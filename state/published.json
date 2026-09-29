@@ -48,5 +48,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/amd-82.html"
   }
+ },
+ {
+  "date": "2026-09-28",
+  "title": "🔒 Plugin4Shell 총정리: Claude Code·Codex·Copilot·Gemini CLI 플러그인 RCE, 패치 현황과 대응 방법",
+  "topic": "Plugin4Shell - Zero Click RCE Vulnerability found in top 4 most popular coding agents, millions of agents affected (Air Security, 2026-09-17)",
+  "category": "AI 보안",
+  "source_url": "https://www.air.security/blog-posts/plugin4shell",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/plugin4shell-claude-codecodexcopilotgem.html"
+  }
  }
 ]
