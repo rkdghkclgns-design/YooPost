@@ -22,11 +22,33 @@ log = logging.getLogger(__name__)
 SIMILAR_TITLE = 0.72  # 제목이 이만큼 비슷하면 같은 주제로 본다
 MAX_ENTRIES = 1000
 _NOISE = re.compile(r"[^0-9a-z가-힣]+")
+_WORD = re.compile(r"[0-9a-z가-힣]+")
+_NUMBER = re.compile(r"^\d+[가-힣]*$")  # 250만주 · 90500원 · 2026 같은 숫자(+단위)
 _MARKER = re.compile(r"<!--yoopost (\{.*?\})-->", re.DOTALL)
+# 카테고리 글의 주제·제목 틀에 늘 들어가는 말 — 이 말과 숫자만 겹치면 같은 주제로 보지 않는다
+# (공모주 주제는 '<회사> 증권신고서(지분증권) — 코스닥 상장 공모 N주, 희망공모가 …' 틀이 같아 회사가 달라도 0.74 로 겹친다)
+TEMPLATE_WORDS = frozenset({
+    "증권신고서", "지분증권", "정정", "효력발생", "효력발생안내", "금융감독원", "한국거래소", "dart", "kind",
+    "코스닥", "코스피", "코넥스", "유가증권시장", "상장", "공모", "공모주", "신주", "구주", "희망공모가", "희망가",
+    "공모가", "밴드", "수요예측", "청약", "분석", "총정리", "사용", "가이드",
+})
 
 
 def _norm(text: str) -> str:
     return _NOISE.sub("", text.lower())
+
+
+def _subject_words(text: str) -> frozenset[str]:
+    """주제의 고유한 말(회사·모델 이름 등) — 틀 말·숫자·한 글자는 뺀다."""
+    return frozenset(w for w in _WORD.findall(text.lower())
+                     if len(w) >= 2 and w not in TEMPLATE_WORDS and not _NUMBER.match(w))
+
+
+def _share_subject(a: frozenset[str], b: frozenset[str]) -> bool:
+    """고유한 말이 하나라도 겹치는가 — 조사가 붙은 말('엘리스그룹의')도 같은 말로 본다. 한쪽이 비면 판단하지 않는다(True)."""
+    if not a or not b:
+        return True
+    return any(x == y or x.startswith(y) or y.startswith(x) for x in a for y in b)
 
 
 @dataclass(frozen=True)
@@ -59,15 +81,20 @@ class PostHistory:
     entries: tuple[HistoryEntry, ...] = ()
 
     def is_duplicate(self, topic: str, url: str = "") -> bool:
-        """같은 원문 주소이거나, 주제·제목이 거의 같은 글이 이미 있으면 True."""
+        """같은 원문 주소이거나, 주제·제목이 거의 같은 글이 이미 있으면 True.
+
+        글자 비율이 높아도 고유한 말(회사·모델 이름)이 하나도 겹치지 않으면 틀만 같은 다른 주제로 본다.
+        """
         key = canonical(url) if url else ""
         wanted = _norm(topic)
+        subject = _subject_words(topic)
         for entry in self.entries:
             if key and entry.source_url and canonical(entry.source_url) == key:
                 return True
             for seen in (entry.topic, entry.title):
                 norm = _norm(seen)
-                if wanted and norm and SequenceMatcher(None, wanted, norm).ratio() >= SIMILAR_TITLE:
+                if (wanted and norm and SequenceMatcher(None, wanted, norm).ratio() >= SIMILAR_TITLE
+                        and _share_subject(subject, _subject_words(seen))):
                     return True
         return False
 

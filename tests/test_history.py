@@ -16,6 +16,24 @@ def test_duplicate_by_source_url_or_similar_title():
     assert not history.is_duplicate("Claude Sonnet 5.5 공개", "https://anthropic.com/news/x")
 
 
+def test_template_wording_alone_is_not_a_duplicate():
+    """공모주 글은 주제 틀이 같아 글자 비율만 보면 0.74 로 겹친다 — 회사가 다르면 다른 주제다."""
+    published = entry(
+        "🔍 인텔리빅스 공모주 분석: 코스닥 상장 250만주·희망가 7,600~9,000원, 증권신고서 총정리",
+        "AI 공모주 분석", url="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000544",
+        topic="인텔리빅스 증권신고서(지분증권) — 코스닥 상장 공모 250만주, 희망공모가 7,600~9,000원 "
+              "(금융감독원 DART, 2026-09-16)")
+    history = PostHistory((published,))
+    other_company = ("엘리스그룹 증권신고서(지분증권) — 코스닥 상장 공모 신주 2,222,000주, "
+                     "희망공모가 70,400~90,500원, 세 차례 정정·효력발생 (금융감독원 DART, 2026-09-29~30)")
+    assert not history.is_duplicate(other_company, "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260929000656")
+    # 같은 회사(조사가 붙어도)·같은 원문은 여전히 중복
+    assert history.is_duplicate("인텔리빅스의 증권신고서(지분증권) — 코스닥 상장 공모 250만주, 희망공모가 7,600~9,000원")
+    assert history.is_duplicate("다른 제목", "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000544")
+    # 틀 말만 남는 주제(고유한 말이 없음)는 예전처럼 글자 비율로 판단
+    assert history.is_duplicate("증권신고서(지분증권) — 코스닥 상장 공모 250만주, 희망공모가 7,600~9,000원")
+
+
 def test_related_prefers_same_category_and_platform_urls():
     history = PostHistory((
         entry("A", "AI 도구", urls={"blogger": "https://b/a"}),
