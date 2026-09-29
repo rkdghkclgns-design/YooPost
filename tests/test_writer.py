@@ -54,6 +54,7 @@ def test_revise_sends_issues_and_current_json():
     assert revised.title == "🤖 고친 제목"
     prompt = client.models.calls[0]["contents"]
     assert "가격은 무료" in prompt and '"title": "🤖 Gemini 3.8 Live' in prompt
+    assert "검증 결과가 우선" in prompt and "되풀이한 곳도 모두 함께 고칩니다" in prompt
 
 
 def test_content_to_json_roundtrip():

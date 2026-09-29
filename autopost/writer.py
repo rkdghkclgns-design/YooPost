@@ -118,6 +118,8 @@ def build_revise_prompt(content_json: str, sheet: FactSheet, issues: Sequence[di
 [고치는 방법]
 - verdict 가 contradicted 인 주장: correction 과 evidence 에 맞게 고치고, 확실하지 않으면 그 문장을 지웁니다.
 - verdict 가 unverifiable 인 주장: 그 주장을 지우거나, 조사 자료에 있는 사실로만 다시 씁니다.
+- 검증 결과가 아래 조사 자료와 다르면 **검증 결과가 우선**입니다. 조사 자료의 그 항목(날짜·수치, '공개되지 않음' 목록 포함)은
+  틀린 것으로 보고 원고에 다시 쓰지 않습니다. 같은 내용을 다른 문장·표·FAQ 에 되풀이한 곳도 모두 함께 고칩니다.
 - 문제없는 부분은 그대로 둡니다. 글의 구성(JSON 구조·소제목·박스·표·image 블록·**강조** 표시)은 유지합니다.
 - 표의 칸을 지울 때는 행 전체를 지웁니다.
 
