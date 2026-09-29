@@ -1,9 +1,9 @@
 # AI백과사전 자동 포스팅 (YooPost)
 
 매일 **AI 공식 발표·뉴스**에서 주제를 골라, 웹 검색으로 **사실을 교차 확인한 정보만** 담아
-**구글 블로그 'AI백과사전' · 네이버 블로그**에 올리고, 결과를 **슬랙 YooPost 워크스페이스**로 보고합니다.
+**구글 블로그 [AI백과사전](https://aibaekgwasajeon.blogspot.com/)**에 올리고, 결과를 **슬랙 YooPost 워크스페이스**로 보고합니다.
 글의 구성·서식은 참고 블로그 [fornewchallenge.tistory.com](https://fornewchallenge.tistory.com/) **전체 게시물을 분석한 문법**을 그대로 따릅니다.
-영상은 만들지 않습니다. GitHub Actions(무료)에서 동작하며, 구조는 `본연 포스팅 자동화`와 같습니다.
+영상은 만들지 않고, 네이버 블로그는 쓰지 않습니다. GitHub Actions(무료)에서 동작하며, 구조는 `본연 포스팅 자동화`와 같습니다.
 
 ```
  [슬랙 /aipost] ─▶ Cloudflare Worker ─▶ GitHub Actions ◀─ [매일 11:00]
@@ -11,10 +11,10 @@
                                              ▼
  ① 셀프 세팅 점검 ─▶ ② 주제 선정 ─▶ ③ 자료 조사·출처 확인 ─▶ ④ AI 원고 (참고 블로그 문법)
                                                                   │
-      ⑧ 발행 기록 ◀─ ⑦ 구글 블로그 / 네이버 발행 ◀─ ⑥ 대표 이미지 ◀─ ⑤ 사실 검증 (틀리면 고쳐서 재검증)
+      ⑧ 발행 기록 ◀─ ⑦ 구글 블로그 발행 ◀─ ⑥ 대표 이미지·미리보기 ◀─ ⑤ 사실 검증 (틀리면 고쳐서 재검증)
           │                                                        └ 끝내 통과 못하면 발행 보류
           ▼
-     슬랙 결과 카드 (+ 실패 시 수동 발행용 원고)
+     슬랙 결과 카드
 ```
 
 ---
@@ -81,9 +81,8 @@ AI 원고는 위 문법을 그대로 따릅니다.
 |---|---|---|
 | #yoopost-알림 | 진행 체크리스트 · 오류 | `SLACK_CHANNEL_ID` (Secret) |
 | #yoopost-1-주제조사 | 고른 주제 · 확인된 출처·사실 목록(sources.md) | `SLACK_CHANNEL_RESEARCH` |
-| #yoopost-2-원고검증 | 원고(post.txt) · 사실 검증 보고(factcheck.md) · 대표 이미지 · 구글/네이버 미리보기 | `SLACK_CHANNEL_DRAFT` |
-| #yoopost-3-발행결과 | 발행 결과 링크 · 실패 시 수동 발행용 원고 | `SLACK_CHANNEL_PUBLISH` |
-| #yoopost-로그인토큰-만료알림 | 네이버 로그인 만료 3일 전부터 알림 | `SLACK_CHANNEL_TOKEN_ALERT` |
+| #yoopost-2-원고검증 | 원고(post.txt) · 사실 검증 보고(factcheck.md) · 대표 이미지 · 구글 블로그 미리보기 | `SLACK_CHANNEL_DRAFT` |
+| #yoopost-3-발행결과 | 발행 결과 링크 | `SLACK_CHANNEL_PUBLISH` |
 
 ```
 🤖 AI 포스팅 진행 중 — Introducing Gemini 3.8 Live       → 끝나면 ✅ 포스팅 완료 — 🤖 Gemini 3.8 Live 사용 가이드…
@@ -93,7 +92,7 @@ AI 원고는 위 문법을 그대로 따릅니다.
 ✅ AI 원고 작성 — 본문 8,420자 · 소제목 9개
 ✅ 사실 검증 — 주장 31개 중 31개 확인 (검증 2회)
 ✅ 대표 이미지 — 1200×630
-✅ 블로그 발행 — 구글 블로그 ✅ · 네이버 블로그 ✅
+✅ 블로그 발행 — https://aibaekgwasajeon.blogspot.com/2026/09/….html
 ✅ 발행 기록 — 발행 기록 12번째
 ```
 
@@ -104,6 +103,9 @@ AI 원고는 위 문법을 그대로 따릅니다.
 | `/aipost 테스트` | 발행 없이 조사·원고·사실 검증·미리보기만 (`/aipost GPT-6 테스트` 가능) |
 | `/aipost 도움말` | 사용법 안내 |
 | `/aipost-setup` | 드라이브 폴더·연동 상태 점검 |
+
+슬랙 명령은 Cloudflare Worker(`https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/`)가 슬랙 서명을 확인한 뒤
+GitHub Actions 를 실행합니다. Worker 가 가진 GitHub 토큰은 YooPost 리포지토리의 Actions 실행 권한 하나뿐입니다 (1년 만료).
 
 ---
 
@@ -120,17 +122,16 @@ AI 원고는 위 문법을 그대로 따릅니다.
 │  ├─ fact_check.py           주장 추출 → 독립 웹 검색 검증
 │  ├─ cover.py                대표 이미지 1200×630
 │  ├─ blog_html.py · blog_publisher.py   구글 블로그 HTML(참고 블로그 박스·표 디자인) · Blogger API
-│  ├─ naver_publisher.py      네이버 블로그 (Playwright, 박스·표는 굵은 글씨·기호 줄로)
 │  ├─ publishing.py · preview_page.py    참고문헌·발행 · 미리보기 페이지
+│  ├─ blogger_menu.py         블로그 상단 메뉴(카테고리 라벨 페이지) 링크
 │  ├─ history.py              발행 기록 (중복 주제 방지 · 함께 보면 좋은 글)
 │  ├─ slack_helper.py · progress.py · step_summary.py   슬랙 보고 · Actions 요약
-│  ├─ token_expiry.py         네이버 로그인 만료 알림
 │  └─ pipeline.py · cli.py · config.py
-├─ scripts/                   토큰 발급·세션 저장·미리보기·참고 블로그 분석·시크릿 등록
+├─ scripts/                   토큰 발급·미리보기·참고 블로그 분석·슬랙 채널·시크릿 등록
 ├─ slack_relay/               슬랙 → GitHub 중계 Cloudflare Worker
 ├─ slack_app_manifest.yml     YooPost 슬랙 앱 한 번에 만들기
-├─ .github/workflows/         auto_post.yml(포스팅) · token_check.yml(만료 알림) · ci.yml(테스트)
-└─ tests/                     pytest — 외부 서비스 없이 실행 (네이버 흐름은 로컬 가짜 에디터로 검증)
+├─ .github/workflows/         auto_post.yml(포스팅) · ci.yml(테스트)
+└─ tests/                     pytest — 외부 서비스 없이 실행
 ```
 
 드라이브에는 아래 구조가 **자동 생성**됩니다 (사진을 올릴 필요 없음).
@@ -147,12 +148,11 @@ AI백과사전_포스팅자동화/
 ## 1회 준비
 
 > 계정: 구글 **rkdghkclgns@gmail.com** · 슬랙 워크스페이스 **YooPost** · GitHub **rkdghkclgns-design/YooPost** (비공개)
-> 네이버는 나중에 추가해도 됩니다. **시크릿을 비워두면 그 플랫폼은 자동으로 건너뜁니다.**
+> 2026-09-29 기준 아래 준비는 모두 끝났습니다. 다시 설치하거나 키를 바꿀 때 참고하세요.
 
 ### 0) 슬랙 워크스페이스 YooPost
-1. https://slack.com/get-started#/createnew 에서 워크스페이스를 만들고 이름을 **YooPost** 로 지정
-   (이미 있는 워크스페이스라면 `설정 및 관리 → 워크스페이스 설정 → 이름`)
-2. 채널 5개 생성: `#yoopost-알림`, `#yoopost-1-주제조사`, `#yoopost-2-원고검증`, `#yoopost-3-발행결과`, `#yoopost-로그인토큰-만료알림`
+https://slack.com/get-started#/createnew 에서 워크스페이스를 만들고 이름을 **YooPost** 로 지정합니다.
+채널은 3) 의 `setup_slack_channels.py` 가 만듭니다.
 
 ### 1) 구글 (드라이브 + 블로그 'AI백과사전')
 1. rkdghkclgns@gmail.com 으로 https://www.blogger.com → **새 블로그 → 제목 `AI백과사전`**
@@ -173,18 +173,25 @@ AI백과사전_포스팅자동화/
    (Blogger API 는 레이아웃을 바꿀 수 없어 이 단계만 화면에서 1번 합니다)
    - 'AI 공모주 분석' 글은 증권신고서·공시의 사실만 정리하고, 투자 권유가 아니라는 안내가 항상 붙습니다.
 
-### 2) Gemini
-https://aistudio.google.com/apikey (rkdghkclgns@gmail.com) → 키 발급 → `.env` 의 `GEMINI_API_KEY`
-(`python scripts/set_secret.py GEMINI_API_KEY` 로 붙여넣으면 GitHub 에도 함께 저장)
-> 사실 확인에 **구글 검색 근거(Grounding with Google Search)** 를 씁니다. 무료 등급 한도 안에서 하루 1편은 충분합니다.
+### 2) Gemini (YooPost 전용 프로젝트)
+**평소 쓰는 크롬에서** https://aistudio.google.com/apikey → API 키 만들기 → 프로젝트 만들기 `YooPost` → 키 만들기 → 복사
+(자동화 브라우저에서는 구글이 프로젝트·키 생성을 막습니다)
+```bash
+python scripts/import_pasted_secret.py GEMINI_API_KEY --open   # 메모장이 열리면 붙여넣고 Ctrl+S
+python scripts/import_pasted_secret.py GEMINI_API_KEY          # .env + GitHub 에 저장, 파일 삭제
+```
+> 사실 확인에 **구글 검색 근거(Grounding with Google Search)** 를 씁니다. 무료 한도는 **모델당 하루 20회**라
+> 다른 앱과 같은 프로젝트를 쓰면 한도를 나눠 쓰게 됩니다 — 전용 프로젝트를 쓰세요. 키 형식은 `AIza…` 또는 `AQ.…`.
 
 ### 3) 슬랙 앱
-1. https://api.slack.com/apps → **Create New App → From an app manifest** → 워크스페이스 **YooPost** → `slack_app_manifest.yml` 붙여넣기
-2. `Install to Workspace` → **Bot User OAuth Token(xoxb-...)** → `SLACK_BOT_TOKEN`
-3. 채널 ID(채널 이름 클릭 → 맨 아래 `C0...`)를 `.env` 에: `#yoopost-알림` → `SLACK_CHANNEL_ID`, 나머지 → `SLACK_CHANNEL_RESEARCH/DRAFT/PUBLISH/TOKEN_ALERT`
-   각 채널에서 `/invite @yoopost`
-4. (선택) `Incoming Webhooks` → `#yoopost-알림` → `SLACK_WEBHOOK_URL` (봇 전송 실패 시 예비 경로)
-5. 연결 확인: `python scripts/slack_test.py`
+1. https://api.slack.com/apps → **Create New App → From an app manifest** → 워크스페이스 **YooPost** → `slack_app_manifest.yml` 붙여넣기 → Create and Install
+2. `OAuth & Permissions` 의 **Bot User OAuth Token(xoxb-...)** 복사 →
+   `python scripts/import_pasted_secret.py SLACK_BOT_TOKEN --open` 로 붙여넣은 뒤 `python scripts/import_pasted_secret.py SLACK_BOT_TOKEN`
+3. 채널 4개 만들기·나를 초대·채널 ID 저장(.env + GitHub):
+   ```bash
+   python scripts/setup_slack_channels.py
+   ```
+4. 연결 확인: `python scripts/slack_test.py`
 
 ### 4) GitHub 리포지토리 YooPost + 시크릿
 ```bash
@@ -192,31 +199,21 @@ python scripts/push_secrets.py          # .env 의 비밀값 → Secrets, 일반
 ```
 (리포지토리는 비공개 `rkdghkclgns-design/YooPost`. 공개로 바꾸지 마세요)
 
-### 5) Cloudflare Worker (슬랙 명령 중계)
-1. GitHub `Settings → Developer settings → Fine-grained tokens` → **YooPost 리포지토리만** → **Actions: Read and write** 하나로 토큰 생성
-2. 배포:
-   ```bash
-   cd slack_relay
-   npx wrangler login
-   npx wrangler secret put SLACK_SIGNING_SECRET
-   npx wrangler secret put GITHUB_TOKEN
-   npx wrangler deploy
-   ```
-3. 출력된 `https://yoopost-slack-relay....workers.dev` 주소를 슬랙 앱 `Slash Commands` 두 개의 Request URL 에 입력
-4. (선택) `ALLOWED_USER_IDS` 에 실행 허용할 슬랙 사용자 ID
+### 5) Cloudflare Worker (슬랙 `/aipost` 명령 중계)
+```bash
+cd slack_relay && npx wrangler deploy && cd ..        # (wrangler login 이 되어 있어야 함: npx wrangler whoami)
+python scripts/relay_secrets.py --open                # 메모장 2개: Signing Secret, GitHub 토큰 붙여넣고 Ctrl+S
+python scripts/relay_secrets.py                       # Worker 에 등록 (값은 출력·저장하지 않고 파일 삭제)
+```
+- **Signing Secret**: 슬랙 앱 `Basic Information → App Credentials → Signing Secret → Show`
+- **GitHub 토큰**: `Settings → Developer settings → Fine-grained tokens` → Repository access **Only select → YooPost** →
+  Permissions **Actions: Read and write** 하나 → Generate (만료 1년 — 만료되면 새로 만들어 `relay_secrets.py` 다시 실행)
+- 배포 주소를 슬랙 앱 `Slash Commands` 두 개의 Request URL 에 넣습니다 (현재 `https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/`).
+- (선택) `wrangler.toml` 의 `ALLOWED_USER_IDS` 에 실행을 허용할 슬랙 사용자 ID
 
 ### 6) 초기 세팅 실행
 슬랙 `/aipost-setup` (또는 GitHub `Actions → AI백과사전 자동 포스팅 → Run workflow → mode: setup`)
 → 드라이브 폴더가 만들어지고 슬랙에 **"✅ 초기 세팅 완료" + 연동 점검표**가 옵니다.
-
-### 7) (선택) 네이버 블로그
-```bash
-python -m playwright install chromium
-python scripts/export_naver_cookies.py
-```
-열린 창에서 **직접** 로그인('로그인 상태 유지' 체크)하면 블로그 아이디를 찾아 `NAVER_BLOG_ID`·`NAVER_STORAGE_STATE_B64` 를
-`.env` 와 GitHub Secrets 에 저장합니다. 처음에는 Variable `NAVER_PUBLISH_MODE=draft`(임시저장)로 확인 후 `publish` 권장.
-- `GH_SECRETS_TOKEN`(Fine-grained PAT, YooPost · **Secrets: Read and write**)을 등록하면 발행 때 갱신된 로그인 정보를 자동 저장해 만료일이 늘어납니다.
 
 ---
 
@@ -226,29 +223,22 @@ python scripts/export_naver_cookies.py
   - Variable `AUTO_PUBLISH=true`: 바로 **자동 발행**
   - 비우거나 `false`: **검토용 미리보기**만 만들어 슬랙에 올림 → 확인 후 `/aipost` 로 발행
 - **처음 1주일은 `AUTO_PUBLISH` 없이** 미리보기로 원고·사실 검증 보고를 확인해 보는 것을 권장합니다.
-- 한 곳이라도 발행에 성공하면 `posted_history.json` 에 기록 → 같은 주제는 다시 고르지 않고, 다음 글의 '함께 보면 좋은 글'에 연결됩니다.
+- 발행에 성공하면 `posted_history.json` 에 기록 → 같은 주제는 다시 고르지 않고, 다음 글의 '함께 보면 좋은 글'에 연결됩니다.
 - 사실 검증 미통과·발행 실패·테스트 실행은 기록하지 않으므로 다음 실행에서 다시 주제를 고릅니다.
-- 네이버가 실패하면 발행결과 채널에 **수동 발행용 원고**가 올라옵니다.
+- 사실 검증을 끝내지 못하면(AI 과부하 등) 써 둔 원고를 **'사실 검증 전 원고'**로 원고 채널에 남기고 발행하지 않습니다.
 
 ### 내 PC에서 미리보기 (아무것도 올리지 않음, GEMINI_API_KEY 만 필요)
 ```bash
 python scripts/preview_post.py                   # 주제 자동 선정
 python scripts/preview_post.py --topic "GPT-6"   # 주제 지정
 ```
-`output/preview_…/` 에 `sources.md`, `post.txt`, `factcheck.md`, `cover.png`, `blog_preview_google.html`, `blog_preview_naver.html` 이 만들어집니다.
+`output/preview_…/` 에 `sources.md`, `draft_unverified.txt`(검증 전), `post.txt`, `factcheck.md`, `cover.png`,
+`blog_preview_google.html`(구글 블로그에 올라갈 모습) 이 만들어집니다.
 
 ### 참고 블로그 문법 다시 분석
 ```bash
 python scripts/analyze_reference_blog.py   # 새 글만 내려받아 style_profile.json 갱신 (캐시: output/reference_cache)
 ```
-
-### 로그인 토큰 만료 알림
-Actions **'로그인 토큰 만료 점검'** 이 매일 09:00(KST)에 네이버 로그인 만료일을 확인해, 만료 **3일 전부터** `#yoopost-로그인토큰-만료알림` 에 보고합니다.
-```
-🔑 로그인 토큰 만료 알림 — 네이버 3일 이내 만료
-• 네이버: 2026-10-29 (3일 남음)
-```
-확인용으로 지금 보내려면 Actions → '로그인 토큰 만료 점검' → Run workflow → `force`.
 
 ## 로컬 실행 / 테스트
 ```bash
@@ -270,10 +260,9 @@ cd slack_relay && node --test      # Worker 테스트
 | `자료 조사·출처 확인` 실패 "확인된 자료가 부족합니다" | 주제가 너무 새로워 공식 자료가 아직 적음 → 다음 실행이 다른 주제를 고름. `MIN_REFERENCES` 를 낮출 수 있음 |
 | ⚠️ 사실 검증 미통과 — 발행 보류 | 원고채널 `factcheck.md` 확인. 고친 원고를 직접 올리거나 `/aipost` 로 다른 주제 실행 |
 | `refresh token 이 만료` | OAuth 동의화면이 '테스트' 상태 → 프로덕션 게시 후 `get_google_token.py` 재실행 |
-| 네이버 `세션이 만료` | `export_naver_cookies.py` 재실행. 네이버 '해외 로그인 차단' 해제 확인 |
-| 네이버 셀렉터 오류 | Artifacts 의 `naver_error_*.png` 확인 후 `autopost/naver_publisher.py` 의 `NaverSelectors` 수정 |
-| Gemini 429/503 | 자동으로 다른 모델·재시도. 계속되면 `GEMINI_MODEL` 변경 또는 유료 등급 |
-| 슬랙 명령 후 `GitHub API HTTP 403/404` | Worker PAT 권한(Actions: Read and write)·대상 리포지토리(YooPost)·만료일 확인 |
+| Gemini 429/503 | 하루 한도를 다 쓴 모델은 그 실행에서 건너뛰고, 과부하는 30·60·90초 기다려 재시도. 계속되면 전용 프로젝트·결제 연결 |
+| 슬랙 명령 후 `GitHub API HTTP 401/403/404` | Worker 의 GitHub 토큰 만료·권한(Actions: Read and write)·대상 리포지토리(YooPost) 확인 → 새 토큰으로 `relay_secrets.py` |
+| 슬랙 명령 후 `dispatch_failed` | 슬랙 앱 Slash Commands 의 Request URL 이 Worker 주소인지 확인 |
 | 대표 이미지 글자가 네모(□) | 한글 폰트 없음. 로컬은 `FONT_PATH` 지정, Actions 는 `fonts-nanum` 자동 설치 |
 
 ## 참고 / 주의
