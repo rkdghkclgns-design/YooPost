@@ -10,7 +10,6 @@
 from __future__ import annotations
 
 import argparse
-import subprocess
 import sys
 from pathlib import Path
 
@@ -18,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from dotenv import dotenv_values  # noqa: E402
 
-from autopost.local_secrets import upload_secrets  # noqa: E402
+from autopost.local_secrets import upload_secrets, upload_variables  # noqa: E402
 
 SECRETS = (
     "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "GOOGLE_REFRESH_TOKEN", "BLOGGER_BLOG_ID",
@@ -37,15 +36,6 @@ def split_values(env: dict) -> tuple[dict, dict]:
     def pick(names):
         return {n: str(env.get(n) or "").strip() for n in names if str(env.get(n) or "").strip()}
     return pick(SECRETS), pick(VARIABLES)
-
-
-def upload_variables(values: dict, run=subprocess.run) -> list[str]:
-    failed = []
-    for name, value in values.items():
-        result = run(["gh", "variable", "set", name], input=value, text=True, capture_output=True)
-        if result.returncode != 0:
-            failed.append(name)
-    return failed
 
 
 def main() -> int:

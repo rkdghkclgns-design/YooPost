@@ -26,6 +26,11 @@ oauth_config:
       - chat:write
       - chat:write.public
       - files:write
+      # scripts/setup_slack_channels.py 가 yoopost-* 채널을 만들고 나를 초대하는 데 사용
+      - channels:manage
+      - channels:read
+      - users:read
+      - users:read.email
 settings:
   org_deploy_enabled: false
   socket_mode_enabled: false
