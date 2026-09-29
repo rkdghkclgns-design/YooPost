@@ -1,0 +1,67 @@
+{
+ "topic": "Claude Desktop (macOS): opening a malicious file from a Cowork folder could run commands on the host (GHSA-v234-4jrq-mgg6, Anthropic, 2026-09-25)",
+ "source_url": "https://github.com/anthropics/claude-code/security/advisories/GHSA-v234-4jrq-mgg6",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Desktop (macOS): opening a malicious file from a Cowork folder could run commands on the host",
+   "url": "https://github.com/anthropics/claude-code/security/advisories/GHSA-v234-4jrq-mgg6",
+   "publisher": "Anthropic (GitHub Security Advisory)",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CVE-2026-43284 Linux kernel xfrm: esp: avoid in-place decrypt on shared skb frags (GHSA-mmw8-mxmc-8w2r)",
+   "url": "https://github.com/advisories/GHSA-mmw8-mxmc-8w2r",
+   "publisher": "GitHub Advisory Database",
+   "published": "2026-05-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Use Claude Cowork safely",
+   "url": "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Claude Cowork architecture overview",
+   "url": "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Desktop and filesystem access",
+   "url": "https://claude.com/docs/third-party/claude-desktop/local-access",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Managed Settings Not Applied When a Stored API Key Was Preferred Over Enterprise Sign-In (GHSA-gfvf-j8jh-jxxw)",
+   "url": "https://github.com/anthropics/claude-code/security/advisories/GHSA-gfvf-j8jh-jxxw",
+   "publisher": "Anthropic (GitHub Security Advisory)",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [
+   "그래서 Anthropic도 실행 차단 목록을 보완하고 커널 문제를 함께 정리한 것으로 보입니다. (근거 없는 추정 — 해석 표시 문장으로 대체)",
+   "수동·관리형 업데이트 환경은 우선순위를 높여 확인하라고 권고합니다. (권고문은 '최신 버전으로 업데이트'만 권고 — 수정)",
+   "둘 중 하나만 줄여도 위험이 크게 준다 (안내문은 '더 어려워진다' — 수정)",
+   "'같은 주' 표현 (9/25 금요일, 9/29 화요일로 다른 주 — '나흘 뒤'로 수정)",
+   "ESP-in-UDP 명칭, '기본적으로' 수식어 (출처에 없음 — 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S6 GitHub 권고 원문, S2 GitHub Advisory Database, S3·S4 Anthropic 지원 문서, S5 3P Desktop 문서를 WebFetch로 다시 열어 64개 주장(GHSA·CVE 번호, CVSS 점수·벡터, 영향/수정 버전, CWE, 날짜, 제보자, 기능 설명)을 대조. 불일치 5건 수정, 권고문이 밝히지 않은 파일 형식 이름은 계속 비공개, '결합 위험'·내부 점검 제안·체크리스트·예시 지시문은 이 글의 해석/제안으로 표시. 공격 절차 내용 없음. EGRESS_BLOCKED 출처 없음."
+ }
+}
