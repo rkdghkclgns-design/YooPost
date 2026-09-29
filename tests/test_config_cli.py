@@ -15,7 +15,7 @@ FULL = {
 def test_defaults_and_stage_channels():
     cfg = load_config(FULL)
     assert cfg.blog_name == "AI백과사전" and not hasattr(cfg, "drive_root_name")  # 구글 드라이브는 쓰지 않음
-    assert cfg.deep_research_agent == "deep-research-preview-04-2026" and cfg.deep_research_minutes == 45
+    assert not hasattr(cfg, "deep_research_agent")  # 딥리서치(유료)는 쓰지 않음
     assert not cfg.image_host_enabled
     assert cfg.topic_lookback_days == 3 and cfg.min_references == 3
     assert cfg.slack_stage_channels == (("research", "CR"),)
@@ -25,14 +25,10 @@ def test_defaults_and_stage_channels():
     assert set(cfg.secret_values()) >= {"sec", "tok", "gem", "xoxb-1"}
 
 
-def test_image_host_and_deep_research_settings():
-    cfg = load_config({**FULL, "IMAGE_HOST_URL": "https://relay.example/", "IMAGE_UPLOAD_TOKEN": "img-tok",
-                       "DEEP_RESEARCH_AGENT": "deep-research-max-preview-04-2026", "DEEP_RESEARCH_MINUTES": "30"})
+def test_image_host_settings():
+    cfg = load_config({**FULL, "IMAGE_HOST_URL": "https://relay.example/", "IMAGE_UPLOAD_TOKEN": "img-tok"})
     assert cfg.image_host_enabled and cfg.image_host_url == "https://relay.example"
     assert "img-tok" in cfg.secret_values()
-    assert cfg.deep_research_agent.startswith("deep-research-max") and cfg.deep_research_minutes == 30
-    with pytest.raises(ConfigError, match="DEEP_RESEARCH_MINUTES"):
-        load_config({"DEEP_RESEARCH_MINUTES": "120"})
 
 
 def test_invalid_values_fail_fast():
@@ -112,17 +108,16 @@ def test_step_summary(tmp_path):
     assert not write_step_summary("x", {"GITHUB_STEP_SUMMARY": str(tmp_path / "no" / "dir" / "s.md")})
 
 
-def test_build_services_wires_deep_research_and_image_host(monkeypatch):
+def test_build_services_wires_search_research_and_image_host(monkeypatch):
     monkeypatch.setattr(cli, "build_credentials", lambda google: "creds")
     monkeypatch.setattr(cli, "build_blogger_service", lambda creds: "blogger-service")
     monkeypatch.setattr(cli, "Gemini", lambda *a, **k: "gemini")
-    monkeypatch.setattr(cli, "DeepResearch", lambda key, agent, **k: ("deep", agent, k["timeout_minutes"]))
     cfg = load_config({**FULL, "IMAGE_HOST_URL": "https://relay.example", "IMAGE_UPLOAD_TOKEN": "t"})
     slack = cli.SlackNotifier()
     setup = cli.build_services(cfg, slack, "setup")
     assert setup.researcher is None and setup.blogger is not None and setup.image_host is not None
     post = cli.build_services(cfg, slack, "post")
-    assert post.researcher._deep == ("deep", "deep-research-preview-04-2026", 45)
+    assert post.researcher is not None and not hasattr(post.researcher, "_deep")
     assert post.images is not None and post.image_host is not None
     no_host = cli.build_services(load_config(FULL), slack, "post")
     assert no_host.image_host is None

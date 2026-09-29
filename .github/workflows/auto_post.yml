@@ -45,8 +45,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    # 구글 딥리서치가 보통 5~20분(기본 최대 45분, 설정 최대 60분) 걸린 뒤 원고·사실 검증이 이어진다
-    timeout-minutes: 120
+    timeout-minutes: 40
     env:
       # 일반 설정 (Settings > Secrets and variables > Actions > Variables)
       BLOG_NAME: ${{ vars.BLOG_NAME }}
@@ -56,9 +55,6 @@ jobs:
       MIN_REFERENCES: ${{ vars.MIN_REFERENCES }}
       MAX_FIX_ROUNDS: ${{ vars.MAX_FIX_ROUNDS }}
       MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
-      # 구글 딥리서치 에이전트 (비우면 deep-research-preview-04-2026) · 최대 대기 분
-      DEEP_RESEARCH_AGENT: ${{ vars.DEEP_RESEARCH_AGENT }}
-      DEEP_RESEARCH_MINUTES: ${{ vars.DEEP_RESEARCH_MINUTES }}
       # 블로그 이미지 저장소 (Cloudflare Worker) — 구글 드라이브 대신
       IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
       OUTPUT_DIR: output

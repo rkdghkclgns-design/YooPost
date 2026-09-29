@@ -3,7 +3,7 @@
     🤖 AI 포스팅 진행 중 — Gemini 3.8 Live 사용 가이드
     카테고리·트리거·요청자
     ✅ 주제 선정 — 후보 48개 중 선택 (공식·Google DeepMind)
-    ✅ 딥리서치 자료 조사 — 사실 22개 · 출처 6개 · 인용 이미지 2개
+    ✅ 자료 조사·출처 확인 — 사실 22개 · 출처 6개 · 인용 이미지 2개
     ⏳ AI 원고 작성 진행 중…
     ⬜ 사실 검증 · 이미지 · 블로그 발행
     실행 로그 보기 (GitHub Actions)
@@ -22,7 +22,7 @@ log = logging.getLogger(__name__)
 
 STEPS: tuple[tuple[str, str], ...] = (
     ("topic", "주제 선정"),
-    ("research", "딥리서치 자료 조사"),
+    ("research", "자료 조사·출처 확인"),
     ("draft", "AI 원고 작성"),
     ("factcheck", "사실 검증"),
     ("image", "이미지 (대표·인용)"),

@@ -12,7 +12,7 @@ features:
   slash_commands:
     - command: /aipost
       url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/
-      description: AI 소식 자동 포스팅 (구글 딥리서치 → 원고 → 사실 검증 → 발행)
+      description: AI 소식 자동 포스팅 (자료 조사 → 원고 → 사실 검증 → 발행)
       usage_hint: "[주제] [테스트]  ·  도움말"
       should_escape: false
     - command: /aipost-setup

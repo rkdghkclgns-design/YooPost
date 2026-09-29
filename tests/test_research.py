@@ -4,7 +4,6 @@ import pytest
 
 from pathlib import Path
 
-from autopost.deep_research import DeepResearchReport
 from autopost.links import LinkCheck
 from autopost.research import (
     ImageCandidate,
@@ -12,7 +11,6 @@ from autopost.research import (
     Researcher,
     ResearchError,
     build_research_prompt,
-    extract_report_json,
     pick_sources,
     reference_date,
 )
@@ -110,77 +108,19 @@ def test_reference_date_and_pick_sources():
     assert [s.id for s in pick_sources(sheet, [])] == ["S1", "S2"]  # 인용 표시가 없으면 전체 (공식 먼저)
 
 
-# ---------------------------------------------------------------- 구글 딥리서치
-class StubDeep:
-    def __init__(self, text="", error=None, cited=()):
-        self.text, self.error, self.cited = text, error, tuple(cited)
-        self.prompts = []
-
-    def run(self, prompt, progress=None):
-        self.prompts.append(prompt)
-        if progress is not None:
-            progress("구글 딥리서치 조사 중 — 2분 경과")
-        if self.error:
-            raise self.error
-        return DeepResearchReport(self.text, self.cited, "int-1", 9.8)
-
-
-def deep_researcher(deep, responses=(), min_sources=2):
-    gemini, client = fake_gemini(list(responses))
-    return Researcher(
-        gemini, session=None, min_sources=min_sources,
-        checker=lambda url, keywords, session: CHECKS[url],
-        resolver=lambda url, session: url.replace("https://redirect/", "https://"),
-        deep=deep,
-    ), client
-
-
-def report_with_json(images=()):
+# ---------------------------------------------------------------- 인용 이미지 후보 (구글 검색 조사)
+def test_search_research_also_returns_quote_image_pages():
     data = json.loads(research_json())
-    data["images"] = list(images)
-    return ("# 조사 보고서\n```python\nprint({'not': 'json'})\n```\n본문 [cite: S1]\n\n```json\n"
-            + json.dumps(data, ensure_ascii=False) + "\n```\n")
-
-
-def test_deep_research_report_json_is_used_directly():
-    images = [{"id": "I1", "image_url": "https://deepmind.google/i.png", "page_url": OFFICIAL,
-               "caption": "Gemini 3.8 Live 구조도", "credit": "Google DeepMind"},
-              {"id": "I2", "image_url": "bad", "page_url": "bad", "caption": "x"}]
-    deep = StubDeep(report_with_json(images), cited=["https://redirect/openai.com/blocked"])
-    res, client = deep_researcher(deep)
-    notes = []
-    sheet = res.research(make_topic(), "2026-09-29", progress=notes.append)
-    assert sheet.engine == "구글 딥리서치" and client.models.calls == []  # 옮겨 적기 불필요
-    assert [s.id for s in sheet.sources] == ["S1", "S2", "S3"]  # 차단된 주소도 딥리서치 인용이면 인정
-    assert [c.id for c in sheet.image_candidates] == ["I1"]
-    assert notes == ["구글 딥리서치 조사 중 — 2분 경과"]
-    prompt = deep.prompts[0]
-    assert "출발 자료: https://deepmind.google" in prompt and "인용 이미지" in prompt and "```json" in prompt
-    assert "조사 방식: 구글 딥리서치" in sheet.markdown() and "## 인용 이미지" in sheet.markdown()
-
-
-def test_report_without_json_is_transcribed_without_search():
-    deep = StubDeep("# 보고서만 있고 JSON 은 없음 [cite: S1]")
-    res, client = deep_researcher(deep, [research_json()])
+    data["images"] = [{"id": "I1", "image_url": "", "page_url": OFFICIAL, "caption": "Gemini 3.8 Live 구조도",
+                       "credit": "Google DeepMind"},
+                      {"id": "I2", "image_url": "bad", "page_url": "bad", "caption": "x"}]
+    res, client = researcher([grounded(json.dumps(data, ensure_ascii=False), [])])
     sheet = res.research(make_topic(), "2026-09-29")
-    assert sheet.engine == "구글 딥리서치" and len(sheet.sources) == 2
-    call = client.models.calls[0]
-    assert "보고서만 있고" in call["contents"] and call["config"].tools is None
-
-
-def test_deep_research_failure_falls_back_to_google_search():
-    deep = StubDeep(error=RuntimeError("429 RESOURCE_EXHAUSTED"))
-    res, client = deep_researcher(deep, [grounded(research_json(), [])])
-    notes = []
-    sheet = res.research(make_topic(), "2026-09-29", progress=notes.append)
-    assert sheet.engine == "구글 검색 (딥리서치 대체)" and "구글 검색 조사로 대체" in notes[-1]
-    assert len(client.models.calls[0]["config"].tools) == 2
-
-
-def test_extract_report_json_prefers_the_last_json_block():
-    text = '```json\n{"a": 1}\n```\n중간\n```json\n{"b": 2}\n```'
-    assert extract_report_json(text) == {"b": 2}
-    assert extract_report_json('앞 설명 {"c": 3} 뒤') == {"c": 3}
+    assert sheet.engine == "구글 검색" and [c.id for c in sheet.image_candidates] == ["I1"]
+    assert sheet.image_candidates[0].page_url == OFFICIAL and sheet.image_candidates[0].image_url == ""
+    prompt = client.models.calls[0]["contents"]
+    assert "[인용 이미지]" in prompt and "page_url" in prompt
+    assert "조사 방식: 구글 검색" in sheet.markdown() and "## 인용 이미지" in sheet.markdown()
 
 
 def test_images_are_listed_only_for_the_writer(tmp_path):

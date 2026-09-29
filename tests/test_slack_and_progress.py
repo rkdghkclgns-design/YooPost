@@ -79,7 +79,7 @@ def test_progress_updates_one_message_and_routes_stage_outputs(tmp_path):
     assert len(pointers) == 1  # 단계별 채널 안내는 한 번만
     assert client.messages[-2]["blocks"][0]["elements"][0]["text"] == "🤖 GPT-6 · 09/29"
     step = reporter.fail_current(RuntimeError("boom"))
-    assert step == "딥리서치 자료 조사"
+    assert step == "자료 조사·출처 확인"
     assert client.last_text(ts).startswith("❌ AI 포스팅 실패")
 
 
@@ -95,5 +95,5 @@ def test_progress_without_bot_posts_finished_steps_only():
 def test_progress_blocks_show_icons_and_run_link():
     blocks = build_progress_blocks("h", [], {"topic": ("done", "<x>"), "research": ("run", "")}, "https://run")
     text = blocks[2]["text"]["text"]
-    assert "✅ 주제 선정 — &lt;x&gt;" in text and "⏳ *딥리서치 자료 조사* 진행 중…" in text
+    assert "✅ 주제 선정 — &lt;x&gt;" in text and "⏳ *자료 조사·출처 확인* 진행 중…" in text
     assert "<https://run|실행 로그 보기>" in blocks[3]["elements"][0]["text"]

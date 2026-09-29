@@ -1,25 +1,20 @@
-"""자료 조사 — 구글 딥리서치로 사실 목록(fact sheet)·인용 이미지 후보를 만들고, 출처 주소를 하나하나 확인한다.
-
-1) 구글 딥리서치 에이전트가 수십 개 페이지를 직접 읽고 보고서 + JSON(사실·출처·이미지)을 쓴다.
-   JSON 이 깨졌으면 Gemini 가 보고서를 JSON 으로 옮겨 적는다 (새 내용 추가 금지).
-2) 딥리서치가 실패·시간 초과면 예전 방식(Gemini + 구글 검색 근거)으로 대신 조사한다 — 포스팅이 멈추지 않도록.
+"""자료 조사 — Gemini + 구글 검색 근거(무료)로 사실 목록(fact sheet)·인용 이미지 후보를 만들고, 출처 주소를 하나하나 확인한다.
 
 사실(fact)마다 출처 번호를 붙이고, 출처는 아래를 모두 통과해야 쓴다.
   - 실제로 열리는 주소 (404·도메인 없음 제외 → 지어낸 주소 차단)
   - 페이지에 주제어가 나옴 (엉뚱한 페이지 제외)
-  - 봇 차단(403 등)으로 열어볼 수 없으면, 딥리서치·검색이 실제로 인용한 주소일 때만 인정
+  - 봇 차단(403 등)으로 열어볼 수 없으면, 구글 검색 근거로 실제 확인된 주소일 때만 인정
 출처가 모두 탈락한 사실은 버리고, 남은 사실·출처가 기준보다 적으면 조사 실패로 멈춘다.
+인용 이미지는 '이미지가 실린 출처 페이지'만 받아 두고, 실제 파일은 quote_images 가 그 페이지에서 찾아 확인한다.
 """
 from __future__ import annotations
 
 import logging
-import re
 from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Callable, Sequence
 
 from .content import ContentError, load_json_object
-from .deep_research import DeepResearch
 from .gemini import Gemini
 from .links import LinkCheck, canonical, check_link, domain, is_http_url, resolve_grounding_url, unique_urls
 from .topic import Topic
@@ -28,10 +23,7 @@ log = logging.getLogger(__name__)
 
 MIN_FACTS = 8
 MAX_SOURCES = 12
-MAX_CITED = 80  # 딥리서치 인용 주소 중 확인할 최대 개수
-ENGINE_DEEP = "구글 딥리서치"
-ENGINE_SEARCH = "구글 검색 (딥리서치 대체)"
-_JSON_BLOCKS = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
+ENGINE = "구글 검색"
 
 
 class ResearchError(RuntimeError):
@@ -57,7 +49,7 @@ class Fact:
 
 @dataclass(frozen=True)
 class ImageCandidate:
-    """딥리서치가 찾은 인용 이미지 후보 (아직 확인 전)."""
+    """자료 조사가 찾은 인용 이미지 후보 (아직 확인 전)."""
     id: str  # I1, I2 …
     image_url: str
     page_url: str
@@ -87,7 +79,7 @@ class FactSheet:
     as_of: str = ""
     image_candidates: tuple[ImageCandidate, ...] = ()
     images: tuple[QuoteImage, ...] = ()  # 확인을 통과한 인용 이미지
-    engine: str = ""  # 조사 방식 (구글 딥리서치 / 구글 검색)
+    engine: str = ""  # 조사 방식 (구글 검색)
 
     def source(self, source_id: str) -> Source | None:
         return next((s for s in self.sources if s.id == source_id), None)
@@ -117,7 +109,7 @@ class FactSheet:
             lines += ["", "## 미확인·미공개"] + [f"- {u}" for u in self.unknowns]
         if self.image_candidates:
             kept = {i.id for i in self.images}
-            lines += ["", "## 인용 이미지 (딥리서치 제안)"] + [
+            lines += ["", "## 인용 이미지 (조사에서 찾은 후보)"] + [
                 f"- [{c.id}] {'✅ 사용 가능' if c.id in kept else '❌ 확인 실패'} {c.caption} — {c.credit or '출처 미상'}"
                 f"\n  이미지: {c.image_url}\n  페이지: {c.page_url}" for c in self.image_candidates
             ]
@@ -139,67 +131,21 @@ def build_research_prompt(topic: Topic, today: str) -> str:
 - 소문·유출·익명 게시물은 사실로 쓰지 않습니다.
 - 사실은 15~30개, 출처는 4~10개. 각 사실에는 그 사실이 실제로 적힌 출처 번호를 붙입니다.
 
+[인용 이미지]
+- 독자 이해에 도움이 되는 공식 이미지(제품 사진, 구조도·아키텍처 그림, 공식 벤치마크 도표, 논문 그림)가 실린
+  출처 페이지를 최대 3개 images 에 적습니다. page_url(이미지가 실린 출처 페이지)은 반드시 적고,
+  image_url 은 이미지 파일 주소를 확실히 알 때만 적습니다 (모르면 빈 문자열 — 시스템이 그 페이지에서 직접 찾습니다).
+- 공식 발표 페이지·공식 블로그·논문을 우선합니다. 장식용·스톡 사진·로고·아이콘·사람 얼굴 위주 사진은 넣지 않습니다.
+- 정책·소송·인사 소식처럼 그림이 필요 없는 주제면 빈 배열입니다.
+
 [출력] JSON 객체 하나만 (설명·코드블록 금지):
 {{"summary": "주제 요약 2~3문장",
   "sources": [{{"id": "S1", "title": "문서 제목", "url": "https://...", "publisher": "발행 주체(회사·매체명)",
                "published": "YYYY-MM-DD 또는 빈 문자열", "official": true}}],
   "facts": [{{"statement": "확인된 사실 한 문장", "source_ids": ["S1"]}}],
-  "unknowns": ["아직 공개되지 않은 것"]}}"""
-
-
-JSON_SPEC = """{"summary": "주제 요약 2~3문장",
- "sources": [{"id": "S1", "title": "문서 제목", "url": "실제로 읽은 페이지의 원래 주소(https://...)",
-              "publisher": "발행 주체(회사·매체명)", "published": "YYYY-MM-DD 또는 빈 문자열", "official": true}],
- "facts": [{"statement": "확인된 사실 한 문장", "source_ids": ["S1"]}],
- "unknowns": ["아직 공개되지 않았거나 확인되지 않은 것"],
- "images": [{"id": "I1", "image_url": "이미지 파일 주소 (모르면 빈 문자열)", "page_url": "이미지가 실린 출처 페이지 주소",
-             "caption": "이미지 설명 한 줄 (한국어)", "credit": "저작권자(회사·매체명)"}]}"""
-
-
-def build_deep_research_prompt(topic: Topic, today: str) -> str:
-    start = f"\n출발 자료: {topic.source_url} ({topic.source_name})" if topic.source_url else ""
-    return f"""당신은 한국어 AI 전문 블로그의 리서처입니다. 오늘은 {today} 입니다. 블로그 글을 쓰기 전에 사실만 조사합니다.
-주제: {topic.title}
-관점: {topic.angle or '핵심 내용·스펙·가격·사용법·한계 총정리'}{start}
-
-[조사 규칙]
-- 공식 발표·공식 문서·논문·저장소(1차 자료)를 가장 먼저 찾고, 신뢰할 수 있는 언론 보도로 교차 확인합니다.
-- 수치(파라미터·가격·벤치마크·컨텍스트 길이·날짜)는 출처에 적힌 그대로 옮깁니다. 계산·추정·반올림하지 않습니다.
-- 출처에서 확인되지 않은 것은 사실에 넣지 말고 unknowns 에 "공개되지 않음/확인 불가"로 적습니다.
-- 소문·유출·익명 게시물은 사실로 쓰지 않습니다.
-- 사실은 15~30개, 출처는 4~10개. 각 사실에는 그 사실이 실제로 적힌 출처 번호를 붙입니다.
-- 출처 url 은 검색 결과 경유 주소가 아니라 실제로 읽은 페이지의 원래 주소를 적습니다.
-
-[인용 이미지]
-- 독자 이해에 도움이 되는 공식 이미지(제품 사진, 구조도·아키텍처 그림, 공식 벤치마크 도표, 논문 그림)가 실린
-  출처 페이지를 최대 3개 images 에 적습니다. page_url(이미지가 실린 출처 페이지)은 반드시 적고,
-  image_url 은 이미지 파일 주소를 확실히 알 때만 적습니다 (모르면 빈 문자열 — 시스템이 그 페이지에서 직접 찾습니다).
-- caption 은 그 이미지가 무엇을 보여주는지 한 줄, credit 은 저작권자(회사·기관명)입니다.
-- 공식 발표 페이지·공식 블로그·논문을 우선합니다. 장식용·스톡 사진·로고·아이콘·사람 얼굴 위주 사진은 넣지 않습니다.
-- 제품·모델·도구·논문 소개처럼 그림이 설명을 돕는 주제면 비워 두지 말고, 정책·소송·인사 소식처럼 그림이 필요 없는 주제만 빈 배열입니다.
-
-[출력]
-보고서를 쓴 뒤, 맨 끝에 아래 형식의 JSON 을 ```json 코드블록 하나로 붙입니다 (보고서와 같은 내용, 한국어).
-{JSON_SPEC}"""
-
-
-def build_transcribe_prompt(report: str) -> str:
-    return f"""아래는 구글 딥리서치가 쓴 조사 보고서입니다. 보고서에 적힌 내용만 아래 JSON 형식으로 옮겨 적으세요.
-- 보고서에 없는 사실·주소를 추가하지 않습니다. 수치는 보고서 그대로 옮깁니다.
-- 출처는 보고서가 인용한 문서(주소가 있는 것)만, 사실마다 근거 출처 번호를 붙입니다.
-- images 는 보고서가 언급한 이미지·그림이 실린 출처 페이지만 (page_url 필수, 이미지 파일 주소를 모르면 image_url 은 빈 문자열). 없으면 빈 배열.
-
-[출력] JSON 객체 하나만 (설명·코드블록 금지):
-{JSON_SPEC}
-
-[보고서]
-{report[:60000]}"""
-
-
-def extract_report_json(text: str) -> dict:
-    """보고서 끝의 ```json 블록 (여러 개면 마지막 것) — 없으면 본문 전체에서 JSON 을 찾는다."""
-    blocks = _JSON_BLOCKS.findall(text)
-    return load_json_object(blocks[-1] if blocks else text)
+  "unknowns": ["아직 공개되지 않은 것"],
+  "images": [{{"id": "I1", "image_url": "이미지 파일 주소 (모르면 빈 문자열)", "page_url": "이미지가 실린 출처 페이지 주소",
+              "caption": "이미지 설명 한 줄 (한국어)", "credit": "저작권자(회사·매체명)"}}]}}"""
 
 
 def _raw_sources(data: dict) -> list[dict]:
@@ -237,45 +183,21 @@ class Researcher:
         min_sources: int = 3,
         checker: Callable[..., LinkCheck] = check_link,
         resolver: Callable[..., str] = resolve_grounding_url,
-        deep: DeepResearch | None = None,
     ) -> None:
         self._gemini = gemini
         self._session = session
         self._min_sources = min_sources
         self._check = checker
         self._resolve = resolver
-        self._deep = deep
 
-    def research(self, topic: Topic, today: str, progress: Callable[[str], None] | None = None) -> FactSheet:
-        if self._deep is not None:
-            try:
-                data, cited = self._deep_research(topic, today, progress)
-                return self._build(data, cited, topic, today, ENGINE_DEEP)
-            except Exception as exc:
-                log.warning("구글 딥리서치 실패 — 구글 검색 조사로 대체합니다: %s", str(exc)[:300])
-                if progress is not None:
-                    progress(f"딥리서치 실패({str(exc)[:60]}) → 구글 검색 조사로 대체")
-        data, cited = self._search_research(topic, today)
-        return self._build(data, cited, topic, today, ENGINE_SEARCH if self._deep is not None else "구글 검색")
-
-    def _deep_research(self, topic: Topic, today: str, progress) -> tuple[dict, list[str]]:
-        report = self._deep.run(build_deep_research_prompt(topic, today), progress)
-        try:
-            data = _validated(extract_report_json(report.text))
-        except ContentError as exc:
-            log.info("딥리서치 JSON 을 바로 읽지 못해 보고서를 옮겨 적습니다: %s", exc)
-            data, _ = self._gemini.generate(build_transcribe_prompt(report.text), _parse_research,
-                                            temperature=0.1, label="딥리서치 보고서 정리")
-        cited = [self._resolve(url, self._session) for url in report.cited_urls[:MAX_CITED]]
-        return data, cited
-
-    def _search_research(self, topic: Topic, today: str) -> tuple[dict, list[str]]:
+    def research(self, topic: Topic, today: str) -> FactSheet:
         data, reply = self._gemini.generate(
             build_research_prompt(topic, today), _parse_research, grounded=True, url_context=bool(topic.source_url),
             temperature=0.2, label="자료 조사",
         )
         log.info("구글 검색 조사: 검색어 %s", ", ".join(reply.queries))
-        return data, [self._resolve(s.url, self._session) for s in reply.sources]
+        cited = [self._resolve(s.url, self._session) for s in reply.sources]
+        return self._build(data, cited, topic, today, ENGINE)
 
     def _build(self, data: dict, cited: Sequence[str], topic: Topic, today: str, engine: str) -> FactSheet:
         from .quote_images import parse_candidates

@@ -1,4 +1,4 @@
-"""테스트용 가짜 외부 서비스 (구글 블로그 / 이미지 저장소 / 딥리서치 / Slack / Gemini / HTTP) 와 샘플 데이터."""
+"""테스트용 가짜 외부 서비스 (구글 블로그 / 이미지 저장소 / Slack / Gemini / HTTP) 와 샘플 데이터."""
 from __future__ import annotations
 
 import json
@@ -23,57 +23,6 @@ class FakeImageHost:
 
     def ping(self) -> bool:
         return not self.fail
-
-
-# ------------------------------------------------------------------ 구글 딥리서치 (client.interactions 흉내)
-class FakeInteraction:
-    def __init__(self, status: str, data: dict | None = None, id: str = "int-1", error=None) -> None:
-        self.status = status
-        self.id = id
-        self.error = error
-        self._data = {"id": id, "status": status, **(data or {})}
-
-    def model_dump(self, **kwargs) -> dict:
-        return self._data
-
-
-class FakeInteractions:
-    """create 는 첫 응답, get 은 이후 응답을 차례로 (예외 객체는 발생)."""
-
-    def __init__(self, responses: list) -> None:
-        self._responses = list(responses)
-        self.created: list[dict] = []
-        self.cancelled: list[str] = []
-
-    def _next(self):
-        item = self._responses.pop(0)
-        if isinstance(item, Exception):
-            raise item
-        return item
-
-    def create(self, **kwargs):
-        self.created.append(kwargs)
-        return self._next()
-
-    def get(self, interaction_id):
-        return self._next()
-
-    def cancel(self, interaction_id):
-        self.cancelled.append(interaction_id)
-
-
-class FakeDeepClient:
-    def __init__(self, responses: list) -> None:
-        self.interactions = FakeInteractions(responses)
-
-
-def deep_output(text: str, citations=()) -> dict:
-    """완료된 딥리서치 응답 (steps 형식)."""
-    content = {"type": "text", "text": text}
-    if citations:
-        content["annotations"] = [{"type": "url_citation", "url": u} for u in citations]
-    return {"steps": [{"type": "user_input", "content": [{"type": "text", "text": "prompt"}]},
-                      {"type": "model_output", "content": [content]}]}
 
 
 # ------------------------------------------------------------------ 구글 블로그 (BloggerPublisher 흉내)

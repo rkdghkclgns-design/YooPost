@@ -12,7 +12,6 @@ from typing import Sequence
 
 from .blog_publisher import BloggerPublisher
 from .config import MODES, Config, ConfigError, load_config, validate_for_mode
-from .deep_research import DeepResearch
 from .fact_check import FactChecker
 from .gemini import Gemini
 from .google_auth import build_blogger_service, build_credentials
@@ -65,11 +64,10 @@ def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
         return Services(slack=slack, blogger=blogger, image_host=host)
 
     gemini = Gemini(cfg.gemini_api_key, cfg.gemini_model, cfg.gemini_fallback_models)
-    deep = DeepResearch(cfg.gemini_api_key, cfg.deep_research_agent, timeout_minutes=cfg.deep_research_minutes)
     return Services(
         slack=slack,
         selector=TopicSelector(gemini, session, lookback_days=cfg.topic_lookback_days),
-        researcher=Researcher(gemini, session, min_sources=cfg.min_references, deep=deep),
+        researcher=Researcher(gemini, session, min_sources=cfg.min_references),
         writer=PostWriter(gemini, cfg.blog_name, cfg.min_body_chars),
         checker=FactChecker(gemini),
         blogger=blogger,

@@ -32,15 +32,11 @@ class StubResearcher:
     def __init__(self, error=None, candidates=()):
         self.error = error
         self.candidates = tuple(candidates)
-        self.progress_calls = 0
 
-    def research(self, topic, today, progress=None):
-        if progress is not None:
-            progress("구글 딥리서치 조사 중 — 2분 경과")
-            self.progress_calls += 1
+    def research(self, topic, today):
         if self.error:
             raise self.error
-        return make_sheet(topic=topic, image_candidates=self.candidates, engine="구글 딥리서치")
+        return make_sheet(topic=topic, image_candidates=self.candidates, engine="구글 검색")
 
 
 class StubImages:
@@ -111,13 +107,13 @@ def test_publishes_to_google_blog_with_hosted_cover(tmp_path):
     assert "https://img.example/img/20260929_1000_cover.png" in body  # 대표 이미지는 이미지 저장소 주소
     assert "googleusercontent" not in body and "drive" not in body.lower()
     assert "📚 참고 문헌 및 출처" in body and "Google DeepMind. (2026, September 24)" in body
-    assert "2026년 9월 29일 기준으로 작성" in body and "구글 딥리서치" in body
+    assert "2026년 9월 29일 기준으로 작성" in body and "딥리서치" not in body
     assert "<!--yoopost " in body  # 발행 기록 표시
     assert host.uploads == [("cover.png", "20260929_1000_cover.png")]
     progress = next(i for i, m in enumerate(client.messages, start=1) if m["text"].startswith("🤖 AI 포스팅 진행 중"))
     assert client.last_text(f"1700000000.{progress:06d}").startswith("✅ 포스팅 완료")
     steps = json.dumps(client.last_blocks(f"1700000000.{progress:06d}"), ensure_ascii=False)
-    assert "딥리서치 자료 조사" in steps and "구글 딥리서치" in steps and "발행 기록" not in steps
+    assert "자료 조사·출처 확인" in steps and "딥리서치" not in steps and "발행 기록" not in steps
     uploads = {u["title"] for u in client.uploads}
     assert {"출처·사실 목록", "원고", "사실 검증 보고", "대표 이미지", "구글 블로그 미리보기"} <= uploads
     assert any(u["channel"] == "CDRAFT" for u in client.uploads)
@@ -193,8 +189,8 @@ def test_step_error_is_reported_once(tmp_path, monkeypatch):
     client = FakeWebClient()
     with pytest.raises(AlreadyReported):
         run_post(cfg(tmp_path), RunOptions(), services(client, researcher=StubResearcher(RuntimeError("no data"))))
-    assert "딥리서치 자료 조사" in summary.read_text(encoding="utf-8")
-    assert any("🚨 '딥리서치 자료 조사' 단계 오류" in t for t in client.texts())
+    assert "자료 조사·출처 확인" in summary.read_text(encoding="utf-8")
+    assert any("🚨 '자료 조사·출처 확인' 단계 오류" in t for t in client.texts())
 
 
 def test_draft_is_kept_when_fact_check_cannot_finish(tmp_path):
@@ -232,7 +228,7 @@ def test_setup_checks_blog_ai_and_image_host(tmp_path):
                                      image_host=FakeImageHost()))
     assert code == 0 and "연동 점검 완료" in client.messages[0]["text"]
     blocks = json.dumps(client.messages[0]["blocks"], ensure_ascii=False)
-    assert "AI백과사전 (글 0개)" in blocks and "딥리서치" in blocks and "https://ai.blogspot.com/" in blocks
+    assert "AI백과사전 (글 0개)" in blocks and "구글 검색" in blocks and "https://ai.blogspot.com/" in blocks
 
     class DownBlogger(FakeBlogger):
         def blog_info(self):

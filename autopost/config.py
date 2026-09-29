@@ -1,7 +1,7 @@
 """환경변수 로딩 및 검증.
 
 발행 대상은 구글 블로그 하나다 (네이버는 쓰지 않음). BLOGGER_BLOG_ID 가 없으면 포스팅 모드는 시작하지 않는다.
-자료 조사는 구글 딥리서치(Gemini Deep Research 에이전트), 이미지는 이미지 저장소(Cloudflare Worker) — 구글 드라이브는 쓰지 않는다.
+자료 조사는 Gemini + 구글 검색 근거(무료), 이미지는 이미지 저장소(Cloudflare Worker) — 구글 드라이브는 쓰지 않는다.
 """
 from __future__ import annotations
 
@@ -17,8 +17,6 @@ MODES = ("post", "setup")
 DEFAULT_GEMINI_MODEL = "gemini-flash-latest"
 # 기본 모델이 과부하(503)·중단(404)일 때 순서대로 시도
 DEFAULT_GEMINI_FALLBACKS = "gemini-3.8-flash,gemini-3.5-flash,gemini-3-flash-preview,gemini-2.5-flash"
-# 구글 딥리서치 에이전트 (Interactions API). 더 깊게 조사하려면 deep-research-max-preview-04-2026 (비용 약 2배)
-DEFAULT_DEEP_RESEARCH_AGENT = "deep-research-preview-04-2026"
 # 진행 단계별 슬랙 채널 (비우면 그 단계 결과물은 알림 채널의 진행 메시지 스레드에 올라감)
 STAGE_CHANNEL_ENV = (
     ("research", "SLACK_CHANNEL_RESEARCH"),  # 주제·출처 목록
@@ -55,8 +53,6 @@ class Config:
     min_body_chars: int
     output_dir: Path
     slack_stage_channels: tuple[tuple[str, str], ...] = ()  # (진행 단계, 채널 ID)
-    deep_research_agent: str = DEFAULT_DEEP_RESEARCH_AGENT
-    deep_research_minutes: int = 45  # 딥리서치 최대 대기 (넘기면 일반 구글 검색 조사로 대체)
     image_host_url: str = ""  # 이미지 저장소 (Cloudflare Worker 주소)
     image_upload_token: str = ""
 
@@ -138,8 +134,6 @@ def load_config(env: Mapping[str, str] | None = None) -> Config:
         slack_stage_channels=tuple(
             (stage, _get(source, key)) for stage, key in STAGE_CHANNEL_ENV if _get(source, key)
         ),
-        deep_research_agent=_get(source, "DEEP_RESEARCH_AGENT", DEFAULT_DEEP_RESEARCH_AGENT),
-        deep_research_minutes=_get_int(source, "DEEP_RESEARCH_MINUTES", 45, 5, 60),
         image_host_url=_get(source, "IMAGE_HOST_URL").rstrip("/"),
         image_upload_token=_get(source, "IMAGE_UPLOAD_TOKEN"),
     )

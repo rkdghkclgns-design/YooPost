@@ -1,6 +1,6 @@
 """포스팅/연동 점검 전체 흐름 (구글 드라이브는 쓰지 않는다).
 
-    ① 주제 선정 → ② 구글 딥리서치 자료 조사·출처 확인·인용 이미지 확보 → ③ AI 원고
+    ① 주제 선정 → ② 자료 조사(구글 검색)·출처 확인·인용 이미지 확보 → ③ AI 원고
     → ④ 사실 검증(틀리면 고쳐서 재검증) → ⑤ 대표 이미지·미리보기 → ⑥ 구글 블로그 발행
 발행 기록은 구글 블로그 글 목록 자체다 (같은 주제 반복 방지·함께 보면 좋은 글).
 사실 검증을 끝내 통과하지 못하면 발행하지 않고 원고·검증 보고만 슬랙에 남긴다.
@@ -96,8 +96,7 @@ def setup_checks(cfg: Config, services: Services) -> tuple[list[tuple[str, bool,
         checks.append((f"구글 블로그 — {info['name']} (글 {info['posts']}개)", True, ""))
     else:
         checks.append(("구글 블로그", False, blog_hint))
-    checks.append((f"구글 딥리서치 자료 조사 ({cfg.deep_research_agent})", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
-    checks.append(("Gemini 원고 작성·사실 검증", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
+    checks.append(("Gemini 자료 조사·원고·사실 검증 (구글 검색)", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
     host_ok = services.image_host.ping() if services.image_host else False
     checks.append(("이미지 저장소 (대표·인용 이미지)", host_ok,
                    "IMAGE_HOST_URL + IMAGE_UPLOAD_TOKEN (scripts/image_host_secret.py)"))
@@ -160,15 +159,13 @@ def _pick_topic(services: Services, options: RunOptions, history: PostHistory, n
 
 
 def _research(services: Services, topic: Topic, today: str, workdir: Path, reporter: ProgressReporter) -> FactSheet:
-    reporter.step("research", "run", "구글 딥리서치 조사 중 (보통 5~20분)")
-    sheet = services.researcher.research(topic, today, progress=lambda text: reporter.step("research", "run", text))
+    reporter.step("research", "run")
+    sheet = services.researcher.research(topic, today)
     if services.images is not None and sheet.image_candidates:
         sheet = replace(sheet, images=services.images.collect(sheet.image_candidates, sheet.sources, workdir))
     official = sum(1 for s in sheet.sources if s.official)
     images = f" · 인용 이미지 {len(sheet.images)}개" if sheet.image_candidates else " · 인용 이미지 불필요"
-    engine = f" · {sheet.engine}" if sheet.engine else ""
-    reporter.step("research", "done",
-                  f"사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개 (공식 {official}){images}{engine}")
+    reporter.step("research", "done", f"사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개 (공식 {official}){images}")
     path = workdir / "sources.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(sheet.markdown(), encoding="utf-8")

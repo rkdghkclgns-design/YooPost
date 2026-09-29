@@ -1,4 +1,4 @@
-"""인용 이미지 확보 — 구글 딥리서치가 찾은 이미지 후보를 실제로 내려받아 확인한다.
+"""인용 이미지 확보 — 자료 조사(구글 검색)가 찾은 이미지 후보를 실제로 내려받아 확인한다.
 
 통과 기준 (하나라도 어기면 버린다 — 포스팅에 이미지가 필요 없으면 후보 자체가 없다):
   - 이미지가 실린 페이지가 조사에서 확인된 출처와 같은 사이트 (blogs.nvidia.com ↔ nvidianews.nvidia.com 은 같은 곳으로 봄)
@@ -40,7 +40,7 @@ _OG_IMAGE = (
 
 
 def parse_candidates(raw) -> tuple[ImageCandidate, ...]:
-    """딥리서치 JSON 의 images 배열 → 후보 목록 (주소가 이상한 항목은 버림, 최대 3개)."""
+    """자료 조사 JSON 의 images 배열 → 후보 목록 (주소가 이상한 항목은 버림, 최대 3개)."""
     result: list[ImageCandidate] = []
     for index, item in enumerate(raw if isinstance(raw, list) else [], start=1):
         if not isinstance(item, dict):

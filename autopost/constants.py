@@ -39,7 +39,7 @@ CLOSING_HEADING = "🎯 맺음말"
 REFERENCES_HEADING = "📚 참고 문헌 및 출처"
 CLOSING_SIGNATURE = "저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다."
 BASIS_NOTE = "※ 본 글은 {date} 기준으로 작성되었습니다."
-FACT_NOTE = "이 글의 수치·날짜·이름 등 사실 관계는 구글 딥리서치로 조사한 공식 발표·1차 자료를 웹 검색으로 다시 교차 확인했습니다."
+FACT_NOTE = "이 글의 수치·날짜·이름 등 사실 관계는 공식 발표·1차 자료와 웹 검색으로 교차 확인했습니다."
 RELATED_POSTS = 3
 
 
