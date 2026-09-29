@@ -12,12 +12,12 @@ features:
   slash_commands:
     - command: /aipost
       url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/
-      description: AI 소식 자동 포스팅 (자료 조사 → 원고 → 사실 검증 → 발행)
+      description: AI백과사전 사용법 안내 (원고는 Claude 앱에서 작성)
       usage_hint: "[주제] [테스트]  ·  도움말"
       should_escape: false
     - command: /aipost-setup
       url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/
-      description: 구글 블로그·Gemini·이미지 저장소 연동 상태 점검
+      description: 구글 블로그·이미지·원고 보관함·슬랙 연동 상태 점검
       should_escape: false
 oauth_config:
   scopes:
@@ -31,7 +31,13 @@ oauth_config:
       - channels:read
       - users:read
       - users:read.email
+      # 원고 메시지의 ✅ 반응을 감지해 발행 (Worker /slack/events)
+      - reactions:read
 settings:
+  event_subscriptions:
+    request_url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/slack/events
+    bot_events:
+      - reaction_added
   org_deploy_enabled: false
   socket_mode_enabled: false
   token_rotation_enabled: false

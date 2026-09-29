@@ -1,0 +1,57 @@
+name: AI백과사전 원고 발행 (슬랙 ✅ 승인)
+# Claude 가 쓴 원고 메시지에 슬랙에서 ✅ 를 누르면 Cloudflare Worker 가 이 워크플로를 실행한다.
+# AI(구글 API)를 쓰지 않는다 — 원고 보관함에서 발행용 HTML 을 꺼내 구글 블로그에 올리고 결과를 슬랙 스레드에 남긴다.
+run-name: "✅ 승인 발행 · ${{ inputs.draft_id }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      draft_id:
+        description: "원고 ID (슬랙 원고 메시지에 표시)"
+        type: string
+        required: true
+      approved_by:
+        description: "승인한 슬랙 사용자 ID (Worker 가 자동 입력)"
+        type: string
+        default: ""
+
+concurrency:
+  group: publish-draft
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BLOG_NAME: ${{ vars.BLOG_NAME }}
+      IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+      SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+      IMAGE_UPLOAD_TOKEN: ${{ secrets.IMAGE_UPLOAD_TOKEN }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 원고 발행
+        env:
+          # 외부 입력은 run 스크립트에 직접 넣지 않고 환경변수로만 전달 (스크립트 인젝션 방지)
+          DRAFT_ID: ${{ inputs.draft_id }}
+          APPROVED_BY: ${{ inputs.approved_by }}
+        run: python -m autopost.publish_draft

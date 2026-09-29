@@ -291,7 +291,7 @@ def test_setup_checks_blog_ai_and_image_host(tmp_path):
                                      image_host=FakeImageHost()))
     assert code == 0 and "연동 점검 완료" in client.messages[0]["text"]
     blocks = json.dumps(client.messages[0]["blocks"], ensure_ascii=False)
-    assert "AI백과사전 (글 0개)" in blocks and "구글 검색" in blocks and "https://ai.blogspot.com/" in blocks
+    assert "AI백과사전 (글 0개)" in blocks and "✅ 승인 감지" in blocks and "https://ai.blogspot.com/" in blocks
 
     class DownBlogger(FakeBlogger):
         def blog_info(self):

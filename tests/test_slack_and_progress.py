@@ -35,7 +35,7 @@ def test_setup_blocks_show_connection_checks():
     assert "✅ 구글 블로그" in blocks[1]["text"]["text"]
     assert "⬜ 이미지 저장소  _(필요: IMAGE_&lt;HOST&gt;)_" in blocks[1]["text"]["text"]
     footer = blocks[-1]["elements"][0]["text"]
-    assert "<https://b|구글 블로그 열기>" in footer and "구글 드라이브는 쓰지 않습니다" in footer
+    assert "<https://b|구글 블로그 열기>" in footer and "✅ 를 누르면 발행" in footer
     ok = build_setup_blocks([("슬랙", True, "")])
     assert "연동 점검 완료" in ok[0]["text"]["text"] and "블로그 열기" not in ok[-1]["elements"][0]["text"]
 

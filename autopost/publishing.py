@@ -89,21 +89,26 @@ def _public_url(host: ImageHost | None, path: Path, name: str) -> str:
     return data_uri(path, INLINE_IMAGE_PX)
 
 
+def build_publish_html(host: ImageHost | None, ctx: PublishContext) -> str:
+    """이미지를 저장소에 올리고 구글 블로그에 그대로 올릴 본문 HTML 을 만든다 (발행 기록 표시 포함)."""
+    cover_url = None
+    if ctx.cover is not None:
+        cover_url = _public_url(host, ctx.cover, f"{ctx.stamp}_cover{ctx.cover.suffix}")
+    images = tuple(
+        ImageRef(i.id, _public_url(host, i.path, f"{ctx.stamp}_{i.id}{i.path.suffix}"), i.caption, i.credit,
+                 i.page_url)
+        for i in ctx.used_images()
+    )
+    extras = replace(ctx.notes, cover_url=cover_url, related=ctx.related(), images=images, marker=ctx.marker())
+    return build_blog_html(ctx.content, extras)
+
+
 def publish_blogger(host: ImageHost | None, blogger: BloggerPublisher | None, ctx: PublishContext) -> PublishResult:
     """대표 이미지·인용 이미지를 저장소에 올린 뒤 구글 블로그에 발행 (실패는 결과로 돌려준다)."""
     if blogger is None:
         return PublishResult.skip(blog_publisher.PLATFORM, "BLOGGER_BLOG_ID 미설정")
     try:
-        cover_url = None
-        if ctx.cover is not None:
-            cover_url = _public_url(host, ctx.cover, f"{ctx.stamp}_cover{ctx.cover.suffix}")
-        images = tuple(
-            ImageRef(i.id, _public_url(host, i.path, f"{ctx.stamp}_{i.id}{i.path.suffix}"), i.caption, i.credit,
-                     i.page_url)
-            for i in ctx.used_images()
-        )
-        extras = replace(ctx.notes, cover_url=cover_url, related=ctx.related(), images=images, marker=ctx.marker())
-        body = build_blog_html(ctx.content, extras)
+        body = build_publish_html(host, ctx)
         return blogger.publish(ctx.content.title, body, build_labels(ctx.content.category, ctx.content.hashtags))
     except Exception as exc:
         log.exception("%s 발행 실패", blog_publisher.PLATFORM)

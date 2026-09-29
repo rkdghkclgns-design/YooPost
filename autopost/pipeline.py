@@ -143,9 +143,8 @@ def setup_checks(cfg: Config, services: Services) -> tuple[list[tuple[str, bool,
         checks.append((f"구글 블로그 — {info['name']} (글 {info['posts']}개)", True, ""))
     else:
         checks.append(("구글 블로그", False, blog_hint))
-    checks.append(("Gemini 자료 조사·원고·사실 검증 (구글 검색)", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
     host_ok = services.image_host.ping() if services.image_host else False
-    checks.append(("이미지 저장소 (대표·인용 이미지)", host_ok,
+    checks.append(("이미지·원고 보관함 + ✅ 승인 감지 (Cloudflare Worker)", host_ok,
                    "IMAGE_HOST_URL + IMAGE_UPLOAD_TOKEN (scripts/image_host_secret.py)"))
     checks.append(("슬랙", cfg.slack_enabled, "SLACK_BOT_TOKEN + SLACK_CHANNEL_ID 또는 SLACK_WEBHOOK_URL"))
     return checks, blog_url

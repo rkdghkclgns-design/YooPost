@@ -103,7 +103,7 @@ def build_setup_blocks(checks: Sequence[tuple[str, bool, str]], blog_url: str = 
         {"type": "header", "text": {"type": "plain_text", "text": header}},
         {"type": "section", "text": {"type": "mrkdwn", "text": _truncate(f"*연동 점검*\n{checklist}")}},
     ]
-    footer = "자료 조사는 구글 검색(무료), 이미지는 이미지 저장소(Cloudflare)를 씁니다 — 구글 드라이브는 쓰지 않습니다"
+    footer = "원고는 Claude 앱이 쓰고, 슬랙 원고 메시지에 ✅ 를 누르면 발행됩니다 (구글 AI API·드라이브 미사용)"
     if blog_url:
         footer += f"  |  <{blog_url}|구글 블로그 열기>"
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": footer}]})

@@ -1,4 +1,4 @@
-name: AI백과사전 자동 포스팅
+name: AI백과사전 자동 포스팅 (Gemini · 수동 전용)
 # Actions 실행 목록에 무엇을 실행했는지 표시 (예: "💬 슬랙 포스팅 · GPT-6 [테스트]")
 run-name: >-
   ${{ github.event_name == 'schedule' && (vars.AUTO_PUBLISH == 'true' && '⏰ 정기 자동 포스팅' || '⏰ 정기 미리보기 [검토용]') || format('{0} {1}{2}{3}',
@@ -8,9 +8,8 @@ run-name: >-
   inputs.dry_run && ' [테스트]' || '') }}
 
 on:
-  schedule:
-    # 매일 11:00 (KST) = UTC 02:00, 하루 1회 — 미국 발표가 밤사이 나온 뒤. GitHub 부하로 수~수십 분 늦을 수 있음
-    - cron: "0 2 * * *"
+  # 매일 자동 실행(schedule)은 껐다 — 원고는 Claude 앱이 쓰고 슬랙 ✅ 승인으로 발행한다 (publish_draft.yml).
+  # 이 워크플로(Gemini 로 조사·작성)는 GitHub 화면에서 직접 실행할 때만 돈다 (Gemini 비용 발생).
   workflow_dispatch:
     inputs:
       mode:

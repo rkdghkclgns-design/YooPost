@@ -1,8 +1,11 @@
 /**
- * 슬랙(YooPost 워크스페이스) 슬래시 커맨드 → GitHub Actions(workflow_dispatch) 중계 Cloudflare Worker.
+ * 슬랙(YooPost 워크스페이스) ↔ GitHub Actions 중계 + 블로그 이미지·원고 보관 Cloudflare Worker.
  *
- * GitHub Actions 는 외부 요청(웹훅)을 직접 받을 수 없어서, 슬랙 명령을 이 Worker 가 받아
- * 서명 검증 후 GitHub API 로 워크플로를 실행시킨다. (Cloudflare 무료 플랜으로 충분)
+ * 원고는 Claude(데스크톱 앱)가 쓴다 — 구글 AI API 를 쓰지 않는다.
+ *   Claude → PUT /draft/<ID> (원고 보관) → 슬랙 원고 채널에 '✅ 누르면 발행' 메시지
+ *   사용자가 그 메시지에 ✅ 반응 → 슬랙 이벤트(POST /slack/events) → 이 Worker 가 감지
+ *   → GitHub Actions publish_draft.yml 실행 → 구글 블로그 발행 → 슬랙 스레드에 결과
+ * GitHub Actions 는 외부 요청을 직접 받을 수 없어서 이 Worker 가 서명 검증 후 대신 실행시킨다. (Cloudflare 무료 플랜)
  *
  * 필요한 설정 (wrangler secret put / wrangler.toml [vars])
  *   SLACK_SIGNING_SECRET : 슬랙 앱 > Basic Information > Signing Secret
@@ -12,18 +15,19 @@
  *   GITHUB_REF           : (선택) 실행 브랜치, 기본 main
  *   ALLOWED_USER_IDS     : (선택) 실행 허용 슬랙 사용자 ID 목록 "U0123,U0456"
  *   IMAGE_UPLOAD_TOKEN   : 블로그 이미지 업로드용 비밀값 (GitHub Actions 와 같은 값)
- *   IMAGES               : 이미지 저장 KV 바인딩 (wrangler.toml [[kv_namespaces]])
+ *   IMAGES               : 이미지·원고 저장 KV 바인딩 (wrangler.toml [[kv_namespaces]])
+ *   PUBLISH_WORKFLOW     : (선택) ✅ 승인 시 실행할 워크플로, 기본 publish_draft.yml
+ *   APPROVE_REACTIONS    : (선택) 승인으로 볼 반응 이름, 기본 "white_check_mark,heavy_check_mark"
  *
- * 사용 예:  /aipost                       → 최신 AI 소식에서 주제를 골라 포스팅
- *           /aipost Gemini 3.8 Live       → 주제 지정
- *           /aipost 테스트                → 발행 없이 조사·원고·사실 검증 미리보기(dry-run)
- *           /aipost 전체                  → 블로그 메뉴 카테고리마다 1편씩 (7편, 차례로)
- *           /aipost 도움말                → 사용법 안내 (실행 안 함)
- *           /aipost-setup                 → 연동 상태 점검
+ * 슬랙 명령:  /aipost 도움말 → 사용법 · /aipost-setup → 연동 상태 점검
+ *   (/aipost 로 Gemini 가 글을 쓰던 기능은 껐다 — 원고는 Claude 앱에서 요청)
  *
  * 블로그 이미지 호스팅 (구글 드라이브 대신):
  *   PUT /img/<이름>  (Authorization: Bearer IMAGE_UPLOAD_TOKEN) → KV 에 저장
  *   GET /img/<이름>  → 누구나 볼 수 있는 이미지 주소 (구글 블로그 본문 <img> 에 사용)
+ * 원고 보관함 (둘 다 Authorization: Bearer IMAGE_UPLOAD_TOKEN 필요):
+ *   PUT /draft/<ID>  원고 저장 (slack.channel·slack.ts 가 있으면 그 메시지의 ✅ 와 연결)
+ *   GET /draft/<ID>  원고 읽기 (발행 워크플로가 사용)
  */
 
 export const COMMANDS = {
@@ -41,24 +45,34 @@ const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 const DRY_RUN_WORDS = /(테스트|dry-?run|test)/gi;
 const HELP_WORDS = /^(도움말|help|사용법|\?)$/i;
 const ALL_WORDS = /(^|\s)(전체|카테고리별|all)(?=\s|$)/gi;
+const DRAFT_PATH = /^\/draft\/([A-Za-z0-9][A-Za-z0-9._-]{0,119})$/;
+const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
+const RETRYABLE = new Set(["pending", "failed"]);
+
+export const WRITE_NOTICE = [
+  "✍️ 원고 작성은 이제 *Claude 앱*에서 합니다 (구글 AI API 를 쓰지 않아 비용 0원).",
+  "Claude 에게 \"AI 보안 카테고리 글 써줘\" 또는 \"카테고리별로 7편 써줘\" 처럼 요청하면,",
+  "원고와 미리보기가 원고 채널에 올라오고 그 메시지에 ✅ 를 누르면 구글 블로그에 발행됩니다.",
+].join("\n");
 
 export const HELP_TEXT = [
-  "*🤖 AI백과사전 자동 포스팅 명령어*",
-  "• `/aipost` — 최신 AI 공식 발표·뉴스에서 주제를 골라 바로 포스팅",
-  "• `/aipost Gemini 3.8 Live` — 주제 지정 (제품·모델·논문 이름)",
-  "• `/aipost 테스트` — 발행 없이 자료 조사·원고·사실 검증·미리보기만 (`/aipost GPT-6 테스트` 처럼 주제와 함께 가능)",
-  "• `/aipost 전체` — 블로그 메뉴 카테고리(AI 언어 모델·AI 도구·AI 논문 분석·AI 뉴스 리뷰·AI 보안·AI 인사이트·AI 공모주 분석)마다 1편씩, 차례로 7편 (`/aipost 전체 테스트` 가능)",
-  "• `/aipost-setup` — 구글 블로그·Gemini·이미지 저장소 연동 상태 점검",
+  "*🤖 AI백과사전 사용법*",
+  WRITE_NOTICE,
   "",
-  "실행하면 채널에 진행 메시지가 올라오고 단계별(주제 선정 → 자료 조사 → 원고 → 사실 검증 → 이미지 → 발행)로 갱신됩니다.",
-  "사실 검증을 통과하지 못한 글은 발행하지 않고 원고·검증 보고만 남깁니다.",
+  "• 원고 메시지에 ✅ — 구글 블로그에 발행 (결과는 그 메시지 스레드에)",
+  "• `/aipost-setup` — 구글 블로그·이미지 저장소 연동 상태 점검",
 ].join("\n");
 
 export default {
-  async fetch(request, env) {
-    const image = new URL(request.url).pathname.match(IMAGE_PATH);
+  async fetch(request, env, ctx) {
+    const path = new URL(request.url).pathname;
+    const image = path.match(IMAGE_PATH);
     if (image) {
       return handleImage(request, env, image[1]);
+    }
+    const draft = path.match(DRAFT_PATH);
+    if (draft) {
+      return handleDraft(request, env, draft[1]);
     }
     if (request.method !== "POST") {
       return new Response("ok");
@@ -66,6 +80,9 @@ export default {
     const raw = await request.text();
     if (!(await verifySlackSignature(request.headers, raw, env.SLACK_SIGNING_SECRET))) {
       return new Response("invalid signature", { status: 401 });
+    }
+    if (path === "/slack/events") {
+      return handleSlackEvent(request, env, ctx, raw);
     }
 
     const form = new URLSearchParams(raw);
@@ -85,6 +102,9 @@ export default {
       return reply("이 명령어를 실행할 권한이 없습니다. 관리자에게 문의하세요.");
     }
 
+    if (mode === "post") {
+      return reply(WRITE_NOTICE); // Gemini 가 글을 쓰던 기능은 꺼 둠 (비용 0원 유지)
+    }
     const { topic, dryRun, all } = parseText(text);
     const inputs = buildInputs(mode, topic, dryRun, cleanText(form.get("user_name") || userId, 30), all);
     try {
@@ -104,6 +124,111 @@ export default {
     );
   },
 };
+
+function authorized(request, env) {
+  const expected = env.IMAGE_UPLOAD_TOKEN ? `Bearer ${env.IMAGE_UPLOAD_TOKEN}` : "";
+  return Boolean(expected) && timingSafeEqual(expected, request.headers.get("Authorization") || "");
+}
+
+function json(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+  });
+}
+
+export async function handleDraft(request, env, id) {
+  if (!env.IMAGES) {
+    return new Response("draft store not configured", { status: 503 });
+  }
+  if (!authorized(request, env)) {
+    return new Response("unauthorized", { status: 401 });
+  }
+  if (request.method === "GET") {
+    const draft = await env.IMAGES.get(`draft:${id}`, { type: "json" });
+    return draft ? json(draft) : new Response("not found", { status: 404 });
+  }
+  if (request.method !== "PUT") {
+    return new Response("method not allowed", { status: 405, headers: { Allow: "GET, PUT" } });
+  }
+  const raw = await request.text();
+  if (raw.length === 0 || raw.length > MAX_DRAFT_BYTES) {
+    return new Response("draft too large or empty", { status: 413 });
+  }
+  let draft;
+  try {
+    draft = JSON.parse(raw);
+  } catch {
+    return new Response("invalid json", { status: 400 });
+  }
+  if (!draft || typeof draft !== "object" || !draft.title || !draft.html) {
+    return new Response("draft needs title and html", { status: 400 });
+  }
+  await env.IMAGES.put(`draft:${id}`, JSON.stringify({ ...draft, id }));
+  const slack = draft.slack || {};
+  if (slack.channel && slack.ts) {
+    await env.IMAGES.put(`msg:${slack.channel}:${slack.ts}`, id); // 이 메시지의 ✅ → 이 원고
+  }
+  return json({ ok: true, id }, 201);
+}
+
+export async function handleSlackEvent(request, env, ctx, raw) {
+  let body;
+  try {
+    body = JSON.parse(raw);
+  } catch {
+    return new Response("invalid json", { status: 400 });
+  }
+  if (body.type === "url_verification") {
+    return json({ challenge: body.challenge }); // 슬랙 앱 이벤트 구독 주소 확인
+  }
+  if (request.headers.get("X-Slack-Retry-Num")) {
+    return new Response("ok"); // 재전송은 무시 (원고 상태로도 중복 발행을 막음)
+  }
+  const event = body.event || {};
+  if (body.type === "event_callback" && event.type === "reaction_added" && isApproval(event.reaction, env)) {
+    const work = approveDraft(env, event).catch((err) => console.error("approve failed", err.message));
+    if (ctx && ctx.waitUntil) {
+      ctx.waitUntil(work); // 슬랙에는 3초 안에 바로 응답
+    } else {
+      await work;
+    }
+  }
+  return new Response("ok");
+}
+
+function isApproval(reaction, env) {
+  const names = (env.APPROVE_REACTIONS || "white_check_mark,heavy_check_mark").split(",").map((s) => s.trim());
+  return names.includes(String(reaction || "").split("::")[0]);
+}
+
+export async function approveDraft(env, event) {
+  const item = event.item || {};
+  if (!env.IMAGES || item.type !== "message") {
+    return "ignored";
+  }
+  const id = await env.IMAGES.get(`msg:${item.channel}:${item.ts}`);
+  if (!id) {
+    return "not a draft";
+  }
+  const draft = await env.IMAGES.get(`draft:${id}`, { type: "json" });
+  if (!draft || !RETRYABLE.has(draft.status || "pending")) {
+    return "already handled";
+  }
+  const allowed = (env.ALLOWED_USER_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (allowed.length > 0 && !allowed.includes(event.user)) {
+    return "not allowed";
+  }
+  await env.IMAGES.put(`draft:${id}`, JSON.stringify({ ...draft, status: "approved", approved_by: event.user }));
+  try {
+    await dispatch(env, { draft_id: id, approved_by: String(event.user || "") },
+      env.PUBLISH_WORKFLOW || "publish_draft.yml");
+  } catch (err) {
+    await env.IMAGES.put(`draft:${id}`, JSON.stringify({ ...draft, status: "pending" })); // 다시 ✅ 로 재시도
+    throw err;
+  }
+  return "dispatched";
+}
 
 export async function handleImage(request, env, key) {
   if (!env.IMAGES) {
@@ -125,8 +250,7 @@ export async function handleImage(request, env, key) {
   if (request.method !== "PUT") {
     return new Response("method not allowed", { status: 405, headers: { Allow: "GET, HEAD, PUT" } });
   }
-  const expected = env.IMAGE_UPLOAD_TOKEN ? `Bearer ${env.IMAGE_UPLOAD_TOKEN}` : "";
-  if (!expected || !timingSafeEqual(expected, request.headers.get("Authorization") || "")) {
+  if (!authorized(request, env)) {
     return new Response("unauthorized", { status: 401 });
   }
   const type = (request.headers.get("Content-Type") || "").split(";")[0].trim().toLowerCase();
@@ -207,16 +331,15 @@ function timingSafeEqual(a, b) {
   return diff === 0;
 }
 
-export function dispatchUrl(env) {
-  const workflow = env.GITHUB_WORKFLOW || "auto_post.yml";
+export function dispatchUrl(env, workflow = env.GITHUB_WORKFLOW || "auto_post.yml") {
   return `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${workflow}/dispatches`;
 }
 
-async function dispatch(env, inputs) {
+async function dispatch(env, inputs, workflow) {
   if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) {
     throw new Error("Worker 에 GITHUB_TOKEN / GITHUB_REPO 가 설정되지 않았습니다");
   }
-  const response = await fetch(dispatchUrl(env), {
+  const response = await fetch(dispatchUrl(env, workflow), {
     method: "POST",
     headers: {
       Authorization: `Bearer ${env.GITHUB_TOKEN}`,
