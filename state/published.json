@@ -1,0 +1,52 @@
+[
+ {
+  "date": "2026-09-28",
+  "title": "⚡ Claude Sonnet 5.5 출시: 오퍼스급 코딩·속도 30% 향상·AWS Bedrock 스펙 총정리",
+  "topic": "Introducing Claude Sonnet 5.5 on AWS",
+  "category": "AI 언어 모델",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-sonnet-55-30-aws-bedrock.html"
+  }
+ },
+ {
+  "date": "2026-09-28",
+  "title": "🚀 Manus 2.0 사용 가이드: 비용 32% 줄인 Cascade·Studio·자동화·Cue 총정리",
+  "topic": "Introducing Manus 2.0 (Manus, 2026-09-28)",
+  "category": "AI 도구",
+  "source_url": "https://manus.im/blog/introducing-manus-2-0",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/manus-20-32-cascadestudiocue.html"
+  }
+ },
+ {
+  "date": "2026-09-28",
+  "title": "🤖 Holo4 총정리: 화면·코드·MCP 다 쓰는 오픈 웨이트 에이전트 모델, 가격·벤치마크·사용법",
+  "topic": "Holo4: powering generalist computer-use agents",
+  "category": "AI 언어 모델",
+  "source_url": "https://huggingface.co/blog/Hcompany/holo4",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/holo4-mcp.html"
+  }
+ },
+ {
+  "date": "2026-09-28",
+  "title": "🧠 구글 RRSI 논문 분석: 에이전트 하네스 자가개선의 과적합을 잡은 정규화 기법 총정리",
+  "topic": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses (Google Cloud AI Research, arXiv 2609.24972)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.24972",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/rrsi.html"
+  }
+ },
+ {
+  "date": "2026-09-28",
+  "title": "🤝 AMD의 월드 랩스 인수 총정리: 82억 달러 전액 주식 딜, 페이페이 리 최고과학자 합류",
+  "topic": "AMD to Acquire World Labs to Advance the Future of AI Compute (AMD, 2026-09-28)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/amd-82.html"
+  }
+ }
+]

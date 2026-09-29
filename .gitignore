@@ -1,0 +1,7 @@
+# Actions 가 원고를 준비하며 만드는 파일 (올리지 않음)
+drafts/*/publish.html
+drafts/*/blog_preview*.html
+drafts/*/cover.png
+drafts/*/quote_*
+drafts/*/sources.md
+__pycache__/
