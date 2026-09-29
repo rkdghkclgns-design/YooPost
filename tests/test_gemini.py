@@ -63,3 +63,26 @@ def test_all_models_exhausted_still_tries_again():
 
 def test_extract_grounding_handles_missing_metadata():
     assert extract_grounding(FakeGeminiResponse("x")) == ((), ())
+
+
+def test_usage_counts_tokens_searches_and_discarded_replies():
+    from autopost.gemini import Usage, usage_of
+
+    class Meta:
+        prompt_token_count = 1000
+        tool_use_prompt_token_count = 500
+        candidates_token_count = 300
+        thoughts_token_count = 200
+
+    good = grounded('{"ok": 1}', ["https://a"], queries=("q1", "q2"))
+    good.usage_metadata = Meta()
+    bad = grounded("not json", [], queries=("q3",))
+    gemini, _ = fake_gemini([bad, good], models=("m1", "m2"))
+    gemini.generate("p", load_json_object, grounded=True)
+    usage = gemini.usage
+    assert usage == Usage(requests=2, input_tokens=1500, output_tokens=500, searches=3)
+    assert usage_of(object(), 0) == Usage(requests=1)
+    assert (usage - Usage(requests=1, searches=1)).searches == 2
+    cost = Usage(input_tokens=1_000_000, output_tokens=1_000_000, searches=1000).paid_cost()
+    assert round(cost, 2) == 18.5
+    assert "구글 검색 3회" in usage.line() and "유료 환산 약 $" in usage.line()

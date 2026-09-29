@@ -3,7 +3,7 @@ name: AI백과사전 자동 포스팅
 run-name: >-
   ${{ github.event_name == 'schedule' && (vars.AUTO_PUBLISH == 'true' && '⏰ 정기 자동 포스팅' || '⏰ 정기 미리보기 [검토용]') || format('{0} {1}{2}{3}',
   inputs.source == 'slack' && '💬 슬랙' || '🖐 수동',
-  inputs.mode == 'setup' && '연동 점검' || '포스팅',
+  inputs.mode == 'setup' && '연동 점검' || (inputs.categories == 'all' && '카테고리별 포스팅(7편)' || '포스팅'),
   inputs.topic && format(' · {0}', inputs.topic) || '',
   inputs.dry_run && ' [테스트]' || '') }}
 
@@ -34,6 +34,10 @@ on:
         description: "요청자 (슬랙 명령 시 자동 입력)"
         type: string
         default: ""
+      categories:
+        description: "all 이면 블로그 메뉴 카테고리마다 1편씩 (7편, 30~90분)"
+        type: string
+        default: ""
 
 concurrency:
   group: auto-post
@@ -45,7 +49,8 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    # 1편 5~15분 · 카테고리별(7편)은 차례로 진행해 30~90분
+    timeout-minutes: ${{ inputs.categories == 'all' && 150 || 40 }}
     env:
       # 일반 설정 (Settings > Secrets and variables > Actions > Variables)
       BLOG_NAME: ${{ vars.BLOG_NAME }}
@@ -97,6 +102,7 @@ jobs:
           AUTOPOST_DRY_RUN: ${{ (github.event_name == 'schedule' && vars.AUTO_PUBLISH != 'true') || inputs.dry_run || false }}
           AUTOPOST_TRIGGER: ${{ inputs.source || github.event_name }}
           AUTOPOST_REQUESTED_BY: ${{ inputs.requested_by || github.actor }}
+          AUTOPOST_CATEGORIES: ${{ inputs.categories || '' }}
           AUTOPOST_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: python main.py
 

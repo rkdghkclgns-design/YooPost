@@ -28,6 +28,53 @@ class WebSource:
     url: str
 
 
+# 유료 요금 환산용 (Gemini 3.x Flash 표준 요금, 2026-12-31 까지 · 구글 검색 근거는 검색어 1,000개당)
+PRICE_INPUT_PER_M = 0.75
+PRICE_OUTPUT_PER_M = 3.75
+PRICE_SEARCH_PER_K = 14.0
+
+
+@dataclass(frozen=True)
+class Usage:
+    """AI 사용량 누계 — 요청 수·토큰·구글 검색어 수 (비용 추정용)."""
+    requests: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0  # 생각(thinking) 토큰 포함
+    searches: int = 0
+
+    def __add__(self, other: "Usage") -> "Usage":
+        return Usage(self.requests + other.requests, self.input_tokens + other.input_tokens,
+                     self.output_tokens + other.output_tokens, self.searches + other.searches)
+
+    def __sub__(self, other: "Usage") -> "Usage":
+        return Usage(self.requests - other.requests, self.input_tokens - other.input_tokens,
+                     self.output_tokens - other.output_tokens, self.searches - other.searches)
+
+    def paid_cost(self) -> float:
+        """유료 요금으로 환산한 금액(달러) — 무료 한도 안이면 실제 청구는 0."""
+        return (self.input_tokens / 1e6 * PRICE_INPUT_PER_M + self.output_tokens / 1e6 * PRICE_OUTPUT_PER_M
+                + self.searches / 1000 * PRICE_SEARCH_PER_K)
+
+    def line(self) -> str:
+        return (f"AI 요청 {self.requests}회 · 토큰 입력 {self.input_tokens / 1000:,.0f}k·출력 {self.output_tokens / 1000:,.0f}k"
+                f" · 구글 검색 {self.searches}회 · 유료 환산 약 ${self.paid_cost():.2f}")
+
+
+def usage_of(response, queries: int) -> Usage:
+    meta = getattr(response, "usage_metadata", None)
+
+    def count(name: str) -> int:
+        value = getattr(meta, name, None) if meta is not None else None
+        return int(value) if isinstance(value, (int, float)) else 0
+
+    return Usage(
+        requests=1,
+        input_tokens=count("prompt_token_count") + count("tool_use_prompt_token_count"),
+        output_tokens=count("candidates_token_count") + count("thoughts_token_count"),
+        searches=queries,
+    )
+
+
 @dataclass(frozen=True)
 class GeminiReply:
     text: str
@@ -74,6 +121,12 @@ class Gemini:
         self._sleep = sleep
         # 하루 무료 한도(PerDay)를 다 쓴 모델 — 이번 실행 동안은 다시 부르지 않는다 (매 호출마다 429 왕복 낭비 방지)
         self._exhausted: frozenset[str] = frozenset()
+        self._usage = Usage()
+
+    @property
+    def usage(self) -> Usage:
+        """이 실행에서 성공한 호출의 사용량 누계."""
+        return self._usage
 
     @staticmethod
     def _daily_quota_exceeded(exc: Exception) -> bool:
@@ -121,6 +174,8 @@ class Gemini:
             for model in self._available():
                 try:
                     response = self._client.models.generate_content(model=model, contents=contents, config=config)
+                    # 형식 오류로 버리는 응답도 요금은 나가므로 받자마자 센다
+                    self._usage = self._usage + usage_of(response, len(extract_grounding(response)[1]))
                     text = response.text or ""
                     parsed = parse(text)
                 except Exception as exc:  # 과부하/모델중단/네트워크/파싱 오류 모두 다음 후보로

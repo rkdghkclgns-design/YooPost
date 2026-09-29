@@ -33,15 +33,22 @@ async function slackRequest(params, { secret = SECRET, timestamp = Math.floor(Da
 }
 
 test("parseText extracts topic and dry-run flag", () => {
-  assert.deepEqual(parseText("Gemini 3.8 Live 테스트"), { topic: "Gemini 3.8 Live", dryRun: true });
-  assert.deepEqual(parseText("  "), { topic: "", dryRun: false });
-  assert.deepEqual(parseText("DRY-RUN GPT-6"), { topic: "GPT-6", dryRun: true });
+  assert.deepEqual(parseText("Gemini 3.8 Live 테스트"), { topic: "Gemini 3.8 Live", dryRun: true, all: false });
+  assert.deepEqual(parseText("  "), { topic: "", dryRun: false, all: false });
+  assert.deepEqual(parseText("DRY-RUN GPT-6"), { topic: "GPT-6", dryRun: true, all: false });
   assert.equal(parseText("x".repeat(150)).topic.length, 100);
 });
 
+test("parseText recognises the all-categories words", () => {
+  assert.deepEqual(parseText("전체"), { topic: "", dryRun: false, all: true });
+  assert.deepEqual(parseText("카테고리별 테스트"), { topic: "", dryRun: true, all: true });
+  assert.deepEqual(parseText("ALL"), { topic: "", dryRun: false, all: true });
+  assert.equal(parseText("전체적인 AI 흐름").all, false); // 단어 일부는 아님
+});
+
 test("parseText strips slack mrkdwn control characters and quotes", () => {
-  assert.deepEqual(parseText("```<!channel> GPT"), { topic: "channel GPT", dryRun: false });
-  assert.deepEqual(parseText(`"Claude"'5'\\`), { topic: "Claude5", dryRun: false });
+  assert.deepEqual(parseText("```<!channel> GPT"), { topic: "channel GPT", dryRun: false, all: false });
+  assert.deepEqual(parseText(`"Claude"'5'\\`), { topic: "Claude5", dryRun: false, all: false });
 });
 
 test("buildInputs sends string inputs and ignores topic/dry-run for setup", () => {
@@ -51,6 +58,16 @@ test("buildInputs sends string inputs and ignores topic/dry-run for setup", () =
   assert.deepEqual(buildInputs("setup", "GPT-6", true, "yoo"), {
     mode: "setup", topic: "", dry_run: "false", source: "slack", requested_by: "yoo",
   });
+  assert.deepEqual(buildInputs("post", "", true, "yoo", true), {
+    mode: "post", topic: "", dry_run: "true", source: "slack", requested_by: "yoo", categories: "all",
+  });
+  assert.equal(buildInputs("setup", "", false, "yoo", true).categories, undefined);
+});
+
+test("/aipost 전체 dispatches the all-categories run", async () => {
+  const response = await worker.fetch(await slackRequest({ command: "/aipost", text: "전체", user_id: "U1" }), ENV);
+  assert.match((await response.json()).text, /카테고리별 포스팅 7편/);
+  assert.equal(dispatched[0].body.inputs.categories, "all");
 });
 
 test("dispatchUrl honours custom workflow file", () => {

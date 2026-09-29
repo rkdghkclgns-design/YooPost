@@ -24,8 +24,12 @@ class StubSelector:
     def __init__(self):
         self.histories = []
 
-    def pick(self, history, now, requested=""):
+    def pick(self, history, now, requested="", category=""):
         self.histories.append(history)
+        self.categories = [*getattr(self, "categories", []), category]
+        if category:
+            return make_topic(title=f"{category} 소식", category=category,
+                              source_url=f"https://news.example/{len(self.histories)}"), 5
         return make_topic(requested=bool(requested)), 12
 
 
@@ -268,7 +272,7 @@ def test_draft_is_kept_when_fact_check_cannot_finish(tmp_path):
 
 def test_untrusted_titles_cannot_mention_the_channel(tmp_path):
     class HostileSelector(StubSelector):
-        def pick(self, history, now, requested=""):
+        def pick(self, history, now, requested="", category=""):
             return make_topic(title="<!channel> <https://evil.com|클릭>", source_url="https://x.com/<!here>"), 3
 
     client = FakeWebClient()

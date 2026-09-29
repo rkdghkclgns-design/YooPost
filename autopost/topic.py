@@ -3,11 +3,12 @@
 1) 슬랙 등으로 주제를 직접 주면 그 주제 (웹 검색으로 대표 1차 자료를 찾음)
 2) 아니면 공식 발표·AI 뉴스 후보 중 아직 안 쓴 것을 AI 가 골라준다
 3) 후보가 하나도 없으면(소스 전부 실패) 웹 검색으로 최근 AI 발표를 찾는다
+카테고리를 정해 주면(카테고리별 포스팅) 그 카테고리에 맞는 후보만 고르고, 맞는 후보가 없으면 그 카테고리로 웹 검색한다.
 """
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
 from typing import Callable, Sequence
 
@@ -21,6 +22,7 @@ from .links import LinkCheck, check_link, is_http_url
 log = logging.getLogger(__name__)
 
 MAX_CANDIDATES = 40
+CATEGORY_SEARCH_DAYS = 14  # 카테고리를 정해 검색할 때 (논문·보안·공모주 소식은 매일 나오지 않아 기간을 넓힘)
 
 
 class TopicError(RuntimeError):
@@ -54,7 +56,15 @@ def _category_guide() -> str:
     return "\n".join(f"- {name}: {hint}" for name, hint in CATEGORY_HINTS.items())
 
 
-def build_pick_prompt(candidates: Sequence[Candidate], recent_titles: Sequence[str], today: str) -> str:
+def _category_rule(category: str) -> str:
+    if not category:
+        return ""
+    return (f"\n- 이번 글의 카테고리는 '{category}' 로 정해져 있습니다 ({CATEGORY_HINTS.get(category, '')}). "
+            "이 카테고리에 맞는 후보만 고르고, 맞는 후보가 없으면 index 를 -1 로 답하세요.")
+
+
+def build_pick_prompt(candidates: Sequence[Candidate], recent_titles: Sequence[str], today: str,
+                      category: str = "") -> str:
     listing = "\n".join(
         f"{i}. {c.label()}\n   {c.url}\n   {c.summary[:200]}" for i, c in enumerate(candidates)
     )
@@ -66,7 +76,7 @@ def build_pick_prompt(candidates: Sequence[Candidate], recent_titles: Sequence[s
 - 한국 독자가 지금 궁금해할 만한 AI 소식 (새 모델·도구 출시, 가격·무료 정책, 사용법, 주목받는 논문, 큰 업계 소식)
 - 공식 발표·1차 자료로 사실을 확인할 수 있는 주제 우선 ([공식] 표시가 1차 자료)
 - 광고·행사 후기·채용·단순 인터뷰처럼 정보 가치가 낮은 글은 제외
-- 최근에 쓴 글과 같은 주제는 제외
+- 최근에 쓴 글과 같은 주제는 제외{_category_rule(category)}
 
 [최근에 쓴 글]
 {recent}
@@ -97,10 +107,12 @@ def build_request_prompt(requested: str, today: str) -> str:
   "source_url": "대표 1차 자료 주소", "source_name": "발표 주체", "official": true}}"""
 
 
-def build_search_prompt(recent_titles: Sequence[str], today: str, lookback_days: int) -> str:
+def build_search_prompt(recent_titles: Sequence[str], today: str, lookback_days: int, category: str = "") -> str:
     recent = "\n".join(f"- {t}" for t in recent_titles) or "- (없음)"
+    wanted = (f"카테고리 '{category}' ({CATEGORY_HINTS.get(category, '')})에 해당하는 주제 1개"
+              if category else "주제 1개")
     return f"""오늘은 {today} 입니다. 웹 검색으로 최근 {lookback_days}일 안에 공식 발표된 AI 소식 중
-한국어 AI 블로그 'AI백과사전'에 쓸 만한 주제 1개를 찾으세요 (새 모델·도구 출시, 가격 정책, 주목받는 논문 등).
+한국어 AI 블로그 'AI백과사전'에 쓸 만한 {wanted}를 찾으세요 (새 모델·도구 출시, 가격 정책, 주목받는 논문 등).
 최근에 쓴 글과 같은 주제는 제외합니다:
 {recent}
 
@@ -139,33 +151,43 @@ class TopicSelector:
         log.info("요청·검색 주제의 원문 주소를 확인하지 못해 비웁니다 (상태 %s): %s", check.status, url)
         return ""
 
-    def pick(self, history: PostHistory, now: datetime, requested: str = "") -> tuple[Topic, int]:
-        """(주제, 살펴본 후보 수)."""
+    def pick(self, history: PostHistory, now: datetime, requested: str = "", category: str = "") -> tuple[Topic, int]:
+        """(주제, 살펴본 후보 수). category 를 주면 그 카테고리 글만."""
         today = now.strftime("%Y-%m-%d")
+        category = category if category in CATEGORIES else ""
         if requested.strip():
             return self._requested(requested.strip(), today), 0
         candidates = self._collect(self._feeds, self._session, now, self._lookback_days)
         fresh = [c for c in candidates if not history.is_duplicate(c.title, c.url)][:MAX_CANDIDATES]
         if fresh:
-            return self._choose(fresh, history, today), len(candidates)
-        log.warning("새 주제 후보가 없어 웹 검색으로 주제를 찾습니다 (수집 %d건)", len(candidates))
-        return self._search(history, today), len(candidates)
+            chosen = self._choose(fresh, history, today, category)
+            if chosen is not None:
+                return chosen, len(candidates)
+            log.info("'%s' 에 맞는 후보가 없어 웹 검색으로 주제를 찾습니다", category)
+        else:
+            log.warning("새 주제 후보가 없어 웹 검색으로 주제를 찾습니다 (수집 %d건)", len(candidates))
+        return self._search(history, today, category), len(candidates)
 
-    def _choose(self, fresh: Sequence[Candidate], history: PostHistory, today: str) -> Topic:
+    def _choose(self, fresh: Sequence[Candidate], history: PostHistory, today: str, category: str = "") -> Topic | None:
         def parse(text: str) -> dict:
             data = load_json_object(text)
             index = data.get("index")
+            if category and index == -1:
+                return data
             if not isinstance(index, int) or not 0 <= index < len(fresh):
                 raise ContentError(f"후보 번호가 잘못되었습니다: {index!r}")
             return data
 
         data, _ = self._gemini.generate(
-            build_pick_prompt(fresh, history.recent_titles(), today), parse, temperature=0.3, label="주제 선정"
+            build_pick_prompt(fresh, history.recent_titles(), today, category), parse, temperature=0.3,
+            label="주제 선정",
         )
+        if data["index"] == -1:
+            return None
         chosen = fresh[data["index"]]
         return Topic(
             title=chosen.title,
-            category=_category(data.get("category")),
+            category=category or _category(data.get("category")),
             angle=str(data.get("angle") or "").strip(),
             keywords=_keywords(data.get("keywords"), chosen.title),
             source_url=chosen.url,
@@ -197,12 +219,15 @@ class TopicSelector:
             raise TopicError(f"요청한 주제를 AI 관련 사실로 확인하지 못했습니다: {requested}")
         return self._from_search(data, requested=True)
 
-    def _search(self, history: PostHistory, today: str) -> Topic:
+    def _search(self, history: PostHistory, today: str, category: str = "") -> Topic:
+        days = max(self._lookback_days, CATEGORY_SEARCH_DAYS) if category else self._lookback_days
         data, _ = self._gemini.generate(
-            build_search_prompt(history.recent_titles(), today, self._lookback_days),
+            build_search_prompt(history.recent_titles(), today, days, category),
             load_json_object, grounded=True, label="주제 검색",
         )
         topic = self._from_search(data, requested=False)
+        if category:
+            topic = replace(topic, category=category)
         if history.is_duplicate(topic.title, topic.source_url):
             raise TopicError(f"새 주제를 찾지 못했습니다 (이미 쓴 주제: {topic.title})")
         return topic

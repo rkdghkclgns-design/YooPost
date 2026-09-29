@@ -86,3 +86,27 @@ def test_search_fallback_rejects_duplicate():
 def test_pick_prompt_lists_recent_titles_and_categories():
     prompt = build_pick_prompt(CANDIDATES, ["지난 글"], "2026-09-29")
     assert "- 지난 글" in prompt and "0. [공식·Google DeepMind" in prompt and "AI 논문 분석" in prompt
+
+
+def test_category_is_enforced_when_picking_from_candidates():
+    pick = json.dumps({"index": 1, "category": "AI 언어 모델", "angle": "보안 관점"})
+    topics, client = selector([pick])
+    topic, _ = topics.pick(PostHistory(), NOW, category="AI 보안")
+    assert topic.category == "AI 보안"  # AI 가 다른 카테고리를 적어도 정한 카테고리로
+    assert "카테고리는 'AI 보안' 로 정해져 있습니다" in client.models.calls[0]["contents"]
+    assert "index 를 -1" in client.models.calls[0]["contents"]
+
+
+def test_no_fitting_candidate_searches_that_category_over_a_wider_window():
+    search = json.dumps({"title": "OO증권 AI 기업 공모", "category": "AI 뉴스 리뷰", "source_url": "not-a-url"})
+    topics, client = selector([json.dumps({"index": -1}), grounded(search)])
+    topic, seen = topics.pick(PostHistory(), NOW, category="AI 공모주 분석")
+    assert topic.category == "AI 공모주 분석" and topic.title == "OO증권 AI 기업 공모" and seen == 2
+    prompt = client.models.calls[1]["contents"]
+    assert "카테고리 'AI 공모주 분석'" in prompt and "최근 14일" in prompt
+
+
+def test_minus_one_is_invalid_without_a_category_and_unknown_category_is_ignored():
+    topics, _ = selector([json.dumps({"index": -1}), json.dumps({"index": 0})], models=("a", "b"))
+    topic, _ = topics.pick(PostHistory(), NOW, category="요리")
+    assert topic.title == "Introducing Gemini 3.8 Live"

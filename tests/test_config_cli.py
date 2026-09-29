@@ -121,3 +121,16 @@ def test_build_services_wires_search_research_and_image_host(monkeypatch):
     assert post.images is not None and post.image_host is not None
     no_host = cli.build_services(load_config(FULL), slack, "post")
     assert no_host.image_host is None
+
+
+def test_main_routes_all_categories(monkeypatch):
+    monkeypatch.setattr(cli, "_load_dotenv", lambda: None)
+    for key, value in FULL.items():
+        monkeypatch.setenv(key, value)
+    monkeypatch.setenv("AUTOPOST_CATEGORIES", "ALL")
+    calls = []
+    monkeypatch.setattr(cli, "build_services", lambda cfg, slack, mode: "services")
+    monkeypatch.setattr(cli, "run_categories", lambda cfg, options, services: calls.append("batch") or 0)
+    monkeypatch.setattr(cli, "run_post", lambda *a: calls.append("single") or 0)
+    assert cli.main([]) == 0 and calls == ["batch"]
+    assert cli.main(["--categories", ""]) == 0 and calls == ["batch", "single"]

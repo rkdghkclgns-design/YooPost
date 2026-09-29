@@ -17,6 +17,7 @@
  * 사용 예:  /aipost                       → 최신 AI 소식에서 주제를 골라 포스팅
  *           /aipost Gemini 3.8 Live       → 주제 지정
  *           /aipost 테스트                → 발행 없이 조사·원고·사실 검증 미리보기(dry-run)
+ *           /aipost 전체                  → 블로그 메뉴 카테고리마다 1편씩 (7편, 차례로)
  *           /aipost 도움말                → 사용법 안내 (실행 안 함)
  *           /aipost-setup                 → 연동 상태 점검
  *
@@ -39,12 +40,14 @@ const IMAGE_TYPES = new Set(["image/png", "image/jpeg", "image/webp", "image/gif
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 const DRY_RUN_WORDS = /(테스트|dry-?run|test)/gi;
 const HELP_WORDS = /^(도움말|help|사용법|\?)$/i;
+const ALL_WORDS = /(^|\s)(전체|카테고리별|all)(?=\s|$)/gi;
 
 export const HELP_TEXT = [
   "*🤖 AI백과사전 자동 포스팅 명령어*",
   "• `/aipost` — 최신 AI 공식 발표·뉴스에서 주제를 골라 바로 포스팅",
   "• `/aipost Gemini 3.8 Live` — 주제 지정 (제품·모델·논문 이름)",
   "• `/aipost 테스트` — 발행 없이 자료 조사·원고·사실 검증·미리보기만 (`/aipost GPT-6 테스트` 처럼 주제와 함께 가능)",
+  "• `/aipost 전체` — 블로그 메뉴 카테고리(AI 언어 모델·AI 도구·AI 논문 분석·AI 뉴스 리뷰·AI 보안·AI 인사이트·AI 공모주 분석)마다 1편씩, 차례로 7편 (`/aipost 전체 테스트` 가능)",
   "• `/aipost-setup` — 구글 블로그·Gemini·이미지 저장소 연동 상태 점검",
   "",
   "실행하면 채널에 진행 메시지가 올라오고 단계별(주제 선정 → 자료 조사 → 원고 → 사실 검증 → 이미지 → 발행)로 갱신됩니다.",
@@ -82,8 +85,8 @@ export default {
       return reply("이 명령어를 실행할 권한이 없습니다. 관리자에게 문의하세요.");
     }
 
-    const { topic, dryRun } = parseText(text);
-    const inputs = buildInputs(mode, topic, dryRun, cleanText(form.get("user_name") || userId, 30));
+    const { topic, dryRun, all } = parseText(text);
+    const inputs = buildInputs(mode, topic, dryRun, cleanText(form.get("user_name") || userId, 30), all);
     try {
       await dispatch(env, inputs);
     } catch (err) {
@@ -92,7 +95,9 @@ export default {
 
     const label = mode === "setup"
       ? "연동 상태 점검"
-      : `AI 포스팅${topic ? ` (${topic})` : ""}${dryRun ? " [테스트]" : ""}`;
+      : all
+        ? `카테고리별 포스팅 7편${dryRun ? " [테스트]" : ""} (차례로 30~90분)`
+        : `AI 포스팅${topic ? ` (${topic})` : ""}${dryRun ? " [테스트]" : ""}`;
     return reply(
       `🤖 ${label} 요청을 접수했습니다. 1분 안에 진행 메시지가 올라오고, 단계마다 갱신됩니다.`,
       "in_channel",
@@ -142,8 +147,10 @@ export async function handleImage(request, env, key) {
 
 export function parseText(text) {
   const dryRun = new RegExp(DRY_RUN_WORDS.source, "i").test(text);
-  const topic = cleanText(text.replace(DRY_RUN_WORDS, ""), MAX_TOPIC);
-  return { topic, dryRun };
+  const withoutDry = text.replace(DRY_RUN_WORDS, " ");
+  const all = new RegExp(ALL_WORDS.source, "i").test(withoutDry);
+  const topic = all ? "" : cleanText(withoutDry, MAX_TOPIC);
+  return { topic, dryRun, all };
 }
 
 export function cleanText(value, limit) {
@@ -154,15 +161,17 @@ export function cleanText(value, limit) {
     .slice(0, limit);
 }
 
-export function buildInputs(mode, topic, dryRun, requestedBy) {
+export function buildInputs(mode, topic, dryRun, requestedBy, all = false) {
   // workflow_dispatch 의 inputs 값은 모두 문자열로 전달한다 (boolean 입력도 "true"/"false")
-  return {
+  const inputs = {
     mode,
-    topic: mode === "setup" ? "" : topic,
+    topic: mode === "setup" || all ? "" : topic,
     dry_run: dryRun && mode !== "setup" ? "true" : "false",
     source: "slack",
     requested_by: requestedBy,
   };
+  // 카테고리별일 때만 보낸다 (워크플로에 없는 입력을 보내면 GitHub 가 거절하므로, 일반 실행은 예전과 같게)
+  return all && mode !== "setup" ? { ...inputs, categories: "all" } : inputs;
 }
 
 export async function verifySlackSignature(headers, body, secret, nowSeconds = Date.now() / 1000) {

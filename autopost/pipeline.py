@@ -18,8 +18,10 @@ from .blog_publisher import BloggerPublisher
 from .config import Config
 from .content import PostContent
 from .cover import make_cover
+from .constants import CATEGORIES
 from .fact_check import FactChecker, FactCheckReport
-from .history import PostHistory, load_history
+from .gemini import Usage
+from .history import HistoryEntry, PostHistory, load_history
 from .image_host import ImageHost
 from .progress import ProgressReporter
 from .prune import Pruner, removed_markdown
@@ -37,7 +39,7 @@ from .slack_helper import SlackNotifier, build_report_blocks, build_setup_blocks
 from .step_summary import build_failure_summary, build_step_summary, write_step_summary
 from .style_profile import load_style
 from .topic import Topic, TopicSelector
-from .writer import PostWriter
+from .writer import PostWriter, finalize
 
 log = logging.getLogger(__name__)
 
@@ -58,6 +60,8 @@ class RunOptions:
     trigger: str = "manual"
     requested_by: str = ""
     run_url: str = ""  # GitHub Actions 실행 로그 주소 (슬랙 진행 메시지에 링크)
+    category: str = ""  # 카테고리를 정해 쓸 때 (카테고리별 포스팅)
+    avoid: tuple[tuple[str, str], ...] = ()  # 같은 실행에서 이미 고른 주제 (제목, 원문 주소) — 겹치지 않게
 
 
 @dataclass(frozen=True)
@@ -73,6 +77,24 @@ class Services:
     pruner: Pruner | None = None  # 검증 미통과 주장만 빼기 (없으면 글 전체 발행 보류)
     cover_maker: Callable[..., Path] = make_cover
     now: Callable[[], datetime] = lambda: datetime.now(KST)
+    usage: Callable[[], Usage] | None = None  # AI 사용량 누계 (글마다 차이를 보고)
+
+
+@dataclass(frozen=True)
+class PostOutcome:
+    """글 1편 결과 — 카테고리별 포스팅의 요약 카드에 쓴다."""
+    code: int
+    category: str = ""
+    topic: str = ""
+    source_url: str = ""
+    title: str = ""
+    url: str = ""
+    status: str = ""  # 한 줄 결과 (발행 완료 / 발행 보류 사유 / 오류)
+    usage: Usage = Usage()
+
+    @property
+    def ok(self) -> bool:
+        return self.code == 0
 
 
 @dataclass(frozen=True)
@@ -143,6 +165,8 @@ def _meta(options: RunOptions, now: datetime) -> list[str]:
     meta = [escape_mrkdwn(TRIGGER_LABELS.get(options.trigger, options.trigger))]
     if options.topic:
         meta.append(f"요청 주제 *{escape_mrkdwn(short(options.topic, 60))}*")
+    if options.category:
+        meta.append(f"카테고리 *{escape_mrkdwn(options.category)}*")
     if options.requested_by:
         meta.append(f"요청 {escape_mrkdwn(options.requested_by)}")
     meta.append(f"{now:%m/%d %H:%M}")
@@ -150,11 +174,16 @@ def _meta(options: RunOptions, now: datetime) -> list[str]:
 
 
 def run_post(cfg: Config, options: RunOptions, services: Services) -> int:
+    return post_once(cfg, options, services).code
+
+
+def post_once(cfg: Config, options: RunOptions, services: Services) -> PostOutcome:
     if None in (services.selector, services.researcher, services.writer, services.checker):
         raise RuntimeError("포스팅 모드에는 주제 선정·조사·작성·검증 서비스가 모두 필요합니다")
     now = services.now()
     tag = " [테스트]" if options.dry_run else ""
-    workdir = cfg.output_dir / f"{now:%Y%m%d_%H%M}_ai"
+    suffix = f"_{CATEGORIES.index(options.category) + 1}" if options.category in CATEGORIES else ""
+    workdir = cfg.output_dir / f"{now:%Y%m%d_%H%M}_ai{suffix}"
     reporter = ProgressReporter(
         services.slack, f"🤖 AI 포스팅 진행 중{tag}", _meta(options, now), options.run_url,
         stage_channels=dict(cfg.slack_stage_channels),
@@ -172,7 +201,7 @@ def run_post(cfg: Config, options: RunOptions, services: Services) -> int:
 def _pick_topic(services: Services, options: RunOptions, history: PostHistory, now: datetime,
                 reporter: ProgressReporter, tag: str) -> Topic:
     reporter.step("topic", "run")
-    topic, seen = services.selector.pick(history, now, options.topic)
+    topic, seen = services.selector.pick(history, now, options.topic, options.category)
     # 주제 제목은 RSS·AI 응답(외부 입력)이라 슬랙 멘션·링크가 되지 않도록 이스케이프
     title = escape_mrkdwn(topic.title)
     run_label = f"{short(title, 28)} · {now:%m/%d %H:%M}" + (" · 테스트" if options.dry_run else "")
@@ -260,9 +289,12 @@ def _write_outputs(content: PostContent, outcome: FactOutcome, workdir: Path, re
 
 
 def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: ProgressReporter, now: datetime,
-               workdir: Path, tag: str) -> int:
+               workdir: Path, tag: str) -> PostOutcome:
     today = now.strftime("%Y-%m-%d")
+    usage_before = services.usage() if services.usage else Usage()
     history = load_history(services.blogger)
+    if options.avoid:  # 같은 실행에서 이미 고른 주제는 다시 고르지 않는다 (발행 전이라 블로그 목록에 아직 없음)
+        history = PostHistory(history.entries + tuple(HistoryEntry("", t, t, "", u) for t, u in options.avoid))
     topic = _pick_topic(services, options, history, now, reporter, tag)
     sheet = _research(services, topic, today, workdir, reporter)
 
@@ -279,6 +311,8 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: P
         _keep_unverified_draft(content, workdir, reporter)
         raise
     reporter.step("factcheck", "done" if outcome.publishable else "fail", outcome.line())
+    if options.category:  # 카테고리별 포스팅은 정한 카테고리로 고정 (공모주 안내문 등도 그 카테고리 기준)
+        content = finalize(replace(content, category=options.category))
     content = attach_references(content, sheet, now)
     _write_outputs(content, outcome, workdir, reporter)
 
@@ -304,13 +338,20 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: P
         results = [publish_blogger(services.image_host, services.blogger, ctx)]
         reporter.step("publish", "done" if results[0].ok else "fail", results[0].url or results[0].message)
 
+    used = (services.usage() - usage_before) if services.usage else Usage()
     reporter.note(f"🤖 [AI백과사전] {escape_mrkdwn(content.title)}",
                   build_report_blocks(content.title, content.category, results, outcome.line(),
-                                      options.dry_run, held and not options.dry_run), stage="publish")
+                                      options.dry_run, held and not options.dry_run,
+                                      used.line() if used.requests else ""), stage="publish")
     ok = options.dry_run or (not held and any(r.ok for r in results))
-    headline = ("🧪 테스트 완료" if options.dry_run else "⚠️ 사실 검증 미통과 — 발행 보류" if held
+    headline = ("🧪 테스트 완료" if options.dry_run else f"⚠️ {outcome.held_reason}" if held
                 else "✅ 포스팅 완료" if ok else "❌ 포스팅 실패")
     reporter.finish(f"{headline} — {short(escape_mrkdwn(content.title), 60)}")
     write_step_summary(build_step_summary(content.title, content.category, topic.source_url, content.text_length(),
                                           outcome.line(), results, options.dry_run, held))
-    return 0 if ok else 1
+    url = next((r.url for r in results if r.ok and r.url), "")
+    status = ("테스트 완료" if options.dry_run else outcome.held_reason if held
+              else "발행 완료" + (f" (문제 {len(outcome.removed)}곳 제외)" if outcome.removed else "") if ok
+              else next((r.message for r in results if not r.ok), "발행 실패"))
+    return PostOutcome(0 if ok else 1, content.category, topic.title, topic.source_url, content.title, url, status,
+                       used)

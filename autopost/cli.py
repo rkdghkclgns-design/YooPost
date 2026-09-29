@@ -10,6 +10,7 @@ import os
 import sys
 from typing import Sequence
 
+from .batch import ALL, run_categories
 from .blog_publisher import BloggerPublisher
 from .config import MODES, Config, ConfigError, load_config, validate_for_mode
 from .fact_check import FactChecker
@@ -44,6 +45,8 @@ def parse_args(argv: Sequence[str] | None) -> argparse.Namespace:
                         help="발행 없이 조사·원고·사실 검증·미리보기만 만들어 슬랙으로")
     parser.add_argument("--trigger", default=os.environ.get("AUTOPOST_TRIGGER", "manual"))
     parser.add_argument("--requested-by", default=os.environ.get("AUTOPOST_REQUESTED_BY", ""))
+    parser.add_argument("--categories", default=os.environ.get("AUTOPOST_CATEGORIES", ""),
+                        help="all 이면 블로그 메뉴의 카테고리마다 1편씩 차례로 포스팅")
     return parser.parse_args(argv)
 
 
@@ -72,6 +75,7 @@ def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
         writer=PostWriter(gemini, cfg.blog_name, cfg.min_body_chars),
         checker=FactChecker(gemini),
         pruner=Pruner(gemini),
+        usage=lambda: gemini.usage,
         blogger=blogger,
         images=ImageCollector(session),
         image_host=host,
@@ -117,6 +121,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             requested_by=args.requested_by,
             run_url=os.environ.get("AUTOPOST_RUN_URL", ""),
         )
+        if args.categories.strip().lower() == ALL:
+            return run_categories(cfg, options, services)
         return run_post(cfg, options, services)
     except AlreadyReported:
         log.exception("실행 중 오류 (슬랙 진행 스레드에 보고됨)")
