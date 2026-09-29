@@ -1,6 +1,6 @@
 [
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "⚡ Claude Sonnet 5.5 출시: 오퍼스급 코딩·속도 30% 향상·AWS Bedrock 스펙 총정리",
   "topic": "Introducing Claude Sonnet 5.5 on AWS",
   "category": "AI 언어 모델",
@@ -10,7 +10,7 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "🚀 Manus 2.0 사용 가이드: 비용 32% 줄인 Cascade·Studio·자동화·Cue 총정리",
   "topic": "Introducing Manus 2.0 (Manus, 2026-09-28)",
   "category": "AI 도구",
@@ -20,7 +20,7 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "🤖 Holo4 총정리: 화면·코드·MCP 다 쓰는 오픈 웨이트 에이전트 모델, 가격·벤치마크·사용법",
   "topic": "Holo4: powering generalist computer-use agents",
   "category": "AI 언어 모델",
@@ -30,7 +30,7 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "🧠 구글 RRSI 논문 분석: 에이전트 하네스 자가개선의 과적합을 잡은 정규화 기법 총정리",
   "topic": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses (Google Cloud AI Research, arXiv 2609.24972)",
   "category": "AI 논문 분석",
@@ -40,7 +40,7 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "🤝 AMD의 월드 랩스 인수 총정리: 82억 달러 전액 주식 딜, 페이페이 리 최고과학자 합류",
   "topic": "AMD to Acquire World Labs to Advance the Future of AI Compute (AMD, 2026-09-28)",
   "category": "AI 뉴스 리뷰",
@@ -50,7 +50,7 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "🔒 Plugin4Shell 총정리: Claude Code·Codex·Copilot·Gemini CLI 플러그인 RCE, 패치 현황과 대응 방법",
   "topic": "Plugin4Shell - Zero Click RCE Vulnerability found in top 4 most popular coding agents, millions of agents affected (Air Security, 2026-09-17)",
   "category": "AI 보안",
@@ -60,13 +60,23 @@
   }
  },
  {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "title": "📊 마이크로소프트 AI 확산 보고서 총정리: 세계 18.8%·한국 40.6%(12위), AI 사용률 숫자 읽는 법",
   "topic": "The continued state of global AI diffusion in 2026 — Global AI Diffusion Q2 2026 Trends and Insights (Microsoft, 2026-09-21)",
   "category": "AI 인사이트",
   "source_url": "https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/",
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/ai-188-40612-ai.html"
+  }
+ },
+ {
+  "date": "2026-09-29",
+  "title": "🔍 인텔리빅스 공모주 분석: 코스닥 상장 250만주·희망가 7,600~9,000원, 증권신고서 총정리",
+  "topic": "인텔리빅스 증권신고서(지분증권) — 코스닥 상장 공모 250만주, 희망공모가 7,600~9,000원 (금융감독원 DART, 2026-09-16)",
+  "category": "AI 공모주 분석",
+  "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000544",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/250-76009000.html"
   }
  }
 ]
