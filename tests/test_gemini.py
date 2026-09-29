@@ -43,7 +43,7 @@ def test_raises_after_all_rounds_and_waits_between_rounds():
     gemini = Gemini("k", "a", ("b",), client=client, max_rounds=2, sleep=waits.append)
     with pytest.raises(GeminiError, match="4회 실패"):
         gemini.generate("p", load_json_object, label="테스트")
-    assert waits == [15]
+    assert waits == [30]
 
 
 def test_model_with_exhausted_daily_quota_is_skipped_for_the_run():

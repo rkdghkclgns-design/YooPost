@@ -13,7 +13,9 @@ from typing import Callable, Sequence, TypeVar
 log = logging.getLogger(__name__)
 
 T = TypeVar("T")
-RETRY_WAIT_SECONDS = 15  # 모든 모델이 실패한 라운드 뒤 대기 (라운드마다 늘어남)
+# 모든 모델이 실패한 라운드 뒤 대기 (라운드마다 늘어남: 30·60·90초)
+# — 실제 실행에서 '503 high demand' 가 수십 초씩 이어져 15초 간격 3라운드로는 부족했다
+RETRY_WAIT_SECONDS = 30
 
 
 class GeminiError(RuntimeError):
@@ -59,7 +61,7 @@ class Gemini:
         model: str,
         fallback_models: Sequence[str] = (),
         client=None,
-        max_rounds: int = 3,
+        max_rounds: int = 4,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
         if client is None:
@@ -133,6 +135,6 @@ class Gemini:
                 sources, queries = extract_grounding(response)
                 return parsed, GeminiReply(text=text, model=model, sources=sources, queries=queries)
             if round_no < self._max_rounds:
-                self._sleep(RETRY_WAIT_SECONDS * round_no)  # 과부하(503)가 풀리도록 15·30초 대기
+                self._sleep(RETRY_WAIT_SECONDS * round_no)  # 과부하(503)가 풀리도록 30·60·90초 대기
         total = self._max_rounds * len(self._models)
         raise GeminiError(f"{label}에 {total}회 실패했습니다: {last_error}")

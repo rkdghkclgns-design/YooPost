@@ -61,7 +61,8 @@ def main() -> int:
 
     writer = PostWriter(gemini, cfg.blog_name, cfg.min_body_chars)
     content = writer.write(sheet, load_style(topic.category, cfg.min_body_chars), today)
-    print(f"③ 원고: {content.title} — 본문 {content.text_length():,}자")
+    (workdir / "draft_unverified.txt").write_text(content.plain_text() + "\n", encoding="utf-8")
+    print(f"③ 원고: {content.title} — 본문 {content.text_length():,}자 (검증 전 원고: draft_unverified.txt)")
 
     report = FactCheckReport(())
     if not args.no_check:

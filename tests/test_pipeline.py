@@ -183,6 +183,21 @@ def test_step_error_is_reported_once(tmp_path, monkeypatch):
     assert any("🚨 '자료 조사·출처 확인' 단계 오류" in t for t in client.texts())
 
 
+def test_draft_is_kept_when_fact_check_cannot_finish(tmp_path):
+    class DownChecker:
+        def check(self, *args, **kwargs):
+            raise RuntimeError("503 UNAVAILABLE")
+
+    drive, client = MemoryDrive(), FakeWebClient()
+    blogger = StubBlogger()
+    svc = services(drive, client, blogger=blogger)
+    with pytest.raises(AlreadyReported):
+        run_post(cfg(tmp_path), RunOptions(), Services(**{**svc.__dict__, "checker": DownChecker()}))
+    assert blogger.posts == [] and history_of(drive).entries == ()
+    kept = [u for u in client.uploads if u["title"] == "사실 검증 전 원고"]
+    assert kept and "발행하지 않았습니다" in kept[0]["initial_comment"]
+
+
 def test_untrusted_titles_cannot_mention_the_channel(tmp_path):
     class HostileSelector(StubSelector):
         def pick(self, history, now, requested=""):

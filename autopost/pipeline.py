@@ -175,6 +175,14 @@ def _verify(services: Services, cfg: Config, content: PostContent, sheet: FactSh
     return content, report
 
 
+def _keep_unverified_draft(content: PostContent, workdir: Path, reporter: ProgressReporter) -> None:
+    """사실 검증을 끝내지 못해도(AI 과부하 등) 써 둔 원고는 남긴다 — 발행은 하지 않는다."""
+    path = workdir / "draft_unverified.txt"
+    path.write_text(content.plain_text() + "\n", encoding="utf-8")
+    reporter.file(path, "사실 검증 전 원고",
+                  f"⚠️ 사실 검증을 끝내지 못한 원고 — 발행하지 않았습니다: *{escape_mrkdwn(content.title)}*", stage="draft")
+
+
 def _write_outputs(content: PostContent, report: FactCheckReport, workdir: Path, reporter: ProgressReporter) -> None:
     post_txt = workdir / "post.txt"
     post_txt.write_text(content.plain_text() + "\n", encoding="utf-8")
@@ -197,7 +205,11 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
     content = services.writer.write(sheet, load_style(topic.category, cfg.min_body_chars), today)
     reporter.step("draft", "done", f"본문 {content.text_length():,}자 · 소제목 {len(content.sections)}개")
 
-    content, report = _verify(services, cfg, content, sheet, today, reporter)
+    try:
+        content, report = _verify(services, cfg, content, sheet, today, reporter)
+    except Exception:
+        _keep_unverified_draft(content, workdir, reporter)
+        raise
     content = attach_references(content, sheet, now)
     _write_outputs(content, report, workdir, reporter)
 
