@@ -1,7 +1,8 @@
 # yoopost-drafts — 클라우드 원고 데이터 (코드 없음)
 
 매일 07:00(KST) 클라우드 루틴(Claude)이 카테고리별 원고를 이 브랜치에 올립니다.
-push 가 오면 `.github/workflows/cloud_drafts.yml` 이 main 의 코드로 슬랙 승인 요청을 보냅니다 (비밀값은 GitHub 에만).
+push 가 오면 `.github/workflows/drafts_trigger.yml`(비밀값 없음)이 main 의 `cloud_drafts.yml` 을 실행시켜 슬랙 승인 요청을 보냅니다.
+비밀값은 main 브랜치 전용 production 환경에만 있습니다 — 이 브랜치의 워크플로는 비밀값을 읽을 수 없습니다.
 
 | 경로 | 내용 | 쓰는 쪽 |
 |---|---|---|

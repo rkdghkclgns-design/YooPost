@@ -1,0 +1,29 @@
+name: 원고 도착 → main 의 슬랙 승인 요청 실행
+# (yoopost-drafts 브랜치 전용) 클라우드 루틴이 원고(drafts/·runs/)를 올리면
+# main 의 cloud_drafts.yml 을 workflow_dispatch 로 실행시키기만 한다.
+# 이 워크플로는 비밀값을 쓰지 않는다 — 비밀값은 production 환경(main 브랜치만 사용 가능)에만 있고,
+# 슬랙 전송·원고 준비는 main 의 코드와 워크플로가 한다.
+run-name: "📬 ${{ github.event.head_commit.message }}"
+
+on:
+  push:
+    branches: [yoopost-drafts]
+    paths: ["drafts/**", "runs/**"]
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: main 의 cloud_drafts.yml 실행 요청
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          # 커밋 메시지는 외부 입력 — run 스크립트에 직접 넣지 않고 환경변수로만 전달 (스크립트 인젝션 방지)
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          note="${COMMIT_MESSAGE%%$'\n'*}"
+          gh workflow run cloud_drafts.yml --ref main -f note="${note:0:100}"
