@@ -46,5 +46,20 @@ def test_raises_after_all_rounds_and_waits_between_rounds():
     assert waits == [15]
 
 
+def test_model_with_exhausted_daily_quota_is_skipped_for_the_run():
+    daily = RuntimeError("429 RESOURCE_EXHAUSTED quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+    gemini, client = fake_gemini([daily, '{"a": 1}', '{"a": 2}'], models=("a", "b"))
+    gemini.generate("p1", load_json_object)
+    data, reply = gemini.generate("p2", load_json_object)
+    assert data == {"a": 2} and reply.model == "b"
+    assert [c["model"] for c in client.models.calls] == ["a", "b", "b"]  # 두 번째 호출은 'a' 를 건너뜀
+
+
+def test_all_models_exhausted_still_tries_again():
+    daily = RuntimeError("RESOURCE_EXHAUSTED PerDay")
+    gemini, client = fake_gemini([daily, '{"ok": 1}'], models=("a",), rounds=2)
+    assert gemini.generate("p", load_json_object)[0] == {"ok": 1}
+
+
 def test_extract_grounding_handles_missing_metadata():
     assert extract_grounding(FakeGeminiResponse("x")) == ((), ())

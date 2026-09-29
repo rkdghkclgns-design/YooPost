@@ -70,6 +70,17 @@ class Gemini:
         self._models = tuple(dict.fromkeys((model, *fallback_models)))  # 순서 유지 중복 제거
         self._max_rounds = max_rounds
         self._sleep = sleep
+        # 하루 무료 한도(PerDay)를 다 쓴 모델 — 이번 실행 동안은 다시 부르지 않는다 (매 호출마다 429 왕복 낭비 방지)
+        self._exhausted: frozenset[str] = frozenset()
+
+    @staticmethod
+    def _daily_quota_exceeded(exc: Exception) -> bool:
+        text = str(exc)
+        return "RESOURCE_EXHAUSTED" in text and "PerDay" in text
+
+    def _available(self) -> tuple[str, ...]:
+        models = tuple(m for m in self._models if m not in self._exhausted)
+        return models or self._models  # 전부 소진이면 그래도 시도 (한도가 풀렸을 수 있음)
 
     @staticmethod
     def _config(grounded: bool, url_context: bool, json_mode: bool, temperature: float):
@@ -105,14 +116,19 @@ class Gemini:
         config = self._config(grounded, url_context, json_mode, temperature)
         last_error: Exception | None = None
         for round_no in range(1, self._max_rounds + 1):
-            for model in self._models:
+            for model in self._available():
                 try:
                     response = self._client.models.generate_content(model=model, contents=contents, config=config)
                     text = response.text or ""
                     parsed = parse(text)
                 except Exception as exc:  # 과부하/모델중단/네트워크/파싱 오류 모두 다음 후보로
                     last_error = exc
-                    log.warning("%s 실패 [%s] (라운드 %d/%d): %s", label, model, round_no, self._max_rounds, exc)
+                    if self._daily_quota_exceeded(exc):
+                        self._exhausted = self._exhausted | {model}
+                        log.warning("%s: [%s] 오늘 무료 한도 소진 — 이번 실행에서는 건너뜁니다", label, model)
+                        continue
+                    log.warning("%s 실패 [%s] (라운드 %d/%d): %s", label, model, round_no, self._max_rounds,
+                                str(exc)[:300])
                     continue
                 sources, queries = extract_grounding(response)
                 return parsed, GeminiReply(text=text, model=model, sources=sources, queries=queries)
