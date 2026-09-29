@@ -78,5 +78,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/250-76009000.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🛠 Claude Code 2.1.280~2.1.285 총정리: 자동 모드 기본값·모델 차단·플러그인 설정 사용 가이드",
+  "topic": "Claude Code changelog 2.1.280–2.1.285 (2026-09-22~29)",
+  "category": "AI 도구",
+  "source_url": "https://code.claude.com/docs/en/changelog",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-code-2128021285.html"
+  }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🎙 Anthropic 'What Do You Want from AI?' 총정리: 15분 AI 인터뷰 참여 방법·공개 범위·주의점",
+  "topic": "What Do You Want from AI? (Anthropic, 2026-09-29)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.anthropic.com/research/your-thoughts-on-ai",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/anthropic-what-do-you-want-from-ai-15-ai.html"
+  }
  }
 ]
