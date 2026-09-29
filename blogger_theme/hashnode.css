@@ -74,3 +74,51 @@ input, button, .byline { font-family: var(--font) !important; }
 
 /* 바닥글 */
 .footer, .Attribution, .ReportAbuse, .centered-bottom .Attribution a { color: var(--slate) !important; }
+
+/* ── 레이아웃: 본문 + 오른쪽 메뉴 (오른쪽 메뉴는 사이드바의 HTML/자바스크립트 가젯이 본문 옆으로 옮김) ── */
+.sidebar-container, .hamburger-menu, .sidebar-back { display: none !important; }
+@media screen and (min-width: 1440px) {
+  .page_body { margin-left: 0 !important; }
+  body.collapsed-header .page_body .centered-top-container { padding-left: 16px !important; }
+}
+.page_body .centered { max-width: 1180px !important; margin: 0 auto !important; }
+.centered-top-container, .centered-top-placeholder { background: transparent !important; }
+.centered-top { max-width: 1180px !important; }
+body.yp-has-aside .page_body .centered-bottom { display: block; }
+@media screen and (min-width: 1100px) {
+  body.yp-has-aside .page_body .centered-bottom {
+    display: grid !important; grid-template-columns: minmax(0, 1fr) 264px; gap: 44px; align-items: start;
+  }
+  .yp-aside { position: sticky; top: 24px; padding-top: 4px; }
+}
+@media screen and (max-width: 1099px) {
+  .yp-aside { margin: 24px 0 8px; padding: 24px; background: var(--canvas); border: 1px solid var(--fog); border-radius: 14px; }
+}
+.yp-main { min-width: 0; }
+
+/* 추천 글 — Hashnode 히어로 패널 (18px, 큰 제목, 파란 버튼 하나) */
+#page_body .FeaturedPost { border-radius: 18px !important; padding: 32px 36px !important; margin-bottom: 36px !important; }
+#page_body .FeaturedPost .widget-content::before, body:not(.item-view) #page_body .Blog::before {
+  display: block; margin: 0 0 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: var(--blue);
+}
+/* ● 는 Blogger 가 &#9679; 로 바꿔 저장하므로 CSS 이스케이프로 쓴다 */
+#page_body .FeaturedPost .widget-content::before { content: "\25CF  추천 글"; }
+body:not(.item-view) #page_body .Blog::before { content: "\25CF  최신 글"; }
+#page_body .FeaturedPost .post-title a { font-size: 30px !important; line-height: 1.3 !important; }
+#page_body .FeaturedPost .snippet-thumbnail { margin: 20px 0 !important; max-height: none !important; }
+#page_body .FeaturedPost .snippet-thumbnail img, .Blog .snippet-thumbnail img {
+  width: 100% !important; height: auto !important; aspect-ratio: 1200 / 630; object-fit: cover;
+  border-radius: 12px !important; border: 1px solid var(--fog) !important; margin: 0 !important;
+}
+#page_body .FeaturedPost .snippet-container { color: var(--slate) !important; }
+#page_body .FeaturedPost .jump-link a { background: var(--blue) !important; color: #fff !important; border-color: var(--blue) !important; }
+#page_body .FeaturedPost .jump-link a:hover { background: var(--blue-dark) !important; }
+
+/* 글 목록 — 2열 카드 (넓은 화면) */
+@media screen and (min-width: 820px) {
+  body:not(.item-view) .Blog .blog-posts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  body:not(.item-view) .Blog .blog-posts .post-outer-container { margin: 0 !important; padding: 20px 22px !important; }
+  body:not(.item-view) .Blog .post-title a { font-size: 18px !important; line-height: 1.45 !important; }
+}
+.Blog .post-body .snippet-thumbnail { float: none !important; max-width: 100% !important; max-height: none !important; margin: 0 0 14px !important; }
+.Blog .post-body .snippet-container { color: var(--slate) !important; font-size: 14px; }

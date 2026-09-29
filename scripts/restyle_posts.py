@@ -1,7 +1,9 @@
 """이미 발행한 글·승인 대기 원고·대표 이미지를 새 디자인(Hashnode 스타일)으로 바꾼다. 내용은 그대로.
 
     python scripts/restyle_posts.py            # 미리 보기 — 바뀔 글과 바뀌는 곳 수만 출력 (아무것도 바꾸지 않음)
-    python scripts/restyle_posts.py --apply    # 적용 — 발행 글 본문 수정 · 원고 보관함 갱신 · 대표 이미지 덮어쓰기
+    python scripts/restyle_posts.py --apply    # 적용 — 발행 글 본문 수정 · 원고 보관함 갱신 · 새 대표 이미지로 교체
+
+이미지 저장소는 1년 캐시(immutable)라 같은 주소에 덮어쓰면 바뀌지 않는다 → 새 이름(<이름>_v2.png)으로 올리고 글의 주소를 바꾼다.
 
 AI 호출 없음. 필요(.env): GOOGLE_*·BLOGGER_BLOG_ID, IMAGE_HOST_URL·IMAGE_UPLOAD_TOKEN.
 """
@@ -26,7 +28,7 @@ from autopost.cover import make_cover  # noqa: E402
 from autopost.draft_store import DraftStore  # noqa: E402
 from autopost.google_auth import build_blogger_service, build_credentials  # noqa: E402
 from autopost.image_host import ImageHost  # noqa: E402
-from autopost.restyle import CoverInfo, find_cover, marker_category, restyle_html  # noqa: E402
+from autopost.restyle import find_cover, marker_category, restyle_html, versioned_key  # noqa: E402
 
 DRAFTS = ROOT / "output" / "claude_drafts"
 RECENT_DAYS = 14
@@ -52,40 +54,45 @@ def main(argv: list[str] | None = None) -> int:
     store = DraftStore(cfg.image_host_url, cfg.image_upload_token, session)
     host = ImageHost(cfg.image_host_url, cfg.image_upload_token, session)
     mode = "적용" if args.apply else "미리 보기"
-    covers: dict[str, tuple[CoverInfo, str]] = {}
+    uploaded: dict[str, str] = {}  # 예전 대표 이미지 주소 → 새 주소
+    tmp = Path(tempfile.mkdtemp())
+
+    def redesign(html: str, category: str) -> tuple[str, int]:
+        result = restyle_html(html)
+        html, changes = result.html, result.changes
+        cover = find_cover(html, cfg.image_host_url)
+        if cover:
+            changes += 1
+            print(f"     🖼️ 대표 이미지 → {versioned_key(cover.key)} ({category})")
+            if args.apply:
+                if cover.url not in uploaded:
+                    path = make_cover(tmp / versioned_key(cover.key), cover.title, category, cfg.blog_name,
+                                      cover.date_text)
+                    uploaded[cover.url] = host.upload(path, versioned_key(cover.key))
+                html = html.replace(cover.url, uploaded[cover.url])
+        return html, changes
 
     print(f"== 발행 글 ({mode})")
     for post in blogger.editable_posts():
         content = str(post.get("content") or "")
-        result = restyle_html(content)
-        cover = find_cover(content, cfg.image_host_url)
-        if cover:
-            covers[cover.key] = (cover, marker_category(content, list(post.get("labels") or []), CATEGORIES))
-        print(f"  {'✏️' if result.changed else '·'} {post.get('title', '')[:60]} — 바뀌는 곳 {result.changes}")
-        if args.apply and result.changed:
-            blogger.update_content(str(post["id"]), result.html)
+        category = marker_category(content, list(post.get("labels") or []), CATEGORIES)
+        print(f"  · {post.get('title', '')[:60]}")
+        html, changes = redesign(content, category)
+        print(f"     바뀌는 곳 {changes}")
+        if args.apply and changes and html != content:
+            blogger.update_content(str(post["id"]), html)
 
     print(f"== 승인 대기 원고 ({mode})")
     for draft_id in recent_draft_ids():
         record = store.find(draft_id)
         if not record or str(record.get("status") or "pending") not in EDITABLE:
             continue
-        html = str(record.get("html") or "")
-        result = restyle_html(html)
-        cover = find_cover(html, cfg.image_host_url)
-        if cover:
-            covers.setdefault(cover.key, (cover, str(record.get("category") or CATEGORIES[0])))
-        print(f"  {'✏️' if result.changed else '·'} {draft_id} {str(record.get('title', ''))[:50]} — 바뀌는 곳 {result.changes}")
-        if args.apply and result.changed:
-            store.put(draft_id, {**record, "html": result.html})
-
-    print(f"== 대표 이미지 {len(covers)}개 ({mode} — 같은 주소에 새 디자인으로 덮어쓰기)")
-    with tempfile.TemporaryDirectory() as tmp:
-        for key, (cover, category) in sorted(covers.items()):
-            print(f"  🖼️ {key} — {category} · {cover.title[:50]}")
-            if args.apply:
-                path = make_cover(Path(tmp) / key, cover.title, category, cfg.blog_name, cover.date_text)
-                host.upload(path, key)
+        content = str(record.get("html") or "")
+        print(f"  · {draft_id} {str(record.get('title', ''))[:50]}")
+        html, changes = redesign(content, str(record.get("category") or CATEGORIES[0]))
+        print(f"     바뀌는 곳 {changes}")
+        if args.apply and changes and html != content:
+            store.put(draft_id, {**record, "html": html})
     print("✅ 끝" if args.apply else "미리 보기만 했습니다 — 적용하려면 --apply")
     return 0
 

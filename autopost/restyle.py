@@ -92,6 +92,11 @@ def find_cover(html: str, host_url: str) -> CoverInfo | None:
     return CoverInfo(url, key, _unescape(title), f"{year}.{month}.{day}")
 
 
+def versioned_key(key: str) -> str:
+    """새 디자인 대표 이미지의 새 이름 — 이미지 저장소는 1년 캐시라 같은 이름에 덮어쓰면 바뀌지 않는다."""
+    return key.replace("_cover.png", "_cover_v2.png")
+
+
 def marker_category(html: str, labels: list[str], categories: tuple[str, ...]) -> str:
     """글의 카테고리 — 발행 기록 표시(주석) 우선, 없으면 카테고리 라벨."""
     match = _MARKER.search(html)

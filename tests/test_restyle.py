@@ -3,7 +3,7 @@ from autopost import blog_html
 from autopost.blog_html import PostExtras, build_blog_html
 from autopost.constants import CATEGORIES
 from autopost.content import parse_post
-from autopost.restyle import LEGACY, find_cover, marker_category, restyle_html
+from autopost.restyle import LEGACY, find_cover, marker_category, restyle_html, versioned_key
 from fakes import post_json
 
 HOST = "https://relay.example"
@@ -35,6 +35,9 @@ def test_cover_and_category_are_read_from_the_post():
     cover = find_cover(html, HOST + "/")
     assert cover.key == "20260928_0912_cover.png" and cover.title == "🤖 A & B" and cover.date_text == "2026.09.28"
     assert find_cover('<img src="https://elsewhere/x_cover.png" alt="x"/>', HOST) is None
+    assert versioned_key(cover.key) == "20260928_0912_cover_v2.png"
+    v2 = html.replace(cover.key, versioned_key(cover.key))
+    assert find_cover(v2, HOST) is None  # 이미 바꾼 대표 이미지는 다시 바꾸지 않는다
     assert marker_category(html, [], CATEGORIES) == "AI 보안"
     assert marker_category("<!--yoopost {bad-->", ["AI 도구"], CATEGORIES) == "AI 도구"
     assert marker_category("", ["기타"], CATEGORIES) == CATEGORIES[0]

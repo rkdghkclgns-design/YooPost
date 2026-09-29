@@ -1,0 +1,168 @@
+<!-- AI백과사전 오른쪽 메뉴 (티스토리형: 공지사항 · 분류 전체보기 N · 최근글/인기글)
+     Blogger → 레이아웃 → 사이드바 → 가젯 추가 → HTML/자바스크립트 에 이 내용을 그대로 붙여 넣는다 (제목 비움).
+     블로그 공개 피드(JSONP)만 읽는다. 공지사항은 '공지사항' 라벨 글, 인기글은 같은 사이드바의 '인기 게시물' 가젯을 읽는다. -->
+<style>
+.yp-aside{font-family:"Pretendard Variable",Pretendard,Inter,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#16191c;font-size:14px;line-height:1.5}
+.yp-aside section{margin:0 0 30px}
+.yp-aside h4{font-size:15px;font-weight:700;letter-spacing:-.01em;margin:0 0 12px;color:#16191c}
+.yp-aside ul{list-style:none;margin:0;padding:0}
+.yp-aside li{margin:0 0 9px}
+.yp-aside a{color:#4a5057;text-decoration:none}
+.yp-aside a:hover{color:#1d52de}
+.yp-aside .yp-all{font-weight:700;color:#16191c}
+.yp-aside .yp-n{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin-left:6px;border-radius:4px;background:#e3ebfd;color:#1d52de;font-size:9px;font-weight:700;vertical-align:1px}
+.yp-aside .yp-notice a{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.yp-aside .yp-tabs{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.yp-aside .yp-tabs button{all:unset;cursor:pointer;font-size:15px;font-weight:700;color:#a3a8ae}
+.yp-aside .yp-tabs button[aria-selected="true"]{color:#16191c}
+.yp-aside .yp-tabs i{width:1px;height:12px;background:#d1d4d9}
+.yp-aside .yp-post{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px}
+.yp-aside .yp-post div{flex:1;min-width:0}
+.yp-aside .yp-post a.t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:#16191c;font-size:13.5px;line-height:1.45}
+.yp-aside .yp-post a.t:hover{color:#1d52de}
+.yp-aside .yp-post small{display:block;margin-top:3px;color:#7b8187;font-size:12px}
+.yp-aside .yp-post img{flex:none;width:76px;height:46px;object-fit:cover;border-radius:6px;border:1px solid #d1d4d9;background:#f4f5f7}
+.yp-aside .yp-empty{color:#7b8187;font-size:13px}
+</style>
+<script>
+(function () {
+  var CATS = ["AI 언어 모델", "AI 도구", "AI 논문 분석", "AI 뉴스 리뷰", "AI 보안", "AI 인사이트", "AI 공모주 분석"];
+  var NOTICE = "공지사항";
+  var NEW_MS = 24 * 3600 * 1000; /* N 표시: 24시간 안에 새 글 */
+  var ORIGIN = "https://aibaekgwasajeon.blogspot.com";
+
+  function h(tag, attrs, kids) {
+    var node = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+    (kids || []).forEach(function (c) { node.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return node;
+  }
+  function jsonp(url, done) {
+    var name = "ypFeed" + Math.random().toString(36).slice(2);
+    var tag = document.createElement("script");
+    var finished = false;
+    window[name] = function (data) { finished = true; done(data); try { delete window[name]; } catch (e) {} tag.remove(); };
+    tag.onerror = function () { if (!finished) done(null); };
+    tag.src = url + (url.indexOf("?") < 0 ? "?" : "&") + "alt=json-in-script&callback=" + name;
+    document.body.appendChild(tag);
+  }
+  function labelUrl(label) { return ORIGIN + "/search/label/" + encodeURIComponent(label); }
+  function link(entry) {
+    var found = (entry.link || []).filter(function (l) { return l.rel === "alternate"; })[0];
+    return found ? found.href : ORIGIN;
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function day(date) { return date.getFullYear() + "." + pad(date.getMonth() + 1) + "." + pad(date.getDate()); }
+  function thumb(entry) {
+    /* 본문의 첫 이미지(대표 이미지) — 요약 피드에는 썸네일이 없어 전체 피드 본문에서 찾는다 */
+    var html = (entry.content && entry.content.$t) || "";
+    var found = html.match(/<img[^>]+src="([^"]+)"/i);
+    return found ? found[1].replace(/&amp;/g, "&") : "";
+  }
+  function badge() { return h("span", { "class": "yp-n", "aria-label": "새 글" }, ["N"]); }
+  function postItem(title, href, img, when) {
+    var text = h("div", {}, [h("a", { "class": "t", href: href }, [title])]);
+    if (when) text.appendChild(h("small", {}, [when]));
+    var row = h("li", { "class": "yp-post" }, [text]);
+    if (img) row.appendChild(h("img", { src: img, alt: "", loading: "lazy" }));
+    return row;
+  }
+
+  var aside = h("aside", { "class": "yp-aside", "aria-label": "블로그 메뉴" });
+  var notice = h("section", { "class": "yp-notice", hidden: "" }, [h("h4", {}, ["공지사항"]), h("ul")]);
+  var cats = h("section", {}, [h("h4", {}, [h("a", { "class": "yp-all", href: ORIGIN + "/" }, ["분류 전체보기"])]), h("ul")]);
+  var recent = h("ul", { role: "tabpanel" });
+  var popular = h("ul", { role: "tabpanel", hidden: "" });
+  var tabRecent = h("button", { role: "tab", "aria-selected": "true", type: "button" }, ["최근글"]);
+  var tabPopular = h("button", { role: "tab", "aria-selected": "false", type: "button" }, ["인기글"]);
+  var tabs = h("section", {}, [h("div", { "class": "yp-tabs", role: "tablist" }, [tabRecent, h("i"), tabPopular]), recent, popular]);
+  [notice, cats, tabs].forEach(function (s) { aside.appendChild(s); });
+  function select(showRecent) {
+    tabRecent.setAttribute("aria-selected", String(showRecent));
+    tabPopular.setAttribute("aria-selected", String(!showRecent));
+    recent.hidden = !showRecent;
+    popular.hidden = showRecent;
+  }
+  tabRecent.addEventListener("click", function () { select(true); });
+  tabPopular.addEventListener("click", function () { select(false); });
+
+  function renderCategories(entries) {
+    var latest = {};
+    entries.forEach(function (e) {
+      var time = new Date(e.published.$t).getTime();
+      (e.category || []).forEach(function (c) { latest[c.term] = Math.max(latest[c.term] || 0, time); });
+    });
+    var now = Date.now();
+    var list = cats.querySelector("ul");
+    var anyNew = false;
+    CATS.forEach(function (name) {
+      var item = h("li", {}, [h("a", { href: labelUrl(name) }, [name])]);
+      if (latest[name] && now - latest[name] < NEW_MS) { item.appendChild(badge()); anyNew = true; }
+      list.appendChild(item);
+    });
+    if (anyNew) cats.querySelector("h4").appendChild(badge());
+  }
+  function renderRecent(entries) {
+    if (!entries.length) { recent.appendChild(h("li", { "class": "yp-empty" }, ["아직 글이 없습니다"])); return; }
+    entries.slice(0, 5).forEach(function (e) {
+      recent.appendChild(postItem(e.title.$t, link(e), thumb(e), day(new Date(e.published.$t))));
+    });
+  }
+  function renderPopular() {
+    var items = document.querySelectorAll(".PopularPosts article, .PopularPosts .post");
+    var seen = {};
+    Array.prototype.forEach.call(items, function (node) {
+      var a = node.querySelector(".post-title a, h3 a, a");
+      if (!a || seen[a.href] || popular.children.length >= 5) return;
+      seen[a.href] = true;
+      var img = node.querySelector("img");
+      popular.appendChild(postItem(a.textContent.trim(), a.href, img ? img.src : "", ""));
+    });
+    if (!popular.children.length) popular.appendChild(h("li", { "class": "yp-empty" }, ["인기글을 모으는 중입니다"]));
+  }
+  function wideThumbnails() {
+    /* 블로그가 대표 이미지를 정사각형·945×600 으로 잘라 보여 주는 것을 원래 비율(1200×630)로 바꾼다 */
+    var imgs = document.querySelectorAll(".FeaturedPost .snippet-thumbnail img, .Blog .snippet-thumbnail img");
+    Array.prototype.forEach.call(imgs, function (img) {
+      var src = img.getAttribute("src") || "";
+      if (src.indexOf("googleusercontent.com") < 0 || /=w840-h441-p-k-no-nu$/.test(src)) return;
+      img.removeAttribute("srcset");
+      img.removeAttribute("sizes");
+      img.setAttribute("src", src.replace(/=[^/]*$/, "") + "=w840-h441-p-k-no-nu");
+    });
+  }
+  function mount() {
+    var bottom = document.querySelector(".page_body .centered-bottom");
+    if (!bottom || bottom.querySelector(".yp-main")) return;
+    var main = h("div", { "class": "yp-main" });
+    while (bottom.firstChild) main.appendChild(bottom.firstChild);
+    bottom.appendChild(main);
+    bottom.appendChild(aside);
+    document.body.classList.add("yp-has-aside");
+  }
+  function start() {
+    mount();
+    wideThumbnails();
+    var feed = document.querySelector(".Blog .blog-posts"); /* '더보기'로 불러온 글에도 적용 */
+    if (feed && window.MutationObserver) new MutationObserver(wideThumbnails).observe(feed, { childList: true, subtree: true });
+    renderPopular();
+    jsonp(ORIGIN + "/feeds/posts/summary?max-results=50", function (data) {
+      renderCategories((data && data.feed && data.feed.entry) || []);
+    });
+    jsonp(ORIGIN + "/feeds/posts/default?max-results=5", function (data) {
+      renderRecent((data && data.feed && data.feed.entry) || []);
+    });
+    jsonp(ORIGIN + "/feeds/posts/summary/-/" + encodeURIComponent(NOTICE) + "?max-results=5", function (data) {
+      var entries = (data && data.feed && data.feed.entry) || [];
+      if (!entries.length) return;
+      var list = notice.querySelector("ul");
+      entries.forEach(function (e) {
+        var when = new Date(e.published.$t);
+        list.appendChild(h("li", {}, [h("a", { href: link(e), title: e.title.$t }, ["(" + day(when) + ") " + e.title.$t])]));
+      });
+      notice.hidden = false;
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+})();
+</script>
