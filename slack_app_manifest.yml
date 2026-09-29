@@ -29,6 +29,8 @@ oauth_config:
       # scripts/setup_slack_channels.py 가 yoopost-* 채널을 만들고 나를 초대하는 데 사용
       - channels:manage
       - channels:read
+      # 채널 정리 스크립트가 봇이 빠진 공개 채널에 다시 참여할 때 사용
+      - channels:join
       - users:read
       - users:read.email
       # 원고 메시지의 ✅ 반응을 감지해 발행 (Worker /slack/events)
