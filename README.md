@@ -20,7 +20,7 @@
 
 1. Claude 앱(이 프로젝트 폴더)에서 요청: **"AI 보안 글 써줘"**, **"카테고리별로 7편 써줘"**, **"GPT-6 글 써줘"**
    → Claude 가 `.claude/skills/yoopost-write/SKILL.md` 절차대로 조사·작성·사실 검증 후 슬랙 원고 채널에 올립니다.
-2. 슬랙 `#yoopost-2-원고검증` 의 **📝 발행 대기 원고** 메시지 → 스레드의 미리보기(HTML) 확인
+2. 슬랙 `#yoopost-1-원고승인` 의 **📝 발행 대기 원고** 메시지 → 스레드의 미리보기(HTML)·출처·사실 검증 확인
 3. 그 메시지에 **✅** 반응 → 1~2분 뒤 구글 블로그에 발행, 스레드에 글 주소 (실패하면 ✅ 를 다시 누르면 재시도)
 - Claude 는 ✅ 를 누르지 않습니다 — 발행 여부는 항상 사용자가 정합니다.
 - 예전 방식(Gemini 가 쓰는 `auto_post.yml`)은 매일 자동 실행을 껐고, GitHub 화면에서 직접 실행할 때만 돕니다 (Gemini 비용 발생).
@@ -91,10 +91,12 @@ AI 원고는 위 문법을 그대로 따릅니다.
 
 | 채널 | 내용 | 설정 |
 |---|---|---|
-| #yoopost-알림 | 진행 체크리스트 · 오류 | `SLACK_CHANNEL_ID` (Secret) |
-| #yoopost-1-주제조사 | 고른 주제 · 확인된 출처·사실 목록(sources.md) · 인용 이미지 | `SLACK_CHANNEL_RESEARCH` |
-| #yoopost-2-원고검증 | 원고(post.txt) · 사실 검증 보고(factcheck.md) · 대표 이미지 · 구글 블로그 미리보기 | `SLACK_CHANNEL_DRAFT` |
-| #yoopost-3-발행결과 | 발행 결과 링크 | `SLACK_CHANNEL_PUBLISH` |
+| #yoopost-알림 | 매일 원고 작성 요약 · 발행 오류 · 연동 점검(`/aipost-setup`) | `SLACK_CHANNEL_ID` (Secret) |
+| #yoopost-1-원고승인 | Claude 가 쓴 **발행 대기 원고** — 스레드에 미리보기(HTML)·대표 이미지·출처·사실 검증. **✅ = 발행**, 결과도 그 스레드에 | `SLACK_CHANNEL_DRAFT` |
+| #yoopost-2-발행완료 | ✅ 로 발행된 글 주소 모음 | `SLACK_CHANNEL_PUBLISH` |
+
+채널은 `python scripts/setup_slack_channels.py` 가 지금 구성으로 맞춥니다 (예전 #yoopost-2-원고검증·#yoopost-3-발행결과는 이름만 바꿔 그대로 쓰고,
+쓰지 않는 #yoopost-1-주제조사는 보관). 매일 원고 작성 요약은 `python scripts/slack_notice.py` 로 #yoopost-알림 에 올라갑니다.
 
 ```
 🤖 AI 포스팅 진행 중 — Introducing Gemini 3.8 Live       → 끝나면 ✅ 포스팅 완료 — 🤖 Gemini 3.8 Live 사용 가이드…

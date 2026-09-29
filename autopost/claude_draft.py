@@ -59,6 +59,7 @@ class PreparedDraft:
     source_url: str
     fact_line: str
     warnings: tuple[str, ...] = ()
+    sources_md: Path | None = None  # 출처·사실 검증 목록 (슬랙 스레드에 올려 ✅ 전에 확인)
 
     def bundle(self, now: datetime) -> dict:
         return {"id": self.draft_id, "status": "pending", "title": self.content.title, "html": self.html,
@@ -109,6 +110,21 @@ def load_draft(folder: Path) -> DraftFiles:
     factcheck = research.get("factcheck") if isinstance(research.get("factcheck"), dict) else {}
     return DraftFiles(content, topic, str(research.get("source_url") or "").strip(), sources,
                       parse_candidates(research.get("images")), MappingProxyType(dict(factcheck)))
+
+
+def sources_markdown(files: DraftFiles, sources: Sequence[Source], line: str) -> str:
+    """승인 전에 볼 출처·사실 검증 목록."""
+    lines = [f"# 출처·사실 검증 — {files.content.title}", "", f"원문: {files.source_url or '없음'}", f"사실 검증: {line}",
+             "", "## 출처"]
+    lines += [f"- [{s.id}] {'(공식) ' if s.official else ''}{s.publisher} — {s.title} ({s.published or '날짜 미상'})\n  {s.url}"
+              for s in sources]
+    removed = files.factcheck.get("removed") or []
+    if isinstance(removed, list) and removed:
+        lines += ["", "## 확인되지 않아 뺀 문장"] + [f"- {r}" for r in removed]
+    note = files.factcheck.get("note")
+    if note:
+        lines += ["", f"검증 방법: {note}"]
+    return "\n".join(lines) + "\n"
 
 
 def fact_line(factcheck: Mapping[str, object]) -> str:
@@ -168,8 +184,11 @@ class DraftPreparer:
         html = build_publish_html(self._host, ctx)
         labels = tuple(build_labels(content.category, content.hashtags))
         (folder / "publish.html").write_text(html, encoding="utf-8")
+        line = fact_line(files.factcheck)
+        sources_md = folder / "sources.md"
+        sources_md.write_text(sources_markdown(files, sources, line), encoding="utf-8")
         return PreparedDraft(draft_id, content, html, labels, preview, cover, files.topic, files.source_url,
-                             fact_line(files.factcheck), tuple(warnings))
+                             line, tuple(warnings), sources_md)
 
 
 def build_draft_blocks(prepared: PreparedDraft) -> list[dict]:
@@ -200,5 +219,7 @@ def send_for_approval(prepared: PreparedDraft, store, slack, channel: str, now: 
         slack.upload_file(prepared.preview, "구글 블로그 미리보기", "👀 올라갈 모습 — 내려받아 브라우저로 열어 보세요",
                           thread_ts=ts, channel=channel)
     slack.upload_file(prepared.cover, "대표 이미지", "🖼️ 대표 이미지", thread_ts=ts, channel=channel)
+    if prepared.sources_md is not None:
+        slack.upload_file(prepared.sources_md, "출처·사실 검증", "🔎 출처와 사실 검증 결과", thread_ts=ts, channel=channel)
     store.put(prepared.draft_id, {**bundle, "slack": {"channel": channel, "ts": ts}})
     return ts

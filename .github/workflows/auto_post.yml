@@ -71,7 +71,6 @@ jobs:
       SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       # 진행 단계별 결과물 채널 ID (Variables, 비우면 알림 채널의 진행 메시지 스레드로)
-      SLACK_CHANNEL_RESEARCH: ${{ vars.SLACK_CHANNEL_RESEARCH }}
       SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
       SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
       BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}

@@ -138,7 +138,9 @@ def test_send_for_approval_posts_card_uploads_preview_and_links_message(tmp_path
     assert card["channel"] == "CDRAFT" and "발행 대기 원고" in card["text"]
     blocks = json.dumps(card["blocks"], ensure_ascii=False)
     assert "✅ 반응을 누르면 구글 블로그에 발행됩니다" in blocks and "20260929_1300_4" in blocks and "참고" in blocks
-    assert {u["title"] for u in client.uploads} == {"구글 블로그 미리보기", "대표 이미지"}
+    assert {u["title"] for u in client.uploads} == {"구글 블로그 미리보기", "대표 이미지", "출처·사실 검증"}
+    sources = (tmp_path / "sources.md").read_text(encoding="utf-8")
+    assert "(공식) NVIDIA — NVIDIA Vera CPU" in sources and "확인 안 된 문장" in sources and DEAD not in sources
     assert all(u["thread_ts"] == ts for u in client.uploads)
     assert store.puts[0][1].get("slack") is None  # 슬랙에 올리기 전에 먼저 보관
     assert store.items["20260929_1300_4"]["slack"] == {"channel": "CDRAFT", "ts": ts}

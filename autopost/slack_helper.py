@@ -84,7 +84,7 @@ def build_report_blocks(
             line += f"\n{escape_mrkdwn(result.message)}"
         blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": _truncate(line)}})
     footer = ("원고·사실 검증 보고는 원고 채널에서 확인하고, 고친 뒤 직접 발행하거나 다른 주제로 다시 실행하세요"
-              if held else "출처·사실 검증 보고는 주제조사·원고 채널에 올라가 있습니다")
+              if held else "출처·사실 검증 보고는 원고 채널(#yoopost-1-원고승인)에 올라가 있습니다")
     if usage_line:
         footer += f"\n📊 {escape_mrkdwn(usage_line)}"
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": footer}]})

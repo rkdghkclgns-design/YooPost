@@ -40,40 +40,63 @@ def test_push_secrets_splits_secrets_and_variables():
     assert calls[0] == (["gh", "variable", "set", "BLOG_NAME"], "AI백과사전")
 
 
-def test_slack_channels_are_created_once_and_user_invited():
+def test_slack_channels_follow_the_approval_workflow():
     from slack_sdk.errors import SlackApiError
 
     channels = load("setup_slack_channels")
 
     class FakeSlack:
-        def __init__(self):
-            self.created, self.invited, self.joined = [], [], []
-            self.existing = {"yoopost-알림": "CALERT"}
+        def __init__(self, existing):
+            self.existing = existing  # 이름 → {"id", "is_archived"}
+            self.created, self.renamed, self.archived, self.invited, self.purposes, self.posts = [], [], [], [], {}, []
 
         def conversations_list(self, **kwargs):
-            return {"channels": [{"name": n, "id": i} for n, i in self.existing.items()]}
+            return {"channels": [{"name": n, **c} for n, c in self.existing.items()]}
 
         def conversations_create(self, name):
             self.created.append(name)
             return {"channel": {"id": f"C{len(self.created)}"}}
 
+        def conversations_rename(self, channel, name):
+            self.renamed.append((channel, name))
+
+        def conversations_archive(self, channel):
+            self.archived.append(channel)
+
         def conversations_setPurpose(self, channel, purpose):
-            pass
+            self.purposes[channel] = purpose
 
         def conversations_join(self, channel):
-            self.joined.append(channel)
+            pass
 
         def conversations_invite(self, channel, users):
-            if channel == "C1":
+            if channel == "CPUB":
                 raise SlackApiError("already", {"error": "already_in_channel"})
             self.invited.append((channel, users))
 
-    fake = FakeSlack()
-    ids = channels.ensure_channels(fake, "U1")
-    assert ids["yoopost-알림"] == "CALERT" and fake.joined == ["CALERT"]
-    assert fake.created == ["yoopost-1-주제조사", "yoopost-2-원고검증", "yoopost-3-발행결과"]
-    assert ("CALERT", "U1") in fake.invited and all(c != "C1" for c, _ in fake.invited)
-    assert [env for _, env, secret in channels.CHANNELS if secret] == ["SLACK_CHANNEL_ID"]
+        def chat_postMessage(self, channel, text):
+            self.posts.append((channel, text))
+
+    old = FakeSlack({"yoopost-알림": {"id": "CALERT"}, "yoopost-1-주제조사": {"id": "CRES"},
+                     "yoopost-2-원고검증": {"id": "CDRAFT"}, "yoopost-3-발행결과": {"id": "CPUB"},
+                     "yoopost-예전": {"id": "COLD", "is_archived": True}})
+    known = channels.all_channels(old)
+    assert channels.ensure_channel(old, known, "yoopost-1-원고승인", ("yoopost-2-원고검증",), "p") == ("CDRAFT", True)
+    assert channels.ensure_channel(old, known, "yoopost-알림", (), "q") == ("CALERT", False)
+    channels.retire(old, known)
+    assert old.renamed == [("CDRAFT", "yoopost-1-원고승인")] and old.archived == ["CRES"] and old.created == []
+    assert old.purposes == {"CDRAFT": "p", "CALERT": "q"}
+
+    fresh = FakeSlack({})
+    assert channels.ensure_channel(fresh, {}, "yoopost-2-발행완료", ("yoopost-3-발행결과",), "r") == ("C1", True)
+    channels.retire(fresh, {"yoopost-1-주제조사": {"id": "X", "is_archived": True}})
+    assert fresh.created == ["yoopost-2-발행완료"] and fresh.archived == []
+    channels.invite(fresh, "C1", "U1", "n")
+    channels.invite(fresh, "CPUB", "U1", "n")
+    channels.invite(fresh, "C1", None, "n")
+    assert fresh.invited == [("C1", "U1")]
+    assert [env for _, _, env, secret, _ in channels.CHANNELS if secret] == ["SLACK_CHANNEL_ID"]
+    assert [name for name, *_ in channels.CHANNELS] == ["yoopost-알림", "yoopost-1-원고승인", "yoopost-2-발행완료"]
 
 
 def test_upload_variables_without_gh_reports_all_failed():
@@ -87,7 +110,7 @@ def test_upload_variables_without_gh_reports_all_failed():
 
 def test_scripts_show_help_without_side_effects():
     for name in ("preview_post", "push_secrets", "get_google_token", "analyze_reference_blog", "setup_slack_channels",
-                 "blogger_menu"):
+                 "blogger_menu", "slack_notice", "claude_brief", "claude_draft"):
         result = subprocess.run([sys.executable, str(SCRIPTS / f"{name}.py"), "--help"],
                                 capture_output=True, text=True, encoding="utf-8", timeout=60)
         assert result.returncode == 0, result.stderr
