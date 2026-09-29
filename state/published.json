@@ -108,5 +108,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-desktop-cowork-cvss-85.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🧪 Claude 과학 3연작 총정리: 페르마 정리 11일·9루프 진폭·단백질 모델 4배 가속, 무엇이 달라졌나",
+  "topic": "Claude 과학 3연작: Formalizing Fermat's Last Theorem / How Claude is uplifting biomolecular modeling / Yes, Claude can do Nine Loops (Anthropic, 2026-09)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-3-119-4.html"
+  }
  }
 ]
