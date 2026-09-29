@@ -20,7 +20,6 @@ jobs:
           cache: pip
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
       - run: pip install -r requirements-dev.txt
-      - run: python -m playwright install --with-deps chromium
       - run: pytest --cov=autopost --cov-fail-under=80
 
   slack-relay:

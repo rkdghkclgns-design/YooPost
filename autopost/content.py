@@ -105,7 +105,7 @@ class PostContent:
         return replace(self, references=tuple(references))
 
     def plain_text(self) -> str:
-        """네이버 수동 발행/슬랙 원고 파일용 일반 텍스트."""
+        """슬랙 원고 파일(post.txt)용 일반 텍스트."""
         lines = [self.title, "", strip_inline(self.intro), "", "[한눈에 보기]"]
         lines += [f"- {strip_inline(s)}" for s in self.summary] + [""]
         for section in self.sections:
@@ -151,21 +151,6 @@ def inline_html(text: str) -> str:
     escaped = _BOLD.sub(r"<b>\1</b>", escaped)
     escaped = _CODE.sub(r"<code>\1</code>", escaped)
     return escaped.replace("\n", "<br/>")
-
-
-def bold_segments(text: str) -> list[tuple[str, bool]]:
-    """네이버 입력용: [(글자, 굵게 여부)] — `코드` 표시는 지운다."""
-    segments: list[tuple[str, bool]] = []
-    position = 0
-    plain = _CODE.sub(r"\1", text)
-    for match in _BOLD.finditer(plain):
-        if match.start() > position:
-            segments.append((plain[position:match.start()], False))
-        segments.append((match.group(1), True))
-        position = match.end()
-    if position < len(plain):
-        segments.append((plain[position:], False))
-    return segments
 
 
 # ------------------------------------------------------------------ AI 응답 해석

@@ -1,4 +1,4 @@
-"""YooPost 슬랙 채널 5개를 만들고(있으면 그대로) 나를 초대한 뒤, 채널 ID 를 .env 와 GitHub 에 저장.
+"""YooPost 슬랙 채널 4개를 만들고(있으면 그대로) 나를 초대한 뒤, 채널 ID 를 .env 와 GitHub 에 저장.
 
     python scripts/setup_slack_channels.py                 # GOOGLE_ACCOUNT_EMAIL(기본 rkdghkclgns@gmail.com) 초대
     python scripts/setup_slack_channels.py --email me@x.com
@@ -26,14 +26,12 @@ CHANNELS = (
     ("yoopost-1-주제조사", "SLACK_CHANNEL_RESEARCH", False),
     ("yoopost-2-원고검증", "SLACK_CHANNEL_DRAFT", False),
     ("yoopost-3-발행결과", "SLACK_CHANNEL_PUBLISH", False),
-    ("yoopost-로그인토큰-만료알림", "SLACK_CHANNEL_TOKEN_ALERT", False),
 )
 PURPOSES = {
     "yoopost-알림": "AI백과사전 자동 포스팅 진행 상황·오류",
     "yoopost-1-주제조사": "고른 주제와 확인된 출처·사실 목록",
     "yoopost-2-원고검증": "AI 원고·사실 검증 보고·대표 이미지·블로그 미리보기",
-    "yoopost-3-발행결과": "구글·네이버 발행 결과와 수동 발행용 원고",
-    "yoopost-로그인토큰-만료알림": "네이버 로그인 만료 3일 전 알림",
+    "yoopost-3-발행결과": "구글 블로그 발행 결과",
 }
 
 

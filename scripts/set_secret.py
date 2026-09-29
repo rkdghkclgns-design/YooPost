@@ -21,8 +21,7 @@ from autopost.setup_browser import tk_prompt  # noqa: E402
 NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{2,63}$")
 HINTS = {
     "GEMINI_API_KEY": "https://aistudio.google.com/apikey 에서 만든 API 키를 붙여넣으세요",
-    "GH_SECRETS_TOKEN": "GitHub 에서 방금 만든 토큰(github_pat_ 로 시작)을 붙여넣으세요\n"
-                        "— 네이버 로그인 정보가 갱신되면 GitHub 에 자동 저장하는 데 씁니다",
+    "SLACK_BOT_TOKEN": "슬랙 앱 OAuth & Permissions 의 Bot User OAuth Token(xoxb-...)을 붙여넣으세요",
 }
 
 

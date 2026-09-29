@@ -20,7 +20,12 @@ sys.path.insert(0, str(ROOT))
 from autopost.local_secrets import save_everywhere  # noqa: E402
 
 NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{2,63}$")
-PREFIXES = {"SLACK_BOT_TOKEN": "xoxb-", "SLACK_WEBHOOK_URL": "https://hooks.slack.com/", "GEMINI_API_KEY": "AIza"}
+# 이름별 허용 시작 문자 — Gemini 키는 예전 형식(AIza…)과 새 형식(AQ.…) 모두 있다
+PREFIXES = {
+    "SLACK_BOT_TOKEN": ("xoxb-",),
+    "SLACK_WEBHOOK_URL": ("https://hooks.slack.com/",),
+    "GEMINI_API_KEY": ("AIza", "AQ."),
+}
 
 
 def paste_file(name: str) -> Path:
@@ -63,9 +68,10 @@ def main() -> int:
     if not value:
         print("❌ 값이 비어 있습니다. 메모장에 붙여넣고 Ctrl+S 로 저장했는지 확인하세요.")
         return 1
-    prefix = PREFIXES.get(args.name)
-    if prefix and not value.startswith(prefix):
-        print(f"❌ {args.name} 값은 {prefix} 로 시작해야 합니다. 다른 값을 붙여넣은 것 같습니다 (파일은 그대로 둡니다).")
+    prefixes = PREFIXES.get(args.name, ())
+    if prefixes and not value.startswith(prefixes):
+        print(f"❌ {args.name} 값은 {' 또는 '.join(prefixes)} 로 시작해야 합니다. "
+              "다른 값을 붙여넣은 것 같습니다 (파일은 그대로 둡니다).")
         return 1
     failed = save_everywhere({args.name: value}, Path(args.env), upload=not args.no_upload)
     path.unlink()

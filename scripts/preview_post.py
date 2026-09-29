@@ -6,7 +6,7 @@
 
 필요한 것: .env 의 GEMINI_API_KEY 하나.
 결과: output/preview_<시각>/ 에 sources.md(출처·사실), post.txt(원고), factcheck.md(사실 검증 보고),
-      cover.png, blog_preview_google.html, blog_preview_naver.html
+      cover.png, blog_preview_google.html (구글 블로그에 올라갈 모습 — 업로드하지 않음)
 """
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ from autopost.fact_check import FactChecker, FactCheckReport  # noqa: E402
 from autopost.gemini import Gemini  # noqa: E402
 from autopost.history import PostHistory  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
-from autopost.publishing import PublishContext, attach_references, base_notes, write_previews  # noqa: E402
+from autopost.publishing import PublishContext, attach_references, base_notes, write_preview  # noqa: E402
 from autopost.research import Researcher  # noqa: E402
 from autopost.style_profile import load_style  # noqa: E402
 from autopost.topic import TopicSelector  # noqa: E402
@@ -80,8 +80,8 @@ def main() -> int:
     (workdir / "post.txt").write_text(content.plain_text() + "\n", encoding="utf-8")
     cover = make_cover(workdir / "cover.png", content.title, content.category, cfg.blog_name, f"{now:%Y.%m.%d}")
     ctx = PublishContext(content, cover, base_notes(now, report.passed), PostHistory(), "", now.strftime("%Y%m%d_%H%M"))
-    google, naver = write_previews(ctx, workdir, cfg.blog_name, cfg.naver_align, dry_run=True)
-    print(f"\n✅ 완료: {workdir}\n   {google}\n   {naver}")
+    preview = write_preview(ctx, workdir, dry_run=True)
+    print(f"\n✅ 완료: {workdir}\n   {preview}")
     return 0
 
 

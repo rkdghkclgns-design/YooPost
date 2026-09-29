@@ -15,10 +15,11 @@ FULL = {
 def test_defaults_and_stage_channels():
     cfg = load_config(FULL)
     assert cfg.blog_name == "AI백과사전" and cfg.drive_root_name == "AI백과사전_포스팅자동화"
-    assert cfg.naver_align == "left" and cfg.topic_lookback_days == 3 and cfg.min_references == 3
+    assert cfg.topic_lookback_days == 3 and cfg.min_references == 3
     assert cfg.slack_stage_channels == (("research", "CR"),)
     assert cfg.gemini_fallback_models[0] == "gemini-3.8-flash"
-    assert cfg.blogger_enabled and not cfg.naver_enabled and cfg.slack_enabled
+    assert cfg.blogger_enabled and cfg.slack_enabled
+    assert not hasattr(cfg, "naver_blog_id")  # 네이버는 쓰지 않음
     assert set(cfg.secret_values()) >= {"sec", "tok", "gem", "xoxb-1"}
 
 
@@ -27,8 +28,8 @@ def test_invalid_values_fail_fast():
         load_config({"MIN_REFERENCES": "many"})
     with pytest.raises(ConfigError, match="범위"):
         load_config({"TOPIC_LOOKBACK_DAYS": "30"})
-    with pytest.raises(ConfigError, match="NAVER_ALIGN"):
-        load_config({"NAVER_ALIGN": "right"})
+    with pytest.raises(ConfigError, match="MAX_FIX_ROUNDS"):
+        load_config({"MAX_FIX_ROUNDS": "9"})
 
 
 def test_validate_for_mode_and_readiness():
@@ -38,7 +39,8 @@ def test_validate_for_mode_and_readiness():
     assert len(validate_for_mode(load_config({}), "setup")) == 1
     assert "알 수 없는" in validate_for_mode(load_config(FULL), "x")[0]
     names = [name for name, ok, _ in platform_readiness(load_config(FULL)) if ok]
-    assert "구글 블로그" in names and "네이버 블로그" not in names
+    assert names == ["구글 드라이브", "Gemini AI (웹 검색 사실 확인)", "구글 블로그", "슬랙"]
+    assert "BLOGGER_BLOG_ID" in validate_for_mode(load_config({**FULL, "BLOGGER_BLOG_ID": ""}), "post")[0]
 
 
 def test_parse_args_reads_actions_env(monkeypatch):
@@ -50,7 +52,7 @@ def test_parse_args_reads_actions_env(monkeypatch):
 
 def test_main_config_errors_return_2(monkeypatch):
     monkeypatch.setattr(cli, "_load_dotenv", lambda: None)
-    for key in list(FULL) + ["MIN_REFERENCES", "BLOGGER_BLOG_ID", "NAVER_BLOG_ID"]:
+    for key in list(FULL) + ["MIN_REFERENCES", "BLOGGER_BLOG_ID"]:
         monkeypatch.delenv(key, raising=False)
     monkeypatch.setenv("MIN_REFERENCES", "x")
     assert cli.main([]) == 2
@@ -88,7 +90,7 @@ def test_main_reports_unexpected_errors(monkeypatch):
 
 def test_step_summary(tmp_path):
     text = build_step_summary("제목|1", "AI 도구", "https://src", 5000, "주장 3개 중 3개 확인",
-                              [PublishResult("구글 블로그", True, "https://b"), PublishResult.skip("네이버 블로그", "미설정")],
+                              [PublishResult("구글 블로그", True, "https://b"), PublishResult.skip("구글 블로그", "미설정")],
                               dry_run=False)
     assert "제목\\|1" in text and "[열기](https://b)" in text and "⏭️ 건너뜀" in text
     assert build_step_summary("t", "c", "", 1, "x", [], dry_run=True).startswith("## 🧪")

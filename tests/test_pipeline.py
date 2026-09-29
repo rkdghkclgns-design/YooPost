@@ -71,28 +71,16 @@ class StubBlogger:
         return PublishResult("구글 블로그", True, "https://ai.blogspot.com/p/1", "발행 완료")
 
 
-class StubNaver:
-    def __init__(self, fail=False):
-        self.fail = fail
-        self.calls = []
-
-    def publish(self, content, extras):
-        if self.fail:
-            raise RuntimeError("naver down")
-        self.calls.append((content, extras))
-        return PublishResult("네이버 블로그", True, "https://blog.naver.com/me/223456789012", "발행 완료")
-
-
 def cfg(tmp_path, **env):
     base = {"OUTPUT_DIR": str(tmp_path / "out"), "MIN_BODY_CHARS": "1000", "SLACK_CHANNEL_DRAFT": "CDRAFT"}
     return load_config({**base, **env})
 
 
-def services(drive, client, checker=(True,), researcher=None, blogger=None, naver=None, writer=None):
+def services(drive, client, checker=(True,), researcher=None, blogger=None, writer=None):
     return Services(
         drive=drive, slack=SlackNotifier(channel_id="C1", client=client), selector=StubSelector(),
         researcher=researcher or StubResearcher(), writer=writer or StubWriter(), checker=StubChecker(checker),
-        blogger=blogger, naver=naver, now=lambda: NOW,
+        blogger=blogger, now=lambda: NOW,
     )
 
 
@@ -102,22 +90,23 @@ def history_of(drive):
     return PostHistory.from_json(drive.read_text(found.id))
 
 
-def test_publishes_to_both_platforms_and_records_history(tmp_path):
+def test_publishes_to_google_blog_and_records_history(tmp_path):
     drive, client = MemoryDrive(), FakeWebClient()
-    blogger, naver = StubBlogger(), StubNaver()
-    code = run_post(cfg(tmp_path), RunOptions(trigger="schedule"), services(drive, client, blogger=blogger, naver=naver))
+    blogger = StubBlogger()
+    code = run_post(cfg(tmp_path), RunOptions(trigger="schedule"), services(drive, client, blogger=blogger))
     assert code == 0
     title, body, labels = blogger.posts[0]
     assert title.startswith("🤖 Gemini 3.8 Live") and labels[0] == "AI 언어 모델"
     assert "lh3.googleusercontent.com" in body and "📚 참고 문헌 및 출처" in body  # 대표 이미지·참고문헌
     assert "Google DeepMind. (2026, September 24)" in body and "교차 확인했습니다" in body
-    assert naver.calls[0][1].cover.name == "cover.png" and "2026년 9월 29일" in naver.calls[0][1].notes
+    assert "2026년 9월 29일 기준으로 작성" in body
     entry = history_of(drive).entries[0]
-    assert entry.urls == {"blogger": "https://ai.blogspot.com/p/1", "naver": "https://blog.naver.com/me/223456789012"}
+    assert entry.urls == {"blogger": "https://ai.blogspot.com/p/1"}
     progress = next(i for i, m in enumerate(client.messages, start=1) if m["text"].startswith("🤖 AI 포스팅 진행 중"))
     assert client.last_text(f"1700000000.{progress:06d}").startswith("✅ 포스팅 완료")
     uploads = {u["title"] for u in client.uploads}
-    assert {"출처·사실 목록", "원고", "사실 검증 보고", "대표 이미지", "구글 블로그 미리보기", "네이버 블로그 미리보기"} <= uploads
+    assert {"출처·사실 목록", "원고", "사실 검증 보고", "대표 이미지", "구글 블로그 미리보기"} <= uploads
+    assert not any("네이버" in u["title"] for u in client.uploads)
     assert any(u["channel"] == "CDRAFT" for u in client.uploads)
 
 
@@ -159,15 +148,7 @@ def test_dry_run_makes_previews_without_publishing(tmp_path):
     assert "&lt;!channel&gt;" in json.dumps(client.messages[1]["blocks"], ensure_ascii=False)
 
 
-def test_platform_failures_are_isolated_and_naver_fallback_posted(tmp_path):
-    drive, client = MemoryDrive(), FakeWebClient()
-    code = run_post(cfg(tmp_path), RunOptions(), services(drive, client, blogger=StubBlogger(), naver=StubNaver(fail=True)))
-    assert code == 0
-    assert any("수동 발행용 원고" in t for t in client.texts())
-    assert history_of(drive).entries[0].urls == {"blogger": "https://ai.blogspot.com/p/1"}
-
-
-def test_all_platforms_failing_returns_error_without_record(tmp_path):
+def test_blog_failure_returns_error_without_record(tmp_path):
     drive, client = MemoryDrive(), FakeWebClient()
     code = run_post(cfg(tmp_path), RunOptions(), services(drive, client, blogger=StubBlogger(fail=True)))
     assert code == 1 and history_of(drive).entries == ()

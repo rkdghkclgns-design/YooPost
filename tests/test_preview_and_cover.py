@@ -4,8 +4,7 @@ from autopost.blog_html import PostExtras
 from autopost.content import parse_post
 from autopost.cover import HEIGHT, WIDTH, make_cover, strip_emoji, wrap_title
 from autopost.fonts import load_font
-from autopost.naver_publisher import NaverExtras
-from autopost.preview_page import render_naver_preview, render_preview, write_page
+from autopost.preview_page import render_preview, write_page
 from fakes import post_json
 
 
@@ -30,14 +29,7 @@ def test_google_preview_embeds_cover(tmp_path):
     assert "data:image/jpeg;base64," in page and "검토용" in page and "한눈에 보기" in page
     no_cover = render_preview(parse_post(post_json()), PostExtras(), None, "검토용")
     assert "data:image" not in no_cover
-
-
-def test_naver_preview_shows_editor_lines(tmp_path):
-    cover = make_cover(tmp_path / "cover.png", "제목", "AI 도구", "AI백과사전", "2026.09.29")
-    page = render_naver_preview(parse_post(post_json()), NaverExtras(cover, notes="기준일"), "검토용", "AI백과사전", "center")
-    assert "text-align:center" in page and "<b>구글</b>" in page and "━━" in page
-    assert 'class="code">pip install google-genai' in page and "▶ 무엇이 달라졌나" in page
-    missing = render_naver_preview(parse_post(post_json()), NaverExtras(tmp_path / "none.png"), "n", "b")
+    missing = render_preview(parse_post(post_json()), PostExtras(), tmp_path / "none.png", "검토용")
     assert "data:image" not in missing
     out = write_page(tmp_path / "x" / "p.html", page)
     assert out.read_text(encoding="utf-8") == page

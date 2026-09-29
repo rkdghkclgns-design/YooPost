@@ -1,7 +1,6 @@
 # 비밀 정보 — 절대 커밋 금지
 .env
 client_secret*.json
-naver_state*.b64
 *.token.json
 
 # 실행 결과물 (참고 블로그 캐시 포함)

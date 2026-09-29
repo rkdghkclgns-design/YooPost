@@ -15,10 +15,8 @@ from .config import MODES, Config, ConfigError, load_config, validate_for_mode
 from .drive_helper import DriveHelper
 from .fact_check import FactChecker
 from .gemini import Gemini
-from .github_secrets import update_github_secret
 from .google_auth import build_blogger_service, build_credentials, build_drive_service
 from .links import USER_AGENT
-from .naver_publisher import NaverPublisher
 from .pipeline import AlreadyReported, RunOptions, Services, run_post, run_setup
 from .research import Researcher
 from .slack_helper import SlackNotifier
@@ -36,7 +34,7 @@ def _env_flag(name: str) -> bool:
 
 
 def parse_args(argv: Sequence[str] | None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="AI백과사전 자동 포스팅 (구글 블로그·네이버)")
+    parser = argparse.ArgumentParser(description="AI백과사전 자동 포스팅 (구글 블로그)")
     parser.add_argument("--mode", choices=MODES, default=os.environ.get("AUTOPOST_MODE") or "post")
     parser.add_argument("--topic", default=os.environ.get("AUTOPOST_TOPIC", ""),
                         help="쓸 주제 (예: 'Gemini 3.8 Live'). 비우면 최신 AI 소식에서 자동 선정")
@@ -65,17 +63,6 @@ def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
     gemini = Gemini(cfg.gemini_api_key, cfg.gemini_model, cfg.gemini_fallback_models)
     session = http_session()
     blogger = BloggerPublisher(build_blogger_service(creds), cfg.blogger_blog_id) if cfg.blogger_enabled else None
-    naver = (
-        NaverPublisher(
-            cfg.naver_blog_id,
-            cfg.naver_storage_state_b64,
-            cfg.naver_publish_mode,
-            cfg.output_dir,
-            on_session_updated=lambda value: update_github_secret("NAVER_STORAGE_STATE_B64", value),
-            align=cfg.naver_align,
-        )
-        if cfg.naver_enabled else None
-    )
     return Services(
         drive=drive,
         slack=slack,
@@ -84,7 +71,6 @@ def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
         writer=PostWriter(gemini, cfg.blog_name, cfg.min_body_chars),
         checker=FactChecker(gemini),
         blogger=blogger,
-        naver=naver,
     )
 
 

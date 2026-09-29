@@ -21,7 +21,8 @@ MASK = "***"
 MIN_SECRET_LEN = 6
 # (패턴, 치환문자열) — 그룹 1 은 남기고 비밀값 부분만 가린다
 SECRET_PATTERNS = (
-    (re.compile(r"AIza[0-9A-Za-z_\-]{30,}"), MASK),  # Google API 키 (Gemini)
+    (re.compile(r"AIza[0-9A-Za-z_\-]{30,}"), MASK),  # Google API 키 (Gemini, 예전 형식)
+    (re.compile(r"\bAQ\.[0-9A-Za-z_\-.]{30,}"), MASK),  # Google API 키 (새 형식)
     (re.compile(r"ya29\.[0-9A-Za-z_\-.]+"), MASK),  # Google 액세스 토큰
     (re.compile(r"xox[abposre]-[0-9A-Za-z\-]+"), MASK),  # 슬랙 토큰
     (re.compile(r"(?:ghp|gho|ghs|ghu|github_pat)_[0-9A-Za-z_]+"), MASK),  # GitHub 토큰

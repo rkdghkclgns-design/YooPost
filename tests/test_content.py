@@ -3,7 +3,6 @@ import pytest
 from autopost.content import (
     ContentError,
     Reference,
-    bold_segments,
     inline_html,
     load_json_object,
     normalize_hashtags,
@@ -50,8 +49,6 @@ def test_load_json_object_accepts_code_fence_and_surrounding_text():
 def test_inline_markup_helpers():
     assert strip_inline("**굵게** 와 `code`") == "굵게 와 code"
     assert inline_html("<b> **굵게** `x`\n다음") == "&lt;b&gt; <b>굵게</b> <code>x</code><br/>다음"
-    assert bold_segments("앞 **굵게** 뒤 `x`") == [("앞 ", False), ("굵게", True), (" 뒤 x", False)]
-
 
 def test_plain_text_and_length_exclude_code_and_markup():
     content = parse_post(post_json()).with_references(

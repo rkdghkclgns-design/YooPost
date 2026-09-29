@@ -71,7 +71,7 @@ def test_slack_channels_are_created_once_and_user_invited():
     fake = FakeSlack()
     ids = channels.ensure_channels(fake, "U1")
     assert ids["yoopost-알림"] == "CALERT" and fake.joined == ["CALERT"]
-    assert fake.created == ["yoopost-1-주제조사", "yoopost-2-원고검증", "yoopost-3-발행결과", "yoopost-로그인토큰-만료알림"]
+    assert fake.created == ["yoopost-1-주제조사", "yoopost-2-원고검증", "yoopost-3-발행결과"]
     assert ("CALERT", "U1") in fake.invited and all(c != "C1" for c, _ in fake.invited)
     assert [env for _, env, secret in channels.CHANNELS if secret] == ["SLACK_CHANNEL_ID"]
 

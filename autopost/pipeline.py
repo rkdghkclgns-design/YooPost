@@ -1,7 +1,7 @@
 """포스팅/초기세팅 전체 흐름.
 
     ① 셀프 세팅 점검 → ② 주제 선정 → ③ 자료 조사·출처 확인 → ④ AI 원고 → ⑤ 사실 검증(틀리면 고쳐서 재검증)
-    → ⑥ 대표 이미지·미리보기 → ⑦ 구글 블로그·네이버 발행 → ⑧ 발행 기록
+    → ⑥ 대표 이미지·미리보기 → ⑦ 구글 블로그 발행 → ⑧ 발행 기록
 사실 검증을 끝내 통과하지 못하면 발행하지 않고 원고·검증 보고만 슬랙에 남긴다.
 """
 from __future__ import annotations
@@ -13,7 +13,6 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Callable
 
-from . import naver_publisher
 from .blog_publisher import BloggerPublisher
 from .config import Config, platform_readiness
 from .content import PostContent
@@ -21,16 +20,15 @@ from .cover import make_cover
 from .drive_helper import DriveHelper, folder_url
 from .fact_check import FactChecker, FactCheckReport
 from .history import HistoryEntry, HistoryStore, PostHistory
-from .naver_publisher import NaverPublisher
 from .progress import ProgressReporter
 from .publishing import (
     PublishContext,
     attach_references,
     base_notes,
-    publish_all,
+    publish_blogger,
     published_urls,
     skipped_results,
-    write_previews,
+    write_preview,
 )
 from .research import FactSheet, Researcher
 from .setup_engine import SetupReport, ensure_layout
@@ -69,7 +67,6 @@ class Services:
     writer: PostWriter | None = None
     checker: FactChecker | None = None
     blogger: BloggerPublisher | None = None
-    naver: NaverPublisher | None = None
     cover_maker: Callable[..., Path] = make_cover
     now: Callable[[], datetime] = lambda: datetime.now(KST)
 
@@ -218,10 +215,9 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
     reporter.step("image", "done", "1200×630")
     ctx = PublishContext(content, cover, base_notes(now, report.passed), history, setup.layout.public_folder_id,
                          now.strftime("%Y%m%d_%H%M"))
-    google_preview, naver_preview = write_previews(ctx, workdir, cfg.blog_name, cfg.naver_align, options.dry_run)
+    preview = write_preview(ctx, workdir, options.dry_run)
     reporter.file(cover, "대표 이미지", "🖼️ 대표 이미지", stage="draft")
-    reporter.file(google_preview, "구글 블로그 미리보기", "👀 구글 블로그에 올라갈 모습 — 내려받아 브라우저로 열어 보세요", stage="draft")
-    reporter.file(naver_preview, "네이버 블로그 미리보기", "👀 네이버 블로그에 올라갈 모습 (에디터 입력 순서 그대로)", stage="draft")
+    reporter.file(preview, "구글 블로그 미리보기", "👀 구글 블로그에 올라갈 모습 — 내려받아 브라우저로 열어 보세요", stage="draft")
 
     held = not report.passed
     if options.dry_run:
@@ -232,14 +228,10 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
         reporter.step("publish", "skip", "사실 검증 미통과 — 발행 보류")
     else:
         reporter.step("publish", "run")
-        results = publish_all(services.drive, services.blogger, services.naver, ctx)
-        reporter.step("publish", "done" if any(r.ok for r in results) else "fail",
-                      " · ".join(f"{r.platform} {'⏭️' if r.skipped else ('✅' if r.ok else '❌')}" for r in results))
+        results = [publish_blogger(services.drive, services.blogger, ctx)]
+        reporter.step("publish", "done" if results[0].ok else "fail", results[0].url or results[0].message)
 
     _record(store, history, topic, content, results, options, reporter, today)
-    if any(r.platform == naver_publisher.PLATFORM and not r.ok and not r.skipped for r in results):
-        reporter.note("📝 네이버 블로그 수동 발행용 원고 (원고 파일과 같음)\n\n"
-                      f"{escape_mrkdwn(content.plain_text()[:3500])}", stage="publish")
     reporter.note(f"🤖 [AI백과사전] {escape_mrkdwn(content.title)}",
                   build_report_blocks(content.title, content.category, results, report.summary_line(),
                                       options.dry_run, held and not options.dry_run), stage="publish")
@@ -254,7 +246,7 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
 
 def _record(store: HistoryStore, history: PostHistory, topic: Topic, content: PostContent, results, options: RunOptions,
             reporter: ProgressReporter, today: str) -> None:
-    """한 곳이라도 발행에 성공했을 때만 기록 (실패·테스트는 기록하지 않아 다음에 다시 쓸 수 있음)."""
+    """발행에 성공했을 때만 기록 (실패·테스트는 기록하지 않아 다음에 다시 쓸 수 있음)."""
     if options.dry_run or not any(r.ok for r in results):
         reporter.step("record", "skip", "발행하지 않아 기록 안 함")
         return

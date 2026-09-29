@@ -52,8 +52,6 @@ jobs:
       DRIVE_ROOT_FOLDER_NAME: ${{ vars.DRIVE_ROOT_FOLDER_NAME }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
       GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS }}
-      NAVER_PUBLISH_MODE: ${{ vars.NAVER_PUBLISH_MODE }}
-      NAVER_ALIGN: ${{ vars.NAVER_ALIGN }}
       TOPIC_LOOKBACK_DAYS: ${{ vars.TOPIC_LOOKBACK_DAYS }}
       MIN_REFERENCES: ${{ vars.MIN_REFERENCES }}
       MAX_FIX_ROUNDS: ${{ vars.MAX_FIX_ROUNDS }}
@@ -72,11 +70,6 @@ jobs:
       SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
       SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
       BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
-      NAVER_BLOG_ID: ${{ secrets.NAVER_BLOG_ID }}
-      NAVER_STORAGE_STATE_B64: ${{ secrets.NAVER_STORAGE_STATE_B64 }}
-      # (선택) 갱신된 네이버 로그인 정보를 시크릿에 자동 저장할 PAT (Secrets: Read and write)
-      GH_SECRETS_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
-      HAS_NAVER: ${{ secrets.NAVER_STORAGE_STATE_B64 != '' && secrets.NAVER_BLOG_ID != '' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -91,10 +84,6 @@ jobs:
 
       - name: 패키지 설치
         run: pip install -r requirements.txt
-
-      - name: 네이버용 브라우저 설치
-        if: env.HAS_NAVER == 'true'
-        run: python -m playwright install --with-deps chromium
 
       - name: 자동화 실행
         id: autopost
