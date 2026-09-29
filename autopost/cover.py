@@ -1,4 +1,7 @@
-"""대표 이미지 (1200×630, 참고 블로그 대표 이미지와 같은 비율) — 글 제목·카테고리·블로그 이름."""
+"""대표 이미지 (1200×630, 참고 블로그 대표 이미지와 같은 비율) — 글 제목·카테고리·블로그 이름.
+
+디자인: Hashnode 스타일(refero.design) — 종이색 면 위 가는 테두리 패널, 먹색 제목, 파란 강조색 하나, 그림자·그라데이션 없음.
+"""
 from __future__ import annotations
 
 import re
@@ -9,10 +12,15 @@ from PIL import Image, ImageDraw
 from .fonts import load_font
 
 WIDTH, HEIGHT = 1200, 630
-TOP_COLOR = (13, 71, 161)  # 참고 블로그 강조색(#2196F3) 계열의 짙은 파랑
-BOTTOM_COLOR = (33, 150, 243)
-ACCENT = (255, 193, 7)  # 💡 박스 노랑(#ffc107)
+PAPER = (244, 245, 247)  # #f4f5f7 바탕
+CANVAS = (249, 250, 251)  # #f9fafb 패널
+FOG = (209, 212, 217)  # #d1d4d9 가는 테두리
+INK = (22, 25, 28)  # #16191c 제목
+SLATE = (123, 129, 135)  # #7b8187 바닥글
+BLUE = (29, 82, 222)  # #1d52de 유일한 강조색
+TAG_BG = (227, 235, 253)  # #e3ebfd 파랑을 옅게 (카테고리 태그)
 MARGIN = 72
+INSET = 28  # 패널 바깥 여백
 MAX_LINES = 3
 # 폰트에 없는 이모지는 네모(□)로 찍히므로 이미지에는 넣지 않는다
 _EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿⬀-⯿⌀-⏿️‍]")
@@ -22,13 +30,11 @@ def strip_emoji(text: str) -> str:
     return re.sub(r"\s+", " ", _EMOJI.sub("", text)).strip()
 
 
-def _gradient() -> Image.Image:
-    image = Image.new("RGB", (WIDTH, HEIGHT), TOP_COLOR)
+def _canvas() -> Image.Image:
+    """종이색 바탕 위에 18px 둥근 패널 (가는 테두리) — 그라데이션·그림자 없음."""
+    image = Image.new("RGB", (WIDTH, HEIGHT), PAPER)
     draw = ImageDraw.Draw(image)
-    for y in range(HEIGHT):
-        ratio = y / (HEIGHT - 1)
-        color = tuple(int(a + (b - a) * ratio) for a, b in zip(TOP_COLOR, BOTTOM_COLOR))
-        draw.line([(0, y), (WIDTH, y)], fill=color)
+    draw.rounded_rectangle([INSET, INSET, WIDTH - INSET, HEIGHT - INSET], radius=18, fill=CANVAS, outline=FOG, width=2)
     return image
 
 
@@ -62,25 +68,27 @@ def wrap_title(draw: ImageDraw.ImageDraw, text: str, font, max_width: int, max_l
 
 
 def make_cover(path: Path, title: str, category: str, blog_name: str, date_text: str) -> Path:
-    image = _gradient()
+    image = _canvas()
     draw = ImageDraw.Draw(image)
-    badge_font, title_font, footer_font = load_font(30), load_font(64), load_font(30, bold=False)
+    badge_font, title_font, footer_font = load_font(28), load_font(62), load_font(28, bold=False)
 
-    badge = strip_emoji(category) or "AI"
-    badge_w = int(draw.textlength(badge, font=badge_font)) + 44
-    draw.rounded_rectangle([MARGIN, MARGIN, MARGIN + badge_w, MARGIN + 56], radius=28, fill=ACCENT)
-    draw.text((MARGIN + 22, MARGIN + 9), badge, font=badge_font, fill=(33, 33, 33))
+    badge = strip_emoji(category) or "AI"  # 카테고리 태그: 옅은 파랑 바탕 + 파란 점 + 파란 글씨 (10px 둥근 사각)
+    badge_w = int(draw.textlength(badge, font=badge_font)) + 64
+    draw.rounded_rectangle([MARGIN, MARGIN, MARGIN + badge_w, MARGIN + 52], radius=10, fill=TAG_BG)
+    draw.ellipse([MARGIN + 20, MARGIN + 21, MARGIN + 30, MARGIN + 31], fill=BLUE)
+    draw.text((MARGIN + 42, MARGIN + 9), badge, font=badge_font, fill=BLUE)
 
     lines = wrap_title(draw, strip_emoji(title), title_font, WIDTH - MARGIN * 2)
-    line_h = 84
-    top = (HEIGHT - line_h * len(lines)) // 2 + 10
+    line_h = 82
+    top = (HEIGHT - line_h * len(lines)) // 2 + 6
     for index, line in enumerate(lines):
-        draw.text((MARGIN, top + index * line_h), line, font=title_font, fill=(255, 255, 255))
+        draw.text((MARGIN, top + index * line_h), line, font=title_font, fill=INK)
 
-    draw.line([(MARGIN, HEIGHT - 110), (WIDTH - MARGIN, HEIGHT - 110)], fill=(255, 255, 255), width=2)
-    draw.text((MARGIN, HEIGHT - 92), blog_name, font=footer_font, fill=(255, 255, 255))
+    draw.line([(MARGIN, HEIGHT - 116), (WIDTH - MARGIN, HEIGHT - 116)], fill=FOG, width=2)
+    draw.rectangle([MARGIN, HEIGHT - 117, MARGIN + 64, HEIGHT - 114], fill=BLUE)  # 파란 강조선 하나
+    draw.text((MARGIN, HEIGHT - 98), blog_name, font=footer_font, fill=INK)
     date_w = draw.textlength(date_text, font=footer_font)
-    draw.text((WIDTH - MARGIN - date_w, HEIGHT - 92), date_text, font=footer_font, fill=(227, 242, 253))
+    draw.text((WIDTH - MARGIN - date_w, HEIGHT - 98), date_text, font=footer_font, fill=SLATE)
 
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, "PNG", optimize=True)

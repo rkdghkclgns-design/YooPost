@@ -29,7 +29,7 @@ def test_full_html_follows_reference_blog_order():
 
 def test_highlight_style_matches_reference_blog():
     html = block_html(Block("paragraph", text="Vera는 **에이전트 전용 CPU**입니다."))
-    assert "background-color:#ede9fe" in HIGHLIGHT and "font-weight:700" in HIGHLIGHT
+    assert "background-color:#e3ebfd" in HIGHLIGHT and "font-weight:700" in HIGHLIGHT
     assert f'<b style="{HIGHLIGHT}">에이전트 전용 CPU</b>입니다.' in html
     table = block_html(Block("table", headers=("항목",), rows=(("**88개** 코어",),)))
     assert f'<b style="{HIGHLIGHT}">88개</b>' in table
@@ -57,18 +57,18 @@ def test_optional_parts_are_omitted():
 
 
 def test_block_styles_match_reference_design():
-    assert "#fff3cd" in block_html(Block("info", text="t", title="팁"))
+    assert "border-left:3px solid #1d52de" in block_html(Block("info", text="t", title="팁"))  # Hashnode 파란 강조
     warning = block_html(Block("warning", text="t", title="⚠️ 주의"))
-    assert "#f8d7da" in warning and "⚠️ ⚠️" not in warning
+    assert "border-left:3px solid #d93036" in warning and "⚠️ ⚠️" not in warning
     assert "💡 " in block_html(Block("info", text="제목 없음"))
     table = block_html(Block("table", headers=("항목",), rows=(("<x>",),)))
-    assert "#2196F3" in table and "&lt;x&gt;" in table
+    assert "background-color:#f4f5f7" in table and "border-radius:14px" in table and "&lt;x&gt;" in table
     code = block_html(Block("code", text="a < b"))
-    assert "#1e1e1e" in code and "a &lt; b" in code
+    assert "background-color:#16191c" in code and "a &lt; b" in code
     assert block_html(Block("list", items=("하나",))).startswith("<ul")
     assert block_html(Block("subheading", text="소제목")).startswith("<h3")
     assert block_html(Block("paragraph", text="a\n\nb")).count("<p") == 2
-    assert 'style="background-color:#f5f5f5' in block_html(Block("paragraph", text="`id`"))
+    assert 'style="background-color:#f4f5f7' in block_html(Block("paragraph", text="`id`"))
 
 
 class _Posts:

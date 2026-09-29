@@ -18,32 +18,38 @@ from .constants import (
 )
 from .content import Block, PostContent, inline_html
 
-P = 'style="line-height:1.8;margin:0 0 18px;"'
-H2 = 'style="margin:44px 0 16px;padding-bottom:8px;border-bottom:2px solid #e3f2fd;font-size:1.45em;"'
-H3 = 'style="margin:28px 0 12px;font-size:1.2em;color:#0d47a1;"'
-SUMMARY = ("background-color:#f0f7ff;border-left:4px solid #2196F3;padding:20px;margin:20px 0;"
-           "border-radius:8px;line-height:1.8;")
-INFO = ("background-color:#fff3cd;border-left:4px solid #ffc107;padding:15px 20px;margin:20px 0;"
-        "border-radius:5px;line-height:1.8;")
-WARNING = ("background-color:#f8d7da;border-left:4px solid #dc3545;padding:15px 20px;margin:20px 0;"
-           "border-radius:5px;line-height:1.8;")
-TABLE_WRAP = "overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;margin:20px 0;"
-TABLE = "width:100%;border-collapse:collapse;font-size:15px;"
-TH = "border:1px solid #ddd;padding:12px;text-align:left;background-color:#2196F3;color:#fff;font-weight:bold;"
-TD = "border:1px solid #ddd;padding:12px;text-align:left;word-break:keep-all;"
-CODE_WRAP = ("background-color:#1e1e1e;border-radius:8px;padding:15px;margin:20px 0;overflow-x:auto;"
+# 글 디자인 — Hashnode 스타일(refero.design): 먹색 글자 · 종이색 면 · 가는 회색 테두리 · 파란 강조색 하나 · 그림자 없음
+INK, SLATE, FOG, PAPER, STONE, CANVAS, BLUE = "#16191c", "#7b8187", "#d1d4d9", "#f4f5f7", "#e6e8eb", "#f9fafb", "#1d52de"
+P = f'style="line-height:1.8;margin:0 0 18px;color:{INK};"'
+H2 = (f'style="margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid {FOG};font-size:1.4em;'
+      f'font-weight:700;letter-spacing:-0.02em;line-height:1.35;color:{INK};"')
+H3 = f'style="margin:28px 0 12px;font-size:1.15em;font-weight:600;letter-spacing:-0.01em;color:{INK};"'
+SUMMARY = (f"background-color:{CANVAS};border:1px solid {FOG};border-radius:14px;padding:20px 24px;margin:24px 0;"
+           f"line-height:1.8;color:{INK};")
+INFO = (f"background-color:{PAPER};border:1px solid {FOG};border-left:3px solid {BLUE};border-radius:10px;"
+        f"padding:16px 20px;margin:20px 0;line-height:1.8;color:{INK};")
+WARNING = (f"background-color:{PAPER};border:1px solid {FOG};border-left:3px solid #d93036;border-radius:10px;"
+           f"padding:16px 20px;margin:20px 0;line-height:1.8;color:{INK};")
+TABLE_WRAP = (f"overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;margin:24px 0;border:1px solid {FOG};"
+              "border-radius:14px;")
+TABLE = f"width:100%;border-collapse:collapse;font-size:15px;color:{INK};"
+TH = (f"border-bottom:1px solid {FOG};padding:12px 14px;text-align:left;background-color:{PAPER};color:{INK};"
+      "font-weight:600;white-space:nowrap;")
+TD = f"border-top:1px solid {STONE};padding:12px 14px;text-align:left;word-break:keep-all;"
+CODE_WRAP = (f"background-color:{INK};border-radius:10px;padding:14px;margin:20px 0;overflow-x:auto;"
              "max-width:100%;text-align:left;")
-CODE = ("margin:0;padding:12px;color:#d4d4d4;font-family:Consolas,Monaco,'Courier New',monospace;"
+CODE = ("margin:0;padding:10px;color:#e6e8eb;font-family:'JetBrains Mono',Consolas,Monaco,'Courier New',monospace;"
         "font-size:14px;line-height:1.6;white-space:pre;")
-INLINE_CODE = ("background-color:#f5f5f5;padding:2px 6px;border-radius:4px;font-weight:600;color:#0066cc;")
-# 중요 내용 강조 — 참고 블로그처럼 굵은 글씨 + 연보라 형광 배경 (줄이 바뀌어도 배경이 끊기지 않게)
-HIGHLIGHT = ("background-color:#ede9fe;color:#1f1b3a;font-weight:700;padding:1px 5px;border-radius:4px;"
+INLINE_CODE = (f"background-color:{PAPER};border:1px solid {STONE};padding:1px 6px;border-radius:6px;"
+               f"font-weight:500;color:{BLUE};")
+# 중요 내용 강조 — 굵은 글씨 + 형광 배경 (디자인의 파란 강조색을 옅게, 줄이 바뀌어도 배경이 끊기지 않게)
+HIGHLIGHT = (f"background-color:#e3ebfd;color:{INK};font-weight:700;padding:1px 5px;border-radius:4px;"
              "-webkit-box-decoration-break:clone;box-decoration-break:clone;")
 FIGURE = 'style="margin:28px 0;text-align:center;"'
-FIGURE_IMG = "max-width:100%;height:auto;border-radius:8px;border:1px solid #eee;"
-FIGCAPTION = 'style="margin-top:8px;color:#666;font-size:0.9em;line-height:1.6;"'
+FIGURE_IMG = f"max-width:100%;height:auto;border-radius:14px;border:1px solid {FOG};"
+FIGCAPTION = f'style="margin-top:8px;color:{SLATE};font-size:0.9em;line-height:1.6;"'
 
-NOTE = 'style="color:#666;font-size:0.92em;line-height:1.7;margin:16px 0;"'
+NOTE = f'style="color:{SLATE};font-size:0.92em;line-height:1.7;margin:16px 0;"'
 
 
 @dataclass(frozen=True)
@@ -119,7 +125,7 @@ def block_html(block: Block, images: Mapping[str, ImageRef] | None = None) -> st
         return f'<div style="{CODE_WRAP}"><pre style="{CODE}"><code>{html.escape(block.text)}</code></pre></div>'
     if block.kind == "list":
         items = "".join(f'<li style="margin:6px 0;">{_inline(i)}</li>' for i in block.items)
-        return f'<ul style="line-height:1.8;margin:0 0 18px;">{items}</ul>'
+        return f'<ul {P}>{items}</ul>'
     return _paragraphs(block.text)
 
 
@@ -149,7 +155,7 @@ def build_blog_html(content: PostContent, extras: PostExtras = PostExtras()) -> 
     if extras.cover_url:
         parts.append(
             f'<div style="text-align:center;margin:24px 0;"><img src="{html.escape(extras.cover_url, quote=True)}" '
-            f'alt="{html.escape(content.title, quote=True)}" style="max-width:100%;height:auto;border-radius:8px;"/></div>'
+            f'alt="{html.escape(content.title, quote=True)}" style="max-width:100%;height:auto;border-radius:14px;border:1px solid {FOG};"/></div>'
         )
     if content.summary:
         parts.append(_summary(content.summary))
@@ -179,7 +185,7 @@ def build_blog_html(content: PostContent, extras: PostExtras = PostExtras()) -> 
             f"{html.escape(r.url)}</a></li>"
             for r in content.references
         )
-        parts += ['<hr style="margin:40px 0 20px;border:0;border-top:1px solid #ddd;"/>',
+        parts += [f'<hr style="margin:40px 0 20px;border:0;border-top:1px solid {FOG};"/>',
                   f"<h2 {H2}>{REFERENCES_HEADING}</h2>", f'<ul style="line-height:1.7;">{refs}</ul>']
     notes = " ".join(n for n in (extras.basis_note, content.caveat, extras.fact_note) if n)
     if notes:

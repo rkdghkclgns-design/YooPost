@@ -58,6 +58,29 @@ class BloggerPublisher:
                 break
         return posts
 
+    def editable_posts(self, limit: int = 200) -> list[dict]:
+        """디자인을 다시 입힐 발행 글 (id·제목·라벨·본문)."""
+        posts: list[dict] = []
+        token = None
+        while len(posts) < limit:
+            response = self._service.posts().list(
+                blogId=self._blog_id, maxResults=min(PAGE_SIZE, limit - len(posts)), fetchBodies=True,
+                status="LIVE", orderBy="PUBLISHED", pageToken=token,
+                fields="items(id,title,url,labels,content),nextPageToken",
+            ).execute(num_retries=3) or {}
+            posts.extend(response.get("items") or [])
+            token = response.get("nextPageToken")
+            if not token:
+                break
+        return posts
+
+    def update_content(self, post_id: str, html_body: str) -> str:
+        """발행 글의 본문만 바꾼다 (제목·라벨·주소 그대로). 글 주소를 돌려준다."""
+        response = self._service.posts().patch(
+            blogId=self._blog_id, postId=post_id, body={"content": html_body}, fields="url",
+        ).execute(num_retries=2)
+        return str((response or {}).get("url") or "")
+
     def blog_info(self) -> dict:
         """연동 점검용 — 블로그 이름·주소·글 수."""
         response = self._service.blogs().get(blogId=self._blog_id, fields="name,url,posts/totalItems").execute(
