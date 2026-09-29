@@ -1,0 +1,132 @@
+name: AI백과사전 자동 포스팅
+# Actions 실행 목록에 무엇을 실행했는지 표시 (예: "💬 슬랙 포스팅 · GPT-6 [테스트]")
+run-name: >-
+  ${{ github.event_name == 'schedule' && (vars.AUTO_PUBLISH == 'true' && '⏰ 정기 자동 포스팅' || '⏰ 정기 미리보기 [검토용]') || format('{0} {1}{2}{3}',
+  inputs.source == 'slack' && '💬 슬랙' || '🖐 수동',
+  inputs.mode == 'setup' && '초기 세팅' || '포스팅',
+  inputs.topic && format(' · {0}', inputs.topic) || '',
+  inputs.dry_run && ' [테스트]' || '') }}
+
+on:
+  schedule:
+    # 매일 11:00 (KST) = UTC 02:00, 하루 1회 — 미국 발표가 밤사이 나온 뒤. GitHub 부하로 수~수십 분 늦을 수 있음
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "실행 모드"
+        type: choice
+        options: [post, setup]
+        default: post
+      topic:
+        description: "쓸 주제 (비우면 최신 AI 공식 발표·뉴스에서 자동 선정)"
+        type: string
+        default: ""
+      dry_run:
+        description: "테스트 실행 (발행 없이 조사·원고·사실 검증·미리보기만 슬랙으로)"
+        type: boolean
+        default: false
+      source:
+        description: "실행 경로 (슬랙 명령은 slack — 자동 입력)"
+        type: string
+        default: ""
+      requested_by:
+        description: "요청자 (슬랙 명령 시 자동 입력)"
+        type: string
+        default: ""
+
+concurrency:
+  group: auto-post
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      # 일반 설정 (Settings > Secrets and variables > Actions > Variables)
+      BLOG_NAME: ${{ vars.BLOG_NAME }}
+      DRIVE_ROOT_FOLDER_NAME: ${{ vars.DRIVE_ROOT_FOLDER_NAME }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS }}
+      NAVER_PUBLISH_MODE: ${{ vars.NAVER_PUBLISH_MODE }}
+      NAVER_ALIGN: ${{ vars.NAVER_ALIGN }}
+      TOPIC_LOOKBACK_DAYS: ${{ vars.TOPIC_LOOKBACK_DAYS }}
+      MIN_REFERENCES: ${{ vars.MIN_REFERENCES }}
+      MAX_FIX_ROUNDS: ${{ vars.MAX_FIX_ROUNDS }}
+      MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
+      OUTPUT_DIR: output
+      # 시크릿 (Settings > Secrets and variables > Actions > Secrets)
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # 진행 단계별 결과물 채널 ID (Variables, 비우면 알림 채널의 진행 메시지 스레드로)
+      SLACK_CHANNEL_RESEARCH: ${{ vars.SLACK_CHANNEL_RESEARCH }}
+      SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
+      SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
+      BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+      NAVER_BLOG_ID: ${{ secrets.NAVER_BLOG_ID }}
+      NAVER_STORAGE_STATE_B64: ${{ secrets.NAVER_STORAGE_STATE_B64 }}
+      # (선택) 갱신된 네이버 로그인 정보를 시크릿에 자동 저장할 PAT (Secrets: Read and write)
+      GH_SECRETS_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+      HAS_NAVER: ${{ secrets.NAVER_STORAGE_STATE_B64 != '' && secrets.NAVER_BLOG_ID != '' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 한글 폰트 설치 (대표 이미지)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 네이버용 브라우저 설치
+        if: env.HAS_NAVER == 'true'
+        run: python -m playwright install --with-deps chromium
+
+      - name: 자동화 실행
+        id: autopost
+        env:
+          # 외부 입력(inputs)은 run 스크립트에 직접 넣지 않고 환경변수로만 전달 (스크립트 인젝션 방지)
+          AUTOPOST_MODE: ${{ inputs.mode || 'post' }}
+          AUTOPOST_TOPIC: ${{ inputs.topic || '' }}
+          # 정기 자동 실행은 기본적으로 '검토용 미리보기'(발행 안 함). 자동 발행하려면 Variable AUTO_PUBLISH=true
+          AUTOPOST_DRY_RUN: ${{ (github.event_name == 'schedule' && vars.AUTO_PUBLISH != 'true') || inputs.dry_run || false }}
+          AUTOPOST_TRIGGER: ${{ inputs.source || github.event_name }}
+          AUTOPOST_REQUESTED_BY: ${{ inputs.requested_by || github.actor }}
+          AUTOPOST_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python main.py
+
+      - name: 실패 알림 (파이썬 실행 전 준비 단계 오류)
+        # 파이썬 단계 자체의 오류는 슬랙 진행 스레드로 이미 보고되므로 중복 알림하지 않음
+        if: failure() && steps.autopost.outcome != 'failure'
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then exit 0; fi
+          curl -sS -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\"🚨 [AI백과사전] GitHub Actions 준비 단계에서 실패했습니다 (패키지 설치 등). 로그: ${RUN_URL}\"}" \
+            "$SLACK_WEBHOOK_URL"
+
+      - name: 오류 진단 자료 보관 (실패 시에만, 3일)
+        # 정상 실행의 결과물(출처·원고·검증 보고·미리보기)은 슬랙에 올라가므로 실패했을 때만 보관한다.
+        if: failure()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: autopost-output-${{ github.run_id }}
+          path: output/
+          retention-days: 3
+          if-no-files-found: ignore

@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest>=8.0
+pytest-cov>=5.0
+# 참고 블로그 문법 분석 스크립트(scripts/analyze_reference_blog.py) 전용
+beautifulsoup4>=4.12

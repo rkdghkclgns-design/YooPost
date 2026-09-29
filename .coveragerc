@@ -1,0 +1,4 @@
+[run]
+source = autopost
+# Playwright sync API 는 greenlet 위에서 동작하므로 함께 추적해야 정확한 커버리지가 나온다
+concurrency = greenlet, thread

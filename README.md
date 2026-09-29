@@ -1,0 +1,282 @@
+# AI백과사전 자동 포스팅 (YooPost)
+
+매일 **AI 공식 발표·뉴스**에서 주제를 골라, 웹 검색으로 **사실을 교차 확인한 정보만** 담아
+**구글 블로그 'AI백과사전' · 네이버 블로그**에 올리고, 결과를 **슬랙 YooPost 워크스페이스**로 보고합니다.
+글의 구성·서식은 참고 블로그 [fornewchallenge.tistory.com](https://fornewchallenge.tistory.com/) **전체 게시물을 분석한 문법**을 그대로 따릅니다.
+영상은 만들지 않습니다. GitHub Actions(무료)에서 동작하며, 구조는 `본연 포스팅 자동화`와 같습니다.
+
+```
+ [슬랙 /aipost] ─▶ Cloudflare Worker ─▶ GitHub Actions ◀─ [매일 11:00]
+                    (서명 검증·중계)          │
+                                             ▼
+ ① 셀프 세팅 점검 ─▶ ② 주제 선정 ─▶ ③ 자료 조사·출처 확인 ─▶ ④ AI 원고 (참고 블로그 문법)
+                                                                  │
+      ⑧ 발행 기록 ◀─ ⑦ 구글 블로그 / 네이버 발행 ◀─ ⑥ 대표 이미지 ◀─ ⑤ 사실 검증 (틀리면 고쳐서 재검증)
+          │                                                        └ 끝내 통과 못하면 발행 보류
+          ▼
+     슬랙 결과 카드 (+ 실패 시 수동 발행용 원고)
+```
+
+---
+
+## '사실이 확인된 정보'를 보장하는 방법
+
+| 단계 | 하는 일 | 걸러내는 것 |
+|---|---|---|
+| ② 주제 선정 | OpenAI·Google DeepMind·Google AI·Hugging Face·Mistral·NVIDIA·AWS·GitHub **공식 발표 RSS**를 먼저, AI타임스·GeekNews·TechCrunch·The Verge·HF 논문·해커뉴스를 보조로 수집 → 아직 안 쓴 주제 중 AI가 1개 선택 | 이미 쓴 주제(발행 기록), AI와 무관한 글 |
+| ③ 자료 조사 | Gemini + **구글 검색 근거(grounding)** 로 사실 15~30개와 출처를 모음. 사실마다 출처 번호 | 출처 없는 사실 |
+| ③ 출처 확인 | 출처 주소를 **직접 열어** 확인: 404·없는 도메인 제외, 페이지에 주제어가 없으면 제외, 봇 차단(403)은 구글 검색 근거로 실제 확인된 주소만 인정 | **AI가 지어낸 주소**, 엉뚱한 페이지 |
+| ④ 원고 | 확인된 사실 목록만 쓰도록 지시 (수치·날짜 그대로, 모르면 '공개되지 않았습니다') | 사실 목록 밖의 수치·기능·후기 |
+| ⑤ 사실 검증 | 원고에서 수치·날짜·이름·가격·스펙 주장을 모두 뽑아 **원고와 별개로 다시 웹 검색**해 확인 / 틀림 / 확인 불가 판정 | 틀린 수치, 근거 없는 주장 |
+| ⑤ 수정 | 틀림·확인 불가 주장을 고치거나 지운 뒤 **처음부터 다시 검증** (기본 2회) | |
+| ⑤ 보류 | 그래도 통과 못하면 **발행하지 않음** — 원고·검증 보고만 슬랙에 | 확인 안 된 글의 발행 |
+| 참고 문헌 | 확인된 출처만 코드가 APA 형식으로 붙임 (AI가 참고문헌 주소를 쓸 수 없음) | 가짜 참고문헌 |
+
+슬랙 원고 채널에 올라가는 `factcheck.md` 에서 주장마다 ✅ 확인 / ❌ 틀림 / ❔ 확인 불가 와 근거 주소를 볼 수 있습니다.
+
+## 참고 블로그 문법 (전체 게시물 분석)
+
+`scripts/analyze_reference_blog.py` 가 사이트맵의 **모든 게시물**을 1초 간격으로 확인해(robots.txt 준수, 본문은 저장하지 않음)
+구성 통계만 [`autopost/data/style_profile.json`](autopost/data/style_profile.json) 에 저장하고, 원고 프롬프트가 이 프로필을 따릅니다.
+
+**분석 결과 (2026-09-29, 게시물 950개 전체 · 2023-09 ~ 2026-09, 실패 0)** — 원고는 최근 120개 기준 '현재 문법'을 따릅니다.
+
+| 항목 | 최근 120개 | 전체 950개 |
+|---|---|---|
+| 본문 분량 (공백 제외, 중앙값) | 7,914자 | 6,241자 |
+| h2 소제목 / h3 | 10 / 10 | 7 / 6 |
+| 표 / 코드블록 / 💡정보 박스 / ⚠️주의 박스 | 4 / 4 / 2 / 1.5 | 3 / 3 / 1 / 1 |
+| '한눈에 보기' 요약 박스 | 80% | 12% |
+| ❓ 자주 묻는 질문 (질문 5개 안팎) | 90% | 18% |
+| 🔗 함께 보면 좋은 글 | 93% | 12% |
+| 🎯 맺음말 / 📚 참고 문헌 및 출처 (출처 5개 안팎) | 100% / 99% | 84% / 46% |
+| 제목 맨 앞 이모지 (🆓 🤖 ⚡ 🔒 🚀 순) | 97% | 70% |
+| "안녕하세요!"로 시작 | 100% | 69% |
+| "…다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다"로 끝 | 85% | 58% |
+
+자주 쓰인 소제목: 📰 등장 배경과 의미 · ⚙ 공식 스펙 정리 · 📊 벤치마크 성능 · 💻 설치·사용 가이드 (에이전트에게 붙여넣기) ·
+🧪 성능 테스트 예제 프롬프트 4가지 · 💡 활용 시나리오 3가지 · 🛠 실전 활용 · 💬 커뮤니티 반응 · ⚠ 한계점과 주의사항
+카테고리: AI 도구 494 · AI 언어 모델 297 · AI 논문 분석 39 · AI 인사이트 32 · AI 뉴스 리뷰 24 · AI 공모주 분석 22 …
+
+AI 원고는 위 문법을 그대로 따릅니다.
+
+1. **제목**: 이모지 + 제품·모델명 + 핵심 수치·혜택 + '사용 가이드/총정리'
+2. **도입**: "안녕하세요! {날짜}, {회사}가 {제품}을 공개했습니다 … 함께 살펴보시죠!" → 대표 이미지(1200×630)
+3. **한눈에 보기** 박스 (파란 박스, 마지막 줄 "이 글에서 배울 것")
+4. **이모지 소제목(h2)** 섹션: 📰 등장 배경 · ⚙️ 공식 스펙 정리(표) · 💰 가격 · 💻 설치·사용 가이드(에이전트에게 붙여넣기) · 🧪 예제 프롬프트 · 💡 활용 시나리오 · ⚠️ 제약 …
+   — 💡 노란 정보 박스, ⚠️ 빨간 주의 박스, 파란 머리글 표, 검은 코드블록 (참고 블로그 CSS 색 그대로)
+5. **❓ 자주 묻는 질문** (Q1~Q6) → **🔗 함께 보면 좋은 글**(내 예전 글, 발행 기록에서) → **🎯 맺음말**
+   ("지금까지 … 알아보았습니다 … 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.")
+6. **📚 참고 문헌 및 출처** (APA) → "※ 본 글은 YYYY년 M월 D일 기준으로 작성되었습니다."
+
+> 참고 블로그의 **글을 복사하지 않습니다.** 서식(문법)만 따르고, 내용은 공식 발표·1차 자료에서 새로 씁니다.
+
+---
+
+## 슬랙 (YooPost 워크스페이스)
+
+실행마다 **진행 메시지 1개**가 올라오고 단계마다 갱신됩니다. 결과물은 **단계별 채널**로 갑니다.
+
+| 채널 | 내용 | 설정 |
+|---|---|---|
+| #yoopost-알림 | 진행 체크리스트 · 오류 | `SLACK_CHANNEL_ID` (Secret) |
+| #yoopost-1-주제조사 | 고른 주제 · 확인된 출처·사실 목록(sources.md) | `SLACK_CHANNEL_RESEARCH` |
+| #yoopost-2-원고검증 | 원고(post.txt) · 사실 검증 보고(factcheck.md) · 대표 이미지 · 구글/네이버 미리보기 | `SLACK_CHANNEL_DRAFT` |
+| #yoopost-3-발행결과 | 발행 결과 링크 · 실패 시 수동 발행용 원고 | `SLACK_CHANNEL_PUBLISH` |
+| #yoopost-로그인토큰-만료알림 | 네이버 로그인 만료 3일 전부터 알림 | `SLACK_CHANNEL_TOKEN_ALERT` |
+
+```
+🤖 AI 포스팅 진행 중 — Introducing Gemini 3.8 Live       → 끝나면 ✅ 포스팅 완료 — 🤖 Gemini 3.8 Live 사용 가이드…
+정기 자동 실행 · 09/30 11:04
+✅ 주제 선정 — 후보 48개 중 선택 (공식·Google DeepMind) · AI 언어 모델
+✅ 자료 조사·출처 확인 — 사실 22개 · 출처 6개 (공식 3)
+✅ AI 원고 작성 — 본문 8,420자 · 소제목 9개
+✅ 사실 검증 — 주장 31개 중 31개 확인 (검증 2회)
+✅ 대표 이미지 — 1200×630
+✅ 블로그 발행 — 구글 블로그 ✅ · 네이버 블로그 ✅
+✅ 발행 기록 — 발행 기록 12번째
+```
+
+| 슬랙 명령 | 동작 |
+|---|---|
+| `/aipost` | 최신 AI 소식에서 주제를 골라 포스팅 |
+| `/aipost Gemini 3.8 Live` | 주제 지정 (제품·모델·논문 이름) — 사실로 확인할 수 없는 주제는 거절 |
+| `/aipost 테스트` | 발행 없이 조사·원고·사실 검증·미리보기만 (`/aipost GPT-6 테스트` 가능) |
+| `/aipost 도움말` | 사용법 안내 |
+| `/aipost-setup` | 드라이브 폴더·연동 상태 점검 |
+
+---
+
+## 폴더 구조
+
+```
+├─ main.py / setup.py         포스팅 실행 / 초기 세팅 실행
+├─ autopost/
+│  ├─ feeds.py · topic.py     주제 후보 수집(RSS·논문·HN) · 주제 선정
+│  ├─ gemini.py               Gemini 호출 (모델 대체·재시도·구글 검색 근거 추출)
+│  ├─ research.py · links.py  자료 조사(fact sheet) · 출처 주소 확인
+│  ├─ writer.py · content.py  원고 작성·수정 · 글 구조(참고 블로그 문법)
+│  ├─ style_profile.py        참고 블로그 분석 프로필 → 작성 규칙 (data/style_profile.json)
+│  ├─ fact_check.py           주장 추출 → 독립 웹 검색 검증
+│  ├─ cover.py                대표 이미지 1200×630
+│  ├─ blog_html.py · blog_publisher.py   구글 블로그 HTML(참고 블로그 박스·표 디자인) · Blogger API
+│  ├─ naver_publisher.py      네이버 블로그 (Playwright, 박스·표는 굵은 글씨·기호 줄로)
+│  ├─ publishing.py · preview_page.py    참고문헌·발행 · 미리보기 페이지
+│  ├─ history.py              발행 기록 (중복 주제 방지 · 함께 보면 좋은 글)
+│  ├─ slack_helper.py · progress.py · step_summary.py   슬랙 보고 · Actions 요약
+│  ├─ token_expiry.py         네이버 로그인 만료 알림
+│  └─ pipeline.py · cli.py · config.py
+├─ scripts/                   토큰 발급·세션 저장·미리보기·참고 블로그 분석·시크릿 등록
+├─ slack_relay/               슬랙 → GitHub 중계 Cloudflare Worker
+├─ slack_app_manifest.yml     YooPost 슬랙 앱 한 번에 만들기
+├─ .github/workflows/         auto_post.yml(포스팅) · token_check.yml(만료 알림) · ci.yml(테스트)
+└─ tests/                     pytest — 외부 서비스 없이 실행 (네이버 흐름은 로컬 가짜 에디터로 검증)
+```
+
+드라이브에는 아래 구조가 **자동 생성**됩니다 (사진을 올릴 필요 없음).
+
+```
+AI백과사전_포스팅자동화/
+├─ 98_블로그_게시이미지/   (구글 블로그 대표 이미지 호스팅용, 삭제 금지)
+├─ posted_history.json     (발행 기록 — 같은 주제 반복 방지·함께 보면 좋은 글)
+└─ 00_사용안내.txt
+```
+
+---
+
+## 1회 준비
+
+> 계정: 구글 **rkdghkclgns@gmail.com** · 슬랙 워크스페이스 **YooPost** · GitHub **rkdghkclgns-design/YooPost** (비공개)
+> 네이버는 나중에 추가해도 됩니다. **시크릿을 비워두면 그 플랫폼은 자동으로 건너뜁니다.**
+
+### 0) 슬랙 워크스페이스 YooPost
+1. https://slack.com/get-started#/createnew 에서 워크스페이스를 만들고 이름을 **YooPost** 로 지정
+   (이미 있는 워크스페이스라면 `설정 및 관리 → 워크스페이스 설정 → 이름`)
+2. 채널 5개 생성: `#yoopost-알림`, `#yoopost-1-주제조사`, `#yoopost-2-원고검증`, `#yoopost-3-발행결과`, `#yoopost-로그인토큰-만료알림`
+
+### 1) 구글 (드라이브 + 블로그 'AI백과사전')
+1. rkdghkclgns@gmail.com 으로 https://www.blogger.com → **새 블로그 → 제목 `AI백과사전`**
+2. https://console.cloud.google.com → 새 프로젝트 → **Google Drive API**, **Blogger API v3** 사용 설정
+3. `OAuth 동의 화면` → 외부 → **앱 게시(프로덕션)** ※ '테스트' 상태면 refresh token 이 7일 뒤 만료
+4. `사용자 인증 정보 → OAuth 클라이언트 ID → 데스크톱 앱` → JSON 을 프로젝트 폴더에 `client_secret.json` 으로 저장
+5. 실행 — 로그인 화면에 rkdghkclgns@gmail.com 이 미리 선택되고, 'AI백과사전' 블로그 ID 를 자동으로 찾아 `.env` 에 저장합니다.
+   ```bash
+   python scripts/get_google_token.py client_secret.json
+   ```
+
+6. **상단 메뉴(섹션)** — `홈 | AI 언어 모델 | AI 도구 | AI 논문 분석 | AI 뉴스 리뷰 | AI 보안 | AI 인사이트 | AI 공모주 분석`
+   글마다 카테고리가 첫 번째 라벨로 붙으므로 메뉴는 라벨 페이지로 연결합니다. 링크 목록:
+   ```bash
+   python scripts/blogger_menu.py
+   ```
+   Blogger → **레이아웃** → 헤더 아래 **가젯 추가 → 페이지** → '홈' 체크 + **외부 링크 추가**로 7개를 위 순서대로 → 저장
+   (Blogger API 는 레이아웃을 바꿀 수 없어 이 단계만 화면에서 1번 합니다)
+   - 'AI 공모주 분석' 글은 증권신고서·공시의 사실만 정리하고, 투자 권유가 아니라는 안내가 항상 붙습니다.
+
+### 2) Gemini
+https://aistudio.google.com/apikey (rkdghkclgns@gmail.com) → 키 발급 → `.env` 의 `GEMINI_API_KEY`
+(`python scripts/set_secret.py GEMINI_API_KEY` 로 붙여넣으면 GitHub 에도 함께 저장)
+> 사실 확인에 **구글 검색 근거(Grounding with Google Search)** 를 씁니다. 무료 등급 한도 안에서 하루 1편은 충분합니다.
+
+### 3) 슬랙 앱
+1. https://api.slack.com/apps → **Create New App → From an app manifest** → 워크스페이스 **YooPost** → `slack_app_manifest.yml` 붙여넣기
+2. `Install to Workspace` → **Bot User OAuth Token(xoxb-...)** → `SLACK_BOT_TOKEN`
+3. 채널 ID(채널 이름 클릭 → 맨 아래 `C0...`)를 `.env` 에: `#yoopost-알림` → `SLACK_CHANNEL_ID`, 나머지 → `SLACK_CHANNEL_RESEARCH/DRAFT/PUBLISH/TOKEN_ALERT`
+   각 채널에서 `/invite @yoopost`
+4. (선택) `Incoming Webhooks` → `#yoopost-알림` → `SLACK_WEBHOOK_URL` (봇 전송 실패 시 예비 경로)
+5. 연결 확인: `python scripts/slack_test.py`
+
+### 4) GitHub 리포지토리 YooPost + 시크릿
+```bash
+python scripts/push_secrets.py          # .env 의 비밀값 → Secrets, 일반 설정 → Variables
+```
+(리포지토리는 비공개 `rkdghkclgns-design/YooPost`. 공개로 바꾸지 마세요)
+
+### 5) Cloudflare Worker (슬랙 명령 중계)
+1. GitHub `Settings → Developer settings → Fine-grained tokens` → **YooPost 리포지토리만** → **Actions: Read and write** 하나로 토큰 생성
+2. 배포:
+   ```bash
+   cd slack_relay
+   npx wrangler login
+   npx wrangler secret put SLACK_SIGNING_SECRET
+   npx wrangler secret put GITHUB_TOKEN
+   npx wrangler deploy
+   ```
+3. 출력된 `https://yoopost-slack-relay....workers.dev` 주소를 슬랙 앱 `Slash Commands` 두 개의 Request URL 에 입력
+4. (선택) `ALLOWED_USER_IDS` 에 실행 허용할 슬랙 사용자 ID
+
+### 6) 초기 세팅 실행
+슬랙 `/aipost-setup` (또는 GitHub `Actions → AI백과사전 자동 포스팅 → Run workflow → mode: setup`)
+→ 드라이브 폴더가 만들어지고 슬랙에 **"✅ 초기 세팅 완료" + 연동 점검표**가 옵니다.
+
+### 7) (선택) 네이버 블로그
+```bash
+python -m playwright install chromium
+python scripts/export_naver_cookies.py
+```
+열린 창에서 **직접** 로그인('로그인 상태 유지' 체크)하면 블로그 아이디를 찾아 `NAVER_BLOG_ID`·`NAVER_STORAGE_STATE_B64` 를
+`.env` 와 GitHub Secrets 에 저장합니다. 처음에는 Variable `NAVER_PUBLISH_MODE=draft`(임시저장)로 확인 후 `publish` 권장.
+- `GH_SECRETS_TOKEN`(Fine-grained PAT, YooPost · **Secrets: Read and write**)을 등록하면 발행 때 갱신된 로그인 정보를 자동 저장해 만료일이 늘어납니다.
+
+---
+
+## 운영
+
+- 매일 **11:00(KST)** 자동 실행 (GitHub 서버 — PC 가 꺼져 있어도 됨, 시작이 수~수십 분 늦을 수 있음)
+  - Variable `AUTO_PUBLISH=true`: 바로 **자동 발행**
+  - 비우거나 `false`: **검토용 미리보기**만 만들어 슬랙에 올림 → 확인 후 `/aipost` 로 발행
+- **처음 1주일은 `AUTO_PUBLISH` 없이** 미리보기로 원고·사실 검증 보고를 확인해 보는 것을 권장합니다.
+- 한 곳이라도 발행에 성공하면 `posted_history.json` 에 기록 → 같은 주제는 다시 고르지 않고, 다음 글의 '함께 보면 좋은 글'에 연결됩니다.
+- 사실 검증 미통과·발행 실패·테스트 실행은 기록하지 않으므로 다음 실행에서 다시 주제를 고릅니다.
+- 네이버가 실패하면 발행결과 채널에 **수동 발행용 원고**가 올라옵니다.
+
+### 내 PC에서 미리보기 (아무것도 올리지 않음, GEMINI_API_KEY 만 필요)
+```bash
+python scripts/preview_post.py                   # 주제 자동 선정
+python scripts/preview_post.py --topic "GPT-6"   # 주제 지정
+```
+`output/preview_…/` 에 `sources.md`, `post.txt`, `factcheck.md`, `cover.png`, `blog_preview_google.html`, `blog_preview_naver.html` 이 만들어집니다.
+
+### 참고 블로그 문법 다시 분석
+```bash
+python scripts/analyze_reference_blog.py   # 새 글만 내려받아 style_profile.json 갱신 (캐시: output/reference_cache)
+```
+
+### 로그인 토큰 만료 알림
+Actions **'로그인 토큰 만료 점검'** 이 매일 09:00(KST)에 네이버 로그인 만료일을 확인해, 만료 **3일 전부터** `#yoopost-로그인토큰-만료알림` 에 보고합니다.
+```
+🔑 로그인 토큰 만료 알림 — 네이버 3일 이내 만료
+• 네이버: 2026-10-29 (3일 남음)
+```
+확인용으로 지금 보내려면 Actions → '로그인 토큰 만료 점검' → Run workflow → `force`.
+
+## 로컬 실행 / 테스트
+```bash
+python -m venv .venv && .venv\Scripts\activate
+pip install -r requirements-dev.txt
+copy .env.example .env
+python setup.py                    # 초기 세팅
+python main.py --dry-run           # 발행 없이 미리보기 (슬랙으로)
+python main.py --topic "GPT-6"     # 실제 포스팅
+
+pytest --cov=autopost              # 파이썬 테스트 (외부 서비스 불필요)
+cd slack_relay && node --test      # Worker 테스트
+```
+
+## 문제 해결
+
+| 증상 | 원인 / 해결 |
+|---|---|
+| `자료 조사·출처 확인` 실패 "확인된 자료가 부족합니다" | 주제가 너무 새로워 공식 자료가 아직 적음 → 다음 실행이 다른 주제를 고름. `MIN_REFERENCES` 를 낮출 수 있음 |
+| ⚠️ 사실 검증 미통과 — 발행 보류 | 원고채널 `factcheck.md` 확인. 고친 원고를 직접 올리거나 `/aipost` 로 다른 주제 실행 |
+| `refresh token 이 만료` | OAuth 동의화면이 '테스트' 상태 → 프로덕션 게시 후 `get_google_token.py` 재실행 |
+| 네이버 `세션이 만료` | `export_naver_cookies.py` 재실행. 네이버 '해외 로그인 차단' 해제 확인 |
+| 네이버 셀렉터 오류 | Artifacts 의 `naver_error_*.png` 확인 후 `autopost/naver_publisher.py` 의 `NaverSelectors` 수정 |
+| Gemini 429/503 | 자동으로 다른 모델·재시도. 계속되면 `GEMINI_MODEL` 변경 또는 유료 등급 |
+| 슬랙 명령 후 `GitHub API HTTP 403/404` | Worker PAT 권한(Actions: Read and write)·대상 리포지토리(YooPost)·만료일 확인 |
+| 대표 이미지 글자가 네모(□) | 한글 폰트 없음. 로컬은 `FONT_PATH` 지정, Actions 는 `fonts-nanum` 자동 설치 |
+
+## 참고 / 주의
+- AI 원고는 사실 검증을 거치지만, **처음 한동안은 발행 전 미리보기를 직접 확인**하세요.
+- 참고 블로그는 글 문법 분석에만 쓰며, 그 블로그의 글·이미지를 옮기지 않습니다. 대표 이미지는 직접 생성합니다.
+- 하루 여러 건 발행은 스팸 판정 위험이 있어 하루 1편을 권장합니다.

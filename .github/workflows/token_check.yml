@@ -1,0 +1,35 @@
+name: 로그인 토큰 만료 점검
+
+on:
+  schedule:
+    # 매일 09:00 (KST) = UTC 00:00 — 11시 발행 전에 점검. 만료 3일 전부터 슬랙 알림
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "만료일과 상관없이 지금 알림 보내기 (확인용)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install slack_sdk
+      - name: 만료일 점검
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_TOKEN_ALERT: ${{ vars.SLACK_CHANNEL_TOKEN_ALERT }}
+          NAVER_STORAGE_STATE_B64: ${{ secrets.NAVER_STORAGE_STATE_B64 }}
+          FORCE_FLAG: ${{ inputs.force && '--force' || '' }}
+        run: python -m autopost.token_expiry $FORCE_FLAG

@@ -1,0 +1,29 @@
+# 비밀 정보 — 절대 커밋 금지
+.env
+client_secret*.json
+naver_state*.b64
+*.token.json
+
+# 실행 결과물 (참고 블로그 캐시 포함)
+output/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# Node / Cloudflare
+slack_relay/node_modules/
+slack_relay/.wrangler/
+
+# 에디터·플러그인 상태 (이 프로젝트와 무관한 워크스페이스 파일 포함)
+.idea/
+.vscode/
+.bkit/
+.mswai/
+AGENTS.md
+CLAUDE.md

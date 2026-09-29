@@ -1,0 +1,16 @@
+name = "yoopost-slack-relay"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# 깃허브아이디/리포지토리명
+GITHUB_REPO = "rkdghkclgns-design/YooPost"
+# 실행할 워크플로 파일과 브랜치
+GITHUB_WORKFLOW = "auto_post.yml"
+GITHUB_REF = "main"
+# (선택) 실행 허용할 슬랙 사용자 ID, 쉼표로 구분. 비우면 채널의 누구나 실행 가능
+ALLOWED_USER_IDS = ""
+
+# 시크릿은 파일에 적지 말고 아래 명령으로 등록하세요:
+#   npx wrangler secret put SLACK_SIGNING_SECRET
+#   npx wrangler secret put GITHUB_TOKEN

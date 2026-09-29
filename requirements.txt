@@ -1,0 +1,16 @@
+# Google (Drive / Blogger / OAuth)
+google-api-python-client>=2.150
+google-auth>=2.35
+google-auth-oauthlib>=1.2
+
+# AI (Gemini + 구글 검색 근거)
+google-genai>=1.0
+
+# Slack
+slack_sdk>=3.33
+
+# 대표 이미지 · 네이버 발행 · 기타
+Pillow>=10.4
+playwright>=1.48
+requests>=2.32
+python-dotenv>=1.0

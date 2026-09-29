@@ -1,0 +1,188 @@
+/**
+ * 슬랙(YooPost 워크스페이스) 슬래시 커맨드 → GitHub Actions(workflow_dispatch) 중계 Cloudflare Worker.
+ *
+ * GitHub Actions 는 외부 요청(웹훅)을 직접 받을 수 없어서, 슬랙 명령을 이 Worker 가 받아
+ * 서명 검증 후 GitHub API 로 워크플로를 실행시킨다. (Cloudflare 무료 플랜으로 충분)
+ *
+ * 필요한 설정 (wrangler secret put / wrangler.toml [vars])
+ *   SLACK_SIGNING_SECRET : 슬랙 앱 > Basic Information > Signing Secret
+ *   GITHUB_TOKEN         : fine-grained PAT (YooPost 리포지토리 Actions: Read and write 만)
+ *   GITHUB_REPO          : "깃허브아이디/YooPost"
+ *   GITHUB_WORKFLOW      : (선택) 워크플로 파일명, 기본 auto_post.yml
+ *   GITHUB_REF           : (선택) 실행 브랜치, 기본 main
+ *   ALLOWED_USER_IDS     : (선택) 실행 허용 슬랙 사용자 ID 목록 "U0123,U0456"
+ *
+ * 사용 예:  /aipost                       → 최신 AI 소식에서 주제를 골라 포스팅
+ *           /aipost Gemini 3.8 Live       → 주제 지정
+ *           /aipost 테스트                → 발행 없이 조사·원고·사실 검증 미리보기(dry-run)
+ *           /aipost 도움말                → 사용법 안내 (실행 안 함)
+ *           /aipost-setup                 → 초기 세팅 점검
+ */
+
+export const COMMANDS = {
+  "/aipost": "post",
+  "/ai포스팅": "post",
+  "/aipost-setup": "setup",
+  "/초기세팅": "setup",
+};
+
+const MAX_AGE_SECONDS = 60 * 5;
+const MAX_TOPIC = 100;
+const DRY_RUN_WORDS = /(테스트|dry-?run|test)/gi;
+const HELP_WORDS = /^(도움말|help|사용법|\?)$/i;
+
+export const HELP_TEXT = [
+  "*🤖 AI백과사전 자동 포스팅 명령어*",
+  "• `/aipost` — 최신 AI 공식 발표·뉴스에서 주제를 골라 바로 포스팅",
+  "• `/aipost Gemini 3.8 Live` — 주제 지정 (제품·모델·논문 이름)",
+  "• `/aipost 테스트` — 발행 없이 자료 조사·원고·사실 검증·미리보기만 (`/aipost GPT-6 테스트` 처럼 주제와 함께 가능)",
+  "• `/aipost-setup` — 구글 드라이브 폴더·연동 상태 점검",
+  "",
+  "실행하면 채널에 진행 메시지가 올라오고 단계별(주제 선정 → 자료 조사 → 원고 → 사실 검증 → 대표 이미지 → 발행 → 기록)로 갱신됩니다.",
+  "사실 검증을 통과하지 못한 글은 발행하지 않고 원고·검증 보고만 남깁니다.",
+].join("\n");
+
+export default {
+  async fetch(request, env) {
+    if (request.method !== "POST") {
+      return new Response("ok");
+    }
+    const raw = await request.text();
+    if (!(await verifySlackSignature(request.headers, raw, env.SLACK_SIGNING_SECRET))) {
+      return new Response("invalid signature", { status: 401 });
+    }
+
+    const form = new URLSearchParams(raw);
+    const command = form.get("command") || "";
+    const mode = COMMANDS[command];
+    if (!mode) {
+      return reply(`알 수 없는 명령어입니다: ${command}\n\n${HELP_TEXT}`);
+    }
+    const text = (form.get("text") || "").trim();
+    if (HELP_WORDS.test(text)) {
+      return reply(HELP_TEXT);
+    }
+
+    const userId = form.get("user_id") || "";
+    const allowed = (env.ALLOWED_USER_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
+    if (allowed.length > 0 && !allowed.includes(userId)) {
+      return reply("이 명령어를 실행할 권한이 없습니다. 관리자에게 문의하세요.");
+    }
+
+    const { topic, dryRun } = parseText(text);
+    const inputs = buildInputs(mode, topic, dryRun, cleanText(form.get("user_name") || userId, 30));
+    try {
+      await dispatch(env, inputs);
+    } catch (err) {
+      return reply(`GitHub Actions 실행 요청에 실패했습니다: ${err.message}`);
+    }
+
+    const label = mode === "setup"
+      ? "초기 세팅"
+      : `AI 포스팅${topic ? ` (${topic})` : ""}${dryRun ? " [테스트]" : ""}`;
+    return reply(
+      `🤖 ${label} 요청을 접수했습니다. 1분 안에 진행 메시지가 올라오고, 단계마다 갱신됩니다.`,
+      "in_channel",
+    );
+  },
+};
+
+export function parseText(text) {
+  const dryRun = new RegExp(DRY_RUN_WORDS.source, "i").test(text);
+  const topic = cleanText(text.replace(DRY_RUN_WORDS, ""), MAX_TOPIC);
+  return { topic, dryRun };
+}
+
+export function cleanText(value, limit) {
+  return value
+    .replace(/[`<>&*_~|!"'\\]/g, "") // 슬랙 mrkdwn·따옴표 제어문자 제거 (멘션·코드블록 탈출 방지)
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+export function buildInputs(mode, topic, dryRun, requestedBy) {
+  // workflow_dispatch 의 inputs 값은 모두 문자열로 전달한다 (boolean 입력도 "true"/"false")
+  return {
+    mode,
+    topic: mode === "setup" ? "" : topic,
+    dry_run: dryRun && mode !== "setup" ? "true" : "false",
+    source: "slack",
+    requested_by: requestedBy,
+  };
+}
+
+export async function verifySlackSignature(headers, body, secret, nowSeconds = Date.now() / 1000) {
+  const timestamp = headers.get("X-Slack-Request-Timestamp");
+  const signature = headers.get("X-Slack-Signature");
+  if (!secret || !timestamp || !signature) {
+    return false;
+  }
+  if (Math.abs(nowSeconds - Number(timestamp)) > MAX_AGE_SECONDS) {
+    return false; // 재전송(replay) 공격 방지
+  }
+  const expected = await sign(secret, `v0:${timestamp}:${body}`);
+  return timingSafeEqual(expected, signature);
+}
+
+export async function sign(secret, message) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw", encoder.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"],
+  );
+  const mac = await crypto.subtle.sign("HMAC", key, encoder.encode(message));
+  return "v0=" + [...new Uint8Array(mac)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function timingSafeEqual(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+  let diff = 0;
+  for (let i = 0; i < a.length; i += 1) {
+    diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return diff === 0;
+}
+
+export function dispatchUrl(env) {
+  const workflow = env.GITHUB_WORKFLOW || "auto_post.yml";
+  return `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${workflow}/dispatches`;
+}
+
+async function dispatch(env, inputs) {
+  if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) {
+    throw new Error("Worker 에 GITHUB_TOKEN / GITHUB_REPO 가 설정되지 않았습니다");
+  }
+  const response = await fetch(dispatchUrl(env), {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "yoopost-slack-relay",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ref: env.GITHUB_REF || "main", inputs }),
+  });
+  if (response.status !== 204 && response.status !== 200) {
+    throw new Error(`GitHub API HTTP ${response.status}${await errorDetail(response)}`);
+  }
+}
+
+// GitHub 오류 본문의 message 만 짧게 전달 (예: "Unexpected inputs provided", "Bad credentials")
+async function errorDetail(response) {
+  try {
+    const body = await response.json();
+    const message = cleanText(String(body.message || ""), 80);
+    return message ? ` — ${message}` : "";
+  } catch {
+    return "";
+  }
+}
+
+function reply(text, responseType = "ephemeral") {
+  return new Response(JSON.stringify({ response_type: responseType, text }), {
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+  });
+}

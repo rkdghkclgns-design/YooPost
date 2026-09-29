@@ -1,0 +1,32 @@
+# YooPost 워크스페이스용 슬랙 앱 매니페스트
+# https://api.slack.com/apps → Create New App → From an app manifest → 워크스페이스 'YooPost' 선택 → 아래 내용 붙여넣기
+# ※ url 두 곳은 Cloudflare Worker 배포 후 나온 주소(https://yoopost-slack-relay.<계정>.workers.dev/)로 바꾸세요
+display_information:
+  name: YooPost
+  description: AI백과사전 — 구글·네이버 블로그 AI 자동 포스팅을 슬랙에서 제어합니다
+  background_color: "#0d47a1"
+features:
+  bot_user:
+    display_name: yoopost
+    always_online: true
+  slash_commands:
+    - command: /aipost
+      url: https://yoopost-slack-relay.example.workers.dev/
+      description: AI 소식 자동 포스팅 (자료 조사 → 원고 → 사실 검증 → 발행)
+      usage_hint: "[주제] [테스트]  ·  도움말"
+      should_escape: false
+    - command: /aipost-setup
+      url: https://yoopost-slack-relay.example.workers.dev/
+      description: 구글 드라이브 폴더·연동 상태 점검
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - commands
+      - chat:write
+      - chat:write.public
+      - files:write
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
