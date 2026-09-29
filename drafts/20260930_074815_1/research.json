@@ -1,0 +1,37 @@
+{
+  "topic": "Introducing MiMo-V2.6 series (Xiaomi MiMo, 2026-09-22)",
+  "source_url": "https://mimo.xiaomi.com/mimo-v2-6/article",
+  "sources": [
+    {"id": "S1", "title": "Introducing MiMo-V2.6 series", "url": "https://mimo.xiaomi.com/mimo-v2-6/article", "publisher": "Xiaomi MiMo", "published": "2026-09-22", "official": true},
+    {"id": "S2", "title": "XiaomiMiMo/MiMo-V2.6-Pro-RL (Hugging Face model card)", "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL", "publisher": "Xiaomi MiMo (Hugging Face)", "published": "", "official": true},
+    {"id": "S3", "title": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD (Hugging Face model card)", "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD", "publisher": "Xiaomi MiMo (Hugging Face)", "published": "", "official": true},
+    {"id": "S4", "title": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD (Hugging Face model card)", "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD", "publisher": "Xiaomi MiMo (Hugging Face)", "published": "", "official": true},
+    {"id": "S5", "title": "XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B (Hugging Face model card)", "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B", "publisher": "Xiaomi MiMo (Hugging Face)", "published": "", "official": true},
+    {"id": "S6", "title": "Diagnosing and Mitigating Tool-Call Repetition in MiMo-V2.6", "url": "https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition", "publisher": "Xiaomi MiMo", "published": "2026-09-27", "official": true},
+    {"id": "S7", "title": "MiMo-V2.6-Pro - Intelligence, Performance & Price Analysis", "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro", "publisher": "Artificial Analysis", "published": "", "official": false},
+    {"id": "S8", "title": "Xiaomi MiMo-V2.6 Open Source: Pro, Flash, 9B Models", "url": "https://www.eweek.com/news/xiaomi-mimo-v26-open-source-rl-reproduction/", "publisher": "eWeek", "published": "2026-09-23", "official": false},
+    {"id": "S9", "title": "Xiaomi introduces Mimo-V2.6 series open-source AI model family", "url": "https://siliconangle.com/2026/09/22/xiaomi-introduces-mimo-v2-6-series-open-source-ai-model-family/", "publisher": "SiliconANGLE", "published": "2026-09-22", "official": false},
+    {"id": "S10", "title": "[mimo-v2.6-pro] Tool-use meltdown in multi-round agentic sessions (Issue #98)", "url": "https://github.com/XiaomiMiMo/MiMo/issues/98", "publisher": "GitHub (XiaomiMiMo/MiMo)", "published": "2026-09-22", "official": false}
+  ],
+  "images": [
+    {"id": "I1", "image_url": "https://mimo.xiaomi.com/mimo-v2-6/assets/aaindex-trim.png", "page_url": "https://mimo.xiaomi.com/mimo-v2-6/article", "caption": "Artificial Analysis Intelligence Index v4.3 점수 비교 차트 (MiMo-V2.6-Pro 46점)", "credit": "Xiaomi MiMo / Artificial Analysis"},
+    {"id": "I2", "image_url": "https://mimo.xiaomi.com/mimo-v2-6/assets/pareto.png", "page_url": "https://mimo.xiaomi.com/mimo-v2-6/article", "caption": "Intelligence Index 대비 과제당 비용 차트 (MiMo-V2.6-Pro가 파레토 선 위에 위치)", "credit": "Xiaomi MiMo / Artificial Analysis"}
+  ],
+  "factcheck": {
+    "claims": 104,
+    "confirmed": 94,
+    "removed": [
+      "FAQ: '9B 증류 모델은 SGLang·vLLM·Transformers 사용법이 모델 카드에 있지만' — S5 원문(README)에는 SGLang 명령과 OpenAI 호환 호출 예시만 있음 → vLLM·Transformers 삭제",
+      "경고 박스: 'MCP 도구 74개를 붙인 환경' — S10 원문은 MCP 도구 5개, OpenAI 함수 형식 변환 후 도구 정의 74개 → '도구 정의 74개'로 수정",
+      "경고 박스: 'Claude 계열과 GLM Flash는 거의 문제가 없었다' — 원문은 'worst case is a wrong parameter — never flooding' → 원문대로 수정",
+      "툴 호출 섹션: '가장 눈에 띈 문제가 툴 호출 반복' — S6 원문 'one of the most noticeable issues' → '가장 눈에 띈 문제 중 하나'",
+      "툴 호출 섹션: 'RL 중 한 턴에 10회 이상 호출하는 비율' — S6 은 반복 사례를 단계별 체크포인트로 재실행한 비율 → 측정 방식대로 수정",
+      "벤치마크 섹션: '오픈 웨이트 116개 모델 중 1위' — S7 은 오픈 웨이트 모델을 같은 크기군끼리만 비교 → '비슷한 크기의 오픈 웨이트 모델 116개 중 1위'",
+      "벤치마크 섹션: 'CyberGym은 표에서 MiMo 모델만 수치가 있고' — S1 부록·S2 표에는 MiMo-V2.5-Pro·DeepSeek·Kimi·GLM 수치도 있음 → 'Claude·GPT 비교 모델의 수치가 없고'",
+      "도입·요약: '툴 호출 반복 문제를 고친/고쳐' — S6 은 'dropped substantially'(감소) → '줄인/줄여'",
+      "맺음말: 'RL 학습 환경과 코드까지 열어 두었으며' — S1 은 'We are open-sourcing' 로 공개 완료 여부 미확인 → '공개한다고 밝혔으며'",
+      "설치 섹션: Flash vLLM 명령이 모델 카드 명령의 일부만 옮김(--tool-call-parser 등 누락) — S4 원문 명령 전체로 교체"
+    ],
+    "note": "Opus 검증(claude-opus-5-5): S1 발표문 HTML 과 페이지가 불러오는 bench.js(부록 벤치마크 표, 2026-09-22 스냅숏)·rl-curves.js(RL 곡선 원자료)를 curl 로 받아 대조. DeepSWE v1.1 은 rl-curves.js 계열 이름으로 Pro 58.41→72.57, Flash 48.67→65.68 을 확인해 Pro/Flash 대응을 확정(본문은 발표문 문장 48.8 사용), 25%/12% 는 같은 문장의 Flash→Pro 순서로 확인. S2 Pro-RL·S3 Pro-MOPD·S4 Flash-MOPD·S5 9B 모델 카드는 HF raw README 로 받아 표 17행 전 셀·구조(70/60/10, 48/39/9, 384/8, 256/8, 681M ViT, 308M·127M 오디오, MTP 7토큰)·명령(vLLM TP4/TP8, SGLang TP16 2노드, 9B SGLang)·MIT·77.4B 토큰 확인(GPT-5.6 Sol DeepSWE 73.0 은 카드 표 값, S1 부록에는 '-'). I1·I2 는 원본 PNG 를 내려받아 막대값(53·53·51·48·47·46·45·45·44)과 파레토 선·매력 사분면 위치 확인. S6 블로그는 HTML 원문으로 0.05%, OpenCode 1.02/0.54(표 최고), 11.1→24.6%, 32회·보상 0, 8회·20스텝·$2.31M, 13.45→3.83%, 12스텝·약 7,000개, $90,000(4%), 9/25 06:00 UTC+8, 모델명 유지, 하한 지표 설명 확인. S7 은 HTML 로 #1/116·46·40.8(중앙값 77.9, 샤오미 API)·4.16s(2.33s) 확인(수치는 변동 가능). S8 eWeek(2026-09-23)는 Epoch AI 'flawed' 분류, 'not a mini version of Pro', 성능 이전 가정 금지, Qwen3.5 라이선스 체인, 독립 검증 문장 확인. S9 SiliconANGLE 로 46.32·가격·20배·1M 교차 확인. S10 은 GitHub API 로 본문·댓글 확인(생성 2026-09-22T17:21Z, 본문 Date 2026-09-22/23, 120 병렬, 13회 동일 호출, 이슈 열림). 104개 중 94개 원문 그대로 확인, 10개 수정(삭제·교체), 보완: DeepSWE 상승폭에 Flash/Pro 명시, MiMo VisualCoding 자체 평가 표기, AA 속도 측정 조건 표기."
+  }
+}
