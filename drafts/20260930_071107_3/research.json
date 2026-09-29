@@ -1,0 +1,32 @@
+{
+ "topic": "Project Swap: What happens when agents trade for us? (Anthropic, 2026-09-24)",
+ "source_url": "https://www.anthropic.com/research/project-swap",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Project Swap: What happens when agents trade for us?",
+   "url": "https://www.anthropic.com/research/project-swap",
+   "publisher": "Anthropic",
+   "published": "2026-09-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Project Deal",
+   "url": "https://www.anthropic.com/features/project-deal",
+   "publisher": "Anthropic",
+   "published": "2026-04-24",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "모델별 효율 중 'Sonnet 0.80', 'Fable 0.86' 수치 (원문에 없음 — 'Sonnet은 Haiku와 Opus 사이, Fable은 Opus에 근접하나 낮음'으로 교체, 본문·표 모두)",
+   "S3(Research 목록)·S4(GitHub 이슈, 비공식) 출처 — 근거로 쓰지 않아 삭제"
+  ],
+  "note": "Opus 검증: anthropic.com/research/project-swap 와 features/project-deal 본문을 다시 받아 전체 텍스트(각주 포함)와 문장 단위 대조. 게시일은 원문 표기와 인용 정보 모두 2026-09-24 (GitHub 이슈의 9/28·9/29 는 사용 안 함). 'Haiku 0.55~Opus 0.88' 표현은 오류 — 0.55는 참가자 실제 순위 기준 시장 결과, Haiku 0.75·Opus 0.88·최적 0.95는 Claude 순위 기준. 0.12·0.08은 동일 에이전트 회귀 결과로 원문 확인. 188명은 '분석 풀'이 아니라 순위 제출자로 정정, 거짓말 1%는 '최선호 책을 언급한 에이전트 중 100명 중 1명'으로 정정, 냉정/친사회 지시 설명을 원문대로 수정. PDF·부록은 열지 않았고 웹 본문만 근거로 사용."
+ }
+}
