@@ -23,6 +23,7 @@ def test_prompt_contains_style_rules_facts_and_schema():
     assert "  - 📰 등장 배경" in prompt and "[확인된 사실]" in prompt and "[S1]" in prompt
     assert "3,000~9,000자" in prompt and '"source_ids"' in prompt
     assert "다시 찾아뵙겠습니다" in prompt
+    assert "오늘 날짜(작성일)를 발표일처럼 쓰지 않습니다" in prompt
 
 
 def test_write_adds_closing_signature():
