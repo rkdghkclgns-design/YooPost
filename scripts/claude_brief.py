@@ -11,7 +11,9 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -61,6 +63,24 @@ def recent_titles(cfg, limit: int = 40) -> list[str]:
         return [f"(발행 기록을 읽지 못했습니다: {exc})"]
 
 
+def pending_drafts(days: int = 7) -> list[str]:
+    """최근 원고 폴더의 주제 — 아직 ✅ 전이라 블로그 기록에 없어도 같은 주제를 다시 쓰지 않도록."""
+    if not DRAFTS.is_dir():
+        return []
+    cutoff = time.time() - days * 86400
+    topics = []
+    for research in sorted(DRAFTS.glob("*/research.json"), reverse=True):
+        if research.stat().st_mtime < cutoff:
+            continue
+        try:
+            data = json.loads(research.read_text(encoding="utf-8-sig"))
+            post = json.loads((research.parent / "post.json").read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        topics.append(f"{post.get('category', '?')} · {data.get('topic', '')}  ({data.get('source_url', '')})")
+    return topics
+
+
 def new_draft_dir(category: str) -> Path:
     stamp = datetime.now(KST).strftime("%Y%m%d_%H%M%S")
     number = CATEGORIES.index(category) + 1 if category in CATEGORIES else 0
@@ -91,6 +111,8 @@ def main() -> int:
     print("\n[research.json 형식]\n" + RESEARCH_SCHEMA)
     print("\n[이미 쓴 글 — 같은 주제·같은 원문 금지]")
     print("\n".join(f"- {t}" for t in recent_titles(cfg)) or "- (없음)")
+    print("\n[최근 7일 원고 (승인 대기 포함) — 같은 주제·같은 원문 금지]")
+    print("\n".join(f"- {t}" for t in pending_drafts()) or "- (없음)")
     if args.new:
         print(f"\n[새 원고 폴더] {new_draft_dir(args.category)}")
     return 0
