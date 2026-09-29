@@ -1,0 +1,57 @@
+{
+ "topic": "What Do You Want from AI? (Anthropic, 2026-09-29)",
+ "source_url": "https://www.anthropic.com/research/your-thoughts-on-ai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "What Do You Want from AI?",
+   "url": "https://www.anthropic.com/research/your-thoughts-on-ai",
+   "publisher": "Anthropic",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "What 81,000 people want from AI",
+   "url": "https://www.anthropic.com/features/81k-interviews",
+   "publisher": "Anthropic",
+   "published": "2026-03-18",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Introducing Anthropic Interviewer",
+   "url": "https://www.anthropic.com/research/anthropic-interviewer",
+   "publisher": "Anthropic",
+   "published": "2025-12-04",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "About Anthropic Interviewer",
+   "url": "https://www.anthropic.com/about-anthropic-interviewer",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "What 81,000 people told us about AI economics",
+   "url": "https://www.anthropic.com/research/81k-economics",
+   "publisher": "Anthropic",
+   "published": "2026-04-22",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 76,
+  "removed": [
+   "긍정적 정서가 가장 높은 지역은 사하라 이남 아프리카(75.8%), 라틴아메리카(73.7%), 남아시아(69.2%)였고, 상대적으로 신중한 지역은 서유럽(64.4%), 오세아니아(64.5%), 북미(65.5%)였습니다. (원문 수치와 불일치·역산 추정값 → S2 원문의 67%·60% 하한·'우려 없음' 비율로 교체)",
+   "이전 조사에 비해 Claude Code까지 대상이 포함된 점이 눈에 띕니다. (원문은 '더 많은 Claude 제품'만 명시 → 그 표현으로 교체)",
+   "Anthropic은 표본이 초기 도입자 중심이며 인터넷 접근성의 영향을 받는다고 인정했습니다. ('인터넷 접근성' 언급 없음 → 초기 도입자 편향·AI 보급 차이로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 anthropic.com 원문을 curl 로 다시 받아 전 주장 대조(EGRESS_BLOCKED 없음). 확인: 조사 기간 9/29~10/6, Free·Pro·Max·계정 2주·Claude/Claude Code, 약 15분, 공개 선택(공개 안 해도 참여·분석, 종료 시 영구 삭제), 이전 조사가 Anthropic Institute 의제 형성·WEF 발표(S1 원문), 80,508명·159개국·70개 언어, 바라는 것 9개·우려 13개 비율, 빛과 그림자 5쌍, 3배 의존, S3 1,250명·86/65/70/79/91%, S5 1/5·상위25% 3배·5.1(7점). 수정: 우려 표에 누락된 '의미와 창의성 11.7%'·'웰빙과 의존 11.2%' 추가(과도한 제한 11.7%는 맞음), 비율 설명(바라는 것=1인 1범주, 우려=중복 집계·평균 2.3개), '치명적 오류'→'신뢰성 문제', '공개를 요청하면 삭제'→'삭제를 요청하면', 게시 시점(조사·초기 분석 후)·최종 검토 제외 가능, S1 WEF 문장 원문대로 보완, S2 발행일 2026-03-18 기록."
+ }
+}
