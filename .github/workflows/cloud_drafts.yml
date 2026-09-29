@@ -21,25 +21,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      BLOG_NAME: ${{ vars.BLOG_NAME }}
-      MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
-      IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
-      SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
-      SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-      BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
-      IMAGE_UPLOAD_TOKEN: ${{ secrets.IMAGE_UPLOAD_TOKEN }}
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - name: 코드 (main)
         uses: actions/checkout@v4
         with:
           ref: main
+          persist-credentials: false
 
       - name: 원고 데이터 (yoopost-drafts)
         uses: actions/checkout@v4
@@ -59,7 +46,23 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 원고 전송 · 진행 막대 · 발행 기록
-        run: python scripts/cloud_sync.py --root .yoopost-drafts
+        # 시크릿은 이 단계에만 준다 (원고 브랜치의 데이터는 코드로 실행하지 않는다)
+        env:
+          BLOG_NAME: ${{ vars.BLOG_NAME }}
+          MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
+          IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+          SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
+          SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          IMAGE_UPLOAD_TOKEN: ${{ secrets.IMAGE_UPLOAD_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          WATCHDOG: ${{ github.event.schedule == '30 1 * * *' && '--watchdog' || '' }}
+        run: python scripts/cloud_sync.py --root .yoopost-drafts $WATCHDOG
 
       - name: 상태 저장 (state/)
         if: always()
@@ -72,6 +75,7 @@ jobs:
           git commit -q -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           for attempt in 1 2 3 4; do
             git pull --rebase -q origin yoopost-drafts && git push -q origin HEAD:yoopost-drafts && exit 0
+            git rebase --abort 2>/dev/null || true
             sleep $((attempt * 5))
           done
           echo "::error::상태를 저장하지 못했습니다"; exit 1
