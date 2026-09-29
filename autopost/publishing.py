@@ -47,7 +47,8 @@ class PublishContext:
         return tuple(i for i in self.images if i.id in wanted)
 
     def marker(self) -> dict[str, str]:
-        return {"topic": self.topic or self.content.title, "source": self.source_url}
+        return {"topic": self.topic or self.content.title, "source": self.source_url,
+                "category": self.content.category}
 
 
 def attach_references(content: PostContent, sheet: FactSheet, now: datetime) -> PostContent:

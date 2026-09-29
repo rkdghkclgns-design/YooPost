@@ -14,6 +14,7 @@ from difflib import SequenceMatcher
 from types import MappingProxyType
 from typing import Mapping
 
+from .constants import CATEGORIES
 from .links import canonical
 
 log = logging.getLogger(__name__)
@@ -101,12 +102,14 @@ def history_from_posts(posts) -> PostHistory:
             continue
         marker = read_marker(str(post.get("content") or ""))
         labels = [str(label) for label in post.get("labels") or []]
+        # Blogger 는 라벨 순서를 바꿔 돌려주므로 '첫 라벨'이 아니라 카테고리 목록에 있는 라벨을 쓴다
+        category = str(marker.get("category") or next((label for label in labels if label in CATEGORIES), ""))
         title = str(post.get("title") or "")
         entries.append(HistoryEntry(
             date=str(post.get("published") or "")[:10],
             title=title,
             topic=str(marker.get("topic") or title),
-            category=labels[0] if labels else "",
+            category=category,
             source_url=str(marker.get("source") or ""),
             urls=MappingProxyType({"blogger": str(post["url"])}),
         ))

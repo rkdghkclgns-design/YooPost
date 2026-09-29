@@ -48,7 +48,7 @@ class BloggerPublisher:
         while len(posts) < limit:
             request = self._service.posts().list(
                 blogId=self._blog_id, maxResults=min(PAGE_SIZE, limit - len(posts)), fetchBodies=True,
-                status="live", orderBy="published", pageToken=token,
+                status="LIVE", orderBy="PUBLISHED", pageToken=token,  # Blogger API 는 대문자 값만 받는다
                 fields="items(title,url,published,labels,content),nextPageToken",
             )
             response = request.execute(num_retries=3) or {}

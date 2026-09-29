@@ -135,7 +135,8 @@ def test_recent_posts_pages_through_live_posts_and_blog_info():
     publisher = BloggerPublisher(service, "123")
     assert [p["title"] for p in publisher.recent_posts(limit=52)] == ["1", "2", "3"]
     first, second = service.calls
-    assert first["status"] == "live" and first["fetchBodies"] is True and first["maxResults"] == 50
+    assert first["status"] == "LIVE" and first["orderBy"] == "PUBLISHED"  # API 허용 값 (소문자면 거절됨)
+    assert first["fetchBodies"] is True and first["maxResults"] == 50
     assert first["pageToken"] is None and second["pageToken"] == "t2" and second["maxResults"] == 50
     assert publisher.blog_info() == {"name": "AI백과사전", "url": "https://ai.blogspot.com/", "posts": 7}
     limited = BloggerPublisher(_ListService([{"items": [{"title": "a"}], "nextPageToken": "more"}]), "1")

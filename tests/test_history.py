@@ -43,14 +43,17 @@ def test_history_from_blog_posts_is_oldest_first():
         {"title": "B", "url": "https://b/2", "published": "2026-09-29T10:00:00+09:00", "labels": ["AI 도구", "x"],
          "content": marker_comment({"topic": "원 기사 B", "source": "https://src/b"})},
         {"title": "A", "url": "https://b/1", "published": "2026-09-28T10:00:00+09:00", "labels": [], "content": ""},
+        {"title": "C", "url": "https://b/0", "published": "2026-09-27", "labels": ["AWS", "AI 보안", "Claude"],
+         "content": ""},
         {"title": "no url"}, "garbage",
     ]
     history = history_from_posts(posts)
-    assert [e.title for e in history.entries] == ["A", "B"]
+    assert [e.title for e in history.entries] == ["C", "A", "B"]
+    assert history.entries[0].category == "AI 보안"  # 라벨 순서가 바뀌어도 카테고리 라벨을 찾는다
     newest = history.entries[-1]
     assert (newest.date, newest.topic, newest.category, newest.source_url) == \
         ("2026-09-29", "원 기사 B", "AI 도구", "https://src/b")
-    assert history.entries[0].topic == "A" and history.entries[0].urls == {"blogger": "https://b/1"}
+    assert history.entries[1].topic == "A" and history.entries[1].urls == {"blogger": "https://b/1"}
     assert history.is_duplicate("다른 제목", "https://src/b/")
 
 

@@ -64,7 +64,7 @@ def test_cover_falls_back_to_inline_image_when_host_fails(tmp_path):
     result = publish_blogger(FakeImageHost(fail=True), blogger, ctx(cover))
     body = blogger.posts[0][1]
     assert result.ok and 'src="data:image/jpeg;base64,' in body
-    assert r'<!--yoopost {"topic":"\uc6d0 \uae30\uc0ac","source":"https://src"}-->' in body
+    assert r'<!--yoopost {"topic":"\uc6d0 \uae30\uc0ac","source":"https://src","category":"AI \uc5b8\uc5b4 \ubaa8\ub378"}-->' in body
     host = FakeImageHost()
     publish_blogger(host, FakeBlogger(), ctx(cover))
     assert host.uploads == [("cover.png", "stamp_cover.png")]
