@@ -2,7 +2,7 @@ name: 테스트
 
 on:
   push:
-    # yoopost-drafts 는 클라우드 원고 데이터만 있는 브랜치 (코드 없음) — cloud_drafts.yml 이 처리
+    # yoopost-drafts 는 클라우드 원고 데이터만 있는 브랜치 (코드 없음) — drafts_trigger.yml → main 의 cloud_drafts.yml 이 처리
     branches-ignore: [yoopost-drafts]
     paths-ignore: ["**.md"]
   pull_request:

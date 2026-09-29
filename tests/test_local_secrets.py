@@ -13,7 +13,7 @@ def test_upload_secrets_sends_values_via_stdin_only():
     calls = []
     failed = upload_secrets({"A": "secret-a", "B": "secret-b"}, run=_runner(calls, fail=("B",)))
     assert failed == ["B"]
-    assert calls[0] == (["gh", "secret", "set", "A"], "secret-a")
+    assert calls[0] == (["gh", "secret", "set", "--env", "production", "A"], "secret-a")  # main 전용 환경
     assert all("secret-" not in " ".join(cmd) for cmd, _ in calls)  # 값은 명령줄 인자에 넣지 않음
 
 
@@ -30,7 +30,7 @@ def test_save_everywhere_updates_env_and_optionally_github(tmp_path):
     calls = []
     assert save_everywhere({"BLOGGER_BLOG_ID": "7990695773373420731"}, env, run=_runner(calls)) == []
     assert env.read_text(encoding="utf-8") == "# 설정\nBLOGGER_BLOG_ID=7990695773373420731\nOTHER=keep\n"
-    assert calls == [(["gh", "secret", "set", "BLOGGER_BLOG_ID"], "7990695773373420731")]
+    assert calls == [(["gh", "secret", "set", "--env", "production", "BLOGGER_BLOG_ID"], "7990695773373420731")]
 
     calls.clear()
     save_everywhere({"X": "1"}, env, upload=False, run=_runner(calls))

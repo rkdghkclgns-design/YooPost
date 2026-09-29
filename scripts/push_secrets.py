@@ -1,9 +1,9 @@
-"""로컬 .env 값을 GitHub 리포지토리 Secrets / Variables 로 한 번에 등록 (gh CLI 사용).
+"""로컬 .env 값을 GitHub Secrets(production 환경) / Variables 로 한 번에 등록 (gh CLI 사용).
 
     python scripts/push_secrets.py            # 값이 있는 항목만 등록
     python scripts/push_secrets.py --dry-run  # 무엇을 등록할지 이름만 출력
 
-- 비밀값(토큰·키)은 Secrets, 일반 설정은 Variables 로 나눠 등록한다.
+- 비밀값(토큰·키)은 production 환경 Secrets(main 브랜치 워크플로만 읽음), 일반 설정은 Variables 로 나눠 등록한다.
 - 값은 gh 의 표준입력으로만 전달해 화면·명령줄에 남기지 않는다.
 - 현재 폴더가 GitHub 리포지토리에 연결되어 있어야 한다 (gh repo view 로 확인).
 """

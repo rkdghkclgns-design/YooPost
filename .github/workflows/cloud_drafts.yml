@@ -1,18 +1,24 @@
 name: 클라우드 원고 → 슬랙 승인 요청
 # 매일 07시 클라우드 루틴(Claude)이 원고를 yoopost-drafts 브랜치에 올리면, 여기서 슬랙 승인 요청을 보낸다.
 # 클라우드 세션에는 비밀값이 없다 — 슬랙·원고 보관함·구글 블로그 접속은 이 워크플로(GitHub 시크릿)만 한다.
+# 비밀값은 production 환경(main 브랜치만 사용 가능)에만 있다. 다른 브랜치의 워크플로는 비밀값을 읽지 못한다.
 # AI 호출 없음. 이미 보낸 원고는 다시 보내지 않는다 (원고 보관함 확인).
-run-name: "☁️ ${{ github.event.head_commit.message || github.event_name }}"
+run-name: "☁️ ${{ inputs.note || github.event_name }}"
 
 on:
-  # 원고 브랜치 push 는 yoopost-drafts 브랜치에 있는 이 파일의 사본(push 전용)이 받는다 —
-  # push 이벤트는 push 된 브랜치의 워크플로 파일로 실행되기 때문. 이 파일(main)은 정기·수동 실행용.
+  # 원고 브랜치 push 는 yoopost-drafts 브랜치의 drafts_trigger.yml(비밀값 없음)이 받아
+  # 이 워크플로를 main 에서 workflow_dispatch 로 실행시킨다 (note = 원고 커밋 메시지 첫 줄).
   schedule:
     # 06:10 KST — 클라우드 루틴(07:00) 전에 발행 기록(state/published.json)을 새로 써 둔다
     - cron: "10 21 * * *"
     # 10:30 KST — 오늘 클라우드 실행이 없거나 끝나지 않았으면 #yoopost-알림 에 경고
     - cron: "30 1 * * *"
   workflow_dispatch:
+    inputs:
+      note:
+        description: "실행 표시 (원고 브랜치 push 알림이면 커밋 메시지 — 자동 입력)"
+        type: string
+        default: ""
 
 concurrency:
   group: cloud-drafts
@@ -24,6 +30,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    environment: production
     timeout-minutes: 20
     steps:
       - name: 코드 (main)

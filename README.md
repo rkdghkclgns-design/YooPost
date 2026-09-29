@@ -206,9 +206,14 @@ python scripts/import_pasted_secret.py GEMINI_API_KEY          # .env + GitHub �
 
 ### 4) GitHub 리포지토리 YooPost + 시크릿
 ```bash
-python scripts/push_secrets.py          # .env 의 비밀값 → Secrets, 일반 설정 → Variables
+python scripts/push_secrets.py          # .env 의 비밀값 → production 환경 Secrets, 일반 설정 → Variables
 ```
 (리포지토리는 비공개 `rkdghkclgns-design/YooPost`. 공개로 바꾸지 마세요)
+
+비밀값은 저장소 시크릿이 아니라 **production 환경**(Settings > Environments, 배포 브랜치 `main` 만)에 있다.
+main 의 워크플로(`publish_draft.yml`·`auto_post.yml`·`cloud_drafts.yml`)만 읽을 수 있어서, 다른 브랜치에 워크플로를 올려도 비밀값을 꺼낼 수 없다.
+원고 브랜치(`yoopost-drafts`)의 `drafts_trigger.yml` 은 비밀값 없이 main 의 `cloud_drafts.yml` 을 실행만 시킨다.
+환경 확인: Actions > `publish_draft.yml` 수동 실행에서 `check_only` 체크 (발행하지 않고 시크릿이 들어 있는지만 본다).
 
 ### 5) Cloudflare Worker (슬랙 `/aipost` 명령 중계)
 ```bash
