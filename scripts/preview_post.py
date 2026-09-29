@@ -27,7 +27,8 @@ from autopost.cover import make_cover  # noqa: E402
 from autopost.fact_check import FactChecker, FactCheckReport  # noqa: E402
 from autopost.gemini import Gemini  # noqa: E402
 from autopost.history import PostHistory  # noqa: E402
-from autopost.pipeline import KST  # noqa: E402
+from autopost.pipeline import KST, MIN_KEPT_RATIO  # noqa: E402
+from autopost.prune import Pruner, removed_markdown  # noqa: E402
 from autopost.publishing import PublishContext, attach_references, base_notes, write_preview  # noqa: E402
 from autopost.quote_images import ImageCollector  # noqa: E402
 from autopost.research import Researcher  # noqa: E402
@@ -78,8 +79,19 @@ def main() -> int:
             fixes += 1
             content = writer.revise(content, sheet, [v.as_issue() for v in report.issues])
             report = checker.check(content, sheet, today, rounds=fixes + 1)
-        (workdir / "factcheck.md").write_text(report.markdown(content.title), encoding="utf-8")
-        print(f"④ 사실 검증: {report.summary_line()} → {'통과' if report.passed else '미통과 (실제 실행이면 발행 보류)'}")
+        extra = ""
+        if not report.passed:  # 실제 실행과 같게: 남은 틀림·확인 불가 주장이 든 문장·항목만 뺀다
+            before = content.text_length()
+            result = Pruner(gemini).prune(content, report.issues)
+            content, extra = result.content, removed_markdown(result.removed, result.unlocated)
+            kept = content.text_length() / max(before, 1)
+            verdict = ("발행 보류 (위치 못 찾은 주장 남음)" if result.unlocated else
+                       "발행 보류 (너무 많이 빠짐)" if kept < MIN_KEPT_RATIO or len(content.sections) < 2 else
+                       f"문제 문장·항목 {len(result.removed)}곳 빼고 발행 가능 (본문 {kept:.0%} 유지)")
+        else:
+            verdict = "통과"
+        (workdir / "factcheck.md").write_text(report.markdown(content.title) + extra, encoding="utf-8")
+        print(f"④ 사실 검증: {report.summary_line()} → {verdict}")
 
     content = attach_references(content, sheet, now)
     (workdir / "post.txt").write_text(content.plain_text() + "\n", encoding="utf-8")

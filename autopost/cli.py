@@ -18,6 +18,7 @@ from .google_auth import build_blogger_service, build_credentials
 from .image_host import ImageHost
 from .links import USER_AGENT
 from .pipeline import AlreadyReported, RunOptions, Services, run_post, run_setup
+from .prune import Pruner
 from .quote_images import ImageCollector
 from .research import Researcher
 from .slack_helper import SlackNotifier
@@ -70,6 +71,7 @@ def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
         researcher=Researcher(gemini, session, min_sources=cfg.min_references),
         writer=PostWriter(gemini, cfg.blog_name, cfg.min_body_chars),
         checker=FactChecker(gemini),
+        pruner=Pruner(gemini),
         blogger=blogger,
         images=ImageCollector(session),
         image_host=host,

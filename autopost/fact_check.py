@@ -2,7 +2,7 @@
 
     1) 추출: 수치·날짜·가격·이름·스펙·출시 여부처럼 참/거짓을 가릴 수 있는 주장을 모두 뽑는다
     2) 검증: 구글 검색으로 주장마다 supported(확인) / contradicted(틀림) / unverifiable(확인 불가) 판정
-판정이 모두 supported 여야 통과 — 파이프라인은 통과할 때까지 원고를 고치고, 끝내 통과하지 못하면 발행하지 않는다.
+판정이 모두 supported 여야 통과 — 파이프라인은 원고를 고쳐 다시 검증하고, 그래도 남은 주장이 든 문장·항목만 빼고 발행한다 (prune.py).
 """
 from __future__ import annotations
 

@@ -3,7 +3,8 @@
     ① 주제 선정 → ② 자료 조사(구글 검색)·출처 확인·인용 이미지 확보 → ③ AI 원고
     → ④ 사실 검증(틀리면 고쳐서 재검증) → ⑤ 대표 이미지·미리보기 → ⑥ 구글 블로그 발행
 발행 기록은 구글 블로그 글 목록 자체다 (같은 주제 반복 방지·함께 보면 좋은 글).
-사실 검증을 끝내 통과하지 못하면 발행하지 않고 원고·검증 보고만 슬랙에 남긴다.
+원고를 고쳐도 사실 검증을 통과하지 못하면, 틀림·확인 불가 주장이 든 문장·항목만 빼고 발행한다 (글 전체를 멈추지 않음).
+빼고 나면 글이 너무 짧아지거나 위치를 찾지 못한 주장이 남을 때만 발행을 보류한다.
 """
 from __future__ import annotations
 
@@ -21,6 +22,7 @@ from .fact_check import FactChecker, FactCheckReport
 from .history import PostHistory, load_history
 from .image_host import ImageHost
 from .progress import ProgressReporter
+from .prune import Pruner, removed_markdown
 from .publishing import (
     PublishContext,
     attach_references,
@@ -40,6 +42,7 @@ from .writer import PostWriter
 log = logging.getLogger(__name__)
 
 KST = timezone(timedelta(hours=9))
+MIN_KEPT_RATIO = 0.6  # 문제 항목을 빼고 남은 본문이 원래의 60% 미만이면 글 자체를 믿기 어려워 보류
 TRIGGER_LABELS = {
     "schedule": "정기 자동 실행",
     "workflow_dispatch": "수동 실행",
@@ -67,8 +70,30 @@ class Services:
     blogger: BloggerPublisher | None = None
     images: ImageCollector | None = None  # 인용 이미지 내려받기·확인
     image_host: ImageHost | None = None  # 대표·인용 이미지 공개 주소 (Cloudflare Worker)
+    pruner: Pruner | None = None  # 검증 미통과 주장만 빼기 (없으면 글 전체 발행 보류)
     cover_maker: Callable[..., Path] = make_cover
     now: Callable[[], datetime] = lambda: datetime.now(KST)
+
+
+@dataclass(frozen=True)
+class FactOutcome:
+    """사실 검증 최종 결과 — 통과 / 문제 항목만 빼고 발행 / 발행 보류."""
+    report: FactCheckReport
+    removed: tuple[str, ...] = ()  # 발행 전에 뺀 문장·항목
+    unlocated: tuple[str, ...] = ()  # 원고에서 위치를 찾지 못한 주장
+    held_reason: str = ""
+
+    @property
+    def publishable(self) -> bool:
+        return not self.held_reason and (self.report.passed or bool(self.removed) or not self.report.issues)
+
+    def line(self) -> str:
+        text = self.report.summary_line()
+        if self.removed:
+            text += f" → 문제 문장·항목 {len(self.removed)}곳 빼고 발행"
+        if self.held_reason:
+            text += f" → {self.held_reason}"
+        return text
 
 
 class AlreadyReported(RuntimeError):
@@ -189,8 +214,29 @@ def _verify(services: Services, cfg: Config, content: PostContent, sheet: FactSh
         reporter.step("factcheck", "run", f"{report.summary_line()} → 원고 수정 {fixes}회차")
         content = services.writer.revise(content, sheet, [v.as_issue() for v in report.issues])
         report = services.checker.check(content, sheet, today, rounds=fixes + 1)
-    reporter.step("factcheck", "done" if report.passed else "fail", report.summary_line())
     return content, report
+
+
+def _exclude_issues(services: Services, cfg: Config, content: PostContent, sheet: FactSheet, today: str,
+                    report: FactCheckReport, reporter: ProgressReporter) -> tuple[PostContent, FactOutcome]:
+    """고쳐도 남은 틀림·확인 불가 주장이 든 문장·항목만 뺀다 — 위치를 못 찾은 주장이 있으면 한 번 더 검증."""
+    if services.pruner is None:
+        return content, FactOutcome(report, held_reason="사실 검증 미통과 — 발행 보류")
+    reporter.step("factcheck", "run", f"{report.summary_line()} → 틀림·확인 불가 항목 빼는 중")
+    result = services.pruner.prune(content, report.issues)
+    pruned, removed, unlocated = result.content, result.removed, result.unlocated
+    if unlocated:
+        report = services.checker.check(pruned, sheet, today, rounds=report.rounds + 1)
+        unlocated = ()
+        if not report.passed:
+            again = services.pruner.prune(pruned, report.issues)
+            pruned, removed, unlocated = again.content, removed + again.removed, again.unlocated
+    held = ""
+    if unlocated:
+        held = f"위치를 찾지 못한 주장 {len(unlocated)}개가 남아 발행 보류"
+    elif len(pruned.sections) < 2 or pruned.text_length() < content.text_length() * MIN_KEPT_RATIO:
+        held = "문제 항목을 빼면 본문이 너무 짧아져 발행 보류"
+    return pruned, FactOutcome(report, removed, unlocated, held)
 
 
 def _keep_unverified_draft(content: PostContent, workdir: Path, reporter: ProgressReporter) -> None:
@@ -201,15 +247,16 @@ def _keep_unverified_draft(content: PostContent, workdir: Path, reporter: Progre
                   f"⚠️ 사실 검증을 끝내지 못한 원고 — 발행하지 않았습니다: *{escape_mrkdwn(content.title)}*", stage="draft")
 
 
-def _write_outputs(content: PostContent, report: FactCheckReport, workdir: Path, reporter: ProgressReporter) -> None:
+def _write_outputs(content: PostContent, outcome: FactOutcome, workdir: Path, reporter: ProgressReporter) -> None:
     post_txt = workdir / "post.txt"
     post_txt.write_text(content.plain_text() + "\n", encoding="utf-8")
     fact_md = workdir / "factcheck.md"
-    fact_md.write_text(report.markdown(content.title), encoding="utf-8")
+    extra = removed_markdown(outcome.removed, outcome.unlocated) if outcome.removed or outcome.unlocated else ""
+    fact_md.write_text(outcome.report.markdown(content.title) + extra, encoding="utf-8")
     reporter.file(post_txt, "원고", f"📝 *{escape_mrkdwn(content.title)}*\n본문 {content.text_length():,}자 · "
                   f"해시태그: {escape_mrkdwn(' '.join(content.hashtags[:6]))} …", stage="draft")
-    icon = "✅" if report.passed else "⚠️"
-    reporter.file(fact_md, "사실 검증 보고", f"{icon} 사실 검증 — {report.summary_line()}", stage="draft")
+    icon = "✅" if outcome.report.passed else "✂️" if outcome.publishable else "⚠️"
+    reporter.file(fact_md, "사실 검증 보고", f"{icon} 사실 검증 — {outcome.line()}", stage="draft")
 
 
 def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: ProgressReporter, now: datetime,
@@ -225,15 +272,19 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: P
 
     try:
         content, report = _verify(services, cfg, content, sheet, today, reporter)
+        outcome = FactOutcome(report)
+        if not report.passed:
+            content, outcome = _exclude_issues(services, cfg, content, sheet, today, report, reporter)
     except Exception:
         _keep_unverified_draft(content, workdir, reporter)
         raise
+    reporter.step("factcheck", "done" if outcome.publishable else "fail", outcome.line())
     content = attach_references(content, sheet, now)
-    _write_outputs(content, report, workdir, reporter)
+    _write_outputs(content, outcome, workdir, reporter)
 
     reporter.step("image", "run")
     cover = services.cover_maker(workdir / "cover.png", content.title, content.category, cfg.blog_name, f"{now:%Y.%m.%d}")
-    ctx = PublishContext(content, cover, base_notes(now, report.passed), history, now.strftime("%Y%m%d_%H%M"),
+    ctx = PublishContext(content, cover, base_notes(now, outcome.publishable), history, now.strftime("%Y%m%d_%H%M"),
                          sheet.images, topic.title, topic.source_url)
     used = len(ctx.used_images())
     reporter.step("image", "done", "대표 1200×630" + (f" · 인용 {used}개" if used else ""))
@@ -241,25 +292,25 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: P
     reporter.file(cover, "대표 이미지", "🖼️ 대표 이미지", stage="draft")
     reporter.file(preview, "구글 블로그 미리보기", "👀 구글 블로그에 올라갈 모습 — 내려받아 브라우저로 열어 보세요", stage="draft")
 
-    held = not report.passed
+    held = not outcome.publishable
     if options.dry_run:
         results = skipped_results("테스트 실행(dry-run) — 발행 안 함")
         reporter.step("publish", "skip", "테스트 실행 — 발행 안 함")
     elif held:
-        results = skipped_results("사실 검증 미통과 — 발행 보류")
-        reporter.step("publish", "skip", "사실 검증 미통과 — 발행 보류")
+        results = skipped_results(outcome.held_reason)
+        reporter.step("publish", "skip", outcome.held_reason)
     else:
         reporter.step("publish", "run")
         results = [publish_blogger(services.image_host, services.blogger, ctx)]
         reporter.step("publish", "done" if results[0].ok else "fail", results[0].url or results[0].message)
 
     reporter.note(f"🤖 [AI백과사전] {escape_mrkdwn(content.title)}",
-                  build_report_blocks(content.title, content.category, results, report.summary_line(),
+                  build_report_blocks(content.title, content.category, results, outcome.line(),
                                       options.dry_run, held and not options.dry_run), stage="publish")
     ok = options.dry_run or (not held and any(r.ok for r in results))
     headline = ("🧪 테스트 완료" if options.dry_run else "⚠️ 사실 검증 미통과 — 발행 보류" if held
                 else "✅ 포스팅 완료" if ok else "❌ 포스팅 실패")
     reporter.finish(f"{headline} — {short(escape_mrkdwn(content.title), 60)}")
     write_step_summary(build_step_summary(content.title, content.category, topic.source_url, content.text_length(),
-                                          report.summary_line(), results, options.dry_run, held))
+                                          outcome.line(), results, options.dry_run, held))
     return 0 if ok else 1

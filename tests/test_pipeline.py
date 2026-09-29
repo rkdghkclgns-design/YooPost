@@ -12,6 +12,7 @@ from autopost.content import parse_post
 from autopost.fact_check import ClaimVerdict, FactCheckReport
 from autopost.history import HistoryEntry, load_history
 from autopost.pipeline import AlreadyReported, RunOptions, Services, run_post, run_setup
+from autopost.prune import PruneResult
 from autopost.research import ImageCandidate, QuoteImage
 from autopost.slack_helper import SlackNotifier
 from fakes import FakeBlogger, FakeImageHost, FakeWebClient, make_sheet, make_topic, post_dict
@@ -85,16 +86,38 @@ class StubChecker:
         return FactCheckReport((verdict,), rounds)
 
 
+class StubPruner:
+    """문제 주장마다 문장 하나를 뺐다고 보고 (unlocated 로 위치 못 찾음을 흉내)."""
+
+    def __init__(self, unlocated=(), shrink=False):
+        self.unlocated = list(unlocated)
+        self.shrink = shrink
+        self.calls = []
+
+    def prune(self, content, issues):
+        self.calls.append([v.claim for v in issues])
+        pruned = replace(content, sections=content.sections[:1]) if self.shrink else content
+        missing = tuple(self.unlocated.pop(0)) if self.unlocated else ()
+        return PruneResult(pruned, tuple(f"뺀 문장: {v.claim}" for v in issues), missing)
+
+
+def sent(client) -> str:
+    """슬랙으로 보낸 글자·블록 전체 (진행 체크리스트·결과 카드 포함)."""
+    return " ".join(client.texts()) + json.dumps([m.get("blocks") for m in client.messages + client.updates],
+                                                 ensure_ascii=False)
+
+
 def cfg(tmp_path, **env):
     base = {"OUTPUT_DIR": str(tmp_path / "out"), "MIN_BODY_CHARS": "1000", "SLACK_CHANNEL_DRAFT": "CDRAFT"}
     return load_config({**base, **env})
 
 
-def services(client, checker=(True,), researcher=None, blogger=None, writer=None, host=None, images=None):
+def services(client, checker=(True,), researcher=None, blogger=None, writer=None, host=None, images=None,
+             pruner=None):
     return Services(
         slack=SlackNotifier(channel_id="C1", client=client), selector=StubSelector(),
         researcher=researcher or StubResearcher(), writer=writer or StubWriter(), checker=StubChecker(checker),
-        blogger=blogger, images=images, image_host=host, now=lambda: NOW,
+        blogger=blogger, images=images, image_host=host, pruner=pruner, now=lambda: NOW,
     )
 
 
@@ -166,6 +189,42 @@ def test_unfixable_facts_hold_publishing(tmp_path):
                     services(client, checker=(False, False), blogger=blogger))
     assert code == 1 and blogger.posts == []
     assert any("사실 검증 미통과" in t for t in client.texts())
+
+
+def test_remaining_issues_are_removed_and_the_post_is_still_published(tmp_path):
+    client, blogger, pruner = FakeWebClient(), FakeBlogger(), StubPruner()
+    code = run_post(cfg(tmp_path, MAX_FIX_ROUNDS="1"), RunOptions(),
+                    services(client, checker=(False, False), blogger=blogger, pruner=pruner))
+    assert code == 0 and len(blogger.posts) == 1  # 발행이 멈추지 않음
+    assert pruner.calls == [["주장"]]
+    assert "교차 확인했습니다" in blogger.posts[0][1]  # 남은 내용은 모두 확인된 것
+    fact = next(p for p in (tmp_path / "out").rglob("factcheck.md")).read_text(encoding="utf-8")
+    assert "## 발행 전 제외한 문장·항목 (1곳)" in fact and "- 뺀 문장: 주장" in fact
+    assert "문제 문장·항목 1곳 빼고 발행" in sent(client) and "포스팅 완료" in sent(client)
+    assert any(u["title"] == "사실 검증 보고" and "✂️ 사실 검증" in u["initial_comment"] for u in client.uploads)
+
+
+def test_unlocated_issue_triggers_one_more_check_then_publish(tmp_path):
+    client, blogger = FakeWebClient(), FakeBlogger()
+    pruner = StubPruner(unlocated=[("못 찾은 주장",)])
+    code = run_post(cfg(tmp_path, MAX_FIX_ROUNDS="0"), RunOptions(),
+                    services(client, checker=(False, True), blogger=blogger, pruner=pruner))
+    assert code == 0 and len(blogger.posts) == 1 and len(pruner.calls) == 1  # 다시 검증해 통과
+
+
+def test_still_unlocated_or_too_short_after_removal_holds_publishing(tmp_path):
+    client, blogger = FakeWebClient(), FakeBlogger()
+    pruner = StubPruner(unlocated=[("A",), ("B",)])
+    code = run_post(cfg(tmp_path, MAX_FIX_ROUNDS="0"), RunOptions(),
+                    services(client, checker=(False, False), blogger=blogger, pruner=pruner))
+    assert code == 1 and blogger.posts == [] and len(pruner.calls) == 2
+    assert "위치를 찾지 못한 주장 1개가 남아 발행 보류" in sent(client)
+
+    client, blogger = FakeWebClient(), FakeBlogger()
+    code = run_post(cfg(tmp_path, MAX_FIX_ROUNDS="0"), RunOptions(),
+                    services(client, checker=(False,), blogger=blogger, pruner=StubPruner(shrink=True)))
+    assert code == 1 and blogger.posts == []
+    assert "본문이 너무 짧아져 발행 보류" in sent(client)
 
 
 def test_dry_run_makes_previews_without_publishing_or_uploading(tmp_path):
