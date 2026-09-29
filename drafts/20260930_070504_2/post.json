@@ -1,0 +1,419 @@
+{
+ "title": "🛠 Claude Code 2.1.280~2.1.285 총정리: 자동 모드 기본값·모델 차단·플러그인 설정 사용 가이드",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 9월 22일부터 29일까지, Anthropic의 코딩 에이전트 Claude Code가 2.1.280에서 2.1.285까지 여섯 번 업데이트되었습니다. 새 모델 Claude Opus 5.5와 Sonnet 5.5 지원은 물론, 자동 모드 기본값과 관리자용 모델·공급자 제한, 플러그인 설정 명령까지 실무에 닿는 변화가 이어졌습니다. 공식 changelog와 설정·권한·플러그인·MCP 문서를 읽고 꼭 알아 둘 부분만 정리했습니다. 함께 살펴보시죠!",
+ "summary": [
+  "2026-09-22~29에 2.1.280~2.1.285까지 6개 버전이 나왔습니다.",
+  "Claude Opus 5.5와 Sonnet 5.5가 추가되어 각각 기본 Opus·Sonnet 모델이 되었고, 둘 다 컨텍스트 1M으로 표기됩니다.",
+  "2.1.284부터 모든 요금제·공급자의 터미널·VS Code 세션이 권한 모드 설정이 없으면 자동 모드로 시작합니다.",
+  "deniedModels, availableModelsMatch, allowedProviders 같은 관리 설정 키가 늘었습니다.",
+  "claude plugin configure와 /mcp reconnect all로 플러그인·MCP 운영이 쉬워졌습니다.",
+  "이 글에서 배울 것: 이번 업데이트의 핵심 변경과 설정 방법, 주의할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Claude Code 2.1.280~2.1.285 업데이트 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Claude Code(클로드 코드)는 터미널에서 AI 에이전트에게 코딩 작업을 맡기는 Anthropic의 개발 도구입니다. 공식 변경 기록(changelog)을 보면 **2026년 9월 22일부터 29일까지 일주일 사이에 2.1.280부터 2.1.285까지 여섯 개 버전**이 연달아 나왔습니다. 버전마다 항목이 많아서 한 번에 파악하기 어렵기 때문에, 이 글에서는 실제로 체감하기 쉬운 변화만 골라 정리합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 묶음의 특징은 크게 세 갈래입니다. 첫째 **새 모델 Claude Opus 5.5와 Claude Sonnet 5.5 지원**, 둘째 **권한·모델 제한 같은 관리 설정(managed settings) 강화**, 셋째 **플러그인과 MCP(Model Context Protocol, 에이전트가 외부 도구와 연결하는 표준 규약) 사용성 개선**입니다. 개인 개발자에게는 명령어와 설정 몇 개가, 팀 관리자에게는 정책 키가 눈에 들어올 것입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "버전",
+      "날짜",
+      "대표 변경"
+     ],
+     "rows": [
+      [
+       "2.1.280",
+       "2026-09-22",
+       "Claude Opus 5.5(`claude-opus-5-5`) 추가, MCP 도구 설명 길이 상한 변경 변수"
+      ],
+      [
+       "2.1.281",
+       "2026-09-23",
+       "`\"attribution\": false` 설정, `/insights`의 자동 모드 권고"
+      ],
+      [
+       "2.1.282",
+       "2026-09-24",
+       "`maxProseWidth` 설정, 텔레메트리 변수 시작 알림"
+      ],
+      [
+       "2.1.283",
+       "2026-09-25",
+       "`deniedModels` 관리 설정, `/doctor prompt-audit`"
+      ],
+      [
+       "2.1.284",
+       "2026-09-28",
+       "Claude Sonnet 5.5(`claude-sonnet-5-5`), `/mcp reconnect all`"
+      ],
+      [
+       "2.1.285",
+       "2026-09-29",
+       "`claude plugin configure`, `allowedProviders`, `claude --desktop`"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 기준",
+     "text": "아래 내용은 Claude Code 공식 문서의 changelog와 설정·권한·플러그인·MCP 문서에서 읽은 사실만 정리했습니다. 문서는 계속 갱신되므로 실제 사용 전 본인 버전에서 확인하시기 바랍니다."
+    }
+   ]
+  },
+  {
+   "heading": "🤖 새 모델 두 개: Opus 5.5와 Sonnet 5.5",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "changelog에 따르면 2.1.280(9월 22일)에서 **Claude Opus 5.5(`claude-opus-5-5`)**가 추가되어 기본 Opus 모델이 되었고, 2.1.284(9월 28일)에서 **Claude Sonnet 5.5(`claude-sonnet-5-5`)**가 추가되어 Anthropic API의 기본 Sonnet 모델이 되었습니다. 두 모델 모두 **컨텍스트 1M(백만 토큰)**으로 표기되어 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "모델 ID",
+      "입력/출력 가격(100만 토큰당)",
+      "캐시 읽기"
+     ],
+     "rows": [
+      [
+       "Claude Opus 5.5",
+       "claude-opus-5-5",
+       "$4 / $20",
+       "$0.20"
+      ],
+      [
+       "Claude Sonnet 5.5",
+       "claude-sonnet-5-5",
+       "$2 / $10",
+       "$0.20"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "표의 가격은 changelog에 적힌 값입니다. 같은 2.1.280에서는 **Pro와 Team Standard 요금제의 기본 모델이 Sonnet에서 Opus로 바뀌어** Max, Team Premium, Enterprise와 같아졌습니다. 또 `/effort`가 모델별로 바뀌기 전에 저장한 노력 수준은 Opus 5.5 같은 **새 모델에는 적용되지 않고**, 직접 고르기 전까지 그 모델의 기본값으로 시작합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 가격 해석 주의",
+     "text": "표는 changelog의 표기를 옮긴 것입니다. 구독 요금제나 사용량 한도가 어떻게 적용되는지는 이 글에서 확인하지 못했으므로, 실제 청구 방식은 공식 요금 페이지에서 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "🛡 자동 모드가 기본 시작 권한 모드가 됐습니다",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "changelog를 보면 이 변화는 두 단계로 들어왔습니다. 2.1.283에서는 **서드파티 공급자를 쓰거나 텔레메트리를 끈 대화형 세션**이, 2.1.284에서는 **모든 요금제와 공급자의 터미널·VS Code 세션**이 권한 모드 설정이 없을 때 **자동 모드(auto mode)로 시작**하도록 바뀌었습니다. 두 항목 모두 `permissions.defaultMode`를 설정하면 그 값이 우선한다고 적혀 있습니다. 자동 모드에서는 사용자가 매번 승인하는 대신 분류기(classifier)라는 **두 번째 모델이 행동을 검토**합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "권한 모드 6가지 한눈에"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모드",
+      "승인 없이 실행되는 것",
+      "적합한 상황"
+     ],
+     "rows": [
+      [
+       "default(Manual)",
+       "읽기만",
+       "모든 행동을 직접 검토, 민감한 작업"
+      ],
+      [
+       "acceptEdits",
+       "읽기, 파일 편집, mkdir·touch·mv·cp 같은 파일 명령",
+       "검토하며 코드를 반복 수정"
+      ],
+      [
+       "plan",
+       "읽기, 자동 모드를 쓸 수 있으면 분류기가 승인한 명령",
+       "코드를 바꾸기 전에 코드베이스 탐색"
+      ],
+      [
+       "auto",
+       "전부(백그라운드 안전 검사 포함)",
+       "긴 작업, 승인 피로 줄이기"
+      ],
+      [
+       "dontAsk",
+       "읽기와 사전 승인된 도구, 나머지는 거부",
+       "잠긴 CI와 스크립트"
+      ],
+      [
+       "bypassPermissions",
+       "전부",
+       "격리된 컨테이너와 VM 전용"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Shift+Tab**을 누르면 모드를 순환할 수 있습니다. 문서 기준으로 auto에서 한 번 누르면 default로 가고, 이후 default, acceptEdits, plan 순서로 돕니다. 한 세션만 다른 모드로 시작하려면 `claude --permission-mode default`처럼 플래그를 줍니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 주 changelog에는 자동 모드 관련 수정도 여럿 있습니다. 2.1.280에서는 **안전 검사가 검토 자체를 거절한 동작을 반복해서 재시도하던 문제가 고쳐져 한 번만 거부**되고, 안전 검사가 응답하지 않을 때는 재시도 간격을 늘리다가 **10번 연속이면 메시지와 함께 턴을 멈춥니다**. 2.1.281에서는 `/insights`가 최근 세션에서 자동 모드가 처리할 수 있었던 권한 프롬프트 수를 추정해 권고합니다. 2.1.284에서는 작업 디렉터리 밖 읽기를 묻는 자동 모드 프롬프트에 **\"Yes, but ask again next time\"** 답변이 생겼습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "자동 모드를 쓸 수 있는 조건도 알아 두세요. 권한 모드 문서는 **요금제는 전부 지원**하고, Anthropic API에서는 **Claude Opus 4.6 이상, Sonnet 4.6 이상** 등을 지원 모델로 적고 있습니다. Sonnet 4.5, Opus 4.5, Haiku 같은 **이전 모델은 어느 공급자에서도 지원되지 않으며**, 자동 모드를 쓸 수 없는 세션은 기본값이 auto여도 **Manual로 시작**합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 기본 모드를 바꾸고 싶다면",
+     "text": "`~/.claude/settings.json`에 `permissions.defaultMode`를 `default`로 두면 모든 터미널 세션이 Manual로 시작합니다. 문서의 예시는 아래 코드와 같습니다."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"permissions\": {\n    \"defaultMode\": \"default\"\n  }\n}"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 프로젝트 설정의 auto는 적용되지 않습니다",
+     "text": "문서에 따르면 `.claude/settings.json`이나 `.claude/settings.local.json`에 `\"auto\"`를 적어도 효력이 없습니다. 조직에서 자동 모드를 아예 끄려면 관리 설정에서 `permissions.disableAutoMode`를 `\"disable\"`로 둡니다."
+    }
+   ]
+  },
+  {
+   "heading": "🏢 관리 설정: 모델·공급자 제한 키",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "설정 문서는 설정 우선순위를 높은 순서로 **관리 설정, 명령줄(`claude --settings`), 프로젝트 로컬, 공유 프로젝트, 사용자** 다섯 단계로 보여 줍니다. 관리 설정은 `managed-settings.json`, MDM(모바일 기기 관리) 정책, claude.ai 콘솔로 배포되며 **사용자가 `--settings`로 넘긴 같은 키도 덮어쓰지 못합니다**."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 주에 관리자용 키가 여러 개 추가되었습니다. 아래 표는 changelog 항목을 그대로 정리한 것입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "키·변수",
+      "버전",
+      "설명(changelog 기준)"
+     ],
+     "rows": [
+      [
+       "`deniedModels`",
+       "2.1.283",
+       "특정 모델을 차단(`availableModels`가 허용해도 차단)"
+      ],
+      [
+       "`availableModelsMatch`",
+       "2.1.283",
+       "`\"exact\"`면 `availableModels` 항목이 적은 모델 버전만 허용, 새 버전은 목록에 넣기 전까지 차단"
+      ],
+      [
+       "`allowedProviders`",
+       "2.1.285",
+       "이 머신에서 쓸 수 있는 API 공급자를 제한"
+      ],
+      [
+       "`allowClaudeInChromeWithManagedMcp`",
+       "2.1.282",
+       "`managed-mcp.json`만 쓰는 환경에서 `claude --chrome` 허용"
+      ],
+      [
+       "`CLAUDE_CODE_DISABLE_WEB_FETCH`",
+       "2.1.285",
+       "WebFetch 도구를 끄는 환경 변수"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "`allowedProviders`로 고를 수 있는 공급자도 changelog에 나와 있습니다. **Anthropic API, 사용자 지정 엔드포인트, Bedrock, Mantle, Vertex AI, Foundry, Claude Platform on AWS, Cloud gateway**입니다. 같은 2.1.285에서는 운영체제가 관리 설정 파일 읽기를 거부하면 Claude Code가 아예 시작하지 않던 문제가 고쳐져, 이제 **경고를 띄우고 그 파일의 정책 없이 시작**합니다. 다른 읽기 오류나 해석할 수 없는 파일은 여전히 모든 세션을 멈춥니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "또 하나 눈여겨볼 수정은 2.1.283의 **관리형 `sandbox` 설정 처리**입니다. 중첩된 값 하나라도 잘못되면 전체가 무시되던 동작이 바뀌어, 이제 **잘못된 값이 있으면 안전하게 차단(fails closed)**됩니다. 보안 정책이 조용히 풀리는 일을 막는 변화입니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 개인 사용자에게도 쓸모 있는 설정",
+     "text": "2.1.281에서는 `settings.json`에 `\"attribution\": false`를 넣어 커밋과 PR에 붙는 attribution(작성 표기)을 모두 숨길 수 있게 되었습니다. 다만 **이전 버전 CLI는 이 값이 든 설정 파일을 건너뛰므로**, 여러 버전이 함께 쓰는 파일에는 기존 객체 형식을 유지하라고 changelog는 안내합니다. 2.1.282의 `maxProseWidth`는 넓은 터미널에서 Claude의 산문 폭만 제한하고, 표와 코드 블록은 전체 폭을 유지합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔌 플러그인 사용법과 새 설정 명령",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "플러그인 문서는 플러그인을 **스킬, 에이전트, 훅, MCP 서버 등을 하나의 단위로 묶은 디렉터리**라고 설명합니다. 터미널에서 `/plugin`을 실행하고 **Discover 탭**에서 설치하는 것이 가장 쉬운 시작입니다. 공식 마켓플레이스는 처음 대화형 세션을 시작할 때 자동으로 추가됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "2.1.285에서는 플러그인 설정이 편해졌습니다. `claude plugin configure <plugin>`은 **플러그인의 옵션과 아직 설정되지 않은 항목을 보여 주고**, `--values-stdin`을 쓰면 표준 입력으로 받은 값을 저장합니다. 또 `claude plugin install --config`에 `<server>.<key>=<value>` 형식을 넘겨 **번들된 `.mcpb` MCP 서버 설정을 설치 시점에** 입력할 수 있습니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# 플러그인 옵션 확인·설정 (2.1.285 이상)\nclaude plugin configure <plugin>\n\n# 값을 표준 입력으로 저장\nclaude plugin configure <plugin> --values-stdin"
+    },
+    {
+     "type": "paragraph",
+     "text": "2.1.281에서는 `claude plugin validate`에 **MCP 서버 검증 항목**이 추가되었고, 2.1.285에서는 번들된 `.mcpb` MCP 서버가 설정을 필요로 할 때 조용히 건너뛰던 문제가 고쳐졌습니다. 직접 플러그인을 만드는 개발자라면 배포 전에 validate 명령을 한 번 돌려 볼 만합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 플러그인은 내 권한으로 실행됩니다",
+     "text": "플러그인 문서는 어느 마켓플레이스에서 받든 **설치한 플러그인이 사용자 권한으로 코드를 실행할 수 있다**고 경고합니다. 활성화된 플러그인은 스킬·에이전트 이름과 설명이 매 턴 컨텍스트에 들어가 사용량에도 영향을 줍니다. 설치 전 `/plugin`의 Context cost 추정치를 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "🧩 MCP 관련 개선 사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "MCP 문서는 서버를 추가하는 방법으로 HTTP, SSE, 로컬 stdio, WebSocket 네 가지를 안내합니다. 원격 HTTP 서버는 `claude mcp add --transport http <name> <url>` 형식으로 추가합니다. `/mcp` 명령으로는 연결된 서버를 보고, OAuth 인증을 하고, 상태를 확인하고, 서버를 끄거나 다시 연결할 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 주 변경 중 MCP 관련은 다음과 같습니다. 2.1.284의 **`/mcp reconnect all`**은 실패한 MCP 서버를 한꺼번에 재시도합니다. 같은 버전에서는 재개한 세션에서 서버가 연결되는 동안 도구 호출이 \"No such tool available\"로 실패하던 문제가 고쳐져 **최대 10초까지 기다립니다**. 2.1.280의 `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH`는 **2,048자인 MCP 도구 설명 상한**을 바꿉니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "환경 변수",
+      "문서 설명"
+     ],
+     "rows": [
+      [
+       "`MCP_TIMEOUT`",
+       "MCP 서버 시작 타임아웃, 예: `MCP_TIMEOUT=10000 claude`는 10초"
+      ],
+      [
+       "`MAX_MCP_OUTPUT_TOKENS`",
+       "출력 경고는 10,000 토큰 초과 시, 기본 최대치는 25,000 토큰"
+      ],
+      [
+       "`ENABLE_CLAUDEAI_MCP_SERVERS`",
+       "`false`로 두면 claude.ai 커넥터 비활성화"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "자동 재연결도 알아 둘 만합니다. 문서에 따르면 **원격 서버가 세션 중 끊기면 자동으로 다시 연결**하고, HTTP·SSE 서버의 첫 연결이 일시 오류로 실패하면 **최대 세 번** 재시도합니다. 반면 stdio 서버는 로컬 프로세스라 자동 재연결하지 않습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 활용 시나리오 3가지",
+   "blocks": [
+    {
+     "type": "subheading",
+     "text": "시나리오 1: 팀 모델 통제"
+    },
+    {
+     "type": "paragraph",
+     "text": "조직 관리자는 관리 설정에 `deniedModels`로 쓰지 말아야 할 모델을 막고, `availableModelsMatch`를 `\"exact\"`로 두어 **허용 목록에 적힌 버전만** 쓰게 할 수 있습니다. 관리 설정은 개인 `--settings`보다 우선하므로 정책이 유지됩니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 2: 승인 피로 줄이기"
+    },
+    {
+     "type": "paragraph",
+     "text": "긴 리팩터링을 맡길 때는 기본값인 자동 모드로 진행하고, 민감한 저장소에서는 `permissions.defaultMode`를 `default`로 바꿉니다. 자동 모드가 실제로 얼마나 프롬프트를 줄일지는 `/insights`의 권고 항목이 추정해 줍니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 3: 프롬프트 자산 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "2.1.283에서 추가된 **`/doctor prompt-audit`**(또는 `/checkup prompt-audit`)은 CLAUDE.md 파일, 스킬, 에이전트, 명령에 **이전 모델용으로 쓴 프롬프트 패턴**이 있는지 감사합니다. 같은 버전의 개선 항목에 따르면 **오래된 경로, 오래된 명령, 서로 충돌하는 지침 파일**이 보고서 앞쪽에 나옵니다. 지침이 쌓여 컨텍스트를 낭비한다고 느낄 때 먼저 돌려 볼 만합니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "이 저장소의 CLAUDE.md, 스킬, 에이전트를 점검하려고 합니다.\n/doctor prompt-audit 를 실행하고, 결과에서 중복되거나 오래된 지침을 목록으로 정리해 주세요.\n파일은 아직 수정하지 마세요."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이번 글은 **공식 문서를 읽고 정리한 것이며 직접 설치해 테스트한 결과가 아닙니다**. 그래서 성능 향상이나 체감 속도에 대한 평가는 하지 않았습니다. 새 모델의 벤치마크도 이번에 읽은 문서에는 없어 다루지 않습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "버전 표기가 문서마다 다른 부분도 있습니다. 권한 모드 문서는 자동 모드 기본값을 **v2.1.283 이상**이라고 설명하지만, changelog에서 **모든 요금제·공급자로 넓힌 항목은 2.1.284**에 있고 2.1.283 항목은 서드파티 공급자·텔레메트리를 끈 세션에 한정됩니다. 이 글은 changelog 기준으로 정리했습니다. 자동 모드가 실제로 켜지는지는 모델 지원, 설정, 서버 측 상태에 따라 달라지므로 **본인 환경의 상태 표시줄(`⏵⏵ auto mode on`)로 확인**하세요."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 업데이트 전 확인",
+     "text": "자동 모드는 사용자가 아닌 분류기 모델이 판단하는 방식입니다. 운영 서버나 민감한 자격 증명이 있는 환경에서는 격리된 환경이나 Manual 모드를 함께 고려하세요. 문서도 자동 모드에서 샌드박스나 컨테이너가 방어를 더한다고 설명합니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Claude Code 2.1.285에서 가장 눈에 띄는 것은 무엇인가요?",
+   "a": "changelog 기준으로 `claude plugin configure`, `allowedProviders` 관리 설정, `CLAUDE_CODE_DISABLE_WEB_FETCH`, `claude --desktop` 등이 추가되었습니다. 플러그인 설정과 관리자 통제 쪽이 중심입니다."
+  },
+  {
+   "q": "자동 모드는 누구에게 기본으로 켜지나요?",
+   "a": "changelog 기준으로 2.1.284부터 모든 요금제와 공급자의 터미널·VS Code 세션이 권한 모드 설정이 없으면 자동 모드로 시작합니다. 설정 파일이 자동 모드를 끄거나 모델이 지원하지 않으면 Manual로 시작합니다."
+  },
+  {
+   "q": "자동 모드를 끄려면 어떻게 하나요?",
+   "a": "개인은 `permissions.defaultMode`를 `default`로 두거나 `--permission-mode default`로 시작합니다. 조직은 관리 설정의 `permissions.disableAutoMode`를 `\"disable\"`로 둡니다."
+  },
+  {
+   "q": "Opus 5.5와 Sonnet 5.5의 가격은 얼마인가요?",
+   "a": "changelog에 Sonnet 5.5는 100만 토큰당 $2/$10, Opus 5.5는 $4/$20, 캐시 읽기는 둘 다 $0.20으로 적혀 있습니다. 실제 청구는 공식 요금 안내를 확인하세요."
+  },
+  {
+   "q": "MCP 서버가 실패했을 때 한 번에 다시 연결할 수 있나요?",
+   "a": "2.1.284부터 `/mcp reconnect all`로 실패한 MCP 서버를 모두 재시도할 수 있습니다. 원격 서버는 세션 중 끊기면 자동 재연결도 시도합니다."
+  }
+ ],
+ "closing": "지금까지 Claude Code 2.1.280~2.1.285 업데이트에 대해 알아보았습니다. 새 모델 지원, 자동 모드 기본값, 관리 설정 강화, 플러그인·MCP 개선이 이번 주의 핵심이었습니다. 다만 이 글은 문서를 읽고 정리한 것이라 실제 체감 성능은 확인하지 못했고, 자동 모드의 동작 조건은 환경마다 다를 수 있습니다. 여러분도 한번 Claude Code를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "버전별 기능과 가격은 바뀔 수 있으니 Claude Code 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "ClaudeCode",
+  "클로드코드",
+  "Anthropic",
+  "AI코딩",
+  "코딩에이전트",
+  "자동모드",
+  "권한모드",
+  "MCP",
+  "플러그인",
+  "ClaudeOpus55",
+  "ClaudeSonnet55",
+  "AI도구",
+  "개발자도구",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}

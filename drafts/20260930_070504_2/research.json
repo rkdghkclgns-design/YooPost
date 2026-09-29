@@ -1,0 +1,57 @@
+{
+ "topic": "Claude Code changelog 2.1.280–2.1.285 (2026-09-22~29)",
+ "source_url": "https://code.claude.com/docs/en/changelog",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Code changelog",
+   "url": "https://code.claude.com/docs/en/changelog",
+   "publisher": "Anthropic",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Choose a permission mode",
+   "url": "https://code.claude.com/docs/en/permission-modes",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Settings files and precedence",
+   "url": "https://code.claude.com/docs/en/settings",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Plugins overview",
+   "url": "https://code.claude.com/docs/en/plugins",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Connect Claude Code to tools via MCP",
+   "url": "https://code.claude.com/docs/en/mcp",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 78,
+  "confirmed": 75,
+  "removed": [
+   "같은 문서에는 2.1.283에서 `/model`이 `[1m]` 접미사가 붙은 Sonnet 4.6/5를 받아들이도록 고쳐졌다는 항목도 있어, 긴 컨텍스트 모델을 고를 때 참고할 만합니다. (changelog 원문은 날짜·-v1:0 접미사 id에 [1m]을 잘못 받아들이던 문제를 고친 것 — 의미가 반대라 삭제)",
+   "구체적으로 어떤 항목을 지적하는지는 changelog에 자세히 나와 있지 않습니다. (changelog에 '이전 모델용 프롬프트 패턴', '오래된 경로·명령·충돌 지침 우선' 설명이 있어 삭제 후 사실로 대체)",
+   "같은 문서 다른 대목에는 v2.1.228 이상이라는 조건도 나옵니다. (문서 확인은 되나 changelog와의 실제 불일치 설명으로 대체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S5 공식 문서(.md)를 2026-09-29 curl 로 다시 열어 전 주장 대조, 막힌 출처 없음. 수정: ① '자동 모드 기본값 v2.1.283 이상'은 permission-modes 문서에만 있고 changelog 상 모든 요금제·공급자 터미널·VS Code 확대는 2.1.284 항목(2.1.283은 서드파티 공급자·텔레메트리 끔 세션 한정) → 요약·본문·FAQ를 changelog 기준 2단계(2.1.283/2.1.284)로 수정하고 한계 절에 문서 간 차이 명시. ② 권한 모드 표 5가지→6가지(plan 누락 보완). ③ deniedModels·availableModelsMatch 설명 원문대로 보강. 보완(모두 S1·S2 확인): Opus/Sonnet 5.5 기본 모델화, Pro·Team Standard 기본 모델 Opus 변경, /effort 저장값 미적용, 자동 모드 10회 연속 시 중단, 자동 모드 지원 모델·Manual 대체, allowedProviders 공급자 목록, 관리 설정 파일 읽기 거부 시 경고 후 시작, attribution:false 구버전 주의, prompt-audit 감사 대상."
+ }
+}
