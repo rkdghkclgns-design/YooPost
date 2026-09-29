@@ -98,5 +98,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/anthropic-what-do-you-want-from-ai-15-ai.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 Claude Desktop Cowork 보안 권고 총정리: 악성 파일 실행 취약점(CVSS 8.5)·패치 버전·점검법",
+  "topic": "Claude Desktop (macOS): opening a malicious file from a Cowork folder could run commands on the host (GHSA-v234-4jrq-mgg6, Anthropic, 2026-09-25)",
+  "category": "AI 보안",
+  "source_url": "https://github.com/anthropics/claude-code/security/advisories/GHSA-v234-4jrq-mgg6",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-desktop-cowork-cvss-85.html"
+  }
  }
 ]
