@@ -110,7 +110,8 @@ def test_upload_variables_without_gh_reports_all_failed():
 
 def test_scripts_show_help_without_side_effects():
     for name in ("preview_post", "push_secrets", "get_google_token", "analyze_reference_blog", "setup_slack_channels",
-                 "blogger_menu", "slack_notice", "claude_brief", "claude_draft"):
+                 "blogger_menu", "slack_notice", "claude_brief", "claude_draft", "cloud_drafts", "cloud_sync",
+                 "draft_progress"):
         result = subprocess.run([sys.executable, str(SCRIPTS / f"{name}.py"), "--help"],
                                 capture_output=True, text=True, encoding="utf-8", timeout=60)
         assert result.returncode == 0, result.stderr

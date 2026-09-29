@@ -54,6 +54,19 @@ AI 언어 모델 · AI 도구 · AI 논문 분석 · AI 뉴스 리뷰 · AI 보�
 7. `python scripts/draft_progress.py` 로 #yoopost-알림 진행 막대를 갱신한다.
 8. 보고: 제목·카테고리·사실 검증 수치·보완한 내용·경고·슬랙 전송 여부. **✅ 는 사용자가 누르도록** 둔다.
 
+## ☁️ 클라우드 루틴에서 쓸 때 (매일 07:00, PC 가 꺼져 있어도)
+클라우드 세션에는 `.env`(비밀값)가 없고 슬랙·구글 블로그에 접속할 수 없다. 대신 원고를 **yoopost-drafts 브랜치**에 올리면
+GitHub Actions(`cloud_drafts.yml`)가 위 ② 의 6~7 단계(준비·슬랙 승인 요청·진행 막대)를 대신한다. 아래만 바뀌고 나머지는 같다.
+| 로컬 | 클라우드 |
+|---|---|
+| `python scripts/claude_brief.py --category X --new` | `python scripts/claude_brief.py --category X --new --drafts-dir .yoopost-drafts/drafts --published .yoopost-drafts/state/published.json` |
+| `python scripts/claude_draft.py <폴더> --no-send` | `python scripts/cloud_drafts.py check <폴더>` (형식·분량·구성·factcheck 확인, 문제 있으면 고침) |
+| `python scripts/claude_draft.py <폴더>` (슬랙 전송) | `python scripts/cloud_drafts.py push <폴더>` (올리면 Actions 가 슬랙 승인 요청) |
+| `python scripts/draft_progress.py [--skip X --reason R]` | `python scripts/cloud_drafts.py skip --category X --reason R` (진행 막대는 Actions 가 갱신) |
+실행 처음에 `python scripts/cloud_drafts.py setup` → `status`(이미 끝난 카테고리 확인) → `start`, 마지막에 `finish`(요약은 Actions 가 #yoopost-알림 에).
+WebFetch 가 `EGRESS_BLOCKED` 로 막힌 사이트는 읽지 못한 것이다 — 출처로 쓰지 않는다 (읽은 페이지만 출처). 막힌 곳이 많으면 `start --network limited`.
+출처 접속 확인·인용 이미지 내려받기·중복 주제 확인은 Actions 가 다시 한다 (실패하면 #yoopost-알림 에 이유가 온다).
+
 ## 발행 이후 (자동)
 슬랙 ✅ → Cloudflare Worker(`/slack/events`) → GitHub Actions `publish_draft.yml` → 구글 블로그 발행 → 원고 메시지 스레드에 결과.
 실패하면 스레드에 '다시 누르면 재시도' 가 남고, ✅ 를 다시 누르면 다시 시도한다. 이미 발행한 원고는 두 번 올라가지 않는다.

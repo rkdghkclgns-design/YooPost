@@ -1,0 +1,280 @@
+"""클라우드 루틴(Claude)이 쓴 원고를 깃 브랜치로 받아, GitHub Actions 가 슬랙 승인 요청으로 보낸다.
+
+클라우드 세션은 슬랙·이미지 저장소·구글 블로그에 접속하지 못하고 비밀값도 없다 (웹 조사와 git push 만).
+    클라우드: 원고 폴더(post.json·research.json)를 yoopost-drafts 브랜치 drafts/<ID>/ 에 올린다
+    Actions(cloud_drafts.yml): push 를 받으면 아직 보내지 않은 원고를 준비해 슬랙 승인 요청을 보내고,
+        진행 막대를 고치고, 발행 기록(state/published.json)을 새로 쓴다 (비밀값은 GitHub 에만 있다)
+
+yoopost-drafts 브랜치 (코드 없이 데이터만)
+    drafts/<YYYYMMDD_HHMMSS_n>/post.json·research.json   원고 (n = 카테고리 번호, 폴더 이름 = 원고 ID)
+    drafts/<YYYYMMDD_HHMMSS_n>/skip.json                  건너뛴 카테고리 {"category", "reason"}
+    runs/<YYYYMMDD>.json                                  클라우드 실행 기록 {"started", "finished", "network"}
+    state/progress_<YYYYMMDD>.json                        진행 메시지 ts·요약 전송 여부 (Actions 가 씀)
+    state/failures.json                                   전송 실패 {원고 ID: {"hash", "reason"}} (Actions 가 씀)
+    state/published.json                                  발행 기록 — 클라우드가 주제 중복을 피할 때 읽음
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import re
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+from pathlib import Path
+from types import MappingProxyType
+from typing import Callable, Iterable, Mapping, Sequence
+
+from .claude_draft import DraftError, load_draft
+
+log = logging.getLogger(__name__)
+
+BRANCH = "yoopost-drafts"
+WORKTREE = ".yoopost-drafts"
+DRAFTS, RUNS, STATE = "drafts", "runs", "state"
+SKIP_FILE = "skip.json"
+FOLDER_RE = re.compile(r"^(\d{8})_(\d{6})_(\d+)$")
+EMOJI_HEADING = re.compile(r"^[^\w\s]")  # 이모지·기호로 시작하는 소제목
+MIN_EMOJI_HEADINGS, MIN_FAQ, MIN_TABLES = 5, 3, 2
+MAX_REASON = 300
+MAX_ATTEMPTS = 3  # 일시적 오류(슬랙·보관함·이미지 서버)는 실행마다 다시 시도
+
+
+def folder_day(name: str) -> str:
+    """원고 폴더 이름의 날짜(YYYYMMDD) — 형식이 아니면 빈 문자열."""
+    match = FOLDER_RE.match(name)
+    return match.group(1) if match else ""
+
+
+def recent_days(now: datetime, count: int = 2) -> tuple[str, ...]:
+    return tuple((now - timedelta(days=i)).strftime("%Y%m%d") for i in range(count))
+
+
+def draft_folders(drafts_dir: Path, days: Iterable[str]) -> list[Path]:
+    wanted = set(days)
+    if not drafts_dir.is_dir():
+        return []
+    return sorted(p for p in drafts_dir.iterdir()
+                  if p.is_dir() and not p.is_symlink() and folder_day(p.name) in wanted)
+
+
+def has_symlink(folder: Path) -> bool:
+    """브랜치에서 받은 폴더에 심볼릭 링크가 있으면 쓰지 않는다 (밖의 파일을 읽거나 덮어쓰지 않도록)."""
+    return folder.is_symlink() or any(p.is_symlink() for p in folder.iterdir())
+
+
+def is_skip(folder: Path) -> bool:
+    return (folder / SKIP_FILE).is_file()
+
+
+def fingerprint(folder: Path) -> str:
+    """원고 내용 지문 — 실패한 원고를 고쳐 다시 올리면 지문이 바뀌어 다시 보낸다."""
+    digest = hashlib.sha256()
+    for name in ("post.json", "research.json"):
+        path = folder / name
+        digest.update(path.read_bytes() if path.is_file() else b"")
+    return digest.hexdigest()[:16]
+
+
+def read_json(path: Path) -> dict:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def write_json(path: Path, data: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+# ------------------------------------------------------------------ 품질 확인 (클라우드에서, 네트워크 없이)
+@dataclass(frozen=True)
+class QualityReport:
+    problems: tuple[str, ...]
+    stats: str = ""
+
+    @property
+    def ok(self) -> bool:
+        return not self.problems
+
+
+def quality_report(folder: Path, min_chars: int) -> QualityReport:
+    """원고 폴더가 올릴 만한지 — 형식·분량·구성·사실 검증 기록을 확인한다 (출처·이미지 접속 확인은 Actions 가)."""
+    try:
+        files = load_draft(folder)
+    except DraftError as exc:
+        return QualityReport((str(exc),))
+    content = files.content
+    blocks = [b for s in content.sections for b in s.blocks]
+    length = content.text_length()
+    emoji = sum(1 for s in content.sections if EMOJI_HEADING.match(s.heading))
+    tables = sum(1 for b in blocks if b.kind == "table")
+    boxes = sum(1 for b in blocks if b.kind in ("info", "warning"))
+    paragraphs = [b.text for b in blocks if b.kind == "paragraph"]
+    highlighted = sum(1 for t in paragraphs if "**" in t)
+    official = sum(1 for s in files.sources if s.official)
+    image_ids = {b.image_id for b in blocks if b.kind == "image"}
+    known = {c.id for c in files.candidates}
+    fc = files.factcheck
+    problems = []
+    if length < min_chars:
+        problems.append(f"본문이 {length:,}자입니다 (최소 {min_chars:,}자)")
+    if emoji < MIN_EMOJI_HEADINGS:
+        problems.append(f"이모지 소제목이 {emoji}개입니다 ({MIN_EMOJI_HEADINGS}개 이상)")
+    if len(content.faq) < MIN_FAQ:
+        problems.append(f"FAQ 가 {len(content.faq)}개입니다 (4개 안팎)")
+    if tables < MIN_TABLES:
+        problems.append(f"표가 {tables}개입니다 ({MIN_TABLES}개 이상)")
+    if boxes == 0:
+        problems.append("💡/⚠️ 박스(info·warning)가 없습니다")
+    if paragraphs and highlighted * 2 < len(paragraphs):
+        problems.append(f"형광 강조(**…**)가 있는 문단이 {highlighted}/{len(paragraphs)}개뿐입니다")
+    if official == 0:
+        problems.append("공식 출처(official: true)가 없습니다")
+    if image_ids - known:
+        problems.append(f"research.json images 에 없는 이미지 블록: {', '.join(sorted(image_ids - known))}")
+    if not (isinstance(fc.get("claims"), int) and isinstance(fc.get("confirmed"), int)):
+        problems.append("research.json factcheck(claims·confirmed)가 비어 있습니다 — 사실 검증이 끝나지 않았습니다")
+    stats = (f"본문 {length:,}자 · 소제목 {len(content.sections)}개(이모지 {emoji}) · 표 {tables} · 박스 {boxes} · "
+             f"FAQ {len(content.faq)} · 강조 문단 {highlighted}/{len(paragraphs)} · 출처 {len(files.sources)}"
+             f"(공식 {official}) · 이미지 {len(known)}")
+    return QualityReport(tuple(problems), stats)
+
+
+# ------------------------------------------------------------------ 전송 (Actions 에서)
+@dataclass(frozen=True)
+class SyncOutcome:
+    sent: tuple[str, ...] = ()
+    already: tuple[str, ...] = ()
+    new_failures: Mapping[str, str] = field(default_factory=lambda: MappingProxyType({}))
+    unknown: tuple[str, ...] = ()  # 보관함을 확인하지 못해 다음 실행으로 미룬 원고
+
+
+def delivered(record: Mapping[str, object] | None) -> bool:
+    """슬랙 승인 요청까지 끝난 원고 — 보관함 기록에 슬랙 메시지 위치가 있어야 ✅ 가 원고와 연결된다."""
+    slack = (record or {}).get("slack")
+    return isinstance(slack, Mapping) and bool(slack.get("ts"))
+
+
+def _parked(record: Mapping[str, object] | None, mark: str) -> bool:
+    """같은 내용으로 더 시도하지 않을 실패 — 원고 문제(영구)이거나 일시적 오류를 여러 번 겪음."""
+    if not record or record.get("hash") != mark:
+        return False
+    return bool(record.get("permanent")) or int(record.get("attempts") or 0) >= MAX_ATTEMPTS
+
+
+def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None], send: Callable[[Path], None],
+                failures: Mapping[str, Mapping[str, object]], clean: Callable[[str], str] = lambda t: t,
+                ) -> tuple[SyncOutcome, dict]:
+    """슬랙 승인 요청이 끝나지 않은 원고만 보낸다. (결과, 새 실패 기록)
+
+    lookup(원고 ID) = 보관함 기록 (없으면 None, 확인 못 하면 예외). 원고 문제(DraftError)는 내용이 바뀔 때까지 다시
+    보내지 않고, 일시적 오류는 MAX_ATTEMPTS 번까지 실행마다 다시 시도한다. 알림은 같은 내용의 첫 실패 때만.
+    """
+    sent, already, unknown = [], [], []
+    new_failures: dict[str, str] = {}
+    names = {f.name for f in folders}
+    records = {k: dict(v) for k, v in failures.items() if k in names}  # 지난 원고의 기록은 정리
+    for folder in folders:
+        draft_id = folder.name
+        if is_skip(folder) or not (folder / "post.json").is_file() or not (folder / "research.json").is_file():
+            continue
+        mark = fingerprint(folder)
+        previous = records.get(draft_id) if records.get(draft_id, {}).get("hash") == mark else None
+        if _parked(previous, mark):
+            continue
+        try:
+            if delivered(lookup(draft_id)):
+                already.append(draft_id)
+                records.pop(draft_id, None)
+                continue
+        except Exception as exc:
+            log.warning("보관함 확인 실패 %s: %s", draft_id, exc)
+            unknown.append(draft_id)
+            continue
+        try:
+            if has_symlink(folder):
+                raise DraftError("원고 폴더에 심볼릭 링크가 있어 쓰지 않습니다")
+            send(folder)
+        except Exception as exc:
+            reason = clean(str(exc))[:MAX_REASON] or type(exc).__name__
+            attempts = int((previous or {}).get("attempts") or 0) + 1
+            log.warning("원고 전송 실패 %s (%d번째): %s", draft_id, attempts, reason)
+            records[draft_id] = {"hash": mark, "reason": reason, "attempts": attempts,
+                                 "permanent": isinstance(exc, DraftError)}
+            if attempts == 1:
+                new_failures[draft_id] = reason
+            continue
+        sent.append(draft_id)
+        records.pop(draft_id, None)
+    outcome = SyncOutcome(tuple(sent), tuple(already), MappingProxyType(new_failures), tuple(unknown))
+    return outcome, records
+
+
+def failed_reasons(records: Mapping[str, Mapping[str, object]]) -> dict[str, str]:
+    return {k: str(v.get("reason") or "") for k, v in records.items()}
+
+
+def run_active(run: Mapping[str, object]) -> bool:
+    """클라우드 실행이 진행 중인지 (시작했고 아직 끝나지 않음)."""
+    return bool(run.get("started")) and not run.get("finished")
+
+
+PUBLISHED_KEEP = 120
+
+
+def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callable[[Path], None], slack,
+                    load_entries: Callable[[], Sequence], clean: Callable[[str], str] = lambda t: t) -> SyncOutcome:
+    """Actions 한 번 실행분 — 새 원고 전송 → 실패 알림 → 진행 막대 → (끝났으면) 요약 → 발행 기록 파일."""
+    from .draft_progress import ProgressBoard
+    from .slack_helper import escape_mrkdwn
+
+    current = now()
+    failures_file = root / STATE / "failures.json"
+    folders = draft_folders(root / DRAFTS, recent_days(current))
+    outcome, records = sync_drafts(folders, store.find, send, read_json(failures_file), clean)
+    write_json(failures_file, records)
+    for draft_id, reason in outcome.new_failures.items():
+        slack.post(f"⚠️ 클라우드 원고를 슬랙 승인 요청으로 보내지 못했습니다 — `{draft_id}`: {escape_mrkdwn(reason)}")
+    day = current.strftime("%Y%m%d")
+    run = read_json(root / RUNS / f"{day}.json")
+    progress = root / STATE / f"progress_{day}.json"
+    if run or any(folder_day(f.name) == day for f in folders):
+        board = ProgressBoard(slack, root / DRAFTS, progress, store, now=now)
+        rows = board.refresh(failed_reasons(records), run_active(run))
+        if run.get("finished") and not read_json(progress).get("summary"):
+            slack.post(summary_text(rows, current.strftime("%m/%d"), str(run.get("network") or "")))
+            write_json(progress, {**read_json(progress), "summary": current.isoformat(timespec="seconds")})
+    try:
+        entries = list(load_entries())
+        write_json(root / STATE / "published.json", [e.to_dict() for e in entries[-PUBLISHED_KEEP:]])
+    except Exception as exc:
+        log.warning("발행 기록을 새로 쓰지 못했습니다: %s", exc)
+    return outcome
+
+
+def watchdog(root: Path, now: datetime, slack) -> bool:
+    """오늘 클라우드 실행이 없거나(루틴이 돌지 않음) 시작만 하고 끝나지 않았으면 알린다. 정상이면 True."""
+    run = read_json(root / RUNS / f"{now:%Y%m%d}.json")
+    if run and not run_active(run):
+        return True
+    problem = "시작했지만 끝나지 않았습니다" if run else "실행 기록이 없습니다"
+    slack.post(f"⚠️ {now:%m/%d} 클라우드 원고 루틴이 {problem} — "
+               "claude.ai/code/routines 에서 'YooPost 매일 원고' 실행 결과를 확인해 주세요")
+    return False
+
+
+NETWORK_HINT = ("⚠️ 클라우드 네트워크가 제한되어 조사할 수 있는 사이트가 적었습니다 — "
+                "claude.ai/code 의 환경 설정에서 네트워크 액세스를 '전체'로 바꾸면 조사 품질이 올라갑니다")
+
+
+def summary_text(rows: Sequence, day_label: str, network: str = "") -> str:
+    """실행이 끝났을 때 #yoopost-알림 에 보내는 요약 (rows = 진행 막대의 카테고리별 줄)."""
+    waiting = sum(1 for r in rows if r.icon == "📝")
+    lines = [f"📚 {day_label} 클라우드 원고 작성 결과 — 승인 대기 {waiting}편 (#yoopost-1-원고승인 에서 ✅)"]
+    lines += [f"{r.icon} {r.category} — {r.text}" for r in rows]
+    if network == "limited":
+        lines.append(NETWORK_HINT)
+    return "\n".join(lines)

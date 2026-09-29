@@ -38,6 +38,17 @@ class DraftStore:
         if response.status_code not in (200, 201):
             raise DraftStoreError(f"원고 보관 실패 (HTTP {response.status_code}): {draft_id}")
 
+    def find(self, draft_id: str) -> dict | None:
+        """보관함 기록 — 없으면(404) None. 그 밖의 오류는 있는지 알 수 없으므로 예외."""
+        response = self._session.get(self._url(draft_id), headers={"Authorization": f"Bearer {self._token}"},
+                                     timeout=TIMEOUT)
+        if response.status_code == 404:
+            return None
+        if response.status_code != 200:
+            raise DraftStoreError(f"원고 보관함을 확인하지 못했습니다 (HTTP {response.status_code}): {draft_id}")
+        data = response.json()
+        return data if isinstance(data, dict) else {}
+
     def get(self, draft_id: str) -> dict:
         response = self._session.get(self._url(draft_id), headers={"Authorization": f"Bearer {self._token}"},
                                      timeout=TIMEOUT)

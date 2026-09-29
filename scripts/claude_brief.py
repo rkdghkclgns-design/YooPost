@@ -3,6 +3,8 @@
     python scripts/claude_brief.py                      # 카테고리 지정 없이
     python scripts/claude_brief.py --category "AI 보안"
     python scripts/claude_brief.py --new                # 새 원고 폴더를 만들고 경로 출력
+    # 클라우드 루틴 — 원고는 yoopost-drafts 브랜치, 발행 기록은 Actions 가 남긴 state/published.json
+    python scripts/claude_brief.py --category "AI 보안" --new --drafts-dir .yoopost-drafts/drafts         --published .yoopost-drafts/state/published.json
 
 원고 폴더(output/claude_drafts/<ID>/)에 post.json·research.json 을 쓴 뒤
     python scripts/claude_draft.py output/claude_drafts/<ID>
@@ -50,27 +52,57 @@ CLAUDE_STEPS = """[Claude 작업 순서 — 구글 AI API 없이]
 6. 슬랙 원고 메시지에 사용자가 ✅ 를 누르면 자동으로 발행된다 (Claude 가 ✅ 를 누르지 않는다)."""
 
 
-def recent_titles(cfg, limit: int = 40) -> list[str]:
+def _history_lines(entries, limit: int) -> list[str]:
+    return [f"{e.title}  (주제: {e.topic} · {e.source_url or '원문 없음'})" for e in list(entries)[-limit:]][::-1]
+
+
+def published_snapshot(path: Path, limit: int = 40) -> list[str]:
+    """Actions 가 남긴 발행 기록 파일 (클라우드처럼 구글 계정이 없을 때)."""
+    from autopost.history import HistoryEntry
+
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"(발행 기록 파일을 읽지 못했습니다: {exc})"]
+    entries = [HistoryEntry.from_dict(item) for item in raw if isinstance(item, dict)] if isinstance(raw, list) else []
+    return _history_lines(entries, limit)
+
+
+def recent_titles(cfg, limit: int = 40, published: Path | None = None) -> list[str]:
+    if cfg.google is None and published is not None:
+        return published_snapshot(published, limit)
     try:
         from autopost.blog_publisher import BloggerPublisher
         from autopost.google_auth import build_blogger_service, build_credentials
         from autopost.history import load_history
 
         blogger = BloggerPublisher(build_blogger_service(build_credentials(cfg.google)), cfg.blogger_blog_id)
-        history = load_history(blogger)
-        return [f"{e.title}  (주제: {e.topic} · {e.source_url or '원문 없음'})" for e in history.entries[-limit:]][::-1]
+        return _history_lines(load_history(blogger).entries, limit)
     except Exception as exc:  # 목록을 못 읽어도 지침은 보여 준다
+        if published is not None:
+            return published_snapshot(published, limit)
         return [f"(발행 기록을 읽지 못했습니다: {exc})"]
 
 
-def pending_drafts(days: int = 7) -> list[str]:
+def _folder_time(folder: Path) -> float:
+    """원고 폴더 시각 — 이름(YYYYMMDD_HHMMSS_n)에서, 아니면 수정 시각 (깃에서 받은 폴더는 수정 시각이 믿을 수 없다)."""
+    parts = folder.name.split("_")
+    if len(parts) >= 2:
+        try:
+            return datetime.strptime(f"{parts[0]}{parts[1]}", "%Y%m%d%H%M%S").replace(tzinfo=KST).timestamp()
+        except ValueError:
+            pass
+    return folder.stat().st_mtime
+
+
+def pending_drafts(days: int = 7, drafts_dir: Path = DRAFTS) -> list[str]:
     """최근 원고 폴더의 주제 — 아직 ✅ 전이라 블로그 기록에 없어도 같은 주제를 다시 쓰지 않도록."""
-    if not DRAFTS.is_dir():
+    if not drafts_dir.is_dir():
         return []
     cutoff = time.time() - days * 86400
     topics = []
-    for research in sorted(DRAFTS.glob("*/research.json"), reverse=True):
-        if research.stat().st_mtime < cutoff:
+    for research in sorted(drafts_dir.glob("*/research.json"), reverse=True):
+        if _folder_time(research.parent) < cutoff:
             continue
         try:
             data = json.loads(research.read_text(encoding="utf-8-sig"))
@@ -81,19 +113,21 @@ def pending_drafts(days: int = 7) -> list[str]:
     return topics
 
 
-def new_draft_dir(category: str) -> Path:
+def new_draft_dir(category: str, drafts_dir: Path = DRAFTS) -> Path:
     stamp = datetime.now(KST).strftime("%Y%m%d_%H%M%S")
     number = CATEGORIES.index(category) + 1 if category in CATEGORIES else 0
-    folder = DRAFTS / f"{stamp}_{number}"
+    folder = drafts_dir / f"{stamp}_{number}"
     folder.mkdir(parents=True, exist_ok=True)
     return folder
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Claude 원고 작성 지침")
     parser.add_argument("--category", default="", choices=["", *CATEGORIES])
     parser.add_argument("--new", action="store_true", help="새 원고 폴더 만들기")
-    args = parser.parse_args()
+    parser.add_argument("--drafts-dir", type=Path, default=DRAFTS, help="원고 폴더들이 있는 곳")
+    parser.add_argument("--published", type=Path, default=None, help="구글 계정이 없을 때 읽을 발행 기록 파일")
+    args = parser.parse_args(argv)
     load_dotenv(ROOT / ".env")
     cfg = load_config()
     category = args.category or DEFAULT_CATEGORY
@@ -110,11 +144,11 @@ def main() -> int:
     print("\n[post.json 형식]\n" + OUTPUT_SCHEMA)
     print("\n[research.json 형식]\n" + RESEARCH_SCHEMA)
     print("\n[이미 쓴 글 — 같은 주제·같은 원문 금지]")
-    print("\n".join(f"- {t}" for t in recent_titles(cfg)) or "- (없음)")
+    print("\n".join(f"- {t}" for t in recent_titles(cfg, published=args.published)) or "- (없음)")
     print("\n[최근 7일 원고 (승인 대기 포함) — 같은 주제·같은 원문 금지]")
-    print("\n".join(f"- {t}" for t in pending_drafts()) or "- (없음)")
+    print("\n".join(f"- {t}" for t in pending_drafts(drafts_dir=args.drafts_dir)) or "- (없음)")
     if args.new:
-        print(f"\n[새 원고 폴더] {new_draft_dir(args.category)}")
+        print(f"\n[새 원고 폴더] {new_draft_dir(args.category, args.drafts_dir)}")
     return 0
 
 

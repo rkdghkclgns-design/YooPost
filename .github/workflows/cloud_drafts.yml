@@ -1,0 +1,85 @@
+name: 클라우드 원고 → 슬랙 승인 요청
+# 매일 07시 클라우드 루틴(Claude)이 원고를 yoopost-drafts 브랜치에 올리면, 여기서 슬랙 승인 요청을 보낸다.
+# 클라우드 세션에는 비밀값이 없다 — 슬랙·원고 보관함·구글 블로그 접속은 이 워크플로(GitHub 시크릿)만 한다.
+# AI 호출 없음. 이미 보낸 원고는 다시 보내지 않는다 (원고 보관함 확인).
+run-name: "☁️ ${{ github.event.head_commit.message || github.event_name }}"
+
+on:
+  # 원고 브랜치 push 는 yoopost-drafts 브랜치에 있는 이 파일의 사본(push 전용)이 받는다 —
+  # push 이벤트는 push 된 브랜치의 워크플로 파일로 실행되기 때문. 이 파일(main)은 정기·수동 실행용.
+  schedule:
+    # 06:10 KST — 클라우드 루틴(07:00) 전에 발행 기록(state/published.json)을 새로 써 둔다
+    - cron: "10 21 * * *"
+    # 10:30 KST — 오늘 클라우드 실행이 없거나 끝나지 않았으면 #yoopost-알림 에 경고
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: cloud-drafts
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 코드 (main)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: 원고 데이터 (yoopost-drafts)
+        uses: actions/checkout@v4
+        with:
+          ref: yoopost-drafts
+          path: .yoopost-drafts
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 한글 폰트 설치 (대표 이미지)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 원고 전송 · 진행 막대 · 발행 기록
+        # 시크릿은 이 단계에만 준다 (원고 브랜치의 데이터는 코드로 실행하지 않는다)
+        env:
+          BLOG_NAME: ${{ vars.BLOG_NAME }}
+          MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
+          IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+          SLACK_CHANNEL_DRAFT: ${{ vars.SLACK_CHANNEL_DRAFT }}
+          SLACK_CHANNEL_PUBLISH: ${{ vars.SLACK_CHANNEL_PUBLISH }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          IMAGE_UPLOAD_TOKEN: ${{ secrets.IMAGE_UPLOAD_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          WATCHDOG: ${{ github.event.schedule == '30 1 * * *' && '--watchdog' || '' }}
+        run: python scripts/cloud_sync.py --root .yoopost-drafts $WATCHDOG
+
+      - name: 상태 저장 (state/)
+        if: always()
+        working-directory: .yoopost-drafts
+        run: |
+          git config user.name "yoopost-bot"
+          git config user.email "yoopost-bot@users.noreply.github.com"
+          git add state
+          if git diff --cached --quiet; then echo "상태 변경 없음"; exit 0; fi
+          git commit -q -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for attempt in 1 2 3 4; do
+            git pull --rebase -q origin yoopost-drafts && git push -q origin HEAD:yoopost-drafts && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::상태를 저장하지 못했습니다"; exit 1

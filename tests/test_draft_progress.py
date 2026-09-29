@@ -1,12 +1,12 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 from autopost.draft_progress import ProgressBoard, build_blocks, build_rows, progress_bar, scan
 from autopost.slack_helper import SlackNotifier
 from fakes import FakeWebClient
 
-NOW = datetime(2026, 9, 29, 14, 0)
+NOW = datetime(2026, 9, 29, 14, 0, tzinfo=timezone(timedelta(hours=9)))  # 폴더 이름은 KST
 
 
 def draft(root, name, title="", sent=False, age_minutes=0):

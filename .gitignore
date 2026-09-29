@@ -5,6 +5,8 @@ client_secret*.json
 
 # 실행 결과물 (참고 블로그 캐시 포함)
 output/
+# 클라우드 원고 브랜치(yoopost-drafts)를 받는 작업 폴더
+.yoopost-drafts/
 
 # Python
 .venv/
