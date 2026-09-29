@@ -43,6 +43,25 @@ def test_no_claims_is_an_error():
         FactChecker(gemini).check(parse_post(post_json()), make_sheet(), "2026-09-29")
 
 
+def test_results_are_matched_by_number_claim_text_or_position():
+    from autopost.fact_check import index_results, load_results
+
+    claims = ["GPT-6 는 2026년 9월 공개", "가격은 100만 토큰당 3달러", "컨텍스트는 1M"]
+    rows = [{"n": "2.", "verdict": "supported"},
+            {"claim": "GPT-6 는 2026년 9월 공개됨", "verdict": "contradicted"},
+            {"verdict": "unverifiable"}]
+    indexed = index_results(rows, claims)
+    assert indexed[2]["verdict"] == "supported"
+    assert indexed[1]["verdict"] == "contradicted"  # 주장 문장으로 맞춤
+    assert indexed[3]["verdict"] == "unverifiable"  # 번호·문장이 없으면 순서로
+    assert load_results('설명 ```json\n[{"n": 1}]\n```') == [{"n": 1}]
+    assert load_results('{"verdicts": [{"n": 1}]}') == [{"n": 1}]
+    with pytest.raises(ContentError):
+        load_results('{"answer": "모름"}')
+    with pytest.raises(ContentError):
+        load_results("[broken")
+
+
 def test_long_posts_are_extracted_in_chunks_so_nothing_is_skipped():
     from autopost.fact_check import CHUNK_CHARS, chunk_text
 

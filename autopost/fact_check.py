@@ -6,11 +6,13 @@
 """
 from __future__ import annotations
 
+import json
 import logging
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from typing import Sequence
 
-from .content import ContentError, PostContent, load_json_object
+from .content import ContentError, PostContent, load_json_object, strip_code_fence
 from .gemini import Gemini
 from .research import FactSheet
 
@@ -120,8 +122,57 @@ def build_verify_prompt(claims: Sequence[str], sheet: FactSheet, today: str) -> 
 [주장]
 {listing}
 
-[출력] JSON 객체 하나만:
-{{"results": [{{"n": 1, "verdict": "supported|contradicted|unverifiable", "evidence": "근거 주소", "correction": ""}}]}}"""
+[출력] JSON 객체 하나만 (설명 문장 금지). results 는 위 주장 {len(claims)}개 모두, 번호 순서대로:
+{{"results": [{{"n": 1, "claim": "주장 원문", "verdict": "supported|contradicted|unverifiable", "evidence": "근거 주소", "correction": ""}}]}}"""
+
+
+def load_results(text: str) -> list:
+    """판정 목록 — {"results": [...]}, {"verdicts": [...]}, 또는 목록만 온 경우 모두 받는다.
+
+    검색 도구를 켠 응답은 JSON 강제 출력이 안 돼 형식이 조금씩 흔들린다 (실제 실행에서 확인).
+    """
+    body = strip_code_fence(text).strip()
+    start = body.find("[")
+    if start != -1 and (body.find("{") == -1 or start < body.find("{")):
+        try:
+            data = json.loads(body[start:body.rfind("]") + 1])
+        except json.JSONDecodeError as exc:
+            raise ContentError(f"판정 목록이 JSON 이 아닙니다: {exc}") from exc
+        return data if isinstance(data, list) else []
+    data = load_json_object(body)
+    results = data.get("results") or data.get("verdicts") or data.get("claims")
+    if not isinstance(results, list):
+        raise ContentError("results 목록이 없습니다")
+    return results
+
+
+def _number(value: object) -> int | None:
+    text = str(value if value is not None else "").strip().rstrip(".")
+    return int(text) if text.isdigit() else None
+
+
+def _match_claim(text: object, claims: Sequence[str]) -> int | None:
+    """번호 없이 주장 문장만 돌려준 경우 — 가장 비슷한 주장의 번호 (충분히 비슷할 때만)."""
+    wanted = str(text or "").strip()
+    if not wanted:
+        return None
+    ratios = [SequenceMatcher(None, wanted, claim).ratio() for claim in claims]
+    best = max(range(len(claims)), key=lambda i: ratios[i]) if claims else -1
+    return best + 1 if best >= 0 and ratios[best] >= 0.8 else None
+
+
+def index_results(results: Sequence, claims: Sequence[str]) -> dict[int, dict]:
+    """판정을 주장 번호에 맞춘다: 번호 → 주장 문장 → (둘 다 없으면) 순서."""
+    by_number: dict[int, dict] = {}
+    for position, row in enumerate(results, start=1):
+        if not isinstance(row, dict):
+            continue
+        number = _number(row.get("n", row.get("index", row.get("id"))))
+        if number is None:
+            number = _match_claim(row.get("claim"), claims) or position
+        if 1 <= number <= len(claims) and number not in by_number:
+            by_number[number] = row
+    return by_number
 
 
 class FactChecker:
@@ -145,10 +196,7 @@ class FactChecker:
 
     def _verify_batch(self, claims: Sequence[str], sheet: FactSheet, today: str) -> list[ClaimVerdict]:
         def parse(text: str) -> dict[int, dict]:
-            results = load_json_object(text).get("results")
-            if not isinstance(results, list):
-                raise ContentError("results 목록이 없습니다")
-            by_number = {int(r["n"]): r for r in results if isinstance(r, dict) and str(r.get("n", "")).isdigit()}
+            by_number = index_results(load_results(text), claims)
             if len(by_number) < len(claims) // 2:  # 절반도 판정하지 않았으면 다시
                 raise ContentError(f"판정 누락: {len(by_number)}/{len(claims)}")
             return by_number
