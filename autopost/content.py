@@ -1,10 +1,10 @@
 """AI 원고 데이터 구조 — 참고 블로그의 글 문법을 그대로 담는다.
 
     제목(이모지 + 핵심어 + 숫자) → 인사·도입 → 대표 이미지 → [한눈에 보기] 박스
-    → 이모지 소제목(h2) 섹션들 (문단·h3·💡정보·⚠️주의 박스·표·코드블록·목록)
+    → 이모지 소제목(h2) 섹션들 (문단·h3·💡정보·⚠️주의 박스·표·코드블록·목록·인용 이미지)
     → ❓ 자주 묻는 질문 → 🔗 함께 보면 좋은 글 → 🎯 맺음말 → 📚 참고 문헌 및 출처 → 작성 기준일
 
-본문 안에서는 **굵게**, `코드` 두 가지 인라인 표시만 쓴다.
+본문 안에서는 **강조**(굵게 + 형광 배경), `코드` 두 가지 인라인 표시만 쓴다.
 """
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from typing import Sequence
 
 from .constants import CATEGORIES
 
-BLOCK_KINDS = ("paragraph", "subheading", "info", "warning", "table", "code", "list")
+BLOCK_KINDS = ("paragraph", "subheading", "info", "warning", "table", "code", "list", "image")
 MAX_TITLE = 100
 MAX_HASHTAGS = 15
 MAX_HASHTAG_LEN = 30
@@ -37,10 +37,11 @@ class Block:
     rows: tuple[tuple[str, ...], ...] = ()
     language: str = ""
     items: tuple[str, ...] = ()
+    image_id: str = ""  # 인용 이미지 번호 (I1, I2 …) — 조사 단계에서 확인된 이미지만
 
     def texts(self) -> list[str]:
-        """사실 검증·분량 계산용 텍스트 (코드블록 제외)."""
-        if self.kind == "code":
+        """사실 검증·분량 계산용 텍스트 (코드블록·이미지 제외)."""
+        if self.kind in ("code", "image"):
             return []
         return [t for t in (self.title, self.text, *self.headers, *self.items,
                             *(cell for row in self.rows for cell in row)) if t]
@@ -136,6 +137,8 @@ def plain_block(block: Block) -> list[str]:
         return ["```", *block.text.split("\n"), "```"]
     if block.kind == "list":
         return [f"• {strip_inline(item)}" for item in block.items]
+    if block.kind == "image":
+        return [f"[인용 이미지 {block.image_id}]"]
     return [strip_inline(block.text)]
 
 
@@ -204,6 +207,9 @@ def _block(raw: object) -> Block | None:
     if kind == "list":
         items = _strings(raw.get("items"))
         return Block("list", items=items) if items else None
+    if kind == "image":
+        image_id = str(raw.get("image_id") or raw.get("id") or "").strip().upper()
+        return Block("image", image_id=image_id) if image_id else None
     if kind == "code":
         code = str(raw.get("code") or raw.get("text") or "").strip("\n")
         return Block("code", text=code, language=str(raw.get("language") or "")) if code.strip() else None

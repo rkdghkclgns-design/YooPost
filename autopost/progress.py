@@ -3,9 +3,9 @@
     🤖 AI 포스팅 진행 중 — Gemini 3.8 Live 사용 가이드
     카테고리·트리거·요청자
     ✅ 주제 선정 — 후보 48개 중 선택 (공식·Google DeepMind)
-    ✅ 자료 조사·출처 확인 — 사실 22개 · 출처 6개
+    ✅ 딥리서치 자료 조사 — 사실 22개 · 출처 6개 · 인용 이미지 2개
     ⏳ AI 원고 작성 진행 중…
-    ⬜ 사실 검증 · 대표 이미지 · 블로그 발행 · 발행 기록
+    ⬜ 사실 검증 · 이미지 · 블로그 발행
     실행 로그 보기 (GitHub Actions)
 
 봇 토큰이 없거나(웹훅만) 첫 메시지 전송이 실패하면 수정할 메시지가 없으므로 완료·실패 단계만 새 메시지로 보낸다.
@@ -22,12 +22,11 @@ log = logging.getLogger(__name__)
 
 STEPS: tuple[tuple[str, str], ...] = (
     ("topic", "주제 선정"),
-    ("research", "자료 조사·출처 확인"),
+    ("research", "딥리서치 자료 조사"),
     ("draft", "AI 원고 작성"),
     ("factcheck", "사실 검증"),
-    ("image", "대표 이미지"),
+    ("image", "이미지 (대표·인용)"),
     ("publish", "블로그 발행"),
-    ("record", "발행 기록"),
 )
 STEP_LABELS = dict(STEPS)
 ICONS = {"wait": "⬜", "run": "⏳", "done": "✅", "fail": "❌", "skip": "⏭️"}

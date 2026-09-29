@@ -7,14 +7,14 @@ from dataclasses import replace
 from typing import Sequence
 
 from .constants import CATEGORIES, CLOSING_SIGNATURE, IPO_DISCLAIMER
-
-IPO_CATEGORY = "AI 공모주 분석"
 from .content import PostContent, parse_post
 from .gemini import Gemini
 from .research import FactSheet
 from .style_profile import StyleGuide
 
 log = logging.getLogger(__name__)
+
+IPO_CATEGORY = "AI 공모주 분석"
 
 OUTPUT_SCHEMA = """{
   "title": "이모지 1개 + 핵심 제품/모델명 + 핵심 수치·혜택 + '사용 가이드/총정리' 식 (60자 안팎)",
@@ -24,13 +24,14 @@ OUTPUT_SCHEMA = """{
   "sections": [
     {"heading": "이모지 + 소제목",
      "blocks": [
-       {"type": "paragraph", "text": "문단 (**굵게** 강조 가능)"},
+       {"type": "paragraph", "text": "문단 — 핵심 수치·결론·고유명사는 **강조** 표시"},
        {"type": "subheading", "text": "h3 소제목"},
        {"type": "info", "title": "💡 박스 제목", "text": "핵심 팁·해설"},
        {"type": "warning", "title": "⚠️ 박스 제목", "text": "주의할 점"},
        {"type": "table", "headers": ["항목", "내용"], "rows": [["...", "..."]]},
        {"type": "code", "language": "bash|python|json|plaintext", "code": "코드 또는 복사용 프롬프트"},
-       {"type": "list", "items": ["...", "..."]}
+       {"type": "list", "items": ["...", "..."]},
+       {"type": "image", "image_id": "I1"}
      ]}
   ],
   "faq": [{"q": "질문", "a": "답변 2~4문장"}],
@@ -64,7 +65,13 @@ def style_rules(style: StyleGuide, blog_name: str) -> str:
 8. closing: "지금까지 ○○에 대해 알아보았습니다."로 시작해 핵심을 정리하고, 남은 불확실성을 짚은 뒤
    "여러분도 한번 ○○을 직접 체험해보시길 추천드리면서 {CLOSING_SIGNATURE}" 로 끝냅니다.
 9. 문체: 존댓말(~습니다/~입니다), 친근하지만 정확하게. 전문용어는 처음 나올 때 괄호로 풀어 씁니다 (예: MoE(전문가 혼합)).
-   중요한 수치·결론은 **굵게** 표시합니다. 블로그 이름은 '{blog_name}'."""
+   블로그 이름은 '{blog_name}'.
+10. 강조: 참고 블로그처럼 문단마다 독자가 꼭 기억해야 할 핵심 1~3곳을 **강조**로 감쌉니다 (굵은 글씨 + 형광 배경으로 보임).
+   대상은 핵심 수치("**88개 커스텀 코어**"), 결론 한 구절("**에이전트 전용 CPU**"), 처음 소개하는 제품·기능 이름.
+   문장 전체나 한 문단에 4곳 이상은 강조하지 않습니다. 소제목·표 머리글에는 쓰지 않습니다.
+11. 인용 이미지: 조사 자료에 [인용 이미지]가 있으면, 내용이 맞는 섹션의 관련 문단 바로 뒤에
+   {{"type": "image", "image_id": "I1"}} 블록으로 한 번씩 넣습니다 (캡션·출처는 시스템이 붙입니다).
+   글 내용과 관계없는 이미지는 넣지 않고, 목록이 '(없음)'이면 image 블록을 쓰지 않습니다. 목록에 없는 번호를 지어내지 않습니다."""
 
 
 FACT_RULES = """[사실 규칙 — 가장 중요]
@@ -93,7 +100,7 @@ def build_write_prompt(sheet: FactSheet, style: StyleGuide, blog_name: str, toda
 [분량] 본문(공백 제외, 코드블록 제외) {min_chars:,}~{style.target_chars:,}자. 짧게 끝내지 말고 배경·의미·사용법·주의점을 충분히 설명합니다.
 
 [조사 자료]
-{sheet.as_prompt()}
+{sheet.as_prompt(include_images=True)}
 
 [출력] 아래 JSON 객체 하나만 출력하세요 (설명·코드블록 금지).
 {OUTPUT_SCHEMA}"""
@@ -109,7 +116,7 @@ def build_revise_prompt(content_json: str, sheet: FactSheet, issues: Sequence[di
 [고치는 방법]
 - verdict 가 contradicted 인 주장: correction 과 evidence 에 맞게 고치고, 확실하지 않으면 그 문장을 지웁니다.
 - verdict 가 unverifiable 인 주장: 그 주장을 지우거나, 조사 자료에 있는 사실로만 다시 씁니다.
-- 문제없는 부분은 그대로 둡니다. 글의 구성(JSON 구조·소제목·박스·표)은 유지합니다.
+- 문제없는 부분은 그대로 둡니다. 글의 구성(JSON 구조·소제목·박스·표·image 블록·**강조** 표시)은 유지합니다.
 - 표의 칸을 지울 때는 행 전체를 지웁니다.
 
 {FACT_RULES}
@@ -138,6 +145,15 @@ def finalize(content: PostContent) -> PostContent:
     return replace(content, closing=ensure_signature(content.closing), caveat=caveat)
 
 
+def drop_unknown_images(content: PostContent, image_ids: frozenset[str]) -> PostContent:
+    """확인된 인용 이미지 번호만 남긴다 (AI 가 없는 번호를 지어내면 그 블록을 버린다)."""
+    sections = tuple(
+        replace(section, blocks=tuple(b for b in section.blocks if b.kind != "image" or b.image_id in image_ids))
+        for section in content.sections
+    )
+    return replace(content, sections=sections)
+
+
 def content_to_json(content: PostContent) -> str:
     def block(b) -> dict:
         if b.kind == "table":
@@ -146,6 +162,8 @@ def content_to_json(content: PostContent) -> str:
             return {"type": "code", "language": b.language, "code": b.text}
         if b.kind == "list":
             return {"type": "list", "items": list(b.items)}
+        if b.kind == "image":
+            return {"type": "image", "image_id": b.image_id}
         data = {"type": b.kind, "text": b.text}
         return {**data, "title": b.title} if b.title else data
 
@@ -165,14 +183,14 @@ class PostWriter:
         self._blog_name = blog_name
         self._min_chars = min_chars
 
-    def _parse(self, category: str):
+    def _parse(self, category: str, image_ids: frozenset[str] = frozenset()):
         def parse(text: str) -> PostContent:
-            return finalize(parse_post(text, category))
+            return drop_unknown_images(finalize(parse_post(text, category)), image_ids)
         return parse
 
     def write(self, sheet: FactSheet, style: StyleGuide, today: str) -> PostContent:
         prompt = build_write_prompt(sheet, style, self._blog_name, today, self._min_chars)
-        parse = self._parse(sheet.topic.category)
+        parse = self._parse(sheet.topic.category, frozenset(i.id for i in sheet.images))
         content, _ = self._gemini.generate(prompt, parse, temperature=0.6, label="AI 원고 작성")
         length = content.text_length()
         if length >= self._min_chars:
@@ -185,5 +203,6 @@ class PostWriter:
 
     def revise(self, content: PostContent, sheet: FactSheet, issues: Sequence[dict]) -> PostContent:
         prompt = build_revise_prompt(content_to_json(content), sheet, issues, self._blog_name)
-        revised, _ = self._gemini.generate(prompt, self._parse(content.category), temperature=0.2, label="원고 사실 수정")
+        parse = self._parse(content.category, frozenset(i.id for i in sheet.images))
+        revised, _ = self._gemini.generate(prompt, parse, temperature=0.2, label="원고 사실 수정")
         return revised

@@ -1,18 +1,20 @@
-"""내 PC에서 미리보기 — 드라이브·블로그·슬랙에 아무것도 올리지 않고 한 편을 끝까지 만들어 본다.
+"""내 PC에서 미리보기 — 블로그·이미지 저장소·슬랙에 아무것도 올리지 않고 한 편을 끝까지 만들어 본다.
 
     python scripts/preview_post.py                     # 최신 AI 소식에서 주제 자동 선정
     python scripts/preview_post.py --topic "GPT-6"     # 주제 지정
     python scripts/preview_post.py --no-check          # 사실 검증 생략 (빠른 문법 확인용)
+    python scripts/preview_post.py --no-deep           # 구글 딥리서치 대신 구글 검색 조사 (무료·빠름)
 
-필요한 것: .env 의 GEMINI_API_KEY 하나.
-결과: output/preview_<시각>/ 에 sources.md(출처·사실), post.txt(원고), factcheck.md(사실 검증 보고),
-      cover.png, blog_preview_google.html (구글 블로그에 올라갈 모습 — 업로드하지 않음)
+필요한 것: .env 의 GEMINI_API_KEY 하나. (구글 딥리서치는 조사 1건 약 1~3달러, 5~20분)
+결과: output/preview_<시각>/ 에 sources.md(출처·사실·인용 이미지), quote_I*.jpg(인용 이미지), post.txt(원고),
+      factcheck.md(사실 검증 보고), cover.png, blog_preview_google.html (구글 블로그에 올라갈 모습 — 업로드하지 않음)
 """
 from __future__ import annotations
 
 import argparse
 import logging
 import sys
+from dataclasses import replace
 from datetime import datetime
 from pathlib import Path
 
@@ -23,11 +25,13 @@ from dotenv import load_dotenv  # noqa: E402
 from autopost.cli import http_session  # noqa: E402
 from autopost.config import load_config  # noqa: E402
 from autopost.cover import make_cover  # noqa: E402
+from autopost.deep_research import DeepResearch  # noqa: E402
 from autopost.fact_check import FactChecker, FactCheckReport  # noqa: E402
 from autopost.gemini import Gemini  # noqa: E402
 from autopost.history import PostHistory  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 from autopost.publishing import PublishContext, attach_references, base_notes, write_preview  # noqa: E402
+from autopost.quote_images import ImageCollector  # noqa: E402
 from autopost.research import Researcher  # noqa: E402
 from autopost.style_profile import load_style  # noqa: E402
 from autopost.topic import TopicSelector  # noqa: E402
@@ -38,6 +42,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="AI 포스팅 로컬 미리보기 (발행 안 함)")
     parser.add_argument("--topic", default="", help="쓸 주제 (비우면 자동 선정)")
     parser.add_argument("--no-check", action="store_true", help="사실 검증 생략")
+    parser.add_argument("--no-deep", action="store_true", help="구글 딥리서치 대신 구글 검색으로 조사")
     args = parser.parse_args()
     load_dotenv()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -55,9 +60,15 @@ def main() -> int:
 
     topic, seen = TopicSelector(gemini, session, lookback_days=cfg.topic_lookback_days).pick(PostHistory(), now, args.topic)
     print(f"\n① 주제: {topic.title} ({topic.category}) — 후보 {seen}개\n   {topic.source_url}")
-    sheet = Researcher(gemini, session, min_sources=cfg.min_references).research(topic, today)
+    deep = None if args.no_deep else DeepResearch(cfg.gemini_api_key, cfg.deep_research_agent,
+                                                   timeout_minutes=cfg.deep_research_minutes)
+    researcher = Researcher(gemini, session, min_sources=cfg.min_references, deep=deep)
+    sheet = researcher.research(topic, today, progress=lambda text: print(f"   … {text}"))
+    if sheet.image_candidates:
+        sheet = replace(sheet, images=ImageCollector(session).collect(sheet.image_candidates, sheet.sources, workdir))
     (workdir / "sources.md").write_text(sheet.markdown(), encoding="utf-8")
-    print(f"② 자료 조사: 사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개")
+    print(f"② 자료 조사({sheet.engine}): 사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개 · "
+          f"인용 이미지 {len(sheet.images)}/{len(sheet.image_candidates)}개")
 
     writer = PostWriter(gemini, cfg.blog_name, cfg.min_body_chars)
     content = writer.write(sheet, load_style(topic.category, cfg.min_body_chars), today)
@@ -79,7 +90,8 @@ def main() -> int:
     content = attach_references(content, sheet, now)
     (workdir / "post.txt").write_text(content.plain_text() + "\n", encoding="utf-8")
     cover = make_cover(workdir / "cover.png", content.title, content.category, cfg.blog_name, f"{now:%Y.%m.%d}")
-    ctx = PublishContext(content, cover, base_notes(now, report.passed), PostHistory(), "", now.strftime("%Y%m%d_%H%M"))
+    ctx = PublishContext(content, cover, base_notes(now, report.passed), PostHistory(), now.strftime("%Y%m%d_%H%M"),
+                         sheet.images, topic.title, topic.source_url)
     preview = write_preview(ctx, workdir, dry_run=True)
     print(f"\n✅ 완료: {workdir}\n   {preview}")
     return 0

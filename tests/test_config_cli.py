@@ -1,7 +1,7 @@
 import pytest
 
 from autopost import cli
-from autopost.config import ConfigError, load_config, platform_readiness, validate_for_mode
+from autopost.config import ConfigError, load_config, validate_for_mode
 from autopost.step_summary import build_failure_summary, build_step_summary, write_step_summary
 from autopost.results import PublishResult
 
@@ -14,13 +14,25 @@ FULL = {
 
 def test_defaults_and_stage_channels():
     cfg = load_config(FULL)
-    assert cfg.blog_name == "AI백과사전" and cfg.drive_root_name == "AI백과사전_포스팅자동화"
+    assert cfg.blog_name == "AI백과사전" and not hasattr(cfg, "drive_root_name")  # 구글 드라이브는 쓰지 않음
+    assert cfg.deep_research_agent == "deep-research-preview-04-2026" and cfg.deep_research_minutes == 45
+    assert not cfg.image_host_enabled
     assert cfg.topic_lookback_days == 3 and cfg.min_references == 3
     assert cfg.slack_stage_channels == (("research", "CR"),)
     assert cfg.gemini_fallback_models[0] == "gemini-3.8-flash"
     assert cfg.blogger_enabled and cfg.slack_enabled
     assert not hasattr(cfg, "naver_blog_id")  # 네이버는 쓰지 않음
     assert set(cfg.secret_values()) >= {"sec", "tok", "gem", "xoxb-1"}
+
+
+def test_image_host_and_deep_research_settings():
+    cfg = load_config({**FULL, "IMAGE_HOST_URL": "https://relay.example/", "IMAGE_UPLOAD_TOKEN": "img-tok",
+                       "DEEP_RESEARCH_AGENT": "deep-research-max-preview-04-2026", "DEEP_RESEARCH_MINUTES": "30"})
+    assert cfg.image_host_enabled and cfg.image_host_url == "https://relay.example"
+    assert "img-tok" in cfg.secret_values()
+    assert cfg.deep_research_agent.startswith("deep-research-max") and cfg.deep_research_minutes == 30
+    with pytest.raises(ConfigError, match="DEEP_RESEARCH_MINUTES"):
+        load_config({"DEEP_RESEARCH_MINUTES": "120"})
 
 
 def test_invalid_values_fail_fast():
@@ -38,8 +50,6 @@ def test_validate_for_mode_and_readiness():
     assert len(errors) == 3
     assert len(validate_for_mode(load_config({}), "setup")) == 1
     assert "알 수 없는" in validate_for_mode(load_config(FULL), "x")[0]
-    names = [name for name, ok, _ in platform_readiness(load_config(FULL)) if ok]
-    assert names == ["구글 드라이브", "Gemini AI (웹 검색 사실 확인)", "구글 블로그", "슬랙"]
     assert "BLOGGER_BLOG_ID" in validate_for_mode(load_config({**FULL, "BLOGGER_BLOG_ID": ""}), "post")[0]
 
 
@@ -79,13 +89,13 @@ def test_main_reports_unexpected_errors(monkeypatch):
     monkeypatch.setattr(cli.SlackNotifier, "notify_error", lambda self, stage, exc: errors.append(stage))
 
     def boom(*args):
-        raise RuntimeError("drive down")
+        raise RuntimeError("blogger down")
 
     monkeypatch.setattr(cli, "build_services", boom)
-    assert cli.main(["--mode", "setup"]) == 1 and errors == ["초기 세팅"]
+    assert cli.main(["--mode", "setup"]) == 1 and errors == ["연동 점검"]
     monkeypatch.setattr(cli, "build_services", lambda *a: "s")
     monkeypatch.setattr(cli, "run_post", lambda *a: (_ for _ in ()).throw(cli.AlreadyReported("x")))
-    assert cli.main([]) == 1 and errors == ["초기 세팅"]  # 이미 보고된 오류는 다시 알리지 않음
+    assert cli.main([]) == 1 and errors == ["연동 점검"]  # 이미 보고된 오류는 다시 알리지 않음
 
 
 def test_step_summary(tmp_path):
@@ -100,3 +110,19 @@ def test_step_summary(tmp_path):
     assert write_step_summary("hello", {"GITHUB_STEP_SUMMARY": str(path)}) and path.read_text(encoding="utf-8") == "hello\n"
     assert not write_step_summary("x", {})
     assert not write_step_summary("x", {"GITHUB_STEP_SUMMARY": str(tmp_path / "no" / "dir" / "s.md")})
+
+
+def test_build_services_wires_deep_research_and_image_host(monkeypatch):
+    monkeypatch.setattr(cli, "build_credentials", lambda google: "creds")
+    monkeypatch.setattr(cli, "build_blogger_service", lambda creds: "blogger-service")
+    monkeypatch.setattr(cli, "Gemini", lambda *a, **k: "gemini")
+    monkeypatch.setattr(cli, "DeepResearch", lambda key, agent, **k: ("deep", agent, k["timeout_minutes"]))
+    cfg = load_config({**FULL, "IMAGE_HOST_URL": "https://relay.example", "IMAGE_UPLOAD_TOKEN": "t"})
+    slack = cli.SlackNotifier()
+    setup = cli.build_services(cfg, slack, "setup")
+    assert setup.researcher is None and setup.blogger is not None and setup.image_host is not None
+    post = cli.build_services(cfg, slack, "post")
+    assert post.researcher._deep == ("deep", "deep-research-preview-04-2026", 45)
+    assert post.images is not None and post.image_host is not None
+    no_host = cli.build_services(load_config(FULL), slack, "post")
+    assert no_host.image_host is None

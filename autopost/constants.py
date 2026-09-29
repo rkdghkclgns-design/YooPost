@@ -1,15 +1,9 @@
-"""블로그 이름·드라이브 폴더·글 양식·뉴스 소스 등 시스템 전역 상수."""
+"""블로그 이름·글 양식·뉴스 소스 등 시스템 전역 상수."""
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-FOLDER_MIME = "application/vnd.google-apps.folder"
-
 DEFAULT_BLOG_NAME = "AI백과사전"
-DEFAULT_DRIVE_ROOT = "AI백과사전_포스팅자동화"
-PUBLIC_ASSET_FOLDER = "98_블로그_게시이미지"  # 구글 블로그 대표 이미지 호스팅 (삭제 금지)
-HISTORY_FILE = "posted_history.json"  # 발행한 주제 기록 (같은 주제 반복 방지·함께 보면 좋은 글)
-GUIDE_FILE = "00_사용안내.txt"
 
 # 참고 블로그(fornewchallenge.tistory.com)의 카테고리 체계 — 구글 블로그 상단 메뉴 순서와 같다
 #   홈 | AI 언어 모델 | AI 도구 | AI 논문 분석 | AI 뉴스 리뷰 | AI 보안 | AI 인사이트 | AI 공모주 분석
@@ -45,7 +39,7 @@ CLOSING_HEADING = "🎯 맺음말"
 REFERENCES_HEADING = "📚 참고 문헌 및 출처"
 CLOSING_SIGNATURE = "저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다."
 BASIS_NOTE = "※ 본 글은 {date} 기준으로 작성되었습니다."
-FACT_NOTE = "이 글의 수치·날짜·이름 등 사실 관계는 공식 발표·1차 자료와 웹 검색으로 교차 확인했습니다."
+FACT_NOTE = "이 글의 수치·날짜·이름 등 사실 관계는 구글 딥리서치로 조사한 공식 발표·1차 자료를 웹 검색으로 다시 교차 확인했습니다."
 RELATED_POSTS = 3
 
 
@@ -83,18 +77,3 @@ AI_KEYWORDS = (
     "딥러닝", "머신러닝", "machine learning", "deep learning", "neural", "transformer",
     "diffusion", "생성형", "챗봇", "chatbot", "multimodal", "멀티모달", "rag", "mcp",
 )
-
-GUIDE_TEXT = """[AI백과사전 자동 포스팅 사용 안내]
-
-1. 이 폴더는 자동화가 스스로 관리합니다. 사진을 올릴 필요가 없습니다.
-   - 매일 AI 공식 발표·뉴스(OpenAI, Google, Hugging Face, AI타임스 등)에서 주제를 고르고,
-     웹 검색으로 사실을 교차 확인한 뒤 구글 블로그 'AI백과사전'에 올립니다.
-
-2. posted_history.json
-   - 발행한 주제 기록입니다. 같은 주제를 반복하지 않고, '함께 보면 좋은 글'에 예전 글을 연결하는 데 씁니다.
-   - 지우면 기록이 처음부터 다시 쌓입니다 (이미 쓴 주제를 다시 쓸 수 있음).
-
-3. 98_블로그_게시이미지 폴더는 구글 블로그 대표 이미지 호스팅용입니다. 삭제하지 마세요.
-
-4. 특정 주제로 쓰게 하려면 슬랙에서 /aipost 주제 (예: /aipost Gemini 3.8 Live) 를 입력하세요.
-"""

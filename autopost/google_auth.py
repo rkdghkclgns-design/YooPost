@@ -1,7 +1,7 @@
-"""구글 OAuth 사용자 자격증명 (Drive + Blogger 공용).
+"""구글 OAuth 사용자 자격증명 (구글 블로그 전용 — 구글 드라이브 권한은 쓰지 않는다).
 
-서비스 계정은 개인 드라이브 저장 용량이 없고 Blogger 글 작성도 불가하므로,
-사용자 계정의 refresh token 방식을 사용한다.
+서비스 계정은 Blogger 글 작성이 불가하므로 사용자 계정의 refresh token 방식을 사용한다.
+예전에 드라이브 권한까지 받은 토큰도 그대로 쓸 수 있다 (갱신할 때 블로그 권한만 요청).
 """
 from __future__ import annotations
 
@@ -12,10 +12,7 @@ from googleapiclient.discovery import build
 
 from .config import GoogleConfig
 
-SCOPES = (
-    "https://www.googleapis.com/auth/drive",
-    "https://www.googleapis.com/auth/blogger",
-)
+SCOPES = ("https://www.googleapis.com/auth/blogger",)
 TOKEN_URI = "https://oauth2.googleapis.com/token"
 
 
@@ -41,10 +38,6 @@ def build_credentials(google: GoogleConfig) -> Credentials:
             "(OAuth 동의화면이 '테스트' 상태면 7일마다 만료되므로 '프로덕션'으로 게시하세요)"
         ) from exc
     return creds
-
-
-def build_drive_service(creds: Credentials):
-    return build("drive", "v3", credentials=creds, cache_discovery=False)
 
 
 def build_blogger_service(creds: Credentials):

@@ -1,6 +1,8 @@
 import json
+from pathlib import Path
 
 from autopost.content import parse_post
+from autopost.research import QuoteImage
 from autopost.style_profile import StyleGuide
 from autopost.writer import PostWriter, build_write_prompt, content_to_json, ensure_signature
 from fakes import fake_gemini, make_sheet, post_dict, post_json
@@ -56,3 +58,31 @@ def test_revise_sends_issues_and_current_json():
 def test_content_to_json_roundtrip():
     original = parse_post(post_json())
     assert parse_post(content_to_json(original)) == original
+
+
+def with_images(ids):
+    data = json.loads(long_post())
+    data["sections"][0]["blocks"][1:1] = [{"type": "image", "image_id": i} for i in ids]
+    return json.dumps(data, ensure_ascii=False)
+
+
+def test_prompt_asks_for_highlights_and_lists_quote_images(tmp_path):
+    image = QuoteImage("I1", "Vera CPU 구조도", "NVIDIA", "https://n/p", Path(tmp_path / "a.jpg"))
+    prompt = build_write_prompt(make_sheet(images=(image,)), STYLE, "AI백과사전", "2026-09-29", 3000)
+    assert "**강조**" in prompt and "형광 배경" in prompt and "**88개 커스텀 코어**" in prompt
+    assert "[I1] Vera CPU 구조도 (출처: NVIDIA)" in prompt and '"image_id": "I1"' in prompt
+
+
+def test_only_verified_image_ids_survive_writing_and_revision(tmp_path):
+    image = QuoteImage("I1", "구조도", "NVIDIA", "https://n/p", Path(tmp_path / "a.jpg"))
+    sheet = make_sheet(images=(image,))
+    gemini, client = fake_gemini([with_images(["I1", "I7"]), with_images(["I1", "I2"])])
+    writer = PostWriter(gemini, "AI백과사전", min_chars=100)
+    content = writer.write(sheet, STYLE, "2026-09-29")
+    ids = [b.image_id for s in content.sections for b in s.blocks if b.kind == "image"]
+    assert ids == ["I1"]  # 지어낸 번호(I7)는 버림
+    revised = writer.revise(content, sheet, [{"claim": "x", "verdict": "unverifiable"}])
+    assert [b.image_id for s in revised.sections for b in s.blocks if b.kind == "image"] == ["I1"]
+    assert '{"type": "image", "image_id": "I1"}' in client.models.calls[1]["contents"]
+    no_images = PostWriter(fake_gemini([with_images(["I1"])])[0], "AI백과사전", 100).write(make_sheet(), STYLE, "d")
+    assert not any(b.kind == "image" for s in no_images.sections for b in s.blocks)

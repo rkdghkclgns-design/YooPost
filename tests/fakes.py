@@ -1,66 +1,107 @@
-"""테스트용 가짜 외부 서비스 (Drive / Slack / Gemini / HTTP) 와 샘플 데이터."""
+"""테스트용 가짜 외부 서비스 (구글 블로그 / 이미지 저장소 / 딥리서치 / Slack / Gemini / HTTP) 와 샘플 데이터."""
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from autopost.constants import FOLDER_MIME
-from autopost.drive_helper import DriveFile
 from autopost.research import Fact, FactSheet, Source
 from autopost.topic import Topic
 
 
-# ------------------------------------------------------------------ Drive (DriveHelper 인터페이스)
-class MemoryDrive:
-    def __init__(self) -> None:
-        self.items: dict[str, dict] = {"root": {"name": "My Drive", "mime": FOLDER_MIME, "parent": None}}
-        self.public: set[str] = set()
-        self._seq = 0
+# ------------------------------------------------------------------ 이미지 저장소 (ImageHost 인터페이스)
+class FakeImageHost:
+    def __init__(self, fail: bool = False) -> None:
+        self.fail = fail
+        self.uploads: list[tuple[str, str]] = []
 
-    def _new(self, parent: str, name: str, mime: str, content: bytes = b"") -> str:
-        self._seq += 1
-        file_id = f"id{self._seq}"
-        self.items[file_id] = {"name": name, "mime": mime, "parent": parent, "content": content,
-                               "created": f"2026-01-01T00:00:{self._seq:02d}Z"}
-        return file_id
+    def upload(self, path: Path, name: str) -> str:
+        if self.fail:
+            raise RuntimeError("host down")
+        self.uploads.append((path.name, name))
+        return f"https://img.example/img/{name}"
 
-    def _file(self, file_id: str) -> DriveFile:
-        item = self.items[file_id]
-        return DriveFile(file_id, item["name"], item["mime"], item.get("created", ""))
+    def ping(self) -> bool:
+        return not self.fail
 
-    def children(self, parent: str) -> list[DriveFile]:
-        return [self._file(i) for i, item in self.items.items() if item["parent"] == parent]
 
-    def read_text(self, file_id: str) -> str:
-        return self.items[file_id]["content"].decode("utf-8")
+# ------------------------------------------------------------------ 구글 딥리서치 (client.interactions 흉내)
+class FakeInteraction:
+    def __init__(self, status: str, data: dict | None = None, id: str = "int-1", error=None) -> None:
+        self.status = status
+        self.id = id
+        self.error = error
+        self._data = {"id": id, "status": status, **(data or {})}
 
-    def find_child(self, parent_id: str, name: str, folder_only: bool = False) -> DriveFile | None:
-        for child in self.children(parent_id):
-            if child.name == name and (not folder_only or child.is_folder):
-                return child
-        return None
+    def model_dump(self, **kwargs) -> dict:
+        return self._data
 
-    def ensure_folder(self, parent_id: str, name: str) -> tuple[DriveFile, bool]:
-        existing = self.find_child(parent_id, name, folder_only=True)
-        if existing:
-            return existing, False
-        return self._file(self._new(parent_id, name, FOLDER_MIME)), True
 
-    def upload(self, parent_id: str, local_path: Path, name: str | None = None, mime_type: str | None = None) -> DriveFile:
-        return self._file(self._new(parent_id, name or local_path.name, mime_type or "application/octet-stream",
-                                    local_path.read_bytes()))
+class FakeInteractions:
+    """create 는 첫 응답, get 은 이후 응답을 차례로 (예외 객체는 발생)."""
 
-    def update_content(self, file_id: str, local_path: Path, mime_type: str | None = None) -> None:
-        self.items[file_id]["content"] = local_path.read_bytes()
+    def __init__(self, responses: list) -> None:
+        self._responses = list(responses)
+        self.created: list[dict] = []
+        self.cancelled: list[str] = []
 
-    def download(self, file_id: str, dest: Path) -> Path:
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_bytes(self.items[file_id]["content"])
-        return dest
+    def _next(self):
+        item = self._responses.pop(0)
+        if isinstance(item, Exception):
+            raise item
+        return item
 
-    def make_public(self, file_id: str) -> None:
-        self.public.add(file_id)
+    def create(self, **kwargs):
+        self.created.append(kwargs)
+        return self._next()
+
+    def get(self, interaction_id):
+        return self._next()
+
+    def cancel(self, interaction_id):
+        self.cancelled.append(interaction_id)
+
+
+class FakeDeepClient:
+    def __init__(self, responses: list) -> None:
+        self.interactions = FakeInteractions(responses)
+
+
+def deep_output(text: str, citations=()) -> dict:
+    """완료된 딥리서치 응답 (steps 형식)."""
+    content = {"type": "text", "text": text}
+    if citations:
+        content["annotations"] = [{"type": "url_citation", "url": u} for u in citations]
+    return {"steps": [{"type": "user_input", "content": [{"type": "text", "text": "prompt"}]},
+                      {"type": "model_output", "content": [content]}]}
+
+
+# ------------------------------------------------------------------ 구글 블로그 (BloggerPublisher 흉내)
+class FakeBlogger:
+    """발행한 글을 기억하고, recent_posts 로 최신순 목록을 돌려준다 (= 발행 기록)."""
+
+    def __init__(self, fail: bool = False, list_fail: bool = False) -> None:
+        self.fail = fail
+        self.list_fail = list_fail
+        self.posts: list[tuple[str, str, list]] = []
+
+    def publish(self, title, body, labels):
+        from autopost.results import PublishResult
+
+        if self.fail:
+            raise RuntimeError("blogger down")
+        self.posts.append((title, body, list(labels)))
+        return PublishResult("구글 블로그", True, f"https://ai.blogspot.com/p/{len(self.posts)}", "발행 완료")
+
+    def recent_posts(self, limit=200):
+        if self.list_fail:
+            raise RuntimeError("list down")
+        items = [{"title": t, "url": f"https://ai.blogspot.com/p/{i}", "published": "2026-09-29T10:00:00+09:00",
+                  "labels": labels, "content": body} for i, (t, body, labels) in enumerate(self.posts, start=1)]
+        return list(reversed(items))[:limit]
+
+    def blog_info(self):
+        return {"name": "AI백과사전", "url": "https://ai.blogspot.com/", "posts": len(self.posts)}
 
 
 # ------------------------------------------------------------------ Slack
@@ -183,14 +224,23 @@ class FakeHttpResponse:
     headers: dict = field(default_factory=lambda: {"Content-Type": "text/html; charset=utf-8"})
     url: str = ""
     encoding: str = "utf-8"
+    body: bytes | None = None  # 이미지 등 바이너리 응답
 
     @property
     def content(self) -> bytes:
-        return self.text.encode("utf-8")
+        return self.body if self.body is not None else self.text.encode("utf-8")
 
     def raise_for_status(self) -> None:
         if self.status_code >= 400:
             raise RuntimeError(f"HTTP {self.status_code}")
+
+    def iter_content(self, chunk_size: int = 1):
+        data = self.content
+        for start in range(0, len(data), chunk_size):
+            yield data[start:start + chunk_size]
+
+    def close(self) -> None:
+        pass
 
 
 class FakeHttp:
@@ -205,7 +255,9 @@ class FakeHttp:
         item = self.routes.get(url, FakeHttpResponse(404, "not found"))
         if isinstance(item, Exception):
             raise item
-        return item if item.url else FakeHttpResponse(item.status_code, item.text, item.headers, url, item.encoding)
+        if item.url:
+            return item
+        return FakeHttpResponse(item.status_code, item.text, item.headers, url, item.encoding, item.body)
 
 
 # ------------------------------------------------------------------ 샘플 데이터

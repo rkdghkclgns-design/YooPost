@@ -88,29 +88,23 @@ def build_report_blocks(
     return blocks
 
 
-def build_setup_blocks(
-    created_folders: Sequence[str],
-    created_files: Sequence[str],
-    readiness: Sequence[tuple[str, bool, str]],
-    root_url: str,
-) -> list[dict]:
-    if created_folders or created_files:
-        created = "\n".join(f"• 📁 {p}" for p in created_folders) + "\n" + "\n".join(
-            f"• 📄 {p}" for p in created_files
-        )
-        summary = f"새로 생성한 항목 {len(created_folders) + len(created_files)}개\n{created.strip()}"
-    else:
-        summary = "모든 폴더와 파일이 이미 준비되어 있습니다 (변경 없음)"
+def build_setup_blocks(checks: Sequence[tuple[str, bool, str]], blog_url: str = "") -> list[dict]:
+    """/aipost-setup 연동 점검 결과."""
+    ok = all(passed for _, passed, _ in checks)
     checklist = "\n".join(
-        f"{'✅' if ok else '⬜'} {name}" + ("" if ok else f"  _(필요: {hint})_")
-        for name, ok, hint in readiness
+        f"{'✅' if passed else '⬜'} {name}" + ("" if passed else f"  _(필요: {escape_mrkdwn(hint)})_")
+        for name, passed, hint in checks
     )
-    return [
-        {"type": "header", "text": {"type": "plain_text", "text": f"✅ {LABEL} 초기 세팅 완료"}},
-        {"type": "section", "text": {"type": "mrkdwn", "text": _truncate(summary)}},
-        {"type": "section", "text": {"type": "mrkdwn", "text": f"*연동 점검*\n{checklist}"}},
-        {"type": "context", "elements": [{"type": "mrkdwn", "text": f"<{root_url}|구글 드라이브 폴더 열기>"}]},
+    header = f"✅ {LABEL} 연동 점검 완료" if ok else f"⚠️ {LABEL} 연동 점검 — 확인 필요"
+    blocks: list[dict] = [
+        {"type": "header", "text": {"type": "plain_text", "text": header}},
+        {"type": "section", "text": {"type": "mrkdwn", "text": _truncate(f"*연동 점검*\n{checklist}")}},
     ]
+    footer = "자료 조사는 구글 딥리서치, 이미지는 이미지 저장소(Cloudflare)를 씁니다 — 구글 드라이브는 쓰지 않습니다"
+    if blog_url:
+        footer += f"  |  <{blog_url}|구글 블로그 열기>"
+    blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": footer}]})
+    return blocks
 
 
 class SlackNotifier:

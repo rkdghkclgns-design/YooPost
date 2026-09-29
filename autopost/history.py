@@ -1,19 +1,19 @@
 """발행 기록 — 같은 주제 반복 방지 · '함께 보면 좋은 글' 링크.
 
-드라이브 루트의 posted_history.json 한 파일에 저장한다 (사람이 열어봐도 읽을 수 있는 JSON).
+구글 블로그에 실제로 올라가 있는 글 목록이 곧 발행 기록이다 (별도 저장소·구글 드라이브를 쓰지 않는다).
+글마다 본문 끝에 숨은 주석 <!--yoopost {"topic": 주제, "source": 원문 주소}--> 를 넣어 두고, 목록을 읽을 때 꺼낸다.
+글을 블로그에서 지우면 기록에서도 빠진다.
 """
 from __future__ import annotations
 
 import json
 import logging
 import re
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, field
 from difflib import SequenceMatcher
-from pathlib import Path
 from types import MappingProxyType
 from typing import Mapping
 
-from .constants import HISTORY_FILE
 from .links import canonical
 
 log = logging.getLogger(__name__)
@@ -21,6 +21,7 @@ log = logging.getLogger(__name__)
 SIMILAR_TITLE = 0.72  # 제목이 이만큼 비슷하면 같은 주제로 본다
 MAX_ENTRIES = 1000
 _NOISE = re.compile(r"[^0-9a-z가-힣]+")
+_MARKER = re.compile(r"<!--yoopost (\{.*?\})-->", re.DOTALL)
 
 
 def _norm(text: str) -> str:
@@ -79,44 +80,45 @@ class PostHistory:
         others = [e for e in published if e.category != category]
         return [(e.title, e.urls[platform]) for e in (same + others)[:limit]]
 
-    def add(self, entry: HistoryEntry) -> "PostHistory":
-        return replace(self, entries=(*self.entries, entry)[-MAX_ENTRIES:])
 
-    def to_json(self) -> str:
-        return json.dumps({"posts": [e.to_dict() for e in self.entries]}, ensure_ascii=False, indent=1)
-
-    @classmethod
-    def from_json(cls, text: str) -> "PostHistory":
-        try:
-            data = json.loads(text or "{}")
-        except json.JSONDecodeError:
-            log.warning("발행 기록 파일이 손상되어 빈 기록으로 시작합니다")
-            return cls()
-        posts = data.get("posts", []) if isinstance(data, dict) else []
-        return cls(tuple(HistoryEntry.from_dict(p) for p in posts if isinstance(p, dict)))
+def read_marker(html: str) -> dict:
+    """본문의 발행 표시 주석 → {"topic": ..., "source": ...} (없거나 깨졌으면 빈 dict)."""
+    match = _MARKER.search(html or "")
+    if not match:
+        return {}
+    try:
+        data = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return {}
+    return data if isinstance(data, dict) else {}
 
 
-class HistoryStore:
-    """드라이브 루트 폴더의 posted_history.json 읽기/쓰기."""
+def history_from_posts(posts) -> PostHistory:
+    """Blogger 글 목록(최신순) → 발행 기록(오래된 순)."""
+    entries = []
+    for post in reversed(list(posts)):
+        if not isinstance(post, dict) or not post.get("url"):
+            continue
+        marker = read_marker(str(post.get("content") or ""))
+        labels = [str(label) for label in post.get("labels") or []]
+        title = str(post.get("title") or "")
+        entries.append(HistoryEntry(
+            date=str(post.get("published") or "")[:10],
+            title=title,
+            topic=str(marker.get("topic") or title),
+            category=labels[0] if labels else "",
+            source_url=str(marker.get("source") or ""),
+            urls=MappingProxyType({"blogger": str(post["url"])}),
+        ))
+    return PostHistory(tuple(entries[-MAX_ENTRIES:]))
 
-    def __init__(self, drive, root_id: str, workdir: Path) -> None:
-        self._drive = drive
-        self._root_id = root_id
-        self._workdir = workdir
 
-    def load(self) -> PostHistory:
-        found = self._drive.find_child(self._root_id, HISTORY_FILE)
-        if found is None:
-            return PostHistory()
-        path = self._drive.download(found.id, self._workdir / HISTORY_FILE)
-        return PostHistory.from_json(path.read_text(encoding="utf-8"))
-
-    def save(self, history: PostHistory) -> None:
-        path = self._workdir / HISTORY_FILE
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(history.to_json(), encoding="utf-8")
-        found = self._drive.find_child(self._root_id, HISTORY_FILE)
-        if found is None:
-            self._drive.upload(self._root_id, path, name=HISTORY_FILE, mime_type="application/json")
-        else:
-            self._drive.update_content(found.id, path, mime_type="application/json")
+def load_history(blogger, limit: int = 200) -> PostHistory:
+    """구글 블로그 글 목록에서 발행 기록을 만든다 — 읽지 못하면 빈 기록으로 계속 (경고만)."""
+    if blogger is None:
+        return PostHistory()
+    try:
+        return history_from_posts(blogger.recent_posts(limit))
+    except Exception as exc:
+        log.warning("구글 블로그 글 목록을 읽지 못해 발행 기록 없이 진행합니다: %s", exc)
+        return PostHistory()

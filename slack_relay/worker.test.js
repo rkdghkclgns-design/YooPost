@@ -149,3 +149,63 @@ test("GET health check", async () => {
   const response = await worker.fetch(new Request("https://relay.example/"), ENV);
   assert.equal(await response.text(), "ok");
 });
+
+// ---------------------------------------------------------------- 블로그 이미지 호스팅 (KV)
+function memoryKv() {
+  const store = new Map();
+  return {
+    store,
+    async put(key, value, options) {
+      store.set(key, { value, metadata: options && options.metadata });
+    },
+    async getWithMetadata(key) {
+      const item = store.get(key);
+      return item ? { value: item.value, metadata: item.metadata } : { value: null, metadata: null };
+    },
+  };
+}
+
+const PNG = new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10]);
+
+function upload(key, { token = "img-secret", type = "image/png", body = PNG } = {}) {
+  return new Request(`https://relay.example/img/${key}`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": type },
+    body,
+  });
+}
+
+test("image upload with the token stores it and GET serves it publicly", async () => {
+  const env = { ...ENV, IMAGES: memoryKv(), IMAGE_UPLOAD_TOKEN: "img-secret" };
+  const put = await worker.fetch(upload("20260929_1000_cover.png"), env);
+  assert.equal(put.status, 201);
+  assert.deepEqual(await put.json(), { ok: true, url: "https://relay.example/img/20260929_1000_cover.png" });
+
+  const got = await worker.fetch(new Request("https://relay.example/img/20260929_1000_cover.png"), env);
+  assert.equal(got.status, 200);
+  assert.equal(got.headers.get("Content-Type"), "image/png");
+  assert.match(got.headers.get("Cache-Control"), /immutable/);
+  assert.deepEqual(new Uint8Array(await got.arrayBuffer()), PNG);
+  assert.equal(dispatched.length, 0);
+});
+
+test("image upload is refused without the right token, type or size", async () => {
+  const env = { ...ENV, IMAGES: memoryKv(), IMAGE_UPLOAD_TOKEN: "img-secret" };
+  assert.equal((await worker.fetch(upload("a.png", { token: "wrong" }), env)).status, 401);
+  assert.equal((await worker.fetch(upload("a.png"), { ...env, IMAGE_UPLOAD_TOKEN: "" })).status, 401);
+  assert.equal((await worker.fetch(upload("a.svg", { type: "image/svg+xml" }), env)).status, 415);
+  assert.equal((await worker.fetch(upload("a.png", { body: new Uint8Array(0) }), env)).status, 413);
+  assert.equal(env.IMAGES.store.size, 0);
+});
+
+test("image routes: missing image, bad method, unsafe names and missing store", async () => {
+  const env = { ...ENV, IMAGES: memoryKv(), IMAGE_UPLOAD_TOKEN: "img-secret" };
+  assert.equal((await worker.fetch(new Request("https://relay.example/img/nope.png"), env)).status, 404);
+  const del = await worker.fetch(new Request("https://relay.example/img/a.png", { method: "DELETE" }), env);
+  assert.equal(del.status, 405);
+  // 경로 조작 이름은 이미지 경로로 인정하지 않는다 → 일반 GET 응답
+  const traversal = await worker.fetch(new Request("https://relay.example/img/..%2Fsecret"), env);
+  assert.equal(await traversal.text(), "ok");
+  const noStore = await worker.fetch(new Request("https://relay.example/img/a.png"), ENV);
+  assert.equal(noStore.status, 503);
+});

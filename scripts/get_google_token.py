@@ -2,7 +2,7 @@
 
 사전 준비 (README '1) 구글' 참고)
   1. rkdghkclgns@gmail.com 으로 https://www.blogger.com 에서 블로그 'AI백과사전' 만들기
-  2. Google Cloud 콘솔에서 'Google Drive API', 'Blogger API v3' 사용 설정
+  2. Google Cloud 콘솔에서 'Blogger API v3' 사용 설정 (구글 드라이브는 쓰지 않음)
   3. OAuth 동의 화면을 '프로덕션(게시됨)' 상태로 전환  ※ '테스트' 상태면 토큰이 7일 뒤 만료됨
   4. OAuth 클라이언트 ID(데스크톱 앱) JSON 을 client_secret.json 으로 저장
 

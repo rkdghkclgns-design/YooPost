@@ -67,3 +67,15 @@ def test_plain_text_and_length_exclude_code_and_markup():
 def test_normalize_hashtags_limits_and_dedupes():
     tags = normalize_hashtags(["a b", "#A_B", "", "x" * 40], ("AI",), count=3)
     assert tags == ("#ab", "#A_B", "#" + "x" * 30)
+
+
+def test_image_blocks_are_parsed_but_not_counted_as_claims():
+    import json
+
+    data = json.loads(post_json())
+    data["sections"][0]["blocks"] += [{"type": "image", "image_id": " i2 "}, {"type": "image"}]
+    post = parse_post(json.dumps(data, ensure_ascii=False))
+    images = [b for s in post.sections for b in s.blocks if b.kind == "image"]
+    assert [b.image_id for b in images] == ["I2"]  # 번호 없는 image 블록은 버림
+    assert images[0].texts() == [] and "[인용 이미지 I2]" in post.plain_text()
+    assert post.text_length() == parse_post(post_json()).text_length()

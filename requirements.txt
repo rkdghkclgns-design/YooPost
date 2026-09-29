@@ -1,10 +1,10 @@
-# Google (Drive / Blogger / OAuth)
+# Google (Blogger / OAuth) — 구글 드라이브는 쓰지 않음
 google-api-python-client>=2.150
 google-auth>=2.35
 google-auth-oauthlib>=1.2
 
 # AI (Gemini + 구글 검색 근거)
-google-genai>=1.0
+google-genai>=2.17  # Interactions API (구글 딥리서치 에이전트)
 
 # Slack
 slack_sdk>=3.33

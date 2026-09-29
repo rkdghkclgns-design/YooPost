@@ -12,12 +12,14 @@ from typing import Sequence
 
 from .blog_publisher import BloggerPublisher
 from .config import MODES, Config, ConfigError, load_config, validate_for_mode
-from .drive_helper import DriveHelper
+from .deep_research import DeepResearch
 from .fact_check import FactChecker
 from .gemini import Gemini
-from .google_auth import build_blogger_service, build_credentials, build_drive_service
+from .google_auth import build_blogger_service, build_credentials
+from .image_host import ImageHost
 from .links import USER_AGENT
 from .pipeline import AlreadyReported, RunOptions, Services, run_post, run_setup
+from .quote_images import ImageCollector
 from .research import Researcher
 from .slack_helper import SlackNotifier
 from .topic import TopicSelector
@@ -56,21 +58,23 @@ def http_session():
 
 def build_services(cfg: Config, slack: SlackNotifier, mode: str) -> Services:
     creds = build_credentials(cfg.google)
-    drive = DriveHelper(build_drive_service(creds))
-    if mode == "setup":
-        return Services(drive=drive, slack=slack)
-
-    gemini = Gemini(cfg.gemini_api_key, cfg.gemini_model, cfg.gemini_fallback_models)
     session = http_session()
     blogger = BloggerPublisher(build_blogger_service(creds), cfg.blogger_blog_id) if cfg.blogger_enabled else None
+    host = ImageHost(cfg.image_host_url, cfg.image_upload_token, session) if cfg.image_host_enabled else None
+    if mode == "setup":
+        return Services(slack=slack, blogger=blogger, image_host=host)
+
+    gemini = Gemini(cfg.gemini_api_key, cfg.gemini_model, cfg.gemini_fallback_models)
+    deep = DeepResearch(cfg.gemini_api_key, cfg.deep_research_agent, timeout_minutes=cfg.deep_research_minutes)
     return Services(
-        drive=drive,
         slack=slack,
         selector=TopicSelector(gemini, session, lookback_days=cfg.topic_lookback_days),
-        researcher=Researcher(gemini, session, min_sources=cfg.min_references),
+        researcher=Researcher(gemini, session, min_sources=cfg.min_references, deep=deep),
         writer=PostWriter(gemini, cfg.blog_name, cfg.min_body_chars),
         checker=FactChecker(gemini),
         blogger=blogger,
+        images=ImageCollector(session),
+        image_host=host,
     )
 
 
@@ -119,5 +123,5 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     except Exception as exc:
         log.exception("실행 중 오류")
-        slack.notify_error("초기 세팅" if args.mode == "setup" else "포스팅", exc)
+        slack.notify_error("연동 점검" if args.mode == "setup" else "포스팅", exc)
         return 1

@@ -29,11 +29,15 @@ def test_report_blocks_for_publish_dry_run_and_held():
     assert build_report_blocks("t", "c", [PublishResult.fail("네이버 블로그", "x")], "x")[3]["text"]["text"].startswith("❌")
 
 
-def test_setup_blocks_list_created_items_and_readiness():
-    blocks = build_setup_blocks(["R"], ["a.txt"], [("구글", True, "x"), ("네이버", False, "NAVER_*")], "https://d")
-    assert "📁 R" in blocks[1]["text"]["text"] and "📄 a.txt" in blocks[1]["text"]["text"]
-    assert "⬜ 네이버  _(필요: NAVER_*)_" in blocks[2]["text"]["text"]
-    assert "변경 없음" in build_setup_blocks([], [], [], "u")[1]["text"]["text"]
+def test_setup_blocks_show_connection_checks():
+    blocks = build_setup_blocks([("구글 블로그", True, ""), ("이미지 저장소", False, "IMAGE_<HOST>")], "https://b")
+    assert "확인 필요" in blocks[0]["text"]["text"]
+    assert "✅ 구글 블로그" in blocks[1]["text"]["text"]
+    assert "⬜ 이미지 저장소  _(필요: IMAGE_&lt;HOST&gt;)_" in blocks[1]["text"]["text"]
+    footer = blocks[-1]["elements"][0]["text"]
+    assert "<https://b|구글 블로그 열기>" in footer and "구글 드라이브는 쓰지 않습니다" in footer
+    ok = build_setup_blocks([("슬랙", True, "")])
+    assert "연동 점검 완료" in ok[0]["text"]["text"] and "블로그 열기" not in ok[-1]["elements"][0]["text"]
 
 
 def test_notifier_bot_webhook_fallback_and_uploads(tmp_path):
@@ -75,7 +79,7 @@ def test_progress_updates_one_message_and_routes_stage_outputs(tmp_path):
     assert len(pointers) == 1  # 단계별 채널 안내는 한 번만
     assert client.messages[-2]["blocks"][0]["elements"][0]["text"] == "🤖 GPT-6 · 09/29"
     step = reporter.fail_current(RuntimeError("boom"))
-    assert step == "자료 조사·출처 확인"
+    assert step == "딥리서치 자료 조사"
     assert client.last_text(ts).startswith("❌ AI 포스팅 실패")
 
 
@@ -91,5 +95,5 @@ def test_progress_without_bot_posts_finished_steps_only():
 def test_progress_blocks_show_icons_and_run_link():
     blocks = build_progress_blocks("h", [], {"topic": ("done", "<x>"), "research": ("run", "")}, "https://run")
     text = blocks[2]["text"]["text"]
-    assert "✅ 주제 선정 — &lt;x&gt;" in text and "⏳ *자료 조사·출처 확인* 진행 중…" in text
+    assert "✅ 주제 선정 — &lt;x&gt;" in text and "⏳ *딥리서치 자료 조사* 진행 중…" in text
     assert "<https://run|실행 로그 보기>" in blocks[3]["elements"][0]["text"]

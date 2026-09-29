@@ -1,37 +1,36 @@
-"""포스팅/초기세팅 전체 흐름.
+"""포스팅/연동 점검 전체 흐름 (구글 드라이브는 쓰지 않는다).
 
-    ① 셀프 세팅 점검 → ② 주제 선정 → ③ 자료 조사·출처 확인 → ④ AI 원고 → ⑤ 사실 검증(틀리면 고쳐서 재검증)
-    → ⑥ 대표 이미지·미리보기 → ⑦ 구글 블로그 발행 → ⑧ 발행 기록
+    ① 주제 선정 → ② 구글 딥리서치 자료 조사·출처 확인·인용 이미지 확보 → ③ AI 원고
+    → ④ 사실 검증(틀리면 고쳐서 재검증) → ⑤ 대표 이미지·미리보기 → ⑥ 구글 블로그 발행
+발행 기록은 구글 블로그 글 목록 자체다 (같은 주제 반복 방지·함께 보면 좋은 글).
 사실 검증을 끝내 통과하지 못하면 발행하지 않고 원고·검증 보고만 슬랙에 남긴다.
 """
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from types import MappingProxyType
 from typing import Callable
 
 from .blog_publisher import BloggerPublisher
-from .config import Config, platform_readiness
+from .config import Config
 from .content import PostContent
 from .cover import make_cover
-from .drive_helper import DriveHelper, folder_url
 from .fact_check import FactChecker, FactCheckReport
-from .history import HistoryEntry, HistoryStore, PostHistory
+from .history import PostHistory, load_history
+from .image_host import ImageHost
 from .progress import ProgressReporter
 from .publishing import (
     PublishContext,
     attach_references,
     base_notes,
     publish_blogger,
-    published_urls,
     skipped_results,
     write_preview,
 )
+from .quote_images import ImageCollector
 from .research import FactSheet, Researcher
-from .setup_engine import SetupReport, ensure_layout
 from .slack_helper import SlackNotifier, build_report_blocks, build_setup_blocks, escape_mrkdwn
 from .step_summary import build_failure_summary, build_step_summary, write_step_summary
 from .style_profile import load_style
@@ -60,13 +59,14 @@ class RunOptions:
 
 @dataclass(frozen=True)
 class Services:
-    drive: DriveHelper
     slack: SlackNotifier
     selector: TopicSelector | None = None
     researcher: Researcher | None = None
     writer: PostWriter | None = None
     checker: FactChecker | None = None
     blogger: BloggerPublisher | None = None
+    images: ImageCollector | None = None  # 인용 이미지 내려받기·확인
+    image_host: ImageHost | None = None  # 대표·인용 이미지 공개 주소 (Cloudflare Worker)
     cover_maker: Callable[..., Path] = make_cover
     now: Callable[[], datetime] = lambda: datetime.now(KST)
 
@@ -79,17 +79,38 @@ def short(text: str, limit: int = 40) -> str:
     return text if len(text) <= limit else text[: limit - 1] + "…"
 
 
-# ---------------------------------------------------------------- 초기 세팅
-def _setup(cfg: Config, services: Services) -> SetupReport:
-    return ensure_layout(services.drive, cfg.drive_root_name)
+# ---------------------------------------------------------------- 연동 점검
+def setup_checks(cfg: Config, services: Services) -> tuple[list[tuple[str, bool, str]], str]:
+    """(항목, 정상 여부, 안내) 목록과 블로그 주소 — 실제로 연결해 본다."""
+    checks: list[tuple[str, bool, str]] = []
+    blog_url = ""
+    try:
+        info = services.blogger.blog_info() if services.blogger else None
+    except Exception as exc:
+        info = None
+        blog_hint = f"연결 실패: {str(exc)[:80]}"
+    else:
+        blog_hint = "BLOGGER_BLOG_ID 와 GOOGLE_* 시크릿" if info is None else ""
+    if info:
+        blog_url = info["url"]
+        checks.append((f"구글 블로그 — {info['name']} (글 {info['posts']}개)", True, ""))
+    else:
+        checks.append(("구글 블로그", False, blog_hint))
+    checks.append((f"구글 딥리서치 자료 조사 ({cfg.deep_research_agent})", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
+    checks.append(("Gemini 원고 작성·사실 검증", bool(cfg.gemini_api_key), "GEMINI_API_KEY"))
+    host_ok = services.image_host.ping() if services.image_host else False
+    checks.append(("이미지 저장소 (대표·인용 이미지)", host_ok,
+                   "IMAGE_HOST_URL + IMAGE_UPLOAD_TOKEN (scripts/image_host_secret.py)"))
+    checks.append(("슬랙", cfg.slack_enabled, "SLACK_BOT_TOKEN + SLACK_CHANNEL_ID 또는 SLACK_WEBHOOK_URL"))
+    return checks, blog_url
 
 
 def run_setup(cfg: Config, services: Services) -> int:
-    report = _setup(cfg, services)
-    blocks = build_setup_blocks(report.created_folders, report.created_files, platform_readiness(cfg),
-                                folder_url(report.layout.root_id))
-    services.slack.post("✅ [AI백과사전] 초기 세팅 완료", blocks)
-    return 0
+    checks, blog_url = setup_checks(cfg, services)
+    ok = all(passed for _, passed, _ in checks)
+    services.slack.post("✅ [AI백과사전] 연동 점검 완료" if ok else "⚠️ [AI백과사전] 연동 점검 — 확인 필요",
+                        build_setup_blocks(checks, blog_url))
+    return 0 if ok else 1
 
 
 # ---------------------------------------------------------------- 포스팅
@@ -107,14 +128,9 @@ def _meta(options: RunOptions, now: datetime) -> list[str]:
 def run_post(cfg: Config, options: RunOptions, services: Services) -> int:
     if None in (services.selector, services.researcher, services.writer, services.checker):
         raise RuntimeError("포스팅 모드에는 주제 선정·조사·작성·검증 서비스가 모두 필요합니다")
-    report = _setup(cfg, services)  # 1. 셀프 세팅 점검
-    if report.changed:
-        services.slack.post(f"🛠️ 셀프 세팅: 누락된 항목 {len(report.created_folders) + len(report.created_files)}개를 자동 생성했습니다")
-
     now = services.now()
     tag = " [테스트]" if options.dry_run else ""
     workdir = cfg.output_dir / f"{now:%Y%m%d_%H%M}_ai"
-    store = HistoryStore(services.drive, report.layout.root_id, workdir)
     reporter = ProgressReporter(
         services.slack, f"🤖 AI 포스팅 진행 중{tag}", _meta(options, now), options.run_url,
         stage_channels=dict(cfg.slack_stage_channels),
@@ -122,7 +138,7 @@ def run_post(cfg: Config, options: RunOptions, services: Services) -> int:
     )
     reporter.start()
     try:
-        return _run_steps(cfg, options, services, report, store, reporter, now, workdir, tag)
+        return _run_steps(cfg, options, services, reporter, now, workdir, tag)
     except Exception as exc:
         failed_step = reporter.fail_current(exc)
         write_step_summary(build_failure_summary("AI 포스팅", failed_step, exc))
@@ -144,16 +160,24 @@ def _pick_topic(services: Services, options: RunOptions, history: PostHistory, n
 
 
 def _research(services: Services, topic: Topic, today: str, workdir: Path, reporter: ProgressReporter) -> FactSheet:
-    reporter.step("research", "run")
-    sheet = services.researcher.research(topic, today)
+    reporter.step("research", "run", "구글 딥리서치 조사 중 (보통 5~20분)")
+    sheet = services.researcher.research(topic, today, progress=lambda text: reporter.step("research", "run", text))
+    if services.images is not None and sheet.image_candidates:
+        sheet = replace(sheet, images=services.images.collect(sheet.image_candidates, sheet.sources, workdir))
     official = sum(1 for s in sheet.sources if s.official)
-    reporter.step("research", "done", f"사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개 (공식 {official})")
+    images = f" · 인용 이미지 {len(sheet.images)}개" if sheet.image_candidates else " · 인용 이미지 불필요"
+    engine = f" · {sheet.engine}" if sheet.engine else ""
+    reporter.step("research", "done",
+                  f"사실 {len(sheet.facts)}개 · 출처 {len(sheet.sources)}개 (공식 {official}){images}{engine}")
     path = workdir / "sources.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(sheet.markdown(), encoding="utf-8")
     reporter.file(path, "출처·사실 목록",
                   f"🔎 *{escape_mrkdwn(topic.title)}*\n원문: {escape_mrkdwn(topic.source_url) or '웹 검색'}",
                   stage="research")
+    for image in sheet.images:
+        reporter.file(image.path, f"인용 이미지 {image.id}",
+                      f"🖼️ {escape_mrkdwn(image.caption)} (출처: {escape_mrkdwn(image.credit)})", stage="research")
     return sheet
 
 
@@ -191,10 +215,10 @@ def _write_outputs(content: PostContent, report: FactCheckReport, workdir: Path,
     reporter.file(fact_md, "사실 검증 보고", f"{icon} 사실 검증 — {report.summary_line()}", stage="draft")
 
 
-def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: SetupReport, store: HistoryStore,
-               reporter: ProgressReporter, now: datetime, workdir: Path, tag: str) -> int:
+def _run_steps(cfg: Config, options: RunOptions, services: Services, reporter: ProgressReporter, now: datetime,
+               workdir: Path, tag: str) -> int:
     today = now.strftime("%Y-%m-%d")
-    history = store.load()
+    history = load_history(services.blogger)
     topic = _pick_topic(services, options, history, now, reporter, tag)
     sheet = _research(services, topic, today, workdir, reporter)
 
@@ -212,9 +236,10 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
 
     reporter.step("image", "run")
     cover = services.cover_maker(workdir / "cover.png", content.title, content.category, cfg.blog_name, f"{now:%Y.%m.%d}")
-    reporter.step("image", "done", "1200×630")
-    ctx = PublishContext(content, cover, base_notes(now, report.passed), history, setup.layout.public_folder_id,
-                         now.strftime("%Y%m%d_%H%M"))
+    ctx = PublishContext(content, cover, base_notes(now, report.passed), history, now.strftime("%Y%m%d_%H%M"),
+                         sheet.images, topic.title, topic.source_url)
+    used = len(ctx.used_images())
+    reporter.step("image", "done", "대표 1200×630" + (f" · 인용 {used}개" if used else ""))
     preview = write_preview(ctx, workdir, options.dry_run)
     reporter.file(cover, "대표 이미지", "🖼️ 대표 이미지", stage="draft")
     reporter.file(preview, "구글 블로그 미리보기", "👀 구글 블로그에 올라갈 모습 — 내려받아 브라우저로 열어 보세요", stage="draft")
@@ -228,10 +253,9 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
         reporter.step("publish", "skip", "사실 검증 미통과 — 발행 보류")
     else:
         reporter.step("publish", "run")
-        results = [publish_blogger(services.drive, services.blogger, ctx)]
+        results = [publish_blogger(services.image_host, services.blogger, ctx)]
         reporter.step("publish", "done" if results[0].ok else "fail", results[0].url or results[0].message)
 
-    _record(store, history, topic, content, results, options, reporter, today)
     reporter.note(f"🤖 [AI백과사전] {escape_mrkdwn(content.title)}",
                   build_report_blocks(content.title, content.category, results, report.summary_line(),
                                       options.dry_run, held and not options.dry_run), stage="publish")
@@ -242,16 +266,3 @@ def _run_steps(cfg: Config, options: RunOptions, services: Services, setup: Setu
     write_step_summary(build_step_summary(content.title, content.category, topic.source_url, content.text_length(),
                                           report.summary_line(), results, options.dry_run, held))
     return 0 if ok else 1
-
-
-def _record(store: HistoryStore, history: PostHistory, topic: Topic, content: PostContent, results, options: RunOptions,
-            reporter: ProgressReporter, today: str) -> None:
-    """발행에 성공했을 때만 기록 (실패·테스트는 기록하지 않아 다음에 다시 쓸 수 있음)."""
-    if options.dry_run or not any(r.ok for r in results):
-        reporter.step("record", "skip", "발행하지 않아 기록 안 함")
-        return
-    reporter.step("record", "run")
-    entry = HistoryEntry(today, content.title, topic.title, content.category, topic.source_url,
-                         MappingProxyType(published_urls(results)))
-    store.save(history.add(entry))
-    reporter.step("record", "done", f"발행 기록 {len(history.entries) + 1}번째")
