@@ -26,6 +26,7 @@ from types import MappingProxyType
 from typing import Callable, Iterable, Mapping, Sequence
 
 from .claude_draft import DraftError, load_draft
+from .constants import CATEGORIES
 
 log = logging.getLogger(__name__)
 
@@ -87,6 +88,55 @@ def read_json(path: Path) -> dict:
 def write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+# ------------------------------------------------------------------ 빈 카테고리 (건너뜀·전송 실패·원고 없음) → 자동 보충 대상
+@dataclass(frozen=True)
+class Gap:
+    number: int  # 카테고리 번호 (1~7, 블로그 메뉴 순서)
+    category: str
+    reason: str
+
+
+def _complete(folder: Path) -> bool:
+    """사실 검증까지 끝난 원고 (post.json·research.json, factcheck 에 claims·confirmed)."""
+    if is_skip(folder) or not (folder / "post.json").is_file():
+        return False
+    fc = read_json(folder / "research.json").get("factcheck")
+    return isinstance(fc, dict) and isinstance(fc.get("claims"), int) and isinstance(fc.get("confirmed"), int)
+
+
+def missing_categories(drafts_dir: Path, day: str, categories: Sequence[str],
+                       failures: Mapping[str, Mapping[str, object]] | None = None,
+                       pushed: Iterable[str] | None = None) -> list[Gap]:
+    """오늘(YYYYMMDD) 쓸 만한 원고가 없는 카테고리 — 건너뛴 것, 보내다 멈춘 것, 올리지 못한 것, 아예 없는 것.
+
+    같은 카테고리에 쓸 만한 원고가 하나라도 있으면 빈 카테고리가 아니다 (보충한 원고가 건너뜀 표시를 이긴다).
+    쓸 만한 원고 = 사실 검증까지 끝났고, 원고 브랜치에 올라갔고(pushed 가 주어지면), Actions 가 더 보내지 않기로
+    멈춘(parked) 실패가 아닌 것 — 전송 재시도 규칙(sync_drafts)과 같은 기준.
+    """
+    failures = failures or {}
+    remote = None if pushed is None else set(pushed)
+    folders = draft_folders(drafts_dir, [day])
+    gaps: list[Gap] = []
+    for number, category in enumerate(categories, start=1):
+        mine = [f for f in folders if f.name.endswith(f"_{number}")]
+        complete = [f for f in mine if _complete(f)]
+        on_branch = [f for f in complete if remote is None or f.name in remote]
+        parked = [f for f in on_branch if _parked(failures.get(f.name), fingerprint(f))]
+        if len(on_branch) > len(parked):
+            continue
+        skipped = [str(read_json(f / SKIP_FILE).get("reason") or "") for f in mine if is_skip(f)]
+        if parked:
+            reason = f"전송 실패(재시도 중단): {failures[parked[-1].name].get('reason') or ''}"
+        elif complete:
+            reason = "원고를 브랜치에 올리지 못함 (로컬에만 있음)"
+        elif skipped:
+            reason = f"건너뜀: {skipped[-1] or '이유 없음'}"
+        else:
+            reason = "원고 없음"
+        gaps.append(Gap(number, category, reason[:MAX_REASON]))
+    return gaps
 
 
 # ------------------------------------------------------------------ 품질 확인 (클라우드에서, 네트워크 없이)
@@ -255,14 +305,23 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     return outcome
 
 
+AUTOFILL_HINT = ("🔁 빈 카테고리는 PC가 켜져 있으면 08:30·12:30·17:30 에 자동으로 보충됩니다 "
+                 "(로컬 예약 작업 'yoopost-daily-category-drafts')")
+
+
 def watchdog(root: Path, now: datetime, slack) -> bool:
-    """오늘 클라우드 실행이 없거나(루틴이 돌지 않음) 시작만 하고 끝나지 않았으면 알린다. 정상이면 True."""
+    """오늘 클라우드 실행이 없거나(루틴이 돌지 않음) 끝나지 않았거나, 빈 카테고리가 남았으면 알린다. 정상이면 True."""
     run = read_json(root / RUNS / f"{now:%Y%m%d}.json")
-    if run and not run_active(run):
+    if not run or run_active(run):
+        problem = "시작했지만 끝나지 않았습니다" if run else "실행 기록이 없습니다"
+        slack.post(f"⚠️ {now:%m/%d} 클라우드 원고 루틴이 {problem} — "
+                   f"claude.ai/code/routines 에서 'YooPost 매일 원고' 실행 결과를 확인해 주세요\n{AUTOFILL_HINT}")
+        return False
+    gaps = missing_categories(root / DRAFTS, f"{now:%Y%m%d}", CATEGORIES, read_json(root / STATE / "failures.json"))
+    if not gaps:
         return True
-    problem = "시작했지만 끝나지 않았습니다" if run else "실행 기록이 없습니다"
-    slack.post(f"⚠️ {now:%m/%d} 클라우드 원고 루틴이 {problem} — "
-               "claude.ai/code/routines 에서 'YooPost 매일 원고' 실행 결과를 확인해 주세요")
+    lines = "\n".join(f"• {g.category} — {g.reason}" for g in gaps)
+    slack.post(f"⏭️ {now:%m/%d} 아직 원고가 없는 카테고리 {len(gaps)}개\n{lines}\n{AUTOFILL_HINT}")
     return False
 
 
@@ -275,6 +334,8 @@ def summary_text(rows: Sequence, day_label: str, network: str = "") -> str:
     waiting = sum(1 for r in rows if r.icon == "📝")
     lines = [f"📚 {day_label} 클라우드 원고 작성 결과 — 승인 대기 {waiting}편 (#yoopost-1-원고승인 에서 ✅)"]
     lines += [f"{r.icon} {r.category} — {r.text}" for r in rows]
+    if any(r.icon in ("⏭️", "⚠️") for r in rows):
+        lines.append(AUTOFILL_HINT)
     if network == "limited":
         lines.append(NETWORK_HINT)
     return "\n".join(lines)

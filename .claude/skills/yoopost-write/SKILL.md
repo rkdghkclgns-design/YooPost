@@ -28,7 +28,8 @@ AI 언어 모델 · AI 도구 · AI 논문 분석 · AI 뉴스 리뷰 · AI 보�
    ```
    출력의 글 문법·사실 규칙·post.json/research.json 형식·**이미 쓴 글 목록**·**최근 7일 원고(승인 대기 포함)**를 그대로 따른다. 마지막 줄이 원고 폴더 경로.
 2. **주제 고르기**: WebSearch 로 최근(보통 3일, 논문·보안·공모주는 14일) 공식 발표·1차 자료가 있는 AI 소식. 이미 쓴 글·최근 원고·이번 실행의 앞 주제와 같은 주제·같은 원문 금지.
-   - 공모주: 증권신고서·공시·공식 보도자료만 (최근 60일). 없으면 "건너뜀"으로 보고. 수익 전망·매수 권유 금지 (안내문은 시스템이 붙인다).
+   - 공모주: 증권신고서·공시·공식 보도자료만 (최근 60일, 없으면 아래 '⛔ 빈 카테고리를 남기지 않는다'대로 120일·상장 후 공시까지 넓힌다). 그래도 없을 때만 "건너뜀". 수익 전망·매수 권유 금지 (안내문은 시스템이 붙인다).
+   - 막혀서 못 쓸 것 같으면 바로 건너뛰지 말고 '⛔ 빈 카테고리를 남기지 않는다'의 순서를 따른다.
 3. **조사**: WebFetch 로 공식 발표·문서·논문 원문을 직접 읽고, 신뢰할 수 있는 언론으로 교차 확인. 출처 4~10개, 출처 url 은 실제로 읽은 원래 주소.
    인용 이미지가 설명을 도우면 이미지가 실린 **출처 페이지**를 최대 3개 images 에 (파일 주소를 모르면 image_url 은 빈 문자열).
 4. **원고 (post.json)**: 지침의 OUTPUT_SCHEMA 그대로. 참고 블로그 문법(이모지 제목, "안녕하세요!" 도입, 한눈에 보기, 이모지 h2, 💡/⚠️ 박스, 표, FAQ, 맺음말 끝인사),
@@ -64,8 +65,33 @@ GitHub Actions(`cloud_drafts.yml`)가 위 ② 의 6~7 단계(준비·슬랙 승�
 | `python scripts/claude_draft.py <폴더>` (슬랙 전송) | `python scripts/cloud_drafts.py push <폴더>` (올리면 Actions 가 슬랙 승인 요청) |
 | `python scripts/draft_progress.py [--skip X --reason R]` | `python scripts/cloud_drafts.py skip --category X --reason R` (진행 막대는 Actions 가 갱신) |
 실행 처음에 `python scripts/cloud_drafts.py setup` → `status`(이미 끝난 카테고리 확인) → `start`, 마지막에 `finish`(요약은 Actions 가 #yoopost-알림 에).
+오늘 날짜는 **KST** 로 센다: `TZ=Asia/Seoul date +%F` (루틴은 UTC 22시에 돌기 때문에 `date` 만 쓰면 하루 전 날짜가 된다).
 WebFetch 가 `EGRESS_BLOCKED` 로 막힌 사이트는 읽지 못한 것이다 — 출처로 쓰지 않는다 (읽은 페이지만 출처). 막힌 곳이 많으면 `start --network limited`.
 출처 접속 확인·인용 이미지 내려받기·중복 주제 확인은 Actions 가 다시 한다 (실패하면 #yoopost-알림 에 이유가 온다).
+
+## ⛔ 빈 카테고리를 남기지 않는다 (2026-09-30 사용자 지시 — 클라우드 루틴·자동 보충에서)
+건너뛰기는 마지막 수단이다. 막히면 아래 순서로 다른 길을 찾는다. (출처는 여전히 **직접 읽은 페이지만** — 못 읽은 곳을 출처에 넣지 않는다)
+1. **같은 소식의 다른 공식 출처**: 개발사 GitHub 저장소·릴리스 노트·문서 사이트, Hugging Face 모델 카드, 공식 블로그의 다른 주소, 공식 보도자료 배포처.
+2. **같은 카테고리의 다른 소식**으로 주제를 바꾼다 (읽을 수 있는 1차 자료가 있는 것).
+3. **기간을 넓힌다**: 언어 모델·도구·뉴스 7→14일, 논문·보안 14→30일, 공모주 60→120일 또는 최근 상장 AI 기업의 상장 후 공시(증권발행실적보고서·분기보고서)·미국 S-1/F-1.
+4. 한 번의 실행에서 **같은 회사·기관 주제는 2편까지** (접속되는 사이트만 골라 한 회사 글로 채우지 않는다).
+모든 카테고리를 한 번씩 한 뒤 `python scripts/cloud_drafts.py missing` 으로 남은 카테고리를 확인하고, **남은 카테고리마다 한 번 더** (다른 주제·출처로) 시도한다.
+그래도 쓸 수 없으면 `skip --reason "<구체적 이유>"` — 빈 카테고리는 PC 가 켜져 있으면 로컬 자동 보충(아래)이 채운다.
+**공모주(클라우드)**: 준비 단계에서 dart.fss.or.kr 이 막혀 있으면 공모주는 대안(회사 공식 보도자료·금융위원회 보도자료)을 한 번만 시도하고, 안 되면 재시도 없이 바로 skip 한다 — 로컬 자동 보충이 DART 로 먼저 채운다.
+`missing` 은 **원고 브랜치에 올라간** 원고만 채운 것으로 친다 (로컬에만 있는 원고·보내다 멈춘 원고는 빈 카테고리).
+
+## 🔁 빈 카테고리 자동 보충 (로컬, PC 가 켜져 있을 때 08:30·12:30·17:30 — 꺼져 있었으면 앱을 켤 때)
+로컬 예약 작업 `yoopost-daily-category-drafts` 가 전체 인터넷으로 채운다 (클라우드에서 막힌 사이트도 읽을 수 있다).
+1. `python scripts/cloud_drafts.py setup` → `python scripts/cloud_drafts.py missing --json`
+   - 종료 코드가 0 이 아니거나 `synced` 가 false → 원격과 못 맞춘 것이므로 **아무것도 쓰지 않고** 끝낸다 (옛 상태로 판단하면 중복 원고가 생김).
+   - `gaps` 가 비었거나, `cloud_running`·`cloud_pending` 이 true 이거나, `locked_by` 가 있으면 끝낸다 (클라우드가 쓰는 중·곧 쓸 예정·다른 쪽이 채우는 중).
+2. `python scripts/cloud_drafts.py claim --owner autofill` — 0 이 아니면 끝낸다. (끝날 때 반드시 `release --owner autofill`)
+3. 빈 카테고리마다 차례로, **시작 전에 `missing --json` 을 다시 확인**해 이미 채워졌으면 건너뛴다:
+   ① 작성(Sonnet) — 지침·폴더는 `python scripts/claude_brief.py --category X --new --drafts-dir .yoopost-drafts/drafts`
+   → ② 사실 검증(Opus) — `cloud_drafts.py check <폴더>` → `claude_draft.py <폴더> --no-send`(출처·이미지 확인) → `cloud_drafts.py push <폴더>`.
+   올리면 Actions 가 슬랙 승인 요청과 진행 막대를 처리한다 (보충한 원고가 건너뜀 표시를 대신한다).
+4. `python scripts/cloud_drafts.py release --owner autofill` → `missing` 결과 보고.
+수동으로 채울 때(대화 중)도 같은 순서로 `claim --owner manual` 을 먼저 잡는다.
 
 ## 발행 이후 (자동)
 슬랙 ✅ → Cloudflare Worker(`/slack/events`) → GitHub Actions `publish_draft.yml` → 구글 블로그 발행 → 원고 메시지 스레드에 결과.

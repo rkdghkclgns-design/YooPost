@@ -7,9 +7,10 @@ import pytest
 
 from autopost.claude_draft import DraftError
 from autopost.cloud_drafts import (
-    NETWORK_HINT, draft_folders, failed_reasons, fingerprint, folder_day, quality_report, read_json, recent_days,
-    run_active, summary_text, sync_and_report, sync_drafts, write_json,
+    AUTOFILL_HINT, NETWORK_HINT, draft_folders, failed_reasons, fingerprint, folder_day, missing_categories,
+    quality_report, read_json, recent_days, run_active, summary_text, sync_and_report, sync_drafts, write_json,
 )
+from autopost.constants import CATEGORIES
 from autopost.draft_progress import Row, build_rows, scan
 from autopost.draft_store import DraftStore, DraftStoreError
 from autopost.history import HistoryEntry
@@ -200,7 +201,9 @@ def test_summary_mentions_waiting_drafts_and_network_hint():
     rows = [Row("AI 언어 모델", "📝", "승인 대기: A", True), Row("AI 도구", "⏭️", "건너뜀 — 없음", True)]
     text = summary_text(rows, "09/30", "limited")
     assert "승인 대기 1편" in text and "📝 AI 언어 모델 — 승인 대기: A" in text and NETWORK_HINT in text
+    assert AUTOFILL_HINT in text  # 건너뛴 카테고리가 있으면 자동 보충 안내
     assert NETWORK_HINT not in summary_text(rows, "09/30", "full")
+    assert AUTOFILL_HINT not in summary_text(rows[:1], "09/30", "full")
 
 
 def test_sync_and_report_runs_the_whole_actions_step(tmp_path):
@@ -317,6 +320,7 @@ def test_cloud_helper_checks_pushes_skips_and_records_runs(branch_repo, monkeypa
     helper = load_script("cloud_drafts")
     monkeypatch.setattr(helper, "TREE", tree)
     monkeypatch.setattr(helper, "setup", lambda: tree)
+    monkeypatch.setitem(helper.SYNC, "ok", True)
     monkeypatch.setenv("MIN_BODY_CHARS", "1000")
     today = helper.today()
     folder = write_draft(tree / "drafts" / f"{today}_070000_1")
@@ -341,7 +345,23 @@ def test_cloud_helper_checks_pushes_skips_and_records_runs(branch_repo, monkeypa
 
     assert helper.main(["status"]) == 0
     out = capsys.readouterr().out
-    assert "1. AI 언어 모델: 완료" in out and "7. AI 공모주 분석: 완료(건너뜀)" in out and "2. AI 도구: 남음" in out
+    assert "1. AI 언어 모델: 완료" in out and "2. AI 도구: 남음 — 원고 없음" in out
+    assert "7. AI 공모주 분석: 남음 — 건너뜀: 공모 없음" in out  # 건너뛴 카테고리는 다시 쓸 대상
+    assert helper.main(["missing"]) == 0
+    out = capsys.readouterr().out
+    assert "1. AI 언어 모델" not in out and "7. AI 공모주 분석 — 건너뜀: 공모 없음" in out
+    assert helper.main(["missing", "--json"]) == 0
+    listed = json.loads(capsys.readouterr().out)
+    assert [g["number"] for g in listed["gaps"]] == [2, 3, 4, 5, 6, 7] and listed["gaps"][-1]["category"] == "AI 공모주 분석"
+    assert listed["cloud_running"] is False  # 'finish' 로 끝난 실행
+    write_json(tree / "runs" / f"{today}.json", {"started": datetime.now(helper.KST).isoformat(), "finished": ""})
+    assert helper.cloud_running() is True  # 방금 시작해 진행 중 → 로컬 보충은 기다린다
+    helper.main(["missing"])
+    assert "클라우드 루틴 자신이라면" in capsys.readouterr().out
+    write_json(tree / "runs" / f"{today}.json", {"started": "2000-01-01T07:00:00+09:00", "finished": ""})
+    assert helper.cloud_running() is False  # 오래전에 시작해 멈춘 실행은 기다리지 않는다
+    write_json(tree / "runs" / f"{today}.json", {"started": "?", "finished": ""})
+    assert helper.cloud_running() is False
 
     bad = write_draft(tree / "drafts" / f"{today}_080000_2", factcheck={})
     assert helper.main(["push", str(bad)]) == 1  # 사실 검증 기록이 없으면 올리지 않음
@@ -381,4 +401,74 @@ def test_watchdog_warns_when_the_routine_did_not_run(tmp_path):
     write_json(tmp_path / "runs" / "20260930.json", {"started": "07:00"})
     assert watchdog(tmp_path, day, slack) is False and "끝나지 않았습니다" in client.messages[1]["text"]
     write_json(tmp_path / "runs" / "20260930.json", {"started": "07:00", "finished": "09:10"})
-    assert watchdog(tmp_path, day, slack) is True and len(client.messages) == 2
+    for number in range(1, 7):
+        write_draft(tmp_path / "drafts" / f"20260930_07000{number}_{number}")
+    write_json(tmp_path / "drafts" / "20260930_073000_7" / "skip.json", {"category": "AI 공모주 분석", "reason": "공시 차단"})
+    assert watchdog(tmp_path, day, slack) is False  # 끝났어도 빈 카테고리가 있으면 알린다
+    gap_note = client.messages[2]["text"]
+    assert "원고가 없는 카테고리 1개" in gap_note and "AI 공모주 분석 — 건너뜀: 공시 차단" in gap_note
+    assert AUTOFILL_HINT in gap_note
+    write_draft(tmp_path / "drafts" / "20260930_120000_7")  # 자동 보충한 원고가 건너뜀을 이긴다
+    assert watchdog(tmp_path, day, slack) is True and len(client.messages) == 3
+
+
+def test_missing_categories_cover_skips_failures_and_absent_drafts(tmp_path):
+    from autopost.cloud_drafts import fingerprint as mark
+
+    drafts = tmp_path / "drafts"
+    one = write_draft(drafts / "20260930_070000_1")
+    two = write_draft(drafts / "20260930_070500_2")  # 원고 문제로 보내지 못함 (영구 실패)
+    three = write_draft(drafts / "20260930_071000_3")  # 일시적 실패는 Actions 가 다시 보내므로 빈 카테고리가 아님
+    write_draft(drafts / "20260930_071500_4", factcheck={})  # 사실 검증 전 원고는 쓸 수 없음
+    write_json(drafts / "20260930_072000_5" / "skip.json", {"category": "AI 보안"})
+    write_draft(drafts / "20260929_070000_6")  # 어제 원고는 오늘 것이 아님
+    seven = write_draft(drafts / "20260930_073000_7")  # 일시적 실패를 3번 겪어 멈춤 (parked)
+    failures = {two.name: {"hash": mark(two), "reason": "이미 발행한 주제", "permanent": True},
+                three.name: {"hash": mark(three), "reason": "슬랙 503", "attempts": 1, "permanent": False},
+                seven.name: {"hash": mark(seven), "reason": "슬랙 503", "attempts": 3, "permanent": False}}
+    gaps = missing_categories(drafts, "20260930", CATEGORIES, failures)
+    assert [(g.number, g.reason) for g in gaps] == [
+        (2, "전송 실패(재시도 중단): 이미 발행한 주제"), (4, "원고 없음"), (5, "건너뜀: 이유 없음"),
+        (6, "원고 없음"), (7, "전송 실패(재시도 중단): 슬랙 503")]
+    # 원고를 고치면(지문이 바뀌면) 예전 실패 기록은 더 이상 막지 않는다
+    write_draft(two, good_post(title="🤖 고친 원고"))
+    assert 2 not in [g.number for g in missing_categories(drafts, "20260930", CATEGORIES, failures)]
+    # 원고 브랜치에 올라간 폴더만 채운 것으로 친다 (로컬에만 있는 원고는 빈 카테고리)
+    pushed = [one.name, two.name, three.name]
+    local_only = missing_categories(drafts, "20260930", CATEGORIES, failures, pushed)
+    assert (7, "원고를 브랜치에 올리지 못함 (로컬에만 있음)") in [(g.number, g.reason) for g in local_only]
+    assert missing_categories(tmp_path / "none", "20260930", CATEGORIES)[0].reason == "원고 없음"
+
+
+def test_helper_refuses_to_judge_from_a_stale_worktree_and_serialises_fillers(branch_repo, monkeypatch, capsys):
+    remote, seed, tree = branch_repo
+    helper = load_script("cloud_drafts")
+    monkeypatch.setattr(helper, "TREE", tree)
+    (tree / ".git").exists() or pytest.skip("clone layout")
+    git(tree, "remote", "set-url", "origin", str(remote.parent / "gone.git"))  # 원격에 닿지 못함
+    assert helper.main(["missing", "--json"]) == 2
+    out = json.loads(capsys.readouterr().out)
+    assert out["synced"] is False and "판단하지 않습니다" in out["error"]
+    assert helper.main(["setup"]) == 2 and "맞추지 못했습니다" in capsys.readouterr().out
+    git(tree, "remote", "set-url", "origin", str(remote))
+    assert helper.main(["setup"]) == 0 and helper.SYNC["ok"] is True
+
+    assert helper.claim("autofill") == 0 and helper.lock_holder()["owner"] == "autofill"
+    assert helper.claim("manual") == 3  # 다른 쪽이 채우는 중
+    assert helper.release("manual") == 3 and helper.lock_holder()  # 남의 잠금은 풀지 않는다
+    assert helper.release("autofill") == 0 and helper.lock_holder() == {}
+    write_json(helper.lock_path(), {"owner": "old", "at": "2000-01-01T00:00:00+09:00"})
+    assert helper.lock_holder() == {} and helper.claim("manual") == 0  # 오래된 잠금은 풀린 것으로 본다
+    capsys.readouterr()
+
+    today = helper.today()
+    monkeypatch.setattr(helper, "CLOUD_WAIT_UNTIL", (24, 0))
+    assert helper.cloud_pending() is True  # 오늘 실행 기록이 아직 없고 기다릴 시각 전
+    monkeypatch.setattr(helper, "CLOUD_WAIT_UNTIL", (0, 0))
+    assert helper.cloud_pending() is False
+    write_json(tree / "runs" / f"{today}.json", {"started": "x"})
+    monkeypatch.setattr(helper, "CLOUD_WAIT_UNTIL", (24, 0))
+    assert helper.cloud_pending() is False  # 실행 기록이 있으면 기다리지 않는다
+    assert helper.main(["missing", "--json"]) == 0
+    state = json.loads(capsys.readouterr().out)
+    assert state["synced"] and state["locked_by"] == "manual" and len(state["gaps"]) == 7
