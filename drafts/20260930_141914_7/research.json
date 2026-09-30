@@ -1,0 +1,121 @@
+{
+ "topic": "네오사피엔스 코스닥 공모 — 증권신고서(2026-07-23 최초, 9-09 발행조건확정)·증권발행실적보고서(2026-09-15), 신주 200만주·확정 공모가 10,000원",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260909000307",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "[발행조건확정] 증권신고서(지분증권) — 네오사피엔스 (접수번호 20260909000307)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260909000307",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-09-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "증권신고서(지분증권) — 네오사피엔스 최초 제출 (접수번호 20260723000660)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260723000660",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-07-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "증권발행실적보고서 — 네오사피엔스 (접수번호 20260915000379)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260915000379",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-09-15",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "네오사피엔스, 오는 21일 코스닥 상장 (한국거래소 신규상장 승인 보도)",
+   "url": "https://www.newspim.com/news/view/20260917001291",
+   "publisher": "뉴스핌",
+   "published": "2026-09-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "한국거래소, 네오사피엔스 21일 코스닥 상장",
+   "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=488195",
+   "publisher": "핀포인트뉴스",
+   "published": "2026-09-17",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "네오사피엔스, 증권신고서 제출…코스닥 상장 절차 본격화",
+   "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03280006645517800",
+   "publisher": "이데일리",
+   "published": "2026-07-24",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "희망가보다 27% 낮게 공모가 확정한 '네오사피엔스'",
+   "url": "https://biz.newdaily.co.kr/site/data/html/2026/09/21/2026092100079.html",
+   "publisher": "뉴데일리경제",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "'AI 음성 생성' 네오사피엔스, 코스닥 입성[오늘 상장]",
+   "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01804006645582416",
+   "publisher": "이데일리",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "네오사피엔스, 코스닥 '노크'...생성형AI기업 첫 상장",
+   "url": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202609070250",
+   "publisher": "한국경제TV",
+   "published": "2026-09-07",
+   "official": false
+  },
+  {
+   "id": "S10",
+   "title": "[기재정정] 증권신고서(지분증권) 4차 정정 — 네오사피엔스 (접수번호 20260907000079)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260907000079",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-09-07",
+   "official": true
+  },
+  {
+   "id": "S11",
+   "title": "[기재정정] 증권신고서(지분증권) 2차 정정(공모일정 변경) — 네오사피엔스 (접수번호 20260814003426)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814003426",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-08-14",
+   "official": true
+  },
+  {
+   "id": "S12",
+   "title": "기업개황 — 네오사피엔스 주식회사 (법인구분 코스닥시장, 종목코드 0161M0)",
+   "url": "https://dart.fss.or.kr/dsae001/selectPopup.ax?selectKey=01876251",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 DART 증권신고서·공시 페이지는 글자 위주 문서라 본문 그림이 없고, 언론 기사 그림은 인용하지 않았습니다.",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 56,
+  "removed": [
+   "기관투자자 수요예측은 8월 31일부터 9월 4일까지로 안내되었습니다. (최초 신고서 일정 — 8/14 정정으로 9/2~9/8로 바뀜, 정정 일정으로 수정)",
+   "상장 직후 시가총액은 약 1,927억원으로 보도되었습니다. (기사 1건, 상장예정주식수 12,215,845주×공모가와 불일치)",
+   "주요 고객으로는 SOOP, CJ온스타일, LG유플러스, SBS 같은 방송·교육·커머스 기업이 언급되었습니다. (기사 1건, 공시 미확인)",
+   "청약 일정은 ... 확정 일정으로 쓰지 않았습니다. (DART 확인 후 9/10~11 로 수정)",
+   "다만 이번 조사에서는 DART 서류 본문 화면을 열어 읽지 못했고 ... / DART 본문은 직접 읽지 못했습니다 (본문 대조 후 문장 교체)",
+   "첨부 목록 중 인수계약서·반기 검토보고서·정관 (첨부 목록에서 확인 못 함)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): DART viewer(dcmNo) 본문을 curl 로 직접 열어 대조 — 최초 증권신고서(20260723000660: 밴드 13,800~15,800원, 200만주, 최초 일정), 2차 정정(20260814003426: 수요예측 9/2~9/8·청약 9/10~11·납입 9/15 로 변경), 4차 정정(20260907000079: 연결 요약재무 2024~2026 반기, 회사 개요·226개국·300만 가입자(2026.3)·700여 캐릭터·Neona 2026.5 교육사 계약·기술성장기업 특례·자금 사용목적 DGX B300), 발행조건확정(20260909000307: 확정가 10,000원, 기관 수요예측 219.56:1), 증권발행실적보고서(20260915000379: 발행총액 200억원, 청약 9/10~11, 일반 523,890,410주/500,000주=1,047.78:1·107,233건, 지분 23.62%/37.62%, 자금 사용 31.29억/109.08억/58.68억, 상장일 9/21). 상장은 DART 기업개황(법인구분 코스닥시장, 종목코드 0161M0)·핀포인트/뉴스핌(거래소 승인)·이데일리/뉴데일리(9/21 상장)로 확인. KIND 는 403. 가입자 320만→공시값 300만 이상으로 수정, 재무 반올림값을 공시 원값으로 수정, 수익 전망·매수 권유 표현 없음 확인. 직원 71명(뉴스핌·핀포인트)·기업고객 약 2,000곳(이데일리·한경TV)은 독립 보도 2곳 일치로 보도 기준 명시, '생성형 AI 첫 상장'은 한경TV 표현임을 본문 박스에 밝힘."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}
