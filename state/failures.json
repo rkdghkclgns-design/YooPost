@@ -4,5 +4,11 @@
   "reason": "이미 발행한 주제와 겹칩니다: AMD to Acquire World Labs to Advance the Future of AI Compute (AMD, 2026-09-28) (그래도 올리려면 --allow-duplicate)",
   "attempts": 1,
   "permanent": true
+ },
+ "20261001_074849_7": {
+  "hash": "1f056b2cb8a9f260",
+  "reason": "이미 발행한 주제와 겹칩니다: 인텔리빅스 코스닥 공모 — 증권신고서(지분증권, 2026-09-16): 신주 2,500,000주·희망가 7,600~9,000원, 수요예측 10/12~16·청약 10/21~22 (그래도 올리려면 --allow-duplicate)",
+  "attempts": 1,
+  "permanent": true
  }
 }
