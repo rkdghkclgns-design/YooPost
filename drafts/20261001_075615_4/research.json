@@ -1,0 +1,53 @@
+{
+ "topic": "Akamai Announces $11.6 Billion Multi-year Agreement with Anthropic to Support Growing Demand (Akamai, 2026-09-24)",
+ "source_url": "https://www.globenewswire.com/news-release/2026/09/24/3368729/0/en/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Akamai Announces $11.6 Billion Multi-year Agreement with Anthropic to Support Growing Demand",
+   "url": "https://www.globenewswire.com/news-release/2026/09/24/3368729/0/en/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand.html",
+   "publisher": "Akamai Technologies (GlobeNewswire)",
+   "published": "2026-09-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Akamai Technologies Form 8-K (Anthropic Master Services Agreement, warrant)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001086222/000119312526401048/d288154d8k.htm",
+   "publisher": "U.S. SEC / Akamai Technologies",
+   "published": "2026-09-24",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Akamai signs $11.6 billion cloud deal with Anthropic, grants warrant for up to 5% stake",
+   "url": "https://www.ksl.com/article/51628317/akamai-anthropic-sign-116-billion-cloud-services-deal",
+   "publisher": "KSL (Reuters)",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Akamai lands $11.6 billion Anthropic deal, shares soar",
+   "url": "https://finance.yahoo.com/technology/ai/articles/akamai-lands-11-6-billion-203833354.html",
+   "publisher": "Yahoo Finance",
+   "published": "2026-09-25",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료와 8-K 공시는 글자 위주이며 본문에 계약 내용을 보여 주는 그림·도표가 없음",
+ "factcheck": {
+  "claims": 47,
+  "confirmed": 44,
+  "removed": [
+   "일부 언론은 이를 206억 달러로 계산해 보도했습니다. (읽은 출처에서 확인 안 됨)",
+   "RBC Capital 은 이번 계약이 Akamai 의 목표 시장을 넓힐 가능성이 높다고 평가했습니다. (Yahoo 관련 기사 제목에만 있고 본문 확인 불가)",
+   "Jacob Bourne 는 이 워런트가 AI 기반 클라우드 수요가 지속된다는 자신감의 표시로 볼 수 있다고 말했고 (KSL 원문 발언과 다름 → 실제 인용으로 교체)",
+   "일부 보고는 22% 까지라고 전했습니다. (중복·출처 불명확 → KSL 22%, Yahoo 최대 20% 로 구분)",
+   "공시에서 등록권이나 보호예수 조항은 확인되지 않았습니다. (→ 8-K 의 Section 4(a)(2) 등록 면제 문구로 교체)",
+   "다만 이 환산비는 글쓴이의 계산에 따른 해석입니다. (8-K 가 20대 1 전환비를 명시 → 공식 문구로 교체)"
+  ],
+  "note": "Opus 검증: 보도자료(GlobeNewswire)·8-K(SEC)·KSL(Reuters)·Yahoo Finance 를 다시 열어 전 주장 대조. 수정: '분산형 AI 인프라'→보도자료 문구 '분산형 인프라와 소프트웨어', 28억 달러 CIS 약정은 '일부'가 아니라 '더해짐', Leighton 발언 원문대로, 7년 초기 기간에서 '서비스 시작일부터' 삭제, 20대 1 전환비·7,741,020주·의결권·양도 제한·4(a)(2) 는 8-K 원문으로 확인해 반영, 주가 상승률은 KSL(시간외 22%)과 Yahoo(최대 20%) 구분, Nscale 450억 달러는 KSL 의 '지난달 로이터 보도' 문구로 한정. 이미지: 보도자료·8-K·검색상 공식 페이지 본문 그림 없음 → images_none_reason 유지."
+ }
+}
