@@ -1,0 +1,111 @@
+{
+ "topic": "Streamlining Access to Government Services Through America.gov — America.gov AI 포털 공개와 행정명령 (The White House, 2026-09-29)",
+ "source_url": "https://www.whitehouse.gov/presidential-actions/2026/09/streamlining-access-to-government-services-through-america-gov/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Streamlining Access to Government Services Through America.gov (Presidential Action)",
+   "url": "https://www.whitehouse.gov/presidential-actions/2026/09/streamlining-access-to-government-services-through-america-gov/",
+   "publisher": "The White House",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Fact Sheet: President Donald J. Trump Streamlines Access to Government Services Through America.gov",
+   "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-streamlines-access-to-government-services-through-america-gov/",
+   "publisher": "The White House",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Trump launches AI-fueled America.gov in bid to tie government ...",
+   "url": "https://fedscoop.com/trump-launches-ai-site-america-gov/",
+   "publisher": "FedScoop",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Trump launches America.gov AI portal for federal services",
+   "url": "https://www.yahoo.com/news/politics/articles/trump-launches-america-gov-ai-182742808.html",
+   "publisher": "Quartz (Yahoo News)",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "America.gov launches as Trump's new AI shortcut to federal services",
+   "url": "https://fox23.com/news/nation-world/america-gov-launches-as-president-donald-trumps-new-ai-shortcut-to-federal-services-government-agencies-chief-design-officer-joe-gebbia",
+   "publisher": "FOX 23",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "America.gov Brings Generative AI to Federal Citizen Services",
+   "url": "https://govciomedia.com/america-gov-brings-generative-ai-to-federal-citizen-services/",
+   "publisher": "GovCIO Media & Research",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Donald Trump Launches New AI Government Website: What to Know About ...",
+   "url": "https://www.newsweek.com/trump-launches-america-gov-ai-government-website-12501100",
+   "publisher": "Newsweek",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "White House launches AI-powered 'America.gov' digital front door",
+   "url": "https://www.nextgov.com/digital-government/2026/09/white-house-launches-ai-powered-americagov-digital-front-door/416303/",
+   "publisher": "Nextgov/FCW",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Trump's new AI website America.gov said Biden won 2020—then the White House made the chatbot stop answering",
+   "url": "https://fortune.com/2026/09/29/trumps-new-ai-website-america-gov-said-biden-won-2020then-the-white-house-made-the-chatbot-stop-answering/",
+   "publisher": "Fortune",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S10",
+   "title": "America.gov Explained: What It Is, How to Use It, and What Comes Next",
+   "url": "https://securityboulevard.com/2026/09/america-gov-explained-what-it-is-how-to-use-it-and-what-comes-next/",
+   "publisher": "Security Boulevard",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S11",
+   "title": "Google is a technology partner for the launch of America.gov",
+   "url": "https://blog.google/company-news/outreach-and-initiatives/public-policy/america-gov-google-public-sector/",
+   "publisher": "Google",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 57,
+  "removed": [
+   "또한 이 포털은 재무·세무·법률 자문은 제공하지 않는다고 안내되며, AI가 만든 답은 정부 공식 출처와 대조해 확인해야 한다고 보도되었습니다. (Yahoo 단독, FAQ·팁 문단 반복분 포함 삭제)",
+   "보도에서 예로 든 이용 사례는 사회보장 카드 재발급, 유권자 등록, 메디케어 플랜 비교, 사업자 등록 등입니다. (Yahoo 단독 → 폭스23 이용 사례로 교체)",
+   "야후 뉴스는 그록을 만든 xAI가 스페이스X에 인수된 뒤 'SpaceXAI'로 운영된다고 적었습니다. (단독 출처, 박스 교체)",
+   "USDS 초대 관리자 마이키 디커슨이 이 사이트가 문제의 '가장 쉬운 5%'를 푼 것 같다고 평가 (페드스쿱 단독 인용 → 넥스트거브의 디커슨·휘태커 발언으로 교체)",
+   "그는 '아메리카 바이 디자인(America by Design)' 구상 아래 연방 웹사이트와 디지털 서비스를 현대화하는 역할을 맡고 있습니다. (읽은 출처에 없음)"
+  ],
+  "note": "Opus 검증: 백악관 행정명령·팩트시트 원문, FedScoop·FOX 23·Newsweek·GovCIO·Yahoo(Quartz) 재열람, Nextgov·Fortune·Security Boulevard·Google 공식 블로그 추가 확인. 수정: 2027년 초 일정 출처를 FOX23→Nextgov로 바로잡음, 여권 신청 2026년 12월(루비오 발표) 추가, 계정 없이 이용·GSA 역할을 Nextgov·행정명령 기준으로 교정, 위치정보는 '대략적 위치 사용 가능/정밀 위치 추적 안 함'으로 상충 아님을 명시, 레빗 직함 '전 대변인'으로 교정, 켈리 발언은 구글 블로그로·프롬프트 미보관/2시간 캐시는 Security Boulevard로·2020 대선 답변은 Fortune으로 교차 확인, 따옴표 발언은 Newsweek·FOX23 원문과 대조. GovCIO 게재일 2026-09-29 기입. 마지막 팁 문단은 필자 제안으로 표시."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734986680189",
+  "kind": "all"
+ }
+}
