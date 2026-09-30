@@ -1,0 +1,77 @@
+{
+ "topic": "Introducing Claude Opus 5.5 (Anthropic, 2026-09-22)",
+ "source_url": "https://www.anthropic.com/news/claude-opus-5-5",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Claude Opus 5.5",
+   "url": "https://www.anthropic.com/news/claude-opus-5-5",
+   "publisher": "Anthropic",
+   "published": "2026-09-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "What's new in Claude Opus 5.5",
+   "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
+   "publisher": "Anthropic (Claude Platform Docs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Migrating to Claude Opus 5.5",
+   "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide",
+   "publisher": "Anthropic (Claude Platform Docs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Models overview",
+   "url": "https://platform.claude.com/docs/en/models/overview",
+   "publisher": "Anthropic (Claude Platform Docs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Preserved thinking",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/preserved-thinking",
+   "publisher": "Anthropic (Claude Platform Docs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Life Sciences Verification Program",
+   "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+   "publisher": "Anthropic",
+   "published": "2026-09-17",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Claude Platform release notes",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "publisher": "Anthropic (Claude Platform Docs)",
+   "published": "2026-09-28",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문(S1)의 벤치마크 표·비용 대비 성능 차트·응답 비교 예시는 모두 HTML/SVG 로 그려져 있어 이미지 파일이 없고, 페이지에 있는 이미지 파일은 상단 히어로·하단 장식 그림(2560x1440·1920x1080 webp)과 공유 카드뿐이다. 개발자 문서(S2~S5·S7)에도 본문 그림이 없고, LSVP 발표문(S6)의 그림은 대표 SVG 뿐이다. (Opus 검증에서 HTML 을 다시 열어 확인)",
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 80,
+  "removed": [
+   "GPT 계열 수치는 OpenAI가 보고한 값입니다. (발표문 각주는 Terminal-Bench 4.0·Terminal-Bench-Science 의 GPT 수치만 OpenAI 보고값이라고 적어, 글에 인용한 FrontierCode·CursorBench GPT 수치에는 확인되지 않음)",
+   "Claude Code와 Claude Cowork에서도 제공됩니다. (발표문 Availability·개발자 문서에 해당 문장 없음 — 개발자 문서의 제공 플랫폼 목록으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 curl 로 다시 받아 본문 텍스트에서 수치·날짜·이름·가격·스펙·출시 여부를 한 줄씩 대조. 고친 것: ① Sonnet 5.5 출시 여부 — 발표문의 '몇 주 안에'는 옛 정보, 릴리스 노트(S7)상 2026-09-28 출시로 본문·FAQ 수정, Haiku 5.5 는 미출시 표기 ② temperature·top_p·top_k·prefill 거부는 Opus 5 에서도 이미 거부되던 것이라 'Opus 5.5 로 옮기면 새로 나는 400 오류'에서 분리하고 computer_20251124 를 새 변경으로 넣음 ③ 캐시 쓰기 $5 는 5분 캐시 쓰기임을 표기(1시간 $8, 배치 $2/$10 은 S2 로 확인해 추가) ④ preserved thinking 적용 계정은 '8월 31일 또는 그 이후'(on or after) ⑤ 합병 사례의 '모델'은 재무 모델임을 명확히 ⑥ 제목 '40% 저렴'→'운영비 40%↓'(토큰 단가는 20% 인하). 벤치마크 표 7행·기본 effort 점수(54.6%·52.5%)·GPT-6 Astra 53.3%·GPT-5.6 Sol 41.7%·사례 수치(20만 줄 3시간/20시간/2.5배, HAProxy 9.5h/12h/51%, 39/40, 16/18, 63분/93분/50%)·안전(약 2,000 시나리오, 85%)·스펙표(모델 ID·effort·100만/128K·2026년 6월·2027-09-22)·코드 예시(마이그레이션 가이드와 동일)·max_tokens 64k·/claude-api migrate·LSVP(Standard/High-risk, Mythos 5.1·Opus 5·Sonnet 5) 모두 원문 일치. 🧪 예제 프롬프트 블록은 본문에 '공식 예시가 아니라 이 글이 구성한 것'이라고 밝혀 사실 주장으로 오해되지 않음 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}
