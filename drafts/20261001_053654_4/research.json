@@ -1,0 +1,69 @@
+{
+ "topic": "Ortet Launches as Frontier AI Lab for Health With $500 Million Commitment from Thoreau (Business Wire, 2026-09-29)",
+ "source_url": "https://www.financialcontent.com/article/bizwire-2026-9-29-ortet-launches-as-frontier-ai-lab-for-health-with-500-million-commitment-from-thoreau",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Ortet Launches as Frontier AI Lab for Health With $500 Million Commitment from Thoreau (Business Wire 보도자료)",
+   "url": "https://www.financialcontent.com/article/bizwire-2026-9-29-ortet-launches-as-frontier-ai-lab-for-health-with-500-million-commitment-from-thoreau",
+   "publisher": "Business Wire / FinancialContent",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Ortet Launches as Frontier AI Lab for Health With $500 Million Commitment from Thoreau (Rutland Herald 게재)",
+   "url": "https://www.rutlandherald.com/news/business/ortet-launches-as-frontier-ai-lab-for-health-with-500-million-commitment-from-thoreau/article_f07fcc3c-8ceb-5ec6-b93b-f1bf55f21563.html",
+   "publisher": "Rutland Herald (보도자료 전재)",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Ortet launches as frontier AI health lab with USD 500m commitment from Thoreau",
+   "url": "https://allsci.com/news/corporate-strategy/ai-health-lab-ortet-launches-as-frontier-with-usd/",
+   "publisher": "AllSci",
+   "published": "",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Can Half a Billion Dollars Fix Healthcare AI?",
+   "url": "https://yesilscience.com/can-half-a-billion-dollars-fix-healthcare-ai/",
+   "publisher": "Yesil Science",
+   "published": "",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Ortet 공식 웹사이트",
+   "url": "https://ortet.ai",
+   "publisher": "Ortet",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료와 Ortet 웹사이트 본문에 도표·제품 화면이 없고(로고·텍스트뿐), 기타 출처의 그림은 대표 이미지·플레이스홀더뿐이라 인용하지 않음",
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 43,
+  "removed": [
+   "한 보도는 Genentech·Meta·AWS 출신 AI 리더들이 모였다는 점을 제목에서부터 강조했습니다."
+  ],
+  "corrected": [
+   "'5억 달러(약 $500 million)' → '약' 삭제(정확한 금액)",
+   "'한 보도는 창립 투자라고 전했다' → 보도자료 원문 'Ortet is a founding Thoreau investment'로 출처 수정",
+   "'allsci: 의료 기관 고객과 함께 일할 계획' → 보도자료 원문 '건강 생태계 전반의 고객과 함께 일할 것으로 예상'(본문·FAQ)",
+   "'창업진은 Genentech 출신 AI 연구자가 중심' → 보도자료의 창업진 구성 표현으로 수정(본문·맺음말)",
+   "'순환자 수익' → '순 환자 수익(net patient revenue)' 오역 수정",
+   "Henri Dwyer 'GPU 클러스터 구축' → '구축·운영(built and managed)'",
+   "Thoreau 설명에 공급자·보험자·고용주·생명과학·정부 시장 추가, 웹사이트 첫 화면 설명(팀·채용 링크) 정확화"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 Business Wire 보도자료 원문(FinancialContent)을 curl·WebFetch로 다시 열어 날짜(2026-09-29 8:00 AM EDT)·금액·창업진 6명 직책·이력·인용문·자금 용처·GPU 클러스터·Goldman Sachs 자문·Thoreau/Ensemble(550억 달러)/Penelope Health 설명을 한 줄씩 대조, S2 Rutland Herald 전재본으로 교차 확인. S3 allsci(Aidoc 1.5억·Verily 3억 달러, 환자 여정 연결), S4 Yesil Science(자본 집중·'mediocre at everything' 비판), S5 ortet.ai(사명·Ortet Health Model·4원칙) 재확인. EGRESS_BLOCKED 출처 없음. 확인 안 된 1문장 삭제, 7건 수정. 보도자료 페이지 본문 그림 없음(로고·추적 픽셀뿐) 재확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
