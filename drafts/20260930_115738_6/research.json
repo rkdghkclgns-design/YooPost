@@ -1,0 +1,43 @@
+{
+ "topic": "Scenarios for our Economic Future — Econ Scenario Explorer v1.0 / Economic Scenarios for Transformative AI (Anthropic, 2026-09)",
+ "source_url": "https://www.anthropic.com/institute/econ-scenarios",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Scenarios for our Economic Future (Econ Scenario Explorer v1.0)",
+   "url": "https://www.anthropic.com/institute/econ-scenarios",
+   "publisher": "Anthropic",
+   "published": "2026-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Economic Scenarios for Transformative AI (Anthropic Institute Working Paper No. 2026-02)",
+   "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf",
+   "publisher": "The Anthropic Institute",
+   "published": "2026-09",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic's Economic Policy Framework (June 2026)",
+   "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/9ea607a5dd67c168093829b701f3a0a6d21156d5.pdf",
+   "publisher": "Anthropic",
+   "published": "2026-06",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 87,
+  "removed": [
+   "출처 S4(Techstrong.ai, 요약기로만 읽음) 삭제 — 본문에 S4로만 확인되는 주장은 없었고, 9월 9일 발표일은 본문에 넣지 않은 상태 유지"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 웹페이지 HTML, S2 기술 보고서 PDF(57쪽), S3 6월 정책 프레임워크 PDF(14쪽)를 다시 내려받아 pymupdf 텍스트로 대조. Table 2·3·4 전 수치, 10,980명(Morning Consult 2026-08-11~23)·3,259명, 62.4%(2025 CPS)·62.2%(페이지 2026), 8.6%/4.6% vs 페이지 약 10%/약 5%, 제목 수치(GDP +1.6~+32.4%, 실업률 3.9~11.9%, 노동 몫 60→45%) 모두 원문 일치. 고친 5건: ①'2025년 가격 기준'은 논문 Table 3이 아니라 페이지 GDP 달러 수치의 기준이므로 위치 수정 ②경고 박스 '웹페이지도 예측이 아니라고 밝힘'→페이지는 '실제 결과는 크게 다를 수 있다'고만 적음(예측 아님·확률 없음은 보고서) ③FAQ2 주어를 보고서 저자로 ④'전환 속도 조절 규제·유인책'→원문대로 'Tier 2 수준으로 적응 능력을 넘으면 기업 단위 일자리 대체(displacement) 속도를 관리하는 정부 규제·유인책 지지, 업계 전체 균일 적용' ⑤'검토자들이 결론에 동의한 것은 아님'→'결론 지지를 요청하지 않음'(페이지 원문). 필자 해석 문단은 '여기서부터는 필자의 해석' 문장으로 분리하고, 도입부의 '정책 논의와 이어진다' 표현을 '비춰 볼 수 있다'로 바꿔 프레임워크가 탐색기에 맞춰 설계됐다고 읽히지 않게 함(프레임워크는 '현재 또는 약 1년 내 확산' 기준이라 명시)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734986680189",
+  "kind": "all"
+ }
+}
