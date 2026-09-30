@@ -1,0 +1,87 @@
+{
+ "topic": "Global AI Diffusion Q2 2026 Trends and Insights (Microsoft AI Economy Institute, 2026-09) + New insights from Google's AI & Economy ATLAS (Google, 2026-09-15)",
+ "source_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/Microsoft-AI-Diffusion-Report-2026-Q2.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Global AI Diffusion Q2 2026 Trends and Insights",
+   "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/Microsoft-AI-Diffusion-Report-2026-Q2.pdf",
+   "publisher": "Microsoft AI Economy Institute",
+   "published": "2026-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "New insights from Google's AI & Economy ATLAS",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+   "publisher": "Google",
+   "published": "2026-09-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AI usage in South Korea surpasses 40% for the first time···rise among major countries is in the 'top tier'",
+   "url": "https://www.khan.co.kr/en/article/202609281402017/",
+   "publisher": "The Kyunghyang Shinmun",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft Tracks AI Adoption, U.S. Stalls",
+   "url": "https://www.mediapost.com/publications/article/418164/microsoft-tracks-ai-adoption-us-stalls.html",
+   "publisher": "MediaPost",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "microsoft/ai-diffusion-report",
+   "url": "https://github.com/microsoft/ai-diffusion-report",
+   "publisher": "Microsoft (GitHub)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "AI in Science: Early Insights",
+   "url": "https://ai.google/static/documents/AI-in-Science.pdf",
+   "publisher": "Google · Google DeepMind · MIT FutureTech",
+   "published": "2026-09",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "The continued state of global AI diffusion in 2026",
+   "url": "https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/",
+   "publisher": "Microsoft On the Issues",
+   "published": "2026-09-21",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://blogs.microsoft.com/wp-content/uploads/sites/5/2026/09/figures-scaled.png",
+   "page_url": "https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/",
+   "caption": "2026년 6월 경제권별 AI 확산(생성형 AI 사용자 비율) 지도 — 리더보드 상위 UAE 73.3%, 싱가포르 64.3%",
+   "credit": "Microsoft AI Economy Institute"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://blogs.microsoft.com/wp-content/uploads/sites/5/2026/09/figures2-scaled.png",
+   "page_url": "https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/",
+   "caption": "1분기→2분기 경제권별 AI 확산 순위 변화 — 한국 16위에서 12위(40.6%, +3.5%p)",
+   "credit": "Microsoft AI Economy Institute"
+  }
+ ],
+ "factcheck": {
+  "claims": 76,
+  "confirmed": 76,
+  "removed": [
+   "표에서 보듯 1~2분기 사이 순위 이동은 대부분 1~3%p의 작은 차이에서 나옵니다. (원문 표와 맞지 않아 '상위 30개 경제권 증감 폭은 대부분 1~2%p 안팎(0.6~3.5%p)'로 교체)",
+   "자세한 내용은 글이 링크한 'AI-in-Science' 문서에 있고, 저는 블로그 글의 요약을 읽었을 뿐 그 PDF 본문은 확인하지 못했습니다. (PDF 원문을 직접 읽어 확인된 수치로 교체)"
+  ],
+  "note": "Opus 검증: Microsoft Q2 2026 리포트 PDF를 curl로 내려받아 pdftotext로 추출해 전 수치(18.8%·17.8%·16.3%, 국가 표 30위권·부록 데이터, 노스 28.8%/사우스 16.2%·격차 10.6/12.1/12.6pp, 의도 +29.2%/+32.3%, OpenRouter 1/3·75%, Kimi K3·GLM 5.3 Flash, BYOL 12%)를 원문과 대조 — 모두 일치. microsoft/ai-diffusion-report 저장소를 git clone해 Q2 2026 CSV(한국 37.1→40.6, 미국 31.3→33.0)와 MIT 라이선스 확인. Google ATLAS 블로그 HTML 원문을 직접 추출해 대조 — Scott Strand 직함, 비OECD 직종 목록, 과학 연구 주체(Google·Google DeepMind·MIT FutureTech, MIT FutureTech 분류 체계) 표현 수정. 블로그가 링크한 AI-in-Science PDF 원문으로 과학자 설문(637명·More in Common·7~8월, 거의 절반 매일, 평균 6.9시간, 백로그 41%/25%, 검증 46%) 확인·보완(S6 추가). Microsoft On the Issues 블로그(9/21 공개, 일본 상대 증가율 최대, 사우디 30→25위)로 공개일 확인·S7 추가, 본문 그림 2개(지도·순위 변화 차트, HTTP 200 image/png, 2560px·2081px) 인용 이미지로 추가. 경향신문(9/28) 원문으로 한국 배경 해석 확인, MediaPost(9/21) 원문 일부로 미국 21위 유지 교차 확인."
+ }
+}
