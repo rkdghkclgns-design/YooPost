@@ -1,0 +1,70 @@
+{
+ "topic": "Improving Test-Time Scaling with Adaptive Looped Transformers (arXiv 2609.35748, 2026-09-28)",
+ "source_url": "https://arxiv.org/abs/2609.35748",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Improving Test-Time Scaling with Adaptive Looped Transformers (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2609.35748",
+   "publisher": "arXiv",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Improving Test-Time Scaling with Adaptive Looped Transformers (HTML full text)",
+   "url": "https://arxiv.org/html/2609.35748",
+   "publisher": "arXiv",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "arXiv Computation and Language recent listing (2026-09-29)",
+   "url": "https://arxiv.org/list/cs.CL/recent",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Scaling Latent Reasoning via Looped Language Models (Ouro)",
+   "url": "https://arxiv.org/abs/2510.25741",
+   "publisher": "arXiv",
+   "published": "2025-10-29",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Qwen/Qwen3-1.7B-Base model card",
+   "url": "https://huggingface.co/Qwen/Qwen3-1.7B-Base",
+   "publisher": "Hugging Face / Qwen",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "thu-nics/TaH — Think-at-Hard GitHub README (TaH2 release news)",
+   "url": "https://github.com/thu-nics/TaH",
+   "publisher": "Tsinghua NICS (paper authors)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 58,
+  "removed": [
+   "'주목을 받고 있습니다' (확인 불가 → '제출했습니다'로 변경)",
+   "'다만 크기가 커질수록 평균 이득이 줄어드는 경향도 함께 보입니다' (1.7B +2.9, 4B +3.2, 8B +2.4 로 단조 감소 아님)",
+   "'다만 각 소거 항목의 세부 설정은 논문 본문에서 확인해야 합니다' (세부 설정을 표 4 원문대로 기입해 대체)",
+   "'논문은 KV 캐시 관리 전략을 따로 다루지 않는다고 확인되므로, 메모리 사용량은 이 글에서 판단하지 않습니다' (틀림: 부록에 반복별 KV 캐시 설명)"
+  ],
+  "note": "Opus 검증: WebFetch 요약기 대신 arxiv.org/html/2609.35748 원본 HTML 을 curl 로 받아 표 1~4·본문 텍스트를 직접 대조, abs 페이지(제출일 2026-09-28·초록·코드 링크), GitHub README, Ouro 초록(7.7T), Qwen3-1.7B-Base 모델 카드 재확인. 수정: AIME Standard 평균 11.9→12.0(표1 AIME24/25/26 11.0/13.0/11.9, 표는 개별 값으로 교체, 표1 값은 M=2), 4B '+6.9 는 AIME24'→AIME26(AIME24 는 +5.7), 52.3%/33.5% 는 Ouro/Huginn 각각의 수치로 명시, 배치4 TaH2-fixed 483.3초(2.19배) 추가, 27.3만·34억·16,384 는 1.7B 실험 한정으로 범위 수정(4B/8B 는 Qwen3-235B-A22B 응답·TPP=2), 10개 평균은 표1 10개 벤치마크(Std 37.7), 4B/8B 평균은 9개 벤치마크, +2.8/+3.9 는 AIME24–26(그림1b), 코드는 '출판 시 공개'·README '곧 업데이트'(미공개), TaH2 약자 풀이는 원문에 없음 — TaH=Think-at-Hard 후속으로 서술. 확인됨: 제목 기울기 2.74 vs 1.79(53%), 191.7 TFLOPs 15.4 vs 12.0, 40.6(+2.9)/42.5(+4.8), 표4 변화폭 항목 대응 전부 일치(−3.6 균일가중, −2.1 업데이터, −1.9 ρ=1, −1.3 샘플링, −1.1 불일치 라벨, −1.0 마지막 반복 출력), 8B AIME24 +4.4, 지연 139.8/328.7/187.0/220.3/285.4초, FLOPs 22%, ρ=0.99, τ=0.5."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734986680189",
+  "kind": "all"
+ }
+}
