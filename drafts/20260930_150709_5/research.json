@@ -1,0 +1,72 @@
+{
+ "topic": "An Experimental Evaluation of Multimodal Prompt Injection Attacks on Agentic AI Frameworks (arXiv 2609.09404, 2026-09-08)",
+ "source_url": "https://arxiv.org/abs/2609.09404",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "An Experimental Evaluation of Multimodal Prompt Injection Attacks on Agentic AI Frameworks (abstract)",
+   "url": "https://arxiv.org/abs/2609.09404",
+   "publisher": "arXiv",
+   "published": "2026-09-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "An Experimental Evaluation of Multimodal Prompt Injection Attacks on Agentic AI Frameworks (HTML full text)",
+   "url": "https://arxiv.org/html/2609.09404v1",
+   "publisher": "arXiv",
+   "published": "2026-09-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AgentDrift: A Step-Labeled Benchmark of Injection-Hijacked LLM Agent Trajectories",
+   "url": "https://arxiv.org/abs/2609.06972",
+   "publisher": "arXiv",
+   "published": "2026-09-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Prompt Injection Detection for Email Agents Through Attack Chain Modeling",
+   "url": "https://arxiv.org/abs/2609.30657",
+   "publisher": "arXiv",
+   "published": "2026-09-25",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.09404v1/architecture.png",
+   "page_url": "https://arxiv.org/html/2609.09404v1",
+   "caption": "MMPIBench 평가 파이프라인 구성도: 공격 24개 × 프레임워크 6개 × 모델 5개 = 720칸 실험 설계",
+   "credit": "Nguyen & Husain, arXiv 2609.09404"
+  }
+ ],
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 73,
+  "removed": [
+   "논문은 방어의 초점을 주로 계획 단계, 다음으로 지각 단계에 둬야 한다고 봅니다. (논문에 없는 해석 — 논문 VI-F 의 '계획 단계는 거부보다 약한 보장이며 방어자가 지켜볼 구간' 문장으로 교체)"
+  ],
+  "corrected": [
+   "AgentDrift 12,536개는 '탈취된 궤적'이 아니라 전체 합성 궤적(공격 5,536개 포함, 71,024단계)",
+   "423회는 '그냥 무시'가 아니라 'Failed / ignored'(실패 또는 무시)",
+   "재실행 159칸은 CrewAI·LangGraph '전부'가 아니라 CrewAI 76칸 + LangGraph 83칸",
+   "'모델 훈련이 결과를 좌우' → 논문 표현대로 '모델이 좌우'(본문·FAQ 2곳)",
+   "'실행 기록·모델 버전·게이트웨이 식별자를 공개하겠다' → 공격 세트·하니스·실행 기록은 공개 예정, 버전·식별자는 논문 부록 표 XIII 에 이미 기재",
+   "MELON 설명을 논문 III-C 대로(마스킹한 사용자 프롬프트로 재실행 비교) 수정"
+  ],
+  "added": [
+   "프레임워크별 시도·인식 표(논문 표 II)와 CrewAI 교란 요인 설명(VI-B, VI-H)",
+   "Grok 4.3 vs Claude Opus 4.8 사례(표 VII)",
+   "음성 은밀도별 완료 17/12/6 of 24 및 3단계 관문(VII-D, VII-E)"
+  ],
+  "note": "Opus 검증: arXiv 초록(S1)·HTML 전문(S2, 표 I~XIII·부록)·S3·S4 초록을 curl 로 다시 받아 원고의 수치·날짜·저자·모델명·표 전부를 대조. 이미지 I1 은 HTTP 200 image/png 1362x542 (논문 Fig.1) 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
