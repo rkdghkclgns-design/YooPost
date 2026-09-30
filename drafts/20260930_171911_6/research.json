@@ -1,0 +1,74 @@
+{
+ "topic": "The State of Consumer AI: 2026 Statistics & Trends (Menlo Ventures, 2026-09-16) + Epoch AI near-daily AI use survey (2026-09-14)",
+ "source_url": "https://menlovc.com/perspective/2026-the-state-of-consumer-ai/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The State of Consumer AI: 2026 Statistics & Trends",
+   "url": "https://menlovc.com/perspective/2026-the-state-of-consumer-ai/",
+   "publisher": "Menlo Ventures",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Menlo Ventures Report: Consumer AI Spend Tripled to $40B This Year, Even as User Growth Barely Budged",
+   "url": "https://www.globenewswire.com/news-release/2026/09/16/3363086/0/en/menlo-ventures-report-consumer-ai-spend-tripled-to-40b-this-year-even-as-user-growth-barely-budged.html",
+   "publisher": "Menlo Ventures (GlobeNewswire)",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Near-daily AI use among US adults has more than doubled in six months",
+   "url": "https://epoch.ai/data-insights/near-daily-ai-use-doubled",
+   "publisher": "Epoch AI",
+   "published": "2026-09-14",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Menlo Ventures Report: Consumer AI Spend Tripled to $40B (FinancialContent 재게시)",
+   "url": "https://www.financialcontent.com/article/gnwcq-2026-9-16-menlo-ventures-report-consumer-ai-spend-tripled-to-40b-this-year-even-as-user-growth-barely-budged",
+   "publisher": "Menlo Ventures (FinancialContent)",
+   "published": "2026-09-16",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://menlovc.com/wp-content/uploads/2026/09/1-consumer_ai_growth-scaled.webp",
+   "page_url": "https://menlovc.com/perspective/2026-the-state-of-consumer-ai/",
+   "caption": "소비자 AI 지출 3배 이상 증가: 미국 성인 매일 사용률 19%→25%, 전 세계 소비자 AI 지출 120억→400억 달러",
+   "credit": "Menlo Ventures"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://menlovc.com/wp-content/uploads/2026/09/19-agents_are_mainstream-scaled.webp",
+   "page_url": "https://menlovc.com/perspective/2026-the-state-of-consumer-ai/",
+   "caption": "에이전트는 이미 주류: AI 사용자 중 인지 72%, 사용 경험 41%, 정기 사용 24%",
+   "credit": "Menlo Ventures"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://menlovc.com/wp-content/uploads/2026/09/17-how_consumers_select_ai_tools-scaled.webp",
+   "page_url": "https://menlovc.com/perspective/2026-the-state-of-consumer-ai/",
+   "caption": "신뢰가 선택을 좌우한다: AI 도구 선택 시 중요 요소(정확성 45%, 신뢰성 40%, 보안·개인정보 36%, 사용 편의성 32%)",
+   "credit": "Menlo Ventures"
+  }
+ ],
+ "factcheck": {
+  "claims": 56,
+  "confirmed": 56,
+  "removed": [
+   "에이전트 정의 중 '잠재적으로 자율적인 시스템' 표현 (원문에 없음 → 원문 정의로 교체)",
+   "'에이전트가 일상 도구로 넘어가는 순간 결제로 이어진다는 가설을 뒷받침' (원문 근거 없는 인과 해석 → 원문 수치(에이전트 사용자 63% 매일 사용)로 교체)"
+  ],
+  "note": "Opus 검증: Menlo 리포트 원문 전문(curl, UA 지정)·FinancialContent 재게시 보도자료 전문·Epoch AI 원문 표(CSV 수치)를 직접 대조. WebFetch 요약에서 옮긴 에이전트 접근 권한(이메일 36·브라우저 33·메시지 31·클라우드 29·건강 23·금융 20%, 캘린더 27% 추가), 에이전트별 이용률(Codex 35·Claude Code/Cowork 32·Perplexity 24%), 결제자 지출 구간($20–49 전형, $100+ 14%가 60%, 본인 48%·가족 34%·직장/학교 약 20%, $95 vs $55) 모두 원문 일치. 연령별 수치는 원고에 없음. 수정: 직장·학교 20%의 모수(결제자), 1시간 이상 24%의 모수(AI 사용자), 삶 개선 38/10/52%의 모수(응답자 전체), 비사용자 39→36%, 금융 접근 20%의 모수 표현. 비사용자 편향 40→52%·'사용법 모름 통계적으로 불변'은 보도자료로 확인. 인용 이미지 3개는 내려받아 직접 보고 내용 일치 확인(캡션을 그림 수치에 맞게 조정). GlobeNewswire 원 URL은 curl HTTP/2 오류로 FinancialContent 재게시본으로 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790754467113489",
+  "kind": "all"
+ }
+}
