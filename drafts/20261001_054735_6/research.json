@@ -1,0 +1,100 @@
+{
+ "topic": "Silicon Samples and Synthetic Surveys: Can AI Stand In for Human Respondents? — Can AI Stand In for Human Survey-Takers? Not Really (Pew Research Center, 2026-09-30)",
+ "source_url": "https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Silicon Samples and Synthetic Surveys: Can AI Stand In for Human Respondents? (Can AI Stand In for Human Survey-Takers? Not Really)",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI survey samples poorly replicate human public opinion",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-samples-replicate-public-opinion/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "How AI survey respondents express certainty and factual knowledge",
+   "url": "https://pewresearch.org/data-labs/2026/09/30/how-synthetic-respondents-express-certainty-and-factual-knowledge",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "AI polling results change based on the model used",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "AI surveys struggle with questions about current events",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/synthetic-surveys-and-timely-and-topical-questions/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "AI surveys fail to capture the diversity of public opinion",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-polls-capture-the-diversity-of-public-opinion/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Methodology (Silicon Samples)",
+   "url": "https://www.pewresearch.org/data-labs/2026/09/30/methodology-silicon-samples/",
+   "publisher": "Pew Research Center",
+   "published": "2026-09-30",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/chart-1__-copy-3.png",
+   "page_url": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-samples-replicate-public-opinion/",
+   "caption": "집단별 평균 오차 — 사람 응답과 AI 합성 응답 사이의 평균 절대 오차(퍼센트포인트)",
+   "credit": "Pew Research Center"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/chart-8_desktop.png",
+   "page_url": "https://pewresearch.org/data-labs/2026/09/30/how-synthetic-respondents-express-certainty-and-factual-knowledge",
+   "caption": "상식 문항 정답 비율 — 미국 성인과 AI 합성 응답자 비교",
+   "credit": "Pew Research Center"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/chart-12__desktop_ece048.png",
+   "page_url": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model/",
+   "caption": "모델 선택에 따라 달라지는 공화당 성향 응답 — 실제 응답과 Opus·GPT 합성 응답 비교",
+   "credit": "Pew Research Center"
+  }
+ ],
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 88,
+  "removed": [
+   "다만 ... 이번 연구가 조사 세 건에 한정되며 결과가 Claude Opus 4.6 설정에 특정된다는 점도 퓨가 스스로 밝혔습니다. (퓨의 해당 진술 없음 → '새 모델·구성 방식 발전으로 오차가 줄 수 있다'(S4)로 교체)",
+   "시장조사·사용자 조사 현장에서도 AI 가상 응답자가 '빠르고 싸다'는 이유로 쓰이는 경우가 늘고 있습니다. (출처 없음 → 퓨의 '업계에서 널리 쓰이고, 매력 중 하나가 속도'(S1·S5)로 교체)",
+   "공화당 지지층의 공습 지지를 AI가 '최대' 26포인트 과대 추정 (최대값 아님 — 공화당 최대 오차는 민간인 피해 문항 29포인트)",
+   "민간인 피해 우려 문항에서 민주당 응답 오차는 38포인트 (38포인트는 '이란 국민의 삶이 나빠질 것' 문항 — 문항 바로잡음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 퓨 보고서 7개 장을 curl 로 다시 받아 표 데이터(csv 표)·본문과 수치를 하나씩 대조. 고친 것: 185차 응답자 8,512명→Opus 재현 표본 6,700명(S7 방법론, 본문·표), 추론 강도 비교는 GPT-5.1로 한 것임을 명시(S7), '가장 컸다'→'특히 컸다'(인터넷 저사용층 등 다른 집단도 오차 큼, S2), 이란 문항 수치·문항 바로잡음(S5), 전기요금은 데이터센터가 아닌 생활비 문항의 '매우 걱정'(S5), 수면 70%→약 70%(S6: 6+14+10=30% 제외), 퓨의 지식 과대평가 진술을 '예상→확인'으로 정확히(S3), 모델 비교는 185차 6,700명 표본임을 명시(S4), 중국 적·경쟁자·파트너 문단은 S4(모델 비교) 내용이라 6장으로 이동. 인용 이미지 3개(chart-1, chart-8, chart-12) 모두 HTTP 200 image/png, 가로 875~1334px, 해당 페이지 본문 도표로 확인. 작성자가 뺀 충돌 수치(월드컵 43/42%, 데이터센터 3/25%)는 본문에 없음 확인. '(해석)' 문장은 필자 해석으로 두고 사실 주장만 검증. EGRESS_BLOCKED 출처 없음(7개 모두 직접 열림)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
