@@ -1,0 +1,76 @@
+{
+ "topic": "Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT (OpenAI, 2026-09-22)",
+ "source_url": "https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT",
+   "url": "https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-09-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GPT-6 Sol model page",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "GPT-6 Luna model page",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Latest model guidance (GPT-6 family)",
+   "url": "https://developers.openai.com/api/docs/guides/latest-model",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI's GPT-6 Sol and GPT-6 Luna now available",
+   "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/",
+   "publisher": "GitHub Changelog",
+   "published": "2026-09-22",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI launches GPT-6 Sol and Luna",
+   "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-22",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI Expands GPT-6 Lineup With More Economical Sol And Luna Models",
+   "url": "https://www.crowdfundinsider.com/2026/09/312279-openai-expands-gpt-6-lineup-with-more-economical-sol-and-luna-models/",
+   "publisher": "Crowdfund Insider",
+   "published": "2026-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 53,
+  "confirmed": 52,
+  "removed": [
+   "TechCrunch는 ChatGPT 앱과 웹사이트에는 출시 당일 점진적으로 배포된다고 전했습니다. (Crowdfund Insider·커뮤니티 글과 상충 → Crowdfund Insider 보도로 교체)",
+   "GPT-6 Astra '9월 3일 출시' 날짜 표기 (TechCrunch·Crowdfund Insider 모두 '이달 초'로만 적음 → '9월 초'로 완화, 본문·도입·FAQ 3곳)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S7 전부 다시 열어 확인(모두 200, EGRESS_BLOCKED 없음), OpenAI 문서는 .md 버전으로 교차 확인. 수정: ① reasoning none — GPT-6 Sol 모델 페이지·지침 문서 모두 'GPT-6 Sol·Luna 지원, Astra·GPT-6.1 Sol 미지원'으로 일치 → 'Sol 최소 low' 오류 수정(본문·표). ② 'GPT-6.1 Sol'은 표기 차이가 아니라 별도 신모델(GPT-6 Sol 페이지 'See GPT-6.1 Sol for the newer Sol model') → 경고 박스 재작성. ③ 'Astra에 가까운 성능' 포지셔닝은 GPT-6.1 Sol 설명이었음 → GPT-6 Sol 모델 페이지 문구로 교체(본문·표). ④ 도구 호출 안내를 GPT-6 Sol·Luna 기준(Chat Completions 함수 호출은 none 일 때만)으로 수정(목록·FAQ). ⑤ prompt_cache_options.ttl 은 GPT-5.5 이하에서 옮길 때로 조건 추가. ⑥ EU Fast mode 대상 모델 명시. ⑦ 프롬프트 팁 적용 범위를 지침 원문대로 수정. ⑧ Codexometer 글은 '비용 중시 순위 1위'로 정확히. 지식 기준일(Sol 2026-04-20, Luna 2026-05-18)·922K 입력·엔드포인트·가격은 모델 페이지와 일치. 보완: 272K 초과 요청 할증·Batch/Flex 50%·Fast 2배(모델 페이지), 문단 강조 추가."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734986680189",
+  "kind": "all"
+ }
+}
