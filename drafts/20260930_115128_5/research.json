@@ -1,0 +1,79 @@
+{
+ "topic": "SkillSecurer: Detecting and Patching Prompt-Injection Vulnerabilities in AI Agent Skills (arXiv 2609.14079, 2026-09-12)",
+ "source_url": "https://arxiv.org/abs/2609.14079",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "SkillSecurer: Detecting and Patching Prompt-Injection Vulnerabilities in AI Agent Skills (abstract)",
+   "url": "https://arxiv.org/abs/2609.14079",
+   "publisher": "arXiv",
+   "published": "2026-09-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "SkillSecurer (arXiv HTML full text)",
+   "url": "https://arxiv.org/html/2609.14079",
+   "publisher": "arXiv",
+   "published": "2026-09-12",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OWASP Agentic Skills Top 10 (project repository)",
+   "url": "https://github.com/OWASP/www-project-agentic-skills-top-10",
+   "publisher": "OWASP",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Towards a Risk Assessment of Malicious Skill Files in Coding Agents",
+   "url": "https://arxiv.org/abs/2608.05223",
+   "publisher": "arXiv",
+   "published": "2026-08-05",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "OWASP Agentic Skills Top 10 explained",
+   "url": "https://adversa.ai/blog/owasp-agentic-skills-top-10-explained/",
+   "publisher": "Adversa AI",
+   "published": "2026-08-25",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "OWASP Agentic Skills Top 10 (project page, index.md)",
+   "url": "https://raw.githubusercontent.com/OWASP/www-project-agentic-skills-top-10/main/index.md",
+   "publisher": "OWASP",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 66,
+  "removed": [],
+  "corrected": [
+   "Skill Scanner Skill-Inject IDR 78.8% -> 78.8~79.4% (추정 하한~상한, 표·본문)",
+   "평가 불가 9건 '모두 큰 스킬 2개에서' -> 9건 중 8건이 17~19배 큰 스킬 2개",
+   "'실행되지 않는 절의 경고문은 소용이 없었다'·FAQ '효과 없는 패치는 건너뛰는 절에 경고' -> 라이브 잔여 3회(모델이 경고 무시 1건 계열, Troubleshooting 절 금지문 2회)로 정확히 서술, 사람 검토 실패 3유형과 분리",
+   "OWASP 36%/13.4% 출처를 Snyk ToxicSkills(2026-02, 3,984개), 1,184개를 Antiy CERT 로 명시",
+   "Adversa 체크리스트 순서(목록→격리·자격증명→고정→탐지)와 목록 항목(이름·버전·콘텐츠 해시)으로 수정",
+   "'100건 중 84건 실제 취약점' -> 검토자 3명 다수결로 잠재적 취약점 확인"
+  ],
+  "added": [
+   "비교 스캐너 모두 Sonnet 5 백엔드·타 스캐너 IDR 은 GPT-5.6 Sol 판정 추정치",
+   "954개 선정 기준(skills.sh 제3자 감사 결과 보유), 발견 289건, 감사 합집합 378개·SkillSecurer 단독 64개, Snyk W011",
+   "라이브 시험 OpenCode 컨테이너·6개 모델×5개 스킬",
+   "AST 번호는 심각도 순위 아님·공식 심각도 점수 AIVSS v1 이후(Adversa) 경고 박스"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arxiv.org/html/2609.14079 원본 HTML 을 curl 로 받아 텍스트 변환·MathML alttext(N_w=954, N=180/165) 직접 대조: IDR/GDR 표4, Skill-Inject 165(33스킬·68레시피·73/92), 7/3 스냅샷, 168(17.6%)·289건, 100건 중 84, 75건 중 65(86.7%), 9건 중 8건 17~19배, 13/30->3/30, 5개 스킬 유형, 패치 실패 3유형, Sonnet 5 최적 백엔드(6.1절·표3) 확인. arxiv abs 2609.14079·2608.05223(2,826·11전술·5,629·95.5~96.1·71.6~74.0·1.99%·kappa 0.85·2026-08-05) curl 확인. OWASP github.com 은 403(차단)이라 raw.githubusercontent.com index.md(S6)로 AST01~10 이름·심각도·1.0(2026 Edition)·CC-BY-SA-4.0·Incubator·1,184·36.82%/13.4% 확인. Adversa 2026-08-25 글 curl 확인. 72건 중 66건 원문대로 확인, 6건은 원문에 맞게 수정(수정 후 확인), 삭제 0."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734986680189",
+  "kind": "all"
+ }
+}
