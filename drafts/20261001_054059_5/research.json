@@ -1,0 +1,79 @@
+{
+ "topic": "A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors (arXiv 2609.03884, 2026-09-03)",
+ "source_url": "https://arxiv.org/abs/2609.03884",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors (abstract)",
+   "url": "https://arxiv.org/abs/2609.03884",
+   "publisher": "arXiv",
+   "published": "2026-09-03",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "A Blind Trust, the Bloody Thrust (HTML full text, v2)",
+   "url": "https://arxiv.org/html/2609.03884",
+   "publisher": "arXiv",
+   "published": "2026-09-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hooks reference - Claude Code Docs",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Plugin manifest reference - Claude Code Docs",
+   "url": "https://code.claude.com/docs/en/plugins-reference",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Plugin loading reference - Claude Code Docs",
+   "url": "https://code.claude.com/docs/en/plugins/loading",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.03884v2/overview.png",
+   "page_url": "https://arxiv.org/html/2609.03884",
+   "caption": "HookPry 공격 프레임워크 개요: AMO·TD·LCI 세 구성요소 (논문 그림 1)",
+   "credit": "Li et al., arXiv 2609.03884"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2609.03884v2/ecosystem.png",
+   "page_url": "https://arxiv.org/html/2609.03884",
+   "caption": "에이전트 하네스 안에서 라이프사이클 훅이 놓인 위치 (논문 그림 2)",
+   "credit": "Li et al., arXiv 2609.03884"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2609.03884v2/claude_trust_without_confirm.png",
+   "page_url": "https://arxiv.org/html/2609.03884",
+   "caption": "Claude Code에서 플러그인 업데이트 후 새 훅 세 개가 항목별 확인 없이 로드되는 사례 (논문 그림 3b)",
+   "credit": "Li et al., arXiv 2609.03884"
+  }
+ ],
+ "factcheck": {
+  "claims": 96,
+  "confirmed": 96,
+  "removed": [],
+  "note": "Opus 검증: arXiv abs(제출 2026-09-03, v2 09-08, 저자 7명)와 HTML v2 전문을 다시 열어 표 2(하네스·목표별 E2E-ASR)·표 3(메커니즘 유용성)·RQ1.2 표준편차·표 4(MCP 56.0%, p=7.09e-12)·표 5(절제)·표 6(방어 재현율)·한계·공지 문장을 대조, 모두 일치. Claude Code 문서(hooks, plugins-reference, plugins/loading)를 다시 열어 훅 이벤트·핸들러 5종·환경 상속·OTEL/ENV_SCRUB·/dev/tty·allowManagedHooksOnly·HTTP 허용 목록·hooks 병합·version 고정·자동 업데이트(최대 10분 지연·기본값) 확인. 인용 이미지 3개 HTTP 200 image/png(1512·1580·1905px) 확인. 고친 것: 제목 '평균 77.0%'→'전체 성공률 77.0%'(마이크로 평균), 절제 실험·MCP 비교가 Claude Code+DeepSeek-V4-Flash·50개 대상 별도 실험이며 AMO 제외 값은 분석적 추정치임을 명시, 목표별·모델 독립성 해석을 논문 문장대로 수정, 'CVE 문서화 없음'을 '이번 결과에 대한 CVE·패치 없음'으로(논문은 이전 훅 CVE를 인용), FAQ1에 오픈소스 공개 사실 반영, HookPolicy(연구진 8규칙)·Semgrep(5규칙) 설명, 자동 업데이트 기본값 예외(knowledge-work-plugins·first-party-plugins 꺼짐), allowManagedHooksOnly의 disableCommandPluginSources 조건, 한계 '상용 제품 전반'→'전문 상용 제품'. 통과 770·부분 34·실패 196·차단 0 추가."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
