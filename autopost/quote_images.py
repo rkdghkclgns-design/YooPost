@@ -115,6 +115,33 @@ def _read_capped(response, limit: int, truncate: bool = False) -> bytes | None:
     return b"".join(chunks)[:limit]
 
 
+AUTO_IMAGES = 2  # 원고에 쓸 이미지가 없을 때 공식 출처에서 보충하는 최대 개수
+AUTO_PAGES = 4  # 대표 이미지를 찾아볼 공식 출처 페이지 수 (같은 그림은 내려받을 때 걸러진다)
+
+
+def auto_candidates(sources: Sequence[Source]) -> tuple[ImageCandidate, ...]:
+    """원고에 쓸 이미지가 하나도 없을 때 — 공식 출처 페이지의 대표 이미지(og:image) 후보.
+
+    작성자가 이미지를 빠뜨려도(클라우드 원고는 자주 그랬다) 본문에 그림이 들어가게 하는 보충 장치.
+    공식 출처(official)만 쓴다 — 회사가 공유용으로 내건 대표 이미지이고, 출처·저작권자를 캡션에 밝힌다.
+    """
+    result: list[ImageCandidate] = []
+    pages: set[str] = set()
+    for source in sources:
+        if not source.official or not is_http_url(source.url) or source.url in pages:
+            continue
+        pages.add(source.url)
+        name = site(source.url)
+        result.append(ImageCandidate(
+            id=f"A{len(result) + 1}", image_url="", page_url=source.url,
+            caption=(" ".join((source.title or name).split()))[:MAX_CAPTION],
+            credit=(" ".join((source.publisher or name).split()))[:60],
+        ))
+        if len(result) >= AUTO_PAGES:
+            break
+    return tuple(result)
+
+
 def og_image(page_html: str, page_url: str) -> str:
     for pattern in _OG_IMAGE:
         match = pattern.search(page_html)

@@ -24,11 +24,11 @@ from .cover import make_cover
 from .history import load_history
 from .links import LinkCheck, check_link, is_http_url
 from .publishing import PublishContext, attach_references, base_notes, build_publish_html, write_preview
-from .quote_images import parse_candidates
+from .quote_images import AUTO_IMAGES, auto_candidates, parse_candidates
 from .research import FactSheet, ImageCandidate, Source
 from .slack_helper import LABEL, escape_mrkdwn
 from .topic import Topic
-from .writer import drop_unknown_images, finalize
+from .writer import drop_unknown_images, finalize, place_images
 
 log = logging.getLogger(__name__)
 
@@ -173,6 +173,13 @@ class DraftPreparer:
         if len(images) < len(files.candidates):
             warnings.append(f"인용 이미지 {len(files.candidates) - len(images)}개는 확인을 통과하지 못해 뺐습니다")
         content = drop_unknown_images(files.content, frozenset(i.id for i in images))
+        if not images:  # 원고에 쓸 이미지가 없으면 공식 출처의 대표 이미지로 보충 (작성자가 빠뜨려도 그림이 들어가게)
+            images = self._collector.collect(auto_candidates(sources), sources, folder)[:AUTO_IMAGES]
+            if images:
+                content = place_images(content, [i.id for i in images])
+                warnings.append(f"원고에 쓸 인용 이미지가 없어 공식 출처의 대표 이미지 {len(images)}개를 넣었습니다")
+            else:
+                warnings.append("본문에 넣을 이미지가 없습니다 (원고 후보도, 공식 출처 대표 이미지도 없음)")
         topic = Topic(title=files.topic, category=content.category, angle="", keywords=(files.topic,),
                       source_url=files.source_url)
         sheet = FactSheet(topic, "", (), sources, images=images)

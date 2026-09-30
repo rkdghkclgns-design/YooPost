@@ -7,7 +7,7 @@ from dataclasses import replace
 from typing import Sequence
 
 from .constants import CATEGORIES, CLOSING_SIGNATURE, IPO_DISCLAIMER
-from .content import PostContent, parse_post
+from .content import Block, PostContent, parse_post
 from .gemini import Gemini
 from .research import FactSheet
 from .style_profile import StyleGuide
@@ -156,6 +156,20 @@ def drop_unknown_images(content: PostContent, image_ids: frozenset[str]) -> Post
         for section in content.sections
     )
     return replace(content, sections=sections)
+
+
+def place_images(content: PostContent, image_ids: Sequence[str]) -> PostContent:
+    """이미지 블록이 없는 원고에 이미지를 넣는다 — 첫 소제목과 가운데 소제목의 첫 문단 바로 뒤 (새 원고를 돌려준다)."""
+    sections = list(content.sections)
+    if not sections or not image_ids:
+        return content
+    targets = [0] if len(image_ids) == 1 or len(sections) == 1 else [0, max(1, len(sections) // 2)]
+    for image_id, index in zip(image_ids, targets):
+        blocks = list(sections[index].blocks)
+        first = next((i for i, b in enumerate(blocks) if b.kind == "paragraph"), -1)
+        blocks.insert(first + 1, Block("image", image_id=image_id))
+        sections[index] = replace(sections[index], blocks=tuple(blocks))
+    return replace(content, sections=tuple(sections))
 
 
 def content_to_json(content: PostContent) -> str:
