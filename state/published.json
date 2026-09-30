@@ -188,5 +188,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/americagov-ai-90.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 AI 에이전트 스킬 보안 총정리: SkillSecurer 954개 스킬 17.6% 탐지·패치 86.7% 논문 분석",
+  "topic": "SkillSecurer: Detecting and Patching Prompt-Injection Vulnerabilities in AI Agent Skills (arXiv 2609.14079, 2026-09-12)",
+  "category": "AI 보안",
+  "source_url": "https://arxiv.org/abs/2609.14079",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/ai-skillsecurer-954-176-867.html"
+  }
  }
 ]
