@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Callable, Mapping, Sequence
 
 from .constants import CATEGORIES
+from .draft_request import request_id_of
 from .slack_helper import LABEL, escape_mrkdwn
 
 log = logging.getLogger(__name__)
@@ -54,6 +55,8 @@ def scan(drafts_dir: Path, day: str) -> list[Draft]:
     for folder in sorted(drafts_dir.glob(f"{day}_*")):
         suffix = folder.name.rsplit("_", 1)[-1]
         if not folder.is_dir() or not suffix.isdigit() or not 1 <= int(suffix) <= len(CATEGORIES):
+            continue
+        if request_id_of(folder):  # 수동 지시 원고는 매일 진행 막대에 넣지 않는다 (지시 스레드에 따로 알림)
             continue
         title = str(_read(folder / "post.json").get("title") or "")
         skip = folder / "skip.json"

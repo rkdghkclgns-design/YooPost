@@ -11,6 +11,14 @@
     python scripts/cloud_drafts.py push <원고 폴더>           # 확인을 통과한 원고를 올림 → Actions 가 슬랙에 승인 요청
     python scripts/cloud_drafts.py skip --category "AI 공모주 분석" --reason "최근 60일 공모 없음"
     python scripts/cloud_drafts.py finish                    # 실행 끝 기록 (Actions 가 요약을 #yoopost-알림 에 보냄)
+    python scripts/cloud_drafts.py dupcheck <원고 폴더>       # 이미 쓴 글·최근 원고와 주제·원문이 겹치는지 (겹치면 종료 코드 1)
+
+슬랙 수동 지시(#yoopost-0-수동지시) 전용 — 매일 원고의 start·finish·skip·missing·claim·release 와 섞지 않는다:
+    python scripts/cloud_drafts.py request start --id <요청 ID> [--category C] [--network limited]
+    python scripts/cloud_drafts.py request status --id <요청 ID>      # 카테고리별 올린 원고·건너뜀·남은 카테고리 (JSON)
+    python scripts/cloud_drafts.py push <원고 폴더> --request <요청 ID>
+    python scripts/cloud_drafts.py skip --category C --reason R --request <요청 ID>
+    python scripts/cloud_drafts.py request finish --id <요청 ID> [--note N]   # Actions 가 지시 스레드에 결과를 답함
 
 원고 폴더는 scripts/claude_brief.py --new --drafts-dir .yoopost-drafts/drafts 로 만든다.
 """
@@ -29,11 +37,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from autopost.cloud_drafts import (  # noqa: E402
-    BRANCH, DRAFTS, RUNS, SKIP_FILE, STATE, WORKTREE, draft_folders, is_skip, missing_categories, quality_report,
-    read_json, run_active, write_json,
+    BRANCH, DRAFTS, RUNS, SKIP_FILE, STATE, WORKTREE, draft_folders, folder_day, is_complete, is_parked, is_skip,
+    missing_categories, quality_report, read_json, recent_days, run_active, write_json,
 )
 from autopost.config import load_config  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
+from autopost.draft_request import (  # noqa: E402
+    MAX_AGE_HOURS, read_request, request_id_of, request_path, with_request,
+)
+from autopost.history import HistoryEntry, PostHistory  # noqa: E402
+from autopost.manual_command import KINDS  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 
 TREE = ROOT / WORKTREE
@@ -136,7 +149,7 @@ def status() -> int:
         if number in empty:
             print(f"{number}. {category}: 남음 — {empty[number].reason}")
             continue
-        names = [f.name for f in folders if f.name.endswith(f"_{number}") and not is_skip(f)]
+        names = [f.name for f in folders if f.name.endswith(f"_{number}") and not is_skip(f) and not request_id_of(f)]
         print(f"{number}. {category}: 완료  ({', '.join(names)})")
     return 0
 
@@ -244,24 +257,179 @@ def check(folder: Path) -> int:
     return 0 if report.ok else 1
 
 
-def push(folder: Path) -> int:
+def folder_category(folder: Path) -> str:
+    """원고 폴더 이름 끝 번호의 카테고리 (번호가 없거나 0 이면 빈 문자열)."""
+    suffix = folder.name.rsplit("_", 1)[-1]
+    return CATEGORIES[int(suffix) - 1] if suffix.isdigit() and 1 <= int(suffix) <= len(CATEGORIES) else ""
+
+
+def request_problem(folder: Path, rid: str) -> tuple[int, str] | None:
+    """수동 지시 원고를 올려도 되는지 — (종료 코드, 이유) 또는 None. 3 = 이미 올림, 4 = 요청·카테고리가 맞지 않음."""
+    record = read_request(TREE, rid)
+    if not record:
+        return 4, f"요청 기록이 없습니다: {rid} (request start 를 먼저)"
+    if not record.get("started"):
+        return 4, "request start 를 먼저 해야 합니다"
+    if record.get("finished"):
+        return 4, "이미 끝난 요청입니다 (request finish 뒤에는 올리지 않음)"
+    category = folder_category(folder)
+    if not category:
+        return 4, "카테고리 번호가 없는 원고 폴더입니다 — claude_brief.py 에 --category 를 주고 만드세요"
+    posted = str(read_json(folder / "post.json").get("category") or "")
+    if posted != category:
+        return 4, f"post.json category '{posted}' 가 폴더 카테고리 '{category}' 와 다릅니다"
+    if record.get("kind") == "single" and record.get("category") and record["category"] != category:
+        return 4, f"이 요청의 카테고리는 '{record['category']}' 입니다"
+    pushed, failures = pushed_folders(), read_json(TREE / STATE / "failures.json")
+    mine = [f for f in draft_folders(TREE / DRAFTS, recent_days(datetime.now(KST)))  # Actions 가 멈춘 원고는 대체할 수 있게
+            if f.name != folder.name and f.name in pushed and not is_skip(f) and request_id_of(f) == rid
+            and not is_parked(f, failures)]
+    if record.get("kind") == "single" and mine:
+        return 3, f"이 요청(1편)으로 이미 올린 원고가 있습니다: {mine[0].name}"
+    same = [f.name for f in mine if folder_category(f) == category]
+    if same:
+        return 3, f"이 요청으로 이 카테고리 원고를 이미 올렸습니다: {same[0]}"
+    return None
+
+
+def push(folder: Path, request: str = "") -> int:
     folder = folder.resolve()
     if folder.parent != (TREE / DRAFTS).resolve():
         raise SystemExit(f"❌ 원고 폴더는 {TREE / DRAFTS} 안에 있어야 합니다: {folder}")
+    if request:
+        problem = request_problem(folder, request)
+        if problem:
+            print(f"❌ {problem[1]}")
+            return problem[0]
+        research = folder / "research.json"  # 표시는 모델이 아니라 이 도우미가 붙인다
+        try:  # 깨진 파일을 표시만 남긴 파일로 덮어쓰지 않도록 엄격하게 읽는다
+            data = json.loads(research.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"❌ research.json 을 읽지 못했습니다 ({exc}) — 고친 뒤 다시 올리세요")
+            return 1
+        if not isinstance(data, dict):
+            print("❌ research.json 이 객체(JSON object)가 아닙니다")
+            return 1
+        write_json(research, with_request(data, request, str(read_request(TREE, request)["kind"])))
     if check(folder) != 0:
         return 1
     title = str(read_json(folder / "post.json").get("title") or folder.name)[:80]
     files = [str((folder / name).relative_to(TREE)) for name in ("post.json", "research.json")]
-    publish(files, f"draft: {folder.name} {title}")
+    publish(files, f"draft: {folder.name} {'🧑‍💼 ' if request else ''}{title}")
     return 0
 
 
-def skip(category: str, reason: str) -> int:
-    """건너뜀 기록 — 빈 카테고리로 남아 클라우드의 재시도·로컬 자동 보충 대상이 된다."""
+def skip(category: str, reason: str, request: str = "") -> int:
+    """건너뜀 기록 — 매일 원고면 빈 카테고리로 남아 재시도·자동 보충 대상, 수동 지시면 지시 스레드에 이유를 알린다."""
     stamp = datetime.now(KST).strftime("%Y%m%d_%H%M%S")
     folder = TREE / DRAFTS / f"{stamp}_{CATEGORIES.index(category) + 1}"
-    write_json(folder / SKIP_FILE, {"category": category, "reason": reason, "at": datetime.now(KST).isoformat(timespec="seconds")})
+    data = {"category": category, "reason": reason, "at": datetime.now(KST).isoformat(timespec="seconds")}
+    if request:
+        record = read_request(TREE, request)
+        if not record:
+            print(f"❌ 요청 기록이 없습니다: {request}")
+            return 4
+        data = with_request(data, request, str(record.get("kind") or "single"))
+    write_json(folder / SKIP_FILE, data)
     publish([str((folder / SKIP_FILE).relative_to(TREE))], f"skip: {category} — {reason}"[:120])
+    return 0
+
+
+def dupcheck(folder: Path) -> int:
+    """이미 쓴 글(state/published.json)·원고 브랜치에 올라간 최근 7일 원고와 주제·원문이 겹치는지 (Actions 의 중복 확인을 미리)."""
+    folder = folder.resolve()
+    research, post = read_json(folder / "research.json"), read_json(folder / "post.json")
+    topic, title = str(research.get("topic") or ""), str(post.get("title") or "")
+    url = str(research.get("source_url") or "")
+    published = json.loads((TREE / STATE / "published.json").read_text(encoding="utf-8-sig")) \
+        if (TREE / STATE / "published.json").is_file() else []
+    entries = [("발행한 글", HistoryEntry.from_dict(e)) for e in published if isinstance(e, dict)]
+    # 올리지 못하고 남은 로컬 폴더(첫 시도 실패 등)·Actions 가 멈춘 원고(중복 거절 등)는 비교하지 않는다 — 재시도를 막지 않도록
+    pushed, failures = pushed_folders(), read_json(TREE / STATE / "failures.json")
+    for other in draft_folders(TREE / DRAFTS, recent_days(datetime.now(KST), 7)):
+        if other.name == folder.name or is_skip(other) or other.name not in pushed or is_parked(other, failures):
+            continue
+        data = read_json(other / "research.json")
+        entries.append((f"최근 원고 {other.name}", HistoryEntry(
+            folder_day(other.name), str(read_json(other / "post.json").get("title") or ""),
+            str(data.get("topic") or ""), folder_category(other), str(data.get("source_url") or ""))))
+    for where, entry in entries:
+        single = PostHistory((entry,))
+        if single.is_duplicate(topic or title, url) or (title and single.is_duplicate(title)):
+            print(f"❌ 겹침: {where} '{entry.title}' (주제: {entry.topic} · {entry.source_url or '원문 없음'})")
+            return 1
+    print("✅ 겹치는 글 없음")
+    return 0
+
+
+def _parse_time(value: object) -> datetime | None:
+    try:
+        return datetime.fromisoformat(str(value))
+    except ValueError:
+        return None
+
+
+def request_start(rid: str, category: str, network: str) -> int:
+    """수동 지시 시작 — Actions 가 남긴 요청 기록과 맞아야 한다. 0 = 시작, 3 = 이미 시작·끝·오래됨(중복 실행), 4 = 없음·불일치."""
+    record = read_request(TREE, rid)
+    if not record or record.get("kind") not in KINDS:
+        print(f"❌ 요청 기록이 없거나 형식이 틀립니다: {rid}")
+        return 4
+    if record.get("started") or record.get("finished") or record.get("fire_error"):
+        print("⏹️ 이미 시작했거나 끝났거나 실행에 실패해 닫힌 요청입니다 — 아무것도 하지 않습니다")
+        return 3
+    created = _parse_time(record.get("created"))
+    if created is None or datetime.now(KST) - created > timedelta(hours=MAX_AGE_HOURS):
+        print(f"⏹️ {MAX_AGE_HOURS}시간이 지난 요청입니다 — 아무것도 하지 않습니다")
+        return 3
+    chosen = str(record.get("category") or "")
+    if record["kind"] == "single":
+        if chosen and category and category != chosen:
+            print(f"❌ 이 요청의 카테고리는 '{chosen}' 입니다")
+            return 4
+        chosen = chosen or category
+        if chosen not in CATEGORIES:
+            print("❌ 카테고리가 정해지지 않은 요청입니다 — 주제에 맞는 카테고리를 --category 로 정해 다시 실행하세요")
+            return 4
+    updated = {**record, "category": chosen, "started": datetime.now(KST).isoformat(timespec="seconds"),
+               "network": network}
+    path = request_path(TREE, rid)
+    write_json(path, updated)
+    publish([str(path.relative_to(TREE))], f"request: {rid} 시작")
+    print(json.dumps({k: updated.get(k, "") for k in ("id", "kind", "category", "topic")}, ensure_ascii=False))
+    return 0
+
+
+def request_status(rid: str) -> int:
+    """이 요청으로 올린 원고·건너뜀·남은 카테고리 (JSON)."""
+    record = read_request(TREE, rid)
+    if not record:
+        print(json.dumps({"id": rid, "error": "요청 기록이 없습니다"}, ensure_ascii=False))
+        return 4
+    pushed, failures = pushed_folders(), read_json(TREE / STATE / "failures.json")
+    folders = [f for f in draft_folders(TREE / DRAFTS, recent_days(datetime.now(KST))) if request_id_of(f) == rid]
+    wanted = list(CATEGORIES) if record.get("kind") == "all" else [str(record.get("category") or "")]
+    rows = []
+    for category in wanted:
+        mine = [f for f in folders if folder_category(f) == category]
+        drafts = [f.name for f in mine if f.name in pushed and is_complete(f) and not is_parked(f, failures)]
+        stopped = [f"{f.name}: {failures[f.name].get('reason') or ''}" for f in mine if is_parked(f, failures)]
+        skips = [str(read_json(f / SKIP_FILE).get("reason") or "") for f in mine if is_skip(f)]
+        rows.append({"category": category, "drafts": drafts, "skip": skips[-1] if skips else "", "stopped": stopped})
+    print(json.dumps({"id": rid, "kind": record.get("kind"), "started": record.get("started", ""),
+                      "finished": record.get("finished", ""), "categories": rows,
+                      "missing": [r["category"] for r in rows if not r["drafts"]]}, ensure_ascii=False))
+    return 0
+
+
+def request_finish(rid: str, note: str) -> int:
+    record = read_request(TREE, rid)
+    if not record:
+        print(f"❌ 요청 기록이 없습니다: {rid}")
+        return 4
+    path = request_path(TREE, rid)
+    write_json(path, {**record, "finished": datetime.now(KST).isoformat(timespec="seconds"), "note": note[:300]})
+    publish([str(path.relative_to(TREE))], f"request: {rid} 끝")
     return 0
 
 
@@ -276,11 +444,25 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("claim", "release"):
         sub.add_parser(name).add_argument("--owner", default="local", help="채우는 쪽 이름 (예: autofill, manual)")
     sub.add_parser("finish")
-    for name in ("check", "push"):
+    for name in ("check", "dupcheck"):
         sub.add_parser(name).add_argument("folder", type=Path)
+    push_p = sub.add_parser("push")
+    push_p.add_argument("folder", type=Path)
+    push_p.add_argument("--request", default="", help="슬랙 수동 지시 요청 ID (원고에 수동 지시 표시를 붙임)")
     skip_p = sub.add_parser("skip")
     skip_p.add_argument("--category", required=True, choices=CATEGORIES)
     skip_p.add_argument("--reason", required=True)
+    skip_p.add_argument("--request", default="", help="슬랙 수동 지시 요청 ID")
+    request_p = sub.add_parser("request", help="슬랙 수동 지시 실행 기록")
+    request_sub = request_p.add_subparsers(dest="action", required=True)
+    request_start_p = request_sub.add_parser("start")
+    request_start_p.add_argument("--id", required=True)
+    request_start_p.add_argument("--category", default="", choices=["", *CATEGORIES])
+    request_start_p.add_argument("--network", default="full", choices=["full", "limited"])
+    request_sub.add_parser("status").add_argument("--id", required=True)
+    request_finish_p = request_sub.add_parser("finish")
+    request_finish_p.add_argument("--id", required=True)
+    request_finish_p.add_argument("--note", default="")
     args = parser.parse_args(argv)
     if args.command == "setup":
         print(f"원고 브랜치: {setup()}")
@@ -306,8 +488,19 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "release":
         return release(args.owner)
     if args.command == "push":
-        return push(args.folder)
-    return skip(args.category, args.reason)
+        return push(args.folder, args.request)
+    if args.command == "dupcheck":
+        return dupcheck(args.folder)
+    if args.command == "request":
+        if not SYNC["ok"]:
+            print("❌ 원고 브랜치를 원격과 맞추지 못했습니다 — 요청 기록을 판단하지 않습니다")
+            return 2
+        if args.action == "start":
+            return request_start(args.id, args.category, args.network)
+        if args.action == "status":
+            return request_status(args.id)
+        return request_finish(args.id, args.note)
+    return skip(args.category, args.reason, args.request)
 
 
 if __name__ == "__main__":

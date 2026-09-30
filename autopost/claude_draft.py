@@ -191,12 +191,13 @@ class DraftPreparer:
                              line, tuple(warnings), sources_md)
 
 
-def build_draft_blocks(prepared: PreparedDraft) -> list[dict]:
+def build_draft_blocks(prepared: PreparedDraft, request: Mapping[str, str] | None = None) -> list[dict]:
+    manual = " · 🧑‍💼 수동 지시" if request else ""
     body = (f"*제목:* {escape_mrkdwn(prepared.content.title)}\n*카테고리:* {escape_mrkdwn(prepared.content.category)}\n"
             f"*본문:* {prepared.content.text_length():,}자 · 소제목 {len(prepared.content.sections)}개\n"
             f"*사실 검증:* {escape_mrkdwn(prepared.fact_line)}")
     blocks: list[dict] = [
-        {"type": "header", "text": {"type": "plain_text", "text": f"📝 {LABEL} 발행 대기 원고"}},
+        {"type": "header", "text": {"type": "plain_text", "text": f"📝 {LABEL} 발행 대기 원고{manual}"}},
         {"type": "section", "text": {"type": "mrkdwn", "text": body}},
     ]
     if prepared.warnings:
@@ -207,12 +208,17 @@ def build_draft_blocks(prepared: PreparedDraft) -> list[dict]:
     return blocks
 
 
-def send_for_approval(prepared: PreparedDraft, store, slack, channel: str, now: datetime) -> str:
-    """원고를 보관함에 맡기고 슬랙에 승인 요청을 올린다 — 슬랙 메시지 위치를 원고에 연결해 둔다."""
-    bundle = prepared.bundle(now)
+def send_for_approval(prepared: PreparedDraft, store, slack, channel: str, now: datetime,
+                      request: Mapping[str, str] | None = None) -> str:
+    """원고를 보관함에 맡기고 슬랙에 승인 요청을 올린다 — 슬랙 메시지 위치를 원고에 연결해 둔다.
+
+    request = 수동 지시 표시 {"id","kind"} — 카드에 '🧑‍💼 수동 지시'를 붙이고 보관함 기록에 남긴다 (발행 결과를 지시 스레드에 알림).
+    """
+    bundle = {**prepared.bundle(now), **({"request": dict(request)} if request else {})}
     store.put(prepared.draft_id, bundle)
-    ts = slack.post(f"📝 {LABEL} 발행 대기 원고 — {prepared.content.title}", build_draft_blocks(prepared),
-                    channel=channel)
+    manual = "🧑‍💼 수동 지시 · " if request else ""
+    ts = slack.post(f"{manual}📝 {LABEL} 발행 대기 원고 — {prepared.content.title}",
+                    build_draft_blocks(prepared, request), channel=channel)
     if not ts:
         raise DraftError("슬랙 메시지를 보내지 못했습니다 (봇 토큰·채널 확인)")
     if prepared.preview is not None:

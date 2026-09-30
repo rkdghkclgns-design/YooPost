@@ -25,6 +25,7 @@ from autopost.claude_draft import DraftPreparer, send_for_approval  # noqa: E402
 from autopost.cli import http_session  # noqa: E402
 from autopost.cloud_drafts import WORKTREE, sync_and_report, watchdog  # noqa: E402
 from autopost.config import load_config  # noqa: E402
+from autopost.draft_request import request_of  # noqa: E402
 from autopost.draft_store import DraftStore  # noqa: E402
 from autopost.google_auth import build_blogger_service, build_credentials  # noqa: E402
 from autopost.history import load_history  # noqa: E402
@@ -54,16 +55,18 @@ def main(argv: list[str] | None = None) -> int:
     preparer = DraftPreparer(cfg.blog_name, blogger, ImageHost(cfg.image_host_url, cfg.image_upload_token, session),
                              ImageCollector(session), session=session, now=now)
 
-    def send(folder: Path) -> None:
+    def send(folder: Path) -> str:
         prepared = preparer.prepare(folder, folder.name)
-        send_for_approval(prepared, store, slack, channel, now())
+        ts = send_for_approval(prepared, store, slack, channel, now(), request=request_of(folder))
         print(f"📨 {folder.name} — {prepared.content.title}")
         for warning in prepared.warnings:
             print(f"   ⚠️ {warning}")
+        return ts
 
     root = args.root.resolve()
     outcome = sync_and_report(root, now, store, send, slack, lambda: load_history(blogger).entries,
-                              clean=lambda text: redact(text, cfg.secret_values()))
+                              clean=lambda text: redact(text, cfg.secret_values()),
+                              manual_channel=dict(cfg.slack_stage_channels).get("manual", ""), draft_channel=channel)
     if args.watchdog and not watchdog(root, now(), slack):
         print("⚠️ 오늘 클라우드 실행 기록이 없습니다")
     print(f"보냄 {len(outcome.sent)} · 이미 보냄 {len(outcome.already)} · 실패 {len(outcome.new_failures)}"

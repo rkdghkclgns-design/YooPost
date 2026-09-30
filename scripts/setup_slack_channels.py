@@ -3,6 +3,7 @@
     python scripts/setup_slack_channels.py                 # GOOGLE_ACCOUNT_EMAIL(기본 rkdghkclgns@gmail.com) 초대
     python scripts/setup_slack_channels.py --email me@x.com
 
+    #yoopost-0-수동지시   "주제를 카테고리에 발행해줘" · "전체 새로 발행" 지시     (SLACK_CHANNEL_MANUAL)
     #yoopost-알림        매일 원고 작성 요약 · 오류 · 연동 점검              (SLACK_CHANNEL_ID, Secret)
     #yoopost-1-원고승인   Claude 가 쓴 원고 — 미리보기·출처 확인 후 ✅ = 발행   (SLACK_CHANNEL_DRAFT)
     #yoopost-2-발행완료   ✅ 로 발행된 글 주소                                (SLACK_CHANNEL_PUBLISH)
@@ -23,9 +24,12 @@ from dotenv import load_dotenv  # noqa: E402
 
 from autopost.envfile import update_env_file  # noqa: E402
 from autopost.local_secrets import upload_secrets, upload_variables  # noqa: E402
+from autopost.manual_command import USAGE  # noqa: E402
 
 # (채널 이름, 예전 이름들, .env 이름, 비밀 여부, 채널 설명)
 CHANNELS = (
+    ("yoopost-0-수동지시", (), "SLACK_CHANNEL_MANUAL", False,
+     "Claude 에게 원고 지시 — '주제를 AI도구에 발행해줘' · '전체 새로운 포스트로 재발행' (원고는 ✅ 승인 후 발행)"),
     ("yoopost-알림", (), "SLACK_CHANNEL_ID", True,
      "AI백과사전 — 매일 원고 작성 요약 · 오류 · 연동 점검(/aipost-setup)"),
     ("yoopost-1-원고승인", ("yoopost-2-원고검증",), "SLACK_CHANNEL_DRAFT", False,
@@ -38,6 +42,7 @@ RETIRED_ENV = ("SLACK_CHANNEL_RESEARCH",)
 GUIDE = ("📌 *이 채널 사용법*\n"
          "Claude 가 매일 아침 카테고리별 원고를 여기에 올립니다. 스레드의 미리보기(HTML)·출처를 확인하고\n"
          "원고 메시지에 ✅ 를 누르면 구글 블로그에 발행되고, 결과가 그 스레드에 달립니다. 발행하지 않을 원고는 그냥 두면 됩니다.")
+GUIDES = {"SLACK_CHANNEL_DRAFT": GUIDE, "SLACK_CHANNEL_MANUAL": "📌 " + USAGE}  # 채널을 새로 만들거나 이름을 바꿀 때 올리는 안내
 
 
 def all_channels(client) -> dict[str, dict]:
@@ -139,8 +144,8 @@ def main() -> int:
         for name, old_names, env, _, purpose in CHANNELS:
             channel_id, changed = ensure_channel(client, known, name, old_names, purpose)
             invite(client, channel_id, user_id, name)
-            if changed and env == "SLACK_CHANNEL_DRAFT":
-                client.chat_postMessage(channel=channel_id, text=GUIDE)
+            if changed and env in GUIDES:
+                client.chat_postMessage(channel=channel_id, text=GUIDES[env])
             ids[env] = channel_id
         retire(client, known)
     except SlackApiError as exc:

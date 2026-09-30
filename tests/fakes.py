@@ -78,6 +78,11 @@ class FakeWebClient:
             raise RuntimeError("slack down")
         self.uploads.append(kwargs)
 
+    def chat_getPermalink(self, channel, message_ts):
+        if self.fail:
+            raise RuntimeError("slack down")
+        return {"ok": True, "permalink": f"https://yoopost.slack.com/archives/{channel}/p{message_ts.replace('.', '')}"}
+
     def texts(self) -> list[str]:
         return [m["text"] for m in self.messages] + [u["text"] for u in self.updates]
 

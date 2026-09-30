@@ -8,8 +8,11 @@ GITHUB_REPO = "rkdghkclgns-design/YooPost"
 # 실행할 워크플로 파일과 브랜치
 GITHUB_WORKFLOW = "auto_post.yml"
 GITHUB_REF = "main"
-# (선택) 실행 허용할 슬랙 사용자 ID, 쉼표로 구분. 비우면 채널의 누구나 실행 가능
-ALLOWED_USER_IDS = ""
+# (선택) 실행 허용할 슬랙 사용자 ID, 쉼표로 구분. 비우면 채널의 누구나 실행 가능 (✅ 승인·수동 지시·/aipost 모두)
+ALLOWED_USER_IDS = "U0C4PLGBNF9"
+# 수동 지시 채널 #yoopost-0-수동지시 (scripts/setup_slack_channels.py 가 만든 채널 ID) — 이 채널의 새 메시지만 지시로 받는다
+MANUAL_CHANNEL_ID = "C0C50SP7VV5"
+MANUAL_WORKFLOW = "manual_request.yml"
 
 # 블로그 이미지(대표 이미지·인용 이미지) 저장소 — 구글 드라이브 대신 Cloudflare KV (무료 한도: 쓰기 1,000회/일)
 [[kv_namespaces]]

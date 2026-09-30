@@ -22,6 +22,7 @@ STAGE_CHANNEL_ENV = (
     ("research", "SLACK_CHANNEL_RESEARCH"),  # 주제·출처 목록
     ("draft", "SLACK_CHANNEL_DRAFT"),  # AI 원고·사실 검증 보고·블로그 미리보기
     ("publish", "SLACK_CHANNEL_PUBLISH"),  # 발행 결과·수동 발행용 원고
+    ("manual", "SLACK_CHANNEL_MANUAL"),  # 슬랙 수동 지시 채널 — 지시 스레드에 원고 도착·발행 결과를 답함
 )
 
 

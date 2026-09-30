@@ -12,8 +12,8 @@ features:
   slash_commands:
     - command: /aipost
       url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/
-      description: AI백과사전 사용법 안내 (원고는 Claude 앱에서 작성)
-      usage_hint: "[주제] [테스트]  ·  도움말"
+      description: Claude 에게 원고 지시 (예 "주제를 AI도구에 발행해줘" · "전체 새로운 포스트로 재발행")
+      usage_hint: "[지시]  ·  도움말"
       should_escape: false
     - command: /aipost-setup
       url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/
@@ -35,11 +35,14 @@ oauth_config:
       - users:read.email
       # 원고 메시지의 ✅ 반응을 감지해 발행 (Worker /slack/events)
       - reactions:read
+      # #yoopost-0-수동지시 채널에 쓴 지시를 읽음 (Worker 가 그 채널 메시지만 처리)
+      - channels:history
 settings:
   event_subscriptions:
     request_url: https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev/slack/events
     bot_events:
       - reaction_added
+      - message.channels
   org_deploy_enabled: false
   socket_mode_enabled: false
   token_rotation_enabled: false

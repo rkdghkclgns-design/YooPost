@@ -25,6 +25,7 @@ PREFIXES = {
     "SLACK_BOT_TOKEN": ("xoxb-",),
     "SLACK_WEBHOOK_URL": ("https://hooks.slack.com/",),
     "GEMINI_API_KEY": ("AIza", "AQ."),
+    "ROUTINE_FIRE_TOKEN": ("sk-ant-",),
 }
 
 

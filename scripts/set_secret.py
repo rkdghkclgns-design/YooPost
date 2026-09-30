@@ -22,6 +22,8 @@ NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{2,63}$")
 HINTS = {
     "GEMINI_API_KEY": "https://aistudio.google.com/apikey 에서 만든 API 키를 붙여넣으세요",
     "SLACK_BOT_TOKEN": "슬랙 앱 OAuth & Permissions 의 Bot User OAuth Token(xoxb-...)을 붙여넣으세요",
+    "ROUTINE_FIRE_TOKEN": ("claude.ai/code/routines → 'YooPost 수동 지시 (슬랙)' → 편집 → API 트리거의 "
+                           "Generate token 으로 만든 토큰(sk-ant-oat01-...)을 붙여넣으세요"),
 }
 
 

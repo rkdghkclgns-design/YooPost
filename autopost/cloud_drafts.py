@@ -9,9 +9,14 @@ yoopost-drafts 브랜치 (코드 없이 데이터만)
     drafts/<YYYYMMDD_HHMMSS_n>/post.json·research.json   원고 (n = 카테고리 번호, 폴더 이름 = 원고 ID)
     drafts/<YYYYMMDD_HHMMSS_n>/skip.json                  건너뛴 카테고리 {"category", "reason"}
     runs/<YYYYMMDD>.json                                  클라우드 실행 기록 {"started", "finished", "network"}
+    runs/requests/<요청 ID>.json                         수동 지시 실행 기록 (draft_request.py) — 매일 기록과 따로
     state/progress_<YYYYMMDD>.json                        진행 메시지 ts·요약 전송 여부 (Actions 가 씀)
     state/failures.json                                   전송 실패 {원고 ID: {"hash", "reason"}} (Actions 가 씀)
     state/published.json                                  발행 기록 — 클라우드가 주제 중복을 피할 때 읽음
+    state/requests.json                                   수동 지시 스레드에 이미 알린 것 (Actions 가 씀)
+
+수동 지시 원고(research.json·skip.json 의 "request")는 여느 원고처럼 슬랙 승인 요청으로 보내되, 매일 7개 카테고리의
+빈칸 계산·진행 막대에는 넣지 않는다 (07시 전에 지시해도 07시 루틴이 카테고리를 건너뛰지 않도록).
 """
 from __future__ import annotations
 
@@ -27,6 +32,7 @@ from typing import Callable, Iterable, Mapping, Sequence
 
 from .claude_draft import DraftError, load_draft
 from .constants import CATEGORIES
+from .draft_request import request_id_of
 
 log = logging.getLogger(__name__)
 
@@ -98,7 +104,7 @@ class Gap:
     reason: str
 
 
-def _complete(folder: Path) -> bool:
+def is_complete(folder: Path) -> bool:
     """사실 검증까지 끝난 원고 (post.json·research.json, factcheck 에 claims·confirmed)."""
     if is_skip(folder) or not (folder / "post.json").is_file():
         return False
@@ -108,20 +114,24 @@ def _complete(folder: Path) -> bool:
 
 def missing_categories(drafts_dir: Path, day: str, categories: Sequence[str],
                        failures: Mapping[str, Mapping[str, object]] | None = None,
-                       pushed: Iterable[str] | None = None) -> list[Gap]:
+                       pushed: Iterable[str] | None = None, request: str = "",
+                       days: Iterable[str] | None = None) -> list[Gap]:
     """오늘(YYYYMMDD) 쓸 만한 원고가 없는 카테고리 — 건너뛴 것, 보내다 멈춘 것, 올리지 못한 것, 아예 없는 것.
 
     같은 카테고리에 쓸 만한 원고가 하나라도 있으면 빈 카테고리가 아니다 (보충한 원고가 건너뜀 표시를 이긴다).
     쓸 만한 원고 = 사실 검증까지 끝났고, 원고 브랜치에 올라갔고(pushed 가 주어지면), Actions 가 더 보내지 않기로
     멈춘(parked) 실패가 아닌 것 — 전송 재시도 규칙(sync_drafts)과 같은 기준.
+    request 가 비어 있으면 매일 원고만, 요청 ID 면 그 수동 지시 원고만 본다 (days = 볼 날짜들, 기본은 day 하루).
+    categories 는 늘 전체 목록을 넘긴다 — 번호(폴더 이름 끝)가 목록 순서다.
     """
     failures = failures or {}
     remote = None if pushed is None else set(pushed)
-    folders = draft_folders(drafts_dir, [day])
+    folders = [f for f in draft_folders(drafts_dir, list(days) if days is not None else [day])
+               if request_id_of(f) == request]
     gaps: list[Gap] = []
     for number, category in enumerate(categories, start=1):
         mine = [f for f in folders if f.name.endswith(f"_{number}")]
-        complete = [f for f in mine if _complete(f)]
+        complete = [f for f in mine if is_complete(f)]
         on_branch = [f for f in complete if remote is None or f.name in remote]
         parked = [f for f in on_branch if _parked(failures.get(f.name), fingerprint(f))]
         if len(on_branch) > len(parked):
@@ -200,6 +210,7 @@ class SyncOutcome:
     already: tuple[str, ...] = ()
     new_failures: Mapping[str, str] = field(default_factory=lambda: MappingProxyType({}))
     unknown: tuple[str, ...] = ()  # 보관함을 확인하지 못해 다음 실행으로 미룬 원고
+    messages: Mapping[str, str] = field(default_factory=lambda: MappingProxyType({}))  # 보낸 원고 → 슬랙 메시지 ts
 
 
 def delivered(record: Mapping[str, object] | None) -> bool:
@@ -215,7 +226,12 @@ def _parked(record: Mapping[str, object] | None, mark: str) -> bool:
     return bool(record.get("permanent")) or int(record.get("attempts") or 0) >= MAX_ATTEMPTS
 
 
-def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None], send: Callable[[Path], None],
+def is_parked(folder: Path, failures: Mapping[str, Mapping[str, object]]) -> bool:
+    """Actions 가 더 보내지 않기로 멈춘 원고 (원고 문제·여러 번 실패) — 브랜치에 있어도 쓸 만한 원고가 아니다."""
+    return _parked(failures.get(folder.name), fingerprint(folder))
+
+
+def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None], send: Callable[[Path], str | None],
                 failures: Mapping[str, Mapping[str, object]], clean: Callable[[str], str] = lambda t: t,
                 ) -> tuple[SyncOutcome, dict]:
     """슬랙 승인 요청이 끝나지 않은 원고만 보낸다. (결과, 새 실패 기록)
@@ -225,6 +241,7 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
     """
     sent, already, unknown = [], [], []
     new_failures: dict[str, str] = {}
+    messages: dict[str, str] = {}
     names = {f.name for f in folders}
     records = {k: dict(v) for k, v in failures.items() if k in names}  # 지난 원고의 기록은 정리
     for folder in folders:
@@ -247,7 +264,7 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
         try:
             if has_symlink(folder):
                 raise DraftError("원고 폴더에 심볼릭 링크가 있어 쓰지 않습니다")
-            send(folder)
+            ts = send(folder)
         except Exception as exc:
             reason = clean(str(exc))[:MAX_REASON] or type(exc).__name__
             attempts = int((previous or {}).get("attempts") or 0) + 1
@@ -258,8 +275,10 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
                 new_failures[draft_id] = reason
             continue
         sent.append(draft_id)
+        messages[draft_id] = str(ts or "")
         records.pop(draft_id, None)
-    outcome = SyncOutcome(tuple(sent), tuple(already), MappingProxyType(new_failures), tuple(unknown))
+    outcome = SyncOutcome(tuple(sent), tuple(already), MappingProxyType(new_failures), tuple(unknown),
+                          MappingProxyType(messages))
     return outcome, records
 
 
@@ -275,10 +294,12 @@ def run_active(run: Mapping[str, object]) -> bool:
 PUBLISHED_KEEP = 120
 
 
-def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callable[[Path], None], slack,
-                    load_entries: Callable[[], Sequence], clean: Callable[[str], str] = lambda t: t) -> SyncOutcome:
-    """Actions 한 번 실행분 — 새 원고 전송 → 실패 알림 → 진행 막대 → (끝났으면) 요약 → 발행 기록 파일."""
+def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callable[[Path], str | None], slack,
+                    load_entries: Callable[[], Sequence], clean: Callable[[str], str] = lambda t: t,
+                    manual_channel: str = "", draft_channel: str = "") -> SyncOutcome:
+    """Actions 한 번 실행분 — 새 원고 전송 → 실패 알림 → 수동 지시 스레드 → 진행 막대 → (끝났으면) 요약 → 발행 기록 파일."""
     from .draft_progress import ProgressBoard
+    from .request_report import report_requests
     from .slack_helper import escape_mrkdwn
 
     current = now()
@@ -288,10 +309,14 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     write_json(failures_file, records)
     for draft_id, reason in outcome.new_failures.items():
         slack.post(f"⚠️ 클라우드 원고를 슬랙 승인 요청으로 보내지 못했습니다 — `{draft_id}`: {escape_mrkdwn(reason)}")
+    try:
+        report_requests(root, folders, outcome, records, slack, current, manual_channel, draft_channel)
+    except Exception as exc:  # 수동 지시 알림이 원고 전송·진행 막대를 멈추지 않게
+        log.warning("수동 지시 스레드에 알리지 못했습니다: %s", exc)
     day = current.strftime("%Y%m%d")
     run = read_json(root / RUNS / f"{day}.json")
     progress = root / STATE / f"progress_{day}.json"
-    if run or any(folder_day(f.name) == day for f in folders):
+    if run or any(folder_day(f.name) == day and not request_id_of(f) for f in folders):
         board = ProgressBoard(slack, root / DRAFTS, progress, store, now=now)
         rows = board.refresh(failed_reasons(records), run_active(run))
         if run.get("finished") and not read_json(progress).get("summary"):

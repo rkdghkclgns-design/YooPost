@@ -26,6 +26,7 @@ SECRET_PATTERNS = (
     (re.compile(r"ya29\.[0-9A-Za-z_\-.]+"), MASK),  # Google 액세스 토큰
     (re.compile(r"xox[abposre]-[0-9A-Za-z\-]+"), MASK),  # 슬랙 토큰
     (re.compile(r"(?:ghp|gho|ghs|ghu|github_pat)_[0-9A-Za-z_]+"), MASK),  # GitHub 토큰
+    (re.compile(r"sk-ant-[0-9A-Za-z_\-]+"), MASK),  # Anthropic 토큰 (클라우드 루틴 실행 토큰 sk-ant-oat01-…)
     (re.compile(r"([?&](?:key|access_token|refresh_token|token)=)[^&\s\"'<>|]+"), r"\g<1>" + MASK),
     (re.compile(r"(Bearer )[0-9A-Za-z_\-.~+/=]{8,}"), r"\g<1>" + MASK),
 )
@@ -191,6 +192,16 @@ class SlackNotifier:
         except Exception as exc:
             log.error("슬랙 메시지 수정 실패: %s", exc)
             return False
+
+    def permalink(self, channel: str, ts: str) -> str:
+        """메시지 주소 (봇 토큰이 없거나 실패하면 빈 문자열)."""
+        if self._client is None or not channel or not ts:
+            return ""
+        try:
+            return str((self._client.chat_getPermalink(channel=channel, message_ts=ts) or {}).get("permalink") or "")
+        except Exception as exc:
+            log.warning("슬랙 메시지 주소를 얻지 못했습니다: %s", exc)
+            return ""
 
     def upload_file(
         self,

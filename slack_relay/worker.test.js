@@ -6,6 +6,7 @@ import worker, { buildInputs, dispatchUrl, parseText, sign, verifySlackSignature
 
 const SECRET = "test-signing-secret";
 const ENV = { SLACK_SIGNING_SECRET: SECRET, GITHUB_TOKEN: "ghp_x", GITHUB_REPO: "me/YooPost" };
+const OWNER = { ...ENV, ALLOWED_USER_IDS: "U1" };
 const DISPATCH_URL = "https://api.github.com/repos/me/YooPost/actions/workflows/auto_post.yml/dispatches";
 const realFetch = globalThis.fetch;
 let dispatched;
@@ -64,14 +65,27 @@ test("buildInputs sends string inputs and ignores topic/dry-run for setup", () =
   assert.equal(buildInputs("setup", "", false, "yoo", true).categories, undefined);
 });
 
-test("/aipost no longer runs Gemini — it explains the Claude + ✅ flow", async () => {
-  for (const text of ["", "GPT-6 테스트", "전체"]) {
-    const response = await worker.fetch(await slackRequest({ command: "/aipost", text, user_id: "U1" }), ENV);
-    const json = await response.json();
-    assert.equal(json.response_type, "ephemeral");
-    assert.match(json.text, /Claude 앱/);
-  }
+test("/aipost without text explains usage and never runs Gemini", async () => {
+  const response = await worker.fetch(await slackRequest({ command: "/aipost", text: "", user_id: "U1" }), ENV);
+  const json = await response.json();
+  assert.equal(json.response_type, "ephemeral");
+  assert.match(json.text, /수동지시/);
   assert.equal(dispatched.length, 0);
+});
+
+test("/aipost <지시> dispatches a manual request (never auto_post.yml)", async () => {
+  const request = await slackRequest({
+    command: "/aipost", text: "슬랙에 에이전트 직원 만들기를 AI도구에 발행해줘", user_id: "U1", channel_id: "CANY",
+  });
+  const json = await (await worker.fetch(request, OWNER)).json();
+  assert.equal(json.response_type, "ephemeral");
+  assert.match(json.text, /접수/);
+  assert.equal(dispatched.length, 1);
+  assert.equal(dispatched[0].url, "https://api.github.com/repos/me/YooPost/actions/workflows/manual_request.yml/dispatches");
+  assert.deepEqual(dispatched[0].body, {
+    ref: "main",
+    inputs: { text: "슬랙에 에이전트 직원 만들기를 AI도구에 발행해줘", channel: "CANY", ts: "", user: "U1", source: "slash" },
+  });
 });
 
 test("dispatchUrl honours custom workflow file", () => {
@@ -243,6 +257,9 @@ function memoryStore() {
       const value = store.has(key) ? store.get(key) : null;
       return value !== null && options && options.type === "json" ? JSON.parse(value) : value;
     },
+    async delete(key) {
+      store.delete(key);
+    },
   };
 }
 
@@ -342,4 +359,92 @@ test("approval waits in the background when the runtime offers waitUntil", async
   await worker.fetch(await eventRequest(reaction()), env, { waitUntil: (p) => pending.push(p) });
   await Promise.all(pending);
   assert.equal(dispatched.length, 1);
+});
+
+// ---------------------------------------------------------------- 수동 지시 채널 (#yoopost-0-수동지시)
+const MANUAL_URL = "https://api.github.com/repos/me/YooPost/actions/workflows/manual_request.yml/dispatches";
+
+function manualEnv(extra = {}) {
+  return draftEnv({ MANUAL_CHANNEL_ID: "CMANUAL", ALLOWED_USER_IDS: "U1", ...extra });
+}
+
+function message(extra = {}) {
+  return { type: "event_callback", event: { type: "message", channel: "CMANUAL", channel_type: "channel",
+    user: "U1", ts: "1727650000.123456", text: "전체 새로운 포스트로 재발행", ...extra } };
+}
+
+test("a top-level message in the manual channel dispatches manual_request.yml once", async () => {
+  const env = manualEnv();
+  const response = await worker.fetch(await eventRequest(message()), env);
+  assert.equal(response.status, 200);
+  assert.equal(dispatched.length, 1);
+  assert.equal(dispatched[0].url, MANUAL_URL);
+  assert.deepEqual(dispatched[0].body.inputs, {
+    text: "전체 새로운 포스트로 재발행", channel: "CMANUAL", ts: "1727650000.123456", user: "U1", source: "message",
+  });
+  await worker.fetch(await eventRequest(message()), env); // 같은 메시지가 다시 와도 한 번만
+  await worker.fetch(await eventRequest(message(), { retry: true }), env);
+  assert.equal(dispatched.length, 1);
+});
+
+test("manual channel ignores bots, edits, thread replies, other channels, blank text and strangers", async () => {
+  const env = manualEnv({ ALLOWED_USER_IDS: "U1" });
+  const ignored = [
+    { bot_id: "B1" },
+    { subtype: "message_changed" },
+    { subtype: "bot_message" },
+    { thread_ts: "1727640000.000001" },
+    { channel: "CDRAFT" },
+    { text: "   " },
+    { user: "U2" },
+    { user: undefined },
+  ];
+  for (const [i, extra] of ignored.entries()) {
+    await worker.fetch(await eventRequest(message({ ts: `1727650000.00000${i}`, ...extra })), env);
+  }
+  assert.equal(dispatched.length, 0);
+  // 스레드 첫 메시지(thread_ts == ts)는 지시로 인정
+  await worker.fetch(await eventRequest(message({ ts: "1727650001.000001", thread_ts: "1727650001.000001" })), env);
+  assert.equal(dispatched.length, 1);
+});
+
+test("manual messages are ignored until the channel is configured, and long text is capped", async () => {
+  await worker.fetch(await eventRequest(message()), draftEnv());
+  assert.equal(dispatched.length, 0);
+  await worker.fetch(await eventRequest(message({ text: "가".repeat(900) })), manualEnv());
+  assert.equal(dispatched[0].body.inputs.text.length, 500);
+});
+
+test("a failed manual dispatch frees the message so a resend can retry", async () => {
+  const env = manualEnv();
+  globalThis.fetch = async () => new Response("nope", { status: 500 });
+  await worker.fetch(await eventRequest(message()), env);
+  assert.equal(env.IMAGES.store.has("manual:CMANUAL:1727650000.123456"), false);
+});
+
+test("manual requests fail closed when no allowlist is configured", async () => {
+  await worker.fetch(await eventRequest(message()), manualEnv({ ALLOWED_USER_IDS: "" }));
+  const slash = await worker.fetch(await slackRequest({ command: "/aipost", text: "전체 발행", user_id: "U1" }), ENV);
+  assert.match((await slash.json()).text, /허용된 사용자/);
+  assert.equal(dispatched.length, 0);
+});
+
+test("a manual instruction with an attached file still counts (file_share)", async () => {
+  await worker.fetch(await eventRequest(message({ subtype: "file_share", files: [{ id: "F1" }] })), manualEnv());
+  assert.equal(dispatched.length, 1);
+  assert.equal(dispatched[0].body.inputs.text, "전체 새로운 포스트로 재발행");
+});
+
+test("a failed manual dispatch is announced in the thread when a bot token is set", async () => {
+  const calls = [];
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body), auth: init.headers.Authorization });
+    return url.includes("slack.com") ? new Response("{}", { status: 200 }) : new Response("nope", { status: 401 });
+  };
+  await worker.fetch(await eventRequest(message()), manualEnv({ SLACK_BOT_TOKEN: "xoxb-test" }));
+  const notice = calls.find((c) => c.url === "https://slack.com/api/chat.postMessage");
+  assert.ok(notice);
+  assert.equal(notice.auth, "Bearer xoxb-test");
+  assert.deepEqual([notice.body.channel, notice.body.thread_ts], ["CMANUAL", "1727650000.123456"]);
+  assert.match(notice.body.text, /넘기지 못했습니다/);
 });

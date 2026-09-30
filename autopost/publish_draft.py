@@ -17,6 +17,7 @@ from typing import Sequence
 
 from .blog_publisher import PLATFORM, BloggerPublisher
 from .config import ConfigError, load_config
+from .draft_request import manual_thread
 from .draft_store import DraftStore
 from .results import PublishResult
 from .slack_helper import LABEL, SlackNotifier, escape_mrkdwn
@@ -36,7 +37,7 @@ def _message(draft: dict, result: PublishResult, approved_by: str) -> str:
 
 def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, slack: SlackNotifier,
                   approved_by: str = "", publish_channel: str = "",
-                  now=lambda: datetime.now(KST)) -> int:
+                  now=lambda: datetime.now(KST), manual_channel: str = "") -> int:
     draft = store.get(draft_id)
     place = draft.get("slack") if isinstance(draft.get("slack"), dict) else {}
     if draft.get("status") == "published":
@@ -55,6 +56,10 @@ def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, s
     slack.post(text, thread_ts=place.get("ts"), channel=place.get("channel"))
     if result.ok and publish_channel:
         slack.post(text, channel=publish_channel)
+    request = draft.get("request") if isinstance(draft.get("request"), dict) else {}
+    place_manual = manual_thread(str(request.get("id") or ""), manual_channel)
+    if place_manual:  # 수동 지시 원고면 지시 스레드에도 결과
+        slack.post(text, thread_ts=place_manual[1], channel=place_manual[0])
     return 0 if result.ok else 1
 
 
@@ -83,7 +88,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     store = DraftStore(cfg.image_host_url, cfg.image_upload_token)
     publish_channel = dict(cfg.slack_stage_channels).get("publish", "")
     try:
-        return publish_draft(args.id, store, blogger, slack, args.approved_by, publish_channel)
+        return publish_draft(args.id, store, blogger, slack, args.approved_by, publish_channel,
+                             manual_channel=dict(cfg.slack_stage_channels).get("manual", ""))
     except Exception as exc:
         log.exception("원고 발행 중 오류")
         slack.notify_error("원고 발행", exc)

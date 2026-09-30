@@ -18,9 +18,16 @@
  *   IMAGES               : 이미지·원고 저장 KV 바인딩 (wrangler.toml [[kv_namespaces]])
  *   PUBLISH_WORKFLOW     : (선택) ✅ 승인 시 실행할 워크플로, 기본 publish_draft.yml
  *   APPROVE_REACTIONS    : (선택) 승인으로 볼 반응 이름, 기본 "white_check_mark,heavy_check_mark"
+ *   MANUAL_CHANNEL_ID    : 수동 지시 채널(#yoopost-0-수동지시) ID — 비우면 채널 메시지를 받지 않는다
+ *   MANUAL_WORKFLOW      : (선택) 수동 지시 워크플로, 기본 manual_request.yml
+ *   SLACK_BOT_TOKEN      : (선택) 수동 지시를 GitHub 로 넘기지 못했을 때 그 스레드에 알리는 용도
  *
- * 슬랙 명령:  /aipost 도움말 → 사용법 · /aipost-setup → 연동 상태 점검
- *   (/aipost 로 Gemini 가 글을 쓰던 기능은 껐다 — 원고는 Claude 앱에서 요청)
+ * 수동 지시: #yoopost-0-수동지시 에 "주제를 AI도구에 발행해줘" · "전체 새로운 포스트로 재발행" 을 쓰면
+ *   (슬랙 이벤트 message.channels) → manual_request.yml 실행 → 클라우드 루틴이 원고 작성 → 원고 채널에서 ✅ 로 발행.
+ *   /aipost <지시> 도 같은 지시로 처리한다 (앱에 channels:history 권한이 없어도 쓸 수 있는 길).
+ *
+ * 슬랙 명령:  /aipost <지시> · /aipost 도움말 → 사용법 · /aipost-setup → 연동 상태 점검
+ *   (/aipost 로 Gemini 가 글을 쓰던 기능은 껐다 — 원고는 Claude 가 쓴다)
  *
  * 블로그 이미지 호스팅 (구글 드라이브 대신):
  *   PUT /img/<이름>  (Authorization: Bearer IMAGE_UPLOAD_TOKEN) → KV 에 저장
@@ -48,11 +55,14 @@ const ALL_WORDS = /(^|\s)(전체|카테고리별|all)(?=\s|$)/gi;
 const DRAFT_PATH = /^\/draft\/([A-Za-z0-9][A-Za-z0-9._-]{0,119})$/;
 const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
 const RETRYABLE = new Set(["pending", "failed"]);
+const MAX_MANUAL_TEXT = 500;
+const MANUAL_SEEN_SECONDS = 60 * 60 * 24 * 3; // 같은 슬랙 메시지를 두 번 처리하지 않게 3일 기억
 
 export const WRITE_NOTICE = [
-  "✍️ 원고 작성은 이제 *Claude 앱*에서 합니다 (구글 AI API 를 쓰지 않아 비용 0원).",
-  "Claude 에게 \"AI 보안 카테고리 글 써줘\" 또는 \"카테고리별로 7편 써줘\" 처럼 요청하면,",
-  "원고와 미리보기가 원고 채널에 올라오고 그 메시지에 ✅ 를 누르면 구글 블로그에 발행됩니다.",
+  "✍️ 원고는 *Claude* 가 씁니다 (구글 AI API 를 쓰지 않아 비용 0원). 매일 07시 7개 카테고리 원고가 자동으로 올라옵니다.",
+  "더 쓰고 싶으면 *#yoopost-0-수동지시* 채널에 한 줄로 지시하세요 (또는 `/aipost <지시>`):",
+  "  • `슬랙에 에이전트 직원 만들기를 AI도구에 발행해줘` · `AI 보안 한 편 더 발행해줘` · `전체 새로운 포스트로 재발행`",
+  "원고는 사실 검증 뒤 원고 채널에 올라오고, 그 메시지에 ✅ 를 누르면 구글 블로그에 발행됩니다.",
 ].join("\n");
 
 export const HELP_TEXT = [
@@ -103,7 +113,19 @@ export default {
     }
 
     if (mode === "post") {
-      return reply(WRITE_NOTICE); // Gemini 가 글을 쓰던 기능은 꺼 둠 (비용 0원 유지)
+      // Gemini 가 글을 쓰던 기능은 꺼 둠 — 지시가 있으면 수동 지시(클라우드 루틴 Claude)로 넘긴다
+      if (!text) {
+        return reply(WRITE_NOTICE);
+      }
+      if (!allowedUser(env, userId, { requireList: true })) {
+        return reply("수동 지시는 허용된 사용자만 쓸 수 있습니다 (Worker 의 ALLOWED_USER_IDS).");
+      }
+      try {
+        await dispatch(env, manualInputs(text, form.get("channel_id") || "", "", userId, "slash"), manualWorkflow(env));
+      } catch (err) {
+        return reply(`수동 지시를 넘기지 못했습니다: ${err.message}`);
+      }
+      return reply("🧑‍💼 지시를 접수했습니다. #yoopost-0-수동지시 스레드에서 진행 상황을 알려 드립니다.");
     }
     const { topic, dryRun, all } = parseText(text);
     const inputs = buildInputs(mode, topic, dryRun, cleanText(form.get("user_name") || userId, 30), all);
@@ -186,15 +208,97 @@ export async function handleSlackEvent(request, env, ctx, raw) {
     return new Response("ok"); // 재전송은 무시 (원고 상태로도 중복 발행을 막음)
   }
   const event = body.event || {};
+  let work = null;
   if (body.type === "event_callback" && event.type === "reaction_added" && isApproval(event.reaction, env)) {
-    const work = approveDraft(env, event).catch((err) => console.error("approve failed", err.message));
-    if (ctx && ctx.waitUntil) {
-      ctx.waitUntil(work); // 슬랙에는 3초 안에 바로 응답
-    } else {
-      await work;
-    }
+    work = approveDraft(env, event).catch((err) => console.error("approve failed", err.message));
+  } else if (body.type === "event_callback" && event.type === "message") {
+    work = manualMessage(env, event).catch((err) => console.error("manual request failed", err.message));
+  }
+  if (work && ctx && ctx.waitUntil) {
+    ctx.waitUntil(work); // 슬랙에는 3초 안에 바로 응답
+  } else if (work) {
+    await work;
   }
   return new Response("ok");
+}
+
+function allowedUser(env, user, { requireList = false } = {}) {
+  const allowed = (env.ALLOWED_USER_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (allowed.length === 0) {
+    return !requireList; // 수동 지시는 유료 루틴을 돌리므로 허용 목록이 비어 있으면 아무도 못 쓴다
+  }
+  return allowed.includes(user);
+}
+
+function manualWorkflow(env) {
+  return env.MANUAL_WORKFLOW || "manual_request.yml";
+}
+
+export function manualInputs(text, channel, ts, user, source) {
+  // 해석은 Actions(Python)가 한다 — 여기서는 길이만 자르고 그대로 넘긴다 (입력은 워크플로에서 환경 변수로만 읽는다)
+  return {
+    text: String(text || "").trim().slice(0, MAX_MANUAL_TEXT),
+    channel: String(channel || ""),
+    ts: String(ts || ""),
+    user: String(user || ""),
+    source,
+  };
+}
+
+/** #yoopost-0-수동지시 의 사람이 쓴 새 메시지(스레드 답글·수정·봇 제외) → manual_request.yml */
+export async function manualMessage(env, event) {
+  if (!env.MANUAL_CHANNEL_ID || event.channel !== env.MANUAL_CHANNEL_ID) {
+    return "ignored";
+  }
+  // 파일을 붙인 지시(file_share)는 글만 지시로 쓴다. 수정·삭제·봇 글 등 다른 subtype 은 무시
+  if ((event.subtype && event.subtype !== "file_share") || event.bot_id || !event.user || !event.ts) {
+    return "ignored";
+  }
+  if (event.thread_ts && event.thread_ts !== event.ts) {
+    return "thread reply";
+  }
+  if (!String(event.text || "").trim()) {
+    return "blank";
+  }
+  if (!allowedUser(env, event.user, { requireList: true })) {
+    return "not allowed";
+  }
+  const seenKey = `manual:${event.channel}:${event.ts}`;
+  if (env.IMAGES) {
+    if (await env.IMAGES.get(seenKey)) {
+      return "duplicate";
+    }
+    await env.IMAGES.put(seenKey, "1", { expirationTtl: MANUAL_SEEN_SECONDS });
+  }
+  try {
+    await dispatch(env, manualInputs(event.text, event.channel, event.ts, event.user, "message"), manualWorkflow(env));
+  } catch (err) {
+    if (env.IMAGES && env.IMAGES.delete) {
+      await env.IMAGES.delete(seenKey); // 다시 보내면 재시도할 수 있게
+    }
+    await notifySlack(env, event.channel, event.ts,
+      `⚠️ 지시를 GitHub Actions 로 넘기지 못했습니다 (${cleanText(err.message, 120)}) — 잠시 뒤 같은 지시를 새로 보내 주세요.`);
+    throw err;
+  }
+  return "dispatched";
+}
+
+/** (선택) SLACK_BOT_TOKEN 이 있으면 지시 스레드에 한 줄 알린다 — 실패해도 조용히 넘어간다 */
+export async function notifySlack(env, channel, threadTs, text) {
+  if (!env.SLACK_BOT_TOKEN || !channel) {
+    return false;
+  }
+  try {
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ channel, thread_ts: threadTs, text }),
+    });
+    return response.ok;
+  } catch (err) {
+    console.error("slack notice failed", err.message);
+    return false;
+  }
 }
 
 function isApproval(reaction, env) {
@@ -215,8 +319,7 @@ export async function approveDraft(env, event) {
   if (!draft || !RETRYABLE.has(draft.status || "pending")) {
     return "already handled";
   }
-  const allowed = (env.ALLOWED_USER_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  if (allowed.length > 0 && !allowed.includes(event.user)) {
+  if (!allowedUser(env, event.user)) {
     return "not allowed";
   }
   await env.IMAGES.put(`draft:${id}`, JSON.stringify({ ...draft, status: "approved", approved_by: event.user }));

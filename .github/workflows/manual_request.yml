@@ -1,0 +1,74 @@
+name: 슬랙 수동 지시 → 클라우드 루틴 원고 작성
+# #yoopost-0-수동지시 채널에 쓴 지시(또는 /aipost <지시>)를 Cloudflare Worker 가 받아 이 워크플로를 실행한다.
+# 지시를 해석해 그 메시지 스레드에 답하고, 클라우드 루틴 'YooPost 수동 지시 (슬랙)'을 API 로 실행한다.
+# 루틴이 쓴 원고는 원고 브랜치 → cloud_drafts.yml → #yoopost-1-원고승인 에 올라오고 ✅ 로 발행된다 (여기서는 발행하지 않는다).
+# 비밀값은 production 환경(main 브랜치만 사용 가능)에 있다. Worker 는 main 으로 실행한다.
+run-name: "🧑‍💼 수동 지시 · ${{ inputs.source }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "지시 문장 (Worker 가 자동 입력)"
+        type: string
+        required: true
+      channel:
+        description: "슬랙 채널 ID"
+        type: string
+        default: ""
+      ts:
+        description: "지시 메시지 ts (/aipost 면 비움)"
+        type: string
+        default: ""
+      user:
+        description: "지시한 슬랙 사용자 ID"
+        type: string
+        default: ""
+      source:
+        description: "message (채널 메시지) | slash (/aipost)"
+        type: string
+        default: "message"
+
+# 동시 실행 그룹을 두지 않는다 — 대기 중인 실행을 GitHub 가 취소해 지시가 사라질 수 있다 (중복은 Worker 가 막음)
+permissions:
+  contents: write  # 요청 기록(runs/requests/<ID>.json)을 원고 브랜치에 올린다 — 루틴은 이 기록과 맞는 요청만 수행
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 5
+    steps:
+      - name: 코드 (main)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: 원고 데이터 (yoopost-drafts)
+        uses: actions/checkout@v4
+        with:
+          ref: yoopost-drafts
+          path: .yoopost-drafts
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 지시 해석 · 루틴 실행 · 스레드 답장
+        env:
+          # 외부 입력은 run 스크립트에 직접 넣지 않고 환경변수로만 전달 (스크립트 인젝션 방지)
+          MANUAL_TEXT: ${{ inputs.text }}
+          MANUAL_CHANNEL: ${{ inputs.channel }}
+          MANUAL_TS: ${{ inputs.ts }}
+          MANUAL_USER: ${{ inputs.user }}
+          MANUAL_SOURCE: ${{ inputs.source }}
+          SLACK_CHANNEL_MANUAL: ${{ vars.SLACK_CHANNEL_MANUAL }}
+          ROUTINE_FIRE_URL: ${{ vars.ROUTINE_FIRE_URL }}
+          ROUTINE_FIRE_TOKEN: ${{ secrets.ROUTINE_FIRE_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: python scripts/manual_request.py
