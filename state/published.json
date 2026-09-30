@@ -148,5 +148,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/slack-cli-5agentforceadd-to-slack.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🤖 GPT-6 Sol·Luna 사용 가이드: 100만 토큰·입력 $2/$0.1·가격 반값 총정리",
+  "topic": "Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT (OpenAI, 2026-09-22)",
+  "category": "AI 언어 모델",
+  "source_url": "https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/gpt-6-solluna-100-201.html"
+  }
  }
 ]
