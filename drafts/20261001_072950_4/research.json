@@ -1,0 +1,106 @@
+{
+ "topic": "AMD to Acquire World Labs to Advance the Future of AI Compute (AMD, 2026-09-28)",
+ "source_url": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AMD to Acquire World Labs to Advance the Future of AI",
+   "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
+   "publisher": "AMD Newsroom",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AMD to Acquire World Labs to Advance the Future of AI Compute",
+   "url": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute",
+   "publisher": "AMD Investor Relations",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "World Labs is Joining AMD",
+   "url": "https://www.worldlabs.ai/blog/amd-announcement",
+   "publisher": "World Labs",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "World Labs Announces New Funding",
+   "url": "https://www.worldlabs.ai/blog/funding-2026",
+   "publisher": "World Labs",
+   "published": "2026-02-18",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Atlas: A World Model for Spatial Intelligence",
+   "url": "https://www.worldlabs.ai/blog/atlas",
+   "publisher": "World Labs",
+   "published": "2026-09-01",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Marble: A Multimodal World Model",
+   "url": "https://www.worldlabs.ai/blog/marble-world-model",
+   "publisher": "World Labs",
+   "published": "2025-11-12",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "NVIDIA Cosmos",
+   "url": "https://www.nvidia.com/en-us/ai/cosmos/",
+   "publisher": "NVIDIA",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "AMD Acquires Fei-Fei Li's World Labs For $8.2B",
+   "url": "https://dataconomy.com/2026/09/29/amd-acquires-fei-fei-lis-world-labs-for-8-2b/",
+   "publisher": "Dataconomy",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "AMD agrees to buy Fei-Fei Li's World Labs for $8.2 billion",
+   "url": "https://www.therundown.ai/news/amd-world-labs-acquisition-fei-fei-li",
+   "publisher": "The Rundown AI",
+   "published": "",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "World Labs Atlas world model: capabilities and access",
+   "url": "https://datanorth.ai/news/world-labs-introduces-atlas-world-model",
+   "publisher": "DataNorth AI",
+   "published": "",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "page_url": "https://www.worldlabs.ai/blog/atlas",
+   "image_url": "https://wlt-ai-cdn.art/atlas/assets-827/robotics/poster/atlas-robotics-demo-v3.jpg",
+   "caption": "Atlas 로보틱스 Real-to-Sim 예시: 실제 로봇 작업 공간을 적은 카메라로 촬영하는 장면 (World Labs Atlas 글 본문)",
+   "credit": "World Labs"
+  }
+ ],
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 40,
+  "removed": [
+   "The Rundown은 이번 인수로 AMD가 투자자에서 최대 주주(majority owner)로 올라선다고 해석했습니다. (+ AMD 경쟁력 해석 문장) — 언론 해설에만 근거한 지분 표현이라 삭제, AMD 2월 투자 참여(World Labs 공식)와 인수 계약 사실로 대체",
+   "보도에 따르면 월드 모델은 ... 합성 데이터 수요와 맞닿아 있습니다 / Dataconomy는 NVIDIA가 이미 Cosmos 같은 공개 가중치 월드 모델을 제공 — 언론 해설 문장 삭제, AMD 발표 워크로드·Atlas 글·NVIDIA 공식 Cosmos 페이지 문구로 교체",
+   "Atlas 활용처 중 '3D 콘텐츠 제작, 공간 컴퓨팅' — Atlas 공식 글에서 확인 안 됨, VFX·게임·디자인·로보틱스 Real-to-Sim 으로 수정",
+   "모델 크기·가격·속도 제한은 공개되지 않았다고 해설 기사(DataNorth)가 지적 — Atlas 공식 글 기준 문장으로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). AMD IR 보도자료·AMD 뉴스룸·World Labs 'Joining AMD'/펀딩/Atlas/Marble 블로그를 직접 다시 열어 금액(약 82억 달러, 전액 주식)·종결 조건(2026년 말, 규제 승인·통상 조건)·Fei-Fei Li 직책(EVP 겸 Chief Scientist, Lisa Su 보고)·Johnson/Mildenhall 리더십·Lisa Su 직함(Chair and CEO) 확인. 수정: 제목 '수석과학자'→'최고과학자', 'world leading frontier research organization' 문구, AMD 로드맵 문장을 공식 문구로, 설립·Marble 날짜 출처를 World Labs 공식으로 교체, Marble 설명을 공식 블로그 기준으로, Atlas 복원 기능(1장~수십 장). 새 출처 S9(Marble 블로그)·S10(NVIDIA Cosmos). 인용 이미지: Atlas 글 로보틱스 섹션 본문 그림(1280x720 JPEG, HTTP 200) 추가. EGRESS_BLOCKED 출처 없음."
+ }
+}
