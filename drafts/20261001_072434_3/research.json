@@ -1,0 +1,61 @@
+{
+ "topic": "It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs (arXiv 2609.37891, 2026-09-29)",
+ "source_url": "https://arxiv.org/abs/2609.37891",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2609.37891",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs (PDF 전문)",
+   "url": "https://arxiv.org/pdf/2609.37891",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "PleIAs/Baguettotron 모델 카드",
+   "url": "https://huggingface.co/PleIAs/Baguettotron",
+   "publisher": "Hugging Face (PleIAs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "PleIAs/SYNTH 데이터셋 카드",
+   "url": "https://huggingface.co/datasets/PleIAs/SYNTH",
+   "publisher": "Hugging Face (PleIAs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "It's All Training (arXiv HTML 버전)",
+   "url": "https://arxiv.org/html/2609.37891v1",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.37891v1/synth_pipeline.drawio.png",
+   "page_url": "https://arxiv.org/html/2609.37891v1",
+   "caption": "SYNTH 파이프라인: 1단계 보조 모델 미세조정, 2단계 대규모 합성 데이터 생성",
+   "credit": "Langlais et al., arXiv 2609.37891 (Figure 1)"
+  }
+ ],
+ "factcheck": {
+  "claims": 130,
+  "confirmed": 130,
+  "removed": [],
+  "note": "Opus 검증: arXiv PDF(2609.37891v1)를 직접 내려받아 pdftotext 로 본문·표1·부록B·체크리스트를 대조, arXiv abs 메타데이터(제출일 2026-09-29, 'Accepted at NeurIPS 2026' 코멘트, 저자·소속 PleIAs), Hugging Face 데이터셋 카드·모델 카드 원문(README)을 열어 확인. 수정 5건: ①'친칠라 최적 예산의 264배' → 파라미터 대비 264배(158B 토큰) ②학습 인프라(Monad·350M은 Nanotron, 나머지 torchtitan+FSDP, 부록B) ③FActScore 표에 본문이 언급한 OLMoE(82.6%/33.4%) 행 추가 ④씨앗 5.8만/5.9만 표기 통일(58,698) ⑤증폭 배율에 카드의 '최소 100배, 최근·자기 설명 약 1만 배' 병기. 보완: 토큰 규모를 논문 '약 800억'과 데이터셋 카드 'Pleias 토크나이저 기준 약 750억(샘플 79,648,272개, 410억 단어)'로 구분 표기, 학습·데이터 생성 코드 미공개(논문 체크리스트) 한계 추가. 인용 그림 I1(arXiv HTML Figure 1) 200 image/png 1325×520 확인. 막힌(EGRESS_BLOCKED) 출처 없음. 주장 수 산정: 원고 속 서로 다른 수치 124개 + 비수치 주장 6개(NeurIPS 2026 채택, PleIAs 소속, 데이터셋 CC-BY-4.0, 모델 Apache-2.0, Claude Opus 4.5 채점, Gemma-3-12B-base LoRA·bge-m3)."
+ }
+}
