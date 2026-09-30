@@ -1,0 +1,407 @@
+{
+ "title": "🛡 Cursor Rollouts·Security Review 사용 가이드: PR부터 배포까지 지키는 봇 2종 총정리",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 9월 23일, Cursor가 코드를 내보내는 마지막 구간을 맡는 봇 두 가지, **Rollouts**와 **Security Review**를 공개했습니다. AI가 코드를 쓰는 속도가 빨라질수록 병합 이후 배포가 건강한지, 보안 구멍은 없는지 확인하는 일이 병목이 되기 쉬운데, Cursor는 이 구간을 봇에게 맡기는 접근을 내놓았습니다. 두 봇은 Teams와 Enterprise 요금제에서 쓸 수 있고 automations 탭에서 켭니다. 이 글에서는 공식 변경 기록·블로그·문서에 적힌 내용만 바탕으로 두 봇이 무엇을 하는지, 어떻게 켜는지, 무엇을 조심해야 하는지 정리했습니다. 함께 살펴보시죠!",
+ "summary": [
+  "Cursor가 2026년 9월 23일 '마지막 구간용 봇' **Rollouts**(배포 감시)와 **Security Review**(PR 보안 검토)를 공개했습니다.",
+  "Rollouts는 PR마다 모니터를 붙여 환경별 변경 상태를 **verified healthy·regression detected·inconclusive** 셋 중 하나로 보고합니다.",
+  "Security Review는 PR을 코드베이스 맥락에서 읽고 **심각도·공격 경로·수정 제안**이 담긴 리뷰 댓글을 남깁니다.",
+  "두 봇 모두 **Teams와 Enterprise 요금제** 전용이며 automations 탭에서 켭니다. 발표 후 10일 동안 Rollouts 체험용 크레딧(약 50건·500건 변경분)이 제공됩니다.",
+  "이 글에서 배울 것: 두 봇의 기능·탐지 범위·켜는 방법·Security Agents 설정 조건·한계와 주의점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Cursor Rollouts·Security Review 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Cursor 공식 블로그 글의 제목은 '**Bots for the last mile: Rollouts, Security Review**'이며 2026년 9월 23일에 올라왔습니다. 여기서 '마지막 구간(last mile)'은 코드가 작성된 뒤 리뷰를 거쳐 실제 환경에 배포되고 운영되는 단계를 가리킵니다. Cursor는 이 단계를 지키는 봇 두 가지를 동시에 내놓았습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "변경 기록(changelog)은 두 봇을 이렇게 소개합니다. Rollouts는 모든 풀 리퀘스트(PR, 코드 변경 제안)에 모니터를 붙이고 **배포되는 동안 변경을 지켜보며 환경별 건강 상태를 보고**하는 봇이고, Security Review는 모든 PR을 코드베이스 맥락에서 읽고 **악용 가능한 버그를 알려 주는 봇**입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "같은 시기 Cursor 변경 기록에는 9월 10일 **Cursor Projects**(조정자 에이전트가 작업을 계획하고 하위 에이전트에 나눠 맡기는 기능), 9월 2일 **Self-hosted Machines** 같은 항목이 이어집니다. 코드를 만드는 쪽과 내보내는 쪽 기능이 함께 늘고 있는 흐름으로 읽을 수 있습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "이 글은 Cursor 공식 변경 기록·블로그·문서와 이를 다룬 기사에 적힌 내용만 정리했습니다. 실제 화면 구성이나 세부 동작은 계정·요금제·시점에 따라 다를 수 있으니 공식 문서에서 최신 내용을 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "🚦 Rollouts: 배포되는 동안 변경을 지켜보는 봇",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Rollouts는 **PR에서 프로덕션까지** 변경 하나를 따라가며 감시합니다. 블로그에 따르면 소스 컨트롤, 배포 시스템, 그리고 'Datadog, Grafana, Honeycomb, 또는 지표와 트레이스가 있는 어느 곳'과 연결됩니다. 변경 기록에는 GitHub/Origin, 지속적 전달(CD) 시스템, Datadog 연동이 적혀 있습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "병합 전: 모니터링 계획"
+    },
+    {
+     "type": "paragraph",
+     "text": "변경 기록에 따르면 Rollouts는 diff(변경 내용)를 분석해 **위험과 계측 빈틈(instrumentation gaps)을 짚는 PR 댓글**, 즉 모니터링 계획을 남깁니다. 블로그도 병합 전에 위험과 계측이 빠진 곳을 알려 준다고 설명합니다. 계측 빈틈이란 문제가 생겨도 로그·지표·트레이스로 볼 수 없는 지점을 뜻합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "배포 중·후: 환경별 상태 보고"
+    },
+    {
+     "type": "paragraph",
+     "text": "배포가 시작되면 Rollouts는 로그·지표·트레이스로 환경별 변경을 추적하고, 신호를 기준선(baseline)과 비교합니다. 상태는 **verified healthy(정상 확인)·regression detected(회귀 감지)·inconclusive(판단 불가)** 세 가지로 보고됩니다. 블로그는 전 세계 경보가 울리기 전에 특정 지역이나 엔드포인트에서 생긴 회귀를 잡아낼 수 있고, 의도한 변경과 실제 문제를 구분한다고 설명합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "문제가 보이면: 알림·일시 중지·되돌리기"
+    },
+    {
+     "type": "paragraph",
+     "text": "회귀가 발견되면 변경 기록은 작성자에게 알리고 **되돌리기(revert) PR을 열 수 있다**고 적었습니다. 블로그는 설정에 따라 작성자 알림, 점진적 롤아웃 일시 중지, 승인을 기다리는 revert PR 생성을 예로 듭니다. 변경 기록은 Rollouts가 **현재 스스로 병합하거나 롤백하지는 않는다**고 밝히며, 설정에 따라 발견 내용을 클라우드 에이전트에 넘겨 수정을 맡길 수도 있다고 설명합니다. 앞으로 **기능 플래그(feature flag) 연동과 릴리스 트레인·배포 동결 인식**이 추가될 예정이라고 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "내용(출처 기준)"
+     ],
+     "rows": [
+      [
+       "감시 대상",
+       "PR에서 프로덕션까지의 변경"
+      ],
+      [
+       "연결 대상",
+       "소스 컨트롤·배포 시스템·Datadog, Grafana, Honeycomb 등 텔레메트리(블로그), GitHub/Origin·CD·Datadog(변경 기록)"
+      ],
+      [
+       "상태값",
+       "verified healthy / regression detected / inconclusive"
+      ],
+      [
+       "문제 발견 시",
+       "작성자 알림, 점진적 롤아웃 일시 중지, revert PR 생성(설정에 따라, 자동 병합·롤백은 하지 않음)"
+      ],
+      [
+       "예고된 기능",
+       "기능 플래그 연동, 릴리스 트레인 인식"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 연결해야 동작합니다",
+     "text": "변경 기록은 소스 컨트롤·배포 시스템·텔레메트리 제공자를 연결해야 다음 PR부터 감시가 시작된다고 안내합니다. 계측이 비어 있으면 정확한 판단이 어려울 수 있고, 그래서 '판단 불가(inconclusive)' 상태가 존재한다고 해석할 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔒 Security Review: PR마다 붙는 보안 리뷰어",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Security Review는 PR이 열릴 때마다 **변경 내용을 코드베이스 전체 맥락에서 읽고** 악용 가능한 버그를 리뷰 댓글로 알려 줍니다. 변경 기록은 발견 사항마다 **심각도, 공격 경로, 수정 제안**이 붙고 무시(dismiss) 옵션도 있다고 적었습니다. 블로그는 설명과 함께 원클릭 수정안을 제시한다고 표현합니다. 사유를 적어 무시하면 그 PR에서는 같은 지적을 다시 올리지 않고, **초안(Draft) PR은 건너뜁니다**. 스타일·코드 품질 지적은 기존 Bugbot이 맡습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "아래 그림은 변경 기록에 실린 **Security Review 화면**입니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "subheading",
+     "text": "탐지 범위"
+    },
+    {
+     "type": "paragraph",
+     "text": "변경 기록과 블로그에 나온 **탐지 항목**을 합치면 다음과 같습니다. 블로그는 SQL·명령·템플릿·LDAP 인젝션, 인증·인가 허점, 커밋된 시크릿, 안전하지 않은 역직렬화, 검증되지 않은 리다이렉트, 알려진 의존성 취약점, 안전하지 않은 인프라 기본값을 들고, 변경 기록은 여기에 SSRF를 더해 적었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "탐지 항목",
+      "설명"
+     ],
+     "rows": [
+      [
+       "인젝션",
+       "SQL·명령·템플릿 인젝션(블로그는 LDAP 인젝션도 포함)"
+      ],
+      [
+       "인증·인가",
+       "인증·인가 우회나 허점"
+      ],
+      [
+       "시크릿",
+       "소스 코드에 커밋된 자격 증명"
+      ],
+      [
+       "SSRF·리다이렉트",
+       "SSRF(변경 기록), 검증되지 않은 리다이렉트"
+      ],
+      [
+       "역직렬화",
+       "안전하지 않은 역직렬화"
+      ],
+      [
+       "의존성",
+       "알려진 취약점이 있는 의존성 변경"
+      ],
+      [
+       "인프라",
+       "안전하지 않은 인프라 기본값(블로그)"
+      ]
+     ]
+    },
+    {
+     "type": "subheading",
+     "text": "블로그가 제시한 수치"
+    },
+    {
+     "type": "paragraph",
+     "text": "블로그에 실린 차트('Faster reviews, higher acceptance')는 Security Reviewer의 **평균 실행 시간이 4.8분에서 3.8분**(21% 단축)으로 줄고, **댓글 수용률이 45~50%에서 60~70%**로 올랐다고 보여 줍니다. 다만 무엇을 기준으로 한 '전(Before)·후(After)'인지, 측정 기간과 표본은 글에 설명되어 있지 않습니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I2"
+    },
+    {
+     "type": "info",
+     "title": "💡 '리뷰 댓글 하나'의 의미",
+     "text": "변경 기록은 Security Review가 PR마다 '하나의 리뷰 댓글'로 악용 가능한 버그를 보고한다고 설명합니다. 여러 줄 알림 대신 한곳에 모아 보는 방식이라 리뷰어가 우선순위를 잡기 쉬울 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 Rollouts·Security Review 켜는 방법과 설정",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "두 봇은 **Teams와 Enterprise 요금제**에서 쓸 수 있고, 블로그는 cursor.com/automations의 **automations 탭**에서 켠다고 안내합니다. Cursor 문서에 따르면 Automations는 Agents Window, cursor.com/automations, 로컬 에이전트 세션의 `/automate` 스킬, Cursor Marketplace 템플릿으로 만들 수 있습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "Security Agents 설정 조건"
+    },
+    {
+     "type": "paragraph",
+     "text": "Security Agents 문서는 **Automations의 Security Agents 페이지**에서 설정한다고 안내하고, Security Reviewer와 **Vulnerability Scanner**(기존 코드베이스를 주기적으로 훑는 에이전트) 두 종류가 있으며 둘 다 **Automations 플랫폼과 Cloud Agents 인프라**가 필요하다고 설명합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "Security Reviewer",
+      "Vulnerability Scanner"
+     ],
+     "rows": [
+      [
+       "하는 일",
+       "병합 전 PR에서 취약점 점검",
+       "기존 코드베이스를 지속 스캔해 놓친 문제 발견"
+      ],
+      [
+       "트리거",
+       "Git 기반(PR·MR 이벤트)",
+       "cron 기반 정기 일정"
+      ],
+      [
+       "저장 조건",
+       "도구 또는 MCP 1개 이상 필요",
+       "도구 없이도 저장 가능"
+      ],
+      [
+       "결과",
+       "PR 리뷰 댓글",
+       "Flagged Vulnerabilities 목록"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Flagged Vulnerabilities 목록은 저장소별로 **상태(Active/Dismissed), 피드백(Useful/False Positive/Unimportant), 심각도(Critical/High/Medium)** 등으로 필터링되며, 각 항목에서 **Fix in Cursor**(Cloud Agent 실행)와 **View in codebase**(팀에서 Origin을 켠 경우에만 표시)를 고를 수 있습니다. 사용 요금은 개인이 아니라 팀 단위 풀에 청구됩니다."
+    },
+    {
+     "type": "subheading",
+     "text": "푸시하기 전 로컬에서 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "문서에 따르면 에이전트에서 `/review-security` 또는 `/review` 스킬로 푸시 전에 보안 검토를 돌릴 수 있습니다(Cursor 3.7 이상, cursor.com/agents 또는 Cursor CLI). 기본값은 **기준 브랜치 대비 모든 변경**(커밋한 것과 안 한 것 포함)을 검토합니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "/review-security"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 포크 PR에서는 트리거가 돌지 않습니다",
+     "text": "Automations 문서는 보안상 이유로 포크에서 연 PR에는 PR 트리거가 실행되지 않는다고 밝힙니다('Pull request merged' 트리거만 예외). 외부 기여를 포크로 받는 저장소라면 이 점을 감안해야 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "💳 가격·크레딧과 Automations 기본 구조",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "변경 기록에 따르면 발표 후 **10일 동안** Rollouts를 실제 변경에 써 볼 수 있도록 Teams 고객에게는 **약 50건**, Enterprise 고객에게는 **약 500건** 변경분의 사용 크레딧이 제공됩니다. 그 이후 요금은 이번 글에서 읽은 공식 자료에서 확인되지 않았고, Automations 문서는 자동화가 클라우드 에이전트 사용량 기준으로 청구된다고만 설명합니다. Automations 문서는 사용량이 **'Run as'** 설정에 따라 청구된다고 설명합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Run as",
+      "청구"
+     ],
+     "rows": [
+      [
+       "Me",
+       "개인 사용량으로 청구"
+      ],
+      [
+       "Service account",
+       "팀 사용 풀로 청구(팀 관리자만 선택 가능, 전용 서비스 계정으로 실행)"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Automations 문서가 소개하는 **기본 생성 순서**는 트리거 선택, 지침(프롬프트) 작성, 선택 도구 활성화, 저장소 요건 지정, 저장 및 활성화입니다. 트리거에는 일정, 소스 컨트롤(GitHub·GitLab·Bitbucket Cloud), Slack, 웹훅, Linear, Sentry, PagerDuty가 있습니다. 문서는 사전 구성된 관리형 에이전트로 Bugbot, Security Agents, PR Routing & Approval을 든다고 설명합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 메모리 사용 시 주의",
+     "text": "문서는 Automations의 메모리(실행 간 유지되는 이름 있는 메모)가 신뢰할 수 없는 입력을 다루는 자동화에서는 주의해서 써야 한다고 경고합니다. 외부 입력이 섞이는 자동화라면 이 문구를 기억해 두세요."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 활용 시나리오 3가지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 공식 자료에 적힌 기능을 조합해 본 **활용 예시**입니다. 실제 사례나 후기가 아니라 기능 설명을 바탕으로 한 해석입니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 1. 모든 PR에 보안 1차 검토 붙이기"
+    },
+    {
+     "type": "paragraph",
+     "text": "Security Reviewer를 Git 기반 트리거로 설정하면 PR 이벤트마다 **자동으로 보안 검토 댓글**이 달립니다. 사람 리뷰어는 기계가 먼저 짚은 인젝션·시크릿·의존성 문제를 확인하고 본래 설계 검토에 집중할 수 있습니다. 저장 시 도구나 MCP가 최소 1개 필요하다는 점만 기억하면 됩니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 2. 배포 직후 회귀 조기 발견"
+    },
+    {
+     "type": "paragraph",
+     "text": "Rollouts를 켜고 배포 시스템과 텔레메트리를 연결하면 병합 전에는 계측 빈틈을, 배포 중에는 환경별 상태를 받아 볼 수 있습니다. 문제가 보이면 **revert PR**로 되돌리는 흐름까지 이어질 수 있습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 3. 주기적 전수 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "Vulnerability Scanner를 cron으로 돌리면 PR에 걸리지 않는 **기존 코드의 숨은 취약점**이 Flagged Vulnerabilities 목록에 쌓입니다. 목록에서 'Fix in Cursor'를 눌러 Cloud Agent에게 수정을 맡기는 흐름이 문서에 설명되어 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "에이전트에게 설정 초안을 맡기고 싶다면 문서가 소개한 `/automate` 스킬에 자연어로 요청할 수 있습니다. 아래는 그런 요청의 **예시 지시문**입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "/automate\n내 저장소의 모든 PR이 열릴 때마다 보안 취약점(인젝션, 시크릿, 안전하지 않은 역직렬화)을 점검하고, 발견하면 심각도와 수정 제안을 PR 댓글로 남겨 줘."
+    }
+   ]
+  },
+  {
+   "heading": "⚠️ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 먼저 **요금제 제한**입니다. 두 봇은 Teams와 Enterprise 전용이라 개인 요금제 사용자는 쓸 수 없습니다. 기사(Martin Cid, 2026-09-26)도 이 점을 개인 개발자가 제외되는 한계로 짚었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "둘째, **성과 수치는 벤더 자료**입니다. 평균 실행 시간 4.8분→3.8분, 댓글 수용률 45~50%→60~70%는 Cursor 블로그 차트의 값이며 독립적으로 검증된 결과가 아닙니다. 또한 Rollouts의 정확도는 연결된 텔레메트리의 품질에 좌우될 것으로 보입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "셋째, 일부 기능은 **아직 예고 단계**입니다. 기능 플래그 연동과 릴리스 트레인 인식은 '앞으로' 제공될 기능으로 적혀 있어 지금 쓸 수 있다고 단정할 수 없습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 자동 리뷰가 사람 리뷰를 대체하지는 않습니다",
+     "text": "Security Review가 놓치는 취약점도 있을 수 있고, 지적 중 일부는 오탐일 수 있습니다. 문서의 피드백 분류(Useful/False Positive/Unimportant)가 이를 전제로 합니다. 최종 병합 판단은 팀의 리뷰 절차에 남겨 두세요."
+    },
+    {
+     "type": "info",
+     "title": "💡 도입 전 체크리스트",
+     "text": "① 요금제가 Teams/Enterprise인지 ② 소스 컨트롤·배포·텔레메트리 연결 권한이 있는지 ③ Security Reviewer에 붙일 도구·MCP가 있는지 ④ 포크 PR 운영 여부 ⑤ 체험 크레딧 10일 이후 사용량 청구 방식을 확인하세요."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Rollouts와 Security Review는 누구나 쓸 수 있나요?",
+   "a": "공식 자료에 따르면 두 봇은 Teams와 Enterprise 요금제에서 쓸 수 있고 automations 탭에서 켭니다. 개인 요금제 제공 여부는 이번 글의 출처에서 확인되지 않았습니다."
+  },
+  {
+   "q": "무료로 써 볼 수 있나요?",
+   "a": "변경 기록에 따르면 발표 후 10일 동안 Rollouts 체험용으로 Teams 고객에게 약 50건, Enterprise 고객에게 약 500건 변경분의 크레딧이 제공됩니다. 이후 요금은 공식 문서에서 확인하셔야 합니다."
+  },
+  {
+   "q": "Rollouts가 보고하는 상태는 무엇인가요?",
+   "a": "verified healthy, regression detected, inconclusive 세 가지입니다. 회귀가 발견되면 작성자에게 알리고 revert PR을 열 수 있다고 변경 기록에 적혀 있습니다."
+  },
+  {
+   "q": "Security Reviewer에 꼭 도구를 붙여야 하나요?",
+   "a": "Security Agents 문서는 Security Reviewer가 저장하려면 도구 또는 MCP가 최소 하나 필요하다고 설명합니다. Vulnerability Scanner는 도구 없이도 저장할 수 있습니다."
+  },
+  {
+   "q": "푸시 전에 로컬에서 보안 검토를 돌릴 수 있나요?",
+   "a": "문서에 따르면 에이전트에서 /review-security 또는 /review 스킬로 돌릴 수 있고, Cursor 3.7 이상·cursor.com/agents·Cursor CLI가 필요합니다. 기본값은 기준 브랜치 대비 모든 변경을 검토합니다."
+  },
+  {
+   "q": "포크에서 온 PR도 검토되나요?",
+   "a": "Automations 문서는 포크에서 연 PR에는 PR 트리거가 실행되지 않는다고 밝힙니다. 병합 커밋에서 시작하는 'Pull request merged' 트리거만 예외이며, 저장소 안의 브랜치로 PR을 열면 됩니다."
+  }
+ ],
+ "closing": "지금까지 Cursor의 Rollouts와 Security Review에 대해 알아보았습니다. 두 봇은 PR 단계의 보안 검토와 배포 단계의 상태 감시를 각각 자동화해 코드를 내보내는 마지막 구간을 채우려는 시도입니다. 다만 Teams·Enterprise 전용이고, 성과 수치는 Cursor가 공개한 자료이며, 기능 플래그 연동 같은 일부 기능은 앞으로의 계획이라는 점은 분명히 구분해야 합니다. 여러분도 한번 Rollouts와 Security Review를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "요금제·크레딧·기능 제공 범위는 바뀔 수 있으니 Cursor 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "Cursor",
+  "Rollouts",
+  "SecurityReview",
+  "AI코딩",
+  "코드리뷰",
+  "보안리뷰",
+  "배포모니터링",
+  "Automations",
+  "CloudAgents",
+  "Bugbot",
+  "DevSecOps",
+  "AI에이전트",
+  "AI백과사전",
+  "개발도구"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6"
+ ]
+}

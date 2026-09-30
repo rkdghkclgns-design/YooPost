@@ -1,0 +1,89 @@
+{
+ "topic": "Bots for the last mile: Rollouts, Security Review (Cursor, 2026-09-23)",
+ "source_url": "https://cursor.com/blog/rollouts-and-security-reviewer",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Rollouts and Security Review (Cursor Changelog)",
+   "url": "https://cursor.com/changelog/rollouts-and-security-reviewer",
+   "publisher": "Cursor",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Bots for the last mile: Rollouts, Security Review",
+   "url": "https://cursor.com/blog/rollouts-and-security-reviewer",
+   "publisher": "Cursor",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Security Agents (Cursor Docs)",
+   "url": "https://cursor.com/docs/security-agents",
+   "publisher": "Cursor",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Automations (Cursor Docs)",
+   "url": "https://cursor.com/docs/cloud-agent/automations",
+   "publisher": "Cursor",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Cursor's AI bots now catch security flaws and halt bad deploys",
+   "url": "https://www.martincid.com/technology-sv/cursor-rollouts-security-review-ai-bots-developers/",
+   "publisher": "Martin Cid",
+   "published": "2026-09-26",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "What's New in Cursor — Latest Updates & Release Notes",
+   "url": "https://cursor.com/changelog",
+   "publisher": "Cursor",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/changelog/security-review-N8azgyLevr8FvNIRqJN6hk71os2Oxu.png",
+   "page_url": "https://cursor.com/changelog/rollouts-and-security-reviewer",
+   "caption": "Security Review 화면 — PR에서 악용 가능한 버그를 보고하는 리뷰 (Cursor 변경 기록)",
+   "credit": "Cursor"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/security-reviewer-chart-r3-2400-9iLvPmOOav3nIdJTzMBFMcY7x7miBR.png",
+   "page_url": "https://cursor.com/blog/rollouts-and-security-reviewer",
+   "caption": "블로그가 제시한 수치 — Security Reviewer 평균 실행 시간 4.8분→3.8분, 댓글 수용률 45~50%→60~70% 차트 (Cursor 블로그)",
+   "credit": "Cursor"
+  }
+ ],
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 54,
+  "removed": [],
+  "corrected": [
+   "크레딧: '새로 시작하는 고객에게' → 변경 기록 원문대로 '발표 후 10일 동안 Rollouts 체험용, Teams 약 50건·Enterprise 약 500건 변경분' (요약·본문·FAQ·체크리스트)",
+   "차트 수치: '도입 효과로 평균 리뷰 시간' → 차트 라벨대로 'Security Reviewer 평균 실행 시간 4.8→3.8분(21% 단축), 댓글 수용률 45~50%→60~70%', 전후 비교 기준 미설명 명시",
+   "Security Agents 설정 위치 'Automations > Security Agents' → 'Automations의 Security Agents 페이지'",
+   "포크 PR: 'Pull request merged' 트리거 예외 추가",
+   "Run as Service account: '관리자 전용' → '팀 관리자만 선택 가능, 전용 서비스 계정으로 실행'; Bitbucket → Bitbucket Cloud",
+   "Rollouts: 스스로 병합·롤백하지 않음, 일시 중지는 점진적 롤아웃·설정에 따름 추가",
+   "Security Review: Draft PR 제외, 사유와 함께 무시하면 그 PR에서 재지적 안 함, 스타일·품질은 Bugbot 추가"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 변경 기록·S2 블로그·S3 Security Agents 문서·S4 Automations 문서·S6 변경 기록 목록을 curl 로 원문 HTML 을 받아 문장 단위로 대조, S5 기사 WebFetch 로 재확인. 블로그 차트는 이미지 파일(2400x1250 PNG)을 직접 열어 4.8 min→3.8 min(21% faster), 45–50%→60–70% 라벨과 alt 텍스트로 확인. 인용 이미지 I1(4000x3000 PNG)·I2(2400x1250 PNG) 모두 HTTP 200 image/png 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
