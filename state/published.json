@@ -508,5 +508,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/12000-ai.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "⚡ DeepSeek-V4.1-Flash 사용 가이드: 552B MoE·100만 토큰·입력 $0.15 총정리",
+  "topic": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient (DeepSeek, 2026-09-10) — 모델 카드·API 공식 문서",
+  "category": "AI 언어 모델",
+  "source_url": "https://api-docs.deepseek.com/news/news260910",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/deepseek-v41-flash-552b-moe100-015.html"
+  }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🧪 SYNTH·Baguettotron 논문 분석: 위키백과 5.9만 문서로 단일 단계 학습, 10~140배 적은 토큰 총정리",
+  "topic": "It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs (arXiv 2609.37891, 2026-09-29)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.37891",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/synthbaguettotron-59-10140.html"
+  }
  }
 ]
