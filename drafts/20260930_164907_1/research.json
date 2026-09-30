@@ -1,0 +1,135 @@
+{
+ "topic": "Introducing GPT-6.1 Sol (OpenAI, 2026-09-29) — GPT-6.1 Sol 모델 문서·DevDay 2026 발표",
+ "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GPT-6.1 Sol Model | OpenAI API",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Using GPT-6 (OpenAI API guide)",
+   "url": "https://developers.openai.com/api/docs/guides/latest-model",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Models — GPT-6.1 Sol (ChatGPT + Codex docs)",
+   "url": "https://learn.chatgpt.com/docs/models",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Model selection — When to consider GPT-6.1 Sol",
+   "url": "https://developers.openai.com/api/docs/guides/model-selection",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "DevDay 2026 announcements and developer resources",
+   "url": "https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI releases GPT-6.1 Sol at a fifth of GPT-6 Astra's token prices",
+   "url": "https://thenextweb.com/news/openai-gpt-6-1-sol-price-astra-devday",
+   "publisher": "The Next Web",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI launches GPT-6.1 Sol, says it nearly matches GPT-6 Astra and costs less",
+   "url": "https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "OpenAI's GPT-6.1 Sol delivers Astra-like performance at a dramatically lower price",
+   "url": "https://siliconangle.com/2026/09/29/openais-gpt-6-1-sol-delivers-astra-like-performance-at-a-dramatically-lower-price/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "GPT-6.1 Sol in GitHub Copilot",
+   "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/",
+   "publisher": "GitHub",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
+   "url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+   "publisher": "OpenAI Deployment Safety Hub",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S11",
+   "title": "GPT-6 Sol Model | OpenAI API",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/Screenshot-from-2026-09-30-06-41-53.png",
+   "page_url": "https://siliconangle.com/2026/09/29/openais-gpt-6-1-sol-delivers-astra-like-performance-at-a-dramatically-lower-price/",
+   "caption": "벤치마크 성능: DeepSWE 1.1 작업당 비용 대비 점수 (GPT-6.1 Sol·GPT-6 Sol·GPT-6 Astra)",
+   "credit": "OpenAI (SiliconANGLE 게재)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/Screenshot-from-2026-09-30-06-42-38.png",
+   "page_url": "https://siliconangle.com/2026/09/29/openais-gpt-6-1-sol-delivers-astra-like-performance-at-a-dramatically-lower-price/",
+   "caption": "사실 정확도: 어려운 프롬프트에서 사실 오류가 있는 답변 비율 (낮을수록 좋음)",
+   "credit": "OpenAI (SiliconANGLE 게재)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-1-sol/assets/images/image25.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+   "caption": "안전성 지표: 경고(명시적 제한)를 우회하려 한 비율 — GPT-6.1 Sol·GPT-6 Sol·GPT-6 Astra 등 모델별 비교 (낮을수록 좋음)",
+   "credit": "OpenAI (GPT-6.1 Sol 시스템 카드 부록 Figure 7)"
+  }
+ ],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 58,
+  "removed": [
+   "DeepSWE v1.1에서 GPT-6 Sol의 최고 점수보다 6.4%p 높음 (The Next Web 단독)",
+   "AutomationBench에서 Claude Opus 5.5보다 2.2점 높음 (The Next Web 단독 — '높고 비용 약 3분의 1'만 SiliconANGLE로 확인해 유지)",
+   "OSWorld 2.0에서 Astra와 2.1점 차이, 작업당 비용 약 7분의 1 (The Next Web 단독 — SiliconANGLE 기준 '컴퓨터 사용 작업에서 GPT-6 Sol보다 7% 넘게 높고 Astra에 조금 못 미침'으로 교체)",
+   "Terminal-Bench Science 0.1 작업당 평균 $5.47 (Opus 5.5 $23.21, Astra $23.80) 및 Astra 68.1% 최고점 (The Next Web 단독)",
+   "OpenAI는 가장 어려운 과학 연구 작업에는 Astra를 쓰라고 안내 (The Next Web 단독, 본문·표·FAQ에서 삭제 — 모델 선택 안내 문구로 교체)",
+   "\"Near-Astra intelligence for a fifth of the price\" 인용 및 GPT-6 Sol 9월 22일·Luna 동시 출시 (The Next Web 단독 — '일주일 만'은 TechCrunch로 확인해 유지)",
+   "Sol용 Ultrafast가 며칠 안에 제공 (The Next Web 단독 — 공식 문서의 '이후 제공/곧 제공'만 유지)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). WebFetch 는 developers.openai.com 에서 403 이었으나 curl(프록시)로 S1~S9 원문과 .md 버전을 모두 다시 열어 확인. 스펙·가격·엔드포인트·속도 제한·마이그레이션은 S1·S2·S3·S4 공식 문서와 일치. 안전성 수치(2.08/4.92/1.50%, 23.5/64.4/17.4%, Auto-review 우회 시도 없음, 저위험·통제 없이 실행)는 공식 시스템 카드 부록(S10) 본문·Figure 7·10으로 교차 확인. 캐시 입력 '절반'은 GPT-6 Sol 모델 페이지(S11, $0.2)로 확인. 사실 오류율 11.4→7.7%·Astra와 1.9% 이내는 TechCrunch(S7)와 SiliconANGLE 게재 OpenAI 도표로 확인. 벤치마크는 The Next Web 단독 수치를 빼고 SiliconANGLE(S8)과 겹치는 내용만 남김. openai.com 발표 글은 403 이라 출처에서 제외. S3 주소는 리디렉트된 learn.chatgpt.com/docs/models 로 수정. 이미지 I1·I2(SiliconANGLE 본문, 652·648px PNG)와 I3(시스템 카드 Figure 7, 1999px PNG) 모두 HTTP 200 image/png 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790754467113489",
+  "kind": "all"
+ }
+}
