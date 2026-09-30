@@ -1,0 +1,103 @@
+{
+ "topic": "GLM-5.3 and the spread of advanced cyber capabilities (Anthropic Frontier Red Team, 2026-09-29)",
+ "source_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+   "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+   "publisher": "Anthropic",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CAISI's Assessment of Z.ai's GLM-5.3 Cyber Capabilities",
+   "url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+   "publisher": "NIST CAISI",
+   "published": "2026-09-17",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic: China's GLM-5.3 Can Build Cyber Exploits",
+   "url": "https://madrobot.blog/2026/09/29/anthropic-glm-5-3-zai-cyber-exploits-safeguards-open-weight/",
+   "publisher": "MadRobot",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "zai-org/GLM-5.3 (Hugging Face model card)",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "publisher": "Z.ai",
+   "published": "2026-08-25",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Project Glasswing: An initial update",
+   "url": "https://www.anthropic.com/research/glasswing-initial-update",
+   "publisher": "Anthropic",
+   "published": "2026-05-22",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "CAISI Assessment of Z.ai's GLM-5.2",
+   "url": "https://www.nist.gov/news-events/news/2026/07/caisi-assessment-zais-glm-52",
+   "publisher": "NIST CAISI",
+   "published": "2026-07-17",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "ExploitBench: A Capability Ladder Benchmark for LLM Cybersecurity Agents",
+   "url": "https://arxiv.org/abs/2605.14153",
+   "publisher": "arXiv",
+   "published": "2026-05-13",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Refusal in Language Models Is Mediated by a Single Direction",
+   "url": "https://arxiv.org/abs/2406.11717",
+   "publisher": "arXiv",
+   "published": "2024-06-17",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a1b61c7da2c400ab84425e105837fc1f346a4339-1280x1576.webp",
+   "page_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+   "caption": "한눈에 보는 핵심 결과: 공격 능력 상승과 안전장치 우회 요약 (Figure 1)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d4d48dcf67d529d3b2243bfa50a7cccc98565278-1280x1531.webp",
+   "page_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+   "caption": "어블리터레이션: 모델별 평균 거절률 비교 (Figure 4)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a8b70c8d729325cc988af66416f7c0811d2097a5-1280x1257.webp",
+   "page_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+   "caption": "모델을 고치지 않고도 우회: 조건별 유해 요청 응답률 (Figure 5)",
+   "credit": "Anthropic"
+  }
+ ],
+ "factcheck": {
+  "claims": 65,
+  "confirmed": 65,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): 수치·날짜·이름·스펙 62건을 S1(Anthropic 원문 본문·각주·Figure 1~5 캡션), S2(NIST CAISI 표 1·2·방법 노트), S3(MadRobot), S4(HF 모델 카드)를 다시 열어 대조. 수정: CyberGym '몇 퍼센트포인트'→'몇 퍼센트(85%→81%)', 속임수 프롬프트 문구를 원문(exercise)대로, '중국 최전선' 정의를 CAISI 방법 노트대로(이전 중국 최고·대부분 Kimi K3), '미국 모델 안전장치 끔'에 '해당하는 경우' 추가, Z.ai 무논평은 MadRobot 9/29 보도로 출처 명시. 보강: 출시일 8/14·2주 뒤 가중치 공개(S2), 753B 파라미터·사이버 능력 설명(S4), Glasswing 약 50개 파트너(S5), GLM-5.2 CAISI 평가(S6), ExploitBench 41개 V8 버그·16단계(S7), 어블리터레이션 원 논문(S8), Flash 비용 20.40달러·Figure 1·4 수치(S1). 이미지 3개: 원문 HTML 에서 Figure 1·4·5 파일과 캡션 짝 확인, 주소를 원문이 쓰는 www-cdn.anthropic.com 으로 바꾸고 HTTP 200 image/* (1280px) 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
