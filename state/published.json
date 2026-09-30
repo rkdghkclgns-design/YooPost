@@ -528,5 +528,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/synthbaguettotron-59-10140.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🤝 Akamai·Anthropic 계약 총정리: 7년 116억 달러, 최대 5% 워런트 조건",
+  "topic": "Akamai Announces $11.6 Billion Multi-year Agreement with Anthropic to Support Growing Demand (Akamai, 2026-09-24)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.globenewswire.com/news-release/2026/09/24/3368729/0/en/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/akamaianthropic-7-116-5.html"
+  }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🔒 GitSpawn 총정리: 저장소 .git 설정 하나로 AI 코딩 에이전트 7종이 공격 코드를 실행한 방법",
+  "topic": "GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok (Manifold Security, 2026-09-01)",
+  "category": "AI 보안",
+  "source_url": "https://manifold.security/blog/ai-coding-agents-git-hijack",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gitspawn-git-ai-7.html"
+  }
  }
 ]
