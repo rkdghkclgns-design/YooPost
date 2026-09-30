@@ -348,5 +348,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/anthropic-glm-53-64100.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 멀티모달 프롬프트 인젝션 논문 분석: MMPIBench 720회 완료 1.11%·음성은 49% 총정리",
+  "topic": "An Experimental Evaluation of Multimodal Prompt Injection Attacks on Agentic AI Frameworks (arXiv 2609.09404, 2026-09-08)",
+  "category": "AI 보안",
+  "source_url": "https://arxiv.org/abs/2609.09404",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/mmpibench-720-111-49.html"
+  }
  }
 ]
