@@ -24,7 +24,7 @@ from .cover import make_cover
 from .history import load_history
 from .links import LinkCheck, check_link, is_http_url
 from .publishing import PublishContext, attach_references, base_notes, build_publish_html, write_preview
-from .quote_images import AUTO_IMAGES, auto_candidates, parse_candidates
+from .quote_images import AUTO_IMAGES, auto_candidates, keywords_of, parse_candidates
 from .research import FactSheet, ImageCandidate, Source
 from .slack_helper import LABEL, escape_mrkdwn
 from .topic import Topic
@@ -137,6 +137,13 @@ def fact_line(factcheck: Mapping[str, object]) -> str:
     return line
 
 
+def draft_keywords(files: DraftFiles) -> set[str]:
+    """본문 그림 관련도 기준 낱말 — 제목·주제·소제목·해시태그·한눈에 보기 (본문 전체는 넣지 않는다: 흔한 말로 아무 그림이나 붙지 않게)."""
+    content = files.content
+    return keywords_of(content.title, files.topic, *(s.heading for s in content.sections), *content.hashtags,
+                       *content.summary)
+
+
 class DraftPreparer:
     def __init__(self, blog_name: str, blogger, host, collector, session=None,
                  checker: Callable[..., LinkCheck] = check_link, cover_maker: Callable[..., Path] = make_cover,
@@ -169,17 +176,19 @@ class DraftPreparer:
         if history.is_duplicate(files.topic, files.source_url) and not allow_duplicate:
             raise DraftError(f"이미 발행한 주제와 겹칩니다: {files.topic} (그래도 올리려면 --allow-duplicate)")
         sources, warnings = self._verified(files.sources)
-        images = self._collector.collect(files.candidates, sources, folder) if files.candidates else ()
+        keywords = draft_keywords(files)
+        images = self._collector.collect(files.candidates, sources, folder, keywords) if files.candidates else ()
         if len(images) < len(files.candidates):
-            warnings.append(f"인용 이미지 {len(files.candidates) - len(images)}개는 확인을 통과하지 못해 뺐습니다")
+            warnings.append(f"인용 이미지 {len(files.candidates) - len(images)}개는 확인을 통과하지 못해 뺐습니다 "
+                            "(썸네일·로고이거나, 원고와 관련된 본문 그림을 찾지 못함)")
         content = drop_unknown_images(files.content, frozenset(i.id for i in images))
-        if not images:  # 원고에 쓸 이미지가 없으면 공식 출처의 대표 이미지로 보충 (작성자가 빠뜨려도 그림이 들어가게)
-            images = self._collector.collect(auto_candidates(sources), sources, folder)[:AUTO_IMAGES]
+        if not images:  # 원고에 쓸 이미지가 없으면 공식 출처 본문에서 원고와 관련된 그림만 보충 (썸네일은 쓰지 않음)
+            images = self._collector.collect(auto_candidates(sources), sources, folder, keywords)[:AUTO_IMAGES]
             if images:
-                content = place_images(content, [i.id for i in images])
-                warnings.append(f"원고에 쓸 인용 이미지가 없어 공식 출처의 대표 이미지 {len(images)}개를 넣었습니다")
+                content = place_images(content, [i.id for i in images], [i.caption for i in images])
+                warnings.append(f"원고에 쓸 인용 이미지가 없어 공식 출처 본문의 관련 그림 {len(images)}개를 넣었습니다")
             else:
-                warnings.append("본문에 넣을 이미지가 없습니다 (원고 후보도, 공식 출처 대표 이미지도 없음)")
+                warnings.append("본문에 넣을 이미지가 없습니다 (원고 후보도, 공식 출처 본문의 관련 그림도 없음)")
         topic = Topic(title=files.topic, category=content.category, angle="", keywords=(files.topic,),
                       source_url=files.source_url)
         sheet = FactSheet(topic, "", (), sources, images=images)

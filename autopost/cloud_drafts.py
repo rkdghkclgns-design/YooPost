@@ -197,7 +197,7 @@ def quality_report(folder: Path, min_chars: int) -> QualityReport:
         problems.append(f"research.json images 에 없는 이미지 블록: {', '.join(sorted(image_ids - known))}")
     none_reason = str(read_json(folder / "research.json").get("images_none_reason") or "").strip()
     if not files.candidates and not none_reason:
-        problems.append("인용 이미지 후보(research.json images)가 없습니다 — 공식 출처 페이지의 그림·화면·대표 이미지 1~3개를 "
+        problems.append("인용 이미지 후보(research.json images)가 없습니다 — 공식 출처 본문의 관련 화면·도표 1~3개(썸네일 제외)를 "
                         "넣고 본문에 image 블록을 두세요 (정말 없으면 images_none_reason 에 이유)")
     elif files.candidates and not image_ids:
         problems.append("인용 이미지 후보는 있는데 본문에 image 블록이 없습니다 — 관련 문단 뒤에 {\"type\": \"image\", \"image_id\": \"I1\"}")

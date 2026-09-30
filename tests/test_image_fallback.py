@@ -1,4 +1,4 @@
-"""원고에 이미지가 없을 때 — 공식 출처 대표 이미지 보충 · 본문 배치 · 클라우드 품질 검사."""
+"""원고에 이미지가 없을 때 — 공식 출처 본문의 관련 그림 보충(썸네일 제외) · 관련 소제목 배치 · 클라우드 품질 검사."""
 import json
 
 from autopost.cloud_drafts import quality_report
@@ -20,7 +20,7 @@ def test_auto_candidates_use_official_pages_only():
                src("https://openai.com/a"), *[src(f"https://docs.example/{i}") for i in range(6)]]
     found = auto_candidates(sources)
     assert [c.page_url for c in found][:2] == ["https://openai.com/a", "https://docs.example/0"]
-    assert len(found) == AUTO_PAGES and found[0].id == "A1" and found[0].caption == "GPT-6 발표"
+    assert len(found) == AUTO_PAGES and found[0].id == "A1" and found[0].caption == ""  # 캡션은 찾은 그림 설명으로
     assert found[0].credit == "회사" and found[0].image_url == ""
     assert auto_candidates([src("https://x.example", official=False)]) == ()
 
@@ -44,10 +44,10 @@ def test_place_images_after_the_first_paragraph_of_first_and_middle_sections():
 def test_prepare_fills_in_official_images_when_the_draft_has_none(tmp_path):
     prepared = preparer().prepare(write_local_draft(tmp_path, []), "d1")
     assert prepared.html.count("<figure") >= 1
-    assert any("대표 이미지" in w for w in prepared.warnings)
+    assert any("관련 그림" in w for w in prepared.warnings)
 
     class NoImages(Collector):
-        def collect(self, candidates, sources, workdir):
+        def collect(self, candidates, sources, workdir, keywords=()):
             return ()
 
     p = preparer()
@@ -55,6 +55,19 @@ def test_prepare_fills_in_official_images_when_the_draft_has_none(tmp_path):
     (tmp_path / "b").mkdir()
     empty = p.prepare(write_local_draft(tmp_path / "b", []), "d2")
     assert "<figure" not in empty.html and any("넣을 이미지가 없습니다" in w for w in empty.warnings)
+
+
+def test_best_sections_follow_the_image_description():
+    from autopost.writer import best_sections
+
+    content = PostContent(title="t", category="AI 도구", intro="i", summary=(), faq=(), closing="c", hashtags=(),
+                          sections=(Section("📰 개요", (paragraph("소개"),)),
+                                    Section("⚙️ 설치 CLI", (paragraph("slack create 명령"),)),
+                                    Section("💰 요금", (paragraph("가격 표"),)),
+                                    Section("🔍 권한 scope", (paragraph("OAuth scope 설정"),))))
+    assert best_sections(content, ["Slack CLI create command", "OAuth scope permissions screen"]) == [1, 3]
+    assert best_sections(content, ["unrelated words"]) == [0]
+    assert best_sections(content, ["CLI create", "CLI create again"]) == [1, 2]  # 같은 소제목에 두 개 몰지 않음 → 가운데
 
 
 def test_cloud_check_requires_images_or_a_reason(tmp_path):

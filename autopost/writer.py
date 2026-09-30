@@ -158,12 +158,45 @@ def drop_unknown_images(content: PostContent, image_ids: frozenset[str]) -> Post
     return replace(content, sections=sections)
 
 
-def place_images(content: PostContent, image_ids: Sequence[str]) -> PostContent:
-    """이미지 블록이 없는 원고에 이미지를 넣는다 — 첫 소제목과 가운데 소제목의 첫 문단 바로 뒤 (새 원고를 돌려준다)."""
+def _words(text: str) -> set[str]:
+    from .quote_images import tokens
+
+    return tokens(text)
+
+
+def best_sections(content: PostContent, descriptions: Sequence[str]) -> list[int]:
+    """그림마다 넣을 소제목 번호 — 그림 설명과 낱말이 가장 많이 겹치는 소제목 (겹침이 없으면 첫·가운데 소제목).
+
+    한 소제목에 그림을 두 개 몰지 않는다.
+    """
+    sections = content.sections
+    if not sections:
+        return []
+    texts = [_words(" ".join([s.heading, *(t for b in s.blocks for t in b.texts())])) for s in sections]
+    fallback = [0, max(1, len(sections) // 2) if len(sections) > 1 else 0]
+    chosen: list[int] = []
+    for number, description in enumerate(descriptions):
+        words = _words(description)
+        ranked = sorted(range(len(sections)), key=lambda i: (-len(words & texts[i]), i))
+        best = next((i for i in ranked if i not in chosen and words & texts[i]), None)
+        if best is None:
+            best = next((i for i in [*fallback[number:], *range(len(sections))] if i not in chosen), 0)
+        chosen.append(best)
+    return chosen
+
+
+def place_images(content: PostContent, image_ids: Sequence[str], descriptions: Sequence[str] = ()) -> PostContent:
+    """이미지 블록이 없는 원고에 이미지를 넣는다 — 그림 설명과 가장 관련 있는 소제목의 첫 문단 바로 뒤 (새 원고).
+
+    descriptions 가 없으면 첫 소제목과 가운데 소제목.
+    """
     sections = list(content.sections)
     if not sections or not image_ids:
         return content
-    targets = [0] if len(image_ids) == 1 or len(sections) == 1 else [0, max(1, len(sections) // 2)]
+    if descriptions:
+        targets = best_sections(content, list(descriptions)[:len(image_ids)])
+    else:
+        targets = [0] if len(image_ids) == 1 or len(sections) == 1 else [0, max(1, len(sections) // 2)]
     for image_id, index in zip(image_ids, targets):
         blocks = list(sections[index].blocks)
         first = next((i for i, b in enumerate(blocks) if b.kind == "paragraph"), -1)

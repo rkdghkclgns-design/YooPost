@@ -46,19 +46,75 @@ def test_og_image_reads_either_attribute_order_and_relative_urls():
     assert og_image("<html></html>", "https://x.com") == ""
 
 
-def test_collects_verified_images_and_falls_back_to_page_og_image(tmp_path):
+ARTICLE = """<html><head>
+<meta property="og:image" content="https://blogs.nvidia.com/og.jpg">
+<meta name="twitter:image" content="https://blogs.nvidia.com/card.jpg"></head><body>
+<header><img src="/i/header-hero.png" alt="Vera CPU architecture block diagram"></header>
+<nav><img src="/i/menu.png" alt="Vera CPU"></nav>
+<article><h2>Vera CPU architecture</h2>
+<p>text</p>
+<figure><img src="/i/arch.png" alt=""><figcaption>Vera CPU core block diagram</figcaption></figure>
+<img src="/i/og.jpg" alt="Vera CPU architecture diagram">
+<img src="/i/logo-nvidia.png" alt="Vera CPU architecture logo">
+<img data-src="/i/bench.png" alt="Vera benchmark chart versus Grace CPU" width="1200">
+<img src="/i/team.png" alt="NVIDIA team photo">
+<img src="/i/tiny.png" alt="Vera CPU architecture" width="64">
+</article>
+<footer><img src="/i/foot.png" alt="Vera CPU block diagram"></footer></body></html>"""
+
+
+def test_article_images_skip_chrome_meta_cards_and_thumbnails():
+    from autopost.quote_images import article_images, meta_images
+
+    found = article_images(ARTICLE, PAGE)
+    urls = [i.url for i in found]
+    # 머리글·메뉴·바닥글, og 주소, 로고, 작은 그림은 빠진다
+    assert urls == ["https://blogs.nvidia.com/i/arch.png", "https://blogs.nvidia.com/i/bench.png",
+                    "https://blogs.nvidia.com/i/team.png"]
+    assert found[0].caption == "Vera CPU core block diagram" and found[0].heading == "Vera CPU architecture"
+    assert meta_images(ARTICLE, PAGE) == {"https://blogs.nvidia.com/og.jpg", "https://blogs.nvidia.com/card.jpg"}
+
+
+def test_relevance_ignores_brand_words_and_undescribed_images():
+    from autopost.quote_images import PageImage, relevance, relevant_images, tokens
+
+    words = tokens("Vera CPU 구조도 architecture benchmark NVIDIA")
+    brand = tokens("NVIDIA nvidia")
+    team = PageImage("u1", alt="NVIDIA team photo")
+    bench = PageImage("u2", alt="Vera benchmark chart versus Grace CPU")
+    blank = PageImage("u3", alt="", heading="Vera CPU architecture")
+    captioned = PageImage("u4", caption="Vera block", heading="")
+    assert relevance(team, words, brand) == 0 and relevance(blank, words, brand) == 0
+    assert relevance(bench, words, brand) >= 2
+    assert relevant_images([team, blank, captioned, bench], words, brand) == [bench, captioned]
+
+
+def test_missing_image_falls_back_to_a_related_article_figure_never_the_og_card(tmp_path):
     http = FakeHttp({
         "https://blogs.nvidia.com/i/vera.png": image_response(png()),
-        PAGE: FakeHttpResponse(200, '<meta property="og:image" content="https://blogs.nvidia.com/og.jpg">'),
-        "https://blogs.nvidia.com/og.jpg": image_response(png((1600, 900), color="black"), "image/jpeg"),
+        PAGE: FakeHttpResponse(200, ARTICLE),
+        "https://blogs.nvidia.com/i/arch.png": image_response(png((1600, 900), color="black"), "image/jpeg"),
+        "https://blogs.nvidia.com/og.jpg": image_response(png((1600, 900), color="gray"), "image/jpeg"),
     })
     found = ImageCollector(http).collect(
         [candidate(), candidate("I2", image="https://blogs.nvidia.com/i/missing.png", credit="NVIDIA Newsroom")],
-        SOURCES, tmp_path)
+        SOURCES, tmp_path, keywords={"vera", "cpu", "구조도"})
     assert [i.id for i in found] == ["I1", "I2"]
     assert found[0].credit == "NVIDIA" and found[0].path.suffix == ".jpg" and found[0].width == 1200
     assert found[1].credit == "NVIDIA Newsroom" and found[1].width == 1400  # 본문 폭에 맞게 줄임
-    assert found[1].path.is_file()
+    assert not any(url == "https://blogs.nvidia.com/og.jpg" for url, _ in http.calls)  # 대표 이미지는 받지도 않는다
+
+
+def test_writer_supplied_og_or_thumbnail_urls_are_refused(tmp_path):
+    http = FakeHttp({
+        PAGE: FakeHttpResponse(200, '<meta property="og:image" content="https://blogs.nvidia.com/og.jpg"><p>x</p>'),
+        "https://blogs.nvidia.com/og.jpg": image_response(png()),
+        "https://blogs.nvidia.com/thumbnails/vera.png": image_response(png()),
+    })
+    found = ImageCollector(http).collect(
+        [candidate("I1", image="https://blogs.nvidia.com/og.jpg"),
+         candidate("I2", image="https://blogs.nvidia.com/thumbnails/vera.png")], SOURCES, tmp_path, keywords={"vera"})
+    assert found == ()
 
 
 def test_rejects_other_sites_small_duplicate_svg_and_broken_images(tmp_path):

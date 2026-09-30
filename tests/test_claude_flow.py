@@ -39,7 +39,7 @@ def write_draft(folder, images=(), **post_overrides):
 
 
 class Collector:
-    def collect(self, candidates, sources, workdir):
+    def collect(self, candidates, sources, workdir, keywords=()):
         found = []
         for c in candidates:
             path = workdir / f"quote_{c.id}.jpg"
@@ -90,7 +90,7 @@ def test_prepare_builds_publishable_html_with_hosted_images_and_references(tmp_p
 
 def test_images_that_fail_are_dropped_and_duplicates_are_refused(tmp_path):
     class NoImages(Collector):
-        def collect(self, candidates, sources, workdir):
+        def collect(self, candidates, sources, workdir, keywords=()):
             return ()
 
     p = preparer()

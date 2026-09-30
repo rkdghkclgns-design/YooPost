@@ -9,6 +9,8 @@ import re
 from typing import Sequence
 
 _H2 = re.compile(r"<h2\b", re.I)
+# 예전에 자동으로 넣은 공식 출처 대표 이미지(og:image 썸네일) — 이미지 키에 _auto_ 가 들어 있다
+_AUTO_FIGURE = re.compile(r"<figure\b(?:(?!</figure>).)*?_auto_(?:(?!</figure>).)*?</figure>", re.S | re.I)
 
 
 def target_sections(section_count: int, image_count: int) -> list[int]:
@@ -20,14 +22,25 @@ def target_sections(section_count: int, image_count: int) -> list[int]:
     return [0, max(1, section_count // 2)]
 
 
-def insert_figures(html: str, figures: Sequence[str], section_count: int) -> str:
-    """소제목 h2 뒤 첫 문단 다음에 figure 를 넣은 새 본문. 이미 figure 가 있으면 그대로 돌려준다."""
+def remove_auto_figures(html: str) -> tuple[str, int]:
+    """예전에 넣은 대표 이미지(썸네일) figure 를 뺀 본문과 뺀 개수 — 원고와 관련 없는 공유 카드였다."""
+    return _AUTO_FIGURE.subn("", html)
+
+
+def insert_figures(html: str, figures: Sequence[str], section_count: int,
+                   places: Sequence[int] | None = None) -> str:
+    """소제목 h2 뒤 첫 문단 다음에 figure 를 넣은 새 본문. 이미 figure 가 있으면 그대로 돌려준다.
+
+    places = 그림마다 넣을 소제목 번호 (writer.best_sections — 그림 설명과 가장 관련 있는 소제목). 없으면 첫·가운데.
+    """
     if "<figure" in html or not figures:
         return html
     starts = [m.start() for m in _H2.finditer(html)][:section_count]
-    places = target_sections(len(starts), len(figures))
+    targets = list(places) if places is not None else target_sections(len(starts), len(figures))
     inserts: list[tuple[int, str]] = []
-    for figure, index in zip(figures, places):
+    for figure, index in zip(figures, targets):
+        if not 0 <= index < len(starts):
+            continue
         h2 = starts[index]
         end = starts[index + 1] if index + 1 < len(starts) else len(html)
         heading_end = html.find("</h2>", h2)
