@@ -1,0 +1,395 @@
+{
+  "title": "🤖 슬랙에 에이전트 직원 만들기 사용 가이드: Slack CLI 5단계·Agentforce·Add to Slack 총정리",
+  "category": "AI 도구",
+  "intro": "안녕하세요! 이번 글은 특정 제품의 출시 소식이 아니라 **슬랙(Slack)에 AI 에이전트 '직원'을 들이는 방법**을 공식 문서 기준으로 정리한 사용 가이드입니다. 슬랙 공식 문서는 에이전트를 \"추론하고, 도구를 쓰고, 슬랙 대화 전반의 맥락을 유지하는 자율적·목표 지향 AI 앱\"이라고 설명합니다. 슬랙에 에이전트를 만드는 길은 크게 세 가지로 나뉩니다. 직접 코드를 짜는 **Slack CLI 개발 경로**, 세일즈포스의 **Agentforce 경로**, 파트너 플랫폼에서 버튼 한 번으로 연결하는 **Add to Slack 경로**입니다. 이 글은 그중 공식 빠른 시작(quickstart)이 단계별로 안내하는 개발 경로를 중심에 두고, 나머지 두 경로는 범위와 조건만 짚습니다. 발표일이 따로 없는 문서형 주제이므로 모든 내용은 **공식 문서 기준**이며, 함께 살펴보시죠!",
+  "summary": [
+    "슬랙 공식 문서는 에이전트를 추론·도구 사용·맥락 유지가 가능한 자율적 AI 앱으로 정의합니다.",
+    "직접 만들기: Slack CLI 설치 → slack login → slack create agent → 프레임워크 폴더로 이동해 .env 에 ANTHROPIC_API_KEY 입력 → slack run 순서입니다.",
+    "에이전트 기능에는 assistant:write 권한이 쓰이고, app_context_changed·agent_session_stopped·agent_session_title_changed 이벤트 구독을 추가로 확인해야 합니다.",
+    "코딩 없이 만들고 싶다면 Agentforce(Employee Agent 유형) 또는 Add to Slack(파트너 10곳, 2026-08-20 공지) 경로가 있습니다.",
+    "일부 AI 기능의 개발·사용에는 유료 슬랙 플랜이 필요하며(무료 Developer Program 샌드박스로 대체 가능), 게스트는 AI 앱·에이전트를 쓸 수 없습니다.",
+    "이 글에서 배울 것: 세 가지 경로의 차이, 개발 경로의 실제 명령과 설정, 채널에 에이전트를 추가하는 방법, 주의사항"
+  ],
+  "sections": [
+    {
+      "heading": "🧭 슬랙 에이전트 직원이란? 세 갈래 경로",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "슬랙 개발자 문서의 AI 개요는 앱용 AI 기능을 **에이전트, AI 지원 개발, 모델 컨텍스트 프로토콜(MCP, AI가 외부 도구를 발견해 안전하게 쓰게 하는 개방형 표준), 그리고 워크플로 자동화·Agentforce 같은 통합 대안**으로 나누어 소개합니다. 이 중 '직원'처럼 팀 대화에 상주하는 것이 바로 **에이전트**입니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "'슬랙에 에이전트 직원 만들기'는 여러 제품으로 해석될 수 있어서, 이 글은 공식 문서로 뒷받침되는 세 경로로 범위를 밝혀 둡니다. 코드로 직접 만드는 경로는 공식 **빠른 시작(Quickstart)** 이, 세일즈포스 경로는 **슬랙 도움말 센터의 Agentforce 설정 문서**가, 노코드 경로는 **슬랙 공식 블로그의 Add to Slack 소개**가 각각 근거입니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "경로",
+            "이런 팀에 맞음",
+            "공식 문서가 밝힌 핵심"
+          ],
+          "rows": [
+            [
+              "Slack CLI로 직접 개발",
+              "코드를 쓸 수 있는 개발자",
+              "slack create agent 로 프로젝트 생성, Claude Agent SDK·OpenAI Agents SDK·Pydantic AI 중 선택"
+            ],
+            [
+              "Agentforce",
+              "세일즈포스를 쓰는 조직",
+              "Agentforce Employee Agent 유형만 슬랙용으로 만들 수 있음, Agentforce 라이선스 필요"
+            ],
+            [
+              "Add to Slack",
+              "코딩 없이 연결하고 싶은 팀",
+              "파트너 플랫폼에서 Add to Slack 클릭, 런치 파트너 10곳"
+            ]
+          ]
+        },
+        {
+          "type": "info",
+          "title": "💡 이 글의 범위",
+          "text": "슬랙 자체의 다른 AI 기능이 아니라, **에이전트 앱을 만들어 슬랙에 들이는 방법**만 다룹니다. 단계·명령·권한은 직접 읽은 공식 문서에 적힌 것만 옮겼습니다."
+        }
+      ]
+    },
+    {
+      "heading": "💻 Slack CLI로 에이전트 만들기 (빠른 시작)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "공식 빠른 시작은 **Casey**라는 AI 지원 에이전트 예제를 만들어 봅니다. 시작 단계는 **Slack CLI 설치, 슬랙 워크스페이스 로그인, Casey 샘플 앱으로 프로젝트 생성** 세 가지입니다. 프레임워크는 **Claude Agent SDK, OpenAI Agents SDK, Pydantic AI** 중에서 고르며, Pydantic AI는 Bolt for Python 에서만 선택지로 안내되고 Bolt for JavaScript 에서는 앞의 두 가지만 쓸 수 있습니다."
+        },
+        {
+          "type": "subheading",
+          "text": "설치부터 실행까지 5단계"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1단계: Slack CLI 설치 — 공식 문서의 설치 명령을 터미널에 실행합니다.",
+            "2단계: 워크스페이스 인증 — slack login",
+            "3단계: 프로젝트 생성 — slack create agent",
+            "4단계: 사용할 프레임워크 폴더(예: claude-agent-sdk)로 이동한 뒤 .env.sample 을 .env 로 복사하고 ANTHROPIC_API_KEY 를 입력합니다.",
+            "5단계: slack run 으로 실행합니다."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "curl -fsSL https://downloads.slack-edge.com/slack-cli/install.sh | bash\nslack login\nslack create agent\ncd claude-agent-sdk\ncp .env.sample .env\nslack run"
+        },
+        {
+          "type": "paragraph",
+          "text": "실행하면 Casey는 **앱 홈(App Home)에서 고른 문제 유형, 다이렉트 메시지(DM), 채널에서 @Casey 로 부르는 멘션**에 응답합니다. 처리 중에는 **👀 반응**, 문제가 해결되면 **✅ 반응**이 붙는다고 문서에 적혀 있습니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ API 키는 코드에 넣지 마세요",
+          "text": "문서가 안내하는 방식은 .env 파일에 키를 두는 것입니다. **ANTHROPIC_API_KEY** 는 비밀값이므로 저장소에 올리지 않도록 관리하세요. (이 주의는 일반적인 보안 관행이며, 문서의 별도 경고 문구는 아닙니다.)"
+        },
+        {
+          "type": "paragraph",
+          "text": "문서는 이 외에 **Slack MCP 서버 연동 문서, Bolt 프레임워크용 에이전트 기능 가이드, 파이썬·자바스크립트 시작 템플릿**을 추가 자료로 안내합니다."
+        }
+      ]
+    },
+    {
+      "heading": "⚙ 에이전트 기능 켜기: 권한·이벤트·플랜",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "'에이전트 개발' 문서에 따르면 슬랙 에이전트는 **입력 수신 → 추론 → 도구 호출 → 출력 스트리밍·표시**의 응답 루프를 따릅니다. 빠른 시작을 마친 뒤 **앱 설정에 추가된 Agents 기능과 권한을 확인하고, 필요한 이벤트 구독을 추가**하면 됩니다. 문서가 추가를 요구하는 이벤트는 app_context_changed·agent_session_stopped·agent_session_title_changed 이고, message.im·app_home_opened 는 사용자 메시지와 DM 열기를 감지할 때 듣는 이벤트입니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "구분",
+            "이름",
+            "설명(공식 문서)"
+          ],
+          "rows": [
+            [
+              "권한(스코프)",
+              "assistant:write",
+              "상태 설정, 추천 프롬프트, 스레드 제목 같은 에이전트 기능을 쓰게 함"
+            ],
+            [
+              "이벤트",
+              "app_context_changed",
+              "사용자가 현재 보고 있는 화면 추적"
+            ],
+            [
+              "이벤트",
+              "agent_session_stopped",
+              "중지 버튼 상호작용 처리"
+            ],
+            [
+              "이벤트",
+              "agent_session_title_changed",
+              "사용자가 바꾼 제목 동기화"
+            ],
+            [
+              "이벤트",
+              "message.im",
+              "사용자 메시지 감지"
+            ],
+            [
+              "이벤트",
+              "app_home_opened",
+              "DM을 여는 시점 파악"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "문서는 **일부 AI 기능의 개발·사용에 유료 플랜이 필요**하다고 밝히며, 유료 플랜이 없다면 **슬랙 Developer Program 에 가입해 무료 샌드박스**를 받을 수 있다고 안내합니다."
+        },
+        {
+          "type": "info",
+          "title": "💡 샌드박스부터 시작",
+          "text": "비용을 들이기 전에 **Developer Program 무료 샌드박스**에서 먼저 만들어 보는 것이 공식 문서가 열어 둔 가장 부담 없는 경로입니다."
+        }
+      ]
+    },
+    {
+      "heading": "🛠 대화 화면 만들기: 상태·스트리밍·추천 프롬프트",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "에이전트가 '직원'처럼 느껴지려면 응답 흐름이 자연스러워야 합니다. 공식 문서는 다음 순서를 권합니다. 첫 만남에는 환영 메시지를 보내고 **assistant.threads.setSuggestedPrompts** 로 추천 프롬프트를 띄웁니다. 사용자 입력을 받으면 즉시 **agents.sessions.setStatus** 를 status: \"processing\" 으로 호출해 로딩 표시를 켭니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "응답 텍스트는 **chat.startStream → chat.appendStream → chat.stopStream** 세 메서드로 조금씩 흘려보냅니다. 다중 단계 작업은 task_update·plan 표시 모드로 보여줄 수 있습니다. 끝나면 status: \"active\" 로 로딩 상태를 해제하고, **agents.sessions.rename** 으로 스레드 제목을 정하며, 대화 내역은 conversations.replies 와 thread_ts 로 불러옵니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "단계",
+            "호출",
+            "역할"
+          ],
+          "rows": [
+            [
+              "1",
+              "assistant.threads.setSuggestedPrompts",
+              "추천 프롬프트 표시"
+            ],
+            [
+              "2",
+              "agents.sessions.setStatus (processing)",
+              "로딩 표시 시작"
+            ],
+            [
+              "3",
+              "chat.startStream / appendStream / stopStream",
+              "응답 텍스트 스트리밍"
+            ],
+            [
+              "4",
+              "agents.sessions.setStatus (active)",
+              "로딩 해제"
+            ],
+            [
+              "5",
+              "agents.sessions.rename",
+              "스레드 제목 설정"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**Bolt 프레임워크(파이썬·자바스크립트)** 는 이 과정을 줄여 주는 도구를 제공합니다. 문서에 나온 것은 say_stream(), setStatus(), setSuggestedPrompts(), setTitle() 입니다. 피드백은 👍/👎 **feedback_buttons** 요소를 context_actions 블록에 넣어 받을 수 있습니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 스트리밍 주의사항",
+          "text": "문서에 따르면 **Block Kit 블록은 chat.stopStream 에서만** 쓸 수 있고 startStream·appendStream 에서는 쓸 수 없습니다. 스트리밍 메시지에서는 링크 미리보기(언펄링)가 꺼지며, 로딩 상태는 명시적으로 해제하지 않으면 **한 시간** 유지됩니다."
+        }
+      ]
+    },
+    {
+      "heading": "👥 팀에 들이기: 직원처럼 대화하고 채널에 추가하기",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "만든 에이전트를 팀원이 쓰는 방법은 도움말 센터 문서에 정리되어 있습니다. 사이드바의 **Agents & tools** 탭(보이지 않으면 More)에서 **Apps** 를 고르고 에이전트를 찾아 **New Chat** 으로 대화를 시작하며, 이전 기록은 **History** 탭에서 봅니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "화면 오른쪽 위 **Add agent** 를 눌러 다른 작업 옆에서 대화하는 **분할 보기**도 가능합니다. 채널에서는 **@에이전트 이름** 으로 부르며, 채널 이름 헤더를 눌러 **Agents & apps** 탭에서 **Add Agent or App** 으로 추가합니다. 제거는 에이전트 이름 옆 More 메뉴의 **Remove from this channel** 입니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "항목",
+            "공식 문서 내용"
+          ],
+          "rows": [
+            [
+              "사용 가능 플랜",
+              "모든 플랜의 멤버 대상"
+            ],
+            [
+              "게스트",
+              "AI 앱·에이전트 사용 불가"
+            ],
+            [
+              "표시 설정",
+              "Preferences → Navigation → Show AI Agents in top bar"
+            ],
+            [
+              "관리자 통제",
+              "에이전트 숨기기·표시, Enterprise 조직의 앱 관리 정책"
+            ],
+            [
+              "앱 승인",
+              "소유자·관리자가 설치 전 승인 요구 가능"
+            ]
+          ]
+        },
+        {
+          "type": "info",
+          "title": "💡 도입 팁",
+          "text": "처음에는 **한 채널에 하나의 에이전트**만 추가해 역할을 좁게 시험해 보는 것을 권합니다. 이는 해석에 가까운 제안이며, 문서가 요구하는 절차는 아닙니다."
+        }
+      ]
+    },
+    {
+      "heading": "🏢 Agentforce로 만들기: 세일즈포스 조직용",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "세일즈포스를 쓰는 조직이라면 도움말 센터의 Agentforce 설정 문서가 근거입니다. 핵심은 **슬랙용 에이전트는 Agentforce Employee Agent 유형으로만 만들 수 있다**는 점이며, **모든 슬랙 플랜에서 Agentforce 라이선스가 있을 때** 쓸 수 있다고 적혀 있습니다."
+        },
+        {
+          "type": "list",
+          "items": [
+            "먼저 세일즈포스 조직과 슬랙을 연결하고, 아직 슬랙에서 세일즈포스 접근 권한을 받지 않은 멤버는 계정을 수동으로 매핑합니다(세일즈포스 계정이 없는 사람은 임시 세일즈포스 라이선스가 필요).",
+            "Agentforce Studio 앱에서 에이전트를 골라 Connections 옆 + 버튼으로 Add Connection 을 선택하고 Slack 을 고른 뒤 Add to Agent 를 누릅니다.",
+            "우측 상단에서 Commit Version 후 Activate 합니다.",
+            "Pro·Business+ 에서는 Admin → Manage Agentforce → Review agent 에서 권한을 검토하고 Install Agent 를 누릅니다."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "제공되는 템플릿은 **Customer Insights Agent, Employee Help Agent, Onboarding Agent** 세 가지입니다. Employee Agent 의 멤버 접근은 세일즈포스 권한에 따라 자동으로 정해지지만, **Agentforce 서비스 에이전트는 소유자·관리자가 접근 권한을 할당하기 전에는 아무도 쓸 수 없다**고 하니, 계정 매핑(개별 추가 또는 CSV)과 권한 할당을 잊지 마세요."
+        },
+        {
+          "type": "paragraph",
+          "text": "슬랙 동작을 더하고 싶다면 개발자 문서의 **커스텀 슬랙 액션** 가이드가 있습니다. 슬랙 앱을 만들고 세일즈포스에 인증·자격 증명을 설정한 뒤 Apex 클래스(채널 조회, 메시지 전송)를 만들어 배포하는 **8단계 구성**이며, 개발 환경으로 Salesforce CLI 와 VSCode 를 쓰고 Java 런타임 오류가 나면 OpenJDK 21 을 설치하라고 안내합니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 라이선스 확인",
+          "text": "Agentforce 경로는 **Salesforce 측 라이선스와 관리자 권한**이 전제입니다. 슬랙만으로는 진행할 수 없으니 관리자와 먼저 조율하세요."
+        }
+      ]
+    },
+    {
+      "heading": "🔌 Add to Slack: 코드 없이 연결하기",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "슬랙 공식 블로그는 **2026년 8월 20일** 게시글에서 Add to Slack 을 소개했습니다. 에이전트 빌더 도구 안에 들어 있는 \"안전한 원클릭 다리\"로, 파트너 플랫폼에서 만든 에이전트를 **맞춤 코드나 복잡한 설정 없이** 슬랙 채널에 배포한다는 설명입니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "런치 파트너는 **Hyperagent, LangChain, Lovable, n8n, NanoClaw, OpenAI, Runlayer, Skydive, Superhuman(Go for Slack), Vercel** 10곳입니다. 플랫폼이 멀티 테넌트 권한 범위와 인증을 자동 처리하고, 에이전트는 **워크스페이스의 권한과 데이터 경계를 그대로 물려받는다**고 합니다."
+        },
+        {
+          "type": "info",
+          "title": "💡 어떤 경로를 고를까",
+          "text": "이미 위 파트너 플랫폼에서 에이전트를 만들고 있다면 Add to Slack, 세일즈포스 중심이라면 Agentforce, 동작을 세밀하게 제어하고 싶다면 Slack CLI 개발 경로가 자연스럽습니다. 이는 문서 내용을 바탕으로 한 해석입니다."
+        }
+      ]
+    },
+    {
+      "heading": "🧪 에이전트에게 붙여넣기: 시작 지시문 예시",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "아래는 독자가 코딩 에이전트에게 그대로 붙여넣을 수 있는 **복사용 지시문 예시**입니다. 명령과 설정은 위에서 확인한 공식 문서 범위 안에서만 요청하도록 짰습니다."
+        },
+        {
+          "type": "code",
+          "language": "plaintext",
+          "code": "슬랙 공식 문서(docs.slack.dev/ai/agent-quickstart)의 빠른 시작을 따라 슬랙 에이전트를 만들고 싶어.\n1) Slack CLI 설치와 slack login 을 안내해 줘.\n2) slack create agent 로 프로젝트를 만들고 Claude Agent SDK 폴더를 사용해 줘.\n3) .env.sample 을 .env 로 복사하고 ANTHROPIC_API_KEY 를 넣을 위치를 알려줘. 키 값 자체는 내가 직접 입력할게.\n4) slack run 으로 실행한 뒤 앱 홈, DM, @멘션으로 동작을 확인하는 방법을 정리해 줘.\n문서에 없는 명령이나 설정은 지어내지 말고, 모르면 모른다고 말해 줘."
+        },
+        {
+          "type": "paragraph",
+          "text": "이렇게 **문서 범위를 명시하고 '지어내지 말라'는 조건**을 함께 주면, 에이전트가 존재하지 않는 옵션을 만들어 내는 위험을 줄이는 데 도움이 됩니다."
+        }
+      ]
+    },
+    {
+      "heading": "⚠ 한계와 주의사항",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "이 글은 슬랙 공식 문서·도움말·블로그 7개를 직접 읽고 정리한 것으로, **문서에 없는 화면 경로나 가격은 다루지 않았습니다.** 특히 Agentforce·유료 플랜의 구체적인 요금, Add to Slack 파트너별 지원 범위는 문서에서 확인하지 못했습니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 게스트와 권한",
+          "text": "**게스트는 AI 앱·에이전트를 쓸 수 없고**, 관리자는 에이전트를 숨기거나 설치 전 승인을 요구할 수 있습니다. 도입 전에 워크스페이스 정책을 확인하세요."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 문서는 바뀔 수 있습니다",
+          "text": "에이전트 API와 UI 명칭은 빠르게 바뀔 수 있습니다. 작업 전에 **공식 문서의 최신 내용**을 다시 확인하세요."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "슬랙 에이전트를 만들려면 꼭 유료 플랜이 필요한가요?",
+      "a": "공식 에이전트 개발 문서는 일부 AI 기능의 개발·사용에 유료 플랜이 필요하지만, 유료 플랜이 없다면 Developer Program 에 가입해 모든 기능을 갖춘 샌드박스를 무료로 받을 수 있다고 안내합니다."
+    },
+    {
+      "q": "어떤 AI 모델·프레임워크를 쓸 수 있나요?",
+      "a": "빠른 시작은 Claude Agent SDK, OpenAI Agents SDK, Pydantic AI 세 가지 프레임워크를 안내합니다(Pydantic AI 는 Bolt for Python 에서만). 예제는 Claude Agent SDK 기준이라 .env 에 ANTHROPIC_API_KEY 를 넣도록 되어 있습니다."
+    },
+    {
+      "q": "코드를 못 쓰는데 만들 수 있나요?",
+      "a": "Add to Slack 은 파트너 플랫폼(Lovable, n8n 등 10곳)에서 만든 에이전트를 코드 없이 슬랙에 연결하는 방식이라고 소개됩니다. Agentforce 도 빌더 화면에서 설정하지만 Agentforce 라이선스와 관리자 조율이 필요합니다."
+    },
+    {
+      "q": "팀원은 에이전트를 어떻게 쓰나요?",
+      "a": "사이드바 Agents & tools 에서 New Chat 으로 대화하거나, 채널에서 @에이전트 이름으로 부를 수 있습니다. 채널의 Agents & apps 탭에서 추가·제거도 가능합니다. 게스트는 사용할 수 없습니다."
+    },
+    {
+      "q": "Agentforce 에이전트는 어떤 유형이어야 하나요?",
+      "a": "도움말 센터 문서에 따르면 슬랙용 에이전트는 Agentforce Employee Agent 유형으로만 만들 수 있습니다."
+    }
+  ],
+  "closing": "지금까지 슬랙에 에이전트 직원을 만드는 방법에 대해 알아보았습니다. 직접 개발하는 Slack CLI 경로, 세일즈포스의 Agentforce 경로, 파트너 플랫폼의 Add to Slack 경로 중 팀 상황에 맞는 길을 고르면 됩니다. 다만 유료 플랜 세부 조건과 파트너별 지원 범위처럼 문서에서 확인하지 못한 부분은 남아 있으니 공식 문서를 함께 확인하세요. 여러분도 한번 슬랙 에이전트를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+  "caveat": "이 글은 2026-09-30 기준 공식 문서를 바탕으로 하며, 플랜 조건·메뉴 이름·API는 바뀔 수 있으니 공식 문서에서 최신 정보를 확인하세요.",
+  "hashtags": [
+    "슬랙",
+    "Slack",
+    "슬랙에이전트",
+    "AI에이전트",
+    "SlackCLI",
+    "Agentforce",
+    "AddToSlack",
+    "ClaudeAgentSDK",
+    "에이전트만들기",
+    "업무자동화",
+    "AI도구",
+    "사용가이드",
+    "슬랙봇"
+  ],
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7"
+  ]
+}

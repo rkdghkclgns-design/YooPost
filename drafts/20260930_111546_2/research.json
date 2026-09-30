@@ -1,0 +1,73 @@
+{
+ "topic": "슬랙에 에이전트 직원 만들기 — Quickstart: Creating a Slack agent",
+ "source_url": "https://docs.slack.dev/ai/agent-quickstart/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Quickstart: Creating a Slack agent",
+   "url": "https://docs.slack.dev/ai/agent-quickstart/",
+   "publisher": "Slack Developer Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Developing an agent",
+   "url": "https://docs.slack.dev/ai/developing-agents/",
+   "publisher": "Slack Developer Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AI in Slack overview",
+   "url": "https://docs.slack.dev/ai/",
+   "publisher": "Slack Developer Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Work with AI agents in Slack",
+   "url": "https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack",
+   "publisher": "Slack Help Center",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Set up and manage Agentforce in Slack",
+   "url": "https://slack.com/help/articles/36218109305875-Set-up-and-manage-Agentforce-in-Slack",
+   "publisher": "Slack Help Center",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Anyone can now build Agents on Slack: Introducing Add to Slack",
+   "url": "https://slack.com/blog/news/add-to-slack",
+   "publisher": "Slack",
+   "published": "2026-08-20",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Customizing Agentforce agents with Slack actions",
+   "url": "https://docs.slack.dev/ai/customizing-agentforce-agents-with-custom-slack-actions/",
+   "publisher": "Slack Developer Docs",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 68,
+  "confirmed": 68,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 공식 문서 7개를 모두 다시 열어(HTTP 200, 막힌 출처 없음) 명령·권한·이벤트·API 메서드·메뉴 경로·플랜 조건·파트너 10곳·블로그 게시일(2026-08-20, 페이지 표기 'August 20th, 2026')을 대조. 수정 7건: ① 빠른 시작 순서(cd 프레임워크 폴더 → cp .env 순, 목록·코드 블록) ② 준비물 3단계를 문서대로(설치·로그인·샘플 프로젝트 생성) ③ Pydantic AI 는 Bolt for Python 에서만 선택지 ④ '5개 이벤트 구독 필요' → 추가 확인 이벤트 3개 + message.im·app_home_opened 수신으로 정정 ⑤ 유료 플랜 조건을 '일부 AI 기능'으로 정정(요약·본문·FAQ) ⑥ Agentforce 계정 매핑 대상·임시 라이선스, Employee Agent 자동 접근 vs Service Agent 수동 할당 구분 ⑦ OpenJDK 21 은 Java 런타임 오류 시 설치 안내로 정정, 참고 문서 수 '4~5개' → 7개. 뺀 문장 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790734476267849",
+  "kind": "single"
+ }
+}
