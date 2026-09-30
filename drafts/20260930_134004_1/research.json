@@ -1,0 +1,151 @@
+{
+ "topic": "구글 Gemini 4 출시 소식 — Google says Gemini 4 release is coming 'as soon as possible' (9to5Google, 2026-09-24) / 공식: Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+   "publisher": "Google",
+   "published": "2026-09-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Gemini 3.8 Flash - Model Card",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+   "publisher": "Google DeepMind",
+   "published": "2026-09-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Gemini models | Gemini API",
+   "url": "https://ai.google.dev/gemini-api/docs/models",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Gemini Apps release notes",
+   "url": "https://gemini.google/release-notes/",
+   "publisher": "Google",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Gemini models",
+   "url": "https://deepmind.google/models/gemini/",
+   "publisher": "Google DeepMind",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Gemini (The Keyword)",
+   "url": "https://blog.google/products/gemini/",
+   "publisher": "Google",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Google says Gemini 4 release is coming 'as soon as possible'",
+   "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/",
+   "publisher": "9to5Google",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Gemini 4 is in post-training and could ship before the end of 2026",
+   "url": "https://thenextweb.com/news/gemini-4-release-kavukcuoglu-post-training",
+   "publisher": "The Next Web",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Google plans Gemini 4 release before year-end",
+   "url": "https://www.computerworld.com/article/4226640/google-plans-gemini-4-release-before-year-end.html",
+   "publisher": "Computerworld",
+   "published": "2026-09-25",
+   "official": false
+  },
+  {
+   "id": "S10",
+   "title": "Google Gemini 4 is coming later this year with something to prove",
+   "url": "https://www.techzine.eu/news/applications/144581/google-gemini-4-is-coming-later-this-year-with-something-to-prove/",
+   "publisher": "Techzine",
+   "published": "2026-09-25",
+   "official": false
+  },
+  {
+   "id": "S11",
+   "title": "Gemini 3.1 Pro - Model Card",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+   "publisher": "Google DeepMind",
+   "published": "2026-02-19",
+   "official": true
+  },
+  {
+   "id": "S12",
+   "title": "A new era of intelligence with Gemini 3",
+   "url": "https://blog.google/products/gemini/gemini-3/",
+   "publisher": "Google",
+   "published": "2025-11-18",
+   "official": true
+  },
+  {
+   "id": "S13",
+   "title": "Introducing Gemini 3.8 Live with Live Avatar",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+   "publisher": "Google",
+   "published": "2026-09-24",
+   "official": true
+  },
+  {
+   "id": "S14",
+   "title": "Gemini 3.8 text-to-speech says hello",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+   "publisher": "Google",
+   "published": "2026-09-23",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3-8-flash__evals__deepswe-plot__light.original.png",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+   "caption": "Gemini 3.8 Flash 공식 스펙 관련 DeepSWE v1.1 점수와 작업당 평균 비용 비교 차트 (Gemini 3.8 Flash vs 3.7 Flash 등)",
+   "credit": "Google (출처: Datacurve AI)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3-8-cyber__evals__cwe-bench_light.original.png",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+   "caption": "Gemini 3.8 Flash Cyber CWE-Bench 패치 Pass@1과 롤아웃당 비용 비교 차트",
+   "credit": "Google"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 56,
+  "removed": [
+   "요약: 'Pro 플래그십은 Gemini 3.1 Pro' — 공식 페이지에 '플래그십' 표기 없음 → 'Pro 급은 3.1 Pro가 공식 페이지에 올라 있음(API 문서 프리뷰)'로 수정",
+   "라인업 섹션: 'API 문서에서 가장 강력한 추론 모델이 Gemini 3.1 Pro(프리뷰)로 안내' — API 문서에 그런 문구 없음(3.1 Pro는 Preview 목록, 설명은 'Advanced intelligence...') → 삭제, 프리뷰 분류 사실만 남김",
+   "라인업 표: '3.8 Flash 현재 최신 Flash', '3.1 Pro 딥마인드·API 문서에 Pro 급으로 표기' → API 문서 원문('가장 지능적인 Flash')·모델 카드 게시일·프리뷰 여부로 수정",
+   "배경 섹션: 'TNW — 허사비스로부터 운영을 넘겨받은 뒤의 첫 대형 과제와 맞물려' — '첫 대형 과제'는 원문에 없음 → '8월 조직 개편 이후 일상 운영을 맡음'(TNW)·Computerworld/Techzine 교차 보도로 수정",
+   "3.8 Flash Cyber: '실제 취약점 탐지 성공률 70% 이상' — 원문은 구글 자체 내부 벤치마크 → '자체 내부 벤치마크'로 수정; 'Fairwind 대상자에게만 제공' → 원문 'prioritized access'(정부 기관·핵심 기반시설 운영자·SW 유지 관리자)로 수정",
+   "3.8 Live/TTS: '구글 블로그에 3.8 Live·3.8 TTS 소개 글이 올라와 있다'는 목록 서술 → 두 글 본문을 열어 날짜(09-24, 09-23)·제공처·기능으로 대체"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S10 을 모두 다시 열어 확인(EGRESS_BLOCKED 없음). 공식 블로그 HTML 원문에서 가격 각주(2026-12-31 종료, 2027-01-01부터 $1.50/$7.50)·제공 경로·Fairwind·70%(내부 벤치마크)·47.2% 확인, 모델 카드에서 1M/64K·입력 형식·지식 기준(2026년 3월, 일부 2025년 1월) 확인. API 문서: 3.8 Flash/Live/Flash TTS Stable, 3.1 Pro Preview, 3.5 Pro·Gemini 4 없음. 딥마인드 페이지: '3.5 Pro coming soon', Gemini 4 없음. 릴리스 노트 최신 2026.09.10 Windows 앱. Gemini 4 는 미출시 — 관련 서술은 모두 '보도에 따르면'/언론사 명시. 9to5Google(행사·인용문·Antigravity 내부 테스트·3 Pro 2025-11·3.1 Pro 2026-02), TNW(8월 개편·Antigravity), Computerworld·Techzine(10월설은 관측, Pro/Flash 선후 불명) 확인. 3 Pro·3.1 Pro 시점은 공식 S12(2025-11-18)·S11(2026-02-19)로 교차 확인해 추가. 3.8 Live(S13)·TTS(S14) 본문을 열어 확인된 사실로 분량 보완. 인용 이미지 2개(S1 본문 DeepSWE·CWE-Bench 차트, 200 image/png 3840x2160) 추가."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743099972139",
+  "kind": "single"
+ }
+}
