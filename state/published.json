@@ -388,5 +388,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/cot-316.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🛡 NVIDIA Open Agent Safety Platform 총정리: OpenShell·Sentry로 AI 에이전트 가두는 법, 100곳 이상 참여",
+  "topic": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (NVIDIA, 2026-09-28)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/nvidia-open-agent-safety-platform.html"
+  }
  }
 ]
