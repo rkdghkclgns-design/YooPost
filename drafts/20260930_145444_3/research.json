@@ -1,0 +1,87 @@
+{
+ "topic": "Frontier Learning: Training LLM Reasoners at the Edge of Capability (arXiv 2609.35426, 2026-09-28)",
+ "source_url": "https://arxiv.org/abs/2609.35426",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Frontier Learning: Training LLM Reasoners at the Edge of Capability (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2609.35426",
+   "publisher": "arXiv",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Frontier Learning: Training LLM Reasoners at the Edge of Capability (HTML full text)",
+   "url": "https://arxiv.org/html/2609.35426",
+   "publisher": "arXiv / 저자(University of Basel·UCL)",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Frontier Learning (PDF)",
+   "url": "https://arxiv.org/pdf/2609.35426",
+   "publisher": "arXiv",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+   "url": "https://arxiv.org/abs/2503.14476",
+   "publisher": "arXiv",
+   "published": "2025-03-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (GRPO)",
+   "url": "https://arxiv.org/abs/2402.03300",
+   "publisher": "arXiv",
+   "published": "2024-02-05",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Prioritized Level Replay",
+   "url": "https://arxiv.org/abs/2010.03934",
+   "publisher": "arXiv",
+   "published": "2020-10-08",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.35426v1/Formatting_Instructions_For_NeurIPS_2026/figures/concept2.png",
+   "page_url": "https://arxiv.org/html/2609.35426",
+   "caption": "Frontier Learning 등장 배경: 모델 능력이 오르면 프런티어가 바깥으로 이동하고, 프로시저럴 생성으로 그 근처 훈련 데이터를 계속 만드는 개념도",
+   "credit": "Faro et al., arXiv 2609.35426 (CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2609.35426v1/pipeline_fl11.png",
+   "page_url": "https://arxiv.org/html/2609.35426",
+   "caption": "Frontier Learning 핵심 아이디어: GRPO와 함께 도는 한 번의 반복(레벨 배치 구성·변이·생성·후회 추적) 파이프라인",
+   "credit": "Faro et al., arXiv 2609.35426 (CC BY 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2609.35426v1/Formatting_Instructions_For_NeurIPS_2026/figures/largest_island_olmo3_bin_curves.png",
+   "page_url": "https://arxiv.org/html/2609.35426",
+   "caption": "Frontier Learning 장기 학습: Olmo3-7B-Instruct의 Largest Island 난이도별 정확도, 500 GRPO 스텝 학습 곡선",
+   "credit": "Faro et al., arXiv 2609.35426 (CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 67,
+  "confirmed": 67,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5, 2026-09-30): arXiv 초록 페이지(S1)와 HTML 전문(S2: 본문·표1·표2·표3·ablation·부록 H 계산 비용 표8~12)을 다시 열어 67개 주장을 대조. 제출일 2026-09-28(v1, Mon 28 Sep 2026 15:35 UTC)·저자 4인·소속(Basel·UCL)·분류(cs.LG 주, cs.AI·cs.CL) 확인. Countdown/Llama 2위 Domain Rand. 33.8±1.9, +16.0% 확인. 수정 1건: 변이를 '더 어려운 쪽으로'라고 쓴 부분을 원문대로 '방향 없는 작은 섭동(속성 하나)'과 성공률 5%/95% 기준 3구간 상태 의존 확률로 고침. FlatMut 설명은 원문 'level-independent probability'에 맞춰 다듬음. Decimal Arithmetic 설명(다항→여러 항)·평가 4시드 평균 보완. S3~S6 링크 200 확인, 인용 이미지 3개 모두 image/png 200 확인. 삭제 문장 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
