@@ -448,5 +448,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-marketplace-2000.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🧭 LLM 에이전트 계획 실행 논문 분석: 계획 구조 유지 22~45%·ALFWorld 0.48→0.92 총정리",
+  "topic": "Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution (arXiv 2609.38108, 2026-09-29)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.38108",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/llm-2245alfworld-048092.html"
+  }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🧪 Ortet 출범 총정리: Thoreau 5억 달러 약정·조경현 CEO, 건강 전용 프런티어 AI 연구소",
+  "topic": "Ortet Launches as Frontier AI Lab for Health With $500 Million Commitment from Thoreau (Business Wire, 2026-09-29)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.financialcontent.com/article/bizwire-2026-9-29-ortet-launches-as-frontier-ai-lab-for-health-with-500-million-commitment-from-thoreau",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ortet-thoreau-5-ceo-ai.html"
+  }
  }
 ]
