@@ -1,0 +1,120 @@
+{
+ "topic": "MLflow dspy and statsmodels flavors bypass pickle deserialization control — CERT/CC VU#369093 (CVE-2026-96775·CVE-2026-96804, 2026-09-16) / GHSA-gqvg-gmmx-x4hm",
+ "source_url": "https://kb.cert.org/vuls/id/369093",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "VU#369093 - MLflow dspy and statsmodels flavors bypass pickle deserialization control",
+   "url": "https://kb.cert.org/vuls/id/369093",
+   "publisher": "CERT/CC",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False safety control bypassed by mlflow.statsmodels flavor (GHSA-gqvg-gmmx-x4hm)",
+   "url": "https://github.com/mlflow/mlflow/security/advisories/GHSA-gqvg-gmmx-x4hm",
+   "publisher": "MLflow (GitHub Security Advisory)",
+   "published": "2026-07-27",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "GHSA-gqvg-gmmx-x4hm",
+   "url": "https://osv.dev/vulnerability/GHSA-gqvg-gmmx-x4hm",
+   "publisher": "OSV",
+   "published": "2026-09-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False safety control bypassed by mlflow.statsmodels flavor",
+   "url": "https://advisories.gitlab.com/pypi/mlflow/GHSA-gqvg-gmmx-x4hm/",
+   "publisher": "GitLab Advisory Database",
+   "published": "2026-09-01",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Pickle-Free Model format",
+   "url": "https://mlflow.org/docs/latest/ml/tracking/pickle-free-models/",
+   "publisher": "MLflow",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "mlflow.environment_variables",
+   "url": "https://mlflow.org/docs/latest/api_reference/python_api/mlflow.environment_variables.html",
+   "publisher": "MLflow",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Add MLFLOW_ALLOW_PICKLE_DESERIALIZATION guard to mlflow.statsmodels flavor (#24686)",
+   "url": "https://github.com/mlflow/mlflow/pull/24686",
+   "publisher": "MLflow (GitHub)",
+   "published": "2026-07-27",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "MLflow v3.15.0 release notes",
+   "url": "https://github.com/mlflow/mlflow/releases/tag/v3.15.0",
+   "publisher": "MLflow (GitHub)",
+   "published": "2026-07-31",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "CVE-2026-96804 record",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/96xxx/CVE-2026-96804.json",
+   "publisher": "CVE Program (CNA: CERT/CC)",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "CVE-2026-96775 record",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/96xxx/CVE-2026-96775.json",
+   "publisher": "CVE Program (CNA: CERT/CC)",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S11",
+   "title": "mlflow · PyPI (release history)",
+   "url": "https://pypi.org/project/mlflow/#history",
+   "publisher": "PyPI",
+   "published": "",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처인 CERT/CC 권고·GitHub 보안 권고·PR·3.15.0 릴리스 노트·CVE 레코드·MLflow 문서는 모두 글자·코드 중심이라 원고와 관련된 본문 그림이 없다 (MLflow 문서 페이지의 이미지는 로고뿐, CERT/CC·릴리스 페이지 본문 이미지 없음 — Opus 검증 시 재확인).",
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 46,
+  "removed": [
+   "GitHub 권고가 제시한 임시 대응은 두 가지입니다. 아티팩트 저장소 접근을 제한하고, 3.15.0 으로 올리기 전까지는 배포된 모델을 불러오기 전에 검토하라는 것입니다. (GHSA 원문에 workaround 없음)",
+   "수정 방법은 3.15.0 에서 statsmodels flavor 에 빠져 있던 보호 코드가 추가된 것으로 OSV 가 설명합니다. (OSV 에 그런 설명 없음 → PR #24686·3.15.0 릴리스 노트 근거로 교체)",
+   "CVE-2026-96775(statsmodels)/CVE-2026-96804(dspy) 1:1 대응 표기 (요약·본문·스펙 표) — CERT/CC 본문과 CERT/CC 가 등록한 CVE 레코드가 반대로 적어 flavor 이름 기준으로 바꾸고 차이를 명시"
+  ],
+  "corrected": [
+   "'CERT/CC 보고일 2026-08-07' → 'MLflow 통보일(CERT/CC 기재)' (페이지 표기는 Notified: 2026-08-07)",
+   "'일부 제3자 CVE 데이터베이스가 다르게 매핑' → CERT/CC 가 CNA 로 등록한 공식 CVE 레코드가 반대로 매핑",
+   "제목의 CVSS 8.8 을 statsmodels(GHSA)에만 귀속 (dspy CVSS 는 출처 없음)",
+   "GHSA 영향 범위 표기: GHSA 는 '>= 2.1.0 / patched 3.15.0', '<3.15.0' 범위는 OSV·GitLab 기준으로 출처 구분",
+   "인증 없는 기본 배포 설명의 출처를 GHSA 원문(--app-name basic-auth 없는 배포)으로 정정",
+   "PyTorch pt2 장치 조건(저장 장치 그대로 로드)·LightGBM(Booster 제외)·기본값 전환 영향 문구를 문서 원문대로 정정",
+   "pip 명령은 권고 원문 명령이 아닌 일반 명령임을 본문·코드 주석에 명시 (export 줄만 MLflow 문서 원문)",
+   "dspy 수정 여부: master 코드는 여전히 .pkl 분기가 있고 공식 수정 발표는 확인 못 함 → 'CERT/CC 권고 기준 패치 없음'으로 표현 한정"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): CERT/CC VU#369093 원문을 curl 로 직접 받아 전문 대조, GHSA 는 GitHub 페이지+OSV API JSON(원문 details 포함), GitLab 권고, PR #24686, v3.15.0 릴리스 노트, PyPI 릴리스 이력(3.15.0=2026-07-31), CVEProject/cvelistV5 의 CVE-2026-96775·96804 JSON, MLflow pickle-free 문서 원문을 다시 열어 확인. 3.15.0 수정은 공식 PR·릴리스 노트로 확인. 막힌(EGRESS_BLOCKED/403) 출처 없음. 본문 그림은 모든 출처에서 없음(로고만) → images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}

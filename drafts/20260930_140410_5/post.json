@@ -1,0 +1,437 @@
+{
+ "title": "🔒 MLflow 피클 안전장치 우회 총정리: statsmodels(CVSS 8.8)·dspy 원격 코드 실행과 3.15.0 대응법",
+ "category": "AI 보안",
+ "intro": "안녕하세요! 2026년 9월 16일, CERT/CC(취약점 조정 기관)가 오픈소스 머신러닝 플랫폼 **MLflow**의 취약점 권고 **VU#369093**을 공개했습니다. 모델을 불러오는 순간 공격자가 심어 둔 코드가 실행될 수 있는데, 이를 막으려고 만든 스위치 **MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False**를 두 가지 모델 방식(flavor)이 그냥 지나쳐 버린다는 내용입니다. 이 글에서는 CERT/CC 권고와 GitHub 보안 권고, MLflow 공식 문서에 적힌 사실만 모아 무엇이 문제인지, 어떤 버전이 영향을 받는지, 지금 무엇을 점검해야 하는지 차근차근 정리합니다. AI 서비스의 모델 저장소를 운영하는 분이라면 꼭 확인해 보셔야 하는 내용입니다. 함께 살펴보시죠!",
+ "summary": [
+  "CERT/CC 는 2026-09-16 MLflow 의 dspy·statsmodels flavor 가 피클 역직렬화 통제를 우회한다는 권고 VU#369093 을 공개했습니다 (마지막 갱신 2026-09-23).",
+  "statsmodels flavor 는 MLFLOW_ALLOW_PICKLE_DESERIALIZATION 확인이 아예 없고, dspy flavor 는 모델 경로가 .pkl 로 끝날 때만 확인합니다. CVE 번호는 CVE-2026-96775·CVE-2026-96804 두 개입니다 (flavor 대응은 자료마다 다름).",
+  "GitHub 권고 GHSA-gqvg-gmmx-x4hm(statsmodels)은 심각도 High(CVSS 8.8), 수정 버전 3.15.0 이며, OSV·GitLab 은 영향 범위를 2.1.0 이상 3.15.0 미만으로 표시합니다.",
+  "공격에는 모델 저장 위치(artifact store)에 쓰기 권한이 필요합니다. 다만 인증 없는 기본 설치에서는 업로드에 자격 증명이 필요 없다고 OSV 는 설명합니다.",
+  "dspy 쪽은 권고 시점에 패치가 없어 해당 flavor 로 모델을 불러오지 않는 것이 CERT/CC 의 안내입니다.",
+  "이 글에서 배울 것: 무엇이 우회되는지, 영향 버전, 지금 할 점검 순서, 피클 없는 모델 형식(pickle-free)으로 옮기는 방법"
+ ],
+ "sections": [
+  {
+   "heading": "🔒 MLflow 권고 VU#369093 한눈에 보기",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "CERT/CC 권고의 제목은 'MLflow dspy and statsmodels flavors bypass pickle deserialization control' 입니다. 쉽게 말해 **피클 역직렬화 통제 우회**입니다. 피클(pickle)은 파이썬 객체를 파일로 저장하고 다시 불러오는 표준 방식인데, 불러오는 순간 파일 안의 코드를 실행할 수 있어서 출처를 모르는 파일에는 위험합니다. MLflow 는 이 위험을 줄이려고 환경 변수 **MLFLOW_ALLOW_PICKLE_DESERIALIZATION** 을 제공하며, false 로 두면 피클 방식으로 저장된 모델을 불러올 때 오류를 내도록 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "문제는 이 스위치를 모든 모델 방식이 지키지는 않는다는 점입니다. CERT/CC 는 두 가지를 짚었습니다. **statsmodels flavor** 는 \"there is no check for MLFLOW_ALLOW_PICKLE_DESERIALIZATION at all\" 이라고 표현된 것처럼 확인 자체가 없고, **dspy flavor** 는 모델 경로가 .pkl 로 끝나는지에 따라 확인하기 때문에 .pkl 로 끝나지 않는 경로는 실제로 피클 파일이어도 별도 분기로 넘어가 통제를 피해 갑니다. 두 취약점에는 **CVE-2026-96775·CVE-2026-96804** 가 배정되었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "영향은 두 가지 모두 **임의 원격 코드 실행**입니다. CERT/CC 는 사용자가 피클을 허용하지 않도록 명시했더라도 악성 피클 페이로드(payload, 실제 공격 내용물)로 코드가 실행될 수 있다고 적었습니다. 즉 '스위치를 껐으니 안전하다'는 믿음이 이 두 flavor 에서는 맞지 않았다는 뜻입니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글이 다루는 범위",
+     "text": "이 글은 CERT/CC 권고, GitHub 보안 권고(GHSA), OSV·GitLab 권고 데이터베이스, MLflow 공식 문서에서 직접 확인한 내용만 사용합니다. 실제 공격 사례가 보고되었다는 내용은 확인한 자료에 없으므로 다루지 않습니다."
+    }
+   ]
+  },
+  {
+   "heading": "📰 등장 배경: 피클과 MLflow 의 안전 스위치",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "MLflow 는 모델을 저장하고 불러오는 과정을 flavor 라는 단위로 나눕니다. scikit-learn, PyTorch, LangChain, statsmodels, dspy 같은 각 도구마다 flavor 가 있고, 모델을 불러올 때 flavor 별 코드가 실행됩니다. MLflow 공식 문서는 전통적인 피클 직렬화가 \"can execute arbitrary code during deserialization\" 이라고 설명합니다. 그래서 **MLFLOW_ALLOW_PICKLE_DESERIALIZATION=false** 를 설정하면 피클이나 클라우드피클(cloudpickle)로 저장된 모델을 불러올 때 오류가 나도록 하는 전역 통제를 제공합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 문서에는 기본값이 **true** 라고 되어 있습니다. 예전 모델과의 호환성을 위해서입니다. 따라서 이 스위치를 직접 false 로 바꾼 조직만이 이번 우회의 의미를 실감하게 됩니다. 스위치를 켜 둔 조직은 안전하다고 믿고 있었는데, 두 flavor 에서는 그 믿음이 깨지는 셈입니다. 스위치를 켜지 않은 조직은 애초에 피클 모델을 불러오는 것이 허용된 상태이므로, 모델 저장소 접근 통제가 더 중요해집니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "MLflow 공식 문서 기준 내용"
+     ],
+     "rows": [
+      [
+       "환경 변수",
+       "MLFLOW_ALLOW_PICKLE_DESERIALIZATION"
+      ],
+      [
+       "false 로 설정하면",
+       "피클·클라우드피클로 저장된 모델을 불러올 때 오류 (피클 없는 저장 방식을 쓴 모델은 제외)"
+      ],
+      [
+       "기본값",
+       "true (하위 호환을 위해)"
+      ],
+      [
+       "예외",
+       "Databricks Runtime 은 관리형 아티팩트 저장소가 모델 파일을 무단 변경으로부터 보호하므로 항상 허용"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "이 표는 '스위치가 원래 무엇을 약속했는가'를 보여 줍니다. 이번 권고는 **약속과 실제 동작의 차이**를 다룹니다. 문서상 통제가 있어도 특정 코드 경로가 그 통제를 호출하지 않으면 통제는 없는 것과 같습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이후 장에서는 두 취약점을 하나씩 나눠 보겠습니다. statsmodels 는 **확인이 통째로 빠진 경우**, dspy 는 **확인이 있지만 조건이 잘못된 경우**입니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ 두 취약점 공식 스펙 정리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래 표는 CERT/CC 권고, GitHub 보안 권고, CVE 레코드, MLflow 릴리스 노트에서 확인한 항목을 나란히 놓은 것입니다. **수치와 버전은 출처 표기 그대로**이며, 자료끼리 다른 부분은 따로 적었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "statsmodels flavor",
+      "dspy flavor"
+     ],
+     "rows": [
+      [
+       "대상 코드",
+       "mlflow.statsmodels 의 _load_model()",
+       "mlflow.dspy 불러오기 코드"
+      ],
+      [
+       "원인",
+       "MLFLOW_ALLOW_PICKLE_DESERIALIZATION 확인이 전혀 없음",
+       "모델 경로가 .pkl 로 끝날 때만 확인 — 다른 경로는 우회"
+      ],
+      [
+       "영향",
+       "악성 피클로 임의 원격 코드 실행",
+       "악성 피클로 임의 원격 코드 실행"
+      ],
+      [
+       "영향 버전",
+       "2.1.0 이상 3.15.0 미만 (GHSA·OSV·CVE 레코드)",
+       "2.0 이상 (CVE 레코드, 수정 버전 표기 없음)"
+      ],
+      [
+       "해결",
+       "MLflow 3.15.0 이상으로 업그레이드",
+       "패치가 나올 때까지 이 flavor 로 모델 불러오기 금지 (CERT/CC 안내)"
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "headers": [
+      "일정·정보",
+      "내용"
+     ],
+     "rows": [
+      [
+       "MLflow 통보일 (CERT/CC 기재)",
+       "2026-08-07"
+      ],
+      [
+       "CERT/CC 공개일",
+       "2026-09-16"
+      ],
+      [
+       "CERT/CC 마지막 갱신",
+       "2026-09-23"
+      ],
+      [
+       "CERT/CC 확인 기준 버전",
+       "MLflow 3.12.0"
+      ],
+      [
+       "조정 상황",
+       "CERT/CC 는 MLflow 측과 연락이 닿지 않았다고 적음"
+      ],
+      [
+       "CVE 번호",
+       "CVE-2026-96775, CVE-2026-96804 (CERT/CC 배정)"
+      ],
+      [
+       "GitHub 권고",
+       "GHSA-gqvg-gmmx-x4hm (statsmodels), 게시 2026-07-27, 심각도 High, CVSS 8.8, CWE-502(신뢰할 수 없는 데이터의 역직렬화)"
+      ],
+      [
+       "CVSS 벡터 (GHSA·GitLab)",
+       "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+      ],
+      [
+       "statsmodels 영향 버전",
+       "2.1.0 이상 3.15.0 미만 (2.1.0 ~ 3.14.x)"
+      ],
+      [
+       "statsmodels 수정",
+       "PR #24686 (2026-07-27 병합) → 3.15.0 릴리스 노트에 포함, 3.15.0 은 PyPI 기준 2026-07-31 배포"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "벡터를 풀어 보면 **네트워크(AV:N)** 로 접근할 수 있고 복잡도가 낮으며(AC:L) 사전 권한은 필요 없지만(PR:N) 사용자가 모델을 불러오는 동작(UI:R)이 필요합니다. 기밀성·무결성·가용성 영향이 모두 높음(C:H/I:H/A:H)으로 평가되었습니다. 여기서 '사용자 동작'은 누군가가 악성 모델을 실제로 불러와야 한다는 뜻이므로, 모델을 자동으로 불러오는 서비스나 파이프라인이라면 그 동작이 사람 손 없이 일어날 수 있다는 점을 생각해 봐야 합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 날짜 표기가 자료마다 다릅니다",
+     "text": "GitHub 권고 페이지는 게시일을 2026-07-27 로, CERT/CC 는 MLflow 통보일을 2026-08-07·공개일을 2026-09-16·마지막 갱신을 2026-09-23 으로 적었습니다. 서로 다른 절차의 날짜로 보이며, 이 글은 각 출처가 적은 날짜를 그대로 옮겼습니다. CVE 번호와 flavor 의 대응도 자료마다 다릅니다. CERT/CC 권고 본문은 dspy·statsmodels 순서로 CVE-2026-96804·CVE-2026-96775 라고 적었지만, CERT/CC 가 등록한 CVE 레코드에는 CVE-2026-96804 가 statsmodels, CVE-2026-96775 가 dspy 로 되어 있습니다. GitHub 권고 페이지에는 CVE 번호가 표시되어 있지 않았습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧬 statsmodels 취약점 공격 흐름",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub 보안 권고가 설명하는 근본 원인은 이렇습니다. mlflow.statsmodels 의 **_load_model()** 함수가 statsmodels.iolib.api.load_pickle() 을 곧바로 호출하고, 이 함수는 내부에서 pickle.load() 를 실행합니다. sklearn 같은 다른 flavor 에는 불러오기 전에 환경 변수를 확인하는 보호 코드가 있지만 statsmodels 에는 없었습니다. 권고 원문은 이를 \"completely omits this guard\" 라고 표현합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공격자가 하는 일은 **네 단계**로 정리됩니다. GitHub 권고에 적힌 절차를 옮기면 다음과 같습니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "MLmodel 이라는 YAML 설명 파일에 로더로 **mlflow.statsmodels** 를 지정한다.",
+      "임의의 코드가 들어 있는 악성 model.pkl 파일을 함께 넣는다.",
+      "이 모델 산출물을 **접근 가능한 아티팩트 저장소**(artifact store)에 둔다.",
+      "어떤 프로세스가 mlflow.pyfunc.load_model() 로 이 모델을 불러오면 프로세스 권한으로 코드가 실행된다."
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "눈여겨볼 점은 **mlflow.pyfunc.load_model()** 이라는 범용 진입점입니다. 호출하는 쪽은 statsmodels 를 쓴다고 의식하지 않아도, 모델 설명 파일이 그렇게 지정하면 해당 flavor 코드가 실행됩니다. 그래서 권고는 접근 가능한 아티팩트 저장소에 조작된 모델을 두기만 하면, 그 모델을 불러오는 모든 프로세스에서 코드가 실행될 수 있다고 설명합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 인증 없는 기본 배포에 대한 설명",
+     "text": "GitHub 권고(OSV 에도 같은 내용)는 --app-name basic-auth 없이 띄운 기본 MLflow 배포에서는 인증이 꺼져 있어 아티팩트 업로드에 자격 증명이 필요 없다고 적었습니다. 반면 CERT/CC 는 공격에 모델 저장 위치 쓰기 권한이 필요하다고 정리했습니다. 두 설명은 서로 모순되지 않습니다. 쓰기 권한이 필요하다는 것과, 인증이 없는 환경에서는 그 권한을 누구나 가질 수 있다는 것은 함께 성립합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "수정은 **PR #24686** 으로 이뤄졌습니다. 이 PR 은 2026-07-27 병합되었고 statsmodels 불러오기 함수에 환경 변수 확인을 추가했습니다. MLflow **3.15.0 릴리스 노트**에는 '[Models] Add MLFLOW_ALLOW_PICKLE_DESERIALIZATION guard to mlflow.statsmodels flavor (#24686)' 항목이 있고, GitLab 권고의 해결책도 'Upgrade to version 3.15.0 or above' 입니다. GitHub 권고 자체에는 별도의 임시 대응(workaround)이 적혀 있지 않습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧩 dspy 취약점: 확장자로 판단하는 검사의 함정",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "dspy flavor 의 문제는 방향이 다릅니다. 보호 코드가 없는 것이 아니라, **model_path 가 .pkl 로 끝날 때만** 통제를 적용한다는 점이 문제입니다. CERT/CC 는 .pkl 이 아닌 경로는 피클 데이터를 담고 있어도 안전 스위치를 피해 갈 수 있다고 적었습니다. CVE 레코드는 dspy flavor 의 영향 버전을 **2.0 이상**으로 적었고, 조작된 MLmodel 산출물로 원격 공격자가 임의 코드를 실행할 수 있다고 설명합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 유형은 보안에서 자주 보는 실수입니다. 파일 이름이나 확장자는 공격자가 마음대로 정할 수 있기 때문에, 확장자를 보고 안전 여부를 판단하는 방식은 **이름만 바꾸면 통과**하는 구조가 됩니다. 이것은 이 권고의 표현이 아니라 필자의 해석이며, 사실 부분은 확인이 확장자에 의존한다는 점까지입니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ dspy 는 권고 시점에 패치가 없습니다",
+     "text": "CERT/CC 는 statsmodels 는 3.15.0 이상으로 올리라고 안내했지만, dspy 는 추가 수정이 나올 때까지 피클 차단을 원하는 사용자는 해당 flavor 로 모델을 불러오지 말라고 안내했습니다. 이 글 작성 시점에 dspy 수정을 알리는 공식 권고·릴리스 노트는 확인하지 못했으니 MLflow 릴리스와 CERT/CC 권고 페이지의 최신 상태를 직접 확인하세요."
+    },
+    {
+     "type": "paragraph",
+     "text": "정리하면 두 취약점은 같은 결과(안전 스위치 무력화)에 이르는 서로 다른 길입니다. 하나는 **검사 누락**, 다른 하나는 **검사 조건의 오류**입니다. 스위치 하나만 믿는 방어는 이런 경로 하나로 무너질 수 있으므로, 저장소 권한 통제와 함께 쓰는 다층 방어가 필요합니다. 이 역시 필자의 해석입니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 점검: 내 MLflow 환경 확인 순서",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 공식 권고 내용에서 이어지는 점검 순서입니다. **pip 명령은 권고에 적힌 것이 아니라** 파이썬 패키지 설치의 일반적인 형태이고, 환경 변수 설정 줄(export)은 MLflow 공식 문서에 나온 그대로입니다."
+    },
+    {
+     "type": "subheading",
+     "text": "1단계: 버전 확인과 업그레이드"
+    },
+    {
+     "type": "paragraph",
+     "text": "statsmodels 문제의 영향 버전은 **2.1.0 이상 3.15.0 미만**입니다. 설치된 버전이 이 범위인지 확인하고, **3.15.0 이상**으로 올리라는 것이 CERT/CC 와 GitLab 권고의 안내입니다. 업그레이드 후에도 dspy 는 별도 문제로 남습니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# 일반 pip 명령 (권고 원문의 명령은 아님)\npip show mlflow\npip install --upgrade \"mlflow>=3.15.0\"\n# MLflow 공식 문서의 설정\nexport MLFLOW_ALLOW_PICKLE_DESERIALIZATION=false"
+    },
+    {
+     "type": "subheading",
+     "text": "2단계: 모델 저장소 접근 권한 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "공격에는 모델 저장 위치에 쓰기 권한이 필요하다는 것이 CERT/CC 의 설명입니다. 따라서 **누가 아티팩트 저장소에 쓸 수 있는지**를 먼저 확인하는 것이 가장 효과적인 방어선입니다. 인증이 없는 기본 설치라면 업로드에 자격 증명이 필요 없다는 GitHub 권고의 설명을 떠올려 접근 제어부터 걸어야 합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "3단계: dspy flavor 사용 여부 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "dspy flavor 로 모델을 불러오는 코드나 파이프라인이 있는지 찾아보고, 패치가 나오기 전까지는 **불러오지 않도록** 막으라는 것이 CERT/CC 안내입니다. 대안이 필요하면 아래 4단계의 피클 없는 방식을 검토할 수 있습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "4단계: 피클 없는 저장 방식으로 옮기기"
+    },
+    {
+     "type": "paragraph",
+     "text": "MLflow 공식 문서는 피클을 쓰지 않는 저장 방식을 소개합니다. scikit-learn 은 **serialization_format=\"skops\"** 로 저장하며 사용자 정의 구성 요소가 있으면 skops_trusted_types 에 완전한 클래스 이름을 지정합니다. PyTorch 는 **serialization_format=\"pt2\"** 를 쓰고 PyTorch 2.4 이상과 input_example 이 필요합니다. LangChain·커스텀 파이썬 모델은 'Models From Code' 방식으로 피클을 피할 수 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델 종류",
+      "공식 문서의 피클 없는 방식",
+      "주의 조건"
+     ],
+     "rows": [
+      [
+       "scikit-learn",
+       "serialization_format=\"skops\"",
+       "사용자 정의 구성 요소는 skops_trusted_types 지정"
+      ],
+      [
+       "PyTorch",
+       "serialization_format=\"pt2\"",
+       "torch 2.4 이상, input_example 필수(Tensor 입력만), torch.jit.ScriptModule 불가, 저장한 장치 그대로 로드(예: GPU 0 에 저장 → GPU 0 에 로드)"
+      ],
+      [
+       "LightGBM",
+       "serialization_format=\"skops\"",
+       "scikit-learn 형 모델(예: LGBMClassifier)만, lightgbm.Booster 는 제외"
+      ],
+      [
+       "LangChain·커스텀 파이썬",
+       "Models From Code",
+       "피클 자체를 우회"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 문서가 예고한 방향",
+     "text": "MLflow 문서는 앞으로 피클 없는 형식이 기본이 될 예정이라고 적었습니다. scikit-learn·LightGBM·LangChain·커스텀 파이썬 사용자는 대부분 호환이 깨지지 않지만, PyTorch 는 input_example 이 필수가 되고 ScriptModule 을 지원하지 않는 호환성 변화가 있다고 덧붙였습니다. 이번 사건을 계기로 미리 옮겨 두면 나중의 전환 부담을 줄일 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "아래 프롬프트를 AI 코딩 에이전트에 붙여넣으면 내 저장소에서 점검이 필요한 부분을 찾는 데 도움이 됩니다. 에이전트가 찾은 결과는 **반드시 사람이 확인**하세요."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "이 저장소에서 MLflow 를 쓰는 곳을 찾아 다음을 정리해 줘.\n1) requirements 나 lock 파일에 적힌 mlflow 버전 (3.15.0 미만인지)\n2) mlflow.statsmodels, dspy flavor, mlflow.pyfunc.load_model 을 호출하는 코드 위치\n3) MLFLOW_ALLOW_PICKLE_DESERIALIZATION 을 설정하는 곳과 값\n4) 모델 아티팩트 저장소에 쓰기 권한이 있는 계정·토큰\n코드는 수정하지 말고 발견한 위치와 위험도만 표로 보고해 줘."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이 권고를 읽을 때 지켜야 할 선이 있습니다. 첫째, **공격에는 모델 저장 위치 쓰기 권한이 필요**합니다. 아무 인터넷 사용자가 곧바로 남의 서버를 장악한다는 뜻이 아니라, 악성 모델을 저장소에 올릴 수 있는 위치에 있는 공격자가 문제라는 뜻입니다. 그래서 위험도는 조직이 저장소를 어떻게 관리하는지에 따라 크게 달라집니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "둘째, 확인한 자료에서 **실제 악용 사례는 확인되지 않았습니다**. 이 글이 사용한 출처는 취약점의 존재와 수정 방법을 설명할 뿐 공격이 벌어졌다고 말하지 않으며, 그렇다고 안전하다는 증거도 아닙니다. 셋째, CERT/CC 는 MLflow 측과 연락이 닿지 않았다고 적었고, dspy 수정 일정은 확인한 자료에 없습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 스위치를 켰다고 끝이 아닙니다",
+     "text": "MLFLOW_ALLOW_PICKLE_DESERIALIZATION=false 는 유용한 통제지만 이번 권고가 보여 주듯 모든 flavor 에서 동작한다고 가정하면 안 됩니다. 저장소 쓰기 권한 제한, 출처를 모르는 모델 불러오지 않기, 피클 없는 형식 사용을 함께 적용하세요."
+    },
+    {
+     "type": "paragraph",
+     "text": "넷째, **CVE 번호와 flavor 의 대응은 자료마다 다릅니다**. CERT/CC 권고 본문 기준으로는 CVE-2026-96804 가 dspy, CVE-2026-96775 가 statsmodels 이지만, CERT/CC 가 CVE 목록에 등록한 레코드에는 그 반대로 적혀 있습니다. 이 글은 번호 대신 flavor 이름으로 설명했으니, 보안 도구에서 번호로 조회할 때는 두 번호를 모두 확인하시기 바랍니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "질문",
+      "확인된 답"
+     ],
+     "rows": [
+      [
+       "누가 영향받나",
+       "statsmodels: MLflow 2.1.0 이상 3.15.0 미만 / dspy: 2.0 이상 (CVE 레코드)"
+      ],
+      [
+       "당장 할 일",
+       "3.15.0 이상 업그레이드, 저장소 쓰기 권한 점검, dspy flavor 불러오기 중단"
+      ],
+      [
+       "패치가 없는 부분",
+       "dspy (권고 시점 기준)"
+      ],
+      [
+       "악용 사례",
+       "확인한 자료에는 없음"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "MLFLOW_ALLOW_PICKLE_DESERIALIZATION 을 false 로 두면 안전한가요?",
+   "a": "이번 권고 기준으로는 그렇지 않습니다. mlflow.statsmodels 는 이 변수를 아예 확인하지 않았고, dspy 는 .pkl 로 끝나는 경로에만 적용했습니다. 스위치는 여전히 유용하지만 저장소 접근 통제 등 다른 방어와 함께 써야 합니다."
+  },
+  {
+   "q": "어떤 MLflow 버전이 영향을 받나요?",
+   "a": "OSV·GitLab 은 statsmodels 문제의 영향 범위를 2.1.0 이상 3.15.0 미만(2.1.0 ~ 3.14.x)으로, GitHub 권고는 수정 버전을 3.15.0 으로 적었습니다. dspy 는 CVE 레코드에 2.0 이상으로 적혀 있고 수정 버전 표기가 없습니다. CERT/CC 는 3.12.0 에서 확인했다고 밝혔습니다."
+  },
+  {
+   "q": "공격에 필요한 조건은 무엇인가요?",
+   "a": "CERT/CC 는 모델 저장 위치에 대한 쓰기 권한이 필요하다고 정리했습니다. GitHub 권고는 인증을 켜지 않은 기본 배포에서는 업로드에 자격 증명이 필요 없다고 설명합니다. 그리고 피해자가 그 모델을 실제로 불러와야 코드가 실행됩니다."
+  },
+  {
+   "q": "dspy flavor 는 어떻게 해야 하나요?",
+   "a": "CERT/CC 는 패치가 나오기 전까지 dspy flavor 로 모델을 불러오지 말라고 안내했습니다. 최신 수정 여부는 MLflow 릴리스와 CERT/CC 권고 페이지에서 확인하세요."
+  },
+  {
+   "q": "피클을 쓰지 않는 방법이 있나요?",
+   "a": "MLflow 공식 문서는 scikit-learn 과 LightGBM 의 skops 형식, PyTorch 의 pt2 형식, LangChain·커스텀 파이썬의 Models From Code 를 소개합니다. 각각 조건이 있으므로 문서의 주의 사항을 먼저 읽으세요."
+  },
+  {
+   "q": "Databricks 에서는 어떻게 되나요?",
+   "a": "MLflow 문서는 Databricks Runtime 이 관리형 아티팩트 저장소가 모델 파일을 무단 변경으로부터 보호하므로 피클 모델 불러오기를 항상 허용한다고 적었습니다. 이번 권고가 Databricks 환경에 어떻게 적용되는지는 확인한 자료에 없습니다."
+  }
+ ],
+ "closing": "지금까지 MLflow 피클 안전장치 우회 권고에 대해 알아보았습니다. 핵심은 두 가지입니다. 안전 스위치가 모든 모델 방식에서 작동한다고 믿으면 안 되며, 모델 저장소의 쓰기 권한이 곧 코드 실행 권한이 될 수 있다는 점입니다. statsmodels 는 3.15.0 이상으로 올리면 되지만 dspy 는 CERT/CC 권고 기준 패치가 없다는 점, 실제 악용 사례는 확인하지 못했다는 점이 남은 불확실성입니다. 여러분도 한번 내 MLflow 환경의 버전과 저장소 권한을 직접 점검해 보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "취약점 상태와 수정 버전은 계속 바뀔 수 있으니 CERT/CC 와 MLflow 공식 페이지에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "MLflow",
+  "AI보안",
+  "피클역직렬화",
+  "CERT",
+  "VU369093",
+  "CVE202696775",
+  "CVE202696804",
+  "statsmodels",
+  "dspy",
+  "원격코드실행",
+  "MLOps",
+  "모델보안",
+  "skops",
+  "공급망보안",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7",
+  "S8",
+  "S9",
+  "S10",
+  "S11"
+ ]
+}
