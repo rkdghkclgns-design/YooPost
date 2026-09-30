@@ -1,0 +1,72 @@
+{
+ "topic": "Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution (arXiv 2609.38108, 2026-09-29)",
+ "source_url": "https://arxiv.org/abs/2609.38108",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Do LLM Agents Execute the Plans They Declare? (arXiv abs)",
+   "url": "https://arxiv.org/abs/2609.38108",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Do LLM Agents Execute the Plans They Declare? (HTML full text)",
+   "url": "https://arxiv.org/html/2609.38108",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Do LLM Agents Execute the Plans They Declare? (PDF)",
+   "url": "https://arxiv.org/pdf/2609.38108",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "url": "https://arxiv.org/abs/2210.03629",
+   "publisher": "arXiv (Yao et al.)",
+   "published": "2022-10-06",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Do LLM Agents Execute the Plans They Declare? — 프로젝트 페이지",
+   "url": "https://subbareddy248.github.io/projects/declaration-gap-site/",
+   "publisher": "저자 프로젝트 페이지 (Subba Reddy Oota)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.38108v1/planning_routing.png",
+   "page_url": "https://arxiv.org/html/2609.38108",
+   "caption": "Planning-as-Routing 핵심 아이디어: 계획 모드를 선언하면 라우터가 모드 전용 실행기로 보내는 구조 (논문 Figure 1(c))",
+   "credit": "Oota et al., arXiv 2609.38108"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2609.38108v1/search_planning.png",
+   "page_url": "https://arxiv.org/html/2609.38108",
+   "caption": "Search 모드: 여러 후보 계획을 각각 실행하고 루브릭 판정자가 고르는 구조 (논문 Figure 5(a))",
+   "credit": "Oota et al., arXiv 2609.38108"
+  }
+ ],
+ "factcheck": {
+  "claims": 45,
+  "confirmed": 45,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs·HTML 전문(v1)·PDF(200 확인)·ReAct abs·프로젝트 페이지를 다시 열어 초록·본문 Table 1~6·부록 Table 7/12/16/18/19·부록 M·재현성 성명과 한 줄씩 대조. 수정: ①재시도 통제의 원래 격차 0.035~0.241(ALFWorld만의 범위)→Table 18 기준 ALFWorld·Mind2Web·SWE-bench 작업 성공률 0.031~0.241(−0.025~+0.027은 확인), ②few-shot Mind2Web '+0.004~0.018'→'최대 +0.018, 일부 0 또는 −0.003'(+0.156은 DeepSeek 사고 모드 켬 0.656→0.812로 확인), ③한계 '세 가지'→부록 M의 네 가지로 재작성, ④'SWE-bench 시드 하나'→표 16 준수율 분석 두 모델 시드 13만·표 4 Plan+ReAct 시드 1개로 구체화, ⑤코드 공개: '코드와 프롬프트'→구현·검증기·실행 기록 게재 시 공개(프롬프트 전문은 부록 N), 프로젝트 페이지 'coming soon' 확인(S5 추가), ⑥0.48→0.92/0.36→0.44는 DeepSeek-V4-Flash 최선 고정 패턴 값임을 명시하고 Routing@1 0.721 보완, ⑦소속을 원문 표기대로(5명 ADIA Lab + 그라나다대·LIST·코넬대·LBNL 겸임), ⑧22~45%가 ALFWorld·Mind2Web·SWE-bench 기준임을 명시, ⑨Plan+ReAct·Flat ReAct 급락은 ALFWorld 기준으로 한정, ⑩그림 캡션 Figure 1(c)·5(a)로 정정. 확인: 모델 3개(Qwen3.6-35B-A3B·DeepSeek-V4-Flash·Gemma-4-26B), 작업 수 134/1,341/500/204, 5,000회 순열 95% 구간 −0.025~+0.009·최소 단측 p=0.094, 반복 실행 통제 ALFWorld 0.117~0.381·WebArena 0.153~0.233, |r|≤0.181, ALFWorld 준수율 표, Search 최대 4개(평균 3.35). 인용 그림 2개 image/png 1406px·1427px 폭 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
