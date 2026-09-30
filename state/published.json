@@ -308,5 +308,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/200-1.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "⚡ Grok 4.7 사용 가이드: 500k 컨텍스트·입력 $2/출력 $6·벤치마크 총정리",
+  "topic": "Grok 4.7 (xAI, 2026-09-21) — Grok 4.7 발표문·API 문서·릴리스 노트",
+  "category": "AI 언어 모델",
+  "source_url": "https://x.ai/news/grok-4-7",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/grok-47-500k-2-6.html"
+  }
  }
 ]
