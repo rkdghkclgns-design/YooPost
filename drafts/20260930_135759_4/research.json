@@ -1,0 +1,96 @@
+{
+ "topic": "OpenAI DevDay 2026 announcements and developer resources (OpenAI Developer Community, 2026-09-29)",
+ "source_url": "https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DevDay 2026 announcements and developer resources",
+   "url": "https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Ultrafast mode (OpenAI API guide)",
+   "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Computer use (Agents API guide)",
+   "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Sign in with ChatGPT",
+   "url": "https://developers.openai.com/siwc",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Codex Security Cloud setup",
+   "url": "https://learn.chatgpt.com/docs/security/setup",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI Unveils GPT-6.1 Sol at DevDay With New Codex and ChatGPT Tools",
+   "url": "https://www.unite.ai/openai-unveils-gpt-6-1-sol-at-devday-with-new-codex-and-chatgpt-tools/",
+   "publisher": "Unite.AI",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI DevDay 2026: every announcement, with prices and availability",
+   "url": "https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh",
+   "publisher": "DEV Community",
+   "published": "",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "OpenAI Gave AI Agents Their Own Computers at DevDay 2026",
+   "url": "https://decrypt.co/379584/openai-ai-agents-computers-devday-2026-everything-announced",
+   "publisher": "Decrypt",
+   "published": "",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Pricing (OpenAI API docs)",
+   "url": "https://developers.openai.com/api/docs/pricing",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(DevDay 공지 커뮤니티 글, Ultrafast·컴퓨터 사용·Sign in with ChatGPT·Codex Security Cloud 문서, API 가격표)를 다시 열어 본문 <img> 를 확인했으나 사이트 로고·버튼 아이콘(svg)뿐이고 본문 그림이 없다. 언론 페이지의 이미지는 대표 썸네일이라 쓰지 않았다. openai.com 본문은 403 으로 읽지 못했다.",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 41,
+  "removed": [
+   "같은 매체는 사실성 오류율이 11.4%에서 7.7%로 줄었다고도 전했지만 ... 참고로만 보시기 바랍니다. (unite.ai 단독, 공식 미확인)",
+   "unite.ai는 컴퓨터 사용이 포함된 Agents API가 Pro 500과 Enterprise에서 제공된다고 전했는데 ... (요금제 조건 공식 미확인) + 표의 'Pro 500·Enterprise 제공, 도구 라우팅·문맥 압축'",
+   "decrypt는 Pro 500이 월 500달러라고 전했습니다. (decrypt 단독, 공식 가격 페이지 403)",
+   "decrypt는 ... Cerebras 칩 위에서 돈다고 전했습니다. (decrypt 단독)",
+   "벤치마크 점수나 다른 회사 모델과의 비교는 unite.ai 등 언론 보도에 있지만 ... (확인 안 됨)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 공지·S2~S5 문서를 다시 열어 항목별 원문 문장 대조. 가격 $2/$0.10/$10(Sol), Astra $10/$50, Ultrafast Astra $60/$300(6배), Luna $0.10/$0.50 은 언론 대신 공식 API 가격표(S9, developers.openai.com/api/docs/pricing, curl 로 수치 확인)로 확인해 '공식'으로 고침. 'Ultrafast 가격은 문서에 없다' 문장 수정. Codex Security Cloud 요금제는 '언론끼리 엇갈림'이 사실과 달라(unite.ai·decrypt·dev.to 모두 Pro·Business·Enterprise·Edu) 언론 보도 표시로 고침. Sign in with ChatGPT 파트너(Devin·Notion·Vercel)·Marketplace(Adobe·Figma)·Ultrafast 초당 300토큰은 unite.ai·decrypt 일치로 '보도' 표시 유지. Marketplace 32곳은 unite.ai(·dev.to) 보도로 표시. 컴퓨터 사용 5단계·보안 규칙·Ultrafast 지역 제한·속도 한도(50만~500만 TPM)는 문서 원문과 일치. 강조 없던 컴퓨터 사용 첫 문단에 형광 강조 추가. 본문 그림 없음 재확인(images_none_reason)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}

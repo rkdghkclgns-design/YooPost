@@ -1,0 +1,362 @@
+{
+ "title": "🚀 OpenAI DevDay 2026 총정리: Agents API·Ultrafast·Pro 500·Codex Security Cloud 한눈에",
+ "category": "AI 뉴스 리뷰",
+ "intro": "안녕하세요! 2026년 9월 29일, OpenAI가 개발자 행사 DevDay 2026에서 모델, API, Codex, ChatGPT 협업 기능, 요금제까지 한꺼번에 쏟아냈습니다. 공식 개발자 커뮤니티의 정리 글만 해도 항목이 스무 개를 훌쩍 넘습니다. 그중 이미 따로 다룬 GPT-6 Sol과 dots를 빼고, 이번 글에서는 **Agents API 공개 베타**, **Ultrafast 속도 등급**, **Sign in with ChatGPT**, **Codex Security Cloud**, **Pro 500 요금제**처럼 개발자와 팀이 실제로 손댈 수 있는 것들을 공식 문서로 확인해 정리했습니다. 무엇이 지금 쓸 수 있고 무엇이 아직 예고인지도 구분해 보겠습니다. 함께 살펴보시죠!",
+ "summary": [
+  "OpenAI가 2026-09-29 DevDay 2026 발표 목록을 공식 개발자 커뮤니티에 정리해 공개했습니다.",
+  "GPT-6.1 Sol은 표준 토큰 가격이 Astra의 5분의 1이고, Agents API는 공개 베타로 호스팅 실행·메모리·도구·멀티 에이전트를 지원합니다.",
+  "Ultrafast는 유료 속도 등급으로, OpenAI는 Codex에서 최대 8배·API에서 6배 빠른 토큰 생성을 내세웠고 Astra는 지금, Sol은 곧 나옵니다.",
+  "Sign in with ChatGPT는 16개 출시 파트너에서 ChatGPT 요금제 사용량을 다른 앱에서 쓰게 하고, Codex Security Cloud는 저장소 취약점 스캔과 수정 준비를 맡습니다.",
+  "Pro 500은 Plus의 25배 사용량과 Ultrafast 접근을 제공하고, Pro 200 신규 가입은 다시 열렸습니다.",
+  "이 글에서 배울 것: DevDay 2026 발표의 핵심 항목, Ultrafast·컴퓨터 사용의 공식 사용 조건, 도입 전 확인할 제한 사항"
+ ],
+ "sections": [
+  {
+   "heading": "📰 DevDay 2026, 무엇이 발표되었나요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "OpenAI 개발자 커뮤니티의 공지 'DevDay 2026 announcements and developer resources'는 발표를 **모델과 API**, **Codex**, **플러그인과 배포**, **dots와 협업**, **요금제와 기타**의 다섯 묶음으로 나눕니다. 이 글은 2026년 9월 29일자 공지를 기준으로 하며, 각 항목의 상세 문서는 공지에 걸린 링크를 따라가 읽었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "모델 쪽에서는 **GPT-6.1 Sol**이 코딩과 컴퓨터 사용을 개선했고 표준 토큰 가격이 Astra의 5분의 1이라고 소개됩니다. API 쪽에서는 **Agents API**가 공개 베타에 들어갔고, **Decisions API**는 제한적 미리보기입니다. Amazon Bedrock Managed Agents는 OpenAI 기반 에이전트를 AWS 안에서 돌리는 방식입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "묶음",
+      "대표 항목"
+     ],
+     "rows": [
+      [
+       "모델과 API",
+       "GPT-6.1 Sol, Ultrafast, Agents API(공개 베타), 에이전트 API의 컴퓨터 사용, Decisions API(제한적 미리보기), Bedrock Managed Agents, Private Intelligence"
+      ],
+      [
+       "Codex",
+       "Codex Cloud, CLI 업데이트(양방향 음성·/agents 보기), Code Review, Codex Security Cloud"
+      ],
+      [
+       "플러그인과 배포",
+       "플러그인 확장, MCP 이벤트, Sign in with ChatGPT, OpenAI Marketplace"
+      ],
+      [
+       "dots와 협업",
+       "dots, ChatGPT Space, Pages, 협업 슬라이드, Slack·Teams의 @ChatGPT, Meetings 플러그인"
+      ],
+      [
+       "요금제와 기타",
+       "Pro 500, Pro 200 재개, API 첫 토큰 지연 45% 감소, 도구 호출 30% 이상 빨라짐"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "GPT-6 Sol 가격과 dots(상시 실행 에이전트)는 앞선 글에서 따로 다뤘습니다. 여기서는 DevDay 전체 지도를 그리고, 문서가 공개된 항목을 깊게 읽습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🤖 GPT-6.1 Sol과 Agents API",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 공지는 GPT-6.1 Sol을 두고 코딩과 컴퓨터 사용이 나아졌고 **표준 토큰 가격이 Astra의 5분의 1**이라고 적었습니다. OpenAI API 가격표를 보면 실제로 `gpt-6.1-sol`은 100만 토큰당 **입력 2달러, 캐시된 입력 0.10달러, 출력 10달러**이고, `gpt-6-astra`는 입력 10달러, 출력 50달러라서 5분의 1이라는 설명과 맞습니다. 가격표의 수치는 짧은 문맥 기준 표준 등급입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Agents API**는 공개 베타이며 호스팅 실행, 메모리, 도구, 멀티 에이전트를 지원합니다. 기존에는 개발자가 반복 루프와 문맥 관리를 직접 짜야 했다면, 이 API는 그 부분을 OpenAI가 호스팅하는 쪽으로 옮긴 것으로 읽힙니다. 어떤 요금제·계정에서 쓸 수 있는지는 공식 공지에 나오지 않으므로 **도입 전에 문서에서 적용 범위를 확인**하셔야 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "공식 공지 내용",
+      "공식 가격표 (100만 토큰당)"
+     ],
+     "rows": [
+      [
+       "GPT-6.1 Sol",
+       "코딩·컴퓨터 사용 개선, 표준 토큰 가격이 Astra의 5분의 1",
+       "입력 $2 / 캐시 입력 $0.10 / 출력 $10"
+      ],
+      [
+       "GPT-6 Astra (비교)",
+       "Ultrafast 즉시 사용 가능",
+       "입력 $10 / 캐시 입력 $1 / 출력 $50"
+      ],
+      [
+       "Decisions API",
+       "Luna로 입력을 분류하거나 요청을 라우팅하거나 미리 정한 답 중에서 행동을 고름 (제한적 미리보기)",
+       "gpt-6-luna: 입력 $0.10 / 출력 $0.50"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "⚡ Ultrafast 속도 등급, 공식 문서로 보기",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**Ultrafast**는 OpenAI API에서 가장 빠른 서비스 등급으로, 속도가 더 높은 비용을 정당화하는 애플리케이션을 위한 것입니다. 공지에 따르면 **Codex에서 최대 8배, API에서 최대 6배** 빠른 토큰 생성을 OpenAI가 보고했고, Astra는 바로 쓸 수 있으며 Sol은 곧 나옵니다. unite.ai와 decrypt는 Codex에서 이것이 초당 300토큰 수준이라고 보도했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "개발자 문서의 사용법은 단순합니다. 요청마다 **`model`을 `gpt-6-astra`로, `service_tier`를 `ultrafast`로** 두 값을 지정하면 됩니다. HTTP와 WebSocket 모두 되지만 문서는 특히 에이전트 앱에서 **WebSocket을 강하게 권장**합니다. 네트워크 오버헤드가 지연 이득을 깎아 먹을 수 있기 때문입니다."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"model\": \"gpt-6-astra\",\n  \"service_tier\": \"ultrafast\"\n}"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 지역 제한과 가격",
+     "text": "문서는 Ultrafast가 **미국 데이터 상주와 글로벌 처리만 지원**하며 EU 등 미국 밖 지역 엔드포인트는 지원하지 않는다고 밝힙니다. 가격도 높습니다. 공식 가격표에서 Astra의 Ultrafast 요금은 100만 토큰당 입력 60달러·출력 300달러로, 표준(입력 10달러·출력 50달러)의 6배입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "속도 한도 측면에서 GPT-6 Astra의 기본 한도는 **분당 50만 토큰(1~3단계)에서 500만 토큰(5단계)** 사이이며, 더 높은 한도는 OpenAI 계정 팀을 통해 요청할 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🖥 에이전트의 컴퓨터 사용: 브라우저 세션 5단계",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Agents API의 컴퓨터 사용은 에이전트가 웹사이트를 탐색하고 브라우저 화면을 조작하게 합니다. 문서는 **웹사이트 테스트, 정보 수집, 화면으로만 쓸 수 있는 앱 사용**을 예로 듭니다. **OpenAI가 호스팅하는 환경**에서 돌아가며 베타입니다. 문서 예시는 `gpt-6-astra` 모델을 씁니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "단계",
+      "내용"
+     ],
+     "rows": [
+      [
+       "1",
+       "Agents API로 브라우저 세션을 만들고 세션 ID를 저장"
+      ],
+      [
+       "2",
+       "세션 이벤트를 따라가며 에이전트에 작업을 전달"
+      ],
+      [
+       "3",
+       "웹사이트 접근 요청(출처 승인)을 처리하고 필요하면 로그인 처리"
+      ],
+      [
+       "4",
+       "작업 완료를 기다리며 연결이 끊기면 세션 복구"
+      ],
+      [
+       "5",
+       "브라우저 활동을 검토하고 끝나면 세션 삭제"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "보안 규칙이 눈에 띕니다. 문서는 **새 웹사이트 출처에 처음 접근하기 전에 사용자 승인이 필요**하며 공개 웹사이트도 예외가 아니라고 적습니다. 로그인 값은 전용 이벤트로만 보내야 하고, 그렇게 제출한 값은 에이전트의 모델 입력 밖에 머뭅니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 스크린샷과 파괴적 작업",
+     "text": "문서는 스크린샷에 민감한 페이지·계정 정보가 담길 수 있으니 권한 있는 사용자에게만 보여 주고 로그에는 남기지 말라고 안내합니다. 구매나 파괴적 변경 전 확인을 반드시 보장해야 한다면 브라우저를 안전한 리소스로 제한하거나 통제된 런타임을 쓰라고 권고합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔐 Sign in with ChatGPT와 OpenAI Marketplace",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**Sign in with ChatGPT**는 사용자가 ChatGPT 계정으로 로그인하고, 자격이 되면 앱의 AI 요청을 자신의 ChatGPT 요금제로 처리하게 하는 기능입니다. 공지는 16개 출시 파트너를 통해 구독 사용량을 쓸 수 있다고 하며, unite.ai는 Devin, Notion, Vercel 등을 파트너로 꼽았습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "개발자 문서에 따르면 통합 방식은 웹사이트에 로그인 버튼을 넣는 방법, ChatGPT 플러그인 인증을 빠르게 하는 방법, 오픈소스 앱에서 자격 있는 사용자가 ChatGPT 요금제 혜택으로 추론을 쓰게 하는 방법 세 가지입니다. 요구 사항은 **OpenAI에서 클라이언트 ID 발급**, OAuth 기반 인증 구현, 콜백 URL 설정, 앱 가이드라인 준수입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "**OpenAI Marketplace**는 자격을 갖춘 기업 고객이 **OpenAI 약정 금액의 일부를 파트너 제품에** 쓰게 하는 서비스이며, 오픈소스 모델 접근용으로 Baseten이 포함됩니다. unite.ai는 첫 파트너가 32곳이라고 전했고, unite.ai와 decrypt 모두 Adobe, Figma 등이 들어 있다고 보도했습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 개인 개발자에게 의미",
+     "text": "사용자가 자기 구독으로 AI 비용을 부담하는 구조라면 앱 운영자는 추론 비용 부담을 덜 수 있습니다. 다만 자격 조건과 한도는 문서에 자세히 나오지 않으므로 신청 전에 확인이 필요합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛡 Codex Security Cloud와 Codex 업데이트",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Codex 쪽 발표는 넷입니다. **Codex Cloud**는 노트북을 닫아도 작업이 계속 돌고 여러 기기에서 접근됩니다. **CLI 업데이트**는 양방향 음성과 `/agents` 보기를 더했습니다. **Code Review**는 요약·diff·변경 질문을 리뷰 화면에 넣고 자동 리뷰를 클라우드에서 돌릴 수 있습니다. **Codex Security Cloud**는 취약점을 찾고 조사하고 중복을 없앤 뒤 수정을 준비하며, 일정에 따라 스캔할 수 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Codex Security Cloud 설정 단계",
+      "내용"
+     ],
+     "rows": [
+      [
+       "1",
+       "ChatGPT의 Plugins에서 'Codex Security Cloud'를 설치·활성화"
+      ],
+      [
+       "2",
+       "'New scan'에서 GitHub 저장소 접근 권한 부여"
+      ],
+      [
+       "3",
+       "호환되는 Cloud 환경을 고르거나 새로 생성"
+      ],
+      [
+       "4",
+       "스캔 유형을 'Repository'로 골라 시작"
+      ],
+      [
+       "5",
+       "Findings에서 결과를 검토하고 수정 적용"
+      ],
+      [
+       "6",
+       "커밋 모니터링을 켜서 변경을 지속 추적"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "문서는 워크스페이스에 **Codex Cloud가 먼저 설정**되어 있어야 하고, GitHub 연결과 적절한 저장소 권한, 호환 Cloud 환경이 필요하다고 적습니다. 'Fix with Codex'는 패치를 제안하고, 승인된 수정에 대해 초안 풀 리퀘스트를 만들며, 프로젝트 컨텍스트에서 위협 모델을 검토·수정할 수 있습니다. 제공 대상은 unite.ai와 decrypt가 모두 Pro·Business·Enterprise·Edu 사용자라고 보도했지만, 공식 설정 문서에는 요금제 조건이 없으므로 내 워크스페이스에서 쓸 수 있는지 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "💬 협업 기능과 요금제 변화",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "협업 쪽에서는 **ChatGPT Space**가 팀과 에이전트가 파일과 프로젝트 맥락을 공유하는 공간이고, **Pages**는 사람과 에이전트가 함께 고치는 문서(차트·인터랙티브 도구 포함)입니다. 협업 슬라이드는 앞으로 몇 주 안에 나옵니다. Slack과 Microsoft Teams에서는 `@ChatGPT` 멘션에 응답하고 연결된 도구를 쓸 수 있으며, Meetings 플러그인은 회의 노트와 액션 아이템을 만드는 macOS 베타(Pro·Business)입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "요금제에서는 **Pro 500**이 Plus의 25배 사용량과 Ultrafast 접근을 제공하고, **Pro 200** 신규 구독이 다시 열렸지만 기존 유지 구독과 사용량 허용치가 다릅니다. 공지 끝에는 전 세계 사용량 초기화가 발표되었다는 문장도 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "상태"
+     ],
+     "rows": [
+      [
+       "Pro 500",
+       "25배 Plus 사용량·Ultrafast 접근 (공지)"
+      ],
+      [
+       "Pro 200",
+       "신규 구독 재개, 기존과 사용량 다름 (공지)"
+      ],
+      [
+       "협업 슬라이드",
+       "앞으로 몇 주 안 (공지)"
+      ],
+      [
+       "Private Inference",
+       "올가을 미리보기 예정 (공지)"
+      ],
+      [
+       "Decisions API",
+       "제한적 미리보기 (공지)"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 지역과 예정 기능",
+     "text": "이미 쓴 글에서 다룬 dots처럼 일부 기능은 지역·요금제 제한이 있고, 텍스트 메시지 연동이나 dots 팀은 아직 예정 단계입니다. 예고와 출시를 구분해서 보세요."
+    }
+   ]
+  },
+  {
+   "heading": "📊 성능 수치는 어디까지 믿을 수 있나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공지가 직접 제시한 성능 수치는 **API 첫 토큰 지연 45% 감소**와 **도구 호출·워크플로 30% 이상 가속**입니다. 두 수치 모두 OpenAI가 '보고했다'는 표현이며 측정 조건은 공지에 없습니다. 공지에는 **벤치마크 점수가 없으므로** 이 수치는 OpenAI 측 보고로 받아들이는 편이 안전합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 읽는 요령",
+     "text": "'최대 8배', '최대 6배' 같은 표현은 조건이 맞을 때의 상한입니다. 내 워크로드에서 얼마나 빨라지는지는 직접 재 보아야 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "종합하면 이번 DevDay는 모델 자체보다 **에이전트를 돌리는 환경**(호스팅 실행, 브라우저 세션, 보안 스캔, 결제·로그인)을 채우는 데 무게가 실렸습니다. 다만 이것은 발표 목록을 읽은 해석이며, 실제 채택 속도는 앞으로 지켜봐야 합니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "DevDay 2026은 언제 열렸나요?",
+   "a": "OpenAI 개발자 커뮤니티의 정리 글은 2026년 9월 29일자입니다. 이 글은 그 공지와 링크된 문서를 기준으로 합니다."
+  },
+  {
+   "q": "Ultrafast는 어떻게 켜나요?",
+   "a": "개발자 문서 기준으로 요청에 model을 gpt-6-astra, service_tier를 ultrafast로 지정합니다. HTTP와 WebSocket 모두 지원하며 에이전트 앱에는 WebSocket을 강하게 권장합니다."
+  },
+  {
+   "q": "Ultrafast를 유럽에서 쓸 수 있나요?",
+   "a": "문서에 따르면 미국 데이터 상주와 글로벌 처리만 지원하고 EU 등 미국 밖 지역 엔드포인트는 지원하지 않습니다."
+  },
+  {
+   "q": "에이전트가 웹사이트를 마음대로 돌아다니나요?",
+   "a": "아닙니다. 문서는 새 웹사이트 출처에 처음 접근하기 전에 사용자 승인이 필요하며 공개 웹사이트도 마찬가지라고 밝힙니다. 로그인 값은 전용 이벤트로만 보냅니다."
+  },
+  {
+   "q": "Sign in with ChatGPT를 앱에 넣으려면 무엇이 필요한가요?",
+   "a": "OpenAI에서 클라이언트 ID를 받고 OAuth 인증과 콜백 URL을 설정한 뒤 앱 가이드라인을 지켜야 합니다."
+  },
+  {
+   "q": "Codex Security Cloud를 쓰려면 무엇이 먼저 필요한가요?",
+   "a": "워크스페이스에 Codex Cloud가 설정되어 있어야 하고, GitHub 연결과 저장소 권한, 호환되는 Cloud 환경이 필요합니다."
+  }
+ ],
+ "closing": "지금까지 OpenAI DevDay 2026 발표에 대해 알아보았습니다. 이번 발표는 새 모델 하나보다 Agents API, Ultrafast, 컴퓨터 사용, Sign in with ChatGPT, Codex Security Cloud처럼 에이전트를 실제로 운영하는 도구를 넓게 깔았다는 점이 특징이었습니다. 다만 요금제별 제공 범위나 월 구독료처럼 공식 공지에 없는 부분이 있고, 일부 기능은 베타나 예고 단계입니다. 도입 전에 공식 문서와 가격표를 꼭 다시 확인해 주세요. 여러분도 한번 Ultrafast와 Agents API를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "기능·가격·제공 범위는 바뀔 수 있으니 OpenAI 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "OpenAI",
+  "DevDay2026",
+  "GPT61Sol",
+  "AgentsAPI",
+  "Ultrafast",
+  "Codex",
+  "CodexSecurityCloud",
+  "SigninwithChatGPT",
+  "Pro500",
+  "ChatGPT",
+  "AI뉴스",
+  "AI에이전트",
+  "컴퓨터사용",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7",
+  "S8",
+  "S9"
+ ]
+}
