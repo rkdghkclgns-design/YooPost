@@ -228,5 +228,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/openai-dots-24.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🤖 Claude Opus 5.5 사용 가이드: Opus 5보다 운영비 40%↓·입출력 $4/$20·100만 토큰 총정리",
+  "topic": "Introducing Claude Opus 5.5 (Anthropic, 2026-09-22)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.anthropic.com/news/claude-opus-5-5",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/claude-opus-55-opus-5-40-420100.html"
+  }
  }
 ]
