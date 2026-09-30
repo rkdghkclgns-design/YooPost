@@ -398,5 +398,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/nvidia-open-agent-safety-platform.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 OpenCode 원격 코드 실행 취약점 총정리: 웹페이지 방문만으로 실행되는 GHSA-632h-h47v-g4x4와 1.18.22 대응법",
+  "topic": "Discovering and exploiting a remote code execution vulnerability in OpenCode (GHSA-632h-h47v-g4x4) (Datadog Security Labs, 2026-09-24)",
+  "category": "AI 보안",
+  "source_url": "https://securitylabs.datadoghq.com/articles/opencode-upgrade-remote-code-execution/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/opencode-ghsa-632h-h47v-g4x4-11822.html"
+  }
  }
 ]
