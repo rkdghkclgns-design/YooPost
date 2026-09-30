@@ -1,0 +1,103 @@
+{
+ "topic": "openai dots — Meet dots (ChatGPT Learn 공식 문서)",
+ "source_url": "https://learn.chatgpt.com/docs/dots",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Meet dots",
+   "url": "https://learn.chatgpt.com/docs/dots",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Get started with your dot",
+   "url": "https://learn.chatgpt.com/docs/dots/getting-started",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Tasks and memory",
+   "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Connect computers and apps to your dot",
+   "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Control your dot",
+   "url": "https://learn.chatgpt.com/docs/dots/controls",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Message your dot",
+   "url": "https://learn.chatgpt.com/docs/dots/channels",
+   "publisher": "OpenAI (ChatGPT Learn)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Introducing dots (OpenAI 뉴스 피드 항목)",
+   "url": "https://openai.com/news/rss.xml",
+   "publisher": "OpenAI",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "GPT-6 Astra System Card — Introducing: dots (부록)",
+   "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+   "publisher": "OpenAI Deployment Safety Hub",
+   "published": "2026-09-03",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "GPT-6 Astra Model",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+   "publisher": "OpenAI (API 문서)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "dots-oai/dots README (OpenAI 와 무관한 독립 프로젝트 고지)",
+   "url": "https://github.com/dots-oai/dots",
+   "publisher": "dots-oai (독립 프로젝트)",
+   "published": "",
+   "official": false
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "corrected": [
+   "핸들 설명: '@이름-dot 형태의 핸들이 갱신' → 처음엔 @사용자이름-dot, 이름을 지으면 바뀜 (S1)",
+   "시스템 카드 배포 판단 근거: '큰 준비나 매우 허용적인 프롬프트' → 상당한 사전 준비와 함께 허용적 프롬프트 또는 여러 경로의 고급 기법, 재현 어려움 (S8 12.2.2)",
+   "Slack 기본 응답: '나에게만' → '사용자에게' (S1·S6 'By default, it responds to you')",
+   "한계 문단 '가격·한도·지역' → '요금제·한도·지역' (본문에 가격 수치 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S9 원문을 2026-09-30 다시 내려받아 문장 단위 대조 — 이용 조건(Pro 100/200/500·18세 초과·EEA/영국/스위스 제외, Business Premium, Enterprise 관리자 활성화), 사용 한도, 생성 3단계, 채널·통화·Texting coming soon, 컴퓨터 연결 3단계·1대 제한·Offline/Revoke, 사용자 지정 규칙 4종·경로, Pause/Activity/Scheduled, 데이터 설정, 능동적 조사, 시스템 카드 부록(2026-09-29 추가, 500통=334+166, 100회·50,000통·16,600통, 100체인·2,638건), RSS 2026-09-29 'Introducing dots', API 모델 사양(1,050,000/128,000/2026-04-30) 확인. S10(github.com)은 이 세션에서 403이라 raw.githubusercontent.com 의 같은 README 로 독립 프로젝트 고지 문구 확인. 품질: 본문 8,594자로 지침 상한(7,914자) 초과 → 중복 FAQ 2개·중복 개요 표·중복 박스·요약 7번·반복 문장 정리로 7,893자."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790738875173169",
+  "kind": "single"
+ }
+}
