@@ -138,5 +138,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/2222000-7040090500.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🤖 슬랙에 에이전트 직원 만들기 사용 가이드: Slack CLI 5단계·Agentforce·Add to Slack 총정리",
+  "topic": "슬랙에 에이전트 직원 만들기 — Quickstart: Creating a Slack agent",
+  "category": "AI 도구",
+  "source_url": "https://docs.slack.dev/ai/agent-quickstart/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/slack-cli-5agentforceadd-to-slack.html"
+  }
  }
 ]
