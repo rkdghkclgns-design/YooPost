@@ -248,5 +248,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/gemini-4.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🤖 Gemini API 관리형 에이전트 사용 가이드: Antigravity 9월 하네스·Credentials API·샌드박스 총정리",
+  "topic": "Gemini API 관리형 에이전트 — Antigravity agent (antigravity-preview-09-2026), Credentials API·Files API (Google AI for Developers 공식 문서)",
+  "category": "AI 도구",
+  "source_url": "https://ai.google.dev/gemini-api/docs/antigravity-agent",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/gemini-api-antigravity-9-credentials-api.html"
+  }
  }
 ]
