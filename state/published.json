@@ -378,5 +378,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/15000235.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🧠 CoT 트레이스 검증 논문 분석: 정답 속 무효 추론 31.6%·셔플해도 정확도 유지 총정리",
+  "topic": "Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces (arXiv 2609.38107, 2026-09-29)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.38107",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/cot-316.html"
+  }
  }
 ]
