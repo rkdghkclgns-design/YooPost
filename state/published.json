@@ -218,5 +218,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/218-1900022000.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🤖 OpenAI dots 사용 가이드: 자기 클라우드 컴퓨터로 24시간 일하는 에이전트, 요금제·설정·권한 총정리",
+  "topic": "openai dots — Meet dots (ChatGPT Learn 공식 문서)",
+  "category": "AI 도구",
+  "source_url": "https://learn.chatgpt.com/docs/dots",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/openai-dots-24.html"
+  }
  }
 ]
