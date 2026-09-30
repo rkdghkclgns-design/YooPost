@@ -1,0 +1,66 @@
+{
+ "topic": "Grok 4.7 (xAI, 2026-09-21) — Grok 4.7 발표문·API 문서·릴리스 노트",
+ "source_url": "https://x.ai/news/grok-4-7",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Grok 4.7",
+   "url": "https://x.ai/news/grok-4-7",
+   "publisher": "xAI (SpaceXAI)",
+   "published": "2026-09-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Grok 4.7 (모델 문서)",
+   "url": "https://docs.x.ai/developers/models/grok-4.7",
+   "publisher": "xAI Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Release Notes",
+   "url": "https://docs.x.ai/developers/release-notes",
+   "publisher": "xAI Docs",
+   "published": "2026-09",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Grok Models & Pricing",
+   "url": "https://docs.x.ai/developers/models",
+   "publisher": "xAI Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Grok 4.7 — Pricing, Providers & Benchmarks",
+   "url": "https://llmgateway.io/models/grok-4-7",
+   "publisher": "LLM Gateway",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Grok 4.7 (모델 개요)",
+   "url": "https://docs.x.ai/developers/grok-4-7",
+   "publisher": "xAI Docs",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문의 그래프는 페이지 안에 직접 그려진 인터랙티브 차트(이미지 파일 아님)이고, 개발자 문서 페이지에는 본문 그림이 없다. 실린 그림 파일은 공유 카드(og:image)뿐이라 넣지 않는다.",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [],
+  "note": "Opus 검증 (2026-09-30): x.ai/news/grok-4-7 원문 HTML, docs.x.ai 모델 페이지·모델 목록·릴리스 노트의 .md 원문, 새로 추가한 모델 개요 문서(S6), llmgateway 페이지를 다시 열어 날짜·스펙·가격(4.7/4.3/4.20/grok-build-0.1)·요청 한도(150 RPS, 5천만 TPM)·리전(us-east-1/us-west-2/us-central-1)·지식 기준 시점(2026년 5월, 모델 목록·개요 문서)·벤치마크 표 전 수치·GDPval·안전 지표·설치 명령·제공처를 대조. 수정: 벤치마크 해석 문장(AA Briefcase는 Fable 5.1, DeepSWE는 GPT-5.6 Sol이 더 높음을 보완), logprobs 출처를 모델 목록 문서로 정정·'조용히 무시' 보완, Fast 변형 설명 보완(같은 모델·무료 등급 제외). 보완: 공식 Python SDK 예제·prompt_cache_key 권장·게이트웨이(S6). 벤치마크는 xAI 자체 보고임을 본문에 명시. 발표문 차트는 인라인 SVG로 이미지 파일 없음, 문서 페이지에도 본문 그림 없음 — images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
