@@ -1,0 +1,105 @@
+{
+ "topic": "인텔리빅스 코스닥 공모 — 증권신고서(지분증권, 2026-09-16): 신주 2,500,000주·희망가 7,600~9,000원, 수요예측 10/12~16·청약 10/21~22",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000544",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "인텔리빅스 증권신고서(지분증권) 문서 목록",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000544",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "증권신고서 제1부 I-1 공모개요",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=8&offset=74914&length=13163&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "증권신고서 제1부 V 자금의 사용목적",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=19&offset=1661607&length=47353&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "증권신고서 제2부 II-1 사업의 개요",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=29&offset=1791528&length=21359&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "증권신고서 요약정보 1 핵심투자위험",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=4&offset=24240&length=34439&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "증권신고서 제2부 III-1 요약재무정보",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=37&offset=1990697&length=12337&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "인텔리빅스, 증권신고서 제출...안전관제 AI로 코스닥 상장 돌입",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=215381",
+   "publisher": "AI타임스",
+   "published": "2026-09-17",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "증권신고서 제2부 II-4 매출 및 수주상황",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=32&offset=1791528&length=199169&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "증권신고서 제2부 I-1 회사의 개요",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=23&offset=1791528&length=199169&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "증권신고서 제2부 II 지적재산권 현황",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=35&offset=1791528&length=199169&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S11",
+   "title": "증권신고서 제1부 I-2 공모방법",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260916000544&dcmNo=11582435&eleId=9&offset=74914&length=13163&dtd=dart4.xsd",
+   "publisher": "금융감독원 전자공시(DART) — 인텔리빅스",
+   "published": "2026-09-16",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처가 증권신고서(공시 문서)로 본문에 제품 화면·도표 그림이 없고, 언론 기사의 사진은 회사 홍보 사진이라 원고 내용(공모 조건·재무)을 보여 주지 않아 넣지 않았습니다.",
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 86,
+  "removed": [
+   "의무배정 미달 시 취득분 25,000주(1억 9천만 원)는 6개월 보유합니다. (25,000주·1억 9천만 원 수치 확인 불가 → '의무배정 미달 시 추가 취득분은 6개월 보유'로 수정)",
+   "주요 고객은 지방자치단체, 공공기관, 대기업으로 소개됩니다. (공시에서 해당 표현 확인 불가 → 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): DART 증권신고서(rcpNo 20260916000544) 공모개요·공모방법·자금의 사용목적·요약재무·사업의 개요·매출 및 수주상황·회사의 개요·지적재산권·핵심투자위험 섹션을 WebFetch 로 다시 열어 수치 대조, AI타임스 기사로 고객사·일정 교차 확인. 수정: 특허(등록 국내54·해외1/출원18 → 등록54·출원19(국내18·해외1)), 신용등급 유효일(2026-04-09 유효 → 2026-04-10 평가·2027-04-09까지 유효), 공공 매출 편중 분기(4분기 → 2·4분기), 69.02%/60.12% 의무보유 관계(69.02% 전부 36개월 → 60.12% 36개월·나머지 임원 등 6개월), 최대주주 35.49% 공모 후 기준 명시, 연구개발 '인건비' → '인건비성 비용', 이사회 일정 구체화, '회사 보도자료' → 'AI타임스 기사' 출처 표기, 맺음말 '체험' 표현 수정. 수익 전망·매수 권유 표현 없음 확인. curl 로는 DART 접속 불가(empty reply)였으나 WebFetch 로 읽힘."
+ }
+}
