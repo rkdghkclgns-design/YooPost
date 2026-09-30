@@ -328,5 +328,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/cursor-rolloutssecurity-review-pr-2.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🧠 Frontier Learning 논문 분석: 문제를 계속 만들어 Dice 71.8% vs 33.3%, GRPO 후학습 총정리",
+  "topic": "Frontier Learning: Training LLM Reasoners at the Edge of Capability (arXiv 2609.35426, 2026-09-28)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.35426",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/frontier-learning-dice-718-vs-333-grpo.html"
+  }
  }
 ]
