@@ -1,0 +1,70 @@
+{
+ "topic": "Codex CLI 0.155.0–0.159.2 (2026-09-17~29) — ChatGPT & Codex changelog·Codex CLI 공식 문서 (OpenAI)",
+ "source_url": "https://developers.openai.com/codex/changelog",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "ChatGPT & Codex changelog",
+   "url": "https://developers.openai.com/codex/changelog",
+   "publisher": "OpenAI",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Codex CLI (공식 문서)",
+   "url": "https://developers.openai.com/codex/cli.md",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Slash commands in Codex CLI",
+   "url": "https://developers.openai.com/codex/cli/slash-commands",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Agent approvals & security",
+   "url": "https://developers.openai.com/codex/agent-approvals-security.md",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Codex CLI Changelog (September 2026)",
+   "url": "https://www.gradually.ai/en/changelogs/codex-cli/",
+   "publisher": "gradually.ai",
+   "published": "2026-09-26",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 changelog와 CLI·보안 문서는 글자 중심 문서이며, 이번 릴리스(9월)와 관련된 본문 스크린샷·도표가 페이지에 없음(확인한 이미지는 다른 기능의 앱 화면뿐이라 넣지 않음).",
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 62,
+  "removed": [
+   "0.156.0에서 기본 켜짐이 되었지만, 내 환경에서 마이크와 오디오 런타임이 동작하는지는 직접 확인해야 합니다. (changelog 문구 이상의 내용 — changelog 문구로 교체)",
+   "다만 0.155.0 changelog가 '지원되는 빌드에서' 쓸 수 있다고 적었으므로 환경에 따라 다를 수 있습니다. (FAQ — 추론 부분 삭제, changelog 문구만 남김)"
+  ],
+  "corrected": [
+   "버전 수 11개 → 10개 (0.155.0·0.155.1·0.156.0·0.156.1·0.157.0·0.157.1·0.158.0·0.159.0·0.159.1·0.159.2)",
+   "도입부 '같은 기간' 공지 → mcp-server 제거(9/5)·GPT-5.5 종료 예고(9/14)는 9/17~29 이전, untrusted 폐지는 보안 문서 안내로 정정 (맺음말도)",
+   "PR 번호를 'GitHub 이슈 번호'로 적은 것 → 풀 리퀘스트 번호",
+   "0.159.2 Windows 콘솔 억제 범위에 샌드박스 명령 추가",
+   "instant_interrupt '설정 키 이름 없음' → '켜는 방법(설정 위치) 없음'",
+   "untrusted 대체 TOML 예시가 한 파일에 approval_policy 와 '생략' 을 함께 담아 모순 → 방법 1/방법 2 로 분리",
+   "0.155.1 추론 요약 기본 꺼짐(되돌림) 사실 보완"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): developers.openai.com/codex/changelog(HTML, curl+UA)에서 9/17~29 Codex CLI 릴리스 10개와 9/5·9/14·9/22·9/29 공지 원문을 줄 단위 대조, cli.md·slash-commands.md·agent-approvals-security.md 로 설치 명령·/usage·/status·/import·/model·untrusted 이전 안내·샌드박스 기본값 대조, gradually.ai 로 버전·날짜 교차 확인. /voice·/tui·/daemon 은 changelog 문구에만 근거. 본문 그림은 9월 항목·CLI·슬래시 문서 페이지에 없음(재확인) — images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790754467113489",
+  "kind": "all"
+ }
+}

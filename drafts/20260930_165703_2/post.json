@@ -1,0 +1,413 @@
+{
+ "title": "🛠 Codex CLI 0.155~0.159 총정리: 전체 화면 TUI·음성 대화·/usage·GPT-6.1 Sol 사용 가이드",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 9월 17일부터 29일까지 OpenAI가 터미널용 코딩 에이전트 **Codex CLI**를 0.155.0에서 0.159.2까지 연달아 갱신했습니다. ChatGPT & Codex 공식 changelog에는 이 기간에 **음성 대화**, **/tui 전체 화면 UI**, **/usage 분석 대시보드**, **GPT-6 Sol·Luna 모델 선택**, **GPT-6.1 Sol 기본 모델 지정** 같은 변경이 차례로 올라왔습니다. 그보다 앞선 9월 5일·14일에는 `codex mcp-server` 명령 제거, GPT-5.5 종료 예고 공지가 올라왔고, 공식 보안 문서에는 승인 정책 `untrusted` 폐지 안내가 있어 '기존 설정을 손봐야 하는' 점검 항목도 함께 챙겨야 합니다. 이 글에서는 공식 changelog와 공식 문서에 적힌 내용만 골라 버전별 변화, 설치·업데이트 방법, 바로 써 볼 수 있는 명령, 그리고 업그레이드 전에 점검할 항목을 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "9월 17일~29일 사이 Codex CLI 0.155.0 → 0.159.2 까지 릴리스가 이어졌고, 공식 changelog가 버전별 신기능·버그 수정을 나눠 적었습니다.",
+  "0.155.0은 실험적 /voice 대화를, 0.156.0은 음성 기본 켜짐·/tui 전체 화면 UI·/usage 대시보드·새 테마 6종을 추가했습니다.",
+  "0.157.0에서 GPT-6 Sol·Luna(Amazon Bedrock 포함)가 들어왔고 전체 화면 트랜스크립트가 기본값이 되었습니다.",
+  "0.158.0은 MCP OAuth 클라이언트 시크릿·투명 배경 이미지 생성을, 0.159.0은 instant_interrupt 옵션을 더했고 0.159.1은 GPT-6.1 Sol을 번들 카탈로그 기본 모델로 올렸습니다.",
+  "업그레이드 전 점검: codex mcp-server 제거, GPT-5.5 10월 14일 종료, approval_policy = \"untrusted\" 폐지, tui.prompt_suggestions 설정 제거.",
+  "이 글에서 배울 것: Codex CLI 설치·업데이트 방법, 9월 신기능 활용법, 그리고 업그레이드 때 깨질 수 있는 설정 점검법"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Codex CLI 9월 업데이트 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Codex CLI는 **터미널에서 코드를 읽고, 수정하고, 명령을 실행하는 OpenAI의 코딩 에이전트**입니다. 공식 문서는 이 도구를 '터미널에서 코드 검사·편집·실행을 하고 반복 작업을 자동화하는 도구'로 소개하며, 로컬 저장소를 대상으로 작업하고, 모델·추론 강도·권한·명령을 직접 고르고, `codex exec`로 스크립트와 CI에 붙일 수 있다는 점을 장점으로 꼽습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "9월 changelog를 보면 릴리스가 매우 촘촘합니다. 0.155.0(9월 17일)부터 0.159.2(9월 29일)까지 **13일 동안 패치 버전을 포함해 10개 버전**이 올라왔습니다. 대부분 터미널 화면(TUI)의 사용성, 음성 입력, 샌드박스 보안, MCP 연결 같은 '매일 쓰는 부분'을 다듬는 내용이며, 여기에 새 모델 지원이 겹쳤습니다. 9월 22일에는 GPT-6 Sol과 GPT-6 Luna가 Codex와 ChatGPT Work에 순차 제공되기 시작했고, 9월 29일에는 GPT-6.1 Sol이 Codex와 ChatGPT Work에 올라왔습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "이 글은 OpenAI의 ChatGPT & Codex changelog(developers.openai.com/codex/changelog)와 Codex CLI 공식 문서에 적힌 내용만 다룹니다. 모델 자체의 스펙·가격은 다루지 않으며, 공식 changelog가 Codex 안에서의 사용 방법으로 안내한 부분만 언급합니다. changelog의 항목별 번호(#47639 등)는 GitHub 풀 리퀘스트 번호로, 이 글에서는 생략했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "날짜(changelog 표기)",
+      "버전",
+      "한 줄 요약"
+     ],
+     "rows": [
+      [
+       "2026-09-17",
+       "0.155.0",
+       "실험적 /voice 대화, 추론 요약 상태 표시, Touch ID 검증"
+      ],
+      [
+       "2026-09-22",
+       "0.156.0",
+       "/tui 전체 화면 UI, /usage 대시보드, 음성 기본 켜짐, 테마 6종"
+      ],
+      [
+       "2026-09-25",
+       "0.157.0",
+       "GPT-6 Sol·Luna 추가, 전체 화면 트랜스크립트 기본값"
+      ],
+      [
+       "2026-09-28",
+       "0.158.0",
+       "MCP OAuth 클라이언트 시크릿, 투명 배경 이미지 생성"
+      ],
+      [
+       "2026-09-29",
+       "0.159.0 / 0.159.1 / 0.159.2",
+       "instant_interrupt, GPT-6.1 Sol 기본 모델, Windows 콘솔 창 억제"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🎙 0.155~0.156: 음성 대화와 전체 화면 UI",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**0.155.0**은 실험적 **/voice 대화**를 처음 넣었습니다. 지원되는 빌드에서 실시간 자막(트랜스크립트)과 마이크 조절 기능이 붙고, `/experimental`에서 켭니다. 같은 버전에서 TUI 상태 줄에 **실시간 추론 요약**이 보이고, 턴이 성공하면 완료 시각이 표시됩니다. 다만 다음 날 나온 **0.155.1**(9월 18일)은 추론 요약을 지원하지 않는 제공자에서 요청이 거부되는 문제를 고치려고, 새 로컬 TUI 세션에서 추론 요약을 기본으로 끄도록 되돌렸습니다(직접 지정한 설정은 그대로 따름)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**0.156.0**(9월 22일)에서는 음성 대화가 **기본으로 켜졌고**, F8 키로 켜고 끄며, `/voice` 설정 선택기와 Linux·Windows용 오디오 런타임이 번들로 들어갔습니다. 또 다음 실행부터 쓸 수 있는 **선택형 전체 화면 UI**를 `/tui`로 고를 수 있게 되었고, 여기에는 트랜스크립트 검색·마우스 선택·오른쪽 클릭 복사가 포함됩니다."
+    },
+    {
+     "type": "subheading",
+     "text": "/usage 분석 대시보드"
+    },
+    {
+     "type": "paragraph",
+     "text": "0.156.0은 **/usage 분석 대시보드**로 계정 사용량, 토큰 합계, 플러그인·스킬 활동을 살펴볼 수 있게 했습니다. 공식 슬래시 명령 문서는 `/usage`를 'ChatGPT 토큰 사용량을 일간·주간·누적으로 TUI 안에서 확인하거나 사용량 제한 초기화를 쓰는 명령'으로 설명합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "에이전트 명령 센터와 워크트리"
+    },
+    {
+     "type": "paragraph",
+     "text": "0.155.0에서는 에이전트 개요에서 작업을 숨기고, 보관하고, 삭제할 수 있게 되었고 워크트리 소유 정보가 표시됩니다. 0.156.0에서는 **작업을 상태별로 걸러 보고 명령 센터에서 워크트리 세션을 만들 수 있으며, 워크트리 지원이 기본으로 켜졌습니다**. 이 밖에 새 터미널 테마 6종과, 응답 안에서 지원되는 Mermaid 다이어그램·수식 표시가 추가되었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "기능",
+      "도입 버전",
+      "사용 방법(changelog 기준)"
+     ],
+     "rows": [
+      [
+       "/voice 대화",
+       "0.155.0(실험) → 0.156.0(기본 켜짐)",
+       "/experimental 로 켜기(0.155.0), F8 토글·/voice 설정(0.156.0)"
+      ],
+      [
+       "전체 화면 UI",
+       "0.156.0",
+       "/tui 로 다음 실행에 선택"
+      ],
+      [
+       "사용량 대시보드",
+       "0.156.0",
+       "/usage"
+      ],
+      [
+       "백그라운드 서버 업데이트",
+       "0.156.0",
+       "/daemon, 우회는 --no-daemon"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 음성 기능은 빌드에 따라 다릅니다",
+     "text": "0.155.0 changelog는 /voice 를 '지원되는 빌드에서' 쓸 수 있는 실험 기능으로 적었습니다. 0.156.0 changelog에 따르면 기본으로 켜졌고, 번들 오디오 런타임은 Linux·Windows용으로 적혀 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🤖 0.157: GPT-6 Sol·Luna와 전체 화면 트랜스크립트",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**0.157.0**(9월 25일)은 **GPT-6 Sol과 Luna**를 추가했습니다. Amazon Bedrock 지원과 예전 모델 사용자를 위한 이전(마이그레이션) 안내 프롬프트도 포함됩니다. 앞서 0.156.1(9월 23일)에서 모델 선택기에서 GPT-6 Sol 또는 Luna를 고를 수 있게 되었고, 사용량 한도 도달 시 나오는 전환 안내는 GPT-6 Luna를 권하도록 바뀌었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 changelog는 **GPT-6 Sol을 복잡한 코딩과 에이전트 작업용**, **Luna를 집중적이고 물량이 많은 작업용**으로 안내합니다. CLI에서는 `/model`을 쓰거나 `codex --model gpt-6-sol`, `codex --model gpt-6-luna`로 작업을 시작합니다. 두 모델은 Plus·Pro·Business·Enterprise·Edu 사용자에게 순차 제공되고, Free·Go 사용자는 데스크톱 앱에서 Luna를 쓸 수 있습니다. 엔터프라이즈는 관리자가 새 모델을 켜야 합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "화면과 편의 기능"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**전체 화면 트랜스크립트가 기본**이 되었고 Shift-클릭으로 텍스트 선택 범위를 넓힐 수 있습니다.",
+      "자격이 되는 대화형 세션에서 **백그라운드 서버가 자동 시작**되며, 서버 설정이 맞지 않으면 복구 선택지를 보여 줍니다.",
+      "다른 앱에서 열려 있는 대화를 `f` 단축키로 포크하면 초안과 대기 중 프롬프트가 유지됩니다.",
+      "`/import`가 원격 세션과 로컬 백그라운드 서버 세션에서도 가능해졌습니다."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 /import 는 무엇인가요?",
+     "text": "공식 슬래시 명령 문서는 `/import`를 'Claude Code 또는 Cursor의 설정·프로젝트·대화를 가져오는 명령'으로 설명합니다. 다른 코딩 도구에서 옮겨 오는 분이 참고할 만합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "보안 쪽으로는 **네트워크 제한이 리디렉션과 진행 중인 HTTP·WebSocket 트래픽에도 적용**되고, 정책이 바뀌어 접근 권한이 회수되면 연결이 취소됩니다. 파일 업로드가 일시적으로 실패하면 재시도하며 업로드 제한 시간이 5분으로 늘었습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔒 0.158~0.159: MCP 인증·이미지·보안 기본값",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**0.158.0**(9월 28일)은 **미리 등록한 OAuth 클라이언트 시크릿이 필요한 MCP 서버**에 `codex mcp add --oauth-client-secret`로 연결할 수 있게 했습니다. exec-server 직접 WebSocket 연결은 베어러 토큰으로 보호할 수 있게 되었고, 이미지 생성·편집은 **투명 배경**을 명시적으로 요청할 수 있으며 편집 시 파일로 저장된 대화 이미지를 받아들입니다. 전체 화면 TUI에서는 선택 시 복사와 오른쪽 클릭 붙여넣기를 설정할 수 있고, 복사한 트랜스크립트가 마크다운 서식을 유지합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "눈여겨볼 기본값 변경은 **상승된 권한으로 실행하는 명령에 터미널 입력 승인이 기본으로 켜졌다**는 점입니다. 실행 중에만 유효한 권한 부여는 더 이상 불필요한 검토를 일으키지 않습니다. 또 새 사용자 입력이 도착하면 승인 검토가 재시도되어, 상태를 묻는 질문 때문에 대기 중인 작업이 자동 중단되지 않습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "**0.159.0**(9월 29일)에는 **선택형(opt-in) instant_interrupt**가 들어와, 모델이 응답하는 중이나 오래 걸리는 코드 모드 호출 중에 새 입력으로 Codex를 조종(steer)할 수 있습니다. 새 세션에는 간결한 환영 화면과 일관된 헤더가 보이고 작업 중·후에 가끔 팁이 나옵니다. 경고 뷰어는 닫을 때 확인한 경고를 정리하며, `k`를 눌러 하나를 나중을 위해 남길 수 있습니다. 계획을 구현할지 정하는 동안 트랜스크립트를 스크롤할 수 있고, Mermaid 렌더링이 더 많은 흐름도 문법을 지원합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "보안·안정성 항목",
+      "버전",
+      "내용"
+     ],
+     "rows": [
+      [
+       "샌드박스 쓰기 경로",
+       "0.159.0",
+       "승인된 명령이 명시적 파일 시스템 거부를 유지, 쓰기 가능 루트 아래 .aws 디렉터리를 기본 보호"
+      ],
+      [
+       "macOS 샌드박스",
+       "0.159.0",
+       "네트워크가 켜진 샌드박스에서 TLS 접근 문제 수정"
+      ],
+      [
+       "Windows",
+       "0.159.0 / 0.159.2",
+       "MCP 서버·코드 모드 호스트·파이프 명령에서 불필요한 콘솔 창 억제, 0.159.2에서 백그라운드 프로세스·샌드박스 명령으로 확대"
+      ],
+      [
+       "계정 전환",
+       "0.155.0",
+       "이전 계정의 원격 제어 세션·WebSocket 상태·모델 카탈로그 무효화"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ instant_interrupt는 옵트인입니다",
+     "text": "0.159.0 changelog는 이 기능을 '선택형'이라고 적었습니다. 기본으로 켜지는 것이 아니므로, 쓰려면 별도로 켜야 합니다. 켜는 방법(설정 위치)은 changelog에 나와 있지 않으므로 공식 설정 문서에서 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "💻 설치·업데이트·사용 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 CLI 문서는 macOS/Linux 표준 설치 스크립트, Windows PowerShell 설치 스크립트, npm, Homebrew **네 가지 방법**을 안내합니다. 아래는 문서에 적힌 명령 그대로입니다. 업데이트도 문서상 같은 명령을 다시 실행합니다(Homebrew는 `brew upgrade --cask codex`)."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# macOS / Linux (표준 설치 스크립트)\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh\n\n# npm\nnpm install -g @openai/codex\n\n# Homebrew\nbrew install --cask codex\nbrew upgrade --cask codex"
+    },
+    {
+     "type": "code",
+     "language": "powershell",
+     "code": "# Windows\npowershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\""
+    },
+    {
+     "type": "paragraph",
+     "text": "설치 뒤에는 프로젝트 폴더에서 `codex`를 실행하고, 처음 실행할 때 **Sign in with ChatGPT** 등 사용 가능한 로그인 방법을 고릅니다. 첫 작업은 문서 예시처럼 `Tell me about this project`로 시작해 볼 수 있습니다. 문서는 작업 전후에 Git 체크포인트를 만들어 두라고 권합니다. 특정 버전이 필요하면 changelog가 보여 주는 `npm install -g @openai/codex@0.159.2` 형태로 설치할 수 있습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "에이전트에게 붙여넣는 점검 지시문"
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "Codex CLI를 최신 버전으로 업데이트한 뒤 다음을 점검해 줘.\n1) codex --version 으로 버전을 알려줘.\n2) ~/.codex/config.toml 과 프로젝트 설정에서 approval_policy = \"untrusted\" 가 있는지 찾아줘. 있으면 삭제 대신 어떻게 바꿔야 할지 제안만 해줘.\n3) tui.prompt_suggestions 설정이 있는지 찾아줘.\n4) 스크립트나 CI 에서 codex mcp-server 명령을 쓰는 곳이 있는지 찾아줘.\n5) gpt-5.5 나 gpt-5.3-codex-spark 모델을 고정한 설정이 있는지 찾아줘.\n결과는 표로 정리하고, 아무 파일도 수정하지 마."
+    },
+    {
+     "type": "info",
+     "title": "💡 자주 쓰는 슬래시 명령",
+     "text": "공식 슬래시 명령 문서에 따르면 `/status`는 활성 모델·승인 정책·쓰기 가능 루트·남은 컨텍스트를, `/permissions`는 권한 모드를 보여 주고 바꿀 수 있게 합니다. 채팅이 진행 중일 때 슬래시 명령을 입력하고 Tab을 누르면 다음 턴에 실행되도록 대기열에 넣습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 업그레이드 전에 점검할 변경·종료 공지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "changelog와 보안 문서에는 새 기능만큼 중요한 **'기존 설정이 깨질 수 있는'** 공지가 있습니다. 아래 표에 정리했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "공지",
+      "날짜·시점",
+      "해야 할 일"
+     ],
+     "rows": [
+      [
+       "codex mcp-server 명령·codex-mcp-server 바이너리 제거",
+       "2026-09-05 공지(8월 24일 사용 중단 예고)",
+       "이 명령을 실행하는 통합을 업그레이드 전에 수정. 통합에는 Codex app server 사용을 안내하나, app-server 명령은 실험적이며 프로덕션 워크로드용으로 지원되지 않는다고 명시"
+      ],
+      [
+       "GPT-5.5 종료",
+       "2026-10-14 (ChatGPT·ChatGPT Work·Codex, 모든 플랜; API는 해당 없음)",
+       "gpt-5.5를 고르는 작업공간 기본값·저장된 모델 설정·관리형 구성·커스텀 에이전트·예약 작업·스크립트 교체"
+      ],
+      [
+       "GPT-5.3-Codex-Spark 지원 중단",
+       "2026-09-14",
+       "ChatGPT 데스크톱 앱·Codex CLI·IDE 확장에서 더는 제공되지 않음. gpt-5.3-codex-spark 를 고르는 설정 교체"
+      ],
+      [
+       "approval_policy = \"untrusted\" 폐지",
+       "보안 문서 안내",
+       "Codex와 ChatGPT Work가 지원하지 않으며 남아 있으면 클라이언트 시작을 막을 수 있음"
+      ],
+      [
+       "tui.prompt_suggestions 설정 제거",
+       "0.159.0",
+       "자동 후속 프롬프트 제안 기능과 설정이 함께 제거됨"
+      ],
+      [
+       "bundled plugin-creator 스킬 제거",
+       "0.159.0",
+       "이 스킬에 의존하던 작업 흐름 확인"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 보안 문서는 `untrusted`를 쓰던 사용자에게 읽기 전용 대화용으로 `sandbox_mode = \"read-only\"`와 `approval_policy = \"on-request\"`를 쓰거나 **`codex --sandbox read-only --ask-for-approval on-request`를 실행**하라고 안내합니다. 더 엄격한 명령 승인 규칙을 유지하려면 명시적 `approval_policy`를 생략하고 사용자 수준 `~/.codex/config.toml`에 프로젝트 항목을 추가합니다."
+    },
+    {
+     "type": "code",
+     "language": "toml",
+     "code": "# 방법 1: 읽기 전용 대화용\nsandbox_mode = \"read-only\"\napproval_policy = \"on-request\"\n\n# 방법 2 (방법 1 대신): 엄격한 명령 승인 유지\n# approval_policy 줄은 두지 않고 ~/.codex/config.toml 에 추가\n[projects.\"/path/to/project\"]\ntrust_level = \"untrusted\""
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ trust_level = \"untrusted\" 의 부작용",
+     "text": "문서에 따르면 이 방식은 프로젝트 로컬 구성도 비활성화합니다. 또한 `approval_policy`를 `on-request`로 명시하면 프로젝트에서 파생된 정책을 덮어씁니다. 관리형 환경에서는 `allowed_approval_policies`에 `untrusted`가 포함되어야 허용됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "기본 보안 모델도 알아 두면 좋습니다. 공식 문서에 따르면 로컬에서 Codex는 OS가 강제하는 샌드박스와 승인 정책을 함께 씁니다. CLI와 IDE 확장의 기본값은 **네트워크 접근 없음, 쓰기는 현재 작업공간으로 제한**이며, `workspace-write`에서 네트워크가 필요하면 `[sandbox_workspace_write]`의 `network_access = true`로 켭니다."
+    }
+   ]
+  },
+  {
+   "heading": "💡 실전 활용 시나리오 3가지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래 시나리오는 changelog에 적힌 기능을 조합한 **활용 예시**이며, 공식 문서가 보증한 사례는 아닙니다. 내 환경에서 먼저 작은 작업으로 확인해 보세요."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 1: 긴 작업 중 방향 바꾸기"
+    },
+    {
+     "type": "paragraph",
+     "text": "0.159.0의 **instant_interrupt**를 켜 두면, 오래 걸리는 코드 모드 호출 중에도 새 입력으로 Codex를 조종할 수 있습니다. 0.158.0은 새 사용자 입력이 오면 승인 검토를 재시도하므로, '지금 어디까지 했어?' 같은 상태 질문을 던져도 대기 중인 작업이 자동으로 중단되지 않습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 2: 사용량과 모델 비용 점검"
+    },
+    {
+     "type": "paragraph",
+     "text": "`/usage`로 일간·주간·누적 토큰 활동과 플러그인·스킬 활동을 본 뒤, **반복적이고 물량 많은 작업은 Luna, 복잡한 작업은 Sol**로 나누어 시작해 볼 수 있습니다. 시작할 때는 `codex --model gpt-6-luna` 또는 `codex --model gpt-6-sol`을 씁니다. 사용량 한도에 닿으면 전환 안내가 GPT-6 Luna를 권합니다."
+    },
+    {
+     "type": "subheading",
+     "text": "시나리오 3: 외부 MCP 서버 연결 정리"
+    },
+    {
+     "type": "paragraph",
+     "text": "OAuth 클라이언트 시크릿이 필요한 MCP 서버는 0.158.0부터 `codex mcp add --oauth-client-secret`로 추가할 수 있습니다. 공식 CLI 문서는 `codex mcp`가 로컬·원격 MCP 서버를 추가하고, 필요 시 인증하고, 세션에서 쓸 수 있는 도구를 확인하는 명령이라고 설명합니다. Codex가 MCP '서버'로 동작하던 **`codex mcp-server`는 제거되었으니** 혼동하지 마세요."
+    },
+    {
+     "type": "info",
+     "title": "💡 GPT-6.1 Sol 은 어떻게 쓰나요?",
+     "text": "9월 29일 changelog는 GPT-6.1 Sol이 복잡한 작업에서 Astra에 가까운 성능을 더 낮은 비용으로 낸다고 안내하며, 코드·앱·문서에 걸친 반복적이고 오래 걸리는 작업에 고려해 보라고 합니다. 모델 ID는 `gpt-6.1-sol`이고, 제공 여부는 플랜·클라이언트·작업공간 설정에 따릅니다. 0.159.1은 번들 모델 카탈로그와 Amazon Bedrock Mantle·Runtime 카탈로그의 기본 모델을 GPT-6.1 Sol로 올렸습니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Codex CLI는 어떻게 설치하고 업데이트하나요?",
+   "a": "공식 문서 기준으로 macOS/Linux는 `curl -fsSL https://chatgpt.com/codex/install.sh | sh`, npm은 `npm install -g @openai/codex`, Homebrew는 `brew install --cask codex`로 설치합니다. 업데이트는 같은 명령을 다시 실행하고, Homebrew는 `brew upgrade --cask codex`를 씁니다. Windows는 PowerShell 설치 스크립트를 씁니다."
+  },
+  {
+   "q": "음성 대화는 어떻게 켜나요?",
+   "a": "0.155.0에서는 실험 기능이라 `/experimental`에서 켰고, 0.156.0부터는 기본으로 켜지며 F8 토글과 `/voice` 설정 선택기가 제공됩니다. 0.155.0 changelog는 이 기능을 '지원되는 빌드에서' 쓸 수 있다고 적었습니다."
+  },
+  {
+   "q": "GPT-6.1 Sol을 Codex CLI에서 바로 쓸 수 있나요?",
+   "a": "changelog상 GPT-6.1 Sol은 2026-09-29에 Codex와 ChatGPT Work에 올라왔고 모델 ID는 gpt-6.1-sol입니다. 제공 여부는 플랜·클라이언트·작업공간 설정에 따라 다르므로 모델 선택기나 /model에서 목록에 보이는지 확인하세요."
+  },
+  {
+   "q": "업그레이드했더니 Codex가 시작되지 않아요. 왜일까요?",
+   "a": "보안 문서에 따르면 폐지된 `approval_policy = \"untrusted\"` 설정이 남아 있으면 클라이언트 시작을 막을 수 있습니다. 사용자·프로젝트 구성, 프로필 파일, 시작 스크립트, 관리형 기본값에서 이 설정을 제거하고 `on-request`와 읽기 전용 샌드박스 등으로 바꾸세요."
+  },
+  {
+   "q": "codex mcp-server 를 쓰던 통합은 어떻게 하나요?",
+   "a": "공식 공지는 이 명령과 codex-mcp-server 바이너리가 8월 24일 사용 중단 예고 이후 제거되었다고 밝히며, 통합에는 Codex app server를 쓰라고 안내합니다. 다만 app-server 명령은 실험적이며 프로덕션 워크로드용으로 지원되지 않는다고 적혀 있습니다. 외부 MCP 서버에 연결하는 `codex mcp`는 계속 지원됩니다."
+  },
+  {
+   "q": "GPT-5.5를 계속 쓸 수 있나요?",
+   "a": "ChatGPT, ChatGPT Work, Codex에서는 2026년 10월 14일에 모든 플랜에서 종료됩니다. 공식 공지는 이 종료가 OpenAI API에는 적용되지 않는다고 밝혔습니다. 그 전에 저장된 모델 설정과 스크립트를 교체하세요."
+  }
+ ],
+ "closing": "지금까지 Codex CLI 0.155~0.159 업데이트에 대해 알아보았습니다. 2주도 안 되는 기간에 음성 대화, 전체 화면 UI, 사용량 대시보드, 새 모델 지원, MCP 인증, 샌드박스 보강이 한꺼번에 들어왔고, 그 전후로 codex mcp-server 제거나 승인 정책 폐지처럼 설정을 손봐야 하는 변화도 있었습니다. 다만 이 글은 공식 changelog의 요약 문장을 바탕으로 했기 때문에, 각 기능의 세부 설정 키와 동작은 공식 문서와 직접 실행으로 확인하셔야 합니다. 여러분도 한번 Codex CLI를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "버전·모델 제공 범위·종료 일정은 바뀔 수 있으니 공식 changelog와 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "CodexCLI",
+  "OpenAI",
+  "코딩에이전트",
+  "터미널",
+  "GPT6Sol",
+  "GPT61Sol",
+  "MCP",
+  "샌드박스",
+  "음성대화",
+  "AI도구",
+  "개발자도구",
+  "changelog",
+  "업데이트",
+  "사용가이드",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}
