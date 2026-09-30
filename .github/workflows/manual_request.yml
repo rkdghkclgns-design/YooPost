@@ -71,4 +71,5 @@ jobs:
           ROUTINE_FIRE_URL: ${{ vars.ROUTINE_FIRE_URL }}
           ROUTINE_FIRE_TOKEN: ${{ secrets.ROUTINE_FIRE_TOKEN }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
         run: python scripts/manual_request.py

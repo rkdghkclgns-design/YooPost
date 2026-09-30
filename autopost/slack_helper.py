@@ -180,13 +180,13 @@ class SlackNotifier:
                 log.error("슬랙 웹훅 전송 실패: %s", exc)
         return None
 
-    def update(self, ts: str, text: str, blocks: list[dict] | None = None) -> bool:
+    def update(self, ts: str, text: str, blocks: list[dict] | None = None, channel: str | None = None) -> bool:
         """이미 보낸 메시지를 고친다 (진행 상황 체크리스트 갱신용)."""
         if self._client is None or not ts:
             return False
         try:
             self._client.chat_update(
-                channel=self._channel_id, ts=ts, text=self._clean(text), blocks=self._clean_blocks(blocks)
+                channel=channel or self._channel_id, ts=ts, text=self._clean(text), blocks=self._clean_blocks(blocks)
             )
             return True
         except Exception as exc:

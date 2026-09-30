@@ -1,7 +1,8 @@
 """GitHub Actions manual_request.yml 진입점 — 슬랙 수동 지시 하나를 처리한다 (autopost/manual_request.py).
 
 입력은 모두 환경 변수: MANUAL_TEXT · MANUAL_CHANNEL · MANUAL_TS · MANUAL_USER · MANUAL_SOURCE,
-SLACK_CHANNEL_MANUAL, ROUTINE_FIRE_URL(변수) · ROUTINE_FIRE_TOKEN(비밀), SLACK_BOT_TOKEN(비밀). 비밀값은 출력하지 않는다.
+SLACK_CHANNEL_MANUAL, ROUTINE_FIRE_URL(변수) · ROUTINE_FIRE_TOKEN(비밀), SLACK_BOT_TOKEN·SLACK_CHANNEL_ID(비밀, #yoopost-알림).
+비밀값은 출력하지 않는다.
 루틴을 깨우기 전에 요청 기록을 원고 브랜치(--tree, 기본 .yoopost-drafts)의 runs/requests/<요청 ID>.json 에 올린다.
 """
 from __future__ import annotations
@@ -73,6 +74,7 @@ def main(argv: list[str] | None = None) -> int:
         os.environ.get("MANUAL_TEXT", ""), env("MANUAL_CHANNEL"), env("MANUAL_TS"), env("MANUAL_USER"),
         env("MANUAL_SOURCE") or "message", manual_channel=manual_channel, notifier=notifier, fire=fire,
         record=lambda record: record_to_branch(args.tree.resolve(), record),
+        alert_channel=env("SLACK_CHANNEL_ID"),  # #yoopost-알림 진행 카드 (비우면 올리지 않음)
     )
     print(f"수동 지시 처리: {status}")
     if status in ("failed", "not configured"):

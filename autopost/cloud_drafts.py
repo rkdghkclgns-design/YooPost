@@ -310,7 +310,8 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     for draft_id, reason in outcome.new_failures.items():
         slack.post(f"⚠️ 클라우드 원고를 슬랙 승인 요청으로 보내지 못했습니다 — `{draft_id}`: {escape_mrkdwn(reason)}")
     try:
-        report_requests(root, folders, outcome, records, slack, current, manual_channel, draft_channel)
+        report_requests(root, folders, outcome, records, slack, current, manual_channel, draft_channel,
+                        lookup=store.find)
     except Exception as exc:  # 수동 지시 알림이 원고 전송·진행 막대를 멈추지 않게
         log.warning("수동 지시 스레드에 알리지 못했습니다: %s", exc)
     day = current.strftime("%Y%m%d")

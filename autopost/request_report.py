@@ -15,11 +15,12 @@ import json
 import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Mapping, Sequence
+from typing import Callable, Mapping, Sequence
 
 from .constants import CATEGORIES
 from .draft_request import REQUESTS_DIR, manual_thread, request_of
 from .manual_command import split_request_id
+from .request_board import board_hash, board_rows, build_board, valid_ts
 from .slack_helper import escape_mrkdwn
 
 log = logging.getLogger(__name__)
@@ -27,6 +28,7 @@ log = logging.getLogger(__name__)
 STATE_FILE = "requests.json"
 KEEP_DAYS = 3  # 이보다 오래된 요청의 알림 기록은 지운다
 STALE_HOURS = 3  # 시작한 지 이만큼 지나도 끝나지 않으면 한 번 알린다
+BOARD_HOURS = 30  # 원고 폴더를 오늘·어제 것만 보므로 이 시간 안의 요청만 진행 카드를 고친다
 NOT_STARTED_MINUTES = 30  # 요청을 기록한 뒤 이만큼 지나도 루틴이 시작(request start)하지 않으면 한 번 알린다
 MAX_TITLE = 120
 
@@ -90,14 +92,19 @@ def _age_ok(rid: str, now: datetime) -> bool:
 
 
 def report_requests(root: Path, folders: Sequence[Path], outcome, records: Mapping[str, Mapping[str, object]], slack,
-                    now: datetime, manual_channel: str, draft_channel: str = "") -> dict:
-    """수동 지시 스레드 알림 — 보낸 알림 기록(state/requests.json)을 새로 써서 돌려준다."""
+                    now: datetime, manual_channel: str, draft_channel: str = "",
+                    lookup: Callable[[str], Mapping | None] | None = None) -> dict:
+    """수동 지시 스레드 알림 + #yoopost-알림 진행 카드 — 보낸 알림 기록(state/requests.json)을 새로 써서 돌려준다.
+
+    lookup(원고 ID) = 원고 보관함 기록 (승인 대기·발행됨 표시용, 없으면 None).
+    """
     state_path = root / "state" / STATE_FILE
     old = _read(state_path)
     if not manual_channel:
         return old
     state = {rid: {"reported": list(v.get("reported") or []), "finished": str(v.get("finished") or ""),
-                   "stale": bool(v.get("stale"))}
+                   "stale": bool(v.get("stale")), "board_ts": valid_ts(v.get("board_ts")),
+                   "board_hash": str(v.get("board_hash") or ""), "thread_link": str(v.get("thread_link") or "")}
              for rid, v in old.items() if isinstance(v, dict) and _age_ok(rid, now)}
     per_request: dict[str, list[Path]] = {}
     for folder in folders:
@@ -106,7 +113,7 @@ def report_requests(root: Path, folders: Sequence[Path], outcome, records: Mappi
         if not place:
             continue
         per_request.setdefault(rid, []).append(folder)
-        entry = state.setdefault(rid, {"reported": [], "finished": "", "stale": False})
+        entry = state.setdefault(rid, _new_entry())
         category = escape_mrkdwn(_category(folder))
         # 알림은 종류별로 한 번씩 — 전송 실패를 알린 원고가 나중에 재시도로 도착하면 '원고 도착'도 단다
         if folder.name in outcome.sent:
@@ -133,7 +140,11 @@ def report_requests(root: Path, folders: Sequence[Path], outcome, records: Mappi
         if not place or not _age_ok(rid, now):
             continue
         request = _read(path)
-        entry = state.setdefault(rid, {"reported": [], "finished": "", "stale": False})
+        entry = state.setdefault(rid, _new_entry())
+        try:  # 진행 카드는 스레드 알림과 따로 — 실패해도 스레드 알림은 계속
+            _refresh_board(slack, request, per_request.get(rid, []), lookup, records, entry, place, now)
+        except Exception as exc:
+            log.warning("수동 지시 진행 카드를 고치지 못했습니다 %s: %s", rid, exc)
         if request.get("finished") and not entry["finished"]:
             slack.post(_summary(rid, request, per_request.get(rid, []), outcome, records),
                        thread_ts=place[1], channel=place[0])
@@ -156,6 +167,34 @@ def report_requests(root: Path, folders: Sequence[Path], outcome, records: Mappi
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return state
+
+
+def _new_entry() -> dict:
+    return {"reported": [], "finished": "", "stale": False, "board_ts": "", "board_hash": "", "thread_link": ""}
+
+
+def _refresh_board(slack, request: Mapping, folders: Sequence[Path], lookup, records, entry: dict,
+                   place: tuple[str, str], now: datetime) -> None:
+    """#yoopost-알림 진행 카드를 새 상태로 — 내용이 바뀌었을 때만 고치고, 카드가 없으면 새로 올린다.
+
+    원고 폴더를 오늘·어제 것만 보므로 그보다 오래된 요청의 카드는 더 고치지 않는다 (마지막 상태로 둔다).
+    """
+    created = _parse(str(request.get("created") or ""))
+    if created is None or now.timestamp() - created.timestamp() > BOARD_HOURS * 3600:
+        return
+    if not entry["thread_link"] and hasattr(slack, "permalink"):
+        entry["thread_link"] = slack.permalink(place[0], place[1])
+    text, blocks = build_board(request, board_rows(request, folders, lookup, records), entry["thread_link"])
+    mark = board_hash(text, blocks)
+    if mark == entry["board_hash"]:
+        return
+    ts = entry["board_ts"] or valid_ts(request.get("alert_ts"))
+    if ts and slack.update(ts, text, blocks):
+        entry["board_ts"], entry["board_hash"] = ts, mark
+    elif not ts and not request.get("fire_error"):  # 실행 실패로 닫힌 요청은 접수할 때 이미 알렸다
+        posted = slack.post(text, blocks)
+        if posted:
+            entry["board_ts"], entry["board_hash"] = str(posted), mark
 
 
 def _parse(value: str) -> datetime | None:

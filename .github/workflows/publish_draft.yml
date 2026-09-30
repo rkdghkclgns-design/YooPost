@@ -26,6 +26,7 @@ concurrency:
 
 permissions:
   contents: read
+  actions: write  # 발행 뒤 cloud_drafts.yml 실행 (알림 채널 진행 막대·수동 지시 카드 갱신)
 
 jobs:
   publish:
@@ -74,3 +75,9 @@ jobs:
           DRAFT_ID: ${{ inputs.draft_id }}
           APPROVED_BY: ${{ inputs.approved_by }}
         run: python -m autopost.publish_draft
+
+      - name: 알림 채널 진행 막대·수동 지시 카드 갱신
+        if: ${{ !inputs.check_only && always() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run cloud_drafts.yml --repo "$GITHUB_REPOSITORY" --ref main -f note="발행 반영" || echo "::warning::갱신 실행을 요청하지 못했습니다"

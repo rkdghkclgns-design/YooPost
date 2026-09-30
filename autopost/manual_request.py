@@ -15,6 +15,7 @@ from typing import Callable
 
 from .draft_request import new_record
 from .manual_command import NO_VERB, USAGE, ManualCommand, fire_text, parse_command, request_id
+from .request_board import board_rows, build_board
 from .slack_helper import SlackNotifier, escape_mrkdwn
 
 log = logging.getLogger(__name__)
@@ -105,10 +106,12 @@ def handle_request(
     fire: Callable[[str], FireResult] | None,
     record: Callable[[dict], None] | None = None,
     now: datetime | None = None,
+    alert_channel: str = "",
 ) -> str:
     """지시 하나를 처리하고 결과 상태(fired / help / invalid / ignored / not configured / failed)를 돌려준다.
 
     record(요청 기록) — 루틴을 깨우기 전에 원고 브랜치에 요청을 남긴다 (루틴은 이 기록과 맞는 요청만 수행).
+    alert_channel(#yoopost-알림) — 수동 지시 진행 카드를 올린다 (이후 cloud_sync 가 단계마다 고친다).
     """
     if source == "slash":  # /aipost 는 어느 채널에서든 — 수동 지시 채널에 새 글타래를 연다
         root = notifier.post(f"🧑‍💼 <@{user}> 지시 (`/aipost`): {escape_mrkdwn(text)}", channel=manual_channel)
@@ -134,6 +137,15 @@ def handle_request(
     rid = request_id(channel, ts)
     created = (now or datetime.now(timezone.utc)).astimezone(KST).isoformat(timespec="seconds")
     request = new_record(rid, command.kind, command.category, command.topic, user, created)
+    thread_link = notifier.permalink(channel, ts) if alert_channel else ""
+
+    def board(state: dict) -> tuple[str, list[dict]]:
+        return build_board(state, board_rows(state, [], None, {}), thread_link)
+
+    if alert_channel:  # #yoopost-알림 에 진행 카드 — 위치를 요청 기록에 남겨 이후 단계마다 고친다
+        alert_ts = notifier.post(*board(request), channel=alert_channel)
+        if alert_ts:
+            request = {**request, "alert_ts": alert_ts}
     if record is not None:
         try:
             record(request)
@@ -144,11 +156,14 @@ def handle_request(
     result = fire(fire_text(command, rid))
     if not result.ok:
         reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
+        closed = {**request, "fire_error": result.error[:200]}
         if record is not None:
             try:  # 닫힌 요청으로 표시 — 루틴이 늦게 떠도 하지 않고, '시작되지 않았습니다' 경고도 다시 달지 않는다
-                record({**request, "fire_error": result.error[:200]})
+                record(closed)
             except Exception as exc:
                 log.warning("요청 기록에 실행 실패를 남기지 못했습니다: %s", exc)
+        if request.get("alert_ts"):
+            notifier.update(str(request["alert_ts"]), *board(closed), channel=alert_channel)
         return "failed"
     link = f" · <{result.session_url}|작성 과정 보기>" if result.session_url else ""
     reply(f"📝 접수했습니다 — {describe(command)}{link}\n"
