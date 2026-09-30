@@ -1,0 +1,75 @@
+{
+ "topic": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient (DeepSeek, 2026-09-10) — 모델 카드·API 공식 문서",
+ "source_url": "https://api-docs.deepseek.com/news/news260910",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression (모델 카드)",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "publisher": "DeepSeek-AI (Hugging Face)",
+   "published": "2026-09-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient",
+   "url": "https://api-docs.deepseek.com/news/news260910",
+   "publisher": "DeepSeek API Docs",
+   "published": "2026-09-10",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Models & Pricing",
+   "url": "https://api-docs.deepseek.com/quick_start/pricing",
+   "publisher": "DeepSeek API Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Your First API Call",
+   "url": "https://api-docs.deepseek.com/",
+   "publisher": "DeepSeek API Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "deepseek-ai/deepseek-recipe",
+   "url": "https://github.com/deepseek-ai/deepseek-recipe",
+   "publisher": "DeepSeek-AI (GitHub)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/assets/dsv41_kv_cache.png",
+   "page_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "caption": "세대별 토큰당 전역 KV 캐시 크기 비교 (KV 캐시 압축)",
+   "credit": "DeepSeek-AI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/assets/dsv41_agentic_performance.png",
+   "page_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "caption": "DeepSeek-V4.1-Flash 에이전트 벤치마크 성능 비교",
+   "credit": "DeepSeek-AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 78,
+  "confirmed": 72,
+  "removed": [
+   "제3자 가격 사이트는 DeepSeek 이 이 계획(deepseek-v4-pro → V4.1-Flash 연결)을 되돌렸다고 전합니다 (aipricing.guru 에만 근거 — 삭제, S6 출처 제거)",
+   "메모리에 올릴 때는 552B 전체가 필요한 구조로 보입니다 (공식 근거 없음)",
+   "모델 카드는 Transformers·vLLM·SGLang 같은 배포 경로도 언급합니다 (모델 카드에 없음 — inference 폴더 안내로 교체)",
+   "FAQ: 모델 카드는 Transformers·vLLM·SGLang 경로를 언급 (동일 사유로 교체)",
+   "추론 강도를 low·high·max 로 바꿔 가며 (API 문서에서 high 만 확인 — 일반 표현으로 교체)",
+   "캐시를 줄이면 같은 GPU 로 더 많은 동시 요청을 받을 수 있어 (추정 — 공식 뉴스 문구 '더 많은 사용자를 더 낮은 비용으로'로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): 공식 뉴스(news260910)·Models & Pricing·Your First API Call 페이지와 HF 모델 카드 README 원문(raw)·HF API(createdAt 2026-09-10)·deepseek-recipe GitHub 를 다시 열어 스펙·벤치마크 표 전 수치·가격·피크 시간·뉴스 목록 날짜를 대조. V4-Pro 연결 계획은 공식 뉴스에서 확인(9/14 04:00 UTC, V4.1-Pro 출시 전까지)했으나 현재 가격 문서에는 V4-Pro 가 별도 요금으로 남아 있어 두 공식 문서의 차이로 서술을 고침. 인용 이미지 2개 모두 HTTP 200 image/png 3801x2640 확인."
+ }
+}
