@@ -278,5 +278,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/openai-devday-2026-agents.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 MLflow 피클 안전장치 우회 총정리: statsmodels(CVSS 8.8)·dspy 원격 코드 실행과 3.15.0 대응법",
+  "topic": "MLflow dspy and statsmodels flavors bypass pickle deserialization control — CERT/CC VU#369093 (CVE-2026-96775·CVE-2026-96804, 2026-09-16) / GHSA-gqvg-gmmx-x4hm",
+  "category": "AI 보안",
+  "source_url": "https://kb.cert.org/vuls/id/369093",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/mlflow-statsmodelscvss-88dspy-3150.html"
+  }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "📊 세인트루이스 연은 생성형 AI 직무 조사 총정리: 노동자 45%·직업 80% 확산, 깊이는 얕다",
+  "topic": "What Work Does Generative AI Do? (St. Louis Fed On the Economy, 2026-09-01)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/ai-45-80.html"
+  }
  }
 ]
