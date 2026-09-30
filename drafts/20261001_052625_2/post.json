@@ -1,0 +1,331 @@
+{
+ "title": "🛍 Claude Marketplace 사용 가이드: 플러그인 2,000개 이상·약정 지출로 구매·등록 절차 총정리",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 9월 23일, Anthropic이 **Claude Marketplace**를 공개했습니다. 커넥터·플러그인, Claude 기반 에이전트·제품, 서비스 파트너를 한 곳에서 찾을 수 있는 웹사이트로, 공개 시점에 **2,000개 이상의 커넥터와 플러그인**이 올라왔다고 합니다. 이어 9월 25일에는 개발자가 플러그인을 직접 올리는 방법을 다룬 'Build plugins for Claude' 글도 나왔습니다. 이 글에서는 마켓플레이스가 무엇인지, 조직이 어떻게 활용하는지, 개발자는 어떻게 등록하는지를 공식 문서 기준으로 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Claude Marketplace는 2026-09-23 공개된 곳으로, 커넥터·플러그인 / 에이전트·제품 / 서비스 파트너 세 영역으로 나뉩니다.",
+  "공개 시점에 커넥터와 플러그인 2,000개 이상이 있었고, Atlassian·Google·Microsoft·Notion·Salesforce 등이 포함됩니다.",
+  "조직은 기존 Anthropic 약정 지출의 일부를 파트너 제품 구매에 쓸 수 있다고 공식 글에 적혀 있습니다.",
+  "플러그인은 MCP 커넥터, Agent Skills 또는 둘 모두를 묶은 것이며, 유료 Claude 플랜(Pro·Max·Team·Enterprise) 사용자가 제출할 수 있습니다.",
+  "마켓플레이스 전용 등록은 따로 없고, 디렉터리 개발자 포털(claude.ai/directory/manage)에서 제출합니다.",
+  "이 글에서 배울 것: 마켓플레이스 세 영역 구분, 구매 방식, 플러그인 제출·검토·업데이트 절차, 제출 전 주의점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Claude Marketplace 등장 배경과 의미",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Anthropic 공식 블로그는 **Claude Marketplace**를 'plugins, agents, and services'를 한 곳에서 찾는 장소로 소개합니다. 2026년 9월 23일 공개되었고, 공식 글에 따르면 조직은 커넥터와 플러그인을 추가하고, Claude 기반 에이전트와 제품을 구매하고, 서비스 파트너를 찾을 수 있습니다. 흩어져 있던 확장 기능과 파트너 제품을 **하나의 탐색 창구**로 모은 셈입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "커넥터(connector)는 Claude를 외부 앱·데이터에 연결하는 통로이고, 플러그인(plugin)은 MCP 커넥터와 Agent Skills를 묶은 확장 패키지입니다. 공식 글은 커넥터와 플러그인이 MCP(Model Context Protocol)와 Agent Skills라는 **오픈 표준**으로 만들어졌다고 설명합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이름은 같아도 역할이 다릅니다",
+     "text": "Marketplace는 탐색·구매 창구이고, 개발자가 제출하는 곳은 '디렉터리'입니다. 공식 문서는 Claude Marketplace용 별도 제출은 없고 디렉터리에 제출하면 된다고 안내합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧭 마켓플레이스 세 영역 한눈에 보기",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 글과 마켓플레이스 페이지를 종합하면 구성은 세 영역입니다. 첫째 **커넥터와 플러그인**, 둘째 **에이전트와 제품**, 셋째 **서비스 파트너**입니다. 각 영역은 찾는 목적이 다르므로 아래 표로 비교해 보세요."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "영역",
+      "무엇을 찾나",
+      "공식 글·페이지에 나온 예"
+     ],
+     "rows": [
+      [
+       "커넥터와 플러그인",
+       "앱·데이터·도구를 Claude에 연결",
+       "Atlassian, Google, Microsoft, Notion, Salesforce"
+      ],
+      [
+       "에이전트와 제품",
+       "Claude 기반 소프트웨어 구매",
+       "CrowdStrike, Cursor, Harvey, Legora, Lovable, Snowflake"
+      ],
+      [
+       "서비스 파트너",
+       "도입을 돕는 컨설팅·통합 업체",
+       "Accenture, Boston Consulting Group, Deloitte"
+      ]
+     ]
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "paragraph",
+     "text": "마켓플레이스 페이지에는 **'가장 인기 있는 커넥터' 순위**와 '이번 주 급상승' 목록, 생산성 같은 카테고리별 커넥터 묶음이 있고, 에이전트 영역은 코드·보안·데이터 같은 용도별로 나뉜다고 나옵니다. 서비스 파트너는 Global Premier(Accenture, Deloitte)와 Preferred(Caylent, Slalom Consulting) 같은 등급으로 표시됩니다."
+    }
+   ]
+  },
+  {
+   "heading": "💳 구매와 약정 지출: 조직은 어떻게 쓰나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 글에서 눈에 띄는 대목은 결제 방식입니다. 조직은 **기존 Anthropic 약정 지출(committed spend)의 일부**를 파트너의 에이전트·제품·서비스 구매에 쓸 수 있다고 합니다. 파트너 인용문에서는 **이미 약정한 예산**을 활용해 조달 절차를 줄일 수 있다는 점이 강조됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 글은 고객 사례로 CodeRabbit, Power Digital, ThoughtSpot이 마켓플레이스를 통해 약정 지출을 Vercel과 Snowflake 서비스에 배정했다고 언급합니다. Snowflake는 인용문에서 약정 지출 활용이 **조달 주기를 줄인다**(cutting procurement cycles)고 설명했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "확인된 내용",
+      "출처 기준"
+     ],
+     "rows": [
+      [
+       "약정 지출의 일부를 구매에 사용 가능",
+       "Claude Marketplace 공식 블로그"
+      ],
+      [
+       "파트너 제품 입점은 별도 신청(claude.com/marketplace-partners)",
+       "같은 글"
+      ],
+      [
+       "구체적 수수료·정산 조건",
+       "공개 자료에서 확인하지 못함"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 세부 조건은 직접 확인하세요",
+     "text": "약정 지출을 어떤 범위까지, 어떤 절차로 쓸 수 있는지는 계약마다 다를 수 있습니다. 공식 글에는 관리자 요건이 명시되어 있지 않으므로 도입 전에 Anthropic 담당자나 공식 안내로 확인하는 것이 안전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 개발자를 위한 플러그인 제출 5단계",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "9월 25일 공식 글 'Build plugins for Claude'는 플러그인이 MCP 커넥터, Agent Skills 또는 둘 모두를 묶은 것이며 **서드파티 확장을 만드는 주된 방법**이라고 설명합니다. 제출 경로는 두 가지입니다. 원격 MCP 서버를 가리키는 단일 MCP 커넥터, 또는 GitHub에 올린 MCP 서버와 스킬의 플러그인 번들입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 문서(Submit your plugin)의 **플러그인 번들 제출 흐름**은 다음과 같습니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "1단계: 개발자 포털(claude.ai/directory/manage)에서 Submit new를 누르고 Plugin bundle을 선택합니다.",
+      "2단계: Source 단계에서 GitHub 저장소(URL 또는 owner/repo)와 선택 항목(플러그인 경로, 추적할 브랜치·태그)을 입력하고 Validate를 실행합니다.",
+      "3단계: plugin.json과 README에서 읽어 온 Listing details를 확인합니다. 바꾸려면 저장소를 고치고 다시 검증합니다.",
+      "4단계: Data handling 질문(개인정보 처리, 선언하지 않은 서비스로의 전송, 보관 기간, 18세 미만 대상 여부)에 답하고 Compliance 단계에서 연락 이메일과 동의 항목 4개를 선택합니다.",
+      "5단계: Review and submit에서 새 버전 반영 방식(GitHub push webhook 또는 Scheduled check only)을 고르고 Submit for review를 누릅니다."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 제출 전 터미널 점검",
+     "text": "공식 문서는 플러그인 폴더가 들어 있는 폴더에서 claude plugin validate ./<플러그인 폴더> 를 먼저 실행해 형식·구조 문제를 잡으라고 안내합니다. 포털의 Validate 단계는 이 명령보다 더 많은 검사를 합니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "claude plugin validate ./<plugin-folder>"
+    },
+    {
+     "type": "paragraph",
+     "text": "플러그인 폴더마다 제출이 따로 필요합니다. 한 저장소에 플러그인이 여러 개면 각각 제출해야 합니다. 조직은 24시간 안에 최대 **10건**까지 제출할 수 있고, 저장한 초안과 철회한 제출도 이 한도에 포함됩니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔍 검토·게시·업데이트 과정",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "제출하면 디렉터리가 추적 브랜치의 최신 커밋을 검사합니다. 검사마다 규칙 검증과 **보안 스캔**이 돌아갑니다. 결과는 세 가지입니다. 모든 검사를 통과해 게시할 수 있는 상태, 검토자가 읽은 뒤에야 게시되는 '보류' 상태, 통과하지 못해 어긴 규칙이 표시되는 상태입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "결과",
+      "의미",
+      "다음 행동"
+     ],
+     "rows": [
+      [
+       "모든 검사 통과",
+       "게시 가능 버전",
+       "포털에서 Publish 선택 (기본은 Anthropic 검토자가 게시)"
+      ],
+      [
+       "검토자 보류",
+       "검토자가 읽고 통과시켜야 게시",
+       "검토 결과 대기"
+      ],
+      [
+       "통과 못함",
+       "어긴 규칙이 포털에 표시",
+       "저장소 수정 후 Check for new commits 또는 Resubmit for review"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "게시 이후에는 추적 브랜치에 병합하는 평소 방식으로 **업데이트**합니다. 디렉터리가 새 커밋을 일정에 따라 확인하고, GitHub push webhook을 설정하면 푸시 때도 확인합니다. plugin.json에 version을 적었다면 릴리스마다 올려야 합니다. 새 버전이 게시되기 전까지는 마지막으로 게시된 버전이 계속 제공됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 글은 게시 뒤 분석도 안내합니다. **제품 표면·버전별 설치 수**, 목록 조회와 검색 성과를 볼 수 있어 수정과 기능 우선순위를 정하는 데 쓸 수 있다고 합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 비공개 저장소와 공개 시점",
+     "text": "저장소가 비공개여도 검증·제출은 가능하지만, 게시(리스팅 공개)는 저장소가 공개 상태여야 합니다. 비공개 제출 시 소스가 자동 스캔을 위해 Anthropic에 업로드되고 검토자에게 보인다는 점에 동의해야 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "✅ 누가 제출하고 무엇을 지원하나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서에 따르면 **유료 Claude 플랜**(Pro, Max, Team, Enterprise)이 있으면 제출할 수 있고 무료 계정은 제출할 수 없습니다. Pro·Max는 본인 계정으로 제출하고, Team·Enterprise는 Owner가 제출합니다. Enterprise는 Owner가 사용자 지정 역할로 Directory 권한을 다른 구성원에게 줄 수 있습니다. 별도 파트너 프로그램에 먼저 가입할 필요는 없다고 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "공식 문서 기준 내용"
+     ],
+     "rows": [
+      [
+       "제출 가능 플랜",
+       "Pro, Max, Team, Enterprise (무료 불가)"
+      ],
+      [
+       "사용자에게 노출되는 곳",
+       "claude.ai 웹, 데스크톱·모바일 앱, Cowork. 추가한 플러그인은 Claude Code 세션에서도 사용"
+      ],
+      [
+       "지원 기술",
+       "MCP 2.0(무상태 코어), MCP Apps(대화 안 인터랙티브 UI), Enterprise Managed Auth(엔터프라이즈 사용자용 무개입 OAuth)"
+      ],
+      [
+       "그 밖의 MCP 기능·확장",
+       "공식 글은 '곧 제공'이라고만 표시"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "MCP 서버를 직접 운영한다면 공식 문서는 서버를 **MCP 커넥터로도 따로 제출**하라고 권합니다. 커넥터 대시보드에서 서버 상태와 도구별 사용량을 볼 수 있기 때문입니다. 데스크톱 확장(MCPB) 형태의 로컬 MCP 서버 제출은 더 받지 않고, 로컬 서버는 플러그인 번들에 넣으라고 안내합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 공개 목록 없이 쓰고 싶다면",
+     "text": "공식 문서는 공개 리스팅 없이 공유하려면 팀원과 플러그인 공유 또는 조직 전체 배포 방법을 쓰라고 안내합니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 에이전트에게 붙여넣기: 제출 전 점검 프롬프트",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 공식 제출 절차를 바탕으로 제가 만든 점검용 지시문입니다. **공식 제공 문구가 아니므로** 본인 저장소에 맞게 고쳐 쓰세요."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "내 플러그인 폴더를 점검해 줘.\n1) .claude-plugin/plugin.json 이 있는지, name·description·version 이 채워져 있는지 확인\n2) README 와 라이선스 파일이 있는지 확인\n3) 사용자 데이터를 읽거나 외부 서비스로 보내는 코드가 있으면 목록으로 정리 (Data handling 질문에 답하기 위함)\n4) claude plugin validate 를 실행하고 나온 문제를 고친 뒤 결과를 요약"
+    },
+    {
+     "type": "paragraph",
+     "text": "이 지시문은 공식 문서가 강조한 세 가지, 곧 plugin.json·README·라이선스 점검, 데이터 처리 공개, 사전 검증 명령을 그대로 따릅니다. **포털 Validate는 더 많은 검사**를 하므로 통과한 뒤에도 결과를 확인해야 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "💡 활용 시나리오 3가지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래 시나리오는 공식 자료의 기능을 조합한 **활용 예시**이며, 실제 성과를 보장하지 않습니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "팀 도구 연결: 회사가 Atlassian·Notion·Salesforce 같은 커넥터를 골라 Claude에서 사내 자료를 참조하게 만듭니다.",
+      "전문 제품 구매: 보안·법률·데이터 같은 용도별 파트너 제품을 찾아, 약정 지출을 활용해 도입을 검토합니다.",
+      "사내 플러그인 제작: 자사 서비스 스킬과 MCP 서버를 묶어 디렉터리에 제출하고, 사용 분석으로 개선점을 찾습니다."
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 보안은 사용자 몫도 있습니다",
+     "text": "플러그인은 외부 코드와 권한을 들여오는 확장입니다. 설치 전에 제공자와 요구 권한을 확인하세요. 디렉터리는 제출 버전에 보안 스캔을 돌린다고 하지만, 이것이 모든 위험이 없다는 보증은 아닙니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Claude Marketplace는 언제 공개되었나요?",
+   "a": "공식 블로그 기준 2026년 9월 23일입니다. 공개 시점에 커넥터와 플러그인이 2,000개 이상 있었다고 안내되어 있습니다."
+  },
+  {
+   "q": "마켓플레이스에 입점하려면 별도 신청이 필요한가요?",
+   "a": "커넥터·플러그인은 별도의 마켓플레이스 제출 없이 디렉터리에 제출하면 됩니다. Claude 기반 제품을 판매하려는 업체는 마켓플레이스 파트너 신청 페이지, 컨설팅 업체는 Claude Partner Network 신청서를 공식 글이 안내합니다."
+  },
+  {
+   "q": "무료 계정으로 플러그인을 제출할 수 있나요?",
+   "a": "공식 문서는 Pro, Max, Team, Enterprise 플랜에서 제출할 수 있고 무료 계정은 제출할 수 없다고 밝힙니다."
+  },
+  {
+   "q": "검토에는 얼마나 걸리나요?",
+   "a": "공식 문서는 검토 시간이 고정되어 있지 않다고 밝힙니다. 제출 상태는 포털에서 확인합니다."
+  },
+  {
+   "q": "한 번 제출한 뒤 업데이트는 어떻게 하나요?",
+   "a": "추적 브랜치에 병합하면 디렉터리가 새 커밋을 확인·검사하고, 통과한 버전은 게시 설정에 따라 제공됩니다. 포털로 다시 돌아갈 필요는 보류된 경우 등에 한정됩니다."
+  }
+ ],
+ "closing": "지금까지 Claude Marketplace에 대해 알아보았습니다. 커넥터·플러그인, 에이전트·제품, 서비스 파트너를 한곳에서 찾고, 조직은 약정 지출의 일부로 구매할 수 있으며, 개발자는 디렉터리 개발자 포털로 플러그인을 제출·업데이트하는 구조였습니다. 다만 약정 지출 적용 범위와 검토 소요 시간 같은 세부 조건은 공개 자료에서 확인되지 않았으므로 도입 전에 공식 안내를 다시 확인하셔야 합니다. 여러분도 한번 Claude Marketplace를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "마켓플레이스 구성·제출 조건은 바뀔 수 있으니 공식 블로그와 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "ClaudeMarketplace",
+  "Anthropic",
+  "Claude",
+  "플러그인",
+  "MCP",
+  "AgentSkills",
+  "커넥터",
+  "AI에이전트",
+  "AI도구",
+  "개발자포털",
+  "디렉터리",
+  "약정지출",
+  "AI백과사전",
+  "Cowork",
+  "ClaudeCode"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7"
+ ]
+}

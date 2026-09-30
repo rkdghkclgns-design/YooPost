@@ -1,0 +1,90 @@
+{
+ "topic": "Claude Marketplace: one place to discover plugins, agents, and services (Anthropic, 2026-09-23) + Build plugins for Claude (2026-09-25)",
+ "source_url": "https://claude.com/blog/claude-marketplace",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Marketplace: one place to discover plugins, agents, and services",
+   "url": "https://claude.com/blog/claude-marketplace",
+   "publisher": "Anthropic",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Build plugins for Claude",
+   "url": "https://claude.com/blog/build-plugins-for-claude",
+   "publisher": "Anthropic",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Publish to the directory",
+   "url": "https://claude.com/docs/directory/publish",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Submit your plugin",
+   "url": "https://claude.com/docs/plugins/submit",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Claude Marketplace",
+   "url": "https://claude.com/marketplace",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Anthropic Launches Claude Marketplace With More Than 2,000 Connectors and Plugins",
+   "url": "https://www.ghacks.net/2026/09/27/anthropic-launches-claude-marketplace-with-more-than-2000-connectors-and-plugins/",
+   "publisher": "gHacks Tech News",
+   "published": "2026-09-27",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Product announcements",
+   "url": "https://claude.com/blog-category/announcements",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6ab3af144435c228297042ed_Claude-marketplace.png",
+   "page_url": "https://claude.com/blog/claude-marketplace",
+   "caption": "마켓플레이스 세 영역 한눈에 보기: Claude Marketplace 화면",
+   "credit": "Anthropic"
+  }
+ ],
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "corrected": [
+   "에이전트·제품 예시 표에서 Hebbia 제거 (공식 글 목록에 없고 인용문에만 등장)",
+   "마켓플레이스 페이지의 '카테고리 필터' → '카테고리별 커넥터 묶음'(Productivity 섹션)으로 수정",
+   "'별도 예산이나 새 계약 없이 ... 목적' → 파트너 인용문(Legora·Snowflake) 표현대로 수정",
+   "Snowflake 인용문 요지를 원문(cutting procurement cycles)대로 명확화",
+   "'참여했습니다' → '포함됩니다'(원문 including)"
+  ],
+  "removed": [
+   "이미 나온 Claude Cowork 예약 작업 글이나 Claude Code 업데이트 글과 달리, 이번 소식은 '무엇을 붙일 수 있는가'에 관한 것입니다. (출처로 확인 불가)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S2·S3·S4·S5 공식 페이지를 WebFetch와 curl 원문으로 다시 열어 날짜(9/23, 9/25)·2,000개 이상·영역별 기업명·약정 지출·고객 사례·파트너 신청 경로·제출 5단계·10건/24시간·검토 결과 3종·게시 설정·비공개 저장소 조건·플랜/역할·노출 표면·MCP 2.0/MCP Apps/Enterprise Managed Auth·MCPB·서비스 파트너 등급을 한 줄씩 대조. 인용 이미지 I1 은 S1 본문 figure(3840x2160, HTTP 200 image/png, og:image 아님) 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
