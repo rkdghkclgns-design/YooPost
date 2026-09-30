@@ -158,5 +158,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/gpt-6-solluna-100-201.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 GitHub Copilot 앱 로컬 샌드박스 사용 가이드: 파일·네트워크·자격 증명 제한과 OpenTelemetry 총정리",
+  "topic": "Local sandboxing in the GitHub Copilot app (GitHub Changelog, 2026-09-23) · OpenTelemetry in the GitHub Copilot app (2026-09-22)",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/github-copilot-opentelemetry.html"
+  }
  }
 ]
