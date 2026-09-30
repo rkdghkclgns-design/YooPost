@@ -1,0 +1,84 @@
+{
+ "topic": "Epoch AI 2026년 9월 분석 4편 — The plunging price of thought (2026-09-22) / Near-daily AI use among US adults has more than doubled in six months (2026-09-14) / In August, 25% of math preprints acknowledged AI use (2026-09-18) / Frontier data center power (2026-09-04)",
+ "source_url": "https://epoch.ai/publications/the-plunging-price-of-thought",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The plunging price of thought",
+   "url": "https://epoch.ai/publications/the-plunging-price-of-thought",
+   "publisher": "Epoch AI",
+   "published": "2026-09-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Near-daily AI use among US adults has more than doubled in six months",
+   "url": "https://epoch.ai/data-insights/near-daily-ai-use-doubled",
+   "publisher": "Epoch AI",
+   "published": "2026-09-14",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "In August, 25% of math preprints acknowledged AI use, up from 4% in April",
+   "url": "https://epoch.ai/data-insights/math-preprints-disclosed-ai-use",
+   "publisher": "Epoch AI",
+   "published": "2026-09-18",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Frontier data center power",
+   "url": "https://epoch.ai/data-insights/frontier-data-center-power",
+   "publisher": "Epoch AI",
+   "published": "2026-09-04",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Epoch AI Data Insights 목록",
+   "url": "https://epoch.ai/data-insights",
+   "publisher": "Epoch AI",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://epoch.ai/assets/images/posts/2026/the-plunging-price-of-thought/figure-1.png",
+   "page_url": "https://epoch.ai/publications/the-plunging-price-of-thought",
+   "caption": "기술별 가격 하락 비교: AI 추론 비용이 DNA 시퀀싱·배터리·컴퓨팅·전기보다 가파르게 떨어진 그래프",
+   "credit": "Epoch AI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://epoch.ai/assets/images/data-insights/near-daily-ai-use-doubled/near-daily-ai-use-doubled.png",
+   "page_url": "https://epoch.ai/data-insights/near-daily-ai-use-doubled",
+   "caption": "미국 성인의 AI 사용 일수별 비율: 주 6일 이상 사용 2026년 3월 8%에서 8월 19%",
+   "credit": "Epoch AI / Ipsos"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://epoch.ai/assets/images/data-insights/math-preprints-disclosed-ai-use/math-preprint-ai-acknowledgments.png",
+   "page_url": "https://epoch.ai/data-insights/math-preprints-disclosed-ai-use",
+   "caption": "수학 연구 현장: arXiv 수학 프리프린트 중 AI 사용을 밝힌 비율(2026년 8월 25%)과 상당한 연구 기여를 밝힌 비율(6%) 변화 차트",
+   "credit": "Epoch AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [
+   "원문의 해석대로라면 새 사용자가 늘었다기보다 가끔 쓰던 사람이 습관적 사용자로 옮겨 간 것이 성장의 중심입니다. (원문에 없는 해석 — 삭제, 90% 신뢰 구간 수치로 대체)",
+   "원문은 Microsoft Fairwater Wisconsin과 OpenAI Stargate 같은 시설이 수 기가와트에 이를 수 있다는 전망을 내놓았지만… (원문에 없음 — 예정 시설 5곳이 추세의 약 절반이라는 원문 내용으로 교체)",
+   "2028년까지의 전망은 로그 선형 모형으로 외삽한 예측입니다. (FAQ — 예정 시설은 건설 일정 기반이며 회귀에 쓰이지 않음, 수정)",
+   "다만 2023년 이전 자료가 부족해 직접 확인하지는 못했다고 밝힙니다. (원문 표현과 다름 — 'MMLU 토큰 단가 등 거친 자료에 기댄 그럴 법한 추정'으로 수정)"
+  ],
+  "note": "Opus 검증: Epoch AI 원문 5개 페이지(S1~S5)를 curl 로 다시 열어 모든 수치·날짜·이름을 대조. 발표일 9-22/9-14/9-18/9-04, 47%·13배, 725배·0.0004달러, 벤치마크별 하락률, 66%/32%, 42.9~58.0%, 8%→19%·17%→10%·50%→56%·표본 2,017/1,016, 4%→25%·6%·93%, 10개월·946MW(헤드라인 약 950MW) 확인. 고친 것: 기술 비교표 AI 기간 2021~26→2023~26 및 기술별 기간 추가, 분석 기간 '2023년 3월~2026년 9월'→'2023년부터 약 3년', 수학 논문 93% 검토 대상·1.5%p 조건 정확화, 데이터센터 626MW 기록 추가·예정 시설 설명 교체, 주 2~5일 수치 정확화, S5 설명(홈페이지 최신→보고서·데이터 인사이트). 인용 이미지 3개는 모두 HTTP 200 image/png, 가로 1026~2400px, 각 페이지 본문 차트(noscript 대체 이미지, og:image 아님)이며 그림 내용과 캡션 일치 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790746913071379",
+  "kind": "all"
+ }
+}
