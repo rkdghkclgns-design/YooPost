@@ -1,0 +1,75 @@
+{
+ "topic": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (NVIDIA, 2026-09-28)",
+ "source_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
+   "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+   "publisher": "NVIDIA Newsroom",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+   "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+   "publisher": "NVIDIA Technical Blog",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "NVIDIA wants AI agent safety enforced in silicon, not left to the agent",
+   "url": "https://www.helpnetsecurity.com/2026/09/28/nvidia-open-agent-safety-platform/",
+   "publisher": "Help Net Security",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+   "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell",
+   "publisher": "NVIDIA Technical Blog",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "NVIDIA OpenShell Documentation",
+   "url": "https://docs.nvidia.com/openshell/about/why-open-shell",
+   "publisher": "NVIDIA Docs",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/NVIDIAAgentSafetyPlatform_1920x1080_Title_v05.webp",
+   "page_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+   "caption": "OpenShell(Vera CPU)과 Sentry(BlueField-4)로 이뤄진 Open Agent Safety Platform 참조 설계 구성도",
+   "credit": "NVIDIA"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/figure-1-2.webp",
+   "page_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell",
+   "caption": "OpenShell 게이트웨이가 샌드박스별 에이전트를 관리하고, 정책이 허용한 연결만 애플리케이션 서비스로 나가는 구조",
+   "credit": "NVIDIA"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 60,
+  "removed": [
+   "독자 댓글에서는 오래된 방화벽이 '나쁜 것' 규칙을 견고하게 쓰기 어려웠던 경험을 들어 실제 효과를 지켜봐야 한다는 의견도 나왔습니다. (댓글은 근거가 아님)",
+   "ServeTheHome는 OpenShell의 버전이 0.1.0이라는 점이 아직 갈 길이 남았다는 신호일 수 있다고 보았고 (매체 의견 — 공식 자료 기반 버전 안내로 교체)"
+  ],
+  "note": "Opus 검증: S1(보도자료 2026-09-28)·S2(기술 블로그 2026-09-28)·S3를 curl로 다시 열어 수치·날짜·이름·파트너 목록·하드웨어 주장을 대조. ServeTheHome(S4)에만 있던 OpenShell 0.1.0·YAML→OPA/Rego·HTTP/GraphQL/MCP 검사·OCSF 감사 기록·자격 증명 분리·최대 2시간 적대적 실험은 NVIDIA 공식 안내서(S5, 2026-09-28)에서 모두 확인되어 유지하고 출처를 S5로 바꿈, S4는 출처에서 제외. 수정: '수 밀리초'→'밀리초 단위'(원문 in milliseconds), '이 밖에도 100곳'→'이들을 포함해 100곳', 에너지 기업을 '미국 핵심 인프라 제공자'로, '모든 정책 결정' 표현 완화. 문서 사이트 최신 v0.1.2(S6)로 버전 안내 보강. 인용 이미지 I1(S2 본문 Figure 1)·I2(S5 본문 Figure 1) 모두 HTTP 200 image/webp, 가로 1920/2047px 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790754467113489",
+  "kind": "all"
+ }
+}
