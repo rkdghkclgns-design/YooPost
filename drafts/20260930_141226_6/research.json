@@ -1,0 +1,72 @@
+{
+ "topic": "What Work Does Generative AI Do? (St. Louis Fed On the Economy, 2026-09-01)",
+ "source_url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "What Work Does Generative AI Do?",
+   "url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+   "publisher": "Federal Reserve Bank of St. Louis",
+   "published": "2026-09-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "FRED Adds Data About the Adoption of Generative Artificial Intelligence",
+   "url": "https://news.research.stlouisfed.org/2026/07/fred-adds-data-about-the-adoption-of-generative-artificial-intelligence/",
+   "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+   "published": "2026-07-24",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Generative Artificial Intelligence, Adoption Rate for Work: Employed Adults 18-64 (FRED)",
+   "url": "https://fred.stlouisfed.org/series/RPSGENAIUSAGESHAREWORK",
+   "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "The State of Generative AI Adoption in 2025",
+   "url": "https://www.stlouisfed.org/on-the-economy/2025/nov/state-generative-ai-adoption-2025",
+   "publisher": "Federal Reserve Bank of St. Louis",
+   "published": "2025-11-13",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/blog/2026/ote/sept/blogimage_ai_whatwork_fig1_090126.png",
+   "page_url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+   "caption": "직업별 AI 사용률 분포 — 사용률 10분위 구간별 직업 비중 (RPS 2025년 8월~2026년 5월)",
+   "credit": "Federal Reserve Bank of St. Louis"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/blog/2026/ote/sept/blogimage_ai_whatwork_fig2_090126.png",
+   "page_url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+   "caption": "업무별 AI 사용률 분포 — 사용률 10분위 구간별 업무 비중 (RPS 2025년 8월~2026년 5월)",
+   "credit": "Federal Reserve Bank of St. Louis"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "글은 챗 로그 분석에 직업 맥락 없이 분류해야 하는 등 개념·측정상의 어려움이 있다고 지적합니다. (원문에 '직업 맥락' 언급 없음 → 원문 표현으로 교체)",
+   "같은 사무직이라도 직업에 따라 사용률이 크게 갈린다는 점이 바로 이 방식에서 드러납니다. (원문 근거 없음)",
+   "몸을 쓰거나 현장에서 사람을 직접 대하는 업무는 아직 생성형 AI 의 손이 닿지 않는다는 뜻으로 읽을 수 있습니다. (원문의 'hands-on or face-to-face' 직업 서술로 교체)",
+   "연구진이 업무 단위 지수를 별도로 내려받을 수 있게 공개한 이유도 여기에 있어 보입니다. (추측)",
+   "연구진은 … 익숙해질수록 사용이 깊어질 것이라고 봅니다. (원문에 없는 전망 → 'costly learning or experimentation' 원문 설명으로 교체)",
+   "기술 가능성만으로 도입을 예측하기 어렵다는 것이 이번 결과의 교훈입니다. (원문 결론 문장으로 교체)",
+   "조직 관점에서는 '우리 직무의 어떤 업무에 AI 를 붙였는가'를 업무 단위로 점검하는 것이 출발점이 될 수 있습니다. (원문에 없는 조언 → 지수 공개·갱신 사실로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1(세인트루이스 연은 2026-09-01 원문), S2(FRED 공지 2026-07-24), S3(FRED 계열 RPSGENAIUSAGESHAREWORK, 2025Q2 35.08·2025Q4 40.73·2026Q1 43.41·2026Q2 45.20), S4(2025-11-13 글)를 WebFetch 로 다시 열어 수치·날짜·이름을 하나씩 대조 (curl 은 stlouisfed.org 연결이 끊겨 WebFetch 사용). 수정: '6개월 넘게'→'6개월 이상'(at least six months), '같은 업무'→'비슷한 업무', 노출 점수 '약 절반'은 '일부 노출 예측'으로 한정, 수리·특수교육·세탁 3직업 모두 '예측의 약 두 배'(원문)로 정정, 개인정보 설명을 원문대로, 연구 날짜·S2 저자(빅·블랜딘·데밍)·S2 항목(사용률 비교) 정정, '1만 4천 명 가까운'(nearly 14,000). 인용 이미지: fig1·fig2 를 직접 받아 PNG(image/png) 확인 — fig1 808x496 'Distribution of AI Adoption Rates across Occupations', fig2 812x495 'Distribution of AI Adoption Rates across Job Tasks' — 캡션을 그림 제목에 맞게 구체화, I1 을 분포를 다루는 '넓지만 얕다' 소제목으로 옮김. 원문에 없는 전망·조언 문장은 원문 서술로 교체."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}
