@@ -258,5 +258,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/gemini-api-antigravity-9-credentials-api.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🔒 LLM 에이전트 트레이스 변조 논문 분석: 10개 조합 실험·Muse Code만 0%·방어책 총정리",
+  "topic": "LLM Agents Can Easily Tamper With Their Own Traces (arXiv 2609.30266, 2026-09-24)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.30266",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/llm-10-muse-code-0.html"
+  }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🚀 OpenAI DevDay 2026 총정리: Agents API·Ultrafast·Pro 500·Codex Security Cloud 한눈에",
+  "topic": "OpenAI DevDay 2026 announcements and developer resources (OpenAI Developer Community, 2026-09-29)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/openai-devday-2026-agents.html"
+  }
  }
 ]
