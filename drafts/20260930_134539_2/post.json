@@ -1,0 +1,391 @@
+{
+  "title": "🤖 Gemini API 관리형 에이전트 사용 가이드: Antigravity 9월 하네스·Credentials API·샌드박스 총정리",
+  "category": "AI 도구",
+  "intro": "안녕하세요! 구글이 Gemini API 에 내놓은 **관리형 에이전트(Managed Agents)** 가 `antigravity-preview-09-2026` 하네스로 새로워졌습니다. 관리형 에이전트는 API 호출 한 번으로 구글이 호스팅하는 리눅스 샌드박스를 띄우고, 그 안에서 에이전트가 코드를 실행하고 파일을 다루고 웹을 검색하게 해 주는 서비스입니다. 이번 9월 버전은 **프롬프트 캐싱·네이티브 코드 검색 도구·줄 범위 파일 편집**으로 실행 환경을 개선했고, 공식 문서에는 샌드박스 파일을 주고받는 Files API 와 비밀 값을 샌드박스 밖에 보관하는 Credentials API 사용법도 정리돼 있습니다. 이 글에서는 공식 문서를 직접 읽고 호출 방법, 환경 설정, 자격 증명 처리 방식, 한도와 주의점을 정리했습니다. 함께 살펴보시죠!",
+  "summary": [
+    "에이전트 ID `antigravity-preview-09-2026` 은 Gemini 3.8 Flash 기반 범용 관리형 에이전트로, Interactions API 한 번 호출로 리눅스 샌드박스가 만들어집니다.",
+    "기본 도구는 코드 실행(Bash·Python·Node.js)·Google 검색·URL 컨텍스트·파일 시스템이며, 사용자 함수와 MCP 서버로 확장할 수 있습니다.",
+    "Credentials API 는 토큰·API 키를 서버에 보관하고, 샌드박스에는 비밀 값이 들어가지 않습니다 (값은 쓰기 전용).",
+    "환경(environment)은 Git 저장소 500MB·Cloud Storage 2GB·인라인 파일당 1MB(합계 2MB)까지 소스로 담을 수 있고, 15분 유휴 뒤 idle, 마지막 활동 후 7일 보관 뒤 삭제됩니다.",
+    "프리뷰 기간에는 모델 토큰·도구 사용량 기준 종량제이며 환경 컴퓨트 비용은 청구되지 않는다고 문서에 적혀 있습니다.",
+    "이 글에서 배울 것: 관리형 에이전트 호출법, 자격 증명·네트워크 허용 목록 설정, 환경 수명주기, 커스텀 에이전트 만들기와 한계"
+  ],
+  "sections": [
+    {
+      "heading": "📰 Gemini 관리형 에이전트 등장 배경",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "구글은 2026년 5월 19일 블로그에서 **Gemini API 관리형 에이전트**를 처음 소개했습니다. 당시 설명은 \"단일 API 호출이 Antigravity 에이전트를 통해 원격 리눅스 환경을 만들고, 에이전트가 추론하고 계획하고 도구를 호출한다\"는 것이었고, 구글은 \"복잡성을 추상화해서 제품 경험에 집중할 수 있게 한다\"고 밝혔습니다. 그때의 Antigravity 에이전트는 Gemini 3.5 Flash 기반이었습니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "2026년 7월 7일에는 **백그라운드 실행**, **원격 MCP 서버 연결**, **사용자 함수 호출**, **자격 증명 갱신** 네 가지가 추가됐습니다. 백그라운드 실행은 HTTP 연결을 붙잡고 있지 않아도 서버에서 작업이 돌고, 응답으로 받은 ID 로 상태를 조회하는 방식입니다. 이번 9월 하네스는 이 흐름의 연장선에서 나온 업데이트입니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "이번 `antigravity-preview-09-2026` 에 대해 공식 문서는 Antigravity 에이전트가 **Antigravity IDE 와 같은 하네스**를 쓴다고 설명합니다. 모델 페이지에는 \"2026년 9월 릴리스가 **프롬프트 캐싱, 네이티브 코드 검색 도구, 효율적인 줄 범위 파일 편집**으로 런타임 하네스를 개선했다\"고 적혀 있고, 최신 업데이트 시점도 '2026년 9월'로 표시돼 있습니다. 5월·7월 블로그 예시 코드가 쓰던 `antigravity-preview-05-2026` 대신 지금 문서의 예시는 모두 9월 버전 ID 를 씁니다."
+        },
+        {
+          "type": "info",
+          "title": "💡 관리형 에이전트란",
+          "text": "직접 에이전트 루프·샌드박스·도구 실행기를 만들지 않고, **구글이 호스팅하는 하네스(에이전트 실행 틀)** 를 API 로 호출하는 방식입니다. 문서는 이를 \"설정 가능한 에이전트 하네스\"라고 설명합니다."
+        }
+      ]
+    },
+    {
+      "heading": "⚙ Antigravity 에이전트 공식 스펙 정리",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "공식 문서에 따르면 Antigravity 에이전트는 **Gemini 3.8 Flash** 를 기본 모델로 쓰는 범용 관리형 에이전트이고, \"자체 보안 리눅스 샌드박스 안에서 추론하고, 코드를 실행하고, 파일을 관리하고, 웹을 탐색\"합니다. 모델 페이지의 주요 사양은 아래 표와 같습니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "항목",
+            "공식 문서 내용"
+          ],
+          "rows": [
+            [
+              "에이전트 ID",
+              "antigravity-preview-09-2026"
+            ],
+            [
+              "입력 형식",
+              "텍스트, 이미지"
+            ],
+            [
+              "출력 형식",
+              "텍스트"
+            ],
+            [
+              "입력 컨텍스트 창",
+              "1,048,576 토큰 (약 135k 에서 압축)"
+            ],
+            [
+              "출력 토큰 한도",
+              "65,536"
+            ],
+            [
+              "기본 모델",
+              "Gemini 3.8 Flash"
+            ],
+            [
+              "선택 가능한 모델",
+              "Gemini 3.7 Flash, 3.6 Flash, 3.5 Flash, 3.5 Flash-Lite"
+            ],
+            [
+              "상태",
+              "프리뷰 (Google AI Studio·Gemini API, 무료·유료 프로젝트 모두)"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**기본 제공 도구**는 네 가지입니다. 코드 실행(Bash·Python·Node.js 이며 표준 출력과 오류를 수집), Google 검색(공개 웹 질의), URL 컨텍스트(웹 페이지 읽기), 파일 시스템(샌드박스 안의 파일 읽기·쓰기·편집·검색)입니다. 파일 시스템은 `environment` 매개변수를 쓰면 자동으로 켜집니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "**확장 방법**은 두 가지입니다. 사용자 함수는 에이전트가 함수 호출을 요청하면 클라이언트가 결과를 다음 턴에 돌려주는 방식이고, **MCP(Model Context Protocol, 모델 컨텍스트 프로토콜) 서버**는 원격 HTTP 엔드포인트를 도구로 등록하는 방식입니다. MCP 에는 인증 헤더와 허용 목록을 붙일 수 있습니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 프리뷰 서비스입니다",
+          "text": "문서가 '프리뷰'로 표시한 기능이라 에이전트 ID·한도·요금 조건이 바뀔 수 있습니다. 운영 환경에 붙이기 전에 최신 문서를 다시 확인하세요."
+        }
+      ]
+    },
+    {
+      "heading": "💻 첫 호출: 설치·사용 가이드 (에이전트에게 붙여넣기)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "호출은 **Interactions API 한 번**이면 됩니다. 아래는 공식 문서에 실린 Python 예시입니다. `environment=\"remote\"` 가 새 리눅스 컨테이너를 만들라는 뜻입니다. 문서는 JavaScript·Java·Go·REST 예시도 함께 제공합니다."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "from google import genai\nclient = genai.Client()\ninteraction = client.interactions.create(\n    agent=\"antigravity-preview-09-2026\",\n    input=\"Read Hacker News, summarize the top 10 stories, and save the results as a PDF.\",\n    environment=\"remote\",\n)\nprint(interaction.output_text)"
+        },
+        {
+          "type": "paragraph",
+          "text": "`environment` 값은 세 가지 형태를 받습니다. `\"remote\"` 는 새 샌드박스, `\"env_abc123\"` 처럼 ID 를 주면 **기존 환경 재사용**(파일과 상태 유지), 설정 객체를 주면 Git 소스·GCS 버킷·인라인 파일·네트워크 허용 목록을 갖춘 **맞춤 환경**입니다. 한 상호작용에서 만든 파일은 같은 환경 ID 를 다시 쓰면 남아 있어서 여러 턴에 걸친 작업이 가능합니다."
+        },
+        {
+          "type": "subheading",
+          "text": "토큰 예산과 모델 교체"
+        },
+        {
+          "type": "paragraph",
+          "text": "`agent_config` 의 `max_total_tokens` 로 입력·출력·사고 토큰의 **총합 상한**을 걸 수 있고, 예산이 바닥나면 상호작용이 `status: \"incomplete\"` 로 끝납니다. 캐시된 토큰은 이 한도에 포함되지 않습니다. 같은 `agent_config` 로 모델도 바꿉니다."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "agent_config={\n    \"type\": \"antigravity\",\n    \"max_total_tokens\": 50000\n}\n\nagent_config={\n    \"type\": \"antigravity\",\n    \"model\": \"gemini-3.5-flash-lite\",\n}"
+        },
+        {
+          "type": "subheading",
+          "text": "백그라운드 실행과 예약 트리거"
+        },
+        {
+          "type": "paragraph",
+          "text": "`background=True` 를 주면 **비동기 실행**이 되어 ID 를 즉시 돌려받고, 완료될 때까지 폴링합니다. 진행 중인 상호작용은 취소할 수 있습니다. 또한 cron 문법으로 **예약 트리거**를 만들면 에이전트·환경·프롬프트·일정이 묶여 정해진 시각에 실행되고 같은 샌드박스를 재사용하며, 일시 정지·재개·삭제·수동 실행도 됩니다."
+        },
+        {
+          "type": "code",
+          "language": "plaintext",
+          "code": "Gemini API 관리형 에이전트로 작업을 하나 실행하는 파이썬 스크립트를 만들어 줘.\n- 에이전트 ID: antigravity-preview-09-2026\n- Interactions API 사용, environment=\"remote\"\n- 입력은 내가 정한 조사 주제 한 줄\n- max_total_tokens 로 토큰 예산 상한을 걸고, status 가 incomplete 이면 안내 메시지 출력\n- 공식 문서(ai.google.dev/gemini-api/docs/antigravity-agent)에 없는 옵션은 쓰지 말 것"
+        },
+        {
+          "type": "info",
+          "title": "💡 이미지 입력은 인라인 base64",
+          "text": "상호작용은 텍스트와 이미지를 받지만, 이미지는 MIME 타입과 함께 **base64 인라인 데이터**로 넣어야 한다고 문서에 적혀 있습니다."
+        }
+      ]
+    },
+    {
+      "heading": "🔐 Credentials API: 비밀 값을 샌드박스 밖에 두는 방법",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "이번 업데이트에서 실무적으로 가장 눈에 띄는 부분입니다. 문서는 자격 증명을 \"비밀 값이 에이전트 환경에 들어가지 않고도 에이전트가 외부 서비스에 접근하게 해 주는 **서버 관리형 비밀**\"이라고 설명합니다. 비밀 값은 **쓰기 전용**이라 한 번 저장하면 어떤 엔드포인트도 되돌려 주지 않습니다. 에이전트가 침해되더라도 토큰을 읽어 갈 수 없게 하려는 설계입니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "유형",
+            "용도",
+            "동작"
+          ],
+          "rows": [
+            [
+              "bearer_token",
+              "개인 액세스 토큰·API 키",
+              "프록시가 토큰을 요청 헤더로 주입, 갱신 로직 없음"
+            ],
+            [
+              "oauth2",
+              "OAuth 앱·사용자 위임 흐름",
+              "프록시가 리프레시 토큰을 액세스 토큰으로 자동 교환"
+            ],
+            [
+              "environment_variable",
+              "환경 변수를 읽는 클라이언트 SDK",
+              "에이전트는 자리표시자를 받고, 프록시가 나가는 요청에서만 실제 값으로 치환"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "사용 패턴은 세 가지입니다. 문서가 **권장**하는 것은 `environment.network.allowlist` 의 도메인 규칙에 자격 증명을 붙이는 방식으로, 그 도메인으로 나가는 모든 요청을 프록시가 인증합니다. MCP 서버 도구에는 `credential` 을 지정하면 인증 헤더가 주입됩니다. 환경 변수 방식은 `environment.env` 의 변수 이름에 묶으면 변수에 `__GEMINI_CRED_<id>__` 형태의 자리표시자가 들어가고, `trusted_domains` 로 지정한 곳으로 가는 요청에서만 치환됩니다."
+        },
+        {
+          "type": "subheading",
+          "text": "관리 API 와 오류 코드"
+        },
+        {
+          "type": "list",
+          "items": [
+            "생성: POST /v1beta/credentials (유형별 필수 필드 포함)",
+            "목록: GET /v1beta/credentials?page_size=10 (page_token 으로 페이지 이동)",
+            "조회: GET /v1beta/credentials/{id} (메타데이터만 반환)",
+            "교체: PATCH /v1beta/credentials/{id} (참조를 바꾸지 않고 비밀 값만 교체)",
+            "삭제: DELETE /v1beta/credentials/{id}",
+            "오류: 400 invalid_request, 404 not_found, 409 aborted (ID 중복)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "bearer_token 의 기본 헤더는 `Authorization: Bearer <token>` 이고, `header_name` 과 `prefix` 로 바꿀 수 있습니다. 예를 들어 `x-goog-api-key` 헤더에 접두사 없이 키를 넣는 설정이 문서 예시로 나옵니다. oauth2 는 **생성 시점에 `token_url` 로 실제 토큰 교환을 시도**해 리프레시 토큰을 검증하고, 성공 응답에 `access_token` 이 있을 때만 저장합니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 리터럴 값은 평문입니다",
+          "text": "문서는 환경 변수에 **리터럴 문자열**로 넣은 값은 컨테이너 안에서 평문이라고 밝힙니다. 비밀은 반드시 자격 증명으로 저장해 자리표시자 치환을 쓰고, 문서는 environment_variable 유형마다 `trusted_domains` 를 **반드시 설정하라**고 권고하며, 그 목록 밖의 도메인으로 가는 요청은 거부됩니다."
+        }
+      ]
+    },
+    {
+      "heading": "🛠 환경(Environment) 설정과 Files API",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "환경은 격리된 리눅스 샌드박스로, 상호작용 컨텍스트와 **분리되어** 있어서 재사용하거나 새로 시작할 수 있습니다. 설정 객체에서 쓸 수 있는 소스와 한도는 아래와 같습니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "소스·항목",
+            "한도"
+          ],
+          "rows": [
+            [
+              "Git 저장소",
+              "500MB"
+            ],
+            [
+              "Cloud Storage 파일·디렉터리",
+              "2GB"
+            ],
+            [
+              "인라인 텍스트",
+              "파일당 1MB, 전체 합계 2MB"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "네트워크는 **도메인 허용 목록**으로 제한하고 인증 헤더를 붙일 수 있으며, 저장된 자격 증명을 참조하거나 `transform` 으로 인라인 토큰을 주입할 수 있습니다. `network: \"disabled\"` 를 주면 **바깥으로 나가는 접근을 모두 끕니다**. 에이전트 개요 문서는 기본값이 제한 없는 아웃바운드 접근이라고 적고 있으니, 허용 목록 설정은 사실상 필수에 가깝습니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "샌드박스는 Ubuntu 기반이며 **Python 3.12**(numpy·pandas·requests 포함)와 **Node.js 22**, curl·git·jq 같은 유닉스 도구, Google Cloud CLI 가 미리 깔려 있습니다."
+        },
+        {
+          "type": "subheading",
+          "text": "수명주기와 Files API"
+        },
+        {
+          "type": "paragraph",
+          "text": "환경 상태는 created, active, idle(**15분** 유휴 후), offline(마지막 활동 후 **7일** 보관), deleted 순으로 진행되고, 보관 중인 환경은 ID 를 넘기면 이어서 쓸 수 있습니다. 만료된 ID 를 넘기면 404 오류가 납니다. **Files API** 는 샌드박스 파일의 목록 조회·tar 다운로드·업로드·압축 해제를 지원하며, 저장 용량은 공정 사용 한도를 따른다고 문서에 나옵니다."
+        },
+        {
+          "type": "info",
+          "title": "💡 자격 증명 갱신 요령",
+          "text": "7월 업데이트로 기존 `environment_id` 와 새 네트워크 설정을 함께 넘기면 **파일 시스템 상태를 유지한 채** 토큰이나 API 키를 바꿀 수 있습니다. 장기 작업에서 토큰이 만료될 때 유용합니다."
+        }
+      ]
+    },
+    {
+      "heading": "💡 나만의 에이전트 만들기 활용 시나리오",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "관리형 에이전트는 Antigravity 에이전트에 **사용자 지침·스킬·데이터**를 얹은 것입니다. 시스템 지침은 `system_instruction` 으로 넘기며 파일 기반 지침과 **합산**됩니다. 도구는 기본값(코드 실행·검색·URL 컨텍스트)을 덮어쓰거나 사용자 함수·MCP 서버를 등록해 바꿀 수 있습니다."
+        },
+        {
+          "type": "code",
+          "language": "plaintext",
+          "code": "my-agent/\n├── AGENTS.md        # 긴 페르소나·지침\n├── skills/\n│   └── skill-name/\n│       └── SKILL.md\n└── workspace/       # 초기 데이터 파일"
+        },
+        {
+          "type": "paragraph",
+          "text": "시스템은 `.agents/AGENTS.md` 를 시작 지침으로 자동 로드하고, `.agents/skills/<이름>/SKILL.md` 로 기능을 확장합니다. 만드는 방법은 두 가지로, **소스에서 만들기**(`base_agent`·`id`·`agent_config`·`base_environment` 에 Git·GCS·인라인 소스 지정)와 **포크**(기본 에이전트와 환경을 대화형으로 꾸민 뒤 `environment_id` 로 포크)입니다."
+        },
+        {
+          "type": "subheading",
+          "text": "권장 작업 순서"
+        },
+        {
+          "type": "list",
+          "items": [
+            "기본 Antigravity 에이전트에 지침·소스를 인라인으로 넘겨 프로토타이핑",
+            "패키지 설치·소스 마운트로 환경 안정화",
+            "소스에서 만들거나 환경을 포크해 관리형 에이전트로 저장",
+            "지침·스킬·소스를 바꾸면 다음 호출부터 새 설정 반영"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "문서에서 시나리오를 직접 제시하지는 않으므로, 아래는 제가 문서 기능을 조합해 본 **활용 아이디어**입니다. 예를 들어 예약 트리거와 URL 컨텍스트로 매일 정해진 웹 페이지를 읽고 요약 파일을 만들게 하거나, Git 소스를 마운트한 환경에서 코드 검색과 줄 범위 편집으로 작은 수정을 맡기거나, MCP 서버와 자격 증명을 연결해 사내 API 조회 결과를 정리하게 하는 식입니다."
+        }
+      ]
+    },
+    {
+      "heading": "⚠ 한계점과 주의사항",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**개수·보관 한도**부터 확인하세요. 관리형 에이전트는 최대 **1,000개**까지 만들 수 있고, 환경은 7일 동안 쓰지 않으면 삭제 단계로 넘어갑니다. 커스텀 에이전트의 기반은 현재 `antigravity-preview-09-2026` 만 지원하며, 에이전트 ID 에는 `gemini-`, `google-`, `veo-` 같은 예약 접두사를 쓸 수 없습니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "**요금**은 모델 토큰과 도구 사용량 기준 종량제입니다. 문서는 프리뷰 동안 환경 컴퓨트가 청구되지 않는다고 적었지만, 프리뷰가 끝난 뒤의 조건은 공개된 자료에서 확인하지 못했습니다. 무료 등급에는 할당량과 속도 제한이 있습니다."
+        },
+        {
+          "type": "paragraph",
+          "text": "**안전성** 면에서 개요 문서는 에이전트가 OS 수준에서 격리된 샌드박스에서 돌지만, 데이터를 바꾸는 작업은 배포 전에 **출력을 반드시 검증**하라고 강조합니다."
+        },
+        {
+          "type": "warning",
+          "title": "⚠️ 기본 네트워크는 열려 있습니다",
+          "text": "허용 목록을 걸지 않으면 에이전트는 외부로 자유롭게 나갈 수 있습니다. 민감한 데이터를 넣는 작업이라면 허용 목록이나 `network: \"disabled\"` 를 먼저 설정하세요."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "확인된 것",
+            "확인하지 못한 것"
+          ],
+          "rows": [
+            [
+              "9월 하네스의 개선 항목(캐싱·코드 검색·줄 범위 편집)",
+              "프리뷰 종료 시점"
+            ],
+            [
+              "프리뷰 동안 환경 컴퓨트 미청구",
+              "프리뷰 종료 후 요금"
+            ],
+            [
+              "Files·Credentials API 기능 설명",
+              "세부 요금표·모든 지역 제공 여부"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "관리형 에이전트는 무엇이 다른가요?",
+      "a": "에이전트 루프와 샌드박스를 직접 만들지 않고, 구글이 호스팅하는 하네스를 API 호출 한 번으로 씁니다. 호출하면 리눅스 샌드박스가 만들어지고 그 안에서 코드 실행·파일 관리·웹 탐색이 이뤄집니다."
+    },
+    {
+      "q": "무료로 써 볼 수 있나요?",
+      "a": "문서에 따르면 프리뷰로 Google AI Studio 와 Gemini API 에서 무료·유료 프로젝트 모두 쓸 수 있고, 무료 등급에는 할당량과 속도 제한이 있습니다. 요금은 모델 토큰과 도구 사용량 기준 종량제이며 프리뷰 동안 환경 컴퓨트는 청구되지 않습니다."
+    },
+    {
+      "q": "API 키나 토큰을 에이전트에게 맡겨도 안전한가요?",
+      "a": "Credentials API 로 저장하면 비밀 값은 쓰기 전용이고 샌드박스 안에 들어가지 않습니다. 다만 환경 변수에 리터럴로 넣은 값은 컨테이너 안에서 평문이므로, 비밀은 반드시 자격 증명으로 등록해야 합니다."
+    },
+    {
+      "q": "환경에 만든 파일은 얼마나 유지되나요?",
+      "a": "15분 유휴 뒤 idle 상태가 되고, 마지막 활동 후 7일 동안 offline 상태로 보관된 뒤 삭제됩니다. 보관 중인 환경은 환경 ID 를 넘기면 이어서 쓸 수 있고, Files API 로 tar 다운로드를 받아 둘 수 있습니다."
+    },
+    {
+      "q": "다른 모델로 바꿀 수 있나요?",
+      "a": "기본은 Gemini 3.8 Flash 이고 agent_config 의 model 로 3.7·3.6·3.5 Flash 또는 3.5 Flash-Lite 를 고를 수 있다고 문서에 나옵니다. 비용을 줄이려는 용도로 Flash-Lite 를 언급합니다."
+    }
+  ],
+  "closing": "지금까지 Gemini API 관리형 에이전트와 antigravity-preview-09-2026 하네스에 대해 알아보았습니다. 핵심은 API 호출 한 번으로 격리된 샌드박스와 에이전트를 얻고, Credentials API 와 네트워크 허용 목록으로 비밀과 외부 접근을 통제할 수 있다는 점입니다. 다만 프리뷰 서비스라 요금과 한도는 바뀔 수 있으니 최신 문서를 꼭 확인하세요. 여러분도 한번 Gemini 관리형 에이전트를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+  "caveat": "프리뷰 기능의 한도·요금·에이전트 ID 는 바뀔 수 있으니 구글 공식 문서에서 최신 정보를 확인하세요.",
+  "hashtags": [
+    "Gemini",
+    "GeminiAPI",
+    "관리형에이전트",
+    "ManagedAgents",
+    "Antigravity",
+    "구글AI",
+    "AI에이전트",
+    "CredentialsAPI",
+    "FilesAPI",
+    "샌드박스",
+    "MCP",
+    "InteractionsAPI",
+    "AI도구",
+    "Gemini3.8Flash",
+    "AI백과사전"
+  ],
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8"
+  ]
+}

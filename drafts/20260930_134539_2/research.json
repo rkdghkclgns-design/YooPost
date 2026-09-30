@@ -1,0 +1,87 @@
+{
+ "topic": "Gemini API 관리형 에이전트 — Antigravity agent (antigravity-preview-09-2026), Credentials API·Files API (Google AI for Developers 공식 문서)",
+ "source_url": "https://ai.google.dev/gemini-api/docs/antigravity-agent",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Antigravity agent",
+   "url": "https://ai.google.dev/gemini-api/docs/antigravity-agent",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Antigravity preview (antigravity-preview-09-2026)",
+   "url": "https://ai.google.dev/gemini-api/docs/models/antigravity-preview-09-2026",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Credentials in managed agents",
+   "url": "https://ai.google.dev/gemini-api/docs/agent-credentials",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Environments in managed agents",
+   "url": "https://ai.google.dev/gemini-api/docs/agent-environment",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Agents overview",
+   "url": "https://ai.google.dev/gemini-api/docs/agents",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Building managed agents",
+   "url": "https://ai.google.dev/gemini-api/docs/custom-agents",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Introducing Managed Agents in the Gemini API",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+   "publisher": "Google (The Keyword)",
+   "published": "2026-05-19",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Expanding Managed Agents in Gemini API: background tasks, remote MCP",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+   "publisher": "Google (The Keyword)",
+   "published": "2026-07-07",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(ai.google.dev 문서 6곳)는 글자·코드·표로만 된 문서라 본문 그림이 없고, 구글 블로그 두 글의 본문 그림은 제목 문구만 들어간 대표 배너(og:image 와 같은 그림)와 고객 후기 로고 이미지뿐이라 원고 내용(스펙·자격 증명·환경 설정)을 보여 주는 본문 그림이 없음.",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 57,
+  "removed": [
+   "한 매체는 이번 하네스가 긴 다단계 작업에서 캐시 적중률을 22%, 복잡한 코딩 워크플로에서 9% 개선했다고 전했지만 … 수치는 언론 보도로만 참고하시길 권합니다. (S10 언론 보도에만 있고 공식 문서에 없음 — 문단과 표의 '22%·9% 개선 수치' 행, 맺음말의 '일부 성능 수치' 언급 삭제)",
+   "공개 저장소 gemini-skills 의 9월 17일자 병합 풀 리퀘스트도 예전 antigravity-preview-05-2026 표기를 9월 버전으로 바꿨습니다. (S9 GitHub 가 EGRESS_BLOCKED(403)라 확인 불가 — 삭제, S9 출처 제거)",
+   "이번 antigravity-preview-09-2026 은 Antigravity 코딩 에이전트의 도구와 동작을 Gemini API 로 가져오고, 여기에 Files API 와 Credentials API 를 더한 것입니다. (공식 문서에 9월 릴리스에서 추가됐다는 서술 없음 — 'Antigravity IDE 와 같은 하네스'(S1)로 교체, 도입부의 '더했습니다'도 '문서에 정리돼 있다'로 수정)",
+   "환경 소스 표 '소스 전체 최대 2GB' 행 및 요약의 '최대 2GB 까지 담고' (S4 에 전체 합계 한도 없음 — Git 500MB·GCS 2GB·인라인 1MB/2MB 로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S8 공식 페이지를 curl 로 다시 열어 본문 대조, S9(github.com)는 EGRESS_BLOCKED 403, S10(NokiaPowerUser)은 열렸으나 22%·9% 수치가 공식 문서에 없어 사용하지 않음(S9·S10 출처 제거). 수정: idle 이 아니라 offline(7일 보관) 환경을 ID 로 재개(S4), environment_variable 의 trusted_domains 는 필드상 선택이지만 문서가 설정을 권고(S3), 권장 작업 순서를 S6 의 4단계(프로토타입→안정화→저장→정의 갱신)로 교정, 예시 코드 입력 문자열을 S1 원문과 일치, max_total_tokens 에 캐시 토큰 제외 추가(S1). 1,000개 한도는 S5 '1,000'·S6 '1000' 으로 같은 값. 9월 하네스는 S2 '2026년 9월 릴리스·Latest update September 2026' 만 쓰고 구체 발표일은 쓰지 않음. 이미지: 블로그 본문 그림(S8 1300px PNG 는 열리지만 제목 배너=og:image)이라 쓰지 않고 images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790743072195349",
+  "kind": "all"
+ }
+}
