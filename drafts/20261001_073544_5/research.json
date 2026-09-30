@@ -1,0 +1,90 @@
+{
+  "topic": "GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok (Manifold Security, 2026-09-01)",
+  "source_url": "https://manifold.security/blog/ai-coding-agents-git-hijack",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok",
+      "url": "https://manifold.security/blog/ai-coding-agents-git-hijack",
+      "publisher": "Manifold Security",
+      "published": "2026-09-01",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "A Git Config Key Ran Code in Seven Coding Agents. The 2022 Fix Does Not Stop It.",
+      "url": "https://grith.ai/blog/git-config-key-2022-fix-coding-agents",
+      "publisher": "grith",
+      "published": "2026-09-09",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code",
+      "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
+      "publisher": "The Hacker News",
+      "published": "2026-09-02",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Malicious .git Configs: AI Coding Agents Execute Before You Approve",
+      "url": "https://codehunter.com/resources/insights/malicious-git-configs-bypass-ai-coding-agent-trust-prompts/",
+      "publisher": "CodeHunter",
+      "published": "2026-09-02",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Arbitrary command execution in goose CLI via goose review via git core.fsmonitor (GHSA-r5pp-p5r8-466r)",
+      "url": "https://github.com/aaif-goose/goose/security/advisories/GHSA-r5pp-p5r8-466r",
+      "publisher": "goose (GitHub Security Advisory)",
+      "published": "2026-07-24",
+      "official": true
+    },
+    {
+      "id": "S6",
+      "title": "[codex] Ignore fsmonitor config in Git metadata reads (PR #22652)",
+      "url": "https://github.com/openai/codex/pull/22652",
+      "publisher": "OpenAI (GitHub)",
+      "published": "2026-05-14",
+      "official": true
+    },
+    {
+      "id": "S7",
+      "title": "Git documentation: core.fsmonitor (Documentation/config/core.adoc)",
+      "url": "https://raw.githubusercontent.com/git/git/master/Documentation/config/core.adoc",
+      "publisher": "Git project",
+      "published": "",
+      "official": true
+    },
+    {
+      "id": "S8",
+      "title": "Git documentation: git-config (configuration file precedence)",
+      "url": "https://raw.githubusercontent.com/git/git/master/Documentation/git-config.adoc",
+      "publisher": "Git project",
+      "published": "",
+      "official": true
+    },
+    {
+      "id": "S9",
+      "title": "CVE-2026-19592 - Vulnerability Details",
+      "url": "https://app.opencve.io/cve/CVE-2026-19592",
+      "publisher": "OpenCVE (OpenAI CNA record)",
+      "published": "2026-09-01",
+      "official": false
+    }
+  ],
+  "images": [],
+  "images_none_reason": "Manifold Security·grith·CodeHunter 본문에는 원고 내용을 보여 주는 도표·스크린샷이 없고 대표(히어로) 일러스트뿐이며(검증 단계에서 다시 확인), 벤더 권고·Git 문서·PR 은 글자뿐인 문서다. 터미널 출력은 이미지가 아닌 텍스트 코드였다.",
+  "factcheck": {
+    "claims": 52,
+    "confirmed": 49,
+    "removed": [
+      "git config --global core.fsmonitor false (전역에서 fsmonitor 끄기) — 저장소 값보다 우선하지 않아 방어책처럼 제시한 것은 오해 소지(Git 공식 문서 설정 우선순위로 확인·로컬 재현), 명령 삭제하고 경고 박스로 교체",
+      "해당 글이 시험한 세 가지 git 설정 모두에서 실행이 막혔다고 합니다 — grith 원문은 기본·safe.bareRepository 에서는 실행, fsmonitor 를 비운 경우만 차단이라 수정",
+      "보안 업체 grith / 보안 자문 업체 CodeHunter — 업체 성격 확인 안 됨, 수식어 삭제"
+    ],
+    "note": "Opus 검증(claude-opus-5-5): Manifold 원문·The Hacker News·grith·CodeHunter 재열람. CVE·버전 대조: goose CVE-2026-72718/1.44.0 은 벤더 GHSA-r5pp-p5r8-466r 로, Codex CVE-2026-19592/CLI 0.131.0/Desktop 빌드는 OpenCVE(OpenAI CNA 기록)·openai/codex PR #22652(2026-05-14 병합)로, Hermes CVE-2026-71963 은 Manifold(VulnCheck 배정)로 확인. 미수정 4건은 Manifold·THN·CodeHunter 일치; Manifold 는 Codex·Cursor 를 '중복 종결·수정됨'으로만 적고 THN 은 버전·CVE 를 적어 차이가 있으나 PR 병합일이 보고일보다 앞서 모순 없음을 본문에 명시. THN 이 언급한 CVE-2026-55607(Claude Code 6월 권고)은 GitSpawn 과 같은 건인지 확인 안 돼 쓰지 않음. core.fsmonitor 동작과 설정 우선순위는 git/git 공식 문서로 확인. 공식 출처 5개(Manifold 1차 연구, goose 권고, OpenAI PR, Git 문서 2). 인용 이미지: Manifold·grith·CodeHunter 본문에 관련 그림 없음 재확인, images_none_reason 유지."
+  }
+}
