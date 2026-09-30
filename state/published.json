@@ -468,5 +468,25 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ortet-thoreau-5-ceo-ai.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🔒 HookPry 에이전트 훅 업데이트 공격 논문 총정리: 7개 하네스 전체 성공률 77.0%·Defender 0% 탐지",
+  "topic": "A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors (arXiv 2609.03884, 2026-09-03)",
+  "category": "AI 보안",
+  "source_url": "https://arxiv.org/abs/2609.03884",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/hookpry-7-770defender-0.html"
+  }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🔬 Pew AI 설문 응답자 실험 총정리: 평균 오차 12.4%p·상식 98% vs 52%, AI가 여론조사를 대신할 수 있을까",
+  "topic": "Silicon Samples and Synthetic Surveys: Can AI Stand In for Human Respondents? — Can AI Stand In for Human Survey-Takers? Not Really (Pew Research Center, 2026-09-30)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/pew-ai-124p-98-vs-52-ai.html"
+  }
  }
 ]
