@@ -318,5 +318,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/grok-47-500k-2-6.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🛡 Cursor Rollouts·Security Review 사용 가이드: PR부터 배포까지 지키는 봇 2종 총정리",
+  "topic": "Bots for the last mile: Rollouts, Security Review (Cursor, 2026-09-23)",
+  "category": "AI 도구",
+  "source_url": "https://cursor.com/blog/rollouts-and-security-reviewer",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/cursor-rolloutssecurity-review-pr-2.html"
+  }
  }
 ]
