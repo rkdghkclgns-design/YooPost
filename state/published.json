@@ -338,5 +338,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/frontier-learning-dice-718-vs-333-grpo.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🛡 Anthropic의 GLM-5.3 분석 총정리: 오픈 웨이트 모델의 공격 능력·안전장치 우회 64~100%",
+  "topic": "GLM-5.3 and the spread of advanced cyber capabilities (Anthropic Frontier Red Team, 2026-09-29)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/anthropic-glm-53-64100.html"
+  }
  }
 ]
