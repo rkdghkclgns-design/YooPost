@@ -1,0 +1,81 @@
+{
+ "topic": "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (Google, 2026-09-23) — Gemini 3.8 text-to-speech says hello",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (Gemini 3.8 text-to-speech says hello)",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+   "publisher": "Google",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Speech generation (text-to-speech) — Gemini API",
+   "url": "https://ai.google.dev/gemini-api/docs/speech-generation",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Gemini Developer API pricing",
+   "url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "publisher": "Google AI for Developers",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Gemini API changelog",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "publisher": "Google AI for Developers",
+   "published": "2026-09-22",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Google rolls out Gemini 3.8 Flash TTS and Flash-Lite TTS with custom voice creation, 2000+ voices, 100+ language support",
+   "url": "https://www.fonearena.com/blog/493358/google-gemini-3-8-flash-tts-flash-lite-tts.html",
+   "publisher": "Fonearena",
+   "published": "2026-09-24",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/blog-gemini-3.8-flash-tts__evals.width-1000.format-webp_3X4R0xy.webp",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+   "caption": "Hume AI Voice Design 리더보드: Gemini 3.8 Flash TTS 종합 71.4·다국어 3.82·억양 60.8 비교표",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/blog-gemini-3.8-flash-tts__evals.width-1000.format-webp_UFC28T9.webp",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+   "caption": "Voice Arena 언어별 TTS 리더보드: 영어·일본어·힌디어 등 Flash TTS와 Flash-Lite TTS 점수 비교표",
+   "credit": "Google"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/blog-gemini-3.8-flash-tts__evals.width-1000.format-webp_hBIZaRI.webp",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+   "caption": "Hume AI 품질 벤치마크: 종합 점수 Gemini 3.8 Flash TTS 0.920·Flash-Lite TTS 0.914 등 TTS 모델 비교표",
+   "credit": "Google"
+  }
+ ],
+ "factcheck": {
+  "claims": 105,
+  "confirmed": 104,
+  "removed": [
+   "둘째, 개발자 문서에는 컨텍스트 창이나 입력 토큰 한도가 명시되어 있지 않습니다. (TTS 가이드가 모델 스펙 페이지로 안내하므로 '명시 없음'을 확인할 수 없어 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 블로그·S2 음성 생성 문서·S3 가격표·S4 변경 이력·S5 Fonearena 본문을 다시 열어 대조. 벤치마크 표 3종(Voice Design·Voice Arena·품질 벤치마크) 수치 45개는 블로그 본문 그림 원본(storage.googleapis.com webp)을 직접 열어 대조, 모두 일치. 가격은 S3 기준 표준·배치·Flex·저장 요금 일치. 수정: '일부 언론은 9월 24일로 보도'→Fonearena 게시일 9월 24일(보도가 발표일을 24일로 적은 것은 아님), 음성 라이브러리 규모(문서 '수백 개'·변경 이력 150+ 조회 표현 정정), 화자별 개별 합성 조건(맞춤·복제 음성일 때), '오늘부터'→'발표 당일부터'. 추가(검증됨): 변경 이력의 GA 표기, 한국어 지원(문서 언어표), 맞춤 음성 프로젝트당 200개·1년 보관, 품질 벤치마크 수치와 그림 I3. 이미지 image_url 3개는 블로그 본문 그림 파일(WEBP 확인)이나 서버 Content-Type 이 application/octet-stream 임. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790799549766259",
+  "kind": "all"
+ }
+}
