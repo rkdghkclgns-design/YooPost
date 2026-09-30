@@ -350,6 +350,19 @@ def auto_candidates(sources: Sequence[Source]) -> tuple[ImageCandidate, ...]:
     return tuple(result)
 
 
+def fetch_page(session, page_url: str) -> str:
+    """페이지 HTML (앞부분 MAX_PAGE 바이트까지) — 열지 못하면 빈 문자열."""
+    if not page_url or session is None:
+        return ""
+    try:
+        response = session.get(page_url, timeout=TIMEOUT, allow_redirects=True, stream=True)
+        body = _read_capped(response, MAX_PAGE, truncate=True) if response.status_code == 200 else None
+    except Exception as exc:
+        log.info("페이지 열기 실패 %s: %s", page_url, exc)
+        return ""
+    return body.decode("utf-8", errors="ignore") if body else ""
+
+
 class ImageCollector:
     def __init__(self, session=None) -> None:
         if session is None:
@@ -413,17 +426,9 @@ class ImageCollector:
     def _page(self, page_url: str) -> str:
         if not page_url:
             return ""
-        if page_url in self._pages:
-            return self._pages[page_url]
-        text = ""
-        try:
-            response = self._session.get(page_url, timeout=TIMEOUT, allow_redirects=True, stream=True)
-            body = _read_capped(response, MAX_PAGE, truncate=True) if response.status_code == 200 else None
-            text = body.decode("utf-8", errors="ignore") if body else ""
-        except Exception as exc:
-            log.info("인용 이미지 페이지 열기 실패 %s: %s", page_url, exc)
-        self._pages[page_url] = text
-        return text
+        if page_url not in self._pages:
+            self._pages[page_url] = fetch_page(self._session, page_url)
+        return self._pages[page_url]
 
     def _download(self, url: str) -> bytes | None:
         if not url:

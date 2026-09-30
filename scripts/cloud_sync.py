@@ -23,7 +23,9 @@ from dotenv import load_dotenv  # noqa: E402
 from autopost.blog_publisher import BloggerPublisher  # noqa: E402
 from autopost.claude_draft import DraftPreparer, send_for_approval  # noqa: E402
 from autopost.cli import http_session  # noqa: E402
-from autopost.cloud_drafts import WORKTREE, sync_and_report, watchdog  # noqa: E402
+from autopost.cloud_drafts import (  # noqa: E402
+    DRAFTS, STATE, WORKTREE, pending_entries, published_snapshot, read_json, sync_and_report, user_topic, watchdog,
+)
 from autopost.config import load_config  # noqa: E402
 from autopost.draft_request import request_of  # noqa: E402
 from autopost.draft_store import DraftStore  # noqa: E402
@@ -47,6 +49,7 @@ def main(argv: list[str] | None = None) -> int:
         print("❌ GOOGLE_*·BLOGGER_BLOG_ID·IMAGE_HOST_URL·IMAGE_UPLOAD_TOKEN 이 필요합니다")
         return 2
     now = lambda: datetime.now(KST)  # noqa: E731
+    root = args.root.resolve()
     session = http_session()
     blogger = BloggerPublisher(build_blogger_service(build_credentials(cfg.google)), cfg.blogger_blog_id)
     store = DraftStore(cfg.image_host_url, cfg.image_upload_token, session)
@@ -56,15 +59,16 @@ def main(argv: list[str] | None = None) -> int:
                              ImageCollector(session), session=session, now=now)
 
     def send(folder: Path) -> str:
-        prepared = preparer.prepare(folder, folder.name)
+        pending = (pending_entries(root / DRAFTS, now(), read_json(root / STATE / "failures.json"), before=folder.name)
+                   + published_snapshot(root))  # 누적 발행 기록 — 블로그 목록 상한보다 오래된 글과도 비교
+        prepared = preparer.prepare(folder, folder.name, pending=pending, fresh_required=not user_topic(root, folder))
         ts = send_for_approval(prepared, store, slack, channel, now(), request=request_of(folder))
         print(f"📨 {folder.name} — {prepared.content.title}")
         for warning in prepared.warnings:
             print(f"   ⚠️ {warning}")
         return ts
 
-    root = args.root.resolve()
-    outcome = sync_and_report(root, now, store, send, slack, lambda: load_history(blogger).entries,
+    outcome = sync_and_report(root, now, store, send, slack, lambda: load_history(blogger, strict=True).entries,
                               clean=lambda text: redact(text, cfg.secret_values()),
                               manual_channel=dict(cfg.slack_stage_channels).get("manual", ""), draft_channel=channel)
     if args.watchdog and not watchdog(root, now(), slack):

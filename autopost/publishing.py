@@ -15,7 +15,7 @@ from .blog_html import ImageRef, PostExtras, build_blog_html
 from .blog_publisher import BloggerPublisher, build_labels
 from .constants import BASIS_NOTE, FACT_NOTE, RELATED_POSTS
 from .content import PostContent, Reference
-from .history import PostHistory
+from .history import MAX_MARKER_SOURCES, PostHistory
 from .image_host import ImageHost
 from .preview_page import data_uri, render_preview, write_page
 from .research import FactSheet, QuoteImage, pick_sources, reference_date
@@ -37,6 +37,7 @@ class PublishContext:
     images: tuple[QuoteImage, ...] = ()  # 확인된 인용 이미지
     topic: str = ""  # 발행 기록용 (원 기사·발표 제목)
     source_url: str = ""
+    sources: tuple[str, ...] = ()  # 발행 기록용 출처 주소 — 다른 매체로 같은 소식을 다시 쓰는 것을 막는 데 쓴다
 
     def related(self) -> tuple[tuple[str, str], ...]:
         return tuple(self.history.related("blogger", self.content.category, RELATED_POSTS))
@@ -46,9 +47,10 @@ class PublishContext:
         wanted = {b.image_id for s in self.content.sections for b in s.blocks if b.kind == "image"}
         return tuple(i for i in self.images if i.id in wanted)
 
-    def marker(self) -> dict[str, str]:
-        return {"topic": self.topic or self.content.title, "source": self.source_url,
-                "category": self.content.category}
+    def marker(self) -> dict[str, object]:
+        data: dict[str, object] = {"topic": self.topic or self.content.title, "source": self.source_url,
+                                   "category": self.content.category}
+        return {**data, "sources": list(self.sources[:MAX_MARKER_SOURCES])} if self.sources else data
 
 
 def attach_references(content: PostContent, sheet: FactSheet, now: datetime) -> PostContent:

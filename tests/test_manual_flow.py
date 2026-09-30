@@ -156,14 +156,14 @@ def test_stale_requests_and_forged_channels(tmp_path):
 
 # ------------------------------------------------------------------ 승인 카드·발행 결과
 def test_approval_card_is_labelled_and_the_request_is_kept_for_publishing(tmp_path):
-    prepared = preparer().prepare(write_local_draft(tmp_path, [IMAGE]), "20260930_163000_2")
+    prepared = preparer().prepare(write_local_draft(tmp_path, [IMAGE]), "20260930_163000_4")
     client, store = FakeWebClient(), MemoryStore()
     send_for_approval(prepared, store, SlackNotifier(channel_id="C1", client=client), "CDRAFT", NOW,
                       request={"id": RID, "kind": "single"})
     assert client.messages[0]["text"].startswith("🧑‍💼 수동 지시")
     assert "수동 지시" in build_draft_blocks(prepared, {"id": RID})[0]["text"]["text"]
     assert "수동 지시" not in build_draft_blocks(prepared)[0]["text"]["text"]
-    assert store.items["20260930_163000_2"]["request"] == {"id": RID, "kind": "single"}
+    assert store.items["20260930_163000_4"]["request"] == {"id": RID, "kind": "single"}
 
 
 def test_publishing_a_manual_draft_answers_in_the_request_thread():

@@ -7,11 +7,11 @@
     python scripts/cloud_drafts.py status                    # 오늘 카테고리별 상태 (완료 / 남음 — 이유)
     python scripts/cloud_drafts.py missing [--json]          # 오늘 원고가 없는 카테고리 (건너뜀·전송 실패·원고 없음)
     python scripts/cloud_drafts.py claim --owner autofill    # 빈 카테고리 채우기 잠금 (한 번에 한 쪽만) / release 로 해제
-    python scripts/cloud_drafts.py check <원고 폴더>          # 형식·분량·구성·사실 검증 기록 확인 (문제 있으면 종료 코드 1)
+    python scripts/cloud_drafts.py check <원고 폴더>          # 형식·분량·구성·사실 검증 + 기존 글과 겹침·최신 이슈 (문제 있으면 1)
     python scripts/cloud_drafts.py push <원고 폴더>           # 확인을 통과한 원고를 올림 → Actions 가 슬랙에 승인 요청
-    python scripts/cloud_drafts.py skip --category "AI 공모주 분석" --reason "최근 60일 공모 없음"
+    python scripts/cloud_drafts.py skip --category "AI 공모주 분석" --reason "최근 14일 새 공모 없음"
     python scripts/cloud_drafts.py finish                    # 실행 끝 기록 (Actions 가 요약을 #yoopost-알림 에 보냄)
-    python scripts/cloud_drafts.py dupcheck <원고 폴더>       # 이미 쓴 글·최근 원고와 주제·원문이 겹치는지 (겹치면 종료 코드 1)
+    python scripts/cloud_drafts.py dupcheck <원고 폴더>       # 이미 쓴 글·다른 원고와 겹치는지만 (겹치면 종료 코드 1)
 
 슬랙 수동 지시(#yoopost-0-수동지시) 전용 — 매일 원고의 start·finish·skip·missing·claim·release 와 섞지 않는다:
     python scripts/cloud_drafts.py request start --id <요청 ID> [--category C] [--network limited]
@@ -38,7 +38,8 @@ sys.path.insert(0, str(ROOT))
 
 from autopost.cloud_drafts import (  # noqa: E402
     BRANCH, DRAFTS, RUNS, SKIP_FILE, STATE, WORKTREE, draft_folders, folder_day, is_complete, is_parked, is_skip,
-    missing_categories, quality_report, read_json, recent_days, run_active, write_json,
+    missing_categories, novelty_problems, pushed_names, quality_report, read_json, recent_days, run_active,
+    write_json,
 )
 from autopost.config import load_config  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
@@ -81,13 +82,7 @@ def setup() -> Path:
 
 def pushed_folders() -> set[str]:
     """원격 원고 브랜치에 올라간 원고 폴더 이름 — 로컬에만 있는(올리지 못한) 원고는 채운 것으로 치지 않는다."""
-    listing = git("ls-tree", "-r", "--name-only", f"origin/{BRANCH}", "--", f"{DRAFTS}/", cwd=TREE, check=False)
-    names = set()
-    for line in listing.stdout.splitlines():
-        parts = line.strip().split("/")
-        if len(parts) == 3 and parts[2] in ("post.json", "research.json", SKIP_FILE):
-            names.add(parts[1])
-    return names
+    return pushed_names(TREE)
 
 
 def publish(paths: list[str], message: str) -> None:
@@ -248,13 +243,16 @@ def missing(as_json: bool) -> int:
     return 0
 
 
-def check(folder: Path) -> int:
+def check(folder: Path, request: str = "") -> int:
+    """형식·분량·구성·사실 검증 기록 + 기존 글과 겹침·최신 이슈 (2026-10-01 사용자 지시) 확인."""
+    folder = folder.resolve()
     report = quality_report(folder, load_config().min_body_chars)
+    problems = [*report.problems, *novelty_problems(folder, TREE, datetime.now(KST), pushed_folders(), request)]
     print(f"📋 {folder.name}: {report.stats}")
-    for problem in report.problems:
+    for problem in problems:
         print(f"   ❌ {problem}")
-    print("✅ 올릴 수 있습니다" if report.ok else "고친 뒤 다시 확인하세요")
-    return 0 if report.ok else 1
+    print("✅ 올릴 수 있습니다" if not problems else "고친 뒤 다시 확인하세요 (겹치거나 오래된 소식이면 주제를 바꾼다)")
+    return 0 if not problems else 1
 
 
 def folder_category(folder: Path) -> str:
@@ -311,7 +309,7 @@ def push(folder: Path, request: str = "") -> int:
             print("❌ research.json 이 객체(JSON object)가 아닙니다")
             return 1
         write_json(research, with_request(data, request, str(read_request(TREE, request)["kind"])))
-    if check(folder) != 0:
+    if check(folder, request) != 0:
         return 1
     title = str(read_json(folder / "post.json").get("title") or folder.name)[:80]
     files = [str((folder / name).relative_to(TREE)) for name in ("post.json", "research.json")]
@@ -336,28 +334,16 @@ def skip(category: str, reason: str, request: str = "") -> int:
 
 
 def dupcheck(folder: Path) -> int:
-    """이미 쓴 글(state/published.json)·원고 브랜치에 올라간 최근 7일 원고와 주제·원문이 겹치는지 (Actions 의 중복 확인을 미리)."""
+    """이미 쓴 글(state/published.json 전부)·원고 브랜치에 올라간 다른 원고와 겹치는지 (Actions 의 중복 확인을 미리).
+
+    올리지 못하고 남은 로컬 폴더(첫 시도 실패 등)·Actions 가 멈춘 원고(중복 거절 등)는 비교하지 않는다 — 재시도를 막지 않도록.
+    """
     folder = folder.resolve()
-    research, post = read_json(folder / "research.json"), read_json(folder / "post.json")
-    topic, title = str(research.get("topic") or ""), str(post.get("title") or "")
-    url = str(research.get("source_url") or "")
-    published = json.loads((TREE / STATE / "published.json").read_text(encoding="utf-8-sig")) \
-        if (TREE / STATE / "published.json").is_file() else []
-    entries = [("발행한 글", HistoryEntry.from_dict(e)) for e in published if isinstance(e, dict)]
-    # 올리지 못하고 남은 로컬 폴더(첫 시도 실패 등)·Actions 가 멈춘 원고(중복 거절 등)는 비교하지 않는다 — 재시도를 막지 않도록
-    pushed, failures = pushed_folders(), read_json(TREE / STATE / "failures.json")
-    for other in draft_folders(TREE / DRAFTS, recent_days(datetime.now(KST), 7)):
-        if other.name == folder.name or is_skip(other) or other.name not in pushed or is_parked(other, failures):
-            continue
-        data = read_json(other / "research.json")
-        entries.append((f"최근 원고 {other.name}", HistoryEntry(
-            folder_day(other.name), str(read_json(other / "post.json").get("title") or ""),
-            str(data.get("topic") or ""), folder_category(other), str(data.get("source_url") or ""))))
-    for where, entry in entries:
-        single = PostHistory((entry,))
-        if single.is_duplicate(topic or title, url) or (title and single.is_duplicate(title)):
-            print(f"❌ 겹침: {where} '{entry.title}' (주제: {entry.topic} · {entry.source_url or '원문 없음'})")
-            return 1
+    overlap = [p for p in novelty_problems(folder, TREE, datetime.now(KST), pushed_folders())
+               if p.startswith(("이미 쓴 글", "post.json·research.json"))]
+    if overlap:
+        print(f"❌ {overlap[0]}")
+        return 1
     print("✅ 겹치는 글 없음")
     return 0
 
@@ -444,8 +430,10 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("claim", "release"):
         sub.add_parser(name).add_argument("--owner", default="local", help="채우는 쪽 이름 (예: autofill, manual)")
     sub.add_parser("finish")
-    for name in ("check", "dupcheck"):
-        sub.add_parser(name).add_argument("folder", type=Path)
+    check_p = sub.add_parser("check")
+    check_p.add_argument("folder", type=Path)
+    check_p.add_argument("--request", default="", help="슬랙 수동 지시 요청 ID (주제를 정한 지시는 최신 이슈 조건을 끔)")
+    sub.add_parser("dupcheck").add_argument("folder", type=Path)
     push_p = sub.add_parser("push")
     push_p.add_argument("folder", type=Path)
     push_p.add_argument("--request", default="", help="슬랙 수동 지시 요청 ID (원고에 수동 지시 표시를 붙임)")
@@ -471,7 +459,7 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         return 0
     if args.command == "check":
-        return check(args.folder)
+        return check(args.folder, args.request)
     setup()
     if args.command == "start":
         start(args.network)

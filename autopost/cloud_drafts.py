@@ -24,15 +24,18 @@ import hashlib
 import json
 import logging
 import re
+import subprocess
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
 from types import MappingProxyType
 from typing import Callable, Iterable, Mapping, Sequence
 
-from .claude_draft import DraftError, load_draft
+from .claude_draft import DraftError, folder_category, load_draft
 from .constants import CATEGORIES
-from .draft_request import request_id_of
+from .draft_request import read_request, request_id_of
+from .freshness import folder_date, freshness_problems
+from .history import MAX_ENTRIES, HistoryEntry, PostHistory, combined, merge_published
 
 log = logging.getLogger(__name__)
 
@@ -65,6 +68,23 @@ def draft_folders(drafts_dir: Path, days: Iterable[str]) -> list[Path]:
                   if p.is_dir() and not p.is_symlink() and folder_day(p.name) in wanted)
 
 
+def pushed_names(tree: Path) -> set[str]:
+    """원격 원고 브랜치에 올라간 원고 폴더 이름 — 로컬에만 있는(올리지 못한) 원고는 치지 않는다."""
+    if not (tree / ".git").exists():
+        return set()
+    try:
+        listing = subprocess.run(["git", "ls-tree", "-r", "--name-only", f"origin/{BRANCH}", "--", f"{DRAFTS}/"],
+                                 cwd=tree, capture_output=True, text=True, encoding="utf-8")
+    except OSError:
+        return set()
+    names = set()
+    for line in listing.stdout.splitlines():
+        parts = line.strip().split("/")
+        if len(parts) == 3 and parts[2] in ("post.json", "research.json", SKIP_FILE):
+            names.add(parts[1])
+    return names
+
+
 def has_symlink(folder: Path) -> bool:
     """브랜치에서 받은 폴더에 심볼릭 링크가 있으면 쓰지 않는다 (밖의 파일을 읽거나 덮어쓰지 않도록)."""
     return folder.is_symlink() or any(p.is_symlink() for p in folder.iterdir())
@@ -78,8 +98,8 @@ def fingerprint(folder: Path) -> str:
     """원고 내용 지문 — 실패한 원고를 고쳐 다시 올리면 지문이 바뀌어 다시 보낸다."""
     digest = hashlib.sha256()
     for name in ("post.json", "research.json"):
-        path = folder / name
-        digest.update(path.read_bytes() if path.is_file() else b"")
+        path = folder / name  # Windows 작업 폴더(CRLF)에서도 Actions(LF)와 같은 지문이 되게 줄바꿈을 맞춘다
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n") if path.is_file() else b"")
     return digest.hexdigest()[:16]
 
 
@@ -239,7 +259,7 @@ def is_parked(folder: Path, failures: Mapping[str, Mapping[str, object]]) -> boo
 
 def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None], send: Callable[[Path], str | None],
                 failures: Mapping[str, Mapping[str, object]], clean: Callable[[str], str] = lambda t: t,
-                ) -> tuple[SyncOutcome, dict]:
+                keep_days: Iterable[str] = ()) -> tuple[SyncOutcome, dict]:
     """슬랙 승인 요청이 끝나지 않은 원고만 보낸다. (결과, 새 실패 기록)
 
     lookup(원고 ID) = 보관함 기록 (없으면 None, 확인 못 하면 예외). 원고 문제(DraftError)는 내용이 바뀔 때까지 다시
@@ -249,7 +269,8 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
     new_failures: dict[str, str] = {}
     messages: dict[str, str] = {}
     names = {f.name for f in folders}
-    records = {k: dict(v) for k, v in failures.items() if k in names}  # 지난 원고의 기록은 정리
+    keep = set(keep_days)  # 멈춘 원고 기록은 겹침 비교 기간 동안 남긴다 (거절된 원고가 '다른 원고'로 되살아나지 않게)
+    records = {k: dict(v) for k, v in failures.items() if k in names or folder_day(k) in keep}
     for folder in folders:
         draft_id = folder.name
         if is_skip(folder) or not (folder / "post.json").is_file() or not (folder / "research.json").is_file():
@@ -297,7 +318,83 @@ def run_active(run: Mapping[str, object]) -> bool:
     return bool(run.get("started")) and not run.get("finished")
 
 
-PUBLISHED_KEEP = 120
+PENDING_DAYS = 30  # 아직 발행 전일 수 있는 원고와 겹침을 비교하는 기간 (최신 이슈 기간보다 넉넉히)
+
+
+def draft_entry(folder: Path) -> HistoryEntry | None:
+    """원고 폴더 → 겹침 비교용 기록 (주제·제목·대표 원문·출처 주소 전부)."""
+    research, post = read_json(folder / "research.json"), read_json(folder / "post.json")
+    if not research or not post:
+        return None
+    day = folder_day(folder.name)
+    urls = tuple(str(s.get("url") or "") for s in research.get("sources") or []
+                 if isinstance(s, Mapping) and s.get("url"))
+    return HistoryEntry(f"{day[:4]}-{day[4:6]}-{day[6:]}" if day else "", str(post.get("title") or ""),
+                        str(research.get("topic") or ""), str(post.get("category") or ""),
+                        str(research.get("source_url") or ""), sources=urls, where=f"최근 원고 {folder.name}")
+
+
+def pending_entries(drafts_dir: Path, now: datetime, failures: Mapping[str, Mapping[str, object]],
+                    exclude: str = "", before: str = "", include: set[str] | None = None,
+                    days: int = PENDING_DAYS) -> tuple[HistoryEntry, ...]:
+    """다른 원고들 (✅ 전이라 블로그에 없어도 같은 소식을 또 쓰지 않도록).
+
+    건너뜀·Actions 가 멈춘 원고(중복·오래된 소식 등)는 빼서 그 카테고리를 다시 쓸 수 있게 한다.
+    before = 이 이름보다 먼저 쓴 원고만 (Actions 는 먼저 쓴 원고를 살린다), include = 이 이름들만 (원격에 올라간 원고).
+    """
+    found = []
+    for other in draft_folders(drafts_dir, recent_days(now, days)):
+        if other.name == exclude or (before and other.name >= before) or is_skip(other) or is_parked(other, failures):
+            continue
+        if include is not None and other.name not in include:
+            continue
+        entry = draft_entry(other)
+        if entry is not None:
+            found.append(entry)
+    return tuple(found)
+
+
+def user_topic(tree: Path, folder: Path, rid: str = "") -> bool:
+    """사용자가 슬랙에서 주제를 정해 지시한 원고(수동 지시 single + 주제) — 최신 이슈 조건을 적용하지 않는다."""
+    record = read_request(tree, rid or request_id_of(folder))
+    return str(record.get("kind") or "") == "single" and bool(str(record.get("topic") or "").strip())
+
+
+def published_snapshot(tree: Path) -> tuple[HistoryEntry, ...]:
+    """Actions 가 남긴 발행 기록 (state/published.json) — 클라우드 세션은 블로그에 접속하지 못한다."""
+    try:
+        raw = json.loads((tree / STATE / "published.json").read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return ()
+    return tuple(HistoryEntry.from_dict(e) for e in raw if isinstance(e, dict)) if isinstance(raw, list) else ()
+
+
+def novelty_problems(folder: Path, tree: Path, now: datetime, include: set[str] | None = None,
+                     rid: str = "") -> list[str]:
+    """올리기 전에 — 이미 쓴 글·다른 원고와 겹치는지, 최신 이슈인지 (Actions 가 한 번 더 확인한다)."""
+    mine = draft_entry(folder)
+    if mine is None:
+        return ["post.json·research.json 을 읽지 못해 겹침을 확인할 수 없습니다"]
+    problems = []
+    numbered = folder_category(folder.name)
+    if numbered and mine.category != numbered:
+        problems.append(f"post.json category '{mine.category}' 가 원고 폴더 번호의 카테고리 '{numbered}' 와 다릅니다 "
+                        "(카테고리를 바꿔 기간을 늘리지 않는다)")
+    others = pending_entries(tree / DRAFTS, now, read_json(tree / STATE / "failures.json"), exclude=folder.name,
+                             include=include)
+    found = combined(PostHistory(published_snapshot(tree)), others).find_duplicate(
+        mine.topic, mine.source_url, mine.title, mine.sources)
+    if found:
+        entry, reason = found
+        problems.append(f"이미 쓴 글과 겹칩니다 — {entry.where or '발행한 글'} '{entry.title}' ({reason}) — 다른 소식으로 바꾸세요")
+    if not user_topic(tree, folder, rid):
+        try:
+            files = load_draft(folder)
+        except DraftError:
+            return problems  # 형식 오류는 quality_report 가 알린다
+        problems += freshness_problems(files.content.category, files.sources, files.source_url,
+                                       folder_date(folder.name, now.date()))
+    return problems
 
 
 def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callable[[Path], str | None], slack,
@@ -311,7 +408,8 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     current = now()
     failures_file = root / STATE / "failures.json"
     folders = draft_folders(root / DRAFTS, recent_days(current))
-    outcome, records = sync_drafts(folders, store.find, send, read_json(failures_file), clean)
+    outcome, records = sync_drafts(folders, store.find, send, read_json(failures_file), clean,
+                                   keep_days=recent_days(current, PENDING_DAYS))
     write_json(failures_file, records)
     for draft_id, reason in outcome.new_failures.items():
         slack.post(f"⚠️ 클라우드 원고를 슬랙 승인 요청으로 보내지 못했습니다 — `{draft_id}`: {escape_mrkdwn(reason)}")
@@ -330,8 +428,8 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
             slack.post(summary_text(rows, current.strftime("%m/%d"), str(run.get("network") or "")))
             write_json(progress, {**read_json(progress), "summary": current.isoformat(timespec="seconds")})
     try:
-        entries = list(load_entries())
-        write_json(root / STATE / "published.json", [e.to_dict() for e in entries[-PUBLISHED_KEEP:]])
+        entries = merge_published(published_snapshot(root), list(load_entries()))
+        write_json(root / STATE / "published.json", [e.to_dict() for e in entries])
     except Exception as exc:
         log.warning("발행 기록을 새로 쓰지 못했습니다: %s", exc)
     return outcome

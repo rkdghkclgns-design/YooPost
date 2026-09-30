@@ -70,7 +70,7 @@ class PostExtras:
     basis_note: str = ""
     fact_note: str = ""
     images: tuple[ImageRef, ...] = ()
-    marker: Mapping[str, str] | None = None  # 발행 기록용 숨은 표시 (주제·원문 주소)
+    marker: Mapping[str, object] | None = None  # 발행 기록용 숨은 표시 (주제·원문 주소·출처)
 
 
 def _inline(text: str) -> str:
@@ -142,7 +142,7 @@ def _links(items: Sequence[tuple[str, str]]) -> str:
     return f'<ul style="line-height:1.8;">{rows}</ul>'
 
 
-def marker_comment(marker: Mapping[str, str]) -> str:
+def marker_comment(marker: Mapping[str, object]) -> str:
     """발행 기록용 HTML 주석 — 구글 블로그 글 목록이 곧 발행 기록이다 (주석은 화면에 보이지 않는다)."""
     payload = json.dumps(dict(marker), ensure_ascii=True, separators=(",", ":")).replace("--", "\\u002d\\u002d")
     return f"<!--yoopost {payload}-->"

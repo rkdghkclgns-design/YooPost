@@ -21,10 +21,11 @@ from .blog_publisher import build_labels
 from .constants import CATEGORIES, DEFAULT_CATEGORY
 from .content import ContentError, PostContent, parse_post
 from .cover import make_cover
-from .history import load_history
+from .freshness import folder_date, freshness_problems, page_date_check, page_published, primary_source
+from .history import HistoryEntry, HistoryUnavailable, PostHistory, combined, load_history
 from .links import LinkCheck, check_link, is_http_url
 from .publishing import PublishContext, attach_references, base_notes, build_publish_html, write_preview
-from .quote_images import AUTO_IMAGES, auto_candidates, keywords_of, parse_candidates
+from .quote_images import AUTO_IMAGES, auto_candidates, fetch_page, keywords_of, parse_candidates
 from .research import FactSheet, ImageCandidate, Source
 from .slack_helper import LABEL, escape_mrkdwn
 from .topic import Topic
@@ -35,6 +36,12 @@ log = logging.getLogger(__name__)
 
 class DraftError(RuntimeError):
     """원고 폴더가 잘못됐거나 발행할 수 없는 원고."""
+
+
+def folder_category(name: str) -> str:
+    """원고 폴더 이름 끝 번호(YYYYMMDD_HHMMSS_n)의 카테고리 — 번호가 없거나 0 이면 빈 문자열."""
+    suffix = name.rsplit("_", 1)[-1] if "_" in name else ""
+    return CATEGORIES[int(suffix) - 1] if suffix.isdigit() and 1 <= int(suffix) <= len(CATEGORIES) else ""
 
 
 @dataclass(frozen=True)
@@ -156,6 +163,7 @@ class DraftPreparer:
         self._check = checker
         self._cover = cover_maker
         self._now = now
+        self._history_cache: PostHistory | None = None
 
     def _verified(self, sources: Sequence[Source]) -> tuple[tuple[Source, ...], list[str]]:
         kept, warnings = [], []
@@ -169,13 +177,59 @@ class DraftPreparer:
             raise DraftError("열리는 출처가 하나도 없습니다 — 출처 주소를 확인하세요")
         return tuple(kept), warnings
 
-    def prepare(self, folder: Path, draft_id: str, allow_duplicate: bool = False) -> PreparedDraft:
+    def _history(self, strict: bool) -> PostHistory:
+        """발행 기록 — 이 준비기(Actions 한 번 실행)에서 한 번만 읽는다 (원고마다 글 목록 전체를 받지 않도록).
+
+        strict 이면 못 읽을 때 HistoryUnavailable (중복 검사를 빈 기록으로 하면 안 된다 — 다음 실행에 다시).
+        """
+        if self._history_cache is None:
+            try:
+                self._history_cache = load_history(self._blogger, strict=True)
+            except HistoryUnavailable:
+                if strict:
+                    raise
+                return PostHistory()
+        return self._history_cache
+
+    def _check_overlap(self, files: DraftFiles, pending: Sequence[HistoryEntry]) -> None:
+        """발행한 글 전부 + 아직 발행 전인 원고와 같은 소식이면 원고 문제."""
+        found = combined(self._history(strict=True), pending).find_duplicate(
+            files.topic, files.source_url, files.content.title, [s.url for s in files.sources])
+        if found:
+            entry, reason = found
+            raise DraftError(f"이미 쓴 글과 겹칩니다 — {entry.where or '발행한 글'} '{entry.title}' ({reason}) "
+                             "— 다른 소식으로 다시 쓰세요")
+
+    def _check_fresh(self, files: DraftFiles, draft_id: str, now: datetime) -> list[str]:
+        """최신 이슈인지 (원고를 쓴 날 기준, Claude 가 직접 읽은 출처 목록으로) — 아니면 원고 문제.
+
+        러너에서 출처가 잠깐 안 열려도 판단이 바뀌지 않게 링크 확인 전 목록을 쓴다. 원문 페이지 발표일이 기간 밖이면 거절,
+        원고 표기와 다르면 참고 문구 (페이지를 못 열거나 날짜 표시가 없으면 원고 표기를 따른다).
+        """
+        category, day = files.content.category, folder_date(draft_id, now.date())
+        problems = freshness_problems(category, files.sources, files.source_url, day)
+        if problems:
+            raise DraftError("최신 이슈가 아닙니다 — " + " / ".join(problems))
+        primary = primary_source(files.sources, files.source_url)
+        page = fetch_page(self._session, primary.url) if primary else ""
+        reject, note = page_date_check(primary.published if primary else "", page_published(page), category, day)
+        if reject:
+            raise DraftError(f"최신 이슈가 아닙니다 — {reject}")
+        return [note] if note else []
+
+    def prepare(self, folder: Path, draft_id: str, allow_duplicate: bool = False,
+                pending: Sequence[HistoryEntry] = (), fresh_required: bool = True) -> PreparedDraft:
+        """pending = 아직 발행 전인 다른 원고 (중복 비교), fresh_required = 최신 이슈 조건 확인 (사용자가 주제를 정한 지시는 끔)."""
         files = load_draft(folder)
         now = self._now()
-        history = load_history(self._blogger)
-        if history.is_duplicate(files.topic, files.source_url) and not allow_duplicate:
-            raise DraftError(f"이미 발행한 주제와 겹칩니다: {files.topic} (그래도 올리려면 --allow-duplicate)")
+        numbered = folder_category(draft_id)
+        if numbered and numbered != files.content.category:
+            raise DraftError(f"post.json category '{files.content.category}' 가 원고 폴더 번호의 카테고리 '{numbered}' 와 다릅니다")
+        if not allow_duplicate:
+            self._check_overlap(files, pending)
         sources, warnings = self._verified(files.sources)
+        if fresh_required:
+            warnings += self._check_fresh(files, draft_id, now)
         keywords = draft_keywords(files)
         images = self._collector.collect(files.candidates, sources, folder, keywords) if files.candidates else ()
         if len(images) < len(files.candidates):
@@ -194,8 +248,9 @@ class DraftPreparer:
         sheet = FactSheet(topic, "", (), sources, images=images)
         content = attach_references(content, sheet, now)
         cover = self._cover(folder / "cover.png", content.title, content.category, self._blog_name, f"{now:%Y.%m.%d}")
+        history = self._history(strict=False)  # '함께 보면 좋은 글' 링크용 (못 읽으면 링크만 빠짐)
         ctx = PublishContext(content, cover, base_notes(now, True), history, now.strftime("%Y%m%d_%H%M"), images,
-                             files.topic, files.source_url)
+                             files.topic, files.source_url, tuple(s.url for s in sources))
         preview = write_preview(ctx, folder, dry_run=True)
         html = build_publish_html(self._host, ctx)
         labels = tuple(build_labels(content.category, content.hashtags))

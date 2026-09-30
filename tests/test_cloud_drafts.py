@@ -19,6 +19,7 @@ from fakes import FakeWebClient
 
 NOW = datetime(2026, 9, 30, 7, 30, tzinfo=timezone.utc)
 OFFICIAL = "https://www.nvidia.com/en-us/data-center/vera-cpu/"
+PRESS = "https://www.theverge.com/nvidia-vera-cpu"
 PARAGRAPH = "엔비디아는 **베라 CPU** 를 공개했습니다. " * 40
 SENT = {"status": "pending", "slack": {"channel": "CDRAFT", "ts": "1700.1"}}
 
@@ -38,11 +39,22 @@ def good_post(**overrides) -> dict:
     return data
 
 
-def write_draft(folder, post=None, factcheck=None, official=True, images=True):
+def draft_day(name):
+    """원고 폴더 이름의 날짜 (YYYY-MM-DD) — 형식이 아니면 오늘. 출처 발표일을 원고일로 두면 '최신 이슈' 조건을 통과한다."""
+    try:
+        return datetime.strptime(name[:8], "%Y%m%d").strftime("%Y-%m-%d")
+    except ValueError:
+        return datetime.now().strftime("%Y-%m-%d")
+
+
+def write_draft(folder, post=None, factcheck=None, official=True, images=True, published=None):
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "post.json").write_text(json.dumps(post or good_post(), ensure_ascii=False), encoding="utf-8")
+    day = draft_day(folder.name) if published is None else published
     research = {"topic": "NVIDIA Vera CPU 공개", "source_url": OFFICIAL,
-                "sources": [{"id": "S1", "title": "Vera", "url": OFFICIAL, "publisher": "NVIDIA", "official": official}],
+                "sources": [{"id": "S1", "title": "Vera", "url": OFFICIAL, "publisher": "NVIDIA", "official": official,
+                             "published": day},
+                            {"id": "S2", "title": "Vera 보도", "url": PRESS, "publisher": "The Verge", "published": day}],
                 "images": [{"id": "I1", "image_url": "", "page_url": OFFICIAL, "caption": "사진"}] if images else [],
                 "factcheck": {"claims": 30, "confirmed": 30, "removed": []} if factcheck is None else factcheck}
     (folder / "research.json").write_text(json.dumps(research, ensure_ascii=False), encoding="utf-8")
@@ -323,7 +335,7 @@ def test_cloud_helper_checks_pushes_skips_and_records_runs(branch_repo, monkeypa
     monkeypatch.setitem(helper.SYNC, "ok", True)
     monkeypatch.setenv("MIN_BODY_CHARS", "1000")
     today = helper.today()
-    folder = write_draft(tree / "drafts" / f"{today}_070000_1")
+    folder = write_draft(tree / "drafts" / f"{today}_070000_1", post=good_post(category="AI 언어 모델"))
     assert helper.main(["check", str(folder)]) == 0
 
     # 다른 쪽(Actions)이 먼저 올린 커밋이 있어도 받아서 다시 올린다
@@ -472,3 +484,106 @@ def test_helper_refuses_to_judge_from_a_stale_worktree_and_serialises_fillers(br
     assert helper.main(["missing", "--json"]) == 0
     state = json.loads(capsys.readouterr().out)
     assert state["synced"] and state["locked_by"] == "manual" and len(state["gaps"]) == 7
+
+
+def test_published_record_is_kept_when_the_blog_list_cannot_be_read(tmp_path):
+    from autopost.history import HistoryUnavailable
+
+    root = tmp_path / "branch"
+    write_json(root / "state" / "published.json", [HistoryEntry("2026-09-29", "글", "주제", "AI 도구").to_dict()])
+
+    def unavailable():
+        raise HistoryUnavailable("503")
+
+    sync_and_report(root, lambda: datetime(2026, 9, 30, 16, 40), Store(), lambda f: None,
+                    SlackNotifier(channel_id="C", client=FakeWebClient()), unavailable)
+    assert read_json_list(root / "state" / "published.json")[0]["topic"] == "주제"  # 빈 기록으로 덮지 않음
+
+
+def read_json_list(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def test_pending_entries_skip_parked_skipped_later_and_unpushed_drafts(tmp_path):
+    from autopost.cloud_drafts import fingerprint, pending_entries, user_topic
+
+    drafts = tmp_path / "drafts"
+    first = write_draft(drafts / "20260930_070000_1")
+    parked = write_draft(drafts / "20260930_071000_2")
+    write_json(drafts / "20260930_072000_3" / "skip.json", {"category": "AI 논문 분석", "reason": "없음"})
+    later = write_draft(drafts / "20260930_090000_4")
+    failures = {parked.name: {"hash": fingerprint(parked), "permanent": True}}
+    now = datetime(2026, 9, 30, 12, 0)
+    names = [e.where for e in pending_entries(drafts, now, failures, before=later.name)]
+    assert names == [f"최근 원고 {first.name}"]  # 멈춘 원고·건너뜀·뒤에 쓴 원고는 빼고
+    entry = pending_entries(drafts, now, failures, include={first.name})[0]
+    assert entry.sources == (OFFICIAL, PRESS) and entry.date == "2026-09-30"
+
+    rid = "C0C50SP7VV5-1790734476267849"
+    write_json(tmp_path / "runs" / "requests" / f"{rid}.json", {"id": rid, "kind": "single", "topic": "슬랙 에이전트 만들기"})
+    assert user_topic(tmp_path, first, rid) and not user_topic(tmp_path, first)
+    write_json(tmp_path / "runs" / "requests" / f"{rid}.json", {"id": rid, "kind": "all", "topic": ""})
+    assert not user_topic(tmp_path, first, rid)
+
+
+def test_cloud_check_refuses_stale_or_repeated_news(branch_repo, monkeypatch, capsys):
+    remote, seed, tree = branch_repo
+    helper = load_script("cloud_drafts")
+    monkeypatch.setattr(helper, "TREE", tree)
+    monkeypatch.setattr(helper, "setup", lambda: tree)
+    monkeypatch.setitem(helper.SYNC, "ok", True)
+    monkeypatch.setenv("MIN_BODY_CHARS", "1000")
+    today = helper.today()
+    stale = write_draft(tree / "drafts" / f"{today}_070000_1", published="2026-01-05")
+    assert helper.main(["check", str(stale)]) == 1
+    out = capsys.readouterr().out
+    assert "최근 3일" in out and "고친 뒤 다시 확인하세요" in out
+
+    first = write_draft(tree / "drafts" / f"{today}_071000_2", post=good_post(category="AI 도구"))
+    assert helper.main(["push", str(first)]) == 0
+    again = write_draft(tree / "drafts" / f"{today}_072000_4", post=good_post(category="AI 뉴스 리뷰"))
+    assert helper.main(["check", str(again)]) == 1  # 방금 올린 원고와 같은 소식 — 카테고리가 달라도
+    assert f"최근 원고 {first.name}" in capsys.readouterr().out
+    write_json(tree / "state" / "published.json",
+               [HistoryEntry("2026-09-01", "옛 글", "NVIDIA Vera CPU 공개", "AI 도구", OFFICIAL).to_dict()])
+    assert helper.main(["dupcheck", str(again)]) == 1
+
+
+def test_review_fixes_for_line_endings_retention_git_and_incomplete_drafts(tmp_path):
+    from autopost.cloud_drafts import fingerprint, novelty_problems, pushed_names, sync_drafts
+
+    lf = write_draft(tmp_path / "lf" / "20260930_070000_4")
+    crlf = tmp_path / "crlf" / "20260930_070000_4"
+    crlf.mkdir(parents=True)
+    for name in ("post.json", "research.json"):
+        (crlf / name).write_bytes((lf / name).read_bytes().replace(b"\n", b"\r\n"))
+    assert fingerprint(lf) == fingerprint(crlf)  # Windows 작업 폴더(CRLF)도 Actions 기록과 같은 지문
+
+    old = {"20260915_070000_1": {"hash": "h", "permanent": True}, "20260801_070000_1": {"hash": "h", "permanent": True}}
+    _, records = sync_drafts([], lambda d: None, lambda f: "ts", old, keep_days=["20260915"])
+    assert list(records) == ["20260915_070000_1"]  # 겹침 비교 기간 안의 멈춤 기록은 남긴다
+
+    assert pushed_names(tmp_path / "no-tree") == set()  # 작업 폴더가 없어도 죽지 않는다
+    half = tmp_path / "tree" / "drafts" / "20260930_070000_4"
+    half.mkdir(parents=True)
+    (half / "research.json").write_text('{"topic": "t"}', encoding="utf-8")
+    assert "읽지 못해" in novelty_problems(half, tmp_path / "tree", datetime(2026, 9, 30, 12))[0]
+    wrong = write_draft(tmp_path / "tree" / "drafts" / "20260930_080000_1")  # 폴더 1 = 언어 모델인데 뉴스 리뷰
+    assert any("폴더 번호" in p for p in novelty_problems(wrong, tmp_path / "tree", datetime(2026, 9, 30, 12)))
+
+
+def test_published_record_accumulates_older_posts(tmp_path):
+    from autopost import cloud_drafts
+
+    root = tmp_path / "branch"
+    old = HistoryEntry("2025-01-01", "아주 옛 글", "옛 주제", "AI 도구", urls={"blogger": "https://b/old"})
+    write_json(root / "state" / "published.json", [old.to_dict()])
+    fresh = [HistoryEntry("2026-09-29", "글", "주제", "AI 도구", urls={"blogger": "https://b/1"})]
+    original = cloud_drafts.merge_published
+    try:
+        cloud_drafts.merge_published = lambda o, f: original(o, f, limit=1)  # 블로그 목록이 상한에 닿은 경우
+        sync_and_report(root, lambda: datetime(2026, 9, 30, 16, 40), Store(), lambda f: None,
+                        SlackNotifier(channel_id="C", client=FakeWebClient()), lambda: fresh)
+    finally:
+        cloud_drafts.merge_published = original
+    assert [e["title"] for e in read_json_list(root / "state" / "published.json")] == ["아주 옛 글", "글"]

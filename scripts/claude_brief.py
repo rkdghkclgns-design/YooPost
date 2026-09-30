@@ -29,6 +29,8 @@ from dotenv import load_dotenv  # noqa: E402
 from autopost.config import load_config  # noqa: E402
 from autopost.constants import CATEGORIES, CATEGORY_HINTS, DEFAULT_CATEGORY  # noqa: E402
 from autopost.draft_request import read_request  # noqa: E402
+from autopost.freshness import freshness_lines  # noqa: E402
+from autopost.history import MAX_ENTRIES  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 from autopost.style_profile import load_style  # noqa: E402
 from autopost.writer import FACT_RULES, OUTPUT_SCHEMA, style_rules  # noqa: E402
@@ -39,14 +41,15 @@ RESEARCH_SCHEMA = """{
   "topic": "원 발표·기사 제목 (발행 기록·중복 방지에 씀)",
   "source_url": "대표 원문 주소 (공식 발표 우선)",
   "sources": [{"id": "S1", "title": "문서 제목", "url": "실제로 읽은 원래 주소", "publisher": "발행 주체",
-               "published": "YYYY-MM-DD 또는 빈 문자열", "official": true}],
+               "published": "YYYY-MM-DD (그 페이지에 적힌 발표일 — 대표 원문·이슈 확인 출처는 필수)", "official": true}],
   "images": [{"id": "I1", "image_url": "이미지 파일 주소 (모르면 빈 문자열)", "page_url": "이미지가 실린 출처 페이지",
               "caption": "이미지 설명 한 줄", "credit": "저작권자"}],
   "factcheck": {"claims": 40, "confirmed": 40, "removed": ["확인되지 않아 뺀 문장"], "note": "검증 방법 메모"}
 }"""
 
 CLAUDE_STEPS = """[Claude 작업 순서 — 구글 AI API 없이]
-1. 주제: 아래 '이미 쓴 글'과 겹치지 않는 최근 AI 소식을 웹 검색으로 고른다 (공식 발표·1차 자료 우선).
+1. 주제: 오늘 이슈가 되고 있는 최신 AI 소식 (아래 '최신 이슈만' 기간 안 발표 + 여러 매체가 다룸) 가운데
+   아래 '이미 쓴 글'·'최근 원고'와 겹치지 않는 것을 웹 검색으로 고른다 (공식 발표·1차 자료 우선).
 2. 조사: 공식 발표·문서·논문 원문을 직접 열어 읽고, 신뢰할 수 있는 언론으로 교차 확인한다. 사실마다 출처 번호.
 3. 원고: 아래 글 문법·사실 규칙대로 post.json 을 쓴다 (형광 강조 **…**, 필요하면 image 블록).
 4. 사실 검증: 원고의 수치·날짜·이름·가격·스펙 주장을 모두 뽑아, 원고와 별개로 출처를 다시 열어 확인한다.
@@ -59,7 +62,7 @@ def _history_lines(entries, limit: int) -> list[str]:
     return [f"{e.title}  (주제: {e.topic} · {e.source_url or '원문 없음'})" for e in list(entries)[-limit:]][::-1]
 
 
-def published_snapshot(path: Path, limit: int = 40) -> list[str]:
+def published_snapshot(path: Path, limit: int = MAX_ENTRIES) -> list[str]:
     """Actions 가 남긴 발행 기록 파일 (클라우드처럼 구글 계정이 없을 때)."""
     from autopost.history import HistoryEntry
 
@@ -71,7 +74,7 @@ def published_snapshot(path: Path, limit: int = 40) -> list[str]:
     return _history_lines(entries, limit)
 
 
-def recent_titles(cfg, limit: int = 40, published: Path | None = None) -> list[str]:
+def recent_titles(cfg, limit: int = MAX_ENTRIES, published: Path | None = None) -> list[str]:
     if cfg.google is None and published is not None:
         return published_snapshot(published, limit)
     try:
@@ -98,7 +101,7 @@ def _folder_time(folder: Path) -> float:
     return folder.stat().st_mtime
 
 
-def pending_drafts(days: int = 7, drafts_dir: Path = DRAFTS) -> list[str]:
+def pending_drafts(days: int = 30, drafts_dir: Path = DRAFTS) -> list[str]:
     """최근 원고 폴더의 주제 — 아직 ✅ 전이라 블로그 기록에 없어도 같은 주제를 다시 쓰지 않도록."""
     if not drafts_dir.is_dir():
         return []
@@ -168,6 +171,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"# AI백과사전 원고 작성 지침 — 오늘 {today}")
     if args.category:
         print(f"\n[카테고리] {args.category}: {CATEGORY_HINTS[args.category]} (post.json 의 category 는 반드시 이 값)")
+    topic_given = request.get("kind") == "single" and str(request.get("topic") or "").strip()
+    if topic_given:
+        print("\n[최신 이슈 조건] 사용자가 주제를 정한 지시라 발표일 기간을 따지지 않는다 — 공식 문서 기준, 최신 변경점 위주로.")
+    else:
+        print("\n" + "\n".join(freshness_lines(category, datetime.now(KST).date())))
     if request:
         print("\n" + "\n".join(request_lines(request)))
     print("\n[카테고리 목록]\n" + "\n".join(f"- {c}: {CATEGORY_HINTS[c]}" for c in CATEGORIES))
@@ -177,9 +185,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"\n[분량] 본문(공백·코드블록 제외) {cfg.min_body_chars:,}~{style.target_chars:,}자")
     print("\n[post.json 형식]\n" + OUTPUT_SCHEMA)
     print("\n[research.json 형식]\n" + RESEARCH_SCHEMA)
-    print("\n[이미 쓴 글 — 같은 주제·같은 원문 금지]")
+    print("\n[이미 쓴 글 전부 — 같은 소식·같은 원문 금지 (새 버전·후속 소식이면 새로 바뀐 점만 다룬다)]")
     print("\n".join(f"- {t}" for t in recent_titles(cfg, published=args.published)) or "- (없음)")
-    print("\n[최근 7일 원고 (승인 대기 포함) — 같은 주제·같은 원문 금지]")
+    print("\n[최근 30일 원고 (승인 대기 포함) — 같은 소식·같은 원문 금지]")
     print("\n".join(f"- {t}" for t in pending_drafts(drafts_dir=args.drafts_dir)) or "- (없음)")
     if args.new:
         print(f"\n[새 원고 폴더] {new_draft_dir(args.category, args.drafts_dir)}")

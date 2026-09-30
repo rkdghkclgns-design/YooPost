@@ -17,6 +17,7 @@ from fakes import FakeBlogger, FakeImageHost, FakeWebClient, post_dict
 NOW = datetime(2026, 9, 29, 13, 0, tzinfo=timezone.utc)
 OFFICIAL = "https://www.nvidia.com/en-us/data-center/vera-cpu/"
 DEAD = "https://made-up.example/404"
+PRESS = "https://www.theverge.com/nvidia-vera-cpu"
 
 
 def write_draft(folder, images=(), **post_overrides):
@@ -28,8 +29,9 @@ def write_draft(folder, images=(), **post_overrides):
     research = {
         "topic": "NVIDIA Vera CPU 공개", "source_url": OFFICIAL,
         "sources": [{"id": "S1", "title": "NVIDIA Vera CPU", "url": OFFICIAL, "publisher": "NVIDIA",
-                     "published": "2026-03-16", "official": True},
+                     "published": "2026-09-28", "official": True},
                     {"id": "S2", "title": "없는 기사", "url": DEAD, "publisher": "?"},
+                    {"id": "S4", "title": "Vera CPU 보도", "url": PRESS, "publisher": "The Verge", "published": "2026-09-28"},
                     {"id": "S3", "title": "주소 없음", "url": "not-a-url"}],
         "images": list(images),
         "factcheck": {"claims": 40, "confirmed": 39, "removed": ["확인 안 된 문장"]},
@@ -49,7 +51,7 @@ class Collector:
 
 
 def preparer(blogger=None, host=None):
-    checks = {OFFICIAL: LinkCheck(OFFICIAL, 403), DEAD: LinkCheck(DEAD, 404)}
+    checks = {OFFICIAL: LinkCheck(OFFICIAL, 403), DEAD: LinkCheck(DEAD, 404), PRESS: LinkCheck(PRESS, 200)}
     return DraftPreparer("AI백과사전", blogger or FakeBlogger(), host or FakeImageHost(), Collector(),
                          checker=lambda url, keywords, session: checks[url], now=lambda: NOW)
 
@@ -78,8 +80,8 @@ def test_prepare_builds_publishable_html_with_hosted_images_and_references(tmp_p
     html = prepared.html
     assert "https://img.example/img/20260929_1300_cover.png" in html and "20260929_1300_I1.jpg" in html
     assert "▲ Vera CPU 제품 사진 (출처:" in html and "📚 참고 문헌 및 출처" in html
-    assert "NVIDIA. (2026, March 16). <i>NVIDIA Vera CPU</i>" in html and DEAD not in html  # 열리지 않는 출처는 제외
-    assert r'"category":"AI \ub274\uc2a4 \ub9ac\ubdf0"}-->' in html  # 발행 기록 표시
+    assert "NVIDIA. (2026, September 28). <i>NVIDIA Vera CPU</i>" in html and DEAD not in html  # 열리지 않는 출처는 제외
+    assert r'"category":"AI \ub274\uc2a4 \ub9ac\ubdf0","sources":["' in html  # 발행 기록 표시 (열린 출처 주소 포함)
     assert prepared.labels[0] == "AI 뉴스 리뷰" and prepared.content.closing.endswith("감사합니다.")
     assert any("made-up.example" in w for w in prepared.warnings)
     assert prepared.fact_line == "주장 40개 중 39개 확인 (Claude 검증) · 확인 안 된 1곳 뺌"
@@ -100,7 +102,7 @@ def test_images_that_fail_are_dropped_and_duplicates_are_refused(tmp_path):
 
     blogger = FakeBlogger()
     blogger.publish("예전 글", '<!--yoopost {"topic":"NVIDIA Vera CPU 공개","source":"' + OFFICIAL + '"}-->', ["AI 도구"])
-    with pytest.raises(DraftError, match="이미 발행한 주제"):
+    with pytest.raises(DraftError, match="이미 쓴 글과 겹칩니다"):
         preparer(blogger=blogger).prepare(write_draft(tmp_path), "d2")
     assert preparer(blogger=blogger).prepare(write_draft(tmp_path), "d2", allow_duplicate=True).html
 
@@ -225,3 +227,51 @@ def test_draft_store_talks_to_the_worker_with_the_token():
         store.get("d1")
     with pytest.raises(DraftStoreError, match="형식"):
         store.get("d1")
+
+
+def test_only_fresh_issues_are_prepared_unless_the_user_chose_the_topic(tmp_path):
+    folder = write_draft(tmp_path)
+    research = json.loads((folder / "research.json").read_text(encoding="utf-8"))
+    research["sources"][0]["published"] = "2026-09-10"  # 대표 원문이 19일 전
+    (folder / "research.json").write_text(json.dumps(research, ensure_ascii=False), encoding="utf-8")
+    with pytest.raises(DraftError, match="최신 이슈가 아닙니다.*19일 전"):
+        preparer().prepare(folder, "20260929_1300_4")
+    assert preparer().prepare(folder, "20260929_1300_4", fresh_required=False).html  # 슬랙에서 주제를 정한 지시
+
+
+def test_pending_drafts_and_unreadable_blog_lists_block_repeats(tmp_path):
+    from autopost.history import HistoryEntry, HistoryUnavailable
+
+    other = HistoryEntry("2026-09-29", "Vera CPU 총정리", "NVIDIA Vera CPU 발표", "AI 도구", OFFICIAL,
+                         sources=(OFFICIAL,), where="최근 원고 20260929_0700_2")
+    with pytest.raises(DraftError, match="최근 원고 20260929_0700_2"):
+        preparer().prepare(write_draft(tmp_path), "20260929_1300_4", pending=[other])
+    with pytest.raises(HistoryUnavailable):  # 목록을 못 읽으면 빈 기록으로 보내지 않고 다음 실행에 다시 (원고 문제 아님)
+        preparer(blogger=FakeBlogger(list_fail=True)).prepare(write_draft(tmp_path), "20260929_1300_4")
+
+
+def test_primary_page_dates_are_checked_against_the_written_date(tmp_path):
+    from fakes import FakeHttp, FakeHttpResponse
+
+    def with_page(html):
+        p = preparer()
+        p._session = FakeHttp({OFFICIAL: FakeHttpResponse(200, html)})
+        return p
+
+    old = '<script type="application/ld+json">{"datePublished": "2025-11-03"}</script>'
+    with pytest.raises(DraftError, match="2025-11-03"):
+        with_page(old).prepare(write_draft(tmp_path), "20260929_1300_4")
+    near = '<meta property="article:published_time" content="2026-09-25T09:00:00Z">'
+    prepared = with_page(near).prepare(write_draft(tmp_path), "20260929_1300_4")
+    assert any("발표일 확인 필요" in w and "2026-09-25" in w for w in prepared.warnings)
+
+
+def test_flaky_sources_on_the_runner_do_not_turn_into_stale_rejections(tmp_path):
+    p = preparer()
+    p._check = lambda url, keywords, session: LinkCheck(url, 0 if url == PRESS else 403)  # 매체 기사가 잠깐 안 열림
+    assert p.prepare(write_draft(tmp_path), "20260929_1300_4").html  # 최신 여부는 Claude 가 읽은 출처 목록으로 판단
+
+
+def test_folder_number_and_post_category_must_match(tmp_path):
+    with pytest.raises(DraftError, match="원고 폴더 번호의 카테고리 'AI 도구'"):
+        preparer().prepare(write_draft(tmp_path), "20260929_1300_2")
