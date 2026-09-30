@@ -4,7 +4,10 @@
    "arrived:20260930_111546_2"
   ],
   "finished": "2026-09-30T11:19:52+09:00",
-  "stale": false
+  "stale": false,
+  "board_ts": "1790736440.766169",
+  "board_hash": "3d512a4bac9ca337",
+  "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790734476267849?thread_ts=1790734476.267849&cid=C0C50SP7VV5"
  },
  "C0C50SP7VV5-1790734986680189": {
   "reported": [
@@ -13,6 +16,9 @@
    "arrived:20260930_113630_3"
   ],
   "finished": "",
-  "stale": false
+  "stale": false,
+  "board_ts": "1790736441.130469",
+  "board_hash": "5bada5998b139c64",
+  "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790734986680189?thread_ts=1790734986.680189&cid=C0C50SP7VV5"
  }
 }

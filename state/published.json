@@ -168,5 +168,15 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/github-copilot-opentelemetry.html"
   }
+ },
+ {
+  "date": "2026-09-30",
+  "title": "🧠 적응형 루프 트랜스포머 TaH2 논문 분석: 정확도-계산량 기울기 2.74 vs 1.79 총정리",
+  "topic": "Improving Test-Time Scaling with Adaptive Looped Transformers (arXiv 2609.35748, 2026-09-28)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.35748",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/09/tah2-274-vs-179.html"
+  }
  }
 ]
