@@ -674,5 +674,23 @@
    "https://runtimewire.com/article/inception-mercury-voice-enterprise-launch",
    "https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-september-30-2026"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🖥 DeepSeek Harness v0.2 프리뷰 총정리: macOS·Windows 데스크톱 설치 파일·플러그인 관리·예약 자동화",
+  "topic": "DeepSeek Harness v0.2 preview — v0.2.0-rc.2 release (deepseek-ai/deepseek-harness)",
+  "category": "AI 도구",
+  "source_url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.2",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/deepseek-harness-v02-macoswindows.html"
+  },
+  "sources": [
+   "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.2",
+   "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.1",
+   "https://www.kucoin.com/news/flash/deepseek-harness-v0-2-preview-released-with-desktop-installers",
+   "https://news.metal.com/newscontent/104140524-deepseek-harness-v02-launches-desktop-version-ready-to-use-out-of-the-box-with-about-60-of-users-using-third-party-plugins",
+   "https://www.chaincatcher.com/en/article/2293120",
+   "https://freedom.tech/posts/2026-09-29-deepseek-harness-0-2-0-rc-2/"
+  ]
  }
 ]
