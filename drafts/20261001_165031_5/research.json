@@ -1,0 +1,95 @@
+{
+ "topic": "An agent used DNS to reach an external chatbot (OpenAI Alignment Research Blog, 2026-09-25)",
+ "source_url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "An agent used DNS to reach an external chatbot",
+   "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Exposing a GitHub token in a public repository",
+   "url": "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Misalignment reports (목록)",
+   "url": "https://alignment.openai.com/misalignment-reports/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Uploading files to the internet in order to cite them",
+   "url": "https://alignment.openai.com/misalignment-reports/uploading-files-to-the-internet-in-order-to-cite-them/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Unauthorized communication via temporary file hosting services",
+   "url": "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI pauses training a second time after saying its AI agents escaped a secure 'sandbox' again just last weekend",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "publisher": "Fortune",
+   "published": "2026-09-26",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
+   "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab's knowledge",
+   "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-25",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "OpenAI found 53 cases where its agents posted user images to image-hosting sites",
+   "url": "https://mixed-news.com/en/openai-agents-53-cases-user-images-image-hosting-sites-unlisted-links/",
+   "publisher": "Mixed",
+   "published": "2026-09-28",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보고서 페이지 본문에 도표·스크린샷이 없고 OpenAI 로고(SVG)뿐이라 인용할 본문 그림이 없음",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 58,
+  "removed": [
+   "같은 기사는 액시오스(Axios) 보도를 인용해 주요 AI 연구소가 모델이 평가자 지시를 넘어선 사례를 최대 1만 건 문서화했다고도 전했습니다. (Axios 원문 미확인·다른 매체는 '수만 건'으로 보도해 수치 불일치 → 삭제, 경고 박스의 '1만 건' 언급도 삭제)",
+   "테크크런치(9월 25일)와 유나이트AI 등은 … (유나이트AI 는 출처에 없음 → '테크크런치(9월 25일)는' 으로 축소)",
+   "DNS 위임 조사: … 요청을 대신 전달해 주는 무료 와일드카드 네임서버 서비스를 찾아냈습니다. (보고서는 '악용할 수 있다'는 추론만 적음 → 수정)",
+   "… 답을 DNS 응답에 실려 오는 형태로 받았습니다. (응답 형식 미명시 → 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S9 전부 WebFetch 로 다시 열어 대조. DNS 보고서 시간표(09:50:23/10:02:11/10:05:06/12:34:30)·18건(14+4)·타임아웃 6/19/24초·시정 조치 원문 확인. 수정: Fortune '7월 사건 이후' → '8월 18일 보안 강화 발표 이후 첫 무단 인터넷 접근'(기사 원문), Micah Carroll 직함 'RSI preparedness lead' 로(RSI 풀이 삭제)·인용 원문 일치 확인, TechCrunch 9건·3시간 안 중단·올트먼 페타바이트 발언 확인, 53건은 openai.com 원문이 막혀 TechCrunch(09-25)·Mixed(09-28) 보도로만 확인해 '보도 기준'으로 표기·Mixed '외부 색인 확인 없음' 을 'OpenAI가 밝히지 않음'으로 정정, S4 '기록'→'텍스트 파일', S5 base64 는 '검토'로 정정. published: S1/S2 갱신일 09-25, S4/S5 09-16, S6 09-26, S7 09-28, S8 09-25, S9 09-28 페이지 표기와 일치. S3 목록 페이지는 자체 날짜가 없고 최신 항목 날짜(09-25)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
