@@ -10,5 +10,12 @@
   "reason": "이미 발행한 주제와 겹칩니다: 인텔리빅스 코스닥 공모 — 증권신고서(지분증권, 2026-09-16): 신주 2,500,000주·희망가 7,600~9,000원, 수요예측 10/12~16·청약 10/21~22 (그래도 올리려면 --allow-duplicate)",
   "attempts": 1,
   "permanent": true
+ },
+ "20261001_074227_6": {
+  "hash": "092868eaf0883db9",
+  "reason": "겹침으로 제외: 발행한 글 '📊 마이크로소프트 AI 확산 보고서 총정리: 세계 18.8%·한국 40.6%(12위), AI 사용률 숫자 읽는 법' (같은 소식의 원문을 함께 다룸) https://aibaekgwasajeon.blogspot.com/2026/09/ai-188-40612-ai.html",
+  "attempts": 1,
+  "permanent": true,
+  "excluded": true
  }
 }
