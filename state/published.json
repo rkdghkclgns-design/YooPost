@@ -781,5 +781,23 @@
    "https://www.firecrawl.dev/blog/openai-decisions-api-vs-jev",
    "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🖥 Ollama 0.35 결정 모델 지원 총정리: /v1/systemone·nimble 91ms·13개 데이터셋 75.7%",
+  "topic": "Ollama now supports Jev-style decision models (Ollama, 2026-09-29)",
+  "category": "AI 도구",
+  "source_url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ollama-035-v1systemonenimble-91ms13-757.html"
+  },
+  "sources": [
+   "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+   "https://docs.ollama.com/api/systemone",
+   "https://ollama.com/library/nimble",
+   "https://i10x.ai/news/ollama-035-jev-decision-models",
+   "https://modelsystem.one/news/ollama-systemone-decision-models/",
+   "https://ollama.com/library/tev1"
+  ]
  }
 ]
