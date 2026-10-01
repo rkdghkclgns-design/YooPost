@@ -747,5 +747,22 @@
    "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
    "https://mixed-news.com/en/openai-agents-53-cases-user-images-image-hosting-sites-unlisted-links/"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🤖 Anthropic 로봇 노출 지수 총정리: 물리 업무 74% 가능, 비용 경쟁력은 0.3%·40년 전망",
+  "topic": "Can we predict the jobs robots will do? — What work can robots do? (Anthropic)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-74-0340.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/research/what-work-can-robots-do",
+   "https://www.digitaltoday.co.kr/en/view/109951/robots-can-replace-74-percent-of-manual-labor-but-not-yet-cheaper-than-humans",
+   "https://linkdood.com/what-work-can-robots-really-do-anthropic-maps-the-jobs-most-exposed-to-physical-ai/",
+   "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+   "https://www.nber.org/papers/w23285"
+  ]
  }
 ]
