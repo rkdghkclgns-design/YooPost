@@ -548,5 +548,31 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gitspawn-git-ai-7.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🚀 Gemini 4 Argon 총정리: 도입가 $2/$10·DeepSWE 77.9%·Fairwind 제한 공개",
+  "topic": "Google releases Gemini 4 Argon (TechCrunch, 2026-09-30) / 공식: Gemini 4 Argon (Google, 2026-09-30)",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gemini-4-argon-210deepswe-779fairwind.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+   "https://venturebeat.com/technology/google-unveils-gemini-4-argon-retaking-benchmark-lead-over-openai-and-anthropic-but-in-limited-release",
+   "https://9to5google.com/2026/09/30/gemini-4-argon-announcement/"
+  ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🤖 에이엘로봇 공모주 분석: 코스닥 240만주·희망가 15,700~17,600원, 증권신고서 총정리",
+  "topic": "에이엘로봇 코스닥 공모 — 증권신고서(지분증권, 2026-09-21): 2,400,000주·희망가 15,700~17,600원, 수요예측 10/15~21·청약 10/26~27",
+  "category": "AI 공모주 분석",
+  "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000209",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/240-1570017600.html"
+  }
  }
 ]
