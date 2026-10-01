@@ -1,0 +1,77 @@
+{
+ "topic": "DIVD says Zammad zero-days enabled AI-driven network breach (DIVD-2026-00014/00015)",
+ "source_url": "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DIVD-2026-00015 - Vulnerabilities in Zammad during investigation of case DIVD-2026-00014",
+   "url": "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+   "publisher": "DIVD CSIRT",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DIVD-2026-00014 breach analysis",
+   "url": "https://csirt.divd.nl/cases/DIVD-2026-00014/",
+   "publisher": "DIVD CSIRT",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Zammad Zero-Days Exploited in AI-Powered DIVD Hack",
+   "url": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
+   "publisher": "SecurityWeek",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI agent used Zammad zero-days to breach Dutch vulnerability disclosure non-profit",
+   "url": "https://www.helpnetsecurity.com/2026/10/01/divd-agentic-ai-attack-breach/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "DIVD says Zammad zero-days enabled AI-driven network breach",
+   "url": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+   "publisher": "BleepingComputer",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "AI Agent Hacked Cybersecurity Nonprofit DIVD via Zammad Zero-Days; Root Flaw Unpatched",
+   "url": "https://www.techtimes.com/articles/328387/20261001/ai-agent-hacked-cybersecurity-nonprofit-divd-via-zammad-zero-days-root-flaw-unpatched.htm",
+   "publisher": "TechTimes",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Zammad – Helpdesk & Customer Support Software (homepage)",
+   "url": "https://zammad.com/en",
+   "publisher": "Zammad GmbH",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 42,
+  "removed": [
+   "9월 30일에 공격 경로가 Zammad의 알려지지 않은 취약점 2건이라는 점이 확인됐습니다. (DIVD 타임라인의 9/30 항목은 'Zammad 제로데이 관련 공개 성명·파트너 통지' — 수정)",
+   "타임라인 표 '9월 30일 | 공격 경로가 Zammad 제로데이 2건임을 확인' (위와 같은 이유로 수정)",
+   "9월 29일에 기술 분석을 마쳤다고 사례 문서(00014)에 적었습니다. (00014 타임라인의 9/29 항목은 '사례 문서 공개' — 수정)",
+   "정확한 범위는 조사 중입니다. (출처에서 확인 안 됨 — 삭제)",
+   "DIVD는 침해를 발견한 다음 날 곧바로 접근을 차단했고, 사흘째에 제조사에 통보했습니다. (탐지 당일 차단, 이틀 뒤 통보로 수정)",
+   "이 수치는 매체(Forkast, TechTimes)의 설명이며… (Forkast 는 출처에 없음 — BleepingComputer·TechTimes 로 고치고 Zammad 공식 홈페이지 수치 '2,000곳 이상 조직·50,000명 이상 사용자' 병기)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): post.json 의 수치·날짜·이름·버전·CVE·CVSS·권고·패치 상태 42개 주장을 뽑아 S1~S6 을 WebFetch 로 다시 열고 DIVD 두 페이지는 curl 로 HTML 원문(dateModified 2026-10-01T13:27/22:30 CEST)까지 대조. CVSS 9.4 는 DIVD 문서에 없고 SecurityWeek 보도로 출처 표기. 패치 불일치: DIVD 00015 상단 'Patch status: Available' 항목과 같은 문서 본문 'Zammad who are working on a fix'가 서로 다르고, SecurityWeek·Help Net Security 는 수정 없음, TechTimes 는 CVE-2026-102490 'no patch as of today' — Zammad 공식 권고(zammad.com/en/advisories, GitHub Security Advisories)에는 10/1 기준 두 CVE 권고가 없어 '패치 완료'로 단정하지 않고 경고 박스에 근거를 구체화. Zammad 규모는 공식 홈페이지(S7)로 2,000곳 이상·50,000명 이상 확인(매체 55,000명과 차이 명시). 출처 published 는 각 페이지 표기와 일치(SecurityWeek·Help Net·TechTimes 10/1, BleepingComputer 9/30, DIVD 두 문서 'Last modified 01 Oct 2026'); S7 은 날짜 없는 홈페이지. EGRESS_BLOCKED 출처 없음. 악용 절차는 본문에 없음(방어 관점 유지)."
+ },
+ "images_none_reason": "DIVD 사례 문서 두 곳(S1·S2)은 글자·타임라인뿐이고 본문 그림이 없음(성명에서 말한 로그 스크린샷은 사례 문서 본문에 실려 있지 않음). 매체 기사 본문 그림은 2023년 일반 'zero-day' 스톡 사진(SecurityWeek)·구분선(Help Net Security)·대표 이미지(BleepingComputer)뿐이라 원고 내용과 관련된 그림이 없음."
+}
