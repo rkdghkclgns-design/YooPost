@@ -857,5 +857,38 @@
    "https://www.techtimes.com/articles/328387/20261001/ai-agent-hacked-cybersecurity-nonprofit-divd-via-zammad-zero-days-root-flaw-unpatched.htm",
    "https://zammad.com/en"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "📊 베인 AI 데이터센터 보고서 총정리: 2030년 228GW·최대 6.5조 달러, 병목은 전력만이 아니다",
+  "topic": "AI Data Center Boom: Can We Build It If They Come? (Bain & Company, 2026-09-29)",
+  "category": "AI 인사이트",
+  "source_url": "https://bain.com/insights/ai-data-center-boom-can-we-build-it-if-they-come-technology-report-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ai-2030-228gw-65.html"
+  },
+  "sources": [
+   "https://bain.com/insights/ai-data-center-boom-can-we-build-it-if-they-come-technology-report-2026",
+   "https://247wallst.com/investing/2026/09/29/the-coming-ai-blackout-10-trillion-data-center-surge-threatens-to-break-the-grid",
+   "https://www.azorobotics.com/News.aspx?newsID=16497",
+   "https://www.nature.com/articles/s44458-026-00152-5"
+  ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🔬 멜콘 공모주 분석: 확정 공모가 12,300원·수요예측 1,136.84대 1, 반도체 장비 공시 총정리",
+  "topic": "멜콘 코스닥 공모 — 발행조건 확정 정정 증권신고서(2026-09-29): 신주 2,500,000주·확정 공모가 12,300원, 청약 10/1~10/2",
+  "category": "AI 공모주 분석",
+  "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260929000191",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/12300-113684-1.html"
+  },
+  "sources": [
+   "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260929000191",
+   "https://www.fnnews.com/news/202609291527258073",
+   "https://www.newspim.com/news/view/20260929000787",
+   "https://www.newstomato.com/ReadNews.aspx?no=1315290",
+   "https://www.wikitree.co.kr/articles/1163252"
+  ]
  }
 ]
