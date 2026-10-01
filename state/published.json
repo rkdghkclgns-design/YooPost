@@ -799,5 +799,22 @@
    "https://modelsystem.one/news/ollama-systemone-decision-models/",
    "https://ollama.com/library/tev1"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🎵 YuE2 논문 분석: 악보를 먼저 쓰는 3.58B 음악 AI, SongBench 6.96 총정리",
+  "topic": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality (arXiv 2609.33757, 2026-09-27)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.33757",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/yue2-358b-ai-songbench-696.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.33757",
+   "https://arxiv.org/html/2609.33757v1",
+   "https://huggingface.co/papers/2609.33757",
+   "https://map-yue2.github.io/",
+   "https://neurohive.io/en/state-of-the-art/yue2-open-source-ai-song-generator/"
+  ]
  }
 ]
