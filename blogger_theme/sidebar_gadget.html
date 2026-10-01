@@ -1,6 +1,7 @@
-<!-- AI백과사전 오른쪽 메뉴 (티스토리형: 공지사항 · 분류 전체보기 N · 최근글/인기글)
+<!-- AI백과사전 오른쪽 메뉴 (티스토리형: 공지사항 · 분류 전체보기 N · 최근글/인기글 · 블로그 안내)
      Blogger → 레이아웃 → 사이드바 → 가젯 추가 → HTML/자바스크립트 에 이 내용을 그대로 붙여 넣는다 (제목 비움).
-     블로그 공개 피드(JSONP)만 읽는다. 공지사항은 '공지사항' 라벨 글, 인기글은 같은 사이드바의 '인기 게시물' 가젯을 읽는다. -->
+     블로그 공개 피드(JSONP)만 읽는다. 공지사항은 '공지사항' 라벨 글, 인기글은 같은 사이드바의 '인기 게시물' 가젯을 읽는다.
+     블로그 안내(소개·개인정보처리방침·문의)는 스크립트 없이도 보이고 검색 로봇이 읽도록 HTML 로 둔다 (애드센스 심사용). -->
 <style>
 .yp-aside{font-family:"Pretendard Variable",Pretendard,Inter,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#16191c;font-size:14px;line-height:1.5}
 .yp-aside section{margin:0 0 30px}
@@ -24,6 +25,11 @@
 .yp-aside .yp-post img{flex:none;width:76px;height:46px;object-fit:cover;border-radius:6px;border:1px solid #d1d4d9;background:#f4f5f7}
 .yp-aside .yp-empty{color:#7b8187;font-size:13px}
 </style>
+<section class="yp-info" id="yp-info"><h4>블로그 안내</h4><ul>
+<li><a href="https://aibaekgwasajeon.blogspot.com/p/about.html">블로그 소개</a></li>
+<li><a href="https://aibaekgwasajeon.blogspot.com/p/privacy-policy.html">개인정보처리방침</a></li>
+<li><a href="https://aibaekgwasajeon.blogspot.com/p/contact.html">문의하기</a></li>
+</ul></section>
 <script>
 (function () {
   var CATS = ["AI 언어 모델", "AI 도구", "AI 논문 분석", "AI 뉴스 리뷰", "AI 보안", "AI 인사이트", "AI 공모주 분석"];
@@ -138,6 +144,8 @@
     while (bottom.firstChild) main.appendChild(bottom.firstChild);
     bottom.appendChild(main);
     bottom.appendChild(aside);
+    var info = document.getElementById("yp-info"); /* 위 HTML 의 블로그 안내 — 오른쪽 메뉴 맨 아래로 옮긴다 */
+    if (info) aside.appendChild(info);
     document.body.classList.add("yp-has-aside");
   }
   function start() {
