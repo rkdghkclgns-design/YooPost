@@ -1,0 +1,68 @@
+{
+ "topic": "DeepSeek Harness v0.2 preview — v0.2.0-rc.2 release (deepseek-ai/deepseek-harness)",
+ "source_url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.2",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Release v0.2.0-rc.2 · deepseek-ai/deepseek-harness",
+   "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.2",
+   "publisher": "DeepSeek (GitHub)",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Release v0.2.0-rc.1 · deepseek-ai/deepseek-harness",
+   "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.0-rc.1",
+   "publisher": "DeepSeek (GitHub)",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "DeepSeek Harness v0.2 Preview Released with Desktop Installers",
+   "url": "https://www.kucoin.com/news/flash/deepseek-harness-v0-2-preview-released-with-desktop-installers",
+   "publisher": "KuCoin News",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "DeepSeek Harness v0.2 launches desktop version, ready to use out of the box, with about 60% of users using third-party plugins",
+   "url": "https://news.metal.com/newscontent/104140524-deepseek-harness-v02-launches-desktop-version-ready-to-use-out-of-the-box-with-about-60-of-users-using-third-party-plugins",
+   "publisher": "Shanghai Metals Market (SMM)",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "DeepSeek Harness v0.2 preview version...",
+   "url": "https://www.chaincatcher.com/en/article/2293120",
+   "publisher": "ChainCatcher",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Deepseek Harness 0.2.0-rc.2",
+   "url": "https://freedom.tech/posts/2026-09-29-deepseek-harness-0-2-0-rc-2/",
+   "publisher": "freedom.tech",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "읽은 공식 릴리스 페이지(GitHub 릴리스 노트)는 글자뿐이고, 본문 그림 주소를 직접 열어 확인하지 못했습니다.",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "rc.1 노트에는 이전 후보 버전 이후 **187개 커밋**이 반영됐다고 적혀 있습니다. 짧은 기간에 많은 변경이 한꺼번에 들어온 셈입니다. (페이지의 '187 commits to master since this release'는 rc.1 이후 커밋 수라 주장과 반대 — 표의 같은 내용도 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 문장별 대조. 수정: KuCoin 보도일 2026-09-29→2026-09-30(페이지 표기 2026/09/30, published·본문·표), rc.1 '데스크톱 창 위치 문제'→제목 표시줄 가림 문제, rc.2 '채팅 시간 표시'→경과 시간 표시, Bash/PowerShell 안내를 '삭제·이동 전 대상 경로 확인'으로 구체화, Windows 권한 진단 스킬 표현 정정. GitHub 저장소 페이지로 오픈소스(MIT)·에이전트 하네스 확인. 릴리스 날짜 rc.1 9/28·rc.2 9/29(사전 릴리스), SMM 9/30, ChainCatcher 9/30, freedom.tech 9/29 페이지 표기와 일치. 막힌(EGRESS_BLOCKED) 출처 없음. 릴리스 노트·README 본문 그림 없음 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
