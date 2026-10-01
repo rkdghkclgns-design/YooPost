@@ -1,0 +1,73 @@
+{
+ "topic": "Google releases Gemini 4 Argon (TechCrunch, 2026-09-30) / 공식: Gemini 4 Argon (Google, 2026-09-30)",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gemini 4 Argon (Google 공식 블로그)",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "publisher": "Google",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google releases Gemini 4 Argon, called its most powerful model yet",
+   "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google unveils Gemini 4 Argon, retaking benchmark lead over OpenAI and Anthropic — but in limited release",
+   "url": "https://venturebeat.com/technology/google-unveils-gemini-4-argon-retaking-benchmark-lead-over-openai-and-anthropic-but-in-limited-release",
+   "publisher": "VentureBeat",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Google announces Gemini 4 Argon as its new frontier model",
+   "url": "https://9to5google.com/2026/09/30/gemini-4-argon-announcement/",
+   "publisher": "9to5Google",
+   "published": "2026-09-30",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/gemini-4-argon_table_blog.gif",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "caption": "벤치마크: Gemini 4 Argon 성능 비교표",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/gemini_4_cyber_evals_deepswe.gif",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "caption": "벤치마크: DeepSWE 평가 차트",
+   "credit": "Google"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/gemini_4_cyber_evals_automationbench.gif",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "caption": "벤치마크: AutomationBench 차트",
+   "credit": "Google"
+  }
+ ],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 63,
+  "removed": [
+   "입력 형태: 텍스트·이미지·비디오 (원문에 입력 형식 목록이 없어 '멀티모달 이해: 차트 분석·긴 영상 이해·여러 문서 기반 작업'으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 블로그·S2 TechCrunch·S3 VentureBeat·S4 9to5Google 원문 HTML을 curl로 다시 받아 수치를 원문과 대조 (VentureBeat는 첫 요청 429, 재시도로 읽음; EGRESS_BLOCKED 출처 없음). published 4개 모두 페이지 날짜·메타(2026-09-30)와 일치. 가격 $2/$10→$4/$20·캐시 95%($0.10)·출력 64K→1M·DeepSWE 77.9·AutomationBench 51.3·LVBench 91.7·CWE-bench 68·VB 13/18·Harvey 19.6 vs 5.4·FrontierSWE 65.5 vs 55.0·Terminal-bench 4.0 66.4 vs 57.4·Opus 5.5 74.2/42.5 확인. 수정: Zircon 80만 줄 Rust 이전은 '완료'가 아니라 진행 중(감사·검토 단계), libgav1 2.7배는 '기존 Rust 포팅판 대비', 메모리 300TiB는 '적용 시' 예상치, 프롬프트 인젝션 내성은 '자사 모델 중', 사고 대응팀은 훈련 감시 경보, Vals 근거 문장 분리·미국 GDP 가중, 제미나이 앱 10억 명은 8월 발표, 9to5Google 3.5 Pro 문장 원문대로, VB 배경(출시 지연·지도부 개편). 인용 이미지 3개 모두 HTTP 200 image/gif (3936x3948, 1920x1080, 1920x1080) 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790815809148949",
+  "kind": "all"
+ }
+}
