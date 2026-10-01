@@ -142,12 +142,13 @@
    "arrived:20261001_163841_3",
    "arrived:20261001_164438_4",
    "arrived:20261001_165031_5",
-   "arrived:20261001_165704_6"
+   "arrived:20261001_165704_6",
+   "skipped:20261001_171108_7"
   ],
-  "finished": "",
+  "finished": "2026-10-01T17:11:13+09:00",
   "stale": false,
   "board_ts": "1790839690.221359",
-  "board_hash": "fe60303f7bba3627",
+  "board_hash": "298f3d6a0a40a6ad",
   "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790839668820039?thread_ts=1790839668.820039&cid=C0C50SP7VV5"
  }
 }
