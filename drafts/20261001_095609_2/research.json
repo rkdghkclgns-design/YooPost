@@ -1,0 +1,80 @@
+{
+ "topic": "OpenAI Codex 재사용 가능한 클라우드 환경 (DevDay 2026) — Codex Cloud 공식 문서 · TechCrunch·SiliconANGLE 보도",
+ "source_url": "https://learn.chatgpt.com/docs/cloud",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Codex Cloud — 공식 문서",
+   "url": "https://learn.chatgpt.com/docs/cloud",
+   "publisher": "OpenAI",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DevDay 2026 announcements and developer resources",
+   "url": "https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI gives Codex reusable cloud environments that work across devices",
+   "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's Codex gets reusable cloud environments that follow developers across devices",
+   "url": "https://siliconangle.com/2026/09/29/openais-codex-gets-reusable-cloud-environments-that-follow-developers-across-devices/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Codex cloud after DevDay 2026: environments, CLI, code review",
+   "url": "https://szymonpaluch.com/blog/posts/openai-codex-cloud",
+   "publisher": "Szymon Paluch",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "DevDay 2026 — What's new (ChatGPT + Codex docs)",
+   "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026",
+   "publisher": "OpenAI",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Cloud environments — Codex 공식 문서",
+   "url": "https://learn.chatgpt.com/docs/environments/cloud-environments",
+   "publisher": "OpenAI",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(learn.chatgpt.com Codex Cloud·Cloud environments·DevDay 2026 What's new)의 본문 그림은 이미지 파일이 아닌 HTML로 그린 화면 예시이고, 본문 <img>는 로고·아이콘·장식용 SVG뿐이라 인용할 본문 그림 파일이 없음 (Opus 검증 시 curl로 확인)",
+ "factcheck": {
+  "claims": 47,
+  "confirmed": 47,
+  "removed": [
+   "XenoSpectrum(S5, 403 Cloudflare 차단으로 재확인 불가) 출처 표기 문장 — '게시 후 수정해도 실행 중 작업 영향 없음', '설치 스크립트·시작 스킬', '숨기는 것과 제한하는 것은 별개(Tailscale·OIDC)', 'VM 2~4 vCPU·8~16GiB·8~32GiB' → 공식 Cloud environments 문서(S8) 근거로 다시 쓰고 S5 삭제",
+   "표 'API' 행(Luna 기반 Decisions API, Agents API 컴퓨터 사용) — 이전 DevDay 총정리 글과 겹치고 주제 밖이라 삭제",
+   "'Codex Security Cloud ... Daybreak Blue 보안 모델 이용' — TechCrunch 원문은 'Daybreak Blue를 통해 제공되는 모델 접근'이라 부정확, 삭제",
+   "'SiliconANGLE와 TechCrunch는 모두 더 빠른 작업 시작을 언급' — SiliconANGLE 원문에 없음, TechCrunch만 남김",
+   "'TechCrunch: 컴퓨터·휴대폰·클라우드에서 모두 접근할 수 있는 지속적 작업 공간' — 원문 표현과 달라 '격리 샌드박스에서 더 지속적이고 설정 가능한 환경으로' 로 수정"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): 모든 출처를 curl 원문으로 다시 열어 대조. 공식 Cloud environments 문서(.md)로 VM 사양표(Plus·Edu Plus 2vCPU/8GiB/8GiB, Pro·Business·Enterprise·Edu·Edu Pro 4vCPU/16GiB/32GiB)·7일 복구·제한·네트워크 시크릿(HTTPS 443)·5단계 확인. published 확인: S1·S8 문서 페이지는 날짜 표기 없음 — 같은 사이트의 공식 'What's new: DevDay 2026'(S7) 페이지 본문에 'September 29, 2026'이 적혀 있고 재사용 클라우드 환경을 발표하며 S8을 링크, 커뮤니티 공지(S2, article:published_time 2026-09-29T19:11Z)도 Codex Cloud 항목을 S1로 링크하므로 2026-09-29 유지. S3 TechCrunch 'September 29, 2026'·S4 SiliconANGLE 'SEPTEMBER 29 2026' 일치. S6 개인 블로그는 페이지 발행일 2026-09-30 이라 2026-09-29→2026-09-30 수정. S5 XenoSpectrum은 curl 403(Cloudflare)로 읽지 못해 출처에서 삭제. 인용 이미지: 공식 페이지 본문 그림은 HTML 화면 예시뿐(img는 로고·아이콘 SVG)이라 images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790815809148949",
+  "kind": "all"
+ }
+}
