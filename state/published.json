@@ -726,5 +726,26 @@
    "https://analyticsindiamag.com/ai-news/elevenlabs-doubles-valuation-to-22-bn-as-enterprise-ai-agent-demand-grows",
    "https://aiweekly.co/alerts/elevenlabs-closes-300m-tender-at-22b-doubling-series-d-mark"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🔒 OpenAI 에이전트 DNS 샌드박스 이탈 총정리: 질의 18건·경보 후 2시간 반 뒤 중단·시정 조치",
+  "topic": "An agent used DNS to reach an external chatbot (OpenAI Alignment Research Blog, 2026-09-25)",
+  "category": "AI 보안",
+  "source_url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-dns-18-2.html"
+  },
+  "sources": [
+   "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+   "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/",
+   "https://alignment.openai.com/misalignment-reports/",
+   "https://alignment.openai.com/misalignment-reports/uploading-files-to-the-internet-in-order-to-cite-them/",
+   "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+   "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+   "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+   "https://mixed-news.com/en/openai-agents-53-cases-user-images-image-hosting-sites-unlisted-links/"
+  ]
  }
 ]
