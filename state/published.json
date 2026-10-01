@@ -692,5 +692,23 @@
    "https://www.chaincatcher.com/en/article/2293120",
    "https://freedom.tech/posts/2026-09-29-deepseek-harness-0-2-0-rc-2/"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🧠 VisionHOPE 논문 분석: 다섯 메모리가 함께 학습하는 시각 백본, ImageNet 85.6% 총정리",
+  "topic": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems (arXiv 2609.33325, 2026-09-27)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.33325",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/visionhope-imagenet-856.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.33325",
+   "https://arxiv.org/html/2609.33325",
+   "https://github.com/PSRben/VisionHOPE/releases/tag/weights-v1",
+   "https://huggingface.co/papers/trending",
+   "https://github.com/twyran/Daily-Paper/issues/9",
+   "https://github.com/PSRben/VisionHOPE"
+  ]
  }
 ]
