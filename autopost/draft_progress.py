@@ -123,10 +123,15 @@ def build_rows(drafts: Sequence[Draft], skipped: Mapping[str, str], store, now: 
     for category in CATEGORIES:
         mine = [d for d in drafts if d.category == category]
         records = {d.folder.name: _record(store, d) for d in mine if not d.skip_reason}
-        sent = [d for d in mine if not d.skip_reason and (d.sent or _delivered(records[d.folder.name]))]
+        delivered = [d for d in mine if not d.skip_reason and (d.sent or _delivered(records[d.folder.name]))]
+        excluded = [d for d in delivered if str((records[d.folder.name] or {}).get("status") or "") == "excluded"]
+        sent = [d for d in delivered if d not in excluded]
         skip = next((d.skip_reason for d in mine if d.skip_reason), skipped.get(category, ""))
-        broken = [failed[d.folder.name] for d in mine if d.folder.name in failed]
-        if sent:
+        broken = [failed[d.folder.name] for d in mine if d.folder.name in failed and d not in excluded]
+        if excluded and not sent:  # 겹쳐서 자동 제외 — 빈 카테고리로 쳐서 다른 소식으로 다시 쓴다
+            rows.append(Row(category, "🚫", f"겹침으로 제외: {escape_mrkdwn(excluded[0].title[:60])} — 다른 소식으로 다시 씀",
+                            False))
+        elif sent:
             parts = [_state(records[d.folder.name], d) for d in sent]
             icon = parts[0][0]
             text = " · ".join(p[1] for p in parts)

@@ -67,11 +67,12 @@ class PreparedDraft:
     fact_line: str
     warnings: tuple[str, ...] = ()
     sources_md: Path | None = None  # 출처·사실 검증 목록 (슬랙 스레드에 올려 ✅ 전에 확인)
+    sources: tuple[str, ...] = ()  # 출처 주소 — 발행 직전·승인 대기 중 겹침 확인에 쓴다
 
     def bundle(self, now: datetime) -> dict:
         return {"id": self.draft_id, "status": "pending", "title": self.content.title, "html": self.html,
                 "labels": list(self.labels), "category": self.content.category, "topic": self.topic,
-                "source_url": self.source_url, "created": now.isoformat(timespec="seconds")}
+                "source_url": self.source_url, "sources": list(self.sources), "created": now.isoformat(timespec="seconds")}
 
 
 def _read_json(path: Path) -> dict:
@@ -259,7 +260,7 @@ class DraftPreparer:
         sources_md = folder / "sources.md"
         sources_md.write_text(sources_markdown(files, sources, line), encoding="utf-8")
         return PreparedDraft(draft_id, content, html, labels, preview, cover, files.topic, files.source_url,
-                             line, tuple(warnings), sources_md)
+                             line, tuple(warnings), sources_md, tuple(s.url for s in files.sources))
 
 
 def build_draft_blocks(prepared: PreparedDraft, request: Mapping[str, str] | None = None) -> list[dict]:

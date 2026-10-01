@@ -62,6 +62,8 @@ def _draft_row(category: str, folder: Path, record: Mapping | None, failures: Ma
     if status == "published":
         url = str((record or {}).get("url") or "")
         return BoardRow(category, "✅", f"발행됨: <{url}|{title}>" if url else f"발행됨: {title}", 4, True)
+    if status == "excluded":  # 이미 쓴 글과 겹쳐 자동 제외 (✅ 를 눌러도 발행하지 않음)
+        return BoardRow(category, "🚫", f"겹침으로 제외: {title}", 4, True)
     if status == "approved":
         return BoardRow(category, "🚀", f"발행 중: {title}", 3, False)
     if status == "failed":

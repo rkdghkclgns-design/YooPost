@@ -73,6 +73,9 @@ class MemoryStore:
             raise DraftStoreError("없음")
         return self.items[draft_id]
 
+    def find(self, draft_id):
+        return self.items.get(draft_id)
+
 
 def test_prepare_builds_publishable_html_with_hosted_images_and_references(tmp_path):
     host = FakeImageHost()

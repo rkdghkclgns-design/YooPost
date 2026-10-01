@@ -3,6 +3,7 @@
 Worker 가 ✅ 반응을 감지해 원고 ID 로 이 워크플로를 실행한다. 여기서는 AI 를 쓰지 않는다:
 원고 보관함에서 발행용 HTML 을 꺼내 구글 블로그에 올리고, 결과를 슬랙 원고 메시지의 스레드에 남긴다.
 이미 발행한 원고는 다시 올리지 않는다 (✅ 를 여러 번 눌러도 한 번만).
+발행 직전에 블로그 글 전부와 다시 비교해 겹치면 ✅ 를 눌렀어도 발행하지 않고 제외한다 (2026-10-01 사용자 지시).
 
     python -m autopost.publish_draft --id 20260929_1300_1 --approved-by U0123
 """
@@ -19,6 +20,8 @@ from .blog_publisher import PLATFORM, BloggerPublisher
 from .config import ConfigError, load_config
 from .draft_request import manual_thread
 from .draft_store import DraftStore
+from .exclusion import EXCLUDED, exclude, overlap_of, record_entry
+from .history import HistoryUnavailable, load_history
 from .results import PublishResult
 from .slack_helper import LABEL, SlackNotifier, escape_mrkdwn
 
@@ -44,6 +47,21 @@ def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, s
         log.info("이미 발행한 원고입니다: %s", draft.get("url"))
         slack.post(f"ℹ️ 이미 발행한 원고입니다 — {draft.get('url', '')}", thread_ts=place.get("ts"),
                    channel=place.get("channel"))
+        return 0
+    if draft.get("status") == EXCLUDED:
+        slack.post(f"🚫 겹치는 원고라 제외된 원고입니다 — 발행하지 않습니다 ({escape_mrkdwn(str(draft.get('excluded_reason') or ''))})",
+                   thread_ts=place.get("ts"), channel=place.get("channel"))
+        return 0
+    try:  # 발행 직전 겹침 확인 — 블로그 목록을 못 읽으면 확인 없이 올리지 않는다
+        history = load_history(blogger, strict=True)
+    except HistoryUnavailable as exc:
+        store.put(draft_id, {**draft, "status": "failed"})
+        slack.post(f"❌ {LABEL} 발행 전 겹침 확인을 하지 못해 발행하지 않았습니다 — {escape_mrkdwn(str(exc)[:200])}\n"
+                   "✅ 를 다시 누르면 다시 시도합니다", thread_ts=place.get("ts"), channel=place.get("channel"))
+        return 1
+    found = overlap_of(record_entry(draft_id, draft), history)
+    if found:
+        exclude(draft_id, draft, store, slack, found, now(), manual_channel)
         return 0
     try:
         result = blogger.publish(str(draft["title"]), str(draft["html"]), list(draft.get("labels") or []))

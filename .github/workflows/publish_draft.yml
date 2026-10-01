@@ -20,8 +20,10 @@ on:
         type: boolean
         default: false
 
+# 원고마다 따로 줄 세운다 — 한 그룹을 함께 쓰면 ✅ 를 몰아 누를 때 GitHub 가 대기 중인 발행을 취소해
+# 원고가 'approved' 로 멈췄다 (2026-09-30·10-01 실제 발생). 같은 원고는 차례로, 이미 발행한 원고는 다시 올리지 않는다.
 concurrency:
-  group: publish-draft
+  group: publish-draft-${{ inputs.draft_id }}
   cancel-in-progress: false
 
 permissions:

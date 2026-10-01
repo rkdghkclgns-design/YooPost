@@ -82,3 +82,12 @@ def test_board_posts_once_then_updates_the_same_message(tmp_path):
     (tmp_path / "progress_20260929.json").write_text("{broken", encoding="utf-8")
     board.refresh()  # 상태 파일이 깨져도 새 메시지로 이어 간다
     assert len(client.messages) == 2
+
+
+def test_excluded_drafts_show_as_gaps_not_waiting(tmp_path):
+    draft(tmp_path, "20260929_130819_4", "AMD·World Labs 인수", sent=True)
+    drafts = scan(tmp_path, "20260929")
+    rows = build_rows(drafts, {}, Store({"20260929_130819_4": {"status": "excluded"}}), NOW.timestamp(),
+                      failed={"20260929_130819_4": "겹침으로 제외: 발행한 글 'x'"})
+    news = rows[3]
+    assert news.icon == "🚫" and "겹침으로 제외" in news.text and not news.finished  # 빈칸 — 다른 소식으로 다시

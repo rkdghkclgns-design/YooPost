@@ -411,8 +411,10 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     outcome, records = sync_drafts(folders, store.find, send, read_json(failures_file), clean,
                                    keep_days=recent_days(current, PENDING_DAYS))
     write_json(failures_file, records)
+    from .exclusion import failure_text
+
     for draft_id, reason in outcome.new_failures.items():
-        slack.post(f"⚠️ 클라우드 원고를 슬랙 승인 요청으로 보내지 못했습니다 — `{draft_id}`: {escape_mrkdwn(reason)}")
+        slack.post(failure_text(draft_id, reason))
     try:
         report_requests(root, folders, outcome, records, slack, current, manual_channel, draft_channel,
                         lookup=store.find)

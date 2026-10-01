@@ -30,7 +30,8 @@ from autopost.config import load_config  # noqa: E402
 from autopost.draft_request import request_of  # noqa: E402
 from autopost.draft_store import DraftStore  # noqa: E402
 from autopost.google_auth import build_blogger_service, build_credentials  # noqa: E402
-from autopost.history import load_history  # noqa: E402
+from autopost.exclusion import sweep  # noqa: E402
+from autopost.history import PostHistory, load_history  # noqa: E402
 from autopost.image_host import ImageHost  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 from autopost.quote_images import ImageCollector  # noqa: E402
@@ -68,9 +69,24 @@ def main(argv: list[str] | None = None) -> int:
             print(f"   ⚠️ {warning}")
         return ts
 
-    outcome = sync_and_report(root, now, store, send, slack, lambda: load_history(blogger, strict=True).entries,
+    loaded: dict[str, tuple] = {}
+
+    def published_entries() -> tuple:
+        """발행 기록 — 이번 실행에서 한 번만 읽는다 (못 읽으면 HistoryUnavailable)."""
+        if "entries" not in loaded:
+            loaded["entries"] = load_history(blogger, strict=True).entries
+        return loaded["entries"]
+
+    outcome = sync_and_report(root, now, store, send, slack, published_entries,
                               clean=lambda text: redact(text, cfg.secret_values()),
                               manual_channel=dict(cfg.slack_stage_channels).get("manual", ""), draft_channel=channel)
+    try:  # 승인 대기 원고 가운데 겹치는 원고 자동 제외 (✅ 를 눌러도 발행되지 않게)
+        excluded = sweep(root, now(), store, PostHistory(published_entries()), slack,
+                         manual_channel=dict(cfg.slack_stage_channels).get("manual", ""))
+        for draft_id in excluded:
+            print(f"🚫 겹침으로 제외: {draft_id}")
+    except Exception as exc:  # 발행 직전 확인이 한 번 더 막는다
+        print(f"⚠️ 겹침 제외 확인을 하지 못했습니다: {exc}")
     if args.watchdog and not watchdog(root, now(), slack):
         print("⚠️ 오늘 클라우드 실행 기록이 없습니다")
     print(f"보냄 {len(outcome.sent)} · 이미 보냄 {len(outcome.already)} · 실패 {len(outcome.new_failures)}"
