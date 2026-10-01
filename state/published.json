@@ -574,5 +574,22 @@
   "urls": {
    "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/240-1570017600.html"
   }
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🧩 Raven 논문 분석: '하네스의 하네스'로 에이전트를 조합, MAOB Exact Match +10.4·10.5%p 총정리",
+  "topic": "Raven: The Harness of Harnesses for Composable Agentic Intelligence (EverMind AI, arXiv 2609.33439, 2026-09-27)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.33439",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/raven-maob-exact-match-104105p.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.33439",
+   "https://arxiv.org/html/2609.33439v1",
+   "https://github.com/EverMind-AI/Raven/releases/tag/tech-report-v1",
+   "https://startupfortune.com/raven-020-gives-developers-an-open-source-alternative-to-closed-ai-agent-stacks/",
+   "https://github.com/EverMind-AI/Raven"
+  ]
  }
 ]
