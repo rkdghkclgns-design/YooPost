@@ -816,5 +816,46 @@
    "https://map-yue2.github.io/",
    "https://neurohive.io/en/state-of-the-art/yue2-open-source-ai-song-generator/"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "💰 OpenAI 300억 달러 투자 유치 추진 총정리: 기업가치 1.4조 달러, IPO 대신 브리지 라운드",
+  "topic": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation (TechCrunch, 2026-09-29, citing Bloomberg)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-300-14-ipo.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
+   "https://finance.yahoo.com/technology/ai/articles/openai-targets-30-billion-funding-185008998.html",
+   "https://www.coindesk.com/markets/2026/09/30/openai-targets-usd1-4-trillion-valuation-and-unveils-dots-ai-agent",
+   "https://www.blockhead.co/2026/09/30/openai-seeks-at-least-30-billion-at-1-4-trillion-valuation-as-bridge-to-delayed-ipo/",
+   "https://nairametrics.com/2026/09/30/openai-seeks-30-billion-funding-at-1-4-trillion-valuation/",
+   "https://www.foxbusiness.com/markets/sam-altman-says-openai-wont-go-public-2026-amid-ai-safety-concerns",
+   "https://siliconangle.com/2026/03/31/openai-just-closed-record-breaking-122b-funding-round-brings-value-852b/",
+   "https://www.pymnts.com/news/artificial-intelligence/2026/openai-aims-for-1-4-trillion-valuation-with-new-funding/",
+   "https://group.softbank/en/news/press/20261001",
+   "https://www.implicator.ai/openai-500-chatgpt-tier-dots-paid-plans/"
+  ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🔒 DIVD 해킹 총정리: AI 에이전트가 Zammad 제로데이 2건으로 몇 초 만에 root 장악",
+  "topic": "DIVD says Zammad zero-days enabled AI-driven network breach (DIVD-2026-00014/00015)",
+  "category": "AI 보안",
+  "source_url": "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/divd-ai-zammad-2-root.html"
+  },
+  "sources": [
+   "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+   "https://csirt.divd.nl/cases/DIVD-2026-00014/",
+   "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
+   "https://www.helpnetsecurity.com/2026/10/01/divd-agentic-ai-attack-breach/",
+   "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+   "https://www.techtimes.com/articles/328387/20261001/ai-agent-hacked-cybersecurity-nonprofit-divd-via-zammad-zero-days-root-flaw-unpatched.htm",
+   "https://zammad.com/en"
+  ]
  }
 ]
