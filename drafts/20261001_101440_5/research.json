@@ -1,0 +1,57 @@
+{
+ "topic": "Self-replicating prompt injections exist (OpenAI Alignment Research Blog, 2026-09-25) · The Register 보도(2026-09-29)",
+ "source_url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Self-replicating prompt injections exist",
+   "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+   "publisher": "OpenAI Alignment Research Blog",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Add one more AI worry to the nightmare scenario: self-replicating prompt injections",
+   "url": "https://www.theregister.com/security/2026/09/29/add-one-more-ai-worry-to-the-nightmare-scenario-self-replicating-prompt-injections/5299922",
+   "publisher": "The Register",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "GPT-Red: Automated Red Teaming via Self-Play at Scale",
+   "url": "https://arxiv.org/abs/2607.26115",
+   "publisher": "OpenAI / arXiv",
+   "published": "2026-07-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications",
+   "url": "https://arxiv.org/abs/2403.02817",
+   "publisher": "arXiv (Cohen, Bitton, Nassi)",
+   "published": "2024-03-05",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "OpenAI 보고서와 The Register 기사 본문에 도표·스크린샷 등 관련 그림이 없고 글자 중심 문서임 (직접 읽어 확인)",
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [
+   "취약했던 모델은 내부 연구용 체크포인트(GPT-5.4-mini, GPT-5.5)였습니다. / 모델 성격: 모두 내부 연구용 체크포인트 (원문은 GPT-5.4-mini 기반 모델만 internal-only research checkpoint 로 명시 → GPT-5.4-mini 에 한정해 수정)",
+   "모델이 채널을 읽고, 사용자를 조회하고, 자격 증명을 전달한 뒤 (원문에 자격 증명 전달 없음 → froge(사내 칭찬 화폐) 전송으로 수정)",
+   "예시는 이메일·파일 시스템·Slack 다단계 세 가지 (원문에는 코드 저장소 '가짜 컴팩션 메모' 예시까지 4개 → 수정·추가)",
+   "The Register 기사는 이메일 예시 외에 엑셀 통합문서 형태의 예도 언급하지만, OpenAI 원문에서 확인한 예시는 이메일·파일 시스템·Slack 세 가지 (엑셀 예시는 원문 파일 시스템 예시와 같은 사례 → 문단 재작성)",
+   "GPT-Red 훈련이 문서화된 가장 큰 규모의 LLM 안전 훈련 '가운데 하나' (초록은 'single-largest' → 수정)",
+   "표: GPT-Red 이전 유형 확인 범위 '훈련·평가 환경' (원문에 없음 → '보고서에 언급 없음')"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 OpenAI 보고서·S2 The Register 를 curl 로 원문 HTML 을 받아 텍스트 전체 대조, S3 arXiv 초록 원문 대조, S4(Morris-II) arXiv 초록 원문으로 새 문단 검증. published 확인: S1 Disclosure date Sep 25 2026, S2 29 Sep 2026 22:34 UTC, S3 Submitted 28 Jul 2026, S4 v1 2024-03-05 — 모두 일치. The Register 의 'GPT-5.6 적대적 훈련 중 6월 발견'은 기사 표현이며 OpenAI 보고서에는 GPT-5.6 언급 없음(GPT-Red 논문 초록에 GPT-5.6 등장)으로 본문에 밝힘. openai.com GPT-Red 블로그는 403 으로 읽지 못해 출처로 쓰지 않음. claims 52 는 수정 후 원고 기준 주장 수(틀린 6건은 원문대로 고친 뒤 확인)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790815809148949",
+  "kind": "all"
+ }
+}
