@@ -1,0 +1,368 @@
+{
+ "title": "🖥 Ollama 0.35 결정 모델 지원 총정리: /v1/systemone·nimble 91ms·13개 데이터셋 75.7%",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 9월 29일, Ollama가 공식 블로그에서 **Ollama 0.35**부터 TypeSafe의 Jev API 방식을 따르는 **결정 모델(decision model)** 을 로컬에서 돌릴 수 있다고 밝혔습니다. 결정 모델은 글을 길게 생성하는 대신, 주어진 문장을 보고 '어느 항목인가', '예인가 아니인가', '몇 점인가'를 확률과 함께 한 번에 답하는 작은 모델입니다. Ollama에서는 새 엔드포인트(요청을 받는 주소) **/v1/systemone** 으로 쓰고, 출시 때 Bespoke Labs의 nimble(9B)과 Together AI의 tev1(4B·0.8B) 세 모델이 함께 올라왔습니다. 이 글에서는 어떻게 호출하는지, 모델별 정확도와 속도, 그리고 지금 알아 둘 제한을 공식 문서와 두 곳의 외부 매체 기사로 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Ollama 0.35 이상에서 **/v1/systemone** 엔드포인트로 결정 모델을 로컬 실행 (2026-09-29 공식 블로그)",
+  "출시 모델 3종: Bespoke Labs **nimble(9B)**, Together AI **tev1(4B)**, **tev1:0.8b(0.8B)**",
+  "nimble은 MacBook Pro M5 Max에서 Pac-Man 예제를 돌릴 때 결정당 평균 **91ms** (Ollama 자체 측정)",
+  "Bespoke Labs의 13개 공개 데이터셋·3,880건 평균 정확도: nimble 75.7%, tev1 4B 73.3%, tev1 0.8B 63.5%, 비교 대상 Jev 1.13은 76.0% (Ollama 블로그 그래프)",
+  "한 요청에 질문 최대 64개, 요청 본문 64 KiB 이하, 스트리밍·이미지·도구 미지원, GGUF 모델만 가능",
+  "이 글에서 배울 것: 결정 모델이 무엇인지, Ollama에서 호출하는 방법, 모델 선택 기준, 그리고 정확도 수치를 읽을 때 주의할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Ollama 결정 모델 지원 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "지금까지 로컬 모델에 '이 문의는 결제 문제인가, 버그인가, 계정 문제인가'를 분류시키려면 보통 일반 대화형 모델에 프롬프트를 쓰고 JSON 형태로 답하라고 요구해야 했습니다. 이 방식은 출력 형식이 흔들리거나 쓸데없이 긴 문장이 나올 수 있다는 부담이 있었습니다. 결정 모델은 이 문제를 **'질문 목록을 넣으면 정해진 형식의 답과 확률이 나오는'** 방식으로 바꾸려는 시도입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Ollama는 9월 29일 공식 블로그에서 이 흐름에 합류했다고 밝혔습니다. 블로그와 모델 페이지는 새 엔드포인트가 **TypeSafe의 Jev API를 따른다**고 설명합니다. 이 글은 결정 모델 전반이 아니라 **Ollama에서 직접 돌리는 방법과 제한**에 초점을 맞춥니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "외부 매체의 평가도 비슷합니다. i10X는 9월 30일 기사에서 개발자들이 분류 작업에 LLM을 쓸 때 **'불안정한 JSON 출력과 복잡한 프롬프트 설계'** 로 고생해 왔다고 짚고, 이번 업데이트가 결정을 내리는 일과 글을 만드는 일을 로컬 계산 층에서 분리한다고 해석했습니다. 같은 날 ModelSystem.One도 Ollama의 9월 29일 글을 인용해 이 엔드포인트와 모델 세 종을 소개했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "정리하면 이번 소식의 핵심은 새 모델 하나가 아니라, **로컬 실행 도구 안에 결정 모델 전용 입구가 생겼다**는 점입니다. 모델은 앞으로 바뀔 수 있지만, 질문을 담아 보내고 확률이 담긴 답을 받는 호출 형식은 그대로 둔 채 모델만 갈아 끼울 수 있다는 점이 개발자에게 의미가 있어 보입니다. 이는 이 글의 해석이며, 공식 글이 직접 한 말은 아닙니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 결정 모델이란?",
+     "text": "글을 이어 쓰는 모델이 아니라, 주어진 선택지 가운데 하나를 고르고 각 선택지의 확률을 함께 돌려주는 모델입니다. 티켓 분류, 모델 라우팅(어떤 모델에 보낼지 정하기), 콘텐츠 검수처럼 답의 범위가 닫힌 일에 맞습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ Ollama 결정 모델 공식 스펙 정리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Ollama 공식 문서에 따르면 이 기능은 **Ollama v0.35.0 이상**이 필요합니다. 요청에는 모델 이름(model), 판단할 글(state), 질문 묶음(questions)을 넣고, 모델을 메모리에 올려 둘 시간(keep_alive)은 따로 정하지 않으면 서버 설정(별도 설정이 없으면 5분)을 따릅니다. state에는 비어 있지 않은 문자열이나 JSON 객체·배열을 넣을 수 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "엔드포인트",
+       "/v1/systemone (Jev API 기반)"
+      ],
+      [
+       "필요 버전",
+       "Ollama 0.35.0 이상"
+      ],
+      [
+       "질문 유형",
+       "choice(선택), noul(예/아니오), score(점수)"
+      ],
+      [
+       "질문 수",
+       "요청당 1~64개"
+      ],
+      [
+       "선택지·점수 단계",
+       "choice·score 모두 2~26개"
+      ],
+      [
+       "요청 본문",
+       "64 KiB 이하"
+      ],
+      [
+       "keep_alive",
+       "서버 기본값 (보통 5분)"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "질문 유형 이름 가운데 **noul** 은 공식 문서의 표기를 그대로 옮긴 것으로, 예·아니오로 답하는 유형이며 답으로 '참일 확률' 하나를 돌려줍니다. 선택형(choice) 질문의 응답에는 **선택한 답, 모든 선택지의 확률, confidence(확신도)** 가 들어옵니다. 문서의 응답 예시에서는 'bug'가 확률 0.9781로 뽑혔고 confidence는 0.8906, 사용량은 입력 174토큰·출력 1토큰으로 표시됩니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ confidence는 정답 확률이 아닙니다",
+     "text": "공식 API 문서는 confidence가 확률 분포가 얼마나 한쪽에 몰렸는지를 나타내는 값(1 − 엔트로피/ln(선택지 수))이며 '보정된 정답 확률이 아니다'라고 밝힙니다. 이 값을 그대로 '정답일 가능성'으로 읽어 자동 처리 기준으로 쓰면 위험할 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🤖 출시 모델 3종 비교: nimble·tev1",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "출시 때 제공된 모델은 세 가지입니다. **nimble** 은 Bespoke Labs가 만든 9B 결정 모델로, Qwen3.5-9B를 바탕으로 하며 256K 컨텍스트와 Apache 2.0 라이선스로 소개됩니다. 모델 페이지는 용량을 약 9.3~9.5GB로 표시합니다. **tev1** 은 Together AI의 실험적 결정 모델 계열로 4B(약 4.4~4.5GB)와 0.8B(약 797~812MB) 두 크기가 있고, 둘 다 Qwen3.5를 바탕으로 미세 조정했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "크기",
+      "만든 곳",
+      "내려받기"
+     ],
+     "rows": [
+      [
+       "nimble",
+       "9B",
+       "Bespoke Labs",
+       "ollama pull nimble"
+      ],
+      [
+       "tev1",
+       "4B",
+       "Together AI (실험)",
+       "ollama pull tev1:4b"
+      ],
+      [
+       "tev1:0.8b",
+       "0.8B",
+       "Together AI (실험)",
+       "ollama pull tev1:0.8b"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "tev1 페이지는 **데이터셋 구축 도구와 학습 스크립트가 MIT 라이선스**라고 적습니다. 모델 자체의 라이선스는 해당 페이지에서 따로 확인해야 합니다. 두 모델 페이지 모두 선택·예/아니오·점수 세 유형을 안내하고, 요청당 최대 64개 질문에 대해 선택지별 확률을 돌려준다고 설명합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "tev1은 모델 페이지에 ollama pull tev1:4b 와 ollama pull tev1:0.8b 처럼 **크기 태그를 붙인 명령**이 안내되어 있습니다. 세 모델 모두 Ollama 0.35 이상이 필요하므로, 모델을 받았는데 호출이 안 된다면 먼저 버전을 확인하는 것이 좋습니다. 또 모델 페이지는 결정 모델이 아직 Ollama CLI와 Ollama Python·JavaScript 라이브러리에는 들어가지 않았으니 API나 TypeSafe SDK를 쓰라고 안내합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 크기별 선택 기준",
+     "text": "정확도가 가장 중요하면 9B nimble, 메모리가 빠듯한 기기나 아주 빠른 1차 분류에는 0.8B tev1이 후보입니다. 다만 아래 표처럼 0.8B는 평균 정확도가 눈에 띄게 낮습니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 속도와 정확도 벤치마크",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Ollama 블로그 그래프는 Bespoke Labs가 공개한 13개 데이터셋(사람이 라벨을 붙인 3,880건의 결정)에 대한 평균 정확도입니다. 값은 **nimble 75.7%, tev1 4B 73.3%, tev1 0.8B 63.5%** 이고, 비교 기준인 TypeSafe Jev 1.13은 76.0%입니다. nimble과 tev1은 Ollama에서 돌린 결과이고, Jev 값은 같은 결정을 Bespoke Labs가 직접 돌린 결과입니다. 즉 nimble은 Jev 1.13과 0.3%p 차이로 근접합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 정확도가 어떤 뜻인지도 짚어 둘 필요가 있습니다. 모델 페이지는 정확도를 **사람이 붙인 라벨과 일치한 비율**로 설명합니다. 따라서 75.7%는 '네 건 중 세 건 남짓 맞힌다'는 평균일 뿐이고, 질문 유형과 데이터셋에 따라 더 높거나 낮을 수 있습니다. 점수형(루브릭) 데이터셋은 가장 높은 확률의 단계가 사람의 단계와 정확히 같아야 맞힌 것으로 쳐서 수치가 낮게 나온다고 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "13개 데이터셋 평균 정확도"
+     ],
+     "rows": [
+      [
+       "Jev 1.13 (비교 기준)",
+       "76.0%"
+      ],
+      [
+       "nimble 9B",
+       "75.7%"
+      ],
+      [
+       "tev1 4B",
+       "73.3%"
+      ],
+      [
+       "tev1 0.8B",
+       "63.5%"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "nimble 모델 페이지에는 Bespoke Labs가 원래 Nimble 릴리스로 직접 잰 결과도 따로 실려 있습니다. 이 측정에서 13개 전체 평균은 74.8%였고, 유형별로는 **선택형 81.6%, 예/아니오형 80.2%, 점수형 54.6%** 였습니다(Ollama 그래프의 75.7%와는 측정 주체가 다릅니다). 속도는 MacBook Pro M5 Max에서 Pac-Man 예제를 돌릴 때 nimble이 **결정당 평균 91ms** 였다고 합니다. Together AI는 자체 개발용 평가의 주요 결정 세트에서 tev1 4B가 88.0%(1,000건 중 880건)를 기록했다고 적었는데, 개발 중에 쓴 평가라 독립 벤치마크가 아니라고 스스로 밝혔고 Ollama의 13개 데이터셋 평가와도 기준이 달라 직접 비교할 수 없습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 모두 제공 측 수치입니다",
+     "text": "91ms와 정확도는 Ollama 또는 모델 제작사가 밝힌 값이며, 이 글에서 독립적으로 재현하지 않았습니다. 내 하드웨어와 내 데이터에서는 달라질 수 있으니 직접 측정해 보세요."
+    }
+   ]
+  },
+  {
+   "heading": "💻 설치·사용 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "사용 순서는 간단합니다. 먼저 **Ollama를 0.35 이상으로 올리고**, 모델을 내려받은 뒤, 로컬 주소(기본 11434 포트)로 요청을 보냅니다. 아래 요청은 Ollama 공식 API 문서에 실린 예시를 그대로 옮긴 것입니다."
+    },
+    {
+     "type": "subheading",
+     "text": "1) 모델 내려받기"
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "ollama pull nimble"
+    },
+    {
+     "type": "subheading",
+     "text": "2) 요청 보내기 (문서 예시)"
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"model\": \"nimble\",\n  \"state\": \"Our checkout has returned 500 errors since 9am.\",\n  \"questions\": {\n    \"label\": {\n      \"type\": \"choice\",\n      \"instructions\": \"Which label fits this ticket?\",\n      \"criteria\": {\n        \"billing\": \"Payments and refunds\",\n        \"bug\": \"Software errors\",\n        \"account\": \"Login and account access\"\n      }\n    }\n  }\n}"
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "curl http://localhost:11434/v1/systemone \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"model\": \"nimble\",\n    \"state\": \"Our checkout has returned 500 errors since 9am.\",\n    \"questions\": {\n      \"label\": {\n        \"type\": \"choice\",\n        \"instructions\": \"Which label fits this ticket?\",\n        \"criteria\": {\n          \"billing\": \"Payments and refunds\",\n          \"bug\": \"Software errors\",\n          \"account\": \"Login and account access\"\n        }\n      }\n    }\n  }'"
+    },
+    {
+     "type": "subheading",
+     "text": "3) 응답 형태 (문서 예시)"
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"model\": \"nimble\",\n  \"answers\": {\n    \"label\": {\n      \"type\": \"choice\",\n      \"choice\": \"bug\",\n      \"probabilities\": {\"billing\": 0.0125, \"bug\": 0.9781, \"account\": 0.0093},\n      \"confidence\": 0.8906\n    }\n  },\n  \"usage\": {\"input_tokens\": 174, \"output_tokens\": 1}\n}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Ollama는 curl 외에 **TypeSafe의 공식 Python SDK** 로도 호출할 수 있다고 안내합니다. 공식 블로그 예시는 pip install typesafe-sdk 로 설치한 뒤 TYPESAFE_BASE_URL=http://localhost:11434, TYPESAFE_API_KEY=ollama, TYPESAFE_DEFAULT_MODEL=nimble 환경 변수로 로컬 서버를 가리키게 합니다. 모델 페이지에 따르면 SDK는 API 키를 요구하지만 Ollama는 이를 무시하므로 아무 값이나 넣어도 됩니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "pip install typesafe-sdk\nexport TYPESAFE_BASE_URL=http://localhost:11434\nexport TYPESAFE_API_KEY=ollama\nexport TYPESAFE_DEFAULT_MODEL=nimble"
+    },
+    {
+     "type": "subheading",
+     "text": "에이전트에게 붙여넣을 지시문"
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "내 PC의 Ollama 버전이 0.35 이상인지 확인하고, 아니면 업데이트 방법을 알려줘. 그다음 `ollama pull nimble` 로 모델을 받고, Ollama 공식 문서(/v1/systemone)의 예시 형식에 맞춰 고객 문의 하나를 billing/bug/account 로 분류하는 curl 요청을 만들어서 실행해 줘. 응답의 probabilities 와 confidence 를 표로 정리해 줘."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 활용 시나리오",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Ollama와 모델 제작사는 대표 사용처로 **티켓 분류, 모델 라우팅, 콘텐츠 검수** 를 듭니다. 아래는 이 사용처를 바탕으로 한 활용 아이디어이며, 효과는 직접 검증이 필요합니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "고객 문의 분류: 한 문의에 '유형(choice)', '긴급 여부(예/아니오)', '불만 정도(score)'를 한 요청으로 묻기 (요청당 최대 64개 질문)",
+      "모델 라우팅: 쉬운 질문은 로컬에서 처리하고 어려운 질문만 큰 모델로 넘기는 1차 관문",
+      "콘텐츠 검수: 정책 위반 여부를 예/아니오와 확률로 받아 사람이 볼 대상만 추리기"
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "처음 도입한다면 한 번에 전체를 바꾸기보다 **사람이 이미 분류해 둔 문의 100~200건 정도로 시험**해 보는 방법이 현실적입니다. 이 숫자는 이 글의 제안이며 공식 권고가 아닙니다. 같은 문의를 nimble·tev1 4B·tev1 0.8B에 각각 보내 정답과 비교하면, 내 업무에서 어느 크기가 충분한지 빠르게 알 수 있습니다. 응답 속도도 함께 재 보면 선택이 쉬워집니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 확률을 기준으로 쓰기",
+     "text": "답만 쓰지 말고 probabilities 값을 함께 저장해 두면, 확률이 애매한 건만 사람이나 큰 모델에게 넘기는 규칙을 만들 수 있습니다. 단 위 경고처럼 confidence 값 자체는 보정된 정답 확률이 아닙니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "i10X는 0.8B~9B 결정 모델을 **호출당 토큰 비용 없이** 로컬에서 돌릴 수 있게 되면서 이 방식이 클라우드 기반 LLM 분류 API를 직접 위협한다고 해석했습니다. 이는 매체의 전망이므로, 실제 비용 절감은 사용량과 정확도 요구 수준에 따라 달라집니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계점과 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서가 밝힌 제한은 분명합니다. 요청 본문은 **64 KiB 이하**, 스트리밍·이미지·도구·생성 제어는 지원하지 않으며, 호환되는 **GGUF 가중치**가 필요하고 클라우드·MLX/Safetensors 모델은 지원 대상이 아닙니다. 렌더링된 프롬프트가 불러온 컨텍스트 창 안에 들어가면서 점수 계산용 토큰 자리 두 개가 남아야 하고, 입력은 잘라 내지 않습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ tev1은 실험 모델입니다",
+     "text": "Ollama와 Together AI는 tev1을 실험적 모델로 소개합니다. tev1 페이지는 약 2,000토큰 컨텍스트로 돌아가니 입력을 짧게 하고, 선택지는 학습 범위인 2~24개 안에서 쓰라고 권합니다. 0.8B의 평균 정확도는 63.5%여서, 중요한 자동 판단에 바로 쓰기보다 사람 검토와 함께 시험해 보는 편이 안전합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 벤치마크 평균은 내 업무와 다릅니다",
+     "text": "13개 공개 데이터셋 평균이 내 분류 기준과 맞는다는 보장은 없습니다. 내 데이터 일부로 정답표를 만들어 정확도를 따로 재 보세요."
+    },
+    {
+     "type": "paragraph",
+     "text": "Ollama는 앞으로 **Apple 실리콘에서 MLX를 통한 성능 향상**과 다양한 결정 작업에 특화된 모델을 추가할 계획이며, Ollama 클라우드에서 제공하는 결정 모델도 곧 나온다고 밝혔습니다. 일정과 구체적인 모델은 공개되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🌐 같은 흐름의 다른 소식",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "결정 모델은 TypeSafe의 Jev가 만든 형식을 따르는 흐름입니다. ModelSystem.One에 따르면 그동안 오픈 결정 모델을 System One API 형식으로 돌리려면 Ollama와 관계없는 독립 프로젝트인 Ollaya 같은 별도 도구가 필요했고, 지금은 **Ollama·Ollaya·Liquid AI의 호스팅형 d1** 이 같은 요청 형식을 받습니다. tev1 페이지도 tev1이 Jev에서 영감을 받았지만 학습 데이터는 Jev에서 가져오지 않았다고 밝힙니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "ModelSystem.One은 Ollama의 사용자 기반 덕분에 /v1/systemone이 **기본 로컬 인터페이스**가 되고 TypeSafe의 요청 형식이 사실상의 표준이 된다고 평가했습니다. 다만 이는 매체의 해석이며, Jev 방식이 업계 공통 규격으로 자리 잡았는지는 아직 확인되지 않았습니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ollama 결정 모델은 어떤 버전부터 쓸 수 있나요?",
+   "a": "공식 문서 기준 Ollama v0.35.0 이상이 필요합니다. 호환되는 GGUF 가중치가 필요하며 클라우드·MLX/Safetensors 모델은 지원 대상이 아닙니다."
+  },
+  {
+   "q": "챗봇처럼 대화할 수 있나요?",
+   "a": "아닙니다. 결정 모델은 선택·예/아니오·점수형 질문에 확률과 함께 답하도록 만들어졌고, 스트리밍·이미지·도구·생성 제어는 지원하지 않습니다."
+  },
+  {
+   "q": "세 모델 중 무엇을 받아야 하나요?",
+   "a": "13개 데이터셋 평균 정확도는 nimble 9B가 75.7%, tev1 4B가 73.3%, tev1 0.8B가 63.5%입니다. 정확도가 우선이면 nimble, 가벼운 기기에는 tev1 쪽을 시험해 볼 수 있습니다. 내 데이터로 직접 비교하시길 권합니다."
+  },
+  {
+   "q": "한 번에 몇 개를 물어볼 수 있나요?",
+   "a": "요청당 질문 1~64개, 선택지와 점수 단계는 2~26개이며 요청 본문은 64 KiB 이하여야 합니다."
+  },
+  {
+   "q": "91ms는 어떤 환경의 수치인가요?",
+   "a": "Ollama가 MacBook Pro M5 Max에서 nimble로 Pac-Man 예제를 돌렸을 때 잰 결정당 평균 값입니다. 다른 기기와 작업에서는 달라질 수 있습니다."
+  }
+ ],
+ "closing": "지금까지 Ollama 0.35의 결정 모델 지원에 대해 알아보았습니다. /v1/systemone 엔드포인트와 nimble·tev1 세 모델로 분류·라우팅·검수 같은 닫힌 질문을 로컬에서 빠르게 처리할 수 있게 되었고, nimble은 13개 데이터셋 평균 75.7%로 Jev 1.13의 76.0%에 근접했다고 합니다. 다만 수치는 모두 제공 측 발표이고 tev1은 실험 모델이며 confidence는 보정된 정답 확률이 아니라는 점은 기억해 두셔야 합니다. 여러분도 한번 Ollama 결정 모델을 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "모델·버전·제한은 바뀔 수 있으니 Ollama 공식 블로그와 API 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "Ollama",
+  "Ollama035",
+  "결정모델",
+  "Jev",
+  "TypeSafe",
+  "nimble",
+  "tev1",
+  "BespokeLabs",
+  "TogetherAI",
+  "로컬LLM",
+  "소형모델",
+  "AI도구",
+  "모델라우팅",
+  "티켓분류",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6"
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "topic": "Ollama now supports Jev-style decision models (Ollama, 2026-09-29)",
+ "source_url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Ollama now supports Jev-style decision models",
+   "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+   "publisher": "Ollama",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "System One (/v1/systemone) API reference",
+   "url": "https://docs.ollama.com/api/systemone",
+   "publisher": "Ollama",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "nimble — Ollama library model page",
+   "url": "https://ollama.com/library/nimble",
+   "publisher": "Ollama Library",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Ollama 0.35: Jev-Style Decision Models for Local AI",
+   "url": "https://i10x.ai/news/ollama-035-jev-decision-models",
+   "publisher": "i10X",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Ollama adds a local /v1/systemone endpoint and three Jev-style decision models",
+   "url": "https://modelsystem.one/news/ollama-systemone-decision-models/",
+   "publisher": "ModelSystem.One",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "tev1 — Ollama library model page",
+   "url": "https://ollama.com/library/tev1",
+   "publisher": "Ollama Library",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Ollama 공식 블로그의 정확도 그래프는 이미지 파일이 아니라 페이지 안 스크립트(Vega JSON)로 그려지고, Pac-Man 데모도 스크립트 애니메이션입니다. API 문서·nimble·tev1 모델 페이지 본문에는 로고 외 이미지가 없습니다 (curl 로 HTML 의 img 태그 확인).",
+ "factcheck": {
+  "claims": 69,
+  "confirmed": 67,
+  "removed": [
+   "이틀 뒤인 10월 1일에는 Amazon의 Strands Labs가 같은 계열의 오픈소스 모델을 내놓아 별도로 화제가 되었는데, 이 글은 그쪽이 아니라 Ollama에서 직접 돌리는 방법과 제한에 초점을 맞춥니다.",
+   "10월 1일에는 Amazon Strands Labs가 Strands Decider 2B를 오픈소스로 공개했습니다. 이 글은 Ollama의 로컬 실행 지원 하나에 집중했으며, Strands Decider 2B의 구조와 순위는 별도 글에서 다룹니다."
+  ],
+  "corrected": [
+   "'공식 문서는 새 엔드포인트가 Jev API 바탕' → 공식 블로그·모델 페이지 (API 문서 S2 에는 Jev·TypeSafe 언급 없음)",
+   "정확도 75.7/73.3/63.5/76.0% 출처를 'ModelSystem.One이 정리한 값' → Ollama 블로그 그래프(S1, Bespoke Labs 13개 데이터셋·3,880건, Jev 값은 Bespoke Labs 실행)",
+   "nimble 선택형 81.6%·예/아니오형 80.2% → Bespoke Labs 가 원래 Nimble 릴리스로 잰 값(전체 74.8%, 점수형 54.6%)임을 명시, '실제로 nimble도 80%대' 문장을 정확도 정의(사람 라벨 일치) 설명으로 교체",
+   "tev1 88.0% → 4B·1,000건 중 880건·개발용 평가로 독립 벤치마크 아님(원문) 명시",
+   "91ms → 'M5 Max 에서 Pac-Man 예제' 조건 추가 (요약·FAQ 포함)",
+   "curl 예시 '\"state\": \"...\", \"questions\": {...}' 축약형 → API 문서 원문 그대로",
+   "keep_alive '기본 5분' → 서버 설정 기본값(별도 설정 없으면 5m)",
+   "'응답에는 선택한 답·확률·confidence' → 선택형 기준, noul 은 참일 확률 하나",
+   "'로컬 GGUF 모델만, 클라우드·MLX 미지원' → 호환 GGUF 가중치 필요, 클라우드·MLX/Safetensors 미지원 (문서 표현)",
+   "tev1 '256K 컨텍스트' 단정 → 모델 설명만 남기고, 페이지 노트의 약 2,000토큰 컨텍스트·선택지 2~24개 권장을 주의사항에 추가",
+   "i10X '서브 1B급 모델로도 … 토큰 비용 없이' → 원문대로 '0.8B~9B 결정 모델을 호출당 토큰 비용 없이 … 클라우드 LLM 분류 API 위협'",
+   "TypeSafe SDK 환경 변수(TYPESAFE_BASE_URL·API_KEY·DEFAULT_MODEL) 와 'Ollama CLI·Python/JS 라이브러리 미지원' 안내를 S1·S3·S6 원문으로 보완",
+   "'같은 흐름의 다른 소식' 섹션: 출처 없는 Strands 문장 삭제 → ModelSystem.One(S5) 의 Ollaya·Liquid AI d1 내용과 tev1 페이지(S6) 의 'Jev 데이터 미사용'으로 교체",
+   "출처 published: S2(API 문서)는 페이지에 날짜 없음(메타 dateModified 2026-09-30 만) → 비움, S3(nimble)·S6(tev1)은 '3 hours ago' 상대 표기뿐 → 비움, S3 를 nimble·tev1 두 출처로 분리"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 curl 로 원문 HTML 을 직접 받아 문장·수치·코드 단위 대조 (WebFetch 요약 미사용). 모든 출처 HTTP 200, EGRESS_BLOCKED 없음. S1 정확도 수치는 페이지 안 차트 JSON(Jev 76.0·Nimble 75.7·Tev1 4B 73.3·Tev1 0.8B 63.5)과 그림 설명에서 확인. S2 의 1~64개 질문·2~26개 선택지·64 KiB·confidence 정의는 페이지 OpenAPI 스키마에서 확인. published 확인: S1 본문 'September 29, 2026' 일치, S4 <time>/datePublished 2026-09-30 일치, S5 본문 'Last updated: September 30, 2026'·datePublished 2026-09-30 일치, S2·S3·S6 은 페이지에 날짜가 없어 비움. 같은 실행의 Strands Decider 원고(20261002_071345_1)와 겹치지 않도록 Strands 언급을 모두 뺐다(그 원고는 이 원고의 대표 원문인 Ollama 블로그를 S5 로 인용하고 Ollama 를 한 문단 언급). 주장 수: 원래 원고 60개(수정 14건 포함, Strands 2건 삭제) + 보완하며 새로 넣은 9개(SDK 환경 변수·API 키 무시, CLI/라이브러리 미지원, tev1 약 2,000토큰·선택지 2~24, Bespoke 74.8%·점수형 54.6%, 880/1000, Ollama 클라우드 결정 모델 예정, Ollaya·Liquid AI d1, tev1 Jev 데이터 미사용) = 69, 확인 67."
+ }
+}
