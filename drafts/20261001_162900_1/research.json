@@ -1,0 +1,67 @@
+{
+ "topic": "Introducing Mercury Voice (Inception, 2026-09-29) — 음성 에이전트용 확산 LLM",
+ "source_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Mercury Voice",
+   "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+   "publisher": "Inception",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Mercury Voice Claims 320ms and a Benchmark Win With No Numbers",
+   "url": "https://www.beri.net/article/inception-mercury-voice-diffusion-llm-voice-agents-320ms-latency-unpublished-benchmark-scores-per-minute-cost",
+   "publisher": "The Daily Brief (Rajesh Beri)",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Inception launches Mercury Voice for faster AI phone agents",
+   "url": "https://runtimewire.com/article/inception-mercury-voice-enterprise-launch",
+   "publisher": "Runtime Wire",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Everything That Happened in AI Today (Wednesday, September 30, 2026)",
+   "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-september-30-2026",
+   "publisher": "The Neuron",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://framerusercontent.com/images/pHI9R08DttqCoxXY8wKc9LjBHs4.png?width=1296&height=1270",
+   "page_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+   "caption": "실제 음성 에이전트 프롬프트에서의 첫 답변 토큰 시간 비교",
+   "credit": "Inception"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://framerusercontent.com/images/2Dtk1i6eqxiElPQykPH2C7AD1A.png?width=1296&height=1260",
+   "page_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+   "caption": "τ³-bench 품질 대 지연 시간 비교",
+   "credit": "Inception"
+  }
+ ],
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "도구 호출과 구조화된 출력을 지원해 (공식 글에 '구조화된 출력' 언급 없음 → '긴 시스템 프롬프트'로 교체)",
+   "도구 호출과 구조화된 출력이 우리 업무 시스템과 맞는지 (같은 이유로 '구조화된 출력' 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 블로그 원문(HTML 직접 내려받아 본문·이미지 alt 확인, 게시일 Sep 29, 2026), S2·S3(페이지 날짜 2026-09-29) 재열람해 수치·날짜·이름·가격·스펙·제공 범위·고객 사례 대조. 수정: I2 그림 설명을 원문('거의 모든 모델보다 높은 품질, 다음으로 빠른 모델보다 2배 빠름')에 맞춤, I2 caption을 alt('τ³-bench quality vs. latency')에 맞춤, S4 The Neuron published를 페이지 표기(Oct 1, 2026)로 2026-09-30→2026-10-01 정정 및 본문 표현 수정. BFCL v4 multi-turn은 본문 그림 alt로 확인. 인용 이미지 2개 HTTP 200 image/png 확인. 막힌 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
