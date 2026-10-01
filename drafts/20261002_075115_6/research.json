@@ -1,0 +1,73 @@
+{
+ "topic": "AI Data Center Boom: Can We Build It If They Come? (Bain & Company, 2026-09-29)",
+ "source_url": "https://bain.com/insights/ai-data-center-boom-can-we-build-it-if-they-come-technology-report-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI Data Center Boom: Can We Build It If They Come? (Technology Report 2026)",
+   "url": "https://bain.com/insights/ai-data-center-boom-can-we-build-it-if-they-come-technology-report-2026",
+   "publisher": "Bain & Company",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "The Coming AI Blackout: $10 Trillion Data Center Surge Threatens to Break the Grid",
+   "url": "https://247wallst.com/investing/2026/09/29/the-coming-ai-blackout-10-trillion-data-center-surge-threatens-to-break-the-grid",
+   "publisher": "24/7 Wall St.",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "AI Data Centers Could Consume 1% of Global Electricity by 2030",
+   "url": "https://www.azorobotics.com/News.aspx?newsID=16497",
+   "publisher": "AZoRobotics",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Artificial intelligence data centers could reach one percent of global electricity demand by 2030 (Communications Sustainability)",
+   "url": "https://www.nature.com/articles/s44458-026-00152-5",
+   "publisher": "Communications Sustainability (Nature Portfolio)",
+   "published": "2026-09-21",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs44458-026-00152-5/MediaObjects/44458_2026_152_Fig3_HTML.png",
+   "page_url": "https://www.nature.com/articles/s44458-026-00152-5",
+   "caption": "여섯 대형 기술 기업 데이터센터의 전력 사용량 추정치: 2018~2024년 실적과 2030년까지 세 시나리오 전망 (논문 그림 3)",
+   "credit": "Chen et al., Communications Sustainability (2026), CC BY-NC-ND 4.0"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs44458-026-00152-5/MediaObjects/44458_2026_152_Fig4_HTML.png",
+   "page_url": "https://www.nature.com/articles/s44458-026-00152-5",
+   "caption": "2030년 AI 데이터센터 전력 수요의 지역 분포: 미국 주·국가별 기업 기여도 (논문 그림 4, 중립 시나리오)",
+   "credit": "Chen et al., Communications Sustainability (2026), CC BY-NC-ND 4.0"
+  }
+ ],
+ "factcheck": {
+  "claims": 71,
+  "confirmed": 71,
+  "removed": [],
+  "corrections": [
+   "388→1,228TWh 는 '전 세계 전력 수요'가 아니라 베인 그림 2의 AI 데이터센터 전력 수요 — 본문·표·FAQ 수정",
+   "415→945TWh 는 논문 자체 추정이 아니라 논문이 인용한 IEA 전망 — 출처 명시",
+   "'베라 루빈 울트라 랙 600kW' → 기사 원문대로 '루빈 울트라(Rubin Ultra) 랙 약 600kW'(베라 루빈 랙 약 234kW 병기)",
+   "랭커스터 합의 주체: 코어위브가 아니라 랭커스터시가 치리사 테크놀로지 파크스·머신 인베스트먼트 그룹과 맺은 계약(코어위브용 데이터센터)",
+   "팰리세이즈·스리마일섬: '재가동되며'(사실 단정) → 보고서 문맥대로 재가동·신규 원전에 국가 차원 조정이 필요하다는 서술로 수정",
+   "보로타스 → 볼터스(Voltus), VPP 13.7%는 우드 매켄지 인용·'지난해' 명시, 구글-볼터스는 '추진'",
+   "지역 반대 75개 → '최소 75개'(at least), 뉴욕 '7월 일시 중단', '다른 14개 주'",
+   "철도·통신망·전력망 비교는 '미국 데이터센터 투자의 GDP 대비 비중' 비교로 정정",
+   "1~4년 건설 기간은 1GW급 데이터센터 기준임을 명시",
+   "학술 연구 날짜: 논문 게재 2026-09-21(Nature 페이지), AZoRobotics 소개 2026-10-01 로 구분",
+   "'AI 경쟁의 단위' 박스와 맺음말 문장을 필자 해석으로 표시"
+  ],
+  "note": "Opus 검증: S1 베인 원문 본문·그림 alt 텍스트(그림1~4), S2 24/7 Wall St. 원문, S3 AZoRobotics, S4 논문 원문(nature.com, Communications Sustainability, 2026-09-21 게재)을 curl 로 다시 열어 71개 주장(수치·날짜·이름·스펙)을 대조. 학술 연구 수치(118→239~295TWh, 약 1%, 15/25/35% 시나리오, 90% 이상, 10개 미만 지역 약 3분의 2, 오리건·버지니아·아이오와·오하이오·아일랜드, RAG+LLM, IEA 415→945TWh)를 논문 원문으로 교차 확인해 S4 추가. published 는 S1 2026-09-29(article:published_time·'Published on September 29, 2026'), S2 2026-09-29(11:19am ET), S3 2026-10-01(datePublished), S4 2026-09-21 로 페이지 표기와 일치. EGRESS_BLOCKED 출처 없음. 베인 flourish 그림(29953294·29999099)은 본문 그림 1·2의 이미지 파일(image/jpeg 1020px)로 확인했으나 주소 경로의 'thumbnail' 때문에 autopost/quote_images.is_thumbnail_url 에서 거부되므로, 논문 본문 그림 3·4(image/png 685px)로 교체."
+ }
+}
