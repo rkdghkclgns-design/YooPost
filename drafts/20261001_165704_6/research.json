@@ -1,0 +1,87 @@
+{
+ "topic": "Can we predict the jobs robots will do? — What work can robots do? (Anthropic)",
+ "source_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Can we predict the jobs robots will do? (What work can robots do?)",
+   "url": "https://www.anthropic.com/research/what-work-can-robots-do",
+   "publisher": "Anthropic",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Robots can replace 74 percent of manual labor, but are not yet cheaper than humans",
+   "url": "https://www.digitaltoday.co.kr/en/view/109951/robots-can-replace-74-percent-of-manual-labor-but-not-yet-cheaper-than-humans",
+   "publisher": "DigitalToday",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "What Work Can Robots Really Do? Anthropic Maps the Jobs Most Exposed to Physical AI",
+   "url": "https://linkdood.com/what-work-can-robots-really-do-anthropic-maps-the-jobs-most-exposed-to-physical-ai/",
+   "publisher": "Linkdood Technologies",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Five Million Robots now Operate in Factories Globally - World Robotics 2026 Report by IFR released",
+   "url": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+   "publisher": "International Federation of Robotics",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Robots and Jobs: Evidence from US Labor Markets (NBER Working Paper 23285)",
+   "url": "https://www.nber.org/papers/w23285",
+   "publisher": "NBER",
+   "published": "2017-03-27",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/4zrzovbb/website/1dfbdcd3ec1d2f240502194d008e9cc66ec2f364-7680x4480.png",
+   "page_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+   "caption": "헤드라인 숫자: 로봇 노출 단계별 미국 업무 비중 (E0~E3)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.sanity.io/images/4zrzovbb/website/889fc5dfe3ba1248a3edd7529060d9d3c0b3683c-7680x7672.png",
+   "page_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+   "caption": "가장 노출된 직업: 로봇 노출 지수 상위 10개 직업 (택시 기사 2.2 등 운전 계열)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://cdn.sanity.io/images/4zrzovbb/website/a010c2b04ed72ac124d232ae06dbacfbd8fb24d8-7680x4320.png",
+   "page_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+   "caption": "비용의 벽: 로봇 비용이 내려갈 때 경제성이 생기는 업무 비중",
+   "credit": "Anthropic"
+  }
+ ],
+ "factcheck": {
+  "claims": 91,
+  "confirmed": 84,
+  "removed": [
+   "버스 기사(1.9), 주차 관리원과 배달·트럭 운전사(1.8) — Figure 4 에 없음, 실제 순위로 교체",
+   "포장 작업자 '지수 0.93' — 원문·Figure 7 에 없음",
+   "같은 시기 Anthropic 이 내놓은 2030 경제 시나리오가 노동 몫과 실업률을 시나리오별로 따진 것과 함께 읽으면 … (출처 없음)",
+   "하드웨어 가격, 표준화, AI 적응력, 규모의 경제가 이 속도를 바꿀 변수로 꼽힙니다 (원문에 없음)",
+   "연구 자체도 이 숫자는 … 고용 예측이 아니라고 선을 긋습니다 / FAQ 같은 문장 (원문에 없음)",
+   "간호는 복합 조작, 예측하기 어려운 환자 반응, 정서적 상호작용이 한꺼번에 필요 (원문에 없음)",
+   "연구팀 스스로 Claude 가 평가자라는 점을 한계로 밝혔습니다 / 업무 적응 효과 미반영 (원문에 명시 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 원본 HTML·각주·그림 설명과 Figure 3·4·6·7·8 이미지를 직접 열어 대조. 확인: 900직업/19,000업무, E0 12·E1 23·E2 10·E3 1%(인지·대인 54%), 74%/34%, 0.3%, 연3%·40년(70% 하락 필요), 연2% 능력 확장(1977 대비), 능력 70%·조작 50%·규제 14%·선호 25%·규제+선호 30%, 81%(본문)/about 80%(요약), 포장 97%·200만달러 이상·14명·10년·8%·45,000 vs 49,000달러, 설거지 172.0k vs 45.0k(3배 넘음), 용접 약5배, 택시 약 7,000달러. 고침: 직업별 지수(Figure 4 기준), 도랑 파기 시간 비율(직선 25% vs 손 파기 20%), '포장 작업자 경쟁력 최고'→'비용 경쟁력 노출 최대 직업', 재고 보충 86% 주체, 210만→200만 달러 이상, IFR 통계를 IFR 원문(2026-09-24)으로 교체: 2025 설치 60만+, 가동 500만, 미국 약 38,500, 중국 354,000·59%(Linkdood 의 2024 수치 54%·295,000 대신 최신), Acemoglu·Restrepo 1990~2007 은 NBER 초록으로 확인. published: S1 페이지 'Sep 30, 2026', S2 'Thu October 1, 2026', S3 'October 1, 2026' 일치. 인용 이미지 3개 HTTP 200 image/png, 내용·캡션 일치(I2 캡션 수정)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
