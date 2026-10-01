@@ -1,0 +1,57 @@
+{
+ "topic": "White House Accord on Super Intelligence — Inaugurating The Era of Super Intelligence (White House, 2026-09-29)",
+ "source_url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Inaugurating The Era Of Super Intelligence",
+   "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "publisher": "The White House",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "How does Trump's White House AI accord work?",
+   "url": "https://www.aljazeera.com/economy/2026/9/30/how-does-trumps-white-house-ai-accord-work",
+   "publisher": "Al Jazeera",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Trump, Six AI Giants Sign 'Super Intelligence' Safety Accord",
+   "url": "https://www.infosecurity-magazine.com/news/trump-ai-giants-super-intelligence/",
+   "publisher": "Infosecurity Magazine",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Daily Digest 9/30/2026 (Super Intelligence)",
+   "url": "https://www.benton.org/newsletter/daily-digest-9302026-super-intelligence",
+   "publisher": "Benton Institute for Broadband & Society",
+   "published": "2026-09-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(백악관 행정명령 페이지)는 글자뿐인 문서이고 본문에 관련 도표·그림이 없다.",
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 36,
+  "removed": [
+   "협약의 정식 제목은 Washington Examiner가 전문을 소개하며 적은 대로 \"Joint Commitment on Frontier Responsibilities\"입니다 (S4 전문 미확인 — 알자지라 발언 인용 수준으로 고침)",
+   "Washington Examiner는 같은 날 협약 전문을 소개하는 기사를 냈고 (S4 전문 미확인, 타임라인 표 행 포함)",
+   "이 흐름은 같은 시기 Nvidia가 내놓은 에이전트 격리 플랫폼 이야기와도 겹칩니다 (어떤 출처에도 없음)",
+   "Benton Institute 다이제스트는 서명자를 Sundar Pichai … Jensen Huang으로 전했습니다 (Benton 에 개인 이름 없음 — Infosecurity 로 출처 바로잡음)",
+   "Benton … 공식적인 집행 장치는 없다고 전했습니다 (원문: 공식 명령이 아니고 누가 집행할지 불분명 — 문구 바로잡음)",
+   "트럼프 '엄청난 자율 규제의 측면' (원문 'tremendous self-policing aspect' — 번역 바로잡음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): 백악관 행정명령(S1, 2026-09-29)·알자지라(S2, 09-30)·Infosecurity(S3, 09-30)·Benton(S5, 09-30)을 다시 열어 날짜와 문구 대조. 4겹 세부·서명자 이름·'4건' 사고 수치는 Infosecurity 원문 문장으로 확인('four cases of Claude models accessing third-party systems without authorization'). 알자지라 인용문(self-policing·morally binding·Lehane·Amodei·Pichai) 원문 대조. 행정명령 인용·적용 범위·15 U.S.C. 9401(3)·60일 확인. S4 Washington Examiner는 전문을 읽지 못해 출처에서 빼고 그것에만 기댄 주장 삭제. 한 장짜리 문서·집행 주체 불분명은 Benton(뉴욕타임스 요약)으로 확인. 6건은 고치거나 삭제."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790815809148949",
+  "kind": "all"
+ }
+}
