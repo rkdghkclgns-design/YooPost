@@ -591,5 +591,22 @@
    "https://startupfortune.com/raven-020-gives-developers-an-open-source-alternative-to-closed-ai-agent-stacks/",
    "https://github.com/EverMind-AI/Raven"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🤝 Salesforce의 Listen Labs 인수 총정리: AI 고객 인터뷰·디지털 트윈 플랫폼, 가격은 비공개 속 약 20억 달러 보도",
+  "topic": "Salesforce Signs Definitive Agreement to Acquire Listen Labs (Salesforce, 2026-09-29)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-listen-labs/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/salesforce-listen-labs-ai-20.html"
+  },
+  "sources": [
+   "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-listen-labs/",
+   "https://martech.org/salesforce-buys-ai-customer-research-startup-listen-labs/",
+   "https://www.beri.net/article/salesforce-listen-labs-acquisition-ai-customer-research-digital-twins-data-export-continuity",
+   "https://techfundingnews.com/salesforce-in-talks-to-acquire-ai-customer-research-startup-listen-labs-for-2b/",
+   "https://cxm.world/customer-experience/salesforce-listen-labs-acquisition/"
+  ]
  }
 ]
