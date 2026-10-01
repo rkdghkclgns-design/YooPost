@@ -658,5 +658,21 @@
    "https://m.sedaily.com/article/20091853",
    "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202608130514"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "⚡ Inception Mercury Voice 총정리: 첫 답변 320ms·128K·입력 $0.40 음성 에이전트용 확산 LLM",
+  "topic": "Introducing Mercury Voice (Inception, 2026-09-29) — 음성 에이전트용 확산 LLM",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/inception-mercury-voice-320ms128k-040.html"
+  },
+  "sources": [
+   "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+   "https://www.beri.net/article/inception-mercury-voice-diffusion-llm-voice-agents-320ms-latency-unpublished-benchmark-scores-per-minute-cost",
+   "https://runtimewire.com/article/inception-mercury-voice-enterprise-launch",
+   "https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-september-30-2026"
+  ]
  }
 ]
