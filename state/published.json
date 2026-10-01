@@ -608,5 +608,21 @@
    "https://techfundingnews.com/salesforce-in-talks-to-acquire-ai-customer-research-startup-listen-labs-for-2b/",
    "https://cxm.world/customer-experience/salesforce-listen-labs-acquisition/"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "🔒 OpenAI 자기복제 프롬프트 인젝션 총정리: 웜처럼 퍼지는 공격 4가지와 GPT-Red 대응",
+  "topic": "Self-replicating prompt injections exist (OpenAI Alignment Research Blog, 2026-09-25) · The Register 보도(2026-09-29)",
+  "category": "AI 보안",
+  "source_url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-4-gpt-red.html"
+  },
+  "sources": [
+   "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+   "https://www.theregister.com/security/2026/09/29/add-one-more-ai-worry-to-the-nightmare-scenario-self-replicating-prompt-injections/5299922",
+   "https://arxiv.org/abs/2607.26115",
+   "https://arxiv.org/abs/2403.02817"
+  ]
  }
 ]
