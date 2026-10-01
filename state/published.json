@@ -710,5 +710,21 @@
    "https://github.com/twyran/Daily-Paper/issues/9",
    "https://github.com/PSRben/VisionHOPE"
   ]
+ },
+ {
+  "date": "2026-10-01",
+  "title": "💰 ElevenLabs 기업가치 220억 달러 총정리: 3억 달러 임직원 지분 매각, 2월 대비 2배",
+  "topic": "ElevenLabs reaches $22bn valuation after employee tender (ElevenLabs, 2026-09-30)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://elevenlabs.io/blog/tender-22bn",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/elevenlabs-220-3-2-2.html"
+  },
+  "sources": [
+   "https://elevenlabs.io/blog/tender-22bn",
+   "https://www.unite.ai/elevenlabs-closes-300m-employee-tender-offer-at-22b-valuation/",
+   "https://analyticsindiamag.com/ai-news/elevenlabs-doubles-valuation-to-22-bn-as-enterprise-ai-agent-demand-grows",
+   "https://aiweekly.co/alerts/elevenlabs-closes-300m-tender-at-22b-doubling-series-d-mark"
+  ]
  }
 ]
