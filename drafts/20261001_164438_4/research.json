@@ -1,0 +1,56 @@
+{
+ "topic": "ElevenLabs reaches $22bn valuation after employee tender (ElevenLabs, 2026-09-30)",
+ "source_url": "https://elevenlabs.io/blog/tender-22bn",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "ElevenLabs reaches $22bn valuation after employee tender",
+   "url": "https://elevenlabs.io/blog/tender-22bn",
+   "publisher": "ElevenLabs",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ElevenLabs Closes $300M Employee Tender Offer at $22B Valuation",
+   "url": "https://www.unite.ai/elevenlabs-closes-300m-employee-tender-offer-at-22b-valuation/",
+   "publisher": "Unite.AI",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "ElevenLabs Doubles Valuation to $22 Bn as Enterprise AI Agent Demand Grows",
+   "url": "https://analyticsindiamag.com/ai-news/elevenlabs-doubles-valuation-to-22-bn-as-enterprise-ai-agent-demand-grows",
+   "publisher": "Analytics India Magazine",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "ElevenLabs Closes $300M Tender at $22B, Doubling Series D Mark",
+   "url": "https://aiweekly.co/alerts/elevenlabs-closes-300m-tender-at-22b-doubling-series-d-mark",
+   "publisher": "AI Weekly",
+   "published": "2026-09-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [
+   "회사 설명에 따르면 신규 투자자 6곳이 한꺼번에 들어온 점이 이번 거래의 특징입니다. (회사가 '특징'이라 설명한 적 없음 → 사실만 남겨 고침)",
+   "이는 투자자 측의 평가이며, 회사가 독립적으로 검증한 수치가 아닙니다. (수치가 아닌 인용이라 문장 교체)",
+   "2025년 9월에도 같은 방식의 거래가 있었다는 점에서 … (공식 발표문에 없음 → Unite.AI 출처로 고쳐 씀: 2025-09-08 발표, 1억 달러, Sequoia·ICONIQ 주도, 66억 달러)",
+   "측정 조건은 보도에 자세히 나오지 않습니다 (AIM 이 '자사 고객 분석 기반'이라 밝혀 고침)",
+   "인용 이미지 I1(임직원 단체 사진) — 원고 내용(거래·지표)과 관련된 도표·화면이 아니어서 제외, images_none_reason 기록"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 발표문(페이지 날짜 2026-09-30)·S2 Unite.AI(2026-09-30)·S3 AIM(2026-10-01 11:01)·S4 AI Weekly(2026-09-30 15:27 UTC)를 WebFetch 로 다시 열어 수치·이름·인용을 대조. published 4개 모두 페이지 날짜와 일치. 66억 달러는 Unite.AI(2025-09-08 1억 달러 tender, Sequoia·ICONIQ 주도)에서 확인, 시리즈 D 110억 달러는 공식 발표문에 금액이 없어 AI Weekly 출처로 표기. AI Weekly 해석(TTS→에이전트 플랫폼, 7개월 만에 2배, GIC·OTPP·공개시장 투자자, v4 출시 다음 날 마감, 대금은 임직원에게)은 페이지 문장으로 확인. 보강: 멀티채널 도입 기업 2배·Admiral/Customers Bank/Cadence·Scribe v2 Medical·Norchet/Staniszewski 전체 인용(공식), AI Weekly 상장 신호 해석(매체 해석으로 명시). EGRESS_BLOCKED 출처 없음."
+ },
+ "images_none_reason": "대표 원문(elevenlabs.io/blog/tender-22bn) 본문에 실린 그림은 임직원 단체 사진('All company photo') 하나뿐이고, 거래 구조·투자자·사업 지표를 보여 주는 도표·화면이 없음. 다른 출처(Unite.AI·AIM·AI Weekly)도 공식 본문 그림이 아니어서 관련 인용 이미지 없음.",
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
