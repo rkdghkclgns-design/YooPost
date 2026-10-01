@@ -1,0 +1,61 @@
+{
+ "topic": "Salesforce Signs Definitive Agreement to Acquire Listen Labs (Salesforce, 2026-09-29)",
+ "source_url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-listen-labs/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Salesforce Signs Definitive Agreement to Acquire Listen Labs",
+   "url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-listen-labs/",
+   "publisher": "Salesforce",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Salesforce buys AI customer research startup Listen Labs",
+   "url": "https://martech.org/salesforce-buys-ai-customer-research-startup-listen-labs/",
+   "publisher": "MarTech",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Salesforce Buys Listen Labs Without a Word on Customers' Interviews",
+   "url": "https://www.beri.net/article/salesforce-listen-labs-acquisition-ai-customer-research-digital-twins-data-export-continuity",
+   "publisher": "Beri",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Salesforce in talks to acquire AI customer research startup Listen Labs for $2B",
+   "url": "https://techfundingnews.com/salesforce-in-talks-to-acquire-ai-customer-research-startup-listen-labs-for-2b/",
+   "publisher": "Tech Funding News",
+   "published": "2026-09-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Salesforce Reported Listen Labs Acquisition: What It Could Mean",
+   "url": "https://cxm.world/customer-experience/salesforce-listen-labs-acquisition/",
+   "publisher": "CXM World",
+   "published": "2026-09-11",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 페이지에서 확인한 이미지는 소형 기사 대표 이미지(300px)뿐이며 본문 도표·화면이 없어 넣지 않음",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "다만 매체마다 나머지 거래 목록과 일부 금액이 달라 이 글에서는 세부 목록을 확정하지 않습니다. (근거 없음 — CXM World 목록으로 교체)",
+   "Beri 기사가 거래가 이미 종료된 것처럼 썼다는 문장 (Beri 원문은 '종료되지 않음'으로 명시 — 사실과 달라 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 WebFetch 로 다시 열어 주장 46개 대조. 5개 출처 published 가 페이지 날짜와 일치(9/29·9/30·9/30·9/10·9/11). EGRESS_BLOCKED 출처 없음. 수정: TFN '인터뷰 100만 건'→'100만 명 인터뷰', '매출 15배'→'연환산 매출 15배', 창업 근거 TFN→MarTech·CXM, 20억 달러 협의는 TFN 이 Business Insider 인용임을 명시, CXM 인수 목록(Momentum·Contentful·Fin(옛 Intercom) 36억 달러) 반영, RBC 분석가 명시, Naimat 인용문·디지털 트윈 설명을 원문에 맞춤, Beri 의 종료 시점·권고·개인정보 처리방침 표현을 원문에 맞춤. 20억 달러·ARR 3,000만 달러·67배·기업가치는 모두 매체 보도 수치로 표기됨을 확인. 공식 페이지 본문 그림 없음(images_none_reason 유지)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790815809148949",
+  "kind": "all"
+ }
+}
