@@ -1,0 +1,78 @@
+{
+ "topic": "Introducing Strands Decider 2B: a small, open source, decision model (Strands Agents·Amazon, 2026-10-01) · TechCrunch 보도",
+ "source_url": "https://strandsagents.com/blog/introducing-strands-decider/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Strands Decider 2B: a small, open source, decision model",
+   "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+   "publisher": "Strands Agents (Amazon)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Amazon releases its own Jev clone as decision models flood the web",
+   "url": "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI's Jev clone could help the frontier lab stop its swarming agents",
+   "url": "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's Decisions API vs Jev: Inside the Decision-Model Architecture",
+   "url": "https://www.firecrawl.dev/blog/openai-decisions-api-vs-jev",
+   "publisher": "Firecrawl",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Ollama now supports Jev-style decision models",
+   "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+   "publisher": "Ollama",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://strandsagents.com/_astro/architecture.CTOMFg7u_ZAUu9b.webp",
+   "page_url": "https://strandsagents.com/blog/introducing-strands-decider/",
+   "caption": "Strands Decider 2B의 구조 — Qwen3.5-2B 몸통과 포인터 헤드",
+   "credit": "Strands Agents (Amazon)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://strandsagents.com/_astro/latency_vs_tokens_v18.QRQkM6ta_82iIF.webp",
+   "page_url": "https://strandsagents.com/blog/introducing-strands-decider/",
+   "caption": "성능: 과제 크기(토큰)에 따른 결정 지연 시간 (RTX 3090, v18)",
+   "credit": "Strands Agents (Amazon)"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "corrected": [
+   "Jev 출시 시점 '이달 초' → '9월 15일' (원고 기준일 10월 2일에 맞춤, Firecrawl S4)",
+   "115ms 를 'RTX 3090에서' 로 단정 → 공식 글대로 '널리 쓰이는 하드웨어에서 로컬 중앙값 약 115ms, 그래프는 로컬 RTX 3090·v18 측정'",
+   "v18 경고 박스: '작은 과제' 조건은 M3 맥북 153ms 에만 해당 → 문구 정정, 그림 3 캡션(RTX 3090·v18) 근거 명시",
+   "통합 라이브러리 '곧 저장소를 통해 공개할 예정' → '작업 중이며 저장소를 지켜봐 달라고만 안내, 공개 시점 미정' (원문 'watch the repo for updates soon')",
+   "OpenAI: 'GPT-6 Luna' 출처를 TechCrunch → Firecrawl 로 바로잡고 발표일 9월 29일 추가, '발표일(9월 30일)' → 'Firecrawl 글을 쓴 9월 30일'",
+   "Jev P50 0.21초: TypeSafe 주장 → OpenRouter 측정치",
+   "Ollama 91ms: 'MacBook Pro M5 Max' → 'M5 Max에서 Pac-Man 예제 평균'",
+   "맺음말·요약·소제목의 'Jev 가 같은 주' 표현 정정, Marc Brooker 직함 distinguished engineer"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 WebFetch·curl 로 다시 열어 문장 단위 대조. 다섯 출처 모두 접속됨(EGRESS_BLOCKED 없음). published 는 페이지 메타(article:published_time/datePublished)·본문 날짜와 일치 확인: S1 2026-10-01, S2 2026-10-01, S3 2026-09-30, S4 2026-09-30, S5 2026-09-29. 인용 이미지 I1·I2 는 HTTP 200 image/webp (1720x1080, 1640x948) 본문 그림 확인. 지연 그래프 v18 근거는 공식 글 그림 3 캡션."
+ }
+}
