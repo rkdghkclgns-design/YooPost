@@ -764,5 +764,22 @@
    "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
    "https://www.nber.org/papers/w23285"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🤖 Strands Decider 2B 총정리: 아마존이 공개한 2B 결정 모델, 115ms·JevBench 33개 중 3위",
+  "topic": "Introducing Strands Decider 2B: a small, open source, decision model (Strands Agents·Amazon, 2026-10-01) · TechCrunch 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://strandsagents.com/blog/introducing-strands-decider/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/strands-decider-2b-2b-115msjevbench-33-3.html"
+  },
+  "sources": [
+   "https://strandsagents.com/blog/introducing-strands-decider/",
+   "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
+   "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+   "https://www.firecrawl.dev/blog/openai-decisions-api-vs-jev",
+   "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
+  ]
  }
 ]
