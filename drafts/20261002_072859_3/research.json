@@ -1,0 +1,68 @@
+{
+ "topic": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality (arXiv 2609.33757, 2026-09-27)",
+ "source_url": "https://arxiv.org/abs/2609.33757",
+ "sources": [
+  {
+   "id": "S5",
+   "title": "[2609.33757] YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality (abstract)",
+   "url": "https://arxiv.org/abs/2609.33757",
+   "publisher": "arXiv",
+   "published": "2026-09-27",
+   "official": true
+  },
+  {
+   "id": "S1",
+   "title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+   "url": "https://arxiv.org/html/2609.33757v1",
+   "publisher": "arXiv (HKUST·M-A-P 등)",
+   "published": "2026-09-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Paper page - YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+   "url": "https://huggingface.co/papers/2609.33757",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-09-27",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "YuE2 · Frontier Music with Symbolic Planning",
+   "url": "https://map-yue2.github.io/",
+   "publisher": "M-A-P",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "YuE2: Open-Source AI Song Generator and Suno Alternative",
+   "url": "https://neurohive.io/en/state-of-the-art/yue2-open-source-ai-song-generator/",
+   "publisher": "Neurohive",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.33757v1/yue2_overview.png",
+   "page_url": "https://arxiv.org/html/2609.33757v1",
+   "caption": "YuE2 세 단계 생성 흐름: ABC 악보 → 25Hz 의미 토큰 → 음향 잠재 변수 → 48kHz VAE 오디오 (AR·NAR 전문가 MoT 구조)",
+   "credit": "YuE2 기술 보고서 Figure 3 (arXiv 2609.33757)"
+  }
+ ],
+ "factcheck": {
+  "claims": 135,
+  "confirmed": 129,
+  "removed": [
+   "청취 평가: '전체 351명 참여·4,439건 평가에서' — S1 원문은 351회 참여(participations)·4,439건이며 보고된 선호 비율은 전문가 62명의 3,602건 기준 → '유급 전문가 62명의 평가 3,602건'으로 수정",
+   "공개 범위 표: '생성 길이 30~360초 전체 곡' — 30~360초는 MERT2-FS 학습 녹음 길이(S1·S3)이며 YuE2 생성 길이는 출처에서 확인 안 됨 → 행 삭제",
+   "공개 범위: 체크포인트 이름 'MERT2-30s, MERT2-FS, SheetSage2-AR' — S3 의 Hugging Face 링크는 MERT-v2-30s, MERT-v2-FullSong, SheetSage2, YuE2-Vae(-legacy) → 실제 저장소 이름으로 수정",
+   "공개 범위: 'WildSongBench 평가 데이터는 GitHub' — S3 는 Hugging Face 데이터셋(m-a-p/WildSongBench)으로 링크 → Hugging Face 로 수정",
+   "한계: 'Neurohive는 Mureka 9(6.94)와의 차이가 통계적으로 유의하다고 보기 어렵다고 짚습니다' — S4 는 이를 저자들의 판단으로 전하지만 S1 논문에는 해당 진술이 없음(‘highest observed mean’ 표현만) → 논문 표 수치(6.9632 vs 6.9377)와 논문 표현으로 교체",
+   "학습 데이터: 'MERT2 학습에 약 70만 시간(주로 CC0와 합성 데이터)' — S3 의 CC0·합성 데이터 문장은 모델 전체에 대한 것이고 Tokenwave.AI 는 합성 데이터 '대부분' 제공 → 문장 구조 수정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 arXiv HTML 전문(curl, 747KB)에서 표 1·2(Suno v4.5/v5/v5.5/v6/v6 Wild·Mureka 9·HeartMuLa·MiniMax Music 3 행 전 셀), 식 (7) 0.25·L_AR + L_FM, 28층·3.58B·24,576 위치·346,000시간·25Hz·64차원·32,768 코드북·48kHz 스테레오 VAE·ABC+BPE, 청취 평가(212건·49.3/34.6 p=0.0070·45.0/29.4·44.0/29.5·39.0/21.0, 209건·53.4/35.6·48.5/29.6·34.0/33.5, 57.3/30.5·40.4/39.9·59.3/31.6, 58.9% CI 55.6–62.2, 62명·3,602건), 표 3(384 악보·768 녹음·0.9464/0.9246/0.9307/0.9869·0.2160/0.2473), 표 4(84.17/79.54/73.43/90.58/95.68, 보존 93.10/94.05, 6.64–6.73 vs 6.70·6.73), 커버 표(SHS100K 948작품·3,792출력, Hit@1 71.3/48.4/2.4/0.3, 음악성 5.104→5.691), 소속(HKUST·M-A-P·Tokenwave.AI·NYU·Stanford·MBZUAI·ACE Studio), 목차(한계 절 없음)를 대조. S1 abs 페이지 citation_date 2026/09/27·Submitted 27 Sep 2026 로 발표일 확인. S2 HF Papers 'Published on Sep 27'(upvotes 238) 확인. S3 프로젝트 페이지(날짜 표기 없음, 'Research & demos · September 2026')에서 6.9632/6.8721/6.5562·17 settings·선택 예산 차이 문구·데이터 70만/2.84만/34.6만 시간·HF 모델 링크·NOIZ 무료 데모 확인. S4 Neurohive(article:published_time 2026-09-29) 에서 24GB GPU·BF16·24GB RAM·Linux·Python 3.10+·RTX 4090 3.6분 곡 71초·CC BY-NC 4.0·개인 창작자 판매 허가(9/16)·기업 별도 라이선스 확인. I1 은 arXiv HTML 본문 Figure 3 PNG(672×382, image/png, HTTP 200)를 내려받아 내용 확인. 135개 중 129개 원문 그대로 확인, 6개 수정·삭제. 보완: 인용 이미지 1개와 본문 image 블록 추가, PER 비교에 Suno v4.5 0.0580 병기."
+ }
+}
