@@ -1,0 +1,78 @@
+{
+ "topic": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems (arXiv 2609.33325, 2026-09-27)",
+ "source_url": "https://arxiv.org/abs/2609.33325",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems (arXiv abs)",
+   "url": "https://arxiv.org/abs/2609.33325",
+   "publisher": "arXiv (저자: Peng 외)",
+   "published": "2026-09-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "VisionHOPE (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2609.33325",
+   "publisher": "arXiv (저자: Peng 외)",
+   "published": "2026-09-27",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Release VisionHOPE pretrained weights",
+   "url": "https://github.com/PSRben/VisionHOPE/releases/tag/weights-v1",
+   "publisher": "GitHub PSRben/VisionHOPE",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Trending Papers - Hugging Face",
+   "url": "https://huggingface.co/papers/trending",
+   "publisher": "Hugging Face",
+   "published": "2026-09-27",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Daily LLM Paper Digest — 2026-10-01 · Issue #9",
+   "url": "https://github.com/twyran/Daily-Paper/issues/9",
+   "publisher": "twyran/Daily-Paper (GitHub)",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "PSRben/VisionHOPE (GitHub 저장소 README)",
+   "url": "https://github.com/PSRben/VisionHOPE",
+   "publisher": "GitHub PSRben/VisionHOPE",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.33325v1/main2.png",
+   "page_url": "https://arxiv.org/html/2609.33325",
+   "caption": "VisionHOPE 블록 구조와 4방향 스캔 — 연산자의 네 방향 SRNL 스캔, 공간 복원, 채널 융합 (논문 그림 2)",
+   "credit": "Peng et al., arXiv 2609.33325"
+  }
+ ],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 68,
+  "removed": [
+   "소프트 주입 상한이 필수적이지만 다소 경험적(ad hoc)이라고 인정합니다 / 결합 메모리 시스템이 복잡해 해석이 어려울 수 있다 / 4방향 스캔은 구조적 복잡성을 더합니다 (논문 부록 한계 항목에 없음 → 실제 한계(MLLM 미평가·의료/원격탐사 미검증)로 교체)",
+   "단순한 TTT 계열과 비교해 추가된 복잡성에 비해 성능 향상이 흔히 크지 않다고 적었습니다 (논문에 없는 진술)",
+   "`.pth` 파일 13개가 첨부 (첨부 13개는 확인되나 모두 .pth 인지 확인 불가 — 1×3+3×2 구성상 체크포인트 11개)",
+   "안정화 장치가 선택이 아니라 필수라는 뜻입니다 (스펙트럴 클램프 제거 시 82.3% 변화 없음 — 소프트 주입 상한만 필수)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs/HTML 원문(v1 2026-09-27)에서 표 1~5·명제 1/따름정리 1·식 25~29·부록 D 대조. 수정: Base ImageNet 'H-ViT3-B와 동률'→85.6 vs 85.5(+0.1%p), Tiny RMT-S 84.1 동률 명시, 계층형 격차 재계산(동률/+0.2/+0.1), 스펙트럴 클램프·소프트 상한이 강제하는 경계 구분, 수축(‖T_t‖<1)은 따름정리 1, 하드 클램프·소거표(스펙트럴 클램프 제거 82.3, 공유 초기상태 82.0, '고정 스케일'→'고정 합산') 보정, 한계 섹션을 부록 실제 내용으로 교체, Daily-Paper 인용 문구(키·값 생성)와 순위 표기(🔥3, HF 192) 수정, HF 트렌딩 '상위권'→299 추천·검증 시점 11번째. 출처 published 확인: S1/S2 arXiv 27 Sep 2026, S3 릴리스 29 Sep(README 2026-09-29 공지로 연도 확인), S4 HF 목록에 논문 날짜 2026-09-27 표시·GitHub 링크 표시, S5 이슈 2026-10-01, S6 README 신규(코드 MIT 공개·가중치 공지 2026-09-29). 이미지 I1 main2.png HTTP 200 image/png 1249x392 (논문 그림 2). EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790839668820039",
+  "kind": "all"
+ }
+}
