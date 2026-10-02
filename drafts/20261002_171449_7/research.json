@@ -1,0 +1,57 @@
+{
+ "topic": "이에스티 코스닥 공모 — 증권신고서(지분증권, 2026-09-21): 신주 2,200,000주·희망가 10,600~12,400원, 수요예측 10/14~20·청약 10/22~23",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000211",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "증권신고서(지분증권) - 주식회사 이에스티",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000211",
+   "publisher": "금융감독원 DART",
+   "published": "2026-09-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "이에스티, 증권신고서 제출...\"유리기판·올레도스로 시장 확대\"",
+   "url": "https://www.thelec.kr/news/articleView.html?idxno=62625",
+   "publisher": "디일렉(THE ELEC)",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "이에스티, 기술특례로 코스닥 상장 추진…유리기판·OLEDoS 시장 공략",
+   "url": "https://www.newsprime.co.kr/news/article/?no=748598",
+   "publisher": "프라임경제",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "이에스티, 코스닥 상장 증권신고서 제출",
+   "url": "https://www.newstopkorea.com/news/articleView.html?idxno=47792",
+   "publisher": "뉴스톱",
+   "published": "2026-09-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://dart.fss.or.kr/report/download.do?dcmNo=11586779&flNm=%EC%A0%95%EC%A0%84%EC%B2%99+%EA%B5%AC%EC%A1%B0%EB%8F%84.jpg",
+   "page_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000211",
+   "caption": "정전척 구조도: 디스플레이 정전척과 반도체 정전척의 전극·절연층·냉각 유로 구조 (증권신고서 'II. 사업의 내용')",
+   "credit": "주식회사 이에스티 증권신고서 / 금융감독원 DART"
+  }
+ ],
+ "factcheck": {
+  "claims": 119,
+  "confirmed": 119,
+  "removed": [],
+  "note": "Opus 검증: DART 증권신고서(rcpNo 20260921000211) 표지·요약정보·공모개요·공모방법·공모가격 결정방법·모집절차·투자위험요소·인수인 의견·자금의 사용목적·사업의 내용·지분구조 섹션을 viewer 로 다시 열어 공모 조건·일정(요일 포함)·배정·재무·지분·유통물량·희석·위험요소 수치를 하나씩 대조. 고친 것: 자금 사용목적 문단(요약 표의 시설자금 19,391,977,000원+연구개발비 3,681,000,000원+발행제비용 946,124,400원 = 모집총액 23,320,000,000원+의무인수분 699,600,000원 구조로 설명, 순수입금 23,073,475,600원 명시, 표 추가), 반기 영업이익률 하락 이유에 판관비 증가 추가, 기술특례 표현(혁신기술기업·소부장 전문기업) 정정, 글라스코어 문장 표현, S3 발행처를 '프라임경제'로 정정, 도입부 근거 없는 시장 평가·맺음말 단정 표현 중립화. 보도 3건(디일렉·프라임경제·뉴스톱) 다시 열어 게재일 2026-09-21(페이지 입력 시각 19:42·16:36·16:59)과 김영곤 대표 발언·유리기판/OLEDoS 설명·상단 기준 시가총액 약 1,725억원(13,914,200주×12,400원 계산과 일치) 확인. 인용 이미지: 신고서 본문 '정전척 구조도'(HTTP 200 image/jpeg, 1596x489) 추가. 유통물량 일정에 신고서의 '상장 1년 후 16,200주' 추가, 형광 강조 누락 문단 보완."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
