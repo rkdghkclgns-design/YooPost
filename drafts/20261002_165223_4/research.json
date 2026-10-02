@@ -1,0 +1,78 @@
+{
+ "topic": "Armadin Raises $255.5 Million Series B to Scale Effective Autonomous Security (Armadin, 2026-10-01)",
+ "source_url": "https://www.prnewswire.com/news-releases/armadin-raises-255-5-million-series-b-to-scale-effective-autonomous-security-302895278.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Armadin Raises $255.5 Million Series B to Scale Effective Autonomous Security",
+   "url": "https://www.prnewswire.com/news-releases/armadin-raises-255-5-million-series-b-to-scale-effective-autonomous-security-302895278.html",
+   "publisher": "Armadin (PR Newswire)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Armadin raises $255.5 million to expand AI offensive security platform",
+   "url": "https://www.helpnetsecurity.com/2026/10/01/armadin-raises-255-5-million-funding/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Armadin Raises $255.5 Million Series B At Over $2.5 Billion Valuation",
+   "url": "https://pulse2.com/armadin-raises-255-5-million-series-b-at-over-2-5-billion-valuation/",
+   "publisher": "Pulse 2.0",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Armadin raises $255.5M at a $2.5B-plus valuation for its AI attack platform",
+   "url": "https://runtimewire.com/article/armadin-series-b-255-million-valuation",
+   "publisher": "RuntimeWire",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Armadin Raises $255.5M for AI Attack Swarms: What the $2.5B Valuation Is Paying For",
+   "url": "https://datafloq.com/armadin-raises-255-5m-for-ai-attack-swarms-what-the-2-5b-valuation-is-paying-for/",
+   "publisher": "Datafloq",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Kevin Mandia's Armadin Raises $255 Million at $2.5 Billion Valuation",
+   "url": "https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/",
+   "publisher": "SecurityWeek",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Kevin Mandia's Armadin Launches With $190 Million in Funding",
+   "url": "https://www.securityweek.com/kevin-mandias-armadin-launches-with-189-9-million-in-funding/",
+   "publisher": "SecurityWeek",
+   "published": "2026-03-10",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료에는 로고뿐이고 제품 화면·도표 등 본문 그림이 없어 넣지 않음",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 59,
+  "removed": [
+   "트래비스 래넘은 구글 클라우드 보안 운영 부문에서 수석 엔지니어 겸 기술 리드를 지냈다 (읽은 출처에서 확인 안 됨)",
+   "에반 페냐는 맨디언트에서 13년간 일하며 레드팀 조직을 만들고 이끌었고 조직이 컨설턴트 200명 넘게 성장했다 (보도자료·읽은 기사에 없음, 표 포함 삭제)",
+   "데이비드 슬레이터는 스탠퍼드대 컴퓨터과학 졸업생이며 구글 SecOps 데이터 플랫폼 엔지니어링을 이끌었다 (확인 안 됨, 표 포함 삭제)"
+  ],
+  "note": "Opus 검증: S1~S6 을 다시 열어 금액·기업가치·누적액·투자자·자금 용도·인용문·제품 설명·TENEX.ai 훈련 수치·Horizon3.ai 수치·웹사이트 지표·맨디언트 인수 이력을 대조. 각 출처 published 가 페이지 날짜와 일치(Pulse 2.0 은 '어제' 표기로 10-01 일치). 공동 창업자 직책은 S7(3월 출범 기사)·S6 로 확인, 세부 경력은 확인 안 돼 삭제. TENEX.ai '보안 운영 회사' 수식어 삭제. 성능 수치는 회사 측 주장으로 명시되어 있고 투자 권유 문구 없음 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
