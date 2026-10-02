@@ -1,0 +1,53 @@
+{
+ "topic": "OpenAI and Synopsys Announce GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design (Synopsys, 2026-09-30)",
+ "source_url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenAI and Synopsys Announce GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design",
+   "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+   "publisher": "Synopsys",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI and Synopsys team up to build an AI model that designs chips like a seasoned engineer",
+   "url": "https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/",
+   "publisher": "The Decoder",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI and Synopsys Develop AI Model for Chip Design",
+   "url": "https://www.techaimag.com/ai-news/openai-and-synopsys-develop-ai-model-for-chip-design",
+   "publisher": "Tech AI Magazine",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI and Synopsys plan a specialized model for chip design",
+   "url": "https://www.rdworldonline.com/openai-and-synopsys-plan-a-specialized-model-for-chip-design/",
+   "publisher": "R&D World",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "시높시스 보도자료 본문 그림은 양사 이름을 넣은 400x225 홍보 이미지 1개뿐(가로 480px 미만, 내용 도표 아님)이고, 그 밖의 본문 도표는 공식 출처가 아닌 매체 페이지에만 있다.",
+ "factcheck": {
+  "claims": 33,
+  "confirmed": 31,
+  "removed": [
+   "같은 시기 OpenAI는 GPT-6.1 Sol 같은 범용 모델도 내놓았는데 (출처 없음 — 해석 문장으로 교체)",
+   "이 매체는 ... 새로운 수치나 인용은 담지 않았습니다 (확인 안 됨)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 시높시스 보도자료(S1)·The Decoder(S2)·Tech AI Magazine(S3)를 다시 열어 날짜·계약 조건·보안 항목·발언 원문 대조, 페이지 발행일과 published 일치 확인. 수정: 모델 정의를 '시높시스 EDA 도구를 쓰도록 최적화된 특화 모델'로, '칩 설계 전문성 결합' 표현을 보도자료 제목·본문 표현으로, '고객 시스템과 연동'을 '고객 에이전트 하네스와 함께 동작'으로, 보존 설정에 감사·권한 제어 추가, 오타 수정. R&D World(S4, 2026-10-01)를 직접 읽어 추가하고 투자자의 날·묶음 서비스·두 갈래 수익 구조·분배 비율 비공개 섹션 보완. 보도자료 본문 그림은 400px 홍보 이미지뿐이라 images_none_reason 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
