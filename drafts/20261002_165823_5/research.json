@@ -1,0 +1,72 @@
+{
+ "topic": "Vulnerability Discovery and Exploitation Trends in the AI Era (Google Threat Intelligence Group, 2026-09-30)",
+ "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Vulnerability Discovery and Exploitation Trends in the AI Era",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+   "publisher": "Google Cloud Blog (GTIG)",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google: AI Is Changing the Pace and Profile of Vulnerability Discovery",
+   "url": "https://www.securityweek.com/google-ai-is-changing-the-pace-and-profile-of-vulnerability-discovery/",
+   "publisher": "SecurityWeek",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google: Vulnerability disclosures double to 10,000 per month as AI fuels exploitation",
+   "url": "https://therecord.media/google-vulnerabilities-cyberattacks-ai",
+   "publisher": "The Record",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI-Found Vulnerabilities More Likely to Enable RCE, Google Says",
+   "url": "https://www.infosecurity-magazine.com/news/ai-found-vulnerabilities-rce/",
+   "publisher": "Infosecurity Magazine",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "The vulnerabilities AI finds are the ones attackers want",
+   "url": "https://www.helpnetsecurity.com/2026/10/01/google-ai-discovered-vulnerabilities-remote-code-execution/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/Figure_8_Share_of_vulnerabilities_per_expl.max-2000x2000.png",
+   "page_url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+   "caption": "AI가 찾은 취약점의 악용 결과 유형 비교 (AI 발견 vs 비AI 발견, RCE 50% 대 26%)",
+   "credit": "Google Threat Intelligence Group"
+  }
+ ],
+ "factcheck": {
+  "claims": 60,
+  "confirmed": 54,
+  "removed": [
+   "2025년 5월 CISA 악용 취약점 목록(KEV)에 오른 Langflow의 CVE-2025-3248 (KEV 등재·날짜는 출처에 없어 삭제, 야생 악용 사실만 유지)",
+   "어플라이언스 사각지대에 EDR 적용 (보고서 권고로 확인되지 않음)",
+   "AI 인프라 네트워크 분리, 불필요한 API·관리 인터페이스 비활성화, AI 게이트웨이 전 엔드포인트 인증 (보고서 권고로 확인되지 않음)",
+   "8계층 전반의 인증·권한 관리, 워크플로 입력과 직렬화 형식 검증, ML 프레임워크·벡터 DB에 최소 권한 (보고서 권고로 확인되지 않음)",
+   "High/Critical 중심의 위험 기반 취약점 관리, 악용 정보 연계 ('High/Critical 중심' 표현은 출처에 없어 위험 기반 취약점 관리로 수정)",
+   "일부 보도에서 언급된 연말 전망치 등은 이 글에서 별도로 검증하지 않았으니 원문을 확인해 주세요."
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1(GTIG 원문)·S3·S4·S5 를 curl 로 다시 받아 본문 대조, S2(SecurityWeek)는 curl 403 이지만 WebFetch 로 열람·수치 확인. 모든 published 가 페이지 날짜와 일치(S1·S2·S3·S4 2026-09-30, S5 2026-10-01). 수정: 4일 후 1개 클러스터+7일 내 5개 추가, 엣지 'over 65%'→65% 이상, 128건은 8월 High Risk 공개의 약 37%, 추론 인프라 24%는 인증 없는 API 또는 SSRF, Remote Support 제품명 추가, n-day 무기화는 보고서도 '가능성'으로 표현, AI 인프라 악용은 '손에 꼽을 정도·zero-day 미관측'으로 정정, 방어 권고 표를 보고서 문구(위협 인텔리전스 기반 선별·표적 엣지 방어·격리·샌드박스·Mandiant AI 지원 취약점 관리·CodeMender)로 교체. 인용 이미지 I1 은 S1 본문 Figure(결과 유형 비교) — HTTP 200 image/png 1999x1117 확인. 공격 절차(엔드포인트 경로 등)는 원고에 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
