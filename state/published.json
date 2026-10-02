@@ -943,5 +943,24 @@
    "https://aiweekly.co/alerts/uw-meta-paper-language-models-that-edit-their-own-context",
    "https://huggingface.co/papers/2609.37725"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "💰 Armadin 2억 5,550만 달러 투자 총정리: 기업가치 25억 달러, AI 공격 에이전트 스웜의 정체",
+  "topic": "Armadin Raises $255.5 Million Series B to Scale Effective Autonomous Security (Armadin, 2026-10-01)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.prnewswire.com/news-releases/armadin-raises-255-5-million-series-b-to-scale-effective-autonomous-security-302895278.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/armadin-2-5550-25-ai.html"
+  },
+  "sources": [
+   "https://www.prnewswire.com/news-releases/armadin-raises-255-5-million-series-b-to-scale-effective-autonomous-security-302895278.html",
+   "https://www.helpnetsecurity.com/2026/10/01/armadin-raises-255-5-million-funding/",
+   "https://pulse2.com/armadin-raises-255-5-million-series-b-at-over-2-5-billion-valuation/",
+   "https://runtimewire.com/article/armadin-series-b-255-million-valuation",
+   "https://datafloq.com/armadin-raises-255-5m-for-ai-attack-swarms-what-the-2-5b-valuation-is-paying-for/",
+   "https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/",
+   "https://www.securityweek.com/kevin-mandias-armadin-launches-with-189-9-million-in-funding/"
+  ]
  }
 ]
