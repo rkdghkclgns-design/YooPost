@@ -1,0 +1,92 @@
+{
+ "topic": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform (Cloudflare, 2026-10-01)",
+ "source_url": "https://blog.cloudflare.com/clef-decision-models/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform",
+   "url": "https://blog.cloudflare.com/clef-decision-models/",
+   "publisher": "Cloudflare Blog",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Cloudflare Tries to Outplay Jev With Open-Weight Clef Models",
+   "url": "https://tech.slashdot.org/story/26/10/01/2110250/cloudflare-tries-to-outplay-jev-with-open-weight-clef-models",
+   "publisher": "Slashdot",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "A deep dive into Clef, Cloudflare's decision model",
+   "url": "https://flaviocopes.com/clef/",
+   "publisher": "flaviocopes.com",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Clef — Cloudflare's open decision models",
+   "url": "https://ai-tldr.dev/releases/cloudflare-clef/",
+   "publisher": "ai-tldr.dev",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Pricing · Cloudflare Workers AI docs",
+   "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "publisher": "Cloudflare Docs",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Cloudflare/clef (Hugging Face model card)",
+   "url": "https://huggingface.co/Cloudflare/clef",
+   "publisher": "Hugging Face (Cloudflare)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "TypeSafe AI",
+   "url": "https://typesafe.ai/",
+   "publisher": "TypeSafe AI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "clef · Cloudflare Workers AI models",
+   "url": "https://developers.cloudflare.com/workers-ai/models/clef/",
+   "publisher": "Cloudflare Docs",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://blog.cloudflare.com/_emdash/api/media/file/01M3TJPNG3PJHDJ88KJZJ7Q29T.png",
+   "page_url": "https://blog.cloudflare.com/clef-decision-models/",
+   "caption": "호출 방법과 입력 스키마: 지원 티켓과 질문·선택지를 넣으면 결정 모델이 부서·긴급도별 확률을 병렬로 출력",
+   "credit": "Cloudflare"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://blog.cloudflare.com/_emdash/api/media/file/01M3TJPQEG983EA9PS20PQZS6R.png",
+   "page_url": "https://blog.cloudflare.com/clef-decision-models/",
+   "caption": "RL 파인튜닝 플랫폼: AI Gateway 기록, Workers AI 롤아웃, Containers 보상 계산, RL 트레이너, BYO Model 배포",
+   "credit": "Cloudflare"
+  }
+ ],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 다시 열어 수치·이름·날짜를 하나씩 대조, published 는 각 페이지 표기(S1 2026-10-01T15:34Z, S2 Oct 01 2026 6PM, S3 Oct 1 2026, S4 2026-10-01)와 일치. 가격은 Workers AI 공식 가격 페이지(S5, Last updated Oct 1 2026)·모델 페이지(S8)에서 Clef $0.24/Clef-flash $0.09 확인, Jev $0.042 는 TypeSafe 공식 사이트(S7, $42/10억 토큰)로 확인. GPQA Diamond(Jev 78.3·Clef 48.0)·MMLU-Pro 는 Cloudflare HF 모델 카드(S6)로 확인. 이미지 지연 13~30초는 S3 단독(작성자 개인 측정)이라 출처·단일 측정임을 본문에 명시. 수정: Jev '토큰당 $0.042'→'입력 백만 토큰당', ai-tldr 에 없는 ToolRet 수치 출처 문구 정정, 코드 예시를 블로그 원문대로(severity 질문 복원), Jev 32K 컨텍스트 단서(Slashdot) 추가, 비교표 Jev 가중치 칸 정정, 지연 그래프 위치 서술을 Slashdot 요약으로 교체. 인용 이미지 2개 image/png 200 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
