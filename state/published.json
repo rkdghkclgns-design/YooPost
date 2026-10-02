@@ -926,5 +926,22 @@
    "https://docs.github.com/en/copilot/concepts/agents/computer-use",
    "https://docs.github.com/en/copilot/how-tos/github-copilot-app/computer-use"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🧠 Context Language Models 논문 분석: 컨텍스트를 파일처럼 고치는 LLM, BrowseComp-Plus 59.4% 총정리",
+  "topic": "Context Language Models (arXiv 2609.37725)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.37725",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/context-language-models-llm-browsecomp.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.37725",
+   "https://arxiv.org/html/2609.37725",
+   "https://dev.to/gaurav_dadhich/context-language-models-what-the-uw-and-meta-paper-changes-for-agent-builders-and-what-it-leaves-40a7",
+   "https://aiweekly.co/alerts/uw-meta-paper-language-models-that-edit-their-own-context",
+   "https://huggingface.co/papers/2609.37725"
+  ]
  }
 ]
