@@ -906,5 +906,25 @@
    "https://www.techaimag.com/ai-news/openai-and-synopsys-develop-ai-model-for-chip-design",
    "https://www.rdworldonline.com/openai-and-synopsys-plan-a-specialized-model-for-chip-design/"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🖥 GitHub Copilot 컴퓨터 사용 공개 프리뷰 총정리: /computer on·권한 3단계·동적 워크플로 한눈에",
+  "topic": "GitHub Copilot can now interact with desktop apps with computer use (GitHub Changelog, 2026-10-01)",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/github-copilot-computer-on-3.html"
+  },
+  "sources": [
+   "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/",
+   "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+   "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use",
+   "https://docs.github.com/en/copilot/concepts/agents/dynamic-workflows",
+   "https://thewincentral.com/github-copilot-computer-use-desktop-app-control/",
+   "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-1-2026/",
+   "https://docs.github.com/en/copilot/concepts/agents/computer-use",
+   "https://docs.github.com/en/copilot/how-tos/github-copilot-app/computer-use"
+  ]
  }
 ]
