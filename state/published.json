@@ -890,5 +890,21 @@
    "https://www.newstomato.com/ReadNews.aspx?no=1315290",
    "https://www.wikitree.co.kr/articles/1163252"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🤖 GPT-Synopsys 총정리: OpenAI와 시높시스가 만드는 칩 설계 전용 모델, 공개된 사실과 아직 비공개인 것",
+  "topic": "OpenAI and Synopsys Announce GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design (Synopsys, 2026-09-30)",
+  "category": "AI 언어 모델",
+  "source_url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gpt-synopsys-openai.html"
+  },
+  "sources": [
+   "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+   "https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/",
+   "https://www.techaimag.com/ai-news/openai-and-synopsys-develop-ai-model-for-chip-design",
+   "https://www.rdworldonline.com/openai-and-synopsys-plan-a-specialized-model-for-chip-design/"
+  ]
  }
 ]
