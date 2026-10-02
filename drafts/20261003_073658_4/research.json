@@ -1,0 +1,93 @@
+{
+ "topic": "Updates to Full Disk Access in macOS (Apple Developer News, 2026-10-02) · TechCrunch 보도",
+ "source_url": "https://developer.apple.com/news/?id=p6zjojqw",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Updates to Full Disk Access in macOS",
+   "url": "https://developer.apple.com/news/?id=p6zjojqw",
+   "publisher": "Apple Developer",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Apple says it's tightening macOS 'Full Disk Access' controls due to new risks from AI agents",
+   "url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Apple sounds the alarm on AI agents and 'Full Disk Access'",
+   "url": "https://www.engadget.com/2276186/apple-sounds-the-alarm-on-ai-agents-and-full-disk-access/",
+   "publisher": "Engadget",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Apple Tightens macOS Full Disk Access Controls as AI Agents 'Substantially' Increase Risk",
+   "url": "https://hardware.slashdot.org/story/26/10/02/2056223/apple-tightens-macos-full-disk-access-controls-as-ai-agents-substantially-increase-risk",
+   "publisher": "Slashdot",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Meta disputes claim that Muse read a user's private messages without permission",
+   "url": "https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Meta Muse AI reportedly read Mac Messages without consent",
+   "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
+   "publisher": "AppleInsider",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI fixes ChatGPT for macOS flaw that could let local code misuse trusted access",
+   "url": "https://www.thehackacademy.com/news/chatgpt-macos-cve-2026-100754-fix/",
+   "publisher": "The Hack Academy",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "ChatGPT & Codex changelog — 2026-09-25 macOS security update 26.924",
+   "url": "https://learn.chatgpt.com/docs/changelog",
+   "publisher": "OpenAI",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Vulnerability in ChatGPT macOS App Allowing Access to Conversations Fixed",
+   "url": "https://forklog.com/en/vulnerability-in-chatgpt-macos-app-allowing-access-to-conversations-fixed/",
+   "publisher": "ForkLog",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://media.appleinsider.com/gallery/69140-145804-linesoftext-xl.jpg",
+   "page_url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
+   "caption": "Jason Aten의 Threads 게시물 캡처 — Full Disk Access가 꺼진 상태에서 Muse가 메시지 DB 187k 줄을 동기화했다는 주장 (Meta는 반박)",
+   "credit": "AppleInsider / Jason Aten (Threads)"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 원문을 모두 다시 열어 대조(EGRESS_BLOCKED 없음), 각 출처 published 가 페이지 표기 날짜와 일치함을 확인(Apple 'October 2, 2026', TechCrunch 9/30·10/2, Engadget 10/2, Slashdot 10/02, AppleInsider 9/28, The Hack Academy 10/2). CVE-2026-100754·빌드 26.924.20706·Patrick Wardle(Objective-See)·9/25 공지는 OpenAI 공식 changelog(S8)로 확인하고 ForkLog(S9)로 기술 설명 교차 확인. 수정: '24시간 안에'→'하루 만에'(AppleInsider 원문 'a single day'), 알림 배너 설명이 사실 아니라는 판단을 Aten→AppleInsider 로 귀속 정정, Singleton 3단계 표를 TechCrunch 원문대로 정정(비활성화·macOS 설정 재확인·앱 재시작), ChatGPT 결함 '확인된 피해자 없음'→'공개 보고된 악용·피해자 없음(보고 없음≠시도 없음)'으로 완화하고 9/25 를 'OpenAI 변경 기록 공지일'로 정정, Wardle 를 'OpenAI 가 공로 표기'로 정정, Slashdot 댓글 '사용자 교육 부족'→'사용자가 문제를 이해 못함', Engadget 'often encourage' 표현 반영, intro '발표 직전'→'발표를 전후해'(WIRED 보도는 10/2 당일), S7 제목을 페이지 제목으로 정정. AppleInsider 본문 그림(Aten Threads 캡처, 187k 주장) 확인 후 I1 로 추가(image/jpeg 200)."
+ }
+}
