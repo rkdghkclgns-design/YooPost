@@ -1011,5 +1011,41 @@
    "https://www.newsprime.co.kr/news/article/?no=748598",
    "https://www.newstopkorea.com/news/articleView.html?idxno=47792"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "📄 LlamaIndex Extract v2.5 총정리: ExtractBench F1 93.9~96.4·긴 목록 238건 전부 추출·인용 정확도 80.6",
+  "topic": "Introducing Extract v2.5: Next-Gen Document Extraction Agents (LlamaIndex, 2026-10-01)",
+  "category": "AI 도구",
+  "source_url": "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/llamaindex-extract-v25-extractbench-f1.html"
+  },
+  "sources": [
+   "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+   "https://www.unite.ai/llamaindex-launches-extract-v2-5-with-accuracy-and-grounding-gains/",
+   "https://www.llamaindex.ai/blog/what-makes-an-extraction-confidence-score-useful",
+   "https://www.llamaindex.ai/blog/why-vlms-can-t-read-forms"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🤖 Cloudflare Clef 총정리: 결정 모델 27B·9B, Clef-flash 38.8ms·Apache 2.0 오픈 웨이트",
+  "topic": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform (Cloudflare, 2026-10-01)",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.cloudflare.com/clef-decision-models/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cloudflare-clef-27b9b-clef-flash.html"
+  },
+  "sources": [
+   "https://blog.cloudflare.com/clef-decision-models/",
+   "https://tech.slashdot.org/story/26/10/01/2110250/cloudflare-tries-to-outplay-jev-with-open-weight-clef-models",
+   "https://flaviocopes.com/clef/",
+   "https://ai-tldr.dev/releases/cloudflare-clef/",
+   "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "https://huggingface.co/Cloudflare/clef",
+   "https://typesafe.ai/",
+   "https://developers.cloudflare.com/workers-ai/models/clef/"
+  ]
  }
 ]
