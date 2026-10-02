@@ -1,0 +1,82 @@
+{
+ "topic": "The AI-Native Enterprise: Absorption Is the New Advantage (Bain & Company, 2026-09-29)",
+ "source_url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The AI-Native Enterprise: Absorption Is the New Advantage",
+   "url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+   "publisher": "Bain & Company",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Bain & Co: AI Infrastructure Buildout Will Require $6 Trillion Revenue by 2031 to Support Massive CAPEX",
+   "url": "https://techblog.comsoc.org/2026/09/29/bain-co-ai-infrastructure-buildout-will-require-6-trillion-revenue-by-2031-to-support-massive-capex/",
+   "publisher": "IEEE ComSoc Technology Blog",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Bain Says AI Needs $6T Revenue by 2031",
+   "url": "https://techedgeai.com/bain-puts-6t-revenue-test-on-ai-infrastructure/",
+   "publisher": "TechEdgeAI",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI needs $6tn in annual revenue to justify data centre boom, Bain says",
+   "url": "https://www.thenationalnews.com/future/technology/2026/09/29/ai-industry-needs-to-earn-6-trillion-by-2031-to-justify-data-centres/",
+   "publisher": "The National",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://public.flourish.studio/visualisation/30064465/thumbnail",
+   "page_url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+   "caption": "다섯 개 업무 영역에서 보고된 성과 수치 (그림 1: 잘 설계된 AI 혁신에서 리더들이 보고한 개선)",
+   "credit": "Bain & Company"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://public.flourish.studio/visualisation/30064251/thumbnail",
+   "page_url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+   "caption": "흡수 속도와 현장 파견 엔지니어 경쟁 (그림 2: AI 기업별 채용 공고 직무 비중)",
+   "credit": "Bain & Company"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://public.flourish.studio/visualisation/30064324/thumbnail",
+   "page_url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+   "caption": "기업이 막히는 진짜 이유 (그림 4: 생성형 AI 도입을 늦추는 이유, 출처 Bain GenAI Survey 2026)",
+   "credit": "Bain & Company"
+  }
+ ],
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 80,
+  "removed": [
+   "이번 'AI 네이티브 기업' 글은 그중 '운영 혁신' 묶음에 들어가는 편이며 (원문·보도 어디에도 '운영 혁신' 묶음 표기 없음 → '여러 편 가운데 하나'로 대체)",
+   "베인은 이 세 질문에 대한 답이 모델 선택보다 먼저 라고 말합니다. (베인이 한 말이 아님 → 글쓴이 해석으로 바꿈)"
+  ],
+  "corrected": [
+   "그림 2: 'Decagon 은 솔루션 직군 비중이 가장 크다' 틀림(엔지니어링 38 > 솔루션 35, Flourish 데이터) → 팔란티어·Sierra·Databricks 만",
+   "그림 3 표: 'GPT-5 Pro·Gemini 3 Pro 160 안팎'(실제 150·153), 'Kimi K2.6·Qwen3 Max 150 초반'(Qwen3 Max 145) 틀림 → GPT-5.5 Pro 약 159, Kimi K2.6 약 152, 격차 약 15→8포인트",
+   "97.5억 달러 '이상' 은 TechEdgeAI 가 아니라 IEEE ComSoc·The National 표현(TechEdgeAI 는 'up to') → 출처 표기 수정, 합계 1.5+4+2.5+1+0.75=9.75 원문으로 확인",
+   "148%/95%/20~27% 는 '소프트웨어 개발 편'이 아니라 베인 기술·엔지니어링 설문(293명) 인용 → 수정",
+   "실천 과제 2 '계속 움직일 것'(오역: 하네스 경계가 계속 바뀐다는 뜻) → 수정",
+   "그림 4 설문에 '검증되지 않은 ROI 31%' 추가(원문 본문도 unproven ROI 언급)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 베인 원문 전문과 본문 Flourish 그림 4개(30064465·30064251·30133966·30064324)의 이미지·embed 데이터를 직접 열어 수치 대조, S2·S3·S4 재확인. published 4개 모두 페이지 표기와 일치(S1 'Published on September 29, 2026', S2 time 2026-09-29, S3·S4 datePublished 2026-09-29). 인용 이미지 3개 HTTP 200 image/jpeg, 1020px 폭."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
