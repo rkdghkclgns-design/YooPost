@@ -1,0 +1,76 @@
+{
+ "topic": "Salt Labs found the agentic AI platform Manus could be hijacked with a single email (How We Hijacked an AI Agent With a Single Email)",
+ "source_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "How We Hijacked an AI Agent With a Single Email",
+   "url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+   "publisher": "Salt Security (Salt Labs)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Manus 2.0 Lets Email Trigger Agents Days After an Email Hijack Bug",
+   "url": "https://www.beri.net/article/manus-2-0-email-triggered-automations-cue-agents-prompt-injection-team-plan-sso",
+   "publisher": "Beri.net",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Prompt-Injection Vulnerability Hits $4B Agentic AI Platform Manus AI",
+   "url": "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/",
+   "publisher": "OODAloop",
+   "published": "2026-09-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Manus AI Agent Exposed by Prompt-Injection Bug",
+   "url": "https://sqmagazine.co.uk/manus-prompt-injection-bug/",
+   "publisher": "SQ Magazine",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Salt Labs Research: A Single Email Could Hijack an AI Agent and Reach a User's Connected Accounts",
+   "url": "https://www.einpresswire.com/article/946455020/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-user-s-connected-accounts",
+   "publisher": "Salt Security (press release)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "This popular AI agent could be hacked by a single email — with potentially disastrous consequences",
+   "url": "https://www.techradar.com/pro/security/this-popular-ai-agent-could-be-hacked-by-a-single-email-with-potentially-disastrous-consequences",
+   "publisher": "TechRadar",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/6334717ca56db62653270dc5/6abd5ee54c6c247dd13960b2_blog%207.jpg",
+   "page_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+   "caption": "Base64 로 가린 명령을 Manus 가 프롬프트 인젝션으로 판단해 실행하지 않고 확인을 묻는 화면",
+   "credit": "Salt Security (Salt Labs)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.prod.website-files.com/6334717ca56db62653270dc5/6abd600acbbd6a225409074c_blog%2011.jpg",
+   "page_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+   "caption": "JSFuck 페이로드를 Node.js 로 처리해 Manus 샌드박스 터미널에서 코드가 실행되는 화면",
+   "credit": "Salt Security (Salt Labs)"
+  }
+ ],
+ "factcheck": {
+  "claims": 38,
+  "confirmed": 38,
+  "removed": [],
+  "note": "Opus 검증: S1(Salt 블로그, 페이지 날짜 2026-10-01)·S5(보도자료 2026-10-01 14:15 GMT)·S2(Beri 2026-10-02)·S3(OODAloop 09/25/2026)·S4(SQ Magazine 2026-09-24)·S6(TechRadar 2026-10-02, 새로 추가) 본문을 다시 열어 확인. published 값은 모두 페이지 날짜와 일치. 'Meta 버그바운티로 보고'는 S1 본문('responsible disclosure report for submission through Meta's bug bounty program')·S5·S4·S6 로 확인. 첫 공개 시점: S4(9/24)·S3(9/25)·Beri(9/25 공개 언급)·검색 결과(Dark Reading 9/24 단독, 403 으로 직접 읽지 못해 출처 미사용) — Salt 블로그·보도자료는 10/1 기술 공개이므로 본문에 '첫 보도 9월 24일 전후'를 명시. 4B 는 '40억 달러 기업가치로 투자 유치 추진'으로 정정(S3·S4·S2), Meta 20억 달러 인수 무산은 S3·S4 인용 형태 유지, 2026년 4월은 OODAloop 단독으로 명시. Manus 2.0 9/28(월) 은 Beri 확인. 인용 이미지 2개 내려받아 내용이 캡션과 일치 확인(image/jpeg)."
+ }
+}
