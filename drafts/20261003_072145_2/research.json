@@ -1,0 +1,62 @@
+{
+ "topic": "Introducing Extract v2.5: Next-Gen Document Extraction Agents (LlamaIndex, 2026-10-01)",
+ "source_url": "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Extract v2.5: Next-Gen Document Extraction Agents",
+   "url": "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+   "publisher": "LlamaIndex",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "LlamaIndex Launches Extract V2.5 With Accuracy and Grounding Gains",
+   "url": "https://www.unite.ai/llamaindex-launches-extract-v2-5-with-accuracy-and-grounding-gains/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "A practical guide to extraction confidence scores",
+   "url": "https://www.llamaindex.ai/blog/what-makes-an-extraction-confidence-score-useful",
+   "publisher": "LlamaIndex",
+   "published": "2026-09-16",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Why Can't VLMs Read Forms?",
+   "url": "https://www.llamaindex.ai/blog/why-vlms-can-t-read-forms",
+   "publisher": "LlamaIndex",
+   "published": "2026-09-28",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.llamaindex.ai/extract-story/v25/w14-57728-page-full.jpg",
+   "page_url": "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+   "caption": "스캔 양식: 검토자 메모가 섞인 W-14 허가서 1쪽, Extract v2.5가 원래 값과 메모를 나눠 읽은 사례",
+   "credit": "LlamaIndex"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.llamaindex.ai/extract-story/v25/a-v0-1-40c31f12-p6.jpg",
+   "page_url": "https://www.llamaindex.ai/blog/introducing-extract-v2-5",
+   "caption": "쪽 경계를 넘는 기록: United Way Worldwide Schedule I 6쪽, 5쪽에서 이어진 항목을 하나의 레코드로 묶은 사례",
+   "credit": "LlamaIndex"
+  }
+ ],
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 57,
+  "removed": [
+   "발표는 10월 1일이며, 오늘 기준으로 사흘 이내의 새 소식입니다. (오늘 날짜 기준 상대 표현 — 출처로 확인할 주장이 아니어서 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 원문을 curl 로 다시 받아 본문 텍스트와 대조. F1 3개 등급·과제별 9쌍·인용 점수·238/87건·52.8→98.7·United Way 5~6쪽 주소·W-14 값·3,200개 필드·CLI/MCP/SDK 명령·신뢰도 안내서 수치(0.7717, 559,666/211,401/17,309, 97.0%, 66.48%)·9/28 체크박스 설명 모두 원문과 일치. 저자명은 S1 바이라인으로 직접 확인. 출처 published 는 페이지 날짜(S1 Oct 1, S2 meta 2026-10-01, S3 Sept 16, S4 Sept 28)와 일치. 수정: 'W-14 폐수 처리 허가서'→'처분(disposal) 허가서'(원문 disposal permit). 보완: ExtractBench 구성(S2), 인용 점수 비교 그래프 수치(S1), 담수층 깊이 분리 사례(S1), cite_sources·confidence_scores 옵션(S1), Unite.AI 기사가 AI 생성임을 명시(S2). 인용 이미지 2개는 HTTP 200 image/jpeg(1237x1601, 900x696) 확인."
+ }
+}
