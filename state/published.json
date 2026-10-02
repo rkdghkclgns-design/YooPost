@@ -1047,5 +1047,96 @@
    "https://typesafe.ai/",
    "https://developers.cloudflare.com/workers-ai/models/clef/"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🧠 Sharpening Tax 논문 분석: RL 후훈련의 숨은 대가, WebShop pass@128 87.6% 대 56% 총정리",
+  "topic": "Sharpening Tax in Post-Training (arXiv 2610.01509, 2026-10-01)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.01509",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/sharpening-tax-rl-webshop-pass128-876-56.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.01509",
+   "https://arxiv.org/html/2610.01509",
+   "https://huggingface.co/papers/2610.01509",
+   "https://aiweekly.co/alerts/sharpening-tax-paper-rl-post-training-cuts-passk-coverage"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🔒 Manus 이메일 한 통 해킹 총정리: JSFuck 으로 가드레일을 뚫은 Salt Labs 연구와 메타 패치",
+  "topic": "Salt Labs found the agentic AI platform Manus could be hijacked with a single email (How We Hijacked an AI Agent With a Single Email)",
+  "category": "AI 보안",
+  "source_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/manus-jsfuck-salt-labs.html"
+  },
+  "sources": [
+   "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+   "https://www.beri.net/article/manus-2-0-email-triggered-automations-cue-agents-prompt-injection-team-plan-sso",
+   "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/",
+   "https://sqmagazine.co.uk/manus-prompt-injection-bug/",
+   "https://www.einpresswire.com/article/946455020/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-user-s-connected-accounts",
+   "https://www.techradar.com/pro/security/this-popular-ai-agent-could-be-hacked-by-a-single-email-with-potentially-disastrous-consequences"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🔒 Apple macOS Full Disk Access 강화 총정리: AI 에이전트 위험 경고·Meta Muse 논란·ChatGPT 맥 앱 결함",
+  "topic": "Updates to Full Disk Access in macOS (Apple Developer News, 2026-10-02) · TechCrunch 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://developer.apple.com/news/?id=p6zjojqw",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/apple-macos-full-disk-access-ai-meta.html"
+  },
+  "sources": [
+   "https://developer.apple.com/news/?id=p6zjojqw",
+   "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/",
+   "https://www.engadget.com/2276186/apple-sounds-the-alarm-on-ai-agents-and-full-disk-access/",
+   "https://hardware.slashdot.org/story/26/10/02/2056223/apple-tightens-macos-full-disk-access-controls-as-ai-agents-substantially-increase-risk",
+   "https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/",
+   "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
+   "https://www.thehackacademy.com/news/chatgpt-macos-cve-2026-100754-fix/",
+   "https://learn.chatgpt.com/docs/changelog",
+   "https://forklog.com/en/vulnerability-in-chatgpt-macos-app-allowing-access-to-conversations-fixed/"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "⚖️ FTC의 OpenAI·Anthropic 안전 조사 총정리: 백악관 자율 서약 하루 뒤 등장한 '강제 수단'",
+  "topic": "FTC opens probe into safety of AI, including Anthropic and OpenAI (ABC News, 2026-09-30)",
+  "category": "AI 인사이트",
+  "source_url": "https://abcnews.com/Politics/ftc-opens-probe-safety-ai-including-anthropic-open/story?id=136896227",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ftc-openaianthropic.html"
+  },
+  "sources": [
+   "https://abcnews.com/Politics/ftc-opens-probe-safety-ai-including-anthropic-open/story?id=136896227",
+   "https://www.yahoo.com/news/politics/articles/ftc-opens-probe-openai-anthropic-161215937.html",
+   "https://aiincontext.com/articles/ftc-opens-investigation-into-openai-anthropic-over-ai-product-risks-21b55934",
+   "https://the-decoder.com/ftc-launches-sweeping-probe-into-openai-anthropic-and-other-ai-labs-over-consumer-protection-concerns/",
+   "https://www.sofx.com/ftc-opens-consumer-protection-probe-of-openai-anthropic-and-metr-over-rogue-ai-agents/",
+   "https://fortune.com/2026/10/01/trump-ai-regulation-luncheon-huang-amodei-pichai-brockman-zuckerberg-musk-joint-committment-frontier-responsibilities/",
+   "https://thenextweb.com/news/standards-authority-frontier-ai-google-openai-anthropic",
+   "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🌡 디티에스 공모주 분석: 코스닥 222.9만주·희망가 17,000~18,500원, 1차 정정 증권신고서 총정리",
+  "topic": "디티에스 코스닥 공모 — [기재정정] 증권신고서(지분증권, 2026-10-01, 1차 정정): 신주 2,228,917주·희망가 17,000~18,500원, 수요예측 10/1~8·청약 10/13~14",
+  "category": "AI 공모주 분석",
+  "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001000078",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/2229-1700018500-1.html"
+  },
+  "sources": [
+   "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001000078",
+   "https://www.gukjenews.com/news/articleView.html?idxno=3709993",
+   "https://www.consumernews.co.kr/news/articleView.html?idxno=765061",
+   "https://dealsite.co.kr/articles/168940"
+  ]
  }
 ]
