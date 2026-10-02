@@ -1,0 +1,49 @@
+{
+ "topic": "디티에스 코스닥 공모 — [기재정정] 증권신고서(지분증권, 2026-10-01, 1차 정정): 신주 2,228,917주·희망가 17,000~18,500원, 수요예측 10/1~8·청약 10/13~14",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001000078",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "[기재정정]증권신고서(지분증권) — 디티에스",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001000078",
+   "publisher": "금융감독원 DART",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "'디티에스 공모주' 8일까지 수요예측...기업정보와 매출 '확인'",
+   "url": "https://www.gukjenews.com/news/articleView.html?idxno=3709993",
+   "publisher": "국제뉴스",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "[주간IPO] 10월 둘째 주, 엘리스그룹 공모청약…디티에스·티앤이코리아 등 수요예측",
+   "url": "https://www.consumernews.co.kr/news/articleView.html?idxno=765061",
+   "publisher": "소비자가 만드는 신문",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "디티에스, 증권신고서 제출…공모 절차 본격 돌입",
+   "url": "https://dealsite.co.kr/articles/168940",
+   "publisher": "딜사이트",
+   "published": "2026-09-14",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공시(증권신고서) 문서와 텍스트 기사 중심이라 원고 내용을 보여 주는 본문 도표·그림이 없어 넣지 않음",
+ "factcheck": {
+  "claims": 96,
+  "confirmed": 94,
+  "removed": [
+   "보도에서는 데이터센터 냉각용 드라이쿨러(Dry Cooler) 사업을 준비한다고 소개했습니다. (보도 3건 어디에도 없음 → 공시의 신성장 기술개발투자비 용도 'Dry Cooler 성능 고도화' 문장으로 교체)",
+   "정정은 ... 수익 전망이나 공모 조건 자체를 바꾼 정정이 아닙니다. ('수익 전망' 표현 삭제, 정정표에 공모 조건 변경 없음으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): DART 정정 증권신고서(rcpNo 20261001000078) 전 목차 70개를 viewer.do 로 내려받아 수치·날짜·이름을 하나씩 대조. 국제뉴스(WebFetch, 2026-10-01 00:13 승인)·소비자가 만드는 신문(article:published_time 2026-10-02)·딜사이트(2026-09-14, 기간 밖 배경 — '상위 20개 EPC 중 15곳·30개국 284건'만 이 출처로 확인) 재확인, 각 published 가 페이지 날짜와 일치. 수정: 7월 누적 잠정실적은 정정 전에도 있던 표이므로 '이번 정정으로 추가'를 고치고 정정에서 추가된 7·8월 월별 수치(81.6억·8.80%, 111.0억·16.53%)로 보강; 모회사 6/19 임시주총 '상정'→'가결'; 계약자산 대손충당금 주체 명확화; 소비자가 만드는 신문 기사 설명을 기사 문구대로 수정. 수익 전망·매수 권유 표현 없음 확인. 형광 강조 없는 문단 7곳 보완."
+ }
+}
