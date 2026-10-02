@@ -1,0 +1,77 @@
+{
+ "topic": "Context Language Models (arXiv 2609.37725)",
+ "source_url": "https://arxiv.org/abs/2609.37725",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Context Language Models (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2609.37725",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Context Language Models (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2609.37725",
+   "publisher": "arXiv",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Context Language Models: What the UW and Meta Paper Changes for Agent Builders, and What It Leaves to Memory",
+   "url": "https://dev.to/gaurav_dadhich/context-language-models-what-the-uw-and-meta-paper-changes-for-agent-builders-and-what-it-leaves-40a7",
+   "publisher": "DEV Community",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "UW-Meta paper: language models that edit their own context",
+   "url": "https://aiweekly.co/alerts/uw-meta-paper-language-models-that-edit-their-own-context",
+   "publisher": "AI Weekly",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Paper page - Context Language Models",
+   "url": "https://huggingface.co/papers/2609.37725",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.37725v1/figures/CLM_Teaser_v8.png",
+   "page_url": "https://arxiv.org/html/2609.37725",
+   "caption": "CLM 의 핵심 아이디어 — 컨텍스트를 파일처럼 다루는 구조와 성능 요약 (논문 그림 1)",
+   "credit": "Shao et al., arXiv 2609.37725"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2609.37725v1/figures/suffix-cache-reuse.png",
+   "page_url": "https://arxiv.org/html/2609.37725",
+   "caption": "Suffix Cache Reuse — 표준 서빙과 편집 뒤 캐시 재사용 비교 (논문 그림 4)",
+   "credit": "Shao et al., arXiv 2609.37725"
+  }
+ ],
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 48,
+  "removed": [
+   "BrowseComp-Plus 에서 Codex 방식 요약 53.4% (표·FAQ) — 논문 본문에 없고 DEV 해설에만 있으며 59.4/53.4=11.2% 로 논문의 상대 11.4% 와 맞지 않아 뺌, '상대 11.4% 향상'으로 대체",
+   "ContextBench 에서는 4개 과제 모두 기준선을 앞섰고, 컨텍스트 압력 최대 24배에도 적응했다 — 논문은 고정 전략이 24배 압력에서 단순 과제도 완벽히 못 푼다고만 서술, 해당 주장 확인 안 됨",
+   "Opus 5 자가 진화 결과가 Claude Fable 5.1 보조 진화와 비슷했다 — 확인 안 됨, '두 방식 모두 초기보다 개선'으로 대체",
+   "SCR 편집이 여러 번 쌓이면 오차가 누적될 수 있다 — 논문은 한 편집에서 여러 구간을 옮길 때 근사가 겹친다고 서술, 그 내용으로 대체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs/HTML v1(2026-09-29 제출 확인), DEV(2026-10-01), AI Weekly(2026-10-01), HF Papers(Published on Sep 29 → S5 published 2026-09-30→2026-09-29 수정) 직접 재확인. 요청 수치: TBLite 73.7%/67.0% 확인, EdgeBench 44.6 vs 42.3(179 vs 437 PFLOPs) 확인, 수학 2.636/0.03617 은 서브에이전트 CLM 값이고 3.0%/16.8% 는 일반 CLM 2.618/0.03653 대 OpenEvolve 2.541/0.03127 기준 — 짝을 바로잡음, 요약 53.4% 미확인(삭제)·42.1% 확인(학습 요약 34.7→42.1), BrowseComp-Plus 59.4% 확인, 코드 라이선스 CC BY-NC 4.0 은 AI Weekly·DEV 및 GitHub 저장소 LICENSE(Attribution-NonCommercial 4.0) 로 확인(논문 자체는 arXiv CC BY 4.0). RL 표를 CLM/요약 학습 전→후 형태로 바로잡음(요약 4.01→2.19 행 혼동 수정), 38.8% 는 논문 본문 수치로 출처 표기 수정. 인용 이미지 2개 HTTP 200 image/png(5000x2180, 5100x819) 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790926235542589",
+  "kind": "all"
+ }
+}
