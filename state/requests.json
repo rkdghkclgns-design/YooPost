@@ -161,10 +161,10 @@
    "arrived:20261002_170439_6",
    "arrived:20261002_171449_7"
   ],
-  "finished": "",
+  "finished": "2026-10-02T17:24:40+09:00",
   "stale": false,
   "board_ts": "1790926260.301799",
-  "board_hash": "bc01ea62c0b30638",
+  "board_hash": "ad39791223325aea",
   "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790926235542589?thread_ts=1790926235.542589&cid=C0C50SP7VV5"
  }
 }

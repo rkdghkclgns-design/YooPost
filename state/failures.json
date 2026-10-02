@@ -17,5 +17,12 @@
   "attempts": 1,
   "permanent": true,
   "excluded": true
+ },
+ "20261002_171449_7": {
+  "hash": "e256e49477a1a028",
+  "reason": "겹침으로 제외: 발행한 글 '🔬 이에스티 공모주 분석: 코스닥 신주 220만주·희망가 10,600~12,400원, 정전척 증권신고서 총정리' (같은 원문 https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000211) https://aibaekgwasajeon.blogspot.com/2026/10/220-1060012400.html",
+  "attempts": 1,
+  "permanent": true,
+  "excluded": true
  }
 }
