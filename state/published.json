@@ -962,5 +962,38 @@
    "https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/",
    "https://www.securityweek.com/kevin-mandias-armadin-launches-with-189-9-million-in-funding/"
   ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🔒 Google GTIG AI 시대 취약점 보고서 총정리: 월 10,740건 공개·AI 발견 취약점 50%가 RCE",
+  "topic": "Vulnerability Discovery and Exploitation Trends in the AI Era (Google Threat Intelligence Group, 2026-09-30)",
+  "category": "AI 보안",
+  "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/google-gtig-ai-10740-ai-50-rce.html"
+  },
+  "sources": [
+   "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+   "https://www.securityweek.com/google-ai-is-changing-the-pace-and-profile-of-vulnerability-discovery/",
+   "https://therecord.media/google-vulnerabilities-cyberattacks-ai",
+   "https://www.infosecurity-magazine.com/news/ai-found-vulnerabilities-rce/",
+   "https://www.helpnetsecurity.com/2026/10/01/google-ai-discovered-vulnerabilities-remote-code-execution/"
+  ]
+ },
+ {
+  "date": "2026-10-02",
+  "title": "🧭 베인 'AI 네이티브 기업' 보고서 총정리: 승부처는 모델이 아니라 흡수 속도, 선도 기업 EBITDA 10~25% 성장",
+  "topic": "The AI-Native Enterprise: Absorption Is the New Advantage (Bain & Company, 2026-09-29)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ai-ebitda-1025.html"
+  },
+  "sources": [
+   "https://www.bain.com/insights/the-ai-native-enterprise-absorption-is-the-new-advantage-technology-report-2026/",
+   "https://techblog.comsoc.org/2026/09/29/bain-co-ai-infrastructure-buildout-will-require-6-trillion-revenue-by-2031-to-support-massive-capex/",
+   "https://techedgeai.com/bain-puts-6t-revenue-test-on-ai-infrastructure/",
+   "https://www.thenationalnews.com/future/technology/2026/09/29/ai-industry-needs-to-earn-6-trillion-by-2031-to-justify-data-centres/"
+  ]
  }
 ]
