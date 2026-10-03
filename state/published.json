@@ -1380,5 +1380,38 @@
    "https://247wallst.com/investing/2026/10/01/ibm-jumps-5-as-bob-coding-agent-gains-self-hosted-deployment-salesforce-rises-3-palantir-inches-higher/",
    "https://daily.dev/posts/ibm-moves-its-bob-coding-agent-inside-the-firewall-qlsyzjiqg"
   ]
+ },
+ {
+  "date": "2026-10-04",
+  "title": "⚖️ 온폴리시 vs 오프폴리시 증류 논문 분석: 롤아웃보다 KL 방향·학습률이 좌우, 정확도 72% 대 73% 총정리",
+  "topic": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics (arXiv 2609.35259, 2026-09-28)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.35259",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/vs-kl-72-73.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.35259",
+   "https://arxiv.org/html/2609.35259",
+   "https://aiweekly.co/alerts/piskorz-team-kl-direction-not-rollouts-drives-distillation",
+   "https://thinkingmachines.ai/blog/on-policy-distillation/",
+   "https://huggingface.co/papers/date/2026-10-02"
+  ]
+ },
+ {
+  "date": "2026-10-04",
+  "title": "🏛 GSA AI 계약 조항 총정리: LLM 정부 데이터 학습 금지·72시간 보고·10월 19일 시행",
+  "topic": "GSA memo to set AI-specific acquisition rules (Nextgov/FCW, 2026-10-01)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.nextgov.com/acquisition/2026/10/gsa-memo-set-ai-specific-acquisition-rules/416378/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gsa-ai-llm-72-10-19.html"
+  },
+  "sources": [
+   "https://www.acquisition.gov/sites/default/files/page_file_uploads/RGO-2026-01.pdf",
+   "https://www.nextgov.com/acquisition/2026/10/gsa-memo-set-ai-specific-acquisition-rules/416378/",
+   "https://www.executivegov.com/articles/gsa-memo-llm-ai-data-safeguarding-rules",
+   "https://www.cdomagazine.tech/us-federal-news-bureau/gsa-issues-ai-acquisition-clause-with-new-government-data-safeguards"
+  ]
  }
 ]
