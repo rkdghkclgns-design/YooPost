@@ -1361,5 +1361,24 @@
    "https://aiweekly.co/alerts/ants-inclusionai-ships-ling-31-flash-with-560b-parameters",
    "https://benchlm.ai/models/ling-3-1-flash"
   ]
+ },
+ {
+  "date": "2026-10-04",
+  "title": "🔒 IBM Bob 셀프호스트 총정리: 에어갭·온프레미스에서 AI 코딩 에이전트 돌리는 법, 지원 모델·패키지",
+  "topic": "IBM Introduces Self-Hosted Deployment for IBM Bob to Help Enterprises Advance AI Sovereignty and Governance (IBM, 2026-10-01)",
+  "category": "AI 도구",
+  "source_url": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ibm-bob-ai.html"
+  },
+  "sources": [
+   "https://www.ibm.com/new/announcements/ibm-bob-expands-to-self-hosted-environments-for-sensitive-and-mission-critical-enterprise-software",
+   "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance",
+   "https://siliconangle.com/2026/10/01/ibm-allows-on-prem-deployment-of-its-bob-agentic-development-platform/",
+   "https://www.marktechpost.com/2026/10/02/ibm-brings-bob-to-self-hosted-and-air-gapped-environments/",
+   "https://startupfortune.com/ibm-bets-enterprises-want-their-ai-coding-agents-locked-inside-their-own-walls/",
+   "https://247wallst.com/investing/2026/10/01/ibm-jumps-5-as-bob-coding-agent-gains-self-hosted-deployment-salesforce-rises-3-palantir-inches-higher/",
+   "https://daily.dev/posts/ibm-moves-its-bob-coding-agent-inside-the-firewall-qlsyzjiqg"
+  ]
  }
 ]
