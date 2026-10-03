@@ -1,0 +1,72 @@
+{
+ "topic": "IBM Introduces Self-Hosted Deployment for IBM Bob to Help Enterprises Advance AI Sovereignty and Governance (IBM, 2026-10-01)",
+ "source_url": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "IBM Bob expands to self-hosted environments for sensitive and mission-critical enterprise software",
+   "url": "https://www.ibm.com/new/announcements/ibm-bob-expands-to-self-hosted-environments-for-sensitive-and-mission-critical-enterprise-software",
+   "publisher": "IBM",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "IBM Introduces Self-Hosted Deployment for IBM Bob to Help Enterprises Advance AI Sovereignty and Governance",
+   "url": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance",
+   "publisher": "IBM Newsroom",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "IBM allows on-prem deployment of its Bob agentic development platform",
+   "url": "https://siliconangle.com/2026/10/01/ibm-allows-on-prem-deployment-of-its-bob-agentic-development-platform/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "IBM Brings Bob to Self-Hosted and Air-Gapped Environments: Agentic Software Development Without Moving Your Code",
+   "url": "https://www.marktechpost.com/2026/10/02/ibm-brings-bob-to-self-hosted-and-air-gapped-environments/",
+   "publisher": "MarkTechPost",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "IBM Bets Enterprises Want Their AI Coding Agents Locked Inside Their Own Walls",
+   "url": "https://startupfortune.com/ibm-bets-enterprises-want-their-ai-coding-agents-locked-inside-their-own-walls/",
+   "publisher": "Startup Fortune",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "IBM Jumps 5% as Bob Coding Agent Gains Self-Hosted Deployment; Salesforce Rises 3%, Palantir Inches Higher",
+   "url": "https://247wallst.com/investing/2026/10/01/ibm-jumps-5-as-bob-coding-agent-gains-self-hosted-deployment-salesforce-rises-3-palantir-inches-higher/",
+   "publisher": "24/7 Wall St.",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "IBM Moves Its Bob Coding Agent Inside the Firewall",
+   "url": "https://daily.dev/posts/ibm-moves-its-bob-coding-agent-inside-the-firewall-qlsyzjiqg",
+   "publisher": "daily.dev",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "IBM 공식 페이지에는 제품 로고가 들어간 상단 대표(리드스페이스) 일러스트만 있고 기능·구성을 보여 주는 본문 도표·화면이 없으며, 다른 출처에도 관련 본문 그림이 없음",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 45,
+  "removed": [
+   "IBM은 Bob이 이런 환경에서 외부 네트워크 연결 없이 동작할 수 있다고 설명했습니다. (IBM 문구로 확인 안 됨 — 발표문의 '에어갭 포함 온프레미스에서 지원 모델 직접 운영' 문장으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 을 WebFetch·curl 로 다시 열어 수치(44%·68%·8만 명·45%·70%·주 10시간·9개월→3일·30일→3일·160시간·5%·231.05달러·3%·약 20%)·날짜·이름·모델명(Nemotron·Laguna·Claude Sonnet 5.0·Claude Opus 4.8·Gemini 3.7 Flash·GPT 5.6 Sol)·GA 기능·프리미엄 패키지·가격 비공개를 확인. 발행일 대조: S1 페이지 표시 'Published 30 September 2026'(메타 2026-10-01) → 2026-09-30 으로 수정, S7 daily.dev 는 datePublished 2026-10-01T20:07Z(2026-10-02 는 수정일) → 2026-10-01 로 수정, 나머지는 페이지 날짜와 일치(MarkTechPost 표시 October 2, 2026). 다중 모델 라우팅은 IBM 이 향후 계획으로 적은 것을 경고 박스에 유지. MarkTechPost 모델 계층·경쟁 비교, 24/7 Wall St 표현, IBV 보고서 시점을 원문에 맞게 고침. EGRESS_BLOCKED 출처 없음. 이미지는 관련 본문 그림 없음(images_none_reason)."
+ }
+}
