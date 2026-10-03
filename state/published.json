@@ -1240,5 +1240,40 @@
    "https://startupfortune.com/arxiv-now-limits-every-researcher-to-two-paper-submissions-a-month/",
    "https://pracheeac.substack.com/p/arxiv-is-killing-itself-so-ai-doesnt"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🧩 Claude Code 모드(mods) 사용 가이드: v2.1.287 플러그인으로 동작·화면 바꾸기 총정리",
+  "topic": "Claude Code mods (Claude Mods) — Claude Code v2.1.287 (2026-10-01)",
+  "category": "AI 도구",
+  "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-code-mods-v21287.html"
+  },
+  "sources": [
+   "https://code.claude.com/docs/en/changelog",
+   "https://code.claude.com/docs/en/plugins/mods/overview",
+   "https://code.claude.com/docs/en/plugins/mods/create",
+   "https://code.claude.com/docs/en/plugins/mods/admin",
+   "https://the-decoder.com/claude-codes-new-mods-system-lets-developers-rewrite-the-ai-coding-tool-from-the-inside/",
+   "https://aiweekly.co/alerts/anthropic-launches-claude-code-mods-typescript-agent-hooks",
+   "https://claude.com/blog/claude-code-mods"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🧠 HC-DLM 논문 분석: 확산 언어 모델의 토큰 의존성 문제, Sudoku 72.41%·LM1B 75.5 총정리",
+  "topic": "Hierarchical Continuous Diffusion Language Models (UIUC, arXiv 2610.02193, 2026-10-01)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.02193",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/hc-dlm-sudoku-7241lm1b-755.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.02193",
+   "https://huggingface.co/papers/2610.02193",
+   "https://hc-dlm.github.io/",
+   "https://arxiv.org/html/2610.02193v1"
+  ]
  }
 ]
