@@ -1275,5 +1275,24 @@
    "https://hc-dlm.github.io/",
    "https://arxiv.org/html/2610.02193v1"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🤖 Meta Muse Gadgets 총정리: 오픈소스 SDK·Home Link 5,000대 무료 배포",
+  "topic": "Meta wants you to build your own Muse gadget (Muse Gadgets: open source hardware for your Muse)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/10/02/meta-wants-you-to-build-your-own-muse-gadget/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/meta-muse-gadgets-sdkhome-link-5000.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/02/meta-wants-you-to-build-your-own-muse-gadget/",
+   "https://gadgets.muse.ai/",
+   "https://mezha.net/eng/news/7cb3896c_meta_opens_muse/",
+   "https://github.com/facebookincubator/muse-gadget-sdk",
+   "https://github.com/facebookincubator/muse-gadget-sdk/tree/main/esp32",
+   "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/",
+   "https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/"
+  ]
  }
 ]
