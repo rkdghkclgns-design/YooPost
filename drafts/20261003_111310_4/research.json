@@ -1,0 +1,53 @@
+{
+ "topic": "Claude Frontier Academy: $100M to train 10,000 engineers",
+ "source_url": "https://www.anthropic.com/news/claude-frontier-academy",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Frontier Academy: $100M to train 10,000 engineers",
+   "url": "https://www.anthropic.com/news/claude-frontier-academy",
+   "publisher": "Anthropic",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic Is Training 10,000 Engineers to Install Claude Inside the World's Largest Enterprises",
+   "url": "https://forkast.news/anthropic-is-training-10000-engineers-to-install-claude-inside-the-worlds-largest-enterprises/",
+   "publisher": "Forkast News",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic commits $100 million to train 10,000 enterprise AI engineers",
+   "url": "https://cryptobriefing.com/anthropic-100-million-claude-frontier-academy/",
+   "publisher": "Cryptobriefing",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Launches Claude Frontier Academy, Commits $100M to Train 10,000 Enterprise AI Engineers by 2027",
+   "url": "https://aiweekly.co/alerts/anthropic-launches-claude-frontier-academy-commits-100m-to-train-10000",
+   "publisher": "AI Weekly",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표 페이지(anthropic.com/news)와 공식 프로그램 페이지(claude.com/programs/frontier-academy) 본문의 그림은 모두 장식용 일러스트(SVG: 연필·악수·계단 등)로 프로그램 내용을 보여 주는 제품 화면·도표가 아니며, 나머지는 글뿐입니다.",
+ "factcheck": {
+  "claims": 40,
+  "confirmed": 40,
+  "removed": [
+   "매체가 '매출·평가액·규제 이슈'를 실었다는 문장의 '규제 이슈'(Forkast 기사에서 확인 안 됨 → 분기 매출·기업 가치·벤치마크로 수정)",
+   "'개인이 바로 지원할 수 있는지 판단하기 어렵다'(공식 페이지에 조직 추천·계정 팀 문의 방식이 적혀 있어 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 다시 열어 수치·이름·직함·인용·일정·자격 조건 40개 주장을 대조. 수정 6건 — 파트너 네트워크 '4만 6,000개 이상 기업 참여'→'4만 6,000개 기업의 전문가들이 17만 5,000건 넘는 인증, 4,000명 가까이 Basecamp 수료'(본문·FAQ), CBA 발언 '3배'→'지난 1년 최대 3배', 자격 조건 'LLM을 만들어 본 경험·조직 내 AI 도입'→'LLM으로 만든 이력·다른 사람의 AI 도입을 도운 경험·가장 중요한 문제에 달려드는 습관'(본문·목록·점검표·FAQ), Corfield 직함 '글로벌 사업개발·파트너십 총괄'과 발언 표현, 강사 '공인 강사', 첫 코호트 100명은 Forkast 보도로 명시. 추가: 조직 추천(지명) 방식·계정 팀/파트너 매니저 문의(S1), Cryptobriefing 의 '3월 Claude Partner Network 1억 달러에 이은 올해 두 번째' 설명(S3). 모든 출처 published 2026-10-02 는 페이지 표기와 일치(S1 메타 2026-10-02T23:01Z). 막힌 출처 없음. 인용 이미지: 공식 프로그램 페이지까지 확인했으나 장식 일러스트뿐이라 없음 유지."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790992424011969",
+  "kind": "all"
+ }
+}
