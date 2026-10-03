@@ -1,0 +1,53 @@
+{
+ "topic": "Empowering Small Business: The Impact of Technology on U.S. Small Business (U.S. Chamber of Commerce C_TEC, 2026-10-02) · Vizaca 보도",
+ "source_url": "https://www.uschamber.com/technology/2026-empowering-small-business-report",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Empowering Small Business: The Impact of Technology on U.S. Small Business (2026 report)",
+   "url": "https://www.uschamber.com/technology/2026-empowering-small-business-report",
+   "publisher": "U.S. Chamber of Commerce",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "The Chamber's Free Enterprise Opportunity Tour Rolls into Detroit with Groundbreaking New Data on How AI is Creating Small Business Jobs",
+   "url": "https://www.uschamber.com/economy/the-chambers-free-enterprise-opportunity-tour-rolls-into-detroit-with-groundbreaking-new-data-on-how-ai-is-creating-small-business-jobs",
+   "publisher": "U.S. Chamber of Commerce",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Small Business AI Adoption Hits 66%, Chamber Finds",
+   "url": "https://www.vizaca.com/technology/small-business-ai-adoption/",
+   "publisher": "Vizaca Magazine",
+   "published": "2026-10-03",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "U.S. Chamber's Latest Empowering Small Business Report Shows Majority of Businesses in All 50 States Are Embracing AI (2025 edition)",
+   "url": "https://www.uschamber.com/technology/artificial-intelligence/u-s-chambers-latest-empowering-small-business-report-shows-majority-of-businesses-in-all-50-states-are-embracing-ai",
+   "publisher": "U.S. Chamber of Commerce",
+   "published": "2025-08-18",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.uschamber.com/assets/images/AI-Adoption-US.png",
+   "page_url": "https://www.uschamber.com/technology/2026-empowering-small-business-report",
+   "caption": "핵심 수치: 주별 소기업 AI 도입률을 색으로 보여 주는 지도",
+   "credit": "U.S. Chamber of Commerce"
+  }
+ ],
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S4 를 다시 열어 본문 문장과 메타 태그(article:published_time·datePublished)로 대조 — S1 2026-10-02, S2 2026-10-02, S3 2026-10-03, S4 2025-08-18 모두 research.json published 와 일치. 수치 66%(+8p, 2023년 23%, 약 3배)·41%(+9p, 2022년의 약 3배)·84%·32%(+9p)·47%/6%·25%(4배)·10%·7p·10p·78%/75%·95%/47%·10곳 중 6곳, 5번째/4번째 판, 2025년 판 58%(2024년 40%)·96%·77%·82%·50개 주·스테이블코인, Vizaca 기사 수치·날짜 확인. I1 이미지 직접 내려받아 확인(HTTP 200 image/png 2092x1468, 'Small Business AI Adoption Rate' 주별 지도, 범례 Low/High rate of AI use). 고친 것: 디트로이트 행사에서 '먼저' 소개 → 근거 없어 '소개'로, 2025년 77% 문장을 원문(성장·운영·순이익)대로, 2025년 판 규제 우려 표현을 원문 'patchwork' 대로, FAQ 오타. 표본 크기·조사 시기는 확인한 페이지에 없음(원고에도 그렇게 명시). 문단 강조 5곳 보완."
+ }
+}
