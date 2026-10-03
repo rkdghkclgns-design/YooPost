@@ -1294,5 +1294,72 @@
    "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/",
    "https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🔒 PixelLeak 총정리: AI 코딩 에이전트가 사내 스크린샷 1.3만 장을 공개 GitHub에 올린 사건",
+  "topic": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+  "category": "AI 보안",
+  "source_url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/pixelleak-ai-13-github.html"
+  },
+  "sources": [
+   "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+   "https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640",
+   "https://www.bitdefender.com/en-us/blog/hotforsecurity/pixelleak-ai-coding-agents-github-screenshots",
+   "https://github.com/cli/cli/releases/tag/v2.99.0",
+   "https://github.blog/changelog/2026-09-01-github-cli-media-in-issues-pull-requests-and-comments/"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "📊 Epoch AI 에이전트 용량 보고서: 2027년까지 출하 칩으로 최대 1.7억 에이전트, 20%만 써도 연 2.6~5.3조 달러",
+  "topic": "How many AI agents could run on the AI chips shipped through 2027? (Epoch AI, Jason Li, 2026-10-02)",
+  "category": "AI 인사이트",
+  "source_url": "https://epoch.ai/publications/estimating-the-agent-population",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/epoch-ai-2027-17-20-2653.html"
+  },
+  "sources": [
+   "https://epoch.ai/publications/estimating-the-agent-population",
+   "https://epochai.substack.com/p/hundreds-of-millions-of-ai-agents",
+   "https://latent.space/p/ainews-not-much-happened-today-cee",
+   "https://cryptobriefing.com/epoch-ai-chips-billion-ai-agents/"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "⛳ 크리에이츠 공모주 분석: 희망가 15,000~18,000원·140만주, 골프 론치모니터 기업의 AI 비중까지",
+  "topic": "크리에이츠 코스닥 공모 — [기재정정] 증권신고서(지분증권, 2026-09-28, 2차 정정): 보통주 1,400,000주·희망가 15,000~18,000원, 수요예측 10/12~16·청약 10/20~21",
+  "category": "AI 공모주 분석",
+  "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260928000196",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/1500018000140-ai.html"
+  },
+  "sources": [
+   "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260928000196",
+   "https://biz.newdaily.co.kr/site/data/html/2026/09/30/2026093000046.html",
+   "https://www.etnews.com/20260929000204",
+   "https://www.newspim.com/news/view/20260904000913",
+   "https://www.the-stock.kr/news/articleView.html?idxno=33323",
+   "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260930000017"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🤖 Ling-3.1-flash 총정리: 560B MoE·활성 25B·1M 컨텍스트 예고, 13일까지 무료 체험",
+  "topic": "Ling 3.1 Flash is now available on AI Gateway (Vercel, 2026-09-30) — InclusionAI Ling-3.1-flash 560B MoE",
+  "category": "AI 언어 모델",
+  "source_url": "https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ling-31-flash-560b-moe-25b1m-13.html"
+  },
+  "sources": [
+   "https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway",
+   "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/",
+   "https://aiweekly.co/alerts/ants-inclusionai-ships-ling-31-flash-with-560b-parameters",
+   "https://benchlm.ai/models/ling-3-1-flash"
+  ]
  }
 ]
