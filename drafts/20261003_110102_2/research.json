@@ -1,0 +1,66 @@
+{
+ "topic": "Introducing Canvas: Opening the aperture on online store design (Shopify, 2026-10-01)",
+ "source_url": "https://www.shopify.com/news/introducing-canvas",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Canvas: Opening the aperture on online store design",
+   "url": "https://www.shopify.com/news/introducing-canvas",
+   "publisher": "Shopify",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Design a fully bespoke store with Canvas (Shopify Changelog)",
+   "url": "https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas",
+   "publisher": "Shopify",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Shopify launches Canvas to let merchants build stores through AI chat",
+   "url": "https://techbriefly.com/2026/10/02/shopify-canvas-ai-store-builder/",
+   "publisher": "TechBriefly",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Shopify launches Canvas AI workspace for store design",
+   "url": "https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design",
+   "publisher": "eCommerce News",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.shopify.com/shopifycloud/help-center/manual/online-store/themes/canvas/canvas-overview.png",
+   "page_url": "https://help.shopify.com/en/manual/online-store/themes/canvas",
+   "caption": "Canvas 작업 공간: 홈 페이지·제품·컬렉션 템플릿을 나란히 보여 주는 화면",
+   "credit": "Shopify Help Center"
+  }
+ ],
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 38,
+  "removed": [
+   "도움말 센터는 Canvas가 테마의 모든 템플릿을 나란히 보여 준다고 설명합니다 (S3 EGRESS_BLOCKED, 403 — 그림 설명으로 대체)",
+   "일부 스토어 대상 얼리 액세스 (S1·S2는 '며칠에 걸쳐 기존 스토어에 순차 제공'으로만 적음 — 도입·요약·표·시나리오·FAQ·맺음말 모두 수정)",
+   "도움말 센터는 브랜드 설명으로 새 테마를 만들 수 있다고 안내 (확인 불가 — 변경 로그의 '새 테마 생성 또는 테마 복제'로 교체)",
+   "도움말 센터와 보도에서는 앱 블록·앱 임베드 설정, 시장별 테마 맞춤, 콘텐츠 번역도 Canvas 안에서 할 수 없다고 정리 (검색 요약 출처 — 변경 로그 원문 문구로 교체)",
+   "블록을 직접 추가하지 못하고 Sidekick에게 요청해야 한다는 보도도 있습니다 (어느 출처에서도 확인 안 됨 — 삭제)",
+   "도움말 센터에는 구체적인 날짜가 없습니다 (S3 차단 — 삭제)",
+   "기존 방식 표의 '미리보기: 페이지별 확인'·'AI 역할: 보조 기능' (출처 없음 — TechBriefly 기재 내용으로 교체)",
+   "Canvas가 테마 선택·섹션 수동 배치 요구를 없앤다 (TechBriefly는 이전 방식만 설명 — 표현 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 뉴스룸(2026-10-01 페이지 표기 일치)·S2 변경 로그(October 01, 2026 일치)·S4 TechBriefly(2026-10-02T09:27Z 일치)·S5 eCommerce News(2026-10-02 일치)를 다시 열어 대조. S3 도움말 센터는 403(EGRESS_BLOCKED)로 열리지 않아 sources에서 빼고, S3로만 확인되던 주장은 S2·S4로 재확인하거나 삭제. 한계 항목은 S2 원문으로 재확인: 서드파티 테마(테마 스토어)·Markets·rollouts·번역·앱 블록·앱 임베드 미지원, Canvas 편집 테마는 테마 업데이트 미수신 — '자동 테마 업데이트'·'수동 블록 추가 불가'는 고치거나 삭제. Austin Knight 인용문이 원문과 달라('took considerable effort') 원문('took a great deal of time and attention')으로 수정. 2,500만 건 테마 편집(2026 상반기)·Ben Sehl 20분 발언·에디터 미대체 발언은 S1·S5 원문 일치. 이미지 I1은 PNG(1024x590)로 열리고 홈 페이지·제품·컬렉션 화면과 Sidekick 입력창이 보여 캡션과 일치(page_url은 차단)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790992424011969",
+  "kind": "all"
+ }
+}
