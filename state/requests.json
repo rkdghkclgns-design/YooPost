@@ -1,30 +1,4 @@
 {
- "C0C50SP7VV5-1790754467113489": {
-  "reported": [
-   "arrived:20260930_164907_1",
-   "arrived:20260930_165703_2",
-   "arrived:20260930_170257_3",
-   "arrived:20260930_170733_4",
-   "arrived:20260930_171323_5",
-   "arrived:20260930_171911_6",
-   "arrived:20260930_172505_7"
-  ],
-  "finished": "2026-09-30T17:37:27+09:00",
-  "stale": false,
-  "board_ts": "1790754488.755039",
-  "board_hash": "8bff7e2b7e84b335",
-  "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790754467113489?thread_ts=1790754467.113489&cid=C0C50SP7VV5"
- },
- "C0C50SP7VV5-1790757881298159": {
-  "reported": [
-   "arrived:20260930_174552_2"
-  ],
-  "finished": "2026-09-30T17:52:29+09:00",
-  "stale": false,
-  "board_ts": "1790757900.036379",
-  "board_hash": "eb00a66b735373ec",
-  "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1790757881298159?thread_ts=1790757881.298159&cid=C0C50SP7VV5"
- },
  "C0C50SP7VV5-1790799549766259": {
   "reported": [
    "arrived:20261001_052625_2",
