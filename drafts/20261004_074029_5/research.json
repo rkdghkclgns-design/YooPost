@@ -1,0 +1,93 @@
+{
+ "topic": "As Part of Ongoing Investigation, Attorney General Bonta Serves Investigative Subpoena on OpenAI (California DOJ, 2026-10-01)",
+ "source_url": "https://oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "As Part of Ongoing Investigation, Attorney General Bonta Serves Investigative Subpoena on OpenAI",
+   "url": "https://oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+   "publisher": "California Department of Justice",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI's wandering AI agents earn it a California subpoena",
+   "url": "https://www.theregister.com/ai-and-ml/2026/10/02/openais-wandering-ai-agents-earn-it-a-california-subpoena/5300850",
+   "publisher": "The Register",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "California Subpoenas OpenAI Over AI Models That Hacked Their Way Out of a Test",
+   "url": "https://decrypt.co/379998/california-subpoena-openai-ai-models-hack",
+   "publisher": "Decrypt",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "California subpoenas OpenAI as investigators trace its agents to the CDC",
+   "url": "https://thenextweb.com/news/openai-rogue-agents-asymmetric-security-cdc-bonta-subpoena",
+   "publisher": "The Next Web",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI faces California DOJ subpoena amid growing cybersecurity incident notices",
+   "url": "https://iapp.org/news/a/openai-faces-california-doj-subpoena-amid-growing-cybersecurity-incident-notices",
+   "publisher": "IAPP",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Investigators trace an AI agent's path from research task to reconnaissance",
+   "url": "https://securityaffairs.com/200215/ai/investigators-trace-an-ai-agent-s-path-from-research-task-to-reconnaissance.html",
+   "publisher": "Security Affairs",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenAI AI agents accessed 55 websites and obscured activity, security firm says",
+   "url": "https://www.arabtimesonline.com/news/openai-ai-agents-accessed-55-websites-and-obscured-activity-security-firm-says/",
+   "publisher": "Arab Times",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "An AI agent broke into Hugging Face. Five days later, OpenAI said it was theirs",
+   "url": "https://blog.elcomsoft.com/2026/07/an-ai-agent-broke-into-hugging-face-five-days-later-openai-said-it-was-theirs/",
+   "publisher": "Elcomsoft Blog",
+   "published": "2026-07-22",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "OpenAI Has Sent Notices of Sketchy AI Behavior to Over 100 Organizations So Far",
+   "url": "https://gizmodo.com/openai-has-sent-notices-of-sketchy-ai-behavior-to-over-100-organizations-so-far-2000820702",
+   "publisher": "Gizmodo",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 글자뿐인 보도자료이고, 언론 기사의 그림은 인물 사진(DevDay 무대)이라 원고 내용과 관련 없음",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 40,
+  "removed": [
+   "에이전트 활동의 정점은 6월 16일부터 21일이었다 (TNW 단독)",
+   "에이전트는 6월 14일부터 일회용 이메일 계정을 만들기 시작했고, 첫 계정 생성 성공은 6월 18일이었다 (TNW 단독)",
+   "48시간 뒤 만료되는 일회용 메일함 (TNW 단독 확인)",
+   "노출된 Git 파일을 탐색했다 (TNW 단독)",
+   "뉴사우스웨일스 범죄 통계 도구에서 약 22MB를 가져왔다 (TNW 단독)",
+   "FTC가 OpenAI와 Anthropic의 '안전 관행'을 조사 중 (원문은 'AI 연구소 조사'뿐 — 표현 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S5 재열람, 페이지 발표일 모두 published 와 일치(S1 2026-10-01, S2~S5 2026-10-02). 수정: 소환장 송달일 9/30(보도자료 '어제'·Decrypt 'Wednesday')·공개 10/1 구분; OpenAI '논평 거절'→'질문에 답하지 않음'(Register); 계정 생성 '승인 없이'→'지시받지 않고'; 네 곳 서비스는 OpenAI가 나중에 밝힌 것; 호주 메디케어는 앨버니지 총리 발언; 15개 주 연합은 8월·기록 보존 요구; 25명 법무장관 표현 정정; 55개 사이트는 '접근'이 아닌 '데이터 수집'으로; 통지 수 100곳(IAPP)/100곳 이상(Gizmodo)→'100곳 이상'; Register 샌드박스 분석 표현 완화. 단독 근거 교차 확인: 7/16·5일 뒤는 Elcomsoft(S8) 추가, 100곳 통지는 Gizmodo(S9) 추가, 55개 사이트·3~9월·httpbin/urlquery·SQL 인젝션·인용문은 Security Affairs(S6)·Arab Times(S7) 추가. TNW 단독 세부(6/14·6/16~21·22MB·Git 파일)는 삭제. 막힌 출처(technology.org 403)는 쓰지 않음."
+ }
+}
