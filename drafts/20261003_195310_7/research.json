@@ -1,0 +1,66 @@
+{
+ "topic": "크리에이츠 코스닥 공모 — [기재정정] 증권신고서(지분증권, 2026-09-28, 2차 정정): 보통주 1,400,000주·희망가 15,000~18,000원, 수요예측 10/12~16·청약 10/20~21",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260928000196",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "[기재정정] 증권신고서(지분증권) 크리에이츠 (2차 정정)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260928000196",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "1조원 대어부터 적자 기술특례까지 … 10월 공모주 13곳 옥석 가리기",
+   "url": "https://biz.newdaily.co.kr/site/data/html/2026/09/30/2026093000046.html",
+   "publisher": "뉴데일리",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "10월 공모주 청약 러시…로봇·AI 줄줄이 상장",
+   "url": "https://www.etnews.com/20260929000204",
+   "publisher": "전자신문",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "크리에이츠, 증권신고서 제출…코스닥 상장 본격화",
+   "url": "https://www.newspim.com/news/view/20260904000913",
+   "publisher": "뉴스핌",
+   "published": "2026-09-04",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "스팩 실패 딛고 재도전…청사진 현실화 ‘눈길’",
+   "url": "https://www.the-stock.kr/news/articleView.html?idxno=33323",
+   "publisher": "더스탁(The Stock)",
+   "published": "2026-09-07",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "투자설명서 크리에이츠 (증권신고 효력발생일 2026-09-30)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260930000017",
+   "publisher": "금융감독원 전자공시시스템(DART)",
+   "published": "2026-09-30",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공시(DART 증권신고서)는 글자와 표로만 구성되어 있고, 크리에이츠 공모 내용을 보여 주는 본문 그림·도표 이미지가 없으며 언론 기사 이미지는 저작권상 인용하지 않았습니다.",
+ "factcheck": {
+  "claims": 98,
+  "confirmed": 98,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): DART 2차 정정 증권신고서(rcpNo 20260928000196) 본문 섹션(정정표·공모개요·공모방법·인수인의 의견·자금 사용목적·투자위험요소·매출 및 제품별 매출·요약재무·이사회·주주)을 직접 내려받아 수치·날짜·이름·가격 전부 대조, DART 공시 목록으로 9/30 효력발생·투자설명서(rcpNo 20260930000017) 확인 후 S6 추가. 뉴데일리(영업이익 250억→상반기 21억, 유통 가능 물량 39.47%, 청약 20~21일 — 39.47%는 신고서 5,176,832주 기재로도 확인), 전자신문, 뉴스핌, 더스탁 기사를 다시 열어 내용·published(페이지 입력일 9/30·9/29·9/04·9/07) 일치 확인. 고친 것: 전자신문 인용('15개 기업 공모 추진'→'10월 일반청약 기업 15곳'), 현지 법인 표현(중국 법인은 원자재 구매용), 운영자금 세부 내용, EYE XO 가격 조정 시점(2024년) 명시, 시장 전망 출처(Straits Research) 명시, 효력발생·투자설명서 반영. AI 비중 정직성 보강: 도입부 'AI 기반' 표현을 '골프 계측장비 기업'으로 바꾸고 SW 매출 비중(2025년 2.4%·2026년 상반기 6.5%), AI 센터(2023.7) 설립 사실과 AI 매출 별도 미공개를 명시. 수익 전망·매수 권유 표현 없음 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
