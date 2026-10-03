@@ -1138,5 +1138,107 @@
    "https://www.consumernews.co.kr/news/articleView.html?idxno=765061",
    "https://dealsite.co.kr/articles/168940"
   ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🧠 Perplexity pplx-decider 총정리: Decisions API $0.04/100만 토큰·Apache 2.0·Jev와 11개 비교",
+  "topic": "Perplexity launches Decisions API and open decision model pplx-decider-v1-27b",
+  "category": "AI 언어 모델",
+  "source_url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/perplexity-pplx-decider-decisions-api.html"
+  },
+  "sources": [
+   "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+   "https://aiweekly.co/alerts/perplexity-open-sources-27b-decider-edges-jev-on-11-test-panel",
+   "https://www.kucoin.com/news/flash/perplexity-open-sources-27b-decision-model-outperforms-jev-in-official-tests",
+   "https://explainx.ai/blog/perplexity-pplx-decider-decisions-api-2026"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🎥 OneStreamer 논문 분석: 4B 모델이 스트리밍 영상 벤치마크 8개 1위, 컨텍스트 93.1% 절감 총정리",
+  "topic": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.01762",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/onestreamer-4b-8-1-931.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.01762",
+   "https://arxiv.org/html/2610.01762",
+   "https://huggingface.co/papers/2610.01762",
+   "https://aiweekly.co/alerts/onestreamer-4b-model-tops-eight-streaming-video-benchmarks",
+   "https://huggingface.co/MCG-NJU/OneStreamer-4B"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🛍 Shopify Canvas 총정리: Sidekick과 채팅으로 스토어를 디자인하는 AI 작업 공간",
+  "topic": "Introducing Canvas: Opening the aperture on online store design (Shopify, 2026-10-01)",
+  "category": "AI 도구",
+  "source_url": "https://www.shopify.com/news/introducing-canvas",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/shopify-canvas-sidekick-ai.html"
+  },
+  "sources": [
+   "https://www.shopify.com/news/introducing-canvas",
+   "https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas",
+   "https://techbriefly.com/2026/10/02/shopify-canvas-ai-store-builder/",
+   "https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🎓 Anthropic Claude Frontier Academy 총정리: 1억 달러·엔지니어 1만 명·12주 레지던시",
+  "topic": "Claude Frontier Academy: $100M to train 10,000 engineers",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.anthropic.com/news/claude-frontier-academy",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-claude-frontier-academy-1-1-12.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/news/claude-frontier-academy",
+   "https://forkast.news/anthropic-is-training-10000-engineers-to-install-claude-inside-the-worlds-largest-enterprises/",
+   "https://cryptobriefing.com/anthropic-100-million-claude-frontier-academy/",
+   "https://aiweekly.co/alerts/anthropic-launches-claude-frontier-academy-commits-100m-to-train-10000"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "🔒 Microsoft 2026 디지털 방어 보고서 총정리: 무기화 24시간 미만·32단계 AI 공격 사슬·CVE 7.2만 건",
+  "topic": "Insights from the 2026 Microsoft Digital Defense Report",
+  "category": "AI 보안",
+  "source_url": "https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/microsoft-2026-24-32-ai-cve-72.html"
+  },
+  "sources": [
+   "https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/",
+   "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report",
+   "https://www.bleepingcomputer.com/news/security/microsoft-says-threat-actors-are-ahead-in-the-early-ai-race/",
+   "https://helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report",
+   "https://www.techtimes.com/articles/328467/20261002/microsoft-2026-security-report-autonomous-ransomware-has-hacked-real-organizations.htm",
+   "https://blogs.microsoft.com/on-the-issues/2026/10/01/preparing-governments-for-an-era-of-interconnected-cyber-risk/",
+   "https://www.geekzone.co.nz/content.asp?contentid=27427"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "📉 arXiv 월 2편 제출 제한 총정리: 9월 40,363건 폭증·cs.AI 6배·갈리는 연구자 반응",
+  "topic": "Fair Moderation, Equitable Access, and AI: arXiv's Updated Rate Limit Policy (arXiv, 2026-10-01)",
+  "category": "AI 인사이트",
+  "source_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/arxiv-2-9-40363-csai-6.html"
+  },
+  "sources": [
+   "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+   "https://terrytao.wordpress.com/2026/10/01/arxiv-updates-its-rate-limiting-policy/",
+   "https://telescoper.blog/2026/10/02/the-arxiv-limit/",
+   "https://startupfortune.com/arxiv-now-limits-every-researcher-to-two-paper-submissions-a-month/",
+   "https://pracheeac.substack.com/p/arxiv-is-killing-itself-so-ai-doesnt"
+  ]
  }
 ]
