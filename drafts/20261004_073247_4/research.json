@@ -1,0 +1,49 @@
+{
+ "topic": "GSA memo to set AI-specific acquisition rules (Nextgov/FCW, 2026-10-01)",
+ "source_url": "https://www.nextgov.com/acquisition/2026/10/gsa-memo-set-ai-specific-acquisition-rules/416378/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GSA RGO-2026-01: GSAR Class Deviations in Response to Executive Order 14275 (clause 552.239-7001)",
+   "url": "https://www.acquisition.gov/sites/default/files/page_file_uploads/RGO-2026-01.pdf",
+   "publisher": "GSA(미국 연방조달청)",
+   "published": "2026-01-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GSA memo to set AI-specific acquisition rules",
+   "url": "https://www.nextgov.com/acquisition/2026/10/gsa-memo-set-ai-specific-acquisition-rules/416378/",
+   "publisher": "Nextgov/FCW",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "GSA Memo Sets Data Safeguarding Rules for Contractor LLMs",
+   "url": "https://www.executivegov.com/articles/gsa-memo-llm-ai-data-safeguarding-rules",
+   "publisher": "ExecutiveGov",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GSA Issues AI Acquisition Clause With New Government Data Safeguards",
+   "url": "https://www.cdomagazine.tech/us-federal-news-bureau/gsa-issues-ai-acquisition-clause-with-new-government-data-safeguards",
+   "publisher": "CDO Magazine",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 글자뿐인 규정 PDF이고 언론 기사 본문에도 관련 도표·스크린샷이 없어 인용할 본문 그림이 없음",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "구체적인 위반 시 제재 수준은 본 글에서 다룬 자료로는 확인하지 못했습니다. (사실과 다름 — 조항 (j)(3)에 사용 중지·폐기 비용 25% 상한이 있어 확인된 내용으로 교체)",
+   "(퀸 아넥스리스가) 논란이 된 편향 문구 삭제를 환영했다 ('환영' 표현은 기사에 없음 — 문구가 빠진 점을 짚었다로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 GSA RGO-2026-01 PDF(230쪽)를 내려받아 pdftotext로 552.239-7001 조항 전문((a)~(j))·539.71 처방·501.107(d)·별첨 A 표(이미지 렌더링)와 대조: 72시간·7일·30일·120일·90일·영업일 5일·주/부 버전 30/15일, 금지 용도, (e)(4) 보호 조치, 종료 시 가중치·임베딩 삭제, (f)(2) 외국 통제, (f)(4) 추론 단계 요약, (h) 이동성, (j)(2) 벤치마크 권리 모두 일치. 별첨 A에서 552부 효력일 10/19/2026·서명 07/16/2026 확인(보도의 7월 승인·10월 19일 효력과 일치). S2 Nextgov(2026-10-01, 129쪽·코시스·1월/7월/10월 19일·업계 반발·Anex-Ries·Kevin Martin 인용), S3 ExecutiveGov(2026-10-02, 3월 FAS 초안·6월 의견 요청·FSS/OASIS+), S4 CDO Magazine(2026-10-02, 하청 best efforts·필요 범위·CDO 협의) 재확인. 수정: (e)(3)→(e)(1)(iv)·(e)(3) 조항 표기, '익명'→'비식별', 효력일을 공식 문서로 보강(연표·FAQ·경고 박스), 제재 문장 교체, CDO Magazine 인용 귀속 정정. published 확인: S1 문서 첫 장 01/15/2026(PDF는 2026-09-28 수정, 조항 표기 Sept 2026), S2 2026-10-01, S3·S4 2026-10-02 — 모두 페이지 표기와 일치. EGRESS_BLOCKED 출처 없음."
+ }
+}
