@@ -1,0 +1,55 @@
+{
+ "topic": "Ling 3.1 Flash is now available on AI Gateway (Vercel, 2026-09-30) — InclusionAI Ling-3.1-flash 560B MoE",
+ "source_url": "https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Ling 3.1 Flash is now available on AI Gateway",
+   "url": "https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway",
+   "publisher": "Vercel",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Ant Group launches Ling-3.1-flash with 560 billion parameters",
+   "url": "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/",
+   "publisher": "TechNode",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Ant's InclusionAI Ships Ling-3.1-flash With 560B Parameters",
+   "url": "https://aiweekly.co/alerts/ants-inclusionai-ships-ling-31-flash-with-560b-parameters",
+   "publisher": "AI Weekly",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Ling 3.1 Flash Benchmarks & Context",
+   "url": "https://benchlm.ai/models/ling-3-1-flash",
+   "publisher": "BenchLM",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Vercel changelog와 보도 페이지 본문에는 글자뿐이고, 원고 내용을 보여 주는 도표·스크린샷이 없다(있는 이미지는 대표 이미지·로고·썸네일뿐).",
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 42,
+  "removed": [
+   "이어서 '미순위(Unranked)'로 두었습니다. (중복 문장)",
+   "AI Weekly … 다른 모델과의 직접 순위 비교는 아직 추측에 가깝다고 지적합니다. (AI Weekly 본문에서 확인 안 됨)",
+   "두 매체 모두 모델의 오픈 여부보다 발표 직후 접근성에 초점을 맞춘 보도입니다. (AI Weekly는 '발표된 것이지 오픈 릴리스가 아님'이 핵심 — 해석 틀림, 고쳐 씀)",
+   "AI Gateway는 … 별도 제공사 계정 없이 지출 추적과 요청 트레이스를 쓸 수 있다 (Vercel 문구와 다름 — 'one API, 사용량·비용 추적, 라우팅·재시도·failover'로 고쳐 씀)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): Vercel changelog(2026-09-30, Zachary Chen·Jerilyn Zheng), TechNode(2026-09-30, IT Home 인용), AI Weekly(2026-09-30 게시·10-01 수정), BenchLM(마지막 수정 2026-10-02 → published 를 페이지 날짜로 정정)을 WebFetch 로 다시 열어 대조. 확인: 560B/활성 25B, 1M 설계·256K 체험·262K Gateway, 10/13 무료 종료와 두 모델 ID 과금 방식, 큰 컨텍스트는 10/13 이후 유료 단계(AI Weekly), Ling-3.0-Flash 발표→오픈소스 약 2주(AI Weekly가 OrcaRouter 인용, '기본 예상'은 매체 해석으로 표기), 벤치마크 8개는 @AntLingAGI 발표 화면 출처의 개발사 자체 수치·미순위·제3자 평가 없음. 코딩 에이전트는 Claude Code·Codex·fx 로 정정. 개발사 1차 자료 미열람 한계를 본문 박스에 명시. EGRESS_BLOCKED 출처 없음. 본문 그림 없음(Vercel 본문은 글·코드뿐) 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
