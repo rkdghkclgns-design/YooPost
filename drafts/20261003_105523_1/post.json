@@ -1,0 +1,464 @@
+{
+ "title": "🧠 Perplexity pplx-decider 총정리: Decisions API $0.04/100만 토큰·Apache 2.0·Jev와 11개 비교",
+ "category": "AI 언어 모델",
+ "intro": "안녕하세요! 2026년 10월 1일, Perplexity가 **Decisions API**와 오픈 웨이트 결정 모델 **pplx-decider-v1-27b**를 공개했습니다. 이 모델은 Qwen3.8-27B를 미세 조정한 것으로, 글을 쓰는 대신 예·아니오, 선택지, 점수 단계에 대한 확률을 돌려줍니다. 호스팅 가격은 입력 100만 토큰당 $0.04이고 출력은 무료이며, 가중치는 Apache 2.0으로 Hugging Face에 올라왔습니다. 이 글에서는 공식 문서와 모델 카드를 바탕으로 호출 방법, 요청 한도, Jev와의 11개 벤치마크 비교, 로컬 실행 방법과 주의점을 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Perplexity가 Decisions API와 오픈 웨이트 모델 pplx-decider-v1-27b를 공개했습니다 (Qwen3.8-27B 미세 조정, Apache 2.0).",
+  "질문 타입은 noul(예·아니오)·choice(선택지)·score(루브릭) 세 가지이고, 답은 확률로 돌아옵니다.",
+  "가격은 입력 100만 토큰당 $0.04, 출력은 무료입니다.",
+  "한 요청에 질문 최대 128개, 입력 262,144토큰 미만, 조직당 초당 10건 제한입니다.",
+  "11개 벤치마크 평균은 85.71%로 Jev 84.51%보다 높지만 Jev가 앞선 항목이 6개이며, 자체 측정 결과입니다.",
+  "이 글에서 배울 것: Decisions API 호출 방법, 요청 한도, 벤치마크 읽는 법, 로컬 실행 조건"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Perplexity Decisions API 공개 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Perplexity는 문서에서 **Decisions API**를 \"콘텐츠에 대한 질문에 글이 아니라 확률로 답하는 API\"로 소개합니다. 예·아니오, 여러분이 정한 선택지 중 하나, 또는 여러분이 정한 평가 기준(루브릭)의 한 단계를 확률과 함께 돌려줍니다. 이 API가 호출하는 모델이 오픈 웨이트로 함께 공개된 **pplx-decider-v1-27b**입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "모델 카드(Hugging Face)에 따르면 이 모델은 **Qwen3.8-27B를 미세 조정(파인튜닝)한 결정 모델**이며, 라이선스는 **Apache 2.0**입니다. Hugging Face 저장소는 2026-10-01에 만들어졌고, 이틀 사이에 여러 매체가 이 소식을 다뤘습니다. 한 AI 뉴스 매체는 이 발표가 같은 날 나온 Cloudflare와 AWS의 결정 모델 발표와 같은 흐름에 있다고 짚었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 글은 앞서 다룬 다른 회사의 결정 모델 소식과 달리, **Perplexity가 새로 내놓은 호스팅 API 사용법과 공개 벤치마크 표**에 집중합니다. 결정 모델이 무엇인지 같은 배경 설명은 최소로 줄였습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 결정 모델이란?",
+     "text": "Perplexity 문서는 결정 모델을 \"소프트웨어가 바로 쓸 수 있는 빠르고 구조화된 결정을 내리도록 만든 모델\"로 설명합니다. 자연어 텍스트와 이미지를 멀티모달 언어 모델처럼 읽지만, 글을 쓰는 대신 **타입이 정해진 답과 확률**을 돌려줍니다. 답장을 쓰거나 코드를 생성하거나 추론 과정을 설명하지 않으며, 그 숫자로 판단하는 일은 호출하는 코드가 맡습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙️ 공식 스펙 정리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서와 모델 카드, 그리고 이를 정리한 매체 기사에서 확인된 핵심 사양은 아래 표와 같습니다. 문서의 요청 예시는 모두 모델 이름으로 **pplx-decider-v1-27b**를 지정하며, 문서는 \"pplx-decider-v1-27b가 결정 모델이고 Decisions API는 그것을 호출하는 방법\"이라고 설명합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "모델 이름",
+       "pplx-decider-v1-27b"
+      ],
+      [
+       "기반 모델",
+       "Qwen3.8-27B 미세 조정 (모델 카드)"
+      ],
+      [
+       "라이선스",
+       "Apache 2.0 (오픈 웨이트, Hugging Face 공개)"
+      ],
+      [
+       "입력",
+       "텍스트·JSON·이미지 (멀티모달)"
+      ],
+      [
+       "출력",
+       "타입이 있는 답과 확률 (글을 쓰지 않음)"
+      ],
+      [
+       "파라미터",
+       "26.1B (26,085,330,160개), BF16 (Hugging Face 메타데이터)"
+      ],
+      [
+       "컨텍스트",
+       "262,144 토큰 (config.json의 max_position_embeddings)"
+      ],
+      [
+       "가중치 용량",
+       "약 49GiB (모델 카드)"
+      ],
+      [
+       "호스팅 가격",
+       "입력 100만 토큰당 $0.04, 출력 무료"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "문서에는 \"출력 토큰은 무료이고 요청당 별도 요금도 없다\"고 적혀 있습니다. 응답 예시의 `usage`에도 **output_tokens가 3**으로 찍혀 있을 만큼 출력이 짧은 것이 이 모델 계열의 특징입니다."
+    }
+   ]
+  },
+  {
+   "heading": "🎯 세 가지 질문 타입",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "API는 한 번의 요청에 `state`(판단 대상 콘텐츠)와 이름 붙은 질문을 여러 개 담아 보내는 방식입니다. 질문 타입은 **noul · choice · score** 세 가지입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "질문 타입",
+      "묻는 것",
+      "돌려받는 것"
+     ],
+     "rows": [
+      [
+       "noul",
+       "예·아니오 질문 또는 사실 여부를 확인할 문장",
+       "예일 확률 (0~1)"
+      ],
+      [
+       "choice",
+       "여러분이 정의한 선택지 중 하나 고르기",
+       "모든 선택지의 확률과 가장 가능성 높은 선택지"
+      ],
+      [
+       "score",
+       "순서가 있는 루브릭으로 평가",
+       "모든 단계의 확률과 기대 점수"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "문서는 이 모델을 \"채팅 모델에게 라벨을 달라고 한 뒤 답을 파싱하던 곳\"에 쓰라고 안내합니다. 분류, 라우팅, 루브릭 채점처럼 **기준값(임계값)과 비교할 숫자**가 필요한 결정이 대상입니다. 같은 콘텐츠에 대한 질문을 한 요청에 여러 개 묶을 수 있다는 점도 문서가 내세우는 장점입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Kucoin 뉴스는 이 모델의 활용처로 **고객 지원 티켓 배정, 도구 호출 여부 결정, 워크플로 경로 결정**을 꼽았습니다. 다만 이는 매체의 설명이며, 성능은 아래에서 보듯 용도에 따라 갈립니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 noul이라는 이름",
+     "text": "문서와 모델 카드 모두 예·아니오 질문의 타입 이름을 `noul`로 적고 있습니다. 응답에서도 `\"noul\": 0.9424...` 처럼 같은 이름의 필드로 확률이 돌아옵니다. 오타가 아니라 문서에 적힌 그대로의 이름이니 요청에 그대로 쓰시면 됩니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 API 호출 방법",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "엔드포인트는 `POST https://api.perplexity.ai/v1/decisions` 하나이며, 인증은 `Authorization: Bearer <PERPLEXITY_API_KEY>` 헤더로 합니다. 문서에 따르면 **Perplexity API 키라면 무엇이든 쓸 수 있고**, 키가 없으면 console.perplexity.ai에서 만들면 됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "아래는 문서 퀵스타트의 Python 예시를 그대로 옮긴 것입니다. 헤드폰 리뷰 하나에 대해 **결함 여부(noul), 감정(choice), 심각도(score)** 세 질문을 한 번에 던집니다. HTTP 클라이언트는 `httpx`를 쓰고, 설치는 `pip install httpx`입니다."
+    },
+    {
+     "type": "code",
+     "language": "python",
+     "code": "import os\nimport httpx\n\nresponse = httpx.post(\n    \"https://api.perplexity.ai/v1/decisions\",\n    headers={\"Authorization\": f\"Bearer {os.environ['PERPLEXITY_API_KEY']}\"},\n    json={\n        \"model\": \"pplx-decider-v1-27b\",\n        \"state\": {\n            \"title\": \"Battery died after two weeks\",\n            \"review\": \"The headphones sound great, but the battery stopped charging after two weeks.\",\n        },\n        \"questions\": {\n            \"defect\": {\n                \"type\": \"noul\",\n                \"instructions\": \"Does the review report a product defect?\",\n            },\n            \"sentiment\": {\n                \"type\": \"choice\",\n                \"instructions\": \"What is the overall sentiment of the review?\",\n                \"criteria\": {\n                    \"positive\": \"Mostly satisfied\",\n                    \"mixed\": \"Praise and complaints in one review\",\n                    \"negative\": \"Mostly dissatisfied\",\n                },\n            },\n            \"severity\": {\n                \"type\": \"score\",\n                \"instructions\": \"How severe is the reported problem?\",\n                \"criteria\": [\"Cosmetic\", \"Inconvenient\", \"Product unusable\"],\n            },\n        },\n    },\n    timeout=30.0,\n)\nresponse.raise_for_status()\nanswers = response.json()[\"answers\"]\nprint(answers[\"defect\"][\"noul\"])  # probability of yes, 0 to 1"
+    },
+    {
+     "type": "paragraph",
+     "text": "응답은 질문 이름별로 답이 들어 있는 JSON입니다. 문서의 응답 예시에서는 `defect`의 확률이 **0.9424...**, `sentiment`의 선택은 `mixed`(신뢰도 0.9255)로 나옵니다. `usage`에는 입력 367토큰, 출력 3토큰이 기록되어 있습니다."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"model\": \"pplx-decider-v1-27b\",\n  \"answers\": {\n    \"defect\": {\"type\": \"noul\", \"noul\": 0.9424522889347015},\n    \"sentiment\": {\"type\": \"choice\", \"choice\": \"mixed\", \"confidence\": 0.9255}\n  },\n  \"usage\": {\"input_tokens\": 367, \"output_tokens\": 3}\n}"
+    },
+    {
+     "type": "paragraph",
+     "text": "이미지를 판단 대상으로 쓰고 싶다면 문서의 설명대로 `state` 안에 **base64 데이터 URL**로 이미지를 넣습니다. 이미지 크기 한도는 **32×32 픽셀 타일 2,048개**입니다."
+    }
+   ]
+  },
+  {
+   "heading": "📏 요청 한도·속도·타임아웃",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "문서가 밝힌 요청 한도는 아래와 같습니다. 한 요청에 질문을 **최대 128개**까지 묶을 수 있고, 선택지는 최대 255개, 점수 단계는 최대 10단계입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "한도",
+      "값"
+     ],
+     "rows": [
+      [
+       "요청당 질문 수",
+       "1~128"
+      ],
+      [
+       "선택지 수",
+       "1~255"
+      ],
+      [
+       "점수 단계 수",
+       "1~10"
+      ],
+      [
+       "입력 토큰",
+       "262,144 미만"
+      ],
+      [
+       "요청 본문 크기",
+       "32 MiB"
+      ],
+      [
+       "이미지 크기",
+       "32×32 픽셀 타일 2,048개"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "속도 제한은 **조직당 초당 10건**이며, 응답에는 `x-ratelimit-*` 헤더가 포함됩니다. 응답 시간은 입력 길이에 비례해, 문서가 2026년 9월 30일에 측정한 결과로는 **입력 토큰 수백 개면 2초 미만, 약 9만 토큰은 5초, 약 19만 토큰은 14초, 입력 한도 바로 아래에서는 23초**가 걸렸습니다. 모델이 제때 답하지 못하면 `504` 오류가 돌아오며, 문서의 테스트에서는 약 1분이 걸렸습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 지연 시간 확인",
+     "text": "문서는 결정 모델을 '빠르고 구조화된 결정'을 위한 모델로 설명하지만, 이 수치는 Perplexity 자체 테스트 결과이고 입력이 길어지면 응답 시간도 늘어납니다. 같은 날 소개된 다른 결정 모델의 지연 시간과 직접 비교한 수치는 확인되지 않았으므로, 실시간 경로에 넣으실 때는 여러분의 입력 길이로 직접 측정해 보시길 권합니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 벤치마크: Jev와의 11개 비교",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "모델 카드는 11개 벤치마크의 정확도 표를 공개했습니다. 비교 대상은 **Jev**와 **기반 모델인 Qwen3.8-27B**이며, 카드에는 pplx-decider-v1-27b의 결과가 **Perplexity API를 통해 측정**되었다고 적혀 있습니다. 전체 평균은 **pplx-decider 85.71%, Jev 84.51%, Qwen3.8-27B 74.76%**입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "벤치마크",
+      "Jev",
+      "Qwen3.8-27B",
+      "pplx-decider-v1-27b"
+     ],
+     "rows": [
+      [
+       "WinoGrande",
+       "90.70%",
+       "73.10%",
+       "83.30%"
+      ],
+      [
+       "FinancialPhraseBank",
+       "76.98%",
+       "75.68%",
+       "84.18%"
+      ],
+      [
+       "RAGTruth",
+       "77.27%",
+       "61.53%",
+       "88.80%"
+      ],
+      [
+       "JudgeBench",
+       "78.57%",
+       "68.86%",
+       "78.29%"
+      ],
+      [
+       "BBH",
+       "94.27%",
+       "72.80%",
+       "82.80%"
+      ],
+      [
+       "JevBench public hard",
+       "73.27%",
+       "72.28%",
+       "70.30%"
+      ],
+      [
+       "TabFact",
+       "89.80%",
+       "78.60%",
+       "90.60%"
+      ],
+      [
+       "ContractNLI",
+       "77.45%",
+       "80.78%",
+       "80.78%"
+      ],
+      [
+       "Circa",
+       "84.60%",
+       "87.00%",
+       "89.20%"
+      ],
+      [
+       "Belebele",
+       "95.00%",
+       "93.20%",
+       "94.00%"
+      ],
+      [
+       "TruthfulQA binary",
+       "92.00%",
+       "82.80%",
+       "85.40%"
+      ],
+      [
+       "전체 평균",
+       "84.51%",
+       "74.76%",
+       "85.71%"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "표를 보면 **평균 격차는 1.2%포인트 남짓**이지만 항목별로는 엇갈립니다. pplx-decider가 앞선 곳은 FinancialPhraseBank, RAGTruth(**88.80% 대 77.27%**), TabFact, Circa입니다. 반면 Jev는 WinoGrande(**90.70% 대 83.30%**), BBH(**94.27% 대 82.80%**), TruthfulQA binary(92.00% 대 85.40%) 등에서 더 높습니다. 모델 카드에서 Jev가 굵게 표시된 행은 6개로, Kucoin 뉴스도 \"Jev가 11개 중 6개에서 앞섰다\"고 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "항목을 읽을 때는 벤치마크의 성격을 구분하는 것이 좋습니다. 표에서 pplx-decider가 Jev를 앞선 RAGTruth, FinancialPhraseBank, TabFact, Circa는 각각 검색 증강 답변의 사실 여부, 금융 문장 분류, 표 기반 사실 확인, 대화 속 간접 답변 해석처럼 **업무 문서 분류에 가까운 과제**입니다. 반대로 Jev가 크게 앞선 WinoGrande와 BBH는 상식 추론과 다단계 추론 과제입니다. 이 해석은 표의 항목 이름에서 읽은 것이며, Perplexity가 이런 구분을 직접 설명한 것은 아닙니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "또 하나 눈여겨볼 점은 ContractNLI입니다. 이 항목에서 pplx-decider는 기반 모델 Qwen3.8-27B와 같은 **80.78%**를 기록했고, Jev의 77.45%보다 높았습니다. 반대로 Belebele에서는 Jev가 95.00%, pplx-decider가 94.00%로 거의 비슷했습니다. 평균 한 숫자보다 **내 업무와 닮은 항목의 점수**를 보는 편이 판단에 도움이 됩니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 기반 모델 대비 개선",
+     "text": "같은 표에서 Qwen3.8-27B의 평균은 74.76%입니다. 결정 모델용으로 미세 조정한 pplx-decider는 평균이 **약 10.95%포인트** 높아, 미세 조정의 효과가 가장 뚜렷하게 보이는 대목입니다. (85.71%에서 74.76%를 뺀 값입니다.)"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 자체 측정 결과",
+     "text": "이 수치는 Perplexity가 자체 패널로 측정한 것입니다. AI Weekly는 cellcog.ai의 지적을 인용해 Perplexity의 X 게시물이 85.71%를 내세우지만 **문서에는 벤치마크 표가 없다**고 전했고, explainx는 API로 잰 점수가 로컬 체크포인트 성능과 다를 수 있다고 짚었습니다. 독립 평가는 아직 확인되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🖥️ 직접 돌려보기: 로컬 실행",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가중치가 Hugging Face에 공개되어 있어 직접 실행할 수도 있습니다. 모델 카드는 **Python 3.12 이상과, 약 49GiB의 가중치와 작업 메모리를 담을 수 있는 CUDA GPU**가 필요하다고 안내합니다. 추론 예제 `inference.py`는 `uv`로 내려받아 실행합니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "uvx --from huggingface-hub hf download perplexity-ai/pplx-decider-v1-27b inference.py --local-dir .\nuv run inference.py"
+    },
+    {
+     "type": "paragraph",
+     "text": "모델 카드의 파이썬 예시는 `Decider.from_pretrained`로 모델을 불러온 뒤 `predict`에 텍스트와 질문 정의를 넘기는 형태입니다. 아래는 카드에 실린 **고객 요청을 어느 팀이 처리할지 고르는** 예시입니다."
+    },
+    {
+     "type": "code",
+     "language": "python",
+     "code": "from inference import Decider\n\nmodel = Decider.from_pretrained(\"perplexity-ai/pplx-decider-v1-27b\")\nresult = model.predict(\n    \"My Stripe integration keeps failing. Please help ASAP.\",\n    {\n        \"type\": \"choice\",\n        \"instructions\": \"Which team should handle this request?\",\n        \"criteria\": {\n            \"billing\": \"Charges and refunds\",\n            \"technical_support\": \"Integration errors\",\n            \"sales\": \"Questions about buying a product\",\n        },\n    },\n)\nprint(result)  # Selected choice and calibrated probabilities."
+    },
+    {
+     "type": "paragraph",
+     "text": "**예·아니오 확률**이 필요하면 `{\"type\": \"noul\", \"instructions\": \"Does this message express urgency?\"}` 형태의 질문을 쓰고, 이미지는 `predict`에 `images=[\"screenshot.png\"]`를 넘기거나 `uv run inference.py --image screenshot.png`로 실행합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "문서의 목차에는 **요청 ID(Request ids)·오류(Errors)·타임아웃(Timeouts)** 항목이 따로 마련되어 있어, 운영에 넣기 전에 문서의 해당 부분을 함께 읽어 보시길 권합니다. 이 글에서는 문서에서 직접 확인한 한도와 타임아웃 수치만 옮겼습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 호스팅 API와 로컬의 선택",
+     "text": "호스팅 API는 입력 100만 토큰에 $0.04로 GPU 준비가 필요 없고, 로컬 실행은 약 49GiB급 GPU 메모리가 필요한 대신 가중치를 직접 다룹니다. 어느 쪽이 유리한지는 호출량과 보유 장비에 달려 있으며, 이 글의 자료만으로 손익분기점을 계산할 수는 없습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 활용 시나리오와 주의점",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "문서가 직접 든 예는 **리뷰 분류**입니다. 결함 보고 여부를 `noul`로, 감정을 `choice`로, 문제의 심각도를 `score`로 한 번에 묻는 식입니다. 모델 카드의 예는 **지원 요청 라우팅**으로, 청구·기술 지원·영업 중 어느 팀이 맡을지를 고르게 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "확률이 나오기 때문에 **기준값을 정해 자동 처리와 사람 검토를 나누는** 설계도 가능합니다. 예를 들어 결함 확률이 높을 때만 담당자에게 넘기는 식입니다. 다만 어떤 기준값이 적절한지는 문서가 정해 주지 않으므로, 여러분의 데이터로 검증해야 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "상황",
+      "권장 질문 타입",
+      "비고"
+     ],
+     "rows": [
+      [
+       "결함·긴급 여부 확인",
+       "noul",
+       "확률 임계값으로 분기"
+      ],
+      [
+       "문의를 팀별로 분류",
+       "choice",
+       "선택지 설명을 구체적으로 작성"
+      ],
+      [
+       "품질·심각도 채점",
+       "score",
+       "순서가 있는 단계 정의"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 이 모델이 하지 않는 일",
+     "text": "문서는 이 모델이 답장을 쓰거나 코드를 생성하거나 추론을 설명하지 않는다고 분명히 적었습니다. 설명이 필요한 판단이나 열린 질문에는 일반 채팅 모델이 필요합니다. 또 벤치마크에서 WinoGrande·BBH처럼 상식·추론형 항목은 Jev보다 낮았으므로, 그런 성격의 질문은 직접 테스트 후 쓰시기 바랍니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "pplx-decider-v1-27b는 어떤 모델인가요?",
+   "a": "Qwen3.8-27B를 미세 조정한 결정 모델이며 Apache 2.0 라이선스로 Hugging Face에 공개되었습니다. 글을 생성하지 않고 예·아니오, 선택지, 점수 단계에 대한 확률을 돌려줍니다."
+  },
+  {
+   "q": "Decisions API 가격은 얼마인가요?",
+   "a": "문서 기준으로 입력 100만 토큰당 $0.04이고 출력 토큰은 무료입니다. 요청당 별도 요금은 없다고 적혀 있습니다."
+  },
+  {
+   "q": "한 번에 몇 개의 질문을 보낼 수 있나요?",
+   "a": "문서의 요청 한도는 요청당 질문 1~128개입니다. 선택지는 최대 255개, 점수 단계는 최대 10단계, 입력은 262,144토큰 미만, 요청 본문은 32 MiB까지입니다."
+  },
+  {
+   "q": "Jev보다 성능이 좋은가요?",
+   "a": "Perplexity 자체 11개 벤치마크 평균은 85.71%로 Jev의 84.51%보다 높습니다. 하지만 Jev가 앞선 항목이 6개이고 독립 평가는 확인되지 않았으므로, 용도에 맞는 직접 테스트가 필요합니다."
+  },
+  {
+   "q": "로컬에서 돌리려면 무엇이 필요한가요?",
+   "a": "모델 카드는 Python 3.12 이상과 약 49GiB의 가중치와 작업 메모리를 담을 수 있는 CUDA GPU를 요구합니다. uv로 inference.py를 내려받아 실행하는 방법이 안내되어 있습니다."
+  }
+ ],
+ "closing": "지금까지 Perplexity의 pplx-decider-v1-27b와 Decisions API에 대해 알아보았습니다. 이 모델은 글을 쓰지 않고 확률만 돌려주는 대신, 분류·라우팅·채점처럼 기준값으로 판단하는 작업에 맞춰져 있습니다. 평균 85.71%라는 수치는 Perplexity가 자체 측정한 것이고 Jev가 앞선 항목도 많아서, 독립 평가가 나오기 전에는 여러분의 데이터로 직접 확인하는 것이 안전합니다. 여러분도 한번 pplx-decider를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "가격·한도·벤치마크는 공식 문서와 모델 카드 기준(2026-10-03 확인)이며 바뀔 수 있으니 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "Perplexity",
+  "pplxdecider",
+  "DecisionsAPI",
+  "결정모델",
+  "Qwen3.8",
+  "오픈웨이트",
+  "Apache2",
+  "Jev",
+  "AI언어모델",
+  "HuggingFace",
+  "AI백과사전",
+  "LLM",
+  "분류모델",
+  "API가격"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}

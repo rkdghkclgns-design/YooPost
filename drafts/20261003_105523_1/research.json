@@ -1,0 +1,67 @@
+{
+ "topic": "Perplexity launches Decisions API and open decision model pplx-decider-v1-27b",
+ "source_url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Decisions API — Quickstart",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "publisher": "Perplexity",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "pplx-decider-v1-27b (model card)",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+   "publisher": "Perplexity (Hugging Face)",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Perplexity Open-Sources 27B Decider, Edges Jev on 11-Test Panel",
+   "url": "https://aiweekly.co/alerts/perplexity-open-sources-27b-decider-edges-jev-on-11-test-panel",
+   "publisher": "AI Weekly",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Perplexity open-sources its 27B decision model, outperforming Jev in official tests",
+   "url": "https://www.kucoin.com/news/flash/perplexity-open-sources-27b-decision-model-outperforms-jev-in-official-tests",
+   "publisher": "KuCoin News",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "pplx-decider: 85.71% vs Jev, $0.04/M (2026)",
+   "url": "https://explainx.ai/blog/perplexity-pplx-decider-decisions-api-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 문서(Decisions API 퀵스타트)와 Hugging Face 모델 카드는 글자·표·코드뿐이고 본문 그림이 없다.",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 57,
+  "removed": [
+   "모델 이름은 pplx-decider-v1-27b 하나이며, Decisions API에서 쓸 수 있는 유일한 모델이라고 문서에 적혀 있습니다. (문서에 '유일한 모델' 문구 없음 → 문서 실제 설명으로 교체)"
+  ],
+  "corrected": [
+   "응답 시간 '수백 토큰 약 2초' → 문서 원문 '2초 미만'(2026-09-30 측정, 9만 토큰 5초·19만 토큰 14초·한도 근처 23초)으로 수정",
+   "'약 60초를 넘기면 504' → '제때 답하지 못하면 504, 테스트에서 약 1분'으로 수정",
+   "'문서에 벤치마크 표 없음' 지적의 주체: AI Weekly → AI Weekly가 인용한 cellcog.ai로 수정",
+   "파라미터 26.1B·컨텍스트 262,144 출처 표기를 explainx → Hugging Face safetensors 메타데이터(26,085,330,160 BF16)·config.json(max_position_embeddings 262144) 직접 확인으로 교체",
+   "'디스크 용량 약 49GiB' → 모델 카드 문구대로 '가중치 용량 약 49GiB'"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5, 2026-10-03 KST). S1 문서·S2 모델 카드(README, HF API, config.json)·S3·S4·S5를 모두 다시 열어 확인(막힌 출처 없음). 벤치마크 11개+평균 36개 수치는 모델 카드 표와 전부 일치, Jev 굵게 표시 6행 확인, 카드에 'pplx 결과는 Perplexity API로 측정' 명시 — 본문에 자체 측정임을 표기. published: S1 dateModified 2026-10-01, S2 createdAt 2026-10-01, S3 2026-10-02 22:59 UTC, S4 2026/10/02 02:36, S5 Oct 2, 2026 — 모두 일치. 인용 이미지: 문서·카드에 본문 그림 없음(소셜 썸네일·로고뿐)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790992424011969",
+  "kind": "all"
+ }
+}
