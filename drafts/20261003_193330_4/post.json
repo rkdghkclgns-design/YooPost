@@ -1,0 +1,316 @@
+{
+ "title": "🤖 Meta Muse Gadgets 총정리: 오픈소스 SDK·Home Link 5,000대 무료 배포",
+ "category": "AI 뉴스 리뷰",
+ "intro": "안녕하세요! 2026년 10월 2일(현지 시간), Meta가 자사 개인 AI 에이전트 Muse(뮤즈)에 연결되는 하드웨어를 개발자가 직접 만들 수 있게 하는 오픈소스 프로젝트 **Muse Gadgets**를 공개했습니다. 펌웨어와 Linux 소프트웨어 개발 키트(SDK)가 공개되었고, Raspberry Pi나 ESP32 보드만 있으면 화면·버튼·센서를 Muse와 연결할 수 있다고 합니다. Meta는 직접 만든 USB-C 기기 Muse Home Link도 구독자에게 무료로 나눠 준다고 밝혔습니다. 이 글에서는 공식 사이트와 TechCrunch 등 보도에서 확인되는 내용을 중심으로, 무엇이 공개되었고 어떻게 시작하는지, 아직 알려지지 않은 점은 무엇인지 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Meta가 Muse 전용 하드웨어를 직접 만들 수 있는 오픈소스 프로젝트 **Muse Gadgets**를 공개했습니다 (보도일 2026-10-02).",
+  "**ESP32 Device SDK**와 **Linux Device SDK**가 제공되며 라이선스는 Apache 2.0입니다.",
+  "Raspberry Pi 5, Waveshare 원형 AMOLED, Seeed 컬러 e-ink 등 **프로젝트 아이디어 8가지**가 공식 사이트에 소개됩니다.",
+  "Meta가 만든 **Muse Home Link**는 미국 Muse 구독자에게 무료이며, TechCrunch는 5,000대를 만들었다고 전합니다.",
+  "시작하려면 SDK 토큰, Muse 앱의 개발자 모드, 'MuseGadget' 접두어 기기 페어링이 필요합니다.",
+  "이 글에서 배울 것: Muse Gadgets의 구성, 시작 절차, Home Link 조건, 맥락과 한계"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Muse Gadgets 발표, 무엇이 공개되었나요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta의 Muse Gadgets 공식 사이트는 이 프로젝트를 \"직접 만드는 오픈소스 기기\"로 소개합니다. 사이트 설명에 따르면 **ESP32 보드를 프로그래밍하거나 Raspberry Pi를 설정**한 뒤 Meta의 SDK로 Muse를 디스플레이, 버튼, 센서, 액추에이터 등에 연결할 수 있습니다. 사이트는 이를 \"해커가, 해커를 위해, 재미로 만든 것\"이라고 표현하며, 보드가 망가지거나 보증이 무효가 될 수 있으니 본인 책임으로 진행하라는 경고도 적어 두었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch는 2026년 10월 2일 기사에서 Meta가 **오픈소스 펌웨어와 Linux SDK**, 프로젝트 아이디어를 제공한다고 전했습니다. 같은 기사에 따르면 Muse는 여행 예약, 양식 작성, 쇼핑 같은 작업을 처리하는 Meta의 AI 에이전트입니다. Meta Superintelligence Labs의 제품 책임자 Nat Friedman은 X(옛 트위터)에 올린 글에서 Meta가 직접 만든 기기 Muse Home Link를 소개했습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 Muse가 무엇인가요?",
+     "text": "TechCrunch(2026-09-25)에 따르면 Muse는 Meta의 개인 AI 에이전트 앱으로, 2026년 9월 8일 출시되었고 보도 시점 기준 미국과 캐나다에서만 쓸 수 있습니다. 같은 기사는 Sensor Tower의 목요일(9월 24일) 추정치 기준 다운로드가 **340만 건을 넘었다**고 전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧰 SDK 구성: ESP32와 Linux",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 사이트는 SDK를 두 갈래로 나눕니다. **ESP32 Device SDK**는 ESP32 보드를 Muse에 연결하며, 화면으로 이미지를 보여 주거나 오디오 입출력, 다른 센서를 붙일 수 있다고 설명합니다. **Linux Device SDK**는 남는 Raspberry Pi나 Linux 컴퓨터를 Muse 기기로 바꿔, 시스템 관리 작업이나 Home Assistant(스마트홈 플랫폼) 설정을 Muse가 처리하도록 직접 명령을 넣을 수 있게 해 줍니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "GitHub 저장소(facebookincubator/muse-gadget-sdk)는 `/esp32`, `/linux`, `/skills`, `/.github` 폴더로 구성됩니다. 라이선스는 **Apache 2.0**이며, minimp3 라이브러리(CC0-1.0)와 픽셀 글꼴(BSD-2-Clause) 같은 일부 제3자 구성요소와 Jollybot 아바타는 예외로 표시되어 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "ESP32 Device SDK",
+      "Linux Device SDK"
+     ],
+     "rows": [
+      [
+       "대상 하드웨어",
+       "ESP32 보드",
+       "Raspberry Pi 등 Linux 기기"
+      ],
+      [
+       "공식 설명",
+       "화면·오디오·센서 연결",
+       "Home Assistant·시스템 관리 명령 연동"
+      ],
+      [
+       "저장소 폴더",
+       "/esp32",
+       "/linux"
+      ],
+      [
+       "라이선스",
+       "Apache 2.0",
+       "Apache 2.0"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "ESP32 SDK의 README는 가장 빠른 시작용 보드로 **ESP32-C5 DevKitC-1**을 안내하며, 지원 보드 표에는 10월 3일 확인 기준 **15종**이 올라 있습니다 (공개 직후에도 커밋으로 보드가 계속 추가되고 있습니다). 이 중 일부 보드는 움직이는 아바타 화면, 푸시투토크(누르고 말하기), 설정 화면까지 지원한다고 설명합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 프로젝트 아이디어 8가지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 사이트는 시작점으로 **프로젝트 아이디어 8가지**를 보여 줍니다. 아래 표는 사이트에 적힌 목록을 그대로 옮긴 것입니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "기기",
+      "사이트 설명"
+     ],
+     "rows": [
+      [
+       "Raspberry Pi 5",
+       "Home Assistant 등 Linux 애플리케이션과 Muse 연동"
+      ],
+      [
+       "Waveshare ESP32-S3-Touch-AMOLED-1.75C",
+       "1.75인치 원형 AMOLED 터치 화면, 푸시투토크, 스피커·마이크, 배터리"
+      ],
+      [
+       "TV용 Muse (HDMI 스틱)",
+       "사이트에 '곧 공개(coming soon)'로 표시"
+      ],
+      [
+       "Seeed reTerminal E1002",
+       "컬러 e-ink 디스플레이"
+      ],
+      [
+       "M5Stack StickS3",
+       "버튼이 달린 포켓 크기 기기"
+      ],
+      [
+       "AiPi Lite",
+       "화면이 있는 데스크톱 동반 기기"
+      ],
+      [
+       "ideaspark ESP32",
+       "1.9인치 상태 표시 화면"
+      ],
+      [
+       "Home Assistant Voice Preview Edition",
+       "푸시투토크와 LED 링"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch와 Mezha 보도는 이 가운데 **컬러 e-ink 디스플레이와 TV HDMI 스틱**을 예로 들었습니다. 다만 TV용 HDMI 스틱은 공식 사이트에 아직 '곧 공개(Coming soon)'로 표시되어 있어 지금 바로 만들 수 있는 것은 아닙니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I2"
+    },
+    {
+     "type": "info",
+     "title": "💡 어떤 보드로 시작할까요?",
+     "text": "공식 README가 ESP32-C5 DevKitC-1을 권장하므로, 처음이라면 문서와 가장 잘 맞는 보드를 고르는 편이 시행착오를 줄일 수 있습니다. 다만 어떤 보드가 더 낫다는 비교는 공개된 자료에 없습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🏠 Muse Home Link: 무료로 받는 Meta 제작 기기",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta가 직접 만든 기기도 있습니다. 공식 사이트는 **Muse Home Link**를 \"Muse를 집 Wi-Fi에 연결해, 이미 가진 호환 기기나 로컬 HTTP API로 만든 무엇이든 닿게 해 주는\" 기기로 설명합니다. 커뮤니티가 만든 스킬(skill)을 쓰면 조명 켜기, TV 제어, 문서를 프린터로 보내기 같은 일을 할 수 있다고 하며, 실제 가능 여부는 사용자의 환경에 따라 달라진다고 덧붙입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "조건은 **미국 내 활성 Muse 구독자에게 무료, 1인당 1개, 10월 배송, 선착순**입니다. 사이트의 신청 안내에는 신청이 '대기 순번을 잡는 것이며 주문은 아니다'라고 적혀 있습니다. TechCrunch는 Nat Friedman의 글을 인용해 Meta가 **5,000대**를 만들었고, USB-C로 전원을 공급하며 홈 네트워크의 스피커·스마트 TV 같은 기기와 Muse를 연결해 준다고 설명합니다. 같은 기사는 재고가 있는 동안 무료로 나눠 주고, 몇 주 안에 배송 준비가 된다고 전했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용",
+      "출처"
+     ],
+     "rows": [
+      [
+       "가격",
+       "미국 활성 Muse 구독자에게 무료",
+       "공식 사이트"
+      ],
+      [
+       "수량 제한",
+       "1인당 1개, 선착순",
+       "공식 사이트"
+      ],
+      [
+       "배송 시기",
+       "10월 배송 (사이트 표기)",
+       "공식 사이트"
+      ],
+      [
+       "제작 수량",
+       "5,000대",
+       "TechCrunch"
+      ],
+      [
+       "전원",
+       "USB-C",
+       "TechCrunch"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 해외 구독자는 대상이 아닙니다",
+     "text": "공식 사이트는 Home Link 무료 제공을 '미국 내 구독자'로 한정합니다. 그 밖의 지역에서 받을 수 있는지는 공개된 자료에서 확인되지 않습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🚀 시작하는 방법: 공식 README 기준",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub README가 안내하는 기본 흐름은 이렇습니다. 먼저 gadgets.muse.ai의 설정 화면에서 **SDK 토큰**을 받고 Gadget SDK 약관을 확인합니다. 그다음 `/esp32` 또는 `/linux` 폴더의 README에 따라 기기를 굽거나(flash) 설정하고, Muse 앱의 설정 > 기기에서 **개발자 모드**를 켠 뒤 이름이 'MuseGadget'으로 시작하는 기기를 페어링합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "ESP32 SDK 문서는 필요한 것으로 ESP32 보드, 데이터 전송이 되는 USB 케이블, macOS 또는 Linux 컴퓨터, SDK 토큰, Muse 모바일 앱을 꼽습니다. 직접 빌드하려면 **ESP-IDF v6.0.1**을 설치하고 아래 순서로 진행하라고 안내합니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# ESP-IDF v6.0.1 설치 (ESP32 SDK README)\ngit clone -b v6.0.1 --recursive https://github.com/espressif/esp-idf.git ~/esp/esp-idf-v6\n~/esp/esp-idf-v6/install.sh esp32c5,esp32s3,esp32c6,esp32\n. ~/esp/esp-idf-v6/export.sh\n\n# 설정(SDK 토큰 입력) 후 빌드\nidf.py menuconfig\nidf.py build\n\n# 보드에 굽기 (포트 이름은 환경에 맞게 변경)\nidf.py -p /dev/cu.usbmodem1101 flash monitor"
+    },
+    {
+     "type": "paragraph",
+     "text": "README에는 Meta의 코딩 도구 **'Muse Code'**를 쓰는 더 빠른 방법도 적혀 있습니다. 설치 스크립트를 받은 뒤 저장소의 esp32 폴더에서 `muse --disable-sandbox`를 실행하는 방식입니다. README는 이 옵션이 보드의 USB 시리얼 포트에 접근하고 ESP-IDF 도구를 내려받기 위한 것이며, 각 명령은 실행 전에 사용자가 승인한다고 설명합니다. 그래도 샌드박스(격리 실행 환경)를 끄는 옵션이므로 내용을 이해한 뒤에 쓰는 것이 좋습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 설치 스크립트는 내용을 먼저 확인하세요",
+     "text": "README의 빠른 방법은 인터넷에서 받은 스크립트를 바로 실행하고 샌드박스를 비활성화합니다. 이는 공식 안내를 그대로 옮긴 것이며, 실행 전에 스크립트 내용과 권한을 직접 검토하시길 권합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🌐 등장 배경: Muse의 빠른 성장과 기기 확장",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이번 발표는 갑자기 나온 것이 아닙니다. TechCrunch(2026-09-25)에 따르면 Muse는 9월 8일 출시 후 9월 17일까지 다운로드가 전일 대비 평균 **55%씩 늘었고**(Sensor Tower 추정), 9월 18일 미국 App Store 1위, 9월 19일 Google Play 1위에 올랐습니다. 또 앞으로 아바타 화상 채팅, Mac 컴퓨터 사용 지원, 전용 이메일 주소, 추가 파트너 연동, 스마트 안경 지원 등이 예정되어 있다고 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "하드웨어 쪽에서는 TechCrunch(2026-09-23)가 Meta가 Connect 행사에서 손바닥 크기의 AI 웨어러블 **Muse Charm**을 공개했다고 보도했습니다. 작은 화면에 아바타가 나오고 지문 센서로 음성 호출을 하며, 마크 저커버그 CEO는 12월 연말 시즌에 맞춰 출하할 예정이라고 밝혔습니다. 이번 Muse Gadgets는 Meta가 모든 기기를 직접 만들지 않고도 Muse를 여러 공간과 기기로 넓힐 수 있는 길로 해석됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch는 이번 발표가 **Muse for Small Business**와 새 **Meta Enterprise Platform** 부서 신설 같은 기업 대상 확장과 같은 흐름에 있다고도 짚었습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 해석 부분",
+     "text": "'Meta가 기기 생태계를 키우려는 것으로 보인다'는 평가는 보도 내용을 바탕으로 한 해석이며, Meta가 이를 목적으로 명시한 것은 아닙니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 아직 알려지지 않은 것과 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공개 자료에서 확인되지 않는 부분도 있습니다. 공식 사이트와 GitHub README에는 Muse Home Link의 프로세서·메모리 같은 **하드웨어 사양**이나 구독자가 아닌 사람을 위한 판매 계획이 적혀 있지 않습니다. 따라서 사양을 단정하기보다 공식 사이트와 GitHub 문서에 적힌 내용만 기준으로 보는 편이 안전합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "보안과 책임 측면도 있습니다. 공식 사이트는 이 프로젝트를 취미용 해킹 프로젝트처럼 소개하고 **\"보증 없이 있는 그대로(as-is)\" 제공**한다고 밝힙니다. 따라서 업무용 시스템에 곧바로 붙이기보다는 별도 보드에서 먼저 시험해 보는 것이 합리적입니다. Muse에 집 안 기기를 제어하는 권한을 주는 만큼, 어떤 스킬을 설치하는지도 직접 확인해야 합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 이 글에서 다루지 않은 것",
+     "text": "Home Link의 정확한 배송 날짜, 미국 외 지역 제공 계획, 구독자가 아닌 경우의 구매 방법·가격, HDMI TV 스틱의 출시 시점은 공개 자료에 구체적으로 적혀 있지 않습니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Muse Gadgets는 누가, 언제 공개했나요?",
+   "a": "Meta가 공개했고, TechCrunch는 2026년 10월 2일(현지 시간) 기사로 이를 전했습니다. Meta Superintelligence Labs 제품 책임자 Nat Friedman은 X에 올린 글에서 Muse Home Link를 소개했습니다."
+  },
+  {
+   "q": "무엇이 필요하면 직접 만들어 볼 수 있나요?",
+   "a": "공식 README 기준으로 ESP32 보드(또는 Raspberry Pi 같은 Linux 기기), SDK 토큰, Muse 모바일 앱, macOS 또는 Linux 컴퓨터가 필요합니다. ESP32 SDK는 ESP-IDF v6.0.1 설치를 안내합니다."
+  },
+  {
+   "q": "Muse Home Link는 누구나 받을 수 있나요?",
+   "a": "아닙니다. 공식 사이트는 미국 내 활성 Muse 구독자에게 무료이며 1인당 1개, 10월 배송, 선착순이라고 적고 있습니다."
+  },
+  {
+   "q": "소스 코드는 자유롭게 쓸 수 있나요?",
+   "a": "디바이스 SDK와 펌웨어는 Apache 2.0 라이선스로 공개되었습니다. 다만 일부 제3자 구성요소와 Jollybot 아바타는 별도 라이선스 또는 예외로 표시되어 있으니 저장소의 라이선스 안내를 확인하세요."
+  },
+  {
+   "q": "Muse는 어느 나라에서 쓸 수 있나요?",
+   "a": "TechCrunch(2026-09-25) 보도 시점 기준으로 미국과 캐나다에서만 이용할 수 있습니다."
+  }
+ ],
+ "closing": "지금까지 Meta의 Muse Gadgets에 대해 알아보았습니다. Meta는 펌웨어와 Linux·ESP32 SDK를 Apache 2.0으로 공개했고, 8가지 프로젝트 아이디어와 미국 구독자 대상 무료 Home Link로 개발자 참여를 유도하고 있습니다. 다만 Home Link의 하드웨어 사양, 지역별 제공 범위, TV 스틱 일정은 아직 공개 자료로 확인되지 않으니 공식 사이트와 GitHub를 계속 확인하시는 것이 좋습니다. 여러분도 한번 Muse Gadgets를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "Home Link 제공 조건·SDK 요구사항은 바뀔 수 있으니 공식 사이트와 GitHub에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "Meta",
+  "Muse",
+  "MuseGadgets",
+  "AI에이전트",
+  "오픈소스",
+  "ESP32",
+  "RaspberryPi",
+  "MuseHomeLink",
+  "AI하드웨어",
+  "SDK",
+  "스마트홈",
+  "AI뉴스",
+  "메타AI",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S5",
+  "S6",
+  "S7",
+  "S8"
+ ]
+}

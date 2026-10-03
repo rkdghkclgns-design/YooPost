@@ -1,0 +1,91 @@
+{
+ "topic": "Meta wants you to build your own Muse gadget (Muse Gadgets: open source hardware for your Muse)",
+ "source_url": "https://techcrunch.com/2026/10/02/meta-wants-you-to-build-your-own-muse-gadget/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Meta wants your next gadget to be Muse-infused",
+   "url": "https://techcrunch.com/2026/10/02/meta-wants-you-to-build-your-own-muse-gadget/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Muse Gadgets: Open source hardware for your Muse",
+   "url": "https://gadgets.muse.ai/",
+   "publisher": "Meta (Muse)",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Meta Opens Muse Gadgets to Developers and Reveals a USB-C Home Link",
+   "url": "https://mezha.net/eng/news/7cb3896c_meta_opens_muse/",
+   "publisher": "Mezha",
+   "published": "2026-10-03",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "facebookincubator/muse-gadget-sdk",
+   "url": "https://github.com/facebookincubator/muse-gadget-sdk",
+   "publisher": "Meta (GitHub)",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Muse Gadget SDK - ESP32 Device SDK",
+   "url": "https://github.com/facebookincubator/muse-gadget-sdk/tree/main/esp32",
+   "publisher": "Meta (GitHub)",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Meta is putting its muscle behind Muse as the AI app takes off",
+   "url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-25",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Meta made a Tamagotchi-like wearable for its Muse AI agent",
+   "url": "https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://gadgets.muse.ai/gadgets/muse-gadgets-lineup.png",
+   "page_url": "https://gadgets.muse.ai/",
+   "caption": "Muse Gadgets 기기들: Waveshare 원형 AMOLED, M5Stack StickS3, Muse Home Link, Raspberry Pi, Seeed reTerminal e-ink",
+   "credit": "Meta (Muse Gadgets)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://gadgets.muse.ai/gadgets/seeed-e1002-briefing-photo.webp",
+   "page_url": "https://gadgets.muse.ai/",
+   "caption": "프로젝트 아이디어 중 Seeed reTerminal E1002 컬러 e-ink 디스플레이",
+   "credit": "Meta (Muse Gadgets)"
+  }
+ ],
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 64,
+  "removed": [
+   "한 매체(Technosports)는 정식 가격·출시일, 프로세서·메모리 같은 사양이 정해지지 않았다고 정리했는데, 이는 Home Link가 아닌 일반 '기기'에 대한 설명으로 보이며 Meta의 공식 자료에서 확인된 내용은 아닙니다. (Technosports 원문이 발표일을 10월 3일로 잘못 적는 등 신뢰도가 낮아 출처 S4 와 함께 삭제, 공식 사이트·README 기준 문장으로 대체)",
+   "GitHub README는 기본 흐름을 다섯 단계로 안내합니다 ('다섯 단계' 표현 — README 에 그런 단계 구분 없음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). gadgets.muse.ai HTML·이미지 Last-Modified, GitHub 저장소 clone(README·esp32/README·git log), TechCrunch 3건·Mezha·Technosports 원문 HTML(JSON-LD datePublished)을 curl 로 직접 다시 열어 확인. 수정: '14종 이상 보드'→README 표 15종(10/3 기준), Sensor Tower 340만은 9/24(목) 추정치, 55% 성장은 9/8~17 전일 대비 평균, 'Friedman X 글로 발표'→Friedman 이 X 에서 Home Link 소개, 'Mezha·TC가 눈에 띈다고'→예로 들었다, Home Link 신청은 주문이 아닌 대기 순번(공식 사이트) 추가, --disable-sandbox 용도·명령별 승인(README) 추가, 이미지 I1 캡션(Home Link 는 프로젝트 아이디어가 아님) 수정. 날짜: S2 공식 사이트는 페이지·메타에 날짜 없음 → GitHub 저장소 Initial commit 2026-10-02 11:21 PDT 및 사이트 이미지 Last-Modified 2026-10-02 22:49 GMT 근거로 2026-10-02 유지. S5·S6 은 Initial commit 2026-10-02 로 확인. S1 2026-10-02 17:45 PDT(=10-03 00:45 UTC), S7 2026-09-25, S8 2026-09-23 17:46 PDT, S3 Mezha 2026-10-03 05:01 +02:00 확인. EGRESS_BLOCKED 출처 없음. 이미지 I1(image/png)·I2(image/webp) 직접 내려받아 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
