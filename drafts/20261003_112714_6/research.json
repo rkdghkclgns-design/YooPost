@@ -1,0 +1,79 @@
+{
+ "topic": "Fair Moderation, Equitable Access, and AI: arXiv's Updated Rate Limit Policy (arXiv, 2026-10-01)",
+ "source_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Fair Moderation, Equitable Access, and AI: arXiv's Updated Rate Limit Policy",
+   "url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+   "publisher": "arXiv",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "arXiv updates its rate limiting policy",
+   "url": "https://terrytao.wordpress.com/2026/10/01/arxiv-updates-its-rate-limiting-policy/",
+   "publisher": "Terence Tao 블로그",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The arXiv limit",
+   "url": "https://telescoper.blog/2026/10/02/the-arxiv-limit/",
+   "publisher": "telescoper.blog (In the Dark)",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "arXiv now limits every researcher to two paper submissions a month",
+   "url": "https://startupfortune.com/arxiv-now-limits-every-researcher-to-two-paper-submissions-a-month/",
+   "publisher": "Startup Fortune",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "arXiv Is Killing Itself So AI Doesn't Have To",
+   "url": "https://pracheeac.substack.com/p/arxiv-is-killing-itself-so-ai-doesnt",
+   "publisher": "Prachee Avasthi (Substack)",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://i0.wp.com/blog.arxiv.org/wp-content/uploads/2026/10/arXiv-Monthly-Submissions-September-2026.png?resize=1024%2C642&ssl=1",
+   "page_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+   "caption": "arXiv 월간 제출 건수 추이 (1991년~현재, 2026년 9월 40,363건 강조)",
+   "credit": "arXiv"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://i0.wp.com/blog.arxiv.org/wp-content/uploads/2026/10/cs.AI_.growthchart-1.png?resize=1024%2C758&ssl=1",
+   "page_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+   "caption": "arXiv cs.AI 카테고리 월별 제출 건수 증가 추이 (2024~2026년)",
+   "credit": "arXiv"
+  }
+ ],
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "corrected": [
+   "'약 9,000건' 지원 티켓 → '9,000건 가까이'(원문 almost 9,000) — 요약·본문",
+   "telescoper.blog 의 'AI 가 상투적 논문을 쏟아내게 한다'를 arXiv 인용으로 쓴 부분 → 블로그 글쓴이의 정리로 고치고 arXiv 는 AI 비율을 밝히지 않았음을 명시",
+   "Tao 소개 문구를 원문('exponential growth of submissions', 'at most two a month for each submitter') 범위로 다듬음",
+   "Dietterich 인용: 지연(며칠~몇 주) 언급은 arXiv 일반 설명이 아니라 Dietterich 인용문 안의 발언으로 고침",
+   "I2 캡션을 차트 제목(cs.AI submissions per month, 2024-2026)에 맞춤"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S5 를 2026-10-03 curl 로 다시 열어(모두 HTTP 200, EGRESS_BLOCKED 없음) 수치(9,869/20,569/40,363건, 9,000건 가까운 티켓, cs.AI 6배 이상, 다른 카테고리 2배, 월 2편·동시 3편, 2024년부터 동시 3편)·FAQ 6항목·Dietterich 직함·작성자 Kat Boboris·Lewko 댓글·Lambert 주장·r/MachineLearning 116점·Avasthi 대안을 원문과 대조. published 는 페이지 표시 날짜와 일치(S1 2026-10-01, S2 '1 October, 2026', S3 October 2, S4 Oct 2, S5 Oct 02). 매체 간 어긋남: Startup Fortune 은 Dietterich 를 'computer science advisory section' 의장, 한도를 'every author' 로 적었으나 원고는 arXiv 원문(Editorial Advisory Council 의장, submitter 기준)을 따름. 이미지 I1·I2 는 arXiv 블로그 본문 차트로 HTTP 200 image/png(1024x642, 1024x758) 확인, 내용이 캡션과 일치. 해석 문장은 '제 해석'으로 표시됨."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790992424011969",
+  "kind": "all"
+ }
+}
