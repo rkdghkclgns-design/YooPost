@@ -1,0 +1,76 @@
+{
+ "topic": "Claude Code mods (Claude Mods) — Claude Code v2.1.287 (2026-10-01)",
+ "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Code changelog (v2.1.287: Added Claude Mods)",
+   "url": "https://code.claude.com/docs/en/changelog",
+   "publisher": "Anthropic",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Mods overview",
+   "url": "https://code.claude.com/docs/en/plugins/mods/overview",
+   "publisher": "Anthropic",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Create a mod",
+   "url": "https://code.claude.com/docs/en/plugins/mods/create",
+   "publisher": "Anthropic",
+   "published": "2026-10-03",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Manage mods for your organization",
+   "url": "https://code.claude.com/docs/en/plugins/mods/admin",
+   "publisher": "Anthropic",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Claude Code's new Mods system lets developers rewrite the AI coding tool from the inside",
+   "url": "https://the-decoder.com/claude-codes-new-mods-system-lets-developers-rewrite-the-ai-coding-tool-from-the-inside/",
+   "publisher": "THE DECODER",
+   "published": "2026-10-03",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Anthropic Launches Claude Code Mods, TypeScript Agent Hooks",
+   "url": "https://aiweekly.co/alerts/anthropic-launches-claude-code-mods-typescript-agent-hooks",
+   "publisher": "AI Weekly",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Customize Claude Code with mods in TypeScript",
+   "url": "https://claude.com/blog/claude-code-mods",
+   "publisher": "Anthropic",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 문서의 모드 시연 자료가 영상(mp4)뿐이고 본문에 실린 정지 이미지(스크린샷·도표)가 없음",
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 63,
+  "removed": [
+   "AI Weekly도 ... 보안 모델이 가장 큰 쟁점이라고 짚었습니다 (원문에 '가장 큰 쟁점' 표현 없음 — 편집자 코멘트의 공급망 위험 지적으로 고쳐 씀)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): changelog v2.1.287(October 1, 2026)·mods overview/create/admin 문서·THE DECODER(Oct 3, 2026, article:published_time 2026-10-03)·AI Weekly(본문 'October 2, 2026 at 08:02 UTC', datePublished 2026-10-02)·Anthropic 블로그(October 1, 2026, S7 추가)를 다시 열어 버전·날짜·명령어·설정 키·내장/샘플 모드 이름·실행 환경 표·보안 항목을 하나씩 대조. 문서 페이지(S2~S4)는 게시일 표시가 없어 페이지 메타 dateModified 로 published 수정(S2 10-02, S3 10-03, S4 10-02). first-mod 코드가 개요의 축약판임을 명시, 핫 리로드 설명 정확화, 공식 블로그 문단 추가. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}

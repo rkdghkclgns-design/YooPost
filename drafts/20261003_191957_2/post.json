@@ -1,0 +1,417 @@
+{
+ "title": "🧩 Claude Code 모드(mods) 사용 가이드: v2.1.287 플러그인으로 동작·화면 바꾸기 총정리",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 10월 1일, Anthropic이 Claude Code v2.1.287에 **모드(mods)** 기능을 추가했습니다. 모드는 플러그인 안의 JavaScript/TypeScript 함수로 Claude Code의 도구 호출, 프롬프트, 화면 그리기까지 바꿀 수 있게 하는 기능입니다. 공식 문서는 /diff 같은 기존 기능도 이미 모드로 만들어졌다고 밝히고 있고, 여러 매체는 샌드박스가 없는 보안 구조를 함께 짚었습니다. 이 글에서는 모드가 무엇인지, 어떻게 설치하고 만드는지, 조직 관리자는 무엇을 설정해야 하는지 공식 문서 기준으로 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Anthropic이 2026-10-01 Claude Code v2.1.287에 '모드(mods)'를 추가했습니다.",
+  "모드는 도구 호출·프롬프트·화면 그리기 같은 이벤트에 걸리는 JS/TS 이벤트 핸들러를 담은 플러그인입니다.",
+  "/plugin install 이름@마켓플레이스 로 설치하고, Claude에게 만들어 달라고 할 수도 있습니다.",
+  "/diff, AGENTS.md 로더 등 Claude Code 자체 기능 일부가 이미 내장 모드입니다.",
+  "모드는 샌드박스 없이 사용자 권한으로 실행되므로 신뢰할 수 있는 출처만 설치해야 합니다.",
+  "조직은 allowManagedModsOnly 등 관리 설정으로 모드를 제어할 수 있습니다.",
+  "이 글에서 배울 것: 모드의 개념, 설치·제작 방법, 보안 점검과 조직 정책"
+ ],
+ "sections": [
+  {
+   "heading": "🧩 Claude Code 모드(mods)란 무엇인가",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서는 모드를 이렇게 정의합니다. **모드는 Claude Code의 모양과 동작을 바꾸는 플러그인**이며, 도구 호출·프롬프트 제출·화면의 일부를 그리는 순간 같은 이벤트가 일어날 때 Claude Code가 불러 주는 JavaScript 또는 TypeScript 이벤트 핸들러(event handler, 사건이 생기면 실행되는 함수)로 이루어집니다. 핸들러는 이벤트를 지켜보거나, 바꾸거나, 아예 넘겨받아 처리할 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "기존 설정 파일의 훅(hook)은 셸 명령·HTTP 요청·프롬프트를 실행하는 방식이었지만, 모드의 핸들러는 **Claude Code 프로세스 안에서 직접 실행되는 함수**라는 점이 다릅니다. 공식 문서는 이 문서 안에서 모드의 핸들러를 '훅'이라고 부르고, 설정 파일 쪽은 '설정 훅'이라고 구분합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 변경 내역(changelog)에서 이 기능은 **v2.1.287**의 첫 항목인 'Added Claude Mods: plugins may now modify deeper behavior'로 기록되어 있고, 날짜는 2026-10-01입니다. 문서에 따르면 모드는 Claude Code v2.1.287 이상에서 필요하고 기본으로 켜져 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "기능 이름",
+       "Claude Code 모드(mods)"
+      ],
+      [
+       "버전",
+       "Claude Code v2.1.287 이상 (기본 켜짐)"
+      ],
+      [
+       "변경 내역 날짜",
+       "2026-10-01"
+      ],
+      [
+       "형태",
+       "플러그인 안의 JavaScript/TypeScript 이벤트 핸들러"
+      ],
+      [
+       "동작 위치",
+       "Claude Code CLI, 데스크톱 앱의 Code 탭 (그리는 화면 기준)"
+      ],
+      [
+       "코드 실행 권한",
+       "설치한 사용자와 같은 권한, 샌드박스 없음"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 훅과 무엇이 다른가",
+     "text": "공식 문서의 비교표에 따르면 설정 훅은 이벤트를 허용·차단·기록하는 스크립트를 이미 갖고 있을 때, 스킬은 같은 지시를 계속 붙여 넣을 때, MCP 서버는 외부 시스템에 접근해야 할 때 고르는 도구입니다. 모드는 **창(pane)·프롬프트 위 띠·사용자 정의 명령을 그리거나 이벤트를 다시 쓰고 싶을 때** 고릅니다."
+    }
+   ]
+  },
+  {
+   "heading": "📰 모드 등장 배경과 업계 반응",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "독일 AI 전문 매체 **THE DECODER**는 2026-10-03자 기사에서 Anthropic이 Claude Code용 모드를 내놓았다고 전하며, 개발자가 AI 코딩 도구의 모양과 기능을 플러그인 구조로 바꿀 수 있게 하는 미들웨어(middleware, 중간에서 동작을 끼워 넣는 계층) 시스템이라고 소개했습니다. 이 기사는 모드가 도구 호출과 사용자 프롬프트부터 화면 그리기까지 다양한 이벤트에 걸린다고 설명합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Anthropic도 같은 날(2026-10-01) 공식 블로그 글 'Customize Claude Code with mods in TypeScript'를 올려 **모드는 프롬프트를 다시 쓰고, 새 UI를 더하고, 내장 기능을 바꾸거나 새 기능을 얹을 수 있다**고 소개했습니다. 이 글은 `/diff`가 이제 모드여서 `/plugin`에서 끄거나 직접 만든 버전으로 바꿀 수 있다고 밝히고, 모드는 샌드박스 없이 Claude Code와 같은 권한으로 실행되므로 **신뢰할 수 있는 출처의 모드만 설치하라**고 당부했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "AI Weekly도 같은 소식을 다루면서 모드를 프롬프트를 고치고 새 UI를 더하고 내장 기능을 바꾸거나 새 기능을 얹을 수 있는 TypeScript 함수로 소개했고, 편집자 코멘트에서 **보안 문제를 기업의 공급망(supply chain) 위험**으로 짚었습니다. `/plugin`으로 설치한 모드는 기기 전체 권한으로 실행되어 프롬프트를 가로채고 도구 호출을 다시 쓸 수 있으며, 마켓플레이스 검증 기준도 없다는 지적입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 문서에서 눈에 띄는 대목은 **Claude Code 자신의 기능 일부가 이미 모드로 만들어져 있다**는 점입니다. `/plugin`의 Installed 탭에서 Built-in 항목으로 확인할 수 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "내장 모드 이름",
+      "하는 일"
+     ],
+     "rows": [
+      [
+       "cc-plugin-agents-md",
+       "AGENTS.md를 프로젝트 지침으로 불러옴"
+      ],
+      [
+       "cc-plugin-diff",
+       "/diff 명령을 넘겨받아 창을 그림"
+      ],
+      [
+       "cc-plugin-plugin-authoring",
+       "모드 작성용 plugin-authoring 스킬을 Claude에게 제공"
+      ],
+      [
+       "cc-plugin-sec-default",
+       "조직이 관리하는 것을 사용자 모드로부터 보호하는 가드"
+      ],
+      [
+       "cc-plugin-telemetry",
+       "Claude Code와 내장 모드의 분석 기록 전송"
+      ],
+      [
+       "cc-plugin-you-should-know",
+       "긴 작업 중 놓칠 만한 내용을 알려 주는 보조 에이전트 (기본 꺼짐)"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 You Should Know 켜기",
+     "text": "문서 기준으로 `cc-plugin-you-should-know`는 기본적으로 꺼져 있으며, 조직에서 쓸 수 있을 때 `/plugin enable cc-plugin-you-should-know@builtin`으로 켭니다. 켜면 Claude가 긴 작업을 하는 동안 옆에서 지켜보다가 사용자가 놓칠 만한 내용을 프롬프트 위에 메모로 보여 줍니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 모드로 할 수 있는 일",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서는 설정 훅·스킬·상태줄·MCP 서버가 Claude Code **바깥**에서 동작하는 반면 모드는 **안**에서 동작하므로 다음을 할 수 있다고 정리합니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**사용할 수 있는 화면 그리기**: 대화 기록 옆의 창(pane)이나 프롬프트 위의 띠에 탭·버튼·입력란을 그림",
+      "**Claude Code 자체 화면 다시 그리기**: 도구 호출 행, 스피너, Claude가 질문하는 대화상자 등을 바꿈",
+      "**도구 호출·요청에 끼어들기**: 도구 호출을 잡아 두고 사용자에게 묻거나, 도구를 실행하지 않고 대신 답하거나, 요청 하나를 다른 모델로 보냄",
+      "**명령 직접 실행**: Claude 턴 없이 즉시 함수를 실행하는 /명령 추가",
+      "**훅 간 데이터 공유**: 한 모드 파일 안의 훅들이 변수를 공유 (예: 도구 호출 수를 세는 훅과 스피너 옆에 보여 주는 훅)"
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Anthropic은 샘플 모드도 `claude-code-playground` 저장소의 `claude-code/mods` 폴더에 공개했습니다. **지원 없이 있는 그대로 공유되는 예제**입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "샘플 모드",
+      "하는 일"
+     ],
+     "rows": [
+      [
+       "token-weather",
+       "프롬프트 위에 컨텍스트 창 예보를 그림"
+      ],
+      [
+       "blast-radius",
+       "rm -rf나 강제 푸시 같은 위험한 셸 명령을 잡아 두고 바뀔 내용을 보여 주며 진행/취소 버튼 제공"
+      ],
+      [
+       "replay-theater",
+       "/replay 명령으로 직전 턴에서 Claude가 한 파일 수정을 단계별로 재생"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 모드 목록을 보는 법",
+     "text": "현재 세션에서 로드된 모드는 터미널에서 `/plugin`을 실행하면 탭 아래 흐린 줄에 `1 mod active · first-mod`처럼 개수와 이름이 표시됩니다. 다만 내장 모드는 이 줄에서 빠집니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 모드 설치·사용 가이드 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "모드는 **마켓플레이스(marketplace)에서 플러그인으로 설치**합니다. 플러그인 이름, `@`, 마켓플레이스 이름을 차례로 씁니다. 공식 문서의 예시는 `your-org` 마켓플레이스의 `token-chart` 플러그인입니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# Claude Code 세션 안에서\n/plugin install token-chart@your-org\n\n# 또는 셸에서\nclaude plugin install token-chart@your-org\n\n# 세션이 열린 상태에서 셸로 설치·업데이트했다면 세션에서\n/reload-plugins"
+    },
+    {
+     "type": "paragraph",
+     "text": "먼저 **버전을 확인**하세요. 모드는 v2.1.287 이상이 필요하므로 셸에서 `claude --version`을 실행해 봅니다. 샘플 모드를 한 세션만 써 보려면 저장소를 클론한 뒤 `--plugin-dir`로 모드 폴더를 지정합니다. 이 옵션은 설치 없이 한 세션 동안만 플러그인 폴더를 로드합니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "claude --version\nclaude --plugin-dir ./first-mod"
+    },
+    {
+     "type": "paragraph",
+     "text": "직접 코딩하지 않아도 됩니다. 대화형 세션에서 `make a mod that shows the current git branch above the prompt`처럼 원하는 모드를 말하면 Claude가 내장 `plugin-authoring` 스킬로 작성합니다. 이때 **핫 리로드를 이 세션에서 켤지** 묻는 승인 창이 뜨며, 허용(Enable for this session)하면 턴이 끝날 때 모드가 로드되고, 이후 모드 파일을 바꾼 턴이 끝날 때마다 다시 로드됩니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ Claude가 쓴 모드는 임시 폴더에 있습니다",
+     "text": "Claude가 작성한 모드는 `~/.claude/dev-mods/<세션 ID>/` 아래에 만들어지고 그 세션에서만 로드됩니다. 이 폴더는 `cleanupPeriodDays`보다 오래되면 삭제되므로 계속 쓰려면 `~/mods/git-branch`처럼 다른 곳으로 복사한 뒤 `claude --plugin-dir ~/mods/git-branch`로 불러옵니다."
+    }
+   ]
+  },
+  {
+   "heading": "✍️ 직접 만들어 보기: first-mod 예제",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 문서의 튜토리얼은 도구 호출 횟수를 세어 스피너 옆에 보여 주고 `/tally` 명령으로 출력하는 `first-mod`를 만듭니다. 파일은 세 개입니다: `.claude-plugin/plugin.json`(매니페스트), `hooks/hooks.json`(코드 위치), `hooks/register.js`(코드). **Node.js, 번들러, 빌드 단계는 필요 없고** Claude Code가 `.js`와 `.ts` 파일을 바로 로드합니다."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"description\": \"The first-mod hooks module\",\n  \"modules\": [\"./register.js\"]\n}"
+    },
+    {
+     "type": "paragraph",
+     "text": "`hooks.json`의 `modules` 키가 있어야 그 플러그인이 모드가 됩니다. 아래 코드는 공식 개요 문서에 실린 축약판(도구 호출 세기 + 스피너 표시)이고, 튜토리얼 완성본에는 `/tally` 명령을 등록하는 `session.start`·`command.run` 훅이 더 들어갑니다. 코드의 핵심은 `register(on)` 함수가 `on`으로 이벤트별 훅을 등록하는 구조이며, 모든 훅은 **mods API(`$`), 이벤트(`e`), 다음 핸들러(`next`)** 세 인자를 받습니다."
+    },
+    {
+     "type": "code",
+     "language": "javascript",
+     "code": "let calls = 0\n\nexport function register(on) {\n  on('tool.call', async ($, e, next) => {\n    calls += 1\n    $.ui.invalidate('ui.render')\n    return next(e)\n  })\n\n  on('ui.render', { component: 'Spinner' }, async ($, e, next) => {\n    return next({ ...e, props: { ...e.props, suffix: ' · tool calls: ' + calls + '…' } })\n  })\n}"
+    },
+    {
+     "type": "paragraph",
+     "text": "훅이 이벤트를 다루는 방식은 세 가지입니다. **관찰**(그대로 두고 `next(e)` 반환), **다시 쓰기**(바꾼 사본을 `next`에 전달), **응답**(`next`를 부르지 않고 자체 결과 반환)입니다. 실행은 `claude --plugin-dir ./first-mod`로 하고, 비대화형 확인은 `claude -p \"/tally\" --plugin-dir ./first-mod`로 합니다. 코드를 저장하면 세션이 열린 채로 핫 리로드됩니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "점검 도구",
+      "명령",
+      "확인하는 것"
+     ],
+     "rows": [
+      [
+       "정적 분석",
+       "claude plugin validate ./first-mod",
+       "hooks: 줄과 calls: 줄로 처리하는 이벤트와 호출하는 API 확인"
+      ],
+      [
+       "자동 테스트",
+       "claude plugin test",
+       "세션·로그인·네트워크 없이 이벤트를 발생시켜 훅 결과 검증"
+      ],
+      [
+       "타입 정의",
+       "--plugin-dir로 로드 시 .claude-plugin/types/ 에 .d.ts 생성",
+       "현재 버전의 이벤트·API·요소 자동완성"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 validate 규칙",
+     "text": "정적 분석이 모든 훅과 호출을 찾을 수 있도록 이벤트 이름은 `'tool.call'`처럼 문자열 리터럴로 쓰고, mods API는 `$.store.get('notes')`처럼 `$`, 네임스페이스, 메서드를 전부 써야 합니다. `const ui = $.ui`처럼 변수에 담으면 검증에 실패합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🏢 조직 관리자가 알아야 할 설정",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "모드는 기본으로 켜져 있어서 조직 관리자라면 정책을 확인해야 합니다. 공식 관리자 문서에 따르면 팀·엔터프라이즈 플랜에 로그인했거나 기기에 관리 설정(managed settings)이 있으면 **내장 가드 `sec-default`가 사용자 모드보다 먼저 로드**되며 사용자는 끌 수 없습니다. 이 가드는 관리 훅이 받는 내용, 시스템 프롬프트, 관리되는 CLAUDE.md 같은 조직 관리 대상을 사용자 모드가 바꾸지 못하게 지킵니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "사용자가 가져오는 모드를 모두 막으려면 관리 설정에 `allowManagedModsOnly` 옵션을 켭니다. 이 옵션은 **관리 설정에서만 읽히므로** 사용자·프로젝트·로컬 설정 파일에 같은 항목을 써도 효과가 없습니다."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"pluginConfigs\": {\n    \"cc-plugin-sec-default@builtin\": {\n      \"options\": {\n        \"allowManagedModsOnly\": true\n      }\n    }\n  }\n}"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "원하는 정책",
+      "설정"
+     ],
+     "rows": [
+      [
+       "설치된 모드 모두 차단, 훅은 유지",
+       "allowManagedModsOnly 설정, 조직 모드는 배포 안 함"
+      ],
+      [
+       "모드와 훅 전부 차단 (관리 훅 포함)",
+       "disableAllHooks 를 true 로"
+      ],
+      [
+       "승인한 마켓플레이스의 모드만 허용",
+       "마켓플레이스 제한 유지 + disableSideloadFlags true"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ disableAllHooks 는 가장 넓은 설정",
+     "text": "관리 설정의 `disableAllHooks`는 설치된 모든 플러그인의 모드를 멈출 뿐 아니라 설정 파일의 모든 훅을 꺼서 관리 `PreToolUse` 훅의 차단도 사라지고, 사용자 정의 상태줄과 `/goal`도 멈춥니다. 쓰기 전에 설정 문서를 읽어야 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 보안과 한계",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 중요한 한계는 **모드가 샌드박스 안에서 동작하지 않는다**는 점입니다. 공식 문서에 따르면 모드는 사용자 계정이 접근할 수 있는 어디서든 파일을 읽고 쓰고, 프로그램을 시작하고, 네트워크 요청을 보낼 수 있습니다. 환경 변수와 설정 파일에 든 API 키도 읽을 수 있고, 모든 프롬프트와 도구 호출을 볼 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "모드는 프롬프트나 도구 호출을 바꾸고, 사용자가 입력한 것처럼 프롬프트를 제출하고, 권한을 묻기 전에 도구 호출을 승인하고, 사용자의 요금제나 API 키로 모델을 호출할 수도 있습니다. 다만 **권한 확인 창 자체는 바꿀 수 없어** 창에 보이는 내용을 모드가 고칠 수는 없습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "실행 환경",
+      "훅 실행",
+      "모드가 그린 화면"
+     ],
+     "rows": [
+      [
+       "터미널 claude",
+       "예",
+       "예"
+      ],
+      [
+       "데스크톱 앱 Code 탭 (WSL 제외)",
+       "예",
+       "예 (터미널 전용 요소 제외)"
+      ],
+      [
+       "VS Code 확장 채팅 패널",
+       "예",
+       "아니오"
+      ],
+      [
+       "claude -p, Agent SDK",
+       "예",
+       "아니오"
+      ],
+      [
+       "데스크톱 앱 WSL 세션",
+       "아니오",
+       "아니오"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 설치 전에 validate 로 확인하세요",
+     "text": "플러그인 파일을 받은 뒤 `claude plugin validate ./some-mod`를 실행하면 실행 없이 `hooks:`와 `calls:` 줄이 나옵니다. `$.fs.write`, `$.process.run`, `$.http.fetch`, `$.env.get` 같은 호출이 있으면 파일 쓰기·프로그램 실행·네트워크·환경 변수 읽기를 한다는 뜻이므로 신뢰할 수 있는 작성자인지 먼저 확인해야 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "문제가 생기면 **모드를 끄는 방법이 여러 단계로** 있습니다: `/plugin`의 Installed 탭에서 하나만 끄기, `--safe-mode`로 한 세션의 설치된 모드 전체 끄기, `~/.claude/settings.json`에 `\"disableAllHooks\": true`를 넣어 모든 세션에서 끄기입니다. 또한 모드의 이벤트와 메서드는 릴리스 사이에 바뀔 수 있다고 문서가 밝히고 있어, 작성한 모드의 README에 테스트한 Claude Code 버전을 적는 것이 좋습니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "모드를 쓰려면 어떤 버전이 필요한가요?",
+   "a": "공식 문서 기준 Claude Code v2.1.287 이상이 필요하고 기본으로 켜져 있습니다. 셸에서 claude --version으로 확인하고 오래됐다면 업데이트하세요."
+  },
+  {
+   "q": "모드와 기존 훅(settings hook)은 어떻게 다른가요?",
+   "a": "설정 훅은 셸 명령·HTTP 요청·프롬프트를 설정 파일에 적어 실행하지만 모드의 핸들러는 Claude Code 안에서 실행되는 함수입니다. 그래서 모드는 화면을 그리거나 명령을 추가할 수 있습니다. 문서는 기존 훅이 폐지되는 것이 아니라 함께 동작한다고 설명합니다."
+  },
+  {
+   "q": "모드를 직접 코딩하지 않고도 만들 수 있나요?",
+   "a": "가능합니다. 대화형 세션에서 원하는 기능을 설명하면 Claude가 plugin-authoring 스킬로 모드를 작성합니다. 다만 핫 리로드를 켤지 묻는 승인이 필요하고, -p 실행이나 dontAsk 모드처럼 승인할 사람이 없는 세션에서는 로드되지 않습니다."
+  },
+  {
+   "q": "모드를 설치해도 안전한가요?",
+   "a": "모드는 샌드박스 없이 사용자와 같은 권한으로 실행되므로 신뢰할 수 있는 작성자와 마켓플레이스의 것만 설치해야 합니다. 설치 전 claude plugin validate로 호출하는 API를 확인할 수 있고, 문제가 있으면 --safe-mode로 끌 수 있습니다."
+  },
+  {
+   "q": "VS Code 확장에서도 모드가 보이나요?",
+   "a": "문서 표에 따르면 VS Code 확장의 채팅 패널에서는 훅은 실행되지만 모드가 그린 화면은 나타나지 않습니다. 화면을 그리는 모드는 터미널과 데스크톱 앱의 Code 탭에서 보입니다."
+  }
+ ],
+ "closing": "지금까지 Claude Code 모드에 대해 알아보았습니다. 모드는 설정 파일의 훅보다 한 걸음 더 들어가 Claude Code 안에서 화면을 그리고 이벤트를 바꾸는 확장 방식이며, 설치는 /plugin 한 줄이면 됩니다. 반면 샌드박스가 없고 사용자 권한으로 실행되기 때문에, 설치 전에 claude plugin validate로 무엇을 호출하는지 확인하는 습관이 중요합니다. 이벤트와 메서드는 릴리스마다 바뀔 수 있다는 점도 기억해 두세요. 여러분도 한번 모드를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "모드의 이벤트·API·관리 설정은 Claude Code 버전에 따라 바뀔 수 있으니 공식 문서에서 최신 내용을 확인하세요.",
+ "hashtags": [
+  "ClaudeCode",
+  "클로드코드",
+  "Anthropic",
+  "모드",
+  "mods",
+  "플러그인",
+  "AI코딩",
+  "AI에이전트",
+  "개발도구",
+  "TypeScript",
+  "보안",
+  "AI백과사전",
+  "v2_1_287"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7"
+ ]
+}
