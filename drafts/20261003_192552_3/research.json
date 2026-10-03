@@ -1,0 +1,83 @@
+{
+ "topic": "Hierarchical Continuous Diffusion Language Models (UIUC, arXiv 2610.02193, 2026-10-01)",
+ "source_url": "https://arxiv.org/abs/2610.02193",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hierarchical Continuous Diffusion Language Models",
+   "url": "https://arxiv.org/abs/2610.02193",
+   "publisher": "arXiv",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hierarchical Continuous Diffusion Language Models (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.02193",
+   "publisher": "Hugging Face",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "HC-DLM: Hierarchical Continuous Diffusion Language Models (project page)",
+   "url": "https://hc-dlm.github.io/",
+   "publisher": "HC-DLM authors (UIUC)",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hierarchical Continuous Diffusion Language Models (arXiv HTML full text, v1)",
+   "url": "https://arxiv.org/html/2610.02193v1",
+   "publisher": "arXiv",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://hc-dlm.github.io/assets/comparison3.png",
+   "page_url": "https://hc-dlm.github.io/",
+   "caption": "HC-DLM 등장 배경: 이산·연속·하이브리드·HC-DLM의 역방향 단계 비교",
+   "credit": "HC-DLM authors (hc-dlm.github.io)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://hc-dlm.github.io/assets/pipeline_train_v2.webp",
+   "page_url": "https://hc-dlm.github.io/",
+   "caption": "HC-DLM 학습 파이프라인: 인코더, 순방향 커널, 세 손실",
+   "credit": "HC-DLM authors (hc-dlm.github.io)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://hc-dlm.github.io/assets/lm1b_cfg.webp",
+   "page_url": "https://hc-dlm.github.io/",
+   "caption": "HC-DLM 벤치마크 결과: LM1B 분류기 없는 가이던스 스케일과 퍼플렉시티",
+   "credit": "HC-DLM authors (hc-dlm.github.io)"
+  }
+ ],
+ "factcheck": {
+  "claims": 89,
+  "confirmed": 87,
+  "removed": [
+   "프로젝트 페이지는 중간 예측을 각 단계에서 디코딩했을 때 HC-DLM의 정확도가 정규화 시간 t/T = 0.6에서 90% 이상으로 올라 '해답이 일찍 드러난다'고 설명합니다.",
+   "프로젝트 페이지 캡션에 따르면 어려운 Sudoku에서 HC-DLM은 52~76%를 유지하는 반면 MDM은 급격히 떨어집니다."
+  ],
+  "corrected": [
+   "ARM(순서 지정) 파라미터 87M → 42M (87.18은 정확도; 표·실험 설정 문단 2곳)",
+   "'같은 날 HF Papers 추천 70개' → 10월 2일 HF 제출, 10월 3일 확인 기준 70개 (커뮤니티 문단의 '10월 1일 기준'도 수정)",
+   "'확산 LM은 빨라' → 초록대로 병렬 생성·양방향 추론/전역 제약 과제의 대안",
+   "연속 확산·하이브리드 방법 설명을 초록 문장에 맞게 수정",
+   "한계 '인코더로 구조 복잡' → 논문 부록 D: 학습 비용 증가(추론 때 인코더 미사용), 대규모 확장은 향후 과제",
+   "소속: UIUC 4명 + Huidong Liu(Amazon) 명시, '어바나-섀플레인' 표기 수정",
+   "CFG 문단을 논문 부록 B.7·그림 5 기준(w=2.75, 엔트로피 안정)으로 재작성; 그림 3a/3b 설명을 논문 본문의 정성 서술로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv 초록(citation_date 2026/10/01)·arXiv HTML v1 본문(표 1~5, 부록 B.1·B.4·B.7, 부록 D)·Hugging Face Papers 페이지 JSON(publishedAt 2026-10-01, submittedOnDailyAt 2026-10-02, upvotes 70, githubStars 52, 댓글 2건, 인용 모델·데이터셋·스페이스 0)·프로젝트 페이지 본문을 curl 로 다시 열어 대조. 날짜: HF 페이지 화면은 'Published on Oct 1 · Submitted by Hui Ren on Oct 2'(연도 없음)라 HF 페이지 자체 게시일=제출일 2026-10-02(JSON·저자 댓글 createdAt 2026-10-02T02:12Z)로 정함. 프로젝트 페이지(hc-dlm.github.io)는 본문·메타에 날짜가 없어 HTTP Last-Modified(2026-10-02 02:16 GMT)와 Wayback Machine 첫 수집(2026-10-02 08:26 UTC)으로 2026-10-02 로 정함. arXiv HTML 그림은 SVG 라 인용 이미지로 쓸 수 없어 프로젝트 페이지 본문 그림(PNG/WebP, 1740~3249px, HTTP 200 image/*)을 유지. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
