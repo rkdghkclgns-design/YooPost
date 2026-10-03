@@ -1,0 +1,85 @@
+{
+ "topic": "Insights from the 2026 Microsoft Digital Defense Report",
+ "source_url": "https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Insights from the 2026 Microsoft Digital Defense Report",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/",
+   "publisher": "Microsoft Security Blog",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "2026 Digital Defense Report",
+   "url": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report",
+   "publisher": "Microsoft",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft says threat actors are ahead in the early AI race",
+   "url": "https://www.bleepingcomputer.com/news/security/microsoft-says-threat-actors-are-ahead-in-the-early-ai-race/",
+   "publisher": "BleepingComputer",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI is giving attackers a head start, Microsoft warns",
+   "url": "https://helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report",
+   "publisher": "Help Net Security",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Microsoft 2026 Security Report: Autonomous Ransomware Has Hacked Real Organizations",
+   "url": "https://www.techtimes.com/articles/328467/20261002/microsoft-2026-security-report-autonomous-ransomware-has-hacked-real-organizations.htm",
+   "publisher": "Tech Times",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Preparing governments for an era of interconnected cyber risk",
+   "url": "https://blogs.microsoft.com/on-the-issues/2026/10/01/preparing-governments-for-an-era-of-interconnected-cyber-risk/",
+   "publisher": "Microsoft On the Issues",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Microsoft: AI accelerates cyber threats as new Digital Defense Report launches",
+   "url": "https://www.geekzone.co.nz/content.asp?contentid=27427",
+   "publisher": "Geekzone",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "page_url": "https://blogs.microsoft.com/on-the-issues/2026/10/01/preparing-governments-for-an-era-of-interconnected-cyber-risk/",
+   "image_url": "https://msblogs.thesourcemediaassets.com/sites/5/2026/09/CombinedGraphic.png",
+   "caption": "국가 배후 조직과 신원 공격: 2026년 위협 행위자가 가장 많이 영향을 준 상위 10개 업종 (정부 기관·서비스 27%)과 국가 배후 공격의 업종별 비중",
+   "credit": "Microsoft Threat Intelligence (Microsoft On the Issues)"
+  }
+ ],
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "글쓴이는 보안 연구·위협 인텔리전스 담당 부사장 Tanmay Ganacharya와 마이크로소프트 시큐리티 총괄 Wes Malaby입니다. (공식 글 저자는 Terrell Cox — 수정)",
+   "마이크로소프트의 공식 글은 올해 보고서의 방향을 '규모 자랑'보다 '공격이 어떻게 진화하고 어떤 빈틈에 주목해야 하는가'로 설명합니다. (읽은 공식 글에 없음 — 공식 글 문장으로 교체)",
+   "마이크로소프트는 AI가 근본적으로 새로운 보안 틈을 만들어 내지는 못한다고도 설명합니다. (확인 안 됨 — '밑바탕의 방법은 여전히 익숙하다'는 공식 문장으로 교체)"
+  ],
+  "note": "Opus 검증: S1·S2·S3·S4·S5 를 WebFetch 로 다시 열어 주장 58개 대조, 공식 페이지 published(2026-10-01)·매체 날짜(BleepingComputer 10-01, Help Net·Tech Times 10-02) 페이지 표기와 일치 확인. 보고서 PDF 는 못 읽어 MS On the Issues 블로그(S6: 기간 2025.7~2026.6, 정부 27%·2025년 17%, 52.2%, 피싱 7%→23%)와 Geekzone 게재 MS 발표문(S7: 165조 신호)을 추가. 32단계는 S2 공식 확인, Mythos·GPT-5.5·JADEPUFFER·18.4%·15%→24% 는 Help Net·Tech Times 두 매체, 오픈 웨이트 7개월·60만 확장 프로그램은 Help Net 단독으로 본문에 출처 명시. 30~60일은 Tech Times → 공식 S2 로 출처 정정. 저자 오기 수정. 인용 이미지: S6 본문 업종 차트(2382x2021 PNG, HTTP 200 확인) 추가."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1790992424011969",
+  "kind": "all"
+ }
+}
