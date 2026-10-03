@@ -1,0 +1,74 @@
+{
+ "topic": "How many AI agents could run on the AI chips shipped through 2027? (Epoch AI, Jason Li, 2026-10-02)",
+ "source_url": "https://epoch.ai/publications/estimating-the-agent-population",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "How many AI agents could run on the AI chips shipped through 2027?",
+   "url": "https://epoch.ai/publications/estimating-the-agent-population",
+   "publisher": "Epoch AI",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hundreds of millions of AI agents are coming. Is there work for them?",
+   "url": "https://epochai.substack.com/p/hundreds-of-millions-of-ai-agents",
+   "publisher": "Epoch AI (Substack)",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "[AINews] not much happened today",
+   "url": "https://latent.space/p/ainews-not-much-happened-today-cee",
+   "publisher": "Latent.Space",
+   "published": "2026-10-03",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Epoch AI data suggests chip stock could support over a billion AI agents",
+   "url": "https://cryptobriefing.com/epoch-ai-chips-billion-ai-agents/",
+   "publisher": "Cryptobriefing",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://epoch.ai/assets/images/posts/2026/estimating-the-agent-population/figure-1.jpg",
+   "page_url": "https://epoch.ai/publications/estimating-the-agent-population",
+   "caption": "모델별 잠재 에이전트 수 — 중심 하드웨어 가정의 동시 에이전트 규모 비교",
+   "credit": "Epoch AI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://epoch.ai/assets/images/posts/2026/estimating-the-agent-population/figure-7.jpg",
+   "page_url": "https://epoch.ai/publications/estimating-the-agent-population",
+   "caption": "출하 연도별 에이전트 용량 — 2026년까지와 2027년까지 HBM 출하분의 동시 에이전트 범위",
+   "credit": "Epoch AI"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://epoch.ai/assets/images/posts/2026/estimating-the-agent-population/figure-8.jpg",
+   "page_url": "https://epoch.ai/publications/estimating-the-agent-population",
+   "caption": "시간당 비용에 따른 에이전트 용량 — 에이전트 한 시간 지출이 10달러에서 100달러로 오를 때의 변화",
+   "credit": "Epoch AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 75,
+  "confirmed": 73,
+  "removed": [
+   "'비영리 AI 연구 기관' — 출처 페이지에 비영리 표기 없음(푸터는 Epoch Artificial Intelligence, Inc), 'AI 연구 기관'으로 수정",
+   "'하드웨어 출하는 실제 가동보다 몇 달에서 몇 년 앞서고' — '몇 달~몇 년' 기간은 원문에 없음, 원문 표현(데이터센터 건설에 달려 길고 예측 어려움)으로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 Epoch 보고서 전문(본문·표 1~4·부록 A~C·주석)과 S2 Substack 요약, S3 Latent.Space 원문을 curl 로 다시 받아 수치·이름·가격·스펙을 하나씩 대조, S4 는 WebFetch 로 확인(curl 403, EGRESS_BLOCKED 아님). published: S1 2026-10-02(페이지 'Oct. 2, 2026'·datePublished), S2 2026-10-02(Oct 02, 2026), S3 2026-10-03(datePublished 2026-10-03T08:45Z), S4 2026-10-02(Oct. 2, 2026) 모두 일치. 표기 차이 귀속: 보고서 본문·결론 '약 30–170 million', 같은 보고서 소제목·그림 7 제목·meta description '33–171 million'(부록 표 B3 32.8–170.7 반올림); 직원 환산 상한은 보고서 720M, Substack 요약 700M — 본문에 출처별로 명시. 이슈화: Latent.Space AINews 2026-10-03 'Capacity economics (Epoch)'·'Demand gap' 항목이 이 보고서를 직접 다룸(@EpochAIResearch 링크). Cryptobriefing 은 이 HBM 보고서를 언급하지 않고 Epoch 칩 판매 자료+LessWrong 분석을 다룸(본문에도 그렇게 서술). 수정: 제목의 '수요 격차 2.6~5.3조 달러'→'20%만 써도 연 2.6~5.3조 달러'(격차가 아니라 내재 지출), 그림 8 설명 '수백만→수천만'을 부록 표 B4 수치(10달러 약 9,800만~5억 1,200만, 100달러 약 980만~5,120만)로 정정, Latent.Space 인용을 원문 표현(20% utilization, 수억~수십억)에 맞춤, 그림 1의 GPT-5.6 Sol 9,700만~1억 9,500만 보완. 그림 figure-1/7/8.jpg 모두 HTTP 200 image/jpeg, 가로 1290~1292px(480px 이상), 내용이 캡션과 일치함을 눈으로 확인. 강조 없는 문단 3곳에 형광 강조 추가, 한계 문단에 부록 표 B5(칩 구성에 따라 용량 7.5~25% 감소) 보완."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
