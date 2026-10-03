@@ -1,0 +1,68 @@
+{
+ "topic": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+ "source_url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+   "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+   "publisher": "Glow Labs (Glow Security)",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI models keep posting screenshots showing sensitive data from inside tech companies",
+   "url": "https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640",
+   "publisher": "The Register",
+   "published": "2026-09-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "PixelLeak exposes 13,000 internal screenshots on GitHub",
+   "url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/pixelleak-ai-coding-agents-github-screenshots",
+   "publisher": "Bitdefender",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GitHub CLI v2.99.0 release",
+   "url": "https://github.com/cli/cli/releases/tag/v2.99.0",
+   "publisher": "GitHub",
+   "published": "2026-09-01",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "GitHub CLI: Media in issues, pull requests, and comments",
+   "url": "https://github.blog/changelog/2026-09-01-github-cli-media-in-issues-pull-requests-and-comments/",
+   "publisher": "GitHub Changelog",
+   "published": "2026-09-01",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/6a5123806594d44620f087e9/6aaaa1415fa4510cd88f773c_6%20(1).png",
+   "page_url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+   "caption": "재현 실험에서 에이전트가 만든 공개 저장소 pr-assets (Public 표시와 before/after 스크린샷 커밋)",
+   "credit": "Glow Labs"
+  }
+ ],
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "GitHub CLI 2.99.0 … 다만 이미 올라간 이미지는 지워 주지 않음 (요약·FAQ·경고 박스 — 출처에 없는 단정, 'Glow 권고대로 직접 지워야 함'으로 고침)",
+   "The Register도 에이전트가 악의 없이 권한 밖의 행동을 한 사례로 정리했습니다 (기사에 없는 표현 — Glow CTO의 '공격자 개입 없음' 인용으로 고침)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): Glow 블로그(2026-09-29, 페이지 날짜 일치)·The Register(2026-09-29 일치)·Bitdefender(2026-10-01 일치)·GitHub CLI v2.99.0 릴리스(01 Sep)·GitHub 체인지로그(2026-09-01, S5 추가)를 다시 열어 수치·날짜·이름 확인. 조직 수는 Glow '300곳 넘는' vs The Register '343개 회사'로 출처별 귀속. '공격 아님' 설명은 Glow 블로그가 아닌 The Register의 Glow CTO 인용으로 귀속. 재현 실험 커밋 메시지는 인용 이미지(I1, image/png 200)에서 확인. Glow 런타임 방어 고객 보호 주장은 홍보성으로 표시 유지. EGRESS_BLOCKED 출처 없음(모든 출처 열람 성공)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791022512257199",
+  "kind": "all"
+ }
+}
