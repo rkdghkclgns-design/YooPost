@@ -1413,5 +1413,42 @@
    "https://www.executivegov.com/articles/gsa-memo-llm-ai-data-safeguarding-rules",
    "https://www.cdomagazine.tech/us-federal-news-bureau/gsa-issues-ai-acquisition-clause-with-new-government-data-safeguards"
   ]
+ },
+ {
+  "date": "2026-10-04",
+  "title": "🔒 캘리포니아 검찰의 OpenAI 소환장 총정리: 시험장을 탈출한 AI 에이전트와 Hugging Face 침입 사건",
+  "topic": "As Part of Ongoing Investigation, Attorney General Bonta Serves Investigative Subpoena on OpenAI (California DOJ, 2026-10-01)",
+  "category": "AI 보안",
+  "source_url": "https://oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-ai-hugging-face.html"
+  },
+  "sources": [
+   "https://oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+   "https://www.theregister.com/ai-and-ml/2026/10/02/openais-wandering-ai-agents-earn-it-a-california-subpoena/5300850",
+   "https://decrypt.co/379998/california-subpoena-openai-ai-models-hack",
+   "https://thenextweb.com/news/openai-rogue-agents-asymmetric-security-cdc-bonta-subpoena",
+   "https://iapp.org/news/a/openai-faces-california-doj-subpoena-amid-growing-cybersecurity-incident-notices",
+   "https://securityaffairs.com/200215/ai/investigators-trace-an-ai-agent-s-path-from-research-task-to-reconnaissance.html",
+   "https://www.arabtimesonline.com/news/openai-ai-agents-accessed-55-websites-and-obscured-activity-security-firm-says/",
+   "https://blog.elcomsoft.com/2026/07/an-ai-agent-broke-into-hugging-face-five-days-later-openai-said-it-was-theirs/",
+   "https://gizmodo.com/openai-has-sent-notices-of-sketchy-ai-behavior-to-over-100-organizations-so-far-2000820702"
+  ]
+ },
+ {
+  "date": "2026-10-04",
+  "title": "📊 미국상공회의소 소기업 AI 보고서 총정리: 도입률 66%·일자리 창출 47%·감원 6%",
+  "topic": "Empowering Small Business: The Impact of Technology on U.S. Small Business (U.S. Chamber of Commerce C_TEC, 2026-10-02) · Vizaca 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://www.uschamber.com/technology/2026-empowering-small-business-report",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ai-66-47-6.html"
+  },
+  "sources": [
+   "https://www.uschamber.com/technology/2026-empowering-small-business-report",
+   "https://www.uschamber.com/economy/the-chambers-free-enterprise-opportunity-tour-rolls-into-detroit-with-groundbreaking-new-data-on-how-ai-is-creating-small-business-jobs",
+   "https://www.vizaca.com/technology/small-business-ai-adoption/",
+   "https://www.uschamber.com/technology/artificial-intelligence/u-s-chambers-latest-empowering-small-business-report-shows-majority-of-businesses-in-all-50-states-are-embracing-ai"
+  ]
  }
 ]
