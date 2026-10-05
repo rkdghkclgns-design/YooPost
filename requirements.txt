@@ -13,3 +13,6 @@ slack_sdk>=3.33
 Pillow>=10.4
 requests>=2.32
 python-dotenv>=1.0
+
+# Codex 클라우드 전용 로그인 캐시 암호화
+cryptography>=43

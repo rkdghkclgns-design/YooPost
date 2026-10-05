@@ -1,0 +1,175 @@
+name: Claude 중단 → Codex 클라우드 인계
+run-name: "🤖 Codex 클라우드 · ${{ inputs.mode || '누락 원고 확인' }}"
+on:
+  schedule:
+    - cron: "15,45 * * * *"
+    - cron: "5 20 * * 1,4"  # 작업이 없는 주에도 전용 로그인 갱신·암호화 캐시 유지
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "work: 인계 작업 / probe: 인증·클라우드 실행 확인만"
+        type: choice
+        options: [work, probe]
+        default: work
+
+concurrency:
+  group: codex-cloud
+  cancel-in-progress: false
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    if: vars.CODEX_FALLBACK_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    outputs:
+      work: ${{ steps.plan.outputs.work }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: yoopost-drafts
+          path: .yoopost-drafts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 인계 대상 재확인 · 임대 · 슬랙 인계 알림
+        id: plan
+        if: inputs.mode != 'probe' && github.event.schedule != '5 20 * * 1,4'
+        env:
+          CODEX_AUTH_READY: ${{ secrets.OPENAI_API_KEY != '' || (secrets.CODEX_AUTH_JSON != '' && secrets.CODEX_AUTH_CACHE_KEY != '') }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_MANUAL: ${{ vars.SLACK_CHANNEL_MANUAL }}
+          MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
+        run: python scripts/codex_cloud.py plan
+      - uses: actions/upload-artifact@v4
+        if: steps.plan.outputs.work == 'true'
+        with:
+          name: codex-input
+          path: output/codex-cloud/
+          retention-days: 2
+
+  write:
+    needs: plan
+    if: needs.plan.outputs.work == 'true' || inputs.mode == 'probe' || github.event.schedule == '5 20 * * 1,4'
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 50
+    steps:
+      - name: 전용 인증 경로
+        run: |
+          echo "CODEX_HOME=$RUNNER_TEMP/yoopost-codex-home" >> "$GITHUB_ENV"
+          echo "CODEX_AUTH_CACHE_FILE=$RUNNER_TEMP/codex-auth.enc" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements.txt cryptography
+      - run: npm install -g @openai/codex@0.160.1
+      - uses: actions/download-artifact@v4
+        if: needs.plan.outputs.work == 'true'
+        with:
+          name: codex-input
+          path: output/codex-cloud/
+      - name: 암호화된 전용 로그인 캐시 복원
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/codex-auth.enc
+          key: codex-auth-${{ vars.CODEX_AUTH_REVISION || 'v1' }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: codex-auth-${{ vars.CODEX_AUTH_REVISION || 'v1' }}-
+      - name: Codex 인증 복원
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+          CODEX_AUTH_CACHE_KEY: ${{ secrets.CODEX_AUTH_CACHE_KEY }}
+        run: python scripts/codex_auth.py restore
+      - name: 클라우드 실행 확인
+        if: inputs.mode == 'probe' || github.event.schedule == '5 20 * * 1,4'
+        env:
+          CODEX_MODEL: ${{ vars.CODEX_MODEL }}
+        run: python scripts/codex_cloud.py probe
+      - name: Codex 조사·작성 → 별도 사실 검증
+        if: needs.plan.outputs.work == 'true'
+        env:
+          CODEX_MODEL: ${{ vars.CODEX_MODEL }}
+        run: python scripts/codex_cloud.py generate
+      - name: 갱신된 인증을 암호화
+        if: always()
+        env:
+          CODEX_AUTH_CACHE_KEY: ${{ secrets.CODEX_AUTH_CACHE_KEY }}
+        run: python scripts/codex_auth.py persist
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: ${{ runner.temp }}/codex-auth.enc
+          key: codex-auth-${{ vars.CODEX_AUTH_REVISION || 'v1' }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always() && needs.plan.outputs.work == 'true'
+        with:
+          name: codex-result
+          path: |
+            output/codex-cloud/result.json
+            output/codex-cloud/post.json
+            output/codex-cloud/research.json
+            output/codex-cloud/verification.json
+          if-no-files-found: ignore
+          retention-days: 7
+
+  complete:
+    needs: [plan, write]
+    if: always() && needs.plan.outputs.work == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: yoopost-drafts
+          path: .yoopost-drafts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: codex-result
+          path: output/codex-cloud/
+      - name: 중복·품질 재확인 · 원고 저장 · 임대 해제 · 슬랙 결과
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_MANUAL: ${{ vars.SLACK_CHANNEL_MANUAL }}
+          MIN_BODY_CHARS: ${{ vars.MIN_BODY_CHARS }}
+        run: python scripts/codex_cloud.py complete
+      - name: 기존 슬랙 승인 전송 실행
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run cloud_drafts.yml --ref main -f note="Codex 클라우드 인계 결과"

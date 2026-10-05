@@ -31,6 +31,23 @@ def env(name: str) -> str:
     return os.environ.get(name, "").strip()
 
 
+def dispatch_codex(rid: str) -> bool:
+    """인증이 설정된 클라우드 작성기를 즉시 깨운다. 실제 인계 판단은 Codex plan이 다시 한다."""
+    if env("CODEX_FALLBACK_ENABLED") != "true" or not env("GITHUB_TOKEN"):
+        return False
+    import requests
+    repo = env("GITHUB_REPOSITORY")
+    if repo != "rkdghkclgns-design/YooPost":
+        return False
+    try:
+        response = requests.post(f"https://api.github.com/repos/{repo}/actions/workflows/codex_fallback.yml/dispatches",
+            headers={"Authorization": f"Bearer {env('GITHUB_TOKEN')}", "Accept": "application/vnd.github+json"},
+            json={"ref": "main", "inputs": {"mode": "work"}}, timeout=20)
+        return response.status_code == 204
+    except requests.RequestException:
+        return False
+
+
 def git(tree: Path, *args: str) -> bool:
     return subprocess.run(["git", *args], cwd=tree, capture_output=True, text=True).returncode == 0
 
@@ -75,6 +92,7 @@ def main(argv: list[str] | None = None) -> int:
         env("MANUAL_SOURCE") or "message", manual_channel=manual_channel, notifier=notifier, fire=fire,
         record=lambda record: record_to_branch(args.tree.resolve(), record),
         alert_channel=env("SLACK_CHANNEL_ID"),  # #yoopost-알림 진행 카드 (비우면 올리지 않음)
+        fallback=dispatch_codex,
     )
     print(f"수동 지시 처리: {status}")
     if status in ("failed", "not configured"):

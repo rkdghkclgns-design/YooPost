@@ -101,7 +101,9 @@ def board_rows(request: Mapping, folders: Sequence[Path], lookup: Callable[[str]
         elif finished:
             rows.append(BoardRow(category, "❌", "원고 없음", 4, True))
         elif started and not writing_marked:
-            rows.append(BoardRow(category, "✍️", "작성·검증 중 (Sonnet 작성 → Opus 사실 검증)", 1, False))
+            fallback = request.get("fallback") or {}
+            author = "Codex 클라우드 작성 → 별도 사실 검증" if fallback.get("provider") == "codex" else "Sonnet 작성 → Opus 사실 검증"
+            rows.append(BoardRow(category, "✍️", f"작성·검증 중 ({author})", 1, False))
             writing_marked = True
         elif started:
             rows.append(BoardRow(category, "⬜", "대기", 1, False))

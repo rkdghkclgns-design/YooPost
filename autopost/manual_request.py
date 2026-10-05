@@ -14,6 +14,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Callable
 
 from .draft_request import new_record
+from .codex_fallback import QUOTA_ERROR
 from .manual_command import NO_VERB, USAGE, ManualCommand, fire_text, parse_command, request_id
 from .request_board import board_rows, build_board
 from .slack_helper import SlackNotifier, escape_mrkdwn
@@ -107,6 +108,7 @@ def handle_request(
     record: Callable[[dict], None] | None = None,
     now: datetime | None = None,
     alert_channel: str = "",
+    fallback: Callable[[str], bool] | None = None,
 ) -> str:
     """지시 하나를 처리하고 결과 상태(fired / help / invalid / ignored / not configured / failed)를 돌려준다.
 
@@ -155,15 +157,22 @@ def handle_request(
             return "failed"
     result = fire(fire_text(command, rid))
     if not result.ok:
-        reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
         closed = {**request, "fire_error": result.error[:200]}
+        saved = record is None
         if record is not None:
             try:  # 닫힌 요청으로 표시 — 루틴이 늦게 떠도 하지 않고, '시작되지 않았습니다' 경고도 다시 달지 않는다
                 record(closed)
+                saved = True
             except Exception as exc:
                 log.warning("요청 기록에 실행 실패를 남기지 못했습니다: %s", exc)
         if request.get("alert_ts"):
             notifier.update(str(request["alert_ts"]), *board(closed), channel=alert_channel)
+        if saved and fallback is not None and QUOTA_ERROR.search(result.error) and fallback(rid):
+            reply("🤖 Claude 실행 한도에 걸려 *Codex 클라우드에 인계를 요청했습니다*. "
+                  "PC를 꺼도 GitHub에서 이어서 작성·검증합니다. 인계가 시작되면 이 스레드에 알려 드립니다. "
+                  "원고는 #yoopost-1-원고승인 에서 ✅를 눌러야 발행됩니다.")
+            return "fallback"
+        reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
         return "failed"
     link = f" · <{result.session_url}|작성 과정 보기>" if result.session_url else ""
     reply(f"📝 접수했습니다 — {describe(command)}{link}\n"

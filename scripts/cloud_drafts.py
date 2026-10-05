@@ -42,6 +42,8 @@ from autopost.cloud_drafts import (  # noqa: E402
     write_json,
 )
 from autopost.config import load_config  # noqa: E402
+from autopost.codex_fallback import fallback_requests, takeover_record  # noqa: E402
+from autopost.cloud_codex import cloud_lease  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import (  # noqa: E402
     MAX_AGE_HOURS, read_request, request_id_of, request_path, with_request,
@@ -118,6 +120,8 @@ def run_file() -> Path:
 
 
 def start(network: str) -> None:
+    if cloud_lease(TREE, datetime.now(KST)):
+        raise SystemExit("Codex 클라우드가 이어 쓰는 중입니다 — 시작하지 않습니다")
     now = datetime.now(KST).isoformat(timespec="seconds")
     write_json(run_file(), {"started": now, "finished": "", "network": network})
     publish([str(run_file().relative_to(TREE))], f"run: {today()} 시작")
@@ -180,6 +184,9 @@ def lock_path() -> Path:
 
 def lock_holder() -> dict:
     """채우기 잠금을 가진 쪽 (없거나 오래되어 풀린 잠금이면 빈 dict)."""
+    remote = cloud_lease(TREE, datetime.now(KST))
+    if remote:
+        return {**remote, "owner": "codex-cloud"}
     data = read_json(lock_path())
     try:
         at = datetime.fromisoformat(str(data["at"]))
@@ -357,6 +364,9 @@ def _parse_time(value: object) -> datetime | None:
 
 def request_start(rid: str, category: str, network: str) -> int:
     """수동 지시 시작 — Actions 가 남긴 요청 기록과 맞아야 한다. 0 = 시작, 3 = 이미 시작·끝·오래됨(중복 실행), 4 = 없음·불일치."""
+    if cloud_lease(TREE, datetime.now(KST)):
+        print("⏹️ Codex 클라우드가 이어 쓰는 중입니다")
+        return 3
     record = read_request(TREE, rid)
     if not record or record.get("kind") not in KINDS:
         print(f"❌ 요청 기록이 없거나 형식이 틀립니다: {rid}")
@@ -419,6 +429,42 @@ def request_finish(rid: str, note: str) -> int:
     return 0
 
 
+def fallback_status() -> int:
+    """Codex 예약 확인용 JSON. 동기화 실패 시 옛 기록으로 인계하지 않는다."""
+    if not SYNC["ok"]:
+        print(json.dumps({"synced": False, "error": "원고 브랜치 동기화 실패"}, ensure_ascii=False))
+        return 2
+    print(json.dumps({"synced": True, "locked_by": lock_holder().get("owner", ""),
+                      "cloud_running": cloud_running(), "cloud_pending": cloud_pending(),
+                      "daily": [{"category": g.category, "reason": g.reason} for g in gaps()],
+                      "requests": fallback_requests(TREE, datetime.now(KST), pushed_folders())}, ensure_ascii=False))
+    return 0
+
+
+def fallback_resume(rid: str, category: str) -> int:
+    """Codex가 잠금을 잡은 뒤에만 실패·중단된 수동 지시를 재개한다."""
+    if not SYNC["ok"]:
+        print("❌ 원고 브랜치 동기화 실패 — 인계하지 않습니다")
+        return 2
+    if lock_holder().get("owner") != "codex-fallback":
+        print("❌ claim --owner codex-fallback 을 먼저 실행하세요")
+        return 3
+    candidate = next((r for r in fallback_requests(TREE, datetime.now(KST), pushed_folders()) if r["id"] == rid), None)
+    if candidate is None:
+        print("⏹️ 인계 대상이 아닙니다 — 실행 중·종료·오래된 요청은 그대로 둡니다")
+        return 3
+    try:
+        updated = takeover_record(read_request(TREE, rid), datetime.now(KST), candidate["reason"], category)
+    except ValueError as exc:
+        print(f"❌ {exc}")
+        return 4
+    path = request_path(TREE, rid)
+    write_json(path, updated)
+    publish([str(path.relative_to(TREE))], f"request: {rid} Codex 인계")
+    print(json.dumps({**candidate, "category": updated["category"]}, ensure_ascii=False))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="클라우드 원고 → yoopost-drafts 브랜치")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -451,6 +497,12 @@ def main(argv: list[str] | None = None) -> int:
     request_finish_p = request_sub.add_parser("finish")
     request_finish_p.add_argument("--id", required=True)
     request_finish_p.add_argument("--note", default="")
+    fallback_p = sub.add_parser("fallback", help="Claude 한도 오류·중단 시 Codex 인계")
+    fallback_sub = fallback_p.add_subparsers(dest="action", required=True)
+    fallback_sub.add_parser("status")
+    resume_p = fallback_sub.add_parser("resume")
+    resume_p.add_argument("--id", required=True)
+    resume_p.add_argument("--category", default="", choices=["", *CATEGORIES])
     args = parser.parse_args(argv)
     if args.command == "setup":
         print(f"원고 브랜치: {setup()}")
@@ -461,6 +513,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "check":
         return check(args.folder, args.request)
     setup()
+    if args.command == "fallback":
+        return fallback_status() if args.action == "status" else fallback_resume(args.id, args.category)
     if args.command == "start":
         start(args.network)
         return 0

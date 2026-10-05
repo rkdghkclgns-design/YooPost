@@ -239,6 +239,11 @@ python scripts/relay_secrets.py                       # Worker 에 등록 (값�
 
 ## 운영
 
+- **Claude 한도·중단 시 Codex 클라우드 인계**: `codex_fallback.yml`이 GitHub에서 30분마다 중단된 수동 지시·빠진 일일 원고를 확인합니다.
+  클라우드 전용 Codex 인증과 `CODEX_FALLBACK_ENABLED=true` 설정 후 PC·Codex 앱이 꺼져 있어도 작성·검증이 동작합니다.
+  슬랙 지시의 한도 오류는 즉시 인계를 요청하고, 기존 봇이 같은 스레드에 인계·결과를 알립니다.
+  [인계 기준·인증 설정·운영 절차](Docs/Codex-Fallback.md). 원고는 사용자 ✅ 승인 후 기존 GitHub Actions가 발행합니다.
+
 - (예전) 매일 **11:00(KST)** Gemini 자동 실행 → **2026-09-29 껐습니다.** 원고는 Claude 앱에 요청하고 ✅ 로 발행합니다.
   - `auto_post.yml` 을 GitHub 화면에서 직접 실행하면 Gemini 방식으로 1편 씁니다 (Variable `AUTO_PUBLISH=true` 설정됨)
   - 비우거나 `false`: **검토용 미리보기**만 만들어 슬랙에 올림 → 확인 후 `/aipost` 로 발행

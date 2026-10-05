@@ -32,6 +32,7 @@ on:
 # 동시 실행 그룹을 두지 않는다 — 대기 중인 실행을 GitHub 가 취소해 지시가 사라질 수 있다 (중복은 Worker 가 막음)
 permissions:
   contents: write  # 요청 기록(runs/requests/<ID>.json)을 원고 브랜치에 올린다 — 루틴은 이 기록과 맞는 요청만 수행
+  actions: write  # Claude 한도 오류면 Codex 클라우드를 즉시 깨운다
 
 jobs:
   request:
@@ -72,4 +73,6 @@ jobs:
           ROUTINE_FIRE_TOKEN: ${{ secrets.ROUTINE_FIRE_TOKEN }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          CODEX_FALLBACK_ENABLED: ${{ vars.CODEX_FALLBACK_ENABLED }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/manual_request.py
