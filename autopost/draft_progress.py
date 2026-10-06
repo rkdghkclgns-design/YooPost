@@ -20,7 +20,7 @@ from typing import Callable, Mapping, Sequence
 
 from .constants import CATEGORIES
 from .draft_request import request_id_of
-from .slack_helper import LABEL, escape_mrkdwn
+from .slack_helper import AUTO_APPROVAL_LABEL, LABEL, escape_mrkdwn
 
 log = logging.getLogger(__name__)
 
@@ -105,15 +105,16 @@ def _state(record: dict | None, draft: Draft) -> tuple[str, str]:
     """(아이콘, 설명) — 원고 보관함 기록으로 발행 여부를 본다 (기록이 없으면 승인 대기로)."""
     record = record or {}
     status, url = str(record.get("status") or "pending"), str(record.get("url") or "")
+    approval = f"{AUTO_APPROVAL_LABEL} · " if record.get("approved_by") == "auto-60s" else ""
     title = escape_mrkdwn(draft.title[:60])
     if status == "published":
-        return "✅", f"발행됨: <{url}|{title}>" if url else f"발행됨: {title}"
+        return "✅", f"{approval}발행됨: <{url}|{title}>" if url else f"{approval}발행됨: {title}"
     if status == "approved":
-        return "🚀", f"발행 중: {title}"
+        return "🚀", f"{approval}발행 중: {title}"
     if status == "held":
         return "⏸️", f"보류 (✅ 승인하면 발행): {title}"
     if status == "failed":
-        return "❌", f"발행 실패 (✅ 다시 누르면 재시도): {title}"
+        return "❌", f"{approval}발행 실패 (✅ 다시 누르면 재시도): {title}"
     return "📝", f"승인 대기: {title}"
 
 

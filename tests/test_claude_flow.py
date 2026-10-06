@@ -161,7 +161,7 @@ def test_send_for_approval_posts_card_uploads_preview_and_links_message(tmp_path
         send_for_approval(prepared, MemoryStore(), DownSlack(), "CDRAFT", NOW)
 
 
-@pytest.mark.parametrize("approver,notice", [("U0ABC", "<@U0ABC>"), ("auto-60s", "자동 승인 (1분 미승인)")])
+@pytest.mark.parametrize("approver,notice", [("U0ABC", "<@U0ABC>"), ("auto-60s", "🤖✅ 자동 승인 (1분 경과)")])
 def test_publish_draft_publishes_once_and_reports_in_thread(approver, notice):
     store = MemoryStore()
     store.put("d1", {"title": "제목", "html": "<p>본문</p>", "labels": ["AI 도구"], "status": "approved",

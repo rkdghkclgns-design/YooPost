@@ -88,7 +88,8 @@ test("60 seconds of pending approval requests publishing once, also after object
   assert.deepEqual(publishes()[0].body.inputs, { draft_id: "d1", approved_by: "auto-60s" });
   assert.equal((await f.read()).status, "approved");
   assert.equal(item.ctx.alarmAt, null);
-  assert.equal(calls.filter(c => c.url.endsWith("/reactions.add")).length, 1);
+  assert.deepEqual(calls.filter(c => c.url.endsWith("/reactions.add")).map(c => c.body.name),
+    ["robot_face", "white_check_mark"]);
 });
 
 test("manual approval wins before the timeout; stale writes cannot rearm it", async t => {
@@ -101,6 +102,7 @@ test("manual approval wins before the timeout; stale writes cannot rearm it", as
   await f.alarm();
   assert.equal(publishes().length, 1);
   assert.equal((await f.read()).approved_by, "U1");
+  assert.equal(calls.filter(c => c.url.endsWith("/reactions.add")).length, 0);
 });
 
 test("simultaneous manual and timer approval do not dispatch twice", async t => {

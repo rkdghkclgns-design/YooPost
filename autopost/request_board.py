@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Callable, Mapping, Sequence
 
 from .constants import CATEGORIES
-from .slack_helper import LABEL, escape_mrkdwn
+from .slack_helper import AUTO_APPROVAL_LABEL, LABEL, escape_mrkdwn
 
 STAGES = ("접수", "작성·검증", "승인 대기", "발행")
 BAR_ON, BAR_OFF = "▰", "▱"
@@ -57,19 +57,20 @@ def _draft_row(category: str, folder: Path, record: Mapping | None, failures: Ma
         reason = escape_mrkdwn(str(_read(folder / "skip.json").get("reason") or "이유 없음"))[:120]
         return BoardRow(category, "⏭️", f"건너뜀 — {reason}", 4, True)
     status = str((record or {}).get("status") or "")
+    approval = f"{AUTO_APPROVAL_LABEL} · " if (record or {}).get("approved_by") == "auto-60s" else ""
     slack = (record or {}).get("slack")
     delivered = isinstance(slack, Mapping) and bool(slack.get("ts"))
     if status == "published":
         url = str((record or {}).get("url") or "")
-        return BoardRow(category, "✅", f"발행됨: <{url}|{title}>" if url else f"발행됨: {title}", 4, True)
+        return BoardRow(category, "✅", f"{approval}발행됨: <{url}|{title}>" if url else f"{approval}발행됨: {title}", 4, True)
     if status == "excluded":  # 이미 쓴 글과 겹쳐 자동 제외 (✅ 를 눌러도 발행하지 않음)
         return BoardRow(category, "🚫", f"겹침으로 제외: {title}", 4, True)
     if status == "approved":
-        return BoardRow(category, "🚀", f"발행 중: {title}", 3, False)
+        return BoardRow(category, "🚀", f"{approval}발행 중: {title}", 3, False)
     if status == "held":
         return BoardRow(category, "⏸️", f"보류 (✅ 승인하면 발행): {title}", 3, False)
     if status == "failed":
-        return BoardRow(category, "❌", f"발행 실패 (✅ 다시 누르면 재시도): {title}", 3, False)
+        return BoardRow(category, "❌", f"{approval}발행 실패 (✅ 다시 누르면 재시도): {title}", 3, False)
     if delivered:
         return BoardRow(category, "📝", f"승인 대기: {title} — #yoopost-1-원고승인 에서 ✅", 3, False)
     if folder.name in failures:

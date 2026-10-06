@@ -503,7 +503,7 @@ export class DraftApproval {
         await this.publish(draft, record, user);
         if (user === "auto-60s") {
           await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
-            "🤖 1분 동안 미승인 상태여서 자동 승인했습니다. 구글 블로그 발행을 요청했습니다.");
+            "🤖✅ 자동 승인 (1분 경과) — 구글 블로그 발행을 요청했습니다.");
           await autoReaction(this.env, draft.slack);
         }
       } catch (err) {
@@ -522,13 +522,19 @@ export class DraftApproval {
 
 async function autoReaction(env, slack) {
   if (!env.SLACK_BOT_TOKEN) return;
-  try {
-    await fetch("https://slack.com/api/reactions.add", {
-      method: "POST", headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ channel: slack.channel, timestamp: slack.ts, name: "white_check_mark" }),
-      signal: AbortSignal.timeout(5000),
-    });
-  } catch (err) { console.error("auto reaction failed", err.message); }
+  for (const name of ["robot_face", "white_check_mark"]) {
+    try {
+      const response = await fetch("https://slack.com/api/reactions.add", {
+        method: "POST", headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ channel: slack.channel, timestamp: slack.ts, name }),
+        signal: AbortSignal.timeout(5000),
+      });
+      const result = await response.json();
+      if (!response.ok || (!result.ok && result.error !== "already_reacted")) {
+        console.error("auto reaction failed", name, result.error || response.status);
+      }
+    } catch (err) { console.error("auto reaction failed", name, err.message); }
+  }
 }
 
 export async function handleImage(request, env, key) {

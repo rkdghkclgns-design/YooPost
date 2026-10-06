@@ -23,7 +23,7 @@ from .draft_store import DraftStore
 from .exclusion import EXCLUDED, exclude, overlap_of, record_entry
 from .history import HistoryUnavailable, load_history
 from .results import PublishResult
-from .slack_helper import LABEL, SlackNotifier, escape_mrkdwn
+from .slack_helper import AUTO_APPROVAL_LABEL, LABEL, SlackNotifier, escape_mrkdwn
 
 log = logging.getLogger(__name__)
 
@@ -31,12 +31,12 @@ KST = timezone(timedelta(hours=9))
 
 
 def _message(draft: dict, result: PublishResult, approved_by: str) -> str:
-    who = " · 자동 승인 (1분 미승인)" if approved_by == "auto-60s" else (
+    who = f" · {AUTO_APPROVAL_LABEL}" if approved_by == "auto-60s" else (
         f" · 승인 <@{approved_by}>" if approved_by.isalnum() else "")
     title = escape_mrkdwn(str(draft.get("title") or ""))
     if result.ok:
         return f"✅ {LABEL} 발행 완료 — <{result.url}|{title}>{who}"
-    return f"❌ {LABEL} 발행 실패 — {title}\n{escape_mrkdwn(result.message[:300])}\n✅ 를 다시 누르면 다시 시도합니다"
+    return f"❌ {LABEL} 발행 실패 — {title}{who}\n{escape_mrkdwn(result.message[:300])}\n✅ 를 다시 누르면 다시 시도합니다"
 
 
 def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, slack: SlackNotifier,

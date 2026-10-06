@@ -16,6 +16,7 @@ from .results import PublishResult
 log = logging.getLogger(__name__)
 
 LABEL = "[AI백과사전]"
+AUTO_APPROVAL_LABEL = "🤖✅ 자동 승인 (1분 경과)"
 MAX_TEXT = 2900  # 슬랙 section 블록 텍스트 한도(3000) 여유
 MASK = "***"
 MIN_SECRET_LEN = 6
