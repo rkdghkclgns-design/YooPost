@@ -1,0 +1,123 @@
+{
+ "topic": "PwC and Cohere announce a global alliance to accelerate secure and trusted enterprise AI adoption (2026-10-05)",
+ "source_url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "PwC and Cohere announce a global alliance to accelerate secure and trusted enterprise AI adoption",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "publisher": "PwC Canada",
+   "published": "2026-10-05",
+   "official": true,
+   "read_note": "별도 검증에서 Cohere 공식 페이지의 press release 링크로 재열람. PwC 335~370행 발표 본문 전체 확인. 하단 500 오류 문구가 있으나 발표 본문은 표시됨.",
+   "verified_on": "2026-10-06"
+  },
+  {
+   "id": "S2",
+   "title": "Cohere and PwC partner to accelerate secure enterprise AI adoption",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "publisher": "Cohere",
+   "published": "2026-10-05",
+   "official": true,
+   "read_note": "별도 검증에서 공식 페이지 재열람. 날짜 150행, 제휴 본문 178~180행, 로고 이미지 157행 확인.",
+   "verified_on": "2026-10-06"
+  },
+  {
+   "id": "S3",
+   "title": "PwC and Cohere form an enterprise AI alliance, launching first in Canada",
+   "url": "https://thenextweb.com/news/cohere-pwc-sovereign-ai-ownership",
+   "publisher": "The Next Web",
+   "published": "2026-10-05",
+   "official": false,
+   "read_note": "별도 검증에서 독립 기사 재열람. 3~32행 본문과 41행 날짜 확인. 법률·합병 주변 논점은 인용하지 않음.",
+   "verified_on": "2026-10-06"
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Cohere 공식 제휴 발표의 본문 이미지 표기는 Cohere and PwC logos로, 로고 제외 규칙에 따라 사용하지 않음. PwC 공식 발표에서 제휴 역할·배포 구조를 설명하는 적합한 화면이나 도표를 확인하지 못함. 독립 기사 이미지는 Canva의 일반 AI 칩 사진으로 공식 본문 도표가 아니어서 제외함.",
+ "factcheck": {
+  "status": "completed",
+  "claims": 40,
+  "confirmed": 37,
+  "removed": [
+   "프라이빗 클라우드는 전용 클라우드 환경이다.",
+   "온프레미스는 조직 내부 설비에 두는 방식이다.",
+   "에어갭은 외부 네트워크와 분리한 환경이다."
+  ],
+  "note": "2026-10-06 별도 검증: post.json 제목·도입·요약·모든 섹션(표/박스 포함)·FAQ·맺음말을 읽고 반복되는 동일 사실은 하나로 합쳐 원자적 주장 40개 추출. PwC 공식 본문 335~370행, Cohere 공식 본문 150~182행 및 The Next Web 기사 3~32·41행을 실제 재열람했다. 37개 확인, 출처에 정의가 없는 배포 용어 설명 3개 삭제. 가상 예시·검토 질문·명시적인 작성자 의견은 사실 개수에 포함하지 않음. 법률 적용·규제 준수·성능·가격의 확정적 주장은 없으며 주의 문구는 보장으로 확대하지 않는 해석이다. PwC 첫 직접 열기는 실패했으나 Cohere 공식 링크로 다시 열어 본문을 읽었다. 검증 완료는 발행 승인 또는 발행을 의미하지 않는다."
+ },
+ "selection": {
+  "category": "AI 뉴스 리뷰",
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-10-03",
+  "official_announcement_date": "2026-10-05",
+  "independent_coverage_date": "2026-10-05",
+  "reason": "최근 3일 이내 기업 AI 사업 제휴이며 공식 양사 발표와 독립 매체 보도가 확인됨. 지정 카테고리를 유지함.",
+  "duplicate_check": "brief-4.md에 제공된 이미 쓴 글 전체와 대조함. North 2 출시 글은 존재하지만 PwC 제휴 발표와 대표 원문은 다름. North 2 기능·스펙을 재작성하지 않고 제휴 역할·공개 범위에 한정함. 외부 발행 기록은 접근하지 않았으며 제공 목록 밖 중복은 확인하지 못함."
+ },
+ "initial_research_facts": [
+  {
+   "statement": "양사는 2026-10-05 글로벌 제휴를 발표했고 캐나다 우선 출범을 설명함.",
+   "source_ids": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "statement": "Cohere는 North, 기업용 모델, 검색·정보 검색 역량을 제공한다고 설명함.",
+   "source_ids": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "statement": "PwC는 활용처 선정, 위험·규제 평가, 업무 재설계, 거버넌스·통제, 기업 시스템 연결과 구현 지원을 설명함.",
+   "source_ids": [
+    "S1"
+   ]
+  },
+  {
+   "statement": "활용 범위에는 기업 검색, 지식 접근, 심층 조사, 의사결정 지원, 작업 자동화가 포함됨.",
+   "source_ids": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "statement": "배포 선택지에 프라이빗 클라우드, 온프레미스, 에어갭 환경을 명시함.",
+   "source_ids": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "statement": "PwC 발표의 성과 측정 방향에는 생산성, 비용, 서비스 제공, 의사결정이 포함됨.",
+   "source_ids": [
+    "S1"
+   ]
+  },
+  {
+   "statement": "읽은 공식 발표에 고객명, 계약 금액, 상세 지역 확대 일정, 고객별 개선 수치는 제시되지 않음. 공개 부재이며 고객·계약 자체의 부재로 해석하지 않음.",
+   "source_ids": [
+    "S1",
+    "S3"
+   ]
+  }
+ ],
+ "draft_checks": {
+  "body_characters_without_whitespace_markup_and_source_markers": 5609,
+  "sections": 7,
+  "tables": 2,
+  "faq": 4,
+  "info_boxes": 3,
+  "warning_boxes": 2,
+  "paragraph_emphasis": "모든 sections paragraph 블록에 핵심 강조 포함",
+  "json_valid": true,
+  "factcheck_complete": true
+ },
+ "scope_note": "원고·조사 기록만 로컬 JSON으로 저장함. 외부 발행·알림·git 작업 없음. 가상 상황과 검토 질문은 작성자 해석으로 표시함.",
+ "request": {
+  "id": "C0C50SP7VV5-1791248113935869",
+  "kind": "all"
+ }
+}
