@@ -1,0 +1,245 @@
+{
+ "claims": [
+  {
+   "claim": "PwC와 Cohere가 글로벌 기업 AI 제휴를 발표했다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 본문 340행에서 양사명과 global alliance 확인"
+  },
+  {
+   "claim": "공식 발표일은 2026년 10월 5일이다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 페이지 날짜 338행 및 본문 340행 확인; Cohere 페이지 150행도 일치"
+  },
+  {
+   "claim": "제휴는 캐나다에서 먼저 출범한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 339~340행 starting with Canada 확인; 한국·세계 동시 일정으로 확대하지 않음"
+  },
+  {
+   "claim": "협력은 기업 AI 기술과 도입·업무 전환 지원을 결합한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 340·347행 역할 설명 확인"
+  },
+  {
+   "claim": "Cohere는 AI 기술 기반을 제공하는 역할이다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 will provide the secure AI foundation 확인"
+  },
+  {
+   "claim": "Cohere의 기술 요소에 North가 포함된다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 179행 North 명시; S1 347행 교차 확인"
+  },
+  {
+   "claim": "North는 Cohere의 에이전트형 AI 플랫폼으로 소개된다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 179행 agentic AI platform 확인; 성능 보장으로 해석하지 않음"
+  },
+  {
+   "claim": "Cohere의 기술 요소에 기업용 모델이 포함된다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 179행 enterprise models 확인"
+  },
+  {
+   "claim": "Cohere의 기술 요소에 검색·정보 검색 역량이 포함된다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 179행 search and retrieval 확인"
+  },
+  {
+   "claim": "PwC는 고객의 기업 도입·전환을 지원하는 역할이다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 340·347행 transformation 및 implementation 설명"
+  },
+  {
+   "claim": "PwC는 가치가 큰 활용처 선정을 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 identify high-value uses 확인"
+  },
+  {
+   "claim": "PwC는 위험 평가를 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 assess risk 확인"
+  },
+  {
+   "claim": "PwC는 규제 요구 평가를 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 regulatory requirements 확인; 특정 법률 준수 보장으로 쓰지 않음"
+  },
+  {
+   "claim": "PwC는 업무 흐름 재설계를 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 redesign workflows 확인"
+  },
+  {
+   "claim": "PwC는 거버넌스와 통제 체계 수립을 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 establish governance and controls 확인"
+  },
+  {
+   "claim": "PwC는 기업 데이터·시스템 연결과 구현을 지원한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 347행 connect 및 support implementation 확인"
+  },
+  {
+   "claim": "제휴의 활용 범위에는 기업 검색이 있다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 enterprise search 확인"
+  },
+  {
+   "claim": "제휴의 활용 범위에는 지식 접근이 있다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 knowledge access 확인"
+  },
+  {
+   "claim": "제휴의 활용 범위에는 심층 조사가 있다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 deep research 확인"
+  },
+  {
+   "claim": "제휴의 활용 범위에는 의사결정 지원이 있다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 decision support 확인"
+  },
+  {
+   "claim": "제휴의 활용 범위에는 작업 자동화가 있다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 task automation 확인"
+  },
+  {
+   "claim": "배포 선택지로 프라이빗 클라우드를 제시했다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 private cloud 확인; S1 359행도 일치"
+  },
+  {
+   "claim": "배포 선택지로 온프레미스를 제시했다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 on-premises 확인; 고객별 제공 조건은 확정하지 않음"
+  },
+  {
+   "claim": "배포 선택지로 에어갭 환경을 제시했다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": true,
+   "action": "유지 — 180행 air-gapped environments 확인"
+  },
+  {
+   "claim": "데이터와 인프라 통제 요구를 배포 선택지와 연결해 설명한다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 359행 greater control over sensitive data and infrastructure 확인; 목표로 유지"
+  },
+  {
+   "claim": "성과 측정의 사업 우선순위에 생산성을 제시했다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 360행 productivity 확인; 달성된 성과가 아닌 방향"
+  },
+  {
+   "claim": "성과 측정의 사업 우선순위에 비용을 제시했다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 360행 cost 확인; 가격이나 절감률은 없음"
+  },
+  {
+   "claim": "성과 측정의 사업 우선순위에 서비스 제공을 제시했다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 360행 service delivery 확인"
+  },
+  {
+   "claim": "성과 측정의 사업 우선순위에 의사결정을 제시했다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 360행 decision-making 확인"
+  },
+  {
+   "claim": "읽은 공식 발표에는 제휴 고객명이 제시되지 않았다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 발표 본문 335~370행 전체에서 제휴 고객명 미기재 확인; 고객 자체의 부재를 뜻하지 않음"
+  },
+  {
+   "claim": "읽은 공식 발표에는 제휴 계약 금액이 제시되지 않았다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 335~370행 전체 확인; 364행 Cohere 누적 투자액은 제휴 금액이 아님"
+  },
+  {
+   "claim": "읽은 공식 발표에는 캐나다 이후 상세 지역 확대 일정이 제시되지 않았다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 335~370행 전체 확인; 캐나다 우선만 명시"
+  },
+  {
+   "claim": "읽은 공식 발표에는 고객별 개선 수치가 제시되지 않았다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 335~370행 전체 확인; 측정 목표와 고객 실적 구분"
+  },
+  {
+   "claim": "이 발표만으로 한국 계약 창구·공급 일정·지원 언어를 확정할 수 없다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 335~370행에 한국 제공 조건 없음; Cohere 서울 사무소 언급을 한국 서비스 출시로 해석하지 않음"
+  },
+  {
+   "claim": "The Next Web이 2026년 10월 5일 제휴를 보도했다.",
+   "url": "https://thenextweb.com/news/cohere-pwc-sovereign-ai-ownership",
+   "confirmed": true,
+   "action": "유지 — 기사 제목·7행·41행 발행일 확인; 외부 매체 기사 직접 재열람"
+  },
+  {
+   "claim": "The Next Web은 고객명·계약 금액·캐나다 이후 일정 미공개를 지적했다.",
+   "url": "https://thenextweb.com/news/cohere-pwc-sovereign-ai-ownership",
+   "confirmed": true,
+   "action": "유지 — 12~15행 확인; 공식 본문 공개 범위와 일치"
+  },
+  {
+   "claim": "이 발표는 새로운 모델의 성능이나 별도 제품의 일반 판매 개시를 확정하는 자료가 아니다.",
+   "url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "confirmed": true,
+   "action": "유지 — 발표 전체는 제휴 내용; 모델 성능·일반 판매 일정 미기재"
+  },
+  {
+   "claim": "프라이빗 클라우드는 전용 클라우드 환경이다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": false,
+   "action": "삭제 — 공식 제휴 발표는 배포 방식 이름만 열거하며 용어 정의는 제공하지 않음. 일반적 설명을 이번 검증의 확인된 사실로 세지 않음"
+  },
+  {
+   "claim": "온프레미스는 조직 내부 설비에 두는 방식이다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": false,
+   "action": "삭제 — 공식 제휴 발표는 배포 방식 이름만 열거하며 용어 정의는 제공하지 않음. 일반적 설명을 이번 검증의 확인된 사실로 세지 않음"
+  },
+  {
+   "claim": "에어갭은 외부 네트워크와 분리한 환경이다.",
+   "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "confirmed": false,
+   "action": "삭제 — 공식 제휴 발표는 배포 방식 이름만 열거하며 용어 정의는 제공하지 않음. 일반적 설명을 이번 검증의 확인된 사실로 세지 않음"
+  }
+ ],
+ "note": "2026-10-06 별도 검증: post.json 제목·도입·요약·모든 섹션(표/박스 포함)·FAQ·맺음말을 읽고 반복되는 동일 사실은 하나로 합쳐 원자적 주장 40개 추출. PwC 공식 본문 335~370행, Cohere 공식 본문 150~182행 및 The Next Web 기사 3~32·41행을 실제 재열람했다. 37개 확인, 출처에 정의가 없는 배포 용어 설명 3개 삭제. 가상 예시·검토 질문·명시적인 작성자 의견은 사실 개수에 포함하지 않음. 법률 적용·규제 준수·성능·가격의 확정적 주장은 없으며 주의 문구는 보장으로 확대하지 않는 해석이다. PwC 첫 직접 열기는 실패했으나 Cohere 공식 링크로 다시 열어 본문을 읽었다. 검증 완료는 발행 승인 또는 발행을 의미하지 않는다."
+}
