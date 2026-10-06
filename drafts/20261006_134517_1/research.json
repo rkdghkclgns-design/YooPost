@@ -1,0 +1,96 @@
+{
+ "topic": "Introducing Beam: Reflection’s 501B open-weight model (2026-10-05)",
+ "source_url": "https://reflection.ai/blog/introducing-beam",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Beam: Reflection’s 501B open-weight model",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "publisher": "Reflection AI",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Reflection AI debuts open-source Beam model with 501B parameters",
+   "url": "https://siliconangle.com/2026/10/05/reflection-ai-debuts-open-source-beam-model-with-501b-parameters/",
+   "publisher": "SiliconANGLE / Maria Deutscher",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Beam Benchmarks & Sources (October 2026)",
+   "url": "https://benchlm.ai/models/reflection-beam",
+   "publisher": "BenchLM",
+   "published": "2026-10-05",
+   "official": false,
+   "date_note": "페이지의 Data as of 및 Last updated 날짜. 독립 보도 발표일 요건은 S2로 충족."
+  },
+  {
+   "id": "S4",
+   "title": "Machine Learning Glossary — parameter",
+   "url": "https://developers.google.com/machine-learning/glossary",
+   "publisher": "Google for Developers",
+   "published": "",
+   "official": true,
+   "date_note": "용어 정의 참고 문서이며 이슈 발표일 근거가 아님. 페이지 발행일은 확인하지 못함."
+  },
+  {
+   "id": "S5",
+   "title": "AI Red Teaming Agent",
+   "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry-classic",
+   "publisher": "Microsoft Learn",
+   "published": "",
+   "official": true,
+   "date_note": "AI 레드팀 정의 참고 문서이며 이슈 발표일 근거가 아님. 페이지 발행일은 확인하지 못함."
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/sp40emik/production/421fc4392ddd11099de35443077d3a84506c82d4-1200x675.png",
+   "page_url": "https://reflection.ai/blog/introducing-beam",
+   "caption": "Figure 2: Beam의 추론 효율 비교. 근사 계산량이며 프롬프트 사전 처리·어텐션·서빙 오버헤드는 제외.",
+   "credit": "Reflection AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 35,
+  "confirmed": 35,
+  "removed": [],
+  "note": "별도 사실 검증 세션에서 post.json 전체(제목·요약·표·FAQ·이미지 설명 포함)의 외부 사실을 추출했다. 동일 주장의 반복은 합쳐 1건으로 집계했다. Reflection 공식 본문 전체와 Figure 2 링크를 다시 열었고 용어는 Google·Microsoft 공식 문서로 대조했다. 매체 보도 행위와 BenchLM 자신의 표기 상태는 해당 발행자의 원문을 읽어 확인했다. SiliconANGLE 웹 open 실패는 원 URL urllib 직접 읽기로 보완했다. confirmed=true는 출처가 해당 내용을 발표·표기했다는 확인이며 성능의 독립 재현, 모델 실행, 실제 배포 완료 확인을 뜻하지 않는다. 실행 후기·평가안·예제 프롬프트·작성 기준일·검증 상태 등 자체 작업 설명은 외부 주장 집계에서 제외했다. Beam 실행·계정 신청·Slack·발행·git 작업은 하지 않았다. 게시 승인 여부는 판단하거나 승인하지 않았다. 날짜·새 소식 요건은 공식 및 독립 보도의 2026-10-05로 충족하며 제공 brief 내 중복은 없음. 현재 서비스 한도·API 가격·실제 배포 파일·최종 라이선스는 확인하지 않았고 확정 주장으로 쓰지 않았다. 사실 오류로 삭제한 항목은 없다. 공개/발표, 현재/발표 당시, 이달/2026년 10월, 효율 비율과 용어 정의 표현을 수정했다."
+ },
+ "status": "factchecked_draft",
+ "selection": {
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-10-03",
+  "category_fixed": true,
+  "duplicate_check": "brief-1.md의 이미 쓴 글 전부와 최근 원고 목록에서 Beam·Reflection 및 대표 원문 중복 없음. 외부 발행 기록에는 접속하지 않음."
+ },
+ "reading_notes": [
+  "별도 검증 단계에서 Reflection 원문 전체 재독 및 Figure 2 링크 열기 완료.",
+  "SiliconANGLE 원 URL urllib 직접 읽기로 기사 날짜·본문 재확인.",
+  "BenchLM 원문 재독으로 본인 순위·근거 표기 확인.",
+  "Google glossary parameter 및 Microsoft AI red teaming 정의 원문 읽기.",
+  "텍스트 전용은 공식 본문 데모 설명에서 확인.",
+  "작성자의 활용 제안·프롬프트는 실행 결과가 아니며 검증 집계에서 제외."
+ ],
+ "unconfirmed": [
+  "실제 서비스 컨텍스트 한도",
+  "호스팅 API 요금·호출 모델 ID",
+  "가중치 실제 다운로드 공개 여부와 공개 날짜",
+  "독립적으로 재현된 성능과 실제 비용"
+ ],
+ "failed_page_opens": [
+  "SiliconANGLE 웹 open(원 URL urllib 읽기로 보완)",
+  "Think Facility 웹 open",
+  "MarkTechPost 웹 open",
+  "Implicator 웹 open"
+ ],
+ "verification_required": false,
+ "request": {
+  "id": "C0C50SP7VV5-1791259338398959",
+  "kind": "all"
+ }
+}
