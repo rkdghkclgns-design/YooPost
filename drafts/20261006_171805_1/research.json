@@ -1,0 +1,95 @@
+{
+ "topic": "Introducing GLM 5.3 on Amazon Bedrock (AWS, 2026-10-05) — 새 제공 경로의 API·캐시·교차 리전 조건",
+ "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing GLM 5.3 on Amazon Bedrock",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "publisher": "AWS",
+   "published": "2026-10-05",
+   "official": true,
+   "read_method": "web.open으로 공식 발표 본문과 API 예제·이미지 링크를 읽음",
+   "verification_read_method": "web.open 재열람"
+  },
+  {
+   "id": "S2",
+   "title": "GLM 5.3 - Amazon Bedrock",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "publisher": "AWS Documentation",
+   "published": "2026-10-05",
+   "official": true,
+   "published_basis": "페이지의 Model launch date. 문서 자체 게시일은 표기되지 않았으므로 이 날짜는 모델의 Bedrock 출시일임.",
+   "read_method": "web.open 접근 실패 후 urllib로 실제 공식 HTML 전체를 열어 모델 상세·접근 제한·캐시·프로필·예제를 읽음",
+   "verification_read_method": "urllib 공식 HTML 재열람"
+  },
+  {
+   "id": "S3",
+   "title": "Prompt caching for faster model inference - Amazon Bedrock",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "publisher": "AWS Documentation",
+   "published": null,
+   "official": true,
+   "published_basis": "페이지 게시일 미표기. 최신 이슈 판정용 출처가 아닌 보충 문서.",
+   "read_method": "web.open으로 캐시 유형·접두부·적중 보장 없음·사용량 확인 안내를 읽음",
+   "verification_read_method": "web.open 재열람"
+  },
+  {
+   "id": "S4",
+   "title": "Amazon Bedrock Adds Zhipu's GLM-5.3 Under a Revenue Sharing Deal",
+   "url": "https://startupfortune.com/amazon-bedrock-adds-zhipus-glm-53-under-a-revenue-sharing-deal/",
+   "publisher": "Startup Fortune",
+   "published": "2026-10-06",
+   "official": false,
+   "read_method": "web.open 접근 실패 후 urllib로 실제 기사 원문과 Dave Barr·Oct 6, 2026 표기를 읽음",
+   "use_scope": "기간 내 독립 매체 이슈 확인. 매출 배분·주가·외부 단가 등은 원고에 사용하지 않음",
+   "verification_read_method": "urllib(User-Agent 지정) 기사 원문 재열람"
+  },
+  {
+   "id": "S5",
+   "title": "GLM-5.3 auf Amazon Bedrock: Zhipu verdient an jedem Aufruf, trotz US-Entity-List",
+   "url": "https://www.drweb.de/glm-5-3-amazon-bedrock-zhipu-entity-list/",
+   "publisher": "Dr. Web",
+   "published": "2026-10-06",
+   "official": false,
+   "read_method": "web.open 접근 실패 후 urllib로 실제 기사 원문과 Michael Dobler·6. Oktober 2026 표기를 읽음",
+   "use_scope": "기간 내 독립 매체 이슈 확인. 수출통제·재무·법률 해석은 원고에 사용하지 않음",
+   "verification_read_method": "urllib(User-Agent 지정) 기사 원문 재열람"
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/05/Screenshot-2026-10-05-at-6.11.23%E2%80%AFPM.png",
+   "page_url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "caption": "AWS 공식 발표의 Figure 1: Bedrock 콘솔에서 GLM 5.3과 대화하는 Playground 화면",
+   "credit": "AWS",
+   "selection_reason": "공식 본문에서 실제 사용 화면으로 제시된 이미지. 썸네일·OG·로고가 아님."
+  }
+ ],
+ "factcheck": {
+  "status": "completed",
+  "claims": 53,
+  "confirmed": 53,
+  "removed": [],
+  "note": "별도 사실 검증 세션에서 post.json의 제목·도입·요약·문단·표·코드·박스·FAQ·맺음말을 대조했다. 반복된 동일 주장은 하나로 합쳤으며 제안·가정·자체 작업 설명은 외부 사실 집계에서 제외했다. S1과 S3은 web.open으로 다시 읽었고, S2는 web.open 실패 후 urllib로 공식 HTML 전체를 직접 읽었다. S4·S5는 web.open 실패 후 User-Agent를 지정한 urllib로 기사 원문·저자·게시일을 읽었다. S1 본문 HTML의 Figure 1 이미지 URL도 대조했다. API 예제는 공식 본문과 대조했으나 설치·API 호출·성능 측정을 실행하지 않았다. 공식 발표의 753B와 모델 문서의 744B 표기 차이는 재확인되었으며 확정 파라미터 수로 사용하지 않았다. 가격 수치·벤치마크 수치·법률 주장은 원고에 없으며 새로 추가하지 않았다. 공식 발표일 2026-10-05와 독립 보도일 2026-10-06을 확인하여 최신성 근거가 충분하다. 승인·발행·외부 알림을 수행하지 않았다. 수정 3건(암시적 캐시 권고 범위, 최소 토큰 조건의 대상, TTL 용어); 삭제 0건."
+ },
+ "research_notes": {
+  "date_basis": "2026-10-06 KST. 공식 발표 2026-10-05, 독립 매체 기사 2026-10-06로 brief의 2026-10-03 이후 조건 충족.",
+  "category_selection": "task.json에 지정된 AI 언어 모델 유지.",
+  "duplicate_check": "brief-1.md 전체의 이미 쓴 글·최근 원고 목록과 대조. 기존 GLM-5.3 보안 능력 분석은 반복하지 않고 10월 5일 Bedrock 제공 후속 변경만 다룸. 폴더 밖 발행 기록이나 외부 서비스에는 접근하지 않음.",
+  "source_conflict": "S1은 전체 파라미터 753B, S2는 744B로 표기. 단일 확정 스펙으로 쓰지 않고 본문에서 자료 간 차이를 명시.",
+  "excluded_sources": "Digest AI는 AWS 원문 재현과 자동 요약 구조가 있어 독립 이슈 확인 근거에서 제외. 검색 요약만 읽었거나 접근 실패한 RuntimeWire는 sources에 넣지 않음.",
+  "unknowns": "Bedrock 구성별 확정 단가·팀 업무의 실측 품질·파라미터 표기 차이의 원인은 확정하지 않음.",
+  "execution_note": "공식 발표와 문서·독립 기사 읽기 및 폴더 내 JSON 작성만 수행. 코드 예제·서비스 연결·발행·알림을 실행하지 않음.",
+  "verification_changes": [
+   "암시적 캐시의 정적/동적 입력 배치 권고로 범위 명시",
+   "1,024토큰 조건의 대상이 체크포인트 앞 프롬프트 접두부임을 명시",
+   "캐시 보존 시간에 TTL 용어 추가"
+  ]
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791273270841789",
+  "kind": "all"
+ }
+}
