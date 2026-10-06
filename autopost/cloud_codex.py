@@ -91,3 +91,12 @@ def validate_verification(research: dict, verification: dict) -> None:
     if not isinstance(fc, dict) or type(fc.get("claims")) is not int or type(fc.get("confirmed")) is not int \
             or fc["claims"] != len(claims) or fc["confirmed"] != sum(c["confirmed"] for c in claims):
         raise ValueError("사실 검증 개수와 주장별 검증 기록이 맞지 않습니다")
+
+
+def validate_primary_source(research: dict) -> None:
+    """대표 원문의 날짜 근거를 출처 목록에서 확인할 수 있어야 한다."""
+    source = research.get("source_url")
+    sources = research.get("sources")
+    if not isinstance(source, str) or not source.strip() or not isinstance(sources, list) or not any(
+        isinstance(item, dict) and item.get("url") == source for item in sources):
+        raise ValueError("대표 원문(source_url)이 sources 목록에 없습니다")

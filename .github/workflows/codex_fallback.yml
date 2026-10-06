@@ -199,7 +199,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: gh workflow run cloud_drafts.yml --ref main -f note="Codex 클라우드 인계 결과"
       - name: 남은 수동 지시 카테고리 계속 작성
-        if: steps.complete.outputs.continue == 'true' && vars.CODEX_FALLBACK_ENABLED == 'true'
+        if: always() && steps.complete.outputs.continue == 'true' && vars.CODEX_FALLBACK_ENABLED == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}

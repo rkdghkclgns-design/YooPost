@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, reserve, settle, validate_verification  # noqa: E402
+from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, reserve, settle, validate_primary_source, validate_verification  # noqa: E402
 from autopost.cloud_drafts import DRAFTS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import manual_thread, read_request, request_id_of, request_path  # noqa: E402
@@ -198,7 +198,9 @@ def generate(work: Path) -> int:
                                              "reason": str(stopped.get("reason") or "검증 근거 부족")[:300]})
             return 0
         try:
-            validate_verification(checked_json(isolated / "research.json"), checked_json(isolated / "verification.json"))
+            research = checked_json(isolated / "research.json")
+            validate_verification(research, checked_json(isolated / "verification.json"))
+            validate_primary_source(research)
         except ValueError:
             run_codex(isolated, "방금 생성한 post.json·research.json·verification.json의 전달 형식을 보정하세요. "
                 "모든 외부 사실 주장에는 실제 읽은 공식 원문의 비어 있지 않은 URL과 boolean confirmed가 필요하고, "
@@ -206,13 +208,18 @@ def generate(work: Path) -> int:
                 "자체 실행 여부·검증 단계 상태 같은 작업 설명은 verification.note와 research.factcheck.note로 옮기고 "
                 "외부 사실의 claims 집계에서 제외하세요. 외부 사실 주장이나 확인 불가한 주장을 보고서에서 숨기지 마세요. "
                 "research.factcheck.claims는 verification.claims 길이, confirmed는 실제 true 개수와 일치시킵니다. "
-                "이미 검증한 외부 사실의 근거와 본문을 보존하고, 근거를 확인할 수 없으면 skip.json에 이유를 남기세요.", minutes=5)
+                "대표 원문 research.source_url은 research.sources의 url 항목에도 정확히 같은 주소로 기록하세요. "
+                "논문 소개(abs)와 본문(html) 주소가 다르면 실제 읽은 소개 페이지를 날짜 근거와 함께 출처에 기록하세요. "
+                "원문 날짜나 공식 여부를 지어내지 마세요. 이미 검증한 외부 사실의 근거와 본문을 보존하고, "
+                "근거를 확인할 수 없으면 skip.json에 이유를 남기세요.", minutes=5)
             if (isolated / "skip.json").is_file():
                 stopped = checked_json(isolated / "skip.json")
                 write_json(work / "result.json", {"status": "skip", "category": stopped.get("category"),
                                                  "reason": str(stopped.get("reason") or "검증 근거 부족")[:300]})
                 return 0
-            validate_verification(checked_json(isolated / "research.json"), checked_json(isolated / "verification.json"))
+            research = checked_json(isolated / "research.json")
+            validate_verification(research, checked_json(isolated / "verification.json"))
+            validate_primary_source(research)
         for name in ("post.json", "research.json", "verification.json"):
             write_json(work / name, checked_json(isolated / name))
         write_json(work / "result.json", {"status": "draft"})
@@ -258,7 +265,9 @@ def complete(work: Path) -> int:
             result = "skipped"
         elif data.get("status") == "draft":
             verification = checked_json(work / "verification.json")
-            validate_verification(checked_json(work / "research.json"), verification)
+            research = checked_json(work / "research.json")
+            validate_verification(research, verification)
+            validate_primary_source(research)
             folder = helper.TREE / DRAFTS / f"{now:%Y%m%d_%H%M%S}_{CATEGORIES.index(category) + 1}"
             if folder.exists():
                 raise ValueError("같은 원고 폴더가 이미 있어 덮어쓰지 않았습니다")
@@ -299,11 +308,16 @@ def complete(work: Path) -> int:
                 path = request_path(helper.TREE, task["request"])
                 write_json(path, updated)
                 extra.append(str(path.relative_to(helper.TREE)))
-        save_state(settle(state, task, owner(), result, note), f"codex: {result}", extra)
+        ended = settle(state, task, owner(), result, note)
+        save_state(ended, f"codex: {result}", extra)
         notice(task, ("완료 — " if result == "done" else "건너뜀 — " if result == "skipped" else "처리 결과 — ")
                + escape_mrkdwn(note))
-        if result in ("done", "skipped") and task["request"] and not read_request(helper.TREE, task["request"]).get("finished"):
-            output("continue", "true")
+        if task["request"] and not read_request(helper.TREE, task["request"]).get("finished"):
+            # 실패한 카테고리의 대기·횟수 상한을 유지하면서 아직 가능한 요청 카테고리만 이어 간다.
+            next_task = choose_task({"synced": True, "requests": [
+                {**task, "id": task["request"], "missing": missing}]}, ended, datetime.now(KST))
+            if next_task:
+                output("continue", "true")
     return 0 if result in ("done", "skipped", "superseded") else 1
 
 

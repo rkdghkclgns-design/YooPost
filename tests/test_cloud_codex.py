@@ -5,7 +5,7 @@ from datetime import timedelta
 import pytest
 from cryptography.fernet import Fernet
 
-from autopost.cloud_codex import choose_task, cloud_lease, reserve, retry_ready, settle, task_key, validate_verification
+from autopost.cloud_codex import choose_task, cloud_lease, reserve, retry_ready, settle, task_key, validate_primary_source, validate_verification
 from autopost.cloud_drafts import read_json, write_json
 from autopost.codex_fallback import fallback_requests, takeover_reason
 from autopost.draft_request import request_path, with_request
@@ -244,7 +244,8 @@ def test_invalid_evidence_is_rejected_before_and_after_generation(claim, fc):
 
 
 @pytest.mark.parametrize("repaired", [True, False])
-def test_generation_repairs_report_format_once_without_bypassing_validation(tmp_path, monkeypatch, repaired):
+@pytest.mark.parametrize("defect", ["verification", "primary-source"])
+def test_generation_repairs_report_format_once_without_bypassing_validation(tmp_path, monkeypatch, repaired, defect):
     work = tmp_path / "work"
     write_json(work / "task.json", task())
     calls = []
@@ -253,8 +254,12 @@ def test_generation_repairs_report_format_once_without_bypassing_validation(tmp_
     def fake_codex(isolated, prompt, minutes=20):
         calls.append(prompt)
         write_json(isolated / "post.json", {"category": "AI 도구"})
-        proof = [factual] if len(calls) == 3 and repaired else [factual, process]
-        write_json(isolated / "research.json", {"factcheck": {"claims": len(proof), "confirmed": 1}})
+        fixed = len(calls) == 3 and repaired
+        proof = [factual] if fixed or defect == "primary-source" else [factual, process]
+        url = "https://arxiv.org/abs/2609.40286"
+        sources = [{"url": url if fixed or defect == "verification" else "https://arxiv.org/html/2609.40286v1"}]
+        write_json(isolated / "research.json", {"source_url": url, "sources": sources,
+                                                "factcheck": {"claims": len(proof), "confirmed": 1}})
         write_json(isolated / "verification.json", {"claims": proof, "note": "작업 상태 설명"})
     monkeypatch.setattr(codex_cloud, "run_codex", fake_codex)
     if repaired:
@@ -262,7 +267,51 @@ def test_generation_repairs_report_format_once_without_bypassing_validation(tmp_
         assert read_json(work / "verification.json")["claims"] == [factual]
         assert read_json(work / "result.json") == {"status": "draft"}
     else:
-        with pytest.raises(ValueError, match="검증 근거"):
+        with pytest.raises(ValueError, match="검증 근거" if defect == "verification" else "대표 원문"):
             codex_cloud.generate(work)
         assert not (work / "result.json").exists()
     assert len(calls) == 3 and "지어내지" in calls[-1]
+
+
+@pytest.mark.parametrize("kind,blocked,continued", [("all", False, True), ("all", True, False), ("single", False, False)])
+def test_failed_category_does_not_stop_other_work_or_bypass_retry_limits(branch_repo, monkeypatch, tmp_path, kind, blocked, continued):
+    _, _, tree = branch_repo
+    monkeypatch.setattr(codex_cloud.helper, "TREE", tree)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
+    monkeypatch.setattr(codex_cloud, "notice", lambda task, text: None)
+    outputs = []
+    monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
+    live = codex_cloud.datetime.now(codex_cloud.KST)
+    selected = task(day=live.strftime("%Y%m%d"), request=RID, kind=kind, owner="123-1")
+    write_json(request_path(tree, RID), record(kind=kind, category="AI 도구" if kind == "single" else "",
+                                            created=live.isoformat(), started=live.isoformat()))
+    state = reserve({}, selected, "123-1", live)
+    if blocked:
+        for category in codex_cloud.CATEGORIES:
+            if category != selected["category"]:
+                state["attempts"][task_key({**selected, "category": category})] = {
+                    "at": live.isoformat(), "count": 2, "status": "failed"}
+    write_json(tree / "state/codex.json", state)
+    codex_cloud.helper.publish(["state/codex.json", str(request_path(tree, RID).relative_to(tree))], "manual lease")
+    work = tmp_path / "failed-result"
+    write_json(work / "result.json", {"status": "draft", "category": "AI 도구"})
+    write_json(work / "post.json", {"category": "AI 도구"})
+    write_json(work / "research.json", {"factcheck": {"claims": 0, "confirmed": 0}})
+    write_json(work / "verification.json", {"claims": []})
+    assert codex_cloud.complete(work) == 1
+    assert (("continue", "true") in outputs) is continued
+    ended = read_json(tree / "state/codex.json")
+    assert not ended["lease"]
+    assert ended["attempts"][task_key(selected)]["count"] == 1
+    assert not retry_ready(ended, selected, live + timedelta(minutes=1))
+
+
+def test_primary_source_requires_the_actual_metadata_page_in_sources():
+    abs_url = "https://arxiv.org/abs/2609.40286"
+    html_url = "https://arxiv.org/html/2609.40286v1"
+    research = {"source_url": abs_url, "sources": [{"url": html_url, "metadata_url": abs_url}]}
+    with pytest.raises(ValueError, match="대표 원문"):
+        validate_primary_source(research)
+    research["sources"].append({"url": abs_url, "published": "2026-09-30", "official": True})
+    validate_primary_source(research)

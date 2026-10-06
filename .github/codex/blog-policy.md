@@ -25,3 +25,5 @@ claims에는 실제 읽은 공식 출처 URL이 있는 외부 사실 주장만 �
 confirmed는 boolean이며, 확인 불가한 외부 주장은 본문에서 삭제·수정하고 action에 조치를 적는다. URL을 지어내거나 외부 주장을 검증 집계에서 숨기지 않는다.
 research.json.factcheck의 claims는 verification.json.claims 길이, confirmed는 그중 true인 항목 수와 일치시킨다.
 다 읽지 못했거나 근거가 부족하면 성공한 것처럼 보고하지 않는다.
+
+대표 원문 research.source_url은 research.sources[].url에도 정확히 같은 주소로 넣는다. 논문 소개 페이지와 본문 URL이 다르면 실제 읽은 소개 페이지와 확인한 발행일을 별도 출처로 기록한다.
