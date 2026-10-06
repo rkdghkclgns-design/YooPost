@@ -1,0 +1,122 @@
+{
+ "topic": "Littler’s 2026 Labor Survey Report (2026-09-29): AI 노사관계 준비·직원 소통과 Revelio Labs·TD Economics 업무 변화 자료 해설",
+ "source_url": "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Fewer Than 10% of U.S. Employers Feel Very Prepared for AI’s Impact on Labor Relations, Littler Survey Finds",
+   "url": "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+   "publisher": "Littler",
+   "published": "2026-09-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Littler 2026 Labor Survey Report",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "publisher": "Littler",
+   "published": "2026-09-29",
+   "official": true,
+   "published_note": "PDF는 SEPTEMBER 2026 표기. 일자는 공식 보고서 소개 페이지와 발표문에서 확인.",
+   "publication_page_url": "https://www.littler.com/news-analysis/littler-report/littler-labor-survey-report-2026"
+  },
+  {
+   "id": "S3",
+   "title": "Littler survey finds an AI workplace readiness gap",
+   "url": "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "publisher": "displacement.ai",
+   "published": "2026-09-30",
+   "official": false,
+   "note": "별도 검증에서 원 URL HTML을 urllib로 재개방해 본문·날짜·자체 해설·AI 작성 표기를 확인. 웹 도구는 Internal Error. 공식 사실의 근거는 S1·S2에 둠."
+  },
+  {
+   "id": "S4",
+   "title": "AI Labor Market Tracker: September 2026",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "publisher": "Revelio Labs",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Generative Artificial Intelligence, Productivity, and the Future of Work: Why AI Is More Likely to Change Jobs Than Eliminate Them",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "publisher": "TD Economics",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://economics.td.com/domains/economics.td.com/images/reports/rb/gen-ai-intelligence/chart11.png",
+   "page_url": "https://economics.td.com/gen-ai-intelligence",
+   "caption": "TD Economics Chart 11: AI 사용 기업의 재교육·채용·해고 대응을 구분한 도표. 한국 기업의 비율을 나타내지 않습니다.",
+   "credit": "TD Economics; 원자료: Federal Reserve Bank of New York Regional Business Surveys, August 2026",
+   "note": "공식 본문 도표 및 이미지 주소를 직접 열었음. 썸네일·OG·로고 아님."
+  }
+ ],
+ "factcheck": {
+  "status": "complete",
+  "claims": 33,
+  "confirmed": 33,
+  "removed": [],
+  "note": "2026-10-06 별도 검증: post.json 전체의 제목·도입·요약·8개 섹션(표·박스 포함)·FAQ·마무리·주의문구를 읽고 확인 가능한 주장을 33개 고유 명제로 집계했다. 반복 출현은 중복 집계하지 않았다. S1·S2·S4·S5 공식 원문을 다시 열어 관련 질문·방법론·지표 정의·분석 조건·도표 설명을 읽었고, S3는 웹 도구 오류 뒤 원 URL HTML을 직접 읽었다. 모든 주장은 원문 범위에서 확인됐다. 17%의 질문 범위와 90%의 지표 정의를 보완하고 도입의 S4·S5 출처 표시를 추가했다. 가격·모델 성능·제품 스펙·개별 법적 의무에 관한 주장은 없다. 가상의 사례·운영 질문·예측 가능성은 명시적으로 작성자의 제안이며 검증된 성과로 집계하지 않았다. 신규 발표 기간과 독립 해설을 재확인해 skip 사유 없음. 이는 사실검증 결과이며 승인·발행을 수행하지 않았다."
+ },
+ "selection": {
+  "category": "AI 인사이트",
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-09-29",
+  "official_announcement_date": "2026-09-29",
+  "independent_coverage_date": "2026-09-30",
+  "duplicate_check": "brief-6.md의 이미 쓴 글 전체·최근 원고 목록을 읽고 Littler·Revelio·TD Economics 및 같은 원문 중복 없음 확인. 외부 발행 서비스에는 접속하지 않음.",
+  "candidate_rejections": [
+   "KPMG Q3 Global AI Pulse: 10/5 지역 소개 페이지와 달리 9/24 최초 발표 보도가 있어 최신 기간 이슈로 채택하지 않음.",
+   "Teradata 9/30 해설: 같은 연구를 다룬 7/20 공식 원문을 확인하여 새 연구 발표로 채택하지 않음.",
+   "Gallup 생산성 페이지: 9/30 업데이트만으로 새 발표인지 확인할 수 없어 채택하지 않음."
+  ]
+ },
+ "read_notes": [
+  {
+   "source_id": "S1",
+   "read": "공식 발표 날짜, AI 준비도·소통 항목을 읽음."
+  },
+  {
+   "source_id": "S2",
+   "read": "PDF 텍스트, 인쇄 14~17쪽 AI 항목 및 24쪽 방법론을 읽음. 58% 하위집단 조건을 확인하고 해당 수치는 원고에서 사용하지 않음."
+  },
+  {
+   "source_id": "S3",
+   "read": "기사 본문·자체 분석·방법론·AI 작성 표기를 읽음."
+  },
+  {
+   "source_id": "S4",
+   "read": "발표일·개요·노출과 도입 정의·Work Content Figure 4.2 설명을 읽음."
+  },
+  {
+   "source_id": "S5",
+   "read": "발표일·세 조건·고용 해석·Chart 11 설명 및 이미지 주소를 열어 확인함."
+  },
+  {
+   "source_id": "S1/S2/S3/S4/S5",
+   "read": "별도 검증 세션에서 재개방 완료. 주장별 근거·검토 위치·수정 내용은 verification.json 참조."
+  }
+ ],
+ "limitations": [
+  "AI 생성 독립 해설을 이슈 확인 출처로 사용하며 사실 근거는 공식 자료에 둠.",
+  "HR Executive 10/2 기사 페이지는 직접 열었지만 본문이 제공되지 않아 채택 출처에 포함하지 않음.",
+  "S2 PDF 차트 스크린샷은 일부 캐시 오류가 발생했다. 수치는 공식 발표문 및 PDF 설명문으로 교차 확인했으며, TD 도표 항목은 공식 본문 대체텍스트로 확인했다."
+ ],
+ "draft_checks": {
+  "paragraph_body_chars_excluding_whitespace_markdown_and_source_markers": 5054,
+  "sections": 8,
+  "tables": 4,
+  "faq": 4,
+  "factcheck_complete": true,
+  "note": "형식·분량 확인만 수행. 사실검증 완료 의미 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791248113935869",
+  "kind": "all"
+ }
+}
