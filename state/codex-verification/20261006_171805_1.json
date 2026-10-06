@@ -1,0 +1,323 @@
+{
+ "claims": [
+  {
+   "claim": "AWS가 2026년 10월 5일 GLM 5.3의 Amazon Bedrock 제공을 발표했다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 Amazon Bedrock의 완전 관리형 API로 접근할 수 있다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "Bedrock의 GLM 5.3 이용 대상은 자격 요건을 충족한 기업 고객이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "콘솔에서 Test > Playground를 선택하고 GLM 5.3을 선택해 프롬프트를 보낼 수 있다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 Responses API를 지원한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 Chat Completions API를 지원한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 Invoke API를 지원한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 Converse API를 지원한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 Python 예제의 준비 조건은 Python 3.10 이상이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제에는 Bedrock 접근 가능한 AWS 계정과 IAM 권한이 필요하다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 패키지 설치 명령은 pip install -U openai aws-bedrock-token-generator이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제는 aws_bedrock_token_generator의 provide_token과 openai의 OpenAI를 가져온다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제의 소스 리전은 us-west-2이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제는 provide_token(region=region)을 api_key로 사용한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제의 base_url은 https://bedrock-runtime.{region}.amazonaws.com/openai/v1이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제는 client.responses.create를 호출하며 모델 ID로 global.zai.glm-5.3을 사용한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제 입력은 Refactor this Python function to be iterative instead of recursive: ...이며 함수 본문은 생략되어 있다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 예제는 resp.output_text를 출력한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 발표는 Standard·Flex·Priority 서비스 계층을 안내한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 발표는 Flex를 시간에 덜 민감한 작업의 비용 최적화 계층으로 설명한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 발표는 Priority를 더 높은 가격으로 지연 시간에 민감한 요청을 우선하는 계층으로 설명한다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 발표문에는 GLM 5.3의 전체 파라미터 수가 753B로 표기되어 있다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 공식 발표의 Figure 1은 Bedrock Playground에서 GLM 5.3과 대화하는 화면이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "Bedrock 모델 문서의 GLM 5.3 컨텍스트 창은 1M 토큰이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "Bedrock 모델 문서의 GLM 5.3 최대 출력은 128K 토큰이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "모델 문서는 GLM 5.3을 복잡한 소프트웨어 엔지니어링과 에이전트 작업을 위한 텍스트 생성 모델로 설명한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 함수 호출을 지원한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 구조화된 JSON 출력을 지원한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 응답 스트리밍을 지원한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "모델 접근은 자격 요건을 충족한 고객으로 제한되며 AWS 계정 담당팀 문의를 안내한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 교차 리전 추론으로만 제공된다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3은 단일 리전 온디맨드 추론을 지원하지 않는다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3의 기본 모델 ID는 zai.glm-5.3이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3의 US 지리적 추론 프로필 ID는 us.zai.glm-5.3이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3의 Global 추론 프로필 ID는 global.zai.glm-5.3이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "GLM 5.3 명시적 캐시 체크포인트 앞의 프롬프트 접두부 최소 토큰 수는 1,024이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "수정: 최소 토큰 조건이 체크포인트 앞 프롬프트 접두부에 적용됨을 명시"
+  },
+  {
+   "claim": "GLM 5.3 명시적 캐시 보존 시간(TTL)은 최소 30분이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "수정: 보존 시간의 TTL 용어를 추가; 최소 30분 수치는 유지"
+  },
+  {
+   "claim": "Bedrock 모델 문서에는 GLM 5.3 전체 파라미터 수가 744B로 표기되어 있다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "AWS 프롬프트 캐시는 반복되는 입력 문맥을 재사용하는 기능이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "암시적 캐시는 요청에 캐시 제어를 넣지 않아도 적격 프롬프트 접두부 재사용을 자동으로 시도한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "명시적 캐시는 모델별 캐시 제어 또는 체크포인트로 재사용할 프롬프트 접두부를 지정한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "암시적 캐시 안내는 정적 내용을 앞에, 동적 내용을 뒤에 배치하도록 권한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "수정: 일반 캐시 배치 권고의 적용 범위를 암시적 캐시 안내로 명시"
+  },
+  {
+   "claim": "암시적 캐시는 동일한 프롬프트를 반복하더라도 캐시 적중을 보장하지 않는다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "명시적 캐시는 적격 요청에서도 캐시 적중을 보장하지 않는다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "모델의 응답 캐시 사용량 필드로 캐시 읽기 또는 쓰기 여부를 확인해야 한다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "토큰은 모델이 입력과 출력을 처리하는 단위이며 캐시 사용량도 토큰으로 기록된다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "Startup Fortune이 2026년 10월 6일 GLM 5.3의 Bedrock 제공 소식을 보도했다.",
+   "url": "https://startupfortune.com/amazon-bedrock-adds-zhipus-glm-53-under-a-revenue-sharing-deal/",
+   "confirmed": true,
+   "action": "유지: 해당 매체 기사 제목·Dave Barr 저자 표기·Oct 6, 2026 날짜와 본문을 직접 읽음. 보도 여부의 1차 출처이며 제품 사양 근거로 사용하지 않음"
+  },
+  {
+   "claim": "Dr. Web이 2026년 10월 6일 GLM 5.3의 Bedrock 제공 소식을 보도했다.",
+   "url": "https://www.drweb.de/glm-5-3-amazon-bedrock-zhipu-entity-list/",
+   "confirmed": true,
+   "action": "유지: 해당 매체 기사 제목·Michael Dobler 저자 표기·6. Oktober 2026 날짜와 본문을 직접 읽음. 보도 여부의 1차 출처이며 법률·가격 근거로 사용하지 않음"
+  },
+  {
+   "claim": "API는 프로그램에서 모델에 요청을 보내고 결과를 받는 연결 창구이다.",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "confirmed": true,
+   "action": "유지: 발표의 Programmatically 설명 및 요청·응답 코드 예제와 일치하는 쉬운 풀이"
+  },
+  {
+   "claim": "함수 호출은 외부 도구에 전달할 요청을 구성하는 기능이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: function calling 지원의 쉬운 풀이; 도구 자동 실행 보장으로 확대하지 않음"
+  },
+  {
+   "claim": "스트리밍은 생성 결과를 순차적으로 받는 방식이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: response streaming 및 streamed reasoning content 설명의 쉬운 풀이"
+  },
+  {
+   "claim": "AWS 리전은 클라우드의 지역 구분이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: Regional Availability의 리전 코드·지역명 표와 대조"
+  },
+  {
+   "claim": "추론 프로필은 모델 요청을 처리할 경로를 지정하는 식별자이다.",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "confirmed": true,
+   "action": "유지: 교차 리전 전용 안내와 Programmatic Access의 geo/global inference ID 사용 지침과 대조"
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 post.json의 제목·도입·요약·문단·표·코드·박스·FAQ·맺음말을 대조했다. 반복된 동일 주장은 하나로 합쳤으며 제안·가정·자체 작업 설명은 외부 사실 집계에서 제외했다. S1과 S3은 web.open으로 다시 읽었고, S2는 web.open 실패 후 urllib로 공식 HTML 전체를 직접 읽었다. S4·S5는 web.open 실패 후 User-Agent를 지정한 urllib로 기사 원문·저자·게시일을 읽었다. S1 본문 HTML의 Figure 1 이미지 URL도 대조했다. API 예제는 공식 본문과 대조했으나 설치·API 호출·성능 측정을 실행하지 않았다. 공식 발표의 753B와 모델 문서의 744B 표기 차이는 재확인되었으며 확정 파라미터 수로 사용하지 않았다. 가격 수치·벤치마크 수치·법률 주장은 원고에 없으며 새로 추가하지 않았다. 공식 발표일 2026-10-05와 독립 보도일 2026-10-06을 확인하여 최신성 근거가 충분하다. 승인·발행·외부 알림을 수행하지 않았다."
+}
