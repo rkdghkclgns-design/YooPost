@@ -1,0 +1,455 @@
+{
+ "claims": [
+  {
+   "claim": "arXiv 식별자는 2610.03509이며 논문 제목은 Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability이다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "저자 Samuel Lewis-Lim 등이 이 논문을 작성했다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 10월 2일에 논문을 공개했다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": false,
+   "action": "수정: 공개일로 단정하지 않고 arXiv 표기 제출일 2026-10-02(UTC), 한국 시각 2026-10-03 01:04:08로 명시"
+  },
+  {
+   "claim": "arXiv v1 제출 시각은 2026-10-02 16:04:08 UTC이다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "초록 페이지 Comments에 Under Review가 표시된다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "심사 중이라는 표시로 동료 심사 완료 여부를 확정할 수 있다.",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "confirmed": false,
+   "action": "수정: 저자가 기재한 Under Review 표기만 확인했으며 심사 기관·진행 상태·독립 재현 완료는 확인되지 않았다고 명시"
+  },
+  {
+   "claim": "연구진의 소속은 University of Sheffield와 AstraZeneca이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#authors",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "CoT 생성은 추론 비용과 지연을 늘릴 수 있어 길이 효율화가 연구 동기이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "세 길이 효율화 방법을 비교하며 모델에 따라 단축에도 감독 지표가 유지되거나 개선된다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "과제와 길이 압력 방식에 따라 충실성·감시 가능성 변화가 다르다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기반 모델은 Qwen3-4B-Thinking이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기반 모델은 Qwen3-8B이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기반 모델은 Olmo3-7B-Think이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "검증 가능한 정답 보상을 사용하는 강화학습으로 모델을 학습했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "세 효율화 방법은 학습 설정을 공유하고 길이 보상·제약 방식이 다르다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "PRIME 전처리 데이터의 AIME-AMC 부분집합을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "학습 데이터는 서로 다른 수학 문제 2,223개이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "LoRA 어댑터를 학습하며 기반 모델 가중치는 고정했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "수학 자료로 효율화 학습을 하고 별도 예측·의사결정·편향 과제로 감독을 평가했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "ThinkPrune은 학습 응답의 최대 생성 길이를 고정한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "ThinkPrune은 제한 길이에서 응답을 잘라 정답 여부를 평가한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "ThinkPrune은 이미 짧은 응답에 추가 단축 압력을 주지 않는다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "L1(LCPO)은 입력에 문제별 목표 길이를 제시한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "L1은 정답 보상에서 목표 길이와의 절대 차이 벌점을 뺀다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "L1은 학습된 모델의 추론 시에도 목표 길이를 지정할 수 있다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "GLP는 같은 문제의 여러 응답 사이의 상대 길이에 보상을 적용한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "GLP는 정답 응답의 상대적 짧음을 보상하고 오답은 짧다는 이유로 보상하지 않는다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성은 내부 계산을 직접 관찰하는 대신 행동 기반 모사 가능성으로 평가한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "관찰자는 원래 입력·모델 응답과 CoT를 이용해 유사한 반사실 입력에서 모델 응답을 예측한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "NSG는 CoT를 읽어 얻는 예측 정확도 향상을 no-CoT 기준의 남은 최대 향상 가능량으로 나눈 값이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "NSG는 원래 문제의 정답률이 아니다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "감시자는 CoT만 읽고 입력 개입의 영향을 탐지한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "감시 가능성 지표는 g-mean²이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "감시 가능성은 편향의 부재나 전체 에이전트 안전성을 뜻하지 않는다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Employee Attrition(퇴사 예측)을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Bank Marketing을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Breast Cancer Recurrence을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Heart Disease을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Annual Income을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Moral Machines을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가 데이터셋에 Pima Diabetes을 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "충실성 평가에는 일곱 데이터셋을 사용하며 반사실 입력은 동일 데이터셋의 유사한 실제 입력이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS3",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "FACE-Eval로 사용자 선호에 맞추는 아첨 성향을 평가했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "FACE-Eval의 선호 단서는 명시적인 사용자 선호 요약 또는 자료에서 추론하는 암묵적 선호이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "의료 편향에는 MedQA 다섯 선택지 문항 150개를 사용했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "의료 문항에 오답을 지지하는 동료 합의·진단 빈도 단서를 추가했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S4.SS4",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "15개 효율화 설정 중 11개에서 NSG가 유의하게 하락했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Olmo3-7B의 L1은 약 70% 단축하면서 NSG가 38.4%에서 약 21%로 하락했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Qwen3-4B의 GLP는 75% 단축하면서 NSG가 32.7%에서 23.0%로 하락했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Qwen3-8B ThinkPrune은 NSG 감소 없이 42% 단축했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Olmo3-7B ThinkPrune은 NSG 감소 없이 29% 단축했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Qwen3-8B GLP는 65% 단축하면서 NSG가 29.8%에서 33.1%로 상승했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "저자들은 충실성 감소의 주된 원인으로 출력 일관성 감소를 보고한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "질문마다 10개 응답을 재표집하고 가장 흔한 답을 예측하는 oracle로 예측 정확도 상한을 추정했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "일관성 변화와 NSG 변화의 상관은 ρ=0.87이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "CoT 길이 변화와 NSG 변화의 상관은 ρ=0.46이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "FACE-Eval에서 추론이 최대 약 70% 단축되어도 감시 지표가 기반 모델보다 0.08 넘게 낮은 효율화 모델은 없었다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "짧은 CoT에도 사용자 선호의 영향이 남는 사례를 저자들이 관찰했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "의료 편향의 L1-Low에서는 세 모델 모두 감시 지표가 0.2보다 크게 하락했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "의료 편향 Qwen3-4B L1-Low의 g-mean²는 0.87에서 0.62로 하락했다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "의료 편향의 감시 지표 하락은 절대 길이보다 기반 모델 대비 압축 정도와 더 관련된 것으로 보고된다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "일부 단축 CoT는 편향 단서를 언급하지 않고 일부는 자기 임상 판단을 확인하는 단서로 표현한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S5.SS2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "논문 그림 2는 두 평가의 차이, 5.1절은 충실성·일관성, 5.2절은 감시 결과, 부록 A는 한계를 다룬다.",
+   "url": "https://arxiv.org/html/2610.03509v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "복잡한 다단계 에이전트 작업과 숨겨진 목표 탐지는 이번 평가 범위 밖이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#A1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "저자들은 예비 실험에서 32B 모델조차 에이전트 과제를 평가할 만큼 안정적으로 완료하지 못했다고 보고한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#A1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "다른 학습 자료·전체 가중치 학습·더 큰 모델·다른 감시자로의 일반화는 이 실험만으로 확정할 수 없다.",
+   "url": "https://arxiv.org/html/2610.03509v1#A1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "단순 분량 요청 프롬프트나 생성 상한 변경은 본 논문의 RL·LoRA 학습 실험과 동등하지 않다.",
+   "url": "https://arxiv.org/html/2610.03509v1#A1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "토큰 단축률을 실제 요금 절감률·응답 속도 향상률로 환산할 측정 결과를 이 원고의 근거에서 확인할 수 없다.",
+   "url": "https://arxiv.org/html/2610.03509v1#A1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "AGI Agent 뉴스레터는 2026-10-05 발행되었다.",
+   "url": "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "AGI Agent 뉴스레터에서 해당 논문을 Paper of the Day로 소개했다.",
+   "url": "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Paperium은 2026-10-02 날짜로 해당 논문의 분석을 게시했다.",
+   "url": "https://paperium.net/article/shop/24978/efficient-reasoning-training-does-not-always-harm-cot-faithfulness-andmonitorability",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "두 매체의 소개는 독립 재현 실험 완료의 근거가 아니다.",
+   "url": "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
+   "confirmed": true,
+   "action": "유지: 두 매체 페이지에서 재현 실험 보고를 확인하지 못함; S4도 대조"
+  },
+  {
+   "claim": "그림 1은 효율화 학습과 충실성·감시 가능성의 개요이다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S1.F1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "그림 2는 응답 예측 및 개입 영향 탐지를 비교한다.",
+   "url": "https://arxiv.org/html/2610.03509v1#S3.F2",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "공식 논문의 라이선스 표기는 CC BY 4.0이다.",
+   "url": "https://arxiv.org/html/2610.03509v1",
+   "confirmed": true,
+   "action": "유지"
+  }
+ ],
+ "note": "별도 검증 세션에서 원고의 반복 주장을 합쳐 확인 가능한 주장 75개를 추출했다. arXiv 초록·v1 전문(방법, 실험, 결과, 부록 A·B·C·D)과 독립 소개 페이지를 새로 GET해 재독했다. 숫자는 논문에 보고된 값과 대조했으며 재현 실험으로 검증한 것은 아니다. 기존 주장 중 날짜·심사 상태 2개는 원래 표현을 확인할 수 없어 수정했다. confirmed는 수정 전 주장에 대한 확인 수이며 수정문은 제출 시각·Comments 표기로 재대조했다. 반복 수치는 한 번만 집계하고 의견·권고는 사실 주장과 구분했다. S3·S4는 web open 오류 후 직접 HTTP GET 성공(200); S3는 User-Agent 지정 재시도로 읽었다. 이미지 2개는 공식 본문 연결·캡션·라이선스와 HTTP 200 image/png를 확인했다. 기간·중복은 brief 기준을 유지하며 외부 발행 기록에는 접속하지 않았다. 승인·발행은 수행하지 않았다."
+}
