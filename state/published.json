@@ -1537,5 +1537,22 @@
    "https://arxiv.org/html/2608.09867v1",
    "https://extrapolator.ai/2026/09/30/openai-disrupts-coordinated-api-based-model-distillation-attack/"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🧭 Littler AI 노사관계 보고서 총정리: 준비도 9%·지속 소통 17%, 업무 설명의 과제",
+  "topic": "Littler’s 2026 Labor Survey Report (2026-09-29): AI 노사관계 준비·직원 소통과 Revelio Labs·TD Economics 업무 변화 자료 해설",
+  "category": "AI 인사이트",
+  "source_url": "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/littler-ai-9-17.html"
+  },
+  "sources": [
+   "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+   "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "https://economics.td.com/gen-ai-intelligence"
+  ]
  }
 ]
