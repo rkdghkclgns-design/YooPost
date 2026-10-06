@@ -1570,5 +1570,22 @@
    "https://thenextweb.com/news/tiktok-ai-shopping-assistant-buy-direct-checkout",
    "https://ppc.land/tiktok-opens-ad-network-of-nearly-400-000-apps-to-us-advertisers/"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🤖 Reflection Beam 총정리: 501B·활성 23B, 공개 일정과 성능 읽는 법",
+  "topic": "Introducing Beam: Reflection’s 501B open-weight model (2026-10-05)",
+  "category": "AI 언어 모델",
+  "source_url": "https://reflection.ai/blog/introducing-beam",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/reflection-beam-501b-23b.html"
+  },
+  "sources": [
+   "https://reflection.ai/blog/introducing-beam",
+   "https://siliconangle.com/2026/10/05/reflection-ai-debuts-open-source-beam-model-with-501b-parameters/",
+   "https://benchlm.ai/models/reflection-beam",
+   "https://developers.google.com/machine-learning/glossary",
+   "https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry-classic"
+  ]
  }
 ]
