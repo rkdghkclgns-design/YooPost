@@ -1,0 +1,281 @@
+{
+ "claims": [
+  {
+   "claim": "취약점 식별자는 CVE-2026-90970이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "제조사는 위험도를 Critical로 분류했다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CVSS v3.1 점수는 9.9이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "공격 전제는 인증된 사용자이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "공격자는 Duo Agent Platform 접근 권한이 필요하다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "특정 조건에서 특수하게 구성한 flow 설정이 진입점이 된다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "프롬프트 템플릿 샌드박스를 벗어날 수 있다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "AI Gateway에서 임의 명령 실행으로 이어질 수 있다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "GitLab 호스팅 AI Gateway에는 수정이 배포되었다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "GitLab.com 고객은 공지상 별도 조치가 필요하지 않다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "GitLab Dedicated 고객은 공지상 별도 조치가 필요하지 않다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "GitLab 호스팅 게이트웨이를 쓰는 Self-Managed 고객은 별도 조치가 필요하지 않다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "영향 버전의 자체 호스팅 AI Gateway에는 신속한 업데이트가 권고된다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "영향 범위는 18.1.6 이상 19.2.4 미만이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "19.3 계열은 19.3.2 미만이 영향을 받는다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "19.4 계열은 19.4.1 미만이 영향을 받는다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "수정 버전은 19.2.4이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "수정 버전은 19.3.2이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "수정 버전은 19.4.1이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "제조사 패치 본문에는 발표일이 표시되지 않는다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "제조사 공지는 특정 공격 조건의 세부 내용을 설명하지 않는다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "제조사 공지는 구버전 호환성이나 구버전 패치 계획을 명시하지 않는다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CERT Santé 경고의 게시일은 2026-10-05이다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "취약점은 사용자 정의 flow의 프롬프트 템플릿 처리에 있다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CWE-1336은 템플릿 엔진 특수 요소의 부적절한 중화 유형이다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "AI Gateway는 GitLab 인스턴스와 AI 모델을 연결한다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "AI Gateway는 Docker 이미지 또는 Helm chart로 설치된다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "게이트웨이 버전 번호는 GitLab 인스턴스 버전과 별개이다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CERT Santé 경고는 우회책이 없다고 표시한다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CERT Santé 경고는 활발한 악용 여부를 Non으로 표시한다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "CERT Santé 경고는 공개 출처에 개념 증명 코드가 없다고 설명한다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "설치 문서는 GitLab 마이너 버전에 맞는 자체 호스팅 이미지 태그를 안내한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "설치 문서는 안정 릴리스와 명시적 버전 태그 사용을 안내한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "자체 호스팅 게이트웨이는 JWT 서명 키를 사용한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "생성된 키 파일은 안전하게 보관하고 공개 공유하지 않아야 한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "JWT 서명 키는 민감한 자격 증명으로 취급해야 한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "컨테이너의 외부 통신 제한이 권고된다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "허용 경로에는 GitLab 인스턴스와 구성된 모델 제공자가 포함된다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "오프라인 라이선스를 쓰지 않으면 라이선스 검증 경로도 허용해야 한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "방화벽 규칙은 운영 적용 전에 비운영 환경에서 시험해야 한다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "과도한 방화벽 제한은 게이트웨이 기능을 방해할 수 있다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": true,
+   "action": "유지: 공식 원문과 일치"
+  },
+  {
+   "claim": "The Hacker News는 2026-10-02 이 취약점과 패치를 보도했다.",
+   "url": "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html?hl=en",
+   "confirmed": true,
+   "action": "유지: 실제 읽은 독립 보도의 페이지 표기 날짜 확인; 기술 사실은 공식 문서로 검증"
+  },
+  {
+   "claim": "GitLab 패치 공개일은 2026-10-02이다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": false,
+   "action": "수정: 공식 본문에 날짜가 없어 패치 공개일 단정을 삭제하고 독립 보도일로만 표기"
+  },
+  {
+   "claim": "SK-CERT는 슬로바키아 기관이며 2026-10-05 이번 취약점 경고를 공개했다.",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "confirmed": false,
+   "action": "삭제: 실제 읽은 CERT Santé 경고는 해당 기관의 경고만 입증함; SK-CERT 원문 접근 실패"
+  },
+  {
+   "claim": "SK-CERT는 이번 취약점에 신속한 업데이트를 권고했다.",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "confirmed": false,
+   "action": "수정: SK-CERT 귀속을 삭제하고 실제 읽은 GitLab 제조사 업데이트 권고만 유지"
+  },
+  {
+   "claim": "SK-CERT는 취약점 제거 후 해당 시스템과 같은 자격 증명을 쓰는 다른 시스템의 비밀번호·키 변경을 권고했다.",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "confirmed": false,
+   "action": "삭제: 설치 문서의 키 보관 지침만 확인됨; SK-CERT 권고 원문을 읽지 못함"
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 원고 전체(제목·요약·본문·표·FAQ·맺음말)를 검토했다. 반복 주장은 의미별로 합쳐 집계하고 운영 제안·해석·자체 작업 설명은 제외했다. GitLab 패치/설치 문서, CERT Santé 및 독립 보도를 실제 다시 열어 읽었다. SK-CERT는 웹 도구 재시도 및 HTTP 요청에서 접근 실패(403)하여 관련 주장을 삭제했다. false 항목의 URL은 실제 읽어 대조한 대체 공식 원문이며 SK-CERT 원문을 읽었다는 뜻이 아니다. 공식 발표일이 없는 제조사 패치 공개일 단정도 수정했다. 개별 시스템 실행·침해 조사, 외부 승인·발행은 수행하지 않았다. 확인된 공식 경고 날짜와 기간 내 독립 보도가 있어 주제 근거는 유지된다."
+}
