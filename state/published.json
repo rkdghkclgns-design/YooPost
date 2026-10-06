@@ -1587,5 +1587,21 @@
    "https://developers.google.com/machine-learning/glossary",
    "https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry-classic"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🧠 Global Coherence 논문 분석: 공유 예산 위반 5/5→0/5, 결과와 한계 총정리",
+  "topic": "Global Coherence: When Every Agent Is Right and the Team Is Still Wrong - A Local-to-Global Semantic Foundation for Multi-Agent Collaboration",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.02036",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/global-coherence-5505.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.02036",
+   "https://arxiv.org/html/2610.02036v1",
+   "https://novasapiens.ru/prompt/2610.02036",
+   "https://arxiv.org/pdf/2610.02036"
+  ]
  }
 ]
