@@ -1490,5 +1490,21 @@
    "https://docs.cohere.com/docs/model-vault/model-vault-with-north",
    "https://docs.cohere.com/docs/tokens-and-tokenizers"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🧠 추론 효율화 논문 분석: 일부 설정에서 CoT 65% 단축·NSG 개선 총정리",
+  "topic": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability (arXiv 2610.03509, 2026-10-02)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.03509",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cot-65-nsg.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.03509",
+   "https://arxiv.org/html/2610.03509v1",
+   "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
+   "https://paperium.net/article/shop/24978/efficient-reasoning-training-does-not-always-harm-cot-faithfulness-andmonitorability"
+  ]
  }
 ]
