@@ -5,10 +5,19 @@
  "topic": "",
  "requested_by": "U0C4PLGBNF9",
  "created": "2026-10-06T16:54:55+09:00",
- "started": "",
- "network": "",
+ "started": "2026-10-06T17:10:18+09:00",
+ "network": "full",
  "finished": "",
  "note": "",
  "delivery_id": "da3bc55c41e87b91e16c80487df5e49597f41421751132bbad3e851d77ce5811a",
- "alert_ts": "1791273295.962259"
+ "alert_ts": "1791273295.962259",
+ "fallback": {
+  "provider": "codex",
+  "mode": "cloud",
+  "status": "writing",
+  "taken_over": "2026-10-06T17:10:18+09:00",
+  "first_taken_over": "2026-10-06T17:10:18+09:00",
+  "reason": "접수 후 15분 동안 작성 미시작",
+  "category": "AI 언어 모델"
+ }
 }

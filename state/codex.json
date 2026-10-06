@@ -89,9 +89,39 @@
    "count": 1,
    "status": "skipped",
    "note": "2026-10-06 KST 기준 brief-1.md의 허용 기간(2026-10-03 이후)에서 공식 원문과 독립 보도를 확인하며 조사했으나, 기존 글·최근 원고와 겹치지 않는 적합한 새 모델 출시·업데이트를 찾지 못했습니다. Reflection Beam 공식 발표(2026-10-05, https://reflection.ai/blog/introducing-beam)는 이미 쓴 글과 같은 소식·원문입니다. Aleph Alpha Kolibri 공식 발표(2026-10-05, 10-03부터 제공, https://aleph-alpha.com"
+  },
+  "20261006:C0C50SP7VV5-1791273270841789:AI 언어 모델": {
+   "at": "2026-10-06T17:10:18+09:00",
+   "count": 1,
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "37434291952-1",
+  "at": "2026-10-06T17:10:18+09:00",
+  "expires": "2026-10-06T19:10:18+09:00",
+  "task": {
+   "day": "20261006",
+   "request": "C0C50SP7VV5-1791273270841789",
+   "kind": "all",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "id": "C0C50SP7VV5-1791273270841789",
+   "reason": "접수 후 15분 동안 작성 미시작",
+   "missing": [
+    "AI 언어 모델",
+    "AI 도구",
+    "AI 논문 분석",
+    "AI 뉴스 리뷰",
+    "AI 보안",
+    "AI 인사이트",
+    "AI 공모주 분석"
+   ],
+   "finish_only": false,
+   "owner": "37434291952-1",
+   "at": "2026-10-06T17:10:18+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
