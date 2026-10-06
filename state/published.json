@@ -1634,5 +1634,23 @@
    "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
    "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🧠 WildAI 인사이트 총정리: 필터 통과 토큰 31.1%와 학습 데이터 선택의 과제",
+  "topic": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text — AI 생성 웹 데이터와 학습·평가 기준 해설",
+  "category": "AI 인사이트",
+  "source_url": "https://arxiv.org/abs/2609.40295",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/wildai-311.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.40295",
+   "https://arxiv.org/html/2609.40295v1",
+   "https://www.digitalapplied.com/blog/ai-generated-web-text-pretraining-study-800-models",
+   "https://arxiv.org/pdf/2609.40295",
+   "https://huggingface.co/docs/transformers/tokenizer_summary",
+   "https://huggingface.co/learn/llm-course/en/chapter1/4"
+  ]
  }
 ]
