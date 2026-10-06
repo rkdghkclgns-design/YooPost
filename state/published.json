@@ -1688,5 +1688,21 @@
    "https://www.drweb.de/glm-5-3-amazon-bedrock-zhipu-entity-list/"
   ],
   "draft_id": "20261006_171805_1"
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🧠 WorldAuditBench 논문 분석: 213개 3D 이상 탐지 과제·성능과 한계 총정리",
+  "topic": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2609.40325",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/worldauditbench-213-3d.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2609.40325",
+   "https://arxiv.org/html/2609.40325v1",
+   "https://arxivtldr.org/abs/2609.40325"
+  ],
+  "draft_id": "20261006_173352_3"
  }
 ]
