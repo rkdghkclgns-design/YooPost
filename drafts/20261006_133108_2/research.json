@@ -1,0 +1,69 @@
+{
+ "topic": "TikTok Unveils AI-Powered Updates for Advertisers: Driving Discovery, Action, and Measurable Business Outcomes — Shopping Assistant, Buy Direct, Lead Agent",
+ "source_url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+ "category": "AI 도구",
+ "as_of_kst": "2026-10-06",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "TikTok Unveils AI-Powered Updates for Advertisers: Driving Discovery, Action, and Measurable Business Outcomes",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "publisher": "TikTok Newsroom",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "From Discovery to Decision: How Agentic Solutions Guide Intent and Drive Action",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "publisher": "TikTok for Business",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "TikTok adds an AI shopping assistant and one-click checkout to its app",
+   "url": "https://thenextweb.com/news/tiktok-ai-shopping-assistant-buy-direct-checkout",
+   "publisher": "The Next Web",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "TikTok opens ad network of nearly 400,000 apps to US advertisers",
+   "url": "https://ppc.land/tiktok-opens-ad-network-of-nearly-400-000-apps-to-us-advertisers/",
+   "publisher": "PPC Land",
+   "published": "2026-10-05",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 원문 재열람 결과 S1 본문에 기능 화면·도표 없음. S2의 Agentic Solutions 이미지는 제목 앞·도입 앞에 반복된 대표 헤더로 본문 인용에서 제외. S3 화면 사진과 S4 대표 일러스트도 기능 화면·도표가 아니므로 제외.",
+ "selection": {
+  "window_start": "2026-10-03",
+  "official_published": "2026-10-05",
+  "independent_coverage_dates": [
+   "2026-10-05"
+  ],
+  "duplicate_check": "별도 검증에서 brief-2.md의 발행 글·최근 원고 목록을 TikTok, Shopping Assistant, Buy Direct 및 대표 원문 주소로 재검색했고 같은 소식을 찾지 못함",
+  "alternatives": "Cursor SDK 1.0.31은 공식 변경 기록에서 발표 날짜를 확인하지 못해 선정하지 않음"
+ },
+ "factcheck": {
+  "status": "completed",
+  "claims": 35,
+  "confirmed": 34,
+  "removed": [
+   "브랜드가 거래의 판매 책임 주체인 Merchant of Record로 남으며 — 법적 책임 범위를 단정하는 번역을 제거하고 공식 Merchant of Record 설명으로 수정"
+  ],
+  "note": "2026-10-06 별도 검증: 제목·intro·summary·표·본문·FAQ·closing을 읽어 확인 가능한 고유 주장 35개를 추출했다. 반복 주장은 하나로 합쳤고 작성자의 제안·가상 사례·조건부 해석은 제품 성능 사실로 세지 않았다. S1·S2 공식 원문 전체를 다시 열어 기능·명칭·날짜·이용 조건·요금표 부재를 확인했고, S3·S4는 보도 사실과 표시 날짜 확인에만 사용했다. 34개 확인, 법적 책임으로 확장된 번역 1개 수정. 연락처 수집 문장도 공식 설명으로 귀속시켰다. confirmed는 원래 추출 주장 기준이며 수정 후 문장을 추가 중복 계수하지 않는다. 직접 성능 시험·계정 접근·법률 검토는 수행하지 않았다. 근거 충분으로 skip.json은 생성하지 않으며 발행 승인을 의미하지 않는다."
+ },
+ "limitations": [
+  "실제 제품 사용·광고 집행·결제·계정 권한 확인 없음",
+  "활용 절차와 모의 사례는 작성자의 제안이며 공식 설정 절차 또는 성능 증거가 아님",
+  "외부 보도는 이슈 확인용으로 사용하고 기술적 사실은 공식 자료에서 작성함"
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791259338398959",
+  "kind": "all"
+ }
+}
