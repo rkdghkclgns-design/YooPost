@@ -1521,5 +1521,21 @@
    "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
    "https://thenextweb.com/news/cohere-pwc-sovereign-ai-ownership"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🔒 OpenAI 추론 추출 사건 총정리: 1만 6,000건의 시도와 공식 대응",
+  "topic": "Disrupting a coordinated model-distillation campaign (OpenAI, 2026-09-30)",
+  "category": "AI 보안",
+  "source_url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-1-6000.html"
+  },
+  "sources": [
+   "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "https://arxiv.org/html/2608.09867v1",
+   "https://extrapolator.ai/2026/09/30/openai-disrupts-coordinated-api-based-model-distillation-attack/"
+  ]
  }
 ]
