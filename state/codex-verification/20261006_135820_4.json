@@ -1,0 +1,173 @@
+{
+ "claims": [
+  {
+   "claim": "OpenAI가 2026년 10월 5일 ChatGPT 시각 광고와 측정 확대를 발표했다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — 상단 날짜 및 본문 도입 확인"
+  },
+  {
+   "claim": "새 시각 광고의 초기 시험은 2026년 10월 미국에서 시작할 예정이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — Bringing products and services to life의 later this month 및 US 확인"
+  },
+  {
+   "claim": "초기 시험 참여 대상은 일부 광고주이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — initial group of advertisers 확인"
+  },
+  {
+   "claim": "새 광고 형식은 ChatGPT 이미지 생성 중 시험한다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — during image generation 확인"
+  },
+  {
+   "claim": "광고를 명확하게 표시한다는 운영 계획이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — clearly labeled 확인"
+  },
+  {
+   "claim": "광고와 생성 이미지를 분리한다는 운영 계획이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — remain separate 확인"
+  },
+  {
+   "claim": "OpenAI는 광고가 ChatGPT 답변에 영향을 주지 않는다고 설명한다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — answers 독립성 설명 확인; 구현의 독립 입증으로 확대하지 않음"
+  },
+  {
+   "claim": "측정 도구와 제휴 확대를 발표했다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — Measuring the impact 본문 확인"
+  },
+  {
+   "claim": "픽셀과 Conversions API(CAPI) 신호를 지원한다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — Connecting campaigns 본문 확인"
+  },
+  {
+   "claim": "측정 대상 행동의 예로 구매·리드·설치·가입을 제시한다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "수정: 상담 신청을 잠재 고객 문의로 바꿔 leads의 범위 보존 — purchases, leads, installs, sign-ups 확인"
+  },
+  {
+   "claim": "기존 시스템의 전환 데이터를 연결하는 제휴를 소개한다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — Hightouch·Tealium·LiveRamp 연동 설명 확인"
+  },
+  {
+   "claim": "귀속 측정과 증분 효과 측정을 지원 대상으로 설명한다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — attribution 및 incrementality 확인"
+  },
+  {
+   "claim": "증분 효과는 광고의 인과적 사업 영향을 살펴보는 접근이다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — causal impact 및 additional business 설명 확인"
+  },
+  {
+   "claim": "지역 기반 증분 효과 실험은 초기 단계이다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — early stages 및 geo-based experiments 확인"
+  },
+  {
+   "claim": "클릭 이후 전환과 노출 이후 전환을 다룬다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — Helping advertisers measure 본문 확인"
+  },
+  {
+   "claim": "보고서 귀속 설정은 캠페인 최적화 방식을 바꾸지 않는다.",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "confirmed": true,
+   "action": "유지 — These settings control attribution in reports 문장 확인"
+  },
+  {
+   "claim": "DoubleVerify와 Integral Ad Science의 브랜드 적합성 평가 시험을 개발 중이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — 회사명 및 developing pilots 확인"
+  },
+  {
+   "claim": "브랜드 적합성은 광고 노출 환경과 브랜드 기준의 부합 여부를 살펴보는 문제이다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — 브랜드별 placement requirements와 ads environment 설명 확인"
+  },
+  {
+   "claim": "브랜드 평가사는 통제된 시험 환경에서 보호 기준 적용을 평가한다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — controlled testing environment 확인"
+  },
+  {
+   "claim": "해당 평가 시험은 개인 이용자 대화에 접근하지 않는다.",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "confirmed": true,
+   "action": "유지 — without accessing private user conversations 확인"
+  },
+  {
+   "claim": "광고 정책은 민감한 이용자 맥락의 광고 배치를 제한한다.",
+   "url": "https://openai.com/policies/ad-policies/",
+   "confirmed": true,
+   "action": "유지 — Ad placement policies 확인; 회사 정책으로 유지"
+  },
+  {
+   "claim": "광고 기준은 문안·이미지·도착 페이지에 적용된다.",
+   "url": "https://openai.com/policies/ad-policies/",
+   "confirmed": true,
+   "action": "유지 — all ad assets 및 landing pages 확인"
+  },
+  {
+   "claim": "과장하거나 오해를 유발하는 광고를 금지한다.",
+   "url": "https://openai.com/policies/ad-policies/",
+   "confirmed": true,
+   "action": "유지 — Misleading or deceptive ads 확인"
+  },
+  {
+   "claim": "제품 인터페이스를 모방해 오해를 일으키는 광고의 제거·수정을 요구할 수 있다.",
+   "url": "https://openai.com/policies/ad-policies/",
+   "confirmed": true,
+   "action": "유지 — Interface imitation 확인"
+  },
+  {
+   "claim": "Digiday는 2026년 10월 5일 해당 업데이트를 보도했다.",
+   "url": "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "confirmed": true,
+   "action": "유지 — 기사 자체 날짜 확인"
+  },
+  {
+   "claim": "Digiday는 광고 형식·측정·브랜드 적합성을 다뤘다.",
+   "url": "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "confirmed": true,
+   "action": "유지 — 기사 본문 각 주제 확인"
+  },
+  {
+   "claim": "Digiday는 측정이 광고 예산 확대의 조건이라는 해석을 제시했다.",
+   "url": "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "confirmed": true,
+   "action": "유지 — measurement 및 contained test budgets 설명 확인; 매체 해석으로 유지"
+  },
+  {
+   "claim": "Digiday는 OpenAI 광고 사업이 여전히 구축 과정에 있다고 평가했다.",
+   "url": "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "confirmed": true,
+   "action": "유지 — still building out 문장 확인; 매체 해석으로 유지"
+  }
+ ],
+ "note": "2026-10-06 별도 검증 세션에서 S1·S3·S4 공식 원문과 S2 기사 본문을 다시 열어 읽었다. 제목·도입·요약·표·본문·박스·FAQ·맺음말의 외부 주장을 검토하고 같은 사실의 반복은 하나로 집계했다. S2 항목은 제품 사실의 공식 근거가 아니라 보도 날짜와 매체 해석에 대한 해당 발행자의 원문 근거이다. 작성자 제안·가상 사례·자체 체험 여부·검증 단계 설명은 claims에서 제외했다. 가격·성능 벤치마크·법률의 효력에 대한 외부 주장은 원고에 없다. confirmed는 출처에 해당 설명이 있음을 뜻하며 실제 구현이나 광고 효과의 독립 입증을 뜻하지 않는다. 불일치·확인 불가 주장 없음; 표현 3곳과 도입 출처 표기를 보완했다. 기간 내 공식 발표와 독립 보도가 확인되어 근거 부족에 따른 skip.json은 생성하지 않았다. 승인·발행·알림·git 접속을 수행하지 않았다."
+}
