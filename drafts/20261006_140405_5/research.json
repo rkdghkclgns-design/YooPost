@@ -1,0 +1,56 @@
+{
+ "topic": "CVE-2026-97662 - Argument injection in AWS security-agent-mcp-server diff scan (AWS, 2026-10-01)",
+ "category": "AI 보안",
+ "source_url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CVE-2026-97662 - Argument injection in AWS security-agent-mcp-server diff scan",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "publisher": "Amazon Web Services",
+   "published": "2026-10-01",
+   "official": true,
+   "note": "공식 본문 직접 열람. 표시 시각 10/01/2026 10:30 AM PDT. 영향 범위, 파일 쓰기 영향, 해결 버전, 임시 운용 권고, 파생 코드 안내를 조사."
+  },
+  {
+   "id": "S2",
+   "title": "awslabs.security-agent-mcp-server 0.2.0",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "publisher": "Amazon Web Services / PyPI",
+   "published": "2026-08-26",
+   "official": true,
+   "note": "공식 공지의 연결 대상. 패키지 설명·도구 목록·설치 예시·출시일·릴리스 이력을 직접 열람. 보조 문서이며 최신 이슈의 대표 발표일로 사용하지 않음. 페이지에 후속 릴리스 0.2.1 표시."
+  },
+  {
+   "id": "S3",
+   "title": "AWS Fixes Diff-Scan Argument Injection in security-agent-mcp-server",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "publisher": "TechGeeks Field Notes",
+   "published": "2026-10-01",
+   "official": false,
+   "note": "별도 검증에서 본문 재열람. 상단의 10/01/2026·10/02/2026 표시를 확인했으나 각각의 날짜 역할은 명시되지 않음. published는 앞에 표시된 날짜를 기록하며 확정 게시일로 단정하지 않음. About the publication에서 TechGeeks Field Notes의 별도 발행 주체를 확인. 자체 운영 해설이 있어 단순 보도자료 재배포와 구분."
+  }
+ ],
+ "images": [],
+ "images_none_reason": "AWS 공식 공지 본문에는 취약점 흐름이나 수정 내용을 보여주는 화면·도표가 없었습니다. 페이지의 일반 AWS 소개 삽화는 관련 본문 이미지가 아니어서 제외했습니다. PyPI 페이지에도 해당 취약점을 설명하는 화면·도표가 없었으며 릴리스 상태 아이콘과 출판 증명 아이콘은 인용 후보에서 제외했습니다.",
+ "selection": {
+  "as_of_kst": "2026-10-06",
+  "earliest_publication": "2026-09-29",
+  "duplicate_check": "brief-5.md의 이미 쓴 글 전부와 최근 30일 원고 목록을 읽고 대조했습니다. CVE-2026-97662, 2026-121-AWS 및 대표 원문 URL과 동일한 소식은 목록에 없었습니다.",
+  "reason": "기간 내 공식 보안 공개와 독립 대응 보도가 있는 미작성 이슈. 기존 목록의 Manus, Microsoft 디지털 방어 보고서, Google GTIG, NVIDIA 플랫폼 등은 중복 또는 기간 조건으로 제외.",
+  "limitations": "Rogue Security의 관련 해설은 검색에서 발견했지만 직접 열기 두 차례 실패해 출처와 주장 근거로 사용하지 않았습니다. 광범위한 대중 보도나 사용자 반응은 확인하지 않아 원고에 넣지 않았습니다."
+ },
+ "factcheck": {
+  "status": "completed",
+  "claims": 39,
+  "confirmed": 38,
+  "removed": [
+   "TechGeeks가 2026년 10월 1일자로 게시했다는 단정: 두 날짜의 역할이 명시되지 않아 날짜 표시 사실로 수정."
+  ],
+  "note": "별도 사실 검증으로 AWS 공식 공지, AWS 공지가 연결한 PyPI 페이지, 기존 독립 이슈화 출처 TechGeeks 본문을 다시 열어 읽었다. 제목·도입·요약·문단·박스·표·FAQ·해시태그의 외부 주장을 추출하고, 반복되는 동일 주장은 하나로 집계했다. 공식 제품·기술·대응 사실은 AWS/PyPI로 검증하고 매체의 날짜·자체 해설·발행 주체는 해당 매체 본문으로 검증했다. 원문의 조건을 파일 쓰기 설명에 보완했다. 가격·성능 수치·법적 의무 주장은 없었다. 운영 제안, 가상 점검 예시, 자체 실행 여부 및 검증 단계 설명은 외부 사실 개수에서 제외했다. 독자 환경의 테스트·패치 적용·침해 여부는 확인하지 않았다. 게시 승인이나 발행은 수행하지 않았다. 기간 내 공식 발표와 별도 발행 주체의 해설 근거를 확인했으므로 근거 부족에 따른 skip.json은 만들지 않았다."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791259338398959",
+  "kind": "all"
+ }
+}
