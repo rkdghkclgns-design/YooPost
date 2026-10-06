@@ -170,12 +170,12 @@ def handle_request(
         if saved and fallback is not None and QUOTA_ERROR.search(result.error) and fallback(rid):
             reply("🤖 Claude 실행 한도에 걸려 *Codex 클라우드에 인계를 요청했습니다*. "
                   "PC를 꺼도 GitHub에서 이어서 작성·검증합니다. 인계가 시작되면 이 스레드에 알려 드립니다. "
-                  "원고는 #yoopost-1-원고승인 에서 ✅를 눌러야 발행됩니다.")
+                  "원고는 #yoopost-1-원고승인 에서 ✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다.")
             return "fallback"
         reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
         return "failed"
     link = f" · <{result.session_url}|작성 과정 보기>" if result.session_url else ""
     reply(f"📝 접수했습니다 — {describe(command)}{link}\n"
           "Claude 가 조사·작성하고 Opus 가 사실 검증한 원고가 #yoopost-1-원고승인 에 올라오면 이 스레드에 알려 드립니다. "
-          "✅ 를 눌러야 블로그에 발행됩니다.")
+          "✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다.")
     return "fired"

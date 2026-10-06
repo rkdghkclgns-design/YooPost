@@ -91,7 +91,8 @@ def plan(work: Path) -> int:
         first = (record.get("fallback") or {}).get("first_taken_over") or task["at"]
         record = {**record, "started": record.get("started") or task["at"], "network": "full",
                   "fallback": {"provider": "codex", "mode": "cloud", "status": "writing",
-                               "taken_over": task["at"], "first_taken_over": first, "reason": task["reason"]}}
+                               "taken_over": task["at"], "first_taken_over": first, "reason": task["reason"],
+                               "category": task["category"]}}
         if record.get("fire_error"):
             record["claude_fire_error"] = record.pop("fire_error")
         path = request_path(helper.TREE, task["request"])
@@ -201,6 +202,7 @@ def generate(work: Path) -> int:
 
 
 def complete(work: Path) -> int:
+    output("continue", "false")
     sync()
     state = read_json(helper.TREE / STATE / STATE_FILE)
     lease = state.get("lease") or {}
@@ -279,7 +281,8 @@ def complete(work: Path) -> int:
             missing = [c for c in missing if c not in skipped]
             finished = not missing or (record.get("kind") == "single" and result == "skipped")
             if not record.get("finished"):
-                updated = {**record, "fallback": {**record.get("fallback", {}), "status": "waiting"}, "note": note}
+                updated = {**record, "fallback": {**record.get("fallback", {}), "status": "waiting",
+                            "category": task["category"], "last_result": result}, "note": note}
                 if finished:
                     updated["finished"] = datetime.now(KST).isoformat(timespec="seconds")
                 path = request_path(helper.TREE, task["request"])
@@ -288,6 +291,8 @@ def complete(work: Path) -> int:
         save_state(settle(state, task, owner(), result, note), f"codex: {result}", extra)
         notice(task, ("완료 — " if result == "done" else "건너뜀 — " if result == "skipped" else "처리 결과 — ")
                + escape_mrkdwn(note))
+        if result in ("done", "skipped") and task["request"] and not read_request(helper.TREE, task["request"]).get("finished"):
+            output("continue", "true")
     return 0 if result in ("done", "skipped", "superseded") else 1
 
 

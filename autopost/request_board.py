@@ -84,6 +84,9 @@ def board_rows(request: Mapping, folders: Sequence[Path], lookup: Callable[[str]
     kind = str(request.get("kind") or "single")
     wanted = list(CATEGORIES) if kind == "all" else [str(request.get("category") or "") or "카테고리 미정"]
     started, finished = bool(request.get("started")), bool(request.get("finished"))
+    fallback = request.get("fallback") or {}
+    cloud = fallback.get("provider") == "codex" and fallback.get("mode") == "cloud"
+    active_category = fallback.get("category") if cloud else ""
     rows: list[BoardRow] = []
     writing_marked = False
     for category in wanted:
@@ -102,8 +105,12 @@ def board_rows(request: Mapping, folders: Sequence[Path], lookup: Callable[[str]
             rows.append(_draft_row(category, folder, record, failures))
         elif finished:
             rows.append(BoardRow(category, "❌", "원고 없음", 4, True))
-        elif started and not writing_marked:
-            fallback = request.get("fallback") or {}
+        elif cloud and fallback.get("status") == "waiting":
+            failed = fallback.get("last_result") == "failed" and fallback.get("category") == category
+            detail = escape_mrkdwn(str(request.get("note") or ""))[:160]
+            rows.append(BoardRow(category, "⚠️" if failed else "⬜",
+                                 f"작성 중단 — {detail} (재시도 대기)" if failed else "Codex 클라우드 순차 처리 대기", 1, False))
+        elif started and not writing_marked and (not active_category or category == active_category):
             author = "Codex 클라우드 작성 → 별도 사실 검증" if fallback.get("provider") == "codex" else "Sonnet 작성 → Opus 사실 검증"
             rows.append(BoardRow(category, "✍️", f"작성·검증 중 ({author})", 1, False))
             writing_marked = True
@@ -143,8 +150,8 @@ def build_board(request: Mapping, rows: Sequence[BoardRow], thread_link: str = "
         parts.append(f"<{thread_link}|지시 스레드>")
     lines = "\n".join(f"{i}. {r.icon} *{escape_mrkdwn(r.category)}* — {r.text}" for i, r in enumerate(rows, start=1))
     waiting = sum(1 for r in rows if r.icon == "📝")
-    footer = (f"승인 대기 {waiting}편 — #yoopost-1-원고승인 의 원고 메시지에 ✅ 를 누르면 발행됩니다"
-              if waiting else "원고는 사실 검증 뒤 #yoopost-1-원고승인 에 올라오고, ✅ 를 눌러야 발행됩니다")
+    footer = (f"승인 대기 {waiting}편 — #yoopost-1-원고승인: ✅ 즉시 승인 · 1분 미승인 자동 승인 · ❌ 보류"
+              if waiting else "원고는 사실 검증 뒤 #yoopost-1-원고승인 에 올라옵니다. ✅ 즉시 승인 · 1분 미승인 자동 승인 · ❌ 보류")
     return head, [
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*{head}*\n{' · '.join(parts)}"}},
         {"type": "section", "text": {"type": "mrkdwn", "text": lines[:2900] or "-"}},

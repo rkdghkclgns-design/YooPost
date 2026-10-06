@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 8
     permissions:
       contents: write
+      actions: write
     outputs:
       work: ${{ steps.plan.outputs.work }}
     steps:
@@ -58,6 +59,12 @@ jobs:
           name: codex-input
           path: output/codex-cloud/
           retention-days: 2
+      - name: 인계 시작 진행 카드 갱신
+        if: steps.plan.outputs.work == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run cloud_drafts.yml --ref main -f note="Codex 클라우드 인계 시작"
 
   write:
     needs: plan
@@ -83,6 +90,22 @@ jobs:
           node-version: "22"
       - run: pip install -r requirements.txt cryptography
       - run: npm install -g @openai/codex@0.160.1
+      - name: Linux 샌드박스 실행 환경 준비
+        if: runner.os == 'Linux' && runner.environment == 'github-hosted'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # openai/codex-action과 동일한 hosted Ubuntu user namespace 설정.
+          # 일회용 작성 서버에만 적용하며 Codex workspace-write는 유지한다.
+          current_userns="$(sysctl -n kernel.unprivileged_userns_clone 2>/dev/null || true)"
+          if [ -n "$current_userns" ] && [ "$current_userns" != "1" ]; then
+            sudo sysctl -w kernel.unprivileged_userns_clone=1
+          fi
+          current_apparmor="$(sysctl -n kernel.apparmor_restrict_unprivileged_userns 2>/dev/null || true)"
+          if [ -n "$current_apparmor" ] && [ "$current_apparmor" != "0" ]; then
+            sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          fi
+          unshare --user --map-root-user --net true
       - uses: actions/download-artifact@v4
         if: needs.plan.outputs.work == 'true'
         with:
@@ -162,6 +185,7 @@ jobs:
           name: codex-result
           path: output/codex-cloud/
       - name: 중복·품질 재확인 · 원고 저장 · 임대 해제 · 슬랙 결과
+        id: complete
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
@@ -174,3 +198,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: gh workflow run cloud_drafts.yml --ref main -f note="Codex 클라우드 인계 결과"
+      - name: 남은 수동 지시 카테고리 계속 작성
+        if: steps.complete.outputs.continue == 'true' && vars.CODEX_FALLBACK_ENABLED == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run codex_fallback.yml --ref main -f mode=work
