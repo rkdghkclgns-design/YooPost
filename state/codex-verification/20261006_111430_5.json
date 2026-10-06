@@ -1,0 +1,353 @@
+{
+ "claims": [
+  {
+   "claim": "발표일 2026-09-30",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "보호된 추론 추출 활동 식별·차단 발표",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "추론은 과제 해결의 내부 기록",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "최종 답변에 없는 정보가 추론에 포함될 수 있음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "적대적 증류는 무단 출력·추론 사용을 통한 다른 모델 훈련·재현·개선",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "활동 시작 2026-07-01, 초기 저규모",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "요청 급증 2026-07-24~25",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "관련 패턴 요청 16,000건",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "요청 사용자 4,000명 초과",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "관련 활동 집단 15,000명 초과",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "각주 수치는 반드시 성공하지 않은 추출 시도",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "공개된 수치를 유출·피해·성공률로 환산할 근거 없음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "대화 간 암호화 추론 복사 후 숨겨진 내용 출력 요구",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "암호화 자체 파괴가 아니라고 회사가 설명",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "데이터베이스 침해가 아니라고 회사가 설명",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "저장된 사용자 대화 직접 접근이 아니라고 회사가 설명",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Kimi 개발사는 Moonshot AI",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "핵심 집단을 Moonshot AI 관련 개인들에게 귀속한 것은 회사 판단",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "모든 운영자가 단일 주체인지는 불명확",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "국가 지시나 회사 전체 실행을 해당 발표가 입증하지 않음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "공식 대응은 계정 제재·기술 통제·파트너 협력",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "부정 계정 금지 또는 제한",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "가입·인프라 통제 강화",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "관련 네트워크 모니터링 확대",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "사용자·워크스페이스·조직·모델 계열 사이 추론 보호 강화",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "이미 보유한 다른 사용자 암호화 추론 재전송·복구 경로 차단",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "추론 노출 가능 스트리밍 출력 검사·보류 추가",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "제삼자 서비스 제공자와 계정 식별·차단 협력",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "공식 발표에 적용용 탐지 임계값·전용 설정 명령 없음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "대응·조사 작업 계속 진행",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "파트너 호스팅 배포에도 같은 보호 필요",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "도구 출력 공격은 가시적 텍스트 이상 검사 필요",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "향후 기술 보호·조직적 활동 탐지와 제재·업계 및 정부 정보 공유 강화",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026-07-28에 관련 활동 차단",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": false,
+   "action": "수정: 2026-07-28까지 차단. 원문 by July 28은 정확한 당일을 뜻하지 않음"
+  },
+  {
+   "claim": "논문 제목 Stealing Reasoning Traces from Proprietary LLM APIs",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "논문 제출일 2026-08-10",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "공식 발표가 해당 논문을 연결",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "연구 당시 제공자 내 세션·사용자·모델 간 추론 블록 호환성 분석",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Figure 1은 추론 추출 구조와 토큰 수 비교",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "논문 평가 대상은 실험 시점 API·모델에 제한",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "내부 암호 구현 변경으로 공격 효과가 달라질 수 있음",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "민감정보에 노출된 에이전트 기록 공개 전 추론 블록·불투명 필드 제거 권고",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "책임 있는 공개 후 동일한 공격을 수행할 수 없었다는 연구진 보고",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "현재 모든 계정에서 논문 공격이 가능한 것으로 설명할 수 없음",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지: 5.1·5.2 및 Reproducibility Statement 확인"
+  },
+  {
+   "claim": "연구진 보고가 모든 공격의 현재 차단을 의미할 수 있는 FAQ 표현",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": false,
+   "action": "수정: 2026년 8월 기준 Figure 1의 결과를 논문에 기술된 공격으로 재현할 수 없었다는 범위 명시"
+  },
+  {
+   "claim": "Unite.AI 사건 보도일 2026-09-30",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기사에 회사 발표와 논문 연결",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기사에 규모·귀속·추론 구조 설명",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "작성자는 AI 생성 분석가라는 고지",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "편집팀 검토 고지",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Extrapolator AI 사건 분석일 2026-09-30",
+   "url": "https://extrapolator.ai/2026/09/30/openai-disrupts-coordinated-api-based-model-distillation-attack/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "기사에 품질 저하·노이즈 주입·이상 점수 설명",
+   "url": "https://extrapolator.ai/2026/09/30/openai-disrupts-coordinated-api-based-model-distillation-attack/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "S4 세부 방어 사양은 S1에서 확인되지 않음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지: 공식 구현으로 채택하지 않음"
+  },
+  {
+   "claim": "현재 파트너별 완료 날짜는 발표에 제시되지 않음",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "사건 특정 사용자의 피해를 논문 권고만으로 입증할 수 없음",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "실험 모집단이 사건과 같다는 근거가 없어 논문 수치를 사건 유출 건수로 사용하지 않음",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "본문 이미지 I1은 논문 Figure 1이며 9월 사건 피해 도표가 아님",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "연구 도표 저작자 Alexander Panfilov 외·CC BY 4.0",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "confirmed": true,
+   "action": "유지"
+  }
+ ],
+ "note": "2026-10-06 별도 검증. 제목·도입·요약·표·박스·본문·FAQ·맺음말의 중복 사실은 하나로 합쳐 검증했다. 공식 발표 전체 본문·각주, arXiv 초록/제출 이력·Figure 1·5.1~5.4·재현성 문구를 다시 열었다. 독립 보도 2곳의 본문·게시일 및 Unite.AI 작성자 고지도 재독했다. confirmed는 원래 주장 그대로 근거가 일치한 개수이며 수정 대상 2개는 false로 집계했다. 의견·비유·운영 제안은 실증 주장으로 세지 않았다. 가격·벤치마크 성능·법적 의무 주장은 원고에 없다. 회사의 사건 설명과 귀속은 발표 내용 확인이며 독립 수사 확정이 아니다. 최신성·독립 보도 근거가 확보되어 skip 대상이 아니다. 발행 승인은 수행하지 않았다. 근거 위치: S1 What we observed/Our assessment of attribution/How we responded/What comes next/Footnotes; S3 Abstract/Figure 1/5.1/5.2/5.4/Reproducibility Statement; S2 Published/본문/작성자 고지; S4 게시일 및 From Behavioral Fingerprinting to Degraded Response/Technical Deep Dive."
+}
