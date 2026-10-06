@@ -8,15 +8,16 @@
  "started": "2026-10-06T13:18:32+09:00",
  "network": "full",
  "finished": "",
- "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+ "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
  "alert_ts": "1791259363.102139",
  "fallback": {
   "provider": "codex",
   "mode": "cloud",
-  "status": "writing",
+  "status": "waiting",
   "taken_over": "2026-10-06T14:04:35+09:00",
   "first_taken_over": "2026-10-06T13:18:32+09:00",
   "reason": "Codex 클라우드에서 남은 카테고리 이어쓰기",
-  "category": "AI 인사이트"
+  "category": "AI 인사이트",
+  "last_result": "done"
  }
 }
