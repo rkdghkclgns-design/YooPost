@@ -128,6 +128,18 @@ def test_fresh_runner_can_commit_the_takeover_without_a_global_git_identity(bran
     assert pushed == head
 
 
+def test_last_response_diagnostic_removes_dedicated_login_secrets(tmp_path, monkeypatch):
+    auth_home = tmp_path / "dedicated-auth"
+    monkeypatch.setenv("CODEX_HOME", str(auth_home))
+    write_json(auth_home / "auth.json", {"tokens": {"access_token": "secret-access", "refresh_token": "secret-refresh"},
+                                        "OPENAI_API_KEY": "secret-api"})
+    source, destination = tmp_path / "reply.txt", tmp_path / "diagnostic.txt"
+    source.write_text("tool failed secret-access secret-refresh secret-api", encoding="utf-8")
+    codex_cloud.save_diagnostic(source, destination)
+    text = destination.read_text(encoding="utf-8")
+    assert "tool failed" in text and "secret-" not in text
+
+
 def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_repo, monkeypatch, tmp_path):
     _, _, tree = branch_repo
     helper = codex_cloud.helper

@@ -121,7 +121,7 @@ jobs:
           path: ${{ runner.temp }}/codex-auth.enc
           key: codex-auth-${{ vars.CODEX_AUTH_REVISION || 'v1' }}-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: actions/upload-artifact@v4
-        if: always() && needs.plan.outputs.work == 'true'
+        if: always() && (needs.plan.outputs.work == 'true' || inputs.mode == 'probe')
         with:
           name: codex-result
           path: |
@@ -129,6 +129,7 @@ jobs:
             output/codex-cloud/post.json
             output/codex-cloud/research.json
             output/codex-cloud/verification.json
+            output/codex-cloud/author-last-message.txt
           if-no-files-found: ignore
           retention-days: 7
 
