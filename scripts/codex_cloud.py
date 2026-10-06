@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, reserve, settle  # noqa: E402
+from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, reserve, settle, validate_verification  # noqa: E402
 from autopost.cloud_drafts import DRAFTS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import manual_thread, read_request, request_id_of, request_path  # noqa: E402
@@ -189,12 +189,30 @@ def generate(work: Path) -> int:
             "다시 열어 검증하세요. 틀리거나 확인 불가한 주장은 고치거나 빼세요. 변경한 post.json·research.json을 "
             "저장하세요. research.json.factcheck의 claims·confirmed·removed·note를 실제 검증 결과로 채우세요. "
             "verification.json에 {claims:[{claim,url,confirmed:true|false,action}],note} 형식의 검증 근거도 저장하세요. "
+            "claims에는 외부 사실 주장과 실제 읽은 출처 URL만 넣으세요. URL은 비워 두지 마세요. "
+            "자체 실행 여부·검증 단계 상태 같은 작업 설명은 note에 따로 적고 claims 개수에서 제외하세요. "
             "글을 검증 없이 승인하지 말고 새 글의 근거가 부족하면 skip.json에 {category,reason}을 저장하세요.")
         if (isolated / "skip.json").is_file():
             stopped = checked_json(isolated / "skip.json")
             write_json(work / "result.json", {"status": "skip", "category": stopped.get("category"),
                                              "reason": str(stopped.get("reason") or "검증 근거 부족")[:300]})
             return 0
+        try:
+            validate_verification(checked_json(isolated / "research.json"), checked_json(isolated / "verification.json"))
+        except ValueError:
+            run_codex(isolated, "방금 생성한 post.json·research.json·verification.json의 전달 형식을 보정하세요. "
+                "모든 외부 사실 주장에는 실제 읽은 공식 원문의 비어 있지 않은 URL과 boolean confirmed가 필요하고, "
+                "confirmed=false이면 본문에서 삭제·수정한 action도 필요합니다. 근거 URL을 지어내지 마세요. "
+                "자체 실행 여부·검증 단계 상태 같은 작업 설명은 verification.note와 research.factcheck.note로 옮기고 "
+                "외부 사실의 claims 집계에서 제외하세요. 외부 사실 주장이나 확인 불가한 주장을 보고서에서 숨기지 마세요. "
+                "research.factcheck.claims는 verification.claims 길이, confirmed는 실제 true 개수와 일치시킵니다. "
+                "이미 검증한 외부 사실의 근거와 본문을 보존하고, 근거를 확인할 수 없으면 skip.json에 이유를 남기세요.", minutes=5)
+            if (isolated / "skip.json").is_file():
+                stopped = checked_json(isolated / "skip.json")
+                write_json(work / "result.json", {"status": "skip", "category": stopped.get("category"),
+                                                 "reason": str(stopped.get("reason") or "검증 근거 부족")[:300]})
+                return 0
+            validate_verification(checked_json(isolated / "research.json"), checked_json(isolated / "verification.json"))
         for name in ("post.json", "research.json", "verification.json"):
             write_json(work / name, checked_json(isolated / name))
         write_json(work / "result.json", {"status": "draft"})
@@ -240,14 +258,7 @@ def complete(work: Path) -> int:
             result = "skipped"
         elif data.get("status") == "draft":
             verification = checked_json(work / "verification.json")
-            claims = verification.get("claims")
-            if not isinstance(claims, list) or not claims or not all(
-                isinstance(c, dict) and c.get("claim") and c.get("url") and isinstance(c.get("confirmed"), bool)
-                and (c["confirmed"] or c.get("action")) for c in claims):
-                raise ValueError("별도 사실 검증 근거가 비어 있거나 확인 불가한 주장에 조치가 없습니다")
-            fc = checked_json(work / "research.json").get("factcheck") or {}
-            if fc.get("claims") != len(claims) or fc.get("confirmed") != sum(c["confirmed"] for c in claims):
-                raise ValueError("사실 검증 개수와 주장별 검증 기록이 맞지 않습니다")
+            validate_verification(checked_json(work / "research.json"), verification)
             folder = helper.TREE / DRAFTS / f"{now:%Y%m%d_%H%M%S}_{CATEGORIES.index(category) + 1}"
             if folder.exists():
                 raise ValueError("같은 원고 폴더가 이미 있어 덮어쓰지 않았습니다")

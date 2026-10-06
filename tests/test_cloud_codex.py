@@ -5,7 +5,7 @@ from datetime import timedelta
 import pytest
 from cryptography.fernet import Fernet
 
-from autopost.cloud_codex import choose_task, cloud_lease, reserve, retry_ready, settle, task_key
+from autopost.cloud_codex import choose_task, cloud_lease, reserve, retry_ready, settle, task_key, validate_verification
 from autopost.cloud_drafts import read_json, write_json
 from autopost.codex_fallback import fallback_requests, takeover_reason
 from autopost.draft_request import request_path, with_request
@@ -214,3 +214,55 @@ def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_re
     assert codex_cloud.complete(tmp_path / "absent") == 1
     assert not read_json(tree / "state/codex.json")["lease"]
     assert len(notices) == 3
+
+
+def test_authorized_recovery_preserves_attempt_limit_and_is_consumed_once():
+    selected = task()
+    state = settle(reserve({}, selected, "owner", NOW), selected, "owner", "failed", "보고서 형식 오류")
+    key = task_key(selected)
+    recovery = {"after_count": 1, "expires": (NOW + timedelta(minutes=30)).isoformat(), "reason": "사용자 장애 복구 요청"}
+    state["retry_authorizations"] = {key: recovery}
+    assert retry_ready(state, selected, NOW + timedelta(minutes=5))
+    assert not retry_ready(state, selected, NOW + timedelta(minutes=31))
+    next_state = reserve(state, selected, "owner2", NOW + timedelta(minutes=5))
+    assert next_state["attempts"][key]["count"] == 2 and key not in next_state["retry_authorizations"]
+    next_state["retry_authorizations"] = {key: {**recovery, "after_count": 2}}
+    assert not retry_ready(next_state, selected, NOW + timedelta(minutes=6))
+    state["attempts"][key]["status"] = "writing"
+    assert not retry_ready(state, selected, NOW + timedelta(minutes=5))
+
+
+@pytest.mark.parametrize("claim,fc", [
+    ({"claim": "외부 주장", "url": "", "confirmed": True}, {"claims": 1, "confirmed": 1}),
+    ({"claim": "외부 주장", "url": "https://official.example/report", "confirmed": "true"}, {"claims": 1, "confirmed": 1}),
+    ({"claim": "외부 주장", "url": "https://official.example/report", "confirmed": False}, {"claims": 1, "confirmed": 0}),
+    ({"claim": "외부 주장", "url": "https://official.example/report", "confirmed": True}, {"claims": 2, "confirmed": 1}),
+])
+def test_invalid_evidence_is_rejected_before_and_after_generation(claim, fc):
+    with pytest.raises(ValueError):
+        validate_verification({"factcheck": fc}, {"claims": [claim]})
+
+
+@pytest.mark.parametrize("repaired", [True, False])
+def test_generation_repairs_report_format_once_without_bypassing_validation(tmp_path, monkeypatch, repaired):
+    work = tmp_path / "work"
+    write_json(work / "task.json", task())
+    calls = []
+    factual = {"claim": "공식 발표", "url": "https://official.example/report", "confirmed": True}
+    process = {"claim": "검증 단계 설명", "url": "", "confirmed": False, "action": "note로 이동"}
+    def fake_codex(isolated, prompt, minutes=20):
+        calls.append(prompt)
+        write_json(isolated / "post.json", {"category": "AI 도구"})
+        proof = [factual] if len(calls) == 3 and repaired else [factual, process]
+        write_json(isolated / "research.json", {"factcheck": {"claims": len(proof), "confirmed": 1}})
+        write_json(isolated / "verification.json", {"claims": proof, "note": "작업 상태 설명"})
+    monkeypatch.setattr(codex_cloud, "run_codex", fake_codex)
+    if repaired:
+        assert codex_cloud.generate(work) == 0
+        assert read_json(work / "verification.json")["claims"] == [factual]
+        assert read_json(work / "result.json") == {"status": "draft"}
+    else:
+        with pytest.raises(ValueError, match="검증 근거"):
+            codex_cloud.generate(work)
+        assert not (work / "result.json").exists()
+    assert len(calls) == 3 and "지어내지" in calls[-1]

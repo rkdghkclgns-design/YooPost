@@ -26,7 +26,14 @@ def task_key(task: dict) -> str:
 def retry_ready(state: dict, task: dict, now: datetime) -> bool:
     attempt = (state.get("attempts") or {}).get(task_key(task)) or {}
     at = parsed_time(attempt.get("at"))
-    return int(attempt.get("count") or 0) < MAX_ATTEMPTS and (not at or now - at >= RETRY_WAIT)
+    count = int(attempt.get("count") or 0)
+    if count >= MAX_ATTEMPTS:
+        return False
+    recovery = (state.get("retry_authorizations") or {}).get(task_key(task)) or {}
+    expires = parsed_time(recovery.get("expires"))
+    authorized = bool(attempt.get("status") == "failed" and recovery.get("reason")
+                      and recovery.get("after_count") == count and expires and now < expires)
+    return authorized or not at or now - at >= RETRY_WAIT
 
 
 def choose_task(status: dict, state: dict, now: datetime) -> dict:
@@ -56,7 +63,9 @@ def reserve(state: dict, task: dict, owner: str, now: datetime) -> dict:
     previous = attempts.get(key) or {}
     attempts[key] = {"at": now.isoformat(timespec="seconds"), "count": int(previous.get("count") or 0) + 1,
                      "status": "writing"}
-    return {**state, "attempts": attempts,
+    authorizations = dict(state.get("retry_authorizations") or {})
+    authorizations.pop(key, None)  # 사용자가 요청한 복구 재시도는 한 번만 허용하며 횟수 상한은 유지한다.
+    return {**state, "attempts": attempts, "retry_authorizations": authorizations,
             "lease": {"owner": owner, "at": now.isoformat(timespec="seconds"),
                       "expires": (now + LEASE_TIME).isoformat(timespec="seconds"), "task": task}}
 
@@ -68,3 +77,17 @@ def settle(state: dict, task: dict, owner: str, result: str, note: str = "") -> 
     key = task_key(task)
     attempts[key] = {**attempts.get(key, {}), "status": result, "note": note[:300]}
     return {**state, "lease": {}, "attempts": attempts}
+
+
+def validate_verification(research: dict, verification: dict) -> None:
+    """작성 단계와 전송 단계가 같은 검증 보고서 규칙을 검사한다."""
+    claims = verification.get("claims")
+    if not isinstance(claims, list) or not claims or not all(
+        isinstance(c, dict) and isinstance(c.get("claim"), str) and c["claim"].strip()
+        and isinstance(c.get("url"), str) and c["url"].strip() and isinstance(c.get("confirmed"), bool)
+        and (c["confirmed"] or c.get("action")) for c in claims):
+        raise ValueError("별도 사실 검증 근거가 비어 있거나 확인 불가한 주장에 조치가 없습니다")
+    fc = research.get("factcheck") or {}
+    if not isinstance(fc, dict) or type(fc.get("claims")) is not int or type(fc.get("confirmed")) is not int \
+            or fc["claims"] != len(claims) or fc["confirmed"] != sum(c["confirmed"] for c in claims):
+        raise ValueError("사실 검증 개수와 주장별 검증 기록이 맞지 않습니다")

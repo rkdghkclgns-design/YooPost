@@ -21,4 +21,7 @@ info/warning 박스, 문단 절반 이상 **강조**, 인사·마무리를 포�
 별도 검증 단계에서 주장을 모두 추출해 공식 원문을 다시 읽는다. 확인되지 않는 주장은 삭제·수정한다.
 research.json.factcheck의 claims·confirmed는 실제 검증 개수이며 검증 전 임의 숫자를 넣지 않는다.
 verification.json에는 주장별 URL·확인 결과·삭제/수정 조치를 기록한다.
+claims에는 실제 읽은 공식 출처 URL이 있는 외부 사실 주장만 넣는다. 자체 작업·실행 여부나 검증 단계 설명은 note에 기록하고 외부 사실 개수에서 제외한다.
+confirmed는 boolean이며, 확인 불가한 외부 주장은 본문에서 삭제·수정하고 action에 조치를 적는다. URL을 지어내거나 외부 주장을 검증 집계에서 숨기지 않는다.
+research.json.factcheck의 claims는 verification.json.claims 길이, confirmed는 그중 true인 항목 수와 일치시킨다.
 다 읽지 못했거나 근거가 부족하면 성공한 것처럼 보고하지 않는다.
