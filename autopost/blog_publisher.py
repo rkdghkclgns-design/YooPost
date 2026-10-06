@@ -35,7 +35,7 @@ class BloggerPublisher:
         response = (
             self._service.posts()
             .insert(blogId=self._blog_id, body=body, isDraft=False)
-            .execute(num_retries=3)
+            .execute(num_retries=0)  # insert에는 멱등키가 없다. 응답 유실은 원고 ID로 목록을 확인한 뒤 복구한다.
         )
         url = response.get("url", "")
         log.info("구글 블로그 발행 완료: %s", url)

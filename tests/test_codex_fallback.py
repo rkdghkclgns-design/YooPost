@@ -16,9 +16,9 @@ def record(**changes):
     return {**new_record(RID, "single", "AI 도구", "주제", "U1", (NOW - timedelta(minutes=30)).isoformat()), **changes}
 
 
-def test_quota_error_is_eligible_but_credentials_and_finished_requests_are_not():
+def test_claude_quota_and_auth_errors_are_eligible_but_finished_requests_are_not():
     assert takeover_reason(record(fire_error="한 시간 실행 한도 (HTTP 429)"), NOW)
-    assert not takeover_reason(record(fire_error="루틴 토큰이 맞지 않습니다"), NOW)
+    assert takeover_reason(record(fire_error="루틴 토큰이 맞지 않습니다"), NOW)
     assert not takeover_reason(record(finished=NOW.isoformat(), fire_error="HTTP 429"), NOW)
     assert not takeover_reason(record(created=(NOW - timedelta(hours=7)).isoformat()), NOW)
     assert not takeover_reason(record(created=(NOW + timedelta(minutes=1)).isoformat()), NOW)

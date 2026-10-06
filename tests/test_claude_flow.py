@@ -169,7 +169,10 @@ def test_publish_draft_publishes_once_and_reports_in_thread(approver, notice):
     client, blogger = FakeWebClient(), FakeBlogger()
     slack = SlackNotifier(channel_id="C1", client=client)
     assert publish_draft("d1", store, blogger, slack, approver, "CPUB", now=lambda: NOW) == 0
-    assert blogger.posts == [("제목", "<p>본문</p>", ["AI 도구"])]
+    from autopost.history import read_marker
+    assert blogger.posts[0][0] == "제목" and blogger.posts[0][2] == ["AI 도구"]
+    assert blogger.posts[0][1].startswith("<p>본문</p>")
+    assert read_marker(blogger.posts[0][1])["draft_id"] == "d1"
     assert store.items["d1"]["status"] == "published" and store.items["d1"]["url"] == "https://ai.blogspot.com/p/1"
     thread, channel_note = client.messages
     assert thread["thread_ts"] == "1700.1" and thread["channel"] == "CDRAFT" and notice in thread["text"]

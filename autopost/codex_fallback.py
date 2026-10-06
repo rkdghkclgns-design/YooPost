@@ -49,7 +49,9 @@ def takeover_reason(record: Mapping, now: datetime) -> str:
         return "작성 시작 후 3시간 이상 중단" if now - activity >= RUNNING_WAIT else ""
     error = str(record.get("fire_error") or "")
     if error:
-        return "Claude 실행 한도 오류" if QUOTA_ERROR.search(error) else ""
+        if "응답 없음" in error and now - created < PENDING_WAIT:
+            return ""
+        return "Claude 실행 한도 오류" if QUOTA_ERROR.search(error) else "Claude 실행 불가 또는 응답 유실 후 미시작"
     return "접수 후 15분 동안 작성 미시작" if now - created >= PENDING_WAIT else ""
 
 

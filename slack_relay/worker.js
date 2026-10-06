@@ -54,6 +54,8 @@ const HELP_WORDS = /^(도움말|help|사용법|\?)$/i;
 const ALL_WORDS = /(^|\s)(전체|카테고리별|all)(?=\s|$)/gi;
 const DRAFT_PATH = /^\/draft\/([A-Za-z0-9][A-Za-z0-9._-]{0,119})$/;
 const MANUAL_WATCH_PATH = /^\/manual-watch\/([CG][A-Z0-9]{8,}-[0-9]{16})$/;
+const DELIVERY_PATH = /^\/delivery\/(d[a-f0-9]{64})$/;
+const PUBLISH_WATCH_MS = 15 * 60_000;
 const MANUAL_START_WAIT_MS = 15 * 60_000;
 const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
 const RETRYABLE = new Set(["pending", "failed"]);
@@ -90,6 +92,12 @@ export default {
     const draft = path.match(DRAFT_PATH);
     if (draft) {
       return handleDraft(request, env, draft[1]);
+    }
+    const delivery = path.match(DELIVERY_PATH);
+    if (delivery) {
+      if (!authorized(request, env)) return new Response("unauthorized", { status: 401 });
+      if (!env.DRAFT_APPROVAL) return new Response("durable delivery not configured", { status: 503 });
+      return env.DRAFT_APPROVAL.get(env.DRAFT_APPROVAL.idFromName(`delivery:${delivery[1]}`)).fetch(request);
     }
     const watch = path.match(MANUAL_WATCH_PATH);
     if (watch) {
@@ -132,7 +140,7 @@ export default {
         return reply("수동 지시는 허용된 사용자만 쓸 수 있습니다 (Worker 의 ALLOWED_USER_IDS).");
       }
       try {
-        await dispatch(env, manualInputs(text, form.get("channel_id") || "", "", userId, "slash"), manualWorkflow(env));
+        await enqueueManual(env, manualInputs(text, form.get("channel_id") || "", "", userId, "slash"), raw);
       } catch (err) {
         return reply(`수동 지시를 넘기지 못했습니다: ${err.message}`);
       }
@@ -221,17 +229,23 @@ export async function handleSlackEvent(request, env, ctx, raw) {
   if (body.type === "url_verification") {
     return json({ challenge: body.challenge }); // 슬랙 앱 이벤트 구독 주소 확인
   }
-  if (request.headers.get("X-Slack-Retry-Num")) {
-    return new Response("ok"); // 재전송은 무시 (원고 상태로도 중복 발행을 막음)
-  }
   const event = body.event || {};
   let work = null;
   if (body.type === "event_callback" && event.type === "reaction_added"
       && (isApproval(event.reaction, env) || isHold(event.reaction))) {
-    work = approveDraft(env, event).catch((err) => console.error("approve failed", err.message));
+    work = approveDraft(env, event);
   } else if (body.type === "event_callback" && event.type === "message") {
-    work = manualMessage(env, event).catch((err) => console.error("manual request failed", err.message));
+    work = manualMessage(env, event);
   }
+  if (work && env.DRAFT_APPROVAL) {
+    // 저장에 실패하면 Slack 재전송을 받는다. 수동 지시는 여기서 영속 큐에만 저장한다.
+    try { await work; } catch (err) {
+      console.error("Slack event persistence failed", err.message);
+      return new Response("retry", { status: 503 });
+    }
+    return new Response("ok");
+  }
+  if (work) work = work.catch(err => console.error("Slack event failed", err.message));
   if (work && ctx && ctx.waitUntil) {
     ctx.waitUntil(work); // 슬랙에는 3초 안에 바로 응답
   } else if (work) {
@@ -281,6 +295,10 @@ export async function manualMessage(env, event) {
   if (!allowedUser(env, event.user, { requireList: true })) {
     return "not allowed";
   }
+  if (env.DRAFT_APPROVAL) {
+    await enqueueManual(env, manualInputs(event.text, event.channel, event.ts, event.user, "message"), `${event.channel}:${event.ts}`);
+    return "queued";
+  }
   const seenKey = `manual:${event.channel}:${event.ts}`;
   if (env.IMAGES) {
     if (await env.IMAGES.get(seenKey)) {
@@ -299,6 +317,17 @@ export async function manualMessage(env, event) {
     throw err;
   }
   return "dispatched";
+}
+
+export async function enqueueManual(env, inputs, identity) {
+  if (!env.DRAFT_APPROVAL) return dispatch(env, inputs, manualWorkflow(env));
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(identity));
+  const id = "d" + [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, "0")).join("");
+  const response = await env.DRAFT_APPROVAL.get(env.DRAFT_APPROVAL.idFromName(`delivery:${id}`)).fetch(
+    new Request(`https://delivery.internal/delivery/${id}`, { method: "PUT",
+      body: JSON.stringify({ ...inputs, delivery_id: id }) }));
+  if (!response.ok) throw new Error(`durable delivery HTTP ${response.status}`);
+  return id;
 }
 
 /** (선택) SLACK_BOT_TOKEN 이 있으면 지시 스레드에 한 줄 알린다 — 실패해도 조용히 넘어간다 */
@@ -393,6 +422,8 @@ export class DraftApproval {
 
   async fetch(request) {
     const path = new URL(request.url).pathname;
+    const deliveryId = path.match(DELIVERY_PATH)?.[1];
+    if (deliveryId) return this.ctx.blockConcurrencyWhile(() => this.saveDelivery(request, deliveryId));
     const watchId = path.match(MANUAL_WATCH_PATH)?.[1];
     if (watchId) return this.ctx.blockConcurrencyWhile(() => this.saveManualWatch(request, watchId));
     const id = path.match(DRAFT_PATH)?.[1];
@@ -413,19 +444,69 @@ export class DraftApproval {
         if (input.action === "hold") {
           if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
           await this.write(draft, { ...current, status: "held", held_by: input.user,
-            auto_approve_at: null, dispatch_pending: false });
-          await this.ctx.storage.deleteAlarm();
+            auto_approve_at: null, publish_watch_at: null, dispatch_pending: false }, null);
           await notifySlack(this.env, draft.slack?.channel, draft.slack?.ts,
             "⏸️ 원고를 보류했습니다. 자동 승인하지 않습니다. 다시 ✅ 를 누르면 승인합니다.");
           return json({ result: "held" });
         }
         if (input.action !== "approve") return new Response("invalid action", { status: 400 });
-        if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
-        await this.publish(draft, { ...current, auto_attempts: 0 }, input.user);
+        if (!["pending", "failed", "held"].includes(current.status)
+            && !(current.status === "approved" && current.publish_alerted)) return json({ result: "already handled" });
+        await this.publish(draft, { ...current, auto_attempts: 0, dispatch_attempts: 0,
+          publish_attempts: 0, publish_alerted: false }, current.approved_by || input.user);
         return json({ result: "dispatched" });
       }
       return new Response("method not allowed", { status: 405 });
     });
+  }
+
+  async persist(key, record, alarmAt) {
+    // 상태와 복구 알람 사이에 프로세스가 종료되는 틈을 없앤다.
+    // 이 클래스는 SQLite DO다. transaction 안의 storage 알람·쓰기 모두 같은 트랜잭션에 포함된다.
+    await this.ctx.storage.transaction(async () => {
+      await this.ctx.storage.put(key, record);
+      if (alarmAt === null) await this.ctx.storage.deleteAlarm();
+      else await this.ctx.storage.setAlarm(alarmAt);
+    });
+  }
+
+  async saveDelivery(request, id) {
+    const old = await this.ctx.storage.get("delivery");
+    if (request.method === "GET") return old ? json(old) : new Response("not found", { status: 404 });
+    if (request.method === "POST") {
+      if (!old) return new Response("not found", { status: 404 });
+      await this.persist("delivery", { ...old, status: "accepted", accepted_at: new Date(Date.now()).toISOString() }, null);
+      return json({ ok: true });
+    }
+    if (request.method !== "PUT") return new Response("method not allowed", { status: 405 });
+    let input;
+    try { input = await request.json(); } catch { return new Response("invalid json", { status: 400 }); }
+    if (!allowedUser(this.env, input.user, { requireList: true }) || !["message", "slash"].includes(input.source)
+        || !String(input.text || "").trim() || input.delivery_id !== id) return new Response("invalid delivery", { status: 400 });
+    if (old) return json({ ok: true, status: old.status });
+    await this.persist("delivery", { id, inputs: manualInputs(input.text, input.channel, input.ts, input.user, input.source),
+      status: "queued", attempts: 0, created_at: new Date(Date.now()).toISOString() }, Date.now() + 1000);
+    return json({ ok: true, status: "queued" }, 201);
+  }
+
+  async deliveryAlarm(record) {
+    if (record.status === "accepted") return this.ctx.storage.deleteAlarm();
+    if (record.attempts >= 5) {
+      if (!record.failure_notified) {
+        const notified = await notifySlack(this.env, record.inputs.channel || this.env.MANUAL_CHANNEL_ID, record.inputs.ts || undefined,
+          "⚠️ 지시를 보존했지만 GitHub 처리 확인을 받지 못했습니다. 전달을 5회 시도한 뒤 중단했습니다. 클라우드 실행·인증 상태를 확인해 주세요.");
+        await this.persist("delivery", { ...record, status: "failed", failure_notified: notified },
+          notified ? null : Date.now() + 15 * 60_000);
+        return;
+      }
+      return this.ctx.storage.deleteAlarm();
+    }
+    record = { ...record, attempts: record.attempts + 1, status: "dispatch_pending" };
+    await this.persist("delivery", record, Date.now() + 60_000);
+    try {
+      await dispatch(this.env, { ...record.inputs, delivery_id: record.id }, manualWorkflow(this.env));
+      await this.persist("delivery", { ...record, status: "awaiting_receipt" }, Date.now() + 10 * 60_000);
+    } catch (err) { console.error("durable manual dispatch failed", err.message); }
   }
 
   async saveManualWatch(request, id) {
@@ -442,15 +523,14 @@ export class DraftApproval {
     }
     const watch = saved || { id, user: input.user, created: input.created, status: "scheduled", attempts: 0,
       due_at: new Date(created + MANUAL_START_WAIT_MS + 1000).toISOString() };
-    await this.ctx.storage.put("manual_watch", watch);
     if (watch.status === "scheduled" || watch.status === "dispatch_pending") {
-      await this.ctx.storage.setAlarm(Math.max(Date.now() + 1000, Date.parse(watch.due_at)));
-    }
+      await this.persist("manual_watch", watch, Math.max(Date.now() + 1000, Date.parse(watch.due_at)));
+    } else await this.ctx.storage.put("manual_watch", watch);
     return json({ ok: true, ...watch }, saved ? 200 : 201);
   }
 
   async manualWatchAlarm(watch) {
-    if (this.env.CODEX_FALLBACK_ENABLED !== "true" || ["dispatched", "failed"].includes(watch.status)) {
+    if (this.env.CODEX_FALLBACK_ENABLED !== "true" || watch.status === "dispatched" || watch.failure_notified) {
       await this.ctx.storage.deleteAlarm();
       return;
     }
@@ -460,14 +540,12 @@ export class DraftApproval {
     }
     if (watch.attempts >= 5) return this.failManualWatch(watch);
     watch = { ...watch, attempts: watch.attempts + 1, status: "dispatch_pending" };
-    await this.ctx.storage.put("manual_watch", watch);
-    await this.ctx.storage.setAlarm(Date.now() + 60_000);
+    await this.persist("manual_watch", watch, Date.now() + 60_000);
     try {
       // Claude가 이미 작성 중이거나 끝났으면 plan이 제외한다. 원고·승인을 여기서 변경하지 않는다.
       await dispatch(this.env, { mode: "work" }, this.env.CODEX_WORKFLOW || "codex_fallback.yml");
-      await this.ctx.storage.put("manual_watch", { ...watch, status: "dispatched",
-        dispatched_at: new Date(Date.now()).toISOString() });
-      await this.ctx.storage.deleteAlarm();
+      await this.persist("manual_watch", { ...watch, status: "dispatched",
+        dispatched_at: new Date(Date.now()).toISOString() }, null);
     } catch (err) {
       console.error("manual watchdog dispatch failed", err.message);
       if (watch.attempts >= 5) await this.failManualWatch(watch);
@@ -475,11 +553,11 @@ export class DraftApproval {
   }
 
   async failManualWatch(watch) {
-    await this.ctx.storage.put("manual_watch", { ...watch, status: "failed" });
-    await this.ctx.storage.deleteAlarm();
     const [channel, stamp] = watch.id.split("-");
-    await notifySlack(this.env, channel, `${stamp.slice(0, 10)}.${stamp.slice(10)}`,
+    const notified = await notifySlack(this.env, channel, `${stamp.slice(0, 10)}.${stamp.slice(10)}`,
       "⚠️ 미시작 요청의 Codex 확인을 5회 요청했지만 GitHub에 전달하지 못했습니다. 클라우드 실행 상태를 확인해 주세요.");
+    await this.persist("manual_watch", { ...watch, status: "failed", failure_notified: notified },
+      notified ? null : Date.now() + 15 * 60_000);
   }
 
   async save(request, id, record) {
@@ -490,17 +568,20 @@ export class DraftApproval {
     if (!draft || !draft.title || !draft.html) return new Response("draft needs title and html", { status: 400 });
     const status = draft.status || "pending";
     // 승인 요청의 마지막 저장/재전송이 승인·발행·보류 상태를 pending 으로 덮지 않는다.
-    const keep = status === "pending" && record && record.status !== "pending";
+    const terminal = record && ["published", "excluded"].includes(record.status);
+    const keep = (terminal && status !== record.status) || (record?.status === "held" && !["published", "excluded"].includes(status))
+      || (status === "pending" && record && record.status !== "pending");
     if (keep) draft = (await this.env.IMAGES.get(`draft:${id}`, { type: "json" })) || draft;
     draft.slack ||= record?.slack;
     const next = { ...(record || {}), id, status: keep ? record.status : status };
+    let alarmAt;
     if (draft.slack?.channel && draft.slack?.ts) next.slack = draft.slack;
     if (!keep) {
       next.approved_by = draft.approved_by || next.approved_by || "";
       next.dispatch_pending = false;
     }
-    for (const key of ["url", "published_at", "excluded_reason"]) {
-      if (draft[key] !== undefined) next[key] = draft[key];
+    for (const key of ["url", "published_at", "excluded_reason", "publish_unknown", "publish_started_at"]) {
+      if (!keep && draft[key] !== undefined) next[key] = draft[key];
     }
     if (next.status === "pending" && draft.approval_ready !== false
         && draft.slack?.channel && draft.slack?.ts && autoApprovalEnabled(this.env)) {
@@ -508,51 +589,64 @@ export class DraftApproval {
       const postedAt = Number(draft.slack.ts) * 1000;
       const startedAt = Number.isFinite(postedAt) && postedAt > 0 && postedAt <= Date.now() ? postedAt : Date.now();
       next.auto_approve_at ||= new Date(Math.max(Date.now(), startedAt + 60_000)).toISOString();
-      await this.ctx.storage.setAlarm(Date.parse(next.auto_approve_at));
+      alarmAt = Date.parse(next.auto_approve_at);
+    } else if (["approved", "failed"].includes(next.status) && next.approved_by && !next.publish_alerted) {
+      next.publish_watch_at ||= new Date(Date.now() + PUBLISH_WATCH_MS).toISOString();
+      alarmAt = Date.parse(next.publish_watch_at);
     } else if (!next.dispatch_pending) {
       next.auto_approve_at = null;
-      await this.ctx.storage.deleteAlarm();
+      next.publish_watch_at = null;
+      alarmAt = null;
     }
-    await this.write(draft, next);
+    await this.write(draft, next, alarmAt);
     if (draft.slack?.channel && draft.slack?.ts) {
       await this.env.IMAGES.put(`msg:${draft.slack.channel}:${draft.slack.ts}`, id);
     }
     return json({ ok: true, id, auto_approve_at: next.auto_approve_at || null }, 201);
   }
 
-  async write(draft, record) {
+  async write(draft, record, alarmAt) {
     // 큰 HTML 은 KV 에, 작은 승인 상태는 강한 일관성을 보장하는 Durable Object 에 보관한다.
-    await this.ctx.storage.put("approval", record);
+    if (alarmAt === undefined) await this.ctx.storage.put("approval", record);
+    else await this.persist("approval", record, alarmAt);
     await this.env.IMAGES.put(`draft:${record.id}`, JSON.stringify({ ...draft, ...record }));
   }
 
   async publish(draft, record, user) {
     const approved = { ...record, status: "approved", approved_by: user,
-      approved_at: new Date(Date.now()).toISOString(), dispatch_pending: true };
+      approved_at: record.approved_at || new Date(Date.now()).toISOString(), dispatch_pending: true,
+      dispatch_attempts: (record.dispatch_attempts || 0) + 1 };
     // 요청 도중 객체가 재시작되어도 다음 알람에서 복구한다. 발행 워크플로도 원고 ID 로 중복을 막는다.
-    await this.write(draft, approved);
-    await this.ctx.storage.setAlarm(Date.now() + 60_000);
-    try {
-      await dispatch(this.env, { draft_id: record.id, approved_by: user }, this.env.PUBLISH_WORKFLOW || "publish_draft.yml");
-    } catch (err) {
-      await this.write(draft, { ...record, status: "pending", dispatch_pending: false });
-      throw err;
-    }
-    await this.write(draft, { ...approved, dispatch_pending: false, auto_approve_at: null });
-    await this.ctx.storage.deleteAlarm();
+    await this.write(draft, approved, Date.now() + 60_000);
+    await dispatch(this.env, { draft_id: record.id, approved_by: user }, this.env.PUBLISH_WORKFLOW || "publish_draft.yml");
+    const watching = { ...approved, dispatch_pending: false, dispatch_attempts: 0, auto_approve_at: null,
+      publish_attempts: (record.publish_attempts || 0) + 1, publish_watch_at: new Date(Date.now() + PUBLISH_WATCH_MS).toISOString() };
+    await this.write(draft, watching, Date.parse(watching.publish_watch_at));
+  }
+
+  async stopPublishing(record) {
+    let notified = record.publish_alerted;
+    if (!notified) notified = await notifySlack(this.env, record.slack?.channel, record.slack?.ts,
+      "⚠️ 승인 후 발행 완료를 확인하지 못했습니다. 재시도 5회 후 중단했습니다. 실행·인증 상태를 확인하고 ✅로 다시 요청할 수 있습니다.");
+    await this.persist("approval", { ...record, publish_alerted: Boolean(notified) },
+      notified ? null : Date.now() + 15 * 60_000);
   }
 
   async alarm() {
     return this.ctx.blockConcurrencyWhile(async () => {
+      const delivery = await this.ctx.storage.get("delivery");
+      if (delivery) return this.deliveryAlarm(delivery);
       const watch = await this.ctx.storage.get("manual_watch");
       if (watch) return this.manualWatchAlarm(watch);
       let record = await this.ctx.storage.get("approval");
       if (!record) return;
-      if ((record.auto_attempts || 0) >= 5) {
-        await this.ctx.storage.deleteAlarm();
-        return;
+      const watching = ["approved", "failed"].includes(record.status) && record.approved_by && record.publish_watch_at;
+      if (watching && Date.parse(record.publish_watch_at) > Date.now()) {
+        await this.ctx.storage.setAlarm(Date.parse(record.publish_watch_at)); return;
       }
-      const recovering = record.status === "approved" && record.dispatch_pending;
+      if ((record.dispatch_pending && (record.dispatch_attempts || 0) >= 5)
+          || (watching && (record.publish_attempts || 0) >= 5)) return this.stopPublishing(record);
+      const recovering = watching || (record.status === "approved" && record.dispatch_pending);
       if (!recovering && (record.status !== "pending" || !record.auto_approve_at || !autoApprovalEnabled(this.env))) {
         await this.ctx.storage.deleteAlarm();
         return;
@@ -564,33 +658,29 @@ export class DraftApproval {
       const draft = await this.env.IMAGES.get(`draft:${record.id}`, { type: "json" });
       if (!draft) {
         record = { ...record, auto_attempts: (record.auto_attempts || 0) + 1 };
-        await this.ctx.storage.put("approval", record);
-        if (record.auto_attempts < 5) await this.ctx.storage.setAlarm(Date.now() + 60_000);
-        else await this.ctx.storage.deleteAlarm();
+        if (record.auto_attempts < 5) await this.persist("approval", record, Date.now() + 60_000);
+        else await this.stopPublishing(record);
         return;
       }
       if (!draft.slack?.channel || !draft.slack?.ts) {
         await this.ctx.storage.deleteAlarm();
         return;
       }
-      record = { ...record, auto_attempts: (record.auto_attempts || 0) + 1 };
       try {
         const user = recovering ? record.approved_by : "auto-60s";
         await this.publish(draft, record, user);
-        if (user === "auto-60s") {
-          await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
+        if (user === "auto-60s" && !record.auto_notice_sent) {
+          const noticed = await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
             `${AUTO_APPROVAL_LABEL} — 구글 블로그 발행을 요청했습니다.`);
-          await markAutoApproval(this.env, draft.slack);
+          const marked = await markAutoApproval(this.env, draft.slack);
+          if (noticed && marked) await this.ctx.storage.put("approval", {
+            ...(await this.ctx.storage.get("approval")), auto_notice_sent: true });
         }
       } catch (err) {
         console.error("auto approval dispatch failed", err.message);
-        if (record.auto_attempts < 5) {
-          await this.ctx.storage.setAlarm(Date.now() + 60_000);
-        } else {
-          await this.ctx.storage.deleteAlarm();
-          await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
-            "⚠️ 자동 승인 발행 요청을 5회 시도했지만 실패했습니다. ✅ 를 눌러 다시 시도할 수 있습니다.");
-        }
+        const latest = await this.ctx.storage.get("approval");
+        if ((latest.dispatch_attempts || 0) >= 5) await this.stopPublishing(latest);
+        else await this.ctx.storage.setAlarm(Date.now() + 60_000);
       }
     });
   }

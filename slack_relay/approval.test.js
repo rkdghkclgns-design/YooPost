@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { afterEach, beforeEach, test } from "node:test";
-import worker, { DraftApproval, approveDraft } from "./worker.js";
+import worker, { DraftApproval, approveDraft, enqueueManual, handleSlackEvent } from "./worker.js";
 
 const realFetch = globalThis.fetch;
 let calls;
@@ -43,6 +43,11 @@ function fixture(t) {
           async put(key, value) { data.set(key, structuredClone(value)); },
           async setAlarm(at) { ctx.alarmAt = at; },
           async deleteAlarm() { ctx.alarmAt = null; },
+          async transaction(fn) {
+            const snapshot = structuredClone(data), at = ctx.alarmAt;
+            try { return await fn(ctx.storage); }
+            catch (err) { data.clear(); for (const [k, v] of snapshot) data.set(k, v); ctx.alarmAt = at; throw err; }
+          },
         }, blockConcurrencyWhile(fn) {
           const result = queue.then(fn);
           queue = result.catch(() => {});
@@ -91,7 +96,7 @@ test("60 seconds of pending approval requests publishing once, also after object
   assert.equal(publishes().length, 1);
   assert.deepEqual(publishes()[0].body.inputs, { draft_id: "d1", approved_by: "auto-60s" });
   assert.equal((await f.read()).status, "approved");
-  assert.equal(item.ctx.alarmAt, null);
+  assert.equal(item.ctx.alarmAt, Date.now() + 15 * 60_000);
   const markers = calls.filter(c => c.url.endsWith("/chat.update"));
   assert.equal(markers.length, 1);
   assert.equal(markers[0].body.blocks[0].block_id, "draft_title");
@@ -172,8 +177,8 @@ test("a dispatch error retries after one minute, with a five attempt cap", async
   for (let i = 1; i <= 5; i++) {
     f.advance(60_000);
     await f.alarm();
-    assert.equal((await f.read()).status, "pending");
-    assert.equal((await f.read()).auto_attempts, i);
+    assert.equal((await f.read()).status, "approved");
+    assert.equal((await f.read()).dispatch_attempts, i);
   }
   assert.equal(f.instances.get("d1").ctx.alarmAt, null);
   assert.equal(publishes().length, 5);
@@ -296,4 +301,148 @@ test("manual watchdog retries failed GitHub requests five times and reports fail
   assert.equal(notice.body.channel, "C0MANUAL01");
   assert.equal(notice.body.thread_ts, "1791244200.000001");
   assert.match(notice.body.text, /5회/);
+});
+
+test("durable Slack retries and concurrent duplicates queue one request until the persisted receipt", async t => {
+  const f = fixture(t);
+  f.env.MANUAL_CHANNEL_ID = "C0MANUAL01";
+  const raw = JSON.stringify({ type: "event_callback", event: { type: "message", channel: "C0MANUAL01",
+    ts: "1791244200.000001", user: "U1", text: "전체 새로운 포스트로 재발행" } });
+  const retry = new Request("https://test/slack/events", { headers: { "X-Slack-Retry-Num": "1" } });
+  await Promise.all(Array.from({ length: 10 }, () => handleSlackEvent(retry, f.env, {}, raw)));
+  assert.equal(f.instances.size, 1);
+  assert.equal(calls.length, 0); // 접수 응답은 네트워크 dispatch 전에 영속 저장만 한다.
+  const [name, item] = [...f.instances][0];
+  item.obj = new DraftApproval(item.ctx, f.env);
+  f.advance(1000);
+  await item.obj.alarm();
+  assert.equal(calls.length, 1);
+  const id = name.replace("delivery:", "");
+  assert.equal(calls[0].body.inputs.delivery_id, id);
+  f.advance(10 * 60_000);
+  await item.obj.alarm(); // HTTP 204를 받았어도 Python 기록 ACK가 없으면 같은 ID로 재전송.
+  assert.equal(calls.length, 2);
+  assert.equal(calls[1].body.inputs.delivery_id, id);
+  assert.equal((await worker.fetch(new Request(`https://test/delivery/${id}`, { method: "POST",
+    headers: { Authorization: "Bearer test" } }), f.env)).status, 200);
+  await item.obj.alarm();
+  await handleSlackEvent(retry, f.env, {}, raw);
+  assert.equal(calls.length, 2);
+  assert.equal(item.ctx.alarmAt, null);
+});
+
+test("durable queue storage failure returns 503 so Slack can retry instead of losing the command", async t => {
+  const f = fixture(t);
+  f.env.MANUAL_CHANNEL_ID = "C0MANUAL01";
+  const get = f.env.DRAFT_APPROVAL.get;
+  let broken = true;
+  f.env.DRAFT_APPROVAL.get = id => {
+    const obj = get(id), item = f.instances.get(id);
+    item.ctx.storage.setAlarm = async at => { if (broken) throw new Error("storage unavailable"); item.ctx.alarmAt = at; };
+    return obj;
+  };
+  const raw = JSON.stringify({ type: "event_callback", event: { type: "message", channel: "C0MANUAL01",
+    ts: "1791244200.000001", user: "U1", text: "AI 도구 한 편 더 발행해줘" } });
+  assert.equal((await handleSlackEvent(new Request("https://test"), f.env, {}, raw)).status, 503);
+  const item = [...f.instances.values()][0];
+  assert.equal(await item.ctx.storage.get("delivery"), undefined); // transaction rollback
+  broken = false;
+  assert.equal((await handleSlackEvent(new Request("https://test"), f.env, {}, raw)).status, 200);
+  assert.equal((await item.ctx.storage.get("delivery")).status, "queued");
+  assert.equal(item.ctx.alarmAt, Date.now() + 1000);
+});
+
+test("delivery timeout is retried with stable ID, capped, and failure notice survives Slack downtime", async t => {
+  const f = fixture(t);
+  const id = await enqueueManual(f.env, { text: "AI 도구 한 편 더 발행해줘", user: "U1", source: "slash", channel: "CMANUAL" }, "trigger1");
+  const item = f.instances.get(`delivery:${id}`);
+  let slackDown = true;
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    if (String(url).startsWith("https://slack.com/")) return Response.json({ ok: !slackDown });
+    throw new Error("dispatch response lost");
+  };
+  for (let i = 0; i < 5; i++) { f.advance(60_000); await item.obj.alarm(); }
+  await item.obj.alarm();
+  assert.equal((await item.ctx.storage.get("delivery")).attempts, 5);
+  assert.equal(calls.filter(c => !c.url.startsWith("https://slack.com/")).length, 5);
+  assert.equal(item.ctx.alarmAt, Date.now() + 15 * 60_000);
+  slackDown = false;
+  f.advance(15 * 60_000);
+  await item.obj.alarm();
+  await item.obj.alarm();
+  assert.equal(item.ctx.alarmAt, null);
+  assert.equal((await item.ctx.storage.get("delivery")).failure_notified, true);
+  assert.equal(calls.filter(c => c.url.endsWith("chat.postMessage")).length, 2);
+});
+
+test("delivery status and receipt reject missing upload secret", async t => {
+  const f = fixture(t);
+  const id = await enqueueManual(f.env, { text: "AI 도구 한 편 더 발행해줘", user: "U1", source: "slash" }, "trigger2");
+  for (const method of ["GET", "POST"]) {
+    assert.equal((await worker.fetch(new Request(`https://test/delivery/${id}`, { method }), f.env)).status, 401);
+  }
+  assert.equal((await worker.fetch(new Request(`https://test/delivery/${id}`, {
+    headers: { Authorization: "Bearer test" } }), f.env)).status, 200);
+});
+
+test("approved publication missing completion is watched; retries preserve approver and send auto notice once", async t => {
+  const f = fixture(t);
+  await f.save(); f.advance(60_000); await f.alarm();
+  const approvedAt = (await f.read()).approved_at;
+  f.advance(15 * 60_000);
+  await f.alarm();
+  assert.equal(publishes().length, 2);
+  assert.equal((await f.read()).approved_at, approvedAt);
+  assert.equal((await f.read()).approved_by, "auto-60s");
+  assert.equal(calls.filter(c => c.url.endsWith("chat.postMessage")).length, 1);
+  await f.save({ ...f.draft, status: "published", url: "https://b/p/1" });
+  await f.save({ ...f.draft, status: "failed", url: "" }); // 유실 응답을 처리한 늦은 runner
+  f.advance(15 * 60_000); await f.alarm();
+  assert.equal(publishes().length, 2);
+  assert.equal((await f.read()).status, "published");
+  assert.equal((await f.read()).url, "https://b/p/1");
+});
+
+test("publication watch retries failed approved work and stops after five dispatches with explicit resume", async t => {
+  const f = fixture(t);
+  await f.save(); await f.manual();
+  for (let i = 1; i < 5; i++) {
+    await f.save({ ...f.draft, status: "failed", approved_by: "U1" });
+    f.advance(15 * 60_000); await f.alarm();
+  }
+  assert.equal(publishes().length, 5);
+  f.advance(15 * 60_000); await f.alarm(); await f.alarm();
+  assert.equal((await f.read()).publish_alerted, true);
+  assert.equal(f.instances.get("d1").ctx.alarmAt, null);
+  assert.equal(calls.filter(c => c.url.endsWith("chat.postMessage")).length, 1);
+  assert.equal(await f.manual(), "dispatched");
+  assert.equal(publishes().length, 6);
+  await f.save({ ...f.draft, status: "published", url: "https://b/p/1" });
+  assert.equal(await f.manual(), "already handled");
+});
+
+test("approval KV write interruption keeps a durable alarm and does not dispatch until data recovers", async t => {
+  const f = fixture(t);
+  await f.save();
+  const put = f.env.IMAGES.put;
+  let down = true;
+  f.env.IMAGES.put = async (...a) => { if (down) throw new Error("KV unavailable"); return put(...a); };
+  await assert.rejects(f.manual(), /KV unavailable/);
+  assert.equal((await f.read()).dispatch_pending, true);
+  assert.equal(publishes().length, 0);
+  down = false;
+  f.advance(60_000); await f.alarm();
+  assert.equal(publishes().length, 1);
+  assert.equal((await f.read()).approved_by, "U1");
+});
+
+test("held work cannot be revived by stale approved or failed saves", async t => {
+  const f = fixture(t);
+  await f.save(); await f.manual("x");
+  await f.save({ ...f.draft, status: "failed", approved_by: "auto-60s" });
+  await f.save({ ...f.draft, status: "approved", approved_by: "auto-60s" });
+  f.advance(15 * 60_000); await f.alarm();
+  assert.equal((await f.read()).status, "held");
+  assert.equal(publishes().length, 0);
 });

@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import argparse
 import logging
+import json
+import re
 import os
 import sys
 from datetime import datetime, timedelta, timezone
@@ -21,13 +23,24 @@ from .config import ConfigError, load_config
 from .draft_request import manual_thread
 from .draft_store import DraftStore
 from .exclusion import EXCLUDED, exclude, overlap_of, record_entry
-from .history import HistoryUnavailable, load_history
+from .history import HistoryUnavailable, load_history, read_marker
 from .results import PublishResult
 from .slack_helper import AUTO_APPROVAL_LABEL, LABEL, SlackNotifier, escape_mrkdwn
 
 log = logging.getLogger(__name__)
 
 KST = timezone(timedelta(hours=9))
+
+
+def publication_html(draft_id: str, draft: dict) -> str:
+    html = str(draft["html"])
+    marker = {**read_marker(html), "draft_id": draft_id}
+    marker.setdefault("topic", str(draft.get("topic") or draft.get("title") or ""))
+    marker.setdefault("source", str(draft.get("source_url") or ""))
+    marker.setdefault("category", str(draft.get("category") or ""))
+    tag = "<!--yoopost " + json.dumps(marker, ensure_ascii=True, separators=(",", ":")) + "-->"
+    pattern = r"<!--yoopost (\{.*?\})-->"
+    return re.sub(pattern, lambda _: tag, html, count=1, flags=re.DOTALL) if re.search(pattern, html, re.DOTALL) else html + "\n" + tag
 
 
 def _message(draft: dict, result: PublishResult, approved_by: str) -> str:
@@ -53,6 +66,19 @@ def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, s
         slack.post(f"🚫 겹치는 원고라 제외된 원고입니다 — 발행하지 않습니다 ({escape_mrkdwn(str(draft.get('excluded_reason') or ''))})",
                    thread_ts=place.get("ts"), channel=place.get("channel"))
         return 0
+    if draft.get("status") not in ("approved", "failed"):
+        log.warning("승인되지 않았거나 보류된 원고는 발행하지 않습니다: %s", draft_id)
+        return 1
+    approved_by = str(draft.get("approved_by") or approved_by)
+    def notify_result(result: PublishResult) -> None:
+        text = _message(draft, result, approved_by)
+        slack.post(text, thread_ts=place.get("ts"), channel=place.get("channel"))
+        if result.ok and publish_channel:
+            slack.post(text, channel=publish_channel)
+        request = draft.get("request") if isinstance(draft.get("request"), dict) else {}
+        place_manual = manual_thread(str(request.get("id") or ""), manual_channel)
+        if place_manual:
+            slack.post(text, thread_ts=place_manual[1], channel=place_manual[0])
     try:  # 발행 직전 겹침 확인 — 블로그 목록을 못 읽으면 확인 없이 올리지 않는다
         history = load_history(blogger, strict=True)
     except HistoryUnavailable as exc:
@@ -60,25 +86,30 @@ def publish_draft(draft_id: str, store: DraftStore, blogger: BloggerPublisher, s
         slack.post(f"❌ {LABEL} 발행 전 겹침 확인을 하지 못해 발행하지 않았습니다 — {escape_mrkdwn(str(exc)[:200])}\n"
                    "✅ 를 다시 누르면 다시 시도합니다", thread_ts=place.get("ts"), channel=place.get("channel"))
         return 1
+    # insert 응답 유실·runner 종료·상태 저장 실패: 새 글을 만들기 전에 이미 발행된 같은 ID를 찾는다.
+    own = next((e for e in history.entries if e.draft_id == draft_id), None)
+    if own:
+        result = PublishResult(PLATFORM, True, own.urls.get("blogger", ""), "기존 발행 복구")
+        store.put(draft_id, {**draft, "status": "published", "url": result.url, "approved_by": approved_by,
+                             "published_at": now().isoformat(timespec="seconds"), "publish_unknown": False})
+        notify_result(result)
+        return 0
     found = overlap_of(record_entry(draft_id, draft), history)
     if found:
         exclude(draft_id, draft, store, slack, found, now(), manual_channel)
         return 0
+    # 원격 쓰기 전에 상태를 남긴다. 이 저장이 실패하면 Blogger insert는 수행하지 않는다.
+    draft = {**draft, "approved_by": approved_by, "publish_started_at": now().isoformat(timespec="seconds")}
+    store.put(draft_id, draft)
     try:
-        result = blogger.publish(str(draft["title"]), str(draft["html"]), list(draft.get("labels") or []))
+        result = blogger.publish(str(draft["title"]), publication_html(draft_id, draft), list(draft.get("labels") or []))
     except Exception as exc:
         log.exception("구글 블로그 발행 실패")
         result = PublishResult.fail(PLATFORM, exc)
     store.put(draft_id, {**draft, "status": "published" if result.ok else "failed", "url": result.url,
-                         "approved_by": approved_by, "published_at": now().isoformat(timespec="seconds")})
-    text = _message(draft, result, approved_by)
-    slack.post(text, thread_ts=place.get("ts"), channel=place.get("channel"))
-    if result.ok and publish_channel:
-        slack.post(text, channel=publish_channel)
-    request = draft.get("request") if isinstance(draft.get("request"), dict) else {}
-    place_manual = manual_thread(str(request.get("id") or ""), manual_channel)
-    if place_manual:  # 수동 지시 원고면 지시 스레드에도 결과
-        slack.post(text, thread_ts=place_manual[1], channel=place_manual[0])
+                         "approved_by": approved_by, "publish_unknown": not result.ok,
+                         "published_at": now().isoformat(timespec="seconds") if result.ok else ""})
+    notify_result(result)
     return 0 if result.ok else 1
 
 

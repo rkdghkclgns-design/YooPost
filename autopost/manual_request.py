@@ -14,7 +14,6 @@ from datetime import datetime, timedelta, timezone
 from typing import Callable
 
 from .draft_request import new_record
-from .codex_fallback import QUOTA_ERROR
 from .manual_command import NO_VERB, USAGE, ManualCommand, fire_text, parse_command, request_id
 from .request_board import board_rows, build_board
 from .slack_helper import SlackNotifier, escape_mrkdwn
@@ -110,6 +109,7 @@ def handle_request(
     alert_channel: str = "",
     fallback: Callable[[str], bool] | None = None,
     watch: Callable[[str, str, str], bool] | None = None,
+    delivery_id: str = "",
 ) -> str:
     """지시 하나를 처리하고 결과 상태(fired / help / invalid / ignored / not configured / failed)를 돌려준다.
 
@@ -134,12 +134,11 @@ def handle_request(
     if command.kind == "invalid":  # 잡담(동사 없음)에는 짧게, 알아듣지 못한 지시에는 사용법까지
         reply(f"🤔 {command.error}" if command.error == NO_VERB else f"🤔 {command.error}\n\n{USAGE}")
         return "invalid"
-    if fire is None:
-        reply(SETUP_HINT)
-        return "not configured"
     rid = request_id(channel, ts)
     created = (now or datetime.now(timezone.utc)).astimezone(KST).isoformat(timespec="seconds")
     request = new_record(rid, command.kind, command.category, command.topic, user, created)
+    if delivery_id:
+        request["delivery_id"] = delivery_id
     thread_link = notifier.permalink(channel, ts) if alert_channel else ""
 
     def board(state: dict) -> tuple[str, list[dict]]:
@@ -156,7 +155,16 @@ def handle_request(
             log.error("요청 기록 실패: %s", exc)
             reply("❌ 요청을 원고 브랜치에 기록하지 못해 작성을 시작하지 않았습니다 — 잠시 뒤 다시 지시해 주세요.")
             return "failed"
-    result = fire(fire_text(command, rid))
+    watch_notice = ""
+    if watch is not None:
+        try:
+            if watch(rid, created, user):
+                watch_notice = "\n⏱️ 15분 동안 작성이 시작되지 않으면 Codex 클라우드가 다시 확인해 이어받습니다."
+            else:
+                log.warning("미시작 인계 타이머 등록 실패 — 정기 클라우드 점검에서 다시 확인합니다")
+        except Exception:
+            log.warning("미시작 인계 타이머 연결 실패 — 정기 클라우드 점검에서 다시 확인합니다")
+    result = fire(fire_text(command, rid)) if fire else FireResult(False, error="Claude 루틴 설정 누락")
     if not result.ok:
         closed = {**request, "fire_error": result.error[:200]}
         saved = record is None
@@ -168,23 +176,15 @@ def handle_request(
                 log.warning("요청 기록에 실행 실패를 남기지 못했습니다: %s", exc)
         if request.get("alert_ts"):
             notifier.update(str(request["alert_ts"]), *board(closed), channel=alert_channel)
-        if saved and fallback is not None and QUOTA_ERROR.search(result.error) and fallback(rid):
-            reply("🤖 Claude 실행 한도에 걸려 *Codex 클라우드에 인계를 요청했습니다*. "
+        if saved and fallback is not None and "응답 없음" not in result.error and fallback(rid):
+            reply("🤖 Claude 실행을 계속할 수 없어 *Codex 클라우드에 인계를 요청했습니다*. "
                   "PC를 꺼도 GitHub에서 이어서 작성·검증합니다. 인계가 시작되면 이 스레드에 알려 드립니다. "
                   "원고는 #yoopost-1-원고승인 에서 ✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다.")
             return "fallback"
-        reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
-        return "failed"
+        reply(SETUP_HINT if fire is None else
+              f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n요청은 보존했으며 클라우드 점검에서 다시 확인합니다.")
+        return "failed" if fire else "not configured"
     link = f" · <{result.session_url}|작성 과정 보기>" if result.session_url else ""
-    watch_notice = ""
-    if watch is not None:
-        try:
-            if watch(rid, created, user):
-                watch_notice = "\n⏱️ 15분 동안 작성이 시작되지 않으면 Codex 클라우드가 다시 확인해 이어받습니다."
-            else:
-                log.warning("미시작 인계 타이머 등록 실패 — 정기 클라우드 점검에서 다시 확인합니다")
-        except Exception:
-            log.warning("미시작 인계 타이머 연결 실패 — 정기 클라우드 점검에서 다시 확인합니다")
     reply(f"📝 접수했습니다 — {describe(command)}{link}\n"
           "Claude 가 조사·작성하고 Opus 가 사실 검증한 원고가 #yoopost-1-원고승인 에 올라오면 이 스레드에 알려 드립니다. "
           "✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다." + watch_notice)

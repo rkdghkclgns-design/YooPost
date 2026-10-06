@@ -69,7 +69,7 @@ def test_quota_failure_dispatches_only_after_request_was_recorded():
     client, records, dispatched = FakeWebClient(), [], []
     notifier = SlackNotifier(client=client, channel_id="C0MANUAL01")
     def fallback(rid):
-        assert records[-1]["fire_error"] == "HTTP 429"
+        assert records[-1]["fire_error"]
         dispatched.append(rid)
         return True
     args = ("AI 도구 한 편 더 발행해줘", "C0MANUAL01", "1791234000.123456", "U1", "message")
@@ -80,7 +80,7 @@ def test_quota_failure_dispatches_only_after_request_was_recorded():
     dispatched.clear()
     handle_request(*args, manual_channel="C0MANUAL01", notifier=notifier,
         fire=lambda text: FireResult(False, error="토큰이 맞지 않습니다"), record=records.append, now=NOW, fallback=fallback)
-    assert not dispatched
+    assert dispatched == [RID]  # Claude 인증이 끊겨도 독립 Codex 인증으로 이어받는다.
 
 
 def test_account_cache_is_encrypted_and_refresh_survives_the_next_runner(tmp_path, monkeypatch):

@@ -8,6 +8,10 @@ run-name: "🧑‍💼 수동 지시 · ${{ inputs.source }}"
 on:
   workflow_dispatch:
     inputs:
+      delivery_id:
+        description: "영속 전달 ID (같은 지시의 재전송 방지)"
+        type: string
+        default: ""
       text:
         description: "지시 문장 (Worker 가 자동 입력)"
         type: string
@@ -29,7 +33,10 @@ on:
         type: string
         default: "message"
 
-# 동시 실행 그룹을 두지 않는다 — 대기 중인 실행을 GitHub 가 취소해 지시가 사라질 수 있다 (중복은 Worker 가 막음)
+concurrency:
+  group: manual-${{ inputs.delivery_id || (inputs.ts && format('{0}-{1}', inputs.channel, inputs.ts)) || github.run_id }}
+  cancel-in-progress: false
+# 같은 지시만 직렬 처리한다. 서로 다른 지시는 서로를 취소하지 않는다.
 permissions:
   contents: write  # 요청 기록(runs/requests/<ID>.json)을 원고 브랜치에 올린다 — 루틴은 이 기록과 맞는 요청만 수행
   actions: write  # Claude 한도 오류면 Codex 클라우드를 즉시 깨운다
@@ -63,6 +70,7 @@ jobs:
       - name: 지시 해석 · 루틴 실행 · 스레드 답장
         env:
           # 외부 입력은 run 스크립트에 직접 넣지 않고 환경변수로만 전달 (스크립트 인젝션 방지)
+          MANUAL_DELIVERY_ID: ${{ inputs.delivery_id }}
           MANUAL_TEXT: ${{ inputs.text }}
           MANUAL_CHANNEL: ${{ inputs.channel }}
           MANUAL_TS: ${{ inputs.ts }}

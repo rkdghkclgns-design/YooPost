@@ -65,6 +65,37 @@ def arm_request_watch(rid: str, created: str, user: str) -> bool:
         return False
 
 
+def acknowledge_delivery(delivery_id: str) -> bool:
+    """원고 브랜치 기록 뒤에만 전달 완료로 표시한다. 실패해도 재전송은 동일 요청으로 판별한다."""
+    import re
+    host = env("IMAGE_HOST_URL").rstrip("/")
+    if not re.fullmatch(r"d[a-f0-9]{64}", delivery_id) or host != "https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev":
+        return False
+    import requests
+    try:
+        response = requests.post(f"{host}/delivery/{delivery_id}",
+            headers={"Authorization": f"Bearer {env('IMAGE_UPLOAD_TOKEN')}"}, json={}, timeout=20)
+        return response.ok
+    except requests.RequestException:
+        return False
+
+
+def existing_request(tree: Path, delivery_id: str, channel: str, ts: str) -> dict:
+    from autopost.manual_command import request_id
+    from autopost.cloud_drafts import read_json
+    if channel and ts:
+        try:
+            prior = read_json(request_path(tree, request_id(channel, ts)))
+            if prior: return prior
+        except ValueError:
+            pass
+    if delivery_id:
+        for path in (tree / "runs/requests").glob("*.json"):
+            prior = read_json(path)
+            if prior.get("delivery_id") == delivery_id: return prior
+    return {}
+
+
 def git(tree: Path, *args: str) -> bool:
     return subprocess.run(["git", *args], cwd=tree, capture_output=True, text=True).returncode == 0
 
@@ -104,14 +135,29 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     notifier = SlackNotifier(bot_token=bot, channel_id=manual_channel, secrets=(token, bot))
     fire = (lambda text: fire_routine(url, token, text)) if token and url else None
+    delivery_id = env("MANUAL_DELIVERY_ID")
+    tree = args.tree.resolve()
+    prior = existing_request(tree, delivery_id, env("MANUAL_CHANNEL"), env("MANUAL_TS"))
+    if prior:
+        arm_request_watch(prior["id"], prior["created"], prior["requested_by"])
+        acknowledge_delivery(delivery_id)
+        print("같은 지시의 재전송 — 기존 요청을 보존하고 Claude를 다시 실행하지 않습니다")
+        return 0
+    def record_and_ack(record):
+        record_to_branch(tree, record)
+        arm_request_watch(record["id"], record["created"], record["requested_by"])
+        acknowledge_delivery(delivery_id)
     status = handle_request(
         os.environ.get("MANUAL_TEXT", ""), env("MANUAL_CHANNEL"), env("MANUAL_TS"), env("MANUAL_USER"),
         env("MANUAL_SOURCE") or "message", manual_channel=manual_channel, notifier=notifier, fire=fire,
-        record=lambda record: record_to_branch(args.tree.resolve(), record),
+        record=record_and_ack,
         alert_channel=env("SLACK_CHANNEL_ID"),  # #yoopost-알림 진행 카드 (비우면 올리지 않음)
         fallback=dispatch_codex,
         watch=arm_request_watch,
+        delivery_id=delivery_id,
     )
+    if status in ("help", "invalid", "ignored"):
+        acknowledge_delivery(delivery_id)
     print(f"수동 지시 처리: {status}")
     if status in ("failed", "not configured"):
         print(f"::warning::수동 지시를 루틴에 넘기지 못했습니다 ({status}) — 슬랙 스레드에 이유를 남겼습니다")

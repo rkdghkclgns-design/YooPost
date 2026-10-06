@@ -80,6 +80,7 @@ class _Posts:
         return self
 
     def execute(self, num_retries=0):
+        assert num_retries == 0  # insert 응답 유실은 상위 원고 ID 복구로 처리한다.
         return {"url": "https://ai.blogspot.com/p/1"}
 
 

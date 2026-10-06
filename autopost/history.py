@@ -142,11 +142,16 @@ class HistoryEntry:
     urls: Mapping[str, str] = field(default_factory=lambda: MappingProxyType({}))  # 플랫폼 → 게시글 주소
     sources: tuple[str, ...] = ()  # 출처 주소 전부 (원고 브랜치의 원고만 — 블로그 글 기록에는 대표 원문만 있다)
     where: str = ""  # 알림용 — '발행한 글' · '최근 원고 <폴더>'
+    draft_id: str = ""  # 발행 응답·상태 저장이 끊겨도 같은 원고를 찾아 복구한다
 
     def to_dict(self) -> dict:
         data = {"date": self.date, "title": self.title, "topic": self.topic, "category": self.category,
                 "source_url": self.source_url, "urls": dict(self.urls)}
-        return {**data, "sources": list(self.sources)} if self.sources else data
+        if self.sources:
+            data["sources"] = list(self.sources)
+        if self.draft_id:
+            data["draft_id"] = self.draft_id
+        return data
 
     @classmethod
     def from_dict(cls, data: dict) -> "HistoryEntry":
@@ -158,6 +163,7 @@ class HistoryEntry:
             source_url=str(data.get("source_url", "")),
             urls=MappingProxyType({str(k): str(v) for k, v in (data.get("urls") or {}).items()}),
             sources=tuple(str(u) for u in data.get("sources") or () if u),
+            draft_id=str(data.get("draft_id") or ""),
         )
 
 
@@ -249,6 +255,7 @@ def history_from_posts(posts) -> PostHistory:
             source_url=str(marker.get("source") or ""),
             urls=MappingProxyType({"blogger": str(post["url"])}),
             sources=tuple(str(u) for u in marker.get("sources") or () if isinstance(u, str) and u)[:MAX_MARKER_SOURCES],
+            draft_id=str(marker.get("draft_id") or ""),
         ))
     return PostHistory(tuple(entries[-MAX_ENTRIES:]))
 

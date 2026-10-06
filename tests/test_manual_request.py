@@ -91,7 +91,7 @@ def test_fire_failure_closes_the_recorded_request():
     status, client, _ = run("AI 보안 한 편 더 발행해줘", fire=FakeFire(FireResult(False, error="HTTP 429")))
     assert status == "failed"
     assert [r.get("fire_error", "") for r in RECORDS] == ["", "HTTP 429"]  # 기록 → 실행 실패 표시
-    assert "다시 시도" in client.messages[-1]["text"]
+    assert "요청은 보존" in client.messages[-1]["text"]
 
 
 def test_chit_chat_gets_a_short_hint_not_the_whole_manual():
