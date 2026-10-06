@@ -5,9 +5,17 @@
  "topic": "",
  "requested_by": "U0C4PLGBNF9",
  "created": "2026-10-06T09:55:39+09:00",
- "started": "",
- "network": "",
+ "started": "2026-10-06T10:25:52+09:00",
+ "network": "full",
  "finished": "",
  "note": "",
- "alert_ts": "1791248139.969289"
+ "alert_ts": "1791248139.969289",
+ "fallback": {
+  "provider": "codex",
+  "mode": "cloud",
+  "status": "writing",
+  "taken_over": "2026-10-06T10:25:52+09:00",
+  "first_taken_over": "2026-10-06T10:25:52+09:00",
+  "reason": "접수 후 15분 동안 작성 미시작"
+ }
 }
