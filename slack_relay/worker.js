@@ -57,6 +57,7 @@ const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
 const RETRYABLE = new Set(["pending", "failed"]);
 const MAX_MANUAL_TEXT = 500;
 const MANUAL_SEEN_SECONDS = 60 * 60 * 24 * 3; // 같은 슬랙 메시지를 두 번 처리하지 않게 3일 기억
+const AUTO_APPROVAL_LABEL = "🤖✅ 자동 승인 (1분 경과)";
 
 export const WRITE_NOTICE = [
   "✍️ 원고는 *Claude* 가 쓰고, 사용량 한도 등으로 중단되면 *Codex 클라우드*가 이어받습니다. PC가 꺼져 있어도 Codex 인계·작성·승인 후 발행은 계속됩니다.",
@@ -503,8 +504,8 @@ export class DraftApproval {
         await this.publish(draft, record, user);
         if (user === "auto-60s") {
           await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
-            "🤖✅ 자동 승인 (1분 경과) — 구글 블로그 발행을 요청했습니다.");
-          await autoReaction(this.env, draft.slack);
+            `${AUTO_APPROVAL_LABEL} — 구글 블로그 발행을 요청했습니다.`);
+          await markAutoApproval(this.env, draft.slack);
         }
       } catch (err) {
         console.error("auto approval dispatch failed", err.message);
@@ -520,20 +521,38 @@ export class DraftApproval {
   }
 }
 
-async function autoReaction(env, slack) {
-  if (!env.SLACK_BOT_TOKEN) return;
-  for (const name of ["robot_face", "white_check_mark"]) {
-    try {
-      const response = await fetch("https://slack.com/api/reactions.add", {
-        method: "POST", headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ channel: slack.channel, timestamp: slack.ts, name }),
-        signal: AbortSignal.timeout(5000),
-      });
-      const result = await response.json();
-      if (!response.ok || (!result.ok && result.error !== "already_reacted")) {
-        console.error("auto reaction failed", name, result.error || response.status);
-      }
-    } catch (err) { console.error("auto reaction failed", name, err.message); }
+async function markAutoApproval(env, slack) {
+  if (!env.SLACK_BOT_TOKEN) return false;
+  try {
+    const query = new URLSearchParams({ channel: slack.channel, oldest: slack.ts,
+      latest: slack.ts, inclusive: "true", limit: "1" });
+    const headers = { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`,
+      "Content-Type": "application/json; charset=utf-8" };
+    const history = await fetch(`https://slack.com/api/conversations.history?${query}`, {
+      headers, signal: AbortSignal.timeout(5000),
+    });
+    const result = await history.json();
+    if (!history.ok || !result.ok) throw new Error(result.error || `HTTP ${history.status}`);
+    const message = result.messages?.find(item => item.ts === slack.ts);
+    if (!message) throw new Error("draft message not found");
+    const blockId = "yoopost_auto_approval";
+    if (message.blocks?.some(block => block.block_id === blockId)) return true;
+    const blocks = message.blocks?.length ? message.blocks : [{ type: "section",
+      text: { type: "mrkdwn", text: message.text || "원고" } }];
+    const response = await fetch("https://slack.com/api/chat.update", {
+      method: "POST", headers,
+      body: JSON.stringify({ channel: slack.channel, ts: slack.ts,
+        text: `${message.text || "원고"}\n${AUTO_APPROVAL_LABEL}`, parse: "none",
+        blocks: [...blocks, { type: "context", block_id: blockId,
+          elements: [{ type: "mrkdwn", text: AUTO_APPROVAL_LABEL }] }] }),
+      signal: AbortSignal.timeout(5000),
+    });
+    const updated = await response.json();
+    if (!response.ok || !updated.ok) throw new Error(updated.error || `HTTP ${response.status}`);
+    return true;
+  } catch (err) {
+    console.error("auto approval marker failed", err.message);
+    return false;
   }
 }
 
