@@ -18,7 +18,7 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
    재로그인하면 다시 setup을 실행한다. 캐시가 삭제되어 오래된 seed 인증이 복구되지 않으면 슬랙에 실패를 알리고 재로그인한다.
 3. API 키 방식을 선택한 경우, OPENAI_API_KEY 환경 변수에 키를 넣고
    `scripts/setup_cloud_codex.py --api-key-env OPENAI_API_KEY`로 등록한다. API 사용료는 구독과 별도다.
-4. GitHub에서 `Claude 중단 → Codex 클라우드 인계`를 `mode: probe`로 실행해 실제 클라우드 Codex 응답을 확인한다.
+4. GitHub에서 `Claude 중단 → Codex 클라우드 인계`를 `mode: probe`로 실행해 실제 파일 작성·다시 읽기와 `OK` 응답을 확인한다.
    성공 후 저장소 변수 CODEX_FALLBACK_ENABLED를 true로 바꾸고 mode: work로 실행한다.
 
 로그인 캐시 공유 제한과 CI 인증 방식은 [OpenAI 공식 인증 문서](https://learn.chatgpt.com/docs/auth/ci-cd-auth)를 따른다.
@@ -27,9 +27,11 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
 ### 운영 적용 확인 (2026-10-06)
 
 - 클라우드 전용 ChatGPT 로그인을 production 비밀값에 등록하고, 갱신 로그인 암호화 캐시 저장까지 확인했다.
-- [클라우드 실제 실행 확인](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37395868854)이 성공했다. Codex를 실제 실행해 `OK` 응답을 검사했다.
+- 최초 실행 검사는 텍스트 `OK` 응답만 확인해 파일 도구 권한 문제를 발견하지 못했다. 이후 Git 작성자 정보 누락과 Ubuntu 샌드박스 시작 권한을 수정했다.
+- [파일 작성·읽기 포함 클라우드 실행 확인](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37400223931)이 성공했다. Codex가 임시 폴더에 `probe.json`을 만들고 다시 읽은 결과를 코드에서도 검사했다.
+- 일회용 GitHub-hosted Linux 작성 서버는 [OpenAI Codex Actions의 user namespace 설정](https://github.com/openai/codex-action/blob/main/action.yml)을 적용한다. Codex의 `workspace-write` 제한은 유지한다.
 - 저장소 변수 `CODEX_FALLBACK_ENABLED=true`로 자동 인계를 활성화했다.
-- Cloudflare 운영 배포 `a9cf85f8-deac-4b5d-b49b-540b40ee7814`의 `/health`에서 자동 승인 활성화·60초·Durable Object 바인딩을 확인했다. 원고 저장소 인증 요청도 정상 응답했다.
+- Cloudflare 운영 배포 `132fe7e3-0dbf-4d48-a394-5f028ebfe542`의 `/health`에서 자동 승인 활성화·60초·Durable Object 바인딩을 확인했다. 원고 저장소 인증 요청도 정상 응답했다.
 - 이후 새로 승인 채널에 전송되는 원고부터 1분 자동 승인이 적용된다. 배포 전 이미 대기 중이던 원고는 기존 수동 승인 상태를 유지한다.
 
 ## 클라우드 실행·슬랙 참여
@@ -40,7 +42,8 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
   GitHub 쓰기·Slack·Google 인증을 작성기에 주지 않는다. 한 실행에 한 편만 처리한다.
 - complete job은 원격 상태·최신성·중복·품질·주장별 검증 기록을 확인한 뒤 데이터만 올리고 임대를 해제한다.
   `cloud_drafts.yml`을 명시적으로 실행해 기존 슬랙 승인 절차로 넘긴다. 실패·건너뜀도 같은 지시 스레드에 알린다.
-- 진행 카드에 `Codex 클라우드 작성 → 별도 사실 검증`이 표시된다. 요청은 기존 `#yoopost-0-수동지시`·`/aipost`로 받는다.
+- 전체 수동 요청은 한 카테고리를 저장하거나 근거 부족으로 건너뛰면 다음 실행을 즉시 요청한다. 실패할 때는 재시도 간격을 지킨다.
+- 인계 시작·결과 시 진행 카드 갱신 workflow를 명시적으로 실행한다. 실제 작성 카테고리에 `Codex 클라우드 작성 → 별도 사실 검증`을 표시하고, 실패는 중단·재시도 대기로 표시한다. 요청은 기존 `#yoopost-0-수동지시`·`/aipost`로 받는다.
 - 실패·건너뜀은 4시간 간격, 같은 날짜·요청·카테고리 최대 2회다. 처리할 일이 없으면 슬랙 알림을 보내지 않는다.
 - 이미 인계한 전체 요청은 남은 카테고리를 최대 24시간 동안 이어간다. 새로 접수된 6시간 이상 오래된 요청은 인계하지 않는다.
 
