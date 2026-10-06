@@ -1670,5 +1670,23 @@
    "https://diamond.jp/zai/articles/-/1073571"
   ],
   "draft_id": "20261006_141908_7"
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🤖 GLM 5.3 Bedrock 사용 가이드: 1M 컨텍스트·API·캐시·리전 조건 총정리",
+  "topic": "Introducing GLM 5.3 on Amazon Bedrock (AWS, 2026-10-05) — 새 제공 경로의 API·캐시·교차 리전 조건",
+  "category": "AI 언어 모델",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/glm-53-bedrock-1m-api.html"
+  },
+  "sources": [
+   "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-zai-glm-5-3.html",
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+   "https://startupfortune.com/amazon-bedrock-adds-zhipus-glm-53-under-a-revenue-sharing-deal/",
+   "https://www.drweb.de/glm-5-3-amazon-bedrock-zhipu-entity-list/"
+  ],
+  "draft_id": "20261006_171805_1"
  }
 ]
