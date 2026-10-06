@@ -1,0 +1,239 @@
+{
+ "claims": [
+  {
+   "claim": "AWS 공지의 발표일은 2026-10-01이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS 공지의 발표 시각은 10:30 AM PDT이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "공식 공지 번호는 2026-121-AWS이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "취약점 식별자는 CVE-2026-97662이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "대상 제품 이름은 security-agent-mcp-server이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "대상 제품은 AWS가 공개한 오픈소스 서버이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "MCP는 Model Context Protocol의 약자이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AI 비서는 이 서버로 소스 코드의 로컬 보안 검사를 수행한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "해당 보안 검사에는 differential(diff) 스캔이 포함된다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "취약점 유형은 diff 스캔 작업의 인자 주입이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "조작된 참조 값이 리비전 대신 명령행 옵션으로 해석된다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "상황에 따라 달라지는 행위자가 작업 공간 밖 호스트의 임의 파일을 생성할 수 있다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 Description·Impacted versions·Resolution·Workarounds에서 확인. 파일 영향 문장은 원문의 조건을 보완."
+  },
+  {
+   "claim": "같은 조건에서 작업 공간 밖 호스트의 임의 파일을 덮어쓸 수 있다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 Description·Impacted versions·Resolution·Workarounds에서 확인. 파일 영향 문장은 원문의 조건을 보완."
+  },
+  {
+   "claim": "같은 조건에서 작업 공간 밖 호스트의 임의 파일을 잘라낼 수 있다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 Description·Impacted versions·Resolution·Workarounds에서 확인. 파일 영향 문장은 원문의 조건을 보완."
+  },
+  {
+   "claim": "이 문제는 서버의 작업 공간 제한 통제를 우회한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "영향 버전 하한은 0.1.1 이상이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "영향 버전 상한은 0.2.0 미만이다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "해당 문제는 0.2.0에서 해결됐다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 최신 버전으로 업데이트할 것을 권고한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 포크 및 파생 코드에도 수정 사항을 반영할 것을 권고한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 업데이트 외의 우회책이 없다고 안내한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 업데이트 전 신뢰하는 저장소만 diff 스캔하도록 권고한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 업데이트 전 최소 권한 사용자로 서버를 실행하도록 권고한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "AWS는 업데이트 전 격리된 환경에서 서버를 실행하도록 권고한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: AWS 공지 본문에서 확인"
+  },
+  {
+   "claim": "공식 AWS 공지는 PyPI의 security-agent-mcp-server 0.2.0 페이지를 연결한다.",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI의 0.2.0 출시일은 2026-08-26이다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI의 0.2.0 페이지에 더 새로운 릴리스 0.2.1이 표시된다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 설명에는 uvx 연결 예시가 있다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 설명에는 Docker 연결 예시가 있다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 설명의 사전 조건은 Python 3.10 이상이다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 설명의 사전 조건에는 AWS 자격 증명 구성이 포함된다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 도구 목록에 start_security_scan이 있다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 도구 목록에 get_scan_status가 있다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "PyPI 도구 목록에 get_scan_findings가 있다.",
+   "url": "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "TechGeeks가 해당 글을 2026년 10월 1일에 게시했다.",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "confirmed": false,
+   "action": "수정: 상단에는 10/01/2026과 10/02/2026이 모두 있지만 각 날짜의 역할은 본문에서 명시되지 않는다. 게시일 단정을 삭제하고 날짜 표시 사실만 기술."
+  },
+  {
+   "claim": "TechGeeks의 해당 취약점 글 상단에는 10/01/2026과 10/02/2026이 표시된다.",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "TechGeeks Field Notes는 AWS와 다른 발행 주체의 기술 해설 매체이다.",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "confirmed": true,
+   "action": "표현 수정: About the publication의 자체 소개를 확인. 독립 기술 매체라는 평가 대신 AWS와 별도 발행 주체라고 표현."
+  },
+  {
+   "claim": "TechGeeks 글은 MCP 클라이언트가 실행하는 서버 환경의 버전을 확인하도록 안내한다.",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  },
+  {
+   "claim": "TechGeeks 글은 업데이트 뒤 승인된 일회용 저장소에서 일반 diff 작업을 점검하도록 안내한다.",
+   "url": "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/",
+   "confirmed": true,
+   "action": "유지: 원문에서 확인"
+  }
+ ],
+ "note": "별도 사실 검증으로 AWS 공식 공지, AWS 공지가 연결한 PyPI 페이지, 기존 독립 이슈화 출처 TechGeeks 본문을 다시 열어 읽었다. 제목·도입·요약·문단·박스·표·FAQ·해시태그의 외부 주장을 추출하고, 반복되는 동일 주장은 하나로 집계했다. 공식 제품·기술·대응 사실은 AWS/PyPI로 검증하고 매체의 날짜·자체 해설·발행 주체는 해당 매체 본문으로 검증했다. 원문의 조건을 파일 쓰기 설명에 보완했다. 가격·성능 수치·법적 의무 주장은 없었다. 운영 제안, 가상 점검 예시, 자체 실행 여부 및 검증 단계 설명은 외부 사실 개수에서 제외했다. 독자 환경의 테스트·패치 적용·침해 여부는 확인하지 않았다. 게시 승인이나 발행은 수행하지 않았다. 기간 내 공식 발표와 별도 발행 주체의 해설 근거를 확인했으므로 근거 부족에 따른 skip.json은 만들지 않았다."
+}
