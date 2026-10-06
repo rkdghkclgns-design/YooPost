@@ -1603,5 +1603,21 @@
    "https://novasapiens.ru/prompt/2610.02036",
    "https://arxiv.org/pdf/2610.02036"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🖼 ChatGPT 시각 광고 총정리: 미국 10월 시험 예고·효과 측정 확대",
+  "topic": "Building advertising for the way people use AI — ChatGPT visual ad format and expanded measurement (2026-10-05)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/chatgpt-10.html"
+  },
+  "sources": [
+   "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "https://ads.openai.com/blog/more-ways-to-measure",
+   "https://openai.com/policies/ad-policies/"
+  ]
  }
 ]
