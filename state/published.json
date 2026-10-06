@@ -1506,5 +1506,20 @@
    "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
    "https://paperium.net/article/shop/24978/efficient-reasoning-training-does-not-always-harm-cot-faithfulness-andmonitorability"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🤝 PwC·Cohere 기업 AI 제휴 총정리: 캐나다 우선 출범·역할 분담과 확인할 조건",
+  "topic": "PwC and Cohere announce a global alliance to accelerate secure and trusted enterprise AI adoption (2026-10-05)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/pwccohere-ai.html"
+  },
+  "sources": [
+   "https://www.pwc.com/ca/en/media/release/pwc-cohere-enterprise-ai-alliance.html",
+   "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+   "https://thenextweb.com/news/cohere-pwc-sovereign-ai-ownership"
+  ]
  }
 ]
