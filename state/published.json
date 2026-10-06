@@ -1724,5 +1724,22 @@
    "https://www.rob.co/en-us/technology/safety"
   ],
   "draft_id": "20261006_174125_4"
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🔒 GitLab AI Gateway CVSS 9.9 취약점: 자체 호스팅 대응 총정리",
+  "topic": "CERT Santé의 GitLab AI Gateway CVE-2026-90970 보안 경고(2026-10-05)와 제조사 수정 안내",
+  "category": "AI 보안",
+  "source_url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gitlab-ai-gateway-cvss-99.html"
+  },
+  "sources": [
+   "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html?hl=en",
+   "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "https://docs.gitlab.com/install/install_ai_gateway/"
+  ],
+  "draft_id": "20261006_174821_5"
  }
 ]
