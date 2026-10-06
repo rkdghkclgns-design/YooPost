@@ -1,0 +1,203 @@
+{
+ "claims": [
+  {
+   "claim": "Littler가 2026년 9월 29일 2026 Labor Survey Report를 발표했다.",
+   "url": "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+   "confirmed": true,
+   "action": "유지 — 공식 발표문 날짜 및 보고서 공개 문장 확인. 제목·도입·요약·첫 섹션의 반복은 한 주장으로 집계."
+  },
+  {
+   "claim": "보고서는 AI 도입의 노사·직원 관계 영향과 준비·소통을 다룬다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 14~17쪽 AI AND LABOR RELATIONS 및 Communicating about AI 항목 확인."
+  },
+  {
+   "claim": "AI 관련 노사·직원 관계 문제에 매우 준비됐다는 응답은 9%다.",
+   "url": "https://www.littler.com/press/press-release/fewer-10-us-employers-feel-very-prepared-ais-impact-labor-relations-littler",
+   "confirmed": true,
+   "action": "유지 — 공식 발표문 How AI is Reshaping Labor Relations에서 9% 확인. 제목·요약·본문·표·FAQ 반복 포함."
+  },
+  {
+   "claim": "AI 관련 선제적·지속적 직원 소통 응답은 17%다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "수정: 요약·본문·표에 인력 감축 및 직무 책임 변화 우려 범위를 명시 — 인쇄 16쪽 질문은 인력 감축 또는 직무 책임 변화 우려를 모두 포함하며 3쪽·17쪽 설명에서 17% 확인."
+  },
+  {
+   "claim": "9%는 AI 도입 성공률이나 도구 설치 완료율이 아니다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 14쪽 질문은 잠재적인 labor/employee relations issues 관리 준비도에 관한 질문이다."
+  },
+  {
+   "claim": "17%는 직원 만족도 점수가 아니다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 16쪽 질문은 조직의 소통 방식이다."
+  },
+  {
+   "claim": "준비도와 소통 비율은 서로 다른 질문의 응답이다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 14쪽·16쪽 질문 확인; 교차표가 없는 두 주변 비율을 동일 조직의 차이로 해석하지 않음."
+  },
+  {
+   "claim": "9% 외 나머지 91%가 모두 전혀 준비되지 않았다는 뜻은 아니다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 15쪽은 매우 또는 보통 준비됨 45%, 전혀 준비되지 않음 20%를 구분한다. 본문에는 이 추가 수치를 넣지 않음."
+  },
+  {
+   "claim": "2026년 6~7월에 설문을 실시했다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 Methodology and Demographics에서 June and July of 2026 확인."
+  },
+  {
+   "claim": "665명이 설문에 응답했다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 665 professionals 확인."
+  },
+  {
+   "claim": "조사 방식은 온라인 설문이다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 via an online survey tool 확인."
+  },
+  {
+   "claim": "응답자의 93%는 미국 기반이다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 93% based in the U.S. 확인."
+  },
+  {
+   "claim": "나머지 응답자는 미국 사업을 운영하는 조직에 속한다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 미국 밖 기반의 나머지 7%와 U.S. operations 조건 확인."
+  },
+  {
+   "claim": "응답자는 사내 법무·인사·사업 관련 전문가 등 사용자 측이다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 2쪽 조사 설명 및 24쪽 응답자 직책 확인; 근로자 전체 의견 조사로 확대하지 않음."
+  },
+  {
+   "claim": "이 설문은 한국 직장인 전체나 세계 노동자를 대표하는 조사로 제시되지 않았다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 인쇄 24쪽 모집단 설명은 미국 기반 및 미국 사업 조직의 전문가 응답이다. 한국·세계 대표성 근거 없음."
+  },
+  {
+   "claim": "displacement.ai가 2026년 9월 30일 보고서를 다뤘다.",
+   "url": "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "confirmed": true,
+   "action": "유지 — 웹 도구 Internal Error 이후 urllib로 원 URL HTML을 직접 읽음. 본문 Published time 및 datePublished 모두 2026-09-30."
+  },
+  {
+   "claim": "독립 기사는 사용자 측 응답이라는 점을 명시한다.",
+   "url": "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "confirmed": true,
+   "action": "유지 — Sources & method의 management-side responses, not an employee poll 확인."
+  },
+  {
+   "claim": "독립 기사에는 구체적인 업무 변화 질문을 제안하는 자체 분석이 있다.",
+   "url": "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "confirmed": true,
+   "action": "유지 — Our analysis 및 Our practical suggestion 본문을 읽음; 보도자료 재배포만으로 구성되지 않음."
+  },
+  {
+   "claim": "독립 기사는 AI 작성·출처 확인 표기를 달고 있다.",
+   "url": "https://displacement.ai/news/littler-ai-workplace-readiness-gap/",
+   "confirmed": true,
+   "action": "유지 — byline AI-generated · source-checked 및 하단 Codex AI agents 작성·확인 표기 확인; 별도 직원 증언·실험으로 취급하지 않음."
+  },
+  {
+   "claim": "Revelio Labs의 September 2026 자료 공개일은 2026년 10월 1일이다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "유지 — 페이지 Monthly Release Release Date: October 1, 2026 및 제목 확인."
+  },
+  {
+   "claim": "전년 대비 활동 변화의 90%가 직업 내부 변화에서 나온다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "수정: 본문·FAQ에 비유사성 지수 및 본문에 프로필 기반 데이터 명시 — Work Content Figure 4.2: year-over-year activity dissimilarity index의 within-occupation share 90%."
+  },
+  {
+   "claim": "90%는 전체 업무 자동화율이나 근로자 직무 변경률이 아니다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "유지 — Figure 4.2의 분모는 업무 활동 비유사성 지수의 전년 대비 변화이며 근로자 수 또는 전체 업무량이 아니다."
+  },
+  {
+   "claim": "Revelio는 직업 구성 변화와 직업 내부 활동 변화를 구분한다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "유지 — Figure 4.2 within- versus between-occupation 분해 및 Work Content 설명 확인."
+  },
+  {
+   "claim": "Revelio는 AI 노출 가능성과 실제 도입을 구분한다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "유지 — Introduction의 anticipated effects 노출 지표와 realized deployment 기업 도입 지표 구분 확인."
+  },
+  {
+   "claim": "노출은 잠재적인 영향을 뜻하며 자동화 완료를 뜻하지 않는다.",
+   "url": "https://www.reveliolabs.com/ai-labor-market-tracker/us/september-2026",
+   "confirmed": true,
+   "action": "유지 — Introduction의 exposure-based measures와 adoption measures 구분 확인; TD 원문의 Current Exposure에서도 동일한 경계 확인."
+  },
+  {
+   "claim": "TD Economics 분석의 발표일은 2026년 10월 1일이다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — Date Published: October 1, 2026 확인."
+  },
+  {
+   "claim": "TD는 기술의 신뢰성·경제성·기업 내 도입 속도를 대규모 노동 대체의 조건으로 논한다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — Highlights 및 세 조건 섹션 확인; 견해로 귀속하고 미래 보장으로 쓰지 않음."
+  },
+  {
+   "claim": "TD는 기술 가능성을 실제 고용 결과와 구별한다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — 도입부 capability and labor market outcomes 구별 및 세 조건 설명 확인."
+  },
+  {
+   "claim": "TD는 대규모 고용 충격을 확정 결과가 아닌 조건부 위험 시나리오로 다룬다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — Painting a Picture 및 결론의 risk scenario, not the base case 확인."
+  },
+  {
+   "claim": "TD 공식 본문 Chart 11은 AI 사용 기업의 인력 대응을 보여 준다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — Chart 11 설명은 firms using AI in 2026 workforce changes; 공식 이미지 URL도 재개방함."
+  },
+  {
+   "claim": "Chart 11에는 재교육·채용 확대·채용 축소·해고가 구분된다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — Chart 11 공식 대체텍스트의 retraining, hiring fewer, hiring more, laying off workers 확인; 막대 근삿값은 원고에서 사용하지 않음."
+  },
+  {
+   "claim": "Chart 11을 한국 기업 비율로 읽을 수 없다.",
+   "url": "https://economics.td.com/gen-ai-intelligence",
+   "confirmed": true,
+   "action": "유지 — 공식 도표 출처는 Federal Reserve Bank of New York Regional Business Surveys, August 2026; 한국 자료가 아님."
+  },
+  {
+   "claim": "이 자료들만으로 특정 기업 감원의 AI 인과관계를 확정할 수 없다.",
+   "url": "https://www.littler.com/sites/default/files/2026-09/2026_littler_labor_survey_report.pdf",
+   "confirmed": true,
+   "action": "유지 — 사용자 측 인식 설문이며 특정 기업 감원 원인 실험이 아님; S4의 지표 분해와 S5의 조건부 분석도 감원 인과 판정을 제공하지 않음."
+  }
+ ],
+ "note": "2026-10-06 별도 검증: post.json 전체의 제목·도입·요약·8개 섹션(표·박스 포함)·FAQ·마무리·주의문구를 읽고 확인 가능한 주장을 33개 고유 명제로 집계했다. 반복 출현은 중복 집계하지 않았다. S1·S2·S4·S5 공식 원문을 다시 열어 관련 질문·방법론·지표 정의·분석 조건·도표 설명을 읽었고, S3는 웹 도구 오류 뒤 원 URL HTML을 직접 읽었다. 모든 주장은 원문 범위에서 확인됐다. 17%의 질문 범위와 90%의 지표 정의를 보완하고 도입의 S4·S5 출처 표시를 추가했다. 가격·모델 성능·제품 스펙·개별 법적 의무에 관한 주장은 없다. 가상의 사례·운영 질문·예측 가능성은 명시적으로 작성자의 제안이며 검증된 성과로 집계하지 않았다. 신규 발표 기간과 독립 해설을 재확인해 skip 사유 없음. 이는 사실검증 결과이며 승인·발행을 수행하지 않았다."
+}
