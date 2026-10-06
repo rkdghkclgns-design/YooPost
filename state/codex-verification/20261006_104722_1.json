@@ -1,0 +1,334 @@
+{
+ "claims": [
+  {
+   "claim": "Aleph Alpha가 Kolibri를 개발·출시했다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "뉴스룸 본문 및 모델 카드 개요"
+  },
+  {
+   "claim": "Kolibri 출시일은 2026-10-03이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Model overview: Release Date"
+  },
+  {
+   "claim": "공식 뉴스룸 발표문 날짜는 2026-10-05이다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "페이지 날짜 05.10.2026 및 본문 날짜"
+  },
+  {
+   "claim": "2026-10-05 발표는 10월 3일부터 제공되었다고 명시한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "본문 seit dem 3. Oktober verfügbar"
+  },
+  {
+   "claim": "독일어와 영어에 집중한다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Model overview Languages 및 Intended use"
+  },
+  {
+   "claim": "고객이 통제하는 인프라에서 운영하도록 설계했다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "본문 Infrastruktur ... Kunden selbst kontrollieren"
+  },
+  {
+   "claim": "공공행정과 산업을 주요 대상으로 소개한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "발표 첫 문단"
+  },
+  {
+   "claim": "독일어에 맞춘 토크나이저를 강조한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Deutsch-optimierter Tokenizer 항목"
+  },
+  {
+   "claim": "토크나이저는 텍스트를 모델이 처리할 토큰 단위로 나눈다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "2.1.2 Tokeniser 절"
+  },
+  {
+   "claim": "전체 파라미터는 78.1B이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "초록 78.1B total parameters; 카드 정밀값 78,103,074,560"
+  },
+  {
+   "claim": "토큰당 활성 파라미터는 3.46B이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "초록 3.46B active parameters per token"
+  },
+  {
+   "claim": "구조는 MoE(전문가 혼합)이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Model overview Architecture"
+  },
+  {
+   "claim": "MoE는 토큰 처리 때 일부 전문가·파라미터를 활성화한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Effiziente Architektur 항목"
+  },
+  {
+   "claim": "활성 파라미터가 작아도 전체 모델을 메모리에 보관해야 한다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Design goals: full model must be held in memory"
+  },
+  {
+   "claim": "FP8 가중치 메모리 규모는 약 78GB이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements: ~78 GB (FP8 weights)"
+  },
+  {
+   "claim": "최소 장비 예시는 A100 80GB 두 장이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements Minimum"
+  },
+  {
+   "claim": "최소 장비 예시는 H100 SXM5 두 장이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements Minimum"
+  },
+  {
+   "claim": "최소 장비 예시는 H200 한 장이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements Minimum"
+  },
+  {
+   "claim": "최소 장비 예시는 B200 한 장이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements Minimum"
+  },
+  {
+   "claim": "최소 장비 예시는 B300 한 장이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Hardware requirements Minimum"
+  },
+  {
+   "claim": "네이티브 학습 길이는 262,144토큰이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Intended use: final long-context phase/native context"
+  },
+  {
+   "claim": "확장 품질·서빙 효율을 검증한 길이는 1,048,576토큰이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Intended use: validated quality and serving efficiency"
+  },
+  {
+   "claim": "262,144토큰을 넘는 서빙에는 확장 설정이 필요하다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Getting started: max-model-len 및 hf-overrides 추가"
+  },
+  {
+   "claim": "효율 또는 복잡한 작업에는 262,144토큰 이하를 권장한다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Model overview 및 Intended use"
+  },
+  {
+   "claim": "Figure 1은 영어·독일어 평균 평가 점수와 GPU당 출력 처리량을 비교한다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "PDF 1쪽 Figure 1 축·캡션, 화면 재확인"
+  },
+  {
+   "claim": "Figure 1 가로축은 디코딩 텍스트 바이트/초/GPU이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Figure 1 Decoded text per GPU [Bytes/s]"
+  },
+  {
+   "claim": "Figure 1 세로축은 평균 평가 점수(%)이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Figure 1 Average score [%]"
+  },
+  {
+   "claim": "Figure 1 모든 비교 모델은 B200 GPU 여덟 장에서 실행된다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Figure 1 캡션 Every model ... eight B200 GPUs"
+  },
+  {
+   "claim": "Figure 1 기반 모델과 후훈련 모델의 입력 길이 조건이 다르다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Figure 1 캡션: base 4k, post-trained 16k"
+  },
+  {
+   "claim": "Figure 1은 제조사 보고서의 평가이며 실제 업무 측정값이 아니다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "제조사 작성 보고서의 평가 조건과 도표 설명"
+  },
+  {
+   "claim": "공식 보고서 1쪽에 Figure 1 성능 도표가 있다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "PDF 1쪽 스크린샷 재확인"
+  },
+  {
+   "claim": "설치에는 aleph-alpha-inference 패키지의 Kolibri vLLM 플러그인이 필요하다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Getting started"
+  },
+  {
+   "claim": "pip install 'aleph-alpha-inference>=1'은 공식 설치 예시이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Getting started 명령 대조"
+  },
+  {
+   "claim": "vllm serve Aleph-Alpha/Kolibri-1 및 fp8·kolibri1 파서·자동 도구 선택 옵션은 공식 예시이다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Getting started 명령의 모델 ID와 네 옵션을 문자 단위 대조"
+  },
+  {
+   "claim": "추론 강도는 none·low·medium·high로 설정할 수 있다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Reasoning mode; none은 thinking 비활성화"
+  },
+  {
+   "claim": "RAG를 지원한다고 공식 발표가 설명한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "본문 RAG 지원 문장"
+  },
+  {
+   "claim": "네이티브 도구 호출을 지원한다고 공식 발표가 설명한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "본문 natives Tool Calling"
+  },
+  {
+   "claim": "문서 근거가 부족할 때 답변을 삼가도록 훈련했다고 제조사가 설명한다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "본문 keine Antwort ... keine ausreichenden Belege"
+  },
+  {
+   "claim": "RAG는 제공한 문서를 답변 근거로 사용하는 방식이다",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "RAG-Anwendungen ... bereitgestellten Dokumente"
+  },
+  {
+   "claim": "Apache 2.0 적용 권리는 저장소 가중치와 설정 파일에 한정된다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "License and terms; 법적 효력 일반화 없이 카드 설명만 인용"
+  },
+  {
+   "claim": "코드·모델 구조·훈련 방법까지 동일 라이선스 공개라고 할 수 없다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "License and terms의 명시적 제외 문장"
+  },
+  {
+   "claim": "INCPak은 2026-10-03 보도에서 네이티브 길이와 확장 서빙 설정을 구분했다",
+   "url": "https://www.incpak.com/tech/aleph-alpha-kolibri-1-open-weights-german-context/",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "페이지 Published 날짜 및 One million tokens requires a serving change 절"
+  },
+  {
+   "claim": "The Frontier는 2026-10-04 보도에서 제조사 평가와 사람의 검토 필요성을 짚었다",
+   "url": "https://www.thefrontier.dev/articles/aleph-alpha-kolibri-1-open-weights",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "페이지 날짜, Pick it ... 및 Human review 절; 기술 내용은 S2·S3와 별도 대조"
+  },
+  {
+   "claim": "제목의 1M 컨텍스트를 별도 조건 없이 제시한다",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "confirmed": false,
+   "action": "수정: 제목을 1M 확장 컨텍스트로 변경",
+   "evidence": "네이티브 262,144토큰; 1,048,576토큰은 설정을 변경한 확장 서빙 한도"
+  },
+  {
+   "claim": "Figure 1 기반 모델의 측정 시퀀스 길이는 4k이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "PDF 1쪽 Figure 1 캡션"
+  },
+  {
+   "claim": "Figure 1 후훈련 모델의 측정 시퀀스 길이는 16k이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "PDF 1쪽 Figure 1 캡션"
+  },
+  {
+   "claim": "파레토 프런티어는 비교 지표에서 다른 후보에 지배되지 않는 경계이다",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "PDF 45쪽 Figure 19 캡션의 frontier 정의 및 1쪽 Figure 1의 품질·처리량 축; 본문은 일반 개념 설명"
+  }
+ ],
+ "note": "2026-10-06 별도 검증: post.json의 제목·도입·요약·표·본문·코드·FAQ·맺음말에서 확인 가능한 외부 주장을 추출하고 중복 주장은 하나로 합산했다. S1 뉴스룸, S2 PDF 초록·Figure 1·관련 설명, S3 모델 카드의 개요·용도·설치·추론·라이선스 절을 다시 열어 대조했다. S4·S5 본문과 표시 발행일도 다시 확인했다. 활용 제안·조건부 해석은 성능 사실로 집계하지 않았다. 원고 내 자체 작성 프롬프트와 실행 미수행 고지는 외부 제품 주장과 구분했다. 제조사 주장 확인이며 독립 성능 재현이나 법률 의견이 아니다. 발표일과 독립 보도는 지정 기간을 충족하므로 skip 사유 없음. 승인·발행은 수행하지 않았다."
+}
