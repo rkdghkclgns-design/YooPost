@@ -1619,5 +1619,20 @@
    "https://ads.openai.com/blog/more-ways-to-measure",
    "https://openai.com/policies/ad-policies/"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🔒 AWS Security Agent MCP 취약점 총정리: 작업 폴더 밖 파일 쓰기와 0.2.0 대응",
+  "topic": "CVE-2026-97662 - Argument injection in AWS security-agent-mcp-server diff scan (AWS, 2026-10-01)",
+  "category": "AI 보안",
+  "source_url": "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/aws-security-agent-mcp-020.html"
+  },
+  "sources": [
+   "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+   "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/",
+   "https://www.techgeeks.org/security-notice-aws-security-agent-mcp-server-cve-2026-97662/"
+  ]
  }
 ]
