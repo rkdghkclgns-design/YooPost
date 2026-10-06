@@ -1,0 +1,92 @@
+{
+ "topic": "Aleph Alpha Kolibri-1 출시 — 2026-10-03, 78.1B MoE·1M 확장 컨텍스트",
+ "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Aleph Alpha veröffentlicht Kolibri",
+   "url": "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "publisher": "Aleph Alpha",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Kolibri: A Sovereign European Model on the Pareto Frontier",
+   "url": "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "publisher": "Aleph Alpha",
+   "published": null,
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Aleph-Alpha/Kolibri-1 — Model card",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "publisher": "Aleph Alpha",
+   "published": "2026-10-03",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Aleph Alpha Releases Kolibri-1: German-Focused Open Weights With a Longer Context",
+   "url": "https://www.incpak.com/tech/aleph-alpha-kolibri-1-open-weights-german-context/",
+   "publisher": "INCPak",
+   "published": "2026-10-03",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Aleph Alpha Kolibri-1 opens 78B German and English MoE weights under Apache 2.0, with 3.46B active parameters",
+   "url": "https://www.thefrontier.dev/articles/aleph-alpha-kolibri-1-open-weights",
+   "publisher": "The Frontier",
+   "published": "2026-10-04",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://aleph-alpha.com/downloads/tech-report.pdf#page=1",
+   "caption": "Figure 1: 영어·독일어의 평균 평가 점수와 GPU당 디코딩 처리량 비교. 제조사 측정이며 실행 조건은 도표 설명 참조.",
+   "credit": "Aleph Alpha",
+   "page": 1,
+   "figure": "Figure 1"
+  }
+ ],
+ "factcheck": {
+  "status": "completed",
+  "claims": 47,
+  "confirmed": 46,
+  "removed": [
+   "제목의 조건 없는 ‘1M 컨텍스트’ 표현을 ‘1M 확장 컨텍스트’로 수정.",
+   "검증 미완료라는 이전 상태 문구를 삭제하고 공식 대조 완료·실행 시험 미수행으로 수정."
+  ],
+  "note": "2026-10-06 별도 검증: post.json의 제목·도입·요약·표·본문·코드·FAQ·맺음말에서 확인 가능한 외부 주장을 추출하고 중복 주장은 하나로 합산했다. S1 뉴스룸, S2 PDF 초록·Figure 1·관련 설명, S3 모델 카드의 개요·용도·설치·추론·라이선스 절을 다시 열어 대조했다. S4·S5 본문과 표시 발행일도 다시 확인했다. 활용 제안·조건부 해석은 성능 사실로 집계하지 않았다. 원고 내 자체 작성 프롬프트와 실행 미수행 고지는 외부 제품 주장과 구분했다. 제조사 주장 확인이며 독립 성능 재현이나 법률 의견이 아니다. 발표일과 독립 보도는 지정 기간을 충족하므로 skip 사유 없음. 승인·발행은 수행하지 않았다."
+ },
+ "selection": {
+  "category": "AI 언어 모델",
+  "window_start_kst": "2026-10-03",
+  "as_of_kst": "2026-10-06",
+  "release_date": "2026-10-03",
+  "official_announcement_date": "2026-10-05",
+  "duplicate_check": "brief-1.md의 전체 발행 목록과 최근 원고 목록에서 Kolibri·콜리브리·Aleph Alpha 및 원문 URL 중복 없음. 외부 발행 서비스에는 접근하지 않음.",
+  "issue_coverage": [
+   "S4",
+   "S5"
+  ]
+ },
+ "research_notes": [
+  "S1 독일어 공식 뉴스룸 본문을 직접 읽음. 영어 뉴스룸 URL은 두 차례 접근 실패하여 출처에서 제외.",
+  "S2 189쪽 보고서 중 초록·Figure 1 설명 및 장문 학습 관련 절을 읽음. 전체 보고서 정독을 주장하지 않음. PDF 본문에서 독립적인 발행일을 확인하지 못해 published는 null.",
+  "S3 모델 개요·의도된 용도·설치·추론 모드·평가 표·한계·라이선스 절을 읽음. published는 카드의 Release Date이며 문서 수정일이 아님.",
+  "S4 및 S5 기사 본문과 페이지 표시 날짜를 직접 확인. 검색 요약을 출처 본문으로 대체하지 않음.",
+  "성능 측정·서버 실행·외부 발행·알림·git 작업 없음.",
+  "브랜드 배너·로고는 이미지 후보에서 제외. 공식 보고서의 도표만 기록.",
+  "별도 검증에서 S1~S5 재열람 완료. Figure 1은 PDF 화면으로 재확인. 기반/후훈련 시퀀스 길이 4k/16k를 본문에 명시. 기존 출처 날짜·이미지 후보 유지."
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791248113935869",
+  "kind": "all"
+ }
+}
