@@ -152,14 +152,16 @@ def test_cloud_board_shows_the_actual_category_and_a_failed_wait_instead_of_writ
     assert "원고 파일 없음" in next(r.text for r in rows if r.category == "AI 도구")
 
 
-def test_all_request_continues_after_one_verified_draft(branch_repo, monkeypatch, tmp_path):
+@pytest.mark.parametrize("replacements", [0, 2])
+def test_all_request_continues_after_one_verified_draft(branch_repo, monkeypatch, tmp_path, replacements):
     _, _, tree = branch_repo
     helper = codex_cloud.helper
     monkeypatch.setattr(helper, "TREE", tree)
     monkeypatch.setenv("GITHUB_RUN_ID", "123")
     monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
     monkeypatch.setenv("MIN_BODY_CHARS", "1000")
-    monkeypatch.setattr(codex_cloud, "notice", lambda task, text: None)
+    notices = []
+    monkeypatch.setattr(codex_cloud, "notice", lambda task, text: notices.append(text))
     outputs = []
     monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
     live = codex_cloud.datetime.now(codex_cloud.KST)
@@ -169,13 +171,14 @@ def test_all_request_continues_after_one_verified_draft(branch_repo, monkeypatch
     helper.publish(["state/codex.json", str(request_path(tree, RID).relative_to(tree))], "manual lease")
     work = tmp_path / "result"
     write_draft(work, post=good_post(category="AI 도구"), published=live.strftime("%Y-%m-%d"))
-    write_json(work / "result.json", {"status": "draft"})
+    write_json(work / "result.json", {"status": "draft", "source_replacements": replacements})
     write_json(work / "verification.json", {"claims": [
         {"claim": f"공식 발표 {i}", "url": "https://nvidia.com/vera", "confirmed": True} for i in range(30)]})
     assert codex_cloud.complete(work) == 0
     assert outputs == [("continue", "false"), ("continue", "true")]
     assert not read_json(request_path(tree, RID))["finished"]
     assert not read_json(tree / "state/codex.json")["lease"]
+    assert any("🔄 조회 실패 후 다른 주제로 재작성(2회)" in n for n in notices) is bool(replacements)
 
 
 def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_repo, monkeypatch, tmp_path):

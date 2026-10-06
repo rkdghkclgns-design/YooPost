@@ -152,6 +152,7 @@ jobs:
             output/codex-cloud/post.json
             output/codex-cloud/research.json
             output/codex-cloud/verification.json
+            output/codex-cloud/generation-report.json
             output/codex-cloud/author-last-message.txt
           if-no-files-found: ignore
           retention-days: 7
