@@ -1,0 +1,73 @@
+{
+ "topic": "CERT Santé의 GitLab AI Gateway CVE-2026-90970 보안 경고(2026-10-05)와 제조사 수정 안내",
+ "source_url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+ "sources": [
+  {
+   "id": "S2",
+   "title": "GitLab AI Gateway Critical Patch Release: 19.2.4, 19.3.2, and 19.4.1",
+   "url": "https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/",
+   "publisher": "GitLab",
+   "published": null,
+   "official": true,
+   "published_note": "실제로 읽은 문서 본문 및 HTML에 발표일 표시 없음. The Hacker News는 공개일을 2026-10-02로 보도함. 페이지 표기 날짜로 임의 대입하지 않음."
+  },
+  {
+   "id": "S3",
+   "title": "GitLab Patches Critical 9.9 AI Gateway Flaw Allowing Command Execution on Self-Hosted Servers",
+   "url": "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html?hl=en",
+   "publisher": "The Hacker News",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GitLab AI - CVE-2026-90970",
+   "url": "https://cyberveille.esante.gouv.fr/alertes/gitlab-ai-cve-2026-90970-2026-10-05",
+   "publisher": "CERT Santé",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Install the GitLab AI Gateway",
+   "url": "https://docs.gitlab.com/install/install_ai_gateway/",
+   "publisher": "GitLab",
+   "published": null,
+   "official": true,
+   "published_note": "상시 설치 문서. 실제 읽은 페이지에 발행일 표기 없음; 최신 이슈 날짜의 근거로 사용하지 않음."
+  }
+ ],
+ "images": [],
+ "images_none_reason": "이번 검증에서 읽은 GitLab 패치·설치 문서 및 CERT Santé 경고에는 원고에 적합한 취약점 구조도·화면·도표를 확인하지 못했다. 독립 보도의 대표 이미지는 제외했다. SK-CERT 원문은 재접속 실패로 이번 이미지 조사 근거에서 제외했다.",
+ "factcheck": {
+  "status": "completed_with_corrections",
+  "claims": 46,
+  "confirmed": 42,
+  "removed": [
+   "GitLab 패치 공개일은 2026-10-02이다. → 수정: 공식 본문에 날짜가 없어 패치 공개일 단정을 삭제하고 독립 보도일로만 표기",
+   "SK-CERT는 슬로바키아 기관이며 2026-10-05 이번 취약점 경고를 공개했다. → 삭제: 실제 읽은 CERT Santé 경고는 해당 기관의 경고만 입증함; SK-CERT 원문 접근 실패",
+   "SK-CERT는 이번 취약점에 신속한 업데이트를 권고했다. → 수정: SK-CERT 귀속을 삭제하고 실제 읽은 GitLab 제조사 업데이트 권고만 유지",
+   "SK-CERT는 취약점 제거 후 해당 시스템과 같은 자격 증명을 쓰는 다른 시스템의 비밀번호·키 변경을 권고했다. → 삭제: 설치 문서의 키 보관 지침만 확인됨; SK-CERT 권고 원문을 읽지 못함"
+  ],
+  "note": "별도 사실 검증 세션에서 원고 전체(제목·요약·본문·표·FAQ·맺음말)를 검토했다. 반복 주장은 의미별로 합쳐 집계하고 운영 제안·해석·자체 작업 설명은 제외했다. GitLab 패치/설치 문서, CERT Santé 및 독립 보도를 실제 다시 열어 읽었다. SK-CERT는 웹 도구 재시도 및 HTTP 요청에서 접근 실패(403)하여 관련 주장을 삭제했다. false 항목의 URL은 실제 읽어 대조한 대체 공식 원문이며 SK-CERT 원문을 읽었다는 뜻이 아니다. 공식 발표일이 없는 제조사 패치 공개일 단정도 수정했다. 개별 시스템 실행·침해 조사, 외부 승인·발행은 수행하지 않았다. 확인된 공식 경고 날짜와 기간 내 독립 보도가 있어 주제 근거는 유지된다."
+ },
+ "selection": {
+  "category": "AI 보안",
+  "window_start": "2026-09-29",
+  "window_end": "2026-10-06",
+  "official_announcement_date": "2026-10-05",
+  "independent_coverage_date": "2026-10-02",
+  "date_note": "기존 대표 SK-CERT 원문 재열기 실패로 해당 주장을 삭제했다. 동일 취약점의 기존 S4 CERT Santé 경고를 실제 다시 읽고 그 페이지의 2026-10-05 게시일을 유지했다. 기간을 넓히거나 날짜를 변경하지 않았다.",
+  "duplicate_check": "brief-5.md 전체 목록을 읽고 GitLab, 90970 관련 항목을 검색했습니다. 같은 이슈·원문 항목 없음. 외부 발행 이력 서비스에는 접속하지 않았으므로 제공된 목록 범위의 확인입니다."
+ },
+ "limitations": [
+  "GitLab 패치 및 설치 문서에 페이지 표기 발행일이 없어 published는 null로 유지했다.",
+  "SK-CERT 원문은 이번 재검증에서 접근 실패해 출처 및 관련 주장에서 제외했다.",
+  "개별 조직의 침해 여부, 특정 공격 조건 및 구버전 호환성은 확정하지 않았다."
+ ],
+ "editorial_note": "별도 사실 검증과 미확인 주장 삭제·수정을 완료했다. 운영 제안과 해석은 제안임을 표시한다. 승인·알림·발행은 하지 않았다.",
+ "request": {
+  "id": "C0C50SP7VV5-1791273270841789",
+  "kind": "all"
+ }
+}
