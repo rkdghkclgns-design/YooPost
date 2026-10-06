@@ -1,0 +1,113 @@
+{
+ "claims": [
+  {
+   "claim": "논문의 제목은 Global Coherence: When Every Agent Is Right and the Team Is Still Wrong - A Local-to-Global Semantic Foundation for Multi-Agent Collaboration이다.",
+   "url": "https://arxiv.org/abs/2610.02036",
+   "confirmed": true,
+   "action": "유지: 소개 페이지 제목 확인. 본문에서는 Global Coherence로 줄여 씀."
+  },
+  {
+   "claim": "논문 저자는 Xin Heng이다.",
+   "url": "https://arxiv.org/abs/2610.02036",
+   "confirmed": true,
+   "action": "유지: 저자 표기 확인. intro·첫 섹션의 동일 주장 통합 집계."
+  },
+  {
+   "claim": "저자 소속은 Tote AI이다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지·출처 보완: 본문 머리의 Affiliation 확인. 첫 섹션에 S2 추가; S1만으로 소속을 인용하지 않음."
+  },
+  {
+   "claim": "arXiv v1 최초 제출은 2026-10-01 16:49:40 UTC이다.",
+   "url": "https://arxiv.org/abs/2610.02036",
+   "confirmed": true,
+   "action": "유지·명확화: Submission history 확인. intro·첫 섹션·FAQ에 UTC 표시; KST 환산은 2026-10-02 01:49:40."
+  },
+  {
+   "claim": "논문은 개별적으로 유효한 결정과 팀 전체 결과의 정합성을 구분한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: Abstract·1절·FAQ의 반복 주장 통합."
+  },
+  {
+   "claim": "관측 별칭 불가능성 정리는 같은 관측에 대응하는 모든 상태가 공통 허용 행동을 가질 때에만 유효한 선택을 보장할 결정적 정책이 존재한다고 설명한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: 2.2절 Theorem 2.1의 필요충분조건과 대조."
+  },
+  {
+   "claim": "Figure 1은 관측 별칭과 전체로 결합되지 않는 부분 상태라는 두 실패 유형을 비교한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지·명확화: 1절 Figure 1 캡션 확인. 원고의 정보 박스를 도표 내용 설명으로 변경."
+  },
+  {
+   "claim": "대표 비교는 TeamBench Study IV Panel 2의 예산 제한 과제 LH2이다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "명확화: 5.5절 표의 LH2 over 20 열 확인. TeamBench 전체 성능처럼 읽히지 않도록 LH2 명시."
+  },
+  {
+   "claim": "LH2의 공유 한도는 팀 전체 셸 명령 도구 run 호출 20회이다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "보완: 5.5절 Panel 2의 권위 있는 계수 단위 확인. API 호출 비용·토큰 예산으로 오해하지 않도록 본문에 추가."
+  },
+  {
+   "claim": "LH2 일반 팀은 다섯 시드 중 5/5에서 공유 한도를 초과했다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: 5.5절 Panel 2 Ordinary team 행 확인. 제목·요약·본문·표의 중복 집계 제외."
+  },
+  {
+   "claim": "LH2 visible_state 조건은 다섯 시드 중 4/5에서 공유 한도를 초과했다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지·조건 명확화: 예산과 attestation 상태를 모두 노출하되 둘 다 강제하지 않은 조건임을 본문·표에 반영."
+  },
+  {
+   "claim": "LH2 coherent_full 조건은 다섯 시드 중 0/5에서 공유 한도를 초과했다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: 5.5절 Panel 2 coherent_full 행 확인. 제목·본문·표·FAQ의 동일 수치 통합."
+  },
+  {
+   "claim": "한도 강제 조건은 누적 실행 호출이 20회에 이르면 다음 호출을 실행 전에 거절한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "명확화: Panel 2 설명 확인. 실행 반영 단계라는 모호한 표현을 호출 실행 전으로 수정."
+  },
+  {
+   "claim": "논문은 9개 연구를 제시한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: 5.1절 I~IX 목록 확인."
+  },
+  {
+   "claim": "에이전트 실험은 한 모델 계열을 사용한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: 5.1절 One model, held fixed 및 1절 한계 확인. 다양한 모델에서 입증됐다고 확대하지 않음."
+  },
+  {
+   "claim": "저자는 에이전트 근거가 작은 표본에 한정되며 규모 확대 검증이 필요하다고 명시한다.",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "confirmed": true,
+   "action": "유지: Abstract·1절·5.5절의 modest panels, five seeds와 비열등성 주장 불가 설명 확인. 0/5를 운영 보장으로 확대하지 않는 경고 유지."
+  },
+  {
+   "claim": "Nova Sapiens에 해당 논문을 다룬 외부 해설이 있다.",
+   "url": "https://novasapiens.ru/prompt/2610.02036",
+   "confirmed": true,
+   "action": "유지·표현 축소: 페이지 제목과 해설 본문 확인. 기관의 독립성이나 연구 재현 여부를 입증한 출처로 취급하지 않도록 외부 해설로 변경."
+  },
+  {
+   "claim": "Nova Sapiens 해당 페이지에 2026-10-01 날짜가 표시되어 있다.",
+   "url": "https://novasapiens.ru/prompt/2610.02036",
+   "confirmed": true,
+   "action": "유지·단서 보완: 상단 1 окт. 2026 г. 직접 확인. 시간대는 확인되지 않았다고 명시."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 post.json의 제목·intro·summary·모든 섹션/표/박스·FAQ·closing·caveat·해시태그를 점검했다. 같은 외부 주장의 반복은 한 건으로 통합했다. 공식 arXiv 소개/제출 이력, v1 HTML의 머리·Abstract·1절·2.2절·5.1절·5.5절 및 Figure 1 캡션을 다시 열어 읽었고, 공식 PDF도 열었다. 외부 해설 자체와 날짜는 그 사이트의 원페이지에서 확인했다. 가상 사례·작성자 제안·미실행/미측정 설명은 외부 사실 개수에서 제외했다. 위 confirmed는 원문에 보고된 내용과의 일치를 뜻하며 실험 재현을 뜻하지 않는다. 가격·법률·제품 스펙 주장은 없다. 원문 제출일과 표시된 해설 날짜가 선정 기간 안이며 근거 부족에 따른 skip 사유는 발견되지 않았다. 승인·발행은 수행하지 않았다."
+}
