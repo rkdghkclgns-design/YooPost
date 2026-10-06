@@ -52,6 +52,8 @@ def sync() -> None:
     helper.setup()
     if not helper.SYNC["ok"]:
         raise RuntimeError("원고 브랜치 동기화 실패")
+    helper.git("config", "user.name", "yoopost-bot", cwd=helper.TREE)
+    helper.git("config", "user.email", "yoopost-bot@users.noreply.github.com", cwd=helper.TREE)
 
 
 def save_state(state: dict, message: str, extra: list[str] | None = None) -> None:

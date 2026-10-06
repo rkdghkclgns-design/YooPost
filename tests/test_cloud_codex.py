@@ -1,4 +1,5 @@
 import json
+import subprocess
 from datetime import timedelta
 
 import pytest
@@ -105,6 +106,26 @@ def test_agent_has_no_github_slack_google_or_cache_key(monkeypatch):
     monkeypatch.setenv("CODEX_HOME", "dedicated-home")
     assert codex_cloud.agent_environment().get("CODEX_HOME") == "dedicated-home"
     assert not set(codex_cloud.agent_environment()) & {"GH_TOKEN", "GITHUB_TOKEN", "SLACK_BOT_TOKEN", "GOOGLE_REFRESH_TOKEN", "CODEX_AUTH_CACHE_KEY"}
+
+
+def test_fresh_runner_can_commit_the_takeover_without_a_global_git_identity(branch_repo, monkeypatch, tmp_path):
+    remote, _, _ = branch_repo
+    tree = tmp_path / "fresh-runner"
+    monkeypatch.setenv("GIT_CONFIG_GLOBAL", str(tmp_path / "empty-git-config"))
+    monkeypatch.setenv("GIT_CONFIG_NOSYSTEM", "1")
+    subprocess.run(["git", "clone", "-q", "--branch", "yoopost-drafts", str(remote), str(tree)], check=True)
+    monkeypatch.setattr(codex_cloud.helper, "TREE", tree)
+    codex_cloud.sync()
+    write_json(tree / "state/codex.json", reserve({}, task(), "runner", NOW))
+    codex_cloud.save_state(read_json(tree / "state/codex.json"), "codex: fresh runner takeover")
+    author = subprocess.run(["git", "log", "-1", "--format=%an <%ae>"], cwd=tree,
+                            check=True, capture_output=True, text=True).stdout.strip()
+    assert author == "yoopost-bot <yoopost-bot@users.noreply.github.com>"
+    pushed = subprocess.run(["git", "rev-parse", "origin/yoopost-drafts"], cwd=tree,
+                            check=True, capture_output=True, text=True).stdout.strip()
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=tree,
+                          check=True, capture_output=True, text=True).stdout.strip()
+    assert pushed == head
 
 
 def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_repo, monkeypatch, tmp_path):
