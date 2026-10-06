@@ -1,0 +1,215 @@
+{
+ "claims": [
+  {
+   "claim": "Reflection은 2026년 10월 5일 Beam을 발표했다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "수정: intro의 공개를 발표로 변경하여 가중치 배포와 구분. 페이지 날짜 October 5, 2026 확인."
+  },
+  {
+   "claim": "Beam은 Reflection의 첫 오픈 웨이트 모델로 소개됐다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "Beam은 코딩·추론·에이전트 작업을 겨냥한 모델이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "발표 당시 Beam은 최종 레드팀 테스트와 평가 단계였다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "수정: 현재 상태 단정을 발표 당시 설명으로 한정."
+  },
+  {
+   "claim": "초기 Beam은 선택된 사용자에게 제공된다고 안내됐다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "발표문은 초기 접근 대기 목록을 연결한다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "수정: 현재 접근 조건 단정을 10월 5일 발표문의 안내로 한정. 신청 플랫폼 자체는 열거나 제출하지 않음."
+  },
+  {
+   "claim": "가중치를 2026년 10월 안에 공개할 계획이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "수정: 이달을 발표월인 2026년 10월로 명시. 계획이며 실제 배포 완료로 확인한 것은 아님."
+  },
+  {
+   "claim": "기술 보고서를 같은 달 공개할 계획이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "모델 카드를 같은 달 공개할 계획이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "개발 자료·실행·평가·파인튜닝 자료를 같은 달 공개할 계획이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "가중치는 Apache 2.0 라이선스로 공개할 계획이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지·명확화: 발표 계획만 확인. 실제 배포 파일의 라이선스 적용이나 법적 이용 범위는 주장하지 않음."
+  },
+  {
+   "claim": "Beam은 희소 Mixture-of-Experts(MoE, 전문가 혼합) 구조다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "Beam의 전체 매개변수는 501B다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "Beam의 활성 매개변수는 23B다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "매개변수 표기의 B는 십억 단위다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 501 billion total / 23 billion active와 원고의 B 표기를 대조."
+  },
+  {
+   "claim": "Beam은 텍스트 전용 모델이다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 본문 데모 설명의 text-only와 not multimodal 확인. BenchLM만으로 확인하지 않음."
+  },
+  {
+   "claim": "중간 학습은 유효 컨텍스트 길이를 1M 토큰으로 확장했다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "발표문에서 1M을 현재 서비스 요청 한도로 명시하지 않았다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: midtraining 수치와 서비스 한도를 구분. 다른 배포 문서까지 한도가 없다는 주장은 하지 않음."
+  },
+  {
+   "claim": "Reflection의 발표표에서 Beam의 SWE Bench Pro v2-Hard 점수는 77.2다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 평가 이름·버전과 Beam 열을 확인. 독립 재현 결과로 주장하지 않음."
+  },
+  {
+   "claim": "Reflection의 발표표에서 Beam의 Terminal Bench v2.1 점수는 80.1다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 평가 이름·버전과 Beam 열을 확인. 독립 재현 결과로 주장하지 않음."
+  },
+  {
+   "claim": "Reflection의 발표표에서 Beam의 AIME 2026 점수는 97.8다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 평가 이름·버전과 Beam 열을 확인. 독립 재현 결과로 주장하지 않음."
+  },
+  {
+   "claim": "Reflection의 발표표에서 Beam의 GPQA Diamond 점수는 90.5다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 평가 이름·버전과 Beam 열을 확인. 독립 재현 결과로 주장하지 않음."
+  },
+  {
+   "claim": "Reflection은 고급 추론 평가에서 GLM-5.2와 비교 가능한 점수를 추론 계산량 약 1/3~1/4로 제시했다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "수정: 3~4배 감소라는 모호한 표현을 약 1/3~1/4 수준이라는 제작사 주장으로 변경. 3–4× less inference compute 대조."
+  },
+  {
+   "claim": "효율 도표의 계산량은 활성 매개변수와 생성 토큰을 사용한 근사치다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "효율 계산은 프롬프트 prefill을 제외한다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "효율 계산은 컨텍스트에 따른 어텐션 연산을 제외한다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "효율 계산은 서빙 오버헤드를 제외한다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 원문의 제작사 발표 내용으로 확인."
+  },
+  {
+   "claim": "효율 도표는 측정된 전체 추론 비용을 나타내지 않는다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: approximate compute comparison rather than measured inference cost 확인. API 청구액·장비 비용 절감률로 환산하지 않음."
+  },
+  {
+   "claim": "발표문에는 호스팅 API 요금이나 호출 모델 ID가 명시되지 않았다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: 공식 발표 전체를 읽어 확인. 모든 공식 문서에 없다는 단정은 하지 않음."
+  },
+  {
+   "claim": "SiliconANGLE은 2026년 10월 5일 Beam 발표와 초기 접근·후속 공개 계획을 보도했다.",
+   "url": "https://siliconangle.com/2026/10/05/reflection-ai-debuts-open-source-beam-model-with-501b-parameters/",
+   "confirmed": true,
+   "action": "유지: 원 URL을 urllib로 직접 읽음. UPDATED 20:46 EDT / OCTOBER 05 2026 및 기사 마지막 접근·공개 계획 문단 확인. 보도 행위에 대한 1차 출처는 매체 본인 기사."
+  },
+  {
+   "claim": "BenchLM은 Beam을 추적하지만 공개 종합 순위를 부여하지 않았다.",
+   "url": "https://benchlm.ai/models/reflection-beam",
+   "confirmed": true,
+   "action": "유지: BenchLM 본인 페이지의 tracked, but not publicly ranked yet 확인. 해당 사이트 상태만 검증."
+  },
+  {
+   "claim": "BenchLM은 제작사 발표값과 근거가 부족한 항목을 구분해 보여준다.",
+   "url": "https://benchlm.ai/models/reflection-beam",
+   "confirmed": true,
+   "action": "유지: Provider exact, provider-reported preview results, unsupported fields blank 설명 확인. 독립 성능 검증을 의미하지 않음."
+  },
+  {
+   "claim": "매개변수는 학습에서 익히는 가중치와 편향이다.",
+   "url": "https://developers.google.com/machine-learning/glossary",
+   "confirmed": true,
+   "action": "수정: 단순 학습한 수치를 가중치와 편향으로 구체화. glossary parameter 항목 확인."
+  },
+  {
+   "claim": "AI 레드팀 테스트는 적대적 사용자의 행동을 모의해 모델의 위험한 행동을 살펴보는 절차다.",
+   "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry-classic",
+   "confirmed": true,
+   "action": "유지: Microsoft 문서의 AI red teaming 정의 확인. Beam 자체의 안전 평가 결과를 주장하는 것은 아님."
+  },
+  {
+   "claim": "원고의 I1은 공식 발표문 Figure 2의 추론 효율 비교 이미지다.",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "confirmed": true,
+   "action": "유지: Figure 2 본문 링크를 실제 열어 research.images의 CDN 원본 주소와 대조. 썸네일·OG·로고 아님."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 post.json 전체(제목·요약·표·FAQ·이미지 설명 포함)의 외부 사실을 추출했다. 동일 주장의 반복은 합쳐 1건으로 집계했다. Reflection 공식 본문 전체와 Figure 2 링크를 다시 열었고 용어는 Google·Microsoft 공식 문서로 대조했다. 매체 보도 행위와 BenchLM 자신의 표기 상태는 해당 발행자의 원문을 읽어 확인했다. SiliconANGLE 웹 open 실패는 원 URL urllib 직접 읽기로 보완했다. confirmed=true는 출처가 해당 내용을 발표·표기했다는 확인이며 성능의 독립 재현, 모델 실행, 실제 배포 완료 확인을 뜻하지 않는다. 실행 후기·평가안·예제 프롬프트·작성 기준일·검증 상태 등 자체 작업 설명은 외부 주장 집계에서 제외했다. Beam 실행·계정 신청·Slack·발행·git 작업은 하지 않았다. 게시 승인 여부는 판단하거나 승인하지 않았다. 날짜·새 소식 요건은 공식 및 독립 보도의 2026-10-05로 충족하며 제공 brief 내 중복은 없음. 현재 서비스 한도·API 가격·실제 배포 파일·최종 라이선스는 확인하지 않았고 확정 주장으로 쓰지 않았다."
+}
