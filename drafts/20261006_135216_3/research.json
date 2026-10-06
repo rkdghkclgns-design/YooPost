@@ -1,0 +1,70 @@
+{
+ "topic": "Global Coherence: When Every Agent Is Right and the Team Is Still Wrong - A Local-to-Global Semantic Foundation for Multi-Agent Collaboration",
+ "source_url": "https://arxiv.org/abs/2610.02036",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Global Coherence — arXiv 소개 및 제출 이력",
+   "url": "https://arxiv.org/abs/2610.02036",
+   "publisher": "Xin Heng / arXiv",
+   "published": "2026-10-01",
+   "official": true,
+   "date_note": "arXiv 제출 이력 v1: 2026-10-01 16:49:40 UTC (KST 2026-10-02 01:49:40). published는 원페이지 UTC 날짜."
+  },
+  {
+   "id": "S2",
+   "title": "Global Coherence — v1 논문 본문",
+   "url": "https://arxiv.org/html/2610.02036v1",
+   "publisher": "Xin Heng / Tote AI",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Global Coherence: почему каждый агент прав, а команда ошибается, и что должны держать контекст и обвязка",
+   "url": "https://novasapiens.ru/prompt/2610.02036",
+   "publisher": "Nova Sapiens",
+   "published": "2026-10-01",
+   "official": false,
+   "date_note": "별도 검증에서 상단 1 окт. 2026 г. 재확인. 시간대 미표시; 자체 재현 또는 기관 독립성의 근거로 사용하지 않음."
+  },
+  {
+   "id": "S4",
+   "title": "Global Coherence — 공식 PDF",
+   "url": "https://arxiv.org/pdf/2610.02036",
+   "publisher": "Xin Heng / arXiv",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://arxiv.org/html/2610.02036v1#S1",
+   "caption": "Figure 1: 정보 누락과 부분들의 결합 실패를 비교한 개념도",
+   "credit": "Xin Heng / Tote AI",
+   "location": "HTML 1절 Figure 1",
+   "note": "HTML Figure 1과 공식 PDF를 열어 도표 후보를 재확인. 독립 이미지 파일 주소는 확인되지 않아 빈 문자열 유지. 재사용 권리는 별도 확인 필요."
+  }
+ ],
+ "factcheck": {
+  "status": "completed",
+  "claims": 18,
+  "confirmed": 18,
+  "removed": [],
+  "note": "별도 사실 검증 세션에서 post.json의 제목·intro·summary·모든 섹션/표/박스·FAQ·closing·caveat·해시태그를 점검했다. 같은 외부 주장의 반복은 한 건으로 통합했다. 공식 arXiv 소개/제출 이력, v1 HTML의 머리·Abstract·1절·2.2절·5.1절·5.5절 및 Figure 1 캡션을 다시 열어 읽었고, 공식 PDF도 열었다. 외부 해설 자체와 날짜는 그 사이트의 원페이지에서 확인했다. 가상 사례·작성자 제안·미실행/미측정 설명은 외부 사실 개수에서 제외했다. 위 confirmed는 원문에 보고된 내용과의 일치를 뜻하며 실험 재현을 뜻하지 않는다. 가격·법률·제품 스펙 주장은 없다. 원문 제출일과 표시된 해설 날짜가 선정 기간 안이며 근거 부족에 따른 skip 사유는 발견되지 않았다. 승인·발행은 수행하지 않았다. 허위 또는 확인 불가로 삭제한 외부 주장은 없으며, 날짜 기준·실험 단위·비교 조건·소속 출처·외부 해설 표현을 수정했다. 독립 이미지 파일 주소와 재사용 권리는 검증하지 않아 빈 주소와 별도 확인 필요 표시를 유지했다. 기존 이미지 메타데이터의 SVG 형식 단정은 제거했다."
+ },
+ "selection": {
+  "category": "AI 논문 분석",
+  "window_start": "2026-09-29",
+  "window_end": "2026-10-06",
+  "timezone": "Asia/Seoul",
+  "duplicate_check": "brief-3.md의 이미 쓴 글·최근 원고 전체 목록에서 논문 제목·2610.02036이 겹치지 않음. 별도 외부 발행 목록에는 접근하지 않음.",
+  "issue_evidence": "Nova Sapiens 원페이지의 2026-10-01 날짜 표시와 해설을 별도 검증에서 다시 읽음. 다른 사이트의 해설 존재를 확인하는 근거이며 기관 독립성이나 독립 재현을 입증하지 않음. 다수 대형 언론 보도 규모는 확인하지 못함."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791259338398959",
+  "kind": "all"
+ }
+}
