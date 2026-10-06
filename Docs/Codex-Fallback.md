@@ -33,6 +33,7 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
 - 저장소 변수 `CODEX_FALLBACK_ENABLED=true`로 자동 인계를 활성화했다.
 - Cloudflare 운영 배포 `132fe7e3-0dbf-4d48-a394-5f028ebfe542`의 `/health`에서 자동 승인 활성화·60초·Durable Object 바인딩을 확인했다. 원고 저장소 인증 요청도 정상 응답했다.
 - 이후 새로 승인 채널에 전송되는 원고부터 1분 자동 승인이 적용된다. 배포 전 이미 대기 중이던 원고는 기존 수동 승인 상태를 유지한다.
+- 중단됐던 09:55 전체 수동 요청을 재개했다. [첫 원고 작성·별도 검증 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37400379560)과 슬랙 전달이 성공했고, `approved_by=auto-60s` 자동 승인 후 [발행 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37401076869)까지 성공했다. 다음 AI 도구 실행도 자동으로 시작됐다.
 
 ## 클라우드 실행·슬랙 참여
 
