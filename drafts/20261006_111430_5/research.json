@@ -1,0 +1,77 @@
+{
+ "topic": "Disrupting a coordinated model-distillation campaign (OpenAI, 2026-09-30)",
+ "source_url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Disrupting a coordinated model-distillation campaign",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+   "publisher": "OpenAI",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI Disrupts Coordinated Model-Reasoning Extraction Campaign",
+   "url": "https://www.unite.ai/openai-disrupts-coordinated-model-reasoning-extraction-campaign/",
+   "publisher": "Unite.AI",
+   "published": "2026-09-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+   "url": "https://arxiv.org/html/2608.09867v1",
+   "publisher": "Alexander Panfilov 외 연구진 / arXiv",
+   "published": "2026-08-10",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI Disrupts Coordinated API-Based Model Distillation Attack",
+   "url": "https://extrapolator.ai/2026/09/30/openai-disrupts-coordinated-api-based-model-distillation-attack/",
+   "publisher": "Extrapolator AI",
+   "published": "2026-09-30",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2608.09867v1/teaser-v8.png",
+   "page_url": "https://arxiv.org/html/2608.09867v1",
+   "caption": "Figure 1: 연구 당시의 암호화 추론 추출 구조와 토큰 수 비교. 8월 배경 연구의 도표이며 9월 사건의 피해 규모나 현재 취약성을 나타내지 않습니다.",
+   "credit": "Alexander Panfilov 외, arXiv:2608.09867v1, CC BY 4.0"
+  }
+ ],
+ "factcheck": {
+  "status": "completed",
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "차단 시점을 2026-07-28 당일로 특정하는 표기(2026-07-28까지로 수정)",
+   "FAQ의 동일 공격 불가 표현이 적용 시점과 실험 범위를 생략한 부분(Figure 1·2026년 8월 기준으로 한정)"
+  ],
+  "note": "2026-10-06 별도 검증. 제목·도입·요약·표·박스·본문·FAQ·맺음말의 중복 사실은 하나로 합쳐 검증했다. 공식 발표 전체 본문·각주, arXiv 초록/제출 이력·Figure 1·5.1~5.4·재현성 문구를 다시 열었다. 독립 보도 2곳의 본문·게시일 및 Unite.AI 작성자 고지도 재독했다. confirmed는 원래 주장 그대로 근거가 일치한 개수이며 수정 대상 2개는 false로 집계했다. 의견·비유·운영 제안은 실증 주장으로 세지 않았다. 가격·벤치마크 성능·법적 의무 주장은 원고에 없다. 회사의 사건 설명과 귀속은 발표 내용 확인이며 독립 수사 확정이 아니다. 최신성·독립 보도 근거가 확보되어 skip 대상이 아니다. 발행 승인은 수행하지 않았다."
+ },
+ "selection": {
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-09-29",
+  "category_preserved": true,
+  "duplicate_check": "brief-5.md의 전체 발행 목록과 최근 원고 목록 대조. 대표 원문 주소 및 사건 제목 중복 없음. 기존 온폴리시·오프폴리시 증류 논문과는 다른 보안 사건.",
+  "independent_coverage": [
+   "S2",
+   "S4"
+  ],
+  "limitations": [
+   "독립 보도는 이슈화 확인에 사용하며 기술적 사실은 공식 원문에 연결했습니다.",
+   "Unite.AI는 AI 작성자 및 편집팀 검토를 고지합니다.",
+   "S4의 세부 방어 구현 추정은 공식 사실로 채택하지 않았습니다.",
+   "S3은 8월 배경 연구이며 최신성 기준은 S1의 9월 30일 공개일입니다."
+  ]
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791248113935869",
+  "kind": "all"
+ }
+}
