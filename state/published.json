@@ -1450,5 +1450,22 @@
    "https://www.vizaca.com/technology/small-business-ai-adoption/",
    "https://www.uschamber.com/technology/artificial-intelligence/u-s-chambers-latest-empowering-small-business-report-shows-majority-of-businesses-in-all-50-states-are-embracing-ai"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🤖 Kolibri 사용 가이드: 78.1B MoE·1M 확장 컨텍스트·오픈 웨이트 총정리",
+  "topic": "Aleph Alpha Kolibri-1 출시 — 2026-10-03, 78.1B MoE·1M 확장 컨텍스트",
+  "category": "AI 언어 모델",
+  "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/kolibri-781b-moe1m.html"
+  },
+  "sources": [
+   "https://aleph-alpha.com/news/kolibri-souveraene-ki-made-in-germany/",
+   "https://aleph-alpha.com/downloads/tech-report.pdf",
+   "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "https://www.incpak.com/tech/aleph-alpha-kolibri-1-open-weights-german-context/",
+   "https://www.thefrontier.dev/articles/aleph-alpha-kolibri-1-open-weights"
+  ]
  }
 ]
