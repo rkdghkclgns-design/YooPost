@@ -13,9 +13,10 @@
  "fallback": {
   "provider": "codex",
   "mode": "cloud",
-  "status": "waiting",
-  "taken_over": "2026-10-06T10:25:52+09:00",
+  "status": "writing",
+  "taken_over": "2026-10-06T10:41:10+09:00",
   "first_taken_over": "2026-10-06T10:25:52+09:00",
-  "reason": "접수 후 15분 동안 작성 미시작"
+  "reason": "Codex 클라우드에서 남은 카테고리 이어쓰기",
+  "category": "AI 언어 모델"
  }
 }
