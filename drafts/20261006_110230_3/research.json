@@ -1,0 +1,82 @@
+{
+ "topic": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability (arXiv 2610.03509, 2026-10-02)",
+ "source_url": "https://arxiv.org/abs/2610.03509",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability — abstract and submission history",
+   "url": "https://arxiv.org/abs/2610.03509",
+   "publisher": "Samuel Lewis-Lim et al. / arXiv",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability — full text v1",
+   "url": "https://arxiv.org/html/2610.03509v1",
+   "publisher": "Samuel Lewis-Lim et al. / arXiv",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "LLM Daily: October 05, 2026",
+   "url": "https://buttondown.com/agent-k/archive/llm-daily-october-05-2026/",
+   "publisher": "AGI Agent",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "In-Depth Analysis & Summary: Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability",
+   "url": "https://paperium.net/article/shop/24978/efficient-reasoning-training-does-not-always-harm-cot-faithfulness-andmonitorability",
+   "publisher": "Paperium",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.03509v1/figures/summary.png",
+   "page_url": "https://arxiv.org/html/2610.03509v1",
+   "caption": "그림 1: 세 효율화 학습과 충실성·감시 가능성 평가 개요",
+   "credit": "Samuel Lewis-Lim et al., CC BY 4.0"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.03509v1/figures/metrics.png",
+   "page_url": "https://arxiv.org/html/2610.03509v1",
+   "caption": "그림 2: 관련 입력의 응답 예측과 입력 개입의 영향 탐지라는 두 평가",
+   "credit": "Samuel Lewis-Lim et al., CC BY 4.0"
+  }
+ ],
+ "factcheck": {
+  "status": "completed",
+  "claims": 75,
+  "confirmed": 73,
+  "removed": [
+   "공개일을 arXiv 제출일과 동일하게 단정한 표현",
+   "Under Review 표기에서 현재 심사 상태를 확정하는 표현"
+  ],
+  "note": "별도 검증 세션에서 원고의 반복 주장을 합쳐 확인 가능한 주장 75개를 추출했다. arXiv 초록·v1 전문(방법, 실험, 결과, 부록 A·B·C·D)과 독립 소개 페이지를 새로 GET해 재독했다. 숫자는 논문에 보고된 값과 대조했으며 재현 실험으로 검증한 것은 아니다. 기존 주장 중 날짜·심사 상태 2개는 원래 표현을 확인할 수 없어 수정했다. confirmed는 수정 전 주장에 대한 확인 수이며 수정문은 제출 시각·Comments 표기로 재대조했다. 반복 수치는 한 번만 집계하고 의견·권고는 사실 주장과 구분했다. S3·S4는 web open 오류 후 직접 HTTP GET 성공(200); S3는 User-Agent 지정 재시도로 읽었다. 이미지 2개는 공식 본문 연결·캡션·라이선스와 HTTP 200 image/png를 확인했다. 기간·중복은 brief 기준을 유지하며 외부 발행 기록에는 접속하지 않았다. 승인·발행은 수행하지 않았다."
+ },
+ "selection": {
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-09-29",
+  "category_preserved": true,
+  "duplicate_check": "brief-3.md의 이미 쓴 글 및 최근 30일 원고 목록에서 제목·arXiv 번호·동일 주제 없음. 외부 발행 기록에는 접속하지 않음.",
+  "coverage": "AGI Agent 2026-10-05 Paper of the Day와 Paperium 2026-10-02 분석을 직접 읽음. 두 출처는 저자 공식 자료나 보도자료 재배포가 아닌 독립 소개·분석이며, 재현 검증 자료로 사용하지 않음."
+ },
+ "reading_notes": {
+  "S1": "별도 검증에서 원 URL 재접속·재독 완료. 근거는 verification.json 및 verified-S1.md 참조.",
+  "S2": "별도 검증에서 원 URL 재접속·재독 완료. 근거는 verification.json 및 verified-S2.md 참조.",
+  "S3": "별도 검증에서 원 URL 재접속·재독 완료. 근거는 verification.json 및 verified-S3.md 참조.",
+  "S4": "별도 검증에서 원 URL 재접속·재독 완료. 근거는 verification.json 및 verified-S4.md 참조."
+ },
+ "draft_notes": "별도 검증 완료. 제목을 특정 설정으로 한정하고 제출일의 UTC/KST 및 Under Review의 저자 기재 성격을 명확히 했다. 수치는 공식 v1 보고값 기준.",
+ "request": {
+  "id": "C0C50SP7VV5-1791248113935869",
+  "kind": "all"
+ }
+}
