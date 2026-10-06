@@ -1467,5 +1467,28 @@
    "https://www.incpak.com/tech/aleph-alpha-kolibri-1-open-weights-german-context/",
    "https://www.thefrontier.dev/articles/aleph-alpha-kolibri-1-open-weights"
   ]
+ },
+ {
+  "date": "2026-10-06",
+  "title": "🛠 Cohere North 2 사용 가이드: 에이전트 메모리·비용 제어와 배포 일정 총정리",
+  "topic": "North 2: Enterprise AI without compromises (Cohere, 2026-10-05)",
+  "category": "AI 도구",
+  "source_url": "https://cohere.com/blog/introducing-north-2",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cohere-north-2.html"
+  },
+  "sources": [
+   "https://cohere.com/blog/introducing-north-2",
+   "https://www.techzine.nl/nieuws/applications/582476/cohere-north-2-soevereine-agents-en-grip-op-tokenkosten/",
+   "https://docs.cohere.com/docs/welcome",
+   "https://private.docs.cohere.com/docs/get-started/north-user-guide",
+   "https://private.docs.cohere.com/docs/get-started/memory",
+   "https://private.docs.cohere.com/docs/get-started/agents/creating-custom-agents",
+   "https://private.docs.cohere.com/docs/get-started/using-citations",
+   "https://private.docs.cohere.com/docs/admin/flow-control",
+   "https://private.docs.cohere.com/docs/deployment-overview",
+   "https://docs.cohere.com/docs/model-vault/model-vault-with-north",
+   "https://docs.cohere.com/docs/tokens-and-tokenizers"
+  ]
  }
 ]
