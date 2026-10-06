@@ -1,0 +1,70 @@
+{
+ "topic": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+ "source_url": "https://arxiv.org/abs/2609.40325",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents — abstract and submission history",
+   "url": "https://arxiv.org/abs/2609.40325",
+   "publisher": "저자 연구진 / arXiv",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "WorldAuditBench — full paper v1",
+   "url": "https://arxiv.org/html/2609.40325v1",
+   "publisher": "저자 연구진 / arXiv",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "TL;DR: WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+   "url": "https://arxivtldr.org/abs/2609.40325",
+   "publisher": "ArXiv TLDR",
+   "published": "2026-09-30",
+   "official": false,
+   "note": "페이지에 표시된 2026-09-30 날짜이며 서비스 게시일인지 논문 날짜인지 구별되지 않는다. AI 요약 서비스의 직접 열람 자료로, 독립 편집 보도·재현 검증으로 간주하지 않는다."
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2609.40325v1/anomaly_taxonomy.png",
+   "page_url": "https://arxiv.org/html/2609.40325v1",
+   "caption": "그림 1. 다섯 계열의 3D 이상 현상 분류와 대표 사례",
+   "credit": "Ziyan Jiang et al. / WorldAuditBench, CC BY 4.0"
+  },
+  {
+   "id": "I2",
+   "image_url": "",
+   "page_url": "https://arxiv.org/html/2609.40325v1",
+   "caption": "그림 3. 탐색 중 추론하는 VLM 감사자와 탐색 후 분석하는 VLA–VLM 감사자",
+   "credit": "Ziyan Jiang et al. / WorldAuditBench, CC BY 4.0",
+   "note": "공식 본문의 그림 3 캡션·링크 확인. 이미지 파일 직접 열람은 오류로 실패하여 파일 URL 확정 보류."
+  }
+ ],
+ "factcheck": {
+  "claims": 106,
+  "confirmed": 105,
+  "removed": [
+   "I2의 정상 열람 여부를 확인하지 못한 이미지 파일 URL: https://arxiv.org/html/2609.40325v1/auditor_modes.png"
+  ],
+  "note": "별도 검증 세션에서 원고 제목·도입·요약·각 문단·표·FAQ·맺음말 및 이미지 정보를 대조했다. 반복된 동일 주장은 중복 집계하지 않고 수치·조건을 나누어 집계했다. 공식 arXiv 소개 페이지와 v1 HTML의 §1~§6, 표 2·3, 부록 A·B·C, 공개 계획을 재열람했다. S3는 실험 결과 근거가 아니라 서비스 자체 날짜·요약 고지의 1차 출처로만 사용했다. 의견·활용 제안·자체 실행 및 검증 상태는 claims에서 제외했다. 실험 재현, 저장소 공개 상태 확인, 승인·발행·Slack·git 작업은 하지 않았다. 논문에 표시된 날짜는 UTC 기준으로 명확히 했으며 KST로는 2026-10-01이다. I1 파일은 직접 열었고 I2 파일은 오류여서 URL 확정을 보류했다. 공식 표와 본문의 범위 불일치를 유지·구체화했다. 기간 내 공식 원문 및 비제휴 요약 페이지는 읽었으나 폭넓은 독립 보도나 화제성까지 입증하지는 못했다.",
+  "status": "completed_with_corrections"
+ },
+ "research_notes": [
+  "지정 카테고리 AI 논문 분석 유지. brief-3.md의 기존 글·최근 원고에서 제목과 arXiv ID 중복 없음.",
+  "초록의 최저 성공률 6.6% 설명과 표 2의 VLM 최저 8.5%를 구분했다. 서론의 VLM 28.2~42.3% 범위도 표 2 전체와 불일치한다.",
+  "외부 사실 수치는 공식 본문을 사용. 활용 아이디어는 필자 해석으로 표시.",
+  "공식 HTML의 그림 1·3을 이미지 후보로 선정. 썸네일·로고 제외.",
+  "발행·알림·git 접속 없음.",
+  "재검증: 최초 제출 2026-09-30 17:55:29 UTC = 2026-10-01 KST. 최신 기간 조건 충족.",
+  "검증 기록은 verification.json을 기준으로 집계."
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791273270841789",
+  "kind": "all"
+ }
+}
