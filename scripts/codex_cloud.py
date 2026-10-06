@@ -243,7 +243,7 @@ def complete(work: Path) -> int:
             proof = helper.TREE / STATE / "codex-verification" / f"{folder.name}.json"
             write_json(proof, verification)
             extra.append(str(proof.relative_to(helper.TREE)))
-            result, note = "done", f"{category} 원고를 올렸습니다. 승인 채널 전송 후 사용자의 ✅를 기다립니다."
+            result, note = "done", f"{category} 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
         else:
             raise ValueError("Codex 결과 상태가 올바르지 않습니다")
     except (ValueError, OSError, RuntimeError, SystemExit) as exc:

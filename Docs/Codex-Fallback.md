@@ -24,6 +24,14 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
 로그인 캐시 공유 제한과 CI 인증 방식은 [OpenAI 공식 인증 문서](https://learn.chatgpt.com/docs/auth/ci-cd-auth)를 따른다.
 모델은 Codex CLI 기본값이며 production 변수 CODEX_MODEL로 지정할 수 있다.
 
+### 운영 적용 확인 (2026-10-06)
+
+- 클라우드 전용 ChatGPT 로그인을 production 비밀값에 등록하고, 갱신 로그인 암호화 캐시 저장까지 확인했다.
+- [클라우드 실제 실행 확인](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37395868854)이 성공했다. Codex를 실제 실행해 `OK` 응답을 검사했다.
+- 저장소 변수 `CODEX_FALLBACK_ENABLED=true`로 자동 인계를 활성화했다.
+- Cloudflare 운영 배포 `a9cf85f8-deac-4b5d-b49b-540b40ee7814`의 `/health`에서 자동 승인 활성화·60초·Durable Object 바인딩을 확인했다. 원고 저장소 인증 요청도 정상 응답했다.
+- 이후 새로 승인 채널에 전송되는 원고부터 1분 자동 승인이 적용된다. 배포 전 이미 대기 중이던 원고는 기존 수동 승인 상태를 유지한다.
+
 ## 클라우드 실행·슬랙 참여
 
 - 한도 오류가 난 수동 지시는 `manual_request.yml`이 Codex workflow를 즉시 깨운다. 실행 도중 멈춘 요청은 주기 확인으로 인계한다.
