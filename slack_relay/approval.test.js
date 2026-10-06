@@ -23,7 +23,7 @@ function fixture(t) {
   t.mock.method(Date, "now", () => now);
   const kv = new Map();
   const env = { IMAGE_UPLOAD_TOKEN: "test", GITHUB_TOKEN: "test", GITHUB_REPO: "me/YooPost",
-    AUTO_APPROVE_ENABLED: "true", ALLOWED_USER_IDS: "U1", SLACK_BOT_TOKEN: "test",
+    AUTO_APPROVE_ENABLED: "true", CODEX_FALLBACK_ENABLED: "true", ALLOWED_USER_IDS: "U1", SLACK_BOT_TOKEN: "test",
     IMAGES: {
       async put(key, value) { kv.set(key, value); },
       async get(key, options) {
@@ -226,4 +226,74 @@ test("health reports the policy and missing timer binding fails closed", async t
   delete f.env.DRAFT_APPROVAL;
   assert.equal((await f.save()).status, 503);
   assert.equal((await worker.fetch(new Request("https://test/draft/d1", { headers: { Authorization: "Bearer wrong" } }), f.env)).status, 401);
+});
+
+const WATCH_ID = "C0MANUAL01-1791244200000001";
+function watchRequest(f, input = {}, token = "test") {
+  return worker.fetch(new Request(`https://test/manual-watch/${WATCH_ID}`, { method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ user: "U1", created: new Date(Date.now()).toISOString(), ...input }),
+  }), f.env);
+}
+
+test("manual start watchdog survives restart, preserves the first deadline and checks once", async t => {
+  const f = fixture(t);
+  await f.save(); // 승인 타이머와 수동 지시 타이머는 별도 객체다.
+  const approvalAt = f.instances.get("d1").ctx.alarmAt;
+  const response = await watchRequest(f);
+  assert.equal(response.status, 201);
+  const due = Date.parse((await response.json()).due_at);
+  const item = f.instances.get(`manual-watch:${WATCH_ID}`);
+  f.advance(60_000);
+  assert.equal((await watchRequest(f)).status, 200);
+  assert.equal(item.ctx.alarmAt, due);
+  item.obj = new DraftApproval(item.ctx, f.env);
+  f.advance(14 * 60_000);
+  await item.obj.alarm();
+  assert.equal(calls.filter(c => c.url.includes("/codex_fallback.yml/dispatches")).length, 0);
+  f.advance(1000);
+  await item.obj.alarm();
+  await item.obj.alarm();
+  const checks = calls.filter(c => c.url.includes("/codex_fallback.yml/dispatches"));
+  assert.equal(checks.length, 1);
+  assert.deepEqual(checks[0].body.inputs, { mode: "work" });
+  assert.equal(item.ctx.alarmAt, null);
+  assert.equal(f.instances.get("d1").ctx.alarmAt, approvalAt);
+  assert.equal((await watchRequest(f)).status, 200);
+  assert.equal(item.ctx.alarmAt, null); // 재전송은 종료된 타이머를 다시 켜지 않는다.
+});
+
+test("manual watchdog requires the upload secret, owner and a recent timezone-qualified time", async t => {
+  const f = fixture(t);
+  assert.equal((await watchRequest(f, {}, "wrong")).status, 401);
+  assert.equal((await watchRequest(f, { user: "U2" })).status, 403);
+  for (const created of ["bad", "2026-10-06T10:00:00", new Date(Date.now() + 1000).toISOString(),
+    new Date(Date.now() - 7 * 60 * 60_000).toISOString()]) {
+    assert.equal((await watchRequest(f, { created })).status, 400);
+  }
+  f.env.CODEX_FALLBACK_ENABLED = "false";
+  assert.equal((await watchRequest(f)).status, 503);
+});
+
+test("manual watchdog retries failed GitHub requests five times and reports failure in the original thread", async t => {
+  const f = fixture(t);
+  await watchRequest(f);
+  const item = f.instances.get(`manual-watch:${WATCH_ID}`);
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
+      : new Response("unavailable", { status: 503 });
+  };
+  f.advance(15 * 60_000 + 1000);
+  for (let i = 0; i < 5; i++) {
+    await item.obj.alarm();
+    f.advance(60_000);
+  }
+  await item.obj.alarm();
+  assert.equal(calls.filter(c => c.url.includes("/codex_fallback.yml/dispatches")).length, 5);
+  assert.equal(item.ctx.alarmAt, null);
+  const notice = calls.find(c => c.url.endsWith("/chat.postMessage"));
+  assert.equal(notice.body.channel, "C0MANUAL01");
+  assert.equal(notice.body.thread_ts, "1791244200.000001");
+  assert.match(notice.body.text, /5회/);
 });

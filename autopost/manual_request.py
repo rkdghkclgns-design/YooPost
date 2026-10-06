@@ -109,6 +109,7 @@ def handle_request(
     now: datetime | None = None,
     alert_channel: str = "",
     fallback: Callable[[str], bool] | None = None,
+    watch: Callable[[str, str, str], bool] | None = None,
 ) -> str:
     """지시 하나를 처리하고 결과 상태(fired / help / invalid / ignored / not configured / failed)를 돌려준다.
 
@@ -175,7 +176,16 @@ def handle_request(
         reply(f"❌ 원고 작성을 시작하지 못했습니다: {escape_mrkdwn(result.error)}\n같은 지시를 새로 보내면 다시 시도합니다.")
         return "failed"
     link = f" · <{result.session_url}|작성 과정 보기>" if result.session_url else ""
+    watch_notice = ""
+    if watch is not None:
+        try:
+            if watch(rid, created, user):
+                watch_notice = "\n⏱️ 15분 동안 작성이 시작되지 않으면 Codex 클라우드가 다시 확인해 이어받습니다."
+            else:
+                log.warning("미시작 인계 타이머 등록 실패 — 정기 클라우드 점검에서 다시 확인합니다")
+        except Exception:
+            log.warning("미시작 인계 타이머 연결 실패 — 정기 클라우드 점검에서 다시 확인합니다")
     reply(f"📝 접수했습니다 — {describe(command)}{link}\n"
           "Claude 가 조사·작성하고 Opus 가 사실 검증한 원고가 #yoopost-1-원고승인 에 올라오면 이 스레드에 알려 드립니다. "
-          "✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다.")
+          "✅ 즉시 승인 또는 1분 미승인 자동 승인으로 발행됩니다. ❌는 보류입니다." + watch_notice)
     return "fired"

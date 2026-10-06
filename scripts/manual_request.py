@@ -48,6 +48,23 @@ def dispatch_codex(rid: str) -> bool:
         return False
 
 
+def arm_request_watch(rid: str, created: str, user: str) -> bool:
+    """영속 타이머를 등록해 GitHub 예약 실행이 늦어져도 미시작 요청을 확인한다."""
+    host = env("IMAGE_HOST_URL").rstrip("/")
+    token = env("IMAGE_UPLOAD_TOKEN")
+    if (env("CODEX_FALLBACK_ENABLED") != "true" or not token
+            or host != "https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev"):
+        return False
+    import requests
+    try:
+        response = requests.post(f"{host}/manual-watch/{rid}",
+            headers={"Authorization": f"Bearer {token}"},
+            json={"created": created, "user": user}, timeout=20)
+        return response.ok and bool(response.json().get("ok"))
+    except (requests.RequestException, ValueError):
+        return False
+
+
 def git(tree: Path, *args: str) -> bool:
     return subprocess.run(["git", *args], cwd=tree, capture_output=True, text=True).returncode == 0
 
@@ -93,6 +110,7 @@ def main(argv: list[str] | None = None) -> int:
         record=lambda record: record_to_branch(args.tree.resolve(), record),
         alert_channel=env("SLACK_CHANNEL_ID"),  # #yoopost-알림 진행 카드 (비우면 올리지 않음)
         fallback=dispatch_codex,
+        watch=arm_request_watch,
     )
     print(f"수동 지시 처리: {status}")
     if status in ("failed", "not configured"):

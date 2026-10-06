@@ -164,3 +164,48 @@ def test_fire_routine_does_not_retry_timeouts():
 
     result = fire_routine(URL, "t", "x", post=post, wait=lambda s: None)
     assert not result.ok and len(attempts) == 1  # 세션이 만들어졌을 수 있으니 중복 실행을 피한다
+
+
+def test_accepted_request_arms_watchdog_from_record_creation_time():
+    client = FakeWebClient()
+    notifier = SlackNotifier(client=client, channel_id=MANUAL)
+    recorded, watched = [], []
+    status = handle_request("전체 새로운 포스트로 재발행", MANUAL, "1727650000.123456", "U1", "message",
+        manual_channel=MANUAL, notifier=notifier, fire=FakeFire(), record=recorded.append, now=NOW,
+        watch=lambda *args: watched.append(args) or True)
+    assert status == "fired"
+    assert watched == [(recorded[0]["id"], recorded[0]["created"], "U1")]
+    assert "15분" in client.messages[-1]["text"] and "Codex" in client.messages[-1]["text"]
+
+
+def test_watchdog_error_keeps_the_accepted_request_and_does_not_refire_claude():
+    client, fire = FakeWebClient(), FakeFire()
+    def broken(*args):
+        raise TimeoutError("watchdog unavailable")
+    status = handle_request("전체 새로운 포스트로 재발행", MANUAL, "1727650000.123456", "U1", "message",
+        manual_channel=MANUAL, notifier=SlackNotifier(client=client, channel_id=MANUAL),
+        fire=fire, record=lambda r: None, now=NOW, watch=broken)
+    assert status == "fired" and len(fire.calls) == 1
+    assert "접수했습니다" in client.messages[-1]["text"]
+    assert "15분" not in client.messages[-1]["text"]
+
+
+def test_watch_registration_only_sends_secret_to_the_configured_worker(monkeypatch):
+    import requests
+    from test_cloud_drafts import load_script
+    helper = load_script("manual_request")
+    host = "https://yoopost-slack-relay.cleaning-autopost-slack-relay.workers.dev"
+    monkeypatch.setenv("IMAGE_HOST_URL", host)
+    monkeypatch.setenv("IMAGE_UPLOAD_TOKEN", "secret")
+    monkeypatch.setenv("CODEX_FALLBACK_ENABLED", "true")
+    calls = []
+    def post(url, **kwargs):
+        calls.append((url, kwargs))
+        return type("Response", (), {"ok": True, "json": lambda self: {"ok": True}})()
+    monkeypatch.setattr(requests, "post", post)
+    assert helper.arm_request_watch("C0MANUAL01-1727650000123456", NOW.isoformat(), "U1")
+    assert calls[0][0] == host + "/manual-watch/C0MANUAL01-1727650000123456"
+    assert calls[0][1]["json"] == {"created": NOW.isoformat(), "user": "U1"}
+    monkeypatch.setenv("IMAGE_HOST_URL", "https://evil.example")
+    assert not helper.arm_request_watch("r", NOW.isoformat(), "U1")
+    assert len(calls) == 1

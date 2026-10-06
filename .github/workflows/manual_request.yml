@@ -75,4 +75,6 @@ jobs:
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
           CODEX_FALLBACK_ENABLED: ${{ vars.CODEX_FALLBACK_ENABLED }}
           GITHUB_TOKEN: ${{ github.token }}
+          IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+          IMAGE_UPLOAD_TOKEN: ${{ secrets.IMAGE_UPLOAD_TOKEN }}
         run: python scripts/manual_request.py

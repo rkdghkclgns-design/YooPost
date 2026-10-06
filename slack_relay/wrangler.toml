@@ -14,8 +14,9 @@ ALLOWED_USER_IDS = "U0C4PLGBNF9"
 MANUAL_CHANNEL_ID = "C0C50SP7VV5"
 MANUAL_WORKFLOW = "manual_request.yml"
 AUTO_APPROVE_ENABLED = "true"
+CODEX_FALLBACK_ENABLED = "true"
 
-# 원고마다 60초 자동 승인 알람 — PC 전원과 무관하게 Cloudflare 에서 실행한다.
+# 원고마다 60초 자동 승인·수동 지시마다 15분 미시작 확인 — PC 전원과 무관하게 실행한다.
 [[durable_objects.bindings]]
 name = "DRAFT_APPROVAL"
 class_name = "DraftApproval"

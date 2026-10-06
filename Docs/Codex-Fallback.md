@@ -38,6 +38,7 @@ GitHub Actions `codex_fallback.yml`이 클라우드에서 30분마다 확인한�
 ## 클라우드 실행·슬랙 참여
 
 - 한도 오류가 난 수동 지시는 `manual_request.yml`이 Codex workflow를 즉시 깨운다. 실행 도중 멈춘 요청은 주기 확인으로 인계한다.
+- Claude 세션 생성에 성공한 수동 지시는 Cloudflare에 요청별 영속 타이머를 등록한다. 접수 15분 뒤 Codex workflow를 깨워 실제 작성 시작·종료 기록을 다시 확인한다. 이미 작성 중이거나 종료된 요청은 인계하지 않는다. GitHub 예약 점검이 늦어져도 이 타이머는 PC 전원과 무관하게 동작한다.
 - plan job이 원고 브랜치의 `state/codex.json`에 2시간 임대를 남기고 기존 봇으로 원래 지시 스레드에 인계 알림을 보낸다.
 - write job은 Codex 인증만 받아 독립 임시 폴더에서 조사·작성과 별도 사실 검증 세션을 실행한다.
   GitHub 쓰기·Slack·Google 인증을 작성기에 주지 않는다. 한 실행에 한 편만 처리한다.

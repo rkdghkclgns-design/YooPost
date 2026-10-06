@@ -53,6 +53,8 @@ const DRY_RUN_WORDS = /(테스트|dry-?run|test)/gi;
 const HELP_WORDS = /^(도움말|help|사용법|\?)$/i;
 const ALL_WORDS = /(^|\s)(전체|카테고리별|all)(?=\s|$)/gi;
 const DRAFT_PATH = /^\/draft\/([A-Za-z0-9][A-Za-z0-9._-]{0,119})$/;
+const MANUAL_WATCH_PATH = /^\/manual-watch\/([CG][A-Z0-9]{8,}-[0-9]{16})$/;
+const MANUAL_START_WAIT_MS = 15 * 60_000;
 const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
 const RETRYABLE = new Set(["pending", "failed"]);
 const MAX_MANUAL_TEXT = 500;
@@ -88,6 +90,10 @@ export default {
     const draft = path.match(DRAFT_PATH);
     if (draft) {
       return handleDraft(request, env, draft[1]);
+    }
+    const watch = path.match(MANUAL_WATCH_PATH);
+    if (watch) {
+      return handleManualWatch(request, env, watch[1]);
     }
     if (request.method !== "POST") {
       return new Response("ok");
@@ -331,6 +337,16 @@ function approvalStub(env, id) {
   return env.DRAFT_APPROVAL.get(env.DRAFT_APPROVAL.idFromName(id));
 }
 
+/** 접수된 요청마다 15분 뒤 인계 대상을 재확인한다. 실제 작성자 선택은 GitHub plan이 한다. */
+export async function handleManualWatch(request, env, id) {
+  if (!authorized(request, env)) return new Response("unauthorized", { status: 401 });
+  if (!env.DRAFT_APPROVAL || env.CODEX_FALLBACK_ENABLED !== "true") {
+    return new Response("manual watchdog not configured", { status: 503 });
+  }
+  const stub = env.DRAFT_APPROVAL.get(env.DRAFT_APPROVAL.idFromName(`manual-watch:${id}`));
+  return stub.fetch(request);
+}
+
 export async function approveDraft(env, event) {
   const item = event.item || {};
   if (!env.IMAGES || item.type !== "message") {
@@ -376,7 +392,10 @@ export class DraftApproval {
   }
 
   async fetch(request) {
-    const id = new URL(request.url).pathname.match(DRAFT_PATH)?.[1];
+    const path = new URL(request.url).pathname;
+    const watchId = path.match(MANUAL_WATCH_PATH)?.[1];
+    if (watchId) return this.ctx.blockConcurrencyWhile(() => this.saveManualWatch(request, watchId));
+    const id = path.match(DRAFT_PATH)?.[1];
     if (!id) return new Response("not found", { status: 404 });
     return this.ctx.blockConcurrencyWhile(async () => {
       const record = await this.ctx.storage.get("approval");
@@ -407,6 +426,60 @@ export class DraftApproval {
       }
       return new Response("method not allowed", { status: 405 });
     });
+  }
+
+  async saveManualWatch(request, id) {
+    const saved = await this.ctx.storage.get("manual_watch");
+    if (request.method === "GET") return saved ? json(saved) : new Response("not found", { status: 404 });
+    if (request.method !== "POST") return new Response("method not allowed", { status: 405 });
+    let input;
+    try { input = await request.json(); } catch { return new Response("invalid json", { status: 400 }); }
+    if (!allowedUser(this.env, input?.user, { requireList: true })) return new Response("not allowed", { status: 403 });
+    const created = Date.parse(input.created);
+    if (!/(Z|[+-]\d{2}:\d{2})$/.test(String(input.created)) || !Number.isFinite(created)
+        || created > Date.now() || Date.now() - created > 6 * 60 * 60_000) {
+      return new Response("invalid creation time", { status: 400 });
+    }
+    const watch = saved || { id, user: input.user, created: input.created, status: "scheduled", attempts: 0,
+      due_at: new Date(created + MANUAL_START_WAIT_MS + 1000).toISOString() };
+    await this.ctx.storage.put("manual_watch", watch);
+    if (watch.status === "scheduled" || watch.status === "dispatch_pending") {
+      await this.ctx.storage.setAlarm(Math.max(Date.now() + 1000, Date.parse(watch.due_at)));
+    }
+    return json({ ok: true, ...watch }, saved ? 200 : 201);
+  }
+
+  async manualWatchAlarm(watch) {
+    if (this.env.CODEX_FALLBACK_ENABLED !== "true" || ["dispatched", "failed"].includes(watch.status)) {
+      await this.ctx.storage.deleteAlarm();
+      return;
+    }
+    if (Date.parse(watch.due_at) > Date.now()) {
+      await this.ctx.storage.setAlarm(Date.parse(watch.due_at));
+      return;
+    }
+    if (watch.attempts >= 5) return this.failManualWatch(watch);
+    watch = { ...watch, attempts: watch.attempts + 1, status: "dispatch_pending" };
+    await this.ctx.storage.put("manual_watch", watch);
+    await this.ctx.storage.setAlarm(Date.now() + 60_000);
+    try {
+      // Claude가 이미 작성 중이거나 끝났으면 plan이 제외한다. 원고·승인을 여기서 변경하지 않는다.
+      await dispatch(this.env, { mode: "work" }, this.env.CODEX_WORKFLOW || "codex_fallback.yml");
+      await this.ctx.storage.put("manual_watch", { ...watch, status: "dispatched",
+        dispatched_at: new Date(Date.now()).toISOString() });
+      await this.ctx.storage.deleteAlarm();
+    } catch (err) {
+      console.error("manual watchdog dispatch failed", err.message);
+      if (watch.attempts >= 5) await this.failManualWatch(watch);
+    }
+  }
+
+  async failManualWatch(watch) {
+    await this.ctx.storage.put("manual_watch", { ...watch, status: "failed" });
+    await this.ctx.storage.deleteAlarm();
+    const [channel, stamp] = watch.id.split("-");
+    await notifySlack(this.env, channel, `${stamp.slice(0, 10)}.${stamp.slice(10)}`,
+      "⚠️ 미시작 요청의 Codex 확인을 5회 요청했지만 GitHub에 전달하지 못했습니다. 클라우드 실행 상태를 확인해 주세요.");
   }
 
   async save(request, id, record) {
@@ -471,6 +544,8 @@ export class DraftApproval {
 
   async alarm() {
     return this.ctx.blockConcurrencyWhile(async () => {
+      const watch = await this.ctx.storage.get("manual_watch");
+      if (watch) return this.manualWatchAlarm(watch);
       let record = await this.ctx.storage.get("approval");
       if (!record) return;
       if ((record.auto_attempts || 0) >= 5) {
