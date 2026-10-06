@@ -1,5 +1,5 @@
 name: AI백과사전 원고 발행 (슬랙 ✅ 승인)
-# Claude 가 쓴 원고 메시지에 슬랙에서 ✅ 를 누르면 Cloudflare Worker 가 이 워크플로를 실행한다.
+# 원고 메시지에 ✅ 또는 게시 후 60초 미승인이면 Cloudflare Worker 가 이 워크플로를 실행한다.
 # AI(구글 API)를 쓰지 않는다 — 원고 보관함에서 발행용 HTML 을 꺼내 구글 블로그에 올리고 결과를 슬랙 스레드에 남긴다.
 # 시크릿은 production 환경(main 브랜치만 사용 가능)에 있다. Worker 는 main 으로 실행한다.
 run-name: "${{ inputs.check_only && '🔎 시크릿 점검 (발행 안 함)' || format('✅ 승인 발행 · {0}', inputs.draft_id) }}"
@@ -12,7 +12,7 @@ on:
         type: string
         required: true
       approved_by:
-        description: "승인한 슬랙 사용자 ID (Worker 가 자동 입력)"
+        description: "승인한 슬랙 사용자 ID 또는 auto-60s (Worker 가 자동 입력)"
         type: string
         default: ""
       check_only:

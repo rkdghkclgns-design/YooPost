@@ -276,7 +276,7 @@ def build_draft_blocks(prepared: PreparedDraft, request: Mapping[str, str] | Non
         notes = "\n".join(f"• {escape_mrkdwn(w)}" for w in prepared.warnings)[:2000]
         blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"*참고*\n{notes}"}})
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
-        f"✅ 반응을 누르면 구글 블로그에 발행됩니다 · 미리보기는 스레드의 HTML 파일 · ID `{prepared.draft_id}`")}]})
+        f"✅ 즉시 승인 · 1분 미승인 시 자동 승인 · ❌ 보류 · 미리보기는 스레드의 HTML 파일 · ID `{prepared.draft_id}`")}]})
     return blocks
 
 
@@ -293,11 +293,14 @@ def send_for_approval(prepared: PreparedDraft, store, slack, channel: str, now: 
                     build_draft_blocks(prepared, request), channel=channel)
     if not ts:
         raise DraftError("슬랙 메시지를 보내지 못했습니다 (봇 토큰·채널 확인)")
+    linked = {**bundle, "slack": {"channel": channel, "ts": ts}}
+    # 첨부 업로드 중에도 사용자가 누른 ❌를 처리할 수 있도록 먼저 연결한다.
+    store.put(prepared.draft_id, {**linked, "approval_ready": False})
     if prepared.preview is not None:
         slack.upload_file(prepared.preview, "구글 블로그 미리보기", "👀 올라갈 모습 — 내려받아 브라우저로 열어 보세요",
                           thread_ts=ts, channel=channel)
     slack.upload_file(prepared.cover, "대표 이미지", "🖼️ 대표 이미지", thread_ts=ts, channel=channel)
     if prepared.sources_md is not None:
         slack.upload_file(prepared.sources_md, "출처·사실 검증", "🔎 출처와 사실 검증 결과", thread_ts=ts, channel=channel)
-    store.put(prepared.draft_id, {**bundle, "slack": {"channel": channel, "ts": ts}})
+    store.put(prepared.draft_id, {**linked, "approval_ready": True})
     return ts

@@ -3,7 +3,7 @@
  *
  * 원고는 Claude(데스크톱 앱)가 쓴다 — 구글 AI API 를 쓰지 않는다.
  *   Claude → PUT /draft/<ID> (원고 보관) → 슬랙 원고 채널에 '✅ 누르면 발행' 메시지
- *   사용자가 그 메시지에 ✅ 반응 → 슬랙 이벤트(POST /slack/events) → 이 Worker 가 감지
+ *   사용자가 그 메시지에 ✅ 반응 또는 60초 미승인 → Durable Object 가 직렬 처리
  *   → GitHub Actions publish_draft.yml 실행 → 구글 블로그 발행 → 슬랙 스레드에 결과
  * GitHub Actions 는 외부 요청을 직접 받을 수 없어서 이 Worker 가 서명 검증 후 대신 실행시킨다. (Cloudflare 무료 플랜)
  *
@@ -62,20 +62,24 @@ export const WRITE_NOTICE = [
   "✍️ 원고는 *Claude* 가 씁니다 (구글 AI API 를 쓰지 않아 비용 0원). 매일 07시 7개 카테고리 원고가 자동으로 올라옵니다.",
   "더 쓰고 싶으면 *#yoopost-0-수동지시* 채널에 한 줄로 지시하세요 (또는 `/aipost <지시>`):",
   "  • `슬랙에 에이전트 직원 만들기를 AI도구에 발행해줘` · `AI 보안 한 편 더 발행해줘` · `전체 새로운 포스트로 재발행`",
-  "원고는 사실 검증 뒤 원고 채널에 올라오고, 그 메시지에 ✅ 를 누르면 구글 블로그에 발행됩니다.",
+  "원고는 사실 검증 뒤 원고 채널에 올라옵니다. ✅ 를 누르면 즉시 승인, 1분 동안 미승인이면 자동 승인됩니다. ❌ 를 누르면 보류합니다.",
 ].join("\n");
 
 export const HELP_TEXT = [
   "*🤖 AI백과사전 사용법*",
   WRITE_NOTICE,
   "",
-  "• 원고 메시지에 ✅ — 구글 블로그에 발행 (결과는 그 메시지 스레드에)",
+  "• 원고 메시지에 ✅ — 즉시 승인 · 1분 미승인 — 자동 승인 · ❌ — 보류 (결과는 스레드에)",
   "• `/aipost-setup` — 구글 블로그·이미지 저장소 연동 상태 점검",
 ].join("\n");
 
 export default {
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
+    if (path === "/health" && request.method === "GET") {
+      return json({ ok: true, auto_approve: autoApprovalEnabled(env),
+        auto_approve_seconds: 60, durable_approval: Boolean(env.DRAFT_APPROVAL) });
+    }
     const image = path.match(IMAGE_PATH);
     if (image) {
       return handleImage(request, env, image[1]);
@@ -166,6 +170,12 @@ export async function handleDraft(request, env, id) {
   if (!authorized(request, env)) {
     return new Response("unauthorized", { status: 401 });
   }
+  if (env.DRAFT_APPROVAL) {
+    return approvalStub(env, id).fetch(request);
+  }
+  if (autoApprovalEnabled(env)) {
+    return new Response("durable approval not configured", { status: 503 });
+  }
   if (request.method === "GET") {
     const draft = await env.IMAGES.get(`draft:${id}`, { type: "json" });
     return draft ? json(draft) : new Response("not found", { status: 404 });
@@ -209,7 +219,8 @@ export async function handleSlackEvent(request, env, ctx, raw) {
   }
   const event = body.event || {};
   let work = null;
-  if (body.type === "event_callback" && event.type === "reaction_added" && isApproval(event.reaction, env)) {
+  if (body.type === "event_callback" && event.type === "reaction_added"
+      && (isApproval(event.reaction, env) || isHold(event.reaction))) {
     work = approveDraft(env, event).catch((err) => console.error("approve failed", err.message));
   } else if (body.type === "event_callback" && event.type === "message") {
     work = manualMessage(env, event).catch((err) => console.error("manual request failed", err.message));
@@ -293,8 +304,9 @@ export async function notifySlack(env, channel, threadTs, text) {
       method: "POST",
       headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify({ channel, thread_ts: threadTs, text }),
+      signal: AbortSignal.timeout(5000),
     });
-    return response.ok;
+    return response.ok && Boolean((await response.json()).ok);
   } catch (err) {
     console.error("slack notice failed", err.message);
     return false;
@@ -306,6 +318,18 @@ function isApproval(reaction, env) {
   return names.includes(String(reaction || "").split("::")[0]);
 }
 
+function isHold(reaction) {
+  return String(reaction || "").split("::")[0] === "x";
+}
+
+function autoApprovalEnabled(env) {
+  return String(env.AUTO_APPROVE_ENABLED || "false").toLowerCase() === "true";
+}
+
+function approvalStub(env, id) {
+  return env.DRAFT_APPROVAL.get(env.DRAFT_APPROVAL.idFromName(id));
+}
+
 export async function approveDraft(env, event) {
   const item = event.item || {};
   if (!env.IMAGES || item.type !== "message") {
@@ -315,6 +339,16 @@ export async function approveDraft(env, event) {
   if (!id) {
     return "not a draft";
   }
+  if (!allowedUser(env, event.user)) return "not allowed";
+  if (env.DRAFT_APPROVAL) {
+    const response = await approvalStub(env, id).fetch(new Request(`https://approval.internal/draft/${id}`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: isHold(event.reaction) ? "hold" : "approve", user: event.user }),
+    }));
+    if (!response.ok) throw new Error(`approval HTTP ${response.status}`);
+    return (await response.json()).result;
+  }
+  if (isHold(event.reaction)) return "ignored";
   const draft = await env.IMAGES.get(`draft:${id}`, { type: "json" });
   if (!draft || !RETRYABLE.has(draft.status || "pending")) {
     return "already handled";
@@ -331,6 +365,170 @@ export async function approveDraft(env, event) {
     throw err;
   }
   return "dispatched";
+}
+
+/** 원고 하나당 영속 타이머. 수동 승인·자동 승인·상태 쓰기를 같은 객체에서 차례로 처리한다. */
+export class DraftApproval {
+  constructor(ctx, env) {
+    this.ctx = ctx;
+    this.env = env;
+  }
+
+  async fetch(request) {
+    const id = new URL(request.url).pathname.match(DRAFT_PATH)?.[1];
+    if (!id) return new Response("not found", { status: 404 });
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const record = await this.ctx.storage.get("approval");
+      if (request.method === "GET") {
+        const draft = await this.env.IMAGES.get(`draft:${id}`, { type: "json" });
+        return draft ? json({ ...draft, ...(record || {}) }) : new Response("not found", { status: 404 });
+      }
+      if (request.method === "PUT") return this.save(request, id, record);
+      if (request.method === "POST") {
+        const input = await request.json();
+        if (!allowedUser(this.env, input.user)) return json({ result: "not allowed" }, 403);
+        const draft = await this.env.IMAGES.get(`draft:${id}`, { type: "json" });
+        if (!draft) return json({ result: "not a draft" }, 404);
+        const current = record || { id, status: draft.status || "pending" };
+        if (input.action === "hold") {
+          if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
+          await this.write(draft, { ...current, status: "held", held_by: input.user,
+            auto_approve_at: null, dispatch_pending: false });
+          await this.ctx.storage.deleteAlarm();
+          await notifySlack(this.env, draft.slack?.channel, draft.slack?.ts,
+            "⏸️ 원고를 보류했습니다. 자동 승인하지 않습니다. 다시 ✅ 를 누르면 승인합니다.");
+          return json({ result: "held" });
+        }
+        if (input.action !== "approve") return new Response("invalid action", { status: 400 });
+        if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
+        await this.publish(draft, { ...current, auto_attempts: 0 }, input.user);
+        return json({ result: "dispatched" });
+      }
+      return new Response("method not allowed", { status: 405 });
+    });
+  }
+
+  async save(request, id, record) {
+    const raw = await request.text();
+    if (!raw || raw.length > MAX_DRAFT_BYTES) return new Response("draft too large or empty", { status: 413 });
+    let draft;
+    try { draft = JSON.parse(raw); } catch { return new Response("invalid json", { status: 400 }); }
+    if (!draft || !draft.title || !draft.html) return new Response("draft needs title and html", { status: 400 });
+    const status = draft.status || "pending";
+    // 승인 요청의 마지막 저장/재전송이 승인·발행·보류 상태를 pending 으로 덮지 않는다.
+    const keep = status === "pending" && record && record.status !== "pending";
+    if (keep) draft = (await this.env.IMAGES.get(`draft:${id}`, { type: "json" })) || draft;
+    draft.slack ||= record?.slack;
+    const next = { ...(record || {}), id, status: keep ? record.status : status };
+    if (draft.slack?.channel && draft.slack?.ts) next.slack = draft.slack;
+    if (!keep) {
+      next.approved_by = draft.approved_by || next.approved_by || "";
+      next.dispatch_pending = false;
+    }
+    for (const key of ["url", "published_at", "excluded_reason"]) {
+      if (draft[key] !== undefined) next[key] = draft[key];
+    }
+    if (next.status === "pending" && draft.approval_ready !== false
+        && draft.slack?.channel && draft.slack?.ts && autoApprovalEnabled(this.env)) {
+      // Slack 메시지 게시 후 60초. 업로드가 오래 걸렸으면 미리보기 연결이 끝난 뒤 즉시 승인한다.
+      const postedAt = Number(draft.slack.ts) * 1000;
+      const startedAt = Number.isFinite(postedAt) && postedAt > 0 && postedAt <= Date.now() ? postedAt : Date.now();
+      next.auto_approve_at ||= new Date(Math.max(Date.now(), startedAt + 60_000)).toISOString();
+      await this.ctx.storage.setAlarm(Date.parse(next.auto_approve_at));
+    } else if (!next.dispatch_pending) {
+      next.auto_approve_at = null;
+      await this.ctx.storage.deleteAlarm();
+    }
+    await this.write(draft, next);
+    if (draft.slack?.channel && draft.slack?.ts) {
+      await this.env.IMAGES.put(`msg:${draft.slack.channel}:${draft.slack.ts}`, id);
+    }
+    return json({ ok: true, id, auto_approve_at: next.auto_approve_at || null }, 201);
+  }
+
+  async write(draft, record) {
+    // 큰 HTML 은 KV 에, 작은 승인 상태는 강한 일관성을 보장하는 Durable Object 에 보관한다.
+    await this.ctx.storage.put("approval", record);
+    await this.env.IMAGES.put(`draft:${record.id}`, JSON.stringify({ ...draft, ...record }));
+  }
+
+  async publish(draft, record, user) {
+    const approved = { ...record, status: "approved", approved_by: user,
+      approved_at: new Date(Date.now()).toISOString(), dispatch_pending: true };
+    // 요청 도중 객체가 재시작되어도 다음 알람에서 복구한다. 발행 워크플로도 원고 ID 로 중복을 막는다.
+    await this.write(draft, approved);
+    await this.ctx.storage.setAlarm(Date.now() + 60_000);
+    try {
+      await dispatch(this.env, { draft_id: record.id, approved_by: user }, this.env.PUBLISH_WORKFLOW || "publish_draft.yml");
+    } catch (err) {
+      await this.write(draft, { ...record, status: "pending", dispatch_pending: false });
+      throw err;
+    }
+    await this.write(draft, { ...approved, dispatch_pending: false, auto_approve_at: null });
+    await this.ctx.storage.deleteAlarm();
+  }
+
+  async alarm() {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      let record = await this.ctx.storage.get("approval");
+      if (!record) return;
+      if ((record.auto_attempts || 0) >= 5) {
+        await this.ctx.storage.deleteAlarm();
+        return;
+      }
+      const recovering = record.status === "approved" && record.dispatch_pending;
+      if (!recovering && (record.status !== "pending" || !record.auto_approve_at || !autoApprovalEnabled(this.env))) {
+        await this.ctx.storage.deleteAlarm();
+        return;
+      }
+      if (!recovering && Date.parse(record.auto_approve_at) > Date.now()) {
+        await this.ctx.storage.setAlarm(Date.parse(record.auto_approve_at));
+        return;
+      }
+      const draft = await this.env.IMAGES.get(`draft:${record.id}`, { type: "json" });
+      if (!draft) {
+        record = { ...record, auto_attempts: (record.auto_attempts || 0) + 1 };
+        await this.ctx.storage.put("approval", record);
+        if (record.auto_attempts < 5) await this.ctx.storage.setAlarm(Date.now() + 60_000);
+        else await this.ctx.storage.deleteAlarm();
+        return;
+      }
+      if (!draft.slack?.channel || !draft.slack?.ts) {
+        await this.ctx.storage.deleteAlarm();
+        return;
+      }
+      record = { ...record, auto_attempts: (record.auto_attempts || 0) + 1 };
+      try {
+        const user = recovering ? record.approved_by : "auto-60s";
+        await this.publish(draft, record, user);
+        if (user === "auto-60s") {
+          await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
+            "🤖 1분 동안 미승인 상태여서 자동 승인했습니다. 구글 블로그 발행을 요청했습니다.");
+          await autoReaction(this.env, draft.slack);
+        }
+      } catch (err) {
+        console.error("auto approval dispatch failed", err.message);
+        if (record.auto_attempts < 5) {
+          await this.ctx.storage.setAlarm(Date.now() + 60_000);
+        } else {
+          await this.ctx.storage.deleteAlarm();
+          await notifySlack(this.env, draft.slack.channel, draft.slack.ts,
+            "⚠️ 자동 승인 발행 요청을 5회 시도했지만 실패했습니다. ✅ 를 눌러 다시 시도할 수 있습니다.");
+        }
+      }
+    });
+  }
+}
+
+async function autoReaction(env, slack) {
+  if (!env.SLACK_BOT_TOKEN) return;
+  try {
+    await fetch("https://slack.com/api/reactions.add", {
+      method: "POST", headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ channel: slack.channel, timestamp: slack.ts, name: "white_check_mark" }),
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch (err) { console.error("auto reaction failed", err.message); }
 }
 
 export async function handleImage(request, env, key) {
@@ -452,6 +650,7 @@ async function dispatch(env, inputs, workflow) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ ref: env.GITHUB_REF || "main", inputs }),
+    signal: AbortSignal.timeout(10000),
   });
   if (response.status !== 204 && response.status !== 200) {
     throw new Error(`GitHub API HTTP ${response.status}${await errorDetail(response)}`);

@@ -142,12 +142,14 @@ def test_send_for_approval_posts_card_uploads_preview_and_links_message(tmp_path
     card = client.messages[0]
     assert card["channel"] == "CDRAFT" and "발행 대기 원고" in card["text"]
     blocks = json.dumps(card["blocks"], ensure_ascii=False)
-    assert "✅ 반응을 누르면 구글 블로그에 발행됩니다" in blocks and "20260929_1300_4" in blocks and "참고" in blocks
+    assert "1분 미승인 시 자동 승인" in blocks and "❌ 보류" in blocks and "20260929_1300_4" in blocks and "참고" in blocks
     assert {u["title"] for u in client.uploads} == {"구글 블로그 미리보기", "대표 이미지", "출처·사실 검증"}
     sources = (tmp_path / "sources.md").read_text(encoding="utf-8")
     assert "(공식) NVIDIA — NVIDIA Vera CPU" in sources and "확인 안 된 문장" in sources and DEAD not in sources
     assert all(u["thread_ts"] == ts for u in client.uploads)
     assert store.puts[0][1].get("slack") is None  # 슬랙에 올리기 전에 먼저 보관
+    assert store.puts[1][1]["slack"]["ts"] == ts and store.puts[1][1]["approval_ready"] is False
+    assert store.items["20260929_1300_4"]["approval_ready"] is True
     assert store.items["20260929_1300_4"]["slack"] == {"channel": "CDRAFT", "ts": ts}
     assert build_draft_blocks(prepared)[0]["text"]["text"].startswith("📝")
 
@@ -159,17 +161,19 @@ def test_send_for_approval_posts_card_uploads_preview_and_links_message(tmp_path
         send_for_approval(prepared, MemoryStore(), DownSlack(), "CDRAFT", NOW)
 
 
-def test_publish_draft_publishes_once_and_reports_in_thread():
+@pytest.mark.parametrize("approver,notice", [("U0ABC", "<@U0ABC>"), ("auto-60s", "자동 승인 (1분 미승인)")])
+def test_publish_draft_publishes_once_and_reports_in_thread(approver, notice):
     store = MemoryStore()
     store.put("d1", {"title": "제목", "html": "<p>본문</p>", "labels": ["AI 도구"], "status": "approved",
                      "slack": {"channel": "CDRAFT", "ts": "1700.1"}})
     client, blogger = FakeWebClient(), FakeBlogger()
     slack = SlackNotifier(channel_id="C1", client=client)
-    assert publish_draft("d1", store, blogger, slack, "U0ABC", "CPUB", now=lambda: NOW) == 0
+    assert publish_draft("d1", store, blogger, slack, approver, "CPUB", now=lambda: NOW) == 0
     assert blogger.posts == [("제목", "<p>본문</p>", ["AI 도구"])]
     assert store.items["d1"]["status"] == "published" and store.items["d1"]["url"] == "https://ai.blogspot.com/p/1"
     thread, channel_note = client.messages
-    assert thread["thread_ts"] == "1700.1" and thread["channel"] == "CDRAFT" and "<@U0ABC>" in thread["text"]
+    assert thread["thread_ts"] == "1700.1" and thread["channel"] == "CDRAFT" and notice in thread["text"]
+    assert store.items["d1"]["approved_by"] == approver
     assert channel_note["channel"] == "CPUB"
     assert publish_draft("d1", store, blogger, slack) == 0 and len(blogger.posts) == 1  # 두 번 발행하지 않음
     assert "이미 발행한 원고" in client.messages[-1]["text"]

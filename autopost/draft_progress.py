@@ -110,6 +110,8 @@ def _state(record: dict | None, draft: Draft) -> tuple[str, str]:
         return "✅", f"발행됨: <{url}|{title}>" if url else f"발행됨: {title}"
     if status == "approved":
         return "🚀", f"발행 중: {title}"
+    if status == "held":
+        return "⏸️", f"보류 (✅ 승인하면 발행): {title}"
     if status == "failed":
         return "❌", f"발행 실패 (✅ 다시 누르면 재시도): {title}"
     return "📝", f"승인 대기: {title}"

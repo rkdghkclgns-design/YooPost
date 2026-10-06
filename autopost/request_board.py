@@ -66,6 +66,8 @@ def _draft_row(category: str, folder: Path, record: Mapping | None, failures: Ma
         return BoardRow(category, "🚫", f"겹침으로 제외: {title}", 4, True)
     if status == "approved":
         return BoardRow(category, "🚀", f"발행 중: {title}", 3, False)
+    if status == "held":
+        return BoardRow(category, "⏸️", f"보류 (✅ 승인하면 발행): {title}", 3, False)
     if status == "failed":
         return BoardRow(category, "❌", f"발행 실패 (✅ 다시 누르면 재시도): {title}", 3, False)
     if delivered:

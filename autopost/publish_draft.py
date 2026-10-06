@@ -31,7 +31,8 @@ KST = timezone(timedelta(hours=9))
 
 
 def _message(draft: dict, result: PublishResult, approved_by: str) -> str:
-    who = f" · 승인 <@{approved_by}>" if approved_by.isalnum() else ""
+    who = " · 자동 승인 (1분 미승인)" if approved_by == "auto-60s" else (
+        f" · 승인 <@{approved_by}>" if approved_by.isalnum() else "")
     title = escape_mrkdwn(str(draft.get("title") or ""))
     if result.ok:
         return f"✅ {LABEL} 발행 완료 — <{result.url}|{title}>{who}"

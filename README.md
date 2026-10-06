@@ -1,6 +1,6 @@
 # AI백과사전 자동 포스팅 (YooPost)
 
-**AI 공식 발표·뉴스**를 **Claude(데스크톱 앱)가 직접 조사·작성·사실 검증**하고, 슬랙에서 **✅ 로 승인하면**
+**AI 공식 발표·뉴스**를 **Claude(데스크톱 앱)가 직접 조사·작성·사실 검증**하고, 슬랙에서 **✅ 로 승인하거나 1분 동안 미승인이면 자동 승인되어**
 **구글 블로그 [AI백과사전](https://aibaekgwasajeon.blogspot.com/)**에 발행됩니다 (**구글 AI API 를 쓰지 않아 AI 비용 0원**).
 글의 구성·서식은 참고 블로그 [fornewchallenge.tistory.com](https://fornewchallenge.tistory.com/) **전체 게시물을 분석한 문법**을 그대로 따릅니다.
 영상은 만들지 않고, 네이버 블로그와 **구글 드라이브는 쓰지 않습니다**.
@@ -10,10 +10,10 @@
    ① 주제 선정 → ② 원문 조사 → ③ 원고 (참고 블로그 문법·형광 강조·인용 이미지) → ④ 사실 검증 (틀리면 고치고 확인 안 되면 뺌)
    ⑤ scripts/claude_draft.py: 출처 확인·이미지 저장소 업로드·발행용 HTML → Worker 원고 보관함 → 슬랙 원고 채널
                                                                               │
- [슬랙] 원고 메시지 + 미리보기 ── 사용자가 ✅ ──▶ Cloudflare Worker (/slack/events, 서명 검증)
+ [슬랙] 원고 메시지 + 미리보기 ── 사용자 ✅ 또는 1분 미승인 ──▶ Cloudflare Worker (/slack/events, 서명 검증)
                                                    ▼
                               GitHub Actions publish_draft.yml → 구글 블로그 발행 → 원고 스레드에 결과
-                              (PC 가 꺼져 있어도 폰에서 ✅ 만 누르면 발행 · 글 목록 = 발행 기록)
+                              (PC 가 꺼져 있어도 1분 미승인 시 자동 승인·발행 · 글 목록 = 발행 기록)
 ```
 
 ## 원고 쓰기 → ✅ 로 발행
@@ -21,8 +21,8 @@
 1. Claude 앱(이 프로젝트 폴더)에서 요청: **"AI 보안 글 써줘"**, **"카테고리별로 7편 써줘"**, **"GPT-6 글 써줘"**
    → Claude 가 `.claude/skills/yoopost-write/SKILL.md` 절차대로 조사·작성·사실 검증 후 슬랙 원고 채널에 올립니다.
 2. 슬랙 `#yoopost-1-원고승인` 의 **📝 발행 대기 원고** 메시지 → 스레드의 미리보기(HTML)·출처·사실 검증 확인
-3. 그 메시지에 **✅** 반응 → 1~2분 뒤 구글 블로그에 발행, 스레드에 글 주소 (실패하면 ✅ 를 다시 누르면 재시도)
-- Claude 는 ✅ 를 누르지 않습니다 — 발행 여부는 항상 사용자가 정합니다.
+3. 그 메시지에 **✅** 반응 → 즉시 승인. **1분 동안 미승인이면 자동 승인**되어 GitHub가 발행하고 스레드에 글 주소를 남깁니다. **❌** 반응으로 자동 승인을 보류할 수 있습니다. 발행 실패 시 ✅ 로 재시도합니다.
+- Claude·Codex는 글 작성과 검증을 담당하고, Cloudflare가 60초 자동 승인을 처리합니다. 보류한 원고는 ✅를 누르기 전까지 발행되지 않습니다. [운영 상세](Docs/Auto-Approval.md).
 - 예전 방식(Gemini 가 쓰는 `auto_post.yml`)은 매일 자동 실행을 껐고, GitHub 화면에서 직접 실행할 때만 돕니다 (Gemini 비용 발생).
 
 ---
@@ -92,7 +92,7 @@ AI 원고는 위 문법을 그대로 따릅니다.
 | 채널 | 내용 | 설정 |
 |---|---|---|
 | #yoopost-알림 | 매일 원고 작성 요약 · 발행 오류 · 연동 점검(`/aipost-setup`) | `SLACK_CHANNEL_ID` (Secret) |
-| #yoopost-1-원고승인 | Claude 가 쓴 **발행 대기 원고** — 스레드에 미리보기(HTML)·대표 이미지·출처·사실 검증. **✅ = 발행**, 결과도 그 스레드에 | `SLACK_CHANNEL_DRAFT` |
+| #yoopost-1-원고승인 | Claude·Codex가 쓴 **발행 대기 원고** — 스레드에 미리보기·출처·사실 검증. **✅ 즉시 승인 · 1분 미승인 자동 승인 · ❌ 보류**, 결과도 그 스레드에 | `SLACK_CHANNEL_DRAFT` |
 | #yoopost-2-발행완료 | ✅ 로 발행된 글 주소 모음 | `SLACK_CHANNEL_PUBLISH` |
 
 채널은 `python scripts/setup_slack_channels.py` 가 지금 구성으로 맞춥니다 (예전 #yoopost-2-원고검증·#yoopost-3-발행결과는 이름만 바꿔 그대로 쓰고,
@@ -242,7 +242,7 @@ python scripts/relay_secrets.py                       # Worker 에 등록 (값�
 - **Claude 한도·중단 시 Codex 클라우드 인계**: `codex_fallback.yml`이 GitHub에서 30분마다 중단된 수동 지시·빠진 일일 원고를 확인합니다.
   클라우드 전용 Codex 인증과 `CODEX_FALLBACK_ENABLED=true` 설정 후 PC·Codex 앱이 꺼져 있어도 작성·검증이 동작합니다.
   슬랙 지시의 한도 오류는 즉시 인계를 요청하고, 기존 봇이 같은 스레드에 인계·결과를 알립니다.
-  [인계 기준·인증 설정·운영 절차](Docs/Codex-Fallback.md). 원고는 사용자 ✅ 승인 후 기존 GitHub Actions가 발행합니다.
+  [인계 기준·인증 설정·운영 절차](Docs/Codex-Fallback.md). 원고는 사용자 ✅ 또는 60초 자동 승인 후 기존 GitHub Actions가 발행합니다.
 
 - (예전) 매일 **11:00(KST)** Gemini 자동 실행 → **2026-09-29 껐습니다.** 원고는 Claude 앱에 요청하고 ✅ 로 발행합니다.
   - `auto_post.yml` 을 GitHub 화면에서 직접 실행하면 Gemini 방식으로 1편 씁니다 (Variable `AUTO_PUBLISH=true` 설정됨)
