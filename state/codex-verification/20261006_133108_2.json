@@ -1,0 +1,215 @@
+{
+ "claims": [
+  {
+   "claim": "TikTok의 이번 공식 발표일은 2026-10-05이다. (intro·출시 범위 표)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — 뉴스룸 표시일 October 05, 2026 확인"
+  },
+  {
+   "claim": "발표는 Advertising Week New York 2026에서 이뤄졌다. (intro)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — 본문 첫 문단의 행사명 확인"
+  },
+  {
+   "claim": "공식 뉴스룸은 Shopping Assistant를 소개한다. (제목·요약·섹션·FAQ)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — Turning Discovery into Action의 제품명 확인"
+  },
+  {
+   "claim": "Shopping Assistant는 제품 문의를 대화로 안내한다. (summary·섹션 1 표)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — 대화형 AI 쇼핑 안내 설명 확인"
+  },
+  {
+   "claim": "공식 뉴스룸은 Buy Direct를 소개한다. (제목·요약·섹션·FAQ)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — 제품명 확인"
+  },
+  {
+   "claim": "Buy Direct는 TikTok 앱을 떠나지 않고 브랜드 제품을 구매하는 결제 경험이다. (summary·섹션 1 표·FAQ)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — Buy Direct 항목 확인"
+  },
+  {
+   "claim": "공식 뉴스룸은 Agentic Leads를 소개한다. (섹션 1·표·섹션 4 제목)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — Agentic Leads 명칭 확인"
+  },
+  {
+   "claim": "Agentic Leads는 대화를 통해 잠재 고객을 발굴·선별한다. (섹션 1·표)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — AI-guided conversations와 capture, qualify 설명 확인"
+  },
+  {
+   "claim": "상세 안내의 제품 명칭은 Lead Agent이다. (summary·섹션 4·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — Agentic Lead Generation 절 확인"
+  },
+  {
+   "claim": "Shopping Assistant는 판매자가 제공한 정보로 AI 답변을 한다. (섹션 2)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — Shopping Assistant 절 확인"
+  },
+  {
+   "claim": "Shopping Assistant 채팅창은 TikTok 앱 내 브라우저의 상품 페이지에서 제공된다. (섹션 2·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — 채팅창 및 상품 페이지 위치 확인"
+  },
+  {
+   "claim": "Shopping Assistant에서 판매자 사이트의 결제로 이어지며 앱 내 브라우저에 머문다. (섹션 2)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — merchant site checkout 설명 확인"
+  },
+  {
+   "claim": "Buy Direct는 네이티브 결제 경험이다. (FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — Buy Direct 절 native checkout 확인"
+  },
+  {
+   "claim": "Buy Direct는 저장된 결제 수단을 활용한다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — stored payment methods 확인"
+  },
+  {
+   "claim": "Buy Direct는 저장된 주소를 활용한다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — saved addresses 확인"
+  },
+  {
+   "claim": "Buy Direct는 앱 내 주문 추적을 제공한다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — in-app order tracking 확인"
+  },
+  {
+   "claim": "브랜드는 거래의 판매 책임 주체인 Merchant of Record로 남는다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": false,
+   "action": "수정: 판매 책임 주체라는 번역을 제거하고 공식 용어를 유지; 구체적 법적 책임은 확정하지 않는다고 명시 — Merchant of Record 유지라는 제품 설명만 있으며 한국어 법적 책임 범위 해석은 입증되지 않음"
+  },
+  {
+   "claim": "Buy Direct에는 UCP 연동이 필요하다. (섹션 3·warning·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — requires an integration 명시 확인"
+  },
+  {
+   "claim": "UCP는 Universal Commerce Protocol의 약자이다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — 공식 풀네임 확인"
+  },
+  {
+   "claim": "UCP는 AI 에이전트와 판매자 시스템이 함께 작동하도록 하는 규칙이다. (섹션 3)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — standardized set of rules 설명 확인"
+  },
+  {
+   "claim": "Lead Agent의 지식 기반은 브랜드가 승인한 정보로 구성한다. (섹션 4·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — brand-approved information 확인"
+  },
+  {
+   "claim": "광고주는 Lead Agent가 참고할 정보와 선별에 중요한 질문을 정할 수 있다. (섹션 4·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — Knowledge Base 및 qualification 질문 정의 설명 확인"
+  },
+  {
+   "claim": "Lead Agent는 적절한 동의를 받아 연락처를 수집할 수 있다고 안내된다. (섹션 4)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "수정: 수집이 실행된 사실이 아닌 공식 안내의 기능 설명으로 한정 — with appropriate consent 확인; 동의의 법적 적합성이나 실제 준수 여부를 검증한 것은 아님"
+  },
+  {
+   "claim": "Lead Agent는 TikTok 직접 메시지에서 활용할 수 있다. (섹션 4)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — direct messages 명시 확인"
+  },
+  {
+   "claim": "Lead Agent는 광고주 웹사이트에서 활용할 수 있다. (섹션 4)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — alongside advertiser website 명시 확인"
+  },
+  {
+   "claim": "TikTok for Business MCP는 여러 AI 플랫폼의 커넥터로 제공된다. (섹션 5)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — Building with Industry Leading Partners에서 플랫폼 목록 확인"
+  },
+  {
+   "claim": "MCP의 풀네임은 Model Context Protocol이며 AI 도구와 외부 시스템을 연결하는 규약이다. (섹션 5)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — 공식 풀네임 및 TikTok Ads 생태계 위의 AI 도구 연결 설명 확인"
+  },
+  {
+   "claim": "TikTok for Business MCP는 광고 계획·실행·관리 흐름을 지원한다. (섹션 5)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — plan, launch, manage 명시 확인"
+  },
+  {
+   "claim": "Smart+ Creative Selection은 광고주 소재·Symphony AI 소재·크리에이터 콘텐츠를 하나의 승인 흐름에 모은다. (섹션 5)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — Expanding AI Automated Capabilities의 소재 종류와 승인 흐름 확인"
+  },
+  {
+   "claim": "Shopping Assistant·Buy Direct·Lead Agent는 자격 기반 시험 기회로 제공된다. (summary·섹션 7·표·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — Ready to get started의 eligibility-based testing 확인"
+  },
+  {
+   "claim": "관심 광고주는 TikTok 영업 담당자에게 자격과 시험 기회를 문의할 수 있다. (섹션 7)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — sales partner 문의 안내 확인"
+  },
+  {
+   "claim": "한국 모든 계정의 즉시 이용 가능 여부는 읽은 공식 자료에서 확인되지 않는다. (summary·섹션 7·FAQ)",
+   "url": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-solutions",
+   "confirmed": true,
+   "action": "유지 — S1·S2 전체에 한국 전체 계정 제공 근거 없음; 미지원이라는 주장으로 확대하지 않음"
+  },
+  {
+   "claim": "읽은 공식 발표와 상세 안내에는 구체 요금표가 없다. (섹션 7 표)",
+   "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+   "confirmed": true,
+   "action": "유지 — S1·S2 전체를 재열람; 숫자 요금표 없음. 서비스 전체에 가격이 없다는 주장 아님"
+  },
+  {
+   "claim": "The Next Web은 같은 발표를 2026-10-05에 보도했다. (섹션 7)",
+   "url": "https://thenextweb.com/news/tiktok-ai-shopping-assistant-buy-direct-checkout",
+   "confirmed": true,
+   "action": "유지 — 본문 및 Published October 5, 2026 - 10:23 pm UTC 확인; KST 10월 6일, 날짜는 페이지 표시일 유지"
+  },
+  {
+   "claim": "PPC Land는 같은 발표를 2026-10-05에 보도했다. (섹션 7)",
+   "url": "https://ppc.land/tiktok-opens-ad-network-of-nearly-400-000-apps-to-us-advertisers/",
+   "confirmed": true,
+   "action": "유지 — 표시일 October 5, 2026과 발표 해설 본문 확인"
+  }
+ ],
+ "note": "2026-10-06 별도 검증: 제목·intro·summary·표·본문·FAQ·closing을 읽어 확인 가능한 고유 주장 35개를 추출했다. 반복 주장은 하나로 합쳤고 작성자의 제안·가상 사례·조건부 해석은 제품 성능 사실로 세지 않았다. S1·S2 공식 원문 전체를 다시 열어 기능·명칭·날짜·이용 조건·요금표 부재를 확인했고, S3·S4는 보도 사실과 표시 날짜 확인에만 사용했다. 34개 확인, 법적 책임으로 확장된 번역 1개 수정. 연락처 수집 문장도 공식 설명으로 귀속시켰다. confirmed는 원래 추출 주장 기준이며 수정 후 문장을 추가 중복 계수하지 않는다. 직접 성능 시험·계정 접근·법률 검토는 수행하지 않았다. 근거 충분으로 skip.json은 생성하지 않으며 발행 승인을 의미하지 않는다."
+}
