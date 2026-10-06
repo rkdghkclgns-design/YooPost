@@ -1,0 +1,96 @@
+{
+ "topic": "Building advertising for the way people use AI — ChatGPT visual ad format and expanded measurement (2026-10-05)",
+ "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Building advertising for the way people use AI",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+   "publisher": "OpenAI",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI moves to make ChatGPT Ads more measurable — and more visual",
+   "url": "https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/",
+   "publisher": "Digiday",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "More ways to measure ChatGPT Ads",
+   "url": "https://ads.openai.com/blog/more-ways-to-measure",
+   "publisher": "OpenAI Ads",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Ad policies",
+   "url": "https://openai.com/policies/ad-policies/",
+   "publisher": "OpenAI",
+   "published": "2026-09-10",
+   "official": true,
+   "date_type": "updated",
+   "date_note": "페이지 상단 Updated: September 10, 2026. 최초 발표일이 아닌 업데이트 날짜. 최신 이슈 선정 근거는 S1·S2."
+  }
+ ],
+ "images": [],
+ "images_none_reason": "S1의 읽을 수 있는 공식 본문에는 인용 가능한 화면·도표가 노출되지 않고 Loading…이 표시됐다. HTML 추가 확인은 HTTP 403으로 실패해 시각 광고 화면을 확인하지 못했다. S3의 Image: Measurement partners for ChatGPT Ads는 파트너 소개 이미지로 화면·도표가 아닌 로고 모음 성격이라 제외했다. S4는 텍스트 정책과 표 중심이며 적합한 본문 인용 이미지를 확인하지 못했다. 썸네일·OG·로고는 사용하지 않았다.",
+ "factcheck": {
+  "status": "completed",
+  "claims": 28,
+  "confirmed": 28,
+  "removed": [],
+  "note": "2026-10-06 별도 검증 세션에서 S1·S3·S4 공식 원문과 S2 기사 본문을 다시 열어 읽었다. 제목·도입·요약·표·본문·박스·FAQ·맺음말의 외부 주장을 검토하고 같은 사실의 반복은 하나로 집계했다. S2 항목은 제품 사실의 공식 근거가 아니라 보도 날짜와 매체 해석에 대한 해당 발행자의 원문 근거이다. 작성자 제안·가상 사례·자체 체험 여부·검증 단계 설명은 claims에서 제외했다. 가격·성능 벤치마크·법률의 효력에 대한 외부 주장은 원고에 없다. confirmed는 출처에 해당 설명이 있음을 뜻하며 실제 구현이나 광고 효과의 독립 입증을 뜻하지 않는다. 불일치·확인 불가 주장 없음; 표현 3곳과 도입 출처 표기를 보완했다. 기간 내 공식 발표와 독립 보도가 확인되어 근거 부족에 따른 skip.json은 생성하지 않았다. 승인·발행·알림·git 접속을 수행하지 않았다."
+ },
+ "selection": {
+  "category": "AI 뉴스 리뷰",
+  "as_of_kst": "2026-10-06",
+  "window_start": "2026-10-03",
+  "official_announcement_date": "2026-10-05",
+  "independent_coverage_date": "2026-10-05",
+  "duplicate_check": "brief-4.md의 이미 쓴 글·최근 원고 목록에서 동일 소식과 대표 URL을 확인하지 못했다. 폴더에 별도 발행 기록 파일은 없어 제공 목록 범위에서만 확인했다.",
+  "reason": "최근 3일 내 공식 발표이며 2026-10-05 Digiday의 독립 보도를 직접 확인한 서비스·광고 사업 변경. AI 뉴스 리뷰로 유지."
+ },
+ "research_notes": [
+  "S1·S2·S3·S4의 원문 페이지를 열어 본문을 읽었다. S4의 날짜는 발표일이 아닌 업데이트 날짜로 구분했다.",
+  "AI Watch 기사 접근은 실패하여 출처에 넣지 않았다. 잘못 시도한 /policies/ads-policies/도 출처에 넣지 않고 공식 링크의 /policies/ad-policies/를 사용했다.",
+  "성과 사례 수치와 주간 이용자 수는 원문에 있으나 이 초안에서는 일반 성과로 오해할 가능성을 줄이기 위해 사용하지 않았다.",
+  "가상 사례·관찰 기준·평가 메모는 작성자의 제안으로 표시했다. 실제 사용자 후기나 계정 실행 결과는 작성하지 않았다.",
+  "외부 서비스 발행·알림·git 작업은 수행하지 않았다.",
+  "별도 검증 결과는 verification.json 참조. 기존 조사 기록은 초안 세션 이력이며 이번 검증의 접근 결과와 구분한다."
+ ],
+ "draft_facts": [
+  {
+   "source_id": "S1",
+   "text": "2026년 10월 5일 발표. 새 시각 광고 초기 시험은 같은 달 미국에서 일부 광고주를 대상으로 시작 예정."
+  },
+  {
+   "source_id": "S1",
+   "text": "이미지 생성 중 광고를 시험하며 광고 표시·생성 이미지와 분리·답변 독립 원칙을 설명."
+  },
+  {
+   "source_id": "S3",
+   "text": "픽셀·CAPI 및 전환 데이터 연동, 귀속·증분 효과 측정을 설명. 지역 기반 증분 실험은 초기 단계."
+  },
+  {
+   "source_id": "S3",
+   "text": "클릭 및 노출 후 전환, 보고 설정과 최적화 구분을 설명."
+  },
+  {
+   "source_id": "S1",
+   "text": "DoubleVerify·IAS 브랜드 적합성 파일럿은 통제된 시험 환경이며 개인 대화 접근 없이 평가한다고 설명."
+  },
+  {
+   "source_id": "S4",
+   "text": "민감한 이용자 맥락의 광고 배치 제한, 소재와 도착 페이지 정책 적용, 과장·기만 및 인터페이스 모방 제한."
+  }
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791259338398959",
+  "kind": "all"
+ }
+}
