@@ -151,7 +151,8 @@ def test_fire_routine_success_and_errors():
     responses = [FakeResponse(401)]
     assert "토큰" in fire_routine(URL, "t", "x", post=post).error
     responses = [FakeResponse(503), FakeResponse(200, {"claude_code_session_url": "u"})]
-    assert fire_routine(URL, "t", "x", post=post, wait=lambda s: None).ok  # 503 은 세션이 안 만들어졌으니 재시도
+    assert "응답 없음" in fire_routine(URL, "t", "x", post=post, wait=lambda s: None).error
+    assert len(responses) == 1  # 503 응답도 세션 생성 실패를 확정하지 못하므로 재전송하지 않는다.
     assert not fire_routine("https://evil.example/fire", "t", "x", post=post).ok
 
 

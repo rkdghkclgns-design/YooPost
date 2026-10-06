@@ -125,7 +125,7 @@ def test_delivery_ack_only_uses_pinned_worker_and_handles_network_failure(monkey
     assert not helper.acknowledge_delivery(DELIVERY)
 
 
-@pytest.mark.parametrize("error", ["루틴 토큰이 맞지 않습니다", "HTTP 400", "HTTP 500", "Claude 루틴 설정 누락"])
+@pytest.mark.parametrize("error", ["루틴 토큰이 맞지 않습니다", "HTTP 400", "HTTP 403", "Claude 루틴 설정 누락"])
 def test_definite_claude_failure_uses_codex_after_recording(error):
     saved, dispatches = [], []
     def fallback(rid):

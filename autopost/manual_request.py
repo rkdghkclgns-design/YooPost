@@ -23,8 +23,6 @@ log = logging.getLogger(__name__)
 KST = timezone(timedelta(hours=9))
 FIRE_URL = re.compile(r"^https://api\.anthropic\.com/v1/claude_code/routines/trig_[A-Za-z0-9]+/fire$")
 FIRE_TIMEOUT = 30
-RETRY_STATUSES = (500, 503)  # 세션이 만들어지지 않은 응답만 다시 시도 (/fire 는 멱등키가 없다)
-MAX_TRIES = 3
 SETUP_HINT = ("⚙️ 수동 지시 설정이 아직 끝나지 않았습니다 — 루틴 'YooPost 수동 지시 (슬랙)'의 API 토큰을 "
               "GitHub production 환경 비밀값 `ROUTINE_FIRE_TOKEN` 에, 주소를 변수 `ROUTINE_FIRE_URL` 에 등록해 주세요.")
 
@@ -62,28 +60,29 @@ def fire_routine(url: str, token: str, text: str, post=None, wait: Callable[[flo
         "anthropic-beta": "experimental-cc-routine-2026-04-01",
         "Content-Type": "application/json",
     }
-    for attempt in range(1, MAX_TRIES + 1):
+    try:
+        response = post(url, headers=headers, json={"text": text}, timeout=FIRE_TIMEOUT)
+    except Exception as exc:  # 응답을 못 받았으면 세션이 이미 만들어졌을 수 있어 다시 보내지 않는다
+        return FireResult(False, error=f"응답 없음({type(exc).__name__}) — 클라우드 점검에서 실제 시작 여부를 확인합니다")
+    status = response.status_code
+    if status >= 500:
+        # fire에는 멱등키가 없다. 서버 오류 응답도 생성 실패를 확정할 수 없으므로 재전송하지 않는다.
+        return FireResult(False, error=f"응답 없음(HTTP {status}) — 클라우드 점검에서 실제 시작 여부를 확인합니다")
+    if status == 200:
         try:
-            response = post(url, headers=headers, json={"text": text}, timeout=FIRE_TIMEOUT)
-        except Exception as exc:  # 응답을 못 받았으면 세션이 이미 만들어졌을 수 있어 다시 보내지 않는다
-            return FireResult(False, error=f"응답 없음({type(exc).__name__}) — 세션이 시작됐는지 claude.ai/code 에서 확인해 주세요")
-        status = response.status_code
-        if status == 200:
             body = response.json() or {}
             return FireResult(True, str(body.get("claude_code_session_url") or ""))
-        if status in RETRY_STATUSES and attempt < MAX_TRIES:
-            wait(5 * attempt)
-            continue
-        detail = _error_message(response)
-        if status == 401:
-            return FireResult(False, error="루틴 토큰이 맞지 않습니다 (ROUTINE_FIRE_TOKEN 을 새로 등록해 주세요)")
-        if status == 429:
-            retry = response.headers.get("Retry-After", "")
-            return FireResult(False, error=f"한 시간 실행 한도에 걸렸습니다{f' ({retry}초 뒤 다시)' if retry else ''}")
-        if status == 400:
-            return FireResult(False, error=f"루틴이 요청을 거절했습니다 (꺼져 있는지 확인): {detail or 'HTTP 400'}")
-        return FireResult(False, error=f"루틴 실행 실패 HTTP {status}{f' — {detail}' if detail else ''}")
-    return FireResult(False, error="루틴 실행 실패 (재시도 초과)")
+        except (ValueError, TypeError, AttributeError):
+            return FireResult(False, error="응답 없음(잘못된 성공 응답) — 클라우드 점검에서 실제 시작 여부를 확인합니다")
+    detail = _error_message(response)
+    if status == 401:
+        return FireResult(False, error="루틴 토큰이 맞지 않습니다 (ROUTINE_FIRE_TOKEN 을 새로 등록해 주세요)")
+    if status == 429:
+        retry = response.headers.get("Retry-After", "")
+        return FireResult(False, error=f"한 시간 실행 한도에 걸렸습니다{f' ({retry}초 뒤 다시)' if retry else ''}")
+    if status == 400:
+        return FireResult(False, error=f"루틴이 요청을 거절했습니다 (꺼져 있는지 확인): {detail or 'HTTP 400'}")
+    return FireResult(False, error=f"루틴 실행 실패 HTTP {status}{f' — {detail}' if detail else ''}")
 
 
 def describe(command: ManualCommand) -> str:
