@@ -8,12 +8,12 @@
  "started": "2026-10-06T10:25:52+09:00",
  "network": "full",
  "finished": "",
- "note": "",
+ "note": "결과 파일 형식이 올바르지 않습니다: result.json",
  "alert_ts": "1791248139.969289",
  "fallback": {
   "provider": "codex",
   "mode": "cloud",
-  "status": "writing",
+  "status": "waiting",
   "taken_over": "2026-10-06T10:25:52+09:00",
   "first_taken_over": "2026-10-06T10:25:52+09:00",
   "reason": "접수 후 15분 동안 작성 미시작"
