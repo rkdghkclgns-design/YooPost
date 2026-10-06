@@ -96,6 +96,28 @@
    },
    "at": "2026-10-06T10:40:48+09:00",
    "reason": "GitHub Ubuntu sandbox setup fixed; real filesystem probe 37400223931 passed"
+  },
+  {
+   "at": "2026-10-06T13:36:48+09:00",
+   "task": "20261006:C0C50SP7VV5-1791259338398959:AI 언어 모델",
+   "prior_attempt": {
+    "at": "2026-10-06T13:18:32+09:00",
+    "count": 1,
+    "status": "failed",
+    "note": "별도 사실 검증 근거가 비어 있거나 확인 불가한 주장에 조치가 없습니다"
+   },
+   "authorization": {
+    "after_count": 1,
+    "expires": "2026-10-06T15:36:48+09:00",
+    "reason": "사용자의 Slack 명령 중단 복구 요청. 검증 보고서 형식 보정 c9ed617 배포 후 일회성 재시도."
+   }
   }
- ]
+ ],
+ "retry_authorizations": {
+  "20261006:C0C50SP7VV5-1791259338398959:AI 언어 모델": {
+   "after_count": 1,
+   "expires": "2026-10-06T15:36:48+09:00",
+   "reason": "사용자의 Slack 명령 중단 복구 요청. 검증 보고서 형식 보정 c9ed617 배포 후 일회성 재시도."
+  }
+ }
 }
