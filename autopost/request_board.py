@@ -165,6 +165,10 @@ _STEP_LABEL = {"⏳": (1, "접수"), "✍️": (2, "작성·검증 중"), "⬜":
 
 def _single_step(row: BoardRow) -> tuple[int, str]:
     """한 편 지시의 (막대 칸 수, 단계 이름) — 건너뜀·원고 없음·시작 실패는 끝난 것으로 4칸."""
+    if row.icon == "⚠️" and row.text.startswith("작성 중단"):
+        return 2, "작성 중단 · 재시도 대기"
+    if row.icon == "⬜" and "순차 처리 대기" in row.text:
+        return 2, "순차 처리 대기"
     if row.icon == "❌" and not row.finished:
         return 3, "발행 실패"
     if row.finished and row.icon != "✅":

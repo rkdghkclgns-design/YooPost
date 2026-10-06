@@ -82,7 +82,7 @@ def _summary(rid: str, request: Mapping[str, object], mine: Sequence[Path], outc
     if note:
         lines.append(f"📝 메모: {escape_mrkdwn(note[:300])}")
     waiting = sum(1 for line in lines if "승인 대기" in line)
-    lines.append(f"승인 대기 {waiting}편 — ✅ 를 누른 원고만 블로그에 발행됩니다.")
+    lines.append(f"승인 대기 {waiting}편 — ✅ 즉시 승인 · 1분 미승인 자동 승인 · ❌ 보류")
     return "\n".join(lines)
 
 
@@ -119,7 +119,7 @@ def report_requests(root: Path, folders: Sequence[Path], outcome, records: Mappi
         if folder.name in outcome.sent:
             event = "arrived"
             link = _link(slack, draft_channel, outcome.messages.get(folder.name, ""), "원고 메시지 열기")
-            text = f"📨 원고 도착 — *{category}* · {_title(folder)}\n#yoopost-1-원고승인 에서 확인하고 ✅ 를 누르면 발행됩니다 · {link}"
+            text = f"📨 원고 도착 — *{category}* · {_title(folder)}\n#yoopost-1-원고승인: ✅ 즉시 승인 · 1분 미승인 자동 승인 · ❌ 보류 · {link}"
         elif (folder / "skip.json").is_file():
             event = "skipped"
             reason = escape_mrkdwn(str(_read(folder / "skip.json").get("reason") or "이유 없음"))[:300]
