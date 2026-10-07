@@ -1984,5 +1984,28 @@
    "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
   ],
   "draft_id": "20261008_074344_5"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "⚡ Google·Constellation 3.6GW 전력 계약 총정리: 원전 890MW와 AI 데이터센터 전력난",
+  "topic": "Google and Constellation announce landmark agreement to bring 890 MW of new nuclear capacity to PJM grid (3,590 MW total, 2026-10-06)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/googleconstellation-36gw-890mw-ai.html"
+  },
+  "sources": [
+   "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html",
+   "https://finance.yahoo.com/energy/articles/google-enters-massive-3-6-103617066.html",
+   "https://www.cryptopolitan.com/google-locks-down-3-6-gw-of-power/",
+   "https://finance.biggo.com/news/f3b53816-83be-4274-8f82-b1bcbd35bc60",
+   "https://www.googlecloudpresscorner.com/2026-10-06-Google-and-Constellation-Announce-Landmark-Agreement-to-Bring-890-MW-of-New-Nuclear-Capacity-to-PJM-Grid-as-Part-of-Long-Term-Power-Deal",
+   "https://dailyenergyinsider.com/news/54023-constellation-energy-inks-20-year-power-purchase-agreement-with-google/",
+   "https://www.bicmagazine.com/industry/powergen/google-constellation-announce-agreement-nuclear-power/",
+   "https://www.constellationenergy.com/news/2025/constellation-meta-sign-20-year-deal-for-clean-reliable-nuclear-energy-in-illinois.html",
+   "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html",
+   "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf"
+  ],
+  "draft_id": "20261008_075307_6"
  }
 ]
