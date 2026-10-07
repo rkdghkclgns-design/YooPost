@@ -1807,5 +1807,23 @@
    "https://frontier.agentik-os.com/articles/source-learning-and-persistent-source-models"
   ],
   "draft_id": "20261007_103108_3"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🛡 Collibra·trail ML 인수 총정리: AI 거버넌스 자동화와 실행 통제",
+  "topic": "Collibra acquires trail ML to automate AI governance from policy to production (2026-10-05)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.collibra.com/company/newsroom/press-releases/collibra-acquires-trail-ml-to-automate-ai-governance-from-policy-to-production",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/collibratrail-ml-ai.html"
+  },
+  "sources": [
+   "https://www.collibra.com/company/newsroom/press-releases/collibra-acquires-trail-ml-to-automate-ai-governance-from-policy-to-production",
+   "https://www.collibra.com/company/newsroom",
+   "https://www.cdomagazine.tech/aiml/collibra-acquisition-pushes-ai-governance-toward-continuous-control",
+   "https://thenextweb.com/news/collibra-trail-ml-eu-ai-act-market",
+   "https://www.prnewswire.com/news-releases/collibra-acquires-trail-ml-to-automate-ai-governance-from-policy-to-production-302897376.html"
+  ],
+  "draft_id": "20261007_103847_4"
  }
 ]
