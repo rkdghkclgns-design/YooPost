@@ -1947,5 +1947,22 @@
    "https://raw.githubusercontent.com/kandinskylab/kandinsky-6/main/README.md"
   ],
   "draft_id": "20261008_072853_3"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🔒 ChatGPT for Teens, Common Sense Media '수용 불가 위험' 평가: 4,000건 테스트 결과 총정리",
+  "topic": "ChatGPT for Teens Risk Assessment (Common Sense Media Institute, 2026-10-07) · TechCrunch 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/chatgpt-for-teens-common-sense-media.html"
+  },
+  "sources": [
+   "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+   "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/",
+   "https://www.thestar.com.my/tech/tech-news/2026/08/18/openai-unveils-chatgpt-for-teens-with-stronger-guardrails-parental-controls",
+   "https://wset.com/news/nation-world/openais-chatgpt-for-teens-presents-unacceptable-risk-says-external-safety-report-common-sense-media-school-work"
+  ],
+  "draft_id": "20261008_073516_4"
  }
 ]
