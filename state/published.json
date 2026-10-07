@@ -1892,5 +1892,24 @@
    "https://newsprd.rthk.hk/rthk/en/component/k2/1871977-20260929.htm"
   ],
   "draft_id": "20261007_150846_7"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🤖 Mistral Large 4 총정리 - 1조 파라미터 MoE, 입력 $1.36·출력 $4.18 프리뷰 공개",
+  "topic": "Introducing Mistral Large 4 (Mistral AI, 2026-10-06)",
+  "category": "AI 언어 모델",
+  "source_url": "https://mistral.ai/news/mistral-large-4/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/mistral-large-4-1-moe-136-418.html"
+  },
+  "sources": [
+   "https://mistral.ai/news/mistral-large-4/",
+   "https://simonwillison.net/2026/Oct/6/le-chonk/",
+   "https://www.testingcatalog.com/mistral-launches-large-4-preview-with-1-t-parameters/",
+   "https://artificialanalysis.ai/models/mistral-large-4",
+   "https://docs.mistral.ai/models/mistral-large-4-0",
+   "https://openrouter.ai/mistralai/mistral-large-4-0"
+  ],
+  "draft_id": "20261008_071411_1"
  }
 ]
