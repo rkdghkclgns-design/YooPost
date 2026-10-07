@@ -5,9 +5,34 @@
    "count": 1,
    "status": "skipped",
    "note": "다른 주제 재작성 2회 후 보류: AI 도구 지정 및 2026-10-04 이후 발표 조건을 유지해 기존 제외 후보와 다른 세 후보를 조사했습니다. Together Link는 공식 changelog에 2026-10-01로 기록돼 기간 조건을 확정하지 못해 제외했습니다. Bubble Agent 2·MCP는 공식 포럼 원문 open 조회가 not accessible / Internal Error로 실패했습니다. 마지막 후보 Perplexity는 2026-10-05 changelog 본문을 읽었으나 핵심 Automations 상세 공식 원"
+  },
+  "20261007:C0C50SP7VV5-1791273270841789:AI 인사이트": {
+   "at": "2026-10-07T09:46:23+09:00",
+   "count": 1,
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "37553672541-1",
+  "at": "2026-10-07T09:46:23+09:00",
+  "expires": "2026-10-07T11:46:23+09:00",
+  "task": {
+   "day": "20261007",
+   "request": "C0C50SP7VV5-1791273270841789",
+   "kind": "all",
+   "category": "AI 인사이트",
+   "topic": "",
+   "id": "C0C50SP7VV5-1791273270841789",
+   "reason": "Codex 클라우드에서 남은 카테고리 이어쓰기",
+   "missing": [
+    "AI 인사이트",
+    "AI 공모주 분석"
+   ],
+   "finish_only": false,
+   "owner": "37553672541-1",
+   "at": "2026-10-07T09:46:23+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
