@@ -1,0 +1,48 @@
+{
+ "topic": "Introducing Personal Agent Protocol (Sierra, 2026-10-06)",
+ "source_url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Personal Agent Protocol",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "publisher": "Sierra",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Sierra announces Personal Agent Protocol, an open standard for personal AI agents",
+   "url": "https://thenextweb.com/news/personal-agent-protocol-sierra-meta",
+   "publisher": "The Next Web",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Genesys Joins Sierra, Meta on Open Standard for Personal AI Agents",
+   "url": "https://www.cmswire.com/contact-center/genesys-joins-sierra-meta-on-open-standard-for-personal-ai-agents-01/",
+   "publisher": "CMSWire",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/ca4jck6w/production/260eeaf35d46524db72f4b3c8a3621f52845be63-3840x2160.png",
+   "page_url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "caption": "개인 에이전트와 기업의 웹사이트·API·기업 에이전트를 연결하는 공식 개념도",
+   "credit": "Sierra"
+  }
+ ],
+ "factcheck": {
+  "claims": 24,
+  "confirmed": 23,
+  "removed": [
+   "“2026년 10월 후반 공개 계획”을 “2026년 10월 중 공개 계획”으로 수정. 공식 원문은 later this month이며 후반을 특정하지 않음.",
+   "검증 대상에서 불필요한 API 용어 풀이를 삭제."
+  ],
+  "note": "별도 사실 검증 단계에서 Sierra 공식 발표 전체 본문과 이미지 링크, The Next Web 및 CMSWire 기사 원문을 다시 열어 읽었다. 제목·도입·요약·본문·표·FAQ·맺음말의 반복 주장은 같은 사실로 묶었고 참여사와 향후 확장 항목은 각각 집계했다. 기사 발행일·논점은 해당 매체 자체 원문으로 검증했다. 월 후반을 특정한 표현은 공식 문구에 맞춰 월 중 공개 계획으로 수정했다. 가격·성능·법적 의무에 관한 단정은 원고에 없었다. 가상 사례·질문지·프롬프트·평가 제안 등 작성자의 의견과 자체 작업 설명은 외부 사실 집계에서 제외했다. 명세 공개 계획을 설치 가능 여부의 단정으로 확대하지 않았다. 원문 조회 실패나 핵심 근거 부족이 없어 skip.json 생성 조건에 해당하지 않는다. 이 기록은 사실 검증 결과이며 발행 승인이나 제품 실행 시험이 아니다."
+ }
+}
