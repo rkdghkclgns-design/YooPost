@@ -17,10 +17,12 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+import requests
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, reserve, settle, validate_primary_source, validate_verification  # noqa: E402
+from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, recover_terminal_lease, reserve, settle, task_key, validate_primary_source, validate_verification  # noqa: E402
 from autopost.cloud_drafts import DRAFTS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import manual_thread, read_request, request_id_of, request_path  # noqa: E402
@@ -78,11 +80,43 @@ def status() -> dict:
     return json.loads(text.getvalue())
 
 
+def recover_previous_run(state: dict) -> dict:
+    lease = state.get("lease") or {}
+    run_id = str(lease.get("owner") or "").split("-")[0]
+    token, repo = os.environ.get("GH_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not run_id.isdigit() or not token or not repo:
+        return state
+    def api(path):
+        response = requests.get(f"https://api.github.com/repos/{repo}/actions/runs/{run_id}{path}",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}, timeout=15)
+        response.raise_for_status()
+        return response.json()
+    run = api("")
+    if run.get("status") != "completed":
+        return state
+    jobs = api("/jobs?per_page=100")
+    if jobs.get("total_count", 0) > 100:
+        raise RuntimeError("이전 실행 단계가 너무 많아 임대를 해제하지 않았습니다")
+    recovered, task = recover_terminal_lease(state, run, jobs.get("jobs") or [])
+    if not task:
+        return state
+    extra = []
+    if task.get("request"):
+        record = read_request(helper.TREE, task["request"])
+        if not record.get("finished"):
+            path = request_path(helper.TREE, task["request"])
+            write_json(path, {**record, "fallback": {**record.get("fallback", {}), "status": "waiting",
+                "last_result": recovered["attempts"][task_key(task)]["status"]}})
+            extra.append(str(path.relative_to(helper.TREE)))
+    save_state(recovered, "codex: 종료된 GitHub 실행 잠금 복구", extra)
+    return recovered
+
+
 def plan(work: Path) -> int:
     output("work", "false")
     sync()
     now = datetime.now(KST)
-    state = read_json(helper.TREE / STATE / STATE_FILE)
+    state = recover_previous_run(read_json(helper.TREE / STATE / STATE_FILE))
     task = choose_task(status(), state, now)
     if not task:
         print("인계 대상 없음")
@@ -413,6 +447,11 @@ def complete(work: Path) -> int:
             next_task = choose_task({"synced": True, "requests": [
                 {**task, "id": task["request"], "missing": missing}]}, ended, datetime.now(KST))
             if next_task:
+                output("continue", "true")
+        elif not task["request"]:
+            # 매일 원고도 30분 예약을 기다리지 않고 다음 가능한 카테고리를 이어 쓴다.
+            # 현재 원격 상태와 Claude 진행 여부를 다시 확인하며 실패 간격·횟수 제한은 유지한다.
+            if choose_task(status(), ended, datetime.now(KST)):
                 output("continue", "true")
     return 0 if result in ("done", "skipped", "superseded") else 1
 

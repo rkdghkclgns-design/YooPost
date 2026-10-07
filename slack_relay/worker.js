@@ -79,11 +79,23 @@ export const HELP_TEXT = [
 ].join("\n");
 
 export default {
+  async scheduled(event, env, ctx) {
+    if (env.CLOUD_WATCHDOG) {
+      const stub = env.CLOUD_WATCHDOG.get(env.CLOUD_WATCHDOG.idFromName("cloud-routine"));
+      ctx.waitUntil(stub.fetch(new Request("https://internal/watchdog", { method: "POST" })));
+    }
+  },
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
     if (path === "/health" && request.method === "GET") {
       return json({ ok: true, auto_approve: autoApprovalEnabled(env),
-        auto_approve_seconds: 60, durable_approval: Boolean(env.DRAFT_APPROVAL) });
+        auto_approve_seconds: 60, durable_approval: Boolean(env.DRAFT_APPROVAL),
+        cloud_watchdog: Boolean(env.CLOUD_WATCHDOG) });
+    }
+    if (path === "/watchdog") {
+      if (!authorized(request, env)) return new Response("unauthorized", { status: 401 });
+      if (!env.CLOUD_WATCHDOG) return new Response("watchdog not configured", { status: 503 });
+      return env.CLOUD_WATCHDOG.get(env.CLOUD_WATCHDOG.idFromName("cloud-routine")).fetch(request);
     }
     const image = path.match(IMAGE_PATH);
     if (image) {

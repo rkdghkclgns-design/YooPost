@@ -227,7 +227,7 @@ test("an interrupted dispatch is resumed; disabling auto approval cancels pendin
 test("health reports the policy and missing timer binding fails closed", async t => {
   const f = fixture(t);
   assert.deepEqual(await (await worker.fetch(new Request("https://test/health"), f.env)).json(),
-    { ok: true, auto_approve: true, auto_approve_seconds: 60, durable_approval: true });
+    { ok: true, auto_approve: true, auto_approve_seconds: 60, durable_approval: true, cloud_watchdog: false });
   delete f.env.DRAFT_APPROVAL;
   assert.equal((await f.save()).status, 503);
   assert.equal((await worker.fetch(new Request("https://test/draft/d1", { headers: { Authorization: "Bearer wrong" } }), f.env)).status, 401);

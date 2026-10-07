@@ -15,15 +15,27 @@ MANUAL_CHANNEL_ID = "C0C50SP7VV5"
 MANUAL_WORKFLOW = "manual_request.yml"
 AUTO_APPROVE_ENABLED = "true"
 CODEX_FALLBACK_ENABLED = "true"
+WATCHDOG_CHANNEL_ID = "C0C4ZUG0TC5"
+
+[triggers]
+crons = ["*/5 * * * *"]
 
 # 원고마다 60초 자동 승인·수동 지시마다 15분 미시작 확인 — PC 전원과 무관하게 실행한다.
 [[durable_objects.bindings]]
 name = "DRAFT_APPROVAL"
 class_name = "DraftApproval"
 
+[[durable_objects.bindings]]
+name = "CLOUD_WATCHDOG"
+class_name = "CloudWatchdog"
+
 [[migrations]]
 tag = "v1-draft-approval"
 new_sqlite_classes = ["DraftApproval"]
+
+[[migrations]]
+tag = "v2-cloud-watchdog"
+new_sqlite_classes = ["CloudWatchdog"]
 
 # 블로그 이미지(대표 이미지·인용 이미지) 저장소 — 구글 드라이브 대신 Cloudflare KV (무료 한도: 쓰기 1,000회/일)
 [[kv_namespaces]]

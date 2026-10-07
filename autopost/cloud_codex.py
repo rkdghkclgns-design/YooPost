@@ -29,6 +29,8 @@ def retry_ready(state: dict, task: dict, now: datetime) -> bool:
     count = int(attempt.get("count") or 0)
     if count >= MAX_ATTEMPTS:
         return False
+    if attempt.get("status") == "infrastructure_wait":
+        return True  # 실행 서버도 받지 못한 취소는 원고 작성 실패로 계산하지 않는다.
     recovery = (state.get("retry_authorizations") or {}).get(task_key(task)) or {}
     expires = parsed_time(recovery.get("expires"))
     authorized = bool(attempt.get("status") == "failed" and recovery.get("reason")
@@ -77,6 +79,27 @@ def settle(state: dict, task: dict, owner: str, result: str, note: str = "") -> 
     key = task_key(task)
     attempts[key] = {**attempts.get(key, {}), "status": result, "note": note[:300]}
     return {**state, "lease": {}, "attempts": attempts}
+
+
+def recover_terminal_lease(state: dict, run: dict, jobs: list[dict]) -> tuple[dict, dict]:
+    """GitHub가 종료를 확인한 이전 실행만 해제한다. 실제 작성 시도는 횟수를 보존한다."""
+    lease = state.get("lease") or {}
+    if run.get("status") != "completed" or str(run.get("id")) != str(lease.get("owner", "")).split("-")[0]:
+        return state, {}
+    task = lease.get("task") or {}
+    if not task.get("day") or "category" not in task:
+        return state, {}
+    # runner가 한 번이라도 배정됐으면 보수적으로 실제 작성 실패로 처리한다.
+    writers = [job for job in jobs if job.get("name") == "write"]
+    unstarted = not any(job.get("runner_id") for job in writers)
+    key = task_key(task)
+    attempt = (state.get("attempts") or {}).get(key) or {}
+    result = "infrastructure_wait" if unstarted else "failed"
+    note = "이전 GitHub 실행 종료 확인 — " + ("서버 미배정, 작성 횟수 복원" if unstarted else "중단된 임대 해제")
+    recovered = settle(state, task, lease["owner"], result, note)
+    if unstarted:
+        recovered["attempts"][key]["count"] = max(0, int(attempt.get("count") or 0) - 1)
+    return recovered, task
 
 
 def validate_verification(research: dict, verification: dict) -> None:

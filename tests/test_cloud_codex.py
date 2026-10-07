@@ -5,7 +5,7 @@ from datetime import timedelta
 import pytest
 from cryptography.fernet import Fernet
 
-from autopost.cloud_codex import choose_task, cloud_lease, reserve, retry_ready, settle, task_key, validate_primary_source, validate_verification
+from autopost.cloud_codex import choose_task, cloud_lease, recover_terminal_lease, reserve, retry_ready, settle, task_key, validate_primary_source, validate_verification
 from autopost.cloud_drafts import read_json, write_json
 from autopost.codex_fallback import fallback_requests, takeover_reason
 from autopost.draft_request import request_path, with_request
@@ -49,6 +49,31 @@ def test_lease_expiry_and_owner_prevent_other_jobs_releasing_it(tmp_path):
         settle(state, task(), "job2", "done")
     ended = settle(state, task(), "job1", "failed", "제한")
     assert not ended["lease"] and ended["attempts"][task_key(task())]["status"] == "failed"
+
+
+def test_terminal_unstarted_queue_refunds_only_its_reserved_attempt():
+    selected = task(request=RID)
+    state = reserve({}, selected, "123-1", NOW)
+    run = {"id": 123, "status": "completed", "conclusion": "cancelled"}
+    jobs = [{"name": "write", "status": "completed", "runner_id": 0}]
+    recovered, chosen = recover_terminal_lease(state, run, jobs)
+    assert chosen == selected and not recovered["lease"]
+    assert recovered["attempts"][task_key(selected)]["count"] == 0
+    assert retry_ready(recovered, selected, NOW + timedelta(minutes=1))
+    assert state["lease"]  # 입력 state는 바꾸지 않는다.
+    assert recover_terminal_lease(recovered, run, jobs) == (recovered, {})
+
+
+def test_terminal_actual_writer_preserves_attempt_and_active_or_other_owner_is_untouched():
+    selected = task()
+    state = reserve({}, selected, "123-1", NOW)
+    jobs = [{"name": "write", "status": "completed", "runner_id": 1}]
+    run = {"id": 123, "status": "completed"}
+    recovered, _ = recover_terminal_lease(state, run, jobs)
+    assert recovered["attempts"][task_key(selected)]["count"] == 1
+    assert not retry_ready(recovered, selected, NOW + timedelta(minutes=1))
+    assert recover_terminal_lease(state, {**run, "status": "queued"}, jobs) == (state, {})
+    assert recover_terminal_lease(state, {**run, "id": 999}, jobs) == (state, {})
 
 
 def test_all_requests_continue_after_partial_success_and_skip_without_rewriting(tmp_path):
@@ -217,6 +242,56 @@ def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_re
     assert codex_cloud.complete(tmp_path / "absent") == 1
     assert not read_json(tree / "state/codex.json")["lease"]
     assert len(notices) == 3
+
+
+@pytest.mark.parametrize("blocked", [False, True])
+def test_daily_completion_chains_only_categories_with_remaining_attempts(branch_repo, monkeypatch, tmp_path, blocked):
+    _, _, tree = branch_repo
+    helper = codex_cloud.helper
+    monkeypatch.setattr(helper, "TREE", tree)
+    monkeypatch.setattr(helper, "cloud_running", lambda: False)
+    monkeypatch.setattr(helper, "cloud_pending", lambda: False)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("MIN_BODY_CHARS", "1000")
+    monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
+    outputs = []
+    monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
+    live = codex_cloud.datetime.now(codex_cloud.KST)
+    selected = task(day=live.strftime("%Y%m%d"), owner="123-1")
+    state = reserve({}, selected, "123-1", live)
+    if blocked:
+        for category in codex_cloud.CATEGORIES:
+            if category != selected["category"]:
+                state["attempts"][task_key({**selected, "category": category})] = {
+                    "at": live.isoformat(), "count": 2, "status": "failed"}
+    write_json(tree / "state/codex.json", state)
+    helper.publish(["state/codex.json"], "daily lease")
+    work = tmp_path / "daily-result"
+    write_draft(work, post=good_post(category="AI 도구"), published=live.strftime("%Y-%m-%d"))
+    write_json(work / "result.json", {"status": "draft"})
+    write_json(work / "verification.json", {"claims": [
+        {"claim": f"공식 발표 {i}", "url": "https://nvidia.com/vera", "confirmed": True} for i in range(30)]})
+    assert codex_cloud.complete(work) == 0
+    assert (("continue", "true") in outputs) is not blocked
+
+
+def test_missing_morning_run_is_eligible_at_0715_and_started_claude_is_protected(tmp_path, monkeypatch):
+    from datetime import datetime
+    helper = codex_cloud.helper
+    monkeypatch.setattr(helper, "TREE", tmp_path)
+    class Clock(datetime):
+        moment = NOW.replace(hour=7, minute=14)
+        @classmethod
+        def now(cls, tz=None):
+            return cls.moment
+    monkeypatch.setattr(helper, "datetime", Clock)
+    assert helper.cloud_pending()
+    Clock.moment = NOW.replace(hour=7, minute=15)
+    assert not helper.cloud_pending()
+    write_json(helper.run_file(), {"started": NOW.replace(hour=7, minute=0).isoformat()})
+    assert helper.cloud_running()
+    Clock.moment = NOW.replace(hour=10, minute=0)
+    assert not helper.cloud_running()
 
 
 def test_authorized_recovery_preserves_attempt_limit_and_is_consumed_once():
