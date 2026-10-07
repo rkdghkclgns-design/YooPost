@@ -1774,5 +1774,21 @@
    "https://forum.inderes.com/t/sensofusion-suunnittelee-listautumista/82660?page=2&tl=en"
   ],
   "draft_id": "20261007_100353_7"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🤖 Sierra Personal Agent Protocol 총정리: 개인 AI 에이전트의 기업 연결과 권한 설계",
+  "topic": "Introducing Personal Agent Protocol (Sierra, 2026-10-06)",
+  "category": "AI 도구",
+  "source_url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/sierra-personal-agent-protocol-ai.html"
+  },
+  "sources": [
+   "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "https://thenextweb.com/news/personal-agent-protocol-sierra-meta",
+   "https://www.cmswire.com/contact-center/genesys-joins-sierra-meta-on-open-standard-for-personal-ai-agents-01/"
+  ],
+  "draft_id": "20261007_102429_2"
  }
 ]
