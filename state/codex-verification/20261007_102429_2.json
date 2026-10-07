@@ -1,0 +1,149 @@
+{
+ "claims": [
+  {
+   "claim": "Sierra는 2026년 10월 6일 Personal Agent Protocol 개발 구상을 발표했다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 페이지 발표일과 본문 확인."
+  },
+  {
+   "claim": "Personal Agent Protocol은 개인 에이전트와 기업의 상호작용을 정의하는 공개 표준 개발 구상이다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 발표 본문의 open standard 및 개발 중이라는 표현 확인."
+  },
+  {
+   "claim": "Meta와 Sierra가 함께 개발한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 개발 주체 확인."
+  },
+  {
+   "claim": "Genesys가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "Instinct가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "Rocket가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "Shopify가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "Stripe가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "Walmart가 Personal Agent Protocol 개발에 참여한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 industry partners 목록 확인. Instinct는 참여 예정이라는 후속 문장도 확인."
+  },
+  {
+   "claim": "고객이 에이전트 접근 권한을 선택하고 기업이 허용 행동 범위를 정한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. How it works의 원칙 확인; 구현 완료가 아닌 발표 설계로 표현."
+  },
+  {
+   "claim": "고객이 읽기 전용 또는 쓰기 접근을 선택한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 설계의 read-only or write access 확인."
+  },
+  {
+   "claim": "발표문은 OAuth 기반 세션을 설명하며 OAuth를 접근 권한 부여 표준으로 소개한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. built on OAuth 및 standard for authorizing access 확인."
+  },
+  {
+   "claim": "기업 연결 경로는 웹사이트·API·기업 자체 에이전트로 설명된다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 세 경로 확인. API의 별도 용어 풀이를 삭제해 검증 범위를 명확히 함."
+  },
+  {
+   "claim": "API 연결 경로 예시로 MCP와 OpenAPI가 언급된다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 발표 API 항목 확인."
+  },
+  {
+   "claim": "v0.1 명세는 2026년 10월 후반 공개할 계획이다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": false,
+   "action": "수정. 공식 문구는 later this month로 월 후반을 특정하지 않음. 표와 설명을 2026년 10월 중 공개 계획으로 수정."
+  },
+  {
+   "claim": "참조 구현 공개는 향후 계획이다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. What comes next의 publish a reference implementation 계획 확인."
+  },
+  {
+   "claim": "세밀한 권한는 향후 확장 구상으로 제시된다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. What comes next의 could 표현 확인; 현재 기능으로 단정하지 않음."
+  },
+  {
+   "claim": "푸시 알림는 향후 확장 구상으로 제시된다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. What comes next의 could 표현 확인; 현재 기능으로 단정하지 않음."
+  },
+  {
+   "claim": "결제 확장는 향후 확장 구상으로 제시된다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. What comes next의 could 표현 확인; 현재 기능으로 단정하지 않음."
+  },
+  {
+   "claim": "공식 본문의 개념도는 개인 에이전트와 기업 연결 경로를 설명한다.",
+   "url": "https://sierra.ai/uk/blog/introducing-personal-agent-protocol",
+   "confirmed": true,
+   "action": "유지. 공식 페이지 본문 이미지 링크 및 설명을 확인; 독립 기사의 동일 도표 설명과 대조."
+  },
+  {
+   "claim": "The Next Web는 2026년 10월 6일 해당 발표를 보도했다.",
+   "url": "https://thenextweb.com/news/personal-agent-protocol-sierra-meta",
+   "confirmed": true,
+   "action": "유지. 해당 매체 자체 기사 제목과 Published 날짜 확인. 연구 출처에는 페이지 표기 날짜를 유지."
+  },
+  {
+   "claim": "CMSWire는 2026년 10월 6일 해당 발표를 보도했다.",
+   "url": "https://www.cmswire.com/contact-center/genesys-joins-sierra-meta-on-open-standard-for-personal-ai-agents-01/",
+   "confirmed": true,
+   "action": "유지. 해당 매체 자체 기사 제목 및 OCT 6, 2026 표기 확인."
+  },
+  {
+   "claim": "The Next Web는 초기 명세 공개 계획과 결제의 향후 확장을 구별했다.",
+   "url": "https://thenextweb.com/news/personal-agent-protocol-sierra-meta",
+   "confirmed": true,
+   "action": "유지. 기사 도입 및 결제 확장을 future extension으로 설명하는 본문 확인."
+  },
+  {
+   "claim": "CMSWire는 고객센터와 기업 에이전트의 접점에 주목했다.",
+   "url": "https://www.cmswire.com/contact-center/genesys-joins-sierra-meta-on-open-standard-for-personal-ai-agents-01/",
+   "confirmed": true,
+   "action": "유지. Contact center stakes 및 Why Genesys Is at the Table 단락 확인."
+  }
+ ],
+ "note": "별도 사실 검증 단계에서 Sierra 공식 발표 전체 본문과 이미지 링크, The Next Web 및 CMSWire 기사 원문을 다시 열어 읽었다. 제목·도입·요약·본문·표·FAQ·맺음말의 반복 주장은 같은 사실로 묶었고 참여사와 향후 확장 항목은 각각 집계했다. 기사 발행일·논점은 해당 매체 자체 원문으로 검증했다. 월 후반을 특정한 표현은 공식 문구에 맞춰 월 중 공개 계획으로 수정했다. 가격·성능·법적 의무에 관한 단정은 원고에 없었다. 가상 사례·질문지·프롬프트·평가 제안 등 작성자의 의견과 자체 작업 설명은 외부 사실 집계에서 제외했다. 명세 공개 계획을 설치 가능 여부의 단정으로 확대하지 않았다. 원문 조회 실패나 핵심 근거 부족이 없어 skip.json 생성 조건에 해당하지 않는다. 이 기록은 사실 검증 결과이며 발행 승인이나 제품 실행 시험이 아니다."
+}
