@@ -1,0 +1,55 @@
+{
+ "topic": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+ "source_url": "https://arxiv.org/abs/2610.02150",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence — arXiv submission record",
+   "url": "https://arxiv.org/abs/2610.02150",
+   "publisher": "Lucheng Fu 외 / arXiv",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence — full text v1",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "publisher": "Lucheng Fu 외 / arXiv",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "RAG That Learns Over Time: Source Learning for LLM Agents",
+   "url": "https://dream.ischool.illinois.edu/blogs/rag_that_learns_over_time.html",
+   "publisher": "DREAM Lab, UIUC",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Source learning and persistent source models",
+   "url": "https://frontier.agentik-os.com/articles/source-learning-and-persistent-source-models",
+   "publisher": "Frontier / Agentik OS",
+   "published": "2026-10-05",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.02150v1/framework.png",
+   "page_url": "https://arxiv.org/html/2610.02150v1",
+   "caption": "Figure 2. 초기 출처 모델, 자기주도 학습, 작업 유도 학습과 답변 단계의 결합 구조.",
+   "credit": "Lucheng Fu 외, SourceLearn 논문 Figure 2"
+  }
+ ],
+ "factcheck": {
+  "claims": 60,
+  "confirmed": 60,
+  "removed": [],
+  "note": "2026-10-07 별도 사실 검증. 공식 arXiv 소개 페이지와 HTML v1을 새로 열어 제출 기록, §1–4.4, §5.1–5.2, §6, A.1–A.3, B.1–B.3 및 Table 1–3을 읽고 원고 전체와 대조했다. Figure 2 이미지 URL도 열었다. 중복 주장은 통합하여 외부 사실 60건 모두 확인했다. 가격·법적 사실 주장은 원고에 없다. 작업 상태·검증일·실험 재실행 여부·가상 활용 예시·독자 평가 제안은 claims에서 제외했다. 실험을 재실행하지 않았으며 논문이 보고한 결과를 확인한 것이다. 조회 실패나 삭제가 필요한 확인 불가 외부 주장은 없었다. 제목·도입의 최고 성능을 저자 보고로 명시하고 평가 조합 범위를 분명히 했으며 평균 개선의 비교 기준과 백엔드를 본문에 명시했다. 슬랙·블로그·git에 접속하지 않았고 승인·발행하지 않았다. 연구실 블로그와 독립 매체는 이번 단계에서 재조회하지 않았으며 기존 선정 기록은 이번 공식 원문 검증 집계에 포함하지 않았다."
+ },
+ "selection_note": "지정 카테고리 AI 논문 분석 유지. 공식 arXiv 페이지 표기 발표일 2026-10-01 (제출 시각 UTC 17:50:16, KST 2026-10-02 02:50:16); 기준 2026-09-30 이후 충족. 연구실 해설과 별개 회사 Agentik OS의 Frontier 해설 2026-10-05를 직접 읽어 기간 내 이슈화를 확인. 이 해설은 보도자료 재배포가 아닌 작성된 분석이며 자동 생성·검토 매체임을 고려해 기술 사실 근거로 쓰지 않음. 모든 발행·최근 원고 목록과 실패 후보에서 동일 제목·소식·대표 URL 중복 없음.",
+ "retrieval_note": "이번 별도 검증에서 공식 arXiv 소개·HTML 본문 및 Figure 2 이미지 조회 성공. 공식 원문 조회 실패 없음. 연구실 블로그·독립 매체 조회에 관한 기존 기록은 이전 작성 단계 기록이며 이번 단계 재조회 결과가 아님."
+}
