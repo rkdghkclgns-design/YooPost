@@ -1,0 +1,70 @@
+{
+ "topic": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation (Team Kandinsky, arXiv 2610.05608, 2026-10-04)",
+ "source_url": "https://arxiv.org/abs/2610.05608",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+   "url": "https://arxiv.org/abs/2610.05608",
+   "publisher": "arXiv",
+   "published": "2026-10-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Kandinsky 6.0 Video (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2610.05608v1",
+   "publisher": "arXiv",
+   "published": "2026-10-04",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hugging Face Papers: Kandinsky 6.0 Video",
+   "url": "https://huggingface.co/papers/2610.05608",
+   "publisher": "Hugging Face",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "kandinskylab/kandinsky-6 README.md (Project Updates 2026/10/06)",
+   "url": "https://raw.githubusercontent.com/kandinskylab/kandinsky-6/main/README.md",
+   "publisher": "Kandinsky Lab (GitHub)",
+   "published": "2026-10-06",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.05608v1/images/CrossDiTFusedBlock.png",
+   "page_url": "https://arxiv.org/html/2610.05608v1",
+   "caption": "Kandinsky 6.0 Video 모델 구조: 영상·오디오 스트림이 교차 어텐션으로 연결되는 트랜스포머 블록",
+   "credit": "Team Kandinsky, arXiv 2610.05608 (CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.05608v1/images/Training_pipeline.png",
+   "page_url": "https://arxiv.org/html/2610.05608v1",
+   "caption": "학습 단계 4가지: 사전학습·SFT(모델 수프)·RL·증류 파이프라인",
+   "credit": "Team Kandinsky, arXiv 2610.05608 (CC BY 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.05608v1/images/vabench_radar.png",
+   "page_url": "https://arxiv.org/html/2610.05608v1",
+   "caption": "RL 효과와 VABench 결과: 정규화한 VABench 레이더 차트",
+   "credit": "Team Kandinsky, arXiv 2610.05608 (CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 120,
+  "confirmed": 120,
+  "removed": [
+   "커뮤니티 쪽에서는 이처럼 코드와 가중치가 함께 풀린 점이 주목받은 것으로 보입니다. (근거 없는 추측 — HF Papers의 '#1 Paper of the day' 사실로 교체)",
+   "생성 영상이 실제 서비스 품질에서 어떤지 ... 향후 과제로만 언급됩니다. (논문에 없는 내용 — 향후 과제 문장으로 축소)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). arXiv abs(제출 v1 2026-10-04, 87명 공동저자, cs.CV, 초록)·arXiv HTML v1 전문(약 17만 자, 수식 alttext 포함 추출)·HF Papers(Published Oct 4, Submitted Oct 6, #1 Paper of the day, 132 upvotes, 저자 댓글 1.4B SR ×2/×2.25/×4)·GitHub README(github.com은 프록시 403이라 raw.githubusercontent.com 으로 직접 읽음, Project Updates 2026/10/06 확인 — url 을 실제 읽은 raw 주소로 교체)를 다시 열어 대조. WER 0.235→0.124(-47%)·Lite 0.179→0.127(-29%)·Harvard 0.251→0.180, 3B(2/0.6/0.4)·29B(19/5/5), 블록 32/60, 은닉 1792/4096·896/2048, 데이터 40M/7M/116k, SFT 11개 영역·4,663/7,686, GRPO K=10(Lite 8)·보상 8개, LoRA 199M 0.69%/47M 1.57%, π-Flow 10 NFE+Sim-LADD, 증류 51:49, VABench 표 11 값, SBS 6개 비교, Table 10 생성 시간, Table 7·9 메모리 모두 논문 원문과 일치. 수정: 한계 '네 가지'→결론의 세 가지 + 초해상도 워프 오차는 별도 평가로 구분, 16GB 프리셋 메모리(HD 13.7GiB 추가, Lite/Pro 동일), 생성 시간은 비증류 모델 기준 명시, MIT 라이선스 근거를 논문 초록으로(README 본문엔 라이선스 문구 없음), 기본 체크포인트 pro-distill 추가, VABench 해상도 조건 차이 추가, HF '오늘의 논문 1위' 명시. 이미지 3개 HTTP 200 image/png(5706x2046, 6826x2292, 900x900) 확인. 각 출처 published 가 페이지 날짜와 일치."
+ }
+}
