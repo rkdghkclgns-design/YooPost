@@ -1,0 +1,40 @@
+{
+ "topic": "AI Benefits at Work Unevenly Distributed (Gallup, 2026-10-06) — CapTech 소비자 조사와 함께 읽는 사용·혜택·통제의 차이",
+ "source_url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI Benefits at Work Unevenly Distributed",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "publisher": "Gallup",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CapTech Releases 2026 Consumer Research",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "publisher": "CapTech",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Polls show how AI is changing the workplace",
+   "url": "https://www.semafor.com/article/10/06/2026/polls-show-how-ai-is-changing-the-workplace",
+   "publisher": "Semafor",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Gallup 공식 본문의 차트 위치는 조회 결과에서 ###Embeddable###로 표시되어 도표 파일·캡션을 확인하지 못했다. 상단 이미지 링크는 제목용 이미지여서 제외했다. CapTech 공식 발표 본문에는 인용할 조사 도표·화면이 없으며 탐색 메뉴·관련 글 이미지뿐이다. Semafor에는 차트 이미지가 있으나 공식 본문 도표 파일을 확인한 것으로 취급하지 않았다.",
+ "factcheck": {
+  "claims": 34,
+  "confirmed": 34,
+  "removed": [],
+  "note": "2026-10-07 별도 검증에서 공식 발표 2곳과 독립 기사 원문을 재조회. 외부 주장 34개 모두 확인. 동일 주장 반복은 합산하지 않음. 삭제한 주장은 없으며 63%의 의미와 조사 대상 조건을 명확히 수정함. 주장별 URL·본문 근거·조치는 verification.json에 기록. 승인·발행은 수행하지 않음."
+ },
+ "date_note": "이번 재조회에서 Gallup 공식 페이지의 제목 위 날짜 L128 및 하단 L182가 모두 October 6, 2026임을 확인했다. CapTech 공식 페이지 L224·L230과 Semafor 기사 L107도 2026-10-06으로 표시됐다.",
+ "selection_note": "AI 인사이트 지정 유지. brief-6.md의 발행·최근 원고 목록에 대표 URL 및 Gallup·CapTech 소식 없음. 실패한 Riverbed 후보는 제외·보존. Semafor는 작성자 Morgan Chalfant가 표시된 독립 보도이며 보도자료 재배포처로 선택하지 않음."
+}
