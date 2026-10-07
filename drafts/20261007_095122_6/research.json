@@ -1,0 +1,60 @@
+{
+ "topic": "The Business-Ready AI Gap 2026 (Templafy, 2026-10-01) — AI 문서 재작업과 기업 업무 설계 해설",
+ "source_url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Templafy Report Finds 95% of Knowledge Workers Edit AI-Generated Documents Before They’re Business-Ready",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "publisher": "Templafy",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Beyond the First Draft: Closing the AI Productivity Gap",
+   "url": "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "publisher": "Templafy",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AI gains lost in translation",
+   "url": "https://londonlovestech.com/ai-gains-lost-in-translation/",
+   "publisher": "London Loves Tech",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "The AI Enterprise Performance Gap",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "publisher": "The Hackett Group",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "The Business-Ready AI Gap 2026",
+   "url": "https://www.templafy.com/guide_whitepaper/the-business-ready-ai-gap-2026/",
+   "publisher": "Templafy",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표의 대표 이미지는 보고서 홍보용 표지이며 본문 인용에서 제외했습니다. 공동창업자 사진도 분석 내용을 설명하는 화면·도표가 아니므로 제외했습니다. 공식 해설·보고서 소개 페이지·Hackett 본문에서 인용할 적합한 실증 도표나 제품 화면을 확인하지 못했습니다. 보고서 소개는 양식 제출 방식이며 전체 PDF를 읽었다고 주장하지 않습니다.",
+ "factcheck": {
+  "claims": 21,
+  "confirmed": 21,
+  "removed": [
+   "공개 출처에서 직접 대조하지 않은 일반 정의: 에이전트(agent, 목표에 따라 작업을 진행하는 AI 시스템). 제품·설문 사실에 해당하지 않는 보조 설명이므로 생략했습니다."
+  ],
+  "note": "2026-10-07 별도 사실 검증 세션에서 S1·S2·S4 공식 공개 본문과 S3 기사, S5 보고서 소개 페이지를 웹 도구로 다시 열어 읽었습니다. 제목·도입·요약·본문·표·박스·FAQ·맺음말의 반복 주장은 통합했습니다. 외부 사실 21개를 확인했으며 가격·법적 효력·제품 성능 보장 주장은 없습니다. 공식 발표의 설문 응답 및 업체 해설을 확인한 것으로 원자료나 응답의 진실성까지 독립 검증한 것은 아닙니다. 전체 보고서 PDF는 열람하지 않았습니다. 작성자의 비교 실험 제안·가상 사례·해석과 실행 상태는 claims에서 제외했습니다. 95%에서 수정 종류별 비중을 추론하지 않도록 문장을 수정하고, 48%의 방법론 설명을 공개 자료 범위로 한정했습니다. 공식 URL 조회 실패나 핵심 근거 부족은 없었으므로 skip.json을 생성하지 않았습니다. 승인·발행·다른 주제 작성은 수행하지 않았습니다. 확인 불가하여 삭제한 외부 사실은 없으며, 출처 없는 에이전트 일반 정의는 생략했습니다."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791273270841789",
+  "kind": "all"
+ }
+}
