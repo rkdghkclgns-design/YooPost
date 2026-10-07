@@ -1,0 +1,9 @@
+{
+ "category": "AI 도구",
+ "reason": "다른 주제 재작성 2회 후 보류: AI 도구 지정 및 2026-10-04 이후 발표 조건을 유지해 기존 제외 후보와 다른 세 후보를 조사했습니다. Together Link는 공식 changelog에 2026-10-01로 기록돼 기간 조건을 확정하지 못해 제외했습니다. Bubble Agent 2·MCP는 공식 포럼 원문 open 조회가 not accessible / Internal Error로 실패했습니다. 마지막 후보 Perplexity는 2026-10-05 changelog 본문을 읽었으나 핵심 Automations 상세 공식 원",
+ "at": "2026-10-07T09:45:49+09:00",
+ "request": {
+  "id": "C0C50SP7VV5-1791273270841789",
+  "kind": "all"
+ }
+}
