@@ -1964,5 +1964,25 @@
    "https://wset.com/news/nation-world/openais-chatgpt-for-teens-presents-unacceptable-risk-says-external-safety-report-common-sense-media-school-work"
   ],
   "draft_id": "20261008_073516_4"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🔒 PoeLLM 악성코드: 시(詩)로 C2를 숨기고 AI 서버 수천 대 감염, 점검 총정리",
+  "topic": "Canto Incognito: Tracking the PoeLLM malware (Lumen Black Lotus Labs)",
+  "category": "AI 보안",
+  "source_url": "https://www.lumen.com/blog/en-us/canto-incognito-tracking-the-poellm-malware",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/poellm-c2-ai.html"
+  },
+  "sources": [
+   "https://www.lumen.com/blog/en-us/canto-incognito-tracking-the-poellm-malware",
+   "https://www.bleepingcomputer.com/news/security/poellm-malware-infects-exposed-ai-servers-in-cryptomining-attacks/",
+   "https://www.theregister.com/security/2026/10/07/poetry-is-the-new-ai-security-threat-as-poellm-malware-infects-3k-servers/5301672",
+   "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-rce-cve-2026-42271-20260609/",
+   "https://github.com/advisories/GHSA-v4p8-mg3p-g94g",
+   "https://www.horizon3.ai/cve-2026-42271-chained-with-cve-2026-48710",
+   "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+  ],
+  "draft_id": "20261008_074344_5"
  }
 ]
