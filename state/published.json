@@ -1858,5 +1858,21 @@
    "https://thenextweb.com/news/embeddinggemma-2-on-device-europe"
   ],
   "draft_id": "20261007_145210_1"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "📊 Gallup AI 업무 혜택 총정리: 63%가 보고한 속도 향상과 도입 격차",
+  "topic": "AI Benefits at Work Unevenly Distributed (Gallup, 2026-10-06) — CapTech 소비자 조사와 함께 읽는 사용·혜택·통제의 차이",
+  "category": "AI 인사이트",
+  "source_url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gallup-ai-63.html"
+  },
+  "sources": [
+   "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "https://www.semafor.com/article/10/06/2026/polls-show-how-ai-is-changing-the-workplace"
+  ],
+  "draft_id": "20261007_145945_6"
  }
 ]
