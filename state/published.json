@@ -1790,5 +1790,22 @@
    "https://www.cmswire.com/contact-center/genesys-joins-sierra-meta-on-open-standard-for-personal-ai-agents-01/"
   ],
   "draft_id": "20261007_102429_2"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🧠 SourceLearn 논문 분석: 13/15 최고 성능 보고, 근거와 한계 총정리",
+  "topic": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.02150",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/sourcelearn-1315.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.02150",
+   "https://arxiv.org/html/2610.02150v1",
+   "https://dream.ischool.illinois.edu/blogs/rag_that_learns_over_time.html",
+   "https://frontier.agentik-os.com/articles/source-learning-and-persistent-source-models"
+  ],
+  "draft_id": "20261007_103108_3"
  }
 ]
