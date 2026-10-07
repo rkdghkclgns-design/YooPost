@@ -1,0 +1,251 @@
+{
+ "claims": [
+  {
+   "claim": "RoboTechnik이 2026-09-28 최종 공모가와 배정 결과를 공시했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 3쪽 제목 및 31쪽 서명·날짜"
+  },
+  {
+   "claim": "최종 공모가는 H주당 HK$436.00이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2~3쪽 Final Offer Price; 제목·요약·본문·표·FAQ의 반복은 통합"
+  },
+  {
+   "claim": "초과배정옵션 행사 전 기본 공모 물량은 11,876,000 H주다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 3쪽 Offer Shares"
+  },
+  {
+   "claim": "최종 홍콩 공모 물량은 1,187,600 H주다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 3·5쪽"
+  },
+  {
+   "claim": "초과배정옵션 행사 전 최종 국제 공모 물량은 10,688,400 H주다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 3·5쪽"
+  },
+  {
+   "claim": "총조달액은 HK$5,177.9 million이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 4쪽 Gross proceeds"
+  },
+  {
+   "claim": "예상 상장비용 차감 후 순조달액은 HK$4,961.3 million이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 4쪽 Net proceeds"
+  },
+  {
+   "claim": "조달액·기본 공모 수치의 기준은 초과배정옵션 행사 전이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 3~4쪽; 옵션 행사 시 추가 순조달액 배분을 별도 설명"
+  },
+  {
+   "claim": "홍콩 공모 신청 수준은 8.65 times다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 5쪽 Subscription level"
+  },
+  {
+   "claim": "국제 공모 신청 수준은 5.97 times다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 5쪽 Subscription Level"
+  },
+  {
+   "claim": "소수 주주의 지분 집중으로 적은 거래량에도 H주 가격이 크게 움직일 수 있다는 경고가 있다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "경고 위치 표현을 첫머리에서 경고문으로 수정; 근거: PDF 3쪽 Warning"
+  },
+  {
+   "claim": "배정 요약 이미지 후보는 공시 PDF 5쪽의 홍콩·국제 공모 표다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: 직접 추출한 PDF 5쪽 두 표; 이미지 파일을 확보했다는 주장은 없음"
+  },
+  {
+   "claim": "가격 결정 공시의 날짜와 공모가 결정일은 2026-09-25다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 본문 및 서명 날짜"
+  },
+  {
+   "claim": "가격 결정 공시는 HK$436.00을 제시한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 Offer Price"
+  },
+  {
+   "claim": "공모규모 조정옵션은 미행사·소멸했으며 이후 행사할 수 없다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 Offer Size Adjustment Option"
+  },
+  {
+   "claim": "H주 거래 단위는 50주다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 board lots"
+  },
+  {
+   "claim": "공모가에는 중개수수료와 거래 관련 부담금이 포함되지 않는다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 exclusive of brokerage 및 세 부담금"
+  },
+  {
+   "claim": "가격 안정화 조치를 실시할 의무는 없다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 no obligation"
+  },
+  {
+   "claim": "가격 안정화 조치는 언제든 중단될 수 있다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 may be discontinued at any time"
+  },
+  {
+   "claim": "가격 안정화 조치를 실시한다면 2026-10-24까지 종료해야 한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "confirmed": true,
+   "action": "단순 종료 시점 표현을 조건부 종료 기한으로 명확화; 근거: PDF 1쪽 required to be brought to an end 및 종료 날짜"
+  },
+  {
+   "claim": "투자설명서 발행일은 2026-09-21이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 인쇄 날짜; S4 1쪽도 같은 날짜 명시"
+  },
+  {
+   "claim": "회사는 태양광 제조 솔루션과 SiPh 조립·검사 장비 사업을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 124쪽 사업 개요"
+  },
+  {
+   "claim": "SiPh는 실리콘 포토닉스(silicon photonics)의 약어다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 9쪽 개요 및 46쪽 용어집"
+  },
+  {
+   "claim": "회사는 SiPh 장비 시장을 AI와 고속 데이터 통신의 성장에 연결해 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 149쪽 사업 비교; 회사 설명으로 한정"
+  },
+  {
+   "claim": "자금 사용 계획 비중은 연구개발 약 20%다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "본문에도 approximately에 해당하는 약을 복원; 표와 일치; 근거: PDF 25~26쪽 Future Plans and Use of Proceeds"
+  },
+  {
+   "claim": "자금 사용 계획 비중은 생산능력 확대·납품 속도 개선 약 40%다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "본문에도 approximately에 해당하는 약을 복원; 표와 일치; 근거: PDF 25~26쪽 Future Plans and Use of Proceeds"
+  },
+  {
+   "claim": "자금 사용 계획 비중은 글로벌 판매·서비스망 약 10%다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "본문에도 approximately에 해당하는 약을 복원; 표와 일치; 근거: PDF 25~26쪽 Future Plans and Use of Proceeds"
+  },
+  {
+   "claim": "자금 사용 계획 비중은 전략적 투자·인수 약 20%다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "본문에도 approximately에 해당하는 약을 복원; 표와 일치; 근거: PDF 25~26쪽 Future Plans and Use of Proceeds"
+  },
+  {
+   "claim": "자금 사용 계획 비중은 운전자금·일반 기업 목적 약 10%다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "본문에도 approximately에 해당하는 약을 복원; 표와 일치; 근거: PDF 25~26쪽 Future Plans and Use of Proceeds"
+  },
+  {
+   "claim": "투자설명서는 태양광 부문 과잉설비 위험을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 25쪽 Risk Factors 요약"
+  },
+  {
+   "claim": "투자설명서는 SiPh 기술 변화·노후화 위험을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 25쪽 Risk Factors 요약"
+  },
+  {
+   "claim": "투자설명서는 인수 통합 실패 위험을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 25쪽 Risk Factors 요약"
+  },
+  {
+   "claim": "투자설명서는 고객 검수 시점에 따른 매출 인식 위험을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 25쪽 Risk Factors 요약"
+  },
+  {
+   "claim": "투자설명서는 손실 지속 가능성 위험을 설명한다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 25쪽 Risk Factors 요약"
+  },
+  {
+   "claim": "반기보고서 관련 공시일은 2026-09-30이다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 2쪽 서명 날짜"
+  },
+  {
+   "claim": "신규 상장회사인 RoboTechnik은 해당 반기보고서 요건의 적용 예외를 공시했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 newly listed issuer 및 Note to Rule 13.48(1)"
+  },
+  {
+   "claim": "회사는 2026년 6월 30일 종료 반기보고서를 별도로 작성·발행·송부하지 않는다고 공시했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "본문과 FAQ의 대상 반기를 명확화; 근거: PDF 2쪽 separately prepare, publish and/or send"
+  },
+  {
+   "claim": "관련 반기 재무정보와 비교 수치는 투자설명서에 포함됐다고 공시했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 2026-06-30 및 2025-06-30 비교 정보; 2쪽 자료 위치"
+  },
+  {
+   "claim": "회사는 상장규칙 13.48(1)의 주석에 따른 적용 예외로 설명했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 공시 근거; 독립적인 일반 법률 판단으로 확대하지 않음"
+  },
+  {
+   "claim": "공시는 기업지배구조 관련 설명과 다른 관련 의무를 위반하지 않는다는 요건을 제시했다.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "confirmed": true,
+   "action": "유지; 근거: PDF 1쪽 (ii)·(iii)"
+  },
+  {
+   "claim": "2026-09-29 RTHK의 Reuters 기반 기사가 RoboTechnik 홍콩 거래 개시와 공모를 다뤘다.",
+   "url": "https://newsprd.rthk.hk/rthk/en/component/k2/1871977-20260929.htm",
+   "confirmed": true,
+   "action": "유지; 근거: 페이지 날짜 2026-09-29 HKT 12:02 및 본문·말미 Reuters; 회사 공시와 별개의 보도"
+  }
+ ],
+ "note": "2026-10-07 별도 사실 검증. 제목·도입·요약·표·본문·FAQ·이미지 설명에서 외부 사실을 추출했고 동일 사실의 반복은 통합했다. S1·S2는 웹 도구에서 Internal Error가 반복됐으나 같은 공식 URL을 직접 HTTP GET하여 각각 200 application/pdf를 받았고, 메모리에서 PDF 텍스트를 추출해 실제 읽었다. 추출본은 source-S1.json·source-S2.json에 보존했다. 최종적으로 조회 불가한 공식 원문은 없다. S3는 해당 사업·용어·위험·자금 계획·날짜 부분, S4는 전체 본문, S5는 날짜와 기사 본문을 다시 읽었다. S3 전체 539쪽을 통독했다는 뜻은 아니다. 자금 비중의 약, 안정화 조치의 조건부 종료 기한, 반기 대상 기간을 명확화했다. 확인 불가한 외부 사실은 남지 않아 삭제는 없다. 문서 읽기 제안·해석·자체 작업 설명은 claims에서 제외했다. 대표 공시 날짜는 최신 기간 안이며 S3는 배경 자료다. 발행 승인·발행·다른 주제 재작성은 수행하지 않았다."
+}

@@ -57,24 +57,11 @@
   "20261007:daily:AI 공모주 분석": {
    "at": "2026-10-07T15:00:17+09:00",
    "count": 2,
-   "status": "writing"
+   "status": "done",
+   "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
   }
  },
- "lease": {
-  "owner": "37579115762-1",
-  "at": "2026-10-07T15:00:17+09:00",
-  "expires": "2026-10-07T17:00:17+09:00",
-  "task": {
-   "day": "20261007",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 공모주 분석",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: 지정 카테고리 AI 공모주 분석을 유지하고 2026-09-23~2026-10-07 기간 및 brief-7.md의 발행·최근 원고 목록을 대조했습니다. 기존 실패 후보 Roze AI·Accelevation·Iambic·DayOne·Primagrove·엘리스그룹은 재선정하지 않았습니다. 새 후보 Direct Drive Tech의 HKEX 신규상장 공식 목록 조회는 Timeout fetching으로 실패했습니다. 첫 대체 후보 Camsense의 2026-09-29 공모 배정 결과 PDF는 not",
-   "owner": "37579115762-1",
-   "at": "2026-10-07T15:00:17+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
