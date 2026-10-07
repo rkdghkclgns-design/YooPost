@@ -145,3 +145,9 @@ GitHub 예약 실행은 지연될 수 있으므로 정확히 30분 안에 시작
 - 워크플로별 취소·재요청을 합쳐 시간당 최대 6회로 제한하고, 반복 대기 시 알린 뒤 횟수가 만료될 때까지 기다린다. 상태와 요청 시각을 API 호출 전에 저장하며, 같은 장애 알림은 24시간 동안 반복하지 않는다.
 - 새 plan은 이전 임대의 GitHub 실행이 종료됐는지 확인한 뒤 잠금을 해제한다. write 서버가 배정되지 않은 종료는 예약했던 작성 횟수를 복원한다. 실제 write 서버가 배정된 실패는 기존 4시간 대기·최대 2회 제한을 유지한다. 수동 요청은 대기 상태로 돌려 3시간 동안 거짓으로 작성 중이라고 표시하지 않는다.
 - 인증·권한 오류와 복구 진행은 기존 YooPost 알림 채널에 표시한다. `/health`의 `cloud_watchdog`는 바인딩 상태이며, 인증된 `/watchdog` GET에서 실제 점검 시각·워크플로 상태를 확인한다. POST는 동일한 점검을 한 번 실행한다. 실제 작성·발행 성공은 GitHub 실행 기록과 블로그 게시글로 별도 확인한다.
+
+운영 적용 시 `5d74aa8`의 [GitHub CI](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37554255302)가 성공했다.
+Cloudflare 버전 `f1e65b4b-b6a0-4ad6-ae03-eddb84c69506`을 100% 배포하고 5분 cron 등록을 API로 다시 확인했다.
+Windows Wrangler는 업로드 후 종료 코드 1을 반환해, 배포 API·운영 health를 확인한 뒤 누락된 cron을 같은 설정으로 등록했다.
+실제 점검이 오래 대기한 [원고 전송 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37512164399)을 취소했고,
+[후속 전송 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37554180079)의 서버 배정·성공과 Slack 원고 도착을 확인했다.
