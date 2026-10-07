@@ -1930,5 +1930,22 @@
    "https://portal.nousresearch.com/bench"
   ],
   "draft_id": "20261008_072126_2"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🎬 Kandinsky 6.0 Video 논문 분석: 소리까지 만드는 3B·29B 모델, RL로 발음 오류 47% 감소",
+  "topic": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation (Team Kandinsky, arXiv 2610.05608, 2026-10-04)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.05608",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/kandinsky-60-video-3b29b-rl-47.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.05608",
+   "https://arxiv.org/html/2610.05608v1",
+   "https://huggingface.co/papers/2610.05608",
+   "https://raw.githubusercontent.com/kandinskylab/kandinsky-6/main/README.md"
+  ],
+  "draft_id": "20261008_072853_3"
  }
 ]
