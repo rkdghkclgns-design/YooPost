@@ -1,0 +1,100 @@
+{
+  "topic": "Google and Constellation announce landmark agreement to bring 890 MW of new nuclear capacity to PJM grid (3,590 MW total, 2026-10-06)",
+  "source_url": "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Google and Constellation Announce Landmark Agreement to Bring 890 MW of New Nuclear Capacity to PJM Grid",
+      "url": "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html",
+      "publisher": "Constellation Energy",
+      "published": "2026-10-06",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Google enters massive 3.6-GW power deal with Constellation Energy (Reuters)",
+      "url": "https://finance.yahoo.com/energy/articles/google-enters-massive-3-6-103617066.html",
+      "publisher": "Yahoo Finance",
+      "published": "2026-10-06",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Google locks down 3.6 GW of power as AI data centers strain America's electric grid",
+      "url": "https://www.cryptopolitan.com/google-locks-down-3-6-gw-of-power/",
+      "publisher": "Cryptopolitan",
+      "published": "2026-10-06",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Google Signs 3.6-Gigawatt Power Deal With Constellation, Including Nuclear Uprates",
+      "url": "https://finance.biggo.com/news/f3b53816-83be-4274-8f82-b1bcbd35bc60",
+      "publisher": "BigGo Finance",
+      "published": "2026-10-06",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Google and Constellation Announce Landmark Agreement to Bring 890 MW of New Nuclear Capacity to PJM Grid as Part of Long-Term Power Deal",
+      "url": "https://www.googlecloudpresscorner.com/2026-10-06-Google-and-Constellation-Announce-Landmark-Agreement-to-Bring-890-MW-of-New-Nuclear-Capacity-to-PJM-Grid-as-Part-of-Long-Term-Power-Deal",
+      "publisher": "Google Cloud Press Corner",
+      "published": "2026-10-06",
+      "official": true
+    },
+    {
+      "id": "S6",
+      "title": "Constellation Energy inks 20-year power purchase agreement with Google",
+      "url": "https://dailyenergyinsider.com/news/54023-constellation-energy-inks-20-year-power-purchase-agreement-with-google/",
+      "publisher": "Daily Energy Insider",
+      "published": "2026-10-07",
+      "official": false
+    },
+    {
+      "id": "S7",
+      "title": "Google and Constellation Energy Partner to Add 890 MW Nuclear Capacity in PJM",
+      "url": "https://www.bicmagazine.com/industry/powergen/google-constellation-announce-agreement-nuclear-power/",
+      "publisher": "BIC Magazine",
+      "published": "2026-10-06",
+      "official": false
+    },
+    {
+      "id": "S8",
+      "title": "Constellation, Meta Sign 20-Year Deal for Clean, Reliable Nuclear Energy in Illinois",
+      "url": "https://www.constellationenergy.com/news/2025/constellation-meta-sign-20-year-deal-for-clean-reliable-nuclear-energy-in-illinois.html",
+      "publisher": "Constellation Energy",
+      "published": "2025-06-03",
+      "official": true
+    },
+    {
+      "id": "S9",
+      "title": "Constellation to Launch Crane Clean Energy Center, Restoring Jobs and Carbon-Free Power to The Grid",
+      "url": "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html",
+      "publisher": "Constellation Energy",
+      "published": "2024-09-20",
+      "official": true
+    },
+    {
+      "id": "S10",
+      "title": "PJM Auction Procures 134,479 MW of Generation Resources",
+      "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf",
+      "publisher": "PJM Interconnection",
+      "published": "2025-12-17",
+      "official": true
+    }
+  ],
+  "images": [],
+  "images_none_reason": "공식 보도자료 본문에는 대표(히어로) 이미지 외 본문 그림이 없고, 다른 출처에도 계약 내용을 보여 주는 도표가 없음",
+  "factcheck": {
+    "claims": 58,
+    "confirmed": 58,
+    "removed": [
+      "Meta 는 1월에 최대 6.6GW 의 원자력을, 3월에 Entergy Louisiana 로부터 가스와 배터리 기반 5.2GW 를 확보했고, Microsoft 는 2.67GW 의 가스 발전, Amazon 은 690MW 의 원자력에 합의했다 (BigGo 단독·출처 미표기, 표 포함)",
+      "미국 전력 사용량 4.195조 kWh(지난해)·4.288조 kWh(올해)·4.356조 kWh(내년) EIA 전망 (BigGo 단독, EIA 원문 미확인)",
+      "PJM 도매 전력 가격 41% 상승·Mid-Columbia 23% 하락 전망 (BigGo 단독·출처 미표기)",
+      "PJM 용량 가격이 2024년 이후 11배 넘게 올랐다 (Cryptopolitan 단독·출처 미표기)",
+      "Wilderness Society 의 연방 토지 AI 데이터센터 중단 촉구·행정부 허가 검토 (Cryptopolitan 단독)"
+    ],
+    "note": "Opus 검증: S1(Constellation 보도자료)·S5(Google 보도자료)·S2(Reuters/Yahoo)를 다시 열어 계약 규모·기간·호기 수·투자·일자리·인용문·AI for energy 를 대조. 2,700MW '발전원 미특정'은 보도자료가 아닌 Reuters 근거로 고침, OT '상당수 망 분리'는 보도자료 문구(many…air-gapped)로 맞춤, Dominguez 발언 보강, 주가 상승폭은 측정 시점(장 전 약 5% vs 장중 13%+)으로 설명. BigGo·Cryptopolitan 단독 수치(빅테크 비교·EIA·PJM 가격)는 빼고 Constellation 의 Microsoft(S9)·Meta(S8) 보도자료와 PJM 2027/28 경매 발표(S10)로 확인한 사실로 교체. 출처 published 를 페이지 날짜와 대조(S4 는 10-07 수정, 발행 10-06). 추가 매체 S6·S7."
+  }
+}
