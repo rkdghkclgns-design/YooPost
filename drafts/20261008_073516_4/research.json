@@ -1,0 +1,69 @@
+{
+ "topic": "ChatGPT for Teens Risk Assessment (Common Sense Media Institute, 2026-10-07) · TechCrunch 보도",
+ "source_url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "ChatGPT for Teens Risk Assessment",
+   "url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+   "publisher": "Common Sense Media Youth AI Safety Institute",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ChatGPT for Teens keeps teens talking, even during mental health crises",
+   "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI unveils ChatGPT for Teens with stronger guardrails, parental controls (Reuters)",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/08/18/openai-unveils-chatgpt-for-teens-with-stronger-guardrails-parental-controls",
+   "publisher": "The Star (Reuters)",
+   "published": "2026-08-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's ChatGPT for Teens presents 'unacceptable risk,' says external safety report",
+   "url": "https://wset.com/news/nation-world/openais-chatgpt-for-teens-presents-unacceptable-risk-says-external-safety-report-common-sense-media-school-work",
+   "publisher": "WSET (The National News Desk)",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://institute.commonsensemedia.org/sites/default/files/2026-10/chatgpt-teens-table-1_0.png",
+   "page_url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+   "caption": "평가는 어떻게 진행됐나요 — 테스트 계획 표 (Table 1)",
+   "credit": "Common Sense Media Institute"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://institute.commonsensemedia.org/sites/default/files/2026-10/chatgpt-teens-table-2.png",
+   "page_url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+   "caption": "부모 알림과 학습 모드 — 청소년 계정에서 ChatGPT 가 숙제를 끝까지 완성한 횟수(안전장치 전후)",
+   "credit": "Common Sense Media Institute"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://institute.commonsensemedia.org/sites/default/files/2026-10/chatgpt-teens-table-3.png",
+   "page_url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens",
+   "caption": "위기 대응의 변화 — 13세 연동 계정 위기 안내 성능 표 (Table 3)",
+   "credit": "Common Sense Media Institute"
+  }
+ ],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "OpenAI 는 ... 같은 날 자체 이용 데이터를 공개했습니다 (‘같은 날 공개’는 TechCrunch 에만 있어 '자체 데이터를 제시'로 바꿈 — 데이터 내용은 TechCrunch·TNND 로 확인)"
+  ],
+  "note": "Opus 검증: S1 평가 페이지(Updated Oct 7, 2026 — 최초 게시일 없음, published 를 갱신일로 기록), S2 TechCrunch(2026-10-07 11:15 PDT), S3 The Star/Reuters(2026-08-18), S4 WSET/TNND(2026-10-07, 추가) 를 다시 열어 주장 72개 대조. 수정: ADHD 과잉 안내 문장(전문가가 위기 자원 불필요로 본 ADHD 질문 30개 중 27개에 안내), 알림 3시간·3일은 출시 전 13세 연동 계정, 알림 테스트 대화 길이(5분 미만~45분, 2개 페르소나 60분), 연애 감정 문장(돌려줄 수 없다며 친구 관계는 열어 둠), 휴식 알림 3시간 테스트 문장, 연구소 정식 이름. I1 image_url 을 본문 Table 1 PNG(1182x1088)로 채움, I2 1314x556·I3 1308x538 확인(모두 480px 이상)."
+ }
+}
