@@ -1,0 +1,75 @@
+{
+ "topic": "RoboTechnik ANNOUNCEMENT OF FINAL OFFER PRICE AND ALLOTMENT RESULTS (2026-09-28)",
+ "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "ANNOUNCEMENT OF FINAL OFFER PRICE AND ALLOTMENT RESULTS",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "publisher": "RoboTechnik / HKEXnews",
+   "published": "2026-09-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ANNOUNCEMENT OF OFFER PRICE",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092501125.pdf",
+   "publisher": "RoboTechnik / HKEXnews",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "GLOBAL OFFERING — Prospectus",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100017.pdf",
+   "publisher": "RoboTechnik / HKEXnews",
+   "published": "2026-09-21",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "EXEMPTION UNDER RULE 13.48(1) OF THE LISTING RULES REGARDING 2026 INTERIM REPORT",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093001717.pdf",
+   "publisher": "RoboTechnik / HKEXnews",
+   "published": "2026-09-30",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "RoboTechnik slips on debut as four test IPO market",
+   "url": "https://newsprd.rthk.hk/rthk/en/component/k2/1871977-20260929.htm",
+   "publisher": "RTHK / Reuters",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801977.pdf",
+   "page_number": 5,
+   "caption": "공식 배정 결과 5쪽의 홍콩·국제 공모 배정 요약 표. PDF 해당 페이지를 인용 이미지 후보로 기록했습니다.",
+   "credit": "RoboTechnik Intelligent Technology Co., Ltd. / HKEXnews",
+   "status": "candidate",
+   "verification_note": "별도 검증에서 PDF 5쪽 두 배정 요약 표 텍스트 확인. 이미지 후보이며 렌더링 파일은 미확보."
+  }
+ ],
+ "factcheck": {
+  "claims": 41,
+  "confirmed": 41,
+  "removed": [],
+  "note": "2026-10-07 별도 사실 검증. 제목·도입·요약·표·본문·FAQ·이미지 설명에서 외부 사실을 추출했고 동일 사실의 반복은 통합했다. S1·S2는 웹 도구에서 Internal Error가 반복됐으나 같은 공식 URL을 직접 HTTP GET하여 각각 200 application/pdf를 받았고, 메모리에서 PDF 텍스트를 추출해 실제 읽었다. 추출본은 source-S1.json·source-S2.json에 보존했다. 최종적으로 조회 불가한 공식 원문은 없다. S3는 해당 사업·용어·위험·자금 계획·날짜 부분, S4는 전체 본문, S5는 날짜와 기사 본문을 다시 읽었다. S3 전체 539쪽을 통독했다는 뜻은 아니다. 자금 비중의 약, 안정화 조치의 조건부 종료 기한, 반기 대상 기간을 명확화했다. 확인 불가한 외부 사실은 남지 않아 삭제는 없다. 문서 읽기 제안·해석·자체 작업 설명은 claims에서 제외했다. 대표 공시 날짜는 최신 기간 안이며 S3는 배경 자료다. 발행 승인·발행·다른 주제 재작성은 수행하지 않았다.",
+  "status": "verified"
+ },
+ "selection": {
+  "category": "AI 공모주 분석",
+  "window_start": "2026-09-23",
+  "window_end": "2026-10-07",
+  "representative_published": "2026-09-28",
+  "background_source_note": "S3는 기간 밖 배경 투자설명서이며 최신성 판단에는 사용하지 않았습니다.",
+  "duplicates_checked": "brief-7.md의 전체 발행 및 최근 30일 원고 목록과 대조했고 RoboTechnik 같은 소식·대표 원문은 발견하지 못했습니다. task.json.reason에 언급된 실패 후보들은 제외했습니다.",
+  "rejected_candidates_file": "candidates 배열은 비어 있었습니다."
+ },
+ "reading_note": "별도 검증에서 공식 URL 원문을 다시 읽음. S1은 1~6·30~31쪽, S2는 1~2쪽, S3는 발행일·사업 개요·용어집·위험 요약·자금 계획·AI 사업 연결 부분, S4는 전체 2쪽, S5는 기사 날짜·본문·Reuters 표기를 확인함. S1 PDF 5쪽 표의 내용은 확인했으며 이미지 파일 저장이나 시각적 스크린샷 검증은 수행하지 않음."
+}
