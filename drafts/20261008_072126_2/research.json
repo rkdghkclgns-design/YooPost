@@ -1,0 +1,65 @@
+{
+ "topic": "Nous Research Hermes for Businesses와 9천만 달러 시리즈 B (A Note on Our Fundraise)",
+ "source_url": "https://nousresearch.com/a-note-on-our-fundraise",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "A Note on Our Fundraise",
+   "url": "https://nousresearch.com/a-note-on-our-fundraise",
+   "publisher": "Nous Research",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
+   "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Nous Research (홈페이지 소식 목록: Series B 10월 7일·Hermes Index 10월 6일)",
+   "url": "https://nousresearch.com/",
+   "publisher": "Nous Research",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hermes Agent Documentation",
+   "url": "https://hermes-agent.nousresearch.com/docs",
+   "publisher": "Nous Research",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Hermes Business and Enterprise",
+   "url": "https://portal.nousresearch.com/business",
+   "publisher": "Nous Research",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Hermes Index",
+   "url": "https://portal.nousresearch.com/bench",
+   "publisher": "Nous Research",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 글(S1)의 그림은 머리 그림 하나뿐이고 TechCrunch(S2) 본문에는 2025년 DeepHermes 대표 사진 외에 도표·스크린샷이 없습니다. Business 페이지(S5)의 그림은 흑백 만화풍 장식 일러스트(대체 텍스트 없음)로 기능을 설명하지 않고, 문서(S4)·Hermes Index(S6)는 글자·표 위주라 본문에 넣을 관련 그림이 없습니다.",
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 47,
+  "removed": [
+   "내비게이션의 'Hermes Pro' 항목도 설명이 비어 있습니다 (⚠️ 박스) — 페이지의 #hermes-pro 링크는 'For Enterprise' 메뉴이고 설명('Your collective wisdom frontier model')도 있어 사실과 다름",
+   "표 '아직 확인되지 않은 것'의 'Hermes Pro의 구체적 내용' — 같은 이유로 빼고 S5에 없는 '보안 인증·감사 기능 같은 세부 보안 구조'로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S6 을 2026-10-08 KST 에 curl 로 다시 열어 본문 대조. S1 페이지에는 'October 2026'만 표시되지만 article:published_time 메타가 2026-10-07T15:00Z 이고 S3 홈페이지 소식 목록(Series B 발표 Oct 7, 2026)·S2(2026-10-07 13:48 PDT, datePublished 동일)와 일치해 published 2026-10-07 유지. S6 Hermes Index 페이지에는 날짜가 없어 published 를 비우고 10월 6일 공개는 S3 소식 목록(Oct 6, 2026)으로 확인. S4·S5 도 페이지에 날짜 없음(빈 값 유지). 기업가치 15억 달러·주도 Robot Ventures·누적 1억 5,800만 달러·WSJ 인용 연환산 매출 3,600만 달러(9월 중순)·연말 1억 달러 기대는 S2(TechCrunch)에서만 확인되며 원고에 매체 보도로 표기됨. 시리즈 B 명칭은 S2 와 S3(홈페이지 소식)에서 확인. 9천만 달러·투자자 명단·2,400만 복제·토큰 2.5%·2월 MIT 공개·Hermes for Businesses 방향은 S1. 설치 명령·기능 표는 S4, Business/Enterprise 표는 S5 FAQ, Hermes Index 표 6행·pass@1·잠정(*) 표기는 S6 와 일치. 고친 것: 'Hermes Pro' 잘못된 서술 삭제, '시스템 요구사항' 표현을 문서 문구(설치 가이드·Platform Support)에 맞게 수정(본문·FAQ), 시리즈 B 근거에 사이트 소식 목록 추가, Hermes Index 공개일 근거 명시, 강조 없는 문단 2개에 강조 추가. 인용 이미지: S1 머리 그림·S5 장식 일러스트·S2 대표 사진을 직접 열어 본 결과 본문 관련 그림 없음 → images_none_reason 보완. EGRESS_BLOCKED 출처 없음."
+ }
+}

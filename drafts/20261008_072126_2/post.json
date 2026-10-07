@@ -1,0 +1,388 @@
+{
+ "title": "🤖 Nous Research Hermes 에이전트 기업용 공개: 9천만 달러 투자·설치 가이드 총정리",
+ "category": "AI 도구",
+ "intro": "안녕하세요! 2026년 10월 7일, AI 연구 기업 Nous Research(노스 리서치)가 9천만 달러(약 $90 million) 규모의 시리즈 B 투자 유치와 함께 기업용 에이전트 서비스인 'Hermes for Businesses'를 내놓겠다고 밝혔습니다. 이 회사가 만든 오픈소스 AI 에이전트 'Hermes Agent'는 스스로 기술(스킬)을 만들어 쓰고 대화를 넘어 기억을 쌓는 도구로, 회사 측은 복제 횟수가 2,400만 회를 넘었다고 주장합니다. 이번 발표로 개인이 쓰던 에이전트를 팀과 기업 환경으로 넓히는 길이 열렸습니다. 이 글에서는 발표 내용, 이미 공개된 Business·Enterprise 구성, 설치 방법, 같은 주에 공개된 Hermes Index 비교표, 그리고 주의할 점까지 차례로 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Nous Research가 2026년 10월 7일 시리즈 B로 9천만 달러를 유치했고, TechCrunch는 기업가치를 15억 달러로 보도했습니다.",
+  "기업용 서비스 'Hermes for Businesses'는 맞춤 AI 에이전트를 데이터 비공개 상태로 배포하는 것이 목표이며, 출시일과 가격은 공개되지 않았습니다.",
+  "오픈소스 Hermes Agent는 MIT 라이선스이고, 회사는 복제 2,400만 회·전 세계 토큰 사용량의 약 2.5%라고 밝혔습니다.",
+  "Nous Portal의 Business 안내에는 중앙 잔액·구성원별 지출 한도·팀 스킬 라이브러리, Enterprise에는 온프레미스·SSO가 적혀 있습니다.",
+  "Hermes Index에서는 Claude Opus 5.5가 63.31점으로 1위, 비용 대비로는 모델마다 큰 차이가 났습니다.",
+  "이 글에서 배울 것: Hermes 에이전트의 기업용 발표 내용, 설치 명령, 기능 구성, 도입 전 확인할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Hermes 에이전트 기업용 발표 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Nous Research는 오픈소스 언어 모델과 에이전트를 만들어 온 AI 연구 기업입니다. 공식 글 'A Note on Our Fundraise'에 따르면 이번 투자에는 **NVIDIA, Microsoft의 M12, Samsung, Robot Ventures, Union Square Ventures, Y Combinator, Menlo Ventures** 등이 참여했고, 회사는 투자 규모를 '요즘 기준으로는 소박한 편'이라고 표현했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch는 같은 날 이 투자가 **9천만 달러 규모의 시리즈 B**이며 기업가치가 **15억 달러**라고 보도했습니다. 라운드는 Robot Ventures가 이끌었고, 누적 투자액은 1억 5,800만 달러라고 전했습니다. 기업가치와 누적 투자액은 공식 글에는 없고 TechCrunch 보도에서 확인되는 수치입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 발표의 핵심은 돈보다 방향입니다. 공식 글은 'AI 시스템을 쓰는 사람이 그것을 통제해야 한다'는 원칙을 개인에서 기업으로 넓히겠다고 밝혔고, 그 결과물이 **Hermes for Businesses**입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용",
+      "근거"
+     ],
+     "rows": [
+      [
+       "발표일",
+       "2026-10-07",
+       "Nous Research 사이트 소식 목록·TechCrunch"
+      ],
+      [
+       "투자 규모",
+       "9천만 달러(시리즈 B)",
+       "공식 글·사이트 소식 목록·TechCrunch"
+      ],
+      [
+       "기업가치",
+       "15억 달러",
+       "TechCrunch"
+      ],
+      [
+       "주도 투자자",
+       "Robot Ventures",
+       "TechCrunch"
+      ],
+      [
+       "누적 투자액",
+       "1억 5,800만 달러",
+       "TechCrunch"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 기업가치 수치 확인",
+     "text": "기업가치와 누적 투자액은 매체 보도 수치입니다. Nous Research의 공식 글은 투자자 명단과 9천만 달러만 직접 밝히고 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🏢 Hermes for Businesses는 무엇이 달라지나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "TechCrunch에 따르면 Hermes for Businesses는 기업이 **맞춤형 AI 에이전트**를 배포해 여러 단계로 이어지는 업무를 처리하게 하면서 데이터를 비공개로 안전하게 유지하도록 돕는 서비스입니다. 다만 기사에는 **가격과 구체적인 제공 시점이 없습니다**."
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 글에 적힌 방향은 **세 가지**입니다. 첫째, 비용과 성능 목표에 맞춰 모델을 고르도록 안내합니다. 둘째, 기존 직원들로 회사 내부 지식 기반을 쌓도록 돕습니다. 셋째, 안전하고 비공개적으로 AI 사용을 늘리는 방법으로 소개됩니다. 공식 글도 출시 날짜는 밝히지 않았습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이미 Nous Portal에는 **Business**와 **Enterprise** 안내 페이지가 있어 현재 모습을 엿볼 수 있습니다. 다만 이 페이지가 'Hermes for Businesses' 발표와 같은 상품의 최종 형태인지는 확인되지 않으므로, 아래 내용은 페이지에 적힌 현재 설명으로만 읽어야 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "Portal 페이지에 적힌 내용"
+     ],
+     "rows": [
+      [
+       "Business",
+       "중앙 잔액 하나로 팀 비용 충당, 구성원별 지출 한도, 구성원마다 호스팅 에이전트 제공"
+      ],
+      [
+       "Business 공유",
+       "구성원이 만든 스킬이 팀 라이브러리에 모여 모두의 에이전트가 사용"
+      ],
+      [
+       "Business 모델",
+       "Nous 추론 API의 모든 모델과 자체 제공자 키"
+      ],
+      [
+       "Business 데이터",
+       "팀마다 Nous 인프라 위 격리된 테넌트"
+      ],
+      [
+       "Enterprise",
+       "온프레미스 또는 프라이빗 클라우드, 맞춤 배포·SSO·SLA·온보딩, 문의는 이메일"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 두 설명을 섞지 마세요",
+     "text": "Portal의 Business 페이지에는 가격표와 플랜 단계가 없습니다. 가격이나 한도 수치는 공식 안내가 나오기 전까지 확인된 것이 없습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙️ Hermes Agent 공식 기능 정리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Hermes Agent는 2월에 **MIT 라이선스**로 공개된 오픈소스 에이전트입니다. 공식 문서에 따르면 사용 경험에서 스킬을 만들고 쓰는 중에 개선하는 **학습 루프**를 갖추고 있으며, 세션을 넘어 이어지는 영구 기억과 사용자 모델링(Honcho)을 지원합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "연결 범위도 넓습니다. 모델 제공자는 Nous Portal, OpenRouter, OpenAI 또는 호환 엔드포인트를 쓸 수 있고, 하나의 게이트웨이로 **Telegram, Discord, Slack, WhatsApp, Signal을 포함한 20개 이상** 플랫폼에 연결됩니다. 스킬은 agentskills.io 공개 표준과 호환되며 커뮤니티 Skills Hub가 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "기능",
+      "공식 문서 설명"
+     ],
+     "rows": [
+      [
+       "학습 루프",
+       "경험에서 스킬 생성, 사용 중 개선, 과거 세션 회상"
+      ],
+      [
+       "메모리",
+       "세션을 넘어 쌓이는 영구 기억과 사용자 모델링"
+      ],
+      [
+       "실행 환경",
+       "로컬, Docker, SSH, Daytona·Modal 등 서버리스"
+      ],
+      [
+       "자동화",
+       "내장 cron 일정과 연결된 플랫폼으로 전달"
+      ],
+      [
+       "도구",
+       "내장 도구 60개 이상, MCP 서버, 병렬 작업용 서브에이전트"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "회사는 Hermes Agent가 **2,400만 회 이상 복제**되었고 내부 추정으로 전 세계 AI 토큰 사용량의 **약 2.5%**를 차지한다고 밝혔습니다. 수천 명의 기여자가 참여했다는 설명도 있지만 모두 회사 주장이며 독립적으로 검증된 수치는 아닙니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 스킬이 쌓이는 방식",
+     "text": "Business 안내의 '팀 스킬 라이브러리'는 이런 스킬 개념을 팀 단위로 확장한 것으로 읽힙니다. 이는 문서 구성에 근거한 해석이며, 동작 방식의 세부 사항은 공개되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 Hermes Agent 설치·사용 가이드",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "설치는 공식 문서 기준으로 어렵지 않습니다. Windows나 macOS에서는 Hermes 웹사이트에서 **Hermes Desktop 설치 프로그램**을 내려받아 실행하면 되고, 명령줄만 쓰려면 아래 명령을 사용합니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# Linux / macOS / WSL2\ncurl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "# 네이티브 Windows (PowerShell)\niex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+    },
+    {
+     "type": "paragraph",
+     "text": "설치가 끝나면 아래 명령으로 시작합니다. 공식 문서에 따르면 이 한 번의 OAuth 로그인으로 **모델 하나와 도구 네 가지(웹 검색, 이미지 생성, TTS, 브라우저)**가 함께 설정됩니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "hermes setup --portal"
+    },
+    {
+     "type": "paragraph",
+     "text": "Android(aarch64) 기기는 별도의 **Termux APT 안내**를 따라야 합니다. 설치 프로그램이 하는 일과 데이터 위치는 설치 가이드에, 전체 지원 플랫폼은 플랫폼 지원 표(Platform Support)에 정리되어 있다고 문서는 안내합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 스크립트를 바로 실행하기 전에",
+     "text": "curl로 받은 스크립트를 곧바로 실행하는 방식은 편리하지만 내용을 확인하기 어렵습니다. 업무용 컴퓨터에서는 스크립트 내용을 먼저 열어 확인하고 격리된 환경에서 시험해 보는 편이 안전합니다. 이는 일반적인 보안 권고이며 공식 문서의 지시가 아닙니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 같은 주에 나온 Hermes Index 비교",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Nous는 사이트 소식 목록 기준 10월 6일 'Hermes Index'를 공개했습니다. 사이트 설명에 따르면 각 모델이 Hermes Agent 안에서 **Hermes Bench, TerminalBench 4, TerminalBench Science, SkillsBench** 네 묶음을 풀고, 점수는 네 평균, 비용은 작업당 평균 비용입니다. 모든 평가는 pass@1이며 별표(*) 항목은 잠정 값입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "순위",
+      "모델",
+      "Hermes Index",
+      "작업당 비용"
+     ],
+     "rows": [
+      [
+       "1",
+       "Claude Opus 5.5",
+       "63.31",
+       "$4.99*"
+      ],
+      [
+       "2",
+       "GPT 6 Astra",
+       "56.25",
+       "$11.61"
+      ],
+      [
+       "3",
+       "Claude Sonnet 5.5",
+       "53.14",
+       "$2.82*"
+      ],
+      [
+       "4",
+       "GPT 6 Sol",
+       "44.10",
+       "$2.23"
+      ],
+      [
+       "9",
+       "DeepSeek V4.1 Flash",
+       "36.91",
+       "$0.259"
+      ],
+      [
+       "14",
+       "Ling 3.0 Flash",
+       "21.56",
+       "$0.054"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "이 표는 **Nous가 자사 에이전트 위에서 직접 돌린 결과**입니다. 순위는 에이전트의 구성에 따라 달라질 수 있으므로 모델 자체의 절대 순위로 받아들이기보다, 기업이 모델을 고를 때 성능과 비용을 함께 비교하는 참고 자료로 보는 것이 좋습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 비용을 같이 보세요",
+     "text": "1위와 3위의 점수 차이는 약 10점이지만 작업당 비용은 4.99달러와 2.82달러로 다릅니다. 공식 글이 말한 '비용과 성능 목표에 따른 모델 선택'이 바로 이런 비교를 가리키는 것으로 보입니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠️ 한계와 도입 전 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 큰 불확실성은 **출시 시점과 가격**입니다. 공식 글과 TechCrunch 모두 Hermes for Businesses의 날짜와 요금을 밝히지 않았습니다. 매출 관련 수치도 있는데, TechCrunch가 월스트리트저널을 인용해 전한 바로는 9월 중순 기준 연환산 매출이 약 3,600만 달러이고 연말까지 1억 달러를 넘길 것으로 기대한다고 합니다. 회사가 직접 확인한 수치로 단정할 수는 없습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "또 하나는 보안 책임입니다. 에이전트가 파일, 터미널, 메신저에 접근하면 **권한 관리와 격리**가 핵심 과제가 됩니다. Business 안내가 격리된 테넌트와 구성원별 한도를 내세우는 것은 이런 우려에 대한 대응으로 보이지만, 세부 보안 구조는 해당 페이지에 적혀 있지 않습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 도입 체크리스트",
+     "text": "가격, 데이터 보관 위치, 감사 로그, 연결 가능한 계정 범위, SLA 조건은 현재 공개된 자료로 확인되지 않았습니다. 계약 전에 공식 담당자에게 문서로 확인하세요."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "확인된 것",
+      "아직 확인되지 않은 것"
+     ],
+     "rows": [
+      [
+       "9천만 달러 시리즈 B, 투자자 명단",
+       "Hermes for Businesses 출시일"
+      ],
+      [
+       "Business·Enterprise 안내 페이지의 구성",
+       "가격표와 플랜 단계"
+      ],
+      [
+       "Hermes Agent 설치 명령과 기능",
+       "보안 인증·감사 기능 같은 세부 보안 구조"
+      ],
+      [
+       "회사가 밝힌 2,400만 복제·2.5% 토큰",
+       "독립적 검증 자료"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 활용 시나리오",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공개된 기능만으로 그려 볼 수 있는 활용은 세 가지입니다. 첫째, 개발팀이 각자 쓰는 에이전트가 만든 스킬을 **팀 라이브러리**에 모아 반복 작업을 공유하는 방식입니다. 둘째, Slack이나 Telegram 같은 메신저로 에이전트에게 작업을 지시하고 결과를 받아 보는 방식입니다. 셋째, 내장 cron 일정으로 정기 보고서를 만들어 지정한 플랫폼으로 전달하는 방식입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "처음 시험해 볼 때는 개인 환경에서 **Hermes Desktop** 또는 설치 명령으로 시작하고, 팀 도입은 Business 페이지의 자체 설정(self-serve) 방식으로 작은 규모부터 비용 한도를 걸어 테스트하는 순서가 무난합니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "다음 Hermes Agent 작업을 시작해 줘.\n1) 매주 월요일 아침 지난주 이슈 목록을 요약해 팀 채널로 보내는 반복 작업을 제안해 줘.\n2) 필요한 도구와 권한을 목록으로 먼저 보여 주고, 내가 승인한 것만 사용해 줘.\n3) 작업 중 새로 만든 스킬이 있으면 이름과 설명을 알려 줘."
+    },
+    {
+     "type": "info",
+     "title": "💡 작은 범위부터",
+     "text": "에이전트에게 처음부터 넓은 권한을 주기보다, 읽기 전용 작업 한두 가지로 결과를 확인하는 것이 안전합니다. 이는 일반적인 도입 요령입니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Hermes for Businesses는 지금 쓸 수 있나요?",
+   "a": "공식 글은 이를 새 자금과 파트너로 만들고 제공하겠다고 밝혔을 뿐 출시 날짜를 적지 않았습니다. TechCrunch도 가격과 제공 시점을 밝히지 않았습니다. Nous Portal에는 Business와 Enterprise 안내 페이지가 이미 있으므로 현재 제공 범위는 그 페이지에서 확인하는 것이 좋습니다."
+  },
+  {
+   "q": "Hermes Agent는 무료인가요?",
+   "a": "공식 사이트와 글은 Hermes Agent가 MIT 라이선스 오픈소스라고 설명합니다. 다만 연결하는 모델 제공자의 비용이나 Nous Portal의 호스팅 요금은 별도일 수 있으며, 가격은 확인되지 않았습니다."
+  },
+  {
+   "q": "어떤 운영체제에서 설치할 수 있나요?",
+   "a": "공식 문서는 Windows와 macOS용 Hermes Desktop 설치 프로그램, Linux·macOS·WSL2용 명령, 네이티브 Windows용 PowerShell 명령, Android(aarch64)용 Termux 안내를 소개합니다. 지원 플랫폼 전체 목록은 문서의 플랫폼 지원 표에서 확인할 수 있습니다."
+  },
+  {
+   "q": "기업 데이터는 안전한가요?",
+   "a": "Business 안내는 팀마다 Nous 인프라 위의 격리된 테넌트를 쓴다고 설명하고, Enterprise는 온프레미스나 프라이빗 클라우드에서 돌릴 수 있다고 적었습니다. 하지만 구체적인 보안 인증이나 감사 기능은 해당 페이지에 나오지 않아 확인된 것이 없습니다."
+  },
+  {
+   "q": "Hermes Index 순위는 믿을 만한가요?",
+   "a": "Nous가 자사 에이전트 환경에서 직접 돌린 결과이고 일부는 잠정 값입니다. 모델 선택의 참고 자료로 볼 수 있지만, 자신의 업무로 직접 시험해 보는 것이 더 정확합니다."
+  }
+ ],
+ "closing": "지금까지 Nous Research의 시리즈 B 투자와 Hermes for Businesses, 그리고 Hermes Agent에 대해 알아보았습니다. 확인된 것은 9천만 달러 투자, 오픈소스 에이전트의 기능과 설치 방법, 그리고 Portal에 적힌 Business·Enterprise 구성입니다. 반대로 출시일, 가격, 세부 보안 구조는 아직 공개되지 않았습니다. 여러분도 한번 Hermes Agent를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "기업가치·매출 수치는 매체 보도이고, 가격과 제공 조건은 바뀔 수 있으니 Nous Research 공식 사이트에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "NousResearch",
+  "HermesAgent",
+  "HermesForBusinesses",
+  "AI에이전트",
+  "오픈소스AI",
+  "시리즈B",
+  "기업용AI",
+  "AI도구",
+  "에이전트설치",
+  "MITLicense",
+  "HermesIndex",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6"
+ ]
+}
