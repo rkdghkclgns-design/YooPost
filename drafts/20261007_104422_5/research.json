@@ -1,0 +1,37 @@
+{
+ "topic": "Hallucinating Credibility: China-Aligned TA419 Impersonates its Way into US AI Policy Circles",
+ "source_url": "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hallucinating Credibility: China-Aligned TA419 Impersonates its Way into US AI Policy Circles",
+   "url": "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy",
+   "publisher": "Proofpoint",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Chinese spies impersonate White House, Anthropic figures to phish AI policy experts",
+   "url": "https://www.helpnetsecurity.com/2026/10/02/china-aligned-ta419-phishing-ai-policy-experts/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.proofpoint.com/sites/default/files/inline-images/image-20260930124157-4.png",
+   "page_url": "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy",
+   "caption": "Proofpoint가 공개한 TA419의 AitM·BitB 피싱 페이지 예시(보고서 Figure 3).",
+   "credit": "Proofpoint"
+  }
+ ],
+ "factcheck": {
+  "claims": 17,
+  "confirmed": 17,
+  "removed": [],
+  "note": "2026-10-07 별도 사실 검증에서 Proofpoint 공식 원문 전체 분석 본문(공개일·Key Findings·Overview·Infection Chain·Recommendations·Figure 3)과 Help Net Security 기사 본문·날짜를 새로 열어 읽었다. 원고의 제목·도입·요약·문단·박스·표·FAQ·이미지 설명에 반복된 동일 외부 사실은 하나로 합쳤으며 고유 외부 주장 17건을 확인했다. 기존 verification.json의 확인 결과를 그대로 승인하지 않고 원문과 다시 대조했다. independent medium은 언론 매체가 아닌 별도의 확인 수단을 뜻하도록 본문·표·FAQ를 수정했다. 가격·성능·법적 사실·피해 규모·성공률에 관한 외부 주장은 원고에 없다. 필자의 점검 제안·해석·개별 침해 진단 불가 안내·작성 기준일과 자체 실행 및 검증 상태는 외부 사실 집계에서 제외했다. 공식 원문 조회 실패나 미확인 외부 주장은 없어 skip.json 생성 사유가 없다. 승인·발행·주제 교체는 수행하지 않았다."
+ }
+}
