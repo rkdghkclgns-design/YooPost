@@ -1,0 +1,352 @@
+{
+ "category": "AI 인사이트",
+ "claims": [
+  {
+   "id": "C01",
+   "claim": "Gallup 공식 페이지 표시일은 2026-10-06이다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L128, L182",
+   "location": "intro, research.sources",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C02",
+   "claim": "Gallup 발표는 미국 직원의 업무 AI 경험을 다룬다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L136-L147",
+   "location": "sections[0], sections[6], faq",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C03",
+   "claim": "AI 업무 혜택 질문 대상은 지난 1년간 최소 몇 번 업무 AI를 쓴 직원이다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L147",
+   "location": "sections[0], sections[4]",
+   "action": "공식 원문 L147 재확인 후 본문의 지난 1년·최소 몇 번 조건 보완"
+  },
+  {
+   "id": "C04",
+   "claim": "지난 1년간 업무 AI를 최소 몇 번 사용한 미국 직원 중 업무 속도 향상을 보고한 비율은 63%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "Gallup 본문 L140, L145, L147: 응답자 비율이며 직원 자기 평가; 혜택 질문 대상 조건.",
+   "location": "title, summary, sections[1], faq[0]",
+   "action": "63% 수치는 유지하되 제목을 응답자 비율로 명확화하고 summary·본문·FAQ에 대상 조건 보완"
+  },
+  {
+   "id": "C05",
+   "claim": "창의적 해결책 혜택 보고 비율은 56%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L140",
+   "location": "sections[1]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C06",
+   "claim": "흥미로운 업무에 쓸 시간 혜택 보고 비율은 47%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L140",
+   "location": "sections[1]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C07",
+   "claim": "업무 품질 향상 보고 비율은 46%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L140",
+   "location": "sections[1]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C08",
+   "claim": "혜택 결과는 직원 자기 평가이며 고용주 평가의 일치를 확인하지 않는다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L145",
+   "location": "sections[1], summary, faq[0], caveat",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C09",
+   "claim": "정기 사용은 매일 또는 매주 사용이다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L149",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C10",
+   "claim": "전체 직원의 주간 이상 업무 AI 사용률은 28%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L149",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C11",
+   "claim": "전체 직원의 업무 AI 미사용 응답률은 54%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L149",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C12",
+   "claim": "대졸 직원 정기 사용률은 40%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L152",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C13",
+   "claim": "비대졸 직원 정기 사용률은 17%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L152",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C14",
+   "claim": "관리자 정기 사용률은 37%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L152",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C15",
+   "claim": "개별 기여자 정기 사용률은 25%다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L152",
+   "location": "sections[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C16",
+   "claim": "AI 사용과 일자리 질의 관계에는 추가 연구가 필요하다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L157",
+   "location": "sections[4], faq[1]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C17",
+   "claim": "이미 일자리 질이 높은 집단과 AI 사용이 높은 집단이 겹쳐 원인·결과를 확정할 수 없다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L154-L157",
+   "location": "sections[4], faq[1]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C18",
+   "claim": "조사 수집 기간은 2026-01-26~2026-03-24다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L147",
+   "location": "sections[4], faq[4]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C19",
+   "claim": "전체 직원 표본은 15,482명이다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L147",
+   "location": "sections[4]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C20",
+   "claim": "AI 업무 혜택 질문의 응답자는 7,845명이다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L147",
+   "location": "sections[4]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C21",
+   "claim": "CapTech 공식 발표일은 2026-10-06이다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L224, L230",
+   "location": "intro, sections[3], research.sources",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C22",
+   "claim": "CapTech 연구의 응답자는 미국 성인 618명이다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L270",
+   "location": "sections[3], sections[6], faq",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C23",
+   "claim": "CapTech 수집 기간은 2026-07-20~2026-08-06이다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L270",
+   "location": "sections[3], faq[4]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C24",
+   "claim": "응답자는 다섯 시나리오의 무작위 일부를 평가했다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L270",
+   "location": "sections[0], sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C25",
+   "claim": "다섯 시나리오 모두 사용 의향이 신뢰보다 높았다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L230, L236",
+   "location": "summary, sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C26",
+   "claim": "대신 행동하는 AI 사용 의향은 47.5%다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L237",
+   "location": "sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C27",
+   "claim": "대신 행동하는 AI 신뢰는 27.9%다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L237",
+   "location": "sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C28",
+   "claim": "오류 수정 기능을 원하는 응답률은 55%다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L252",
+   "location": "sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C29",
+   "claim": "사람 검토 접근을 원하는 응답률은 48.5%다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L252",
+   "location": "sections[3]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C30",
+   "claim": "CapTech 수치는 시나리오 평가의 사용 의향이며 실제 서비스 재방문 측정이 아니다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L237, L270",
+   "location": "sections[3], faq[2]",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C31",
+   "claim": "Semafor는 2026-10-06 Gallup 업무 조사와 사용 편중을 보도했다.",
+   "source_id": "S3",
+   "url": "https://www.semafor.com/article/10/06/2026/polls-show-how-ai-is-changing-the-workplace",
+   "confirmed": true,
+   "evidence": "L107-L123",
+   "location": "sections[0], sections[6], research.sources",
+   "action": "Semafor 기사 원문 재조회 후 보도 존재·날짜 유지"
+  },
+  {
+   "id": "C32",
+   "claim": "Gallup은 직무마다 디지털 기기 접근과 AI 직접 활용 기회가 다르다고 설명한다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L150",
+   "location": "sections[2].blocks[1]",
+   "action": "공식 발표 본문의 조사 설명과 대조 후 유지"
+  },
+  {
+   "id": "C33",
+   "claim": "Gallup과 CapTech 발표는 특정 AI 모델의 정확도·가격 대비 성능·자동 실행 성공률 비교 벤치마크가 아니라 설문 결과를 다룬다.",
+   "source_id": "S1",
+   "url": "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+   "confirmed": true,
+   "evidence": "L140-L147: 직원 설문과 자기 평가. CapTech의 시나리오 설문은 별도 항목으로 기록.",
+   "location": "sections[6].blocks[4]",
+   "action": "공식 발표 본문의 조사 설명과 대조 후 유지"
+  },
+  {
+   "id": "C34",
+   "claim": "CapTech 발표의 연구는 AI 시나리오의 가치·신뢰·우려·통제·데이터 공유·비용·개인 및 업무 사용을 평가한 설문이다.",
+   "source_id": "S2",
+   "url": "https://www.captechconsulting.com/news/captech-releases-2026-consumer-research",
+   "confirmed": true,
+   "evidence": "L269-L270",
+   "location": "sections[0], sections[6].blocks[4]",
+   "action": "공식 발표 본문의 조사 설명과 대조 후 유지"
+  }
+ ],
+ "note": "2026-10-07 별도 사실 검증: policy.md·task.json·brief-6.md와 post.json 전체(제목·요약·표·박스·FAQ·맺음말 포함)를 읽고 Gallup·CapTech 공식 발표 및 Semafor 기사 원문을 다시 열어 대조했다. 기존 검증 숫자를 그대로 승인하지 않고 31개 기존 외부 주장과 누락된 3개 주장을 확인했다. 반복 주장은 하나로 묶었다. 가상 사례·원고의 제안·수치의 확대 해석을 경계하는 설명·상관관계와 인과관계의 개념 설명은 조사에서 발견한 추가 사실로 집계하지 않았다. 자체 실행·검증 단계 설명은 이 note에만 기록했다. 가격·모델 성능·법적 사실을 확정하는 추가 주장은 원고에 없다. 공식 원문 조회 실패나 미확인 외부 주장은 발견하지 않아 skip.json을 만들지 않았다. 주제 교체·승인·발행·Slack·git 접속은 수행하지 않았다.",
+ "corrections": [
+  {
+   "field": "post.title, post.summary[0], sections[0].blocks[0], sections[1].blocks[0], faq[0].a",
+   "action": "63%를 속도 개선 폭으로 오해하지 않도록 응답자 비율임을 명확화하고 지난 1년간 최소 몇 번 업무 AI를 사용한 미국 직원이라는 대상 조건을 보완."
+  }
+ ]
+}
