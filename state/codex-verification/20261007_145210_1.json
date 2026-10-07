@@ -1,0 +1,245 @@
+{
+ "claims": [
+  {
+   "claim": "2026-10-06 구글 딥마인드가 EmbeddingGemma 2를 공개했다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 날짜(2026-10-06)와 출시 문단, Google DeepMind 저자 소속."
+  },
+  {
+   "claim": "Apache 2.0 라이선스로 공개됐다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 출시 문단: commercially permissive Apache 2.0 license."
+  },
+  {
+   "claim": "텍스트·코드·이미지·영상·오디오를 공유 임베딩 공간으로 연결한다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 출시 문단: text, code, images, video, audio의 shared embedding space."
+  },
+  {
+   "claim": "임베딩은 자료를 비교할 숫자 표현으로 바꾸는 역할이다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 shared 768-dimensional vector space와 semantic similarity 설명."
+  },
+  {
+   "claim": "입력별 인코더 선택이 가능하다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Modular loading 및 config_kwargs 코드."
+  },
+  {
+   "claim": "텍스트·코드 구성은 270M 파라미터다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Key capabilities: 270M text/code."
+  },
+  {
+   "claim": "텍스트·시각 구성은 440M 파라미터다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Key capabilities: 440M text + vision."
+  },
+  {
+   "claim": "텍스트·오디오 구성은 570M 파라미터다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Key capabilities: 570M text + audio."
+  },
+  {
+   "claim": "전체 멀티모달 구성은 740M 파라미터다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Key capabilities: 740M full multimodal."
+  },
+  {
+   "claim": "기본 출력은 768차원이다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 Storage-efficient: 768 dimensions."
+  },
+  {
+   "claim": "MRL로 512·256·128차원으로 줄일 수 있다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 Storage-efficient: 512, 256, 128 dimensions."
+  },
+  {
+   "claim": "출력 벡터 저장 공간은 최대 6배 절감 가능하다는 구글 설명이다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 Storage-efficient: up to 6x storage reduction for local vector databases."
+  },
+  {
+   "claim": "다국어 MTEB v2 점수는 이전 61.15, 새 모델 61.36이다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Overall Evaluation Results (768d): MTEB multilingual v2, 61.36/61.15. 본문에 768차원 평가 조건 명시."
+  },
+  {
+   "claim": "코드 MTEB v1 점수는 이전 68.76, 새 모델 78.68이다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Overall Evaluation Results (768d): MTEB code v1, 78.68/68.76. 본문에 768차원 평가 조건 명시."
+  },
+  {
+   "claim": "모델 카드 평가 표는 전체 정밀도 체크포인트 결과다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Benchmark Results: all results use full-precision checkpoint."
+  },
+  {
+   "claim": "양자화한 Pixel 11 Pro의 텍스트 가중치 활성 RAM은 약 191MB다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1 Optimized for on-device performance: with quantization, Pixel 11 Pro, ~191MB active RAM for text-only weights."
+  },
+  {
+   "claim": "같은 조건의 전체 멀티모달 활성 RAM은 약 567MB다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: 같은 S1 문단: ~567MB for full multimodal model."
+  },
+  {
+   "claim": "가이드는 sentence-transformers v6.1.0 이상을 안내한다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Developer Guide: sentence-transformers v6.1.0 or later."
+  },
+  {
+   "claim": "설치 명령 pip install -U sentence-transformers[image,audio,video] transformers가 원문에 있다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Shell 코드의 설치 명령과 일치."
+  },
+  {
+   "claim": "SentenceTransformer와 google/embeddinggemma-2 모델 ID가 원문에 있다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Step 1 Python 코드의 import, 모델 ID, 생성 호출과 일치."
+  },
+  {
+   "claim": "검색 예시 질문은 SearchQuery, 문서는 Document를 사용한다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 Step 2: prompt_name=\"SearchQuery\" 및 \"Document\"."
+  },
+  {
+   "claim": "모델 카드는 float16 대신 bfloat16 또는 float32 실행을 안내한다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Numerical Precision: bfloat16 or float32; do not use float16."
+  },
+  {
+   "claim": "float16에서 NaN 또는 품질 저하 임베딩이 발생할 수 있다고 설명한다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Numerical Precision: float16 returns NaN or silently degraded embeddings."
+  },
+  {
+   "claim": "AI Edge Gallery에 Instant Media Search와 Video Moments Finder를 추가했다.",
+   "url": "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S3 Gallery 섹션: Today adding two interactive showcases와 두 이름."
+  },
+  {
+   "claim": "Instant Media Search는 자연어 또는 예시 이미지로 로컬 미디어를 검색한다.",
+   "url": "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S3 Instant Media Search: local media, natural language or example images."
+  },
+  {
+   "claim": "Video Moments Finder는 로컬 영상의 특정 장면을 검색하는 시연이다.",
+   "url": "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S3 Video Moments Finder: specific visual moments across local video recordings."
+  },
+  {
+   "claim": "모든 입력 종류는 8,192토큰 문맥 한도를 공유한다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Context Limits: single shared 8,192-token context window."
+  },
+  {
+   "claim": "기본 한도에서 이미지 최대 약 29개다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Context Limits: default 280 tokens per image, ~29 images."
+  },
+  {
+   "claim": "기본 한도에서 영상 최대 약 58프레임이다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Context Limits: default 140 tokens per frame, ~58 frames."
+  },
+  {
+   "claim": "오디오 최대 약 327초다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Context Limits: 25 tokens per second, ~327 seconds."
+  },
+  {
+   "claim": "입력 최대치는 텍스트 없는 단일 모달리티를 가정하고 혼합 입력은 같은 예산을 나눠 쓴다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Context Limits 주석: single modality with no accompanying text; mixed modalities share budget."
+  },
+  {
+   "claim": "100개 이상 언어를 지원하나 언어별 같은 성능은 보장하지 않는다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Limitations: supports 100+ languages; may not exhibit equal performance."
+  },
+  {
+   "claim": "사후 정렬·안전 튜닝·출력 수준 조정을 수행하지 않는다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Ethics & Safety: no post-training alignment, safety tuning, output-level moderation."
+  },
+  {
+   "claim": "개발자에게 애플리케이션의 검색 필터링과 공정성 평가를 안내한다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Ethics & Safety: application-level safeguards, retrieval filtering and fairness testing."
+  },
+  {
+   "claim": "Android ML Kit 제공은 향후 몇 주 안의 계획이다.",
+   "url": "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S3: In the coming weeks, Android service accessible through ML Kit."
+  },
+  {
+   "claim": "임베딩을 생성해 검색·분류·군집화 후속 작업에 사용한다.",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "confirmed": true,
+   "action": "유지: S4 Intended Usage: generates embeddings; retrieval, classification, clustering."
+  },
+  {
+   "claim": "인용 이미지 I1은 공식 개발자 가이드의 구조 설명에 실린 그림이다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2 How it works under the hood의 구조도 링크 및 전문 인코더/공유 공간 설명. 이미지 URL도 직접 열어 조회."
+  },
+  {
+   "claim": "The Next Web는 UTC 2026-10-06 19:15(KST 2026-10-07 04:15)에 EmbeddingGemma 2를 보도하며 기기 내 검색을 다뤘다.",
+   "url": "https://thenextweb.com/news/embeddinggemma-2-on-device-europe",
+   "confirmed": true,
+   "action": "수정: 페이지 Published 날짜·UTC 시각과 본문을 확인하고 원고에 UTC/KST 날짜를 구분했다."
+  },
+  {
+   "claim": "구성별 파라미터 수의 M은 백만을 뜻한다.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "confirmed": true,
+   "action": "유지: S1의 740 million parameters와 S2의 740M 표기가 대응한다."
+  },
+  {
+   "claim": "인코더는 입력 종류별 표현을 처리하는 구성 요소다.",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "confirmed": true,
+   "action": "유지: S2의 specialized encoder, shared backbone 및 shared dimensional space 설명과 대조."
+  }
+ ],
+ "note": "2026-10-07 별도 사실 검증 세션에서 post.json 전체(제목·요약·표·코드·FAQ 포함)를 읽고 S1~S4 공식 원문 및 S5 독립 보도를 다시 열었다. 반복 주장은 합산하지 않고 외부 사실 40건을 집계했다. 전부 원문으로 확인했다. S5 보도 사실도 외부 주장으로 포함했으며 해당 매체의 실제 읽은 URL을 사용했다. 원고의 성능표 조건과 보도 날짜를 명확히 수정했다. 양자화·NaN의 일반 용어 풀이 2문장은 별도 정의 출처를 추가하지 않고 삭제했다(모델 사실의 삭제는 아님). 활용·평가 방법은 작성자 제안이며 모델 설치·실행 및 한국어 성능 실험은 수행하지 않았다. 기존 verification의 확인 표시는 재사용 근거로 삼지 않고 원문과 재대조했다. 공식 원문 조회 실패나 핵심 근거 부족이 없어 skip.json은 생성하지 않았다. 승인·발행·주제 교체는 수행하지 않았다."
+}
