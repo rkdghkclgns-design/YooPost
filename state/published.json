@@ -1825,5 +1825,20 @@
    "https://www.prnewswire.com/news-releases/collibra-acquires-trail-ml-to-automate-ai-governance-from-policy-to-production-302897376.html"
   ],
   "draft_id": "20261007_103847_4"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🔒 TA419 AI 정책 전문가 피싱 총정리: 사칭 메일·가짜 로그인과 대응",
+  "topic": "Hallucinating Credibility: China-Aligned TA419 Impersonates its Way into US AI Policy Circles",
+  "category": "AI 보안",
+  "source_url": "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ta419-ai.html"
+  },
+  "sources": [
+   "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy",
+   "https://www.helpnetsecurity.com/2026/10/02/china-aligned-ta419-phishing-ai-policy-experts/"
+  ],
+  "draft_id": "20261007_104422_5"
  }
 ]
