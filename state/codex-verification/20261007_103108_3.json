@@ -1,0 +1,365 @@
+{
+ "claims": [
+  {
+   "claim": "논문은 2026-10-01 arXiv에 제출됐으며 제목은 From Knowledge Access to Source Learning: Developing Source-Specific Competence이다.",
+   "url": "https://arxiv.org/abs/2610.02150",
+   "confirmed": true,
+   "action": "유지 — Submission history; Title에서 대조 확인"
+  },
+  {
+   "claim": "출처 학습은 특정 출처의 구조·해석·적용에 대한 재사용 가능한 이해를 발전시키는 문제다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §3.2에서 대조 확인"
+  },
+  {
+   "claim": "출처에는 문서 모음, 코드 저장소, API 문서가 포함될 수 있다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §1에서 대조 확인"
+  },
+  {
+   "claim": "출처는 작업 사이에 계속 이용 가능하고 사실의 권위로 유지된다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §1; §3에서 대조 확인"
+  },
+  {
+   "claim": "출처 모델은 지속적이고 수정 가능하다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §3.2에서 대조 확인"
+  },
+  {
+   "claim": "출처 모델에는 주요 개체, 관계, 절차, 조건과 예외를 표현한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2에서 대조 확인"
+  },
+  {
+   "claim": "세부 검색 가능한 정보는 원본에 남기며 출처 모델은 전체 원본 재현이 목적이 아니다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2에서 대조 확인"
+  },
+  {
+   "claim": "Hybrid RAG는 작업별 검색 근거를 제공하는 비교 대상이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1; A.2에서 대조 확인"
+  },
+  {
+   "claim": "RAPTOR와 HippoRAG 2는 지속적인 출처 표현의 비교 대상이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1에서 대조 확인"
+  },
+  {
+   "claim": "AWM은 안내용 작업 경험에서 워크플로를 학습하는 비교 대상이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1; A.2에서 대조 확인"
+  },
+  {
+   "claim": "SourceLearn은 자기주도 및 작업 유도 학습으로 출처 모델을 수정한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.1에서 대조 확인"
+  },
+  {
+   "claim": "M0는 초기 구성, MS는 자기주도 학습 이후, MT는 작업 유도 학습 이후 모델이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.1 Eq.4에서 대조 확인"
+  },
+  {
+   "claim": "초기 구성은 개체 중심으로 원본을 읽고 원본의 문서 절·코드 모듈 조직을 사용할 수 있다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Initial construction에서 대조 확인"
+  },
+  {
+   "claim": "큰 자료는 일관된 영역으로 나눌 수 있고 M0는 잠정적인 시작 표현이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Initial construction에서 대조 확인"
+  },
+  {
+   "claim": "답변은 질문, 직접 검색한 원본 근거, 활성화된 출처 모델을 결합한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Eq.7에서 대조 확인"
+  },
+  {
+   "claim": "출처 모델이 입력 예산을 넘으면 관련 영역을 선택하며 내부 구조를 보존한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Eq.6에서 대조 확인"
+  },
+  {
+   "claim": "학습 신호는 재검토 대상을 정하고 지속 지식은 원본에서 재구성한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Eq.5에서 대조 확인"
+  },
+  {
+   "claim": "수정은 근거 지원 및 기존 지원 의미의 보존 조건을 적용한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2 Grounded source reconstruction에서 대조 확인"
+  },
+  {
+   "claim": "관찰을 그대로 지속 기억에 복사하지 않는다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.2에서 대조 확인"
+  },
+  {
+   "claim": "Figure 2는 초기 구성·자기주도 학습·작업 유도 학습 및 답변 시 결합을 나타낸다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Figure 2 caption에서 대조 확인"
+  },
+  {
+   "claim": "자기주도 학습은 미래 과제가 알려지기 전 현재 표현의 불완전한 이해를 살펴본다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3에서 대조 확인"
+  },
+  {
+   "claim": "관련 원문과 현재 표현을 함께 읽으며 조건과 관계 누락 등을 관찰한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3 Model-conditioned source inspection에서 대조 확인"
+  },
+  {
+   "claim": "자기주도 단계의 관찰은 임시이며 모델을 바로 수정하지 않는다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3에서 대조 확인"
+  },
+  {
+   "claim": "Deepen은 한 개체의 미해결 측면, Connect는 두 개체 사이의 관계를 조사한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3 Eq.10에서 대조 확인"
+  },
+  {
+   "claim": "임시 학습 질문은 다시 읽기를 안내하지만 출처 모델에는 저장되지 않는다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3 Adaptive source study에서 대조 확인"
+  },
+  {
+   "claim": "자기주도 학습은 여러 번 읽고 한번 기록하는 패턴으로 관찰을 통합한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3 Evidence consolidation에서 대조 확인"
+  },
+  {
+   "claim": "개체별 관찰은 개체 표현을, 개체 사이 관찰은 상위 관계 구조를 수정할 수 있다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.3에서 대조 확인"
+  },
+  {
+   "claim": "작업 유도 학습은 안내용 작업의 원본 근거와 지식 요구사항을 진단한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Eq.11에서 대조 확인"
+  },
+  {
+   "claim": "참조 정답은 근거를 찾고 요구사항을 도출하는 데 쓰며 정답이나 근거를 그대로 저장하지 않는다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Diagnosing source requirements에서 대조 확인"
+  },
+  {
+   "claim": "실패 후 현재 표현에 빠진 요구사항이 있으면 관련 원본을 다시 읽어 국소 수정한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Eq.12에서 대조 확인"
+  },
+  {
+   "claim": "이미 표현된 요구사항은 추가 기록을 유발하지 않는다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Failure-guided local refinement에서 대조 확인"
+  },
+  {
+   "claim": "여러 과제의 반복되는 표현 교훈을 출처 수준의 표현 정책으로 종합한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Eq.13에서 대조 확인"
+  },
+  {
+   "claim": "표현 정책은 새로운 사실을 도입하지 않고 원본을 재독해하여 재조정한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §4.4 Eq.14에서 대조 확인"
+  },
+  {
+   "claim": "평가는 5개 벤치마크와 3개 백엔드의 15개 설정 중 13개에서 최고 성능이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "수정 — Abstract·§5.2·Table 1 확인; 제목과 도입에 저자의 보고임을 명시하고 모델 전체가 아닌 평가 조합으로 범위 한정"
+  },
+  {
+   "claim": "MultiDoc2Dial·NarrativeQA는 문서 QA, SWE-QA는 코드 QA, APIBench는 도구 사용, AppWorld는 상호작용 작업이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1에서 대조 확인"
+  },
+  {
+   "claim": "백엔드는 GPT-5.6-Luna, gpt-oss-120b, DeepSeek-V4.1-Flash이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1에서 대조 확인"
+  },
+  {
+   "claim": "안내용·평가용 과제는 분리돼 있고 같은 분할을 방법 간 공유한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1; A.1에서 대조 확인"
+  },
+  {
+   "claim": "AppWorld 외에는 30%/70% 고정 분할 3개를 사용한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1; A.1에서 대조 확인"
+  },
+  {
+   "claim": "AppWorld는 공식 학습 및 test-normal 분할을 사용한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1에서 대조 확인"
+  },
+  {
+   "claim": "QA 답변은 GPT-5.6-Luna가 판단하며 APIBench·AppWorld는 공식 평가기를 쓴다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §5.1에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna의 APIBench 최대 차이는 22.6%p이며 상대 증가율·전체 평균이 아니다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "백엔드별 평균 개선은 GPT-5.6-Luna +14.3, gpt-oss-120b +4.9, DeepSeek-V4.1-Flash +13.4포인트다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "수정 — §5.2 확인; 본문에 비교 기준 Hybrid RAG와 각 백엔드 이름을 명시"
+  },
+  {
+   "claim": "gpt-oss-120b SWE-QA는 HippoRAG 2 56.7%, SourceLearn 53.4%다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "gpt-oss-120b AppWorld는 SourceLearn 27.4%, Hybrid RAG 30.4%다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "입력 예산을 맞춘 GPT-5.6-Luna 4개 출처 비교에서는 SourceLearn이 3개 최고·Sphinx 두 번째다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.2 Table 2에서 대조 확인"
+  },
+  {
+   "claim": "입력 예산 일치 비교의 Sphinx 점수는 HippoRAG 2 73.5%, SourceLearn 72.5%다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.2 Table 2에서 대조 확인"
+  },
+  {
+   "claim": "MultiDoc2Dial·GPT-5.6-Luna에서 정답 근거 문서 제거 시 Hybrid RAG 약25포인트, SourceLearn 약8포인트 하락이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.1 Figure 5에서 대조 확인"
+  },
+  {
+   "claim": "감사는 각 모델별 120개 단위를 인용 출처 요소와 대조한다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3 caption에서 대조 확인"
+  },
+  {
+   "claim": "미지원은 인용 근거가 주장을 입증하지 못한다는 정의이며 모순과 다르다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3 caption에서 대조 확인"
+  },
+  {
+   "claim": "감사 단위는 출처 모델의 저장 단위이며 서비스 답변 전체 오류율이 아니다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3 caption에서 대조 확인"
+  },
+  {
+   "claim": "연구 범위는 지속적·권위 있고 비교적 안정적인 출처에 대한 같은 출처 반복 작업이다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §6에서 대조 확인"
+  },
+  {
+   "claim": "바뀌거나 잡음·충돌이 있는 자료로의 확장은 향후 과제다.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — §6에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna MultiDoc2Dial: Hybrid RAG 64.9%, SourceLearn 77.6%, 차이 +12.7%p.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna NarrativeQA: Hybrid RAG 66.0%, SourceLearn 80.2%, 차이 +14.2%p.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna SWE-QA: Hybrid RAG 56.9%, SourceLearn 69.5%, 차이 +12.6%p.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna APIBench: Hybrid RAG 47.8%, SourceLearn 70.4%, 차이 +22.6%p.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "GPT-5.6-Luna AppWorld: Hybrid RAG 72.0%, SourceLearn 81.5%, 차이 +9.5%p.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — Table 1에서 대조 확인"
+  },
+  {
+   "claim": "StudentAid M0: 초기 구성: 완전 지원 79.2%, 부분 지원 19.2%, 미지원 1.7%, 모순 0.0%.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3에서 대조 확인"
+  },
+  {
+   "claim": "StudentAid MS: 자기주도 학습 후: 완전 지원 75.0%, 부분 지원 20.8%, 미지원 4.2%, 모순 0.0%.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3에서 대조 확인"
+  },
+  {
+   "claim": "StudentAid MT: 작업 유도 학습 후: 완전 지원 63.3%, 부분 지원 22.5%, 미지원 13.3%, 모순 0.8%.",
+   "url": "https://arxiv.org/html/2610.02150v1",
+   "confirmed": true,
+   "action": "유지 — B.3 Table 3에서 대조 확인"
+  }
+ ],
+ "note": "2026-10-07 별도 사실 검증. 공식 arXiv 소개 페이지와 HTML v1을 새로 열어 제출 기록, §1–4.4, §5.1–5.2, §6, A.1–A.3, B.1–B.3 및 Table 1–3을 읽고 원고 전체와 대조했다. Figure 2 이미지 URL도 열었다. 중복 주장은 통합하여 외부 사실 60건 모두 확인했다. 가격·법적 사실 주장은 원고에 없다. 작업 상태·검증일·실험 재실행 여부·가상 활용 예시·독자 평가 제안은 claims에서 제외했다. 실험을 재실행하지 않았으며 논문이 보고한 결과를 확인한 것이다. 조회 실패나 삭제가 필요한 확인 불가 외부 주장은 없었다. 제목·도입의 최고 성능을 저자 보고로 명시하고 평가 조합 범위를 분명히 했으며 평균 개선의 비교 기준과 백엔드를 본문에 명시했다. 슬랙·블로그·git에 접속하지 않았고 승인·발행하지 않았다. 연구실 블로그와 독립 매체는 이번 단계에서 재조회하지 않았으며 기존 선정 기록은 이번 공식 원문 검증 집계에 포함하지 않았다."
+}
