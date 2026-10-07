@@ -1,0 +1,131 @@
+{
+ "claims": [
+  {
+   "claim": "Templafy가 2026-10-01 The Business-Ready AI Gap 2026을 발표했다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. 발표 본문 날짜·보고서명 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "응답자 95%가 사용 전 AI 업무 문서를 수정한다고 답했다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. 본문 조사 결과 확인; 오류율로 쓰지 않음; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "조사 대상 국가는 미국과 영국이다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. Methodology 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "조사 대상의 회사 규모는 직원 100명 이상이다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. Methodology의 100+ employees 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "대상은 AI로 업무 문서를 월 1회 이상 만드는 지식 노동자다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. 대상 선별 조건 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "설문 대상은 2,000명이다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. Methodology 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Sapio Research가 2026년 8월 온라인 설문을 실시했다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. 조사 주체·시기·방식 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "48%가 검토 부담 때문에 실제 절약 시간이 거의 남지 않을 수 있다고 답했다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. 본문 설문 응답이며 직접 노동시간 계측이 아님; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "공식 해설은 승인된 회사 자료를 AI 흐름에 연결하는 문제를 강조한다.",
+   "url": "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "confirmed": true,
+   "action": "유지. Why your organization needs to give AI context 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "42%가 승인된 회사 콘텐츠 접근이 충분하지 않다고 답했다.",
+   "url": "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "confirmed": true,
+   "action": "유지. 본문 42% 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "30%가 승인된 템플릿·콘텐츠·자산이 자동 적용된다고 답했다.",
+   "url": "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "confirmed": true,
+   "action": "유지. 본문 30% 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "London Loves Tech의 Simon Jones가 2026-10-01 이 조사를 기사로 다뤘다.",
+   "url": "https://londonlovestech.com/ai-gains-lost-in-translation/",
+   "confirmed": true,
+   "action": "유지. 외부 보도 메타데이터 직접 재조회 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "외부 보도의 여러 수치는 영국 응답자를 별도로 다룬다.",
+   "url": "https://londonlovestech.com/ai-gains-lost-in-translation/",
+   "confirmed": true,
+   "action": "유지. For UK professionals와 Among UK respondents 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Hackett Group은 2026-10-01 The AI Enterprise Performance Gap을 공개했다.",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "confirmed": true,
+   "action": "유지. 페이지 제목·발표일 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Hackett 분석은 개별 작업보다 전체 업무 흐름의 재설계를 제시한다.",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "confirmed": true,
+   "action": "유지. Executive summary와 end-to-end process redesign 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Hackett은 주문·청구·분쟁·수금 등을 연결한 order-to-cash를 예시로 설명한다.",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "confirmed": true,
+   "action": "유지. credit, order capture, billing, dispute management, cash application, collections 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Hackett은 앞 단계의 데이터·판단 개선이 뒤 단계의 업무 부담에 연결될 수 있다고 설명한다.",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "confirmed": true,
+   "action": "유지. Better decisions and data quality upstream reduce downstream effort 확인; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "AI World Class 비교에는 동종 조직 중앙값과 성과 시나리오 기반 모델링이라는 주석이 있다.",
+   "url": "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "confirmed": true,
+   "action": "유지. 각 benchmark modeling 각주 확인; 보장치로 쓰지 않음; 공개 발표·해설의 주장 범위로 한정."
+  },
+  {
+   "claim": "Templafy는 노동자 설문과 자체 플랫폼의 에이전트 사용 데이터를 별도로 제시한다.",
+   "url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "confirmed": true,
+   "action": "유지. S1의 Methodology(설문)와 Agents 섹션(자체 플랫폼 데이터)을 대조해 별도 자료임을 확인했습니다."
+  },
+  {
+   "claim": "두 공식 글의 작성 시간 비교는 표본 규모와 시간 표현이 다르다.",
+   "url": "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "confirmed": true,
+   "action": "유지. S2 Agents 섹션의 16,000 users or sessions·5.6시간→27분과 다시 읽은 S1의 29,000회 초과 세션·중앙값 약 2시간→8분을 대조했습니다. 차이의 원인은 공개 본문에서 확인되지 않아 동일 지표·절감률로 통합하지 않습니다."
+  },
+  {
+   "claim": "외부 기사는 회사 맥락·승인 자료·규칙을 문서 생성 단계에 연결해야 한다는 Templafy 공동창업자의 관점을 소개한다.",
+   "url": "https://londonlovestech.com/ai-gains-lost-in-translation/",
+   "confirmed": true,
+   "action": "유지. 기사에 실린 Christian Lund의 인용과 Fast generation 섹션을 확인했습니다. 독립적인 효과 검증으로 해석하지 않습니다."
+  }
+ ],
+ "note": "2026-10-07 별도 사실 검증 세션에서 S1·S2·S4 공식 공개 본문과 S3 기사, S5 보고서 소개 페이지를 웹 도구로 다시 열어 읽었습니다. 제목·도입·요약·본문·표·박스·FAQ·맺음말의 반복 주장은 통합했습니다. 외부 사실 21개를 확인했으며 가격·법적 효력·제품 성능 보장 주장은 없습니다. 공식 발표의 설문 응답 및 업체 해설을 확인한 것으로 원자료나 응답의 진실성까지 독립 검증한 것은 아닙니다. 전체 보고서 PDF는 열람하지 않았습니다. 작성자의 비교 실험 제안·가상 사례·해석과 실행 상태는 claims에서 제외했습니다. 95%에서 수정 종류별 비중을 추론하지 않도록 문장을 수정하고, 48%의 방법론 설명을 공개 자료 범위로 한정했습니다. 공식 URL 조회 실패나 핵심 근거 부족은 없었으므로 skip.json을 생성하지 않았습니다. 승인·발행·다른 주제 작성은 수행하지 않았습니다."
+}
