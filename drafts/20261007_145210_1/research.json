@@ -1,0 +1,78 @@
+{
+ "topic": "EmbeddingGemma 2: an open, lightweight multimodal embedding model (2026-10-06)",
+ "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "publisher": "Google DeepMind",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "EmbeddingGemma 2: The Developer Guide",
+   "url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "publisher": "Google Developers",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Bring multimodal semantic search to the edge with EmbeddingGemma 2",
+   "url": "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "publisher": "Google AI Edge",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "EmbeddingGemma 2 model card",
+   "url": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "publisher": "Google DeepMind",
+   "published": "2026-10-06",
+   "official": true,
+   "date_kind": "last_updated"
+  },
+  {
+   "id": "S5",
+   "title": "Google launches EmbeddingGemma 2, an open multimodal embedding model for devices",
+   "url": "https://thenextweb.com/news/embeddinggemma-2-on-device-europe",
+   "publisher": "The Next Web",
+   "published": "2026-10-06",
+   "official": false,
+   "published_timezone": "UTC",
+   "published_kst": "2026-10-07"
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/embeddinggemma2.original.png",
+   "page_url": "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "caption": "텍스트·시각·오디오 인코더와 공유 표현 공간을 설명하는 공식 구조도",
+   "credit": "Google Developers"
+  }
+ ],
+ "factcheck": {
+  "claims": 40,
+  "confirmed": 40,
+  "removed": [
+   "양자화는 수치 표현을 줄이는 기법입니다.",
+   "NaN은 정상적인 숫자로 표현되지 않는 값을 뜻합니다."
+  ],
+  "note": "2026-10-07 별도 사실 검증 세션에서 post.json 전체(제목·요약·표·코드·FAQ 포함)를 읽고 S1~S4 공식 원문 및 S5 독립 보도를 다시 열었다. 반복 주장은 합산하지 않고 외부 사실 40건을 집계했다. 전부 원문으로 확인했다. S5 보도 사실도 외부 주장으로 포함했으며 해당 매체의 실제 읽은 URL을 사용했다. 원고의 성능표 조건과 보도 날짜를 명확히 수정했다. 양자화·NaN의 일반 용어 풀이 2문장은 별도 정의 출처를 추가하지 않고 삭제했다(모델 사실의 삭제는 아님). 활용·평가 방법은 작성자 제안이며 모델 설치·실행 및 한국어 성능 실험은 수행하지 않았다. 기존 verification의 확인 표시는 재사용 근거로 삼지 않고 원문과 재대조했다. 공식 원문 조회 실패나 핵심 근거 부족이 없어 skip.json은 생성하지 않았다. 승인·발행·주제 교체는 수행하지 않았다."
+ },
+ "note": "이번 검증에서는 현재 원고의 출처 S1~S5를 모두 조회했다. 과거 후보 및 이미지 조사 실패에 관한 이전 단계의 기록은 이번 검증 결과로 간주하지 않는다. S4 날짜는 마지막 업데이트일이며 출시일은 S1 발표문으로 확인했다.",
+ "quality_checks": {
+  "category": "AI 언어 모델",
+  "freshness": "대표 공식 발표 2026-10-06: 2026-10-04 이후 조건 충족",
+  "duplicate_check": "brief-1.md 전체 발행·최근 원고 목록 및 rejected-candidates.json과 모델명·소식·대표 URL 비교: 비중복",
+  "body_characters_without_whitespace_and_code": 5563,
+  "sections": 7,
+  "tables": 3,
+  "faq": 5,
+  "images": 1
+ }
+}
