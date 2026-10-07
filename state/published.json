@@ -1741,5 +1741,23 @@
    "https://docs.gitlab.com/install/install_ai_gateway/"
   ],
   "draft_id": "20261006_174821_5"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🧠 Templafy AI 생산성 총정리: 문서 수정 95%와 업무 완료 기준의 변화",
+  "topic": "The Business-Ready AI Gap 2026 (Templafy, 2026-10-01) — AI 문서 재작업과 기업 업무 설계 해설",
+  "category": "AI 인사이트",
+  "source_url": "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/templafy-ai-95.html"
+  },
+  "sources": [
+   "https://www.templafy.com/news/knowledge-workers-edit-ai-generated-documents/",
+   "https://www.templafy.com/beyond-the-first-draft-closing-the-ai-productivity-gap/",
+   "https://londonlovestech.com/ai-gains-lost-in-translation/",
+   "https://www.thehackettgroup.com/insights/the-ai-enterprise-performance-gap/",
+   "https://www.templafy.com/guide_whitepaper/the-business-ready-ai-gap-2026/"
+  ],
+  "draft_id": "20261007_095122_6"
  }
 ]
