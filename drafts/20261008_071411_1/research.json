@@ -1,0 +1,87 @@
+{
+ "topic": "Introducing Mistral Large 4 (Mistral AI, 2026-10-06)",
+ "source_url": "https://mistral.ai/news/mistral-large-4/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Mistral Large 4",
+   "url": "https://mistral.ai/news/mistral-large-4/",
+   "publisher": "Mistral AI",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Introducing Mistral Large 4: Le chonk",
+   "url": "https://simonwillison.net/2026/Oct/6/le-chonk/",
+   "publisher": "Simon Willison's Weblog",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Mistral launches Large 4 preview with 1 T parameters",
+   "url": "https://www.testingcatalog.com/mistral-launches-large-4-preview-with-1-t-parameters/",
+   "publisher": "TestingCatalog",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Mistral Large 4 Preview - Intelligence, Performance & Price Analysis",
+   "url": "https://artificialanalysis.ai/models/mistral-large-4",
+   "publisher": "Artificial Analysis",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Mistral Large 4 - Mistral Docs",
+   "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+   "publisher": "Mistral AI",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Mistral: Mistral Large 4 (mistralai/mistral-large-4-0)",
+   "url": "https://openrouter.ai/mistralai/mistral-large-4-0",
+   "publisher": "OpenRouter",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://mistral.ai/news/mistral-large-4/",
+   "caption": "벤치마크 - 코딩 에이전트 DeepSWE v1.1 결과 차트",
+   "credit": "Mistral AI"
+  },
+  {
+   "id": "I2",
+   "image_url": "",
+   "page_url": "https://mistral.ai/news/mistral-large-4/",
+   "caption": "벤치마크 - 사이버보안 Artificial Analysis Cyber Index 차트",
+   "credit": "Mistral AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 62,
+  "corrected": [
+   "활성 파라미터: 공식 발표·모델 문서 52B, Willison·TestingCatalog·미스트랄 X 게시물 49B 로 불일치 표기 보강",
+   "컨텍스트 창: 미스트랄 모델 문서 1M 을 기준으로, AA·OpenRouter 524k(524,288) 병기, AA FAQ 의 520k 표기 삭제, '공식 미기재' 경고 수정",
+   "가격: 모델 문서의 현재 50% 할인가($0.68/$2.09, 캐시 $0.07) 추가",
+   "레드팀 언급을 공식 발표 글 출처로 바꾸고 '소수의' 삭제",
+   "82% 를 '보고된 값 중' → '모든 모델 중 가장 높다'로",
+   "Willison 'Fable-class' 를 '프런티어급'으로 옮긴 부분 정정, 'SVG' → 펠리컨 그림 테스트"
+  ],
+  "removed": [
+   "pydantic-ai 의 GitHub 이슈에는 mistral-large-latest 별칭이 당분간 Large 3 를 가리킨다는 언급이 있습니다. (GitHub 접속 차단으로 확인 불가 → 공식 문서의 모델 이름 mistral-large-4 / mistral-large-4-0 로 대체)",
+   "…Artificial Analysis가 같은 날 이 모델을 다뤘기 때문에 (AA 페이지에 게시일 없음 → '같은 날' 삭제)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 미스트랄 발표(페이지 October 6, 2026 / datePublished 2026-10-06), S2 Willison(6th October 2026), S3 TestingCatalog(6 Oct 2026), S4 Artificial Analysis(페이지에 게시일 없음, 'released on October 6, 2026'), S5 미스트랄 모델 문서(October 6, 2026, 신규), S6 OpenRouter 모델 API(created 2026-10-06, ID mistralai/mistral-large-4-0·context 524288, 신규)를 직접 열어 대조. 벤치마크는 모두 미스트랄 자체 발표로 표기. 인용 이미지는 발표 페이지의 차트가 이미지 파일이 아니라 page_url 만 유지."
+ }
+}
