@@ -1840,5 +1840,23 @@
    "https://www.helpnetsecurity.com/2026/10/02/china-aligned-ta419-phishing-ai-policy-experts/"
   ],
   "draft_id": "20261007_104422_5"
+ },
+ {
+  "date": "2026-10-07",
+  "title": "🤖 EmbeddingGemma 2 사용 가이드: 740M 멀티모달·검색 성능 총정리",
+  "topic": "EmbeddingGemma 2: an open, lightweight multimodal embedding model (2026-10-06)",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/embeddinggemma-2-740m.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "https://developers.googleblog.com/en/embeddinggemma-2-the-developer-guide/",
+   "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/",
+   "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+   "https://thenextweb.com/news/embeddinggemma-2-on-device-europe"
+  ],
+  "draft_id": "20261007_145210_1"
  }
 ]
