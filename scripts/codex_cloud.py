@@ -118,11 +118,22 @@ def plan(work: Path) -> int:
     now = datetime.now(KST)
     state = recover_previous_run(read_json(helper.TREE / STATE / STATE_FILE))
     task = choose_task(status(), state, now)
+    finished_requests = set()
+    while task and task.get("finish_only"):
+        request = task["request"]
+        if request in finished_requests or len(finished_requests) >= 10:
+            raise RuntimeError("요청 종료 상태가 갱신되지 않아 다음 원고를 예약하지 못했습니다")
+        code = helper.request_finish(request, "Codex 확인: 요청 원고가 이미 올라가 있습니다")
+        if code:
+            return code
+        finished_requests.add(request)
+        # 종료만 필요한 수동 요청 뒤에도 같은 실행에서 남은 작업을 재확인한다.
+        now = datetime.now(KST)
+        state = read_json(helper.TREE / STATE / STATE_FILE)
+        task = choose_task(status(), state, now)
     if not task:
         print("인계 대상 없음")
         return 0
-    if task.get("finish_only"):
-        return helper.request_finish(task["request"], "Codex 확인: 요청 원고가 이미 올라가 있습니다")
     if os.environ.get("CODEX_AUTH_READY") != "true":
         if state.get("auth_notice") != now.strftime("%Y%m%d"):
             notice(task, "클라우드 인증이 없어 작성을 시작하지 못했습니다. Codex 전용 로그인 또는 API 키 설정이 필요합니다.")
@@ -448,8 +459,8 @@ def complete(work: Path) -> int:
                 {**task, "id": task["request"], "missing": missing}]}, ended, datetime.now(KST))
             if next_task:
                 output("continue", "true")
-        elif not task["request"]:
-            # 매일 원고도 30분 예약을 기다리지 않고 다음 가능한 카테고리를 이어 쓴다.
+        else:
+            # 수동 요청 종료 후와 매일 원고 처리 후 모두 다음 가능한 작업을 이어 쓴다.
             # 현재 원격 상태와 Claude 진행 여부를 다시 확인하며 실패 간격·횟수 제한은 유지한다.
             if choose_task(status(), ended, datetime.now(KST)):
                 output("continue", "true")

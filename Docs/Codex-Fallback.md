@@ -151,3 +151,11 @@ Cloudflare 버전 `f1e65b4b-b6a0-4ad6-ae03-eddb84c69506`을 100% 배포하고 5�
 Windows Wrangler는 업로드 후 종료 코드 1을 반환해, 배포 API·운영 health를 확인한 뒤 누락된 cron을 같은 설정으로 등록했다.
 실제 점검이 오래 대기한 [원고 전송 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37512164399)을 취소했고,
 [후속 전송 실행](https://github.com/rkdghkclgns-design/YooPost/actions/runs/37554180079)의 서버 배정·성공과 Slack 원고 도착을 확인했다.
+
+## 수동 요청 종료 후 일일 작성 연결 (2026-10-07)
+
+`finish_only` 요청을 종료한 뒤 plan이 바로 반환해 일일 원고가 다음 예약까지 기다리는 구간을 수정했다.
+이제 종료 기록을 저장하고 상태를 다시 조회해 같은 실행에서 다음 수동 요청 또는 일일 원고를 선택한다.
+실제 원고를 작성한 수동 요청의 complete 단계에서도 요청 종료 후 다음 가능한 작업을 즉시 예약한다.
+Claude 진행·잠금·인증 확인과 실패 후 4시간 대기·최대 2회 제한을 유지한다.
+종료 기록 저장 실패 또는 같은 종료 요청이 반복 조회되는 경우 작성 작업을 예약하지 않고 오류로 보고한다.

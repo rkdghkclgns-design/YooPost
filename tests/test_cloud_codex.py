@@ -1,6 +1,7 @@
 import json
 import subprocess
 from datetime import timedelta
+from types import SimpleNamespace
 
 import pytest
 from cryptography.fernet import Fernet
@@ -38,6 +39,63 @@ def test_cloud_selector_prioritises_manual_work_and_respects_wait_and_retry():
     status["locked_by"] = "codex-cloud"
     assert not choose_task(status, {}, NOW)
     assert not choose_task({**status, "locked_by": "", "synced": False}, {}, NOW)
+
+
+@pytest.mark.parametrize("blocked", [False, True])
+@pytest.mark.parametrize("request_count", [1, 2])
+def test_plan_finishes_old_requests_then_starts_daily_without_another_schedule(tmp_path, monkeypatch, blocked, request_count):
+    helper = codex_cloud.helper
+    monkeypatch.setattr(helper, "TREE", tmp_path / "tree")
+    monkeypatch.setattr(codex_cloud, "sync", lambda: None)
+    monkeypatch.setattr(codex_cloud, "recover_previous_run", lambda state: state)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("CODEX_AUTH_READY", "true")
+    pending = [f"request-{n}" for n in range(request_count)]
+    finished = []
+    def current_status():
+        return {"synced": True, "requests": [
+            {"id": rid, "kind": "all", "finish_only": True} for rid in pending],
+            "cloud_running": blocked, "daily": [{"category": "AI 도구", "reason": "원고 없음"}]}
+    def finish(rid, note):
+        finished.append(rid)
+        pending.remove(rid)
+        return 0
+    monkeypatch.setattr(codex_cloud, "status", current_status)
+    monkeypatch.setattr(helper, "request_finish", finish)
+    monkeypatch.setattr(codex_cloud, "save_state", lambda state, *args: write_json(helper.TREE / "state/codex.json", state))
+    monkeypatch.setattr(codex_cloud.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(stdout="brief"))
+    monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
+    outputs = []
+    monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
+    work = tmp_path / "work"
+    assert codex_cloud.plan(work) == 0
+    assert len(finished) == request_count and not pending
+    assert (("work", "true") in outputs) is not blocked
+    if not blocked:
+        selected = read_json(work / "task.json")
+        assert selected["request"] == "" and selected["category"] == "AI 도구"
+        assert read_json(helper.TREE / "state/codex.json")["lease"]["task"] == selected
+    else:
+        assert not read_json(helper.TREE / "state/codex.json").get("lease")
+
+
+@pytest.mark.parametrize("finish_code", [0, 1])
+def test_plan_does_not_reserve_work_when_request_closure_fails_to_persist(tmp_path, monkeypatch, finish_code):
+    monkeypatch.setattr(codex_cloud.helper, "TREE", tmp_path)
+    monkeypatch.setattr(codex_cloud, "sync", lambda: None)
+    monkeypatch.setattr(codex_cloud, "recover_previous_run", lambda state: state)
+    monkeypatch.setattr(codex_cloud, "status", lambda: {"synced": True, "requests": [
+        {"id": RID, "finish_only": True}]})
+    monkeypatch.setattr(codex_cloud.helper, "request_finish", lambda *args: finish_code)
+    outputs = []
+    monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
+    if finish_code:
+        assert codex_cloud.plan(tmp_path / "work") == finish_code
+    else:
+        with pytest.raises(RuntimeError, match="종료 상태가 갱신되지"):
+            codex_cloud.plan(tmp_path / "work")
+    assert outputs == [("work", "false")]
+    assert not read_json(tmp_path / "state/codex.json").get("lease")
 
 
 def test_lease_expiry_and_owner_prevent_other_jobs_releasing_it(tmp_path):
@@ -272,6 +330,40 @@ def test_daily_completion_chains_only_categories_with_remaining_attempts(branch_
     write_json(work / "verification.json", {"claims": [
         {"claim": f"공식 발표 {i}", "url": "https://nvidia.com/vera", "confirmed": True} for i in range(30)]})
     assert codex_cloud.complete(work) == 0
+    assert (("continue", "true") in outputs) is not blocked
+
+
+@pytest.mark.parametrize("blocked", [False, True])
+def test_finished_manual_request_immediately_chains_to_eligible_daily_work(branch_repo, monkeypatch, tmp_path, blocked):
+    _, _, tree = branch_repo
+    helper = codex_cloud.helper
+    monkeypatch.setattr(helper, "TREE", tree)
+    monkeypatch.setattr(helper, "cloud_running", lambda: False)
+    monkeypatch.setattr(helper, "cloud_pending", lambda: False)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
+    monkeypatch.setenv("MIN_BODY_CHARS", "1000")
+    monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
+    outputs = []
+    monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
+    live = codex_cloud.datetime.now(codex_cloud.KST)
+    selected = task(day=live.strftime("%Y%m%d"), request=RID, kind="single", owner="123-1")
+    write_json(request_path(tree, RID), record(kind="single", category="AI 도구", created=live.isoformat(), started=live.isoformat()))
+    state = reserve({}, selected, "123-1", live)
+    if blocked:
+        for category in codex_cloud.CATEGORIES:
+            state["attempts"][task_key({**selected, "request": "", "category": category})] = {
+                "at": live.isoformat(), "count": 2, "status": "failed"}
+    write_json(tree / "state/codex.json", state)
+    helper.publish(["state/codex.json", str(request_path(tree, RID).relative_to(tree))], "manual lease")
+    work = tmp_path / "manual-result"
+    write_draft(work, post=good_post(category="AI 도구"), published=live.strftime("%Y-%m-%d"))
+    write_json(work / "result.json", {"status": "draft"})
+    write_json(work / "verification.json", {"claims": [
+        {"claim": f"공식 발표 {i}", "url": "https://nvidia.com/vera", "confirmed": True} for i in range(30)]})
+    assert codex_cloud.complete(work) == 0
+    assert read_json(request_path(tree, RID))["finished"]
+    assert not read_json(tree / "state/codex.json")["lease"]
     assert (("continue", "true") in outputs) is not blocked
 
 
