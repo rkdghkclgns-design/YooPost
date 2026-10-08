@@ -2217,5 +2217,26 @@
    "https://www.anthropic.com/threat-intelligence-report-september-2026"
   ],
   "draft_id": "20261009_073805_5"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "💰 AI 칩 부채 금융 총정리: 브로드컴·오라클·스페이스X, 한 주에 몰린 수백억 달러 조달 논의",
+  "topic": "AI Chip Spending Fuels Debt Financing Wave; Broadcom Reportedly Eyes Tens of Billions to Fund OpenAI (TrendForce, 2026-10-08)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.trendforce.com/news/2026/10/08/news-ai-chip-spending-fuels-debt-financing-wave-broadcom-reportedly-eyes-tens-of-billions-to-fund-openai/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ai-x.html"
+  },
+  "sources": [
+   "https://www.trendforce.com/news/2026/10/08/news-ai-chip-spending-fuels-debt-financing-wave-broadcom-reportedly-eyes-tens-of-billions-to-fund-openai/",
+   "https://www.tipranks.com/news/broadcom-oracle-stocks-fall-on-huge-ai-chip-debt-plans",
+   "https://www.fool.com/investing/breakfast-news/2026/10/08/breakfast-news-artificial-intelligence-real-debt/",
+   "https://www.tikr.com/blog/oracle-courts-apollo-and-goldman-for-ai-chip-financing-as-debt-tops-169-billion",
+   "https://www.apollo.com/insights-news/pressreleases/2026/06/broadcom--apollo--and-blackstone-establish-landmark-strategic-pl",
+   "https://thenextweb.com/news/broadcom-60bn-ai-chip-debt-anthropic",
+   "https://www.itiger.com/news/1104289347",
+   "https://cryptobriefing.com/broadcom-cds-record-debt-deal/"
+  ],
+  "draft_id": "20261009_074346_6"
  }
 ]
