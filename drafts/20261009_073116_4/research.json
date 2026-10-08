@@ -1,0 +1,81 @@
+{
+ "topic": "China's Manus raises over $500M in first funding round since split with Meta (TechCrunch, 2026-10-08)",
+ "source_url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "China's Manus raises over $500M in first funding round since split with Meta",
+   "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Manus raises more than $500M in first funding round since Meta exit",
+   "url": "https://thenextweb.com/news/manus-raises-500m-after-meta-exit",
+   "publisher": "TNW (The Next Web)",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Manus parent raises more than $500 million after Meta exit",
+   "url": "https://technode.global/2026/10/08/manus-parent-raises-more-than-500-million-after-meta-exit/",
+   "publisher": "TNGlobal",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Manus Raises $500 Million After China Blocks Meta's Acquisition",
+   "url": "https://www.pymnts.com/news/investment-tracker/2026/manus-raises-500-million-after-china-blocks-metas-acquisition/",
+   "publisher": "PYMNTS",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Manus Resumes Independent Operations",
+   "url": "https://manus.im/blog/manus-resumes-independent-operations",
+   "publisher": "Manus",
+   "published": "2026-09-01",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "China blocks Meta's Manus acquisition using foreign investment security review",
+   "url": "https://triviumchina.com/research/china-blocks-metas-manus-acquisition-using-foreign-investment-security-review/",
+   "publisher": "Trivium China",
+   "published": "2026-05-18",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Meta severs Manus data access as Beijing forces $2B deal apart",
+   "url": "https://ppc.land/meta-severs-manus-data-access-as-beijing-forces-2b-deal-apart/",
+   "publisher": "PPC Land",
+   "published": "2026-06-11",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "13.6 billion, Tencent-led consortium reportedly redeems Manus",
+   "url": "https://eu.36kr.com/en/p/3889653713877766",
+   "publisher": "36Kr",
+   "published": "2026-07-10",
+   "official": false
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "요약: '9월 28일에는 Manus 2.0과 개인용 에이전트 앱 Cue를 소개했습니다'의 날짜(출처 목록에 없음 → '최근 공개'로 수정, TechCrunch 근거)",
+   "'TNW는 이를 두고 기존 투자자들이 인수 무산 뒤 회사를 다시 떠받친 모양새로 소개했습니다' (TNW 원문에 없음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S5 원문 HTML을 직접 내려받아 문장 단위로 대조(TNGlobal은 curl 403이라 WebFetch로 인용문 확인), 각 출처 published 를 페이지 메타/표기 날짜와 대조(TC·TNW·PYMNTS 2026-10-08 메타 일치, TNGlobal 페이지 October 8 2026, Manus 블로그 'Tuesday, September 01'=2026-09-01 요일 일치·PYMNTS 'Sept. 1 blog post'로 교차). 단일 매체 주장 재확인: 4/27 NDRC 명령일 → Trivium China(2026-05-18)·PPC Land(2026-06-11)로 확인, 6월 데이터 차단 → PPC Land로 확인, 20억 달러 가치 되사기 → 36Kr(2026-07-10, FT 인용)로 확인, 홍콩 IPO → TechCrunch 보도+36Kr '구조 재편 전제' 보도 수준으로만 서술. 기업가치 약 40억 달러는 Bloomberg 보도 수준으로만 서술(TC·TNW·PYMNTS 인용). 인수가 표기 차이('20억 달러' vs '20억 달러 이상', WSJ)를 본문에 명시. 수정: TNW '새로운 주도 투자자' 표현→TC·TNW '주도', TNGlobal 비공개 항목 문구 보강. 인용 이미지 I1(TechCrunch 상단 Getty 로고 일러스트)은 본문 그림이 아니어서 제거하고 images_none_reason 기록."
+ },
+ "images_none_reason": "원래 후보 I1(TechCrunch 기사 상단 Getty Images 로고 일러스트)은 본문 그림이 아닌 대표 이미지·로고 사진이라 제외. 투자 발표 기사·Manus 독립 운영 공지에는 투자·인수 경과를 보여 주는 본문 도표·스크린샷이 없음 (TNGlobal 본문 그림 없음 확인)."
+}
