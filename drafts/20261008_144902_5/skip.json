@@ -1,0 +1,9 @@
+{
+ "category": "AI 보안",
+ "reason": "다른 주제 재작성 2회 후 보류: AI 보안 카테고리에서 기존 발행·최근 원고와 rejected-candidates.json의 실패 소식을 제외하고 세 후보를 순차 검토함. 첫 후보 Google OSS VRP 공식 규정 open은 본문 0줄을 반환했고, 두 번째 PromptGuardX 공식 원문 open은 Internal Error로 실패함. 두 차례 교체 후 Tanium의 2026-10-06 공식 발표와 같은 날짜 SiliconANGLE 독립 보도 원문은 정상 조회했으나, 공식 제품 페이지의 본문 이미지 후보(48×48 SVG 아",
+ "at": "2026-10-08T14:49:02+09:00",
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
