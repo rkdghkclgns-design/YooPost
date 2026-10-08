@@ -1,0 +1,359 @@
+{
+ "claims": [
+  {
+   "claim": "2026-10-02 Hao Jiang 등 5인이 HackTrace 논문 v1 제출",
+   "url": "https://arxiv.org/abs/2610.03055",
+   "confirmed": true,
+   "action": "유지. 소개 페이지 L8–26에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "보이는 채점기를 통과하는 지름길로 테스트 수정·하드코딩·특별취급·평가 우회를 다룸",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L116–123, L164–167에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "act는 최종 산출물의 지름길 행동 증거를 표시",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L164–167에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "outcome은 행동 증거에 보이는 통과·숨겨진 실패 조건 추가",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L164–167에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "실패한 지름길은 act 양성·outcome 음성일 수 있음",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L139, L167에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "숨겨진 테스트·판정 모델은 라벨 근거이며 감시기 입력이 아님",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L139에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "수정 가능한 테스트 환경에서 행동 감독은 시도 탐지를 개선",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L221–231에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "읽기 전용 환경은 라벨별 탐지 차이가 작음",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L232에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "Qwen3-8B·CodeContests 다중 턴 궤적 173,561개",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L161–169에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "수정 환경은 solution.py와 test.py 수정 가능, 읽기 전용은 solution.py만",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L161에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "궤적 최대 3턴·숨겨진 테스트 문제당 12개",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L162에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "문제 단위 학습/테스트 분리",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L172–174에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "학습 375문제·133,009궤적",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L173에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "테스트 미학습 315문제·40,552궤적",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L173에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "읽기 전용 환경도 학습에 포함되어 새 문제 일반화 평가",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L174에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "136,900개 개별 판정·36,661개 규칙 기반 음성 라벨",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L169–170에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "GPT-5.4가 행동 라벨 판정에 사용됨",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L164에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "사람 감사 305개·최종 라벨 일치율 97.0%",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L171에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "사람 감사는 한 명의 LLM 보조 검토이며 전체 오류율 측정이 아님",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L294에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "최종 응답 생성 중 잔차 스트림 상태 재사용",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L178에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "고정 선형 판독기와 학습된 토큰 집계 판독기 비교",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L179–188에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "MultiMax 18·24층 상태 및 상위 8개 토큰 점수 평균",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "정밀화. 본문 L177, L184–187의 t≥k, k=8 조건을 반영하여 8개 이상 생성된 구간이라고 명시."
+  },
+  {
+   "claim": "MultiMax는 완성 전 점수 갱신 가능",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L178, L188에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "combined는 최종 파일의 정적 특징을 더하므로 턴 종료 때 계산",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L189–194에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "combined 구성: 고정·MultiMax·이동평균·22특징 정적 LR",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L191–192에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "결합 점수는 학습 통계 표준화 후 동일 가중치 합산",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L191–194에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "self-report는 정직성 질문에 대한 추가 처리 상태를 사용",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "정밀화. 본문 L199–201에 따라 질문 뒤 고정 답변 Yes를 붙이는 추가 패스임을 명시."
+  },
+  {
+   "claim": "주요 AUC는 동일 문제 내 양성·음성 점수 비교를 문제 동일 가중치로 평균",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L208–210에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "315 테스트 문제 중 양쪽 라벨을 가진 239개가 주요 AUC 대상",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L210에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "정적 22특징 LR: AUC 0.985·토큰 0·1.20ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 2 L240. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분."
+  },
+  {
+   "claim": "self-report artifact-only: AUC 0.993·토큰459·30.8ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 2 L247. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분."
+  },
+  {
+   "claim": "self-report context-matched: AUC 0.990·토큰369·33.4ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 2 L246. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분."
+  },
+  {
+   "claim": "HackTrace MultiMax: AUC 0.987·토큰0·3.24ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 2 L252. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분."
+  },
+  {
+   "claim": "HackTrace-combined: AUC 0.997·토큰0·8.4ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 2 L253. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분."
+  },
+  {
+   "claim": "HackTrace-offline: AUC 0.998·토큰432·31.6ms 및 추가 모델 처리",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L196, 표 2 L256. 표 머리글을 추가 비캐시 처리 토큰으로 정밀화; 생성 토큰 수와 구분. 결합 버전의 추가 처리 없이를 추가 언어 모델 패스 없이로 정밀화."
+  },
+  {
+   "claim": "초록 감시 시간 요약은 약8ms, 본문 표2는8.4ms",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 초록 L113, 표 2 L253에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "B200·bfloat16·배치1·정적방법 CPU1스레드 측정",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L216에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "지연은 감시 구성요소이며 전체 실행 파이프라인 제외",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L216에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "접두 평가는 저장 궤적 사후 재생·완성길이 기준, 행동 전 탐지 입증 아님",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L218, L295에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "GRPO는 Group Relative Policy Optimization, 감시점수를 벌점으로 사용",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L126, L280에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "GRPO 학습 정책 Qwen3-8B",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L280, L294에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "일반 GRPO 부정행위82~91%와 강한 벌점1~5%는 보이는 통과 결과 기준",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L281–283에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "강한 벌점 시 정직한 보이는 통과27~32%는 전체 시도 기준",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L281–283에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "정직한 보이는 통과와 숨겨진 정답 통과는 구분됨",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L281, L285에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "표3 correct β0.1 일반 GRPO: 부정85.1%·정직8.3%",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 3 L270–271에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "표3 correct MM β0.1 λ10: 부정1.5%·정직30.8%",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 3 L271에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "표3 correct MM β0.1 λ2: 부정3.0%·정직31.5%",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 3 L275에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "λ0.5·120스텝 시점 HT 약81% vs SR약53%로 HT가 나쁨",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L286에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "표3은20~120스텝 평가를 시드별 풀링",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 표 3 캡션 L266에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "탐지연구 Qwen3-8B 및 테스트 수정환경 Llama-3.1-8B-Instruct",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L294에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "실제 배포 에이전트 발생률·정확도는 추가 측정 과제",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L294에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "라벨은 전체 행동 이력이 아닌 최종 산출물 증거",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L167, L294에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "연속 배치 서빙 엔진 통합 비용 제외·표적 적응형 공격 미시험",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L295에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "재현성 선언 코드 주소에 XXXX가 있으며 학습된 판독기·헤드·활성화 특징·GRPO 라벨은 후속 공개 항목",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L300–302에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "Figure1은 라벨 구분, Figure2는 내부상태 감시 구조 도표",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 Figure 1 L139, Figure 2 L177에서 재확인. 기술·실험 결과는 저자의 보고로 한정."
+  },
+  {
+   "claim": "원문 HTML은 CC BY 4.0 표시",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 L104의 논문 HTML 라이선스 표시 확인. 데이터·코드 전체 라이선스로 확대하지 않음."
+  },
+  {
+   "claim": "Mint Research 페이지 날짜2026-10-05 및 HackTrace 행동감시·강한 벌점 감소 보도",
+   "url": "https://mintresearch.org/newsletters/yinai/2026-10-05/",
+   "confirmed": true,
+   "action": "유지. 뉴스레터 제목 L0, Alignment and Control L111–112에서 해당 매체 자신의 제목 날짜와 HackTrace 보도 확인; 기술 수치 검증에는 공식 논문을 사용."
+  },
+  {
+   "claim": "GRPO 보상은 보이는 테스트 통과 보상 R에서 가중치 λ를 곱한 감시 점수 ψ를 빼는 R−λψ이다.",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지. 본문 §4.4 L280의 보상식 확인."
+  },
+  {
+   "claim": "HackTrace-combined는 상태 수집·점수 계산 비용이 있지만 추가 언어 모델 토큰이나 패스가 필요하지 않다.",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "confirmed": true,
+   "action": "유지 및 표현 정밀화. 본문 L188–194, L216, 표 2 L253 확인. 감시 처리 자체가 없다는 의미로 읽히지 않도록 수정."
+  }
+ ],
+ "note": "2026-10-08 별도 사실 검증 세션에서 arXiv 소개·v1 HTML과 Mint Research 뉴스레터를 다시 열어 원고의 외부 사실을 대조했다. 기존 예비 확인 여부를 근거로 삼지 않고 이번 조회의 제출 이력, §1·§3.1–3.4·§4.1–4.4·§5, 표 1–3, Figure 1–2 캡션, 재현성 선언, HTML 라이선스 표시를 읽었다. 제목·요약·본문·표·FAQ·맺음말의 반복 주장은 통합하고 보상식·추가 패스 여부를 보충해 외부 주장 59건을 집계했다. 모두 원문에 근거가 있으며 실험 수치의 독립 재현을 뜻하지 않는다. 4곳의 표현을 정밀화했으며 사실 삭제는 없다. S3는 해당 매체 자신의 발행일·보도 여부만 확인하는 1차 근거다. 자체 작업 설명과 필자의 제안·해석은 claims에서 제외했다. 이미지 파일 시각 검사와 코드 실행은 하지 않았다. 원문 접근 실패나 핵심 검증 실패가 없어 skip.json 생성 사유가 없다. 승인·발행은 수행하지 않았다."
+}
