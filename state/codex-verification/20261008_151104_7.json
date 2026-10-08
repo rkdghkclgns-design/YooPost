@@ -1,0 +1,249 @@
+{
+ "claims": [
+  {
+   "id": "C01",
+   "claim": "회사명은 Roundhouse AI Ltd이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "회사명 항목과 제목, L64–65",
+   "locations": "title, intro, 본문, faq",
+   "action": "유지"
+  },
+  {
+   "id": "C02",
+   "claim": "Schedule One 통지일은 2026-09-25이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L62 및 L114–115",
+   "locations": "intro, sections[4] 표",
+   "action": "유지"
+  },
+  {
+   "id": "C03",
+   "claim": "AIM 입성에 앞서 제출하는 공시이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L63: prior to admission",
+   "locations": "sections[0], sections[5]",
+   "action": "유지"
+  },
+  {
+   "id": "C04",
+   "claim": "이 회사 주식은 이미 Aquis에서 거래되고 있다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": false,
+   "evidence": "공식 공시 L85는 Access Segment 입성 상태를 확인한다. 실제 거래 체결 사실은 제시하지 않는다.",
+   "locations": "summary, sections[0], faq[0]",
+   "action": "본문과 FAQ의 실제 거래 단정을 삭제하고 Access Segment 입성 상태로 수정"
+  },
+  {
+   "id": "C05",
+   "claim": "AIM 입성과 동시에 Aquis 상장을 취소할 계획이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L85: Concurrently with the Admission",
+   "locations": "sections[0]",
+   "action": "유지"
+  },
+  {
+   "id": "C06",
+   "claim": "이번 거래는 기존 시장에서 AIM으로 이전하는 계획이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "기존 시장 L85와 예상 입성 L106–107을 결합한 거래 성격 해석",
+   "locations": "title, summary, sections[0], faq[0]",
+   "action": "유지"
+  },
+  {
+   "id": "C07",
+   "claim": "배정 가격은 5펜스다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L79: Placing Price",
+   "locations": "title, summary, sections[1] 표, faq[1]",
+   "action": "유지"
+  },
+  {
+   "id": "C08",
+   "claim": "신규 배정 주식은 30,000,000주다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L79: Placing Shares",
+   "locations": "summary, sections[1] 표, sections[2] 표",
+   "action": "유지"
+  },
+  {
+   "id": "C09",
+   "claim": "조달액은 £1.5 million이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L80–81",
+   "locations": "title, summary, sections[1] 표",
+   "action": "유지"
+  },
+  {
+   "id": "C10",
+   "claim": "배정 가격 기준 예상 시가총액은 약 £14 million이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L81: anticipated, approx., at the Placing Price",
+   "locations": "sections[1] 표 및 문단",
+   "action": "유지"
+  },
+  {
+   "id": "C11",
+   "claim": "입성 대상 전체 주식은 280,247,721주다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L79",
+   "locations": "sections[2] 문단 및 표",
+   "action": "유지"
+  },
+  {
+   "id": "C12",
+   "claim": "신규 배정 외 기존 주식은 250,247,721주다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L79 구성 항목",
+   "locations": "sections[2] 문단 및 표",
+   "action": "유지"
+  },
+  {
+   "id": "C13",
+   "claim": "AIM 입성 시 not in public hands 비중은 약 45%다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L82–83. 보호예수 비중으로 바꾸지 않음",
+   "locations": "sections[2] 문단 및 표",
+   "action": "유지"
+  },
+  {
+   "id": "C14",
+   "claim": "특정 법인의 지분은 관련 개인의 전체 지분에 포함돼 있어 중복 집계하면 안 된다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L100–101: Kaikalani/Fidelio 지분이 Matthew Lodge 전체 보유에 포함",
+   "locations": "sections[2]",
+   "action": "유지"
+  },
+  {
+   "id": "C15",
+   "claim": "사업 설명은 Roundhouse Dashboard를 에이전트 경제의 데이터·신원·평판 기반으로 설명한다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L73. 회사 설명에 귀속하고 효능을 독립적으로 보증하지 않음",
+   "locations": "sections[3]",
+   "action": "유지"
+  },
+  {
+   "id": "C16",
+   "claim": "Dashboard는 정산 이력·거래 상대방 집중도·활동 패턴을 관찰하도록 설계됐다는 회사 설명이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L75: designed to allow observing",
+   "locations": "sections[3]",
+   "action": "결제 기록을 정산 이력으로 수정; 기능 성능의 독립 검증으로 확대하지 않음"
+  },
+  {
+   "id": "C17",
+   "claim": "추가 상업 기능과 수익 모델 구현은 회사의 추진 방향으로 제시된다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L76: will now be rolling out, intended, implementing",
+   "locations": "sections[3]",
+   "action": "유지"
+  },
+  {
+   "id": "C18",
+   "claim": "예상 AIM 입성일은 2026-10-13이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L106–107: EXPECTED ADMISSION DATE",
+   "locations": "summary, sections[4] 표, faq[3]",
+   "action": "유지"
+  },
+  {
+   "id": "C19",
+   "claim": "입성 문서의 주요 재무정보는 2026-03-31 감사 자료를 기준으로 작성됐다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L104–105의 항목(ii)",
+   "locations": "sections[4] 표",
+   "action": "유지"
+  },
+  {
+   "id": "C20",
+   "claim": "첫 중간보고서 공표 기한은 2026-12-31이다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L104–105의 항목(iii), 기간은 2026-09-30 종료 6개월",
+   "locations": "sections[4] 표",
+   "action": "유지"
+  },
+  {
+   "id": "C21",
+   "claim": "조달액과 예상 시가총액은 별도 항목으로 표시된다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "L80–81",
+   "locations": "sections[1], faq[2]",
+   "action": "유지"
+  },
+  {
+   "id": "C22",
+   "claim": "AIM Micro가 이번 AIM 이전 예정일과 조달 계획을 다뤘다.",
+   "url": "https://www.aimmicro.com/blog/entry/quoted-micro-28-september-2026/",
+   "confirmed": true,
+   "evidence": "독립 기사 L18에서 예정일과 조달 계획 확인. 거래 조건 자체는 공식 공시 L81·107과 대조.",
+   "locations": "sections[0]",
+   "action": "유지; 근거 URL을 보도 내용이 실제 있는 개별 기사로 교체"
+  },
+  {
+   "id": "C23",
+   "claim": "주식은 Aquis Growth Market Access Segment에 입성돼 있다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "공식 공시 L84–85의 기존 시장 항목",
+   "action": "수정된 본문과 FAQ에 반영"
+  },
+  {
+   "id": "C24",
+   "claim": "회사는 Dashboard가 AI 에이전트와 상인 간 실제 정산 활동을 기록·검증한다고 설명한다.",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "confirmed": true,
+   "evidence": "공식 공시 L73의 회사 사업 설명",
+   "action": "회사 설명으로 유지; 실제 성능이나 매출 입증으로 해석하지 않음"
+  },
+  {
+   "id": "C25",
+   "claim": "독립 기사의 표시 게시일은 2026-09-27이다.",
+   "url": "https://www.aimmicro.com/blog/entry/quoted-micro-28-september-2026/",
+   "confirmed": true,
+   "evidence": "개별 기사 L11–14의 제목과 POSTED 표시",
+   "action": "research.sources의 게시일 유지; 제목 날짜와 구분"
+  }
+ ],
+ "note": "2026-10-08 별도 사실 검증 세션에서 공식 공시 본문 L62–118과 독립 개별 기사 L11–18을 다시 열어 읽고 post.json의 제목·도입·요약·표·본문·FAQ·맺음말을 대조했다. 반복 주장은 묶어서 집계했다. 기존 검증 기록의 숫자를 승인 근거로 사용하지 않고 이번 조회 결과로 갱신했다. 원래 실제 거래 단정 1건은 확인되지 않아 입성 상태로 수정했으며 수정 후 확인한 사실은 C23에 별도 기록했다. 기능 설명은 회사 설명의 존재만 확인했고 독립 성능 검증을 뜻하지 않는다. 읽기 제안·의견·자체 실행 설명·작성일은 외부 사실 집계에서 제외했다. 이 세션에서는 승인·발행을 수행하지 않았다. 핵심 공시 조회가 성공하고 수정 후 원고의 사실 근거가 확보돼 skip.json 생성 사유가 없다. 다른 주제로 교체하지 않았다.",
+ "revisions": [
+  {
+   "before": "이 회사 주식은 이미 Aquis 시장에서 거래되고 있으며",
+   "after": "이 회사 주식은 Aquis Stock Exchange Growth Market의 Access Segment에 입성돼 있으며",
+   "reason": "공식 원문이 확인하는 범위와 용어를 반영"
+  },
+  {
+   "before": "공시상 주식은 이미 Aquis에서 거래되고 있습니다.",
+   "after": "공시상 주식은 이미 Aquis Stock Exchange Growth Market의 Access Segment에 입성돼 있습니다.",
+   "reason": "공식 원문이 확인하는 범위와 용어를 반영"
+  },
+  {
+   "before": "결제 기록, 거래 상대방 집중도",
+   "after": "정산 이력, 거래 상대방 집중도",
+   "reason": "공식 원문이 확인하는 범위와 용어를 반영"
+  },
+  {
+   "before": "약 £14 million",
+   "after": "배정 가격 기준 약 £14 million",
+   "reason": "공식 원문이 확인하는 범위와 용어를 반영"
+  }
+ ]
+}
