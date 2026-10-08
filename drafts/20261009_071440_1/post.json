@@ -1,0 +1,308 @@
+{
+ "title": "🤖 ChatGPT GPT-6 Intelligent UI 총정리: Sol·Luna 채팅 적용과 검색 질문 첫 응답 44% 단축",
+ "category": "AI 언어 모델",
+ "intro": "안녕하세요! AI백과사전입니다. 2026년 10월 7일 OpenAI가 ChatGPT의 채팅(Chat) 탭에 **GPT-6**와 새 화면 방식 **Intelligent UI**를 전 세계로 내놓기 시작했습니다. 지난 9월 22일 GPT-6 Sol·Luna가 ChatGPT Work, Codex, API에 먼저 들어갔다면, 이번에는 대화창 자체가 바뀝니다. 답변이 글자뿐 아니라 버튼, 양식, 차트 같은 조작 가능한 화면으로 나오고, 웹 검색이 필요한 질문에서는 첫 응답이 평균 **44% 더 빨리** 시작된다고 OpenAI는 밝혔습니다. 이 글에서는 누가 어떤 모델을 언제 받는지, 무엇이 달라졌는지, 어디에 한계가 있는지를 출처에 적힌 내용만으로 정리합니다.",
+ "summary": [
+  "2026-10-07: Plus·Pro·Business·Enterprise 채팅 탭에 GPT-6(Sol 기반)과 Intelligent UI 전 세계 배포 시작",
+  "2026-10-08: Free·Go 사용자에게 GPT-6 Luna 적용 확대",
+  "Intelligent UI: 질문에 맞춰 버튼·양식·차트·도구를 답변 안에 직접 구성하며, 글이 더 낫다면 글로 답함",
+  "웹 검색 질문에서 GPT-6 Instant가 GPT-5.6 Instant보다 평균 44% 빨리 답을 시작 (OpenAI 발표)",
+  "Pro 사고 수준(GPT-6 Astra)과 구형 데스크톱 앱은 Intelligent UI 미지원",
+  "이 글에서 배울 것: 적용 대상·모델 구성·새 기능·한계와 확인할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 무엇이 발표됐나: 채팅에 들어온 GPT-6",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "OpenAI는 10월 7일(현지) **GPT-6와 Intelligent UI**를 ChatGPT에 배포하기 시작했다고 개발자 커뮤니티 공지에서 밝혔습니다. 적용 범위는 채팅 탭이며, 배포는 전 세계 대상이라고 설명했습니다. 다만 계정마다 화면에 나타나는 시점은 다를 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "모델 구성은 둘로 나뉩니다. Plus·Pro·Business·Enterprise 사용자는 **GPT-6 Sol**, Free·Go 사용자는 **GPT-6 Luna**를 받습니다. Free·Go는 하루 뒤인 10월 8일부터 적용이 시작됐습니다. Search Engine Journal에 따르면 GPT-6는 모델 메뉴의 '최신(Latest)' 항목을 대체하고, GPT-5.6 Sol은 별도 선택지로 남습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이미 나온 Sol·Luna와 무엇이 다른가",
+     "text": "Search Engine Journal은 Sol과 Luna가 9월 22일 ChatGPT Work, Codex, API로 먼저 나왔고 그때는 채팅에 들어오지 않았다고 정리했습니다. 이번 소식의 핵심은 새 모델의 등장보다 **채팅에서 GPT-6를 쓰게 됐다는 점**과 Intelligent UI입니다. Work와 Codex의 모델은 이번 업데이트로 바뀌지 않습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "요금제",
+      "배포 시작",
+      "채팅 모델"
+     ],
+     "rows": [
+      [
+       "Plus·Pro·Business·Enterprise",
+       "2026-10-07",
+       "GPT-6 Sol"
+      ],
+      [
+       "Free·Go",
+       "2026-10-08",
+       "GPT-6 Luna"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🖼 Intelligent UI: 답변이 조작 가능한 화면이 된다",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "OpenAI 설명에 따르면 GPT-6는 질문에 맞는 형식을 스스로 고릅니다. 비교는 나란히 놓은 화면으로, 개념 설명은 **인터랙티브 다이어그램**으로 보여 줄 수 있고, 글이 가장 유용하면 그냥 글로 답합니다. 답변에는 그래픽, 누를 수 있는 버튼, 양식, 차트가 들어갈 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "사용자가 도구를 만들어 달라고 요청할 수도 있습니다. OpenAI가 든 예는 저축이 어떻게 불어나는지 살피는 **계산기**, 친구들과 저녁을 먹은 뒤 쓰는 **더치페이 계산기**, 대화 안에서 즐기는 게임입니다. Tech Times는 일요일 로스트 요리 계획, 지도 위 로드트립, 중심극한정리·GDP·몬티 홀 문제의 입력값을 바꿔 보는 설명 등도 예로 소개했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "기술적으로는 스트리밍 가능한 **네이티브 컴포넌트 라이브러리**와, 모델이 답을 쓰는 동안 화면을 처리하는 컴파일러를 만들었다고 합니다. 그래서 화면이 완성된 뒤가 아니라 조금씩 나타납니다. 또 모델이 자기 화면을 명료성·유용성·완성도 면에서 스스로 평가하도록 학습시켰으며, OpenAI는 디자인 판단과 만들 수 있는 범위가 아직 더 나아져야 한다고 인정했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용",
+      "출처 기준"
+     ],
+     "rows": [
+      [
+       "구성 요소",
+       "그래픽·버튼·양식·차트",
+       "OpenAI 공지"
+      ],
+      [
+       "도구 예시",
+       "저축 계산기·더치페이·게임",
+       "OpenAI 공지"
+      ],
+      [
+       "표시 방식",
+       "답변과 함께 순차적으로 표시",
+       "Tech Times"
+      ],
+      [
+       "끄기",
+       "웹 설정 '레이아웃 및 시각 자료'",
+       "Search Engine Journal·Notebookcheck"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 TechCrunch 시연에서 본 예",
+     "text": "TechCrunch는 비행기 날개가 양력을 만드는 원리를 묻자 여러 장의 다이어그램이 나온 시연을 전했습니다. 자전거 구조 그림, 여러 날 하이킹 지도, 개인 저축 계산기도 예로 들었습니다. OpenAI의 제품 매니저 Aarush Selvan은 ChatGPT가 지금까지 주로 텍스트 기반 인터페이스였다고 말했습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚡ 속도와 검색: 생각하면서 답하기 시작한다",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GPT-6는 아직 생각하거나 도구를 쓰는 중에도 **답변을 먼저 시작**하고, 새 사실을 찾으면 이어서 덧붙이도록 학습됐다고 합니다. Search Engine Journal은 사용자가 새 질문을 하지 않아도 통찰이 더해진다고 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "수치는 OpenAI가 공개한 것입니다. 웹 검색 질문에서 **GPT-6 Instant는 GPT-5.6 Instant보다 평균 44% 빨리** 답을 시작합니다. 공지는 이것이 첫 응답까지의 시간이지 전체 완료 시간이 아니라고 밝혔습니다. 에이전트 과제에서는 GPT-6 Extra High가 GPT-5.6 Medium과 비슷한 시간에 응답을 시작하면서도 GPT-5.6 Extra High보다 전체 점수가 높았다고 Tech Times가 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "검색 판단도 달라졌다고 합니다. OpenAI는 GPT-6가 **언제 검색할지** 더 잘 판단하고 뒷받침하는 정보를 더 안정적으로 찾는다고 설명했습니다. 어려운 문제를 모은 내부 테스트에서는 GPT-6가 GPT-5.6보다 질문의 핵심을 더 자주 짚었다고 하지만, 구체적인 수치와 방법은 공개되지 않았습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 숫자 해석 주의",
+     "text": "44%는 OpenAI가 밝힌 평균값입니다. 시작 시점을 말할 뿐 답변이 끝나는 시간이나 정확도를 보장하는 값이 아닙니다. 어려운 문제 내부 테스트의 수치와 방법도 공개되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛡 안전 설명과 모델 가족 위치",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Tech Times에 따르면 OpenAI는 GPT-6가 Astra 모델에서 얻은 안전 성과 위에 만들어졌고, 여러 번 대화하며 적응하는 공격을 포함해 **안전 학습을 우회하려는 시도**에 더 잘 버틴다고 설명했습니다. 대화 기록을 활용해 한 번의 프롬프트로는 보이지 않는 위험을 알아채면서, 무해한 요청을 불필요하게 거절하지는 않도록 했다는 설명입니다. 전체 시스템 카드도 공개됐다고 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Tech Times에 따르면 모델 가족의 맨 위에는 OpenAI가 **가장 강력한 모델**이라고 설명한 GPT-6 Astra가 있습니다. **Sol은 능력에서 Luna보다 위, 비용에서 Astra보다 아래**이며, Luna는 가격을 우선합니다. Tech Times는 앞선 Sol·Luna 발표를 다룬 보도에서 두 모델의 능력이 GPT-5.6 전작보다 아주 조금 높은 수준으로 평가됐다고 덧붙였습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "위치",
+      "채팅에서의 쓰임"
+     ],
+     "rows": [
+      [
+       "GPT-6 Astra",
+       "가족 중 최상위",
+       "Pro 사고 수준 (Intelligent UI 미지원)"
+      ],
+      [
+       "GPT-6 Sol",
+       "Astra보다 저렴, Luna보다 상위",
+       "Plus·Pro·Business·Enterprise"
+      ],
+      [
+       "GPT-6 Luna",
+       "가장 저렴",
+       "Free·Go"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Intelligent UI는 모든 곳에서 되는 것이 아닙니다. 사고 수준 **Instant부터 Extra High**까지 쓸 수 있지만, Astra로 돌아가는 **Pro 사고 수준**은 지원하지 않고, 구형 macOS·Windows 데스크톱 앱도 지원하지 않습니다. Search Engine Journal에 따르면 웹에서는 점진적으로 도입되며, Notebookcheck는 휴대폰에서는 최신 앱이 필요하다고 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Notebookcheck에 따르면 Intelligent UI에 **별도 사용 한도는 없고** 요금제의 일반 한도가 적용됩니다. 한편 OpenAI의 모델 도움말에는 Free·Go 기본 모델이 아직 GPT-5.6 Luna로 적혀 있어 이번 발표와 어긋난다고 합니다. OpenAI는 모델 메뉴에 GPT-6가 보이지 않으면 아직 계정에 제공되지 않았을 수 있다고 안내했습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 확인되지 않은 것",
+     "text": "Search Engine Journal에 따르면 공지는 차트·비교·도구 안에서 출처가 어떻게 표시되는지 설명하지 않았습니다. 사용 한도 수치와 가격, 학습 방법의 세부도 이번 자료에서는 확인되지 않았습니다. 이 글은 확인된 사실만 적었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "또 하나, 시각 요소를 줄이려면 웹 설정에서 '레이아웃 및 시각 자료'를 끌 수 있지만 **일부 시각 요소는 그대로 나타날 수 있습니다**. 채팅에서 '시각 자료를 줄여 달라'고 요청하는 방법도 있다고 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 이전 기능과의 관계와 대상 규모",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Search Engine Journal에 따르면 ChatGPT의 시각 기능은 이번이 처음이 아닙니다. **인터랙티브 차트는 6월**에, 수학·과학 70개 넘는 주제의 인터랙티브 모듈은 **3월**에 추가됐습니다. Intelligent UI는 이런 개별 기능을 질문에 따라 모델이 알아서 고르고 조합하는 방식으로 넓힌 것으로 볼 수 있습니다. 이는 출처 내용을 바탕으로 한 해석입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "대상 규모도 큽니다. Tech Times는 OpenAI가 매주 **12억 명 넘게** ChatGPT를 쓴다는 점을 들어 이번 배포가 무료 사용자까지 포함한다고 전했습니다. 지난달 나온 GPT-6 계열은 유료 고객에게만 열려 있었는데, 이번에는 Free 사용자도 대상입니다. Notebookcheck는 Free 사용자가 약 2주 전에 데스크톱 앱에서만 GPT-6 Luna를 먼저 받았고, 이제 일반 채팅 탭으로 넓어졌다고 정리했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "시점",
+      "변화",
+      "출처"
+     ],
+     "rows": [
+      [
+       "2026-03",
+       "수학·과학 70개 넘는 주제의 인터랙티브 모듈",
+       "Search Engine Journal"
+      ],
+      [
+       "2026-06",
+       "인터랙티브 차트 추가",
+       "Search Engine Journal"
+      ],
+      [
+       "2026-09-22",
+       "GPT-6 Sol·Luna, ChatGPT Work·Codex·API에 먼저 공개",
+       "Search Engine Journal"
+      ],
+      [
+       "2026-10-07",
+       "Plus·Pro·Business·Enterprise 채팅에 GPT-6 Sol과 Intelligent UI",
+       "OpenAI 커뮤니티 공지"
+      ],
+      [
+       "2026-10-08",
+       "Free·Go 채팅에 GPT-6 Luna",
+       "OpenAI 커뮤니티 공지"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 이렇게 읽으세요",
+     "text": "모델이 바뀐 것과 화면이 바뀐 것은 별개의 변화입니다. 모델은 Sol과 Luna로 나뉘고, 화면은 Intelligent UI라는 기능으로 얹힙니다. 따라서 같은 질문이라도 요금제에 따라 모델이 다르고, 앱 버전이나 사고 수준에 따라 화면 기능이 보이지 않을 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧭 써 보기 전 체크리스트",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "내 계정이 어느 모델을 쓰는지는 모델 메뉴에서 확인하는 것이 가장 정확합니다. Notebookcheck에 따르면 ChatGPT가 형식을 스스로 고르므로 특별한 프롬프트가 필요 없고, 도구를 원하면 **평소 말하듯 요청**하면 됩니다. 아래 문장은 OpenAI가 든 예시를 바탕으로 한 연습용 요청문입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "매달 일정 금액을 저축하면 몇 년 뒤 얼마가 되는지 직접 조절해 볼 수 있는 계산기를 만들어 줘."
+    },
+    {
+     "type": "paragraph",
+     "text": "체크할 점은 세 가지입니다. 첫째, **모델 메뉴에 GPT-6가 보이는지** 확인합니다. 둘째, 데스크톱 구형 앱이라면 웹 버전을 쓰라는 OpenAI의 권고를 따릅니다. 셋째, 사고 수준이 Pro라면 Intelligent UI가 지원되지 않는다는 점을 기억합니다. 시각 자료가 부담스럽다면 설정에서 줄일 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 변화는 **계산기·변환기 같은 웹 도구**가 하던 일을 채팅 안에서 해결할 가능성을 보여 준다고 Search Engine Journal은 짚었습니다. 다만 이는 해설자의 관점이며, 실제 영향은 지켜봐야 합니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "GPT-6와 Intelligent UI는 언제부터 쓸 수 있나요?",
+   "a": "Plus·Pro·Business·Enterprise는 2026년 10월 7일부터, Free·Go는 10월 8일부터 채팅 탭에 배포가 시작됐습니다. 전 세계 대상이지만 계정마다 보이는 시점은 다를 수 있습니다."
+  },
+  {
+   "q": "무료 사용자는 어떤 모델을 받나요?",
+   "a": "Free와 Go 사용자는 GPT-6 Luna를 받습니다. 유료 요금제는 GPT-6 Sol입니다. 모델 메뉴에 GPT-6가 보이지 않으면 아직 계정에 제공되지 않았을 수 있습니다."
+  },
+  {
+   "q": "Intelligent UI는 끌 수 있나요?",
+   "a": "웹 설정의 '레이아웃 및 시각 자료'를 끌 수 있습니다. 다만 일부 시각 요소는 그래도 나타날 수 있다고 합니다. 시각 자료를 줄여 달라고 대화에서 요청하는 방법도 있습니다."
+  },
+  {
+   "q": "Pro 요금제에서도 되나요?",
+   "a": "Pro도 첫 배포 대상에 포함됩니다. 다만 Astra로 돌아가는 Pro 사고 수준은 Intelligent UI를 지원하지 않습니다. 그 밖의 사고 수준은 Instant부터 Extra High까지 지원합니다."
+  },
+  {
+   "q": "Work와 Codex 모델도 바뀌었나요?",
+   "a": "아닙니다. 이번 업데이트는 채팅 경험에만 적용되며 ChatGPT Work와 Codex의 모델은 그대로입니다."
+  }
+ ],
+ "closing": "지금까지 ChatGPT의 GPT-6와 Intelligent UI 배포에 대해 알아보았습니다. 핵심은 채팅에서 Sol(유료)과 Luna(Free·Go)가 쓰이기 시작했고, 답변이 버튼·양식·차트·도구가 있는 화면으로 나올 수 있게 됐다는 점입니다. 검색 질문 첫 응답 44% 단축은 OpenAI 내부 수치이고, 출처 표시와 사용 한도 같은 부분은 아직 확인되지 않았습니다. 여러분도 한번 Intelligent UI를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "배포 시점과 지원 범위는 계정과 앱 버전에 따라 다를 수 있으니 OpenAI 공식 도움말에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "ChatGPT",
+  "GPT6",
+  "IntelligentUI",
+  "GPT6Sol",
+  "GPT6Luna",
+  "OpenAI",
+  "AI언어모델",
+  "인터랙티브UI",
+  "ChatGPT업데이트",
+  "생성형AI",
+  "AI백과사전",
+  "AI뉴스",
+  "GPT6Astra"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}

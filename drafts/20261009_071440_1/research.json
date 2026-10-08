@@ -1,0 +1,54 @@
+{
+ "topic": "GPT-6 and Intelligent UI in ChatGPT (OpenAI, 2026-10-07)",
+ "source_url": "https://community.openai.com/t/gpt-6-and-intelligent-ui-in-chatgpt/1404139",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GPT-6 and Intelligent UI in ChatGPT",
+   "url": "https://community.openai.com/t/gpt-6-and-intelligent-ui-in-chatgpt/1404139",
+   "publisher": "OpenAI Developer Community (Announcements)",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
+   "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "ChatGPT Gets GPT-6 And Intelligent UI For Interactive Answers",
+   "url": "https://www.searchenginejournal.com/chatgpt-gpt-6-intelligent-ui/592249/",
+   "publisher": "Search Engine Journal",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "ChatGPT Free and Go users start getting GPT-6 Luna in Chat",
+   "url": "https://www.notebookcheck.net/ChatGPT-Free-and-Go-users-start-getting-GPT-6-Luna-in-Chat.1419032.0.html",
+   "publisher": "Notebookcheck",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI ChatGPT Gets GPT-6 Model Alongside Intelligent UI, Interactive Features",
+   "url": "https://www.techtimes.com/articles/328769/20261008/openai-chatgpt-gets-gpt-6-model-alongside-intelligent-ui-interactive-features.htm",
+   "publisher": "Tech Times",
+   "published": "2026-10-08",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "OpenAI 공식 발표문(openai.com/index/gpt-6-for-everyone)·도움말/릴리스 노트(help.openai.com)는 검증 단계에서도 403으로 막혀 읽지 못했고, 읽은 공식 커뮤니티 공지(S1)에는 본문 그림이 없음. Notebookcheck·Search Engine Journal은 본문 그림 없이 대표 이미지(스톡 사진)뿐이고, TechCrunch 본문 그림은 매체 페이지라 인용하지 않음",
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S5 를 모두 다시 열어 날짜·요금제·모델명(Sol/Luna/Astra)·44%·9/22 선공개·3월/6월 기능·12억 명·설정 이름·지원 범위 등 48개 주장 대조, 각 출처 published 가 페이지 날짜와 일치(S1·S2·S3 10-07, S4·S5 10-08) 확인. 고친 것: '웹 점진 도입' 출처를 Notebookcheck→Search Engine Journal 로 바로잡음, 44%를 '내부 측정'→'OpenAI가 밝힌 평균'으로, '배포되지 않은 것'→'제공되지 않았을 수 있음'(OpenAI 안내 문구), '별도 토글이 없으므로'→Notebookcheck '특별한 프롬프트 불필요', 'Sol·Luna는 더 작은 모델'(근거 없음)→Tech Times 의 위치 설명, '릴리스 노트와 어긋남'→'이번 발표와 어긋남', 제목 '44% 빠른 첫 응답'→'검색 질문 첫 응답 44% 단축'. openai.com·help.openai.com 은 403 이라 출처로 쓰지 않음 — 그 내용은 S1~S5 로만 확인."
+ }
+}
