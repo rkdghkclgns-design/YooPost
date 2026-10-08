@@ -2161,5 +2161,22 @@
    "https://www.cbsnews.com/news/google-gemini-ai-workplace-agent/"
   ],
   "draft_id": "20261009_072054_2"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "🤖 nanoMuse 논문 분석: Meta Muse를 뜯어 만든 오픈소스 개인 에이전트, Sentinel·5가지 질문 총정리",
+  "topic": "nanoMuse: An Open-Source Personal Agent for Every Device You Own (arXiv 2610.08699, 2026-10-06)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.08699",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/nanomuse-meta-muse-sentinel5.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.08699",
+   "https://arxiv.org/html/2610.08699",
+   "https://huggingface.co/papers/2610.08699",
+   "https://github.com/nano-muse/nanoMuse"
+  ],
+  "draft_id": "20261009_072607_3"
  }
 ]
