@@ -8,16 +8,17 @@
  "started": "2026-10-08T14:06:41+09:00",
  "network": "full",
  "finished": "",
- "note": "다른 주제 재작성 2회 후 보류: AI 보안 카테고리에서 기존 발행·최근 원고와 rejected-candidates.json의 실패 소식을 제외하고 세 후보를 순차 검토함. 첫 후보 Google OSS VRP 공식 규정 open은 본문 0줄을 반환했고, 두 번째 PromptGuardX 공식 원문 open은 Internal Error로 실패함. 두 차례 교체 후 Tanium의 2026-10-06 공식 발표와 같은 날짜 SiliconANGLE 독립 보도 원문은 정상 조회했으나, 공식 제품 페이지의 본문 이미지 후보(48×48 SVG 아",
+ "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
  "delivery_id": "db194a2becf3f595b285ecd6742dfc877a7dad9da1329fa522e78671fc728cc2f",
  "alert_ts": "1791435045.587959",
  "fallback": {
   "provider": "codex",
   "mode": "cloud",
-  "status": "writing",
+  "status": "waiting",
   "taken_over": "2026-10-08T14:49:30+09:00",
   "first_taken_over": "2026-10-08T14:06:41+09:00",
   "reason": "Codex 클라우드에서 남은 카테고리 이어쓰기",
-  "category": "AI 인사이트"
+  "category": "AI 인사이트",
+  "last_result": "done"
  }
 }

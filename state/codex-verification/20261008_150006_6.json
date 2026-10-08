@@ -1,0 +1,161 @@
+{
+ "claims": [
+  {
+   "claim": "발표 주체는 Challenger, Gray & Christmas이다",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "유지. S1 본문 및 PDF 1쪽: 보고서 발표 주체 명시."
+  },
+  {
+   "claim": "발표일은 2026-10-01이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 1쪽 보도 시각·날짜 및 dateline: 2026-10-01. S1은 Oct 01 표시."
+  },
+  {
+   "claim": "미국 기반 기업의 2026년 9월 감원·채용 계획 보고서이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 1쪽 U.S.-based employers, 4쪽 Hiring Plans in 2026 및 10쪽 월별 표."
+  },
+  {
+   "claim": "9월 AI 사유 감원 발표는 3,961명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 3쪽 사유 설명 및 8쪽 Table 4 AI 행: Sep-26 3,961."
+  },
+  {
+   "claim": "1~9월 AI 사유 감원 발표는 120,136명으로 12만 건을 넘는다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 3쪽 및 8쪽 Table 4 AI 행: YTD 2026 120,136, 1~9월 누계."
+  },
+  {
+   "claim": "AI 사유 9월 순위는 5위이다",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "유지. S1 Why Are Companies Cutting? 및 PDF 3쪽: fifth-most cited reason."
+  },
+  {
+   "claim": "AI 사유 누계 순위는 1위이다",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "유지. S1 사유 설명 및 PDF 3쪽: leading reason year-to-date."
+  },
+  {
+   "claim": "Challenger는 발표된 수치를 기록한다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 5쪽 Table 1 주석: 발표 수치를 기록함."
+  },
+  {
+   "claim": "일부 감축은 범위 또는 여러 해에 걸쳐 발표된다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 5쪽 Table 1 주석: 범위로 발표하거나 여러 해에 걸친 감축이 있음."
+  },
+  {
+   "claim": "산업별 표와 사유별 표가 별도로 있다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 6쪽 Table 2 산업별, 8쪽 Table 4 사유별 표가 별도 제시됨."
+  },
+  {
+   "claim": "기술 산업의 9월 감원 발표는 10,799명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 2쪽 및 6쪽 Technology 행: Sep-26 10,799."
+  },
+  {
+   "claim": "전체 9월 감원 발표는 43,281명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 1쪽 및 5·6·8쪽 총계: 9월 43,281."
+  },
+  {
+   "claim": "전체 1~9월 감원 발표는 573,195명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 1쪽 및 5·6·8쪽 총계: 1~9월 573,195."
+  },
+  {
+   "claim": "전체 감원 누계는 전년 동기보다 39% 감소했다",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "유지. S1 누계 설명 및 PDF 1쪽: 전년 1~9월 946,426 대비 39% 감소."
+  },
+  {
+   "claim": "9월 채용 계획 발표는 90,787명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 4쪽 및 10쪽 September 행: 채용 계획 90,787 workers."
+  },
+  {
+   "claim": "1~9월 채용 계획 발표는 210,612명이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "수치는 유지하고 원고의 단위를 건→명으로 명확화. PDF 4쪽 및 10쪽 YTD (Jan–Sept) 행: 210,612."
+  },
+  {
+   "claim": "채용 계획 누계는 전년 동기보다 3% 증가했다",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "유지. S1 채용 설명 및 PDF 4쪽: 전년 1~9월 204,939 대비 3% 증가."
+  },
+  {
+   "claim": "AI·자동화 기술 업데이트·AI일 가능성이 있는 기술 업데이트는 별도 행이다",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "유지. PDF 8쪽 Table 4: Artificial Intelligence, Technological Update (automation), Technological Update (possibly AI)가 별도 행."
+  },
+  {
+   "claim": "TheStreet는 2026-10-01 감원 감소와 약한 9월 채용 계획을 다뤘다",
+   "url": "https://pro.thestreet.com/market-commentary/job-cuts-hit-4-year-low-while-full-year-hiring-plummets",
+   "confirmed": true,
+   "action": "유지. TheStreet 자체 원문 날짜 Oct 1, 2026 및 Executive Summary·September Job Cuts·채용 요약을 직접 읽음. 회원 안내가 있으나 이 주장에 필요한 본문은 표시됨."
+  },
+  {
+   "claim": "RESET은 2026-10-02 감원 발표 집계와 실업 측정을 구분했다",
+   "url": "https://www.reset-media.com/employment/ai-job-cuts-entry-level-hiring",
+   "confirmed": true,
+   "action": "유지. RESET 자체 원문 날짜 2 October 2026 및 본문: 기업 발표·사유 집계와 정부 조사에 의한 실업 측정을 구분함."
+  },
+  {
+   "claim": "감원 집계의 단위는 발표문 개수가 아니라 감원 계획에 포함된 일자리 수이다.",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "PDF 1쪽 job cuts/layoff plans 및 5쪽 주석 확인. 원고·제목·요약·표·FAQ 단위를 명으로 명확화."
+  },
+  {
+   "claim": "채용 집계는 실제 입사 완료 인원이 아니라 발표된 채용 계획의 인원이다.",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "PDF 4쪽 plans to hire workers, 10쪽 ANNOUNCED HIRING PLANS 확인. 수치는 유지하고 단위를 명으로 수정."
+  },
+  {
+   "claim": "해당 보고서는 실제 AI 업무 대체 인원이나 순고용 변화를 측정한 결과를 제시하지 않는다.",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "PDF 1~11쪽 확인: 감원·채용 발표와 산업·사유·지역별 집계이며 실제 실행 및 모델별 대체 결과를 제시하지 않음. 보고서 범위에 한정한 표현 유지."
+  },
+  {
+   "claim": "해당 PDF의 산업별·사유별 합계 표만으로 기술 산업과 AI 사유가 겹치는 일자리 수를 확인할 수 없다.",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "PDF 6쪽과 8쪽은 각각의 주변 합계이며 산업×사유 교차표는 제시하지 않음. 교집합·직무 대체율을 계산하지 않는 해석 유지."
+  },
+  {
+   "claim": "해당 보고서는 개인의 취업 확률이나 학습 과정의 효과, 팀의 처리량·품질·재검토 성과를 제시하지 않는다.",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "confirmed": true,
+   "action": "PDF 전체의 본문과 Table 1~7 확인. 해당 지표 없음. 조직 운영 문단은 필자의 제안이라는 구분 유지."
+  },
+  {
+   "claim": "공식 발표 본문에 감원 추이 도표가 포함되어 있으며 AI 사유 전용 도표로 소개되지 않는다.",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "confirmed": true,
+   "action": "S1 산업별 설명 앞의 본문 도표 링크를 직접 열어 기존 I1 이미지 URL과 일치함을 확인. 해당 본문 이미지·캡션 유지."
+  }
+ ],
+ "note": "2026-10-08 별도 사실 검증 세션에서 S1 공식 발표와 S2 PDF를 다시 열어 날짜·집계 범위·수치·순위·표·주석을 대조했다. S3·S4 자체 원문도 다시 열어 독립 보도의 날짜와 원고에 인용한 설명을 확인했다. 제목·도입·요약·본문·표·박스·FAQ·마무리·주의 문구에서 반복되는 동일 사실은 고유 주장으로 통합하여 26개를 집계했다. 숫자는 모두 일치했으며 건 단위를 감원 계획·채용 계획의 명 단위로 명확화했다. 검증되지 않은 외부 사실 삭제는 없으므로 removed는 빈 배열이다. 공식 출처 조회 실패 및 핵심 근거 부족 없음으로 skip.json은 생성하지 않았다. 필자의 제안·논리적 독해 원칙·자체 원문 조회 여부·작성 기준일·검증 단계 상태는 외부 사실 개수에서 제외했다. 별도의 가격·모델 성능·법적 사실 주장은 원고에 없다. 승인을 실행하지 않았으며 주제 교체도 하지 않았다."
+}
