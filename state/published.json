@@ -2058,5 +2058,21 @@
    "https://www.unite.ai/claude-ai-assistant-arrives-in-google-workspace-as-public-beta/"
   ],
   "draft_id": "20261008_142040_2"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🧠 HackTrace 논문 분석: AUC 0.997·약 8ms 감시의 근거와 한계 총정리",
+  "topic": "hacktrace: behavior-supervised detection of reward hacking during code generation",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.03055",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/hacktrace-auc-0997-8ms.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.03055",
+   "https://arxiv.org/html/2610.03055v1",
+   "https://mintresearch.org/newsletters/yinai/2026-10-05/"
+  ],
+  "draft_id": "20261008_143200_3"
  }
 ]
