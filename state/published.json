@@ -2041,5 +2041,22 @@
    "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/"
   ],
   "draft_id": "20261008_141354_1"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🛠 Claude for Google Workspace: 문서 안에서 편집하는 공개 베타 사용 가이드",
+  "topic": "Claude now works with Google Docs, Sheets, and Slides (2026-10-06)",
+  "category": "AI 도구",
+  "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-for-google-workspace.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "https://www.unite.ai/claude-ai-assistant-arrives-in-google-workspace-as-public-beta/"
+  ],
+  "draft_id": "20261008_142040_2"
  }
 ]
