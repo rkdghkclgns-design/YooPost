@@ -1,0 +1,71 @@
+{
+ "topic": "hacktrace: behavior-supervised detection of reward hacking during code generation",
+ "source_url": "https://arxiv.org/abs/2610.03055",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "hacktrace: behavior-supervised detection of reward hacking during code generation — arXiv 소개·제출 이력",
+   "url": "https://arxiv.org/abs/2610.03055",
+   "publisher": "Hao Jiang et al. / arXiv",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "HackTrace 논문 v1 전체 HTML",
+   "url": "https://arxiv.org/html/2610.03055v1",
+   "publisher": "Hao Jiang et al. / arXiv",
+   "published": "2026-10-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Yesterday in AI · 5 October 2026",
+   "url": "https://mintresearch.org/newsletters/yinai/2026-10-05/",
+   "publisher": "Mint Research",
+   "published": "2026-10-05",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://arxiv.org/html/2610.03055v1",
+   "caption": "Figure 1: 지름길 행동 act와 성공한 우회 outcome의 라벨 차이.",
+   "credit": "Hao Jiang, Xin Li, Annan Wang, Yichi Zhang, Weisi Lin / CC BY 4.0"
+  },
+  {
+   "id": "I2",
+   "image_url": "",
+   "page_url": "https://arxiv.org/html/2610.03055v1",
+   "caption": "Figure 2: 생성 중 계산된 상태를 읽는 MultiMax와 고정 판독기 구조.",
+   "credit": "Hao Jiang, Xin Li, Annan Wang, Yichi Zhang, Weisi Lin / CC BY 4.0"
+  }
+ ],
+ "factcheck": {
+  "claims": 59,
+  "confirmed": 59,
+  "removed": [],
+  "note": "2026-10-08 별도 사실 검증 세션에서 arXiv 소개·v1 HTML과 Mint Research 뉴스레터를 다시 열어 원고의 외부 사실을 대조했다. 기존 예비 확인 여부를 근거로 삼지 않고 이번 조회의 제출 이력, §1·§3.1–3.4·§4.1–4.4·§5, 표 1–3, Figure 1–2 캡션, 재현성 선언, HTML 라이선스 표시를 읽었다. 제목·요약·본문·표·FAQ·맺음말의 반복 주장은 통합하고 보상식·추가 패스 여부를 보충해 외부 주장 59건을 집계했다. 모두 원문에 근거가 있으며 실험 수치의 독립 재현을 뜻하지 않는다. 4곳의 표현을 정밀화했으며 사실 삭제는 없다. S3는 해당 매체 자신의 발행일·보도 여부만 확인하는 1차 근거다. 자체 작업 설명과 필자의 제안·해석은 claims에서 제외했다. 이미지 파일 시각 검사와 코드 실행은 하지 않았다. 원문 접근 실패나 핵심 검증 실패가 없어 skip.json 생성 사유가 없다. 승인·발행은 수행하지 않았다.",
+  "status": "completed"
+ },
+ "status": "factchecked",
+ "selection_note": "2026-10-01~10-08 KST 기간 내 제출. brief-3.md 전체 기존 글·최근 원고에서 제목/대표 URL 중복 없음. rejected-candidates.json의 One Step at a Time 및 이유에 등장하는 Bolmo·SRD 제외. RISED 공식 이미지 조회 실패 기록은 attempt-1에 보존. 두 번째 후보는 독립 attempt-2에서 작성. 최종 후보 대표 URL과 제목은 원문 조사 전에 candidate.json에 저장.",
+ "license_note": "S2 HTML에 CC BY 4.0 명시. 한국어 해설과 표는 원문에 근거해 재구성했으며 원 저자·URL·라이선스를 표시.",
+ "image_note": "공식 HTML의 Figure 1·2 캡션과 본문을 읽어 관련 도표를 후보로 선정. 파일 주소는 직접 확인하지 않아 빈 문자열로 남김. 썸네일/OG/로고가 아닌 논문 본문 도표이며 파일 자체 시각 검사는 미실시.",
+ "publication_note": "원문 재현성 선언의 코드 링크에 XXXX 자리표시자가 남아 있어 공개 저장소·다운로드 실제 존재를 주장하지 않음. 사용자 지시에 따라 git·블로그·Slack 접속 없음.",
+ "format_check": {
+  "sections_paragraph_characters_excluding_spaces_code_links_markup": 5097,
+  "sections": 7,
+  "tables": 3,
+  "faq": 5,
+  "info": 3,
+  "warning": 2,
+  "image_candidates": 2
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
