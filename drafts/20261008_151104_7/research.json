@@ -1,0 +1,47 @@
+{
+ "topic": "Roundhouse AI Ltd AIM Schedule One (2026-09-25): 시장 이전과 신규 배정 조달 계획",
+ "source_url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AIM - Schedule One - Roundhouse AI Ltd",
+   "url": "https://www.aquis.eu/stock-exchange/announcements/5941740",
+   "publisher": "AIM / RNS, Aquis 공식 공시 게시",
+   "published": "2026-09-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Quoted Micro 28 September 2026",
+   "url": "https://www.aimmicro.com/blog/entry/quoted-micro-28-september-2026/",
+   "publisher": "AIM Micro / Andrew Hore",
+   "published": "2026-09-27",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 Schedule One 본문은 텍스트와 주주 표로 구성됩니다. 거래소 로고와 RNS 추적 이미지는 본문 인용에 적합한 화면·도표가 아니므로 제외했습니다. 본문 내용을 설명할 인용 이미지 후보를 찾지 못했습니다.",
+ "note": "S2 제목은 9월 28일이지만 실제 POSTED 표시는 2026-09-27이다. 이번 검증에서 개별 기사 URL을 직접 읽고 sources에 반영했다. 기존 후보 실패 기록은 유지하며 이번 검증은 현재 원고만 대상으로 했다.",
+ "factcheck": {
+  "claims": 25,
+  "confirmed": 24,
+  "removed": [
+   "이 회사 주식은 이미 Aquis 시장에서 거래되고 있으며",
+   "공시상 주식은 이미 Aquis에서 거래되고 있습니다."
+  ],
+  "note": "2026-10-08 별도 사실 검증 세션에서 공식 공시 본문 L62–118과 독립 개별 기사 L11–18을 다시 열어 읽고 post.json의 제목·도입·요약·표·본문·FAQ·맺음말을 대조했다. 반복 주장은 묶어서 집계했다. 기존 검증 기록의 숫자를 승인 근거로 사용하지 않고 이번 조회 결과로 갱신했다. 원래 실제 거래 단정 1건은 확인되지 않아 입성 상태로 수정했으며 수정 후 확인한 사실은 C23에 별도 기록했다. 기능 설명은 회사 설명의 존재만 확인했고 독립 성능 검증을 뜻하지 않는다. 읽기 제안·의견·자체 실행 설명·작성일은 외부 사실 집계에서 제외했다. 이 세션에서는 승인·발행을 수행하지 않았다. 핵심 공시 조회가 성공하고 수정 후 원고의 사실 근거가 확보돼 skip.json 생성 사유가 없다. 다른 주제로 교체하지 않았다."
+ },
+ "format_check": {
+  "body_chars_excluding_whitespace_code_citations_emphasis": 5555,
+  "scope": "intro, summary, sections 제목·본문·박스·표, faq, closing",
+  "sections": 7,
+  "tables": 3,
+  "faq": 5,
+  "info": 3,
+  "warning": 2
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
