@@ -1,0 +1,96 @@
+{
+ "topic": "AI Chip Spending Fuels Debt Financing Wave; Broadcom Reportedly Eyes Tens of Billions to Fund OpenAI (TrendForce, 2026-10-08)",
+ "source_url": "https://www.trendforce.com/news/2026/10/08/news-ai-chip-spending-fuels-debt-financing-wave-broadcom-reportedly-eyes-tens-of-billions-to-fund-openai/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI Chip Spending Fuels Debt Financing Wave; Broadcom Reportedly Eyes Tens of Billions to Fund OpenAI",
+   "url": "https://www.trendforce.com/news/2026/10/08/news-ai-chip-spending-fuels-debt-financing-wave-broadcom-reportedly-eyes-tens-of-billions-to-fund-openai/",
+   "publisher": "TrendForce",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Broadcom, Oracle Stocks Fall on Huge AI Chip Debt Plans",
+   "url": "https://www.tipranks.com/news/broadcom-oracle-stocks-fall-on-huge-ai-chip-debt-plans",
+   "publisher": "TipRanks",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Breakfast News: Artificial Intelligence, Real Debt",
+   "url": "https://www.fool.com/investing/breakfast-news/2026/10/08/breakfast-news-artificial-intelligence-real-debt/",
+   "publisher": "The Motley Fool",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Oracle Courts Apollo and Goldman for AI Chip Financing as Debt Tops $169 Billion",
+   "url": "https://www.tikr.com/blog/oracle-courts-apollo-and-goldman-for-ai-chip-financing-as-debt-tops-169-billion",
+   "publisher": "TIKR",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Broadcom, Apollo, and Blackstone Establish Landmark Strategic Platform to Accelerate More Than 20 Gigawatts of Global AI Deployments",
+   "url": "https://www.apollo.com/insights-news/pressreleases/2026/06/broadcom--apollo--and-blackstone-establish-landmark-strategic-pl",
+   "publisher": "Apollo Global Management",
+   "published": "2026-06-09",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Broadcom seeks more than $60bn in debt to fund AI chips for Anthropic",
+   "url": "https://thenextweb.com/news/broadcom-60bn-ai-chip-debt-anthropic",
+   "publisher": "The Next Web",
+   "published": "2026-08-21",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Broadcom Explores Record $100 Billion Off-Balance-Sheet Financing as CDS Hits All-Time High",
+   "url": "https://www.itiger.com/news/1104289347",
+   "publisher": "Tiger Brokers (Deep News)",
+   "published": "2026-08-21",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Broadcom CDS surges to record 122 basis points amid massive off-balance-sheet AI chip debt deal",
+   "url": "https://cryptobriefing.com/broadcom-cds-record-debt-deal/",
+   "publisher": "CryptoBriefing",
+   "published": "2026-08-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://res.cloudinary.com/tikr/images/w_1122,h_744,c_scale/f_webp,q_auto/v1791442198/images/image-203_137560e5af5/image-203_137560e5af5.png?_i=AA",
+   "page_url": "https://www.tikr.com/blog/oracle-courts-apollo-and-goldman-for-ai-chip-financing-as-debt-tops-169-billion",
+   "caption": "오라클의 재무 상황: 총부채와 현금·단기투자 비교 도표",
+   "credit": "TIKR"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://res.cloudinary.com/tikr/images/w_1112,h_740,c_scale/f_webp,q_auto/v1791442157/images/image-202_13755942264/image-202_13755942264.png?_i=AA",
+   "page_url": "https://www.tikr.com/blog/oracle-courts-apollo-and-goldman-for-ai-chip-financing-as-debt-tops-169-billion",
+   "caption": "오라클의 재무 상황: 잉여현금흐름과 capex 도표",
+   "credit": "TIKR"
+  }
+ ],
+ "factcheck": {
+  "claims": 43,
+  "confirmed": 40,
+  "removed": [
+   "Fool은 브로드컴이 2028 회계연도에 AI 칩 매출 약 2,300억 달러를 기대한다고 적었는데… (기사에 근거 없음)",
+   "경영진은 2026년 달러 기준 매출 성장률을 40%를 약간 넘는 수준으로, 종전 30% 초과 전망에서 올려 잡았습니다. (실적·수익 전망 문장 제거)",
+   "Fool은 삼성의 주가가 6월 고점보다 약 25% 낮고… (주가 관련 문장 제거)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 재열람 + S8(CryptoBriefing) 추가로 CDS 사상 최고 교차 확인. 각 출처 published 를 페이지 날짜와 대조(TIKR 는 화면에 Last updated Oct 8 만 있으나 article:published_time 2026-10-08T07:00 확인). 금액은 모두 보도 기준·협의 단계로 표기, Bloomberg 300억/WSJ 500억 초과 합산 안 함. TipRanks 설명을 '대차대조표 밖'에서 원문대로 '부채·대차대조표 부담 완화'로 수정, TIKR 리스 영향은 '부채/EBITDA 배율' 한정으로 수정. 무디스·S&P 코멘트는 Tiger Brokers(Deep News) 원문에서 확인했으나 평가사 원문은 미확인이라 본문에 명시. 인용 이미지 I1·I2(TIKR 오라클 부채·현금, FCF·capex 차트) 200 image/webp 열림·본문 내용과 일치. 대표 원문은 매체 기사(TrendForce)이며 공식 출처는 2026-06-09 브로드컴·아폴로·블랙스톤 보도자료(S5)뿐."
+ }
+}
