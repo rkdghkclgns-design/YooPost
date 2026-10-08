@@ -2144,5 +2144,22 @@
    "https://www.techtimes.com/articles/328769/20261008/openai-chatgpt-gets-gpt-6-model-alongside-intelligent-ui-interactive-features.htm"
   ],
   "draft_id": "20261009_071440_1"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "🤖 Gemini agent 총정리: 구글이 공개한 범용 업무 에이전트의 기능·거버넌스·한계",
+  "topic": "Welcome to Gemini at Work 2026: Introducing the Gemini agent",
+  "category": "AI 도구",
+  "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gemini-agent.html"
+  },
+  "sources": [
+   "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+   "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/",
+   "https://siliconangle.com/2026/10/08/google-cloud-introduces-gemini-agent-to-change-enterprise-work/",
+   "https://www.cbsnews.com/news/google-gemini-ai-workplace-agent/"
+  ],
+  "draft_id": "20261009_072054_2"
  }
 ]
