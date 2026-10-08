@@ -1,0 +1,281 @@
+{
+ "claims": [
+  {
+   "claim": "2026-10-06 Anthropic 공개 베타 발표",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L29·L34"
+  },
+  {
+   "claim": "모든 유료 Claude 플랜 대상",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L34"
+  },
+  {
+   "claim": "Google Docs·Sheets·Slides 사이드바 제공",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L34·L39"
+  },
+  {
+   "claim": "새 Google Docs·Sheets·Slides 커넥터도 베타",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L23·L34"
+  },
+  {
+   "claim": "사이드바는 열린 파일과 선택 내용을 읽음",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L39"
+  },
+  {
+   "claim": "사이드바에서 파일 직접 편집",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L39"
+  },
+  {
+   "claim": "Docs 문장과 제목 수정",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L40"
+  },
+  {
+   "claim": "Docs 변경 제안 카드",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L40"
+  },
+  {
+   "claim": "Sheets 수식 작성",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L41"
+  },
+  {
+   "claim": "Sheets 피벗 테이블 생성",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L41"
+  },
+  {
+   "claim": "Sheets 차트 생성",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L41"
+  },
+  {
+   "claim": "Sheets 새 탭 추가",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L41"
+  },
+  {
+   "claim": "Slides 기존 레이아웃과 테마로 생성",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L42"
+  },
+  {
+   "claim": "Slides 배치 문제 점검",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S1 L42"
+  },
+  {
+   "claim": "Claude 대화에서 Google 파일 편집 창 제공",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "지원 환경을 명시해 수정. 근거: S3 L95·L138–L139."
+  },
+  {
+   "claim": "새 Google 파일 생성 가능",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L97"
+  },
+  {
+   "claim": "편집 커넥터는 Google Drive와 별개",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L101"
+  },
+  {
+   "claim": "기존 Google 공유 권한 적용",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L143"
+  },
+  {
+   "claim": "Team·Enterprise Owner/Primary Owner 조직 활성화 선행",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L48"
+  },
+  {
+   "claim": "커넥터는 Docs 댓글과 제안을 처리",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L99·L239"
+  },
+  {
+   "claim": "커넥터는 Slides 차트 추가 불가",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L179"
+  },
+  {
+   "claim": "새 Google 파일 생성 요청에 Google 명시 필요",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "FAQ에서 새 파일 생성과 기존 링크 편집을 구분해 수정. 근거: S3 L136·L242."
+  },
+  {
+   "claim": "Google을 명시하지 않으면 로컬 파일 생성 가능",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L136·L242"
+  },
+  {
+   "claim": "창이 불가하면 Open in Google 대안",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L139·L181"
+  },
+  {
+   "claim": "일반 Gmail·Calendar·Drive 커넥터는 모든 사용자 대상",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S3 L46"
+  },
+  {
+   "claim": "Marketplace Claude 설치",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L64"
+  },
+  {
+   "claim": "Extensions > Claude > Open Claude 경로",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L66"
+  },
+  {
+   "claim": "권한 검토 후 Claude 계정 로그인",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L68–L69"
+  },
+  {
+   "claim": "한 설치가 세 앱 적용",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L87"
+  },
+  {
+   "claim": "조직 설치 차단은 Workspace 관리자 허용 또는 설치 필요",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L73·L102–L109"
+  },
+  {
+   "claim": "기본 모드 Ask before edits",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L160"
+  },
+  {
+   "claim": "기본 모드 변경 전 승인 대기",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L160"
+  },
+  {
+   "claim": "Accept all edits도 링크·외부 이미지·접근 관련 승인",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L161·L165"
+  },
+  {
+   "claim": "사이드바 파일 공유 불가",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L167"
+  },
+  {
+   "claim": "사이드바 접근 권한 부여 불가",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L167"
+  },
+  {
+   "claim": "사이드바 소유자 변경 불가",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L167"
+  },
+  {
+   "claim": "변경은 사용자의 이름으로 버전 기록에 남음",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L154"
+  },
+  {
+   "claim": "Firefox 미지원",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L189"
+  },
+  {
+   "claim": "작업 중 사이드바 유지 필요",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L187"
+  },
+  {
+   "claim": "사이드바는 Docs 댓글 읽기·답변·해결 불가",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L197"
+  },
+  {
+   "claim": "Slides 생성 차트는 이미지",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L209"
+  },
+  {
+   "claim": "Slides 생성 차트는 숫자 변경에 자동 갱신 안 됨",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "유지. 이번 재조회 근거: S2 L209"
+  },
+  {
+   "claim": "편집 창은 웹 Chrome 및 내장 브라우저를 켠 Claude Desktop에서 지원",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "S3 L139·L181; 본문에 조건 추가"
+  },
+  {
+   "claim": "Google 기존 파일 링크를 대화에 붙여넣어 편집 요청 가능",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "confirmed": true,
+   "action": "S3 L136; FAQ 명확화"
+  },
+  {
+   "claim": "편집 승인 모드와 무관하게 다른 사람의 접근 권한 제거는 승인 필요",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "confirmed": true,
+   "action": "S2 L165; 접근 관련 승인 설명 유지"
+  },
+  {
+   "claim": "Unite.AI는 2026-10-06 이 공개 베타를 보도",
+   "url": "https://www.unite.ai/claude-ai-assistant-arrives-in-google-workspace-as-public-beta/",
+   "confirmed": true,
+   "action": "S4 L170·L179; 독립 매체 날짜 확인"
+  }
+ ],
+ "note": "2026-10-08 별도 사실 검증 세션에서 S1 공식 발표, S2 사이드바 도움말, S3 커넥터 도움말 및 S4 독립 매체 본문을 직접 다시 열어 읽었다. 제목·도입·요약·문단·표·FAQ·맺음말의 외부 사실을 검토하고 반복된 동일 사실은 한 번 집계했다. 기존 42개 주장과 누락된 4개 외부 사실을 대조했다. S4 보도일도 claims에 포함했다. 지원 환경과 파일 생성/편집 안내를 명확히 수정했으며 반증되거나 확인 불가한 주장은 없었다. 가격 금액·성능 실측·법적 효력 주장은 원고에 없다. 작성자 제안·예제 프롬프트·실행 여부는 외부 사실 집계에서 제외했다. 제품 설치나 계정 실행 테스트는 하지 않았다. 도움말의 상대 갱신 시점은 절대 발표일로 환산하지 않았다. 핵심 공식 원문 조회 실패나 근거 부족은 없어 skip.json 생성 사유가 없다. 승인·발행·주제 교체는 수행하지 않았다."
+}
