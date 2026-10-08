@@ -1,0 +1,64 @@
+{
+ "topic": "Open d1: Edge decision models for text, vision, and audio (2026-10-07)",
+ "source_url": "https://huggingface.co/blog/LiquidAI/open-d1",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Multimodal open d1 decision models for the edge",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "publisher": "Liquid AI (Hugging Face 팀 게시물)",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "LiquidAI/d1-3B model card",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "publisher": "Liquid AI",
+   "published": null,
+   "published_note": "모델 카드 본문에 절대 발행일 미표시. 출시 날짜 근거는 S1이며 카드 발행일로 전용하지 않음.",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "LiquidAI/d1-omni-600M model card",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "publisher": "Liquid AI",
+   "published": null,
+   "published_note": "모델 카드 본문에 절대 발행일 미표시. 출시 날짜 근거는 S1이며 카드 발행일로 전용하지 않음.",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Liquid AI Releases Open-Weight d1-3B and d1-omni-600M: Multimodal Decision Models With Zero Output Tokens",
+   "url": "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/",
+   "publisher": "MarkTechPost",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "실제로 연 공식 팀 발표에는 텍스트 표와 코드가 있으며 본문 인용용 이미지 파일은 보이지 않았습니다. 두 모델 카드에서 노출된 Liquid AI 배너·로고와 프로필 이미지는 제외했습니다. 표는 원고의 table 블록으로 정리했습니다.",
+ "factcheck": {
+  "status": "completed",
+  "claims": 42,
+  "confirmed": 40,
+  "removed": [
+   "컨텍스트를 입력 범위로만 설명한 문구를 작은 모델의 전체 모달리티 위치 합산 설명으로 교체",
+   "score를 순서가 있는 평가 단계로만 설명한 문구를 확률 가중 기대값 설명으로 교체"
+  ],
+  "note": "별도 사실 검증 단계에서 S1 공식 팀 발표, S2·S3 공식 모델 카드, S4 보도 원문을 다시 열어 읽었다. 제목·도입·요약·본문·표·코드·FAQ·맺음말의 외부 사실을 추출했으며 반복 주장은 하나로 집계했다. 수정 전 부정확한 주장과 수정 후 확인된 주장을 각각 기록했다. 날짜·파라미터·입력·벤치마크·지연시간·설치 조건·라이선스 표시를 대조했다. S4는 해당 매체의 보도 존재와 날짜만 확인하며 모델 성능 검증에 사용하지 않았다. 활용 절차·평가표·권고는 필자의 제안으로 집계에서 제외했다. 실제 설치·추론·한국어 성능 시험과 라이선스 전문 검토는 수행하지 않았다. 카드의 발행일은 미표시여서 null을 유지했다. 원문 조회 실패나 핵심 근거 부족은 없어 skip.json을 생성하지 않았다. 발행 승인·주제 교체는 수행하지 않았다."
+ },
+ "research_notes": [
+  "Haiku 5.5 후보는 공식 시스템 카드 조회 실패로 제외했으며 동일 소식·대표 URL을 재사용하지 않았습니다.",
+  "두 번째 후보는 attempt-2에 별도 보존했습니다.",
+  "공식 팀 게시물과 모델 카드의 개별 벤치마크 수치에 차이가 있어 데이터셋별 비교표를 만들지 않았습니다.",
+  "독립 보도 The Expectancy·AGIBytes의 기사 페이지 조회는 Cache miss로 실패했으므로 원고 출처로 사용하지 않았습니다. MarkTechPost 원문은 정상 조회했습니다.",
+  "한국어 평가·실제 설치·추론은 수행하지 않았습니다. 예시 절차는 작성자의 제안입니다.",
+  "발행일이 보이지 않는 보조 모델 카드의 published는 null로 보존했습니다. 대표 원문과 이슈 확인 보도에는 페이지에 표시된 발행일을 기록했습니다."
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
