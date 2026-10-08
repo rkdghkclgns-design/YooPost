@@ -1,0 +1,58 @@
+{
+ "topic": "September 2026 Challenger Report — AI 감원 발표와 채용 계획의 해석",
+ "source_url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 On Weak Early Seasonal Hiring",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Challenger Report September 2026",
+   "url": "https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026-1.pdf",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Job Cuts Hit 4-Year Low but September Hiring Plummets",
+   "url": "https://pro.thestreet.com/market-commentary/job-cuts-hit-4-year-low-while-full-year-hiring-plummets",
+   "publisher": "TheStreet Pro",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Employers Blame AI for 120,000 US Job Cuts. Entry-Level Hiring Takes the Hit",
+   "url": "https://www.reset-media.com/employment/ai-job-cuts-entry-level-hiring",
+   "publisher": "RESET Media",
+   "published": "2026-10-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.challengergray.com/wp-content/uploads/2026/09/chart_cuts_Sept2026-1024x532.png",
+   "page_url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "caption": "Challenger 공식 발표에 실린 감원 추이 도표. AI 사유 전용 도표와 구분해서 읽습니다.",
+   "credit": "Challenger, Gray & Christmas"
+  }
+ ],
+ "factcheck": {
+  "claims": 26,
+  "confirmed": 26,
+  "removed": [],
+  "note": "2026-10-08 별도 사실 검증 세션에서 S1 공식 발표와 S2 PDF를 다시 열어 날짜·집계 범위·수치·순위·표·주석을 대조했다. S3·S4 자체 원문도 다시 열어 독립 보도의 날짜와 원고에 인용한 설명을 확인했다. 제목·도입·요약·본문·표·박스·FAQ·마무리·주의 문구에서 반복되는 동일 사실은 고유 주장으로 통합하여 26개를 집계했다. 숫자는 모두 일치했으며 건 단위를 감원 계획·채용 계획의 명 단위로 명확화했다. 검증되지 않은 외부 사실 삭제는 없으므로 removed는 빈 배열이다. 공식 출처 조회 실패 및 핵심 근거 부족 없음으로 skip.json은 생성하지 않았다. 필자의 제안·논리적 독해 원칙·자체 원문 조회 여부·작성 기준일·검증 단계 상태는 외부 사실 개수에서 제외했다. 별도의 가격·모델 성능·법적 사실 주장은 원고에 없다. 승인을 실행하지 않았으며 주제 교체도 하지 않았다."
+ },
+ "selection_note": "AI 인사이트 유지. 2026-10-01 발표로 기간 충족. brief-6.md의 발행·최근 원고 및 rejected-candidates.json과 소식·대표 URL 중복 없음. 독립 보도 10월 1일·2일. 실패한 Ai2 및 이전 후보 재사용 없음.",
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
