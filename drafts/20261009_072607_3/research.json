@@ -1,0 +1,72 @@
+{
+ "topic": "nanoMuse: An Open-Source Personal Agent for Every Device You Own (arXiv 2610.08699, 2026-10-06)",
+ "source_url": "https://arxiv.org/abs/2610.08699",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "nanoMuse: An Open-Source Personal Agent for Every Device You Own",
+   "url": "https://arxiv.org/abs/2610.08699",
+   "publisher": "arXiv",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "nanoMuse (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2610.08699",
+   "publisher": "arXiv",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - nanoMuse: An Open-Source Personal Agent for Every Device You Own",
+   "url": "https://huggingface.co/papers/2610.08699",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "nano-muse/nanoMuse (GitHub README)",
+   "url": "https://github.com/nano-muse/nanoMuse",
+   "publisher": "GitHub (nanoMuse 프로젝트)",
+   "published": "2026-10-09",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.08699v1/insight.png",
+   "page_url": "https://arxiv.org/html/2610.08699",
+   "caption": "다섯 질문과 세 지평 — 사람을 가운데 두고 질문을 부채꼴로, 지평을 고리로 그린 도식",
+   "credit": "Liu et al., arXiv 2610.08699 Fig. 4"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.08699v1/muse-analysis.png",
+   "page_url": "https://arxiv.org/html/2610.08699",
+   "caption": "Muse 시스템 구조 — 사용자 화면, Meta 클라우드의 컨테이너 경계, 에이전트가 닿지 못하는 호스트 서비스",
+   "credit": "Liu et al., arXiv 2610.08699 Fig. 3"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.08699v1/architecture.png",
+   "page_url": "https://arxiv.org/html/2610.08699",
+   "caption": "nanoMuse 0.1.40 구조 — 기기마다 에이전트와 Sentinel을 갖는 아키텍처",
+   "credit": "Liu et al., arXiv 2610.08699 Fig. 5"
+  }
+ ],
+ "factcheck": {
+  "claims": 120,
+  "confirmed": 120,
+  "removed": [],
+  "corrected": [
+   "HF Papers 페이지 날짜 '2026-10-07' → 페이지 표기 'Published on Oct 6' (S3 published 도 2026-10-06 으로 수정)",
+   "'트렌딩 목록에서 82 추천' → HF 논문 페이지 upvotes 82 (페이지 데이터에서 직접 확인, 확인 시점 기준으로 표기)",
+   "Keel 릴리스 문장: README 소식란 2026-10-09 표기로 한정, 릴리스 페이지 표기(08 Oct) 병기"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(제출 6 Oct 2026, 12p/6fig/2tab, cs.AI, 저자 3명)·arXiv HTML v1 본문 전체(Muse 분석, 표1·표2 수치, Sentinel·Hands·메모리·릴레이, 로드맵, 한계 5개)와 대조. HF Papers 페이지: publishedAt 2026-10-06, submittedOnDailyAt 2026-10-08, upvotes 82. GitHub README(WebFetch 로 읽음; curl 은 세션 프록시 403): Android 8.0+ arm64·macOS 12+·Windows 10+·Linux x64·docker compose, 소식란 '2026-10-09 Latest version: 1.0.0 Keel' — S4 published 2026-10-09 는 README 표기와 일치(릴리스 페이지는 '08 Oct 16:38'). 인용 이미지 3개(insight/muse-analysis/architecture.png) 모두 image/png 200 확인."
+ }
+}
