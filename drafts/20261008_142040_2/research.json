@@ -1,0 +1,52 @@
+{
+ "topic": "Claude now works with Google Docs, Sheets, and Slides (2026-10-06)",
+ "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude now works with Google Docs, Sheets, and Slides (2026-10-06)",
+   "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+   "publisher": "Anthropic",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Use Claude in Google Docs, Sheets, and Slides",
+   "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+   "publisher": "Anthropic",
+   "published": null,
+   "published_note": "페이지는 Updated yesterday만 표시하며 절대 발표일은 표시하지 않음",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Use Google Workspace connectors",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "publisher": "Anthropic",
+   "published": null,
+   "published_note": "페이지는 Updated this week만 표시하며 절대 발표일은 표시하지 않음",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Claude AI Assistant Arrives in Google Workspace as Public Beta",
+   "url": "https://www.unite.ai/claude-ai-assistant-arrives-in-google-workspace-as-public-beta/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표 본문은 기능 시연 영상 링크를 제공하지만 인용 가능한 정지 화면·도표는 확인되지 않았습니다. 도움말의 실제 조회 본문에도 사용 가능한 화면 이미지 항목이 없어 image 블록을 넣지 않았습니다. 로고·OG 이미지는 제외했습니다.",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [],
+  "note": "2026-10-08 별도 사실 검증 세션에서 S1 공식 발표, S2 사이드바 도움말, S3 커넥터 도움말 및 S4 독립 매체 본문을 직접 다시 열어 읽었다. 제목·도입·요약·문단·표·FAQ·맺음말의 외부 사실을 검토하고 반복된 동일 사실은 한 번 집계했다. 기존 42개 주장과 누락된 4개 외부 사실을 대조했다. S4 보도일도 claims에 포함했다. 지원 환경과 파일 생성/편집 안내를 명확히 수정했으며 반증되거나 확인 불가한 주장은 없었다. 가격 금액·성능 실측·법적 효력 주장은 원고에 없다. 작성자 제안·예제 프롬프트·실행 여부는 외부 사실 집계에서 제외했다. 제품 설치나 계정 실행 테스트는 하지 않았다. 도움말의 상대 갱신 시점은 절대 발표일로 환산하지 않았다. 핵심 공식 원문 조회 실패나 근거 부족은 없어 skip.json 생성 사유가 없다. 승인·발행·주제 교체는 수행하지 않았다."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
