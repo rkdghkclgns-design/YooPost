@@ -8,16 +8,17 @@
  "started": "2026-10-08T14:06:41+09:00",
  "network": "full",
  "finished": "",
- "note": "",
+ "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
  "delivery_id": "db194a2becf3f595b285ecd6742dfc877a7dad9da1329fa522e78671fc728cc2f",
  "alert_ts": "1791435045.587959",
  "fallback": {
   "provider": "codex",
   "mode": "cloud",
-  "status": "writing",
+  "status": "waiting",
   "taken_over": "2026-10-08T14:06:41+09:00",
   "first_taken_over": "2026-10-08T14:06:41+09:00",
   "reason": "접수 후 15분 동안 작성 미시작",
-  "category": "AI 언어 모델"
+  "category": "AI 언어 모델",
+  "last_result": "done"
  }
 }

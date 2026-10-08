@@ -1,0 +1,257 @@
+{
+ "claims": [
+  {
+   "claim": "Liquid AI가 2026-10-07 open d1의 d1-3B와 d1-omni-600M 두 모델을 공개했다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "두 모델은 공개 웨이트이며 Hugging Face에서 제공된다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B는 텍스트와 이미지 입력을 지원한다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M은 텍스트와 이미지 또는 텍스트와 음성을 지원한다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M은 실험적 초기 연구 공개 단계다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 총 파라미터는 3.12B다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 컨텍스트 길이는 32,768 토큰이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 총 파라미터는 587M이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 컨텍스트 길이는 16,384 토큰이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M은 이미지 입력 시 상태·질문 텍스트를 896 토큰으로 제한한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 음성 클립은 최대 30초다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 음성 기능은 영어 화자와 어시스턴트 간 요청으로 학습했다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "이번 공개에는 d1-omni-600M 추론 속도 수치를 보고하지 않았다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 질문 유형은 noul, choice, score다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "noul은 예·아니요 질문에 P(yes)를 반환한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "choice는 이름 붙인 선택지 중 하나와 확률 분포를 반환한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B는 채팅 모델이 아니며 텍스트를 작성하지 않는다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M은 채팅 모델이 아니며 텍스트를 작성하지 않는다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B는 한 번의 순전파로 구조화된 답을 반환한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 발표 공개 데이터셋 표에서 d1-3B 평균은 82.9다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "공식 발표 공개 데이터셋 표에서 d1-omni-600M 평균은 78.4다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 카드의 Decision Index 0.2.1 점수는 48.57이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B Decision Index 점수는 제작사가 공식 평가기로 계산했으며 리더보드 제출이 아니다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "발표와 d1-3B 카드의 일부 데이터셋 점수가 다르다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B의 Jetson AGX Thor 한 질문 지연시간은 16ms다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B의 Jetson AGX Thor 384px 이미지 지연시간은 35ms다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 속도 표는 워밍업한 호출을 한 번에 한 요청씩 측정했다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 카드 설치 명령은 pip install \"transformers>=5.14\" torch torchvision pillow다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 카드 설치 명령은 pip install \"transformers>=5.15\" torch torchvision pillow soundfile다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B는 자체 코드 로딩에 trust_remote_code=True를 사용한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M은 자체 코드 로딩에 trust_remote_code=True를 사용한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 카드 라이선스 표시는 lfm1.0이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 카드 라이선스 표시는 lfm1.0이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 요청에 이미지와 음성을 함께 넣으면 ValueError가 발생한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-3B 응답 usage의 output_tokens는 0이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "MarkTechPost가 2026-10-07 두 모델 공개를 보도했다.",
+   "url": "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "컨텍스트는 한 번의 처리에서 다루는 입력 범위다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": false,
+   "action": "수정: 작은 모델의 16,384 토큰은 텍스트·이미지·음성 위치를 합친 길이임을 명시; S2의 텍스트 컨텍스트와 구분"
+  },
+  {
+   "claim": "score는 순서가 있는 평가 단계에 대응한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": false,
+   "action": "수정: 2~10개 순서 단계에 대한 확률 가중 기대값으로 구체화; 표도 수정"
+  },
+  {
+   "claim": "d1-3B SQuAD 2.0은 발표에서 83.3, 모델 카드에서 85.3으로 표기된다.",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "confirmed": true,
+   "action": "유지·명확화: S1 표와 S2 Benchmarks as decisions 표를 대조; 원인 추정은 하지 않음"
+  },
+  {
+   "claim": "d1-3B 카드의 SQuAD 2.0 값은 85.3이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "d1-omni-600M 컨텍스트 16,384 토큰은 텍스트·이미지·음성 위치의 합이다.",
+   "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  },
+  {
+   "claim": "score는 2~10개 순서 단계에 대한 기대값을 반환한다.",
+   "url": "https://huggingface.co/LiquidAI/d1-3B",
+   "confirmed": true,
+   "action": "유지: 공식 원문에서 확인"
+  }
+ ],
+ "note": "별도 사실 검증 단계에서 S1 공식 팀 발표, S2·S3 공식 모델 카드, S4 보도 원문을 다시 열어 읽었다. 제목·도입·요약·본문·표·코드·FAQ·맺음말의 외부 사실을 추출했으며 반복 주장은 하나로 집계했다. 수정 전 부정확한 주장과 수정 후 확인된 주장을 각각 기록했다. 날짜·파라미터·입력·벤치마크·지연시간·설치 조건·라이선스 표시를 대조했다. S4는 해당 매체의 보도 존재와 날짜만 확인하며 모델 성능 검증에 사용하지 않았다. 활용 절차·평가표·권고는 필자의 제안으로 집계에서 제외했다. 실제 설치·추론·한국어 성능 시험과 라이선스 전문 검토는 수행하지 않았다. 카드의 발행일은 미표시여서 null을 유지했다. 원문 조회 실패나 핵심 근거 부족은 없어 skip.json을 생성하지 않았다. 발행 승인·주제 교체는 수행하지 않았다."
+}
