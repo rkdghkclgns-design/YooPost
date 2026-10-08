@@ -1,0 +1,106 @@
+{
+ "topic": "Conversational AI Is Finally Connected to the Work: Automation Anywhere to Acquire Boost.ai (2026-10-07)",
+ "source_url": "https://www.automationanywhere.com/company/press-room/conversational-ai-finally-connected-work-automation-anywhere-acquire-boostai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Conversational AI Is Finally Connected to the Work: Automation Anywhere to Acquire Boost.ai",
+   "url": "https://www.automationanywhere.com/company/press-room/conversational-ai-finally-connected-work-automation-anywhere-acquire-boostai",
+   "publisher": "Automation Anywhere",
+   "published": "2026-10-07",
+   "official": true,
+   "published_note": "이 상세 본문은 today로 표기. 공식 press-room의 Oct 07, 2026 및 Boost.ai 동일 발표 본문의 날짜를 대조함."
+  },
+  {
+   "id": "S2",
+   "title": "Conversational AI Is Finally Connected to the Work: Automation Anywhere to Acquire Boost.ai",
+   "url": "https://boost.ai/announcements/automation-anywhere-to-acquire-boost.ai/",
+   "publisher": "Boost.ai",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Nordic Capital agrees to sell Boost.ai to Automation Anywhere",
+   "url": "https://www.nordiccapital.com/insights/press-releases/nordic-capital-agrees-to-sell-boostai-a-leading-conversational-and-voice-ai-company-for-regulated-industries-to-automation-anywhere/",
+   "publisher": "Nordic Capital",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Conversational AI Is Finally Connected to the Work: Automation Anywhere + boost.ai",
+   "url": "https://www.automationanywhere.com/resources/webinars/conversational-ai-is-finally-connected-to-the-work",
+   "publisher": "Automation Anywhere",
+   "published": null,
+   "official": true,
+   "published_note": "페이지에 발행일 표시 없음. 최신성 판정에는 사용하지 않은 보조 공식 안내."
+  },
+  {
+   "id": "S5",
+   "title": "Automation Anywhere to Acquire Boost.ai",
+   "url": "https://www.destinationcrm.com/Articles/CRM-News/CRM-Across-the-Wire/Automation-Anywhere-to-Acquire-Boost.ai-176924.aspx",
+   "publisher": "Destination CRM",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Automation Anywhere Agrees to Acquire Conversational AI Firm Boost.ai",
+   "url": "https://www.unite.ai/automation-anywhere-agrees-to-acquire-conversational-ai-firm-boost-ai/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Press Room — Oct 07, 2026 Boost.ai acquisition announcement listing",
+   "url": "https://www.automationanywhere.com/company/press-room",
+   "publisher": "Automation Anywhere",
+   "published": "2026-10-07",
+   "official": true,
+   "published_note": "목록의 해당 발표에 표시된 날짜. 목록 페이지 전체의 생성일이 아님. 대표 상세 페이지 날짜 확인 보조."
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 인수 발표·매도자 발표·웨비나 안내의 이미지 후보를 조사했습니다. 본문 기술을 설명하는 화면이나 도표는 확인되지 않았고, 로고·사이트 공통 홍보 이미지·경영진 인물 사진은 본문 인용에서 제외했습니다.",
+ "selection": {
+  "category": "AI 뉴스 리뷰",
+  "date_window": "2026-10-05~2026-10-08 KST",
+  "duplicate_check": "brief-4.md의 이미 쓴 글·최근 원고 전체에서 Automation Anywhere/Boost.ai 동일 소식·대표 URL 없음. rejected-candidates의 SAP·TechWolf 제외.",
+  "independent_coverage": [
+   "S5",
+   "S6"
+  ],
+  "previous_failure": "attempt-1/skip.json",
+  "independent_coverage_note": "S5는 다른 회사 매체의 기사이며 회사 발표를 요약하고 in a statement 인용을 사용한다. 직접 취재 여부는 확인되지 않아 취재 인용이라는 기존 표현을 정정했다. S6는 AI 생성·편집팀 검토 기사라고 명시되어 있다. 두 기사 모두 2026-10-07 발행 표시를 직접 확인했으며 성능의 독립 검증 근거로 사용하지 않는다."
+ },
+ "factcheck": {
+  "claims": 28,
+  "confirmed": 28,
+  "removed": [],
+  "note": "2026-10-08 별도 사실 검증: 기존 검증 집계를 전제하지 않고 S1~S7 원문을 다시 열어 읽고 post.json 전체(제목·도입·요약·표·FAQ·맺음말 포함)의 외부 사실을 대조했다. 반복된 주장은 동일 외부 사실 단위로 묶어 28건으로 집계했다. 모든 조회에 성공했고 28건 모두 확인되어 삭제한 외부 주장은 없다. 회사 소개와 운영 해결률은 회사 발표라는 귀속을 명확히 수정했다. 36개 초과 언어 지원·90% 이상 해결률은 회사가 그렇게 보고했다는 사실을 확인한 것이며 독립 성능 재현을 뜻하지 않는다. 미래 결합 기능은 계획·조건부 설명으로 유지했다. 가상 배송지 변경·비용 처리 예시, 작성자의 평가 제안, 자체 실행 여부 및 검증 상태는 외부 사실 주장 수에서 제외했다. 공식 대표 발표일은 S2 본문 October 7, 2026, S3 날짜 및 S7 목록으로 확인했고 S5·S6 기사 발행일도 재확인했다. S4는 발행일 미표시 보조 자료다. 발행 승인이나 주제 교체는 수행하지 않았다."
+ },
+ "image_review": [
+  {
+   "page_url": "https://www.automationanywhere.com/company/press-room/conversational-ai-finally-connected-work-automation-anywhere-acquire-boostai",
+   "result": "본문에 적합한 화면·도표 확인되지 않음"
+  },
+  {
+   "page_url": "https://boost.ai/announcements/automation-anywhere-to-acquire-boost.ai/",
+   "result": "본문에 적합한 화면·도표 확인되지 않음"
+  },
+  {
+   "page_url": "https://www.nordiccapital.com/insights/press-releases/nordic-capital-agrees-to-sell-boostai-a-leading-conversational-and-voice-ai-company-for-regulated-industries-to-automation-anywhere/",
+   "result": "본문에 적합한 화면·도표 확인되지 않음"
+  },
+  {
+   "page_url": "https://www.automationanywhere.com/resources/webinars/conversational-ai-is-finally-connected-to-the-work",
+   "result": "본문에 적합한 화면·도표 확인되지 않음"
+  }
+ ],
+ "request": {
+  "id": "C0C50SP7VV5-1791435024318039",
+  "kind": "all"
+ }
+}
