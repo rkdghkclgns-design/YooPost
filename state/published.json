@@ -2199,5 +2199,23 @@
    "https://eu.36kr.com/en/p/3889653713877766"
   ],
   "draft_id": "20261009_073116_4"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "🔒 Anthropic 사용 정책 개정 총정리: 선거 기만·무기·감시 금지 강화와 11월 12일 시행",
+  "topic": "2026 Usage Policy update (Anthropic, 2026-10-08)",
+  "category": "AI 보안",
+  "source_url": "https://www.anthropic.com/news/2026-usage-policy-update",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-11-12.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/news/2026-usage-policy-update",
+   "https://www.anthropic.com/legal/aup",
+   "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
+   "https://aiweekly.co/alerts/anthropic-bans-claude-abuse-election-deception-from-nov-12",
+   "https://www.anthropic.com/threat-intelligence-report-september-2026"
+  ],
+  "draft_id": "20261009_073805_5"
  }
 ]
