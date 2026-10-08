@@ -1,0 +1,61 @@
+{
+ "topic": "2026 Usage Policy update (Anthropic, 2026-10-08)",
+ "source_url": "https://www.anthropic.com/news/2026-usage-policy-update",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "2026 Usage Policy update",
+   "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+   "publisher": "Anthropic",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Usage Policy (effective November 12, 2026)",
+   "url": "https://www.anthropic.com/legal/aup",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic changes usage policy to ban model abuse and election interference",
+   "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Bans Claude Abuse, Election Deception From Nov 12",
+   "url": "https://aiweekly.co/alerts/anthropic-bans-claude-abuse-election-deception-from-nov-12",
+   "publisher": "AI Weekly",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Detecting and countering misuse of AI: September 2026",
+   "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 Anthropic 공식 글(2026-usage-policy-update)과 Usage Policy 원문 페이지를 직접 읽었으나 본문에는 글자와 링크뿐이고 제품 화면·도표·차트 같은 본문 그림이 하나도 없다(공유 아이콘만 있음). 대표 이미지·로고는 쓰지 않는 규칙이라 넣지 않았다.",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 52,
+  "removed": [
+   "S2(Usage Policy) published 2026-10-08 → 페이지에 발표일 없음(적용일 2026-11-12만), published 비움",
+   "'시빌 계정' 표현 삭제 — 정책 원문에 없음, 원문 문구(가짜 인물·계정·매체·조직)로 교체",
+   "'감시 도구를 만들거나 개선' 중 '개선' 삭제 — 공식 글은 building 만 명시",
+   "'Claude 가 코드를 실행하고 장비와 연결되는 일이 늘면서' 삭제 — 공식 글에 없음",
+   "'규칙을 먼저 만들고 사용 사례를 맞추는 방식이 아니라' 해석 문장 삭제",
+   "AI Weekly 편집자 주·분석가 해석(위험 관리) 관련 문장 삭제 — 사실로 쓰지 않음, AI Weekly 가 '구분해 적었다'는 문장도 원문과 다름"
+  ],
+  "note": "Opus 검증: S1·S2·S3·S4 를 다시 열어 주장별 대조, 9월 위협 인텔리전스 보고서(S5)를 직접 열어 확인. 수정: 고위험 영역 11개로 정정, 무기 '유도·제어 소프트웨어', 선거 금지 행위 원문 문구로, 기만 섹션 악용 주체(국영 매체·정부 선전 기관·상업 회사), '8월부터' 대화 종료는 TechCrunch 출처로 명시, 집행 문구('이전 정책 집행 방식 반영', '실제 집행 대상 변화 없음'). published 확인: S1 2026-10-08, S3 2026-10-08(11:16 PDT), S4 2026-10-08(18:37 UTC) 페이지 날짜 일치; S2·S5 는 페이지에 발표일 없어 비움. 본문 그림은 S1·S2 모두 없음(images_none_reason 유지)."
+ }
+}
