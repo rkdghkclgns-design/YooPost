@@ -2024,5 +2024,22 @@
    "https://www.dataeconomy.co.kr/news/articleView.html?idxno=43100"
   ],
   "draft_id": "20261008_080030_7"
+ },
+ {
+  "date": "2026-10-08",
+  "title": "🤖 Liquid AI open d1 사용 가이드: 3B·600M 결정 모델과 엣지 추론 총정리",
+  "topic": "Open d1: Edge decision models for text, vision, and audio (2026-10-07)",
+  "category": "AI 언어 모델",
+  "source_url": "https://huggingface.co/blog/LiquidAI/open-d1",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/liquid-ai-open-d1-3b600m.html"
+  },
+  "sources": [
+   "https://huggingface.co/blog/LiquidAI/open-d1",
+   "https://huggingface.co/LiquidAI/d1-3B",
+   "https://huggingface.co/LiquidAI/d1-omni-600M",
+   "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/"
+  ],
+  "draft_id": "20261008_141354_1"
  }
 ]
