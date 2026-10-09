@@ -1,20 +1,4 @@
 {
- "C0C50SP7VV5-1791248113935869": {
-  "reported": [
-   "arrived:20261006_104722_1",
-   "arrived:20261006_105517_2",
-   "arrived:20261006_110230_3",
-   "arrived:20261006_110826_4",
-   "arrived:20261006_111430_5",
-   "arrived:20261006_112208_6",
-   "skipped:20261006_112525_7"
-  ],
-  "finished": "2026-10-06T11:25:27+09:00",
-  "stale": false,
-  "board_ts": "1791248139.969289",
-  "board_hash": "da77fd3bfba7aadd",
-  "thread_link": "https://yoopost.slack.com/archives/C0C50SP7VV5/p1791248113935869?thread_ts=1791248113.935869&cid=C0C50SP7VV5"
- },
  "C0C50SP7VV5-1791259338398959": {
   "reported": [
    "arrived:20261006_133108_2",
