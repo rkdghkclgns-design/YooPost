@@ -1,0 +1,68 @@
+{
+ "topic": "Claude Haiku 5.5 — Anthropic 소형 모델 출시와 Haiku 4.5 대비 가격 인하 (2026-10-07)",
+ "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Haiku 5.5",
+   "url": "https://www.anthropic.com/claude-haiku-5-5",
+   "publisher": "Anthropic",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Claude Haiku 5.5 model overview",
+   "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+   "publisher": "Anthropic",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic launches Claude Haiku 5.5 with 90% API price reduction, matching GPT-6 Luna",
+   "url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+   "publisher": "VentureBeat",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Releases Claude Haiku 5.5 With Lower Prices and Effort Controls",
+   "url": "https://letsdatascience.com/news/anthropic-releases-claude-haiku-55-with-lower-prices-and-eff-f698c663",
+   "publisher": "Let's Data Science",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Claude Haiku 5.5 migration guide",
+   "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Models overview",
+   "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문·모델 문서 본문에 그림 파일이 없고(벤치마크는 표 형태) 대표 이미지(og:image)뿐이라 넣지 않음",
+ "factcheck": {
+  "claims": 96,
+  "confirmed": 95,
+  "removed": [
+   "일부 Azure·Google Cloud 고객은 Sonnet 캐시 인하가 며칠에 걸쳐 적용될 수 있습니다."
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 발표문·S2 모델 개요·S3 VentureBeat·S4 Let's Data Science 를 다시 열어 가격(구간·캐시·배치)·스펙(1M/128K/300K 베타 헤더·지식 기준일·지원 종료)·벤치마크 표 전 수치·고객 수치·effort 단계·안전장치·인용문(Rogo Alex Wang)을 대조. 출처 published 는 S1·S2 페이지(October 7, 2026), S3(Oct 7, 2026 11:08 PT), S4(article:published_time 2026-10-07) 와 일치. 수정: '적응형 사고 Haiku 최초' 표현을 공식 문구대로 'effort 조절 최초 + 적응형 사고 기본'으로 고침, 도입부 '여러 매체 비중 있게' 완화, FrontierCode Sonnet 수치에 Xhigh 표기, Grok 4.7 가격 조건 추가, 지원 종료 약속 범위(Anthropic 운영 플랫폼) 명시. 삭제: 출처에 없는 Azure·Google Cloud 캐시 인하 지연 문장. 보완(확인된 사실만): S5 마이그레이션 가이드(adaptive thinking 전환·프리필 400·computer_toolset_20260801·browser_toolset_20260801·refusal·Priority Tier·/claude-api migrate)와 S6 모델 개요(Opus 5.5로 시작·Fable 5.1 권장, Bedrock·Google Cloud 자체 지원 종료 일정), S1 의 HLE(도구 사용)·Chartography 수치, 1시간 캐시 쓰기 가격(S2), Asana 2.5배·AlphaSense 0.84 vs 0.76. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
