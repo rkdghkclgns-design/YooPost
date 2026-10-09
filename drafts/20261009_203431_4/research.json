@@ -1,0 +1,78 @@
+{
+ "topic": "Measuring the AI Frontier for Real-World Alignment: Arena's $200 Million Series B",
+ "source_url": "https://arena.ai/blog/series-b",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Measuring the AI Frontier for Real-World Alignment: Arena's $200 Million Series B",
+   "url": "https://arena.ai/blog/series-b",
+   "publisher": "Arena",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Popular AI leaderboard Arena nearly doubles valuation to $3.1B valuation in 10 months",
+   "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Arena Reaches $100M in 8 Months",
+   "url": "https://arena.ai/blog/arena-100m-revenue",
+   "publisher": "Arena",
+   "published": "2026-06-29",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Arena Series A announcement ($150M)",
+   "url": "https://arena.ai/blog/series-a",
+   "publisher": "Arena",
+   "published": "2026-01-06",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Arena AI Alignment Index",
+   "url": "https://arena.ai/blog/ai-alignment-index",
+   "publisher": "Arena",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Alignment Index: Best Aligned AI Agents Ranked (Preliminary)",
+   "url": "https://arena.ai/leaderboard/agent/alignment",
+   "publisher": "Arena",
+   "published": "2026-09-30",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/ybjf12mv/migration/7fbe99c5e4b6b2cff0371398ed837e0f56501b78-2200x1426.png",
+   "page_url": "https://arena.ai/blog/ai-alignment-index",
+   "caption": "정렬 지수 결과를 낸 방식: 신호별 기준표 정의 → LLM 판정기가 세션 판정 → 사람 검토로 기준표 수정을 반복",
+   "credit": "Arena"
+  }
+ ],
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 88,
+  "removed": [
+   "예전 이름은 LMArena였고, 올해 1월 Arena로 이름을 바꿨다고 보도됐습니다. (개명 시점 확인 불가 — '1월 시리즈 A 공식 글까지는 LMArena 이름을 썼다'로 교체)",
+   "정렬 지수 순위표 '1위 GPT-6.1 Sol, 2위 Claude Opus 5.5, 3위 Grok 4.7' (리더보드상 Opus 5.5는 6위, Grok 4.7은 7위 — 1~7위·9위 표로 교체)",
+   "이 순위는 TechCrunch와 유나이트AI 보도 사이에 표기가 조금 다르므로… (리더보드로 확인해 정리)",
+   "이번 글에서는 Arena 정렬 지수 본문 페이지를 직접 읽지 못해 세부 점수는 유나이트AI 보도에 의존했습니다. (공식 글·리더보드로 재확인, Unite.AI 출처 제거)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). arena.ai 시리즈 B·정렬 지수 글·리더보드·6월/1월 글, TechCrunch 를 다시 열어 대조. 정렬 지수 가중치 50/25/25·1-√비율 변환·27개 모델·9만 세션·10%/48.0%/45.4%/12.4%/53.5%/20.0%/6.3%/13.7% 모두 arena.ai/blog/ai-alignment-index 원문에서 확인. 순위·점수는 arena.ai/leaderboard/agent/alignment(9월 30일, 72,509 세션, 27개 모델)로 확인 — Opus 5.5 6위·Fable 9위(TechCrunch 와 일치), Unite.AI 의 '2위' 식 나열은 회사별 대표 모델 요약이라 오해 소지. 누적 투표 8,200만(6월 글)·6,200만(10월 글) 모두 각 원문 그대로이며 차이 이유는 미설명 — 본문에 두 수치와 불일치를 명시. 투자자: 시리즈 B(Lightspeed·Khosla 공동 주도, Salesforce Ventures·01 Advisors·Dell Technologies Capital·Endeavor Catalyst 신규, a16z·Felicis·AMP PBC·QuantumLight·The House Fund 기존)와 시리즈 A 명단(Lightspeed 참여, Khosla 없음) 원문 대조. 필자가 AI 에이전트로 표기된 Unite.AI 는 출처에서 제외. 모든 출처 published 가 페이지 메타(article:published_time)·본문 날짜와 일치 확인. 인용 그림 I1 은 정렬 지수 글 본문 Figure 2(2200px, image/png 200 확인)."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
