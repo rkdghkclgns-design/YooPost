@@ -1,0 +1,72 @@
+{
+ "topic": "The results of the 2026 Developer Survey are here (Stack Overflow, 2026-10-06) — AI 코딩 도구 사용·신뢰·업무 변화 해설",
+ "source_url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The results of the 2026 Developer Survey are here",
+   "url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+   "publisher": "Stack Overflow",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Stack Overflow survey shows developers trust AI with caveats",
+   "url": "https://itbrief.co.uk/story/stack-overflow-survey-shows-developers-trust-ai-with-caveats",
+   "publisher": "IT Brief UK",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Stack Overflow Developer Survey 2026 (results overview)",
+   "url": "https://survey.stackoverflow.co/2026/",
+   "publisher": "Stack Overflow",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "AI data 2026 | Stack Overflow Developer Survey",
+   "url": "https://survey.stackoverflow.co/2026/ai/data",
+   "publisher": "Stack Overflow",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Work 2026 | Stack Overflow Developer Survey",
+   "url": "https://survey.stackoverflow.co/2026/work",
+   "publisher": "Stack Overflow",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/82729f3684e5bc0d0770abf0ac825208f718fc06-2048x805.jpg?auto=format",
+   "page_url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+   "caption": "AI 코딩 도구 매일 사용 비율과 하루 사용 시간 차트",
+   "credit": "Stack Overflow"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/b751a657ca0552b40339e4adddc68d6b4ff6ca93-2048x876.jpg?auto=format",
+   "page_url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+   "caption": "답을 어디서 찾나: 검색 83%, AI 70% 차트",
+   "credit": "Stack Overflow"
+  }
+ ],
+ "factcheck": {
+  "claims": 76,
+  "confirmed": 76,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 글·S2 IT Brief UK·S3~S5 설문 결과 사이트(survey.stackoverflow.co/2026, ai/data, work)를 curl 로 다시 열어 수치·날짜·이름 76개 대조. published: S1 페이지 'October 6, 2026'(datePublished 2026-10-06T14:00Z) 일치, S2 페이지 'Tue, 6th Oct 2026'(메타 2026-10-07T11:15+13:00 = UTC 10-06) 일치, S3~S5 결과 사이트에는 날짜 표기가 없어 비움. 6.6%(949/14,304)·24%(승인 도구·지침, n=13,167)는 IT Brief 외에 결과 사이트 원자료로 재확인해 귀속 수정. 93% vs 78.7%: 원자료(n=13,945) 매우 중요 52.1%+중요 26.5%+어느 정도 중요 14.0%=93%, 앞의 둘만=78.7% — 묶음 차이로 설명 추가. 수정: 제목 '신뢰는 6.6%'→'중요한 결정 신뢰는 6.6%', 1~2시간 26%(블로그 차트 alt)→원자료 25.3%·4시간 이상 30.9%·2~4시간 24.1%, 100~499명 16%→원자료 16.5% 병기, 1인 조직 원자료 10.5% 병기, '레이오프와 함께 설명' 문장을 공식 글·결과 사이트 표현대로 고침, '4가지 원칙' 소제목을 본문(5개)에 맞춰 '5가지'로, 16,664명 예시를 질문별 n 으로 교체. 보완(확인된 사실만): 응답 30,903건·질문 103개, 48% 검증 가능할 때 신뢰, 경력 1~5년 4%, 챗봇 매일 65.6%, 2시간 이상 55%, AI 선택 사항 30%, GitHub 저장소 링크(github.com/StackExchange/Survey). 인용 이미지 2개 모두 HTTP 200 image/jpeg(2048px 폭) 확인. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
