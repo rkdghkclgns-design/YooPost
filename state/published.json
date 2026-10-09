@@ -2346,5 +2346,23 @@
    "https://innovatopia.jp/cyber-security/cyber-security-news/118655/"
   ],
   "draft_id": "20261009_204329_5"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "📊 Stack Overflow 2026 개발자 설문 총정리: AI 코딩 도구 매일 73%, 중요한 결정 신뢰는 6.6%",
+  "topic": "The results of the 2026 Developer Survey are here (Stack Overflow, 2026-10-06) — AI 코딩 도구 사용·신뢰·업무 변화 해설",
+  "category": "AI 인사이트",
+  "source_url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/stack-overflow-2026-ai-73-66.html"
+  },
+  "sources": [
+   "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/",
+   "https://itbrief.co.uk/story/stack-overflow-survey-shows-developers-trust-ai-with-caveats",
+   "https://survey.stackoverflow.co/2026/",
+   "https://survey.stackoverflow.co/2026/ai/data",
+   "https://survey.stackoverflow.co/2026/work"
+  ],
+  "draft_id": "20261009_205149_6"
  }
 ]
