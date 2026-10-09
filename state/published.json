@@ -2451,5 +2451,23 @@
    "https://therecord.media/south-korean-bank-hacks-ai-agents"
   ],
   "draft_id": "20261010_073712_5"
+ },
+ {
+  "date": "2026-10-10",
+  "title": "🌲 핀란드 감독청, 구글 데이터센터 2곳 준비 작업 중단 권고 총정리: 10월 23일 기한과 AI 인프라의 허가 문제",
+  "topic": "Finland's LVV urges (kehottaa) Google's Tuike Finland to suspend preparatory work at Muhos and Kajaani data centre sites (LVV, 2026-10-06; Al Jazeera/TNW/Euronews 2026-10-07)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.sttinfo.fi/tiedote/72390663/lupa-ja-valvontavirasto-kehottaa-tuike-finland-oyta-keskeyttamaan-muhoksen-ja-kajaanin-datakeskushankkeiden-valmistelutoimet?lang=fi",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/2-10-23-ai.html"
+  },
+  "sources": [
+   "https://www.sttinfo.fi/tiedote/72390663/lupa-ja-valvontavirasto-kehottaa-tuike-finland-oyta-keskeyttamaan-muhoksen-ja-kajaanin-datakeskushankkeiden-valmistelutoimet?lang=fi",
+   "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-deepens-its-commitment-to-finland-with-a-13-billion-investment-in-ai-infrastructure/",
+   "https://www.aljazeera.com/news/2026/10/7/finland-orders-halt-to-work-on-google-data-sites-over-environment-concerns",
+   "https://thenextweb.com/news/finland-orders-google-to-stop-clearing-forest-at-two-data-centre-sites",
+   "https://www.euronews.com/2026/10/07/finland-orders-pause-on-google-ai-data-centre-over-environmental-concerns"
+  ],
+  "draft_id": "20261010_074223_6"
  }
 ]
