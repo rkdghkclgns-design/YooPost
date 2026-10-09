@@ -1,0 +1,52 @@
+{
+  "topic": "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance (CrowdStrike, 2026-10-07)",
+  "source_url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance",
+      "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+      "publisher": "CrowdStrike",
+      "published": "2026-10-07",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "South Korea probes bank breaches amid suspected AI-powered attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/",
+      "publisher": "BleepingComputer",
+      "published": "2026-10-05",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "How AI emerged as new threat in Korea's bank hacking crisis",
+      "url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis",
+      "publisher": "The Korea Times",
+      "published": "2026-10-07",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "South Korean President Lee Jae Myung — bank hacks likely caused by AI agents",
+      "url": "https://therecord.media/south-korean-bank-hacks-ai-agents",
+      "publisher": "The Record from Recorded Future News",
+      "published": "2026-10-06",
+      "official": false
+    }
+  ],
+  "images": [],
+  "images_none_reason": "출처 페이지 본문 그림은 캡션 없는 일반 이미지·뉴스 사진·인물 사진뿐이라 원고 내용(ARTEX 분석)을 보여 주는 도표나 화면이 없음",
+  "factcheck": {
+    "claims": 61,
+    "confirmed": 61,
+    "removed": [],
+    "corrected": [
+      "CLAUDE.md·홍콩 IP 설명: '세션 기록으로 보면 두 서버 구조' → CLAUDE.md 에 홍콩 IP 가 적혀 있었고 그 IP 의 열린 디렉터리에서 세션 기록 등이 나왔다는 원문대로 수정",
+      "점검 포인트: 'IP 와 도메인 지표' → IOC 표에 있는 IP 지표(ARTEX 서버 1개·프록시 9개)로 수정",
+      "피해 표 신한은행: '은행 측 유출 확인' → '당국이 유출 확인, 약 25,000명 보도'(BleepingComputer: officials confirmed)",
+      "공격 IP 33개: '당국이 확인' → '현지 보도에 따르면 금융당국이 지금까지 찾은'(The Record 원문 표현)"
+    ],
+    "note": "Opus 검증: S1~S4 를 모두 다시 열어 주장 하나씩 대조(전부 접속됨, EGRESS_BLOCKED 없음). published 날짜가 페이지 표기와 일치(S1 2026-10-07, S2 2026-10-05, S3 2026-10-07 KST, S4 2026-10-06). 은행별 피해 인원은 출처별로 표기(신한 약 25,000=S2·S3·S4, KB 119=S2·S3, 하나 89=S3, 최소 7개 기관·68,000명=S4 의 'reportedly')하고 단정하지 않음. 보완: 황석진 교수 '피해 제한적', 임종인 교수 24시간 자동 대응, 크라우드스트라이크 전망, BC 의 KB 신용카드 정보 표기(모두 출처 확인)."
+  }
+}
