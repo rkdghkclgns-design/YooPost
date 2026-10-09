@@ -2398,5 +2398,23 @@
    "https://learn.microsoft.com/en-us/dynamics365/sales/sales-dev-agent/sales-development-agent-overview"
   ],
   "draft_id": "20261010_071815_2"
+ },
+ {
+  "date": "2026-10-10",
+  "title": "🧠 OpenAI openai/math 공개: 수학 원고 719편·Lean 검증 논란 총정리",
+  "topic": "OpenAI openai/math: AI-generated math manuscripts (unique games conjecture claim, Lean formalizations)",
+  "category": "AI 논문 분석",
+  "source_url": "https://github.com/openai/math",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-openaimath-719lean.html"
+  },
+  "sources": [
+   "https://github.com/openai/math",
+   "https://www.quantamagazine.org/as-ai-closed-in-on-unique-games-proof-researchers-raced-to-beat-the-machines-20261007/",
+   "https://officechai.com/ai/openai-releases-ai-generated-proofs-of-quasi-riemann-hypothesis-unique-games-conjecture-hodge-conjecture-for-cm-abelian-varieties/",
+   "https://explainx.ai/blog/openai-math-results-that-matter-expert-reactions-2026",
+   "https://github.com/openai/math/blob/main/history.md"
+  ],
+  "draft_id": "20261010_072331_3"
  }
 ]
