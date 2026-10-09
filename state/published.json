@@ -2274,5 +2274,23 @@
    "https://platform.claude.com/docs/en/about-claude/models/overview"
   ],
   "draft_id": "20261009_201310_1"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "📱 Meta Muse iPad 앱 출시: 새 커넥터·승인 구조·에이전트 차단 논란 총정리",
+  "topic": "Meta's Muse launches on iPad just a month after its mobile debut (TechCrunch, 2026-10-07) — Muse from Meta App Store 10.0",
+  "category": "AI 도구",
+  "source_url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/meta-muse-ipad.html"
+  },
+  "sources": [
+   "https://apps.apple.com/us/app/muse-from-meta/id6760173601",
+   "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
+   "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in/",
+   "https://www.ithinkdiff.com/?p=349481",
+   "https://letsdatascience.com/news/meta-adds-ipad-support-to-muse-3017453a"
+  ],
+  "draft_id": "20261009_201920_2"
  }
 ]
