@@ -2434,5 +2434,22 @@
    "https://www.engadget.com/2281966/fired-openai-safety-researchers-dispute-their-dismissals-in-open-letter/"
   ],
   "draft_id": "20261010_073001_4"
+ },
+ {
+  "date": "2026-10-10",
+  "title": "🔒 ARTEX AI 은행 해킹 총정리: 크라우드스트라이크가 본 Claude Code 세션 기록·한국 금융권 피해",
+  "topic": "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance (CrowdStrike, 2026-10-07)",
+  "category": "AI 보안",
+  "source_url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/artex-ai-claude-code.html"
+  },
+  "sources": [
+   "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+   "https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/",
+   "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis",
+   "https://therecord.media/south-korean-bank-hacks-ai-agents"
+  ],
+  "draft_id": "20261010_073712_5"
  }
 ]
