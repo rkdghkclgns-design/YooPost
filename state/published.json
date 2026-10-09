@@ -2292,5 +2292,22 @@
    "https://letsdatascience.com/news/meta-adds-ipad-support-to-muse-3017453a"
   ],
   "draft_id": "20261009_201920_2"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "🧠 Self-Retrospection Distillation 논문 분석: 보상이 같아도 배운다, RLVR 0.0% 대 SRD 60.6% 총정리",
+  "topic": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight (arXiv 2610.08077, 2026-10-06)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.08077",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/self-retrospection-distillation-rlvr-00.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.08077",
+   "https://huggingface.co/papers/2610.08077",
+   "https://github.com/SalesforceAIResearch/SRD",
+   "https://huggingface.co/papers/date/2026-10-08"
+  ],
+  "draft_id": "20261009_202737_3"
  }
 ]
