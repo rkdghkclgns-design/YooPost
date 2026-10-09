@@ -1,0 +1,63 @@
+{
+ "topic": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect (TechCrunch, 2026-10-08)",
+ "source_url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect",
+   "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI cannot make AI safe on its own (공개서한 원문)",
+   "url": "https://mikitabalesni.com/letter/letter.pdf",
+   "publisher": "Tomek Korbak, Jasmine Wang, Mikita Balesni",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+   "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-01",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI says three staffers fired for mishandling 'sensitive' info",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/10/02/openai-says-three-staffers-fired-for-mishandling-039sensitive039-info",
+   "publisher": "The Star (AFP)",
+   "published": "2026-10-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Fired OpenAI safety researchers dispute their dismissals in open letter",
+   "url": "https://www.engadget.com/2281966/fired-openai-safety-researchers-dispute-their-dismissals-in-open-letter/",
+   "publisher": "Engadget",
+   "published": "2026-10-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "원문이 글자뿐인 공개서한 PDF와 텍스트 기사여서 본문에 실린 관련 도표·스크린샷이 없음",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 50,
+  "removed": [
+   "Newsweek(10월 9일)에 따르면 OpenAI는 10월 9일 성명에서 조사 결과 서한에 적힌 것 이상의 '중대한 신뢰 위반'이 확인됐다고 밝혔습니다 … 몇 주 안에 세부 내용을 공유하겠다고 밝혔습니다. (요약·FAQ·표의 같은 내용 포함)",
+   "Newsweek은 세 사람의 개별 설명도 전했습니다. Korbak은 구두로 METR과의 소통 방식 때문에 해고됐다고 들었고 … Balesni는 제3자 안전 단체와의 접촉 때문에 신뢰를 잃었다는 말을 들었고 … 서면 혐의 목록을 요구했다고 합니다.",
+   "표: Balesni는 단기 기업 이익보다 안전을 앞세운 것이 이유라고 믿는다고 말함",
+   "💡 보도 시점 차이: Newsweek(10월 9일)은 그 뒤 나온 성명을 전했습니다",
+   "OpenAI는 10월 1일 전후로 … 결별했다고 밝혔고 (해고 시점 단정 → '지난주'로만 알려졌다고 수정)",
+   "표: AFP·Reuters 계열 기사 (→ AFP 기사로 수정)",
+   "'징계 사유의 패턴' (→ '비위의 패턴(pattern of misconduct)'으로 수정)",
+   "Wang 관련 인칭 대명사 '그가/그에 따르면' (→ 이름으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): TechCrunch 10/1·10/8, Engadget 10/9, The Star(AFP) 10/2, 서한 PDF(pdftotext 추출)를 다시 열어 수치·날짜·이름·인용을 하나씩 대조. 각 출처 published 를 페이지 표기 날짜와 대조해 일치 확인(서한 PDF 는 본문에 날짜가 없어 서버 Last-Modified 2026-10-08 과 TechCrunch '목요일(10/8)' 보도로 확인). Newsweek 는 자사 AI 어시스턴트(Martyn)로 작성했다고 밝혀 10월 9일 OpenAI 성명·Korbak/Balesni 개별 증언을 TechCrunch·Engadget·검색으로 재확인하려 했으나 찾지 못해 삭제하고 출처(S6)에서 뺌. 해고 날짜는 보도마다 표현이 달라 단정하지 않음. EGRESS_BLOCKED 출처 없음."
+ }
+}
