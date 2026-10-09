@@ -2255,5 +2255,24 @@
    "https://core.asiae.co.kr/article/2026093017481997850"
   ],
   "draft_id": "20261009_075035_7"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "💰 Claude Haiku 5.5 출시: 가장 작은 Claude, 입력 $0.10·출력 $0.50으로 Haiku 4.5 대비 90% 인하",
+  "topic": "Claude Haiku 5.5 — Anthropic 소형 모델 출시와 Haiku 4.5 대비 가격 인하 (2026-10-07)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-haiku-55-claude-010-050-haiku-45.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/claude-haiku-5-5",
+   "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+   "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+   "https://letsdatascience.com/news/anthropic-releases-claude-haiku-55-with-lower-prices-and-eff-f698c663",
+   "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+   "https://platform.claude.com/docs/en/about-claude/models/overview"
+  ],
+  "draft_id": "20261009_201310_1"
  }
 ]
