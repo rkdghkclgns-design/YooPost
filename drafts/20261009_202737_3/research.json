@@ -1,0 +1,75 @@
+{
+ "topic": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight (arXiv 2610.08077, 2026-10-06)",
+ "source_url": "https://arxiv.org/abs/2610.08077",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+   "url": "https://arxiv.org/abs/2610.08077",
+   "publisher": "arXiv",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Self-Retrospection Distillation (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.08077",
+   "publisher": "Hugging Face",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "SalesforceAIResearch/SRD",
+   "url": "https://github.com/SalesforceAIResearch/SRD",
+   "publisher": "Salesforce AI Research (GitHub)",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hugging Face Daily Papers 2026-10-08",
+   "url": "https://huggingface.co/papers/date/2026-10-08",
+   "publisher": "Hugging Face",
+   "published": "2026-10-08",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.08077v2/fig/fig-1-v2.png",
+   "page_url": "https://arxiv.org/html/2610.08077v2",
+   "caption": "RLVR, 회고적 학습, 전향적 학습 비교 (SRD 등장 배경)",
+   "credit": "Zhang et al., arXiv 2610.08077 (CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.08077v2/fig/srd-fig2.png",
+   "page_url": "https://arxiv.org/html/2610.08077v2",
+   "caption": "SRD 개요: 학생 롤아웃과 stop-gradient 자기 교사 (핵심 아이디어와 학습 단계)",
+   "credit": "Zhang et al., arXiv 2610.08077 (CC BY 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.08077v2/fig/sample_efficiency.png",
+   "page_url": "https://arxiv.org/html/2610.08077v2",
+   "caption": "보상이 균일한 그룹이 롤아웃 예산을 낭비하는 정도 (주요 결과)",
+   "credit": "Zhang et al., arXiv 2610.08077 (CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 90,
+  "confirmed": 87,
+  "removed": [
+   "전체 롤아웃 예산과 옵티마이저 설정은 부록 C에 있으며 이번 글에서는 확인하지 못했습니다. (부록 C 를 읽고 확인된 학습 설정으로 교체)",
+   "별도의 논쟁이나 반박 댓글은 확인하지 못했습니다.",
+   "또 이번 글은 전체 본문 일부(부록 C 포함 뒷부분)를 읽지 못해 학습 예산 세부 사항은 다루지 않았습니다."
+  ],
+  "note": "Opus 검증: arXiv abs(v1 2026-10-06, v2 2026-10-08, CC BY 4.0)·arXiv HTML v2 전문(약 16만 자, 부록 C~F 포함)·Hugging Face Papers 페이지(Published on Oct 6 · Submitted on Oct 8, #1 Paper of the day, 추천 115, 제1저자 TL;DR 댓글)·HF Daily Papers 2026-10-08 목록·SalesforceAIResearch/SRD 저장소(git clone: 첫 커밋 2026-10-06, Apache-2.0, README)를 다시 열어 대조. Table 1 수치 전부 일치. 수정: 초록의 '2B 설정'은 RQ3 코드 전용 실험(Qwen3.5 네 규모)의 2B 로 실제 존재하며 60.6% 는 학습 중 성공률 — '본문과 맞지 않아 보인다' 경고를 바로잡고 요약·본문·FAQ 에 '학습 성공률'·코드 전용 실험임을 명시; 저자 소속을 Salesforce AI Research+UCSD·TAMU·Stanford 로 보강; RQ2 +0.6 은 순변화로 정정; '시드 하나' 는 RQ5 의 RLSD+Knowledge 해석에 한정됨을 정정; 부록 C 학습 설정(H200×8, 16×8 롤아웃, 8턴, Adam 1e-6, EMA 0.05 교사) 추가. 인용 이미지 3개 모두 HTTP 200 image/png(2670·1959·1039px 폭) 확인. 출처 published 는 페이지 표기와 일치(HF 논문 페이지는 Published Oct 6 / Submitted Oct 8 — 커뮤니티 게시일 10-08 사용). github.com 페이지는 이 세션 프록시에서 403 이라 git clone·raw README 로 확인."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
