@@ -2381,5 +2381,22 @@
    "https://biz.sbs.co.kr/amp/article/20000331470"
   ],
   "draft_id": "20261009_205739_7"
+ },
+ {
+  "date": "2026-10-10",
+  "title": "🤖 Dynamics 365 AI 에이전트 총정리: Copilot 스킬 30개·Sales Development Agent·Teams 연동",
+  "topic": "Bringing CRM into the flow of work and agents into business process for sales and service teams (Microsoft, 2026-10-08)",
+  "category": "AI 도구",
+  "source_url": "https://www.microsoft.com/en-us/copilot/blog/2026/10/08/bringing-crm-into-the-flow-of-work-and-agents-into-business-process-for-sales-and-service-teams/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/dynamics-365-ai-copilot-30sales.html"
+  },
+  "sources": [
+   "https://www.microsoft.com/en-us/copilot/blog/2026/10/08/bringing-crm-into-the-flow-of-work-and-agents-into-business-process-for-sales-and-service-teams/",
+   "https://futurumgroup.com/insights/microsoft-turns-dynamics-365-into-an-ambient-crm-layer",
+   "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/09/09/accelerate-your-move-to-agentic-business-applications-with-dynamics-365-activate/",
+   "https://learn.microsoft.com/en-us/dynamics365/sales/sales-dev-agent/sales-development-agent-overview"
+  ],
+  "draft_id": "20261010_071815_2"
  }
 ]
