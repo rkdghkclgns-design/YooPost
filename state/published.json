@@ -2328,5 +2328,23 @@
    "https://arena.ai/leaderboard/agent/alignment"
   ],
   "draft_id": "20261009_203431_4"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "🔒 Copilot CLI 암호문 공격 총정리: Adversa 시연서 28초 만에 .env 유출, GitHub는 '취약점 아님' 판단",
+  "topic": "Cryptographic Context Injection(CCI): GitHub Copilot CLI 암호문 지시 유출 시연 (Adversa AI, 2026-10-06)",
+  "category": "AI 보안",
+  "source_url": "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/copilot-cli-adversa-28-env-github.html"
+  },
+  "sources": [
+   "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/",
+   "https://www.theregister.com/a/5301206",
+   "https://expertinsights.com/?p=63126",
+   "https://www.csoonline.com/article/4231763/encrypted-instructions-trick-copilot-cli-to-spill-dev-secrets.html",
+   "https://innovatopia.jp/cyber-security/cyber-security-news/118655/"
+  ],
+  "draft_id": "20261009_204329_5"
  }
 ]
