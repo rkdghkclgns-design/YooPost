@@ -2309,5 +2309,24 @@
    "https://huggingface.co/papers/date/2026-10-08"
   ],
   "draft_id": "20261009_202737_3"
+ },
+ {
+  "date": "2026-10-09",
+  "title": "📊 Arena 2억 달러 시리즈 B 총정리: 기업가치 31억 달러와 정렬 지수(Alignment Index) 공개",
+  "topic": "Measuring the AI Frontier for Real-World Alignment: Arena's $200 Million Series B",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://arena.ai/blog/series-b",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/arena-2-b-31-alignment-index.html"
+  },
+  "sources": [
+   "https://arena.ai/blog/series-b",
+   "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/",
+   "https://arena.ai/blog/arena-100m-revenue",
+   "https://arena.ai/blog/series-a",
+   "https://arena.ai/blog/ai-alignment-index",
+   "https://arena.ai/leaderboard/agent/alignment"
+  ],
+  "draft_id": "20261009_203431_4"
  }
 ]
