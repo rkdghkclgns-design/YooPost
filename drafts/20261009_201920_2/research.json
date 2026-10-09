@@ -1,0 +1,84 @@
+{
+ "topic": "Meta's Muse launches on iPad just a month after its mobile debut (TechCrunch, 2026-10-07) — Muse from Meta App Store 10.0",
+ "source_url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Muse from Meta — App Store 10.0 (iPad 지원)",
+   "url": "https://apps.apple.com/us/app/muse-from-meta/id6760173601",
+   "publisher": "Meta Platforms, Inc. (App Store)",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta's Muse launches on iPad just a month after its mobile debut",
+   "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The next hurdle for AI agents: getting websites to let them in",
+   "url": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "A new way for businesses and personal agents to work together",
+   "url": "https://www.facebook.com/business/news/a-new-way-for-businesses-and-personal-agents-to-work-together",
+   "publisher": "Meta for Business",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Meta's Muse AI Agent Is Now Available on iPad",
+   "url": "https://www.ithinkdiff.com/?p=349481",
+   "publisher": "iThinkDifferent",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Meta Adds iPad Support to Muse",
+   "url": "https://letsdatascience.com/news/meta-adds-ipad-support-to-muse-3017453a",
+   "publisher": "Let's Data Science",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/97/fa/2697fa0a-0468-cf47-4a27-5086a62310b0/Screen01.jpg/600x1300bb.jpg",
+   "page_url": "https://apps.apple.com/us/app/muse-from-meta/id6760173601",
+   "caption": "승인 구조: Muse가 이메일 속 양식을 채운 뒤 확인 메일을 보내기 전에 사용자 승인을 묻는 대화 화면",
+   "credit": "Meta Platforms, Inc. (App Store 스크린샷 — iPhone 화면)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6a/ed/39/6aed399d-812e-5a42-25d8-11746f542adc/Screen07.jpg/600x1300bb.jpg",
+   "page_url": "https://apps.apple.com/us/app/muse-from-meta/id6760173601",
+   "caption": "사업 목표를 맡기는 활용 시나리오: Muse 앱의 목표(Goals) 화면 — 목표를 계획으로 바꾸고 진행을 추적",
+   "credit": "Meta Platforms, Inc. (App Store 스크린샷 — iPhone 화면)"
+  }
+ ],
+ "factcheck": {
+  "claims": 51,
+  "confirmed": 48,
+  "removed": [
+   "보도에 따라 커넥터 이름이 조금씩 달라 정확한 목록은 앱 안에서 확인하는 편이 안전합니다.",
+   "iPad 보도의 목록과 9월 말 소규모 사업자용 발표를 다룬 다른 글의 목록이 일부 다르게 적혀 있습니다.",
+   "소규모 사업자용 확장 기능은 미국·캐나다 중심으로 설명되었다는 보도가 있습니다."
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S6 을 2026-10-09 에 다시 열어 대조. S1 App Store 는 화면에 '2d ago' 로만 보이나 버전 10.0 의 <time datetime=\"2026-10-07\"> 로 날짜 확인(published 유지). S2·S3·S5·S6 은 article:published_time 메타와 published 일치, S4(Meta for Business)는 curl 400 이지만 WebFetch 로 열려 2026-10-06·Personal Agent Protocol·참여사 확인(EGRESS_BLOCKED 아님). 수정: '승인 없이 쓰거나'→'돈을 쓰거나'(Nothing gets spent), Amazon 차단 '2026년 9월부터' 삭제(원문은 '최근'), '항공사 일부는 약관'→United 약관·Delta 답변으로 구체화, 소매 파트너 '9월 발표'→'최근 발표', 'TechCrunch가 가격이 언급되지 않았다고 썼다'→'보도에 가격 정보가 없다', iThinkDifferent 차트 1위 시점을 '기사 작성 시점'으로, iPad 큰 화면 '해석'을 The Verge 인용 보도(S6)로 교체, PAP 신원 전달 방식은 Meta 가 '추후 공유'라 밝힌 것으로 수정. 커넥터 목록이 보도마다 다르다는 주장은 App Store 10.0 노트·TechCrunch 목록이 같아 삭제하고 S3 의 '새 파트너 상당수가 아직 앱 목록에 없음'으로 교체. 인용 이미지 2개는 HTTP 200 image/jpeg 600x1300 확인했으나 iPhone 화면이라 'iPad 앱' 캡션을 고치고 관련 문단(승인 구조·목표 시나리오) 뒤로 옮김."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
