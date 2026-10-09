@@ -2416,5 +2416,23 @@
    "https://github.com/openai/math/blob/main/history.md"
   ],
   "draft_id": "20261010_072331_3"
+ },
+ {
+  "date": "2026-10-10",
+  "title": "⚖️ 해고된 OpenAI 안전 연구자 3인 공개서한 총정리: 징계 사유 반박과 3가지 권고",
+  "topic": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect (TechCrunch, 2026-10-08)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-3-3.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+   "https://mikitabalesni.com/letter/letter.pdf",
+   "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/",
+   "https://www.thestar.com.my/tech/tech-news/2026/10/02/openai-says-three-staffers-fired-for-mishandling-039sensitive039-info",
+   "https://www.engadget.com/2281966/fired-openai-safety-researchers-dispute-their-dismissals-in-open-letter/"
+  ],
+  "draft_id": "20261010_073001_4"
  }
 ]
