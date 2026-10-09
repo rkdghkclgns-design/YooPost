@@ -1,0 +1,57 @@
+{
+ "topic": "OpenAI openai/math: AI-generated math manuscripts (unique games conjecture claim, Lean formalizations)",
+ "source_url": "https://github.com/openai/math",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "openai/math (GitHub repository README)",
+   "url": "https://github.com/openai/math",
+   "publisher": "OpenAI",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "As AI Closed In on 'Unique Games' Proof, Researchers Raced to Beat the Machines",
+   "url": "https://www.quantamagazine.org/as-ai-closed-in-on-unique-games-proof-researchers-raced-to-beat-the-machines-20261007/",
+   "publisher": "Quanta Magazine",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI releases AI-generated proofs of quasi Riemann hypothesis, unique games conjecture, Hodge conjecture for CM abelian varieties",
+   "url": "https://officechai.com/ai/openai-releases-ai-generated-proofs-of-quasi-riemann-hypothesis-unique-games-conjecture-hodge-conjecture-for-cm-abelian-varieties/",
+   "publisher": "OfficeChai",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI math results that matter: expert reactions",
+   "url": "https://explainx.ai/blog/openai-math-results-that-matter-expert-reactions-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "openai/math history.md (2026-10-07 update: withdrawals, fixes, formalizations)",
+   "url": "https://github.com/openai/math/blob/main/history.md",
+   "publisher": "OpenAI",
+   "published": "2026-10-07",
+   "official": true
+  }
+ ],
+ "images": [],
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 90,
+  "removed": [
+   "한 2차 보도에 따르면 Lean 프로젝트는 Lean 4.32.0 과 mathlib 에 고정되어 있고, 캐시를 받은 뒤 전체를 빌드하는 방식이라고 합니다. (explainx 에 4.32.0 없음, 저장소 lean-toolchain 은 v4.34.1 → 저장소 기준 문장으로 교체)",
+   "Quanta 는 일부 수학·이론 전산 연구자가 AI 발전에 맞춰 논문을 더 빨리 내는 전략을 택하고 있다고 보도했습니다. (기사에 일반화된 서술 없음 → 민저 연구진 사례·민저 우려로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 README(raw)·commits 페이지·lean/lean-toolchain·lean/README, S5 history.md, S2 Quanta, S3 OfficeChai, S4 explainx 를 다시 열어 대조. S1 발표일 2026-10-06 은 Quanta 'On October 6, OpenAI announced' 및 저장소 Initial commit(Oct 6, 2026)과 일치. S2·S3 2026-10-07, S4 2026-10-07(10-08 갱신) 페이지 표기 일치. 수정: 추론 요약 패밀리 9→10개(README 표 10행), Lean 버전 4.32.0→v4.34.1(lean-toolchain), 인간수학협회 '거부'→'반대'(objected), 숫자 차이 박스·FAQ 에 history.md(10/7 3편 철회·14편 수정·300/719 형식화) 추가. EGRESS_BLOCKED 출처 없음."
+ },
+ "images_none_reason": "공식 출처가 GitHub 저장소(README·history.md·Lean 코드·PDF 원고)뿐이며 README 본문에 그림·도표가 없음. Quanta 기사 본문 그림은 인물 사진·삽화라 원고 내용을 보여 주는 도표가 아님."
+}
