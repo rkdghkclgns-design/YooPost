@@ -1,0 +1,57 @@
+{
+ "topic": "Finland's LVV urges (kehottaa) Google's Tuike Finland to suspend preparatory work at Muhos and Kajaani data centre sites (LVV, 2026-10-06; Al Jazeera/TNW/Euronews 2026-10-07)",
+ "source_url": "https://www.sttinfo.fi/tiedote/72390663/lupa-ja-valvontavirasto-kehottaa-tuike-finland-oyta-keskeyttamaan-muhoksen-ja-kajaanin-datakeskushankkeiden-valmistelutoimet?lang=fi",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Lupa- ja valvontavirasto kehottaa Tuike Finland Oy:tä keskeyttämään Muhoksen ja Kajaanin datakeskushankkeiden valmistelutoimet",
+   "url": "https://www.sttinfo.fi/tiedote/72390663/lupa-ja-valvontavirasto-kehottaa-tuike-finland-oyta-keskeyttamaan-muhoksen-ja-kajaanin-datakeskushankkeiden-valmistelutoimet?lang=fi",
+   "publisher": "Lupa- ja valvontavirasto (LVV) / STT Info",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google deepens its commitment to Finland with a €13 billion investment in AI infrastructure",
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-deepens-its-commitment-to-finland-with-a-13-billion-investment-in-ai-infrastructure/",
+   "publisher": "Google",
+   "published": "2026-09-09",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Finland orders halt to work on Google data sites over environment concerns",
+   "url": "https://www.aljazeera.com/news/2026/10/7/finland-orders-halt-to-work-on-google-data-sites-over-environment-concerns",
+   "publisher": "Al Jazeera",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Finland orders Google to stop clearing forest at two data centre sites",
+   "url": "https://thenextweb.com/news/finland-orders-google-to-stop-clearing-forest-at-two-data-centre-sites",
+   "publisher": "The Next Web",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Finland orders pause on Google AI data centre over environmental concerns",
+   "url": "https://www.euronews.com/2026/10/07/finland-orders-pause-on-google-ai-data-centre-over-environmental-concerns",
+   "publisher": "Euronews",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(LVV 보도자료·구글 블로그) 본문에 사건 내용을 보여 주는 도표·화면이 없음(LVV 보도자료는 로고뿐, 구글 블로그는 행사 무대 사진 한 장). 언론사 사진은 저작권상 인용하지 않음.",
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 50,
+  "removed": [
+   "유로뉴스는 구글이 임업법에 따라 선의로 행동했다는 입장도 함께 전했습니다. (임업법 언급이 유로뉴스에 없음 → '선의로 행동, 환경 조사·조치 시행'으로 수정)",
+   "카레바(Kaleva)는 제목에서 구글의 \"선의로 행동했다\"는 입장을 소개했으나 본문은 유료 구간이어서 이 글에서는 제목 외에 쓰지 않았습니다. (출처 목록에 없고 확인 불가)"
+  ],
+  "note": "Opus 검증: S1(LVV/STT Info, 페이지 6.10.2026)·S2(구글 블로그, Sep 09 2026)·S3(알자지라 7 Oct 2026)·S4(TNW Oct 7 2026)·S5(유로뉴스 07/10/2026)를 다시 열어 published 일치 확인. LVV 원문은 '중단 명령'이 아니라 kehottaa/kehotus(권고) — 제목의 '공사 중단 명령'을 '준비 작업 중단 권고'로 수정(언론은 order로 보도함을 본문에 명시). 기한 즉시·늦어도 23.10.2026, 서면 설명 14.10.2026, 근거 YVA-laki 32 § 2 mom., 9/18 정보 요청, YVA 보고서 2026년 중 완료 예정, 행정강제(erityislainsäädäntö 또는 YVA-laki)·uhkasakko·자발적 시정 우선 모두 LVV 원문과 일치. 수정: louhinta=채석(발파 아님), 사업명 Kajaani-Otanmäki(오타니에미 오기), Tommi Muilu 직함 osastopäällikkö=환경부서장(과장 아님), '높은 기준' 발언은 TNW·유로뉴스(알자지라는 부족함 인정·지침 준수), '수백 헥타르 조사'는 알자지라·유로뉴스. 130억 유로·2년·유럽 최대 단일 투자·3만7천 일자리·연 36억 유로 GDP·2027~2028·로비사 22년·94MW·3,100만 유로 4년·4,400명은 구글 블로그와 일치. 면적: 300ha 이상(741에이커)=핀란드자연보호협회 할메에파(AFP, 알자지라·유로뉴스), 무후스 약 300ha=TNW(공개 정보 기준), LVV 원문엔 면적 없음, 130ha 식수=로난데르(알자지라·유로뉴스). 로비사 최대 50%·2030→2050, 야당 9월 전국 허가제, 카이코넨 발언은 알자지라와 일치. 막힌 출처 없음."
+ }
+}
