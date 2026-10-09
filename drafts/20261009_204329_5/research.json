@@ -1,0 +1,61 @@
+{
+ "topic": "Cryptographic Context Injection(CCI): GitHub Copilot CLI 암호문 지시 유출 시연 (Adversa AI, 2026-10-06)",
+ "source_url": "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Cryptographic Context Injection in GitHub Copilot CLI",
+   "url": "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/",
+   "publisher": "Adversa AI",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Zombie instructions on carefully constructed web pages could trick GitHub Copilot CLI into sharing secrets",
+   "url": "https://www.theregister.com/a/5301206",
+   "publisher": "The Register",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Encrypted Web Page Tricks GitHub Copilot CLI Into Leaking Secrets",
+   "url": "https://expertinsights.com/?p=63126",
+   "publisher": "Expert Insights",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Encrypted instructions trick Copilot CLI to spill dev secrets",
+   "url": "https://www.csoonline.com/article/4231763/encrypted-instructions-trick-copilot-cli-to-spill-dev-secrets.html",
+   "publisher": "CSO Online",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "GitHub Copilot CLI、暗号文で秘密情報を外部送信 研究者が実証",
+   "url": "https://innovatopia.jp/cyber-security/cyber-security-news/118655/",
+   "publisher": "Innovatopia",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(Adversa AI) 본문의 그림은 영상 제목 카드 한 장뿐이라 공격 과정을 보여 주는 도표·화면이 없고, 다른 공식 페이지(GitHub Docs Copilot CLI autopilot 문서)와 매체 기사 본문에도 관련 그림이 없음",
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "Adversa 글 역시 파일이 실제로 컴퓨터 밖으로 나간 것을 보여 주는 기록이 있는 것은 아니라고 밝힙니다. 읽는 쪽은 이 점을 구분해서 받아들일 필요가 있습니다. (원문은 전송이 일어났으나 사용자 화면·대화 기록에 드러나지 않았다는 뜻 — '화면·기록 어디에도 표시가 없었다'로 고침)",
+   "마지막 전송이 막히더라도 중간 단계의 도구 호출 기록에는 파일 접근이 남습니다. (출처 근거 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 WebFetch 로 다시 열어 수치·날짜·모델명·절차·입장을 하나씩 대조. 각 출처 published 가 페이지 표기일과 일치(S1·S2·S3 10-06, S4·S5 10-07). 28초·50%는 Adversa 자체 시험 수치로 제목·요약·표·FAQ·경고 박스에 귀속 명시, Adversa 의 자사 제품 홍보 사실 도입·한계 문단에 명시. 재현 시점은 '공개 시점'→'10월 1일 기준'(S1 원문), GitHub 대변인 발언 S2 대조, 8월 Grok(채팅 기록 유출)·Gemini 시연 S1 대조, 조달 질문 문구 S1 대로 수정. 형광 강조 전 문단·박스 보강. 인용 그림은 GitHub Docs autopilot 문서도 확인했으나 본문 그림 없음. EGRESS_BLOCKED 출처 없음."
+ },
+ "request": {
+  "id": "C0C50SP7VV5-1791544239763539",
+  "kind": "all"
+ }
+}
