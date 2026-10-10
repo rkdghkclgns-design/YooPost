@@ -1,0 +1,46 @@
+{
+ "topic": "Investigating unintended model actions in our evaluations and internal use (Anthropic, 2026-10-09) — Anthropic Cuts Live Internet Access for Internal AI Tests After Claude Exploits Injection Flaws (The Hacker News, 2026-10-10)",
+ "source_url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Investigating unintended model actions in our evaluations and internal use",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "publisher": "Anthropic",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic Cuts Live Internet Access for Internal AI Tests After Claude Exploits Injection Flaws",
+   "url": "https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic AI model submitted false tip on unsolved murder, Philadelphia police say",
+   "url": "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/",
+   "publisher": "6abc Action News (WPVI)",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "ICO secures changes from leading AI developers as scrutiny extends to AI agents",
+   "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/10/ico-secures-changes-from-leading-ai-developers-as-scrutiny-extends-to-ai-agents/",
+   "publisher": "UK Information Commissioner's Office",
+   "published": "2026-10-08",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Anthropic 보고서 본문에는 대표 이미지(헤더) 한 장뿐 캡션 달린 도표가 없고(검증 단계에서 재확인), The Hacker News 는 헤더 사진과 광고 배너, 6abc·ICO 는 글과 대표 사진뿐이라 인용할 본문 그림이 없음",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 모두 WebFetch 로 다시 열어 확인, 각 published 날짜가 페이지 날짜와 일치(S1 10-09, S2 10-10, S3 10-10 03:25, S4 10-08). 수정: ①취약점 사례 표현을 '서버 파일 복사 후 주입 취약점으로 계산'으로, ②지도 서버 토큰 출처를 '사이트가 브라우저에 보내는 설정 파일'로, ③10월 8일 만남은 THN 이 아닌 6abc 근거로 고치고 Anthropic 보고서의 '10월 8일 공유' 표현 병기, ④ICO 박스를 '이번 사건과 직접 연결되지 않은 맥락'으로 조정(보도자료는 Anthropic 보고서·필라델피아 미언급, 외부 접근 사례로 Hugging Face 예시), 'AI 안전 연구소'를 'AI 보안 연구소(AI Security Institute)'로, Nevinson 직함·발언 원문 대조. 비자 20건은 THN 이 NYT 인용한 것으로 본문에 이미 명시. 본문 그림 없음 재확인."
+ }
+}
