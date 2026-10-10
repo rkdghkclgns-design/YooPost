@@ -2469,5 +2469,27 @@
    "https://www.euronews.com/2026/10/07/finland-orders-pause-on-google-ai-data-centre-over-environmental-concerns"
   ],
   "draft_id": "20261010_074223_6"
+ },
+ {
+  "date": "2026-10-11",
+  "title": "🤖 JetBrains Mellum2.1 총정리: 12B MoE·활성 2.5B, SWE-bench Verified 2.0에서 47.0으로",
+  "topic": "Mellum2.1 Gets to Work: A Fast Open Model for Coding Agents (JetBrains, 2026-10-08)",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/jetbrains-mellum21-12b-moe-25b-swe.html"
+  },
+  "sources": [
+   "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+   "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking",
+   "https://www.zeniteq.com/mellum-2-1-brings-a-compact-llm-to-private-coding-agents-8tez4p",
+   "https://daily.dev/posts/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents-cpbr6alyw",
+   "https://www.llmreference.com/model/mellum2-1-12b-thinking",
+   "https://benchlm.ai/models/mellum2-1-12b-a2-5b-thinking",
+   "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-GGUF",
+   "https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking",
+   "https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/"
+  ],
+  "draft_id": "20261011_071400_1"
  }
 ]
