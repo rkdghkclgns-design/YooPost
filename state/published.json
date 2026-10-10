@@ -2491,5 +2491,26 @@
    "https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/"
   ],
   "draft_id": "20261011_071400_1"
+ },
+ {
+  "date": "2026-10-11",
+  "title": "🎙 Google AI Edge Foresight 사용 가이드: 오프라인 Mac 회의록 앱 기능·개인정보·한계 총정리",
+  "topic": "Google releases a new local-first Granola competitor (Google AI Edge Foresight, TechCrunch, 2026-10-08)",
+  "category": "AI 도구",
+  "source_url": "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/google-ai-edge-foresight-mac.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/",
+   "https://www.notebookcheck.net/Google-AI-Edge-Foresight-Offline-AI-for-meeting-notes-on-Mac.1418337.0.html",
+   "https://www.ithinkdiff.com/google-ai-edge-foresight-mac-offline-meeting-notes/",
+   "https://aichief.com/news/new-google-app-transcribes-meetings-offline-using-on-device-ai/",
+   "https://letsdatascience.com/news/google-releases-ai-edge-foresight-an-offline-meeting-compani-638edbca",
+   "https://9to5google.com/?p=732684",
+   "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/"
+  ],
+  "draft_id": "20261011_072318_2"
  }
 ]
