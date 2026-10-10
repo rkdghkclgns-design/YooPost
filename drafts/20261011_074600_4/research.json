@@ -1,0 +1,84 @@
+{
+ "topic": "TypeSafe AI raises $870M at $7.5B valuation led by a16z weeks after launching Jev (System One model)",
+ "source_url": "https://typesafe.ai/blog/series-ai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "TypeSafe A raises Series AI (TypeSafe 공식 블로그)",
+   "url": "https://typesafe.ai/blog/series-ai",
+   "publisher": "TypeSafe AI",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Introducing System One Models & Jev",
+   "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+   "publisher": "TypeSafe AI",
+   "published": "2026-09-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "The maker of non-text AI model Jev valued at $7.5B just weeks after launch",
+   "url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "TypeSafe AI raises $870 million led by Andreessen Horowitz - Bloomberg",
+   "url": "https://www.investing.com/news/stock-market-news/typesafe-ai-raises-870-million-led-by-andreessen-horowitz--bloomberg-93CH-4941303",
+   "publisher": "Investing.com (Bloomberg 인용)",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "TypeSafe AI Hits 7.5 Billion Dollar Valuation 24 Days After Launching Jev",
+   "url": "https://startupfortune.com/typesafe-ai-hits-75-billion-dollar-valuation-24-days-after-launching-jev/",
+   "publisher": "Startup Fortune",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "TypeSafe investors discuss a higher valuation after Jev reaches nearly 13% of one gateway's paid teams",
+   "url": "https://runtimewire.com/article/typesafe-investors-discuss-a-higher-valuation-after-jev-reaches-nearly-13-of-one",
+   "publisher": "RuntimeWire",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "TypeSafe AI 홈페이지 (Jev 소개)",
+   "url": "https://typesafe.ai",
+   "publisher": "TypeSafe AI",
+   "published": "2026-10-09",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://techcrunch.com/wp-content/uploads/2026/09/typesafe-ai.jpg?w=1024",
+   "page_url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+   "caption": "TypeSafe AI 공동창업자 에릭 가프니·사샤 셍·디오고 알메이다",
+   "credit": "TypeSafe AI (TechCrunch 게재)"
+  }
+ ],
+ "factcheck": {
+  "claims": 70,
+  "confirmed": 64,
+  "removed": [
+   "샌프란시스코의 AI 스타트업 / 샌프란시스코에 있습니다 (읽은 기사에 소재지 없음, 홈페이지 'Made in SF' 문구만 있어 삭제)",
+   "a16z의 마틴 카사도 (소속은 읽은 출처에 없어 삭제, 이사회 합류만 유지)",
+   "블룸버그가 먼저 보도 ('먼저'는 확인 안 돼 삭제)",
+   "입력 예시: 애플리케이션 상태·데이터베이스 행·지원 티켓·사기 신호 (공식 글에 없음 → '프로그램 상태(구조화된 데이터)'로 교체)",
+   "문서·API 콘솔·플레이그라운드 링크 (플레이그라운드 확인 안 됨, 본문·FAQ에서 삭제)",
+   "프라닛 샤르마 사례의 '이전 모델보다' (출처에 비교 대상 없음, 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1·S2·S7은 curl 원문, S3~S6은 WebFetch로 다시 열어 확인(EGRESS_BLOCKED 없음). 라운드: 공식 글 본문 'series A', 제목 'Series AI'는 오타/말장난 → 시리즈 A로 확정, 표·정보 박스 반영. 날짜: typesafe.ai 세 페이지 모두 HTML 주석 'Published Oct 9, 2026, 10:46 PM UTC'와 홈페이지 시계 'Friday, Oct 9, 2026 22:46:50'이 같은 값이라 사이트 빌드 시각으로 판단 — 9월 15일 공개된 Jev 소개 글(S2)의 published를 TechCrunch·Startup Fortune 기준 2026-09-15로 수정. 투자 발표일 10/9는 TechCrunch(2:41 PM PDT Oct 9)·Investing.com/Bloomberg(Oct 09 09:45, '금요일' 보도 — 2026-10-09는 금요일)로 확인, S1 published 유지. S3~S6 published는 페이지 날짜와 일치. 포춘 500: 공식 글·TechCrunch '3분의 1' vs Startup Fortune CEO 전언 '약 4분의 1' 둘 다 표기. 속도·가격·환각 없음은 회사 주장으로 표기, 공식 글의 편향 인정 문구 반영. The Information 100억 달러+ 논의(9/24, 미완료 협상)와 확정 75억 달러 불일치 표기. 이미지: TechCrunch 본문 사진(크레딧 TypeSafe AI, 공동창업자 사진) image/jpeg 200 확인 — 내용과 맞도록 팀 소개 섹션으로 옮김."
+ }
+}
