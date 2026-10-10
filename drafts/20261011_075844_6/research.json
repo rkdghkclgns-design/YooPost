@@ -1,0 +1,71 @@
+{
+ "topic": "The State of AI Report 2026 (Nathan Benaich, Air Street Capital)",
+ "source_url": "https://nathanbenaich.substack.com/p/state-of-ai-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The State of AI Report 2026",
+   "url": "https://nathanbenaich.substack.com/p/state-of-ai-2026",
+   "publisher": "Nathan Benaich (Air Street Capital)",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "The State of AI Report 2026",
+   "url": "https://www.stateof.ai",
+   "publisher": "Air Street Capital",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "State of AI report returns for its ninth year with Anthropic atop the benchmarks",
+   "url": "https://cryptobriefing.com/state-of-ai-report-ninth-edition-anthropic/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "State of AI Report 2026 is out: a three-lab race at the frontier and agents doing real work",
+   "url": "https://toolnavs.com/article/2405-state-of-ai-report-2026-is-out-a-three-lab-race-at-the-frontier-and-agents-doing",
+   "publisher": "ToolNavs",
+   "published": "2026-10-08",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/5db6a95f-7be1-442e-aeb9-40b6aafd4133_1600x900.png",
+   "page_url": "https://nathanbenaich.substack.com/p/state-of-ai-2026",
+   "caption": "프런티어는 3개 연구소의 경주 — 인텔리전스 인덱스와 Arena의 선두가 다르다",
+   "credit": "Nathan Benaich / Air Street Capital"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/ea058de5-27eb-4238-8850-6790791bb3b8_1600x900.png",
+   "page_url": "https://nathanbenaich.substack.com/p/state-of-ai-2026",
+   "caption": "AI가 AI를 만든다 — Claude가 주도하는 Anthropic 모델 R&D 비중",
+   "credit": "Nathan Benaich / Air Street Capital"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/4354d78f-8978-4016-9c97-d8bc0f9c837d_1600x900.png",
+   "page_url": "https://nathanbenaich.substack.com/p/state-of-ai-2026",
+   "caption": "추론 비용 — 같은 벤치마크 점수에 드는 최소 비용의 하락",
+   "credit": "Nathan Benaich / Air Street Capital"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 59,
+  "removed": [
+   "Artificial Analysis 선두 표기의 '에이전트 업무 중심의 v4.1~v4.3 기준' (출처에 없음 → S1 차트의 Claude Opus 5.5 58점으로 교체)",
+   "'에이전트가 의도된 경계를 넘어' (출처 표현은 '안전장치를 낮춘 평가 중 인터넷에 접근' → 교체)",
+   "'보고서는 공개 사이버 모델이 공격 능력을 키우는 동시에 방어자에게도 필요한 도구를 준다고 설명합니다' (출처에 없음 → Hugging Face의 GLM-5.2 포렌식 사례로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Substack·S2 stateof.ai·S4 ToolNavs 는 curl 로 본문을 다시 열어 수치 대조, S3 Crypto Briefing 은 curl 403(Cloudflare)이라 WebFetch 로 열어 2·5·3 채점과 10월 8일 게시 확인. published 4곳 모두 페이지 날짜 2026-10-08 과 일치. 수정: 범위 '지정학·정책'→'정치·예측'(슬라이드 목차), 신약 '후보 여러 개·두 개 3상'→GB-0895·rentosertib 3상 모집 및 Epoch AI 수학 9건(자율4·협업5), SaaSpocalypse '연중 크게 회복'→Mythos Preview 추가 하락 후 급반등, '약 세 배' 파생 표현→실제 성장률 쌍, GPT-6 Astra 행동 모니터 결과 '훨씬 많이'→'거의 0', ToolNavs 자체 해석(단일 리더보드·외부 한계 천장)을 보고서 주장이 아닌 ToolNavs 정리로 표기, Arena 선두에 Gemini 4 Argon 1525점 추가. 이미지 3개 내려받아 직접 확인: I1 슬라이드5 3개 연구소 경주(Intelligence Index·Arena), I2 슬라이드20 Claude 모델 R&D 26%, I3 슬라이드109 Epoch AI 47%/분기·13배/년 — 캡션 일치."
+ }
+}
