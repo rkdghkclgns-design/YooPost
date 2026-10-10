@@ -1,0 +1,110 @@
+{
+ "topic": "Mellum2.1 Gets to Work: A Fast Open Model for Coding Agents (JetBrains, 2026-10-08)",
+ "source_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Mellum2.1 Gets to Work: A Fast Open Model for Coding Agents",
+   "url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+   "publisher": "JetBrains Blog",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "JetBrains/Mellum2.1-12B-A2.5B-Thinking (모델 카드)",
+   "url": "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking",
+   "publisher": "JetBrains (Hugging Face)",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Mellum 2.1 Brings a Compact LLM to Private Coding Agents",
+   "url": "https://www.zeniteq.com/mellum-2-1-brings-a-compact-llm-to-private-coding-agents-8tez4p",
+   "publisher": "Zeniteq",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Mellum2.1 Gets to Work: A Fast Open Model for Coding Agents (daily.dev)",
+   "url": "https://daily.dev/posts/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents-cpbr6alyw",
+   "publisher": "daily.dev",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Mellum2.1 Thinking",
+   "url": "https://www.llmreference.com/model/mellum2-1-12b-thinking",
+   "publisher": "LLM Reference",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "JetBrains Mellum2.1 12B-A2.5B Thinking (BenchLM)",
+   "url": "https://benchlm.ai/models/mellum2-1-12b-a2-5b-thinking",
+   "publisher": "BenchLM",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-GGUF (GGUF 저장소)",
+   "url": "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-GGUF",
+   "publisher": "JetBrains (Hugging Face)",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "JetBrains/Mellum2-12B-A2.5B-Thinking (모델 카드)",
+   "url": "https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking",
+   "publisher": "JetBrains (Hugging Face)",
+   "published": "2026-08-13",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Mellum2 Goes Open Source: A Fast Model for AI Workflows",
+   "url": "https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/",
+   "publisher": "JetBrains Blog",
+   "published": "2026-06-01",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://admin.blog.jetbrains.com/wp-content/uploads/2026/10/mellum21-summary.png",
+   "page_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+   "caption": "Mellum2.1 등장 배경: LiveCodeBench·AIME·GPQA Diamond·BFCL v4·IFEval·SWE-bench Verified에서 Mellum2.1·Mellum2·Qwen3.5-9B·Gemma 4 E4B 성능 비교 요약",
+   "credit": "JetBrains"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://admin.blog.jetbrains.com/wp-content/uploads/2026/10/mellum21-speed.png",
+   "page_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+   "caption": "속도: H200 한 장(FP8)에서 단일 요청(Sync)과 서버 포화(Throughput) 때 Mellum2.1·Qwen3.5-9B·Gemma 4 E4B의 초당 출력 토큰 수",
+   "credit": "JetBrains"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://blog.jetbrains.com/wp-content/uploads/2026/10/mellum21-card-swe-verified.png",
+   "page_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+   "caption": "벤치마크 성능: SWE-bench Verified 비교 카드 (Mellum2.1 47.0, Mellum2 2.0, Gemma 4 E4B 23.0, Qwen3.5-9B 50.0)",
+   "credit": "JetBrains"
+  }
+ ],
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 62,
+  "removed": [
+   "당시에는 Base, Instruct, Thinking 등 여섯 가지 변형이 함께 올라왔습니다.",
+   "JetBrains가 호스팅하는 API 서비스가 아니라 가중치를 직접 받아 쓰는 방식입니다."
+  ],
+  "note": "Opus 검증(claude-opus-5-5): JetBrains 블로그(time datetime=2026-10-08 확인)·HF 모델 카드 README 원문·HF API로 스펙 13항목·평가표 17행 4개 모델 값·vLLM 명령·샘플링값·평가 조건 전부 대조 일치. 수정: GGUF '곧 제공'→10/10 기준 JetBrains 공식 GGUF 저장소 공개(S7, 파일 크기 추가)·MTP 헤드는 미공개로 요약·경고·FAQ·맺음말·마무리 문단 갱신; 속도 그림(이미지 직접 열람) 수치 339→557, 8,533/7,969 vs 4,347, Gemma+drafter 단일 요청 607 반영(‘수치 없음’ 문장 교체); Mellum2 6월 공개(S9)·RLVR(S8) 출처 추가; 실제 저장소·셸·테스트 보상 문장에 모델 카드 근거 명시. 매체 날짜: Zeniteq 10-08(WebFetch), daily.dev 10-08(구조화 데이터), LLM Reference Released 10-08, BenchLM 'Last updated October 10, 2026' 확인. 이미지 3개 모두 HTTP 200 PNG(2000x1125·1280x720·1700x1536) 내려받아 내용 확인 후 캡션 보정."
+ }
+}
