@@ -2512,5 +2512,23 @@
    "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/"
   ],
   "draft_id": "20261011_072318_2"
+ },
+ {
+  "date": "2026-10-11",
+  "title": "🧪 AgentGarten 논문 분석: 코드로 세계를 짓고 4라운드 만에 배우는 AI 에이전트",
+  "topic": "AgentGarten: Code Worlds for Evolving Agents",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.12374",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/agentgarten-4-ai.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.12374",
+   "https://arxiv.org/html/2610.12374v1",
+   "https://huggingface.co/papers/2610.12374",
+   "https://i.ifeng.com/c/8x3oZse85xy",
+   "https://mirros.ai/blog/worlds-for-evolving-agents"
+  ],
+  "draft_id": "20261011_073648_3"
  }
 ]
