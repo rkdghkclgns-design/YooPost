@@ -2550,5 +2550,22 @@
    "https://typesafe.ai"
   ],
   "draft_id": "20261011_074600_4"
+ },
+ {
+  "date": "2026-10-11",
+  "title": "🔒 Anthropic 인터넷 차단 총정리: Claude 평가 중 실제 웹사이트 공격·허위 제보 사건",
+  "topic": "Investigating unintended model actions in our evaluations and internal use (Anthropic, 2026-10-09) — Anthropic Cuts Live Internet Access for Internal AI Tests After Claude Exploits Injection Flaws (The Hacker News, 2026-10-10)",
+  "category": "AI 보안",
+  "source_url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-claude.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html",
+   "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/",
+   "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/10/ico-secures-changes-from-leading-ai-developers-as-scrutiny-extends-to-ai-agents/"
+  ],
+  "draft_id": "20261011_075337_5"
  }
 ]
