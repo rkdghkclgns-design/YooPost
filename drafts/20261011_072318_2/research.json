@@ -1,0 +1,102 @@
+{
+ "topic": "Google releases a new local-first Granola competitor (Google AI Edge Foresight, TechCrunch, 2026-10-08)",
+ "source_url": "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Google releases a new local-first Granola competitor",
+   "url": "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Google AI Edge Foresight: Offline AI for meeting notes on Mac",
+   "url": "https://www.notebookcheck.net/Google-AI-Edge-Foresight-Offline-AI-for-meeting-notes-on-Mac.1418337.0.html",
+   "publisher": "Notebookcheck",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google AI Edge Foresight Turns Shorthand into Full Meeting Notes on Mac, Offline",
+   "url": "https://www.ithinkdiff.com/google-ai-edge-foresight-mac-offline-meeting-notes/",
+   "publisher": "iThinkDiff",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "New Google app transcribes meetings offline using on-device AI",
+   "url": "https://aichief.com/news/new-google-app-transcribes-meetings-offline-using-on-device-ai/",
+   "publisher": "AI Chief",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Google Releases AI Edge Foresight, an Offline Meeting Companion for Mac",
+   "url": "https://letsdatascience.com/news/google-releases-ai-edge-foresight-an-offline-meeting-compani-638edbca",
+   "publisher": "Let's Data Science",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Google AI Edge Foresight for Mac turns scribbles into full notes using offline recordings",
+   "url": "https://9to5google.com/?p=732684",
+   "publisher": "9to5Google",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "publisher": "Google",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Bring multimodal semantic search to the edge with EmbeddingGemma 2",
+   "url": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
+   "publisher": "Google Developers Blog",
+   "published": "2026-10-06",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/original_videos/wagtailvideo-zl22vf_m_thumb.jpg",
+   "page_url": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
+   "caption": "Foresight 분할 화면: 왼쪽 'Shorthand notes'에 짧게 적으면 오른쪽 'Live enhanced notes'에 보강된 노트가 나타나는 구조 (구글 데모 영상 첫 화면)",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/original_videos/wagtailvideo-b8x_05ba_thumb.jpg",
+   "page_url": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
+   "caption": "회의 녹음 중 오른쪽 'Live Assistant' 패널에 회의에서 나온 질문이 감지된 모습 (구글 데모 영상 첫 화면)",
+   "credit": "Google"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://techcrunch.com/wp-content/uploads/2026/10/foresight-retrieval-live-and-chat.gif",
+   "page_url": "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/",
+   "caption": "녹음 중 'Live Q&A' 탭이 질문에 답하면서 지식 베이스 자료(아키텍처 그림)를 출처로 함께 보여 주는 화면",
+   "credit": "Google (TechCrunch 게재)"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 46,
+  "removed": [
+   "통화 중 ... 맥락 카드가 뜨는 'Live Assistance' 도 소개합니다 (기능 이름 'Live Assistance' 확인 안 됨 — 이름 삭제, 기능 설명만 유지)",
+   "출처가 달린 맥락을 보여 주거나(iThinkDiff, 9to5Google 설명) 중 9to5Google 귀속 (9to5Google 본문에 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 다시 열어 문장별 대조, 각 published 가 페이지 날짜와 일치 확인. 구글 공식 Foresight 페이지는 JS 껍데기라 대신 구글 개발자 블로그 S8(2026-10-06) 추가로 오프라인·어떤 회의 플랫폼·클라우드 구독 비용 없음·Gemma 4+EmbeddingGemma 2·실시간 질문 답변·내려받기 주소·37.3ms(MacBook M5 Pro GPU, 모델 수치) 공식 확인. 고침: 'Notebookcheck·iThinkDiff 모두 Apple Silicon' → iThinkDiff·TechCrunch(Notebookcheck 엔 없음), 37.3ms 귀속을 구글 개발자 블로그로, 블로그 대목 이름 정정, 지원 환경 'Apple Silicon 만' → 'Apple Silicon Mac 에만 최적화'(AI Chief 원문 'optimized exclusively'). 가격 '무료'는 AI Chief 단독(공식은 '클라우드 구독 비용 없음'만) — 출처 표시 유지. macOS 최소 버전은 어느 출처에도 없어 '불명확'으로 둠. 이미지: 공식 데모 영상 포스터 2장(S8) 추가, TechCrunch GIF 프레임 확인 후 캡션을 실제 화면(Live Q&A + 출처)에 맞게 수정. EGRESS_BLOCKED 출처 없음."
+ }
+}
