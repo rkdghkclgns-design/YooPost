@@ -1,0 +1,82 @@
+{
+ "topic": "AgentGarten: Code Worlds for Evolving Agents",
+ "source_url": "https://arxiv.org/abs/2610.12374",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AgentGarten: Code Worlds for Evolving Agents",
+   "url": "https://arxiv.org/abs/2610.12374",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AgentGarten: Code Worlds for Evolving Agents (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2610.12374v1",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AgentGarten: Code Worlds for Evolving Agents (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.12374",
+   "publisher": "Hugging Face",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "代码造世界，扩散绘现实：AgentGarten让智能体在实时试炼场中边玩边进化",
+   "url": "https://i.ifeng.com/c/8x3oZse85xy",
+   "publisher": "凤凰网 大风号 (量子位 전재)",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "AgentGarten: Code Worlds for Evolving Agents (MirroS Blog)",
+   "url": "https://mirros.ai/blog/worlds-for-evolving-agents",
+   "publisher": "MirroS",
+   "published": "2026-10-08",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.12374v1/interaction-loop.png",
+   "page_url": "https://arxiv.org/html/2610.12374v1",
+   "caption": "그림 1: 코드 월드의 상호작용 루프 — 엔진이 상태를 유지하며 표면 법선 조건을 내보내고, 신경 렌더러가 외관 참조·텍스트·시각 이력과 합쳐 관측을 생성",
+   "credit": "AgentGarten 저자 (arXiv 2610.12374)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.12374v1/hns-round.png",
+   "page_url": "https://arxiv.org/html/2610.12374v1",
+   "caption": "그림 9: 두 방식의 숨바꼭질 — 위는 자기 대결 RL과 사전학습 에이전트(플레이북) 비교, 아래는 실행 중 세 게임을 위에서 본 장면",
+   "credit": "AgentGarten 저자 (arXiv 2610.12374)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.12374v1/round-loop.png",
+   "page_url": "https://arxiv.org/html/2610.12374v1",
+   "caption": "그림 10: 연습 한 라운드 — 해법 없는 과제 파일을 읽고, 정해진 예산 안에서 카메라 화면만 보며 플레이한 뒤 플레이북을 작성·보관",
+   "credit": "AgentGarten 저자 (arXiv 2610.12374)"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 42,
+  "removed": [
+   "같은 날 Hugging Face Papers에 올랐고 (HF 일간 등록은 10월 9일 → '다음 날 오늘의 논문 1위'로 수정)",
+   "Hugging Face Papers 요약에 다섯 세계와 단일 H100에서 35 FPS 이상이라는 수치가 실렸습니다 (HF 페이지에 해당 문구 없음 → 삭제)",
+   "MirroS·칭화대·베이징대 소속으로 Hugging Face 페이지에 표기 (HF는 MirroS 조직만 표기, 3개 소속은 논문 HTML에 있음 → 출처 수정)",
+   "논문이 직접 밝힌 한계는 네 가지입니다 / 정량 비교 지표는 제한적이라고 밝힙니다 (논문에 해당 표현 없음 → Future Work 내용으로 다시 씀)",
+   "기사 역시 이 결론이 프로젝트 측 자료에 근거하며 독립적인 제3자 검증은 없다는 점이 드러납니다 (기사에 없는 내용 → '허가 게재' 문구 근거로 다시 씀)",
+   "성공률 같은 통계 지표는 논문에 없습니다 (범위를 숨바꼭질로 좁힘)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs·HTML v1 원문을 curl로 직접 받아 표 1·2·3·4, 4.3절(35 FPS 이상, 438.8 ms, 36.5 frames/s, 414.4 ms), 부록 A.1(Cosmos 3-Nano 36층·4096), 5.2~5.4절, 7절 Future Work, 저자·소속과 대조 — 라운드별 점수 표 수치 모두 일치. 수정: '외차선 다리'→'1차선 다리'(one-lane bridge), 지표 설명, 플레이북을 단일 파일→스킬 파일 모음, 숨바꼭질 '번갈아'→순차 1대1, 이미지 캡션을 원문 그림 1·9·10 캡션에 맞춤(I2·I3 위치 교체). HF 페이지 JSON에서 publishedAt 2026-10-08, submittedOnDailyAt 2026-10-09, dailyPaperRank 1, GitHub MirroS-Lab/AgentGarten 확인. S4 ifeng 페이지 메타 article:published_time·JSON-LD datePublished 2026-10-08T18:00+08:00 확인(본문 표기 10-08 18:00), 量子位 허가 게재 글. 공식 MirroS 블로그(S5, Research·Oct 8, 2026) 추가. 이미지 3개 직접 내려받음: 모두 image/png, interaction-loop 1300x377 171,554B, hns-round 1300x690 193,962B, round-loop 1300x552 163,967B. EGRESS 차단 출처 없음(GitHub·qbitai.com은 403이라 출처로 쓰지 않음)."
+ }
+}
