@@ -2619,5 +2619,24 @@
    "https://github.com/rociiu/talorys/blob/main/docs/security.md"
   ],
   "draft_id": "20261012_071915_2"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "⚡ TokenRouter 논문 분석: 토큰 단위 LLM 라우팅 디코딩 처리량 2.01~64.15배 총정리",
+  "topic": "TokenRouter: Efficient Serving System for Token-Level LLM Routing (Tsinghua NICS-EFC, arXiv 2610.12242, 2026-10-08)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.12242",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/tokenrouter-llm-2016415.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.12242",
+   "https://github.com/thu-nics/TokenRouter",
+   "https://fuvty.github.io/thinking_yard_project_page/projects/tokenrouter/",
+   "https://arxiv.org/html/2610.12242v1",
+   "https://huggingface.co/papers/2610.12242",
+   "https://aiweekly.co/alerts/tsinghuas-tokenrouter-serving-system-delivers-2-64x-decode-speedup-for-token"
+  ],
+  "draft_id": "20261012_072639_3"
  }
 ]
