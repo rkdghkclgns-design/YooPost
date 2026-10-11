@@ -2603,5 +2603,21 @@
    "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/"
   ],
   "draft_id": "20261012_071354_1"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "🆓 Talorys 사용 가이드: 내 Cloudflare 무료 플랜에 올리는 개인 AI 에이전트 설치·한계 정리",
+  "topic": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier (Hacker News 소개, rociiu/talorys)",
+  "category": "AI 도구",
+  "source_url": "https://github.com/rociiu/talorys",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/talorys-cloudflare-ai.html"
+  },
+  "sources": [
+   "https://github.com/rociiu/talorys",
+   "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "https://github.com/rociiu/talorys/blob/main/docs/security.md"
+  ],
+  "draft_id": "20261012_071915_2"
  }
 ]
