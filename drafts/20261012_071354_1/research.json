@@ -1,0 +1,66 @@
+{
+ "topic": "Introducing Microsoft-Decision-1: our model for fast decision-making (Microsoft, 2026-10-09)",
+ "source_url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Microsoft-Decision-1: our model for fast decision-making",
+   "url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+   "publisher": "Microsoft",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Deploy and use Microsoft-Decision-1 in Microsoft Foundry",
+   "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision",
+   "publisher": "Microsoft Learn",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft launches Decision-1 model in Foundry",
+   "url": "https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/",
+   "publisher": "TestingCatalog",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft puts a 9B decision model in Foundry for agent workflows",
+   "url": "https://runtimewire.com/article/microsoft-decision-1-achint-srivastava-agent-workflows",
+   "publisher": "RuntimeWire",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Microsoft joins decision-focused AI model race with Microsoft-Decision-1",
+   "url": "https://www.digitaltoday.co.kr/en/view/112711/microsoft-joins-decision-focused-ai-model-race-unveils-microsoft-decision-1",
+   "publisher": "Digital Today",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Clef-omni, faster Clef, and cheaper Clef-flash",
+   "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+   "publisher": "Cloudflare",
+   "published": "2026-10-09",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문(commandline.microsoft.com) 본문의 그림은 히어로 배너 한 장뿐이고 도표·스크린샷이 없다. Microsoft Learn 문서는 코드와 표뿐이며, Cloudflare 블로그도 본문에 대표 배너 외 내용 도표가 확인되지 않았다.",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 53,
+  "removed": [
+   "같은 시기 Cloudflare, Perplexity, Liquid AI 등이 비슷한 결정 모델을 내놓고 있어 (Perplexity·Liquid AI 는 어떤 출처에도 없음 → Cloudflare 만 남김)",
+   "디지털투데이도 수치가 회사 보고 기준이며 독립적으로 검증되지 않았다고 짚었습니다. (기사에 해당 내용 없음)",
+   "두 모델 모두 베이스는 Alibaba의 Qwen 계열 / Alibaba의 오픈 웨이트 모델 (출처에 Alibaba 언급 없음 → 'Alibaba의' 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 수치·이름·가격·스펙을 대조. 수정: Microsoft Discovery 수치(46배 일관성·3배 속도는 LLM 기반 점수 대비, 적응형 재계획 속도는 약 4배)를 원문대로 고침, Clef-omni 출력을 원문 표현('Calibrated, schema-bound decisions')대로 고침, 9B 는 TestingCatalog 의 '9 billion parameters' 로 확인, S5 제목을 페이지 제목으로 고침. 속도 배수는 GPT-6 Sol 대비 35배(P50)만 사용, OpenRouter 는 발표문(링크 안내)과 매체('coming soon') 표현이 엇갈림을 그대로 표시, 성능 수치는 Microsoft 자체 측정으로 표시. published: S1 2026.10.09, S2 ms.date 2026-10-07, S3 9 Oct 2026, S4 Oct 9th 2026, S5 2026-10-10, S6 datePublished 2026-10-09 — 모두 일치. 공식 본문 관련 그림 없음 확인."
+ }
+}
