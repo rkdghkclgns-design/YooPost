@@ -2657,5 +2657,26 @@
    "https://techcrunch.com/2026/05/22/audio-generation-app-huxe-founded-by-former-notebooklm-developers-shuts-down/"
   ],
   "draft_id": "20261012_073413_4"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "🔒 AgentCorruption: AWS AgentCore 에이전트 한 개가 같은 계정 전체로 번진 경로와 방어법 총정리",
+  "topic": "AgentCorruption: How A Single Prompt Collapsed The Entire Cloud Security Model (Zenity Labs, Amazon Bedrock AgentCore)",
+  "category": "AI 보안",
+  "source_url": "https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/agentcorruption-aws-agentcore.html"
+  },
+  "sources": [
+   "https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model",
+   "https://zenity.io/press-release/zenity-labs-discloses-agentcorruption-a-chain-of-aws-agentcore-flaws",
+   "https://labs.zenity.io/post/agentcorruption-one-role-to-rule-them-all",
+   "https://labs.zenity.io/post/agentcorruption-initial-imds-access",
+   "https://labs.zenity.io/post/agentcorruption-weaponizing-agent-memory-for-persistent-hijacking",
+   "https://thenextweb.com/news/aws-agentcore-zenity-agentcorruption-one-prompt-agents",
+   "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-credentials-management.html",
+   "https://labs.zenity.io/post/agentcorruption-credential-theft-from-aws-secrets-manager-and-more"
+  ],
+  "draft_id": "20261012_073929_5"
  }
 ]
