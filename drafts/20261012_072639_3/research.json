@@ -1,0 +1,82 @@
+{
+ "topic": "TokenRouter: Efficient Serving System for Token-Level LLM Routing (Tsinghua NICS-EFC, arXiv 2610.12242, 2026-10-08)",
+ "source_url": "https://arxiv.org/abs/2610.12242",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.12242",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "thu-nics/TokenRouter (GitHub README)",
+   "url": "https://github.com/thu-nics/TokenRouter",
+   "publisher": "Tsinghua NICS-EFC (GitHub)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "TokenRouter project page",
+   "url": "https://fuvty.github.io/thinking_yard_project_page/projects/tokenrouter/",
+   "publisher": "NICS-EFC / Thinking Yard",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "TokenRouter (arXiv HTML full text)",
+   "url": "https://arxiv.org/html/2610.12242v1",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.12242",
+   "publisher": "Hugging Face",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Tsinghua's TokenRouter Serving System Delivers 2-64x Decode Speedup for Token-Level LLM Routing",
+   "url": "https://aiweekly.co/alerts/tsinghuas-tokenrouter-serving-system-delivers-2-64x-decode-speedup-for-token",
+   "publisher": "AI News Weekly",
+   "published": "2026-10-09",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.12242v1/architecture.png",
+   "page_url": "https://arxiv.org/html/2610.12242v1",
+   "caption": "TokenRouter 핵심 설계: 모델마다 하위 서버를 두고 route, send, receive 세 함수로 라우팅을 구현하는 시스템 구조",
+   "credit": "Tianyu Fu 외, TokenRouter 논문 (arXiv 2610.12242, CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.12242v1/delayed_batching.png",
+   "page_url": "https://arxiv.org/html/2610.12242v1",
+   "caption": "지연 배칭 임곗값에 따른 R2R 예측 처리량과 실측 처리량 비교",
+   "credit": "Tianyu Fu 외, TokenRouter 논문 (arXiv 2610.12242, CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 68,
+  "confirmed": 63,
+  "removed": [
+   "멀티 노드 실험은 GPU를 겹치지 않게 배치해 측정했고 (논문에 근거 없음 → 배치 설명으로 교체)",
+   "그 기사는 논문 수치를 그대로 옮긴 것이며 독립적으로 검증하지 않았다고 밝힙니다 (기사에 그런 문구 없음 → 'HF 페이지를 출처로 옮김'으로 수정)",
+   "작은 모델은 텐서 병렬 1(TP1), 큰 모델은 TP2로 돌렸습니다 (TP 표기 대신 논문 문구대로 수정)",
+   "이 논문이 한계 항목을 별도로 정리한 것은 Hugging Face 페이지에서 확인되지 않았습니다 (부정확 — 논문 6절 한계 내용으로 교체)",
+   "소속: 칭화대학교 NICS-EFC 연구실 (저자 1명 Yixin Dong 은 CMU — 표에 병기)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(v1 2026-10-08 16:21 UTC 제출, 코멘트 'Accepted by NeurIPS 2026', CC BY 4.0), arXiv HTML v1 본문(표 2·3·5·6·9, 그림 10, 5.1절 실험 설정·기준선 정의, 6절 한계, 저자 소속 칭화대 6명·CMU 1명), HF Papers(Published on Oct 8, 조직 Tsinghua-NICS-EFC, 추천 129), GitHub README(설치·내장 방법·OpenAI 호환 서버·멀티 노드·CUDA MPS·NeurIPS'26 뉴스 2026/09, LICENSE 표시 없음), 프로젝트 페이지(설계 원칙·route/send/receive·DTMC·18.58배 조건·한계), AI News Weekly(2026-10-09, HF 출처 표기)를 다시 열어 대조. 프로젝트 페이지·GitHub README 에는 정확한 날짜가 없어 published 를 비움. 64.15배의 구체 설정은 본문에서 확인 못 해 그렇게 명시. 인용 이미지 2개 HTTP 200 image/png (2048x964, 634x168) 확인. 강조 없는 문단 5개 보완."
+ }
+}
