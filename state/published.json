@@ -2678,5 +2678,22 @@
    "https://labs.zenity.io/post/agentcorruption-credential-theft-from-aws-secrets-manager-and-more"
   ],
   "draft_id": "20261012_073929_5"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "📊 Crunchbase 2026년 3분기 벤처 투자 총정리: $1590억·AI 64%·10억 달러 라운드 27곳",
+  "topic": "Crunchbase Data: Q3 2026 Posted A Record Count Of Billion-Dollar Rounds As The Global AI Race Heats Up",
+  "category": "AI 인사이트",
+  "source_url": "https://news.crunchbase.com/venture/q3-2026-global-startup-funding-ai-billion-dollar-rounds-exits-data/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/crunchbase-2026-3-1590ai-6410-27.html"
+  },
+  "sources": [
+   "https://news.crunchbase.com/venture/q3-2026-global-startup-funding-ai-billion-dollar-rounds-exits-data/",
+   "https://valueaddvc.com/pulse/ai-startups-64-percent-record-q3-funding-2026",
+   "https://aiweekly.co/alerts/crunchbase-logs-27-billion-dollar-rounds-in-q3-2026-as-ai-grabs-102b-or-64-of",
+   "https://fourweekmba.com/ai-crunchbase-q3-2026-159b-venture-27-billion-dollar-rounds-ai/"
+  ],
+  "draft_id": "20261012_074703_6"
  }
 ]
