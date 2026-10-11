@@ -1,0 +1,65 @@
+{
+ "topic": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe (TechCrunch, 2026-10-10)",
+ "source_url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+   "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-10",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Apple Signs Hiring and Licensing Deal With AI Podcast Startup Huxe",
+   "url": "https://macrumors.com/2026/10/09/apple-signs-hiring-deal-ai-podcast-startup-huxe",
+   "publisher": "MacRumors",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Apple Strikes Hiring and Licensing Deal with AI Podcast Startup Huxe",
+   "url": "https://www.ithinkdiff.com/apple-huxe-hiring-licensing-deal/",
+   "publisher": "iThinkDifferent",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Apple Signs Deal with Huxe After AI Audio Startup Shuts Down",
+   "url": "https://www.analyticsinsight.net/news/apple-signs-deal-with-huxe-after-ai-audio-startup-shuts-down",
+   "publisher": "Analytics Insight",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Huxe — Personalized intelligence that's ready when you are",
+   "url": "https://huxe.com",
+   "publisher": "Huxe",
+   "published": "2026-05-21",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Audio generation app Huxe, founded by former NotebookLM developers, shuts down",
+   "url": "https://techcrunch.com/2026/05/22/audio-generation-app-huxe-founded-by-former-notebooklm-developers-shuts-down/",
+   "publisher": "TechCrunch",
+   "published": "2026-05-22",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(Huxe 페이지)에 원고 내용을 보여 주는 본문 도표·스크린샷이 없고, 매체 기사의 그림은 대표 이미지·스톡 사진뿐이라 넣지 않음.",
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 40,
+  "removed": [
+   "검색으로 확인되는 다른 보도들도 Siri나 팟캐스트 기능 이야기는 추측에 가깝다고 전합니다. (출처 없음 — Analytics Insight 문장으로 교체)",
+   "맥루머스 기사에는 독자 댓글 17개가 달렸고 상위 댓글은 AI가 만든 팟캐스트에 회의적이었다고 합니다. (상위 댓글 내용 확인 불가·댓글 수는 변동)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 주장 42개 대조. 고용 제안권+비독점 라이선스·인수 아님·6월 9일 EC 통지는 TechCrunch·MacRumors·iThinkDifferent·Analytics Insight 4곳 교차 확인, '역 인수합병' 표현·MacRumors 최초 보도는 TechCrunch 원문 확인. 수정: DMA 언급은 MacRumors 본문에 없어 'iThinkDifferent 가 MacRumors 인용·MacRumors 서류 링크가 DMA 사건 페이지'로 고침(본문·FAQ), 종료 이유 미공개는 TechCrunch 5월 기사·Huxe 공지 기준으로 고침. Huxe 공지(5/21 서명, 5/28 종료, 5/29 데이터 삭제)·창업자 3인·460만 달러 투자자·2024년 말 시작 확인. 발표일: S1 10/10, S2 10/9(1:44 am PDT), S3 10/9, S4 10/9, S5 5/21(공지 서명일), S6 5/22 모두 페이지 표기와 일치. Apple 공식 발표·EC 원본 서류는 읽지 못해 보도 인용으로 표기. EGRESS_BLOCKED 출처 없음."
+ }
+}
