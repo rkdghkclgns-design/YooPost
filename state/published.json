@@ -2638,5 +2638,24 @@
    "https://aiweekly.co/alerts/tsinghuas-tokenrouter-serving-system-delivers-2-64x-decode-speedup-for-token"
   ],
   "draft_id": "20261012_072639_3"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "🎙 Apple·Huxe 인력 영입·기술 라이선스 총정리: 인수 아닌 '역 인수합병' 계약 핵심",
+  "topic": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe (TechCrunch, 2026-10-10)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/applehuxe.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+   "https://macrumors.com/2026/10/09/apple-signs-hiring-deal-ai-podcast-startup-huxe",
+   "https://www.ithinkdiff.com/apple-huxe-hiring-licensing-deal/",
+   "https://www.analyticsinsight.net/news/apple-signs-deal-with-huxe-after-ai-audio-startup-shuts-down",
+   "https://huxe.com",
+   "https://techcrunch.com/2026/05/22/audio-generation-app-huxe-founded-by-former-notebooklm-developers-shuts-down/"
+  ],
+  "draft_id": "20261012_073413_4"
  }
 ]
