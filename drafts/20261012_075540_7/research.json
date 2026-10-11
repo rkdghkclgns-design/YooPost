@@ -1,0 +1,82 @@
+{
+ "topic": "엔키화이트햇 코스닥 공모 — 증권신고서(지분증권, 2026-10-08): 보통주 170만주·희망가 13,000~16,500원, 청약 예정 11/12~13(공모주 정보 사이트 기준)",
+ "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261008000660",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "엔키화이트햇 증권신고서(지분증권) (DART 공시 페이지)",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261008000660",
+   "publisher": "금융감독원 전자공시시스템",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "상장 앞둔 엔키화이트햇, 올해도 매출 70% 급성장…'오펜' 고공행진",
+   "url": "https://www.thelec.kr/news/articleView.html?idxno=63479",
+   "publisher": "디일렉(THE ELEC)",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "엔키화이트햇, 코스닥 상장예심 통과…SV인베 '보안 침해' 증가 전망 통했다",
+   "url": "https://view.asiae.co.kr/article/2026100816014068036",
+   "publisher": "아시아경제",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "한국거래소, 엔키화이트햇·마더스제약 코스닥 상장예심 승인",
+   "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=493501",
+   "publisher": "핀포인트뉴스",
+   "published": "2026-10-07",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "엔키화이트햇, 코스닥 기술특례상장 9부 능선 넘었다... 기술성 평가 통과",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=144380",
+   "publisher": "보안뉴스",
+   "published": "2026-06-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "엔키화이트햇, 코스닥 기술성평가 'A·A' 통과…하반기 IPO 추진",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=207355",
+   "publisher": "데일리시큐",
+   "published": "2026-06-29",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "'화이트해커 기업' 엔키화이트햇, 순손실에도 1500억 몸값 넘나 [IPO 엑스레이]",
+   "url": "https://www.etoday.co.kr/news/view/2604141",
+   "publisher": "이투데이",
+   "published": "2026-07-16",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "엔키화이트햇 공모 정보 (희망 공모가·청약일)",
+   "url": "https://www.therich.io/ipo/70",
+   "publisher": "더리치(공모주 정보 사이트)",
+   "published": "",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공시 페이지는 서류 목록뿐이고 기사 본문 그림은 공모 내용과 직접 관련된 도표가 없어 넣지 않음",
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 51,
+  "removed": [
+   "DART 공모게시판 목록에는 기간이 2026.11.12~2026.11.13로 표시됩니다 (DART 공시 페이지에서 확인되지 않음 → '공모주 정보 사이트 기준, 공시 원문 미확인'으로 한정, 요약·표·일정·FAQ 모두 수정)",
+   "보도된 범위에서는 오펜 매출이 2026년 전체 매출 예상의 59% 수준 (틀림: 디일렉 원문은 상반기 기준 전체 매출 중 오펜 비중 59% → 수정)",
+   "안티드론 솔루션 등 사이버 방어 영역으로 넓힐 계획 (원문은 '사이버 방산' → 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 DART 공시 페이지(2026-10-08, 서류명·첨부 10종 확인; 본문 viewer.do 는 dcmNo 를 얻지 못해 열지 못함 — curl 은 DART 빈 응답, KIND 403), S2 디일렉(입력 2026-10-08), S3 아시아경제(입력 2026-10-12), S4 핀포인트뉴스(입력 2026-10-07) 를 다시 열어 날짜·수치 대조. 170만주·10,598,414주·신영증권·2025 매출 142억/78%/영업이익 35억/2026 예상 242억은 S2·S3(·S4) 복수 확인. 희망가 13,000~16,500원·공모 규모·시총은 S2 + S8(더리치, 날짜 미표시) 로 확인, 본문에서 '보도에 따르면' 한정 유지. 청약 11/12~13 은 S8 만 확인되어 '공모주 정보 사이트 기준·원문 미확인'으로 한정. 2026 상반기·8월·218억·오펜·민간 비중·57억 전망·상반기 영업손실은 디일렉 단독(같은 회사 영문판 thelec.net 동일) — '보도 기준' 표기 유지. 기술특례·A·A 는 S5 보안뉴스·S6 데일리시큐(2026-06-29)·S7 이투데이로, RCPS 파생상품평가손실·영업이익률·영업현금흐름은 S7(2026-07-16)로 확인해 출처 추가. 설립일·자본금·종업원·최대주주는 S4. 수익 전망·매수 권유 표현 없음. EGRESS_BLOCKED 출처 없음."
+ }
+}
