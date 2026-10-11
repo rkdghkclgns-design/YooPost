@@ -2584,5 +2584,24 @@
    "https://toolnavs.com/article/2405-state-of-ai-report-2026-is-out-a-three-lab-race-at-the-frontier-and-agents-doing"
   ],
   "draft_id": "20261011_075844_6"
+ },
+ {
+  "date": "2026-10-12",
+  "title": "🤖 Microsoft-Decision-1 총정리: 9B 결정 모델·입력 $0.042·GPT-6 Sol 대비 35배 빠름",
+  "topic": "Introducing Microsoft-Decision-1: our model for fast decision-making (Microsoft, 2026-10-09)",
+  "category": "AI 언어 모델",
+  "source_url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/microsoft-decision-1-9b-0042gpt-6-sol-35.html"
+  },
+  "sources": [
+   "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+   "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision",
+   "https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/",
+   "https://runtimewire.com/article/microsoft-decision-1-achint-srivastava-agent-workflows",
+   "https://www.digitaltoday.co.kr/en/view/112711/microsoft-joins-decision-focused-ai-model-race-unveils-microsoft-decision-1",
+   "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/"
+  ],
+  "draft_id": "20261012_071354_1"
  }
 ]
