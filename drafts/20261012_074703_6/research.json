@@ -1,0 +1,52 @@
+{
+ "topic": "Crunchbase Data: Q3 2026 Posted A Record Count Of Billion-Dollar Rounds As The Global AI Race Heats Up",
+ "source_url": "https://news.crunchbase.com/venture/q3-2026-global-startup-funding-ai-billion-dollar-rounds-exits-data/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Crunchbase Data: Q3 2026 Posted A Record Count Of Billion-Dollar Rounds As The Global AI Race Heats Up",
+   "url": "https://news.crunchbase.com/venture/q3-2026-global-startup-funding-ai-billion-dollar-rounds-exits-data/",
+   "publisher": "Crunchbase News",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI Startups Grabbed 64% Of Q3's Record $159B",
+   "url": "https://valueaddvc.com/pulse/ai-startups-64-percent-record-q3-funding-2026",
+   "publisher": "Value Add VC",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Crunchbase Logs 27 Billion-Dollar Rounds in Q3 2026 as AI Grabs $102B, or 64% of Global VC",
+   "url": "https://aiweekly.co/alerts/crunchbase-logs-27-billion-dollar-rounds-in-q3-2026-as-ai-grabs-102b-or-64-of",
+   "publisher": "AI News Weekly",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Crunchbase: Q3 Venture Hit $159B, AI Took 64%",
+   "url": "https://fourweekmba.com/ai-crunchbase-q3-2026-159b-venture-27-billion-dollar-rounds-ai/",
+   "publisher": "FourWeekMBA",
+   "published": "2026-10-05",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Crunchbase 원문에는 데이터 차트가 없고 머리 일러스트(대표 이미지)만 있어 인용하지 않았습니다.",
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 68,
+  "removed": [
+   "즉 스타트업 수천 곳이 나눈 돈보다 27개 회사가 가져간 돈이 한 덩어리로 더 크게 잡혔다는 이야기입니다. (원문은 27곳이 약 3분의 1 — 틀린 해석이라 삭제·수정)",
+   "보고서에 나오는 '메가라운드'는 한 번에 10억 달러 이상을 모으는 투자를 뜻합니다. (Crunchbase 정의 확인 안 됨 — Value Add VC 표현으로 고침)",
+   "이는 성숙한 스타트업일수록 한 번에 받는 금액이 매우 커졌다는 뜻으로 보이며 (추세 근거 없음)",
+   "이 분야들은 모두 AI 확산과 연결되어 설명되는 경우가 많지만 (출처 없음)",
+   "같은 분기 안에서도 상장 기업별 평가가 크게 엇갈렸다는 점을 보여 줍니다. (원문 확인된 Shein 첫날 주가 내용으로 대체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 WebFetch 로 다시 열어 수치 전부 대조, 4개 출처 수치 일치. Crunchbase·Value Add VC 의 article:published_time 메타(2026-10-05, 2026-10-06)와 published 일치, AI News Weekly·FourWeekMBA 페이지 날짜 2026-10-05 일치. 고친 것: AMD-World Labs 는 '인수 의향 발표'로, M&A 3건 완료 여부 미기재 명시, Value Add VC 의 한계는 '메가라운드 제외 투자를 분야별로 나누지 않음'으로 원문대로, 2분기 부풀림 반론을 Value Add VC 의견으로 표시, AI News Weekly 명칭 통일. 보완: AI 비중 전년 동기 대비 +14%p(앞 두 분기보다는 낮음), Shein 첫날 주가(S1). PitchBook 3분기 수치는 검색해도 아직 없음(미확인 유지). EGRESS_BLOCKED 출처 없음. 투자 권유·전망 표현 없음."
+ }
+}
