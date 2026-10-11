@@ -1,0 +1,101 @@
+{
+ "topic": "AgentCorruption: How A Single Prompt Collapsed The Entire Cloud Security Model (Zenity Labs, Amazon Bedrock AgentCore)",
+ "source_url": "https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AgentCorruption: How A Single Prompt Collapsed The Entire Cloud Security Model",
+   "url": "https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model",
+   "publisher": "Zenity Labs",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Zenity Labs Discloses AgentCorruption, a Chain of AWS AgentCore Flaws",
+   "url": "https://zenity.io/press-release/zenity-labs-discloses-agentcorruption-a-chain-of-aws-agentcore-flaws",
+   "publisher": "Zenity",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AgentCorruption: One Role to Rule Them All",
+   "url": "https://labs.zenity.io/post/agentcorruption-one-role-to-rule-them-all",
+   "publisher": "Zenity Labs",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "AgentCorruption: Initial IMDS Access",
+   "url": "https://labs.zenity.io/post/agentcorruption-initial-imds-access",
+   "publisher": "Zenity Labs",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "AgentCorruption: Weaponizing Agent Memory for Persistent Hijacking",
+   "url": "https://labs.zenity.io/post/agentcorruption-weaponizing-agent-memory-for-persistent-hijacking",
+   "publisher": "Zenity Labs",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Zenity says one prompt took over every AgentCore agent in an AWS account",
+   "url": "https://thenextweb.com/news/aws-agentcore-zenity-agentcorruption-one-prompt-agents",
+   "publisher": "The Next Web",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Understanding Credentials Management in Amazon Bedrock AgentCore",
+   "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-credentials-management.html",
+   "publisher": "AWS",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "AgentCorruption: Credential Theft from AWS's Secrets Manager and More",
+   "url": "https://labs.zenity.io/post/agentcorruption-credential-theft-from-aws-secrets-manager-and-more",
+   "publisher": "Zenity Labs",
+   "published": "2026-10-08",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/13k3ywos/production/26bf253c3f5a001eb48c6575271c508865c01ca7-2048x1148.jpg",
+   "page_url": "https://labs.zenity.io/post/agentcorruption-one-role-to-rule-them-all",
+   "caption": "과도한 기본 실행 역할로 확인된 에이전트 메모리의 행위자·세션 목록",
+   "credit": "Zenity Labs"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.sanity.io/images/13k3ywos/production/3c28a5fde2eb6c91d924e2019c888a545e520411-1988x1212.png",
+   "page_url": "https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model",
+   "caption": "노출된 실행 역할 자격 증명으로 추출된 대화 기록 (방어 체크리스트의 메모리·대화 보호 항목)",
+   "credit": "Zenity Labs"
+  }
+ ],
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 44,
+  "removed": [
+   "Zenity 블로그도 프롬프트 인젝션을 콘텐츠 위험이 아니라 클라우드 자격 증명으로 가는 경로로 다뤄야 한다고 정리했습니다. (Zenity 자료에 없음 → AWS 문서 내용으로 교체)",
+   "The Next Web은 이것(IMDSv2)이 이번 연구에서 쓰인 단순한 메타데이터 요청을 막는 효과가 있다고 설명했습니다. (기사에 없음 → '요청마다 세션 토큰 요구'로 교체)",
+   "특히 Zenity가 강조한 대목은 '자격 증명이 노출될 수 있다고 가정하고 역할을 설계하라'는 것입니다. (Zenity 자료에 없음 → AWS 문서 안내로 교체)",
+   "Zenity의 메모리 글은 ... 사람이 확인하는 절차를 두라고 권합니다. (해당 글에 권고 없음 → 이 글의 방어 제안으로 표시)",
+   "한 분석 글은 연구가 연구자가 통제한 배포 환경에서 나왔다고 짚었습니다. (출처 미확인 → The Next Web 보도 내용으로 교체, 본문·FAQ)",
+   "이전에 만든 자체 정책이나 CLI로 생성한 광범위한 정책이 남아 있을 수 있으므로 (출처 없음 → '기존 역할 적용 여부는 공개 자료에 없음'으로 교체)",
+   "AWS는 별도의 보안 공지로 이 연쇄 전체를 다루지 않았고 (→ AWS Security Bulletins 확인 결과로 표현 수정)",
+   "업계 매체들이 같은 날 다루기 시작했습니다 / 네 편 이상의 연구 블로그 글 (→ The Next Web 보도·다섯 편으로 정정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S6 다시 열어 날짜·타임라인(2025-12-25~2026-10-08)·AWS 성명·IMDSv2(2026-02-14, 새 에이전트)·2026-09-29 기본 역할 축소·Bargury 인용·SecTor 2026 토론토·CVE 없음·TNW 헤드라인 정정 확인. 모든 출처 published 2026-10-08 페이지 표기·메타(article:published_time)와 일치. AWS 공식 문서(S7)·Zenity Secrets Manager 글(S8) 추가로 AWS '문서화된 동작' 근거·환경 변수 노출 보강. AWS Security Bulletins 에 AgentCorruption 공지 없음 확인. 다른 CVE 번호·2월 패치설은 '확인 안 됨'으로만 언급. 재현 가능한 단계 없음 확인. 인용 이미지 2개 image/jpeg·image/png 200 확인. EGRESS_BLOCKED/403 출처(Dark Reading)는 쓰지 않음. Zenity 자료(S1~S5, S8)는 제보자 주장으로 본문에 표시."
+ }
+}
