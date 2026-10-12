@@ -23,8 +23,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, recover_terminal_lease, reserve, settle, task_key, validate_primary_source, validate_verification  # noqa: E402
-from autopost.cloud_drafts import DRAFTS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
+from autopost.cloud_drafts import DRAFTS, RUNS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
+from autopost.daily_run import daily_health  # noqa: E402
 from autopost.draft_request import manual_thread, read_request, request_id_of, request_path  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 from autopost.slack_helper import SlackNotifier, escape_mrkdwn, redact  # noqa: E402
@@ -108,6 +109,14 @@ def recover_previous_run(state: dict) -> dict:
             write_json(path, {**record, "fallback": {**record.get("fallback", {}), "status": "waiting",
                 "last_result": recovered["attempts"][task_key(task)]["status"]}})
             extra.append(str(path.relative_to(helper.TREE)))
+    else:
+        path = helper.TREE / RUNS / f"{task['day']}.json"
+        record = read_json(path)
+        attempt = recovered["attempts"][task_key(task)]
+        write_json(path, {**record, "fallback": {**record.get("fallback", {}), "provider": "codex",
+                    "status": "waiting", "category": task["category"], "last_result": attempt["status"]},
+                    "note": attempt["note"]})
+        extra.append(str(path.relative_to(helper.TREE)))
     save_state(recovered, "codex: 종료된 GitHub 실행 잠금 복구", extra)
     return recovered
 
@@ -152,6 +161,16 @@ def plan(work: Path) -> int:
             record["claude_fire_error"] = record.pop("fire_error")
         path = request_path(helper.TREE, task["request"])
         write_json(path, record)
+        extra.append(str(path.relative_to(helper.TREE)))
+    else:
+        path = helper.TREE / RUNS / f"{task['day']}.json"
+        record = read_json(path)
+        previous = record.get("fallback") or {}
+        health = daily_health(helper.TREE, now)
+        write_json(path, {**record, "started": record.get("started") or task["at"], "finished": "",
+            "fallback": {**previous, "provider": "codex", "status": "writing", "category": task["category"],
+                         "taken_over": task["at"], "first_taken_over": previous.get("first_taken_over") or task["at"],
+                         "reason": previous.get("reason") or health["reason"]}})
         extra.append(str(path.relative_to(helper.TREE)))
     save_state(reserve(state, task, owner(), now), f"codex: 클라우드 인계 {task.get('category') or '카테고리 선택'}", extra)
     output("work", "true")  # 이후 입력 준비 실패에도 complete job이 임대를 해제한다
@@ -449,6 +468,19 @@ def complete(work: Path) -> int:
                 path = request_path(helper.TREE, task["request"])
                 write_json(path, updated)
                 extra.append(str(path.relative_to(helper.TREE)))
+        else:
+            path = helper.TREE / RUNS / f"{task['day']}.json"
+            record = read_json(path)
+            # 종료된 임대 사이에도 인계 기록을 유지해 늦은 Claude가 다시 쓰지 않게 한다.
+            updated = {**record, "fallback": {**record.get("fallback", {}), "provider": "codex",
+                        "status": "waiting", "category": task["category"], "last_result": result}, "note": note}
+            remaining = missing_categories(helper.TREE / DRAFTS, task["day"], CATEGORIES,
+                read_json(helper.TREE / STATE / "failures.json"), helper.pushed_folders())
+            if not remaining:
+                updated["finished"] = datetime.now(KST).isoformat(timespec="seconds")
+                updated["fallback"]["status"] = "done"
+            write_json(path, updated)
+            extra.append(str(path.relative_to(helper.TREE)))
         ended = settle(state, task, owner(), result, note)
         save_state(ended, f"codex: {result}", extra)
         notice(task, ("완료 — " if result == "done" else "건너뜀 — " if result == "skipped" else "처리 결과 — ")

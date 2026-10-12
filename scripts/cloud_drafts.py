@@ -44,6 +44,7 @@ from autopost.cloud_drafts import (  # noqa: E402
 from autopost.config import load_config  # noqa: E402
 from autopost.codex_fallback import fallback_requests, takeover_record  # noqa: E402
 from autopost.cloud_codex import cloud_lease  # noqa: E402
+from autopost.daily_run import daily_health  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import (  # noqa: E402
     MAX_AGE_HOURS, read_request, request_id_of, request_path, with_request,
@@ -87,8 +88,10 @@ def pushed_folders() -> set[str]:
     return pushed_names(TREE)
 
 
-def publish(paths: list[str], message: str) -> None:
+def publish(paths: list[str], message: str, guard=None) -> None:
     """원고 브랜치에 커밋하고 올린다 (다른 쪽이 먼저 올렸으면 받아서 다시)."""
+    if guard:
+        guard()
     git("add", "--", *paths, cwd=TREE)
     if git("diff", "--cached", "--quiet", cwd=TREE, check=False).returncode == 0:
         print("변경 없음 — 올릴 것이 없습니다")
@@ -97,9 +100,12 @@ def publish(paths: list[str], message: str) -> None:
     for attempt in range(1, PUSH_TRIES + 1):
         if git("pull", "--rebase", "-q", "origin", BRANCH, cwd=TREE, check=False).returncode != 0:
             git("rebase", "--abort", cwd=TREE, check=False)  # 충돌이면 내 커밋을 지키고 다시 시도
-        elif git("push", "-q", "origin", f"HEAD:{BRANCH}", cwd=TREE, check=False).returncode == 0 and pushed():
-            print(f"📤 올림: {message}")
-            return
+        else:
+            if guard:
+                guard()  # 인계가 pull/rebase 사이에 발생했으면 늦은 작성자의 push를 막는다.
+            if git("push", "-q", "origin", f"HEAD:{BRANCH}", cwd=TREE, check=False).returncode == 0 and pushed():
+                print(f"📤 올림: {message}")
+                return
         time.sleep(3 * attempt)
     raise SystemExit("❌ 원고 브랜치에 올리지 못했습니다 (git push 실패)")
 
@@ -119,18 +125,44 @@ def run_file() -> Path:
     return TREE / RUNS / f"{today()}.json"
 
 
+def ensure_daily_owner() -> None:
+    lease = cloud_lease(TREE, datetime.now(KST))
+    task = lease.get("task") or {}
+    mine = f"{os.environ.get('GITHUB_RUN_ID', '')}-{os.environ.get('GITHUB_RUN_ATTEMPT', '1')}"
+    if lease and lease.get("owner") == mine and not task.get("request") and task.get("day") == today():
+        return
+    if lease or (read_json(run_file()).get("fallback") or {}).get("provider") == "codex":
+        raise SystemExit("Codex 클라우드가 일일 원고를 이어받았습니다 — 늦은 Claude 기록을 올리지 않습니다")
+
+
+def ensure_daily_slot(category: str) -> None:
+    ensure_daily_owner()
+    if cloud_lease(TREE, datetime.now(KST)) and category not in [g.category for g in gaps()]:
+        raise SystemExit("이 카테고리 원고가 이미 올라왔습니다 — Codex 중복 원고를 올리지 않습니다")
+
+
 def start(network: str) -> None:
-    if cloud_lease(TREE, datetime.now(KST)):
-        raise SystemExit("Codex 클라우드가 이어 쓰는 중입니다 — 시작하지 않습니다")
+    ensure_daily_owner()
     now = datetime.now(KST).isoformat(timespec="seconds")
-    write_json(run_file(), {"started": now, "finished": "", "network": network})
-    publish([str(run_file().relative_to(TREE))], f"run: {today()} 시작")
+    write_json(run_file(), {"started": now, "finished": "", "network": network, "activity_at": now})
+    publish([str(run_file().relative_to(TREE))], f"run: {today()} 시작", guard=ensure_daily_owner)
+
+
+def heartbeat(category: str, phase: str) -> None:
+    ensure_daily_owner()
+    data = read_json(run_file())
+    if not run_active(data):
+        raise SystemExit("시작하지 않았거나 종료된 일일 실행입니다")
+    write_json(run_file(), {**data, "activity_at": datetime.now(KST).isoformat(timespec="seconds"),
+                            "category": category, "phase": phase})
+    publish([str(run_file().relative_to(TREE))], f"run: {today()} {category} {phase}", guard=ensure_daily_owner)
 
 
 def finish() -> None:
+    ensure_daily_owner()
     data = read_json(run_file())
     write_json(run_file(), {**data, "finished": datetime.now(KST).isoformat(timespec="seconds")})
-    publish([str(run_file().relative_to(TREE))], f"run: {today()} 끝")
+    publish([str(run_file().relative_to(TREE))], f"run: {today()} 끝", guard=ensure_daily_owner)
 
 
 def gaps() -> list:
@@ -153,21 +185,13 @@ def status() -> int:
     return 0
 
 
-CLOUD_RUN_HOURS = 3  # 이 시간 안에 시작해 아직 끝나지 않은 클라우드 실행은 '진행 중' (그 뒤는 멈춘 것으로 본다)
 CLOUD_WAIT_UNTIL = (7, 15)  # 07시 Claude 루틴이 15분 동안 시작되지 않으면 독립 Codex가 인계한다.
 LOCK_HOURS = 3  # 채우기 잠금이 이보다 오래되면 멈춘 것으로 보고 풀어 준다
 
 
 def cloud_running() -> bool:
-    """오늘 클라우드 실행이 진행 중인지 — 로컬 자동 보충이 같은 카테고리를 겹쳐 쓰지 않도록."""
-    run = read_json(run_file())
-    if not run_active(run):
-        return False
-    try:
-        started = datetime.fromisoformat(str(run["started"]))
-    except (KeyError, ValueError):
-        return False
-    return datetime.now(KST) - started < timedelta(hours=CLOUD_RUN_HOURS)
+    """시작 기록과 마지막 일일 원고 업로드·진행 기록으로 판단한다."""
+    return daily_health(TREE, datetime.now(KST))["running"]
 
 
 def cloud_pending() -> bool:
@@ -301,6 +325,8 @@ def push(folder: Path, request: str = "") -> int:
     folder = folder.resolve()
     if folder.parent != (TREE / DRAFTS).resolve():
         raise SystemExit(f"❌ 원고 폴더는 {TREE / DRAFTS} 안에 있어야 합니다: {folder}")
+    if not request:
+        ensure_daily_slot(folder_category(folder))
     if request:
         problem = request_problem(folder, request)
         if problem:
@@ -320,12 +346,15 @@ def push(folder: Path, request: str = "") -> int:
         return 1
     title = str(read_json(folder / "post.json").get("title") or folder.name)[:80]
     files = [str((folder / name).relative_to(TREE)) for name in ("post.json", "research.json")]
-    publish(files, f"draft: {folder.name} {'🧑‍💼 ' if request else ''}{title}")
+    publish(files, f"draft: {folder.name} {'🧑‍💼 ' if request else ''}{title}",
+            guard=None if request else lambda: ensure_daily_slot(folder_category(folder)))
     return 0
 
 
 def skip(category: str, reason: str, request: str = "") -> int:
     """건너뜀 기록 — 매일 원고면 빈 카테고리로 남아 재시도·자동 보충 대상, 수동 지시면 지시 스레드에 이유를 알린다."""
+    if not request:
+        ensure_daily_slot(category)
     stamp = datetime.now(KST).strftime("%Y%m%d_%H%M%S")
     folder = TREE / DRAFTS / f"{stamp}_{CATEGORIES.index(category) + 1}"
     data = {"category": category, "reason": reason, "at": datetime.now(KST).isoformat(timespec="seconds")}
@@ -336,7 +365,8 @@ def skip(category: str, reason: str, request: str = "") -> int:
             return 4
         data = with_request(data, request, str(record.get("kind") or "single"))
     write_json(folder / SKIP_FILE, data)
-    publish([str((folder / SKIP_FILE).relative_to(TREE))], f"skip: {category} — {reason}"[:120])
+    publish([str((folder / SKIP_FILE).relative_to(TREE))], f"skip: {category} — {reason}"[:120],
+            guard=None if request else lambda: ensure_daily_slot(category))
     return 0
 
 
@@ -436,6 +466,7 @@ def fallback_status() -> int:
         return 2
     print(json.dumps({"synced": True, "locked_by": lock_holder().get("owner", ""),
                       "cloud_running": cloud_running(), "cloud_pending": cloud_pending(),
+                      "claude": daily_health(TREE, datetime.now(KST)),
                       "daily": [{"category": g.category, "reason": g.reason} for g in gaps()],
                       "requests": fallback_requests(TREE, datetime.now(KST), pushed_folders())}, ensure_ascii=False))
     return 0
@@ -471,6 +502,9 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("setup")
     start_p = sub.add_parser("start")
     start_p.add_argument("--network", default="full", choices=["full", "limited"])
+    heartbeat_p = sub.add_parser("heartbeat", help="일일 Claude 작성 활동 기록")
+    heartbeat_p.add_argument("--category", required=True, choices=CATEGORIES)
+    heartbeat_p.add_argument("--phase", default="조사·작성", choices=["조사·작성", "사실 검증", "전송 준비"])
     sub.add_parser("status")
     sub.add_parser("missing").add_argument("--json", action="store_true", help="JSON 으로 출력")
     for name in ("claim", "release"):
@@ -513,10 +547,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "check":
         return check(args.folder, args.request)
     setup()
+    if args.command in ("start", "heartbeat", "finish", "push", "skip") and not SYNC["ok"]:
+        print("❌ 원고 브랜치 동기화 실패 — 작성 기록을 올리지 않습니다")
+        return 2
     if args.command == "fallback":
         return fallback_status() if args.action == "status" else fallback_resume(args.id, args.category)
     if args.command == "start":
         start(args.network)
+        return 0
+    if args.command == "heartbeat":
+        heartbeat(args.category, args.phase)
         return 0
     if args.command == "finish":
         finish()

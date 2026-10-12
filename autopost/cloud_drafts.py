@@ -402,6 +402,8 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
                     manual_channel: str = "", draft_channel: str = "") -> SyncOutcome:
     """Actions 한 번 실행분 — 새 원고 전송 → 실패 알림 → 수동 지시 스레드 → 진행 막대 → (끝났으면) 요약 → 발행 기록 파일."""
     from .draft_progress import ProgressBoard
+    from .cloud_codex import cloud_lease
+    from .daily_run import daily_health
     from .request_report import report_requests
     from .slack_helper import escape_mrkdwn
 
@@ -425,7 +427,15 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     progress = root / STATE / f"progress_{day}.json"
     if run or any(folder_day(f.name) == day and not request_id_of(f) for f in folders):
         board = ProgressBoard(slack, root / DRAFTS, progress, store, now=now)
-        rows = board.refresh(failed_reasons(records), run_active(run))
+        writer = daily_health(root, current)
+        lease = cloud_lease(root, current)
+        task = lease.get("task") or {}
+        fallback = run.get("fallback") or {}
+        if lease and not task.get("request") and task.get("day") == day:
+            writer = {"status": "writing", "category": task.get("category", "")}
+        elif fallback.get("provider") == "codex" and fallback.get("last_result") == "failed" and not run.get("finished"):
+            writer = {"status": "failed", "category": fallback.get("category", ""), "reason": run.get("note", "")}
+        rows = board.refresh(failed_reasons(records), writer=writer)
         if run.get("finished") and not read_json(progress).get("summary"):
             slack.post(summary_text(rows, current.strftime("%m/%d"), str(run.get("network") or "")))
             write_json(progress, {**read_json(progress), "summary": current.isoformat(timespec="seconds")})

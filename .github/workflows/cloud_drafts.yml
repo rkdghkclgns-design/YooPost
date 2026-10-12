@@ -46,6 +46,7 @@ jobs:
         with:
           ref: yoopost-drafts
           path: .yoopost-drafts
+          fetch-depth: 0  # checkout 시각으로 오래된 실행을 작성 중이라고 표시하지 않는다.
 
       - uses: actions/setup-python@v5
         with:

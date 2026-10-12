@@ -38,6 +38,7 @@ jobs:
         with:
           ref: yoopost-drafts
           path: .yoopost-drafts
+          fetch-depth: 0  # state 갱신과 실제 일일 원고 활동의 커밋 시각을 구분한다.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -176,6 +177,7 @@ jobs:
         with:
           ref: yoopost-drafts
           path: .yoopost-drafts
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

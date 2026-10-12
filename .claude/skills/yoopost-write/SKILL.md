@@ -82,6 +82,11 @@ GitHub Actions(`cloud_drafts.yml`)가 위 ② 의 6~7 단계(준비·슬랙 승�
 | `python scripts/claude_draft.py <폴더>` (슬랙 전송) | `python scripts/cloud_drafts.py push <폴더>` (올리면 Actions 가 슬랙 승인 요청) |
 | `python scripts/draft_progress.py [--skip X --reason R]` | `python scripts/cloud_drafts.py skip --category X --reason R` (진행 막대는 Actions 가 갱신) |
 실행 처음에 `python scripts/cloud_drafts.py setup` → `status`(이미 끝난 카테고리 확인) → `start`, 마지막에 `finish`(요약은 Actions 가 #yoopost-알림 에).
+매일 루틴은 카테고리를 시작할 때와 검증 단계로 전환할 때, 긴 작업 중에는 15분마다
+`python scripts/cloud_drafts.py heartbeat --category "<카테고리>" --phase "조사·작성"`을 실행한다
+(검증 때는 `--phase "사실 검증"`, 올리기 전에는 `--phase "전송 준비"`). 실제 작업 중일 때만 진행 기록을 남긴다.
+마지막 진행 기록·일일 원고 업로드가 60분 동안 없거나 시작 후 3시간이 지나면 Codex 클라우드가 이어받는다.
+도우미가 이미 Codex로 인계됐다고 종료하면 이 일일 실행을 중단한다. 직접 git push로 보호를 우회하지 않는다.
 오늘 날짜는 **KST** 로 센다: `TZ=Asia/Seoul date +%F` (루틴은 UTC 22시에 돌기 때문에 `date` 만 쓰면 하루 전 날짜가 된다).
 WebFetch 가 `EGRESS_BLOCKED` 로 막힌 사이트는 읽지 못한 것이다 — 출처로 쓰지 않는다 (읽은 페이지만 출처). 막힌 곳이 많으면 `start --network limited`.
 출처 접속 확인·인용 이미지 내려받기·중복 주제 확인은 Actions 가 다시 한다 (실패하면 #yoopost-알림 에 이유가 온다).

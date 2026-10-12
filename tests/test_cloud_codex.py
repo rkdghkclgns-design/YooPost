@@ -75,6 +75,8 @@ def test_plan_finishes_old_requests_then_starts_daily_without_another_schedule(t
         selected = read_json(work / "task.json")
         assert selected["request"] == "" and selected["category"] == "AI 도구"
         assert read_json(helper.TREE / "state/codex.json")["lease"]["task"] == selected
+        run = read_json(helper.TREE / f"runs/{selected['day']}.json")
+        assert run["fallback"]["provider"] == "codex" and run["fallback"]["category"] == "AI 도구"
     else:
         assert not read_json(helper.TREE / "state/codex.json").get("lease")
 
@@ -300,6 +302,8 @@ def test_complete_publishes_checked_data_and_releases_lease_on_failure(branch_re
     assert codex_cloud.complete(tmp_path / "absent") == 1
     assert not read_json(tree / "state/codex.json")["lease"]
     assert len(notices) == 3
+    run = read_json(helper.run_file())
+    assert run["fallback"]["last_result"] == "failed" and "result.json" in run["note"]
 
 
 @pytest.mark.parametrize("blocked", [False, True])

@@ -119,7 +119,8 @@ def _state(record: dict | None, draft: Draft) -> tuple[str, str]:
 
 
 def build_rows(drafts: Sequence[Draft], skipped: Mapping[str, str], store, now: float,
-               failed: Mapping[str, str] | None = None, active: bool = False) -> list[Row]:
+               failed: Mapping[str, str] | None = None, active: bool = False,
+               writer: dict | None = None) -> list[Row]:
     """카테고리별 한 줄. failed = {원고 ID: 전송 실패 이유}, active = 클라우드 실행 중 (다음 카테고리를 '작성 중'으로)."""
     failed = failed or {}
     rows: list[Row] = []
@@ -143,11 +144,22 @@ def build_rows(drafts: Sequence[Draft], skipped: Mapping[str, str], store, now: 
             rows.append(Row(category, "⏭️", f"건너뜀 — {escape_mrkdwn(skip)}", True))
         elif broken:
             rows.append(Row(category, "⚠️", f"전송 실패 — {escape_mrkdwn(broken[0][:120])}", True))
-        elif any(now - d.started < RUNNING_MINUTES * 60 for d in mine):
+        elif writer is None and any(now - d.started < RUNNING_MINUTES * 60 for d in mine):
             rows.append(Row(category, "✍️", "작성 중", False))
         else:
             rows.append(Row(category, "⬜", "대기", False))
-    if active:
+    if writer is not None:
+        waiting = next((i for i, r in enumerate(rows) if not r.finished and r.icon in ("⬜", "🚫")), None)
+        chosen = next((i for i, r in enumerate(rows) if r.category == writer.get("category")
+                       and (not r.finished or r.icon in ("⚠️", "⏭️", "🚫"))), waiting)
+        state = writer.get("status")
+        if chosen is not None and state in ("active", "stalled", "writing", "failed"):
+            label = ("Codex 클라우드 작성 → 별도 사실 검증" if state == "writing" else
+                     f"작성 중 (Claude · {writer.get('phase') or '조사·작성'})" if state == "active" else
+                     f"Claude 중단 · Codex 인계 대기 — {escape_mrkdwn(writer.get('reason', ''))}" if state == "stalled" else
+                     f"Codex 중단 · 재시도 대기 — {escape_mrkdwn(writer.get('reason', '')[:120])}")
+            rows[chosen] = Row(rows[chosen].category, "✍️" if state in ("active", "writing") else "⚠️", label, False)
+    elif active:
         waiting = next((i for i, r in enumerate(rows) if r.icon == "⬜"), None)
         if waiting is not None and not any(r.icon == "✍️" for r in rows):
             rows[waiting] = Row(rows[waiting].category, "✍️", "작성 중 (클라우드)", False)
@@ -197,11 +209,12 @@ class ProgressBoard:
         data = self._load()
         self._save({**data, "skipped": {**data.get("skipped", {}), category: reason}})
 
-    def refresh(self, failed: Mapping[str, str] | None = None, active: bool = False) -> list[Row]:
+    def refresh(self, failed: Mapping[str, str] | None = None, active: bool = False,
+                writer: dict | None = None) -> list[Row]:
         now = self._now()
         data = self._load()
         rows = build_rows(scan(self._drafts, now.strftime("%Y%m%d")), data.get("skipped", {}), self._store,
-                          now.timestamp(), failed, active)
+                          now.timestamp(), failed, active, writer)
         text, blocks = build_blocks(rows, now.strftime("%m/%d"))
         ts = data.get("ts")
         if not (ts and self._slack.update(ts, text, blocks)):
