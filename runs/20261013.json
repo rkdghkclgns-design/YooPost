@@ -4,10 +4,12 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-10-13T08:54:05+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
-  "reason": "마지막 작성 활동 이후 95분 경과"
- }
+  "reason": "마지막 작성 활동 이후 95분 경과",
+  "last_result": "skipped"
+ },
+ "note": "지정 카테고리 AI 도구의 2026-10-10~2026-10-13 KST 신규 발표·독립 보도 조건을 함께 충족하는 대체 주제를 확인하지 못했습니다. Shape는 공식 changelog와 블로그의 발표일이 2026-10-09여서 제외했습니다. Honeyjar 공식 홈페이지·Early Access에는 기간 내 신규 발표일이 없어 제외했습니다. Moely의 Work Activity Heatmap은 공식 업데이트에서 2026-10-10 날짜를 확인했지만 같은 소식을 다룬 독립 보도를 찾지 못했습니다. Pine Computer는 공식 소개"
 }
