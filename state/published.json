@@ -2716,5 +2716,23 @@
    "https://www.therich.io/ipo/70"
   ],
   "draft_id": "20261012_075540_7"
+ },
+ {
+  "date": "2026-10-13",
+  "title": "🤖 Meta Muse Wonder 총정리: 100만 토큰·API $4/$20·Opus 5.5와 맞붙은 첫 프런티어 모델",
+  "topic": "Meta releases its first frontier model, Muse Wonder (Meta Muse Wonder & Muse Wonder Full, 2026-10-12)",
+  "category": "AI 언어 모델",
+  "source_url": "https://research.meta.ai/blog/muse-wonder",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/meta-muse-wonder-100-api-420opus-55.html"
+  },
+  "sources": [
+   "https://research.meta.ai/blog/muse-wonder",
+   "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+   "https://decrypt.co/380768/meta-muse-wonder-zuckerberg-frontier-ai-race",
+   "https://felloai.com/muse-wonder/",
+   "https://shattered.io/meta-muse-wonder-ai-pricing-2026/"
+  ],
+  "draft_id": "20261013_071421_1"
  }
 ]
