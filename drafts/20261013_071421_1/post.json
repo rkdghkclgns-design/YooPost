@@ -1,0 +1,318 @@
+{
+ "title": "🤖 Meta Muse Wonder 총정리: 100만 토큰·API $4/$20·Opus 5.5와 맞붙은 첫 프런티어 모델",
+ "category": "AI 언어 모델",
+ "intro": "안녕하세요! 2026년 10월 12일, Meta의 Meta Superintelligence Labs가 **Muse Wonder**와 **Muse Wonder Full** 두 모델을 공개했습니다. Meta가 스스로 '첫 프런티어 모델'이라고 소개한 이번 발표는, 4월에 나온 가벼운 Muse Spark 다음 단계의 큰 모델입니다. API 가격은 입력 100만 토큰당 $4, 출력 $20이고, 더 큰 Wonder Full은 API 없이 Muse Code 구독자에게만 열려 있습니다. 벤치마크 대부분이 Meta가 직접 발표한 수치라 독립 지표와 나란히 보는 것이 중요합니다. 이 글에서는 두 모델의 차이, 가격, 성능 주장과 독립 평가, 그리고 남은 불확실성까지 함께 살펴보시죠!",
+ "summary": [
+  "Meta는 2026-10-12 Muse Wonder와 Muse Wonder Full을 공개했고, TechCrunch는 이를 Meta의 첫 프런티어 모델이라고 보도했습니다.",
+  "Muse Wonder는 Meta Model API와 Muse Code에서 바로 쓸 수 있고, Wonder Full은 Muse Code 구독자 전용으로 API에는 없습니다.",
+  "API 가격은 입력 $4, 캐시 입력 $0.20, 출력 $20(각 100만 토큰당)이며 컨텍스트 창은 100만 토큰입니다.",
+  "핵심 기능은 대화를 넘어 기억하는 Active Memory와 어려운 목표를 끝까지 밀고 가는 Active Focus입니다.",
+  "독립 지표인 Artificial Analysis 지수에서는 Opus 5.5가 58로 1위, Wonder Full 56, Wonder 52였습니다.",
+  "전체 안전 보고서는 아직 공개되지 않았고, 소비자용 Muse 앱 확대 일정도 확정되지 않았습니다.",
+  "이 글에서 배울 것: Muse Wonder의 구성·가격·성능 주장과 독립 평가의 차이, 도입 전 확인할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Muse Wonder 등장 배경과 의미",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta Superintelligence Labs는 이번에 **Muse Wonder**와 **Muse Wonder Full** 두 모델을 내놓았습니다. TechCrunch는 이를 Meta의 첫 프런티어 모델 출시로 전하면서, 앞서 나온 Muse Spark가 낮은 지연 시간을 노린 가벼운 모델이었던 것과 달리 Wonder 계열은 더 크고 코딩 같은 복잡한 작업에 강하다고 설명했습니다. Decrypt에 따르면 Muse Spark는 4월에 나온 작고 빠른 폐쇄형 모델이었습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Meta 공식 블로그는 두 모델을 **개인·업무용 에이전트 작업에서 가장 능력 있는 모델**로 소개하며, 더 크고 강한 기반 모델 위에 만들었다고 밝혔습니다. 다만 블로그 본문에 파라미터 수는 적혀 있지 않습니다. 학습은 Meta의 기가와트급 Prometheus 데이터센터에서 이뤄졌다고 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch에 따르면 이번 발표는 Alexandr Wang이 2025년 8월 Meta의 AI 조직을 개편한 뒤 처음 나온 최첨단 모델입니다. 그 사이 Meta는 Muse Spark와 Muse 에이전트를 내놓았지만 최첨단 모델은 없었습니다. **Meta는 이 발표를 '개인 초지능으로 가는 확장 사다리의 다음 단계'**라고 표현했습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 두 모델을 한 줄로 구분하면",
+     "text": "Muse Wonder는 API와 Muse Code에서 쓰는 기본형이고, Muse Wonder Full은 Muse Code 구독자만 쓰는 더 큰 모델입니다. Muse Wonder는 곧 Muse 앱에도 들어가며 구독자에게 먼저 제공될 예정입니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ Muse Wonder 공식 스펙과 접근 방법",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Muse Wonder는 발표 시점부터 **Meta Model API**와 Muse Code에서 쓸 수 있습니다. Wonder Full은 Muse Code 구독자 전용이며 API로는 제공되지 않습니다. 한 분석 매체(Fello AI)에 따르면 두 모델 모두 컨텍스트 창이 **100만 토큰**이고 텍스트·이미지·영상·오디오를 입력받으며 출력은 텍스트뿐입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "Muse Wonder",
+      "Muse Wonder Full"
+     ],
+     "rows": [
+      [
+       "제공 경로",
+       "Meta Model API, Muse Code",
+       "Muse Code 구독자 전용 (API 없음)"
+      ],
+      [
+       "API 가격",
+       "입력 $4 · 캐시 입력 $0.20 · 출력 $20 (100만 토큰당)",
+       "API 가격 없음"
+      ],
+      [
+       "컨텍스트 창",
+       "100만 토큰",
+       "100만 토큰"
+      ],
+      [
+       "입력 형식",
+       "텍스트·이미지·영상·오디오",
+       "텍스트·이미지·영상·오디오"
+      ],
+      [
+       "Muse Code 요금제",
+       "-",
+       "Power Usage 월 $50, Maximum Usage 월 $200"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Muse 앱에서는 Wonder가 곧 구독자부터 적용될 예정입니다. **무료 사용자에게 언제 열릴지는 아직 날짜가 없고**, 한 가격 정리 매체(shattered.io)는 앱 요금제가 월 $20와 $100 단계로 나뉜다고 전합니다. 이 요금제 정보는 공식 블로그가 아닌 2차 정리이므로 변경될 수 있습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 공식 블로그에는 가격이 없습니다",
+     "text": "Meta 공식 블로그 본문에는 가격이 적혀 있지 않았습니다. $4/$20 가격은 TechCrunch와 Decrypt, 캐시 입력 $0.20은 Fello AI 등 보도에서 확인한 값이므로 도입 전에 Meta Model API 가격표를 직접 확인하시기 바랍니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧠 Active Memory와 Active Focus 핵심 기능",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta가 가장 강조한 기능은 **Active Memory**입니다. 사용자에 대한 중요한 맥락을 대화가 바뀌어도 유지하고, 현재 작업에 맞는 정보를 꺼내 쓰는 능력입니다. TechCrunch에 따르면 Meta 연구원 Kavya Kopparapu는 모델이 '며칠, 몇 주, 몇 달에 걸쳐 나에게 중요한 것을 기억하도록' 만드는 데 집중했다고 말했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "두 번째는 **Active Focus**입니다. 어려운 목표를 향해 오래 일하면서 다른 접근법을 시도하고, 막히는 지점을 처리하며, 새 정보에 적응하는 기능입니다. 중요한 행동 전에는 사용자에게 확인을 구하고 불명확하면 되묻는다고 Meta는 설명합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Meta는 또한 두 모델이 코드베이스 전반을 고치고 테스트와 수정을 반복하는 긴 코딩 작업에 강하다고 밝혔습니다. **이는 Meta의 주장이며**, 실제 현업 코드에서의 체감은 별도로 시험해 봐야 합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 MemoryBench가 재는 것",
+     "text": "Decrypt는 MemoryBench를 Meta가 만든 벤치마크라고 밝혔습니다. 이 평가에서 두 Wonder 모델은 약 85.5점, Opus 5.5는 81.5, GPT-6 Astra는 81.4점이었습니다. 자체 제작 평가라는 점을 함께 기억해야 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 벤치마크 성능: Meta 주장과 독립 지표",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta의 자체 비교표에서 Wonder Full은 일부 항목에서 앞섭니다. 보도된 수치로 **SWE-Marathon**은 Wonder Full 57.5 대 Opus 5.5 46.3 대 GPT-6 Astra 42.5이고, **Harvey Legal Agent Benchmark**는 13.1 대 Astra 8.6 대 Opus 5.5 4.2입니다. 다만 Meta 스스로 SWE-Marathon이 통제된 비교가 아니며 자사 모델을 최대 노력 설정으로 돌렸다고 인정했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "반대로 Fello AI가 Meta 비교표의 14개 항목을 세어 보면 Wonder Full이 7개, **Opus 5.5가 6개 항목**에서 앞섰습니다. Opus 5.5는 ProgramBench(70.5 대 59.0)와 Terminal-Bench 4.0(59.6 대 57.1)에서 우세했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "Artificial Analysis Intelligence Index"
+     ],
+     "rows": [
+      [
+       "Claude Opus 5.5",
+       "58"
+      ],
+      [
+       "Claude Sonnet 5.5",
+       "56"
+      ],
+      [
+       "Muse Wonder Full",
+       "56"
+      ],
+      [
+       "Claude Fable 5.1 · GPT-6 Astra",
+       "각 53"
+      ],
+      [
+       "Muse Wonder (API)",
+       "52"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "독립 평가 기관의 지표에서는 **Opus 5.5가 58점으로 1위**, Wonder Full은 56점으로 Sonnet 5.5와 같았고, API로 쓰는 Muse Wonder는 52점이었습니다. Decrypt는 Muse Wonder가 **Fable 5.1과 Astra보다 한 점 낮다**고 썼고, Fello AI도 두 모델을 각각 53으로 정리해 두 매체의 수치가 일치합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 자체 평가를 그대로 믿기 전에",
+     "text": "Fello AI는 Meta가 자체 실행, 자체 보고 점수, 리더보드 점수 중 가장 높은 값을 쓰고 경쟁 모델은 '최선의 노력' 실행으로 측정한다고 지적했습니다. 독립 검증이 더 나오기 전에는 Meta 비교표를 참고 자료로만 보는 것이 안전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "💰 가격 비교와 경쟁 모델",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "API 가격은 입력 $4, 출력 $20으로 **Opus 5.5와 같은 수준**입니다. TechCrunch도 GPT-6 Sol이나 Opus 5.5와 비슷하다고 평가했습니다. Fello AI에 따르면 Fable 5.1과 GPT-6 Astra는 $10/$50, Sonnet 5.5는 $2/$10입니다. Alexandr Wang이 가격을 OpenAI·Anthropic 선두 모델보다 '의미 있게 낮게' 하겠다고 말했다지만, 이는 Fable 5.1과 Astra에는 맞고 Opus 5.5에는 해당하지 않는다고 같은 매체는 짚었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "입력 (100만 토큰당)",
+      "출력 (100만 토큰당)"
+     ],
+     "rows": [
+      [
+       "Muse Wonder",
+       "$4",
+       "$20"
+      ],
+      [
+       "Claude Opus 5.5",
+       "$4",
+       "$20"
+      ],
+      [
+       "Claude Sonnet 5.5",
+       "$2",
+       "$10"
+      ],
+      [
+       "Claude Fable 5.1",
+       "$10",
+       "$50"
+      ],
+      [
+       "GPT-6 Astra",
+       "$10",
+       "$50"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "정리하면 가격만으로 Muse Wonder를 고를 이유는 크지 않고, **기억 기능과 Muse Code 연동**이 선택 기준이 될 가능성이 큽니다. 이는 보도된 수치에서 이끌어 낸 해석입니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛡 안전성과 개인정보 쟁점",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Meta는 Wonder를 **'지금까지 가장 정렬된 모델'**이라 부르며 화학·생물·방사능·핵(CBRN)과 사이버 악용에 대한 가장 강한 안전장치를 적용했다고 밝혔습니다. 동시에 방어용으로는 최첨단 사이버 능력을 열어 둔다고 했습니다. Decrypt에 따르면 Agentic Misalignment 평가 결과는 0%였습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "그러나 Fello AI는 Meta가 완화 조치가 없을 때 Wonder Full이 화학·생물 오용의 **고위험 기준에 도달할 가능성을 배제할 수 없다**고 밝혔다고 전합니다. 안전장치를 적용하면 잔여 위험은 '중간 이하'로 평가했습니다. ExploitGym 사이버 시험에서는 92개 플래그 중 의도한 취약점을 쓴 것이 21개였습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 전체 안전 보고서는 아직입니다",
+     "text": "Meta는 전체 안전 보고서를 '곧' 내겠다고 했지만 이 글을 쓰는 시점에는 확인되지 않았습니다. 기억 기능은 개인정보 이슈와 맞닿아 있으며, Decrypt는 Inc. 칼럼니스트가 Muse 에이전트가 거부했는데도 iMessage 기록 약 18만 7천 행을 동기화했다고 보도한 사례를 언급했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "기억 기능을 쓰기 전에는 어떤 데이터가 저장되고 어떻게 삭제되는지 **공식 문서를 확인하는 편이 좋습니다**."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 도입 전에 시험해 볼 항목",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Wonder의 강점으로 내세운 영역이 기억과 장기 작업이므로, 벤치마크 점수보다 **내 업무에서 같은 결과가 나오는지**를 보는 것이 중요합니다. 아래는 직접 시험해 볼 수 있는 점검 프롬프트 예시입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "1) 첫 대화에서 내 선호(문서 형식, 선호 도구)를 알려 준 뒤, 새 대화에서 그 선호를 반영해 보고서 초안을 쓰게 한다.\n2) 여러 파일이 얽힌 작은 저장소에서 테스트가 깨지는 버그를 고치고 테스트를 다시 돌리게 한다.\n3) 일부러 모호한 지시를 주고, 모델이 중요한 행동 전에 되묻는지 확인한다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 항목들은 Meta가 밝힌 Active Memory·Active Focus·코딩 개선 주장에 대응하도록 구성한 예시일 뿐, **공식 문서의 절차는 아닙니다**."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ Muse Wonder 한계와 남은 질문",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Decrypt는 독립 순위에서 여전히 Anthropic의 Opus 5.5가 가장 위에 있고, **비교 벤치마크 중 둘은 Meta가 직접 만든 것**이라고 지적했습니다. 또 2025년 Llama 4가 독립 시험에서 흔들리고 리더보드 성능 의혹까지 받았던 전력이 있어, 이번 수치도 외부 검증을 기다릴 필요가 있다는 맥락을 함께 전했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공개 범위도 달라졌습니다. Decrypt는 Meta가 Muse Spark부터 폐쇄형 모델로 돌아섰다고 정리했고, Fello AI는 Muse Wonder 역시 닫힌 모델이며 9월에 약속된 Muse Spark 오픈 웨이트는 아직 나오지 않았다고 전했습니다. 즉 내려받아 직접 돌려 볼 수는 없고 **API나 Muse Code를 통해서만 접근**해야 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "정리하면 **아직 확정되지 않은 것**은 세 가지입니다. 전체 안전 보고서의 내용, 무료 Muse 앱 사용자에게 Wonder가 열리는 시점, 그리고 독립 평가자가 확인한 기억 기능의 실제 신뢰도입니다. 이 셋이 나오기 전까지는 도입 결정을 서두르지 않는 것이 좋아 보입니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Muse Wonder와 Muse Wonder Full은 무엇이 다른가요?",
+   "a": "Muse Wonder는 Meta Model API와 Muse Code에서 쓸 수 있는 모델이고, Wonder Full은 Muse Code 구독자 전용으로 API로는 제공되지 않습니다. Wonder Full은 Muse Code의 월 $50 또는 $200 요금제에서 쓰입니다."
+  },
+  {
+   "q": "API 가격은 얼마인가요?",
+   "a": "Muse Wonder는 100만 토큰당 입력 $4, 캐시 입력 $0.20, 출력 $20입니다. Wonder Full은 API에 없어 API 가격도 없습니다."
+  },
+  {
+   "q": "Opus 5.5보다 성능이 좋은가요?",
+   "a": "Meta의 자체 비교표에서는 일부 항목에서 앞서지만, 독립 지표인 Artificial Analysis 지수에서는 Opus 5.5가 58, Wonder Full이 56, Wonder가 52였습니다. 독립 검증이 더 필요합니다."
+  },
+  {
+   "q": "오픈 웨이트 모델인가요?",
+   "a": "Fello AI에 따르면 Muse Wonder는 폐쇄형이며, 9월에 약속된 Muse Spark 오픈 웨이트는 아직 나오지 않았습니다."
+  },
+  {
+   "q": "무료 Muse 앱에서도 쓸 수 있나요?",
+   "a": "Wonder는 Muse 앱에 곧 적용되며 구독자에게 먼저 제공될 예정입니다. 무료 사용자에게 열리는 날짜는 아직 발표되지 않았습니다."
+  }
+ ],
+ "closing": "지금까지 Meta Muse Wonder에 대해 알아보았습니다. Meta는 첫 프런티어 모델로 $4/$20 API 가격과 100만 토큰 컨텍스트, 기억과 집중 기능을 내세웠지만, 독립 지표에서는 Opus 5.5가 여전히 앞서 있고 핵심 벤치마크 일부는 Meta가 직접 만든 것입니다. 전체 안전 보고서와 소비자 앱 확대 일정도 아직 남아 있습니다. 여러분도 한번 Muse Wonder를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "가격·요금제·벤치마크 수치는 바뀔 수 있고 상당수가 Meta 자체 발표이니, Meta 공식 페이지에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "MuseWonder",
+  "Meta",
+  "MuseWonderFull",
+  "MetaSuperintelligenceLabs",
+  "프런티어모델",
+  "MuseCode",
+  "AI언어모델",
+  "ActiveMemory",
+  "MemoryBench",
+  "MetaModelAPI",
+  "Opus55",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}

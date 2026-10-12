@@ -1,0 +1,64 @@
+{
+ "topic": "Meta releases its first frontier model, Muse Wonder (Meta Muse Wonder & Muse Wonder Full, 2026-10-12)",
+ "source_url": "https://research.meta.ai/blog/muse-wonder",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Muse Wonder (Meta)",
+   "url": "https://research.meta.ai/blog/muse-wonder",
+   "publisher": "Meta",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta releases its first frontier model, Muse Wonder",
+   "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Meta's New Muse Wonder Finally Puts Zuckerberg in the Frontier AI Race",
+   "url": "https://decrypt.co/380768/meta-muse-wonder-zuckerberg-frontier-ai-race",
+   "publisher": "Decrypt",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Meta Muse Wonder: Benchmarks, Price and the Catch",
+   "url": "https://felloai.com/muse-wonder/",
+   "publisher": "Fello AI",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Meta Muse Wonder Pricing: $4-$200/Mo Explained",
+   "url": "https://shattered.io/meta-muse-wonder-ai-pricing-2026/",
+   "publisher": "shattered.io",
+   "published": "2026-10-12",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.decrypt.co/wp-content/uploads/2026/10/Artificial-Analysis-Intelligence-Index-12-Oct-26.png",
+   "page_url": "https://decrypt.co/380768/meta-muse-wonder-zuckerberg-frontier-ai-race",
+   "caption": "Artificial Analysis Intelligence Index 벤치마크 성능 차트 (2026-10-12)",
+   "credit": "Artificial Analysis / Decrypt"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 46,
+  "removed": [
+   "Wonder Full이 이긴 항목 중 둘은 Meta가 만든 내부 벤치마크입니다. (Fello AI 본문에서 해당 승리 항목이 일관되게 확인되지 않음)",
+   "Decrypt는 Fable 5.1과 Astra보다 한 점 낮다고 썼고 Fello AI는 두 모델이 각각 53이라고 정리해, 매체마다 해당 수치에 약간의 차이가 있습니다. (사실과 다름: Decrypt '52, 한 점 아래' = 53 으로 두 매체 일치 → 일치한다는 문장으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Meta 블로그·S2 TechCrunch·S3 Decrypt·S4 Fello AI·S5 shattered.io 를 2026-10-13 KST 다시 열어 주장별 대조. 모든 출처 페이지 날짜 2026-10-12 확인(S4·S5 는 'Updated' 표기). 공식 블로그에는 가격·벤치마크 텍스트가 없어 가격 $4/$20 은 TechCrunch·Decrypt, 캐시 $0.20·컨텍스트·입력 형식·Fable/Astra/Sonnet 가격·ProgramBench/Terminal-Bench·ExploitGym 은 Fello AI(Decrypt 로 100만 토큰 교차), SWE-Marathon·Harvey·MemoryBench·AA 지수는 Decrypt(AA 는 Fello 교차), 앱 요금제는 shattered.io(2차 정보로 본문에 명시). 수정: Muse Spark 4월 출처를 TechCrunch→Decrypt, Kopparapu '발표 영상' 표현 삭제(TechCrunch 인용), Wang 발언 비교 대상 명시, Muse 앱 적용 문구를 블로그 표현대로, 코딩 주장 표현을 블로그 문구대로. 인용 이미지 cdn.decrypt.co PNG 200/image/png 2464x944 확인."
+ }
+}
