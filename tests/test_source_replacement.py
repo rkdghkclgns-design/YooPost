@@ -152,3 +152,31 @@ def test_unspecified_single_keeps_the_first_selected_category(tmp_path, monkeypa
     monkeypatch.setattr(codex_cloud, "run_codex", fake)
     assert codex_cloud.generate(work) == 0
     assert read_json(work / "post.json")["category"] == "AI 도구"
+
+
+@pytest.mark.parametrize("kind", ["no_topic", "verification_failed"])
+def test_daily_unsuitable_candidate_is_replaced_and_history_is_reused(tmp_path, monkeypatch, kind):
+    work, authors = prepare(tmp_path), []
+    write_json(work / "task.json", {"category":"AI 도구", "kind":"daily", "request":"", "topic":""})
+    old = {"title":"이전 실패", "topic":"이전 실패", "source_url":"https://official.example/old", "reason":"검증 실패"}
+    write_json(work / "retry-history.json", {"candidates":[old]})
+    def fake(isolated, prompt, minutes=20):
+        if "원고를 조사·작성" in prompt:
+            authors.append(isolated)
+            assert read_json(isolated / "rejected-candidates.json")["candidates"][0] == old
+        if len(authors) == 1:
+            draft(isolated,"https://official.example/rejected", "조건 불충족 후보")
+            write_json(isolated / "skip.json", {"category":"AI 도구", "failure_kind":kind,"reason":"조건 부족"})
+        else:
+            draft(isolated,"https://official.example/new", "적격 후보")
+    monkeypatch.setattr(codex_cloud,"run_codex",fake)
+    assert codex_cloud.generate(work) == 0
+    assert len(authors) == 2
+    assert read_json(work / "result.json")["status"] == "draft"
+    assert len(read_json(work / "generation-report.json")["rejected_candidates"]) == 2
+    assert read_json(work / "verification.json")["claims"][0]["url"].endswith("/new")
+
+
+def test_history_contains_only_candidate_fields_and_masks_tokens():
+    cleaned = codex_cloud.clean_candidates([{"title":"후보", "reason":"token=ghp_abcdefghi", "extra":"secret"}])
+    assert "extra" not in cleaned[0] and "ghp_" not in cleaned[0]["reason"]

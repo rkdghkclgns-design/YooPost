@@ -26,7 +26,7 @@ import logging
 import re
 import subprocess
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from types import MappingProxyType
 from typing import Callable, Iterable, Mapping, Sequence
@@ -47,7 +47,8 @@ FOLDER_RE = re.compile(r"^(\d{8})_(\d{6})_(\d+)$")
 EMOJI_HEADING = re.compile(r"^[^\w\s]")  # 이모지·기호로 시작하는 소제목
 MIN_EMOJI_HEADINGS, MIN_FAQ, MIN_TABLES = 5, 3, 2
 MAX_REASON = 300
-MAX_ATTEMPTS = 3  # 일시적 오류(슬랙·보관함·이미지 서버)는 실행마다 다시 시도
+MAX_ATTEMPTS = 3  # 수동 요청의 일시적 전송 오류 상한. 일일 원고는 대기 후 계속 시도한다.
+KST = timezone(timedelta(hours=9))
 
 
 def folder_day(name: str) -> str:
@@ -153,7 +154,7 @@ def missing_categories(drafts_dir: Path, day: str, categories: Sequence[str],
         mine = [f for f in folders if f.name.endswith(f"_{number}")]
         complete = [f for f in mine if is_complete(f)]
         on_branch = [f for f in complete if remote is None or f.name in remote]
-        parked = [f for f in on_branch if _parked(failures.get(f.name), fingerprint(f))]
+        parked = [f for f in on_branch if _parked(failures.get(f.name), fingerprint(f), continuous=not request)]
         if len(on_branch) > len(parked):
             continue
         skipped = [str(read_json(f / SKIP_FILE).get("reason") or "") for f in mine if is_skip(f)]
@@ -245,25 +246,26 @@ def delivered(record: Mapping[str, object] | None) -> bool:
     return isinstance(slack, Mapping) and bool(slack.get("ts"))
 
 
-def _parked(record: Mapping[str, object] | None, mark: str) -> bool:
-    """같은 내용으로 더 시도하지 않을 실패 — 원고 문제(영구)이거나 일시적 오류를 여러 번 겪음."""
+def _parked(record: Mapping[str, object] | None, mark: str, continuous: bool = False) -> bool:
+    """원고 문제는 보류한다. 일시적 오류 횟수 상한은 수동 요청에만 적용한다."""
     if not record or record.get("hash") != mark:
         return False
-    return bool(record.get("permanent")) or int(record.get("attempts") or 0) >= MAX_ATTEMPTS
+    return bool(record.get("permanent")) or (not continuous and int(record.get("attempts") or 0) >= MAX_ATTEMPTS)
 
 
 def is_parked(folder: Path, failures: Mapping[str, Mapping[str, object]]) -> bool:
     """Actions 가 더 보내지 않기로 멈춘 원고 (원고 문제·여러 번 실패) — 브랜치에 있어도 쓸 만한 원고가 아니다."""
-    return _parked(failures.get(folder.name), fingerprint(folder))
+    return _parked(failures.get(folder.name), fingerprint(folder), continuous=not request_id_of(folder))
 
 
 def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None], send: Callable[[Path], str | None],
                 failures: Mapping[str, Mapping[str, object]], clean: Callable[[str], str] = lambda t: t,
-                keep_days: Iterable[str] = ()) -> tuple[SyncOutcome, dict]:
+                keep_days: Iterable[str] = (), now: datetime | None = None) -> tuple[SyncOutcome, dict]:
     """슬랙 승인 요청이 끝나지 않은 원고만 보낸다. (결과, 새 실패 기록)
 
     lookup(원고 ID) = 보관함 기록 (없으면 None, 확인 못 하면 예외). 원고 문제(DraftError)는 내용이 바뀔 때까지 다시
-    보내지 않고, 일시적 오류는 MAX_ATTEMPTS 번까지 실행마다 다시 시도한다. 알림은 같은 내용의 첫 실패 때만.
+    보내지 않는다. 일일 원고의 일시적 오류는 대기 후 같은 ID로 계속 시도하며 수동 요청만 MAX_ATTEMPTS 상한을
+    적용한다. 알림은 같은 내용의 첫 실패 때만.
     """
     sent, already, unknown = [], [], []
     new_failures: dict[str, str] = {}
@@ -277,10 +279,16 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
             continue
         mark = fingerprint(folder)
         previous = records.get(draft_id) if records.get(draft_id, {}).get("hash") == mark else None
-        if _parked(previous, mark):
+        continuous = not request_id_of(folder)
+        if _parked(previous, mark, continuous):
             continue
         try:
-            if delivered(lookup(draft_id)):
+            stored = lookup(draft_id)
+            if (stored or {}).get("status") == "excluded":
+                records[draft_id] = {"hash": mark, "permanent": True,
+                    "reason": clean(str(stored.get("excluded_reason") or "발행 전 적격성·중복 검사에서 제외"))[:MAX_REASON]}
+                continue  # 조건을 충족하는 새 후보를 작성한다. 제외된 원고 자체는 재발행하지 않는다.
+            if delivered(stored):
                 already.append(draft_id)
                 records.pop(draft_id, None)
                 continue
@@ -288,6 +296,20 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
             log.warning("보관함 확인 실패 %s: %s", draft_id, exc)
             unknown.append(draft_id)
             continue
+        # 보관함에 이미 연결된 원고를 먼저 확인한 뒤, 같은 ID로 전송 재시도를 기다린다.
+        due = (previous or {}).get("next_retry_at")
+        if continuous and due:
+            try:
+                retry_time = datetime.fromisoformat(str(due).replace("Z", "+00:00"))
+                current = now or datetime.now(KST)
+                if retry_time.tzinfo is None:
+                    retry_time = retry_time.replace(tzinfo=KST)
+                if current.tzinfo is None:
+                    current = current.replace(tzinfo=KST)
+                if current < retry_time:
+                    continue
+            except ValueError:
+                pass  # 오래된 잘못된 대기 시각은 같은 ID 재확인을 영구 중단시키지 않는다.
         try:
             if has_symlink(folder):
                 raise DraftError("원고 폴더에 심볼릭 링크가 있어 쓰지 않습니다")
@@ -298,6 +320,10 @@ def sync_drafts(folders: Sequence[Path], lookup: Callable[[str], Mapping | None]
             log.warning("원고 전송 실패 %s (%d번째): %s", draft_id, attempts, reason)
             records[draft_id] = {"hash": mark, "reason": reason, "attempts": attempts,
                                  "permanent": isinstance(exc, DraftError)}
+            if continuous and not isinstance(exc, DraftError):
+                completed = now or datetime.now(KST)
+                records[draft_id]["next_retry_at"] = (completed + timedelta(
+                    minutes=(30, 60, 120)[min(attempts - 1, 2)])).isoformat()
             if attempts == 1:
                 new_failures[draft_id] = reason
             continue
@@ -411,7 +437,7 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
     failures_file = root / STATE / "failures.json"
     folders = draft_folders(root / DRAFTS, recent_days(current))
     outcome, records = sync_drafts(folders, store.find, send, read_json(failures_file), clean,
-                                   keep_days=recent_days(current, PENDING_DAYS))
+                                   keep_days=recent_days(current, PENDING_DAYS), now=current)
     write_json(failures_file, records)
     from .exclusion import failure_text
 

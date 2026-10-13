@@ -22,7 +22,8 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, recover_terminal_lease, reserve, settle, task_key, validate_primary_source, validate_verification  # noqa: E402
+from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, daily_task, recover_terminal_lease, reserve, settle, task_key, validate_primary_source, validate_verification  # noqa: E402
+from autopost.codex_fallback import parsed_time  # noqa: E402
 from autopost.cloud_drafts import DRAFTS, RUNS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.daily_run import daily_health  # noqa: E402
@@ -135,7 +136,8 @@ def recover_previous_run(state: dict) -> dict:
     jobs = api("/jobs?per_page=100")
     if jobs.get("total_count", 0) > 100:
         raise RuntimeError("이전 실행 단계가 너무 많아 임대를 해제하지 않았습니다")
-    recovered, task = recover_terminal_lease(state, run, jobs.get("jobs") or [])
+    recovered, task = recover_terminal_lease(state, run, jobs.get("jobs") or [],
+        now=parsed_time(run.get("updated_at")) or datetime.now(KST))
     if not task:
         return state
     extra = []
@@ -213,6 +215,17 @@ def plan(work: Path) -> int:
     output("work", "true")  # 이후 입력 준비 실패에도 complete job이 임대를 해제한다
     work.mkdir(parents=True, exist_ok=True)
     write_json(work / "task.json", task)
+    previous = (state.get("attempts") or {}).get(task_key(task)) or {}
+    excluded = []
+    failures = read_json(helper.TREE / STATE / "failures.json")
+    for folder in draft_folders(helper.TREE / DRAFTS, (task["day"],)):
+        failure = failures.get(folder.name) or {}
+        if failure.get("permanent") and helper.folder_category(folder) == task["category"] \
+                and request_id_of(folder) == task["request"]:
+            excluded.append(candidate_snapshot(folder, failure))
+    write_json(work / "retry-history.json", {"candidates": clean_candidates([
+        *(previous.get("rejected_candidates") or []), *excluded]),
+        "previous_failure": str(previous.get("note") or "")[:300]})
     categories = [task["category"]] if task["category"] else list(CATEGORIES)
     for category in categories:
         args = [sys.executable, str(ROOT / "scripts/claude_brief.py"), "--category", category,
@@ -323,7 +336,7 @@ def generate_candidate(work: Path, rejected: list[dict], deadline: float) -> dic
             run("policy.md와 task.json·rejected-candidates.json을 읽고 요청에 맞는 원고를 조사·작성하세요. "
                 "카테고리가 비어 있으면 주제에 맞는 7개 카테고리 중 하나를 고르고 해당 brief-N.md를 읽으세요. "
                 "지정된 카테고리는 바꾸지 마세요. 실제 공식 원문을 열어 읽고 post.json·research.json을 저장하세요. "
-                "조회에 실패한 후보가 있으면 그 후보의 소식·대표 원문을 재사용하지 말고 같은 카테고리의 다른 최신 "
+                "이전 후보가 출처 조회·주제 적격성·사실 검증에서 실패했으면 그 후보의 소식·대표 원문을 재사용하지 말고 같은 카테고리의 다른 최신 "
                 "이슈로 새 원고를 쓰세요. 사용자가 주제를 지정했다면 그 주제 범위 안의 다른 출처·관점을 고르세요. "
                 "선정한 후보의 {title,topic,source_url}을 candidate.json에 먼저 기록하세요. "
                 "아직 factcheck 완료로 표시하지 마세요. 적절한 최신 이슈·공식 근거가 정말 없으면 "
@@ -389,7 +402,10 @@ def generate(work: Path) -> int:
     task = checked_json(work / "task.json")
     for name in ("post.json", "research.json", "verification.json", "result.json", "generation-report.json"):
         (work / name).unlink(missing_ok=True)
-    deadline, rejected = time.monotonic() + GENERATION_SECONDS, []
+    history = read_json(work / "retry-history.json")
+    rejected = clean_candidates(history.get("candidates"))
+    write_json(work / "generation-report.json", {"rejected_candidates": rejected})
+    deadline = time.monotonic() + GENERATION_SECONDS
     for number in range(MAX_SOURCE_CANDIDATES):
         try:
             result = generate_candidate(work, rejected, deadline)
@@ -416,20 +432,36 @@ def generate(work: Path) -> int:
         if not task.get("category"):
             task = {**task, "category": category}
             write_json(work / "task.json", task)  # 미정 single도 선택한 카테고리 안에서만 교체한다.
-        if not source_lookup_failed(result):
+        replace = source_lookup_failed(result) or (daily_task(task) and
+                  result.get("failure_kind") in ("no_topic", "verification_failed"))
+        if not replace:
             result.pop("candidate", None)
             write_json(work / "result.json", result)
             return 0
-        rejected.append(result.get("candidate") or {"reason": result["reason"]})
+        rejected = clean_candidates([*rejected, result.get("candidate") or {"reason": result["reason"]}])
         write_json(work / "generation-report.json", {"rejected_candidates": rejected})
         if number + 1 < MAX_SOURCE_CANDIDATES and deadline - time.monotonic() >= 120:
-            print(f"🔄 공식 출처 조회 실패 — 같은 카테고리의 다른 원고 작성 ({number + 2}/{MAX_SOURCE_CANDIDATES})")
+            print(f"🔄 후보 조건 미충족 — 같은 카테고리의 다른 원고 작성 ({number + 2}/{MAX_SOURCE_CANDIDATES})")
             continue
         result.pop("candidate", None)
         result["reason"] = f"다른 주제 재작성 {number}회 후 보류: {result['reason']}"[:300]
         write_json(work / "result.json", result)
         break
     return 0
+
+
+def clean_candidates(raw) -> list[dict]:
+    """다음 실행에는 후보 식별 정보만 전달하며 임의 필드·비밀값은 보존하지 않는다."""
+    if not isinstance(raw, list):
+        return []
+    result = []
+    for item in raw[-200:]:
+        if isinstance(item, dict):
+            candidate = {key: redact(str(item.get(key) or ""))[:limit] for key, limit in
+                         (("title", 300), ("topic", 300), ("source_url", 2000), ("reason", 300))}
+            if candidate not in result:
+                result.append(candidate)
+    return result
 
 
 def complete(work: Path) -> int:
@@ -442,6 +474,8 @@ def complete(work: Path) -> int:
         return 0
     task = lease["task"]  # 모델이 만든 task.json·경로·요청 ID를 신뢰하지 않는다
     result, note, extra = "failed", "Codex 실행 또는 결과 전달 실패", []
+    failure_kind = "result_invalid"
+    rejected = clean_candidates(read_json(work / "generation-report.json").get("rejected_candidates"))
     try:
         now = datetime.now(KST)
         if not cloud_lease(helper.TREE, now):
@@ -449,7 +483,9 @@ def complete(work: Path) -> int:
         data = checked_json(work / "result.json")
         if data.get("status") == "failed":
             # 실패 사유는 임의 모델 문구가 아니라 허용한 고정 분류만 신뢰한다.
-            raise CodexExecutionError(str(data.get("failure_kind") or "execution"), data.get("exit_code"))
+            error = CodexExecutionError(str(data.get("failure_kind") or "execution"), data.get("exit_code"))
+            failure_kind = error.kind
+            raise error
         category = str(data.get("category") or read_json(work / "post.json").get("category") or task["category"])
         if category not in CATEGORIES or (task["category"] and category != task["category"]):
             raise ValueError("요청 카테고리와 결과가 맞지 않습니다")
@@ -468,6 +504,8 @@ def complete(work: Path) -> int:
                 result, note = "superseded", "다른 작성자의 원고가 이미 올라와 중복 작성을 끝냈습니다"
                 return 0
         if data.get("status") == "skip":
+            failure_kind = data.get("failure_kind") if data.get("failure_kind") in (
+                "source_unavailable", "no_topic", "verification_failed") else "no_topic"
             note = str(data.get("reason") or "공식 근거 부족")[:300]
             if helper.skip(category, note, task["request"]) != 0:
                 raise ValueError("건너뜀 기록 실패")
@@ -532,10 +570,21 @@ def complete(work: Path) -> int:
                 updated["fallback"]["status"] = "done"
             write_json(path, updated)
             extra.append(str(path.relative_to(helper.TREE)))
-        ended = settle(state, task, owner(), result, note)
+        if result == "failed" and (work / "post.json").is_file():
+            rejected = clean_candidates([*rejected, candidate_snapshot(work, {"reason": note})])
+        previous = (state.get("attempts") or {}).get(task_key(task)) or {}
+        # 결과 아티팩트 유실에서도 이전 후보 이력을 지우지 않는다.
+        rejected = clean_candidates([*(previous.get("rejected_candidates") or []), *rejected])
+        ended = settle(state, task, owner(), result, redact(note), now=datetime.now(KST),
+                       failure_kind=failure_kind if result in ("failed", "skipped") else "", rejected=rejected)
         save_state(ended, f"codex: {result}", extra)
-        notice(task, ("완료 — " if result == "done" else "건너뜀 — " if result == "skipped" else "처리 결과 — ")
-               + escape_mrkdwn(note))
+        if result not in ("failed", "skipped") or (previous.get("last_notified") or {}) != {
+                "result": result, "kind": failure_kind, "note": redact(note)}:
+            notice(task, ("완료 — " if result == "done" else "재조사 대기 — " if result == "skipped" and daily_task(task)
+                   else "건너뜀 — " if result == "skipped" else "처리 결과 — ") + escape_mrkdwn(redact(note)))
+            ended["attempts"][task_key(task)]["last_notified"] = {
+                "result": result, "kind": failure_kind, "note": redact(note)}
+            save_state(ended, "codex: 결과 알림 기록")
         if task["request"] and not read_request(helper.TREE, task["request"]).get("finished"):
             # 실패한 카테고리의 대기·횟수 상한을 유지하면서 아직 가능한 요청 카테고리만 이어 간다.
             next_task = choose_task({"synced": True, "requests": [

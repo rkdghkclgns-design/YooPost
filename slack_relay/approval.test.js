@@ -18,7 +18,7 @@ beforeEach(() => {
 });
 afterEach(() => { globalThis.fetch = realFetch; });
 
-function fixture(t) {
+function fixture(t, id = "d1") {
   let now = 1_791_244_200_000;
   t.mock.method(Date, "now", () => now);
   const kv = new Map();
@@ -62,16 +62,16 @@ function fixture(t) {
     slack: { channel: "CDRAFT", ts: "1791244200.000001" } };
   return { env, draft, kv, instances,
     advance(ms) { now += ms; },
-    async save(data = draft, id = "d1") {
-      return worker.fetch(new Request(`https://test/draft/${id}`, { method: "PUT",
+    async save(data = draft, target = id) {
+      return worker.fetch(new Request(`https://test/draft/${target}`, { method: "PUT",
         headers: { Authorization: "Bearer test" }, body: JSON.stringify(data) }), env);
     },
     async read() {
-      return (await worker.fetch(new Request("https://test/draft/d1", {
+      return (await worker.fetch(new Request(`https://test/draft/${id}`, {
         headers: { Authorization: "Bearer test" },
       }), env)).json();
     },
-    alarm() { return env.DRAFT_APPROVAL.get("d1").alarm(); },
+    alarm() { return env.DRAFT_APPROVAL.get(id).alarm(); },
     manual(reaction = "white_check_mark", user = "U1") {
       return approveDraft(env, { reaction, user, item: { type: "message", channel: "CDRAFT", ts: draft.slack.ts } });
     },
@@ -445,4 +445,38 @@ test("held work cannot be revived by stale approved or failed saves", async t =>
   f.advance(15 * 60_000); await f.alarm();
   assert.equal((await f.read()).status, "held");
   assert.equal(publishes().length, 0);
+});
+
+
+test("daily publication resumes the same ID after a bounded burst and cooldown", async t => {
+  const id = "20261006_070000_1", f = fixture(t,id);
+  await f.save(); await f.manual();
+  for (let i=1; i<5; i++) { f.advance(15*60_000); await f.alarm(); }
+  assert.equal(publishes().length,5);
+  f.advance(15*60_000); await f.alarm();
+  const due = Date.parse((await f.read()).publish_retry_at);
+  assert.equal(due,Date.now()+4*60*60_000);
+  const item=f.instances.get(id);
+  item.obj=new DraftApproval(item.ctx,f.env);
+  f.advance(4*60*60_000-1); await f.alarm();
+  assert.equal(publishes().length,5);
+  f.advance(1); await f.alarm();
+  assert.equal(publishes().length,6);
+  assert.ok(publishes().every(c=>c.body.inputs.draft_id===id));
+  assert.equal(calls.filter(c=>c.url.endsWith("chat.postMessage")).length,1);
+  await f.save({...f.draft,status:"published",url:"https://b/p/1"});
+  f.advance(4*60*60_000); await f.alarm();
+  assert.equal(publishes().length,6);
+  assert.equal(item.ctx.alarmAt,null);
+});
+
+test("held daily work and dated manual drafts do not resume automatically", async t => {
+  const id="20261006_070000_1",f=fixture(t,id);
+  await f.save(); await f.manual("x");
+  await f.save({...f.draft,status:"failed",approved_by:"auto-60s"});
+  f.advance(8*60*60_000); await f.alarm();
+  assert.equal(publishes().length,0);
+  const manual=fixture(t,"20261006_070000_2");
+  await manual.save({...manual.draft,request:{id:"C1-123",kind:"single"}});
+  assert.equal((await manual.read()).daily_retry,false);
 });

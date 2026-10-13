@@ -160,6 +160,8 @@ def test_sync_sends_only_new_drafts_and_remembers_failures(tmp_path):
 
 def test_transient_errors_retry_and_half_sent_drafts_are_resent(tmp_path):
     folder = write_draft(tmp_path / "drafts" / "20260930_070000_1")
+    research = read_json(folder / "research.json")
+    write_json(folder / "research.json", {**research, "request": {"id": "C0MANUAL01-1791244200000001", "kind": "single"}})
     calls = []
 
     def slack_down(f):
@@ -435,14 +437,14 @@ def test_missing_categories_cover_skips_failures_and_absent_drafts(tmp_path):
     write_draft(drafts / "20260930_071500_4", factcheck={})  # 사실 검증 전 원고는 쓸 수 없음
     write_json(drafts / "20260930_072000_5" / "skip.json", {"category": "AI 보안"})
     write_draft(drafts / "20260929_070000_6")  # 어제 원고는 오늘 것이 아님
-    seven = write_draft(drafts / "20260930_073000_7")  # 일시적 실패를 3번 겪어 멈춤 (parked)
+    seven = write_draft(drafts / "20260930_073000_7")  # 일일 전송 장애는 같은 ID로 계속 재시도
     failures = {two.name: {"hash": mark(two), "reason": "이미 발행한 주제", "permanent": True},
                 three.name: {"hash": mark(three), "reason": "슬랙 503", "attempts": 1, "permanent": False},
                 seven.name: {"hash": mark(seven), "reason": "슬랙 503", "attempts": 3, "permanent": False}}
     gaps = missing_categories(drafts, "20260930", CATEGORIES, failures)
     assert [(g.number, g.reason) for g in gaps] == [
         (2, "전송 실패(재시도 중단): 이미 발행한 주제"), (4, "원고 없음"), (5, "건너뜀: 이유 없음"),
-        (6, "원고 없음"), (7, "전송 실패(재시도 중단): 슬랙 503")]
+        (6, "원고 없음")]
     # 원고를 고치면(지문이 바뀌면) 예전 실패 기록은 더 이상 막지 않는다
     write_draft(two, good_post(title="🤖 고친 원고"))
     assert 2 not in [g.number for g in missing_categories(drafts, "20260930", CATEGORIES, failures)]
@@ -588,3 +590,54 @@ def test_published_record_accumulates_older_posts(tmp_path):
     finally:
         cloud_drafts.merge_published = original
     assert [e["title"] for e in read_json_list(root / "state" / "published.json")] == ["아주 옛 글", "글"]
+
+
+
+def test_daily_transient_delivery_continues_same_id_after_cap_with_backoff(tmp_path):
+    from datetime import timedelta
+    from autopost.cloud_drafts import fingerprint, is_parked
+    folder = write_draft(tmp_path / "drafts/20260930_070000_1")
+    current = datetime(2026,9,30,10,0)
+    records = {folder.name:{"hash":fingerprint(folder),"attempts":3,"permanent":False,"reason":"503"}}
+    calls = []
+    def failed(f):
+        calls.append(f.name)
+        raise RuntimeError("503")
+    outcome, records = sync_drafts([folder],Store().find,failed,records,now=current)
+    assert calls == [folder.name] and records[folder.name]["attempts"] == 4
+    assert not is_parked(folder,records) and not outcome.new_failures
+    sync_drafts([folder],Store().find,failed,records,now=current+timedelta(minutes=119))
+    assert len(calls) == 1
+    resent, _ = sync_drafts([folder],Store().find,lambda f:calls.append(f.name),records,now=current+timedelta(minutes=120))
+    assert calls == [folder.name, folder.name] and resent.sent == (folder.name,)
+    # 이미 승인/발행/보류된 보관함 원고는 대기 시각 전에도 전송하지 않는다.
+    recovered, records = sync_drafts([folder],lambda id:{"status":"published","slack":{"ts":"1"}},failed,records,now=current)
+    assert recovered.already == (folder.name,) and records == {}
+
+
+
+def test_publisher_exclusion_reopens_daily_category_but_hold_does_not(tmp_path):
+    folder=write_draft(tmp_path / "drafts/20260930_070000_1")
+    sent=[]
+    excluded={"status":"excluded","excluded_reason":"다른 발행 글과 중복","slack":{"ts":"1"}}
+    _,records=sync_drafts([folder],lambda id:excluded,lambda f:sent.append(f.name),{})
+    assert 1 in [g.number for g in missing_categories(folder.parent,"20260930",CATEGORIES,records)]
+    assert sent == []
+    held={"status":"held","slack":{"ts":"1"}}
+    _,records=sync_drafts([folder],lambda id:held,lambda f:sent.append(f.name),{})
+    assert 1 not in [g.number for g in missing_categories(folder.parent,"20260930",CATEGORIES,records)]
+    assert sent == []
+
+
+@pytest.mark.parametrize("due", ["2026-09-30T03:00:00Z", "2026-09-30T03:00:00+00:00"])
+def test_daily_delivery_retry_compares_absolute_time(tmp_path, due):
+    from autopost.cloud_drafts import fingerprint
+    folder = write_draft(tmp_path / "drafts/20260930_070000_1")
+    records = {folder.name: {"hash": fingerprint(folder), "next_retry_at": due}}
+    sent = []
+    sync_drafts([folder], lambda id: None, lambda f: sent.append(f.name), records,
+                now=datetime(2026, 9, 30, 11, 59))
+    assert sent == []
+    sync_drafts([folder], lambda id: None, lambda f: sent.append(f.name), records,
+                now=datetime(2026, 9, 30, 12, 0))
+    assert sent == [folder.name]

@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import pytest
 from cryptography.fernet import Fernet
 
-from autopost.cloud_codex import choose_task, cloud_lease, recover_terminal_lease, reserve, retry_ready, settle, task_key, validate_primary_source, validate_verification
+from autopost.cloud_codex import choose_task, cloud_lease, recover_terminal_lease, reserve, retry_at, retry_ready, settle, task_key, validate_primary_source, validate_verification
 from autopost.cloud_drafts import read_json, write_json
 from autopost.codex_fallback import fallback_requests, takeover_reason
 from autopost.draft_request import request_path, with_request
@@ -31,6 +31,8 @@ def test_cloud_selector_prioritises_manual_work_and_respects_wait_and_retry():
     selected = choose_task(status, {}, NOW)
     assert selected["request"] == RID and selected["category"] == "AI 도구"
     state = reserve({}, selected, "owner", NOW)
+    assert not choose_task(status, state, NOW)  # 원격 상태가 지연돼도 유효한 임대를 존중한다.
+    state = settle(state, selected, "owner", "failed")
     assert choose_task(status, state, NOW)["category"] == "AI 보안"
     assert not retry_ready(state, selected, NOW + timedelta(hours=3))
     assert retry_ready(state, selected, NOW + timedelta(hours=4))
@@ -68,6 +70,12 @@ def test_plan_finishes_old_requests_then_starts_daily_without_another_schedule(t
     outputs = []
     monkeypatch.setattr(codex_cloud, "output", lambda name, value: outputs.append((name, value)))
     work = tmp_path / "work"
+    day = codex_cloud.datetime.now(codex_cloud.KST).strftime("%Y%m%d")
+    rejected_folder = write_draft(helper.TREE / "drafts" / f"{day}_070000_2", post=good_post(category="AI 도구"))
+    other_folder = write_draft(helper.TREE / "drafts" / f"{day}_070100_4", post=good_post(category="AI 뉴스 리뷰"))
+    write_json(helper.TREE / "state/failures.json", {
+        rejected_folder.name: {"permanent": True, "reason": "발행 전 중복 제외"},
+        other_folder.name: {"permanent": True, "reason": "다른 카테고리"}})
     assert codex_cloud.plan(work) == 0
     assert len(finished) == request_count and not pending
     assert (("work", "true") in outputs) is not blocked
@@ -77,6 +85,9 @@ def test_plan_finishes_old_requests_then_starts_daily_without_another_schedule(t
         assert read_json(helper.TREE / "state/codex.json")["lease"]["task"] == selected
         run = read_json(helper.TREE / f"runs/{selected['day']}.json")
         assert run["fallback"]["provider"] == "codex" and run["fallback"]["category"] == "AI 도구"
+        history = read_json(work / "retry-history.json")["candidates"]
+        assert len(history) == 1 and history[0]["reason"] == "발행 전 중복 제외"
+        assert history[0]["source_url"]
     else:
         assert not read_json(helper.TREE / "state/codex.json").get("lease")
 
@@ -134,6 +145,16 @@ def test_terminal_actual_writer_preserves_attempt_and_active_or_other_owner_is_u
     assert not retry_ready(recovered, selected, NOW + timedelta(minutes=1))
     assert recover_terminal_lease(state, {**run, "status": "queued"}, jobs) == (state, {})
     assert recover_terminal_lease(state, {**run, "id": 999}, jobs) == (state, {})
+
+
+def test_interrupted_daily_writer_waits_from_actual_completion():
+    selected = task()
+    state = reserve({}, selected, "123-1", NOW)
+    finished = NOW + timedelta(minutes=42)
+    recovered, _ = recover_terminal_lease(state, {"id": 123, "status": "completed"},
+        [{"name": "write", "runner_id": 1}], now=finished)
+    assert not retry_ready(recovered, selected, finished + timedelta(minutes=29))
+    assert retry_ready(recovered, selected, finished + timedelta(minutes=30))
 
 
 def test_all_requests_continue_after_partial_success_and_skip_without_rewriting(tmp_path):
@@ -277,7 +298,7 @@ def test_generation_preserves_execution_failure_without_replacement_or_partial_d
 
 
 @pytest.mark.parametrize("category", ["AI 도구", ""])
-def test_complete_keeps_cli_failure_and_retry_cap_without_draft(branch_repo, monkeypatch, tmp_path, category):
+def test_complete_keeps_cli_failure_and_service_wait_without_draft(branch_repo, monkeypatch, tmp_path, category):
     _, _, tree = branch_repo
     helper = codex_cloud.helper
     monkeypatch.setattr(helper, "TREE", tree)
@@ -301,7 +322,10 @@ def test_complete_keeps_cli_failure_and_retry_cap_without_draft(branch_repo, mon
     assert attempt["count"] == 2 and attempt["status"] == "failed" and not ended["lease"]
     assert "사용량 한도" in attempt["note"] and "result.json" not in attempt["note"]
     assert "untrusted-secret" not in attempt["note"]
-    assert not retry_ready(ended, selected, live + timedelta(hours=5))
+    assert attempt["failure_kind"] == "usage_limit"
+    assert not retry_ready(ended, selected, live + timedelta(hours=3))
+    assert retry_ready(ended, selected, live + timedelta(hours=5))
+    assert not choose_task({"synced": True, "daily": [{"category": "AI 보안"}]}, ended, live + timedelta(hours=3))
     assert not list(tree.glob("drafts/*/post.json"))
 
 
@@ -471,7 +495,7 @@ def test_missing_morning_run_is_eligible_at_0715_and_started_claude_is_protected
 
 
 def test_authorized_recovery_preserves_attempt_limit_and_is_consumed_once():
-    selected = task()
+    selected = task(request=RID, kind="all")
     state = settle(reserve({}, selected, "owner", NOW), selected, "owner", "failed", "보고서 형식 오류")
     key = task_key(selected)
     recovery = {"after_count": 1, "expires": (NOW + timedelta(minutes=30)).isoformat(), "reason": "사용자 장애 복구 요청"}
@@ -569,3 +593,35 @@ def test_primary_source_requires_the_actual_metadata_page_in_sources():
         validate_primary_source(research)
     research["sources"].append({"url": abs_url, "published": "2026-09-30", "official": True})
     validate_primary_source(research)
+
+
+@pytest.mark.parametrize("count,minutes", [(1,30), (2,60), (3,120), (50,120)])
+def test_daily_retries_continue_after_two_attempts_from_completion(count, minutes):
+    selected = task()
+    state = reserve({}, selected, "owner", NOW)
+    state["attempts"][task_key(selected)]["count"] = count
+    finished = NOW + timedelta(minutes=42)
+    state = settle(state, selected, "owner", "skipped", "적격 후보 없음", now=finished, failure_kind="no_topic")
+    due = retry_at(state["attempts"][task_key(selected)], selected)
+    assert due == finished + timedelta(minutes=minutes)
+    assert not retry_ready(state, selected, due - timedelta(seconds=1))
+    assert retry_ready(state, selected, due)
+    assert not retry_ready(state, selected, due + timedelta(days=1))
+
+
+def test_daily_selector_is_fair_and_never_rewrites_an_existing_category():
+    state = {"attempts": {task_key(task()): {"at": (NOW-timedelta(hours=3)).isoformat(), "count": 8, "status":"failed"}}}
+    status = {"synced": True, "daily": [{"category":"AI 도구"}, {"category":"AI 보안"}]}
+    assert choose_task(status, state, NOW)["category"] == "AI 보안"
+    assert choose_task({"synced":True, "daily":[]}, state, NOW) == {}
+    assert not choose_task({**status,"cloud_running":True},state,NOW)
+
+
+def test_rejected_candidates_survive_reservation_and_artifact_loss():
+    selected = task()
+    failed = [{"title":"제외 후보", "topic":"발표", "source_url":"https://official.example/a", "reason":"검증 실패"}]
+    state = settle(reserve({},selected,"one",NOW),selected,"one","skipped",now=NOW,rejected=failed)
+    following = reserve(state,selected,"two",NOW+timedelta(hours=1))
+    assert following["attempts"][task_key(selected)]["rejected_candidates"] == failed
+    ended = settle(following,selected,"two","failed",now=NOW+timedelta(hours=2))
+    assert ended["attempts"][task_key(selected)]["rejected_candidates"] == failed

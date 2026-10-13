@@ -456,7 +456,7 @@ export class DraftApproval {
         if (input.action === "hold") {
           if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
           await this.write(draft, { ...current, status: "held", held_by: input.user,
-            auto_approve_at: null, publish_watch_at: null, dispatch_pending: false }, null);
+            auto_approve_at: null, publish_watch_at: null, publish_retry_at: null, dispatch_pending: false }, null);
           await notifySlack(this.env, draft.slack?.channel, draft.slack?.ts,
             "⏸️ 원고를 보류했습니다. 자동 승인하지 않습니다. 다시 ✅ 를 누르면 승인합니다.");
           return json({ result: "held" });
@@ -465,7 +465,7 @@ export class DraftApproval {
         if (!["pending", "failed", "held"].includes(current.status)
             && !(current.status === "approved" && current.publish_alerted)) return json({ result: "already handled" });
         await this.publish(draft, { ...current, auto_attempts: 0, dispatch_attempts: 0,
-          publish_attempts: 0, publish_alerted: false }, current.approved_by || input.user);
+          publish_attempts: 0, publish_alerted: false, publish_retry_at: null }, current.approved_by || input.user);
         return json({ result: "dispatched" });
       }
       return new Response("method not allowed", { status: 405 });
@@ -586,6 +586,7 @@ export class DraftApproval {
     if (keep) draft = (await this.env.IMAGES.get(`draft:${id}`, { type: "json" })) || draft;
     draft.slack ||= record?.slack;
     const next = { ...(record || {}), id, status: keep ? record.status : status };
+    next.daily_retry = /^\d{8}_\d{6}_[1-7]$/.test(id) && !draft.request;
     let alarmAt;
     if (draft.slack?.channel && draft.slack?.ts) next.slack = draft.slack;
     if (!keep) {
@@ -602,12 +603,19 @@ export class DraftApproval {
       const startedAt = Number.isFinite(postedAt) && postedAt > 0 && postedAt <= Date.now() ? postedAt : Date.now();
       next.auto_approve_at ||= new Date(Math.max(Date.now(), startedAt + 60_000)).toISOString();
       alarmAt = Date.parse(next.auto_approve_at);
-    } else if (["approved", "failed"].includes(next.status) && next.approved_by && !next.publish_alerted) {
-      next.publish_watch_at ||= new Date(Date.now() + PUBLISH_WATCH_MS).toISOString();
-      alarmAt = Date.parse(next.publish_watch_at);
+    } else if (["approved", "failed"].includes(next.status) && next.approved_by
+        && (next.daily_retry || !next.publish_alerted)) {
+      if (next.daily_retry && next.publish_alerted) {
+        next.publish_retry_at ||= new Date(Date.now() + 4 * 60 * 60_000).toISOString();
+        alarmAt = Date.parse(next.publish_retry_at);
+      } else {
+        next.publish_watch_at ||= new Date(Date.now() + PUBLISH_WATCH_MS).toISOString();
+        alarmAt = Date.parse(next.publish_watch_at);
+      }
     } else if (!next.dispatch_pending) {
       next.auto_approve_at = null;
       next.publish_watch_at = null;
+      next.publish_retry_at = null;
       alarmAt = null;
     }
     await this.write(draft, next, alarmAt);
@@ -632,16 +640,19 @@ export class DraftApproval {
     await this.write(draft, approved, Date.now() + 60_000);
     await dispatch(this.env, { draft_id: record.id, approved_by: user }, this.env.PUBLISH_WORKFLOW || "publish_draft.yml");
     const watching = { ...approved, dispatch_pending: false, dispatch_attempts: 0, auto_approve_at: null,
-      publish_attempts: (record.publish_attempts || 0) + 1, publish_watch_at: new Date(Date.now() + PUBLISH_WATCH_MS).toISOString() };
+      publish_attempts: (record.publish_attempts || 0) + 1, publish_retry_at: null,
+      publish_watch_at: new Date(Date.now() + PUBLISH_WATCH_MS).toISOString() };
     await this.write(draft, watching, Date.parse(watching.publish_watch_at));
   }
 
   async stopPublishing(record) {
     let notified = record.publish_alerted;
     if (!notified) notified = await notifySlack(this.env, record.slack?.channel, record.slack?.ts,
-      "⚠️ 승인 후 발행 완료를 확인하지 못했습니다. 재시도 5회 후 중단했습니다. 실행·인증 상태를 확인하고 ✅로 다시 요청할 수 있습니다.");
-    await this.persist("approval", { ...record, publish_alerted: Boolean(notified) },
-      notified ? null : Date.now() + 15 * 60_000);
+      record.daily_retry ? "⚠️ 일일 원고의 발행 완료를 확인하지 못했습니다. 같은 원고 ID로 4시간 후 다시 확인·요청합니다. 인증 갱신이 필요하면 조치해 주세요."
+        : "⚠️ 승인 후 발행 완료를 확인하지 못했습니다. 재시도 5회 후 중단했습니다. 실행·인증 상태를 확인하고 ✅로 다시 요청할 수 있습니다.");
+    const due = record.daily_retry ? Date.now() + 4 * 60 * 60_000 : null;
+    await this.persist("approval", { ...record, publish_alerted: Boolean(notified),
+      publish_retry_at: due ? new Date(due).toISOString() : null }, due || (notified ? null : Date.now() + 15 * 60_000));
   }
 
   async alarm() {
@@ -652,6 +663,15 @@ export class DraftApproval {
       if (watch) return this.manualWatchAlarm(watch);
       let record = await this.ctx.storage.get("approval");
       if (!record) return;
+      if (record.daily_retry && record.publish_retry_at && ["approved", "failed"].includes(record.status)
+          && record.approved_by) {
+        if (Date.parse(record.publish_retry_at) > Date.now()) {
+          await this.ctx.storage.setAlarm(Date.parse(record.publish_retry_at)); return;
+        }
+        record = { ...record, dispatch_attempts: 0, publish_attempts: 0, publish_retry_at: null,
+          publish_watch_at: new Date(Date.now()).toISOString() };
+        await this.persist("approval", record, Date.now() + 60_000);
+      }
       const watching = ["approved", "failed"].includes(record.status) && record.approved_by && record.publish_watch_at;
       if (watching && Date.parse(record.publish_watch_at) > Date.now()) {
         await this.ctx.storage.setAlarm(Date.parse(record.publish_watch_at)); return;
