@@ -67,24 +67,34 @@
   "20261014:daily:AI 뉴스 리뷰": {
    "at": "2026-10-14T07:41:00+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: Accenture의 2026-10-13 Sagacity 인수 발표를 선정했다. brief-4.md의 발행 글·최근 원고와 이전 실패 후보 Microsoft Maia 및 Character.ai 소식·대표 URL에 중복되지 않는다. 대표 공식 원문은 웹 open의 Internal Error 뒤 동일 URL을 urllib로 20초 제한 공개 조회하여 HTTP 200, 표시 발표일 2026-10-13과 실제 발표 본문을 직접 읽었다. 그러나 기간 내 독립 보도 원문인 Benzinga, Yahoo Finan",
+   "failure_kind": "source_unavailable",
+   "finished_at": "2026-10-14T07:46:23+09:00",
+   "rejected_candidates": [
+    {
+     "title": "⚡ Microsoft Maia 300 총정리: 2027년 배포 계획과 AI 추론 인프라 전환",
+     "topic": "Microsoft to expand Azure Maia system to multi-gigawatt deployments",
+     "source_url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+     "reason": "선정 후보는 Microsoft의 2026-10-12 Maia 300 발표이며 기존 목록과 중복되지 않습니다. 웹 도구에서 공식 발표와 기술 설명 본문을 읽었으나, 별도 공개 HTTP 조회에서 대표 공식 원문이 HTTP 403을 반환했습니다. 독립 매체 Axios 원문은 웹 도구에서 not accessible 오류가 났고, 정책에 따른 urllib 20초 제한 재조회에서도 HTTP 403이 확인되었습니다. 공식 출처 HTTP 조회 실패 시 종료하는 policy.md에 따라 원고 작성·사실 검증 완료 처리를 보류합니다. 조회 기록과 응"
+    },
+    {
+     "title": "📰 Character.ai Chapter 11 절차 발표: 서비스 지속 조건과 매각 계획 총정리",
+     "topic": "An Update on Character.ai — voluntary Chapter 11 and court-supervised sale",
+     "source_url": "https://blog.character.ai/an-update-on-character-ai/",
+     "reason": "Character.ai의 2026-10-12 Chapter 11·법원 감독 매각 발표를 새 후보로 선정했으며 이전 실패 후보 Microsoft Maia 소식·대표 URL을 재사용하지 않았습니다. 대표 공식 블로그는 웹 도구 Internal Error 뒤 urllib 공개 조회에서 HTTP 200으로 실제 발표 본문·FAQ·표시 날짜를 읽었습니다. 그러나 블로그가 직접 연결한 공식 보도자료 https://www.businesswire.com/news/home/20261012656385/en/Character.ai-Initiates-V"
+    },
+    {
+     "title": "📰 Accenture Sagacity 인수: 140명 이상 전문가 합류·고객 AI 전략 총정리",
+     "topic": "Accenture Acquires Sagacity Solutions to Scale AI-Driven Customer Intelligence Across Accenture Song’s UK & Ireland Operations",
+     "source_url": "https://newsroom.accenture.com/news/2026/accenture-acquires-sagacity-solutions-to-scale-ai-driven-customer-intelligence-across-accenture-song-s-uk-ireland-operations",
+     "reason": "Accenture의 2026-10-13 Sagacity 인수 발표를 선정했다. brief-4.md의 발행 글·최근 원고와 이전 실패 후보 Microsoft Maia 및 Character.ai 소식·대표 URL에 중복되지 않는다. 대표 공식 원문은 웹 open의 Internal Error 뒤 동일 URL을 urllib로 20초 제한 공개 조회하여 HTTP 200, 표시 발표일 2026-10-13과 실제 발표 본문을 직접 읽었다. 그러나 기간 내 독립 보도 원문인 Benzinga, Yahoo Finance의 MT Newswires, S"
+    }
+   ],
+   "next_retry_at": "2026-10-14T08:16:23+09:00"
   }
  },
- "lease": {
-  "owner": "38479372955-1",
-  "at": "2026-10-14T07:41:00+09:00",
-  "expires": "2026-10-14T09:41:00+09:00",
-  "task": {
-   "day": "20261014",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 뉴스 리뷰",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "38479372955-1",
-   "at": "2026-10-14T07:41:00+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
