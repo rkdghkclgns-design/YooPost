@@ -4,7 +4,7 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 논문 분석",
   "taken_over": "2026-10-13T13:12:06+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
