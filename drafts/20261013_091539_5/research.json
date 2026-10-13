@@ -1,0 +1,59 @@
+{
+ "topic": "Tenable TRA-2026-63·64·65: Hermes Agent 인증 경로의 세션 탈취·디스크 소비·메모리 고갈 취약점 공개",
+ "source_url": "https://www.tenable.com/security/research/tra-2026-65",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hermes Agent - PKCE Session Takeover via Redirect-URI Parser Confusion",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "publisher": "Tenable Research",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hermes Agent - Pre-Authentication Disk Consumption",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "publisher": "Tenable Research",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hermes Agent - Pre-Authentication Memory Exhaustion",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "publisher": "Tenable Research",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Three Hermes Agent authentication flaws surfaced after the patch was released",
+   "url": "https://diggingbeagle.com/news/three-hermes-agent-authentication-flaws-disclosed-after-october-fix/",
+   "publisher": "DiggingBeagle",
+   "published": "2026-10-11",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "실제로 읽은 Tenable TRA-2026-63·64·65 본문은 텍스트로 동작·시험 수치를 설명하며, 관련 화면 캡처나 도표 이미지가 없다. 사이트 로고·홍보 이미지는 제외했다. 독립 보도도 텍스트와 표로 구성돼 인용할 본문 이미지가 없다.",
+ "factcheck": {
+  "claims": 30,
+  "confirmed": 29,
+  "removed": [
+   "PKCE는 여기서 인증 코드 교환을 검증하는 절차를 가리킵니다. → 일반 정의를 제거하고 권고문의 공격 경로 설명으로 수정."
+  ],
+  "note": "별도 사실 검증 세션에서 policy.md·task.json·brief-5.md와 post.json 전체(제목·도입·요약·표·FAQ·마무리 포함)를 읽고, Tenable TRA-2026-63·64·65의 Synopsis·Solution·Affected Products·Risk Factor·Disclosure Timeline·Advisory Timeline을 다시 열어 대조했다. DiggingBeagle 원문도 다시 열어 발행일과 보도 내용만 검증했다. 외부 사실은 고유 주장 단위로 집계하고 반복 표현은 합쳤다. 실제 읽은 4개 URL만 사용했다. 공식 원문 조회 실패는 없고 핵심 사실 근거가 확보되어 skip.json 생성 사유는 없다. PKCE 일반 정의 1건은 이번 출처에서 확인되지 않아 범위를 좁혀 수정했다. 날짜·버전·수치·위험 분류는 변경할 오류가 없었다. 운영 점검 제안·비유·작성 기준일·실행 여부·검증 상태는 외부 사실 집계에서 제외했다. 다른 에이전트 호출, git·Slack·블로그 접속, 승인·발행 및 독자 환경 시험은 수행하지 않았다. 기존 검증 기록의 자체 수행 주장은 이번 집계 근거로 사용하지 않았다."
+ },
+ "selection": {
+  "category": "AI 보안",
+  "date_window": {
+   "start": "2026-10-06",
+   "end": "2026-10-13",
+   "timezone": "Asia/Seoul"
+  },
+  "duplicate_check": "brief-5.md 전체 발행·최근 원고 목록과 비교. Hermes 기업용 출시·투자 소식과는 다른 인증 취약점 공개이며 같은 소식·대표 URL이 목록에 없다. rejected-candidates.json 초기 목록은 비어 있었다.",
+  "attempt": 2,
+  "failed_candidate": "failed-candidate-1/candidate.json"
+ }
+}
