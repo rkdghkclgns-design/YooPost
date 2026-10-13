@@ -1,0 +1,287 @@
+{
+ "claims": [
+  {
+   "claim": "2026년 10월 13일 Liquid AI가 모델 공개",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "전체 24B·토큰당 약 2B 활성 파라미터",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "온디바이스 에이전트 지향",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "계열의 가장 크고 마지막 모델",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "Base와 후학습 모델 공개 가중치·Hugging Face 및 Playground 제공",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "최종 답변 전 명시적 추론을 만드는 추론 전용 모델",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "문맥 32,768→131,072토큰",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "어휘 65K→128K·비라틴 토큰화 개선 목적",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "40레이어·MoE당 64전문가·top-4 유지",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "사전학습 17T→33T",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "중간학습 두 단계 및 도구 호출·다중 턴 기록",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "후학습 5단계·SFT·교사 특화·비에이전트/에이전트 MOPD·에이전트 RL",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "학습 환경 OpenClaw·Hermes Agent·Pi·OpenCode",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "정답 검색과 샌드박스 인식 보상 해킹을 회사가 보고",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "샌드박스 강화·봉쇄된 환경 평가",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "16개 평가와 평가 영역",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "AutomationBench 27.69 vs 8.72",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "LiveClaw 48.09 vs 38.19",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "ToolSandbox 80.71 vs 75.02",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "WebArena Verified 26.75 vs 37.62",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "SWE-Bench Verified (OpenCode) 51.00 vs 66.20",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "GPQA Diamond 74.42 vs 83.69",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "도구·에이전트 8개 중 5개 앞서거나 비슷·지시 준수 3개 앞섬",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "지식·코딩 평가에서 더 큰 모델 우위 유지",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "M5 Max 디코딩 184토큰/초",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "Ryzen AI Max+ 395 디코딩 114토큰/초",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "비교한 MoE 대비 최대 1.7배 속도",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "단일 B300 높은 동시 요청 총 출력 21K 초과",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "GPU SGLang 0.5.22·입력 1,024·출력 최대 256·BF16",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "GPU 지속 부하·완료 요청 즉시 대체",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "llama.cpp·MLX·vLLM·SGLang·ONNX 출시 시점 지원",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "Hermes M5 Max MacBook Pro 로컬 시연·클라우드 API 호출 없음",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "API 100만 입력 $0.10·캐시 $0.05·출력 $1.00",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "가입 시 $2 크레딧",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "지식 업무 검색·조회 결합 권고",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "공식 발표가 라이선스 연결",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "공식 본문 후학습 도표 존재",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "유지. 회사 발표 사실로 한정하며 측정 재현으로 표현하지 않음."
+  },
+  {
+   "claim": "가중치란 학습 결과를 담은 수치 묶음이다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": false,
+   "action": "이번에 읽은 원문에 해당 정의·일반화의 직접 근거가 없어 삭제. 활용 조언은 권고로 표현."
+  },
+  {
+   "claim": "문맥 창은 모델이 한 번의 처리에서 참고할 수 있는 텍스트의 범위다.",
+   "url": "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents",
+   "confirmed": true,
+   "action": "공식 발표의 기술 수치만 남기도록 중복 설명 삭제."
+  },
+  {
+   "claim": "토큰은 텍스트를 나누어 처리하는 단위이며 한국어 글자 수·페이지 수와 일대일 환산되지 않는다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": false,
+   "action": "이번에 읽은 원문에 해당 정의·일반화의 직접 근거가 없어 삭제. 활용 조언은 권고로 표현."
+  },
+  {
+   "claim": "토크나이저는 문장을 모델의 입력 단위로 바꾸는 처리기다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": false,
+   "action": "이번에 읽은 원문에 해당 정의·일반화의 직접 근거가 없어 삭제. 활용 조언은 권고로 표현."
+  },
+  {
+   "claim": "벤치마크는 특정 조건에서 과제를 풀게 하고 점수를 비교하는 평가다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": false,
+   "action": "이번에 읽은 원문에 해당 정의·일반화의 직접 근거가 없어 삭제. 활용 조언은 권고로 표현."
+  },
+  {
+   "claim": "디코딩은 모델이 응답을 만들어 내는 과정이다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": false,
+   "action": "이번에 읽은 원문에 해당 정의·일반화의 직접 근거가 없어 삭제. 활용 조언은 권고로 표현."
+  },
+  {
+   "claim": "Superpower Daily는 2026-10-13 이 소식을 게시하고 도구·지시 준수 강점과 웹·코딩 약점을 설명했다.",
+   "url": "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents",
+   "confirmed": true,
+   "action": "게시일과 본문 논조를 직접 재확인하여 유지."
+  },
+  {
+   "claim": "Superpower Daily가 다룬 성능은 회사 보고 결과이며 독립 평가가 아니다.",
+   "url": "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents",
+   "confirmed": true,
+   "action": "기사의 명시적 설명을 확인하여 유지."
+  },
+  {
+   "claim": "공식 발표는 가중치를 내려받아 미세조정하고 배포할 수 있다고 안내한다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "출처에 없는 가중치 정의를 발표의 명시적 안내로 수정."
+  },
+  {
+   "claim": "llama.cpp는 GGUF 엣지 추론, MLX는 Apple Silicon, vLLM·SGLang은 GPU 서빙, ONNX는 여러 가속기 실행을 위한 지원 경로로 소개됐다.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "confirmed": true,
+   "action": "공식 발표의 지원 도구별 설명과 대조하여 유지."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 공식 발표와 독립 기사 URL을 다시 조회했다. 웹 도구는 본문 접근 오류를 반환했으나 같은 URL에 대한 requests GET(제한 20초, 로그인·쿠키·프록시·우회 없음)은 두 페이지 모두 HTTP 200을 반환했다. 최종 URL·조회 시각·응답 본문 및 직접 읽은 텍스트를 source-evidence/factcheck-official.json·factcheck-independent.json과 대응 Markdown에 저장했다. 기존 검증 수치를 그대로 승인하지 않고 이번 응답 본문에서 발표일, 구조·학습·점수·하드웨어·측정 조건·가격·지원·시연·라이선스 링크·도표를 재대조했다. 성능·지원·가격은 회사 발표 기준 확인이며 독립 재현이나 실제 설치·API 실행 검증이 아니다. 반복된 동일 주장은 한 항목으로 집계했다. 활용 권고·예제 프롬프트·전망 및 자체 실행 상태는 외부 사실 주장 개수에서 제외했다. 원문 근거 없는 용어 정의는 삭제했고 문맥 창 정의는 독립 기사에서 확인했으나 중복 설명을 줄이기 위해 삭제했다. 새 주제 선택·발행·승인·git·Slack 작업은 수행하지 않았다. 핵심 근거와 최신 발표일 및 독립 보도를 확인했으므로 skip.json 생성 조건에 해당하지 않는다."
+}
