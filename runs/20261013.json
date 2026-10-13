@@ -4,9 +4,9 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
-  "category": "AI 보안",
-  "taken_over": "2026-10-13T09:07:45+09:00",
+  "status": "writing",
+  "category": "AI 인사이트",
+  "taken_over": "2026-10-13T09:16:11+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
   "last_result": "done"
