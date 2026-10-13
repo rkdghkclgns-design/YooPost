@@ -1,0 +1,179 @@
+{
+ "claims": [
+  {
+   "claim": "Riverbed가 2026-10-06 자율 IT 운영 글로벌 조사 결과를 발표했다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 공식 발표 첫 문단의 날짜와 조사명 확인"
+  },
+  {
+   "claim": "90%는 향후 2년 안에 사람 감독 또는 고도로 자율적인 IT 운영을 기대했다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "수정. 공식 발표의 향후 2년·사람 감독 또는 높은 자율성 조건을 확인했으며, 제목과 성과 읽기 문단을 자율 운영 기대로 통일했습니다."
+  },
+  {
+   "claim": "77%는 사람 승인 없는 AI 운영 결정에 주저했다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "수정. 공식 발표의 hesitant 표현에 맞춰 제목을 무승인 결정에 주저 77%로 수정했습니다. 승인 의무 비율로 단정하지 않습니다."
+  },
+  {
+   "claim": "Riverbed 조사 응답자는 1,200명이다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 조사 방법 문단 확인"
+  },
+  {
+   "claim": "Riverbed 조사 범위는 7개국이다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 조사 방법 문단 확인"
+  },
+  {
+   "claim": "Riverbed 응답자는 비즈니스 의사결정자·IT 리더·기술 전문가다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 조사 방법의 세 응답자 유형 확인"
+  },
+  {
+   "claim": "Riverbed 조사는 Coleman Parkes Research가 수행했다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 조사 방법 마지막 문장 확인"
+  },
+  {
+   "claim": "Riverbed 조사는 2026년 7월 수행되었다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 조사 방법 마지막 문장 확인"
+  },
+  {
+   "claim": "Riverbed는 응답 조직의 평균 연간 매출을 23억 달러로 설명한다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. average of $2.3 billion in annual revenue 확인; 조직 설명으로 한정"
+  },
+  {
+   "claim": "Infor는 2026-10-06 Industry AI 아키텍처의 확장을 발표했다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. 첫 날짜와 unveiled its Infor Industry AI architecture 확인"
+  },
+  {
+   "claim": "Infor는 같은 발표에서 Velocity Suite의 다음 단계를 공개했다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. 첫 문단 next evolution of Infor Velocity Suite 확인"
+  },
+  {
+   "claim": "Infor 발표는 산업별 맥락을 설계 요소로 설명한다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. 산업 맥락 설명과 FAQ 확인; 제조사 설명으로 한정"
+  },
+  {
+   "claim": "Infor 발표는 외부 시스템 연결을 설명한다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Open & Connected 항목 확인"
+  },
+  {
+   "claim": "Infor 발표는 사람 승인 흐름을 설명한다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Governed 항목 human-approval workflows 확인"
+  },
+  {
+   "claim": "Infor 발표는 감사 기록을 설명한다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Governed 항목 audit trails 확인"
+  },
+  {
+   "claim": "Infor 조사명은 Enterprise AI Adoption Impact Index다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. 조사 절과 FAQ 확인"
+  },
+  {
+   "claim": "Infor 이번 조사 응답자는 2,111명의 비즈니스 의사결정자다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. FAQ 조사 방법 확인"
+  },
+  {
+   "claim": "Infor 이번 조사는 7개 시장을 대상으로 한다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. FAQ 조사 방법 확인"
+  },
+  {
+   "claim": "Infor 이번 조사는 2026년 8월 수행되었다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. FAQ 조사 방법 확인"
+  },
+  {
+   "claim": "YouGov가 Infor를 위해 조사를 수행했다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Research was conducted by YouGov on behalf of Infor 확인"
+  },
+  {
+   "claim": "Infor 조사 발표는 산업 적합성과 AI 책임 주체를 다룬다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Finding 1과 Finding 3 확인"
+  },
+  {
+   "claim": "두 조사의 응답자 구성과 질문 범위는 동일하지 않다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. Riverbed 조사 방법과 Infor FAQ 방법·질문을 대조했습니다. 추가 근거: https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai"
+  },
+  {
+   "claim": "ITPro는 2026-10-06 Riverbed 조사를 다뤘다.",
+   "url": "https://www.itpro.com/technology/artificial-intelligence/enterprises-arent-quite-sold-on-autonomous-it-operations",
+   "confirmed": true,
+   "action": "유지. 기사 Published 6 October 2026 및 Riverbed 링크와 본문 확인"
+  },
+  {
+   "claim": "ITPro 기사는 자율 운영 기대와 신뢰 문제를 연결했다.",
+   "url": "https://www.itpro.com/technology/artificial-intelligence/enterprises-arent-quite-sold-on-autonomous-it-operations",
+   "confirmed": true,
+   "action": "유지. 본문 도입과 Autonomy challenges 절 확인"
+  },
+  {
+   "claim": "Riverbed 발표는 90%의 조직이 에이전트 AI를 사용해 자율 IT 운영을 추진하기 원한다고 설명한다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 발표 첫 문단의 의향 설명 확인. 제목에서는 시간 조건이 있는 자율 운영 기대로 표현을 명확히 했습니다."
+  },
+  {
+   "claim": "Riverbed의 90% 자율 운영 기대와 77% 무승인 결정에 대한 주저는 서로 다른 응답 내용이다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": true,
+   "action": "유지. 도입 기대 문장과 Trust and governance 절의 승인 조건 문장을 대조했습니다. 개인별 응답 교차표나 동일 조직의 두 응답 동시 발생이 입증됐다고 쓰지 않습니다."
+  },
+  {
+   "claim": "소개한 공식 자료만으로 한국 기업 전체의 AI 도입률을 산출할 수 없다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. Infor FAQ의 7개 시장 목록에 한국이 없고, Riverbed 발표도 한국 기업 전체에 대한 표본·도입률을 제공하지 않습니다. 추가 근거: https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/"
+  },
+  {
+   "claim": "이 글의 Infor 기능 근거는 공급사가 발표한 설계 설명이며 모든 고객 환경에서 효과가 입증되었다는 독립 평가가 아니다.",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "confirmed": true,
+   "action": "유지. 공식 발표의 플랫폼 설명과 FAQ를 확인했습니다. 이 출처의 근거 범위에 한정하며 외부 독립 평가의 존재 여부를 단정하지 않습니다."
+  },
+  {
+   "claim": "Riverbed의 두 응답은 같은 조직 안에서도 함께 존재할 수 있다.",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "confirmed": false,
+   "action": "수정. 공개 발표에는 조직별 두 문항의 교차 응답이 없습니다. 같은 조직에서의 공존을 암시하는 문장을 삭제하고 기대와 통제를 연결한 필자의 해석 및 교차 응답 확인 불가로 바꿨습니다."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 S1 Riverbed 공식 발표, S3 Infor 공식 발표와 FAQ, S2 ITPro 기사 본문을 웹 조회 도구로 다시 열어 읽었습니다. 세 원문 모두 본문과 2026-10-06 발표일을 확인해 HTTP 대체 조회는 필요하지 않았습니다. 반복 주장은 고유 주장으로 합쳤으며 제목·요약·본문·표·FAQ·맺음말을 대조했습니다. 공식 수치·설계 설명과 독립 기사 자체의 날짜·보도 내용만 외부 사실로 집계했습니다. 가상 사례, 해석, 독자 제안, 자체 작업 설명은 집계하지 않았습니다. 읽은 출처에서 검증되지 않은 교차 응답 암시는 수정했습니다. 원문 접근 실패나 핵심 근거 부족은 없어 skip.json은 생성하지 않았습니다. 승인·발행은 수행하지 않았습니다."
+}
