@@ -4,9 +4,9 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
-  "category": "AI 공모주 분석",
-  "taken_over": "2026-10-13T09:24:39+09:00",
+  "status": "writing",
+  "category": "AI 도구",
+  "taken_over": "2026-10-13T13:10:28+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
   "last_result": "done"
