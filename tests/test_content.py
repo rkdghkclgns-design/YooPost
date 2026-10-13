@@ -50,6 +50,25 @@ def test_inline_markup_helpers():
     assert strip_inline("**굵게** 와 `code`") == "굵게 와 code"
     assert inline_html("<b> **굵게** `x`\n다음") == "&lt;b&gt; <b>굵게</b> <code>x</code><br/>다음"
 
+
+def test_inline_citations_render_as_links_with_escaped_attributes():
+    rendered = inline_html('**공개일** [공개 & 이력](https://example.com/a_(b)?x=1&y="2")')
+    assert '<b>공개일</b> <a href="https://example.com/a_(b)?x=1&amp;y=&quot;2&quot;"' in rendered
+    assert 'rel="noopener noreferrer">공개 &amp; 이력</a>' in rendered
+    assert '[공개' not in rendered
+
+
+def test_inline_code_is_literal_and_link_labels_support_emphasis():
+    assert inline_html('`[예제](https://example.com) **값**`') == '<code>[예제](https://example.com) **값**</code>'
+    assert '><b>공식</b> <code>API</code></a>' in inline_html('[**공식** `API`](https://example.com)')
+    assert '<b><a href=' in inline_html('**[공식](https://example.com)**')
+
+
+@pytest.mark.parametrize('url', ['javascript:alert(1)', 'data:text/html,hello', '//example.com', 'https://',
+                                 'https://example.com/\nnext', 'https://example.com/\\evil'])
+def test_inline_unsafe_or_incomplete_urls_do_not_become_links(url):
+    assert '<a ' not in inline_html(f'[출처]({url})')
+
 def test_plain_text_and_length_exclude_code_and_markup():
     content = parse_post(post_json()).with_references(
         [Reference("Google DeepMind", "2026, September 24", "Introducing", "https://deepmind.google/x")]

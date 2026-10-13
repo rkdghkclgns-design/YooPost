@@ -24,6 +24,7 @@ from .draft_request import manual_thread
 from .draft_store import DraftStore
 from .exclusion import EXCLUDED, exclude, overlap_of, record_entry
 from .history import HistoryUnavailable, load_history, read_marker
+from .inline_repair import repair_html_links
 from .results import PublishResult
 from .slack_helper import AUTO_APPROVAL_LABEL, LABEL, SlackNotifier, escape_mrkdwn
 
@@ -33,7 +34,7 @@ KST = timezone(timedelta(hours=9))
 
 
 def publication_html(draft_id: str, draft: dict) -> str:
-    html = str(draft["html"])
+    html = repair_html_links(str(draft["html"])).html
     marker = {**read_marker(html), "draft_id": draft_id}
     marker.setdefault("topic", str(draft.get("topic") or draft.get("title") or ""))
     marker.setdefault("source", str(draft.get("source_url") or ""))

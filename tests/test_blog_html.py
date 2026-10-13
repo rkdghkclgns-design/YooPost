@@ -35,6 +35,25 @@ def test_highlight_style_matches_reference_blog():
     assert f'<b style="{HIGHLIGHT}">88개</b>' in table
 
 
+def test_citation_links_work_in_intro_tables_lists_faq_and_closing():
+    data = json.loads(post_json())
+    citation = '[공식 근거](https://example.com/source)'
+    data['intro'] = '안녕하세요! **공개일** ' + citation
+    data['summary'] = [citation]
+    data['sections'][0]['blocks'] = [
+        {'type':'paragraph', 'text':citation},
+        {'type':'table', 'headers':['근거'], 'rows':[[citation]]},
+        {'type':'list', 'items':[citation]},
+        {'type':'warning', 'text':citation},
+    ]
+    data['faq'] = [{'q':'근거는?', 'a':citation}]
+    data['closing'] = citation
+    rendered = build_blog_html(parse_post(json.dumps(data)))
+    assert rendered.count('href="https://example.com/source"') == 8
+    assert '[공식 근거](' not in rendered
+    assert f'<b style="{HIGHLIGHT}">공개일</b>' in rendered
+
+
 def test_quote_images_are_rendered_once_with_credit():
     data = json.loads(post_json())
     data["sections"][0]["blocks"][1:1] = [{"type": "image", "image_id": "i1"}, {"type": "image", "image_id": "I1"},

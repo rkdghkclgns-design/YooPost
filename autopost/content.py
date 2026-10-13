@@ -4,7 +4,7 @@
     → 이모지 소제목(h2) 섹션들 (문단·h3·💡정보·⚠️주의 박스·표·코드블록·목록·인용 이미지)
     → ❓ 자주 묻는 질문 → 🔗 함께 보면 좋은 글 → 🎯 맺음말 → 📚 참고 문헌 및 출처 → 작성 기준일
 
-본문 안에서는 **강조**(굵게 + 형광 배경), `코드` 두 가지 인라인 표시만 쓴다.
+본문 안에서는 **강조**(굵게 + 형광 배경), `코드`, [출처 이름](URL)을 쓴다.
 """
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ import json
 import re
 from dataclasses import dataclass, replace
 from typing import Sequence
+from urllib.parse import urlsplit
 
 from .constants import CATEGORIES
 
@@ -22,6 +23,8 @@ MAX_HASHTAGS = 15
 MAX_HASHTAG_LEN = 30
 _BOLD = re.compile(r"\*\*(.+?)\*\*")
 _CODE = re.compile(r"`([^`\n]+)`")
+_INLINE = re.compile(r"`([^`\n]+)`|\*\*(.+?)\*\*|(?<!!)\[([^\[\]\n]+)\]\(")
+_LINK = re.compile(r"(?<!!)\[([^\[\]\n]+)\]\(")
 
 
 class ContentError(RuntimeError):
@@ -148,12 +151,65 @@ def strip_inline(text: str) -> str:
     return _CODE.sub(r"\1", _BOLD.sub(r"\1", text))
 
 
-def inline_html(text: str) -> str:
-    """HTML 이스케이프 후 **굵게** → <b>, `코드` → <code>, 줄바꿈 → <br/>."""
-    escaped = html.escape(text)
-    escaped = _BOLD.sub(r"<b>\1</b>", escaped)
-    escaped = _CODE.sub(r"<code>\1</code>", escaped)
-    return escaped.replace("\n", "<br/>")
+def _link_target(text: str, start: int) -> tuple[int, str] | None:
+    """닫는 괄호를 찾되 URL 경로의 괄호는 보존한다. 웹 주소만 링크로 만든다."""
+    depth = 1
+    for end in range(start, len(text)):
+        char = text[end]
+        if char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+            if depth == 0:
+                url = html.unescape(text[start:end])
+                if any(c.isspace() or ord(c) < 32 or c in "<>\\" for c in url):
+                    return None
+                try:
+                    parsed = urlsplit(url)
+                    safe = parsed.scheme in ("http", "https") and bool(parsed.hostname)
+                except ValueError:
+                    safe = False
+                return (end + 1, url) if safe else None
+    return None
+
+
+def _anchor(label: str, url: str) -> str:
+    return (f'<a href="{html.escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">'
+            f"{label}</a>")
+
+
+def inline_html(text: str, *, links: bool = True) -> str:
+    """인라인 표시를 안전한 HTML로 변환한다. 코드 안의 문법은 그대로 보인다."""
+    parts, position = [], 0
+    while match := _INLINE.search(text, position):
+        parts.append(html.escape(text[position:match.start()]))
+        position = match.end()
+        code, bold, label = match.groups()
+        if code is not None:
+            parts.append(f"<code>{html.escape(code)}</code>")
+        elif bold is not None:
+            parts.append(f"<b>{inline_html(bold, links=links)}</b>")
+        elif links and (target := _link_target(text, match.end())):
+            position, url = target
+            parts.append(_anchor(inline_html(label, links=False), url))
+        else:
+            parts.append(html.escape(match.group()))
+    parts.append(html.escape(text[position:]))
+    return "".join(parts).replace("\n", "<br/>")
+
+
+def repair_link_text(text: str) -> tuple[str, int]:
+    """발행 HTML의 텍스트 노드에 남은 링크만 변환한다. 다른 글자는 보존한다."""
+    parts, position, count = [], 0, 0
+    for match in _LINK.finditer(text):
+        if match.start() < position or not (target := _link_target(text, match.end())):
+            continue
+        end, url = target
+        parts.append(text[position:match.start()])
+        parts.append(_anchor(html.escape(html.unescape(match.group(1))), url))
+        position, count = end, count + 1
+    parts.append(text[position:])
+    return "".join(parts), count
 
 
 # ------------------------------------------------------------------ AI 응답 해석
