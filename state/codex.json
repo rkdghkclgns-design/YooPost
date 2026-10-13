@@ -15,7 +15,8 @@
   "20261013:daily:AI 뉴스 리뷰": {
    "at": "2026-10-13T13:13:43+09:00",
    "count": 2,
-   "status": "writing"
+   "status": "failed",
+   "note": "결과 파일 형식이 올바르지 않습니다: result.json"
   },
   "20261013:daily:AI 보안": {
    "at": "2026-10-13T09:07:45+09:00",
@@ -36,21 +37,7 @@
    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
   }
  },
- "lease": {
-  "owner": "38345390652-1",
-  "at": "2026-10-13T13:13:43+09:00",
-  "expires": "2026-10-13T15:13:43+09:00",
-  "task": {
-   "day": "20261013",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 뉴스 리뷰",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: 지정 카테고리 AI 뉴스 리뷰와 2026-10-10~2026-10-13 발표 기간을 유지하고 brief-4.md의 발행·최근 원고 및 rejected-candidates.json의 실패 소식을 제외했다. 최초 후보 Microsoft Maia 300, 첫 대체 후보 HARTING·NVIDIA MGX, 두 번째 대체 후보 MiTAC OCP 2026을 각각 조회 전에 candidate.json에 기록했다. 세 공식 대표 원문 모두 web open에서 Internal Error 및 URL is n",
-   "owner": "38345390652-1",
-   "at": "2026-10-13T13:13:43+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
