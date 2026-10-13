@@ -91,7 +91,12 @@
      "reason": "Accenture의 2026-10-13 Sagacity 인수 발표를 선정했다. brief-4.md의 발행 글·최근 원고와 이전 실패 후보 Microsoft Maia 및 Character.ai 소식·대표 URL에 중복되지 않는다. 대표 공식 원문은 웹 open의 Internal Error 뒤 동일 URL을 urllib로 20초 제한 공개 조회하여 HTTP 200, 표시 발표일 2026-10-13과 실제 발표 본문을 직접 읽었다. 그러나 기간 내 독립 보도 원문인 Benzinga, Yahoo Finance의 MT Newswires, S"
     }
    ],
-   "next_retry_at": "2026-10-14T08:16:23+09:00"
+   "next_retry_at": "2026-10-14T08:16:23+09:00",
+   "last_notified": {
+    "result": "skipped",
+    "kind": "source_unavailable",
+    "note": "다른 주제 재작성 2회 후 보류: Accenture의 2026-10-13 Sagacity 인수 발표를 선정했다. brief-4.md의 발행 글·최근 원고와 이전 실패 후보 Microsoft Maia 및 Character.ai 소식·대표 URL에 중복되지 않는다. 대표 공식 원문은 웹 open의 Internal Error 뒤 동일 URL을 urllib로 20초 제한 공개 조회하여 HTTP 200, 표시 발표일 2026-10-13과 실제 발표 본문을 직접 읽었다. 그러나 기간 내 독립 보도 원문인 Benzinga, Yahoo Finan"
+   }
   }
  },
  "lease": {},
