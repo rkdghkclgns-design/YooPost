@@ -67,9 +67,9 @@
     }
    ],
    "last_notified": {
-    "result": "failed",
-    "kind": "rate_limit",
-    "note": "Codex 요청 한도에 걸렸습니다. 재시도 대기·횟수 제한을 유지합니다 (exit=1)"
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
    },
    "finished_at": "2026-10-13T18:24:48+09:00",
    "next_retry_at": null
