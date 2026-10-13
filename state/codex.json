@@ -18,9 +18,9 @@
   "20261014:daily:AI 도구": {
    "at": "2026-10-14T08:07:19+09:00",
    "count": 2,
-   "status": "writing",
-   "note": "다른 주제 재작성 2회 후 보류: 공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다.",
-   "failure_kind": "verification_failed",
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: 이전 실패 후보 및 brief-2.md의 기존 발행·최근 원고와 겹치지 않는 Honeyjar의 2026-10-13 비공개 베타 확대 발표를 candidate.json에 먼저 기록했다. 독립 매체 TechCrunch의 2026-10-12 보도 본문과 날짜는 직접 읽었다. 그러나 대표 공식 발표 URL은 웹 도구에서 not accessible/Internal Error로 본문을 읽지 못했고, 정책에 따른 동일 공개 URL의 urllib 단일 조회(제한 시간 20초)에서 HTTP 403 및 error c",
+   "failure_kind": "source_unavailable",
    "rejected_candidates": [
     {
      "title": "🛠 Bizzabo 행사 AI 에이전트 총정리: 승인 기반 실행과 도입 일정",
@@ -39,13 +39,33 @@
      "topic": "Tabby Launches Tabby 2.0 With Tabby Talk, an AI Agent Answering Financial Questions and Completing Bookkeeping Tasks (2026-10-12)",
      "source_url": "https://www.newsfile-prod.tmx.cloud/release/318532/Tabby-Launches-Tabby-2.0-With-Tabby-Talk-an-AI-Agent-Answering-Financial-Questions-and-Completing-Bookkeeping-Tasks",
      "reason": "공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다."
+    },
+    {
+     "title": "🛠 Workday Sana 사용 가이드: 새 Home·업무 실행·도입 일정 총정리",
+     "topic": "Sana Is the New Workday Home: A Dynamic Agentic Experience Built to Finish the Work, Not Just Answer Questions (2026-10-13)",
+     "source_url": "https://newsroom.workday.com/2026-10-13-Sana-Is-the-New-Workday-Home-A-Dynamic-Agentic-Experience-Built-to-Finish-the-Work%2C-Not-Just-Answer-Questions",
+     "reason": "2026-10-13 Workday Sana 새 Home·Sana Concierge 발표를 새 후보로 candidate.json에 먼저 기록했다. brief-2.md의 기존 발행·최근 원고 목록과 rejected-candidates.json에서 같은 소식·대표 URL은 발견되지 않았다. 대표 공식 원문을 웹 도구로 열었으나 not accessible/Internal Error로 본문을 읽지 못했다. 동일 공개 URL을 urllib로 제한 시간 20초의 HTTP 조회를 한 번 수행한 결과 HTTP 403 및 error code: 101"
+    },
+    {
+     "title": "🛠 Collective Intelligence Suite 총정리: 자산 관리 AI 도구 3종 사용 가이드",
+     "topic": "Faster Answers, Less Manual Work: Collective Data Launches Collective Intelligence Suite (2026-10-12)",
+     "source_url": "https://collectivedata.com/news/collective-intelligence-suite/",
+     "reason": "이전 실패 후보 4건과 brief-2.md의 발행·최근 원고 목록을 제외하고 2026-10-12 Collective Data의 Collective Intelligence Suite 정식 출시를 새 후보로 candidate.json에 먼저 기록했다. 대표 공식 URL을 웹 조회 도구로 열었으나 Internal Error로 본문을 읽지 못했다. 정책에 따라 동일 공개 URL을 urllib로 제한 시간 20초의 HTTP 조회를 한 번 수행했고 HTTP 403과 error code: 1010 본문을 확인했다. 최종 URL·HTTP 상태·조"
+    },
+    {
+     "title": "🛠 Honeyjar 비공개 베타 확대: PR 업무·검토 절차 사용 가이드",
+     "topic": "Honeyjar Launches an AI Communications Partner Built on Expert Judgment (2026-10-13)",
+     "source_url": "https://www.prnewswire.com/news-releases/honeyjar-launches-an-ai-communications-partner-built-on-expert-judgment-302906574.html",
+     "reason": "이전 실패 후보 및 brief-2.md의 기존 발행·최근 원고와 겹치지 않는 Honeyjar의 2026-10-13 비공개 베타 확대 발표를 candidate.json에 먼저 기록했다. 독립 매체 TechCrunch의 2026-10-12 보도 본문과 날짜는 직접 읽었다. 그러나 대표 공식 발표 URL은 웹 도구에서 not accessible/Internal Error로 본문을 읽지 못했고, 정책에 따른 동일 공개 URL의 urllib 단일 조회(제한 시간 20초)에서 HTTP 403 및 error code: 1010 본문을 확인했다."
     }
    ],
    "last_notified": {
     "result": "skipped",
     "kind": "verification_failed",
     "note": "다른 주제 재작성 2회 후 보류: 공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다."
-   }
+   },
+   "finished_at": "2026-10-14T08:10:58+09:00",
+   "next_retry_at": "2026-10-14T09:10:58+09:00"
   },
   "20261014:daily:AI 논문 분석": {
    "at": "2026-10-14T07:32:06+09:00",
@@ -199,21 +219,7 @@
    }
   }
  },
- "lease": {
-  "owner": "38482209235-1",
-  "at": "2026-10-14T08:07:19+09:00",
-  "expires": "2026-10-14T10:07:19+09:00",
-  "task": {
-   "day": "20261014",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: 공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다.",
-   "owner": "38482209235-1",
-   "at": "2026-10-14T08:07:19+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",

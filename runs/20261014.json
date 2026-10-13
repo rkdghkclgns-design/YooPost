@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-10-14T08:07:19+09:00",
   "first_taken_over": "2026-10-14T07:15:23+09:00",
   "reason": "실행 기록 없음",
   "last_result": "skipped"
  },
- "note": "다른 주제 재작성 2회 후 보류: 기존 발행 및 반려된 래블업·Firmus 소식을 제외하고 Fusion CX의 2026-10-08 RHP와 2026-10-09 독립 보도를 조사했다. 공식 투자자센터와 RHP 안내를 실제 읽었지만 다운로드 안내에는 인도 소재 확인 및 접근 제한이 표시되며 공모 본문을 확보하지 못했다. 같은 공개 RHP URL을 urllib로 20초 제한 아래 한 번 조회한 결과 HTTP 200이었으나 공모 본문 대신 동일한 소재 확인 화면이었다. HTTP 서버 오류로 단정하지 않는다. 검색으로 별도 SEBI·NSE "
+ "note": "다른 주제 재작성 2회 후 보류: 이전 실패 후보 및 brief-2.md의 기존 발행·최근 원고와 겹치지 않는 Honeyjar의 2026-10-13 비공개 베타 확대 발표를 candidate.json에 먼저 기록했다. 독립 매체 TechCrunch의 2026-10-12 보도 본문과 날짜는 직접 읽었다. 그러나 대표 공식 발표 URL은 웹 도구에서 not accessible/Internal Error로 본문을 읽지 못했고, 정책에 따른 동일 공개 URL의 urllib 단일 조회(제한 시간 20초)에서 HTTP 403 및 error c"
 }
