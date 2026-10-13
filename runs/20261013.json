@@ -4,12 +4,12 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 논문 분석",
   "taken_over": "2026-10-13T18:10:27+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
-  "last_result": "skipped"
+  "last_result": "done"
  },
- "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식"
+ "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }

@@ -55,15 +55,24 @@
   "20261013:daily:AI 논문 분석": {
    "at": "2026-10-13T18:10:27+09:00",
    "count": 4,
-   "status": "writing",
-   "note": "Codex 요청 한도에 걸렸습니다. 재시도 대기·횟수 제한을 유지합니다 (exit=1)",
-   "failure_kind": "rate_limit",
-   "rejected_candidates": [],
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "rejected_candidates": [
+    {
+     "title": "🧠 StudentSim 논문 분석: 개인별 학생 시뮬레이션과 AI 튜터 평가 총정리",
+     "topic": "Simulating student learning for better AI tutoring",
+     "source_url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+     "reason": "선정 후보 StudentSim은 공식 소개 글이 2026-10-12에 게시되고 기간 내 독립 소개도 조회되었으나, 공식 논문 소개는 September 2026으로 표기하며 arXiv 제출 이력은 2026-09-01 v1만 확인됩니다. 2026-10-06 이후 새 논문 버전·후속 실험 발표를 확인하지 못했습니다. 소개 글 게시일을 논문 발표일로 대체하지 않으며 최신 논문 요건을 충족하지 않아 원고를 보류합니다. 공식 원문 조회는 성공했으므로 source_unavailable이 아닌 no_topic으로 분류합니다. policy.md의 "
+    }
+   ],
    "last_notified": {
     "result": "failed",
     "kind": "rate_limit",
     "note": "Codex 요청 한도에 걸렸습니다. 재시도 대기·횟수 제한을 유지합니다 (exit=1)"
-   }
+   },
+   "finished_at": "2026-10-13T18:24:48+09:00",
+   "next_retry_at": null
   },
   "20261013:daily:AI 뉴스 리뷰": {
    "at": "2026-10-13T15:46:59+09:00",
@@ -99,21 +108,7 @@
    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
   }
  },
- "lease": {
-  "owner": "38374368456-1",
-  "at": "2026-10-13T18:10:27+09:00",
-  "expires": "2026-10-13T20:10:27+09:00",
-  "task": {
-   "day": "20261013",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 논문 분석",
-   "topic": "",
-   "reason": "건너뜀: 최초 후보와 두 번의 대체 후보를 조사했으나 모든 요건을 충족하는 후보를 확보하지 못했습니다. Beyond Imitation은 공식 OpenReview 조회 차단으로 제외했습니다. Power Sampling은 기간 내 독립 보도를 확인하지 못했습니다. RefineMix는 공식 소개·본문이 열렸지만 독립 분석 페이지 조회가 실패해 직접 읽은 이슈화 근거를 확보하지 못했습니다. 최종 후보의 공식 출처는 조회되므로 최종 보류는 no_topic으로 분류합니다. 기간을 넓히거나 검색 요약만으로 원고를 작성하지 않았습니다.",
-   "owner": "38374368456-1",
-   "at": "2026-10-13T18:10:27+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",

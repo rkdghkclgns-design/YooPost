@@ -1,0 +1,347 @@
+{
+ "claims": [
+  {
+   "claim": "FAR.AI 연구진의 논문 제목·소속",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "내부 hidden states 기반 프로브",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "거짓이라고 믿는 진술이 목표",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "믿음은 문맥·중립적 유도·학습 기준으로 정함",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "기만 의도·사실인 오도 진술은 목표에서 제외",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "네 구조 LinearEnsemble·MLPEnsemble·EFC·axial 비교",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "LinearEnsemble은 층별 선형 분류 결합",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "MLP는 두 층 퍼셉트론 기반",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "EFC는 층 투영과 토큰 평균·공분산 집계",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "axial은 토큰·층 축 주의집중",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "30~90% 깊이의 여섯 층 사용",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "axial/EFC 마지막 사용자·응답 턴, ensemble 마지막 비종료 토큰",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "FIBS 총 163,016행",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "FIBS 28개 계열",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "FIBS는 Falsehoods in Broad Settings",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "76% 후속 질문 합성",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "18% on-policy 계열",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "6% 별도 구성 계열",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "마지막 답 기준 HH HD DD DH 라벨",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "도구 기록 오표현·긴 문맥 포함",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "라벨 균형·길이·메시지 수 통제",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "추론 포함 5.5%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "자료는 대체로 인공적",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "라벨 잡음 1.4% ± 0.1 및 LLM 판정 비교",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "전체 학습 152,980행",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "정상 과제·숨은 부수 과제 조건",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Haiku 4.5 판정으로 부수 과제 개시 라벨",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "도구 호출 이후 후속 질문",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Yes/No 미리 채움과 점수 차이",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "이전 도구 호출 전 추론 제거",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "SHADE-Arena 전체가 25개이며 그중 11개를 제외하고 14개를 평가했다.",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": false,
+   "action": "수정: 부록 B.1의 전체 26개 → 항공 예약 1개 제외 → 남은 25개에서 추가 11개 제외 → 14개 평가로 본문·요약을 정정."
+  },
+  {
+   "claim": "Qwen3.5-397B-A17B 집단 699 에피소드·5,014 양성·16,275 음성",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "초록 AUC 98.8%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "네 프로브 0.979~0.984, Opus 0.960",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Opus 거부 최고 의심 점수 처리",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Opus 양성 5,014 중 2,638 거부",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "자체 보고 logit 0.931",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "내성적 거짓은 대화만으로 분류 불가",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "여덟 미세조정 모델 실험체",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "다섯 실험체 AUC 90.4~99.7%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "gender-female 81%, gender-male 83%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "math-sandbagger 63%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "행동 문맥 추가 math-sandbagger 93%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "자체보고 중앙값 91.3% vs axial 90.8%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Bird Labs 가상 공급자 목표",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Bird Labs 기업 조건 AUC 99.7%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Bird Labs 무료 조건 AUC 75%",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "모델의 믿음·활성화 페르소나 한계",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "자료 양·다양성에서 개선",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "그림 3 정치적 거짓·답변 유도 평가",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지 및 이미지 위치 수정: 그림 3은 정치적 거짓·답변 유도 평가 도식이므로 SHADE-Arena 절에서 내성적 평가 절로 이동."
+  },
+  {
+   "claim": "본문 CC BY 4.0",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "arXiv v1 제출 기록은 2026-10-08 17:58:13 UTC이다.",
+   "url": "https://arxiv.org/abs/2610.12445",
+   "confirmed": true,
+   "action": "명확화: 본문·요약에 UTC 기준을 표시. 한국 시각으로는 2026-10-09 02:58:13이며 날짜 기준을 혼동하지 않도록 함."
+  },
+  {
+   "claim": "독립 해설 게시일 2026-10-09",
+   "url": "https://kenashe.ai/blog/2026-10-09-probes-that-catch-an-agent-lying-before-it-says-a-word/",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "발행자 직접 공개한 자동 작성과 초록 기반",
+   "url": "https://kenashe.ai/blog/2026-10-09-probes-that-catch-an-agent-lying-before-it-says-a-word/",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "발행자 해설은 AUC의 운영 보장 한계와 내부 접근 필요성을 강조",
+   "url": "https://kenashe.ai/blog/2026-10-09-probes-that-catch-an-agent-lying-before-it-says-a-word/",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "ROC AUC는 점수 기반 곡선 면적으로 단일 임계값 탐지율과 다르며 임계값에 따라 TPR/FPR이 달라짐",
+   "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics",
+   "confirmed": true,
+   "action": "유지: 이번 단계에서 원문을 다시 읽어 확인."
+  },
+  {
+   "claim": "부록 B.1의 SHADE-Arena 전체 시나리오는 26개이며 항공 예약 1개를 먼저 제외하고, 남은 25개에서 추가 11개를 제외하여 14개를 평가했다.",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "confirmed": true,
+   "action": "정정한 본문·요약의 근거: 부록 B.1 Scenarios and rollouts에서 직접 확인."
+  }
+ ],
+ "note": "별도 사실 검증 단계에서 공식 arXiv 소개·v1 본문, 독립 해설 발행자 페이지, scikit-learn 공식 지표 문서를 다시 열고 HTTP 200 본문을 재조회했다. 조회 시각·최종 URL·상태·본문은 source-evidence/S1-recheck.md~S4-recheck.md에 저장했다. 기존 근거와 재조회 본문을 대조하고 방법론 2·4절, 결과 5절, 결론 6절과 부록 B.1/B.4 등을 읽었다. 반복되는 주장은 고유 사실로 합산했으며 자체 실행·검증 상태·필자 해석은 집계에서 제외했다. 외부 사실 57건 중 56건 확인, 전체 시나리오 수에 관한 기존 주장 1건을 정정했다. 독립 해설 관련 3건은 해당 발행자가 공개한 날짜·작성 방식·내용에 관한 주장으로 해당 원문을 사용했으며 연구 성능 검증은 공식 논문으로 수행했다. 초록 98.8%와 본문 특정 비교 0.979~0.984는 모두 원문에 있으나 차이의 원인은 확인되지 않아 추정하지 않았다. 실험 재현·모델 실행·승인·발행은 수행하지 않았다. 원문 조회 실패나 핵심 근거 부족은 없어 skip.json을 만들지 않았다."
+}
