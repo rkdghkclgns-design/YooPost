@@ -135,24 +135,34 @@
   "20261014:daily:AI 인사이트": {
    "at": "2026-10-14T07:52:21+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: 공식 보고서의 웹 도표 조회가 Internal Error였으며, 동일 공개 PDF URL의 20초 직접 조회도 실패: HTTP Error 403: Forbidden",
+   "failure_kind": "source_unavailable",
+   "finished_at": "2026-10-14T08:00:42+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🧭 DXC·LangChain과 HCLTech·Anthropic: 기업 AI 실행 통제 총정리",
+     "topic": "DXC and LangChain Advance Agentic AI Harnesses for Mission-Critical IT Operations — HCLTech·Anthropic 발표와 연결한 기업 AI 운영 해설",
+     "source_url": "https://dxc.com/newsroom/10132026-dxc-and-langchain-advance-agentic-ai-harnesses",
+     "reason": "선정 후보는 2026-10-13 DXC·LangChain 발표와 2026-10-12 HCLTech·Anthropic 발표를 연결한 AI 인사이트입니다. DXC 대표 원문은 웹 도구의 not accessible 이후 같은 URL의 urllib 조회에서 HTTP 200과 실제 발표 본문·날짜를 확인했습니다. HCLTech 공식 원문은 웹 도구에서 본문과 날짜를 읽었으나, 추가 urllib 직접 조회(timeout=20)가 TimeoutError: The read operation timed out으로 실패했습니다. 원문 서버의 HTTP"
+    },
+    {
+     "title": "🧭 Workday·C1.ai 총정리: 기업 AI의 추론과 접근 권한을 연결하는 흐름",
+     "topic": "Workday Trusted Agent Platform과 C1.ai 인수 계획으로 본 기업 AI의 실행·권한 통합",
+     "source_url": "https://newsroom.workday.com/2026-10-13-Workdays-Trusted-Agent-Platform-Now-Delivers-Headless-Access-to-HR-and-Finance,-Letting-Customers-Build-and-Run-Lawful-AI-Agents",
+     "reason": "Workday의 2026-10-13 Trusted Agent Platform 발표와 C1.ai 인수 계획을 새 AI 인사이트 후보로 선정했습니다. 이전 DXC·LangChain/HCLTech·Anthropic 실패 후보 및 brief-6.md의 발행·최근 원고 목록과 겹치지 않습니다. Workday 블로그와 C1.ai 블로그는 웹 도구 접근 실패 후 동일 URL 직접 조회(timeout=20)에서 HTTP 200 및 실제 본문을 확인했습니다. 대표 Workday 공식 보도자료는 웹 도구로 발표 본문과 2026-10-13 날짜를 읽었"
+    },
+    {
+     "title": "🧭 Elon AI와 일의 의미 총정리: 적응 의지 66%·경력 통제 자신감 40%",
+     "topic": "The Meaning of Work in the AI Age — AI 시대의 고용·일의 의미·적응 의지 분석",
+     "source_url": "https://imaginingthedigitalfuture.org/reports-and-publications/the-meaning-of-work-in-the-ai-age/",
+     "reason": "공식 보고서의 웹 도표 조회가 Internal Error였으며, 동일 공개 PDF URL의 20초 직접 조회도 실패: HTTP Error 403: Forbidden"
+    }
+   ],
+   "next_retry_at": "2026-10-14T08:30:42+09:00"
   }
  },
- "lease": {
-  "owner": "38480600134-1",
-  "at": "2026-10-14T07:52:21+09:00",
-  "expires": "2026-10-14T09:52:21+09:00",
-  "task": {
-   "day": "20261014",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 인사이트",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "38480600134-1",
-   "at": "2026-10-14T07:52:21+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
