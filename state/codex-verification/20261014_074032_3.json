@@ -1,0 +1,472 @@
+{
+ "claims": [
+  {
+   "claim": "최초 제출일은 2026-10-09이다",
+   "url": "https://arxiv.org/abs/2610.13623",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " search --> Computer Science > Cryptography and Security arXiv:2610.13623 (cs) [Submitted on 9 Oct 2026] Title: APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces Authors: Ziyi Yang , Adel Bibi , Guohao Li , Bernard Ghanem , Carlos Hinojosa View a PDF of the paper titled APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces, by Ziyi Yang and 4 other authors View PDF HTML (experimental) Abstract: Professional agents increasingly work through command-line interfaces and multiple tools over shared workspaces containin",
+   "locations": "intro;summary;sections[0];sections[6]"
+  },
+  {
+   "claim": "논문 제목은 APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces이다",
+   "url": "https://arxiv.org/abs/2610.13623",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " document.documentElement.classList.add('js'); [2610.13623] APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search --> Computer Science > Cryptography and Security arXiv:2610.13623 (cs) [Submitted on 9 Oct 2026] Title: APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces Authors: Ziyi Yang , Adel Bibi , Guohao Li , Bernard Ghanem , Carlos Hinojosa View a PDF of the paper titled APEX-Harm: Evaluating Agent Safety in Shared Professional Workspa",
+   "locations": "title;research.topic"
+  },
+  {
+   "claim": "공유 업무 공간의 프롬프트·스크립트 주입 평가 벤치마크다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "with attacks placed at a single, known read location. We introduce APEX-Harm, a benchmark for evaluating prompt and script injection against long-horizon agents performing finance, consulting, and legal tasks in large workspaces. Each task contains 115 to 328 files, together with email, calendar, chat, document, spreadsheet, PDF, and code-execution tools exposed through MCP servers. The benchmark includes six attack categories covering static and dynamic injections, task-specific script replacement, and attacker-provided generic scripts, and evaluates attack success, exposure",
+   "locations": "sections[0];faq[0]"
+  },
+  {
+   "claim": "업무 수행과 무단 행동을 각각 평가한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "lity across models. Attack success and task utility capture different outcomes: an agent can complete the legitimate task while also performing the harmful action. Table 5: File and application vector comparison ( n = 5 n=5 per vector). Bold indicates the highest value within each vector type. Type Vector ASR/ER File XLSX 67% PDF 50% TXT 50% Word 40% HTML 33% Markdown 20% App Chat 80% Calendar 60% Email 60% Figure 3: Script attack vector comparison ( n = 15 n=15 ). File and Application Attack Vectors. For static prompt injection, we compare file and application attack vectors (Table 5 ). ER is not directl",
+   "locations": "sections[0];sections[3];closing"
+  },
+  {
+   "claim": "공격 내용의 노출 여부를 별도로 측정한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ide different opportunities for exposure under different attacker capabilities. Measuring both prompt exposure and attack success helps distinguish attacks that agents never encounter from attacks that fail after exposure. Figure 1: (Left) Comparison with representative prior agent-safety benchmark settings. (Right) An insider adversary influences content in a shared professional workspace, causing the agent to expose protected information to an unauthorized participant. We introduce APEX-Harm, a benchmark for evaluating agent safety in shared professional workspaces. Figu",
+   "locations": "sections[0];sections[3]"
+  },
+  {
+   "claim": "업무 관련 파일 이름과 실행 중 변경이 노출 기회를 만든다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ntaining hundreds of files, only a fraction of which enter the agent’s context. Filenames relevant to the task, placement in existing files, and modifications during execution provide different opportunities for exposure under different attacker capabilities. Measuring both prompt exposure and attack success helps distinguish attacks that agents never encounter from attacks that fail after exposure. Figure 1: (Left) Comparison with representative prior agent-safety benchmark settings. (Right) An insider adversary influences content in a shared professional workspace, causing the agent to expose protected information t",
+   "locations": "sections[0]"
+  },
+  {
+   "claim": "기존 APEX-Agents 업무와 환경을 기반으로 한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "nning $103.1 Runtime (32 × \\times parallel) 86.6 min ∗ Word and PDF files only. We build APEX-Harm on APEX-Agents ( Vidgen et al., 2026 ) , a benchmark of long-horizon, cross-application tasks designed by investment banking analysts, management consultants, and corporate lawyers. The benchmark is included in recent frontier model evaluations ( OpenAI, 2026b ; DeepMind, 2026 ; xAI, 2026 ; Kimi et al., 2026 ; Tencent Hy, 2026 ) and remains challenging, with the best-performing model achieving a 68.6% success rate. It also captures a realistic setting where CL",
+   "locations": "sections[1];faq[0]"
+  },
+  {
+   "claim": "파일 수는 과제별 115~328개다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "d constraints. In our benchmark, each world comprises a shared file system with 115 to 328 files per task, together with email, calendar, and chat systems that simulate a collaborative workplace involving partners, associates, analysts, and other professional roles. Task. Given a task described in natural language, agents primarily use the code-execution tools alongside other MCP servers for Calendar, Chat, Documents, File System, Mail, PDFs, Spreadsheets, and Presentations. We add safety-related assets (e.g., sensitive events and OTP emails), sensi",
+   "locations": "sections[1];table"
+  },
+  {
+   "claim": "이메일·일정·채팅 협업 환경을 모사한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ld comprises a shared file system with 115 to 328 files per task, together with email, calendar, and chat systems that simulate a collaborative workplace involving partners, associates, analysts, and other professional roles. Task. Given a task described in natural language, agents primarily use the code-execution tools alongside other MCP servers for Calendar, Chat, Documents, File System, Mail, PDFs, Spreadsheets, and Presentations. We add safety-related assets (e.g., sensitive events and OTP emails), sensitive client information to user prompts, and prompt-injection files or harmful scripts to",
+   "locations": "sections[1]"
+  },
+  {
+   "claim": "코드 실행과 문서·파일·메일·PDF·스프레드시트·프레젠테이션 도구를 사용한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "natural language, agents primarily use the code-execution tools alongside other MCP servers for Calendar, Chat, Documents, File System, Mail, PDFs, Spreadsheets, and Presentations. We add safety-related assets (e.g., sensitive events and OTP emails), sensitive client information to user prompts, and prompt-injection files or harmful scripts to the world to induce agents to execute harmful operations. All additions preserve the original task content and feasibility. See Appendix A for details. APEX-Harm contains six categories spanning static placement, runtime workspace modification, task-specific script replacement, and ",
+   "locations": "sections[1]"
+  },
+  {
+   "claim": "원래 과제는 세 분야 각각 5개, 합계 15개다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "om each APEX-Agents domain: Investment Banking, Law, and Management Consulting, yielding 15 tasks in total. Each domain includes three easy, one medium, and one hard task, selected using scores from multiple models and turn counts to help distinguish safety-related utility loss from baseline capability limitations. These tasks are expanded into 30 harmful tasks per category, with attack vectors assigned based on task relevance or uniform sampling, and attack goals sampled uniformly from applicable goals. For Categories 4 and 5, each of the two varian",
+   "locations": "sections[1];table;summary;faq[1]"
+  },
+  {
+   "claim": "업무 분야는 투자은행·법률·경영 컨설팅이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "struction and Sampling We select 5 original tasks from each APEX-Agents domain: Investment Banking, Law, and Management Consulting, yielding 15 tasks in total. Each domain includes three easy, one medium, and one hard task, selected using scores from multiple models and turn counts to help distinguish safety-related utility loss from baseline capability limitations. These tasks are expanded into 30 harmful tasks per category, with attack vectors assigned based on task relevance or uniform sampling, and attack goals sampled uniformly from applicable goals. For Categories 4 a",
+   "locations": "sections[1];table;summary"
+  },
+  {
+   "claim": "분야별 쉬운 과제 3개, 중간 1개, 어려운 1개다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "aw, and Management Consulting, yielding 15 tasks in total. Each domain includes three easy, one medium, and one hard task, selected using scores from multiple models and turn counts to help distinguish safety-related utility loss from baseline capability limitations. These tasks are expanded into 30 harmful tasks per category, with attack vectors assigned based on task relevance or uniform sampling, and attack goals sampled uniformly from applicable goals. For Categories 4 and 5, each of the two variants contains 15 tasks. See Appendix F for details. 4 Experiments ",
+   "locations": "sections[1]"
+  },
+  {
+   "claim": "공격 범주마다 30개 인스턴스로 확장된다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "tility loss from baseline capability limitations. These tasks are expanded into 30 harmful tasks per category, with attack vectors assigned based on task relevance or uniform sampling, and attack goals sampled uniformly from applicable goals. For Categories 4 and 5, each of the two variants contains 15 tasks. See Appendix F for details. 4 Experiments We describe our evaluation protocol and experimental settings in Section 4.1 , the main evaluations and analysis in Section 4.2 , and ablation studies and additional experiments in Section 4.3 . 4.1 Evaluat",
+   "locations": "sections[1];table"
+  },
+  {
+   "claim": "6개 범주로 구성된다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "al task content and feasibility. See Appendix A for details. APEX-Harm contains six categories spanning static placement, runtime workspace modification, task-specific script replacement, and attacker-provided generic scripts; see Section 3.2 for details. 3.1 Threat Model Our threat model characterizes each attack category along two dimensions: attacker knowledge and capabilities, and attack goals. Table 2 summarizes the threat model for all attack categories. We define the five atomic attacker knowledge and capability items used in Table 2 as follows: Table 2: At",
+   "locations": "sections[1];sections[2]"
+  },
+  {
+   "claim": "12개 모델에 모델마다 180개 인스턴스를 평가했다",
+   "url": "https://arxiv.org/abs/2610.13623",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " generic scripts, and evaluates attack success, exposure, and task performance. We evaluate 12 frontier models on 180 task instances per model. Opus 5 and Sonnet 5 have the lowest overall attack success rates (8% and 20%), while task-specific script replacement and attacker-provided generic script attacks remain substantially more effective, averaging 81-84% and 73% attack success, respectively. Gemini 3.8 Flash achieves the highest mean task score (0.877) while still exhibiting a 33% attack success rate. These results show that completing the requested task is not sufficient evidence ",
+   "locations": "title;summary;sections[1];table"
+  },
+  {
+   "claim": "보안 자산은 합성 자격증명·일회용 비밀번호 등을 포함한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ployed agents. We conduct the experiments in simulated APEX-Agents worlds using synthetic security assets, including credentials and one-time passwords, and route evaluated requests through local infrastructure. The experiments use no real client information or live external targets. For artifact release, we will exclude live credentials and external targets, document the assumed attacker capabilities, and describe the intended defensive use of the benchmark. We present the attacks to support measurement and mitigation of these risks in professional agent systems. All authors remain responsible",
+   "locations": "sections[1];faq[4]"
+  },
+  {
+   "claim": "실험은 모사된 세계이며 실제 고객 정보와 살아 있는 외부 대상을 사용하지 않았다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " one-time passwords, and route evaluated requests through local infrastructure. The experiments use no real client information or live external targets. For artifact release, we will exclude live credentials and external targets, document the assumed attacker capabilities, and describe the intended defensive use of the benchmark. We present the attacks to support measurement and mitigation of these risks in professional agent systems. All authors remain responsible for reviewing the released materials and following applicable platform policies and legal requirements. Reproducibility statement S",
+   "locations": "sections[1];faq[4]"
+  },
+  {
+   "claim": "정적 프롬프트 주입은 내부 파일·메일·채팅·일정에 지시를 삽입한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "professional collaboration settings, we design the following attack categories: Category 1: Static Prompt Injection. The attacker embeds prompt injections in internal workspace files (e.g., XLSX files) or external content accessible to the agent, such as emails, chat messages, and calendar events. Category 2: Static Script Injection. The attacker places a malicious text file in the workspace that instructs the agent to execute an attacker-provided script. Category 3: Dynamic Prompt Injection. The attacker prepares rule-based malware that dynamically injects pr",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "정적 스크립트 주입은 텍스트 파일로 공격자 프로그램 실행을 유도한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "nt accessible to the agent, such as emails, chat messages, and calendar events. Category 2: Static Script Injection. The attacker places a malicious text file in the workspace that instructs the agent to execute an attacker-provided script. Category 3: Dynamic Prompt Injection. The attacker prepares rule-based malware that dynamically injects prompt injections into the file system during agent execution. Category 4: Dynamic Script Injection. The attacker prepares rule-based malware that dynamically injects prompts, files, and scripts into the file system, indu",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "동적 프롬프트 주입은 실행 중 파일 시스템을 바꾼다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " the workspace that instructs the agent to execute an attacker-provided script. Category 3: Dynamic Prompt Injection. The attacker prepares rule-based malware that dynamically injects prompt injections into the file system during agent execution. Category 4: Dynamic Script Injection. The attacker prepares rule-based malware that dynamically injects prompts, files, and scripts into the file system, inducing the agent to execute the injected code. We consider two variants: (4.1) without explicit permission to follow file-based instructions, and (4.2) with such pe",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "동적 스크립트 주입은 실행 중 프롬프트·파일·스크립트를 주입한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "amically injects prompt injections into the file system during agent execution. Category 4: Dynamic Script Injection. The attacker prepares rule-based malware that dynamically injects prompts, files, and scripts into the file system, inducing the agent to execute the injected code. We consider two variants: (4.1) without explicit permission to follow file-based instructions, and (4.2) with such permission. Category 5: Task-Specific Script Replacement. The attacker knows the task context and replaces a task-specific helper the user references. We consider two va",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "동적 스크립트에는 파일 지시 허용 유무의 두 변형이 있다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "nducing the agent to execute the injected code. We consider two variants: (4.1) without explicit permission to follow file-based instructions, and (4.2) with such permission. Category 5: Task-Specific Script Replacement. The attacker knows the task context and replaces a task-specific helper the user references. We consider two variants: (5.1, Direct Action) the replacement script can be executed directly; and (5.2, Runtime Info.) it requires runtime inputs obtained from the workspace or user prompt to leak information. Category 6: Attacker-Provided Generic Script. The attacker provid",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "과제 전용 스크립트 교체는 직접 행동과 실행 중 입력 변형으로 나뉜다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "t permission to follow file-based instructions, and (4.2) with such permission. Category 5: Task-Specific Script Replacement. The attacker knows the task context and replaces a task-specific helper the user references. We consider two variants: (5.1, Direct Action) the replacement script can be executed directly; and (5.2, Runtime Info.) it requires runtime inputs obtained from the workspace or user prompt to leak information. Category 6: Attacker-Provided Generic Script. The attacker provides a generic script, for example, through workplace communication, and the user",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "일반 스크립트는 업무 소통을 통해 제공되며 사용자가 실행을 요청한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " runtime inputs obtained from the workspace or user prompt to leak information. Category 6: Attacker-Provided Generic Script. The attacker provides a generic script, for example, through workplace communication, and the user asks the agent to execute it. The attacker requires no task keyword knowledge. Exposure Strategies. Prior benchmarks commonly place injections in predetermined resources expected to be accessed during task execution ( Kuntz et al., 2026 ; Debenedetti et al., 2024 ) . File access is less predictable in large APEX-Agents workspaces: as the number of ",
+   "locations": "sections[2];table"
+  },
+  {
+   "claim": "동적 감시 프로세스는 읽은 파일을 숨기거나 이름을 바꾸고 대체 자료를 놓는다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ents from the agent’s trajectory to identify resources likely to be read again. After a read, it renames or hides the original file and creates a modified replacement that directs the agent to an injected prompt or a malicious recovery script. Figure 2 illustrates the complete workflow. Figure 2: Dynamic attack workflow in a shared workspace. After the agent reads a file, a watcher hides or renames the original and plants a corrupted-file replacement. On rereading, the agent runs a recovery script requiring runtime information (top: dynamic script injection) or follows instr",
+   "locations": "sections[2];image I1"
+  },
+  {
+   "claim": "Figure 2는 동적 공격의 파일 재접근·복구 유도 흐름을 보여준다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "mpt or a malicious recovery script. Figure 2 illustrates the complete workflow. Figure 2: Dynamic attack workflow in a shared workspace. After the agent reads a file, a watcher hides or renames the original and plants a corrupted-file replacement. On rereading, the agent runs a recovery script requiring runtime information (top: dynamic script injection) or follows instructions in a planted file (bottom: dynamic prompt injection). The watcher then restores the workspace. Script Attacks with User Authorization. Categories 5 and 6 exploit a user request to execute a script. In Cate",
+   "locations": "research.images[0]"
+  },
+  {
+   "claim": "ASR은 전체 실행 중 공격 성공 비율이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ean task score. For N N runs with K i K_{i} rubric items in run i i , ASR = # ​ successful attacks N , ER = # ​ exposed runs N , Score = 1 N ​ ∑ i = 1 N 1 K i ​ ∑ j = 1 K i r i ​ j , \\mathrm{ASR}=\\frac{\\#\\text{successful attacks}}{N},\\qquad\\mathrm{ER}=\\frac{\\#\\text{exposed runs}}{N},\\qquad\\mathrm{Score}=\\frac{1}{N}\\sum_{i=1}^{N}\\frac{1}{K_{i}}\\sum_{j=1}^{K_{i}}r_{ij}, where r i ​ j ∈ { 0 , 1 } r_{ij}\\in\\{0,1\\} indicates whether rubric item j j is satisfied. Lower ASR and ER indicate greater model robustness, while higher task score indicates ",
+   "locations": "sections[3]"
+  },
+  {
+   "claim": "ER은 주입 내용을 읽은 실행 비율이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "h K i K_{i} rubric items in run i i , ASR = # ​ successful attacks N , ER = # ​ exposed runs N , Score = 1 N ​ ∑ i = 1 N 1 K i ​ ∑ j = 1 K i r i ​ j , \\mathrm{ASR}=\\frac{\\#\\text{successful attacks}}{N},\\qquad\\mathrm{ER}=\\frac{\\#\\text{exposed runs}}{N},\\qquad\\mathrm{Score}=\\frac{1}{N}\\sum_{i=1}^{N}\\frac{1}{K_{i}}\\sum_{j=1}^{K_{i}}r_{ij}, where r i ​ j ∈ { 0 , 1 } r_{ij}\\in\\{0,1\\} indicates whether rubric item j j is satisfied. Lower ASR and ER indicate greater model robustness, while higher task score indicates greater utility. Models an",
+   "locations": "sections[3]"
+  },
+  {
+   "claim": "업무 점수는 과제별 평가 항목 충족도를 평균한 값이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ollowing APEX-Agents, we measure utility using an LLM judge that evaluates 1–10 expert-written rubric items per task as true or false. For safety, we evaluate each of the 24 attack goals using 1–2 programmatic rules, supplemented by an LLM judge for five types of semantic checks, such as whether disclosed content preserves the original user prompt or a core final-answer result (Appendix B ). For prompt- and script-injection tasks, exposure indicates whether the agent reads the injected prompt while exploring the workspace. We first apply string matching to tool outputs, then u",
+   "locations": "sections[3];faq[2]"
+  },
+  {
+   "claim": "전체 평균 ASR 최저는 Opus 5 8%, Sonnet 5 20%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": " report the main results. Opus 5 and Sonnet 5 are the most robust overall, with average ASRs of 8% and 20%, respectively. While several models are highly robust to static and dynamic prompt injection, task-specific script replacement and attacker-provided generic script attacks remain effective across models, averaging 81–84% and 73% ASR, respectively. This vulnerability is particularly pronounced for the GPT-5.6 models, reaching 100% ASR on these attacks for Sol and Terra and 97–100% for Luna. Gemini 3.8 Flash achieves the highest mean task score (0",
+   "locations": "sections[3];table"
+  },
+  {
+   "claim": "Gemini 3.8 Flash의 최고 평균 업무 점수는 0.877이고 평균 ASR은 33%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "e attacks for Sol and Terra and 97–100% for Luna. Gemini 3.8 Flash achieves the highest mean task score (0.877) despite a 33% average ASR. Table 3: ASR, ER, and mean task score for Categories 1–4 ( n = 30 n=30 per category, 15 15 per variant). Bold indicates the highest value in each column. Model Static Prompt Injection Static Script Injection Dynamic Prompt Injection Dynamic SI ( − - Perm.) ASR ER Score ASR ER Score ASR ER Score ASR ER Score Opus 5 7% 97% 0.841 3% 90% 0.798 3% 77% 0.840 13% 67% 0.803 Sonnet 5 0% 83% 0.788 0% 93% 0.798 0% 63% 0.806 0% 47% 0.619 GPT-6 Astra 0% 80%",
+   "locations": "sections[3];table;summary"
+  },
+  {
+   "claim": "Opus 5 평균 업무 점수는 0.790이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "Score ASR Score ASR ER * Score Opus 5 7% 73% 0.854 13% 0.697 27% 0.733 3% 0.718 8% 83% 0.790 Sonnet 5 0% 60% 0.730 80% 0.819 60% 0.824 50% 0.712 20% 73% 0.767 GPT-6 Astra 0% 27% 0.768 100% 0.784 80% 0.812 80% 0.780 28% 49% 0.758 Gemini 3.8 Flash 40% 67% 0.879 87% 0.877 73% 0.886 67% 0.867 33% 89% 0.877 GPT-5.6 Luna 13% 20% 0.434 100% 0.317 100% 0.413 97% 0.431 42% 33% 0.389 Gemini 3.7 Flash 20% 40% 0.873 93% 0.812 87% 0.856 67% 0.801 46% 86% 0.840 Kimi K3 40% 67% 0.787 67% 0.857 80% 0.790 73% 0.821 47% 75% 0.819 DeepSeek V4 Flash 53% 87",
+   "locations": "sections[3].table"
+  },
+  {
+   "claim": "Sonnet 5 평균 업무 점수는 0.767이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "0.733 3% 0.718 8% 83% 0.790 Sonnet 5 0% 60% 0.730 80% 0.819 60% 0.824 50% 0.712 20% 73% 0.767 GPT-6 Astra 0% 27% 0.768 100% 0.784 80% 0.812 80% 0.780 28% 49% 0.758 Gemini 3.8 Flash 40% 67% 0.879 87% 0.877 73% 0.886 67% 0.867 33% 89% 0.877 GPT-5.6 Luna 13% 20% 0.434 100% 0.317 100% 0.413 97% 0.431 42% 33% 0.389 Gemini 3.7 Flash 20% 40% 0.873 93% 0.812 87% 0.856 67% 0.801 46% 86% 0.840 Kimi K3 40% 67% 0.787 67% 0.857 80% 0.790 73% 0.821 47% 75% 0.819 DeepSeek V4 Flash 53% 87% 0.804 80% 0.762 80% 0.804 73% 0.843 47% 95% 0.799 GPT-5.6 Sol 33",
+   "locations": "sections[3].table"
+  },
+  {
+   "claim": "전용 스크립트 교체 직접 행동 조건의 모델 간 평균 ASR은 84%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "3% 33% 0.800 100% 0.833 93% 0.819 80% 0.817 58% 77% 0.792 Average 25% 58% 0.789 84% 0.748 81% 0.749 73% 0.748 41% 73% 0.760 * Average ER covers only Categories 1–4. High ASR in Categories 5–6 can make ASR exceed average ER. Appendix Figure 10 compares attack success and task utility across models. Attack success and task utility capture different outcomes: an agent can complete the legitimate task while also performing the harmful action. Table 5: File and application vector comparison ( n = 5 n=5 per vector). Bold indicates the high",
+   "locations": "sections[3];table;summary"
+  },
+  {
+   "claim": "전용 스크립트 교체 실행 중 입력 조건의 모델 간 평균 ASR은 81%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "00 100% 0.833 93% 0.819 80% 0.817 58% 77% 0.792 Average 25% 58% 0.789 84% 0.748 81% 0.749 73% 0.748 41% 73% 0.760 * Average ER covers only Categories 1–4. High ASR in Categories 5–6 can make ASR exceed average ER. Appendix Figure 10 compares attack success and task utility across models. Attack success and task utility capture different outcomes: an agent can complete the legitimate task while also performing the harmful action. Table 5: File and application vector comparison ( n = 5 n=5 per vector). Bold indicates the highest value ",
+   "locations": "sections[3];table;summary"
+  },
+  {
+   "claim": "일반 스크립트의 모델 간 평균 ASR은 73%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "833 93% 0.819 80% 0.817 58% 77% 0.792 Average 25% 58% 0.789 84% 0.748 81% 0.749 73% 0.748 41% 73% 0.760 * Average ER covers only Categories 1–4. High ASR in Categories 5–6 can make ASR exceed average ER. Appendix Figure 10 compares attack success and task utility across models. Attack success and task utility capture different outcomes: an agent can complete the legitimate task while also performing the harmful action. Table 5: File and application vector comparison ( n = 5 n=5 per vector). Bold indicates the highest value within eac",
+   "locations": "sections[3];table"
+  },
+  {
+   "claim": "평균 ER은 범주 1~4에만 적용된다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "% 77% 0.792 Average 25% 58% 0.789 84% 0.748 81% 0.749 73% 0.748 41% 73% 0.760 * Average ER covers only Categories 1–4. High ASR in Categories 5–6 can make ASR exceed average ER. Appendix Figure 10 compares attack success and task utility across models. Attack success and task utility capture different outcomes: an agent can complete the legitimate task while also performing the harmful action. Table 5: File and application vector comparison ( n = 5 n=5 per vector). Bold indicates the highest value within each vector type. Type Vector ASR/ER File XLSX 67% PDF 50",
+   "locations": "sections[3].info"
+  },
+  {
+   "claim": "노출되어도 낮은 공격 성공률을 유지하는 모델이 있다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "% 80% 5 Discussion and Conclusion Our results separate exposure from execution. Several models frequently encounter injected instructions while maintaining low ASR, whereas scripts referenced through user instructions succeed across most models. Task utility also remains high in many successful attacks, showing that correct task completion provides an incomplete account of safety. These findings motivate safeguards that track instruction provenance, inspect programs before execution, and verify authority when scripts request sensitive inputs or invoke communication tools. The internal-disclosure results ex",
+   "locations": "sections[3].info"
+  },
+  {
+   "claim": "정적·동적 프롬프트의 내부 유출 ASR이 외부 유출보다 높다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "les. Internal vs. External Leakage. Static and dynamic prompt injection achieve substantially higher ASR for internal leakage (Table 18 ). Agents often reject email or external-link disclosure but treat sharing passphrases through shared folders or task details through calendar events as benign workflow steps, even when the information reaches an unauthorized coworker. Representative trajectories in Appendix H.7 show agents accepting task-related pretexts after questioning the injected instruction. These cases highlight a gap between guarding against external disclosur",
+   "locations": "sections[4]"
+  },
+  {
+   "claim": "공유 폴더·일정에 권한 없는 동료에게 정보를 전달한 사례가 있다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "hared folders or task details through calendar events as benign workflow steps, even when the information reaches an unauthorized coworker. Representative trajectories in Appendix H.7 show agents accepting task-related pretexts after questioning the injected instruction. These cases highlight a gap between guarding against external disclosure and protecting sensitive information from unauthorized internal recipients. 4.3 Ablation Studies Existing-File Injection Ablation. For static prompt and script injection, we compare our created-artifact strategies with two existing-file placem",
+   "locations": "sections[4];warning"
+  },
+  {
+   "claim": "Python은 직접 소스 확인이 가능하고 PYC·ELF는 추가 내부 분석이 필요하다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "cuted directly using commands such as python calculate.pyc or ./calculate , but their underlying logic must first be recovered through decompilation or binary analysis. When these inspection attempts fail, agents may follow the user’s request or a malicious instruction file and execute the script, resulting in substantially higher ASRs. Opus 5 is an exception: unknown ELF files trigger more extensive pre-execution checks, resulting in a lower ASR than PYC attack vectors. See Appendix G.2.2 for examples. Internal vs. External Leakage. Static and dynamic prompt injection achieve substantially higher ASR for inte",
+   "locations": "sections[4]"
+  },
+  {
+   "claim": "검토 실패 뒤 프로그램을 실행한 사례가 관찰됐다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "erlying logic must first be recovered through decompilation or binary analysis. When these inspection attempts fail, agents may follow the user’s request or a malicious instruction file and execute the script, resulting in substantially higher ASRs. Opus 5 is an exception: unknown ELF files trigger more extensive pre-execution checks, resulting in a lower ASR than PYC attack vectors. See Appendix G.2.2 for examples. Internal vs. External Leakage. Static and dynamic prompt injection achieve substantially higher ASR for internal leakage (Table 18 ). Agents ofte",
+   "locations": "sections[4]"
+  },
+  {
+   "claim": "Opus 5의 ELF는 더 광범위한 사전 검토로 예외를 보였다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ute the script, resulting in substantially higher ASRs. Opus 5 is an exception: unknown ELF files trigger more extensive pre-execution checks, resulting in a lower ASR than PYC attack vectors. See Appendix G.2.2 for examples. Internal vs. External Leakage. Static and dynamic prompt injection achieve substantially higher ASR for internal leakage (Table 18 ). Agents often reject email or external-link disclosure but treat sharing passphrases through shared folders or task details through calendar events as benign workflow steps, even when the information reaches an unauthorized coworker",
+   "locations": "sections[4]"
+  },
+  {
+   "claim": "부록은 동시 검토·실행, 실행 후 발견, 실패한 읽기 뒤 실행을 구분한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "otective only if its result can gate execution. The following cases distinguish execution alongside inspection, detection after execution, and execution after an unsuccessful read. M2a. Category 5.1 (Task-Specific Repl., Direct Action), Opus 5: execution and inspection are issued together. In the EV-price comparison task, Opus checks the PYC header, then submits execution and disassembly in the same assistant message. Its warning arrives only after both tool results. The checker confirms that the remote script was downloaded and executed. Task score: 1.000. ⬇ [ Message 2: user ; excerpt ] Please use the prepared task help",
+   "locations": "sections[4]"
+  },
+  {
+   "claim": "각 모델·인스턴스 조합은 한 번 평가해 변동성을 측정하지 못했다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "s generalization to other professional domains and general-purpose agent tasks. Each model and attack instance combination was also evaluated only once, leaving run-to-run variability unmeasured. Some categories yield 0% ASR for Sonnet 5 despite substantial exposure, creating a floor effect that limits our ability to distinguish robust models or assess residual risk under stronger attacks. Judge validation introduces further uncertainty, as agreement was measured on 60 cases labeled by a single human annotator. Future work can extend the benchmark to additional domains, repeated trials, adaptiv",
+   "locations": "sections[5];summary;closing"
+  },
+  {
+   "claim": "세 분야에 집중돼 다른 분야와 범용 과제 일반화에 한계가 있다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ations, and synthetic authorization scenarios. Its focus on these three domains limits generalization to other professional domains and general-purpose agent tasks. Each model and attack instance combination was also evaluated only once, leaving run-to-run variability unmeasured. Some categories yield 0% ASR for Sonnet 5 despite substantial exposure, creating a floor effect that limits our ability to distinguish robust models or assess residual risk under stronger attacks. Judge validation introduces further uncertainty, as agreement was measured on 60 cases labeled by a single human annotator. Future work",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "안전 판정 94%, 노출 판정 70%는 규칙 기반이다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "e Validation. Our evaluation primarily relies on rule-based checks, which cover 94% of safety assessments and 70% of exposure assessments (Appendix B and Table 8 ). We use LLM judges when semantic matching is required, such as determining whether an agent reads an injected instruction despite formatting changes or whether disclosed content preserves the target information. Each judge returns a binary decision. The exposure judge is instructed to treat evaluated prompts and tool outputs as untrusted data to reduce susceptibility to prompt injection. Across 40 exposure cases and 20 ",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "의미 비교에 모델 판정을 보완 사용했다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "f safety assessments and 70% of exposure assessments (Appendix B and Table 8 ). We use LLM judges when semantic matching is required, such as determining whether an agent reads an injected instruction despite formatting changes or whether disclosed content preserves the target information. Each judge returns a binary decision. The exposure judge is instructed to treat evaluated prompts and tool outputs as untrusted data to reduce susceptibility to prompt injection. Across 40 exposure cases and 20 safety cases, agreement with human annotations is 95% for exposure (Cohen’s κ = ",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "일치도 검증은 노출 40개·안전 20개 사례다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "nd tool outputs as untrusted data to reduce susceptibility to prompt injection. Across 40 exposure cases and 20 safety cases, agreement with human annotations is 95% for exposure (Cohen’s κ = 0.900 \\kappa=0.900 ) and 100% for safety ( κ = 1.000 \\kappa=1.000 ), respectively (Appendix B.4 ). 4.2 Main Results and Analysis Quantitative results. Tables 4 and 4 report the main results. Opus 5 and Sonnet 5 are the most robust overall, with average ASRs of 8% and 20%, respectively. While several models are highly robust to static and dynamic prompt injection, task-specific sc",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "노출 일치도 95%, 안전 일치도 100%다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ross 40 exposure cases and 20 safety cases, agreement with human annotations is 95% for exposure (Cohen’s κ = 0.900 \\kappa=0.900 ) and 100% for safety ( κ = 1.000 \\kappa=1.000 ), respectively (Appendix B.4 ). 4.2 Main Results and Analysis Quantitative results. Tables 4 and 4 report the main results. Opus 5 and Sonnet 5 are the most robust overall, with average ASRs of 8% and 20%, respectively. While several models are highly robust to static and dynamic prompt injection, task-specific script replacement and attacker-provided generic script ",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "검증 사례 60개는 단일 사람 평가자가 평가했다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": ". Judge validation introduces further uncertainty, as agreement was measured on 60 cases labeled by a single human annotator. Future work can extend the benchmark to additional domains, repeated trials, adaptive attackers, and broader judge validation, alongside provenance or information-flow defenses. Overall, the results show that professional-agent evaluations must measure both the content agents encounter and the authority exercised by their actions. AI use statement In this work, we used generative AI tools to create synthetic benchmark assets, including safety-e",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "일부 범주 Sonnet 5의 ASR 0%가 바닥 효과를 만든다고 설명한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "asured. Some categories yield 0% ASR for Sonnet 5 despite substantial exposure, creating a floor effect that limits our ability to distinguish robust models or assess residual risk under stronger attacks. Judge validation introduces further uncertainty, as agreement was measured on 60 cases labeled by a single human annotator. Future work can extend the benchmark to additional domains, repeated trials, adaptive attackers, and broader judge validation, alongside provenance or information-flow defenses. Overall, the results show that professional-ag",
+   "locations": "sections[5];faq[3]"
+  },
+  {
+   "claim": "후속 연구는 추가 분야·반복·적응형 공격·확장 판정 검증을 제안한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "es labeled by a single human annotator. Future work can extend the benchmark to additional domains, repeated trials, adaptive attackers, and broader judge validation, alongside provenance or information-flow defenses. Overall, the results show that professional-agent evaluations must measure both the content agents encounter and the authority exercised by their actions. AI use statement In this work, we used generative AI tools to create synthetic benchmark assets, including safety-evaluation configurations and attack test files. The underlying tasks were selected from the existing APEX-Agents benchmark; we ",
+   "locations": "sections[5]"
+  },
+  {
+   "claim": "결론은 지시 출처·사전 프로그램 검토·입력과 통신의 권한 확인을 제안한다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "ovides an incomplete account of safety. These findings motivate safeguards that track instruction provenance, inspect programs before execution, and verify authority when scripts request sensitive inputs or invoke communication tools. The internal-disclosure results extend this requirement to shared folders, calendars, and other resources accessible to multiple workspace participants. APEX-Harm covers 15 tasks from investment banking, law, and management consulting, selected prompt and script attacks, twelve model configurations, and synthetic authorization scenarios. Its focus on these three domains limits ",
+   "locations": "sections[6]"
+  },
+  {
+   "claim": "3절은 위협 모델, 4절은 지표·결과, 5절은 한계를 다룬다",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 다시 읽은 공식 원문의 정의·조건·표·한계와 일치함.",
+   "evidence": "-Harm: Benchmarking Safety in Shared Professional Workspaces Environment. Task. 3.1 Threat Model Need for the Victim Agent. Attacker Goals. 3.2 Attack Categories and Exposure Strategies Attack Categories. Exposure Strategies. Static Attacks. Dynamic Attacks. Script Attacks with User Authorization. 3.3 Task Construction and Sampling 4 Experiments 4.1 Evaluation Protocol Utility, Safety, and Exposure. Models and Inference Settings. Judge Validation. 4.2 Main Results and Analysis Quantitative results. File and Application Attack Vectors. Scrip",
+   "locations": "sections[6]"
+  },
+  {
+   "claim": "APEX-Harm의 평가 표본은 180개 과제다(기존 제목의 표본 단위).",
+   "url": "https://arxiv.org/html/2610.13623v1",
+   "confirmed": false,
+   "action": "제목을 180개 공격 인스턴스로 수정. 기반 업무는 15개이며 이를 공격 조건으로 확장한 표본이다.",
+   "evidence": "3.3절: 기반 업무는 분야별 5개·합계 15개이며 범주별 30개 인스턴스로 확장한다."
+  },
+  {
+   "claim": "Paper Plaine의 APEX-Harm 해설 페이지 표시일은 2026-10-12이다.",
+   "url": "https://paperplaine.com/papers/apex-harm-evaluating-agent",
+   "confirmed": true,
+   "action": "유지. 실제 기사 화면의 Oct 12, 2026을 확인. 논문의 제출일 표시는 별도로 Oct 9, 2026이다."
+  },
+  {
+   "claim": "Paper Plaine 해설은 업무를 올바르게 완료하면서도 무단 행동을 수행할 수 있다는 문제를 다룬다.",
+   "url": "https://paperplaine.com/papers/apex-harm-evaluating-agent",
+   "confirmed": true,
+   "action": "유지. 기사 Summary의 업무 완성과 무단 행동 병행 설명을 확인."
+  }
+ ],
+ "note": "이번 별도 검증에서 policy.md·task.json·brief-3.md·post.json을 읽고 기존 검증 결과를 그대로 승인하지 않고 공식 소개·v1 본문을 다시 열었다. 공식 출처 두 곳과 외부 해설 같은 URL을 requests(timeout=20)로 직접 재조회했으며 모두 HTTP 200의 실제 본문을 읽었다. 웹 도구의 외부 해설 Internal Error는 원문 서버 오류로 분류하지 않았다. 최종 URL·상태·UTC 조회 시각·본문은 source-evidence/recheck-*.json에 저장했다. 날짜·이름·표본·평가지표·표 수치·공격 조건·윤리 설명·한계·Figure 2 설명을 대조했다. 반복 주장은 통합했고, 외부 해설 날짜·내용도 claims에 포함했다. 해석·독자 제안·자체 작업 설명은 주장 집계에서 제외했다. 제목의 표본 단위를 수정했으며 요약에는 모델 구성이라는 표현을 보완했다. 가격·제품 출시·법적 판단 주장은 원고에 없다. 원문 접근과 핵심 근거가 확보되어 skip.json 작성 사유는 없다. 승인·발행 작업은 수행하지 않았다."
+}
