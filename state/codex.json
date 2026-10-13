@@ -1,120 +1,26 @@
 {
  "attempts": {
-  "20261013:daily:AI 도구": {
-   "at": "2026-10-13T20:08:44+09:00",
-   "count": 5,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🖥 OpenScreen 2: AI 에이전트 영상 편집 사용 가이드",
-     "topic": "OpenScreen 2 공개 — MCP를 통한 AI 에이전트 영상 편집",
-     "source_url": "https://getopenscreen.com/",
-     "reason": "OpenScreen 2의 공식 제품 원문 https://getopenscreen.com/ 을 실제로 읽었으나 페이지에 발표일이 없어 대표 원문 발표일이 2026-10-10~2026-10-13 KST라는 조건을 확인하지 못했습니다. Product Hunt Awards는 2026-10-11을, StartupCorners 소개는 2026-10-12 출시일을 표시하여 날짜가 일치하지 않습니다. 이를 공식 발표일로 대체하지 않았습니다. 공식 홈페이지의 v2 안내는 블로그로 연결되는 경로여서 사용자 지시의 블로그 접속 금지에 따라 열지 않았고"
-    },
-    {
-     "title": "🛠 Paperclip 외부 AI 비서 연결 업데이트 사용 가이드",
-     "topic": "Paperclip v2026.1012.0 — 외부 AI 비서 연결 및 업무 위임 업데이트",
-     "source_url": "https://paperclip.ing/changelog/v2026.1012.0/",
-     "reason": "Paperclip v2026.1012.0 공식 변경 기록을 HTTP 200으로 직접 읽어 2026-10-12 발표일과 외부 AI 비서 MCP 연결 업데이트를 확인했습니다. 그러나 2026-10-10~2026-10-13 KST 안에 같은 신규 업데이트를 다룬 독립 매체·커뮤니티 원문을 확인하지 못했습니다. NewReleases 검색 결과는 공식 릴리스 내용의 재게시이며, 직접 읽은 Promovaweb 페이지는 버전 목록이어서 독립적인 이슈 보도로 채택하지 않았습니다. 검색에 나온 개인 블로그 및 Tenkai 블로그는 사용자 지시의 블"
-    },
-    {
-     "title": "🖥 Voyager 창작 앱 제어 에이전트 사용 가이드",
-     "topic": "Voyager 창작 소프트웨어 제어 AI 에이전트 공개",
-     "source_url": "https://voyager.so/",
-     "reason": "AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으며, 공식 릴리스 링크는 git 접속 금지에"
-    },
-    {
-     "title": "🛠 OpenCode v1.19.0 사용 가이드: 2 업그레이드와 수동 업데이트",
-     "topic": "OpenCode v1.19.0 — OpenCode 2 업그레이드 경로와 수동 업데이트 전환",
-     "source_url": "https://dev.opencode.ai/changelog",
-     "reason": "OpenCode v1.19.0을 새 후보로 선정했습니다. 웹 도구로 공식 변경 기록의 2026-10-11 발표일과 업그레이드·수동 업데이트 내용을 실제 읽었고, Automater Newsroom의 2026-10-11 독립 기사도 읽었습니다. 그러나 추가 Python urllib 공개 원문 조회(제한 시간 20초, 로그인·쿠키·프록시 없음)에서 대표 공식 URL이 HTTP 403 Forbidden을 반환했습니다. 웹 도구 오류를 서버 오류로 추정한 것이 아니라 실제 HTTP 조회 결과입니다. policy.md의 어느 단계든 공식 출처"
-    },
-    {
-     "title": "🛠 GWI AI Intelligence 사용 가이드: 소비자 데이터 기반 업무 흐름 총정리",
-     "topic": "GWI Launches New Agentic Portfolio — AI Intelligence layer와 Ad-Selling Workflow",
-     "source_url": "https://www.globenewswire.com/news-release/2026/10/12/3379014/0/en/gwi-launches-new-agentic-portfolio.html",
-     "reason": "GWI AI Intelligence layer·Ad-Selling Workflow를 새 후보로 선정했습니다. 웹 조회 도구에서 GWI 명의 GlobeNewswire 공식 발표 원문과 2026-10-12 발표일을 실제 읽었습니다. 그러나 추가 urllib 공개 HTTP 조회(20초 제한, 로그인·쿠키·프록시·차단 우회 없음)에서 대표 원문이 HTTP 403 Forbidden을 반환했습니다. GWI 공식 제품 페이지는 HTTP 200으로 본문을 읽었으나 대표 발표 원문 조회 실패를 대체하지 않았습니다. policy.md에 따라 이 세션"
-    },
-    {
-     "title": "🛠 Aptos AI 개발 도구 사용 가이드: MCP·문서 피드·Agent Skills",
-     "topic": "Aptos Move 개발용 MCP·LLMs.txt·Agent Skills 도구 묶음",
-     "source_url": "https://aptos.dev/build/ai/aptos-mcp",
-     "reason": "AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식 발표 원문 주소·발표일을 제공하지"
-    },
-    {
-     "title": "🖥 Agibot 상시 실행 Mac AI 에이전트 사용 가이드",
-     "topic": "Agibot 개인 API 키 기반 macOS 상시 실행 AI 에이전트 공개",
-     "source_url": "https://agibot.sh/",
-     "reason": "Agibot 개인 API 키 기반 macOS 상시 실행 AI 에이전트를 이전 실패 후보와 다른 새 후보로 candidate.json에 먼저 기록하고 조사했습니다. 대표 공식 원문 https://agibot.sh/ 은 웹 도구에서 not accessible이었으나, 동일 공개 URL을 urllib로 한 번 조회(20초 제한, 로그인·쿠키·프록시·차단 우회 없음)하여 HTTP 200과 실제 제품 소개·FAQ 본문을 읽었습니다. 최종 URL·HTTP 상태·조회 시각·전체 HTML은 source-evidence/agibot.json에 보존"
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-10-13T20:19:00+09:00",
-   "next_retry_at": null
-  },
-  "20261013:daily:AI 논문 분석": {
-   "at": "2026-10-13T18:10:27+09:00",
-   "count": 4,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🧠 StudentSim 논문 분석: 개인별 학생 시뮬레이션과 AI 튜터 평가 총정리",
-     "topic": "Simulating student learning for better AI tutoring",
-     "source_url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
-     "reason": "선정 후보 StudentSim은 공식 소개 글이 2026-10-12에 게시되고 기간 내 독립 소개도 조회되었으나, 공식 논문 소개는 September 2026으로 표기하며 arXiv 제출 이력은 2026-09-01 v1만 확인됩니다. 2026-10-06 이후 새 논문 버전·후속 실험 발표를 확인하지 못했습니다. 소개 글 게시일을 논문 발표일로 대체하지 않으며 최신 논문 요건을 충족하지 않아 원고를 보류합니다. 공식 원문 조회는 성공했으므로 source_unavailable이 아닌 no_topic으로 분류합니다. policy.md의 "
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-10-13T18:24:48+09:00",
-   "next_retry_at": null
-  },
-  "20261013:daily:AI 뉴스 리뷰": {
-   "at": "2026-10-13T15:46:59+09:00",
-   "count": 3,
-   "status": "done",
-   "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-13T15:55:05+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261013:daily:AI 보안": {
-   "at": "2026-10-13T09:07:45+09:00",
+  "20261014:daily:AI 언어 모델": {
+   "at": "2026-10-14T07:15:23+09:00",
    "count": 1,
-   "status": "done",
-   "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-  },
-  "20261013:daily:AI 인사이트": {
-   "at": "2026-10-13T09:16:11+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-  },
-  "20261013:daily:AI 공모주 분석": {
-   "at": "2026-10-13T09:24:39+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "38476486172-1",
+  "at": "2026-10-14T07:15:23+09:00",
+  "expires": "2026-10-14T09:15:23+09:00",
+  "task": {
+   "day": "20261014",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "38476486172-1",
+   "at": "2026-10-14T07:15:23+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
