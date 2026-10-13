@@ -125,7 +125,12 @@
      "reason": "AI 보안 카테고리를 유지하고 이전 실패 후보(Anthropic 자기복제·BadEngram) 및 brief-5.md의 기발행 목록과 겹치지 않는 Salt Security의 2026-10-13 State of Agentic AI and API Security 2H 2026 발표를 candidate.json에 먼저 기록했습니다. 대표 공식 URL은 웹 도구 Internal Error 이후 동일 URL의 urllib 1회 조회(20초 제한)에서 HTTP 200을 반환했습니다. 공식 발표일과 조사 본문을 직접 읽고 source-eviden"
     }
    ],
-   "next_retry_at": "2026-10-14T08:21:49+09:00"
+   "next_retry_at": "2026-10-14T08:21:49+09:00",
+   "last_notified": {
+    "result": "skipped",
+    "kind": "source_unavailable",
+    "note": "다른 주제 재작성 2회 후 보류: AI 보안 카테고리를 유지하고 이전 실패 후보(Anthropic 자기복제·BadEngram) 및 brief-5.md의 기발행 목록과 겹치지 않는 Salt Security의 2026-10-13 State of Agentic AI and API Security 2H 2026 발표를 candidate.json에 먼저 기록했습니다. 대표 공식 URL은 웹 도구 Internal Error 이후 동일 URL의 urllib 1회 조회(20초 제한)에서 HTTP 200을 반환했습니다. 공식 발표일과 조사 본문을 "
+   }
   }
  },
  "lease": {},
