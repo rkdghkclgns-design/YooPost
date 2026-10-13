@@ -1,0 +1,54 @@
+{
+ "topic": "Plume Console 공개 — ISP 가입자 문제 조사·에이전트 배포·업무 시스템 연결",
+ "source_url": "https://www.plume.com/newsroom/plume-introduces-plume-console-to-empower-isps-to-build-an-agentic-workforce-that-improves-quality-of-outcomes-and-business-results",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "New Plume Console Multiplies ISP Business Results by Putting AI Agents to Work on Cost to Serve, Churn Reduction and Revenue Growth",
+   "url": "https://www.plume.com/newsroom/plume-introduces-plume-console-to-empower-isps-to-build-an-agentic-workforce-that-improves-quality-of-outcomes-and-business-results",
+   "publisher": "Plume",
+   "published": "2026-10-12",
+   "official": true,
+   "note": "별도 검증에서 공개 urllib 재조회 HTTP 200 본문 확인. 근거 파일: source-evidence/factcheck-S1.json"
+  },
+  {
+   "id": "S2",
+   "title": "Plume Console | AI-Powered Network Management for ISPs",
+   "url": "https://plume.ai/console",
+   "publisher": "Plume",
+   "published": null,
+   "official": true,
+   "note": "별도 검증에서 공개 urllib 재조회 HTTP 200 본문 확인. 근거 파일: source-evidence/factcheck-S2.json (공식 www 리다이렉트; 페이지 발표일 표시 없음)"
+  },
+  {
+   "id": "S3",
+   "title": "Plume Launches Console for ISP AI Agents",
+   "url": "https://dailyaibrief.com/news/plume-console-isp-ai-agents-luVgZLUR",
+   "publisher": "AI Brief",
+   "published": "2026-10-13",
+   "official": false,
+   "note": "별도 검증에서 공개 urllib 재조회 HTTP 200 본문 확인. 근거 파일: source-evidence/factcheck-S3.json"
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/6a7f25cc4d0d3ac6b0fda55e/6acd95847a8a56c6fdbc198a_intelligence%201.5x.png",
+   "page_url": "https://plume.ai/console",
+   "caption": "Plume Console 공식 제품 페이지의 INTELLIGENCE 영역 이미지",
+   "credit": "Plume",
+   "note": "이번 재조회에서 공식 HTML의 이미지 src와 INTELLIGENCE 영역을 확인. 이미지 내부 요소에 대한 기존 설명은 재검증하지 못해 삭제."
+  }
+ ],
+ "factcheck": {
+  "claims": 39,
+  "confirmed": 35,
+  "removed": [
+   "본문 개념도는 가정 기기와 게이트웨이 이후 와이파이 품질 영역을 묘사한다",
+   "텔레메트리는 장비와 서비스에서 수집하는 운영 데이터이며 단순 보고서 파일을 뜻하지 않는다",
+   "가드레일은 동작 범위를 제한하는 규칙이다",
+   "코호트는 공통 조건으로 묶은 대상 집단이다"
+  ],
+  "note": "별도 사실 검증 세션에서 원고 전체(제목·요약·표·FAQ·캡션 포함)의 외부 주장을 추출하고 반복 주장은 통합했다. 웹 조회 도구는 세 URL 모두 Internal Error였으며 원문 서버 HTTP 오류로 간주하지 않았다. 같은 공개 URL을 urllib로 각 1회, 제한 20초로 재조회해 모두 HTTP 200의 실제 본문을 읽었다. 조회 시각·최종 URL·HTTP 상태·HTML·추출 본문은 source-evidence/factcheck-S1.json~S3.json에 보존했다. S2는 공식 www 리다이렉트를 따랐다. 공식 게시일 2026-10-12와 dateline·행사 소개일 2026-10-13을 구분했고, AI Brief 2026-10-13 기사를 다시 확인했다. 가격·체험·배포 조건 미확인은 작업 설명으로 집계에서 제외하며 가격이 미공개라는 외부 사실로 단정하지 않는다. 시연 제안·자체 실행 여부·검증 단계 설명은 claims에서 제외했다. 기능·성과는 공급자 설명을 검증한 것으로 실제 실행·독립 성능·법적 준수를 인증한 것이 아니다. 이미지 내부 묘사와 출처에 정의되지 않은 일반 용어 설명 3개는 삭제 또는 제안으로 수정했다. 핵심 발표·기능·최신성 근거를 읽고 확인했으므로 skip 사유 없음. 다른 주제 교체·승인·발행은 수행하지 않았다."
+ }
+}
