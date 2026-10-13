@@ -1,0 +1,185 @@
+{
+ "claims": [
+  {
+   "claim": "TRA-2026-65 최초 공개일은 2026-10-09이다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Advisory Timeline: October 09, 2026 - Initial release."
+  },
+  {
+   "claim": "TRA-2026-64 최초 공개일은 2026-10-09이다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Advisory Timeline: October 09, 2026 - Initial release."
+  },
+  {
+   "claim": "TRA-2026-63 최초 공개일은 2026-10-09이다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Advisory Timeline: October 09, 2026 - Initial release."
+  },
+  {
+   "claim": "TRA-2026-65는 세션 탈취 문제로 High 분류다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. 제목, Risk Factor: High."
+  },
+  {
+   "claim": "TRA-2026-64는 디스크 소비 문제로 Medium 분류다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. 제목, Risk Factor: Medium."
+  },
+  {
+   "claim": "TRA-2026-63은 메모리 고갈 문제로 Medium 분류다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. 제목, Risk Factor: Medium."
+  },
+  {
+   "claim": "서버 Python 파서와 브라우저 파서는 백슬래시를 다르게 해석한다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Synopsis: urlparse와 브라우저 WHATWG 파서의 백슬래시 처리 차이."
+  },
+  {
+   "claim": "서버는 루프백으로 판정하지만 브라우저는 다른 공격자 통제 오리진으로 이동할 수 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Synopsis: loopback으로 판정한 URL의 실제 host가 브라우저에서 다름."
+  },
+  {
+   "claim": "다른 오리진에 code와 state가 전달되는 동작이 시험에서 재현됐다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Synopsis: browser reached this second origin carrying code and state."
+  },
+  {
+   "claim": "공격자는 PKCE 챌린지를 선택하고 유출 코드를 계정 토큰으로 교환할 수 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Synopsis: attacker chooses PKCE challenge; exchange leaked authorization code for tokens."
+  },
+  {
+   "claim": "공개 로그인 경로는 알 수 없는 provider를 거절하기 전에 제한 없는 provider 값을 로그에 복사한다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Synopsis: public POST /auth/password-login; provider size not bounded; log before rejection."
+  },
+  {
+   "claim": "계정 없는 미인증 클라이언트도 입력을 디스크에 지속 기록시킬 수 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Synopsis: unauthenticated client with no account; written persistently to disk."
+  },
+  {
+   "claim": "100 MiB JSON 요청은 404를 반환했다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Synopsis: total JSON size exactly 100 MiB, response 404."
+  },
+  {
+   "claim": "같은 시험의 여유 공간은 919 MB에서 819 MB로 줄었다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Synopsis: free space from 919 MB to 819 MB."
+  },
+  {
+   "claim": "반복 요청은 디스크를 소진하고 서비스 가용성을 저하시킬 위험이 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Synopsis: repeated requests could exhaust disk space and degrade availability."
+  },
+  {
+   "claim": "공개 인증 경로는 인증 검사 전에 전체 JSON 본문을 읽고 애플리케이션 수준 크기 제한이 없었다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Synopsis: entire JSON body read/parsed before authentication, no application-level size limit."
+  },
+  {
+   "claim": "최종 거절에도 익명 요청의 큰 본문이 메모리 소비 및 서비스 거부 위험을 만든다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Synopsis: oversized payloads fully loaded before rejection; denial-of-service risk."
+  },
+  {
+   "claim": "32 MiB 업로드 8개를 15초 동시 유지하는 시험이었다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Synopsis: eight concurrent 32 MiB uploads open for fifteen seconds."
+  },
+  {
+   "claim": "시험에서 프로세스 메모리는 721 MiB에서 1.08 GiB로 증가했다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Synopsis: memory from 721 MiB to 1.08 GiB."
+  },
+  {
+   "claim": "시험 중 /api/status는 overall=ok를 계속 보고했다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Synopsis: /api/status continued overall=ok."
+  },
+  {
+   "claim": "TRA-2026-65 영향 버전은 0.21.6 미만이고 해결책은 0.21.6 이상 업그레이드다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Affected Products, Solution 명시."
+  },
+  {
+   "claim": "TRA-2026-64 영향 버전은 0.21.6 미만이고 해결책은 0.21.6 이상 업그레이드다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Affected Products, Solution 명시."
+  },
+  {
+   "claim": "TRA-2026-63 영향 버전은 0.21.6 미만이고 해결책은 0.21.6 이상 업그레이드다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Affected Products, Solution 명시."
+  },
+  {
+   "claim": "세션 권고문에는 공개일보다 앞선 연락과 수정 논의가 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. Disclosure Timeline: 9월 연락, 10월 5일 수정 논의; Initial release 10월 9일."
+  },
+  {
+   "claim": "디스크 권고문에는 공개일보다 앞선 연락과 수정 기록이 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-64",
+   "confirmed": true,
+   "action": "유지. Disclosure Timeline: 9월 연락, 10월 5일 수정; Initial release 10월 9일."
+  },
+  {
+   "claim": "메모리 권고문에는 공개일보다 앞선 연락과 수정 기록이 있다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-63",
+   "confirmed": true,
+   "action": "유지. Disclosure Timeline: 9월 연락, 10월 5일 수정; Initial release 10월 9일."
+  },
+  {
+   "claim": "읽은 공식 권고문으로 실제 피해 고객 수·전체 노출 규모를 확정할 수 없다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": true,
+   "action": "유지. 세션 권고문은 메커니즘·재현·영향 버전·공개 이력이며 피해 고객 수·노출 총계는 제시하지 않음. 디스크·메모리 원문에서도 해당 규모가 제시되지 않음을 확인."
+  },
+  {
+   "claim": "DiggingBeagle은 Hermes Agent 인증 취약점 3종을 다룬 별도 기사를 2026-10-11 발행했다.",
+   "url": "https://diggingbeagle.com/news/three-hermes-agent-authentication-flaws-disclosed-after-october-fix/",
+   "confirmed": true,
+   "action": "유지. 페이지 Published 날짜와 제목·본문을 직접 확인했다."
+  },
+  {
+   "claim": "독립 보도는 재현 가능한 결함의 근거와 실제 운영 환경에서의 악용 증명을 구분한다.",
+   "url": "https://diggingbeagle.com/news/three-hermes-agent-authentication-flaws-disclosed-after-october-fix/",
+   "confirmed": true,
+   "action": "유지. What the evidence establishes 문단은 결함·완화 근거가 실제 악용과 노출 규모를 증명하지 않는다고 설명한다."
+  },
+  {
+   "claim": "PKCE는 여기서 인증 코드 교환을 검증하는 절차를 가리킵니다.",
+   "url": "https://www.tenable.com/security/research/tra-2026-65",
+   "confirmed": false,
+   "action": "수정. 이번에 읽은 권고문은 PKCE의 일반 정의를 설명하지 않는다. 일반 정의를 제거하고 원문에 적힌 공격자 챌린지 선택·토큰 교환 설명으로 좁혔다."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 policy.md·task.json·brief-5.md와 post.json 전체(제목·도입·요약·표·FAQ·마무리 포함)를 읽고, Tenable TRA-2026-63·64·65의 Synopsis·Solution·Affected Products·Risk Factor·Disclosure Timeline·Advisory Timeline을 다시 열어 대조했다. DiggingBeagle 원문도 다시 열어 발행일과 보도 내용만 검증했다. 외부 사실은 고유 주장 단위로 집계하고 반복 표현은 합쳤다. 실제 읽은 4개 URL만 사용했다. 공식 원문 조회 실패는 없고 핵심 사실 근거가 확보되어 skip.json 생성 사유는 없다. PKCE 일반 정의 1건은 이번 출처에서 확인되지 않아 범위를 좁혀 수정했다. 날짜·버전·수치·위험 분류는 변경할 오류가 없었다. 운영 점검 제안·비유·작성 기준일·실행 여부·검증 상태는 외부 사실 집계에서 제외했다. 다른 에이전트 호출, git·Slack·블로그 접속, 승인·발행 및 독자 환경 시험은 수행하지 않았다. 기존 검증 기록의 자체 수행 주장은 이번 집계 근거로 사용하지 않았다."
+}
