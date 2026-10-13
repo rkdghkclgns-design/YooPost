@@ -2831,5 +2831,20 @@
    "https://dailyaibrief.com/news/plume-console-isp-ai-agents-luVgZLUR"
   ],
   "draft_id": "20261013_201858_2"
+ },
+ {
+  "date": "2026-10-14",
+  "title": "🤖 LFM2.5-24B-A2B 총정리: 131K 문맥·온디바이스 에이전트 사용 가이드",
+  "topic": "LFM2.5-24B-A2B: Built for Fast On-Device Agents",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/lfm25-24b-a2b-131k.html"
+  },
+  "sources": [
+   "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents"
+  ],
+  "draft_id": "20261014_072209_1"
  }
 ]
