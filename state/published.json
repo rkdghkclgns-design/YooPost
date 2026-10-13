@@ -2798,5 +2798,22 @@
    "https://www.sdxcentral.com/news/cisco-nabs-nvidia-for-pluggable-power-up-snuggles-closer-to-sonic/"
   ],
   "draft_id": "20261013_155459_4"
+ },
+ {
+  "date": "2026-10-13",
+  "title": "🧠 Caught in the Act 논문 분석: AI 내부 신호·기만 탐지 실험 총정리",
+  "topic": "Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.12445",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/caught-in-act-ai.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.12445",
+   "https://arxiv.org/html/2610.12445v1",
+   "https://kenashe.ai/blog/2026-10-09-probes-that-catch-an-agent-lying-before-it-says-a-word/",
+   "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics"
+  ],
+  "draft_id": "20261013_182446_3"
  }
 ]
