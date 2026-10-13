@@ -2815,5 +2815,21 @@
    "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics"
   ],
   "draft_id": "20261013_182446_3"
+ },
+ {
+  "date": "2026-10-13",
+  "title": "🛠 Plume Console 사용 가이드: ISP 업무용 AI 에이전트·권한·연동 총정리",
+  "topic": "Plume Console 공개 — ISP 가입자 문제 조사·에이전트 배포·업무 시스템 연결",
+  "category": "AI 도구",
+  "source_url": "https://www.plume.com/newsroom/plume-introduces-plume-console-to-empower-isps-to-build-an-agentic-workforce-that-improves-quality-of-outcomes-and-business-results",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/plume-console-isp-ai.html"
+  },
+  "sources": [
+   "https://www.plume.com/newsroom/plume-introduces-plume-console-to-empower-isps-to-build-an-agentic-workforce-that-improves-quality-of-outcomes-and-business-results",
+   "https://plume.ai/console",
+   "https://dailyaibrief.com/news/plume-console-isp-ai-agents-luVgZLUR"
+  ],
+  "draft_id": "20261013_201858_2"
  }
 ]
