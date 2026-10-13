@@ -2846,5 +2846,21 @@
    "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents"
   ],
   "draft_id": "20261014_072209_1"
+ },
+ {
+  "date": "2026-10-14",
+  "title": "🧠 APEX-Harm 논문 분석: 12개 모델·180개 공격 인스턴스 안전 총정리",
+  "topic": "APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.13623",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/apex-harm-12-180.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.13623",
+   "https://arxiv.org/html/2610.13623v1",
+   "https://paperplaine.com/papers/apex-harm-evaluating-agent"
+  ],
+  "draft_id": "20261014_074032_3"
  }
 ]
