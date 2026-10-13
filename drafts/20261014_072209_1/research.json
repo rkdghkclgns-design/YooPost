@@ -1,0 +1,43 @@
+{
+ "topic": "LFM2.5-24B-A2B: Built for Fast On-Device Agents",
+ "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "LFM2.5-24B-A2B: Built for Fast On-Device Agents",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "publisher": "Liquid AI",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Liquid AI releases a downloadable reasoning model built for on-device agents",
+   "url": "https://superpowerdaily.com/posts/liquid-ai-releases-a-downloadable-reasoning-model-built-for-on-device-agents",
+   "publisher": "Superpower Daily",
+   "published": "2026-10-13",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://aypchzzf9pftwuto.public.blob.vercel-storage.com/lfm2.5-24b-a2b-post-training-recipe-lGn9WUKjroMlFomvlnX4d7f6xouRH9.png",
+   "page_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "caption": "Liquid AI가 공개한 LFM2.5-24B-A2B의 다섯 단계 후학습 과정",
+   "credit": "Liquid AI"
+  }
+ ],
+ "factcheck": {
+  "claims": 47,
+  "confirmed": 42,
+  "removed": [
+   "가중치란 학습 결과를 담은 수치 묶음이다.",
+   "토큰은 텍스트를 나누어 처리하는 단위이며 한국어 글자 수·페이지 수와 일대일 환산되지 않는다.",
+   "토크나이저는 문장을 모델의 입력 단위로 바꾸는 처리기다.",
+   "벤치마크는 특정 조건에서 과제를 풀게 하고 점수를 비교하는 평가다.",
+   "디코딩은 모델이 응답을 만들어 내는 과정이다."
+  ],
+  "note": "별도 사실 검증 세션에서 공식 발표와 독립 기사 URL을 다시 조회했다. 웹 도구는 본문 접근 오류를 반환했으나 같은 URL에 대한 requests GET(제한 20초, 로그인·쿠키·프록시·우회 없음)은 두 페이지 모두 HTTP 200을 반환했다. 최종 URL·조회 시각·응답 본문 및 직접 읽은 텍스트를 source-evidence/factcheck-official.json·factcheck-independent.json과 대응 Markdown에 저장했다. 기존 검증 수치를 그대로 승인하지 않고 이번 응답 본문에서 발표일, 구조·학습·점수·하드웨어·측정 조건·가격·지원·시연·라이선스 링크·도표를 재대조했다. 성능·지원·가격은 회사 발표 기준 확인이며 독립 재현이나 실제 설치·API 실행 검증이 아니다. 반복된 동일 주장은 한 항목으로 집계했다. 활용 권고·예제 프롬프트·전망 및 자체 실행 상태는 외부 사실 주장 개수에서 제외했다. 원문 근거 없는 용어 정의는 삭제했고 문맥 창 정의는 독립 기사에서 확인했으나 중복 설명을 줄이기 위해 삭제했다. 새 주제 선택·발행·승인·git·Slack 작업은 수행하지 않았다. 핵심 근거와 최신 발표일 및 독립 보도를 확인했으므로 skip.json 생성 조건에 해당하지 않는다."
+ }
+}
