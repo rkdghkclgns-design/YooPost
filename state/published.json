@@ -2783,5 +2783,20 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261012000323"
   ],
   "draft_id": "20261013_093208_7"
+ },
+ {
+  "date": "2026-10-13",
+  "title": "⚡ NVIDIA·Cisco USFP 발표: 최대 12.8Tb/s 광모듈 계획 총정리",
+  "topic": "NVIDIA and Cisco Introduce New Pluggable Optics Form Factor to Scale AI Factories (2026-10-12)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/nvidiacisco-usfp-128tbs.html"
+  },
+  "sources": [
+   "https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories",
+   "https://www.sdxcentral.com/news/cisco-nabs-nvidia-for-pluggable-power-up-snuggles-closer-to-sonic/"
+  ],
+  "draft_id": "20261013_155459_4"
  }
 ]
