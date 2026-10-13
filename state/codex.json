@@ -3,8 +3,8 @@
   "20261013:daily:AI 도구": {
    "at": "2026-10-13T17:39:39+09:00",
    "count": 4,
-   "status": "writing",
-   "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으며, 공식",
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식",
    "failure_kind": "no_topic",
    "rejected_candidates": [
     {
@@ -24,13 +24,33 @@
      "topic": "Voyager 창작 소프트웨어 제어 AI 에이전트 공개",
      "source_url": "https://voyager.so/",
      "reason": "AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으며, 공식 릴리스 링크는 git 접속 금지에"
+    },
+    {
+     "title": "🛠 OpenCode v1.19.0 사용 가이드: 2 업그레이드와 수동 업데이트",
+     "topic": "OpenCode v1.19.0 — OpenCode 2 업그레이드 경로와 수동 업데이트 전환",
+     "source_url": "https://dev.opencode.ai/changelog",
+     "reason": "OpenCode v1.19.0을 새 후보로 선정했습니다. 웹 도구로 공식 변경 기록의 2026-10-11 발표일과 업그레이드·수동 업데이트 내용을 실제 읽었고, Automater Newsroom의 2026-10-11 독립 기사도 읽었습니다. 그러나 추가 Python urllib 공개 원문 조회(제한 시간 20초, 로그인·쿠키·프록시 없음)에서 대표 공식 URL이 HTTP 403 Forbidden을 반환했습니다. 웹 도구 오류를 서버 오류로 추정한 것이 아니라 실제 HTTP 조회 결과입니다. policy.md의 어느 단계든 공식 출처"
+    },
+    {
+     "title": "🛠 GWI AI Intelligence 사용 가이드: 소비자 데이터 기반 업무 흐름 총정리",
+     "topic": "GWI Launches New Agentic Portfolio — AI Intelligence layer와 Ad-Selling Workflow",
+     "source_url": "https://www.globenewswire.com/news-release/2026/10/12/3379014/0/en/gwi-launches-new-agentic-portfolio.html",
+     "reason": "GWI AI Intelligence layer·Ad-Selling Workflow를 새 후보로 선정했습니다. 웹 조회 도구에서 GWI 명의 GlobeNewswire 공식 발표 원문과 2026-10-12 발표일을 실제 읽었습니다. 그러나 추가 urllib 공개 HTTP 조회(20초 제한, 로그인·쿠키·프록시·차단 우회 없음)에서 대표 원문이 HTTP 403 Forbidden을 반환했습니다. GWI 공식 제품 페이지는 HTTP 200으로 본문을 읽었으나 대표 발표 원문 조회 실패를 대체하지 않았습니다. policy.md에 따라 이 세션"
+    },
+    {
+     "title": "🛠 Aptos AI 개발 도구 사용 가이드: MCP·문서 피드·Agent Skills",
+     "topic": "Aptos Move 개발용 MCP·LLMs.txt·Agent Skills 도구 묶음",
+     "source_url": "https://aptos.dev/build/ai/aptos-mcp",
+     "reason": "AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식 발표 원문 주소·발표일을 제공하지"
     }
    ],
    "last_notified": {
     "result": "skipped",
     "kind": "no_topic",
     "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으며, 공식"
-   }
+   },
+   "finished_at": "2026-10-13T17:45:59+09:00",
+   "next_retry_at": "2026-10-13T19:45:59+09:00"
   },
   "20261013:daily:AI 논문 분석": {
    "at": "2026-10-13T15:37:21+09:00",
@@ -81,21 +101,7 @@
    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
   }
  },
- "lease": {
-  "owner": "38370726830-1",
-  "at": "2026-10-13T17:39:39+09:00",
-  "expires": "2026-10-13T19:39:39+09:00",
-  "task": {
-   "day": "20261013",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으",
-   "owner": "38370726830-1",
-   "at": "2026-10-13T17:39:39+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
