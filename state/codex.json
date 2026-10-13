@@ -101,24 +101,34 @@
   "20261014:daily:AI 보안": {
    "at": "2026-10-14T07:46:52+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: AI 보안 카테고리를 유지하고 이전 실패 후보(Anthropic 자기복제·BadEngram) 및 brief-5.md의 기발행 목록과 겹치지 않는 Salt Security의 2026-10-13 State of Agentic AI and API Security 2H 2026 발표를 candidate.json에 먼저 기록했습니다. 대표 공식 URL은 웹 도구 Internal Error 이후 동일 URL의 urllib 1회 조회(20초 제한)에서 HTTP 200을 반환했습니다. 공식 발표일과 조사 본문을 ",
+   "failure_kind": "source_unavailable",
+   "finished_at": "2026-10-14T07:51:49+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🔒 Anthropic AI 자기복제 연구: IoT 추론·폐쇄망 실험과 보안 한계 총정리",
+     "topic": "AI models may be capable of self-replicating without access to a datacenter",
+     "source_url": "https://www.anthropic.com/research/self-replicating-ai",
+     "reason": "Anthropic의 2026-10-12 자기복제 연구를 선정하고 웹 도구로 공식 본문을 읽었으나, 독립 보도 SecurityWeek 원문 열기는 Internal Error로 본문을 확인하지 못했습니다. 정책에 따른 동일 공개 URL의 urllib 1회 조회(20초 제한)는 HTTP 403으로 실패했습니다. 추가로 조회한 대표 공식 URL도 HTTP 403을 반환했습니다. 웹 도구 오류 자체를 서버 오류로 간주하지 않았으며 HTTP 조회 결과를 source-evidence에 별도로 기록했습니다. 독립 보도 원문 직접 열람과 별도 사실"
+    },
+    {
+     "title": "🔒 BadEngram 보안 연구: 오픈 웨이트 모델의 메모리 백도어 총정리",
+     "topic": "BadEngram: A New Attack Surface in Open-Weight AI Models — 2026-10-13 공동 연구 발표",
+     "source_url": "https://www.pillar.security/blog/badengram-a-new-attack-surface-in-open-weight-ai-models",
+     "reason": "BadEngram을 기존 실패 후보와 다른 AI 보안 후보로 candidate.json에 먼저 기록했습니다. 대표 Pillar 공식 URL은 웹 도구 Internal Error 후 동일 URL의 urllib 1회 조회(20초 제한)에서 HTTP 200을 반환했고, 2026-10-13 날짜와 연구 본문을 직접 읽었습니다. 그러나 보조 공식 Fujitsu URL은 웹 도구 Internal Error 후 동일 URL의 urllib 1회 조회에서 HTTP 429 및 Vercel Security Checkpoint·브라우저 확인 화면을 반환"
+    },
+    {
+     "title": "🔒 Salt Security 에이전트 보안 조사: 무승인 행동 응답 49.8%와 통제 과제 총정리",
+     "topic": "State of Agentic AI and API Security 2H 2026",
+     "source_url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+     "reason": "AI 보안 카테고리를 유지하고 이전 실패 후보(Anthropic 자기복제·BadEngram) 및 brief-5.md의 기발행 목록과 겹치지 않는 Salt Security의 2026-10-13 State of Agentic AI and API Security 2H 2026 발표를 candidate.json에 먼저 기록했습니다. 대표 공식 URL은 웹 도구 Internal Error 이후 동일 URL의 urllib 1회 조회(20초 제한)에서 HTTP 200을 반환했습니다. 공식 발표일과 조사 본문을 직접 읽고 source-eviden"
+    }
+   ],
+   "next_retry_at": "2026-10-14T08:21:49+09:00"
   }
  },
- "lease": {
-  "owner": "38480009806-1",
-  "at": "2026-10-14T07:46:52+09:00",
-  "expires": "2026-10-14T09:46:52+09:00",
-  "task": {
-   "day": "20261014",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 보안",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "38480009806-1",
-   "at": "2026-10-14T07:46:52+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
