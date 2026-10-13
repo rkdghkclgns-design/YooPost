@@ -18,24 +18,34 @@
   "20261014:daily:AI 도구": {
    "at": "2026-10-14T07:22:43+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: 공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다.",
+   "failure_kind": "verification_failed",
+   "finished_at": "2026-10-14T07:31:35+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🛠 Bizzabo 행사 AI 에이전트 총정리: 승인 기반 실행과 도입 일정",
+     "topic": "Bizzabo Reveals Its Agentic Operating System for Events (2026-10-12)",
+     "source_url": "https://www.bizzabo.com/blog/bizzabo-reveals-its-agentic-operating-system-for-events",
+     "reason": "2026-10-12 Bizzabo 행사 운영 AI 에이전트 발표를 후보로 기록하고 웹 도구에서 공식 본문을 읽었으나, 같은 공식 URL의 실제 HTTP 조회가 403 Forbidden으로 실패했습니다. 독립 매체 Northstar Meetings Group 원문도 웹 도구에서 Internal Error가 발생하여 제한 시간 20초의 HTTP 조회를 한 번 수행했습니다. 정책의 공식 출처 조회 실패 시 중단 규칙에 따라 원고·사실 검증을 완료하지 않았습니다. 후보 교체는 외부 관리기가 담당하므로 이 세션에서 다른 후보로 재시도하지 않"
+    },
+    {
+     "title": "🛠 Steno Litigation Genius 사용 가이드: 사건 파일 분석·페이지 인용 총정리",
+     "topic": "Steno Expands Litigation Technology Suite with Open Beta Launch of Litigation Genius (2026-10-13)",
+     "source_url": "https://www.prnewswire.com/news-releases/steno-expands-litigation-technology-suite-with-open-beta-launch-of-litigation-genius-302902929.html",
+     "reason": "실패한 Bizzabo 후보를 제외하고 2026-10-13 Steno Litigation Genius 오픈 베타 발표를 새 후보로 candidate.json에 기록했습니다. 대표 공식 발표인 Steno Agency, Inc.의 PRNewswire 원문은 웹 도구에서 not accessible/Internal Error가 발생했고, 동일 공개 URL을 urllib로 제한 시간 20초의 HTTP 조회를 한 번 수행한 결과 403 Forbidden 및 error code: 1010 본문을 받았습니다. 검색 결과의 발표문으로 원문 열람을 대"
+    },
+    {
+     "title": "🛠 Tabby 2.0 사용 가이드: Tabby Talk 장부 업무·재무 질문 총정리",
+     "topic": "Tabby Launches Tabby 2.0 With Tabby Talk, an AI Agent Answering Financial Questions and Completing Bookkeeping Tasks (2026-10-12)",
+     "source_url": "https://www.newsfile-prod.tmx.cloud/release/318532/Tabby-Launches-Tabby-2.0-With-Tabby-Talk-an-AI-Agent-Answering-Financial-Questions-and-Completing-Bookkeeping-Tasks",
+     "reason": "공식 발표의 핵심 기능과 날짜는 재검증했으나, 필수 외부 보도 출처 Wisevoter는 수정일만 표시하고 최초 발행일 및 독립 매체 요건을 확인할 근거가 부족하다. 최신 독립 보도 요건 충족을 검증할 수 없어 보류한다."
+    }
+   ],
+   "next_retry_at": "2026-10-14T08:01:35+09:00"
   }
  },
- "lease": {
-  "owner": "38477334552-1",
-  "at": "2026-10-14T07:22:43+09:00",
-  "expires": "2026-10-14T09:22:43+09:00",
-  "task": {
-   "day": "20261014",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "38477334552-1",
-   "at": "2026-10-14T07:22:43+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
