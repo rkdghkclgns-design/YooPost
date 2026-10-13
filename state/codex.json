@@ -165,9 +165,28 @@
     "kind": "source_unavailable",
     "note": "다른 주제 재작성 2회 후 보류: 공식 보고서의 웹 도표 조회가 Internal Error였으며, 동일 공개 PDF URL의 20초 직접 조회도 실패: HTTP Error 403: Forbidden"
    }
+  },
+  "20261014:daily:AI 공모주 분석": {
+   "at": "2026-10-14T08:01:14+09:00",
+   "count": 1,
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "38481547410-1",
+  "at": "2026-10-14T08:01:14+09:00",
+  "expires": "2026-10-14T10:01:14+09:00",
+  "task": {
+   "day": "20261014",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 공모주 분석",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "38481547410-1",
+   "at": "2026-10-14T08:01:14+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
