@@ -1,0 +1,467 @@
+{
+ "claims": [
+  {
+   "claim": "디티에스의 정정 투자설명서는 2026-10-12 공시됐다.",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261012000323",
+   "confirmed": true,
+   "action": "공식 목차의 문서명·날짜 확인, 유지"
+  },
+  {
+   "claim": "확정 공모가는 주당 18,500원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반공모 증권은 기명식 보통주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반공모 주식수는 2,228,917주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반공모 모집총액은 41,234,964,500원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공모방법은 신주모집 100% 일반공모다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "희망가 밴드는 17,000~18,500원이며 확정가격은 상단이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "수요예측 참여 건수는 2,381건이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "수요예측 신청수량 합계는 1,644,913,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기관 수요예측 경쟁률은 983.98대 1이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "수요예측 주문 및 경쟁률 산출 기준 물량은 1,671,687주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기관 수요예측 경쟁률은 일반청약 경쟁률이나 실제 납입 결과가 아니다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공시는 수요예측 경쟁률이 실제 기관투자자의 투자 수요를 보여주는 지표는 아니라고 안내한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기관은 가격확정 후 실투자 여부를 결정해 청약에 참여한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 신청 건수는 2,279건이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 신청수량은 1,565,066,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 신청의 참여건수 비율은 95.72%다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 신청의 신청수량 비율은 95.15%다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 초과 신청 건수는 28건이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 초과 신청수량은 20,381,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 초과 신청의 참여건수 비율은 1.18%다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "18,500원 초과 신청의 신청수량 비율은 1.24%다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "17,000원 초과~18,500원 미만 신청은 1건이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "17,000원 초과~18,500원 미만 신청수량은 1,670,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "가격 미제시 신청은 73건이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "가격 미제시 신청수량은 57,796,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "관계인수인으로 구분되는 기관은 관련 규정에 따라 신청가격을 제시하지 않았다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "회사와 대표주관회사는 수요예측 결과 및 시장상황 등을 고려해 협의하여 공모가를 결정했다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "의무보유확약은 일정 기간 주식을 보유하겠다는 약속이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "의무보유확약기간별 참여내역은 6개월·3개월·1개월·15일·미확약으로 나뉜다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "확약 표는 수요예측 신청 내역이며 최종 배정·납입 수량이 아니다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "6개월 확약 신청수량은 16,471,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "3개월 확약 신청수량은 26,663,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "1개월 확약 신청수량은 37,526,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "15일 확약 신청수량은 138,211,000주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "의무보유 확약 일반기관투자자 배정이 의무배정 수량에 미달하면 대표주관회사의 추가 취득 의무가 발생한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "대표주관회사 추가 취득 주식은 상장일부터 6개월 이상 보유해야 한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "추가 취득자는 대신증권이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "대신증권의 추가 취득수량은 22,290주다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "대신증권의 추가 취득금액은 412,365,000원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "추가 취득분은 일반공모 모집주식과 별도로 신주가 발행되는 물량이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "청약 미달과 대표주관회사의 잔여주식 인수에 따라 추가 취득수량이 달라질 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "이번 공모에서는 의무보유 확약 배정 관련 추가 취득 의무가 발생했다고 공시한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문 확인; 추가 취득 의무 발생 사실을 원고에 보완"
+  },
+  {
+   "claim": "기관투자자 청약기간은 2026-10-13~2026-10-14다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반투자자 청약기간은 2026-10-13~2026-10-14다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "납입기일은 2026-10-16이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "초과 청약증거금 환불일은 2026-10-16이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반청약자 청약증거금률은 50%다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기관투자자는 청약증거금이 면제된다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "배정금액 대비 증거금이 부족하면 추가납입 및 미납 주식의 인수인 인수 조건이 적용된다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반청약 취급처는 대신증권과 유진투자증권이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "여러 취급처에 동시에 청약하는 중복청약은 제한된다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "한 취급처의 복수 계좌를 통한 이중청약은 제한된다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "디티에스의 주력사업은 플랜트용 공랭식 열교환기와 공랭식 복수기 제조다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "AI 데이터센터(AIDC) 열관리·발전 설비 관련 시장 진출을 준비한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "신성장사업 설비투자 계획은 58.6억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "신성장사업 설비투자 항목은 CCUS·수소·ORC·AIDC를 함께 다룬다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "ORC는 유기 랭킨 사이클(Organic Rankine Cycle)이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "58.6억원 중 22.6억원은 CCUS·수소 발전 제작 인프라 설비에 사용할 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "58.6억원 중 36.0억원은 ORC 성능시험 및 부속 제작설비에 사용할 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "AIDC 부문은 시장 진출 준비 단계이며 세부 설비 내역은 확정되는 대로 반영할 예정이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기존 사업부 설비투자 계획은 50.0억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "기존 사업부 설비투자는 AFC·ACC 생산능력 확충을 위한 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "프로젝트 대응비용 계획은 152.6억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "프로젝트 대응비용은 대형 수주 프로젝트의 자재비·외주가공비·현장 기술인력 운영비 등 운영자금이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "신성장 기술개발투자비 계획은 44.4억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "글로벌 마케팅 및 수출 확대 계획은 25.0억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "예비비 계획은 67.0억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공모자금 사용계획 표 합계는 397.6억원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "사용계획 기준은 모집총액에 대표주관회사 의무인수분을 더하고 발행제비용을 차감한 순수입금이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "사용계획 표는 회사의 총 투자 예정금액 전체가 아닌 공모자금 집행 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공모자금은 2026~2028년 단계적으로 집행할 예정이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "사용계획 금액 및 집행시점은 영업환경 및 경영상 판단에 따라 변동할 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "일반청약자에게 환매청구권이 부여되지 않는다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공시는 신고의 효력 발생이 정부·금융위원회의 기재사항 정확성 인정이나 가치 보증·승인을 뜻하지 않는다고 안내한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "공시 심사과정에서 내용과 일정이 변경될 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "공식 본문과 일치하여 유지"
+  },
+  {
+   "claim": "신성장사업 설명에서 CCUS를 탄소포집·활용·저장으로 풀이했다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261012000323&dcmNo=11610126&eleId=4&offset=760461&length=2617207&dtd=dart4.xsd",
+   "confirmed": false,
+   "action": "공시는 탄소포집·저장으로 표기하므로 해당 풀이를 탄소포집·저장(CCUS)으로 수정"
+  }
+ ],
+ "note": "별도 사실검증에서 post.json의 제목·요약·본문·표·FAQ·맺음말의 외부 사실을 추출하고 중복 주장은 한 번만 집계했다. 웹 도구 조회 실패 후 동일 URL을 urllib(timeout=20)로 재조회했으며 S1·S2·S3 모두 HTTP 200의 실제 본문을 읽었다. 응답·최종 URL·상태·UTC 조회시각은 source-evidence/factcheck-S1.json~S3.json에 저장했다. 검증 근거는 공식 본문 공모개요, 공모방법, 수요예측 결과, 모집조건·청약 주석, 자금사용계획 및 투자위험이다. 공식 목차에서 2026-10-12 정정 문서 확인, 독립 기사에서 2026-10-12 21:29 및 해당 공모 후속 보도 확인. claims에는 실제 읽은 공식 URL을 둔 외부 사실만 포함한다. 자체 작업 설명·해석·권고와 중복 반복은 집계에서 제외했다. CCUS 풀이 수정, 이번 추가 취득 의무 발생 설명 보완, 공모자금 계획과 기존 집행 실적을 구분하도록 표현 보정했다. 남은 외부 주장에 근거 부족이나 원문 조회 실패가 없어 skip.json은 생성하지 않았다. 발행 승인·발행 작업은 수행하지 않았다."
+}

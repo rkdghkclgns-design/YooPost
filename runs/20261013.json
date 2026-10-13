@@ -4,12 +4,12 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 공모주 분석",
   "taken_over": "2026-10-13T09:24:39+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
   "last_result": "done"
  },
- "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+ "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }
