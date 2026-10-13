@@ -2734,5 +2734,22 @@
    "https://shattered.io/meta-muse-wonder-ai-pricing-2026/"
   ],
   "draft_id": "20261013_071421_1"
+ },
+ {
+  "date": "2026-10-13",
+  "title": "🔒 Hermes Agent 인증 취약점 3종: 세션 탈취·자원 고갈과 0.21.6 대응 총정리",
+  "topic": "Tenable TRA-2026-63·64·65: Hermes Agent 인증 경로의 세션 탈취·디스크 소비·메모리 고갈 취약점 공개",
+  "category": "AI 보안",
+  "source_url": "https://www.tenable.com/security/research/tra-2026-65",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/hermes-agent-3-0216.html"
+  },
+  "sources": [
+   "https://www.tenable.com/security/research/tra-2026-65",
+   "https://www.tenable.com/security/research/tra-2026-64",
+   "https://www.tenable.com/security/research/tra-2026-63",
+   "https://diggingbeagle.com/news/three-hermes-agent-authentication-flaws-disclosed-after-october-fix/"
+  ],
+  "draft_id": "20261013_091539_5"
  }
 ]
