@@ -1,9 +1,9 @@
 {
  "attempts": {
   "20261013:daily:AI 도구": {
-   "at": "2026-10-13T17:39:39+09:00",
-   "count": 4,
-   "status": "skipped",
+   "at": "2026-10-13T20:08:44+09:00",
+   "count": 5,
+   "status": "writing",
    "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식",
    "failure_kind": "no_topic",
    "rejected_candidates": [
@@ -48,9 +48,7 @@
     "result": "skipped",
     "kind": "no_topic",
     "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하지만 공식"
-   },
-   "finished_at": "2026-10-13T17:45:59+09:00",
-   "next_retry_at": "2026-10-13T19:45:59+09:00"
+   }
   },
   "20261013:daily:AI 논문 분석": {
    "at": "2026-10-13T18:10:27+09:00",
@@ -108,7 +106,21 @@
    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "38388153544-1",
+  "at": "2026-10-13T20:08:44+09:00",
+  "expires": "2026-10-13T22:08:44+09:00",
+  "task": {
+   "day": "20261013",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 도구",
+   "topic": "",
+   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Aptos Move 개발용 MCP·LLMs.txt·Agent Skills를 candidate.json에 먼저 기록한 뒤 조사했습니다. 공식 대표 원문 https://aptos.dev/build/ai/aptos-mcp 를 웹 도구와 공개 urllib 조회(20초 제한)로 실제 읽었습니다. HTTP 200이며 본문 Last updated와 dateModified는 2026-09-14입니다. 직접 읽은 CoinNess 기사(2026-10-12)는 도구 공개를 보도하",
+   "owner": "38388153544-1",
+   "at": "2026-10-13T20:08:44+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
