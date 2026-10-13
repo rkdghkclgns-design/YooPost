@@ -39,6 +39,43 @@ SOURCE_LOOKUP_FAILURE = re.compile(
     r"(?:fetch|retriev\w*|source).{0,40}(?:fail|unavailable|timed?\s*out)|access\s*denied", re.I,
 )
 
+CODEX_FAILURES = {
+    "usage_limit": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요",
+    "rate_limit": "Codex 요청 한도에 걸렸습니다. 재시도 대기·횟수 제한을 유지합니다",
+    "authentication": "Codex 클라우드 전용 인증이 만료되었거나 거부되었습니다. 전용 로그인을 갱신해 주세요",
+    "network": "Codex 서버 연결에 실패했습니다. 네트워크·서비스 상태를 확인해 주세요",
+    "cli_arguments": "Codex CLI 실행 인자가 지원되지 않습니다. 고정 CLI 버전과 명령을 확인해 주세요",
+    "sandbox": "Codex 실행 샌드박스를 시작하지 못했습니다. runner 설정을 확인해 주세요",
+    "timeout": "Codex 실행 제한 시간을 초과했습니다",
+    "unavailable": "Codex 실행 파일을 시작하지 못했습니다. runner 설치 상태를 확인해 주세요",
+    "execution": "Codex 실행 실패 — 오류 분류가 불가능해 인증·사용량·서비스 상태 확인이 필요합니다",
+}
+
+
+class CodexExecutionError(RuntimeError):
+    """CLI 출력·프롬프트·토큰 없이 고정된 장애 분류만 다음 job에 전달한다."""
+    def __init__(self, kind: str, exit_code: int | None = None):
+        self.kind = kind if kind in CODEX_FAILURES else "execution"
+        self.exit_code = exit_code
+        super().__init__(CODEX_FAILURES[self.kind] +
+                         (f" (exit={exit_code})" if type(exit_code) is int else ""))
+
+
+def codex_failure_kind(stderr: str) -> str:
+    """stderr는 메모리에서만 검사하며 원문을 로그·아티팩트에 저장하지 않는다."""
+    text = stderr[-64000:].lower()
+    patterns = (
+        ("usage_limit", r"usage[_ -]limit|you(?:'ve| have) hit your|insufficient_quota"),
+        ("rate_limit", r"rate[_ -]limit|too many requests|\b429\b"),
+        ("authentication", r"refresh_token_(?:reused|expired)|invalid_grant|token.{0,25}expired|"
+                           r"authentication|unauthorized|please (?:log|sign) in|\b401\b"),
+        ("cli_arguments", r"unexpected argument|unrecognized (?:argument|option)|invalid value.*--"),
+        ("sandbox", r"landlock|bwrap|sandbox.{0,40}(?:fail|denied)|operation not permitted"),
+        ("network", r"error sending request|connection (?:refused|reset|closed)|"
+                    r"dns (?:error|failure)|network (?:error|unreachable)|stream disconnected|\b50[234]\b"),
+    )
+    return next((kind for kind, pattern in patterns if re.search(pattern, text)), "execution")
+
 
 def owner() -> str:
     return f"{os.environ['GITHUB_RUN_ID']}-{os.environ.get('GITHUB_RUN_ATTEMPT', '1')}"
@@ -204,10 +241,15 @@ def run_codex(work: Path, prompt: str, minutes: float = 20) -> None:
     if model:
         command[3:3] = ["--model", model]
     # 프롬프트·기사·계정 토큰을 Actions 로그에 출력하지 않는다.
-    result = subprocess.run(command, input=prompt, cwd=work, env=agent_environment(), text=True,
-                            encoding="utf-8", capture_output=True, timeout=minutes * 60)
+    try:
+        result = subprocess.run(command, input=prompt, cwd=work, env=agent_environment(), text=True,
+                                encoding="utf-8", capture_output=True, timeout=minutes * 60)
+    except subprocess.TimeoutExpired:
+        raise CodexExecutionError("timeout") from None
+    except OSError:
+        raise CodexExecutionError("unavailable") from None
     if result.returncode:
-        raise RuntimeError("Codex 실행 실패 — 인증 만료·사용량 한도·네트워크 상태를 확인해 주세요")
+        raise CodexExecutionError(codex_failure_kind(result.stderr or ""), result.returncode)
 
 
 def save_diagnostic(source: Path, destination: Path) -> None:
@@ -351,6 +393,12 @@ def generate(work: Path) -> int:
     for number in range(MAX_SOURCE_CANDIDATES):
         try:
             result = generate_candidate(work, rejected, deadline)
+        except CodexExecutionError as exc:
+            # 실행 장애는 주제 교체로 해결되지 않는다. 추가 세션 없이 실제 원인을 보존한다.
+            write_json(work / "result.json", {"status": "failed", "category": task.get("category", ""),
+                       "failure_kind": exc.kind, "reason": str(exc), "exit_code": exc.exit_code})
+            print(str(exc))
+            return 1
         except GenerationBudgetExpired as exc:
             if not rejected:
                 raise
@@ -399,6 +447,9 @@ def complete(work: Path) -> int:
         if not cloud_lease(helper.TREE, now):
             raise ValueError("작업 임대가 만료되어 결과를 올리지 않았습니다")
         data = checked_json(work / "result.json")
+        if data.get("status") == "failed":
+            # 실패 사유는 임의 모델 문구가 아니라 허용한 고정 분류만 신뢰한다.
+            raise CodexExecutionError(str(data.get("failure_kind") or "execution"), data.get("exit_code"))
         category = str(data.get("category") or read_json(work / "post.json").get("category") or task["category"])
         if category not in CATEGORIES or (task["category"] and category != task["category"]):
             raise ValueError("요청 카테고리와 결과가 맞지 않습니다")

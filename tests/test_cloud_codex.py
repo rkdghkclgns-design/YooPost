@@ -225,6 +225,86 @@ def test_last_response_diagnostic_removes_dedicated_login_secrets(tmp_path, monk
     assert "tool failed" in text and "secret-" not in text
 
 
+@pytest.mark.parametrize("stderr,kind", [
+    ("ERROR: You've hit your usage limit. Try again later.", "usage_limit"),
+    ('{"code":"insufficient_quota"}', "usage_limit"),
+    ("HTTP 429 Too Many Requests", "rate_limit"),
+    ('{"code":"refresh_token_reused"}', "authentication"),
+    ("401 Unauthorized", "authentication"),
+    ("error: unexpected argument '--ephemeral' found", "cli_arguments"),
+    ("bwrap: Operation not permitted", "sandbox"),
+    ("error sending request: connection reset", "network"),
+    ("unclassified failure", "execution"),
+])
+def test_cli_failure_records_only_fixed_classification(tmp_path, monkeypatch, capsys, stderr, kind):
+    secret = "never-output-account-token"
+    monkeypatch.setattr(codex_cloud.subprocess, "run", lambda *args, **kwargs:
+                        SimpleNamespace(returncode=1, stderr=stderr + secret, stdout=secret))
+    with pytest.raises(codex_cloud.CodexExecutionError) as caught:
+        codex_cloud.run_codex(tmp_path, "private article " + secret)
+    assert caught.value.kind == kind and caught.value.exit_code == 1
+    assert secret not in str(caught.value) and stderr not in str(caught.value)
+    assert secret not in capsys.readouterr().out
+    assert not list(tmp_path.iterdir())
+
+
+@pytest.mark.parametrize("failure,kind", [
+    (subprocess.TimeoutExpired("codex", 60, stderr="secret-account-token"), "timeout"),
+    (FileNotFoundError("secret-account-token"), "unavailable"),
+])
+def test_cli_startup_and_timeout_failures_have_safe_diagnostics(tmp_path, monkeypatch, failure, kind):
+    def fail(*args, **kwargs):
+        raise failure
+    monkeypatch.setattr(codex_cloud.subprocess, "run", fail)
+    with pytest.raises(codex_cloud.CodexExecutionError) as caught:
+        codex_cloud.run_codex(tmp_path, "private prompt")
+    assert caught.value.kind == kind and "secret" not in str(caught.value)
+
+
+def test_generation_preserves_execution_failure_without_replacement_or_partial_draft(tmp_path, monkeypatch):
+    work = tmp_path / "work"
+    write_json(work / "task.json", task())
+    write_json(work / "post.json", {"stale": True})
+    calls = []
+    def fail(*args):
+        calls.append(args)
+        raise codex_cloud.CodexExecutionError("usage_limit", 1)
+    monkeypatch.setattr(codex_cloud, "generate_candidate", fail)
+    assert codex_cloud.generate(work) == 1
+    result = read_json(work / "result.json")
+    assert result["status"] == "failed" and result["failure_kind"] == "usage_limit"
+    assert len(calls) == 1 and not (work / "post.json").exists()
+
+
+@pytest.mark.parametrize("category", ["AI 도구", ""])
+def test_complete_keeps_cli_failure_and_retry_cap_without_draft(branch_repo, monkeypatch, tmp_path, category):
+    _, _, tree = branch_repo
+    helper = codex_cloud.helper
+    monkeypatch.setattr(helper, "TREE", tree)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
+    monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
+    monkeypatch.setattr(codex_cloud, "status", lambda: {"synced": True, "daily": []})
+    live = codex_cloud.datetime.now(codex_cloud.KST)
+    selected = task(day=live.strftime("%Y%m%d"), owner="123-1", category=category)
+    state = reserve({}, selected, "previous", live - timedelta(hours=5))
+    state = settle(state, selected, "previous", "failed", "previous failure")
+    state = reserve(state, selected, "123-1", live)
+    write_json(tree / "state/codex.json", state)
+    helper.publish(["state/codex.json"], "lease")
+    work = tmp_path / "failed-result"
+    write_json(work / "result.json", {"status": "failed", "failure_kind": "usage_limit",
+                                     "exit_code": 1, "reason": "untrusted-secret"})
+    assert codex_cloud.complete(work) == 1
+    ended = read_json(tree / "state/codex.json")
+    attempt = ended["attempts"][task_key(selected)]
+    assert attempt["count"] == 2 and attempt["status"] == "failed" and not ended["lease"]
+    assert "사용량 한도" in attempt["note"] and "result.json" not in attempt["note"]
+    assert "untrusted-secret" not in attempt["note"]
+    assert not retry_ready(ended, selected, live + timedelta(hours=5))
+    assert not list(tree.glob("drafts/*/post.json"))
+
+
 def test_cloud_board_shows_the_actual_category_and_a_failed_wait_instead_of_writing():
     request = record(kind="all", category="", started=NOW.isoformat(),
                      fallback={"provider": "codex", "mode": "cloud", "status": "writing", "category": "AI 도구"})
