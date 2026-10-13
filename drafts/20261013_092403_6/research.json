@@ -1,0 +1,41 @@
+{
+ "topic": "Riverbed Global Survey 2026: The State of Autonomous IT Operations — Infor Industry AI 발표와 연결한 실행 권한·업무 맥락 해설",
+ "source_url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "New Riverbed Global Survey Finds Agentic AI is Reshaping IT: 90% Plan to Pursue Autonomous IT; Yet 77% Require Human Approval",
+   "url": "https://www.riverbed.com/press-releases/global-survey-finds-agentic-ai-reshaping-it/",
+   "publisher": "Riverbed",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Enterprises aren't quite sold on autonomous IT operations",
+   "url": "https://www.itpro.com/technology/artificial-intelligence/enterprises-arent-quite-sold-on-autonomous-it-operations",
+   "publisher": "ITPro",
+   "published": "2026-10-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Infor Unveils Its Expanded Infor Industry AI as New Global Research Finds Off-the-Shelf AI Falls Short for Two Out of Three Businesses",
+   "url": "https://www.infor.com/nordics/news/infor-unveils-its-expanded-infor-industry-ai",
+   "publisher": "Infor",
+   "published": "2026-10-06",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "이번 검증에서 실제 읽은 Riverbed·Infor 공식 발표 본문에는 원고의 수치나 아키텍처를 직접 설명하는 인용 가능한 화면·도표를 확인하지 못했습니다. 별도 보고서·인포그래픽은 이번 검증에서 열지 않아 이미지 근거로 사용하지 않았습니다.",
+ "factcheck": {
+  "claims": 29,
+  "confirmed": 28,
+  "removed": [
+   "두 응답은 같은 조직 안에서도 함께 존재할 수 있는 기대와 통제의 문제입니다. — 조직별 교차 응답 미제공으로 삭제하고 해석·확인 한계로 수정."
+  ],
+  "note": "별도 사실 검증 세션에서 S1 Riverbed 공식 발표, S3 Infor 공식 발표와 FAQ, S2 ITPro 기사 본문을 웹 조회 도구로 다시 열어 읽었습니다. 세 원문 모두 본문과 2026-10-06 발표일을 확인해 HTTP 대체 조회는 필요하지 않았습니다. 반복 주장은 고유 주장으로 합쳤으며 제목·요약·본문·표·FAQ·맺음말을 대조했습니다. 공식 수치·설계 설명과 독립 기사 자체의 날짜·보도 내용만 외부 사실로 집계했습니다. 가상 사례, 해석, 독자 제안, 자체 작업 설명은 집계하지 않았습니다. 읽은 출처에서 검증되지 않은 교차 응답 암시는 수정했습니다. 원문 접근 실패나 핵심 근거 부족은 없어 skip.json은 생성하지 않았습니다. 승인·발행은 수행하지 않았습니다. 제목의 사람 승인 77%를 무승인 결정에 주저 77%로, 성과 문단의 도입 의향을 자율 운영 기대로 명확히 했습니다."
+ },
+ "selection_note": "지정 카테고리 유지. 실패한 Vals AI 후보의 소식·대표 원문 재사용 없음. 공식 발표와 독립 보도 모두 허용 기간의 2026-10-06. 서로 다른 최신 공식 발표 두 개를 연결하되 조사 비율을 합산하지 않음."
+}
