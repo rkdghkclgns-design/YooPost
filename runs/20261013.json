@@ -4,12 +4,12 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-10-13T13:10:28+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
-  "last_result": "done"
+  "last_result": "failed"
  },
- "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+ "note": "결과 파일 형식이 올바르지 않습니다: result.json"
 }
