@@ -4,9 +4,9 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
-  "category": "AI 도구",
-  "taken_over": "2026-10-13T13:10:28+09:00",
+  "status": "writing",
+  "category": "AI 논문 분석",
+  "taken_over": "2026-10-13T13:12:06+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
   "last_result": "failed"
