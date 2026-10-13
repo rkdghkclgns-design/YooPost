@@ -4,12 +4,12 @@
  "network": "full",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-10-13T15:30:21+09:00",
   "first_taken_over": "2026-10-13T08:54:05+09:00",
   "reason": "마지막 작성 활동 이후 95분 경과",
-  "last_result": "failed"
+  "last_result": "skipped"
  },
- "note": "결과 파일 형식이 올바르지 않습니다: result.json"
+ "note": "다른 주제 재작성 2회 후 보류: AI 도구 카테고리의 새 후보 Voyager를 조사했습니다. 공식 대표 원문 https://voyager.so/ 은 HTTP 200으로 실제 본문을 읽었으나 발표일이 없어서 2026-10-10~2026-10-13 KST 신규 발표 조건을 확인할 수 없습니다. 직접 읽은 Founderland 기사(2026-10-10)는 본문에서 Voyager가 10월 8일 공개됐다고 설명합니다. 기사 발행일을 제품 발표일로 대체하지 않았습니다. 0.1.87의 10월 10일 업데이트 언급은 독립 기사에만 있으며, 공식"
 }
