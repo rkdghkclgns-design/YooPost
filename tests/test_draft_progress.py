@@ -49,6 +49,7 @@ def test_rows_show_published_waiting_writing_skipped_and_idle(tmp_path):
     assert icons == ["✅", "❌", "✍️", "⬜", "⬜", "⬜", "⏭️"]
     assert "발행됨: <https://b/1|Holo4 총정리> · 승인 대기: GPT-6 가이드" in rows[0].text
     assert [r.finished for r in rows] == [True, True, False, False, False, False, True]
+    assert [r.published for r in rows] == [True, False, False, False, False, False, False]
     approved = build_rows(drafts, {}, Store({"20260929_132001_2": {"status": "approved"}}), NOW.timestamp())
     assert approved[1].icon == "🚀" and approved[0].icon == "📝"  # 보관함에 없으면 승인 대기
     assert build_rows(drafts, {}, None, NOW.timestamp())[0].icon == "📝"
@@ -60,7 +61,7 @@ def test_blocks_have_progress_bar_and_waiting_hint():
     from autopost.draft_progress import Row
 
     text, blocks = build_blocks([Row("AI 도구", "📝", "승인 대기: X", True), Row("AI 보안", "⬜", "대기", False)], "09/29")
-    assert "▰▱ 1/2" in text and "오늘 원고 (09/29)" in text
+    assert "발행 ▱▱ 0/2" in text and "오늘 원고 (09/29)" in text
     assert "승인 대기 1편" in blocks[-1]["elements"][0]["text"]
     assert "2. ⬜ *AI 보안* — 대기" in blocks[1]["text"]["text"]
     _, idle = build_blocks([Row("AI 보안", "⬜", "대기", False)], "09/29")
@@ -76,7 +77,8 @@ def test_board_posts_once_then_updates_the_same_message(tmp_path):
     board.skip("AI 공모주 분석", "공모 없음")
     rows = board.refresh()
     assert len(client.messages) == 1 and len(client.updates) == 1  # 같은 메시지를 고친다
-    assert rows[-1].icon == "⏭️" and "▰▰▱▱▱▱▱ 2/7" in client.updates[0]["text"]
+    assert rows[-1].icon == "⏭️" and "발행 ▱▱▱▱▱▱▱ 0/7" in client.updates[0]["text"]
+    assert "카테고리 처리 2/7" in client.updates[0]["blocks"][-1]["elements"][0]["text"]
     state = json.loads((tmp_path / "progress_20260929.json").read_text(encoding="utf-8"))
     assert state["ts"] == "1700000000.000001"
     (tmp_path / "progress_20260929.json").write_text("{broken", encoding="utf-8")
@@ -91,3 +93,18 @@ def test_excluded_drafts_show_as_gaps_not_waiting(tmp_path):
                       failed={"20260929_130819_4": "겹침으로 제외: 발행한 글 'x'"})
     news = rows[3]
     assert news.icon == "🚫" and "겹침으로 제외" in news.text and not news.finished  # 빈칸 — 다른 소식으로 다시
+
+
+def test_publication_bar_does_not_count_approval_failure_or_skipped_category(tmp_path):
+    statuses = ["pending", "published", "approved", "held", "failed", "excluded"]
+    states = {}
+    for index, status in enumerate(statuses, start=1):
+        folder = draft(tmp_path, f"20260929_130000_{index}", f"원고 {index}", sent=True)
+        states[folder.name] = {"status": status}
+    rows = build_rows(scan(tmp_path, "20260929"), {"AI 공모주 분석": "자료 없음"},
+                      Store(states), NOW.timestamp())
+    text, blocks = build_blocks(rows, "09/29")
+    assert "발행 ▰▱▱▱▱▱▱ 1/7" in text
+    summary = blocks[-1]["elements"][0]["text"]
+    for expected in ["카테고리 처리 6/7", "승인 대기 1", "발행 중 1", "보류 1", "건너뜀 1", "실패 1"]:
+        assert expected in summary

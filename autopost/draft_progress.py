@@ -1,6 +1,6 @@
 """오늘 원고 진행 상황 — 카테고리 7개가 어디까지 됐는지 슬랙 #yoopost-알림 메시지 1개로 보여 주고 계속 갱신한다.
 
-    📚 AI백과사전 오늘 원고 (09/29)   ▰▰▰▱▱▱▱ 3/7
+    📚 AI백과사전 오늘 원고 (09/29) · 발행 ▰▱▱▱▱▱▱ 1/7
     1. AI 언어 모델 — ✅ 발행됨: Holo4 총정리 …
     2. AI 도구 — 📝 승인 대기: Manus 2.0 사용 가이드 …
     3. AI 논문 분석 — ✍️ 작성 중
@@ -45,6 +45,7 @@ class Row:
     icon: str
     text: str
     finished: bool  # 승인 요청을 보냈거나 건너뜀
+    published: bool = False  # 보관함에서 실제 발행 완료가 확인된 카테고리
 
 
 def scan(drafts_dir: Path, day: str) -> list[Draft]:
@@ -139,7 +140,8 @@ def build_rows(drafts: Sequence[Draft], skipped: Mapping[str, str], store, now: 
             parts = [_state(records[d.folder.name], d) for d in sent]
             icon = parts[0][0]
             text = " · ".join(p[1] for p in parts)
-            rows.append(Row(category, icon, text, True))
+            published = any((records[d.folder.name] or {}).get("status") == "published" for d in sent)
+            rows.append(Row(category, icon, text, True, published))
         elif skip:
             rows.append(Row(category, "⏭️", f"건너뜀 — {escape_mrkdwn(skip)}", True))
         elif broken:
@@ -172,15 +174,19 @@ def progress_bar(done: int, total: int) -> str:
 
 def build_blocks(rows: Sequence[Row], day_label: str) -> tuple[str, list[dict]]:
     done = sum(1 for r in rows if r.finished)
-    head = f"📚 {LABEL} 오늘 원고 ({day_label})  {progress_bar(done, len(rows))}"
+    published = sum(1 for r in rows if r.published)
+    head = f"📚 {LABEL} 오늘 원고 ({day_label}) · 발행 {progress_bar(published, len(rows))}"
     lines = "\n".join(f"{i}. {r.icon} *{escape_mrkdwn(r.category)}* — {r.text}" for i, r in enumerate(rows, start=1))
     waiting = sum(1 for r in rows if r.icon == "📝")
     footer = (f"승인 대기 {waiting}편 — #yoopost-1-원고승인 의 원고 메시지에 ✅ 를 누르면 발행됩니다"
               if waiting else "원고는 #yoopost-1-원고승인 에 올라갑니다")
+    summary = (f"카테고리 처리 {done}/{len(rows)} · 승인 대기 {waiting} · "
+               f"발행 중 {sum(r.icon == '🚀' for r in rows)} · 보류 {sum(r.icon == '⏸️' for r in rows)} · "
+               f"건너뜀 {sum(r.icon == '⏭️' for r in rows)} · 실패 {sum(r.icon in ('❌', '⚠️') for r in rows)}")
     return head, [
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*{head}*"}},
         {"type": "section", "text": {"type": "mrkdwn", "text": lines[:2900]}},
-        {"type": "context", "elements": [{"type": "mrkdwn", "text": footer}]},
+        {"type": "context", "elements": [{"type": "mrkdwn", "text": f"{summary}\n{footer}"}]},
     ]
 
 

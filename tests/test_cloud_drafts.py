@@ -235,7 +235,8 @@ def test_sync_and_report_runs_the_whole_actions_step(tmp_path):
     write_json(root / "runs" / "20260930.json", {"started": "07:00", "finished": ""})
     outcome = sync_and_report(root, clock, store, send, slack, lambda: entries)
     assert outcome.sent == ("20260930_163000_1",) and sent == ["20260930_163000_1"]
-    assert len(client.messages) == 1 and "▰▱▱▱▱▱▱ 1/7" in client.messages[0]["text"]
+    assert len(client.messages) == 1 and "발행 ▱▱▱▱▱▱▱ 0/7" in client.messages[0]["text"]
+    assert "카테고리 처리 1/7" in client.messages[0]["blocks"][-1]["elements"][0]["text"]
     assert read_json(root / "state" / "progress_20260930.json")["ts"]
     published = json.loads((root / "state" / "published.json").read_text(encoding="utf-8"))
     assert published[0]["topic"] == "주제"
