@@ -1,0 +1,5 @@
+{
+ "category": "AI 도구",
+ "reason": "다른 주제 재작성 2회 후 보류: 이전 실패 후보 및 brief-2.md의 기존 발행·최근 원고와 겹치지 않는 Honeyjar의 2026-10-13 비공개 베타 확대 발표를 candidate.json에 먼저 기록했다. 독립 매체 TechCrunch의 2026-10-12 보도 본문과 날짜는 직접 읽었다. 그러나 대표 공식 발표 URL은 웹 도구에서 not accessible/Internal Error로 본문을 읽지 못했고, 정책에 따른 동일 공개 URL의 urllib 단일 조회(제한 시간 20초)에서 HTTP 403 및 error c",
+ "at": "2026-10-14T08:10:56+09:00"
+}
