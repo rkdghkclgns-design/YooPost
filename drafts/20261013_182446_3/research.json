@@ -1,0 +1,57 @@
+{
+ "topic": "Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception",
+ "source_url": "https://arxiv.org/abs/2610.12445",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Caught in the Act — arXiv 제출 기록",
+   "url": "https://arxiv.org/abs/2610.12445",
+   "publisher": "FAR.AI / arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Caught in the Act — v1 본문과 부록",
+   "url": "https://arxiv.org/html/2610.12445v1",
+   "publisher": "FAR.AI / arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Probes That Catch an Agent Lying Before It Says a Word",
+   "url": "https://kenashe.ai/blog/2026-10-09-probes-that-catch-an-agent-lying-before-it-says-a-word/",
+   "publisher": "KenAshe Digest / Ken Ashe",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Classification metrics: ROC and ROC AUC",
+   "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics",
+   "publisher": "scikit-learn developers",
+   "published": "",
+   "official": true,
+   "date_note": "보조 개념 문서에 발표일 미표시. 최신성 판정에 사용하지 않음."
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://arxiv.org/html/2610.12445v1#S4.F3",
+   "caption": "그림 3: 정치적 거짓과 답변 유도 평가의 후속 질문·프로브 판독 구조",
+   "credit": "Hollinsworth et al., FAR.AI (CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 57,
+  "confirmed": 56,
+  "removed": [
+   "전체 25개 시나리오라는 부정확한 설명을 삭제하고 전체 26개에서 두 단계로 제외한 절차로 수정."
+  ],
+  "note": "별도 사실 검증 단계에서 공식 arXiv 소개·v1 본문, 독립 해설 발행자 페이지, scikit-learn 공식 지표 문서를 다시 열고 HTTP 200 본문을 재조회했다. 조회 시각·최종 URL·상태·본문은 source-evidence/S1-recheck.md~S4-recheck.md에 저장했다. 기존 근거와 재조회 본문을 대조하고 방법론 2·4절, 결과 5절, 결론 6절과 부록 B.1/B.4 등을 읽었다. 반복되는 주장은 고유 사실로 합산했으며 자체 실행·검증 상태·필자 해석은 집계에서 제외했다. 외부 사실 57건 중 56건 확인, 전체 시나리오 수에 관한 기존 주장 1건을 정정했다. 독립 해설 관련 3건은 해당 발행자가 공개한 날짜·작성 방식·내용에 관한 주장으로 해당 원문을 사용했으며 연구 성능 검증은 공식 논문으로 수행했다. 초록 98.8%와 본문 특정 비교 0.979~0.984는 모두 원문에 있으나 차이의 원인은 확인되지 않아 추정하지 않았다. 실험 재현·모델 실행·승인·발행은 수행하지 않았다. 원문 조회 실패나 핵심 근거 부족은 없어 skip.json을 만들지 않았다."
+ },
+ "selection_note": "2026-10-08 UTC 제출(한국 시각 2026-10-09)로 2026-10-06 이후 새 제출, 10월 9일 독립 해설 확인. 제공된 발행 목록 및 거절 후보와 제목·소식·대표 URL이 겹치지 않음. 독립 해설은 자동 작성·초록 기반임을 공개하므로 실험 사실 근거는 공식 본문 사용. 이미지 I1은 본문에 인라인 SVG로 포함되어 독립 이미지 파일 주소가 없음."
+}
