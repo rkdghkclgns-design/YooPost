@@ -42,7 +42,12 @@
    "failure_kind": "rate_limit",
    "finished_at": "2026-10-13T15:46:28+09:00",
    "rejected_candidates": [],
-   "next_retry_at": "2026-10-13T17:46:28+09:00"
+   "next_retry_at": "2026-10-13T17:46:28+09:00",
+   "last_notified": {
+    "result": "failed",
+    "kind": "rate_limit",
+    "note": "Codex 요청 한도에 걸렸습니다. 재시도 대기·횟수 제한을 유지합니다 (exit=1)"
+   }
   },
   "20261013:daily:AI 뉴스 리뷰": {
    "at": "2026-10-13T13:13:43+09:00",
