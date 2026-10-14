@@ -1,0 +1,62 @@
+{
+ "topic": "An Update on Character.ai (Character.AI Chapter 11, 2026-10-12)",
+ "source_url": "https://blog.character.ai/an-update-on-character-ai/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "An Update on Character.ai",
+   "url": "https://blog.character.ai/an-update-on-character-ai/",
+   "publisher": "Character.AI",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Just 5 years in, interactive chatbot platform Character.AI files for bankruptcy",
+   "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Character.AI files for bankruptcy, will sell some assets to Disney for $20 million",
+   "url": "https://www.nbcnews.com/tech/tech-news/characterai-files-bankruptcy-sell-assets-disney-20-million-rcna603174",
+   "publisher": "NBC News (Reuters)",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Character.AI files for bankruptcy, agrees to sell assets to Disney for $20 million",
+   "url": "https://www.investing.com/news/stock-market-news/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million-4945401",
+   "publisher": "Reuters via Investing.com",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Character.AI files for bankruptcy as Disney moves to buy AI startup's assets for $20 million",
+   "url": "https://techstartups.com/2026/10/13/character-ai-files-for-bankruptcy-as-disney-moves-to-buy-ai-startups-assets-for-20-million/",
+   "publisher": "Tech Startups",
+   "published": "2026-10-13",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 블로그 글과 보도 기사 모두 글자 중심이며 본문에 내용과 관련된 도표·화면 그림이 없음",
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 41,
+  "removed": [
+   "법원 서류의 자산·부채 추정액 5,000만~1억 달러는 상장 대형 기업의 파산과 비교하면 크지 않은 규모이며, 한때 평가받던 기업가치와는 큰 차이가 있습니다. (출처에 없는 해석)",
+   "테크 스타트업스는 이번 사례를 2025년 5월 파산한 빌더닷에이(Builder.ai)와 비교하며 AI 거품 논쟁과 연결했지만… (원문 본문에 'AI 거품' 언급 없음 — 문장 삭제)",
+   "디즈니가 이달 초 아난드를 CTO로 영입 (로이터 '이달 초' vs 테크크런치 '지난달' 엇갈림 — 시점 삭제)",
+   "미국 동부 시간 기준 (출처에 시간대 없음)",
+   "연산 비용과 AI 인재 비용 때문에 한 번도 흑자를 낸 적이 없습니다 → '흑자를 내지 못했다'로 수정",
+   "디즈니가 IP 라이선스와 인력을 확보한다는 점에서 … AI 캐릭터 기술에 관심을 두고 있다는 신호로 읽을 수 있습니다 (해석 삭제)",
+   "디즈니는 라이선스와 인력 이행 지원을 받는 구조 (오류: 디즈니가 이행을 '돕는' 쪽 — 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 공식 블로그(Oct 12, 2026)·TechCrunch(October 13, 2026)·NBC News/Reuters(Oct. 13, 2026)·Investing.com/Reuters(Oct 13, 2026)·Tech Startups(October 13, 2026)를 WebFetch로 다시 열어 문장별 대조, 각 published 날짜가 페이지 표시 날짜와 일치함을 확인. 디즈니 거래는 두 보도의 표현(로이터: 일부 IP 비독점·영구 라이선스의 스토킹호스 입찰자 / 테크크런치: 일부 자산 매입+기술 비독점·영구 라이선스)을 출처대로 구분해 수정. '영업 손실'→'손실', 구글 27억 달러 '모델 비독점 라이선스'→'라이선스 계약', 디즈니 논평 거절·전반적 해결 범위(주 정부·해외 규제 당국 조사·개인 소송)는 Investing/Reuters로 확인. 투자·법률 조언이 아님을 도입·경고 박스·FAQ에 명시. 막힌 Business Wire 보도자료는 출처로 쓰지 않음."
+ }
+}
