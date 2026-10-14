@@ -1,0 +1,84 @@
+{
+ "topic": "OpenAI's annualized revenue $20 billion less than previously signaled, FT reports (Reuters)",
+ "source_url": "https://www.thestar.com.my/tech/tech-news/2026/10/09/openai039s-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports",
+ "sources": [
+  {
+   "id": "S9",
+   "title": "Oracle Form 10-Q for the quarter ended August 31, 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+   "publisher": "Oracle (SEC filing)",
+   "published": "2026-09-11",
+   "official": true
+  },
+  {
+   "id": "S1",
+   "title": "OpenAI's September annualized revenue nears $50 billion, less than previously indicated, source says (Reuters)",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/10/09/openai039s-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports",
+   "publisher": "The Star (Reuters)",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI expects a $70bn revenue run rate by year-end, Bloomberg reports",
+   "url": "https://thenextweb.com/news/openai-revenue-70bn-year-end-50bn-september",
+   "publisher": "TNW",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "CoreWeave Sinks 7% as Financed AI Buildout Names Sell Off Apart From Cloud Software",
+   "url": "https://247wallst.com/investing/2026/10/08/coreweave-sinks-7-as-financed-ai-buildout-names-sell-off-apart-from-cloud-software-nebius-drops-6-oracle-falls-5/",
+   "publisher": "24/7 Wall St.",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S10",
+   "title": "Broadcom CEO Hock Tan likens many AI investors to casino gamblers",
+   "url": "https://thenextweb.com/news/broadcom-hock-tan-ai-investors-casino-capital",
+   "publisher": "TNW",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S11",
+   "title": "US stocks fall after hot inflation report as leading AI shares tumble (AFP)",
+   "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-markets-mixed-tech-firms-025619455.html",
+   "publisher": "Yahoo Finance (AFP)",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S12",
+   "title": "OpenAI and Oracle reportedly ink historic cloud computing deal (TechCrunch)",
+   "url": "https://finance.yahoo.com/news/openai-oracle-reportedly-ink-historic-190034718.html",
+   "publisher": "Yahoo Finance (TechCrunch)",
+   "published": "2025-09-10",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "본문 그림이 없는 뉴스 기사들만 읽었고(TNW 머리 그림은 로고 사진), 원고 내용을 보여 주는 도표·차트가 출처에 없음",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 51,
+  "removed": [
+   "로이터는 이 보도를 독립적으로 확인하지 못했다(오류: 로이터는 소식통을 통해 직접 전함) → 수정",
+   "블룸버그가 '사과 대 사과가 아니다'라고 표현했다(Beri 단독 재인용) → 삭제",
+   "야후 파이낸스(BeInCrypto 재게시) 단독 수치: 오라클 5% 넘게·브로드컴 4% 가까이·엔비디아 2% 넘게·마이크로소프트 1% 넘게 하락 → 삭제(CNN/TNW·247 수치로 대체)",
+   "오라클 계약 잔액의 약 45%가 OpenAI 계약(야후/BeInCrypto 단독) → 본문·표·FAQ 모두 삭제",
+   "월스트리트저널: 오라클 AI 칩 추가 자금 조달 모색(야후 단독, 기존 글 'AI 칩 부채 금융 총정리'와 겹침) → 삭제",
+   "코어위브 최대 224억 달러 계약, 브로드컴 500억 달러 넘는 자금 조달, AMD 6GW·엔비디아 10GW(야후 단독, 기존 글과 겹침) → 공급업체 표와 함께 삭제",
+   "야후: 200억 달러 차이는 대부분 계산 방식 차이(FAQ) → FT·로이터 근거로 다시 씀",
+   "Crypto Briefing 단독: CPI 전월 대비 0.6%·예상치 3.6%, 코어위브 장중 최대 15.9% 하락 → 삭제(AFP 확인 수치 '나스닥 1.9%·S&P 1.1%·CPI 3.7%·코어위브 15% 넘게'로 대체)",
+   "KuCoin(NS3 재게시) 브로드컴 CEO 발언 → 원문 경로 불명으로 출처 삭제, TNW(블룸버그·CNBC 인용) 기사로 확인한 내용만 다시 씀(행사명 DBS 아시아 퓨처 포워드 컨퍼런스)",
+   "Beri: Anthropic 파트너 몫 조정 시 약 50억 달러 차이 추정(필자 계산, 저품질 단독) → 삭제",
+   "AI Weekly(애그리게이터) 출처 → 삭제(TNW·로이터로 같은 내용 확인)",
+   "10월 14일 하락으로 'AI 인프라 부채 우려 부각'(근거 없음·기존 글과 겹침) → 'AI 관련주 변동성'으로 수정",
+   "247월스트리트 하락을 OpenAI 보도와 연결한 서술 → 247은 차입 비용·장기 금리를 원인으로 들었다고 수정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 로이터(The Star, 페이지 날짜 2026-10-09 MYT), TNW 2건(10-09, 10-13), 247월스트리트(10-08), AFP/야후(10-14), 테크크런치/야후(2025-09-10), 오라클 10-Q(SEC, 2026-09-11)를 다시 열어 수치·날짜 대조. 암호화폐·애그리게이터 출처(야후 BeInCrypto 재게시, KuCoin, Crypto Briefing, AI Weekly, Beri) 제거. 오라클 잉여현금흐름 -54억 달러는 10-Q 영업현금흐름 231억-설비투자 285억으로 재계산. 기존 글 'AI 칩 부채 금융 총정리'(2026-10-09)와 겹치는 부채 조달 내용 삭제. 투자 조언 아님 명시."
+ }
+}
