@@ -1,0 +1,65 @@
+{
+ "topic": "AI Models May Be Capable of Self-Replicating Without a Datacenter (Anthropic Frontier Red Team)",
+ "source_url": "https://www.anthropic.com/research/self-replicating-ai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI models may be capable of self-replicating without a datacenter (Frontier Red Team)",
+   "url": "https://www.anthropic.com/research/self-replicating-ai",
+   "publisher": "Anthropic",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic Warns Small AI Models Could Soon Form Self-Propagating IoT Botnets",
+   "url": "https://thehackernews.com/2026/10/anthropic-warns-small-ai-models-could.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic: Small Open Models Months From IoT Self-Replication",
+   "url": "https://aiweekly.co/alerts/anthropic-small-open-models-months-from-iot-self-replication",
+   "publisher": "AI Weekly",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Red Team Says Small AI Models May Soon Replicate on IoT Devices",
+   "url": "https://www.unite.ai/anthropic-red-team-says-small-ai-models-may-soon-replicate-on-iot-devices/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-12",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/25459a064b25f10689f20e258fb4f1f0291ea083-2360x860.png",
+   "page_url": "https://www.anthropic.com/research/self-replicating-ai",
+   "caption": "복제 단계 흐름도: 대상 탐색, 초기 접근, 추론 환경 구축, 복제 전파",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/9d35ab77dd3402cadb0011b20cc7b9960f7ea265-2360x860.png",
+   "page_url": "https://www.anthropic.com/research/self-replicating-ai",
+   "caption": "추론 환경 구축 단계에 초점을 둔 실험 설계 흐름도",
+   "credit": "Anthropic"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 45,
+  "removed": [
+   "또 연구진은 처리량 수치가 한쪽에서는 0.39, 다른 쪽에서는 약 0.3 토큰/초로 서로 다르게 적힌 점을 스스로 지적했습니다. (원문에 그런 지적 없음 → 시연 0.39 / 32k 문맥 평균 약 0.3 으로 맥락을 나눠 다시 씀)",
+   "스피어피싱 평가에서도 소형 모델 점수는 인간 기준으로 정규화하면 '매우 나쁨~나쁨' 수준이었습니다. (다음 문단과 중복)",
+   "조언자·협업 결과는 특정 설정에 한정되었고, 일부 기법은 단순화한 통제 환경에서만 시험됐습니다. (원문이 한계로 밝힌 내용 아님 → 원문의 실제 단서로 교체)",
+   "연구진은 지금부터 시스템을 단단히 하고 느린 복제기에 대비하는 일이 이후 더 빠르고 공격적인 복제기를 막는 토대가 된다고 강조합니다. (원문은 느린 복제기를 '전조(bellwether)'로 표현 → 결론 문단 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): Anthropic 원문(S1, 페이지 날짜 Oct 12, 2026·메타 2026-10-12)을 curl 로 다시 열어 전 주장 대조 — 9종 중 8종, GLM-5.2 8/8 노드 4회·7/8 1회, 45%→61~84%, Mirai 14일 92% 대 74%, 약 950만 대·약 90개 제품군, 13.7 ECI/년, 133k 복제본·80k tok/s·H100 약 40장, 28~51h·71~150h, Orin 76.7·Thor 226 tok/s 일치. 11개 모델(Alibaba·DeepSeek·Google·Meta·MoonShot AI·OpenAI·Zhipu AI)은 원문에 목록이 없어 The Hacker News(S2, Oct 13, 2026)·AI Weekly(S3, 2026-10-12)로 확인. Unite.AI(S4, 2026-10-12) 추가로 교차 확인. THN '의미 있는 연산' 문장에 원문의 '절대량으로는 아주 작은 연산' 단서 추가, Mirai 18%p 표현을 격리·통지 기준으로 수정. 사용자 점검 권고는 '일반적 해석' 표시 유지, 공격 절차 상세 없음 확인. 인용 이미지 2개 HTTP 200 image/png(2360x860) 확인. 막힌 출처 없음."
+ }
+}
