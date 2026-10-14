@@ -1,0 +1,79 @@
+{
+ "topic": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+ "source_url": "https://arxiv.org/abs/2610.12572",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.12572",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DiffusionART (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2610.12572v1",
+   "publisher": "arXiv",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "DiffusionART — Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.12572",
+   "publisher": "Hugging Face",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "DiffusionART README (공식 GitHub 저장소 vanzll/DiffusionART)",
+   "url": "https://raw.githubusercontent.com/vanzll/DiffusionART/main/README.md",
+   "publisher": "GitHub",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "DiffusionART project page",
+   "url": "https://vanzll.github.io/diffusionart-project/",
+   "publisher": "DiffusionART authors",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://vanzll.github.io/diffusionart-project/assets/consistency-force.webp",
+   "page_url": "https://vanzll.github.io/diffusionart-project/",
+   "caption": "NFT의 긍정·부정 힘이 순방향-역방향 일관성 힘을 일부만 상쇄한다는 그림 (숨은 일관성 힘 진단)",
+   "credit": "DiffusionART authors"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://vanzll.github.io/diffusionart-project/assets/aggregation-first.webp",
+   "page_url": "https://vanzll.github.io/diffusionart-project/",
+   "caption": "집계 우선 가이던스: 끝점 보상 공분산을 한 번 정규화해 여러 상태에 공유하는 방법",
+   "credit": "DiffusionART authors"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://vanzll.github.io/diffusionart-project/assets/video-efficiency.webp",
+   "page_url": "https://vanzll.github.io/diffusionart-project/",
+   "caption": "영상 실험 효율: 학습 단계·GPU 시간에 따른 평균 VQ/MQ 보상 비교",
+   "credit": "DiffusionART authors"
+  }
+ ],
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 59,
+  "removed": [
+   "Hugging Face Papers 페이지에서도 논문 요약과 링크 외에 별도의 커뮤니티 토론 내용은 확인되지 않았습니다. (HF 페이지에 저자와의 FDFO 비교 댓글 토론이 있어 사실과 다름 → 실제 댓글 내용으로 교체)",
+   "스칼라 K=8이 891.1 GPU시간에 VQ 13.637이었고, 쌍대 K=2는 260.8 GPU시간에 VQ 12.235였습니다. 즉 K=2가 K=8보다 GPU 시간을 3.4배 덜 쓰면서 (3.4배는 쌍대 K=8 883.3시간 대비 — 비교 대상 수정)",
+   "Hugging Face Papers에서도 주목받고 있습니다 (모호 → 'Paper of the day 1위' 확인 사실로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs·HTML 전문(v1, Thu 8 Oct 2026 18:01:44 UTC 제출, citation_date 2026/10/08 — KST로는 10월 9일 03:01, 본문에 'UTC' 명시), HF Papers(Published on Oct 8, Submitted Oct 12, #1 Paper of the day, KlingAI Research 조직 표시 — 논문 소속 NUS HPC-AI Lab·Kling AI·HKUST 확인), 프로젝트 페이지, README(raw.githubusercontent.com — github.com 저장소 페이지는 이 세션에서 403 차단이라 같은 README 원문으로 확인, News '2026.10.12 공개'·2026.10.14 변경 기록)를 다시 열어 수치 전부 대조. 프로젝트 페이지(S5)에는 날짜가 적혀 있지 않아 published 를 비움(README 근거 추정값 2026-10-12 제거). 인용 이미지 3개 모두 image/webp 200 확인, 캡션은 페이지 alt 와 일치. 'EMA 롤아웃 유지·앵커 제거 시 GenEval 붕괴'는 프로젝트 페이지 그림 alt 로 확인."
+ }
+}
