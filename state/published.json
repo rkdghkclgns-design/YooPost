@@ -2862,5 +2862,117 @@
    "https://paperplaine.com/papers/apex-harm-evaluating-agent"
   ],
   "draft_id": "20261014_074032_3"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "📱 Google Play 개인용 앱 총정리: AI Studio 바이브 코딩 앱을 내 폰에 비공개로 실행하는 방법",
+  "topic": "New on Google Play: More ways to create, discover, and play — Google Play 개인용 앱(Personal apps)",
+  "category": "AI 도구",
+  "source_url": "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/google-play-ai-studio.html"
+  },
+  "sources": [
+   "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+   "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/",
+   "https://www.androidheadlines.com/2026/10/google-play-private-vibe-coded-apps.html",
+   "https://nokiapoweruser.com/google-play-update-vibe-coded-apps-ask-play-gamer-dna/"
+  ],
+  "draft_id": "20261015_071803_2"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "🧠 DiffusionART 논문 분석: 확산 모델 강화학습 GPU 시간 최대 12배 절감",
+  "topic": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.12572",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/diffusionart-gpu-12.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.12572",
+   "https://arxiv.org/html/2610.12572v1",
+   "https://huggingface.co/papers/2610.12572",
+   "https://raw.githubusercontent.com/vanzll/DiffusionART/main/README.md",
+   "https://vanzll.github.io/diffusionart-project/"
+  ],
+  "draft_id": "20261015_072345_3"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "🎭 Character.AI 챕터 11 파산 총정리: 디즈니 2,000만 달러 자산 매각과 이용자 영향",
+  "topic": "An Update on Character.ai (Character.AI Chapter 11, 2026-10-12)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://blog.character.ai/an-update-on-character-ai/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/characterai-11-2000.html"
+  },
+  "sources": [
+   "https://blog.character.ai/an-update-on-character-ai/",
+   "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/",
+   "https://www.nbcnews.com/tech/tech-news/characterai-files-bankruptcy-sell-assets-disney-20-million-rcna603174",
+   "https://www.investing.com/news/stock-market-news/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million-4945401",
+   "https://techstartups.com/2026/10/13/character-ai-files-for-bankruptcy-as-disney-moves-to-buy-ai-startups-assets-for-20-million/"
+  ],
+  "draft_id": "20261015_072944_4"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "🔒 Anthropic AI 자기복제 경고 총정리: 소형 모델·IoT 기기 8/8 전파 실험과 방어법",
+  "topic": "AI Models May Be Capable of Self-Replicating Without a Datacenter (Anthropic Frontier Red Team)",
+  "category": "AI 보안",
+  "source_url": "https://www.anthropic.com/research/self-replicating-ai",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-ai-iot-88.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/research/self-replicating-ai",
+   "https://thehackernews.com/2026/10/anthropic-warns-small-ai-models-could.html",
+   "https://aiweekly.co/alerts/anthropic-small-open-models-months-from-iot-self-replication",
+   "https://www.unite.ai/anthropic-red-team-says-small-ai-models-may-soon-replicate-on-iot-devices/"
+  ],
+  "draft_id": "20261015_073720_5"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "📊 OpenAI 매출 '700억 달러' 논란 총정리: 500억 달러 보고가 AI 주가 급락을 부른 이유",
+  "topic": "OpenAI's annualized revenue $20 billion less than previously signaled, FT reports (Reuters)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.thestar.com.my/tech/tech-news/2026/10/09/openai039s-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-700-500-ai.html"
+  },
+  "sources": [
+   "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+   "https://www.thestar.com.my/tech/tech-news/2026/10/09/openai039s-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports",
+   "https://thenextweb.com/news/openai-revenue-70bn-year-end-50bn-september",
+   "https://247wallst.com/investing/2026/10/08/coreweave-sinks-7-as-financed-ai-buildout-names-sell-off-apart-from-cloud-software-nebius-drops-6-oracle-falls-5/",
+   "https://thenextweb.com/news/broadcom-hock-tan-ai-investors-casino-capital",
+   "https://finance.yahoo.com/markets/world-indices/articles/asian-markets-mixed-tech-firms-025619455.html",
+   "https://finance.yahoo.com/news/openai-oracle-reportedly-ink-historic-190034718.html"
+  ],
+  "draft_id": "20261015_074332_6"
+ },
+ {
+  "date": "2026-10-15",
+  "title": "🎙 Grok Voice 3.0 총정리: 분당 $0.08·음성 지수 86.9·1초 미만 응답",
+  "topic": "Grok Voice 3.0 (xAI/SpaceXSI, 2026-10-14) — speech-to-speech model for Voice Agent API",
+  "category": "AI 언어 모델",
+  "source_url": "https://x.ai/news/grok-voice-3",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/grok-voice-30-008-8691.html"
+  },
+  "sources": [
+   "https://x.ai/news/grok-voice-3",
+   "https://siliconangle.com/2026/10/14/grok-voice-3-0-from-spacexsi-outscores-openai-and-google-on-speech-to-speech-index/",
+   "https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents/",
+   "https://blockchain.news/news/grok-voice-3-launch-unchanged-api-pricing-auto-migration",
+   "https://runtimewire.com/article/spacexai-grok-voice-3-speech-index",
+   "https://artificialanalysis.ai/speech-to-speech",
+   "https://docs.x.ai/docs/release-notes",
+   "https://docs.x.ai/docs/models",
+   "https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech"
+  ],
+  "draft_id": "20261015_075712_1"
  }
 ]
