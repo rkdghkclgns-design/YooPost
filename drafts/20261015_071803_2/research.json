@@ -1,0 +1,58 @@
+{
+  "topic": "New on Google Play: More ways to create, discover, and play — Google Play 개인용 앱(Personal apps)",
+  "source_url": "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "New on Google Play: More ways to create, discover, and play",
+      "url": "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+      "publisher": "Google (The Keyword)",
+      "published": "2026-10-13",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Google Play now lets anyone build private, vibe-coded apps that run on Android",
+      "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-13",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Google Play Overhaul Lets Anyone Vibe-Code and Run Private AI Apps",
+      "url": "https://www.androidheadlines.com/2026/10/google-play-private-vibe-coded-apps.html",
+      "publisher": "Android Headlines",
+      "published": "2026-10-14",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Google Play Update: AI Vibe-Coded Apps, Gamer DNA & Ask Play Explained",
+      "url": "https://nokiapoweruser.com/google-play-update-vibe-coded-apps-ask-play-gamer-dna/",
+      "publisher": "NPowerUser",
+      "published": "2026-10-14",
+      "official": false
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Campfire_personal_library.width-1200.format-webp.webp",
+      "page_url": "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+      "caption": "개인용 앱: 바이브 코딩한 리그용 앱을 Google Play 로 안드로이드 폰에서 실행하는 화면",
+      "credit": "Google"
+    }
+  ],
+  "factcheck": {
+    "claims": 46,
+    "confirmed": 42,
+    "removed": [
+      "다만 같은 매체(Android Headlines)는 AI Studio 요금, 사용 한도, 개인용 앱의 보안·데이터 처리 방식은 글에서 다뤄지지 않았다고 짚었습니다. (매체가 짚은 내용이 아님 → 두 글 모두 다루지 않았다는 사실로 수정)",
+      "한편 Android Headlines 는 이 기능을 두고 개인용 앱이 공개 앱과 심사·안전 관리에서 어떻게 다른지는 다루지 않았다고 짚었습니다. (근거 없는 인용 → 수정)",
+      "TechCrunch 가 든 예처럼 아이의 스포츠 리그 일정을 관리하는 앱 (원문은 공유 대상 예시로 아이의 T-ball 리그 → 수정)",
+      "Dave the Diver 와 Warhammer 40,000: Boltgun 이 이제 제공되고, 클라우드 저장으로 ... (원문은 'bringing ... to Play', 클라우드 저장 문장은 이후 출시작 포함 목록 → 수정)"
+    ],
+    "note": "Opus 검증: 구글 블로그 원문 HTML 직접 내려받아 대조(article:published_time 2026-10-13, Sam Bright 직함, 18세 이상·일부 시장, Sprints 2~5명·48시간, Sidekick 30초 Playbacks, Googlebook·XR·차량, 축구 리그 5곳, Play Fest 일주일, Game Trials PC 확대, Family Link 나이대). TechCrunch(2026-10-13, Sarah Perez)·Android Headlines(2026-10-14, Jean Leon)·NPowerUser(2026-10-14) 재열람·날짜 일치. 인용 이미지 I1 은 본문 그림(alt: rec-league app), og:image 아님, 응답 application/octet-stream 이나 .webp 확장자·RIFF WebP 내용·884x1856 확인. 확인된 사실(Game Finder 20억+ 플레이어, 후속 출시작, Play Fest 혜택, TechCrunch 30억 사용자 배경)로 보완. EGRESS_BLOCKED 출처 없음."
+  }
+}
