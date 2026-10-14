@@ -1,0 +1,314 @@
+{
+ "title": "🎙 Grok Voice 3.0 총정리: 분당 $0.08·음성 지수 86.9·1초 미만 응답",
+ "category": "AI 언어 모델",
+ "intro": "안녕하세요! 2026년 10월 14일, xAI(현 SpaceXSI)가 음성 에이전트용 **Grok Voice 3.0**을 공개했습니다. 음성을 받아 음성으로 바로 답하는 '음성-대-음성(speech-to-speech)' 모델로, 회사는 Artificial Analysis의 Speech-to-Speech Index에서 **86.9점으로 1위**를 차지했다고 밝혔습니다. 가격은 Grok Voice 2.0과 같은 **분당 $0.08**이라 눈길을 끕니다. 다만 성능 수치 상당수는 회사가 인용한 값이고, 사람 선호도(Arena) 순위는 Artificial Analysis 리더보드에서 **공동 3위**로 나와 '모든 항목 1위'는 아닙니다. 이 글에서는 공식 발표·개발자 문서·Artificial Analysis 리더보드와 SiliconANGLE·Unite.AI 등 보도를 나란히 놓고, 확인된 것과 아직 확인되지 않은 것을 구분해 정리합니다. 함께 살펴보시죠!",
+ "summary": [
+  "Grok Voice 3.0은 2026-10-14 공개된 xAI(SpaceXSI)의 음성-대-음성 모델로, Voice Agent API에서 바로 쓸 수 있습니다.",
+  "가격은 분당 $0.08(시간당 $4.80)로 Grok Voice 2.0과 같고, `grok-voice-latest`를 쓰던 에이전트는 자동으로 3.0으로 옮겨졌습니다.",
+  "Artificial Analysis Speech-to-Speech Index 86.9점: GPT-Live-1(Astra, Medium) 83.2, Gemini 3.8 Live 82.6, Grok Voice 2.0 81.3보다 높게 발표됐습니다.",
+  "τ-Voice는 71.6%로 GPT-Live-1(74.5%)에 못 미치지만, xAI는 첫 소리까지의 지연이 40% 낮다고 설명합니다.",
+  "Arena 사람 선호도는 1070점으로 Artificial Analysis 리더보드 공동 3위이며, Tesla·Starlink 운영 수치는 회사 주장으로 독립 검증되지 않았습니다.",
+  "이 글에서 배울 것: Grok Voice 3.0의 스펙·가격·벤치마크 읽는 법과 도입 전 확인할 점"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Grok Voice 3.0 등장 배경",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "xAI는 2026년 10월 14일 발표문에서 Grok Voice 3.0을 **'세계에서 가장 지능적인 음성-대-음성 모델'**이라고 소개했습니다. 고객 통화를 해결하는 데 강하고, 응답은 1초 미만이며, 다른 프런티어 모델보다 저렴하다는 것이 회사의 주장입니다. 음성-대-음성 모델이란 사람의 말소리를 글자로 바꾸는 단계를 따로 거치지 않고, 말소리를 입력받아 말소리로 바로 응답하는 모델을 뜻합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "SiliconANGLE에 따르면 이 모델은 **Voice Agent API**의 새 버전이며, 고객 지원·영업 통화를 음성 에이전트로 처리하려는 기업을 겨냥합니다. 같은 기사는 회사 배경도 짚습니다. SpaceX가 2월에 xAI를 인수했고, AI 부문은 7월에 SpaceXAI로 바뀌었으며, 이달 초 SpaceXSI라는 이름을 쓰기 시작했다는 설명입니다. 그래서 일부 기사에는 xAI와 SpaceXSI가 함께 나옵니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이름이 헷갈릴 때",
+     "text": "이 글의 xAI, SpaceXAI, SpaceXSI는 같은 회사의 이름 변화입니다. 모델 이름은 Grok Voice 3.0이고, API에서는 `grok-voice-latest` 별칭으로 부릅니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이번 소식은 앞서 다룬 Grok 4.7 같은 텍스트 모델 발표와는 다른 갈래입니다. 텍스트 추론 모델이 아니라 **실시간 통화용 음성 모델**의 세대 교체라는 점이 핵심입니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ Grok Voice 3.0 공식 스펙 정리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 발표문에서 확인되는 스펙은 많지 않습니다. 핵심은 **1초 미만의 지연(latency)**, **Voice Agent API 제공**, 그리고 **2.0과 같은 가격**입니다. 지원 언어 목록, 사용량 제한, 모델 크기 같은 내부 사양은 발표문에 나와 있지 않습니다. 다만 xAI 개발자 문서의 Speech to Speech 페이지는 **20개 이상 언어(한국어 포함)**를 지원한다고 적고 있고, 모델 가격표에는 분당 요금과 별도로 텍스트 입력 요금이 표시돼 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "공개일",
+       "2026년 10월 14일"
+      ],
+      [
+       "종류",
+       "음성-대-음성 모델 (Voice Agent API)"
+      ],
+      [
+       "응답 속도",
+       "1초 미만 (회사 표현: 업계 최고 수준)"
+      ],
+      [
+       "가격",
+       "분당 $0.08 (시간당 $4.80), Grok Voice 2.0과 동일"
+      ],
+      [
+       "API 별칭",
+       "`grok-voice-latest` — 쓰던 에이전트는 자동 전환"
+      ],
+      [
+       "지원 언어",
+       "개발자 문서 기준 20개 이상 (한국어 `ko` 포함)"
+      ],
+      [
+       "텍스트 입력",
+       "가격표에 '$0.004 / text input' 별도 표기 (단위 정의 없음)"
+      ],
+      [
+       "사용량 제한",
+       "발표문·문서에서 확인되지 않음"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "xAI 개발자 릴리스 노트에는 **`grok-voice-3.0`이 Grok Voice 2.0과 같은 가격으로 제공**되고, `grok-voice-latest` 별칭이 3.0을 가리키게 되어 별칭을 쓰는 세션은 자동으로 올라간다고 적혀 있습니다. 같은 노트는 **`grok-voice-2.0`을 더 이상 권장하지 않으며(deprecated)**, `model` 값을 `grok-voice-3.0` 또는 `grok-voice-latest`로 바꾸면 된다고 안내합니다. Blockchain.News도 같은 날 이 릴리스 노트를 근거로 같은 내용을 전했습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 플랫폼 기능과 3.0의 변화를 구분하세요",
+     "text": "전이중 대화, 도구 호출, 다국어 지원 같은 기능은 Grok Voice 플랫폼 전체에 해당하는 설명입니다(Blockchain.News도 이를 3.0만의 변화와 구분했습니다). 3.0에서 새로 바뀐 점은 벤치마크 점수와 지연 개선이라고 보는 것이 안전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "📊 벤치마크 성능",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "xAI는 Artificial Analysis(2026-10-13 기준) 자료를 인용해 **Speech-to-Speech Index 86.9점**을 내세웠습니다. Unite.AI의 설명에 따르면 이 지수는 음성 추론(Big Bench Audio), 에이전트 성능(τ-Voice), 사람 선호도(Arena), 과제 성공률 네 가지를 같은 비중으로 합산합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "모델",
+      "Speech-to-Speech Index"
+     ],
+     "rows": [
+      [
+       "Grok Voice 3.0",
+       "86.9"
+      ],
+      [
+       "GPT-Live-1 (Astra, Medium)",
+       "83.2"
+      ],
+      [
+       "Gemini 3.8 Live (Extended Thinking, High)",
+       "82.6"
+      ],
+      [
+       "Grok Voice 2.0",
+       "81.3"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "세부 항목을 보면 Grok Voice 3.0은 **Big Bench Audio 98.5%**(2.0은 97.2%), **과제 성공률 94.8%**(2.0은 94.6%), **Full Duplex Bench 97.0%**(2.0은 95.1%)로 발표됐습니다. Full Duplex Bench는 말 멈춤·끼어들기·차례 넘기기를 얼마나 자연스럽게 처리하는지 보는 시험입니다. 사람 선호도를 보는 Speech Agent Arena Elo는 1070으로 2.0의 1011보다 올랐습니다. 아래 표는 xAI 발표문에 실린 비교 수치(Artificial Analysis 2026-10-13 기준)입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "Grok Voice 3.0",
+      "Grok Voice 2.0",
+      "GPT-Live-1",
+      "Gemini 3.8 Live"
+     ],
+     "rows": [
+      [
+       "Big Bench Audio",
+       "98.5%",
+       "97.2%",
+       "90.1%",
+       "97.7%"
+      ],
+      [
+       "Arena Elo",
+       "1070",
+       "1011",
+       "1048",
+       "990"
+      ],
+      [
+       "과제 성공률",
+       "94.8%",
+       "94.6%",
+       "87.4%",
+       "89.1%"
+      ],
+      [
+       "Full Duplex Bench",
+       "97.0%",
+       "95.1%",
+       "94.9%",
+       "91.9%"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "비용도 비교 대상입니다. Big Bench Audio 한 과제당 비용은 Grok Voice 3.0이 **$0.025**, GPT-Live-1이 $0.030, GPT-Realtime-2.1이 $0.055로 제시됐습니다. 이 수치는 Artificial Analysis 측정으로 인용된 값입니다. Artificial Analysis 리더보드에서도 Grok Voice 3.0의 **첫 소리까지 시간(Time to First Audio)은 0.81초**로, GPT-Live-1(Astra, medium)의 1.34초보다 짧게 표시됩니다. '1초 미만'과 '지연 40% 낮음'이라는 회사 설명과 맞는 값입니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔍 지는 항목과 엇갈린 해석 읽기",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "모든 항목에서 1위는 아닙니다. 고객 지원 통화를 모사한 **τ-Voice**에서 Grok Voice 3.0은 71.6%로, GPT-Live-1(Astra, Medium)의 74.5%에 못 미쳤습니다(Gemini 3.8 Live는 68.6%, Grok Voice 2.0은 56.5%). xAI는 이를 'GPT-Live-1과 비슷하면서 지연은 40% 낮다'고 표현했고, SiliconANGLE는 OpenAI가 근소하게 앞섰다고 적었습니다. 같은 숫자를 두고 강조점이 다른 셈입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "사람 선호도(Arena)는 비교 범위에 따라 결과가 달라집니다. xAI 발표 표에서는 Arena Elo 1070이 함께 실린 GPT-Live-1(1048)과 Gemini 3.8 Live Extended Thinking(990)보다 높습니다. 그런데 Artificial Analysis 리더보드 전체를 보면 **Gemini 3.1 Flash Live Minimal(1100)**과 **Gemini 3.8 Live 기본형(1088)**이 앞서고, Grok Voice 3.0은 Gemini 3.1 Flash Live High와 같은 1070으로 **공동 3위**입니다. RuntimeWire가 '종합 지수 1위지만 블라인드 선호도 아레나에서는 3위'라고 쓴 것도 이 순위와 일치합니다. 리더보드의 GPT-Live-1(Astra, medium) 값은 1056, Gemini 3.8 Live Extended Thinking(High)은 993으로 발표 표와 조금 다르니, 순위표는 갱신될 수 있다는 점도 기억하세요."
+    },
+    {
+     "type": "info",
+     "title": "💡 점수를 읽는 법",
+     "text": "종합 지수 1위와 개별 항목 1위는 다릅니다. 지연이 중요한 콜센터인지, 정확한 작업 수행이 중요한지에 따라 τ-Voice·과제 성공률·Arena 중 무엇을 볼지 달라집니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 회사가 고른 비교입니다",
+     "text": "xAI 릴리스 노트가 직접 확인해 주는 것은 제공 여부·자동 전환·가격입니다. 벤치마크는 xAI가 Artificial Analysis·ServiceNow 자료를 골라 실은 것이고, SiliconANGLE도 성능·사업 수치 대부분이 회사 주장이나 회사가 인용한 벤치마크라고 짚었습니다. 독립 재현 결과가 나오기 전에는 '발표된 수치'로 읽는 것이 좋습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 실전 활용: Tesla와 Starlink 사례",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "xAI는 Grok Voice가 **Tesla 차량에서 하루 수백만 건의 대화**를 처리한다고 밝혔습니다. 운전자는 커넥터로 일정 확인이나 이메일 답장 같은 단순 작업을 하고, 커피 주문이나 저녁 예약처럼 더 큰 일은 Grok Bot을 통해 손을 쓰지 않고 맡긴다는 설명입니다. 새 모델은 Grok Bot의 음성 모드도 구동합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Starlink 상담센터**에서는 하루 약 2만 건의 고객 통화를 여러 언어로 처리하며(언어 목록은 미공개), 약 70%가 사람 개입 없이 해결되고 영업 통화 네 건 중 한 건은 통화가 끝나기 전에 구매로 이어진다고 합니다. 한 에이전트가 고객 확인, 하드웨어 문제 해결, 크레딧 지급, 교체 장비 발송까지 맡는다는 것이 회사 설명입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "ServiceNow의 Nitin Aggarwal(에이전트 평가·책임 있는 AI 담당 제품관리 시니어 디렉터)은 EVA-Bench에서 Grok Voice 3.0이 **'새로운 파레토 프런티어'**를 세웠다고 평가했습니다. EVA-Bench는 ServiceNow가 공개한 오픈소스 기업용 음성 에이전트 벤치마크로 200개 이상의 실제 기업 시나리오를 다루며, 3.0은 정확도 74%로 가장 높았고 정확도와 고객 경험을 함께 볼 때도 가장 우수했다고 발표됐습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 운영 수치는 검증 전입니다",
+     "text": "Tesla·Starlink 통화량과 해결률은 회사가 밝힌 값이며, SiliconANGLE도 회사 보고 수치라고 표시했습니다. 내 서비스에서 같은 결과가 나오리라고 단정하지 마세요."
+    }
+   ]
+  },
+  {
+   "heading": "💻 도입 전 점검 가이드 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이미 `grok-voice-latest`를 쓰고 있다면 별도 작업 없이 3.0으로 바뀝니다. 그래서 도입 전·후 비교를 직접 해 보는 것이 중요합니다. 아래 지시문은 AI 어시스턴트에게 붙여넣어 자사 통화 시나리오에 맞는 점검표를 만들 때 쓸 수 있는 예시입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "우리 고객센터 음성 에이전트를 Grok Voice 3.0(음성-대-음성, 분당 $0.08)으로 점검하려고 합니다.\n1) 지연(첫 소리까지 시간), 끼어들기 처리, 과제 성공률을 기준으로 20개 통화 시나리오 시험표를 만들어 주세요.\n2) 시험표에는 억양·배경 소음·중간에 말을 끊는 경우를 포함해 주세요.\n3) 기존 모델과 같은 시나리오로 비교하는 기록 양식과, 사람에게 넘겨야 하는 기준도 적어 주세요."
+    },
+    {
+     "type": "paragraph",
+     "text": "점검 항목은 세 가지로 좁히면 편합니다. **지연**, **끼어들기 처리**, **사람에게 넘기는 기준**입니다. 발표된 벤치마크는 시뮬레이션 기반이므로 실제 통화 품질은 직접 확인해야 합니다. 개발자 문서의 지원 언어 표에는 **한국어(`ko`)**가 들어 있지만, 한국어 기준 벤치마크는 발표되지 않았습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 비용 감각 잡기",
+     "text": "분당 $0.08이면 한 시간 통화가 $4.80입니다. 통화 길이와 월 통화량을 곱하면 대략의 예산이 나오지만, xAI 모델 가격표에는 텍스트 입력 요금($0.004 / text input)이 따로 적혀 있으므로 최종 비용은 공식 가격표로 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계점과 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "첫째, **사용량 제한이 발표문과 문서에서 확인되지 않습니다**. 둘째, 벤치마크는 대부분 Artificial Analysis와 ServiceNow 자료를 xAI가 골라 실은 것입니다. 셋째, 종합 1위라 해도 τ-Voice에서는 GPT-Live-1이 앞섰고, 사람 선호도(Arena)는 리더보드 공동 3위입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "그래서 현실적인 접근은 **작은 트래픽으로 먼저 시험하고 기존 모델과 같은 시나리오로 비교하는 것**입니다. 자동 전환 때문에 별칭을 쓰는 서비스는 품질이 갑자기 달라질 수 있으니, 고정된 모델이 필요한 곳은 `model` 값을 `grok-voice-3.0`처럼 버전 이름으로 지정하고 릴리스 노트를 확인하세요."
+    },
+    {
+     "type": "info",
+     "title": "💡 이번 소식에서 새로 바뀐 점",
+     "text": "가격은 그대로이고, 지수는 81.3에서 86.9로, τ-Voice는 56.5%에서 71.6%로, Full Duplex Bench는 95.1%에서 97.0%로 올랐다는 것이 발표의 요지입니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Grok Voice 3.0은 언제 공개됐나요?",
+   "a": "xAI(SpaceXSI)가 2026년 10월 14일 발표했고, Voice Agent API에서 바로 제공됩니다."
+  },
+  {
+   "q": "가격은 얼마인가요?",
+   "a": "분당 $0.08(시간당 $4.80)이며 Grok Voice 2.0과 같습니다. xAI 모델 가격표에는 텍스트 입력 요금($0.004 / text input)이 따로 표시돼 있어 함께 확인하는 것이 좋습니다."
+  },
+  {
+   "q": "기존 연동을 고쳐야 하나요?",
+   "a": "`grok-voice-latest`를 쓰던 에이전트는 자동으로 3.0으로 바뀌었고 변경이 필요 없다고 안내됩니다. 버전을 직접 지정해 `grok-voice-2.0`을 쓰는 경우, 릴리스 노트는 2.0이 deprecated 되었으니 `model`을 `grok-voice-3.0` 또는 `grok-voice-latest`로 바꾸라고 안내합니다."
+  },
+  {
+   "q": "정말 가장 좋은 음성 모델인가요?",
+   "a": "Artificial Analysis 종합 지수에서는 86.9점으로 1위지만, τ-Voice에서는 GPT-Live-1이 74.5%로 더 높았고 사람 선호도(Arena)는 1070점으로 공동 3위라 모든 면에서 최고라고 단정하기는 어렵습니다."
+  },
+  {
+   "q": "한국어도 되나요?",
+   "a": "발표문에는 언어 목록이 없지만, xAI 개발자 문서의 Speech to Speech 지원 언어 표에 한국어(`ko`)가 들어 있습니다. 다만 한국어 기준 성능 수치는 없으니 직접 시험해 보세요."
+  }
+ ],
+ "closing": "지금까지 Grok Voice 3.0에 대해 알아보았습니다. 가격은 그대로인데 종합 지수는 81.3에서 86.9로 올랐고, 1초 미만 응답과 Tesla·Starlink 활용 사례가 함께 발표됐습니다. 다만 τ-Voice에서는 경쟁 모델이 앞섰고 사람 선호도는 공동 3위였으며, Tesla·Starlink 운영 수치는 독립 검증이 더 필요합니다. 여러분도 한번 Grok Voice 3.0을 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "벤치마크·가격·API 조건은 바뀔 수 있으니 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "GrokVoice3",
+  "xAI",
+  "SpaceXSI",
+  "음성AI",
+  "음성에이전트",
+  "SpeechToSpeech",
+  "Voice에이전트",
+  "ArtificialAnalysis",
+  "고객센터AI",
+  "Starlink",
+  "Tesla",
+  "AI백과사전",
+  "AI언어모델"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7",
+  "S8",
+  "S9"
+ ]
+}

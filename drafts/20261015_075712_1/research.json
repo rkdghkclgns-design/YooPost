@@ -1,0 +1,89 @@
+{
+ "topic": "Grok Voice 3.0 (xAI/SpaceXSI, 2026-10-14) — speech-to-speech model for Voice Agent API",
+ "source_url": "https://x.ai/news/grok-voice-3",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Grok Voice 3.0",
+   "url": "https://x.ai/news/grok-voice-3",
+   "publisher": "xAI (SpaceXSI)",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Grok Voice 3.0 from SpaceXSI outscores OpenAI and Google on speech-to-speech index",
+   "url": "https://siliconangle.com/2026/10/14/grok-voice-3-0-from-spacexsi-outscores-openai-and-google-on-speech-to-speech-index/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "xAI Introduces Grok Voice 3.0 Speech-to-Speech Model for Voice Agents",
+   "url": "https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Grok Voice 3.0 launches with unchanged API pricing and auto-migration",
+   "url": "https://blockchain.news/news/grok-voice-3-launch-unchanged-api-pricing-auto-migration",
+   "publisher": "Blockchain.News",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "SpaceXAI ships Grok Voice 3.0, ranked No. 1 in speech-to-speech tests",
+   "url": "https://runtimewire.com/article/spacexai-grok-voice-3-speech-index",
+   "publisher": "RuntimeWire",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Speech to Speech AI Model & Provider Leaderboard",
+   "url": "https://artificialanalysis.ai/speech-to-speech",
+   "publisher": "Artificial Analysis",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Release Notes",
+   "url": "https://docs.x.ai/docs/release-notes",
+   "publisher": "xAI Docs",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Models and Pricing",
+   "url": "https://docs.x.ai/docs/models",
+   "publisher": "xAI Docs",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Speech to Speech",
+   "url": "https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech",
+   "publisher": "xAI Docs",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문의 벤치마크 차트는 본문에 이미지 파일 주소로 노출되지 않고(og 공유 카드만 확인), 매체 이미지는 대표 이미지뿐이라 인용하지 않음.",
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 52,
+  "removed": [
+   "어느 쪽이 맞는지는 이번 조사로 확정할 수 없습니다. (Arena 순위 — Artificial Analysis 리더보드로 공동 3위 확인, 문단 교체)",
+   "Grok Voice 플랫폼 '25개 이상 언어 지원' (Blockchain.News 단독, xAI 문서는 20개 이상 — 삭제)",
+   "기존 연동은 같은 엔드포인트·세션 파라미터·이벤트를 유지 (Blockchain.News 단독 — 삭제, 릴리스 노트의 model 값 변경 안내로 대체)",
+   "EVA-Bench는 고객 서비스·IT 서비스 관리·HR 등 시나리오 (도메인 목록 미확인 — '200개 이상 실제 기업 시나리오'로 수정)",
+   "한국어 지원 여부는 발표문에 나오지 않았습니다 / 지원 언어 목록이 없습니다 (xAI 문서에 한국어 포함 — 수정)",
+   "Runtime Wire: 텍스트 입력이 따로 과금 (저품질 단독 → xAI 가격표 '$0.004 / text input'으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S5 다시 열어 날짜 확인(모두 페이지에 2026-10-14; SiliconANGLE는 'UPDATED 18:27 EDT OCTOBER 14 2026'). 수치(지수 86.9/83.2/82.6/81.3, BBA·Elo·과제 성공·FDB, τ-Voice 71.6 vs 74.5, 과제당 비용, 분당 $0.08=2.0 동일, 1초 미만, 지연 40%)는 xAI 발표문·Unite.AI·SiliconANGLE 및 Artificial Analysis 리더보드(TTFA 0.81s vs 1.34s)로 교차 확인. Arena: xAI 표는 비교 4개 모델 중 최고지만 AA 리더보드 전체에선 1070 공동 3위(1100·1088 다음) — RuntimeWire '3위'와 일치, 본문에 반영. AA 리더보드의 GPT-Live-1 1056·Gemini 3.8 Ext 993은 xAI 표(1048·990)와 차이 명시. Tesla·Starlink 수치는 회사 주장 표시 유지(SiliconANGLE 확인). SpaceX 2월 인수·7월 SpaceXAI·10월 SpaceXSI는 SiliconANGLE, 발표 페이지 헤더 SpaceXSI·푸터 SpaceXAI LLC. 2.0 deprecated·자동 전환은 xAI 릴리스 노트로 확인. S6~S9는 페이지에 날짜 없음(published 생략). 막힌 출처 없음."
+ }
+}
