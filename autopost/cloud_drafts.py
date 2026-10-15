@@ -241,9 +241,12 @@ class SyncOutcome:
 
 
 def delivered(record: Mapping[str, object] | None) -> bool:
-    """슬랙 승인 요청까지 끝난 원고 — 보관함 기록에 슬랙 메시지 위치가 있어야 ✅ 가 원고와 연결된다."""
+    """승인 요청 첨부까지 끝난 원고. 승인·발행·사용자 보류는 다시 전송하지 않는다."""
+    if (record or {}).get("status") in {"held", "approved", "publishing", "published"}:
+        return True
     slack = (record or {}).get("slack")
-    return isinstance(slack, Mapping) and bool(slack.get("ts"))
+    return (isinstance(slack, Mapping) and bool(slack.get("ts"))
+            and (record or {}).get("approval_ready") is not False)
 
 
 def _parked(record: Mapping[str, object] | None, mark: str, continuous: bool = False) -> bool:

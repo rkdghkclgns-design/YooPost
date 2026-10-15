@@ -161,6 +161,74 @@ def test_send_for_approval_posts_card_uploads_preview_and_links_message(tmp_path
         send_for_approval(prepared, MemoryStore(), DownSlack(), "CDRAFT", NOW)
 
 
+def test_approval_upload_retry_reuses_existing_message_and_waits_for_attachments(tmp_path):
+    from datetime import timedelta
+
+    prepared = preparer().prepare(write_draft(tmp_path, [IMAGE]), "20260929_1300_4")
+    client, store = FakeWebClient(), MemoryStore()
+
+    class InterruptedSlack(SlackNotifier):
+        def upload_file(self, *args, **kwargs):
+            raise ConnectionError("attachment upload disconnected")
+
+    with pytest.raises(ConnectionError):
+        send_for_approval(prepared, store, InterruptedSlack(channel_id="C1", client=client), "CDRAFT", NOW)
+    partial = store.items[prepared.draft_id]
+    assert partial["approval_ready"] is False and len(client.messages) == 1
+    original_link = dict(partial["slack"])
+    original_created = partial["created"]
+    before = len(store.puts)
+
+    ts = send_for_approval(prepared, store, SlackNotifier(channel_id="C1", client=client),
+                           "COTHER", NOW + timedelta(minutes=30))
+    assert len(client.messages) == 1 and ts == original_link["ts"]
+    assert all(u["thread_ts"] == ts and u["channel"] == original_link["channel"] for u in client.uploads)
+    assert store.items[prepared.draft_id]["slack"] == original_link
+    assert store.items[prepared.draft_id]["created"] == original_created
+    assert store.items[prepared.draft_id]["approval_ready"] is True
+    assert all(data["approval_ready"] is False for _, data in store.puts[before:-1])
+
+
+@pytest.mark.parametrize("status", ["held", "approved", "publishing", "published", "excluded"])
+def test_approval_retry_does_not_change_held_or_finished_draft(tmp_path, status):
+    prepared = preparer().prepare(write_draft(tmp_path, [IMAGE]), "20260929_1300_4")
+    client, store = FakeWebClient(), MemoryStore()
+    original = {**prepared.bundle(NOW), "status": status, "approval_ready": False,
+                "slack": {"channel": "CDRAFT", "ts": "1700.1"}}
+    store.put(prepared.draft_id, original)
+    before = len(store.puts)
+    assert send_for_approval(prepared, store, SlackNotifier(channel_id="C1", client=client),
+                             "CDRAFT", NOW) == "1700.1"
+    assert store.items[prepared.draft_id] == original and len(store.puts) == before
+    assert not client.messages and not client.uploads
+
+
+def test_approval_retry_keeps_legacy_manual_approval_pending(tmp_path):
+    prepared = preparer().prepare(write_draft(tmp_path, [IMAGE]), "20260929_1300_4")
+    client, store = FakeWebClient(), MemoryStore()
+    original = {**prepared.bundle(NOW), "slack": {"channel": "CDRAFT", "ts": "1700.1"}}
+    store.put(prepared.draft_id, original)  # 자동 승인 도입 전 원고에는 approval_ready 필드가 없다.
+    before = len(store.puts)
+    assert send_for_approval(prepared, store, SlackNotifier(channel_id="C1", client=client),
+                             "CDRAFT", NOW) == "1700.1"
+    assert len(store.puts) == before and store.items[prepared.draft_id] == original
+    assert not client.messages and not client.uploads
+
+
+def test_approval_retry_does_not_post_when_store_lookup_fails(tmp_path):
+    prepared = preparer().prepare(write_draft(tmp_path, [IMAGE]), "20260929_1300_4")
+    client = FakeWebClient()
+
+    class UnavailableStore(MemoryStore):
+        def find(self, draft_id):
+            raise DraftStoreError("HTTP 503")
+
+    store = UnavailableStore()
+    with pytest.raises(DraftStoreError, match="503"):
+        send_for_approval(prepared, store, SlackNotifier(channel_id="C1", client=client), "CDRAFT", NOW)
+    assert not store.puts and not client.messages and not client.uploads
+
+
 @pytest.mark.parametrize("approver,notice", [("U0ABC", "<@U0ABC>"), ("auto-60s", "🤖✅ 자동 승인 (1분 경과)")])
 def test_publish_draft_publishes_once_and_reports_in_thread(approver, notice):
     store = MemoryStore()

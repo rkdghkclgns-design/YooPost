@@ -682,3 +682,37 @@ def test_daily_delivery_retry_compares_absolute_time(tmp_path, due):
     sync_drafts([folder], lambda id: None, lambda f: sent.append(f.name), records,
                 now=datetime(2026, 9, 30, 12, 0))
     assert sent == [folder.name]
+
+
+def test_partial_approval_upload_preserves_delivery_backoff(tmp_path):
+    from datetime import timedelta
+
+    folder = write_draft(tmp_path / "drafts/20260930_070000_1")
+    current = datetime(2026, 9, 30, 10, 0)
+    store = Store({folder.name: {**SENT, "approval_ready": False}})
+    calls = []
+
+    def interrupted(f):
+        calls.append(f.name)
+        raise ConnectionError("attachment upload disconnected")
+
+    _, records = sync_drafts([folder], store.find, interrupted, {}, now=current)
+    assert records[folder.name]["attempts"] == 1
+    waiting, preserved = sync_drafts([folder], store.find, interrupted, records,
+                                    now=current + timedelta(minutes=29))
+    assert not waiting.already and preserved == records and calls == [folder.name]
+    retried, remaining = sync_drafts([folder], store.find, lambda f: calls.append(f.name), records,
+                                    now=current + timedelta(minutes=30))
+    assert retried.sent == (folder.name,) and not retried.already and remaining == {}
+    assert calls == [folder.name, folder.name]
+
+
+@pytest.mark.parametrize("status", ["held", "approved", "publishing", "published"])
+def test_partial_delivery_never_resends_held_or_published_draft(tmp_path, status):
+    folder = write_draft(tmp_path / "drafts/20260930_070000_1")
+    calls = []
+    outcome, records = sync_drafts(
+        [folder], lambda _: {"status": status, "approval_ready": False},
+        lambda f: calls.append(f.name), {},
+    )
+    assert outcome.already == (folder.name,) and not calls and not records

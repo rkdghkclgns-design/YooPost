@@ -286,13 +286,26 @@ def send_for_approval(prepared: PreparedDraft, store, slack, channel: str, now: 
 
     request = 수동 지시 표시 {"id","kind"} — 카드에 '🧑‍💼 수동 지시'를 붙이고 보관함 기록에 남긴다 (발행 결과를 지시 스레드에 알림).
     """
+    stored = store.find(prepared.draft_id) or {}  # 조회 실패 시 새 메시지를 만들지 않는다.
+    previous_link = stored.get("slack")
+    previous_link = previous_link if isinstance(previous_link, Mapping) else {}
+    ts = str(previous_link.get("ts") or "")
+    if stored.get("status") in {"held", "approved", "publishing", "published", "excluded"}:
+        return ts
+    if ts and stored.get("approval_ready") is not False:
+        return ts  # 기존 수동 승인 대기 원고도 그대로 둔다.
     bundle = {**prepared.bundle(now), **({"request": dict(request)} if request else {})}
-    store.put(prepared.draft_id, bundle)
-    manual = "🧑‍💼 수동 지시 · " if request else ""
-    ts = slack.post(f"{manual}📝 {LABEL} 발행 대기 원고 — {prepared.content.title}",
-                    build_draft_blocks(prepared, request), channel=channel)
-    if not ts:
-        raise DraftError("슬랙 메시지를 보내지 못했습니다 (봇 토큰·채널 확인)")
+    if stored.get("created"):
+        bundle["created"] = stored["created"]
+    if ts:
+        channel = str(previous_link.get("channel") or channel)
+    else:
+        store.put(prepared.draft_id, {**bundle, "approval_ready": False})
+        manual = "🧑‍💼 수동 지시 · " if request else ""
+        ts = slack.post(f"{manual}📝 {LABEL} 발행 대기 원고 — {prepared.content.title}",
+                        build_draft_blocks(prepared, request), channel=channel)
+        if not ts:
+            raise DraftError("슬랙 메시지를 보내지 못했습니다 (봇 토큰·채널 확인)")
     linked = {**bundle, "slack": {"channel": channel, "ts": ts}}
     # 첨부 업로드 중에도 사용자가 누른 ❌를 처리할 수 있도록 먼저 연결한다.
     store.put(prepared.draft_id, {**linked, "approval_ready": False})
