@@ -1,0 +1,89 @@
+{
+ "topic": "Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation (Zhejiang University 등, arXiv 2610.20571, 2026-10-14)",
+ "source_url": "https://arxiv.org/abs/2610.20571",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation (arXiv abs)",
+   "url": "https://arxiv.org/abs/2610.20571",
+   "publisher": "arXiv",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Any Time, Any Space (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2610.20571",
+   "publisher": "arXiv",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hugging Face Papers: Any Time, Any Space (2610.20571)",
+   "url": "https://huggingface.co/papers/2610.20571",
+   "publisher": "Hugging Face",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Hugging Face Daily Papers (2026-10-15)",
+   "url": "https://huggingface.co/papers/date/2026-10-15",
+   "publisher": "Hugging Face",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "ATAS 프로젝트 페이지",
+   "url": "https://lhmd.top/atas/",
+   "publisher": "ATAS 저자 (Zhejiang University 등)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "ziplab/ATAS GitHub README",
+   "url": "https://raw.githubusercontent.com/ziplab/ATAS/main/README.md",
+   "publisher": "GitHub (ziplab)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.20571v1/teaser.png",
+   "page_url": "https://arxiv.org/html/2610.20571",
+   "caption": "세계 상태 중심 에이전트 영상 생성 개요 (ATAS 핵심 아이디어)",
+   "credit": "Wang et al., arXiv 2610.20571"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.20571v1/atas_workflow.png",
+   "page_url": "https://arxiv.org/html/2610.20571",
+   "caption": "ATAS 작동 순서: 프롬프트에서 상태 갱신까지의 워크플로",
+   "credit": "Wang et al., arXiv 2610.20571"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.20571v1/fig4.png",
+   "page_url": "https://arxiv.org/html/2610.20571",
+   "caption": "공간 재방문과 과거 사건 재포착 결과 비교",
+   "credit": "Wang et al., arXiv 2610.20571"
+  }
+ ],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "이 글이 읽은 논문 페이지에서는 프로젝트 페이지나 코드 저장소 주소를 찾지 못했으므로, 독자가 직접 재현해 볼 수 있는지는 확인되지 않았습니다. (논문·arXiv 초록에 프로젝트 페이지와 GitHub 주소가 있어 틀림 — 코드 공개 내용으로 교체)",
+   "또한 결과는 짧은 롤아웃에서 얻은 것이며 (원문은 부록 메모리 증가 측정에 한정 — 범위를 고쳐 씀)",
+   "Hugging Face 논문 페이지에는 2026년 10월 15일 게시된 것으로 표시 (페이지는 10월 14일 발표·10월 15일 제출로 표시 — 고침)",
+   "시간당 처리량 7.28편→6.21편 (단위가 샷/시간 — 고침)",
+   "맺음말·FAQ의 '코드 공개 여부 미확인' (고침)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs·HTML v1 원문의 표 1~5와 부록 표 E·G·H, 사람 평가 절을 원고 수치와 하나씩 대조해 모두 일치 확인. HF 논문 페이지·10월 15일 일일 목록에서 322 추천 1위·2위 233 확인. 프로젝트 페이지와 GitHub README(raw)를 새로 읽어 코드 공개·MIT 라이선스·실행 요구 사항 절을 추가(github.com 페이지는 프록시 403이라 raw README로 확인). 출처 published 를 페이지 날짜와 대조해 S3 을 2026-10-14 로 고치고, S4 를 날짜 고정 주소로 바꿈. 날짜가 없는 S5·S6 은 published 를 비움. 인용 이미지 3개 모두 200 image/png 확인. 처리량 단위·HF 날짜 표기·롤아웃 범위·코드 공개 여부를 고침."
+ }
+}
