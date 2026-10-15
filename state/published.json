@@ -3029,5 +3029,24 @@
    "https://bsky.app/profile/attie.ai/post/3mxwnz4gbzk2r"
   ],
   "draft_id": "20261016_072300_2"
+ },
+ {
+  "date": "2026-10-16",
+  "title": "🎬 ATAS 논문 분석: 장면과 사건을 기억하는 에이전트 영상 생성, Wan 3.0 평균 0.734 총정리",
+  "topic": "Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation (Zhejiang University 등, arXiv 2610.20571, 2026-10-14)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.20571",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/atas-wan-30-0734.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.20571",
+   "https://arxiv.org/html/2610.20571",
+   "https://huggingface.co/papers/2610.20571",
+   "https://huggingface.co/papers/date/2026-10-15",
+   "https://lhmd.top/atas/",
+   "https://raw.githubusercontent.com/ziplab/ATAS/main/README.md"
+  ],
+  "draft_id": "20261016_073114_3"
  }
 ]
