@@ -1,0 +1,94 @@
+{
+ "topic": "PwnEscape: Guest-to-Host KVM Escape (CVE-2026-99999) — Findings from the $1M Vercel Sandbox challenge",
+ "source_url": "https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Findings from the $1M Vercel Sandbox challenge",
+   "url": "https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge",
+   "publisher": "Vercel",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "PwnEscape: Guest-to-Host KVM Escape (CVE-2026-99999)",
+   "url": "https://pwn.ai/blog/pwnescape",
+   "publisher": "PWN.AI Research",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Critical PwnEscape Linux Kernel Vulnerability Lets Guest VMs Read Host Memory",
+   "url": "https://thehackernews.com/2026/10/critical-pwnescape-linux-kernel.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Vercel $1M Sandbox challenge announcement",
+   "url": "https://vercel.com/blog/one-million-dollar-hacker-challenge-for-vercel-sandbox",
+   "publisher": "Vercel",
+   "published": "2026-08-18",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "XBOW earns Google's $250,000 bounty with a six-day Chrome exploit",
+   "url": "https://runtimewire.com/article/xbow-six-day-chrome-exploit-google-bounty",
+   "publisher": "Runtimewire",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "CVE-2026-99999: ipv4: validate checksum_start before completing checksum",
+   "url": "https://cveawg.mitre.org/api/cve/CVE-2026-99999",
+   "publisher": "CVE Program (Linux kernel CNA)",
+   "published": "2026-10-15",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://api.pwn.ai/api/blog/images/03-ihl-reinterpretation-606902c562d9.png",
+   "page_url": "https://pwn.ai/blog/pwnescape",
+   "caption": "IPv4 헤더 첫 바이트가 IHL 5(20바이트)에서 IHL 15(60바이트)로 바뀌는 과정",
+   "credit": "PWN.AI Research"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://api.pwn.ai/api/blog/images/04-skb-headlen-afc01850c49d.png",
+   "page_url": "https://pwn.ai/blog/pwnescape",
+   "caption": "28바이트 논리 선형 데이터와 60바이트 헤더 복사의 차이로 생기는 32바이트 유출",
+   "credit": "PWN.AI Research"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://api.pwn.ai/api/blog/images/06-evidence-ladder-b49979715ec4.png",
+   "page_url": "https://pwn.ai/blog/pwnescape",
+   "caption": "소스 가설에서 소유 장비의 제한된 호스트 실행까지 입증 수준을 보여 주는 증거 단계도",
+   "credit": "PWN.AI Research"
+  }
+ ],
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 71,
+  "removed": [
+   "클라우드 업체가 고객을 서로 분리하는 데 쓰는 공용 계층이라는 점이 이 사안을 주목받게 한 이유입니다. (pwn.ai·THN 어디에도 그런 설명 없음)"
+  ],
+  "corrected": [
+   "S2(pwn.ai) published 2026-10-14 → 비움: 페이지 바이라인·푸터에 발행일 없음(© 2026 만 표시)",
+   "CVE-2026-99999·9.3 점수: THN 대신 공식 CVE 기록(cveawg.mitre.org, Linux CNA, 2026-10-15 공개)으로 확인, S6 추가. NVD 상태 'Received'",
+   "메인라인 병합 10월 14일: THN 이 아니라 pwn.ai 의 진술로 바로잡음 (THN 엔 날짜 없음)",
+   "96비트 키는 인턴 Marcos Hernanz 결함이 아니라 스냅샷 복원 결함의 조건 — 문단 분리·수정",
+   "'영향 버전 범위 미제시' → CVE 기록 기준 리눅스 2.6.27부터 영향으로 수정",
+   "챌린지 범위(방화벽 우회 포함)·설계 원칙 3개·Omega-Pwn/GPT-5.6 Sol 역할·백포트 문구를 원문 표현에 맞춤",
+   "csum_start/csum_offset 이름은 원문 문장에서 확인되지 않아 '체크섬 메타데이터'로 바꾸고 CVE 기록 설명 추가"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1·S2·S3·S4·S5 를 WebFetch 로 다시 열어 주장별 확인, CVE.org·NVD API 로 CVE 번호·점수·영향/수정 버전 교차 확인. 각 출처 published 를 페이지 날짜와 대조(S1 2026-10-14, S3 2026-10-15, S4 2026-08-18, S5 2026-10-13 일치, S2 날짜 없음). 막힌(EGRESS_BLOCKED) 출처 없음. 인용 이미지 3개 image/png 200 확인. 강조 문단 보완."
+ }
+}
