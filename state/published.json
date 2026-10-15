@@ -3109,5 +3109,24 @@
    "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800035.pdf"
   ],
   "draft_id": "20261016_080516_7"
+ },
+ {
+  "date": "2026-10-16",
+  "title": "💰 Modal 시리즈 D 총정리: 7억 5천만 달러·기업가치 157.5억 달러·연환산 매출 10억 달러",
+  "topic": "Series D: $1B in annualized run rate, new funding, and where Modal goes next (Modal, 2026-10-14)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://modal.com/blog/1-billion-annualized-run-rate-series-d",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/modal-d-7-5-1575-10.html"
+  },
+  "sources": [
+   "https://modal.com/blog/1-billion-annualized-run-rate-series-d",
+   "https://www.pymnts.com/news/investment-tracker/2026/modal-triples-valuation-to-15-billion-as-ai-infrastructure-demand-explodes/",
+   "https://siliconangle.com/2026/10/14/ai-cloud-startup-modal-raises-750m-at-15-75b-valuation/",
+   "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+   "https://techcrunch.com/?p=3170936",
+   "https://dealroom.co/news/129203-modal-raises-355m-series-c-at-4-65b-valuation/"
+  ],
+  "draft_id": "20261016_074046_4"
  }
 ]
