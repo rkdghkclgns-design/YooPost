@@ -3067,5 +3067,27 @@
    "https://cveawg.mitre.org/api/cve/CVE-2026-99999"
   ],
   "draft_id": "20261016_074537_5"
+ },
+ {
+  "date": "2026-10-16",
+  "title": "📊 IMF 세계경제전망 10월호, AI 투자가 성장 3.1%를 받친다: 3개 시나리오·일자리 40% 총정리",
+  "topic": "IMF World Economic Outlook October 2026: Resilience Under Strain, Urgent Choices (AI 투자 붐·시나리오·일자리)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/imf-10-ai-31-3-40.html"
+  },
+  "sources": [
+   "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026",
+   "https://www.imf.org/en/blogs/articles/2026/10/12/global-economic-resilience-is-under-strain-demanding-decisive-policy-action",
+   "https://www.imf.org/-/media/files/publications/weo/2026/october/english/text.pdf.md",
+   "https://www.imf.org/-/media/files/publications/weo/2026/october/english/ch1.pdf.md",
+   "https://www.nbcbayarea.com/news/national-international/imf-forecast-world-growth-risks-ai-boom-debt/4157260/",
+   "https://www.thenationalnews.com/business/economy/2026/10/12/ai-investment-boom-offsets-energy-shock-to-keep-global-growth-at-3-imf-chief-says/",
+   "https://www.dailysabah.com/business/economy/ai-slow-moving-tsunami-but-holds-global-growth-imf-chief-says/amp",
+   "https://kuwaittimes.com/article/51452/business/imf-ai-investment-keeps-global-growth-around-3-but-brings-massive-disruption/",
+   "https://focustaiwan.tw/business/202610130005"
+  ],
+  "draft_id": "20261016_075305_6"
  }
 ]
