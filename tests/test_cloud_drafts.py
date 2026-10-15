@@ -267,6 +267,47 @@ def test_sync_and_report_runs_the_whole_actions_step(tmp_path):
     assert not (quiet / "state" / "progress_20260930.json").exists()  # 오늘 실행·원고가 없으면 진행 막대를 올리지 않음
 
 
+def test_run_summary_is_edited_in_place_as_drafts_get_published(tmp_path):
+    """요약은 한 번만 올리고, 발행되면 같은 메시지를 '발행됨'으로 고친다 (2026-10-15 사용자 지시)."""
+    root = tmp_path / "branch"
+    write_draft(root / "drafts" / "20260930_163000_1")
+    client = FakeWebClient()
+    slack = SlackNotifier(channel_id="CALERT", client=client)
+    store = Store({"20260930_163000_1": dict(SENT)})
+    clock = lambda: datetime(2026, 9, 30, 16, 40)  # noqa: E731
+    write_json(root / "runs" / "20260930.json", {"started": "07:00", "finished": "08:00"})
+    sync = lambda: sync_and_report(root, clock, store, lambda folder: None, slack, lambda: [])  # noqa: E731
+
+    sync()
+    summaries = [m for m in client.messages if "작성 결과" in m["text"]]
+    assert len(summaries) == 1 and "승인 대기 1편" in summaries[0]["text"]
+    summary_ts = read_json(root / "state" / "progress_20260930.json")["summary_ts"]
+    assert summary_ts == f"1700000000.{len(client.messages):06d}"
+
+    store.items["20260930_163000_1"] = {**SENT, "status": "published", "url": "https://blog/p1"}
+    sync()
+    edits = [u for u in client.updates if u["ts"] == summary_ts]
+    assert sum("작성 결과" in m["text"] for m in client.messages) == 1  # 새 요약을 또 올리지 않음
+    assert len(edits) == 1 and "발행 1편 · 승인 대기 0편" in edits[0]["text"]
+    assert "✅ AI 언어 모델 — 발행됨" in edits[0]["text"] and "원고승인 에서 ✅" not in edits[0]["text"]
+
+    sync()  # 바뀐 것이 없으면 요약을 다시 고치지 않음
+    assert len([u for u in client.updates if u["ts"] == summary_ts]) == 1
+
+
+def test_summaries_sent_before_tracking_are_not_reposted(tmp_path):
+    """메시지 위치를 남기기 전에 보낸 요약(예전 기록)은 새로 올리지 않는다 — 같은 요약이 두 번 보이지 않게."""
+    root = tmp_path / "branch"
+    write_draft(root / "drafts" / "20260930_163000_1")
+    client = FakeWebClient()
+    store = Store({"20260930_163000_1": {**SENT, "status": "published", "url": "https://blog/p1"}})
+    write_json(root / "runs" / "20260930.json", {"started": "07:00", "finished": "08:00"})
+    write_json(root / "state" / "progress_20260930.json", {"summary": "2026-09-30T08:00:00"})
+    sync_and_report(root, lambda: datetime(2026, 9, 30, 16, 40), store, lambda folder: None,
+                    SlackNotifier(channel_id="CALERT", client=client), lambda: [])
+    assert not any("작성 결과" in t for t in client.texts())
+
+
 class Response:
     def __init__(self, status, body=None):
         self.status_code = status

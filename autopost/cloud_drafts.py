@@ -10,7 +10,7 @@ yoopost-drafts 브랜치 (코드 없이 데이터만)
     drafts/<YYYYMMDD_HHMMSS_n>/skip.json                  건너뛴 카테고리 {"category", "reason"}
     runs/<YYYYMMDD>.json                                  클라우드 실행 기록 {"started", "finished", "network"}
     runs/requests/<요청 ID>.json                         수동 지시 실행 기록 (draft_request.py) — 매일 기록과 따로
-    state/progress_<YYYYMMDD>.json                        진행 메시지 ts·요약 전송 여부 (Actions 가 씀)
+    state/progress_<YYYYMMDD>.json                        진행 메시지 ts·요약 메시지 ts (Actions 가 씀)
     state/failures.json                                   전송 실패 {원고 ID: {"hash", "reason"}} (Actions 가 씀)
     state/published.json                                  발행 기록 — 클라우드가 주제 중복을 피할 때 읽음
     state/requests.json                                   수동 지시 스레드에 이미 알린 것 (Actions 가 씀)
@@ -462,9 +462,9 @@ def sync_and_report(root: Path, now: Callable[[], datetime], store, send: Callab
         elif fallback.get("provider") == "codex" and fallback.get("last_result") == "failed" and not run.get("finished"):
             writer = {"status": "failed", "category": fallback.get("category", ""), "reason": run.get("note", "")}
         rows = board.refresh(failed_reasons(records), writer=writer)
-        if run.get("finished") and not read_json(progress).get("summary"):
-            slack.post(summary_text(rows, current.strftime("%m/%d"), str(run.get("network") or "")))
-            write_json(progress, {**read_json(progress), "summary": current.isoformat(timespec="seconds")})
+        if run.get("finished"):
+            report_summary(slack, progress, summary_text(rows, current.strftime("%m/%d"), str(run.get("network") or "")),
+                           current)
     try:
         entries = merge_published(published_snapshot(root), list(load_entries()))
         write_json(root / STATE / "published.json", [e.to_dict() for e in entries])
@@ -500,10 +500,32 @@ NETWORK_HINT = ("⚠️ 클라우드 네트워크가 제한되어 조사할 수 
 def summary_text(rows: Sequence, day_label: str, network: str = "") -> str:
     """실행이 끝났을 때 #yoopost-알림 에 보내는 요약 (rows = 진행 막대의 카테고리별 줄)."""
     waiting = sum(1 for r in rows if r.icon == "📝")
-    lines = [f"📚 {day_label} 클라우드 원고 작성 결과 — 승인 대기 {waiting}편 (#yoopost-1-원고승인 에서 ✅)"]
+    published = sum(1 for r in rows if r.icon == "✅")
+    where = " (#yoopost-1-원고승인 에서 ✅)" if waiting else ""
+    lines = [f"📚 {day_label} 클라우드 원고 작성 결과 — 발행 {published}편 · 승인 대기 {waiting}편{where}"]
     lines += [f"{r.icon} {r.category} — {r.text}" for r in rows]
     if any(r.icon in ("⏭️", "⚠️") for r in rows):
         lines.append(AUTOFILL_HINT)
     if network == "limited":
         lines.append(NETWORK_HINT)
     return "\n".join(lines)
+
+
+def report_summary(slack, progress: Path, text: str, current: datetime) -> None:
+    """요약은 한 번만 올리고, 그 뒤 실행마다 같은 메시지를 고쳐 발행 상태를 맞춘다 (2026-10-15 사용자 지시).
+
+    메시지 위치(summary_ts)는 진행 막대 기록 파일에 남긴다. 위치 없이 보낸 예전 요약은 새로 올리지 않는다
+    (같은 요약이 두 번 보이지 않게). 고치지 못하면 다음 실행에서 다시 고친다.
+    """
+    state = read_json(progress)
+    mark = hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+    ts = str(state.get("summary_ts") or "")
+    if state.get("summary_hash") == mark or (state.get("summary") and not ts):
+        return
+    if ts:
+        if slack.update(ts, text):
+            write_json(progress, {**read_json(progress), "summary_hash": mark})
+        return
+    posted = slack.post(text)
+    write_json(progress, {**read_json(progress), "summary": current.isoformat(timespec="seconds"),
+                          "summary_ts": str(posted or ""), "summary_hash": mark})
