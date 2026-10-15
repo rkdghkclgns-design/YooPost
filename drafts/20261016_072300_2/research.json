@@ -1,0 +1,93 @@
+{
+  "topic": "Bluesky expands its AI-powered Attie app to let anyone build websites, games, and more (TechCrunch, 2026-10-15)",
+  "source_url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Bluesky expands its AI-powered Attie app to let anyone build websites, games, and more",
+      "url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-15",
+      "official": false
+    },
+    {
+      "id": "S2",
+      "title": "Bluesky adds AI website and game creation to Attie, linked to its social network",
+      "url": "https://superpowerdaily.com/posts/bluesky-adds-ai-website-and-game-creation-to-attie-linked-to-its-social-network",
+      "publisher": "Superpower Daily",
+      "published": "2026-10-15",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Bluesky's AI tool now lets you make games and apps to share on social",
+      "url": "https://www.wilsonsmedia.com/blueskys-ai-tool-now-lets-you-make-games-and-apps-to-share-on-social/",
+      "publisher": "Wilson's Media",
+      "published": "2026-10-15",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Bluesky leans into AI with Attie, an app for building custom feeds",
+      "url": "https://techcrunch.com/2026/03/28/bluesky-leans-into-ai-with-attie-an-app-for-building-custom-feeds/",
+      "publisher": "TechCrunch",
+      "published": "2026-03-28",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Bluesky names Toni Schneider CEO",
+      "url": "https://bsky.social/about/blog/07-10-2026-toni-schneider-ceo",
+      "publisher": "Bluesky (공식 블로그)",
+      "published": "2026-07-10",
+      "official": true
+    },
+    {
+      "id": "S6",
+      "title": "A New Chapter for Bluesky",
+      "url": "https://bsky.social/about/blog/03-09-2026-a-new-chapter-for-bluesky",
+      "publisher": "Bluesky (공식 블로그)",
+      "published": "2026-03-09",
+      "official": true
+    },
+    {
+      "id": "S7",
+      "title": "Announcing Attie site builder! (@attie.ai 공식 계정 게시물)",
+      "url": "https://bsky.app/profile/attie.ai/post/3mxwnz4gbzk2r",
+      "publisher": "Attie (Bluesky 공식 계정 @attie.ai)",
+      "published": "2026-10-15",
+      "official": true
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "https://techcrunch.com/wp-content/uploads/2026/10/Screenshot-2026-10-15-at-11.47.41-AM.jpg?w=680",
+      "page_url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
+      "caption": "Attie 도구 화면 캡처 (TechCrunch 기사 게재, 제공: Bluesky)",
+      "credit": "Bluesky / TechCrunch"
+    },
+    {
+      "id": "I2",
+      "image_url": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:v7lt2fu7igydcjszoexxrvl2/bafkreihwnjoumosd4ffkht2nwyw27byqe5vjxjeid2zihb4sdw7devtjnu",
+      "page_url": "https://bsky.app/profile/attie.ai/post/3mxwnz54ylk2r",
+      "caption": "Attie 공식 계정이 공개한 예시 게임 'Flappy Butterfly' 미리보기",
+      "credit": "Attie (@attie.ai)"
+    }
+  ],
+  "factcheck": {
+    "claims": 46,
+    "confirmed": 46,
+    "removed": [
+      "지금까지의 ATProto 기반 서비스는 대부분 공개 데이터를 전제로 했기 때문에 (출처 없음 — 공개 프로필 기반 제안 사실과 공식 블로그의 permissioned data 사양 언급으로 교체)",
+      "그레이버는 이후 최고혁신책임자가 됐다고 합니다 (시점 오류 — 3월 9일 공식 블로그 기준으로 수정)",
+      "비공개 베타 (초대·...) 의 '초대' (출처에 없음)",
+      "일반 공개 여부·시점은 보도에 없음 (공식 계정이 '오늘부터 Attie 사용자'로 시작을 알림 — 수정)",
+      "화면의 세부 기능은 기사에서 별도로 풀어 설명하지 않았습니다 (확인 불가)",
+      "일부 '테스트' 이용자가 X로 돌아감 → '써 본 일부 이용자'로 수정",
+      "비공개 데이터 연말 '출시' → 기사 표현대로 '확대 배포(rollout)'로 수정",
+      "3월 '슈나이더 CEO' → 당시 임시 CEO로 수정"
+    ],
+    "note": "Opus 검증 (claude-opus-5-5): S1~S4 를 WebFetch 로 다시 열어 인용문·수치(4,700만 등록 이용자)·이름·직함·날짜·발표 행사 확인, 각 페이지의 날짜가 published 와 일치(S1 2026-10-15 11:56 PDT, S2 2026-10-15, S3 2026-10-15, S4 2026-03-28). 공식 출처 3개 추가: Bluesky 공식 블로그 S5(2026-07-10 슈나이더 정식 CEO·Atmosphere 새 앱 약 200개·permissioned data 사양), S6(2026-03-09 그레이버 CIO·슈나이더 임시 CEO), S7(@attie.ai 공식 게시물 2026-10-15T18:12Z 'Attie site builder' 발표 — bsky.app 페이지는 JS 렌더링이라 public.api.bsky.app getPostThread/getProfile 로 본문·작성자 DID·날짜 확인). 예시 3종(Flappy Butterfly·Poster Alignment Chart·AMA)은 공식 게시물의 링크 카드 설명으로 확인. 이미지 I1(TechCrunch jpeg)·I2(cdn.bsky.app webp 1000x525) 열어서 이미지 파일 확인. EGRESS_BLOCKED 출처 없음. attie.ai 는 제목·설명('AI for the Atmosphere')만 있어 출처로 쓰지 않음."
+  }
+}
