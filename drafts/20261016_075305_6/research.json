@@ -1,0 +1,98 @@
+{
+ "topic": "IMF World Economic Outlook October 2026: Resilience Under Strain, Urgent Choices (AI 투자 붐·시나리오·일자리)",
+ "source_url": "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "World Economic Outlook, October 2026: Resilience Under Strain, Urgent Choices",
+   "url": "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026",
+   "publisher": "IMF",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Global Economic Resilience Is Under Strain, Demanding Decisive Policy Action",
+   "url": "https://www.imf.org/en/blogs/articles/2026/10/12/global-economic-resilience-is-under-strain-demanding-decisive-policy-action",
+   "publisher": "IMF Blog",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "World Economic Outlook, October 2026 (full report text)",
+   "url": "https://www.imf.org/-/media/files/publications/weo/2026/october/english/text.pdf.md",
+   "publisher": "IMF",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "World Economic Outlook, October 2026, Chapter 1",
+   "url": "https://www.imf.org/-/media/files/publications/weo/2026/october/english/ch1.pdf.md",
+   "publisher": "IMF",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "IMF says AI boom driving world growth, but warns it's a 'slow-moving tsunami' for jobs",
+   "url": "https://www.nbcbayarea.com/news/national-international/imf-forecast-world-growth-risks-ai-boom-debt/4157260/",
+   "publisher": "NBC Bay Area (AP)",
+   "published": "2026-10-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI investment boom offsets energy shock to keep global growth at 3%, IMF chief says",
+   "url": "https://www.thenationalnews.com/business/economy/2026/10/12/ai-investment-boom-offsets-energy-shock-to-keep-global-growth-at-3-imf-chief-says/",
+   "publisher": "The National (Reuters)",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "AI 'slow-moving tsunami' but holds global growth, IMF chief says",
+   "url": "https://www.dailysabah.com/business/economy/ai-slow-moving-tsunami-but-holds-global-growth-imf-chief-says/amp",
+   "publisher": "Daily Sabah (Reuters)",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "IMF: AI investment keeps global growth around 3% but brings massive disruption",
+   "url": "https://kuwaittimes.com/article/51452/business/imf-ai-investment-keeps-global-growth-around-3-but-brings-massive-disruption/",
+   "publisher": "Kuwait Times",
+   "published": "2026-10-12",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "IMF raises Taiwan's 2026 growth forecast (AI concentration upstream/downstream)",
+   "url": "https://focustaiwan.tw/business/202610130005",
+   "publisher": "Focus Taiwan (CNA)",
+   "published": "2026-10-13",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "IMF 보고서 페이지(S1)와 IMF 블로그(S2) 본문을 다시 열어 확인했으나 본문에 실린 도표·그림 파일이 없고, 도표는 보고서 PDF 안에만 있습니다. 매체 기사의 사진은 행사장 사진이라 원고 내용과 관련된 본문 그림이 아니어서 넣지 않았습니다.",
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 53,
+  "removed": [
+   "4월 전망과 비교하면 2026년은 그대로, 2027년은 소폭 올렸습니다. (IMF 원문은 '4월과 대체로 같음'으로만 표현 — 수정)",
+   "중국은 2026년 4.5%, 인도는 7%로 전망됐고, 유가는 올해 약 41% 올라 (AP 인용 — IMF 원문에서 확인 안 됨)",
+   "AI 붐이 에너지 충격으로 인한 피해를 상쇄하고 있다는 것이 보도의 요지입니다. (AP 기사에서 확인 안 됨)",
+   "연차총회가 아시아에서 열린 것도 AI 인프라를 짓는 기업 상당수가 아시아에 있기 때문 (인과 관계 기사에 없음 — 수정)",
+   "세계 성장의 95%를 차지하는 나라가 4월 54개국에서 32개국으로 줄었습니다 (AP 인용 — IMF 원문에서 확인 안 됨, 본문·표에서 삭제)",
+   "데이터센터와 모델 운영에 필요한 에너지·핵심 부품·인프라·부대 서비스·독점 지식이 소수 국가에 몰려 있기 때문입니다 (확인 안 됨)",
+   "걸프 산유국은 해상 무역 정상화에 크게 좌우된다 (확인 안 됨)",
+   "수입 비용 상승, 환율 압박, 실질소득 감소를 한꺼번에 겪는다 / 격차가 더 벌어질 위험 (원문 표현으로 수정)",
+   "‘들쭉날쭉한 프런티어(jagged frontier)’ 설명 (IMF 원문에서 확인 안 됨)",
+   "보고서도 위험이 ‘양방향’이라고 표현합니다 (원문은 '하방으로 기울어 있음' — 수정)",
+   "신뢰할 만한 재정 조정 계획으로 재정 여력을 다시 쌓아야 / AI 준비도 향상·개방적 무역·협력을 구조적 회복력의 조건으로 꼽았습니다 (원문 표현으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): IMF 보고서 본문(text.pdf.md·ch1.pdf.md, WebFetch)·IMF 블로그·AP(NBC Bay Area)·로이터 게재 3곳·포커스 타이완을 다시 열어 주장별 대조. 보고서 수치(성장 3.1/3.4%, 물가 4.7/4.1%, 미국 2.3%, 유가 95.74달러, 62%/75%/57%, 생산성 연구 수치, 시나리오 A·B·C 수치, 2028~31년 3.2%)는 IMF 원문으로 확인. AP 인용 수치 중 중국 4.5%·인도 7%·유가 41%·32/54개국은 IMF 원문에서 확인되지 않아 삭제(다른 매체만 확인). 미국 2.3%·약 96달러는 원문으로 확인돼 '보고서 수치'로 표기. 총재 발언(0.5~1%p, 0.2~0.8%p, 40%/60%, 10%)은 로이터 게재 기사로 확인해 '발언'으로 구분. jagged frontier·걸프 해상무역·에너지/부품 집중 문장은 확인 안 돼 삭제, 업스트림/다운스트림·파급은 포커스 타이완 기사로 확인해 S9 추가. 출처 published 는 페이지 표기와 대조(S1 IMF 페이지 2026-10-13 공개 표기, S2 블로그 헤더 2026-10-13·주소는 10/12, S3 2026-10-13, S4~S6 2026-10-12, S9 2026-10-13). imf.org 는 curl 로는 403(Akamai)이었으나 WebFetch 로 읽힘(EGRESS_BLOCKED 아님). 공식 페이지·블로그 본문 그림 없음 재확인."
+ }
+}
