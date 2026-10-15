@@ -2991,5 +2991,23 @@
    "https://www.etnews.com/20260802000070"
   ],
   "draft_id": "20261015_080453_7"
+ },
+ {
+  "date": "2026-10-16",
+  "title": "🤖 Meta Muse Spark Open 총정리: 816B·활성 42B·100만 토큰, 맥 스튜디오 2대로 돌리는 오픈 웨이트",
+  "topic": "Introducing Muse Spark Open, The Most Capable US Open-Weight Model to Date (Meta, 2026-10-15) / Meta launches an open-weight model that runs on Macs (TechCrunch)",
+  "category": "AI 언어 모델",
+  "source_url": "https://research.meta.ai/blog/muse-spark-open",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/meta-muse-spark-open-816b-42b100-2.html"
+  },
+  "sources": [
+   "https://research.meta.ai/blog/muse-spark-open",
+   "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+   "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs",
+   "https://www.investing.com/news/stock-market-news/meta-releases-openweight-muse-spark-model-for-coding-agentic-tasks-4952713",
+   "https://www.constellationr.com/insights/news/meta-releases-open-weight-muse-glimmer-model-open-muse-spark-12-tap"
+  ],
+  "draft_id": "20261016_071516_1"
  }
 ]
