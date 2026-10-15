@@ -24,5 +24,12 @@
   "attempts": 1,
   "permanent": true,
   "excluded": true
+ },
+ "20261016_074046_4": {
+  "hash": "cf2b81f0106c0f7a",
+  "reason": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+  "attempts": 1,
+  "permanent": false,
+  "next_retry_at": "2026-10-16T08:15:41.752218+09:00"
  }
 }
