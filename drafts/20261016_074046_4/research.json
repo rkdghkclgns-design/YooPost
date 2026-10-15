@@ -1,0 +1,62 @@
+{
+ "topic": "Series D: $1B in annualized run rate, new funding, and where Modal goes next (Modal, 2026-10-14)",
+ "source_url": "https://modal.com/blog/1-billion-annualized-run-rate-series-d",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Series D: $1B in annualized run rate, new funding, and where Modal goes next",
+   "url": "https://modal.com/blog/1-billion-annualized-run-rate-series-d",
+   "publisher": "Modal",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Modal raises $750M at a $15.75B valuation (Modal triples valuation to $15 billion as AI infrastructure demand explodes)",
+   "url": "https://www.pymnts.com/news/investment-tracker/2026/modal-triples-valuation-to-15-billion-as-ai-infrastructure-demand-explodes/",
+   "publisher": "PYMNTS",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "AI cloud startup Modal raises $750M at $15.75B valuation",
+   "url": "https://siliconangle.com/2026/10/14/ai-cloud-startup-modal-raises-750m-at-15-75b-valuation/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "[AINews] Modal's $1B ARR, $16B Series D makes it NYC's newest AI Infra Decacorn",
+   "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+   "publisher": "Latent Space",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Modal Labs nearing $750M round at $15.75B valuation",
+   "url": "https://techcrunch.com/?p=3170936",
+   "publisher": "TechCrunch",
+   "published": "2026-09-28",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Modal raises $355M Series C at $4.65B valuation",
+   "url": "https://dealroom.co/news/129203-modal-raises-355m-series-c-at-4-65b-valuation/",
+   "publisher": "Dealroom",
+   "published": "2026-05-21",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Modal 공식 블로그 본문을 다시 확인한 결과 본문에는 차트·스크린샷·도표가 없고 영상 1개(mp4)와 저자 사진·추천 글 썸네일·로고뿐입니다. SiliconANGLE·PYMNTS 등 매체 페이지도 대표 이미지(썸네일)·광고 배너뿐이라 원고 내용과 관련된 본문 그림이 없어 넣지 않았습니다.",
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5): S1~S6 을 모두 다시 열어(WebFetch·curl) 수치·날짜·이름·투자자·제품·고객 주장을 대조했고, 각 출처의 published 가 페이지 날짜(메타 태그·본문)와 같음을 확인(S1 2026-10-14, S2 2026-10-14 ET, S3 2026-10-14, S4 2026-10-15, S5 2026-09-28, S6 2026-05-21). 막힌 출처 없음. 수정 3건: ① '매출 전년 대비 15배 이상' → Modal 원문은 'grown more than 15x YoY'로 지표를 밝히지 않아 '회사는 15배 넘게 성장'으로 고치고 PYMNTS 의 매출 해석은 출처를 밝혀 표기(요약·본문·표 2곳 포함) ② Latent Space 가 배수를 '표제로 삼았다' → 표제는 '$1B ARR, $16B Series D…Decacorn'이고 배수는 본문에 있어 '함께 짚었다'로 수정 ③ '가장 빠르게 성장하는 시장' 발언을 리치 웡·곤살로 모카레아 개인 발언으로 쓴 것 → PYMNTS 원문상 액셀 블로그 글의 표현이며 두 사람의 실제 인용(스타트업부터 대기업까지 기본 구성 요소 제공)으로 바로잡음. TypeSafe AI 이전 글 존재는 published.json 으로 확인. 이미지: Modal 본문에 그림 없음(영상·썸네일뿐) 재확인."
+ }
+}
