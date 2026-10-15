@@ -3048,5 +3048,24 @@
    "https://raw.githubusercontent.com/ziplab/ATAS/main/README.md"
   ],
   "draft_id": "20261016_073114_3"
+ },
+ {
+  "date": "2026-10-16",
+  "title": "🔒 PwnEscape(CVE-2026-99999) 총정리: AI로 찾은 리눅스 커널 VM 탈출 결함과 Vercel 챌린지",
+  "topic": "PwnEscape: Guest-to-Host KVM Escape (CVE-2026-99999) — Findings from the $1M Vercel Sandbox challenge",
+  "category": "AI 보안",
+  "source_url": "https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/pwnescapecve-2026-99999-ai-vm-vercel.html"
+  },
+  "sources": [
+   "https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge",
+   "https://pwn.ai/blog/pwnescape",
+   "https://thehackernews.com/2026/10/critical-pwnescape-linux-kernel.html",
+   "https://vercel.com/blog/one-million-dollar-hacker-challenge-for-vercel-sandbox",
+   "https://runtimewire.com/article/xbow-six-day-chrome-exploit-google-bounty",
+   "https://cveawg.mitre.org/api/cve/CVE-2026-99999"
+  ],
+  "draft_id": "20261016_074537_5"
  }
 ]
