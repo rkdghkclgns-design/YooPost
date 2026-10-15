@@ -1,0 +1,80 @@
+{
+ "topic": "ESWIN Computing(奕斯伟计算, 01256.HK) 홍콩거래소 상장(2026-10-09) — 확정 공모가 HK$1.55·홍콩 공모 9.09배·국제 배정 1.95배",
+ "source_url": "https://www.eswincomputing.com/news/info/118.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "奕斯伟计算（01256.HK）登陆港交所，开启RISC-V+AI发展新阶段",
+   "url": "https://www.eswincomputing.com/news/info/118.html",
+   "publisher": "ESWIN Computing 공식 사이트",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "IPO观察|京东方创始人王东升掌舵，奕斯伟计算上市首日破发",
+   "url": "https://finance.jrj.com.cn/2026/10/09180958650523.shtml",
+   "publisher": "금융계(JRJ)",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "“RISC-V第一股”登陆港交所，亦庄资本、合肥建投等基石认购约11.61亿港元",
+   "url": "http://stock.10jqka.com.cn/20261009/c680542587.shtml",
+   "publisher": "동화순(10jqka)",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "奕斯伟计算H股定价1.55港元 净筹23.86亿港元",
+   "url": "https://www.guandian.cn/m/show/610442",
+   "publisher": "관점망(Guandian)",
+   "published": "2026-10-08",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "RISC-V chipmaker ESWIN Computing lists in Hong Kong",
+   "url": "https://technode.com/2026/10/09/risc-v-chipmaker-eswin-computing-lists-in-hong-kong",
+   "publisher": "TechNode",
+   "published": "2026-10-09",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Announcement of Final Offer Price and Allotment Results — Beijing ESWIN Computing Technology (01256)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1008/2026100801417.pdf",
+   "publisher": "HKEXnews(홍콩거래소 공시)",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Global Offering (Prospectus) — Beijing ESWIN Computing Technology Co., Ltd.",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800035.pdf",
+   "publisher": "HKEXnews(홍콩거래소 공시)",
+   "published": "2026-09-28",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.eswincomputing.com/bocupload/at/image/20261009/1791543409924903o0sA.jpg",
+   "page_url": "https://www.eswincomputing.com/news/info/118.html",
+   "caption": "상장 첫날 홍콩거래소 상장 행사 — 화면에 ESWIN(1256) 시초가 HK$1.54(공모가 대비 -0.01, -0.65%)가 표시돼 있다",
+   "credit": "ESWIN Computing"
+  }
+ ],
+ "factcheck": {
+  "claims": 76,
+  "confirmed": 74,
+  "removed": [
+   "상장 전 네 차례 투자 유치로 누적 90억 위안 이상을 조달했다고 보도됐습니다. (열어 본 출처·투자설명서 검색에서 확인 안 됨)",
+   "일본 IoTBank와는 엣지 AI 솔루션 확산을 위한 전략 협약을 맺었다고 보도됐습니다. (어느 출처에서도 확인 안 됨)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). 작성 시 못 연 HKEX 배정 결과 공고(2026-10-08, 2026100801417.pdf) 원문을 HKEXnews 에서 직접 내려받아 공모가 HK$1.55·범위 1.48~1.59·홍콩 9.09배(유효 청약 18,776건)·국제 1.95배(45곳)·물량 157,022,000/1,460,288,000·발행조정권 47,106,000주(3.00%)·총 1,617,310,000주·총조달 HK$2,506.8m·비용 121.2m·순조달 2,385.7m·기초투자자 9곳 749,354,000주(×1.55≈HK$11.61억)·6개월 보호예수(2027-04-08)·공중 보유 43.40%·시장가치 HK$300억 초과·1수 2,000주를 1차 확인(8.09배 아님). 투자설명서(2026-09-28)로 설립일 2019-09-24, RISC-V 의 AI 연산 지원·AI 컴퓨팅 코어 개발 인력 채용(자금 사용) 확인 → AI 연관 서술을 공식 자료 근거로 보강. 재무·점유율·첫날 거래는 S1(회사)·S2(JRJ)·S3(10jqka) 재열람으로 확인. 고친 것: '왕둥성이 이끄는'→'세운'(공고상 의장은 Mi Peng, 왕둥성은 집행이사), '중국 매체 두 곳이 같은 수치'→HKEX 공고 대조, H주 박스의 코스닥 비교 문장 일반화. 각 출처 published 를 페이지 표기 날짜와 대조(S1~S5 일치, S6 2026-10-08, S7 2026-09-28). 인용 이미지 I1 은 내려받아 확인 — 상장 행사 화면에 1256 시초가 1.54 가 표시돼 첫날 거래 절과 직접 관련되므로 유지하고 캡션을 정확히 고침. EGRESS_BLOCKED 출처 없음."
+ }
+}
