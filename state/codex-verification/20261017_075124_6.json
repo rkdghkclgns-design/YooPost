@@ -1,0 +1,237 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "Pax8 발표일은 2026-10-12이다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "발표 도입부 Oct. 12, 2026 및 datePublished 메타데이터.",
+   "action": "유지"
+  },
+  {
+   "id": "C2",
+   "claim": "Wharton 보고서 소개 발표일은 2026-10-13이다.",
+   "url": "https://knowledge.wharton.upenn.edu/special-report/2026-ai-adoption-report/",
+   "confirmed": true,
+   "evidence": "Wharton 소개 페이지 본문 Published on October 13, 2026.",
+   "action": "유지"
+  },
+  {
+   "id": "C3",
+   "claim": "GBK 공동 조사 해설 발표일은 2026-10-13이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "웹 본문의 Oct 13 및 이번 직접 HTTP 200 HTML의 datePublished 2026-10-13T06:15:43-0700 대조. source-evidence/gbk-factcheck.json.",
+   "action": "유지"
+  },
+  {
+   "id": "C4",
+   "claim": "Pax8 조사는 미국·영국·독일·스웨덴을 대상으로 한다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Methodology에 네 국가 명시.",
+   "action": "유지"
+  },
+  {
+   "id": "C5",
+   "claim": "Pax8 표본은 중소기업 리더 1,150명이다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Methodology: 1,150 business owners, executives, functional leaders, and managers.",
+   "action": "유지"
+  },
+  {
+   "id": "C6",
+   "claim": "Pax8 대상 기업 직원 규모는 5~499명이다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Methodology: companies employing between 5 and 499 people.",
+   "action": "유지"
+  },
+  {
+   "id": "C7",
+   "claim": "Wharton·GBK 조사 대상은 미국 기업이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Study: online survey of U.S. enterprise organizations.",
+   "action": "유지"
+  },
+  {
+   "id": "C8",
+   "claim": "Wharton·GBK 대상 기업은 직원 1,000명 이상이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Study: 1,000+ employees.",
+   "action": "유지"
+  },
+  {
+   "id": "C9",
+   "claim": "Wharton·GBK 대상 기업은 매출 5,000만 달러 이상이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Study: $50M+ revenue.",
+   "action": "유지"
+  },
+  {
+   "id": "C10",
+   "claim": "Wharton·GBK 리더 표본은 1,007명이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Managers and above, n=1,007.",
+   "action": "유지"
+  },
+  {
+   "id": "C11",
+   "claim": "Wharton·GBK 초급·중급 직원 표본은 409명이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "entry- and mid-level employees, n=409.",
+   "action": "유지"
+  },
+  {
+   "id": "C12",
+   "claim": "Pax8의 AI 참여 기업 중 67%가 정기 사용 중인 자체 솔루션을 구축했다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Small Businesses... 절: 67% of AI-engaged businesses... now in regular use.",
+   "action": "유지"
+  },
+  {
+   "id": "C13",
+   "claim": "Pax8의 AI 참여 기업 중 35%가 지난 6개월에 승인되지 않은 AI를 발견했다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "One in Three... 절: 35% ... in the past six months.",
+   "action": "수정: 35% 문장에 AI 참여 기업이라는 분모를 명시"
+  },
+  {
+   "id": "C14",
+   "claim": "Pax8의 shadow AI 정의에는 도구·워크플로·에이전트가 포함된다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "tools, workflows or agents operating without official approval.",
+   "action": "유지"
+  },
+  {
+   "id": "C15",
+   "claim": "지난 1년간 AI 비용을 낸 기업 중 49%가 예상보다 높은 청구·요금을 적어도 한 번 받았다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Nearly Half... 절: Among businesses that paid for AI in the past year ... at least one bill or usage charge higher than they expected.",
+   "action": "유지"
+  },
+  {
+   "id": "C16",
+   "claim": "의사결정자 중 55%가 AI 결과 검토·편집·사실 확인에 주당 3시간 이상을 쓴다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "AI Is Saving Time... 절에 55%, three or more hours per week 명시.",
+   "action": "유지"
+  },
+  {
+   "id": "C17",
+   "claim": "Wharton·GBK 기업 리더의 80%가 긍정적인 AI 투자 수익을 보고했다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "도입부: 80% of enterprise leaders report positive returns from AI.",
+   "action": "유지"
+  },
+  {
+   "id": "C18",
+   "claim": "공동 조사의 세 성공 지표는 가치 입증·업무 흐름 전환·조직 정렬이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Defining Success... 절: proving value, transforming workflows and aligning the organization.",
+   "action": "유지"
+  },
+  {
+   "id": "C19",
+   "claim": "GBK 해설에서 세 성공 지표를 모두 충족한 조직에 속한다고 답한 리더의 비율은 7%이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "GBK 도입부는 share of leaders whose organizations clear all three markers로 정의하며, 본문과 도표는 7% of organizations로 요약한다.",
+   "action": "수정: 리더 응답에 기반한 비율임을 본문에 명시"
+  },
+  {
+   "id": "C20",
+   "claim": "투자 수익 응답과 복합 성공 지표 충족 여부는 서로 다른 측정이다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "도입부의 80%와 7% 및 각 지표별 explicit conditions 설명을 대조.",
+   "action": "유지"
+  },
+  {
+   "id": "C21",
+   "claim": "GBK는 리더와 직원 응답을 합치지 않고 구분한다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Leader and employee responses are reported separately and never combined.",
+   "action": "유지"
+  },
+  {
+   "id": "C22",
+   "claim": "GBK는 부서·산업·기업 규모·직급을 고려한 관계 분석을 설명한다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Maintaining Comparability... 절: department, industry, company size, and seniority accounted for.",
+   "action": "유지"
+  },
+  {
+   "id": "C23",
+   "claim": "GBK는 결과 관계에 대체 설명이 남는 경우를 명시한다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "Where a pattern has another plausible explanation, the report names it. 뒤 문단의 conviction/capability 설명도 대조.",
+   "action": "유지"
+  },
+  {
+   "id": "C24",
+   "claim": "Pax8의 문항별 대상에는 AI 사용·구축·구매 기업 하위집단이 있다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Methodology: Several questions were asked only of businesses that use, build, or pay for AI.",
+   "action": "유지"
+  },
+  {
+   "id": "C25",
+   "claim": "Channel Dive는 2026-10-12 Pax8 조사 보도에서 자체 구축 AI와 관리 문제를 다뤘다.",
+   "url": "https://www.channeldive.com/news/smbs-lack-ai-governance-report/832804/",
+   "confirmed": true,
+   "evidence": "기사 제목 SMBs lack AI governance: report, Published Oct. 12, 2026 및 Dive Brief 본문 확인.",
+   "action": "유지"
+  },
+  {
+   "id": "C26",
+   "claim": "Pax8와 Wharton·GBK는 조사 지역과 기업 규모가 다르므로 동일 모집단의 비율로 직접 비교할 수 없다.",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "confirmed": true,
+   "evidence": "GBK Study의 미국·직원 1,000명 이상·매출 5,000만 달러 이상과 Pax8 Methodology의 4개국·직원 5~499명 대조. Pax8 원문도 별도 재열람.",
+   "action": "유지"
+  },
+  {
+   "id": "C27",
+   "claim": "GBK 공식 도표는 가치 입증·업무 흐름 전환·조직 정렬과 세 지표 동시 충족 7%를 표시한다.",
+   "url": "https://images.squarespace-cdn.com/content/v1/5f886e736b54bb4b0867ae1d/59823eda-540b-4b7d-b32a-cf6b98e45c14/GBK%2BSummary_img%2B01.png",
+   "confirmed": true,
+   "evidence": "웹 Cache miss 후 같은 공개 URL 직접 HTTP 200 image/webp. JSON에 보존한 이미지를 시각 확인. source-evidence/gbk-chart-factcheck.json.",
+   "action": "유지"
+  },
+  {
+   "id": "C28",
+   "claim": "Pax8 공식 발표는 예상 초과 청구 49%와 검토 시간 55%를 별도 질문 결과로 제시하며, 두 변수의 교차 분석 결과로 제시하지 않는다.",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "confirmed": true,
+   "evidence": "Nearly Half... 및 AI Is Saving Time... 절을 각각 재열람. 원문에 두 집단의 중첩 비율이나 인과 효과는 제시되지 않음.",
+   "action": "유지"
+  }
+ ],
+ "note": [
+  "이번 별도 사실 검증에서 post.json의 제목·도입·요약·표·본문·FAQ·마무리와 research의 날짜·도표 설명을 대조했다. 동일 사실의 반복은 중복 집계하지 않았다. 작업 설명과 필자의 제안·가상 예시는 외부 사실 주장 개수에서 제외했다.",
+  "공식 발표 Pax8·GBK·Wharton과 독립 매체 Channel Dive 원문을 웹 도구로 새로 열어 본문을 읽었다. 기존 verification의 확인 표시를 검증 근거 대신 사용하지 않았다.",
+  "GBK 날짜 연도는 직접 HTTP HTML 메타데이터로 추가 확인했다. 도표 웹 도구 Cache miss는 원문 서버 실패로 단정하지 않았고 동일 공개 URL을 timeout=20초로 직접 조회하여 HTTP 200 본문을 JSON에 보존하고 시각 확인했다. 로그인·쿠키·프록시·차단 우회를 사용하지 않았다.",
+  "35%의 분모와 7%의 응답 기준을 명시하도록 post를 수정했다. 현재 원고에서 거짓이거나 미확인인 외부 주장은 발견되지 않았다. 28% 삭제는 이전 단계 이력이며 이번 집계·삭제 결과에 포함하지 않았다.",
+  "가격·제품 성능·법적 사실에 관한 별도 확정 주장은 원고에 없다. 투자 수익 수치는 응답자가 보고한 설문 결과이며 실제 회계 수익 검증으로 취급하지 않았다.",
+  "대표 발표일 2026-10-12와 독립 보도일 2026-10-12는 brief의 2026-10-10 이후 조건을 충족한다. 검증 완료는 승인·발행을 뜻하지 않는다. 원문 조회 실패 또는 근거 부족이 없어 skip.json을 만들지 않았다."
+ ],
+ "checked_at": "2026-10-16T22:50:59.820283+00:00"
+}
