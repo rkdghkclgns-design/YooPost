@@ -1,0 +1,245 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "Kevin Yandoka Denamganaï의 해당 논문 v1 제출일은 2026-10-13(UTC 기준)이다.",
+   "url": "https://arxiv.org/abs/2610.18727",
+   "evidence": "Submitted on 13 Oct 2026; Authors: Kevin Yandoka Denamganaï",
+   "confirmed": true,
+   "action": "제출일 유지. 원고의 공개일 표현을 제출일로 고치고 UTC 기준을 명시."
+  },
+  {
+   "id": "C2",
+   "claim": "진행 중인 공개 초안이다.",
+   "url": "https://arxiv.org/abs/2610.18727",
+   "evidence": "Comments: work in progress, open draft",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C3",
+   "claim": "NLA는 AV로 활성 벡터의 영어 설명을 만들고 AR로 벡터를 복원한다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Abstract; Sections 1 and 2.1",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C4",
+   "claim": "학습은 생성적 재구성 과제, 감독은 판별 과제로 형식화한다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Sections 1, 3.1, 3.4",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C5",
+   "claim": "재구성 학습 목적은 경쟁 설명에 대한 진실 판별을 직접 보상하지 않는다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 1: The loss is computed against one target activation, never discriminatively against distractor accounts.",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C6",
+   "claim": "실험은 공개 NLA 체크포인트 하나를 사용한다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.1: We use one released AV/AR checkpoint",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C7",
+   "claim": "사람 실험 대신 AR 기반 대리 감독 모델을 사용했다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 4.1: a human monitor cannot be run at the scale our measurements need; build a surrogate monitor model",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C8",
+   "claim": "대리 모델은 설명을 재구성해 대상 활성과 유사도를 비교한다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 4.1: re-encodes a candidate account and compares the result with the activation; cosine",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C9",
+   "claim": "다른 활성의 설명을 경쟁자로 둔 조건에서 320회 비교 모두 승리했다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.2 H1a: wins all 320 of its comparisons",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C10",
+   "claim": "식별 비교는 40개 대화·대화당 경쟁 설명 8개였다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 1 Experimental Evidence; Section 6.2",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C11",
+   "claim": "한 주장 변경 조건의 lineup AUC는 60.2%이며, 대화별 쌍별 순위 승률을 평균한 값이다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.2 H1b: wins 0.602 of its comparisons",
+   "confirmed": true,
+   "action": "유지하되 대화별 계산 후 평균한 지표임을 본문·FAQ에 명시."
+  },
+  {
+   "id": "C12",
+   "claim": "한 주장 결과의 대화 수는 35였다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.2 H1b: n=35 conversations",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C13",
+   "claim": "한 주장 결과 표준오차는 6.7%포인트였다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.2 H1b: standard error of 0.067",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C14",
+   "claim": "한 주장 결과의 95% 구간은 0.471~0.728로 우연 기준 0.5를 포함했다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.2 H1b: The 95% interval ... [0.471,0.728], includes chance",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C15",
+   "claim": "그림 4의 막대는 대화 재표집에 따른 95% 구간이다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Figure 4 caption: bars giving 95% intervals from resampling conversations",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C16",
+   "claim": "의미 유지 외부 재작성으로 사적 표현 관습이라는 대안 설명을 점검했다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.3 Question and hypothesis",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C17",
+   "claim": "의미 유지 재작성 손상 중앙값은 다른 활성 설명까지의 거리 대비 0.021이다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.3 H2: median ... 0.021 of the distance to another activation’s account",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C18",
+   "claim": "손상 비율은 벡터의 각도 거리 비율이며 정보 보존율이 아니다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 6.3 How to read the damage measure: ratio of angles, not a proportion of anything countable",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C19",
+   "claim": "경쟁 설명은 대화문에서 확인 가능한 주장만 다룬다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 7 Transcript-level truths only",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C20",
+   "claim": "모델 자체의 처리·계획·의도에 관한 주장은 시험하지 않았다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 7 What remains untested",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C21",
+   "claim": "단일 시드를 사용했다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 7 Design: A single seed throughout",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C22",
+   "claim": "AV의 원래 설명을 참인 설명으로 놓는 가정이 있다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 2.3; Assumption 3.4; Section 7 Assumptions",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C23",
+   "claim": "대화문만 읽는 감독 대조군은 실행하지 않았다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 7: A monitor that reads the transcript ... we have yet to run it",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C24",
+   "claim": "다른 점수화 방식의 경쟁 설명 평가로의 이전은 후속 확인 대상이다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "Section 9 A better read-out: Whether this transfers to the rival lineups is a scoring pass on lineups that already exist",
+   "confirmed": true,
+   "action": "유지. 적용 대상과 조건을 본문에 한정."
+  },
+  {
+   "id": "C25",
+   "claim": "활성 벡터는 언어 모델 계산 과정의 수치 표현이다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "§2.1 및 §6.1: 모델의 특정 층·토큰 위치에서 얻은 activations를 설명 대상으로 사용한다.",
+   "confirmed": true,
+   "action": "유지."
+  },
+  {
+   "id": "C26",
+   "claim": "lineup AUC는 각 대화 안에서 원래 설명이 경쟁 설명보다 높은 점수를 받은 비율을 계산하고 대화 간 평균한다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "§4.1 Definition 4.1 및 unit of analysis 설명.",
+   "confirmed": true,
+   "action": "지표 정의를 본문에 명시."
+  },
+  {
+   "id": "C27",
+   "claim": "이 논문의 순위 기반 측정은 실제 배포에 필요한 고정 판정 임계값을 정하지 않는다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "§7 Assumptions와 §9 Claim deletion and calibration.",
+   "confirmed": true,
+   "action": "유지."
+  },
+  {
+   "id": "C28",
+   "claim": "한 주장 경쟁 설명의 예정된 320개 자리 중 119개가 채워지지 않았다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "§7 Design: 119 of 320 slots unfilled at one claim.",
+   "confirmed": true,
+   "action": "표본 구성의 한계로 본문에 추가."
+  },
+  {
+   "id": "C29",
+   "claim": "재작성 모델은 AV와 사전학습을 공유하여 공유 사전학습에서 온 관습은 배제되지 않는다.",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "evidence": "§7 Assumptions: shares its pretraining; conventions inherited from that shared pretraining are not excluded.",
+   "confirmed": true,
+   "action": "대조 실험 한계로 본문에 추가."
+  },
+  {
+   "id": "C30",
+   "claim": "2026년 10월 13일은 한국 시간 기준으로 확인된 논문 공개일이다.",
+   "url": "https://arxiv.org/abs/2610.18727",
+   "evidence": "소개 페이지에서 확인되는 것은 v1 제출 시각 13 Oct 2026 17:05:28 UTC이다. 한국 시간은 다음 날이며 별도 공개 시각은 확인되지 않는다.",
+   "confirmed": false,
+   "action": "공개일 단정을 삭제하고 UTC 기준 제출일로 수정."
+  }
+ ],
+ "note": "이번 별도 사실 검증 세션에서 공식 arXiv 소개·v1 본문과 Pith 리뷰를 새로 열어 읽고 HTTP GET으로도 재조회했다(모두 200, 최종 URL·조회 시각·본문은 source-evidence/factcheck-*.json). 제목·도입·요약·표·FAQ·이미지 캡션을 포함하여 동일 외부 사실은 묶어 집계했다. 의견·비유·독자 검토 제안과 자체 수행 상태는 claims에서 제외했다. 수치·지표·실험 범위는 원문과 일치했다. UTC 제출일과 공개일을 구분하고 대화별 평균 방식, 누락된 경쟁 설명 자리, 공유 사전학습 한계를 보완했다. Pith의 2026-10-14 T0 AI 리뷰는 별도 회사의 논평 존재 확인용이며 인간 심사·독립 재현으로 인정하지 않았다. 승인·발행·주제 교체는 수행하지 않았다."
+}
