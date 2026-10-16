@@ -1,0 +1,166 @@
+{
+ "claims": [
+  {
+   "claim": "Amazon이 2026-10-15 Bee Frontier·Eclipse를 발표했다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "공식 HTML article:published_time 및 datePublished: 2026-10-15T11:55:24.955Z. 본문에서 두 신제품 발표 확인.",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Frontier는 손목 착용과 옷 고정을 지원한다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Bee Frontier 절: wear on your wrist or clip on to clothes",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Eclipse는 휴대전화 뒤에 자석으로 부착한다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Bee Eclipse 절: attaches to the back of your phone magnetically",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Frontier 공식 가격은 74.99달러이다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Availability and pricing: $74.99",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Eclipse 가격은 99.99달러부터이다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Availability and pricing: starting at $99.99",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "발표 당시 Frontier는 판매 중이었다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Availability and pricing: is available now",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "발표 당시 Eclipse는 출시 예정이었다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Availability and pricing: will be available soon",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Bee Pro는 월 11.99달러이다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Bee Pro costs $11.99 per month",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Alexa+·Amazon.com 연동은 Bee Pro에 포함된다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Bee Pro subscription 열거 항목",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Alexa+ 연결로 요약·할 일을 음성으로 확인한다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "New connections: hands-free access to summaries, insights, and to-dos",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon.com 연결은 개인화 상품 추천에 쓰인다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "New connections: personalized shopping recommendations",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon 설명에 따르면 음성은 실시간 처리 후 저장 없이 폐기된다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "How does Bee Private Compute protect your data?: transcribes in real time and discards without saving",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon 설명에 따르면 전사문·요약·할 일은 사용자 기기가 통제하는 키로 암호화된다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "도입 요약 및 본문 transcripts and insights encrypted using keys only your device creates and controls",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon 설명에 따르면 서버 공유 전에 승인된 소프트웨어를 실행하는지 기기가 확인한다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "Before your device shares anything with Amazon servers, it first verifies ... approved, trusted software",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon 설명에 따르면 격리 처리 환경을 사용한다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "secure and isolated processing environment",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Amazon은 Eclipse 사용자가 통화 녹음을 시작할 때마다 다른 참여자의 허락을 받도록 안내받는다고 설명한다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Bee Eclipse 절: users are prompted to gain permission ... each time a recording is started",
+   "action": "수정: 허락을 받는 주체가 사용자임을 명확히 함. 법적 요건 충족으로 확대하지 않음."
+  },
+  {
+   "claim": "공식 본문 사진은 왼쪽 Frontier·오른쪽 Eclipse를 보여 준다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "How Bee keeps your conversations private 하단 이미지 캡션",
+   "action": "유지: 이번 검증에서 공식 본문과 재대조함."
+  },
+  {
+   "claim": "Bee는 대화를 요약·할 일·알림·인사이트로 정리하는 개인 AI로 소개된다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "공식 발표 도입 및 How Bee works 절.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  },
+  {
+   "claim": "두 신제품 발표와 함께 Alexa+·Amazon.com 연결 기능이 소개됐다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "New connections with Alexa+ and Amazon.com 절.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  },
+  {
+   "claim": "두 기기는 버튼으로 켜고 끄며 작동 상태를 나타내는 표시등이 있다.",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "confirmed": true,
+   "evidence": "Frontier 및 Eclipse 소개, 개인정보 절의 single press와 LED 설명.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  },
+  {
+   "claim": "서비스 연결과 정보 공유는 사용자가 선택한다는 것이 Amazon의 설명이다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "개인정보 설명: you choose what to share; Nothing leaves until you say so; stop sharing at any time.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  },
+  {
+   "claim": "GeekWire는 2026-10-15 신제품을 보도하고 선택적으로 연결하는 쇼핑 추천을 다뤘다.",
+   "url": "https://www.geekwire.com/2026/amazons-new-ai-devices-can-listen-to-conversations-and-suggest-things-to-buy-if-you-opt-in/",
+   "confirmed": true,
+   "evidence": "기사 작성자·날짜 Oct 15, 2026, 본문 opt-in 및 shopping suggestions 설명. 이 보도 행위 자체는 해당 매체 원문으로 검증.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  },
+  {
+   "claim": "개인정보 보조 설명의 발표일은 2026-09-23이다.",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "confirmed": true,
+   "evidence": "공식 HTML article:published_time 및 datePublished: 2026-09-23T22:30:07.502Z. 신제품 발표일로 사용하지 않음.",
+   "action": "유지: 이번 검증에서 원문 확인."
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 post.json의 제목·도입·요약·본문·표·FAQ·이미지 설명을 대조했다. 중복 표현은 동일 주장으로 합산했으며 외부 사실 23건 모두 확인했다. 공식 원문 2편과 GeekWire 기사를 web 도구로 다시 열어 본문을 읽었다. 공식 원문은 urllib로도 각 HTTP 200 재조회하여 최종 URL·시각·날짜 메타데이터·본문을 source-evidence/recheck-S1.json 및 recheck-S3.json에 저장했다. GeekWire 본문은 web 도구로 읽었으나 보조 urllib 요청은 HTTP 403이었다. 따라서 이 보조 요청 실패를 원문 미열람으로 오인하지 않았다. GeekWire 보도 행위는 공식 제품 문서로 입증할 수 없는 외부 사실이므로 실제 읽은 매체 원문 URL로 포함했다. 의견·가상 사례·검토 제안·직접 시험 미실시 등 자체 작업 설명은 claims에서 제외했다. 수치·가격·출시 상태 오류나 확인 불가한 외부 사실은 발견하지 않았다. 통화 동의 안내의 주체를 사용자로 명확히 수정했다. 보안 내용은 Amazon의 설계 설명으로 한정하며 독립적인 구현 검증이나 법적 적합성 판단이 아니다. 한국 판매·한국어 정확도는 단정하지 않았다. 최신성은 brief의 KST 2026-10-17을 기준으로 대표 발표 2026-10-15가 2026-10-14 이후임을 확인했다. 근거 부족 또는 공식 원문 조회 실패에 해당하지 않아 skip.json은 작성하지 않았다."
+}
