@@ -1,0 +1,37 @@
+{
+ "topic": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+ "source_url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+   "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+   "publisher": "Palo Alto Networks Unit 42",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI-Powered Espionage Campaign Uses Custom Malware on Linux Systems",
+   "url": "https://cyber.netsecops.io/articles/ai-powered-espionage-campaign-targets-government-linux-infrastructure/",
+   "publisher": "CyberNetSec.io",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://unit42.paloaltonetworks.com/wp-content/uploads/2026/10/word-image-468821-188392-2.png",
+   "page_url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+   "caption": "공식 보고서 Figure 2: Cortex XDR에서 관찰한 대화형 웹 셸 활동의 프로세스 흐름",
+   "credit": "Palo Alto Networks Unit 42"
+  }
+ ],
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [],
+  "note": "2026-10-16 UTC 별도 사실 검증: 기존 검증 숫자를 승인 근거로 사용하지 않고 post.json 전체의 외부 사실을 다시 추출해 공식 원문을 재조회했다. 공식 발표일 2026-10-15와 관찰 기간, 추적명, 귀속의 한정, PHP 경로·설정, 자격 증명 탈취, SysGoRAT 기능, 메일함 압축 오류, 방어 회피 절을 직접 읽고 대조했다. 반복된 intro·summary·표·FAQ의 동일 주장은 통합하고 도구 기능은 각각 분리했다. 독립 매체는 웹 도구 Internal Error 후 동일 공개 URL을 urllib(timeout=20)로 한 번 조회해 HTTP 200 본문과 표시일 2026-10-16을 확인했다. 두 조회의 최종 URL·HTTP 상태·시각·본문은 source-evidence/recheck-1.json 및 recheck-2.json에 저장했다. 독립 매체의 게시일·자체 해설만 그 매체를 근거로 삼았다. 공식 Figure 2 캡션·본문과 웹 도구의 이미지 대체 설명은 확인했으나 이미지 바이너리는 별도로 열지 않았다. 운영 점검 제안·해석·작업 상태는 외부 사실 개수에 포함하지 않았다. 확인 불가하여 삭제할 외부 주장은 없었고 로그 삭제의 시도 범위와 AI 활용 가능성 표현을 보수적으로 다듬었다. 원문 접근 및 핵심 근거가 충족되어 skip.json 작성 사유는 없다. 발행·승인은 수행하지 않았다."
+ }
+}
