@@ -1,0 +1,55 @@
+{
+ "topic": "On the Monitorability of Natural Language Autoencoders: Identification vs Discrimination",
+ "source_url": "https://arxiv.org/abs/2610.18727",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "On the Monitorability of Natural Language Autoencoders: Identification vs Discrimination",
+   "url": "https://arxiv.org/abs/2610.18727",
+   "publisher": "arXiv / Kevin Yandoka Denamganaï",
+   "published": "2026-10-13",
+   "official": true,
+   "note": "arXiv 제출 이력의 v1 시각은 2026-10-13 17:05:28 UTC이며 KST로는 2026-10-14 02:05:28이다. published는 페이지에 적힌 UTC 날짜를 유지한다."
+  },
+  {
+   "id": "S2",
+   "title": "On the Monitorability of Natural Language Autoencoders — full text v1",
+   "url": "https://arxiv.org/html/2610.18727v1",
+   "publisher": "Kevin Yandoka Denamganaï / arXiv",
+   "published": "2026-10-13",
+   "official": true,
+   "note": "본문 표지의 Draft, October 13, 2026과 v1 날짜를 확인했다."
+  },
+  {
+   "id": "S3",
+   "title": "Pith review: On the Monitorability of Natural Language Autoencoders",
+   "url": "https://pith.science/paper/2610.18727",
+   "publisher": "Pith",
+   "published": "2026-10-14",
+   "official": false,
+   "note": "본문과 날짜를 HTTP 200으로 직접 확인. T0 AI 자동 리뷰임을 페이지가 명시. 독립 논평 존재 확인에만 사용하고 실험 사실 근거는 공식 논문으로 제한."
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.18727v1/figures/47_rival_forest.png",
+   "page_url": "https://arxiv.org/html/2610.18727v1#S6.F4",
+   "caption": "그림 4. 다른 활성 설명의 식별과 일부 주장을 바꾼 경쟁 설명의 판별을 비교한 실험. 막대는 95% 구간입니다.",
+   "credit": "Kevin Yandoka Denamganaï, arXiv:2610.18727v1"
+  }
+ ],
+ "eligibility": {
+  "date_window": "2026-10-10~2026-10-17 KST",
+  "duplicate_check": "brief-3.md의 전체 발행·최근 원고 목록과 제목·주제·대표 URL 비교: 일치 없음. rejected-candidates.json은 빈 목록.",
+  "independent_coverage": "Pith의 2026-10-14 자동 리뷰 본문 직접 확인. 사람 심사나 재현 검증으로 간주하지 않음."
+ },
+ "factcheck": {
+  "claims": 30,
+  "confirmed": 29,
+  "removed": [
+   "한국 시간 기준 공개일로 오인할 수 있는 2026년 10월 13일 공개 표현을 삭제하고 UTC 기준 제출일로 수정."
+  ],
+  "note": "이번 별도 사실 검증 세션에서 공식 arXiv 소개·v1 본문과 Pith 리뷰를 새로 열어 읽고 HTTP GET으로도 재조회했다(모두 200, 최종 URL·조회 시각·본문은 source-evidence/factcheck-*.json). 제목·도입·요약·표·FAQ·이미지 캡션을 포함하여 동일 외부 사실은 묶어 집계했다. 의견·비유·독자 검토 제안과 자체 수행 상태는 claims에서 제외했다. 수치·지표·실험 범위는 원문과 일치했다. UTC 제출일과 공개일을 구분하고 대화별 평균 방식, 누락된 경쟁 설명 자리, 공유 사전학습 한계를 보완했다. Pith의 2026-10-14 T0 AI 리뷰는 별도 회사의 논평 존재 확인용이며 인간 심사·독립 재현으로 인정하지 않았다. 승인·발행·주제 교체는 수행하지 않았다."
+ }
+}
