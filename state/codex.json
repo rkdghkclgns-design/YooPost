@@ -124,7 +124,12 @@
      "reason": "Jio Platforms의 2026-10-15 SEBI 게시 페이지와 2026-10-14 RHP를 요약한 17쪽 Abridged Prospectus는 웹 도구로 읽었다. 그러나 게시 페이지의 공식 링크가 가리키는 전체 RHP(https://www.sebi.gov.in/sebi_data/attachdocs/oct-2026/1792045029108.pdf)는 웹 도구에서 not accessible로 표시됐다. 동일 공개 URL을 urllib로 timeout=20 설정하여 1회 보완 조회한 결과 HTTP 200 및 application/"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
