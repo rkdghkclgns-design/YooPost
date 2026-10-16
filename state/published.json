@@ -3160,5 +3160,21 @@
    "https://econotimes.com/MacPaw-Rolls-Out-Eney-for-Mac-and-iPhone-With-Cloud-Processing-by-Default-1755106"
   ],
   "draft_id": "20261017_072544_2"
+ },
+ {
+  "date": "2026-10-17",
+  "title": "🧠 자연어 오토인코더 논문 분석: 320회 식별·60.2% 판별의 차이 총정리",
+  "topic": "On the Monitorability of Natural Language Autoencoders: Identification vs Discrimination",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.18727",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/320-602.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.18727",
+   "https://arxiv.org/html/2610.18727v1",
+   "https://pith.science/paper/2610.18727"
+  ],
+  "draft_id": "20261017_073112_3"
  }
 ]
