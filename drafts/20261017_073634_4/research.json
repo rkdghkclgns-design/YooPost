@@ -1,0 +1,46 @@
+{
+ "topic": "Amazon introduces 2 new AI products from Bee: Bee Frontier and Bee Eclipse",
+ "source_url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Amazon introduces 2 new AI products from Bee: Bee Frontier and Bee Eclipse",
+   "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "publisher": "Amazon",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Amazon’s new AI devices can listen to conversations and suggest things to buy — if you opt in",
+   "url": "https://www.geekwire.com/2026/amazons-new-ai-devices-can-listen-to-conversations-and-suggest-things-to-buy-if-you-opt-in/",
+   "publisher": "GeekWire",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Bee Private Compute: How Bee keeps your conversations private",
+   "url": "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection",
+   "publisher": "Amazon",
+   "published": "2026-09-23",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://assets.aboutamazon.com/dims4/default/0718ca0/2147483647/strip/true/crop/1600x900%2B0%2B0/resize/1320x743%21/quality/90/?url=https%3A%2F%2Fassets.aboutamazon.com%2Fcc%2F48%2F44c86d444c879facc9fa2614ccbb%2Fbee-frontier-bee-eclipse-inline-amazonnews-ck102426.jpg",
+   "page_url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+   "caption": "공식 발표 본문에 실린 Bee Frontier(왼쪽)와 Bee Eclipse(오른쪽)의 형태 비교.",
+   "credit": "Amazon"
+  }
+ ],
+ "factcheck": {
+  "claims": 23,
+  "confirmed": 23,
+  "removed": [],
+  "note": "별도 사실 검증 세션에서 post.json의 제목·도입·요약·본문·표·FAQ·이미지 설명을 대조했다. 중복 표현은 동일 주장으로 합산했으며 외부 사실 23건 모두 확인했다. 공식 원문 2편과 GeekWire 기사를 web 도구로 다시 열어 본문을 읽었다. 공식 원문은 urllib로도 각 HTTP 200 재조회하여 최종 URL·시각·날짜 메타데이터·본문을 source-evidence/recheck-S1.json 및 recheck-S3.json에 저장했다. GeekWire 본문은 web 도구로 읽었으나 보조 urllib 요청은 HTTP 403이었다. 따라서 이 보조 요청 실패를 원문 미열람으로 오인하지 않았다. GeekWire 보도 행위는 공식 제품 문서로 입증할 수 없는 외부 사실이므로 실제 읽은 매체 원문 URL로 포함했다. 의견·가상 사례·검토 제안·직접 시험 미실시 등 자체 작업 설명은 claims에서 제외했다. 수치·가격·출시 상태 오류나 확인 불가한 외부 사실은 발견하지 않았다. 통화 동의 안내의 주체를 사용자로 명확히 수정했다. 보안 내용은 Amazon의 설계 설명으로 한정하며 독립적인 구현 검증이나 법적 적합성 판단이 아니다. 한국 판매·한국어 정확도는 단정하지 않았다. 최신성은 brief의 KST 2026-10-17을 기준으로 대표 발표 2026-10-15가 2026-10-14 이후임을 확인했다. 근거 부족 또는 공식 원문 조회 실패에 해당하지 않아 skip.json은 작성하지 않았다."
+ },
+ "selection_note": "KST 2026-10-17 기준 2026-10-14 이후 공식 발표. brief-4의 전체 발행·최근 원고 및 빈 rejected-candidates와 대조. S3는 신제품 발표가 아닌 기존 설계 설명의 보조 출처. 대표 발표일은 HTML datePublished 및 article:published_time으로 확인."
+}
