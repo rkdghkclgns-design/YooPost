@@ -1,0 +1,253 @@
+{
+ "claims": [
+  {
+   "id": "C01",
+   "claim": "MacPaw가 2026-10-15 Mac·iPhone용 Eney 출시를 발표했다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "출시 발표 날짜 및 본문 첫 문단",
+   "action": "유지"
+  },
+  {
+   "id": "C02",
+   "claim": "앱·파일·일정 맥락에서 다음 작업을 제안하는 제품으로 소개한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 402~404행",
+   "action": "유지"
+  },
+  {
+   "id": "C03",
+   "claim": "메시지 전송 전에 기본적으로 승인을 요청한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 411행",
+   "action": "유지"
+  },
+  {
+   "id": "C04",
+   "claim": "일정 변경 전에 기본적으로 승인을 요청한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 411행",
+   "action": "유지"
+  },
+  {
+   "id": "C05",
+   "claim": "파일 이동 전에 기본적으로 승인을 요청한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 411행",
+   "action": "유지"
+  },
+  {
+   "id": "C06",
+   "claim": "출시 발표의 Mac 운영체제 요구 조건은 macOS 15 이상이다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 432행",
+   "action": "유지"
+  },
+  {
+   "id": "C07",
+   "claim": "Mac 배포 경로는 eney.ai다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 431행",
+   "action": "유지"
+  },
+  {
+   "id": "C08",
+   "claim": "iPhone용 앱은 App Store에서 제공한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 431행",
+   "action": "유지"
+  },
+  {
+   "id": "C09",
+   "claim": "Setapp 계정 로그인 가능하며 멤버십은 필수가 아니다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "본문 432행",
+   "action": "유지"
+  },
+  {
+   "id": "C10",
+   "claim": "체험 종료는 활성화 후 14일 또는 10,000크레딧 소진 중 먼저 도달하는 때다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Free Download and Trial",
+   "action": "유지"
+  },
+  {
+   "id": "C11",
+   "claim": "기기·플랫폼·요금제 등에 따라 기능이 달라질 수 있다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Scope and Platforms",
+   "action": "유지"
+  },
+  {
+   "id": "C12",
+   "claim": "회의 전 알림을 소개한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "How Eney works 418행",
+   "action": "유지"
+  },
+  {
+   "id": "C13",
+   "claim": "회의 전사 제안을 소개한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "How Eney works 418·421행",
+   "action": "유지"
+  },
+  {
+   "id": "C14",
+   "claim": "회의 노트 및 할 일 정리를 소개한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "How Eney works 418·421행",
+   "action": "유지"
+  },
+  {
+   "id": "C15",
+   "claim": "후속 초대 초안과 사용자 승인을 소개한다",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "confirmed": true,
+   "evidence": "How Eney works 418·421행",
+   "action": "유지"
+  },
+  {
+   "id": "C16",
+   "claim": "클라우드 처리가 기본이다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "개인정보 문서 IV, 103행: 기본 클라우드 처리.",
+   "action": "유지"
+  },
+  {
+   "id": "C17",
+   "claim": "현재 요청에 답하는 로컬 모델을 사용하지 않는다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "개인정보 문서 IV, 103행: 현재 요청 응답에 로컬 모델을 사용하지 않음.",
+   "action": "유지"
+  },
+  {
+   "id": "C18",
+   "claim": "Mac의 파일 읽기·검색은 로컬에서 실행한다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "IV 116행",
+   "action": "유지"
+  },
+  {
+   "id": "C19",
+   "claim": "필요한 파일·검색 결과는 AI 제공자에게 전달될 수 있다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "IV 103·116행",
+   "action": "유지"
+  },
+  {
+   "id": "C20",
+   "claim": "접근 권한 허용 후 읽기 전용 동작은 매번 재승인을 요구하지 않는다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "IV 118행",
+   "action": "유지"
+  },
+  {
+   "id": "C21",
+   "claim": "생성·변경·전송·삭제는 기본적으로 먼저 묻는다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "IV 119행",
+   "action": "유지"
+  },
+  {
+   "id": "C22",
+   "claim": "대화나 설정에서 미리 허용한 동작은 승인 예외다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "IV 119행",
+   "action": "유지"
+  },
+  {
+   "id": "C23",
+   "claim": "작업 복잡도·모델·처리 데이터량 등에 따라 크레딧 소모량이 달라진다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Credit Consumption and AI Models",
+   "action": "유지"
+  },
+  {
+   "id": "C24",
+   "claim": "강행법규에서 달리 정하지 않는 한, 구독 크레딧은 결제 기간 말에 만료되고 이월되지 않는다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Credits",
+   "action": "수정: 약관의 강행법규 예외를 본문에 반영"
+  },
+  {
+   "id": "C25",
+   "claim": "강행법규에서 달리 정하지 않는 한, 일회성 추가 크레딧은 미사용 시 구매 후 12개월에 만료된다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Credits",
+   "action": "수정: 약관의 강행법규 예외를 본문에 반영"
+  },
+  {
+   "id": "C26",
+   "claim": "가격과 크레딧 수량 등은 구매 완료 전 표시된다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Continued Use After the Trial",
+   "action": "유지"
+  },
+  {
+   "id": "C27",
+   "claim": "기능과 가격은 변경될 수 있다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "Changes to Eney",
+   "action": "유지"
+  },
+  {
+   "id": "C28",
+   "claim": "EconoTimes는 2026-10-15 출시와 기본 클라우드 처리를 보도했다",
+   "url": "https://econotimes.com/MacPaw-Rolls-Out-Eney-for-Mac-and-iPhone-With-Cloud-Processing-by-Default-1755106",
+   "confirmed": true,
+   "evidence": "EconoTimes 제목, 작성일 2026-10-15 15:05 UTC, 본문 33~36행에서 출시와 기본 클라우드 처리를 확인.",
+   "action": "유지; 근거 URL을 실제 보도 URL로 수정"
+  },
+  {
+   "id": "C29",
+   "claim": "Eney 개인정보 문서의 갱신일은 2026-10-14이다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": false,
+   "evidence": "원문 26행은 Updated October 16, 2026으로 표시한다.",
+   "action": "수정: research.sources S2의 published를 2026-10-16으로 정정하고 date_type을 updated로 명시"
+  },
+  {
+   "id": "C30",
+   "claim": "Eney 개인정보 문서의 효력 발생일은 2026-10-15이다",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "confirmed": true,
+   "evidence": "원문 26행 Effective date: October 15, 2026.",
+   "action": "유지"
+  },
+  {
+   "id": "C31",
+   "claim": "Eney 이용약관의 갱신일은 2026-10-14이며 효력 발생일은 2026-10-15이다",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "confirmed": true,
+   "evidence": "원문 25행의 Updated 및 Effective date.",
+   "action": "유지"
+  }
+ ],
+ "note": "이번 별도 검증 세션에서 PR Newswire의 MacPaw 공식 발표, MacPaw 개인정보 문서·이용약관, EconoTimes 기사를 web.open으로 다시 열고 해당 본문을 직접 읽었다. 문서 상단 오류 안내와 별개로 실제 문서 본문과 날짜가 모두 표시되어 HTTP 대체 조회는 필요하지 않았다. 동일 외부 사실의 요약·본문·표·FAQ 반복은 한 건으로 집계했다. 원고의 예제 지시문과 평가 방법은 편집 제안이며 제품 실측 결과가 아니다. 작업 실행 여부·단계 설명은 집계하지 않았다. S2 갱신일 오기 1건을 수정했으며 삭제한 외부 주장은 없다. 크레딧 만료의 강행법규 예외를 명시했다. 기능 소개는 회사의 발표·문서상 설명으로 확인했으며 실제 앱 성능을 시험한 것은 아니다. 원문 접근 실패나 핵심 근거 부족이 없어 skip.json 생성 사유는 없다. 승인·발행은 수행하지 않았다."
+}
