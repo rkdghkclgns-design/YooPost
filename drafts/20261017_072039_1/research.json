@@ -1,0 +1,45 @@
+{
+ "topic": "Introducing Ternary Bonsai 2 2B, 4B, and 9B: Bringing Local Agents to Everyday Devices",
+ "source_url": "https://prismml.com/news/bonsai-2-family",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Ternary Bonsai 2 2B, 4B, and 9B: Bringing Local Agents to Everyday Devices",
+   "url": "https://prismml.com/news/bonsai-2-family",
+   "publisher": "PrismML",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "PrismML Ternary Bonsai 2: 2B, 4B and 9B Models From 0.43 GB, Apache 2.0",
+   "url": "https://www.explainx.ai/blog/prismml-ternary-bonsai-2-2b-4b-9b-qwen3-5-apache-phone-glasses-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-15",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/699604cc2b9dd89bdbda0608/6ad11c7c870a45f97e2aa40a_throughput-comp.png",
+   "page_url": "https://prismml.com/news/bonsai-2-family",
+   "caption": "PrismML이 발표한 Bonsai 2 모델별 처리량 비교. 회사 측 측정 자료입니다.",
+   "credit": "PrismML"
+  }
+ ],
+ "factcheck": {
+  "claims": 19,
+  "confirmed": 19,
+  "removed": [],
+  "note": "2026-10-16T22:19:42 UTC에 별도 검증 세션에서 두 URL을 다시 조회했다. 웹 도구는 본문 접근 불가를 반환했으나 같은 공개 URL을 urllib(timeout=20)로 각각 한 번 조회해 최종 URL 동일·HTTP 200·발표/해설 날짜와 전체 본문을 확인했다. 새 응답과 추출 본문은 source-evidence/official-factcheck.json 및 independent-factcheck.json에 저장했다. 이전 검증 파일의 판정을 그대로 승인하지 않고 원고 전체(제목·요약·표·FAQ·이미지 포함)의 고유 외부 주장을 다시 대조했다. 반복 주장은 한 번 집계하고 활용·평가 제안, 실행 여부와 검증 상태는 집계에서 제외했다. 성능은 회사 발표 수치의 존재를 확인한 것으로 독립 재현을 뜻하지 않는다. 라이선스는 공식 발표의 제공 조건을 확인했으며 별도 라이선스 파일이나 법적 적용 범위를 감사하지 않았다. 독립 해설의 데스크톱 속도 및 평가 목록 설명은 현재 공식 본문과 달라 성능 근거로 채택하지 않았다. 원고에 가격·최소 RAM·배터리 지속 시간·상업 이용 권리 확정 주장은 없다. 공식 본문과 날짜를 읽었고 원고의 핵심 근거가 확보되어 skip.json은 만들지 않았다. 발행·승인은 수행하지 않았다. 삭제한 외부 주장은 없으며 도구 활용 설명과 라이선스 귀속 및 독립 해설의 차이를 수정했다."
+ },
+ "eligibility": {
+  "category": "AI 언어 모델",
+  "date_window_start": "2026-10-14",
+  "official_published": "2026-10-15",
+  "independent_published": "2026-10-15",
+  "duplicate_check": "brief-1.md의 이미 쓴 글·최근 원고 및 rejected-candidates.json 대조: 같은 발표·대표 URL 없음",
+  "independent_source_note": "GIGAZINE 조회는 HTTP 403으로 본문 미확인. 인용 출처에서 제외하고 explainx의 날짜 있는 해설 전체 본문을 읽음."
+ }
+}
