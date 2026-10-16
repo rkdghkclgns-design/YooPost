@@ -1,0 +1,51 @@
+{
+ "topic": "MacPaw launches Eney, the proactive AI assistant that lives on your Mac and iPhone and handles everyday tasks (2026-10-15)",
+ "source_url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "MacPaw launches Eney, the proactive AI assistant that lives on your Mac and iPhone and handles everyday tasks",
+   "url": "https://www.prnewswire.co.uk/news-releases/macpaw-launches-eney-the-proactive-ai-assistant-that-lives-on-your-mac-and-iphone-and-handles-everyday-tasks-302909014.html",
+   "publisher": "MacPaw (PR Newswire에 직접 배포한 공식 발표)",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Eney Privacy Notice",
+   "url": "https://macpaw.com/legal/eney-privacy-policy",
+   "publisher": "MacPaw",
+   "published": "2026-10-16",
+   "effective": "2026-10-15",
+   "official": true,
+   "date_type": "updated"
+  },
+  {
+   "id": "S3",
+   "title": "Eney Terms of Service",
+   "url": "https://macpaw.com/legal/eney-terms-of-service",
+   "publisher": "MacPaw",
+   "published": "2026-10-14",
+   "effective": "2026-10-15",
+   "official": true,
+   "date_type": "updated"
+  },
+  {
+   "id": "S4",
+   "title": "MacPaw Rolls Out Eney for Mac and iPhone With Cloud Processing by Default",
+   "url": "https://econotimes.com/MacPaw-Rolls-Out-Eney-for-Mac-and-iPhone-With-Cloud-Processing-by-Default-1755106",
+   "publisher": "EconoTimes",
+   "published": "2026-10-15",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표에 제품 홍보용 대표 비주얼이 있으나 본문 기능 화면이나 데이터 도표를 확인하지 못했습니다. 개인정보 문서와 약관에는 적합한 인용 화면·도표가 없어서 홍보 이미지·로고를 제외했습니다.",
+ "selection_note": "대표 출시 발표일은 2026-10-15로 brief-2.md의 2026-10-14 이후 조건을 충족한다. 독립 보도 EconoTimes의 2026-10-15 기사 본문과 날짜를 이번 검증에서 직접 읽었다. 개인정보 문서의 날짜는 출시일이 아닌 갱신일로 구분했다.",
+ "factcheck": {
+  "claims": 31,
+  "confirmed": 30,
+  "removed": [],
+  "note": "이번 별도 검증 세션에서 PR Newswire의 MacPaw 공식 발표, MacPaw 개인정보 문서·이용약관, EconoTimes 기사를 web.open으로 다시 열고 해당 본문을 직접 읽었다. 문서 상단 오류 안내와 별개로 실제 문서 본문과 날짜가 모두 표시되어 HTTP 대체 조회는 필요하지 않았다. 동일 외부 사실의 요약·본문·표·FAQ 반복은 한 건으로 집계했다. 원고의 예제 지시문과 평가 방법은 편집 제안이며 제품 실측 결과가 아니다. 작업 실행 여부·단계 설명은 집계하지 않았다. S2 갱신일 오기 1건을 수정했으며 삭제한 외부 주장은 없다. 크레딧 만료의 강행법규 예외를 명시했다. 기능 소개는 회사의 발표·문서상 설명으로 확인했으며 실제 앱 성능을 시험한 것은 아니다. 원문 접근 실패나 핵심 근거 부족이 없어 skip.json 생성 사유는 없다. 승인·발행은 수행하지 않았다."
+ }
+}
