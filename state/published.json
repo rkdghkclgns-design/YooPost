@@ -3207,5 +3207,22 @@
    "https://cyber.netsecops.io/articles/ai-powered-espionage-campaign-targets-government-linux-infrastructure/"
   ],
   "draft_id": "20261017_074136_5"
+ },
+ {
+  "date": "2026-10-17",
+  "title": "📊 Pax8·Wharton AI 조사 총정리: 자체 구축 67%와 성과 측정의 조건",
+  "topic": "Pax8 Q3 2026 SMB AI Pulse와 Wharton-GBK 2026 AI Adoption Report로 보는 AI 운영·성과 관리",
+  "category": "AI 인사이트",
+  "source_url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/pax8wharton-ai-67.html"
+  },
+  "sources": [
+   "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "https://knowledge.wharton.upenn.edu/special-report/2026-ai-adoption-report/",
+   "https://www.channeldive.com/news/smbs-lack-ai-governance-report/832804/"
+  ],
+  "draft_id": "20261017_075124_6"
  }
 ]
