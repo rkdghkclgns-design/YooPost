@@ -3,10 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 언어 모델",
   "taken_over": "2026-10-17T07:15:42+09:00",
   "first_taken_over": "2026-10-17T07:15:42+09:00",
-  "reason": "실행 기록 없음"
- }
+  "reason": "실행 기록 없음",
+  "last_result": "done"
+ },
+ "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }

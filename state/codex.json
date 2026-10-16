@@ -3,24 +3,15 @@
   "20261017:daily:AI 언어 모델": {
    "at": "2026-10-17T07:15:42+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-17T07:20:41+09:00",
+   "rejected_candidates": [],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "38974638930-1",
-  "at": "2026-10-17T07:15:42+09:00",
-  "expires": "2026-10-17T09:15:42+09:00",
-  "task": {
-   "day": "20261017",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 언어 모델",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "38974638930-1",
-   "at": "2026-10-17T07:15:42+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
