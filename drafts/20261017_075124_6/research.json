@@ -1,0 +1,61 @@
+{
+ "topic": "Pax8 Q3 2026 SMB AI Pulse와 Wharton-GBK 2026 AI Adoption Report로 보는 AI 운영·성과 관리",
+ "source_url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Pax8 Research Finds Small Businesses Are Building AI Faster Than They Can Govern It",
+   "url": "https://www.pax8.com/en-us/news-post/pax8-research-finds-small-businesses-are-building-ai-faster-than-they-can-govern-it/",
+   "publisher": "Pax8",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Measuring What matters in enterprise ai: Lessons from four years of the wharton-gbk ai adoption report",
+   "url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "publisher": "GBK Collective",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "2026 AI Adoption Report",
+   "url": "https://knowledge.wharton.upenn.edu/special-report/2026-ai-adoption-report/",
+   "publisher": "Knowledge at Wharton",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "SMBs lack AI governance: report",
+   "url": "https://www.channeldive.com/news/smbs-lack-ai-governance-report/832804/",
+   "publisher": "Channel Dive",
+   "published": "2026-10-12",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://images.squarespace-cdn.com/content/v1/5f886e736b54bb4b0867ae1d/59823eda-540b-4b7d-b32a-cf6b98e45c14/GBK%2BSummary_img%2B01.png",
+   "page_url": "https://www.gbkcollective.com/thoughtleadership/enterprise-ai-study-2026",
+   "caption": "가치 입증·업무 흐름 전환·조직 정렬의 세 지표와 동시 충족 7%를 보여주는 공식 도표",
+   "credit": "GBK Collective / Wharton Human-AI Research"
+  }
+ ],
+ "factcheck": {
+  "claims": 28,
+  "confirmed": 28,
+  "removed": [],
+  "note": "이번 별도 검증에서 외부 사실 28개를 재열람·대조하여 확인. 35% 분모와 7% 응답 기준을 명확히 수정. 이번 삭제 없음. 이전 단계 삭제 이력은 이번 집계에서 제외. 상세 근거와 작업 기록은 verification.json 참조."
+ },
+ "review": {
+  "category_preserved": true,
+  "window_start_kst": "2026-10-10",
+  "as_of_kst": "2026-10-17",
+  "duplicate_check_scope": "brief-6.md의 전체 제공 목록 및 rejected-candidates.json",
+  "independent_coverage": "Channel Dive 2026-10-12 원문 확인",
+  "images_checked": "이번 검증: GBK 공식 도표 동일 URL 직접 HTTP 200 후 JSON 보존 및 시각 확인. 세 성공 지표·7% 표시 확인."
+ }
+}
