@@ -3192,5 +3192,20 @@
    "https://www.aboutamazon.com/news/devices/bee-private-compute-data-protection"
   ],
   "draft_id": "20261017_073634_4"
+ },
+ {
+  "date": "2026-10-17",
+  "title": "🔒 CL-UNK-1211 총정리: 정부 리눅스 침투에서 드러난 AI 생성 흔적과 방어 점검",
+  "topic": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+  "category": "AI 보안",
+  "source_url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cl-unk-1211-ai.html"
+  },
+  "sources": [
+   "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+   "https://cyber.netsecops.io/articles/ai-powered-espionage-campaign-targets-government-linux-infrastructure/"
+  ],
+  "draft_id": "20261017_074136_5"
  }
 ]
