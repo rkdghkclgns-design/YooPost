@@ -3128,5 +3128,20 @@
    "https://dealroom.co/news/129203-modal-raises-355m-series-c-at-4-65b-valuation/"
   ],
   "draft_id": "20261016_074046_4"
+ },
+ {
+  "date": "2026-10-17",
+  "title": "🤖 Ternary Bonsai 2 총정리: 0.43GB부터 시작하는 로컬 AI 모델 선택 가이드",
+  "topic": "Introducing Ternary Bonsai 2 2B, 4B, and 9B: Bringing Local Agents to Everyday Devices",
+  "category": "AI 언어 모델",
+  "source_url": "https://prismml.com/news/bonsai-2-family",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ternary-bonsai-2-043gb-ai.html"
+  },
+  "sources": [
+   "https://prismml.com/news/bonsai-2-family",
+   "https://www.explainx.ai/blog/prismml-ternary-bonsai-2-2b-4b-9b-qwen3-5-apache-phone-glasses-2026"
+  ],
+  "draft_id": "20261017_072039_1"
  }
 ]
