@@ -52,7 +52,12 @@
    "failure_kind": "",
    "finished_at": "2026-10-18T07:35:58+09:00",
    "rejected_candidates": [],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
