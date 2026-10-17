@@ -3242,5 +3242,22 @@
    "https://etf-rebalancing.com/info/november-ipo-schedule-subscription-big-deal-calendar-broker-listing-guide"
   ],
   "draft_id": "20261017_080245_7"
+ },
+ {
+  "date": "2026-10-18",
+  "title": "🤖 DeepSeek-V4.1-Flash-1017 총정리: DeepSWE 77.0·프로젝트 개발 사용 가이드",
+  "topic": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real (2026-10-17 업데이트)",
+  "category": "AI 언어 모델",
+  "source_url": "https://api-docs.deepseek.com/news/news261017/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/deepseek-v41-flash-1017-deepswe-770.html"
+  },
+  "sources": [
+   "https://api-docs.deepseek.com/news/news261017/",
+   "https://api-docs.deepseek.com/updates/",
+   "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "https://aiweekly.co/ai-news-today"
+  ],
+  "draft_id": "20261018_072445_1"
  }
 ]
