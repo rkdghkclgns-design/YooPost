@@ -1,0 +1,396 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "발표일은 2026-10-13이다.",
+   "url": "https://arxiv.org/abs/2610.17757",
+   "evidence_location": "arXiv 표제·제출 기록",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C2",
+   "claim": "논문 제목은 Instructions Are Evidence, Not Objectives: Measuring Outcome Alignment of Agents이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표제",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C3",
+   "claim": "결제 재시도 설명 사례는 응답 손실 뒤 중복 청구 가능성을 다룬다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "1절·그림 1",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C4",
+   "claim": "명시·추론·실제 요구사항을 구분한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "3절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C5",
+   "claim": "결과 정렬은 지시와 환경에서 실제 요구사항을 추론해 충족하는 능력이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "3절",
+   "confirmed": true,
+   "action": "정의의 추론뿐 아니라 충족 요건도 드러나도록 summary·info·FAQ 수정"
+  },
+  {
+   "id": "C6",
+   "claim": "실제 요구사항은 작업 시작 전에 고정되어 있다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "3절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C7",
+   "claim": "SWE-chat 사용자·에이전트 기록 100개를 표본으로 조사했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 B",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C8",
+   "claim": "예비 조사에는 사람의 주석 판정이 사용됐다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 B Annotation",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C9",
+   "claim": "예비 조사 표본 56%의 초기 지시는 불완전했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 B Results",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C10",
+   "claim": "누락 조건은 코드·기록·실험에서 발견 가능하도록 설계됐다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.1·4.2절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C11",
+   "claim": "합성 작업은 사람이 검토했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.2절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C12",
+   "claim": "소프트웨어 엔지니어링 작업은 40개이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.3절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C13",
+   "claim": "연구 작업은 24개이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.3절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C14",
+   "claim": "전체 작업은 64개이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.3절·표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C15",
+   "claim": "각 작업에는 실제 요구사항이 다섯 개 있다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.3절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C16",
+   "claim": "39% 작업에서 초기 지시가 실제 조건을 하나도 포함하지 않았다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 3",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C17",
+   "claim": "초기 부분 지시는 실제 조건을 둘보다 많이 포함하지 않았다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 3",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C18",
+   "claim": "Literal은 지시를 완전한 명세로 취급하는 대조 조건이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C19",
+   "claim": "Partial은 불완전 지시를 받고 환경을 조사하며 조건을 추론한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C20",
+   "claim": "Full은 Partial과 같은 프롬프트에 완전 명세를 제공한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C21",
+   "claim": "평가에는 열두 모델을 사용했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 Models",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C22",
+   "claim": "주요 성능 격차 분석 대상은 여덟 프런티어 모델이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.2절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C23",
+   "claim": "불완전 지시 조건은 최대 네 번 제출한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 Conditions and budget",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C24",
+   "claim": "완전 명세 조건은 한 번 제출한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 Conditions and budget",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C25",
+   "claim": "예산은 에피소드당 120턴이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 Conditions and budget",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C26",
+   "claim": "예산은 에피소드당 도구 호출 360회이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 Conditions and budget",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C27",
+   "claim": "사용자 시뮬레이터는 GPT-5.6-Terra이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절 User simulator",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C28",
+   "claim": "사용자 시뮬레이터는 관찰과 대화 이력 등으로 후속 지시를 만든다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.1절·부록 A",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C29",
+   "claim": "Score는 요구사항 충족 비율이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.1절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C30",
+   "claim": "Success는 모든 조건을 충족했는지 나타내며 작업 집합에서 성공률로 집계된다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "4.1절·표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C31",
+   "claim": "여덟 프런티어 모델은 Full 대비 Partial 첫 제출 성공률이 약 53~67퍼센트포인트 낮다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.2절·표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C32",
+   "claim": "GPT-5.6-Sol 성공률은 Full@1 64.1%, Partial@1 10.9%, Partial@4 29.7%이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C33",
+   "claim": "Kimi-K3 성공률은 Full@1 75.0%, Partial@1 21.9%, Partial@4 59.4%이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C34",
+   "claim": "MiMo-v2.6-Pro 성공률은 Full@1 81.3%, Partial@1 28.1%, Partial@4 62.5%이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C35",
+   "claim": "DeepSeek-V4.1-Flash 성공률은 Full@1 81.3%, Partial@1 25.0%, Partial@4 60.9%이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 4",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C36",
+   "claim": "피드백 뒤에도 각 프런티어 모델의 Partial@4 Success는 Full@1보다 낮다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 4",
+   "confirmed": true,
+   "action": "표 4와 재대조하여 유지; 본문의 성공률 상승 설명은 표에 실은 네 모델로 범위를 명시"
+  },
+  {
+   "id": "C37",
+   "claim": "실패한 Partial 에피소드 100개를 감사했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.5절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C38",
+   "claim": "감사 표본에서 72개는 근거 사용 실패로 분류됐다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.5절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C39",
+   "claim": "감사 표본 25개는 문서화된 규칙을 자체 규칙으로 대체했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.5절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C40",
+   "claim": "감사 표본 21개는 위반 출력 뒤에도 수정을 하지 않았다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.5절",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C41",
+   "claim": "계획 모드는 세 모델에서 두 단계 계획·실행 방식으로 시험했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "5.4절·표 6",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C42",
+   "claim": "시험한 계획 모드는 첫 제출 Success를 높이지 않았다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "표 6",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C43",
+   "claim": "비용 제약은 작업 집합 규모를 제한했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 A",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C44",
+   "claim": "저자들은 결과 정렬 개선을 위한 모델 훈련을 탐구하지 못했다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 A",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C45",
+   "claim": "시뮬레이터는 부분적인 믿음 표현이나 선제적인 점진적 요구사항 공개를 담지 못한다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "부록 A",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C46",
+   "claim": "인용 이미지 I1은 결제 사례를 설명하는 논문 그림 1이다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "그림 1 캡션",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C47",
+   "claim": "논문 HTML에는 CC BY 4.0 라이선스가 표시되어 있다.",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "evidence_location": "문서 상단 License",
+   "confirmed": true,
+   "action": "공식 원문 재대조 후 유지"
+  },
+  {
+   "id": "C48",
+   "claim": "ArXiv TLDR의 2026-10-17 주간 목록에서 이 논문을 첫 항목으로 소개한다.",
+   "url": "https://arxivtldr.org/weekly",
+   "evidence_location": "페이지 상단 Weekly · October 17, 2026 및 #1 제목",
+   "confirmed": true,
+   "action": "페이지 재조회 후 유지; 성능 검증 근거로는 사용하지 않음"
+  }
+ ],
+ "note": "이번 별도 사실 검증 세션에서 arXiv 소개 페이지와 v1 HTML 본문을 새로 열어 표제·제출 이력, 1·3·4·5절, 표 3·4·6, 부록 A·B, 그림 1 및 라이선스를 대조했다. 기존 검증 기록만을 근거로 승인하지 않았다. 독립 소개 페이지도 다시 열어 표시 날짜와 첫 항목을 확인했다. 반복 주장은 합쳐 집계했으며 모델별 세 성공률은 각 모델 단위로 묶었다. 48개 항목 모두 재확인했다. 결과 정렬 정의의 충족 요건과 표의 네 모델이라는 범위를 명확히 했고 삭제한 외부 사실 주장은 없다. 가격·제품 출시 스펙·법률 판단 주장은 원고에 없다. 필자의 응용 제안, 일반화 경계 및 자체 작업 기록은 외부 사실 주장 수에서 제외했다. 논문 결과는 저자 보고 수치이며 재현 실험이나 발행 승인을 수행하지 않았다. 웹 도구로 원문 본문을 읽었으므로 HTTP 대체 조회는 필요하지 않았다. 이번 웹 조회 응답 일부를 source-evidence/factcheck-web.json에 저장했다.",
+ "coverage_checks": [
+  {
+   "url": "https://arxivtldr.org/weekly",
+   "published": "2026-10-17",
+   "result": "웹 도구로 목록의 제목·날짜·첫 항목을 직접 읽음. 성능 수치 근거로 미사용."
+  }
+ ]
+}
