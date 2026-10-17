@@ -15,7 +15,12 @@
      "reason": "공식 연구 페이지의 인용 도표 원문 링크를 웹 도구로 열지 못했고, 같은 URL을 urllib로 20초 제한 재조회한 결과 HTTP 403. 확인하지 못한 도표와 설명을 삭제했으며 정책에 따라 이번 후보를 보류한다. 주요 본문 사실은 공식 원문으로 대조했으나 발행 승인하지 않는다. 실패 URL: https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/images/nvidia-nemotron-3.5/nemotron-3.5-bolt.png"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
