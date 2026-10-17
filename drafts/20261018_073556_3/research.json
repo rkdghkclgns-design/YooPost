@@ -1,0 +1,45 @@
+{
+ "topic": "Instructions Are Evidence, Not Objectives: Measuring Outcome Alignment of Agents",
+ "source_url": "https://arxiv.org/abs/2610.17757",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Instructions Are Evidence, Not Objectives: Measuring Outcome Alignment of Agents — abstract",
+   "url": "https://arxiv.org/abs/2610.17757",
+   "publisher": "arXiv / Kaiming Liu 외",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Instructions Are Evidence, Not Objectives: Measuring Outcome Alignment of Agents — full text v1",
+   "url": "https://arxiv.org/html/2610.17757v1",
+   "publisher": "Kaiming Liu 외 / arXiv",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Top AI Papers This Week — October 17, 2026",
+   "url": "https://arxivtldr.org/weekly",
+   "publisher": "ArXiv TLDR",
+   "published": "2026-10-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.17757v1/1.png",
+   "page_url": "https://arxiv.org/html/2610.17757v1",
+   "caption": "그림 1. 결제 재시도 예시에서 문자 그대로 수행하는 경로와 근거로 완료 조건을 추론하는 경로 비교.",
+   "credit": "Kaiming Liu 외, arXiv:2610.17757v1, CC BY 4.0"
+  }
+ ],
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [],
+  "note": "이번 별도 사실 검증 세션에서 arXiv 소개 페이지와 v1 HTML 본문을 새로 열어 표제·제출 이력, 1·3·4·5절, 표 3·4·6, 부록 A·B, 그림 1 및 라이선스를 대조했다. 기존 검증 기록만을 근거로 승인하지 않았다. 독립 소개 페이지도 다시 열어 표시 날짜와 첫 항목을 확인했다. 반복 주장은 합쳐 집계했으며 모델별 세 성공률은 각 모델 단위로 묶었다. 48개 항목 모두 재확인했다. 결과 정렬 정의의 충족 요건과 표의 네 모델이라는 범위를 명확히 했고 삭제한 외부 사실 주장은 없다. 가격·제품 출시 스펙·법률 판단 주장은 원고에 없다. 필자의 응용 제안, 일반화 경계 및 자체 작업 기록은 외부 사실 주장 수에서 제외했다. 논문 결과는 저자 보고 수치이며 재현 실험이나 발행 승인을 수행하지 않았다. 웹 도구로 원문 본문을 읽었으므로 HTTP 대체 조회는 필요하지 않았다. 이번 웹 조회 응답 일부를 source-evidence/factcheck-web.json에 저장했다."
+ }
+}
