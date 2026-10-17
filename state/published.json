@@ -3305,5 +3305,20 @@
    "https://siliconangle.com/2026/10/15/servicenow-adds-ai-agent-controls-and-employee-automation-tools/"
   ],
   "draft_id": "20261018_074031_4"
+ },
+ {
+  "date": "2026-10-18",
+  "title": "🔒 Salt Security AI 에이전트 조사: 무단·예상 밖 행동과 자동 차단 격차 총정리",
+  "topic": "State of Agentic AI and API Security 2H 2026",
+  "category": "AI 보안",
+  "source_url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/salt-security-ai.html"
+  },
+  "sources": [
+   "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "https://www.itpro.com/security/ai-agents-have-a-mind-of-their-own-and-thats-a-problem-for-businesses"
+  ],
+  "draft_id": "20261018_074520_5"
  }
 ]
