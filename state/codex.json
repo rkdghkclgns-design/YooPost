@@ -37,7 +37,12 @@
      "reason": "2026-10-15 발표로 검색된 AtScale for AI를 candidate.json에 먼저 기록했으나 대표 공식 원문 https://www.atscale.com/press/atscale-for-ai/ 본문 조회에 실패했습니다. 웹 도구 조회 실패 후 동일 공개 URL을 urllib로 20초 제한하여 1회 재조회한 결과 HTTP 403, 본문 error code: 1010이 반환되었습니다. 조회 시각·최종 URL·상태·본문은 source-evidence/atscale-http.json에 보존했습니다. 검색 요약이나 보도자료 재배"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
