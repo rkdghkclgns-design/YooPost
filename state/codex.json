@@ -1,138 +1,26 @@
 {
  "attempts": {
-  "20261017:daily:AI 언어 모델": {
-   "at": "2026-10-17T07:15:42+09:00",
+  "20261018:daily:AI 언어 모델": {
+   "at": "2026-10-18T07:15:46+09:00",
    "count": 1,
-   "status": "done",
-   "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:20:41+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 도구": {
-   "at": "2026-10-17T07:21:13+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:25:46+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 논문 분석": {
-   "at": "2026-10-17T07:26:14+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:31:14+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 뉴스 리뷰": {
-   "at": "2026-10-17T07:31:40+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:36:36+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 보안": {
-   "at": "2026-10-17T07:37:02+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:41:37+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 인사이트": {
-   "at": "2026-10-17T07:42:08+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T07:51:26+09:00",
-   "rejected_candidates": [
-    {
-     "title": "📊 IBM AI 거버넌스 조사 총정리: 자율성 기대와 책임·성과의 간극",
-     "topic": "IBM October 2026 AI governance survey: UK and EMEA accountability gap",
-     "source_url": "https://uk.newsroom.ibm.com/Eight-in-Ten-UK-Businesses-Struggle-to-Keep-Pace-with-AI-Governance-IBM-Study-Finds",
-     "reason": "Komprise 공식 원문을 웹 도구로 읽지 못했고, 동일 URL의 직접 HTTP 조회도 403 Forbidden으로 실패했습니다. 해당 주장을 원고에서 삭제했으며 여러 발표를 연결한 신규 원고의 핵심 근거를 재확인할 수 없어 보류합니다."
-    },
-    {
-     "title": "📊 CPX·Microsoft·IDC 조사 총정리: AI 에이전트 도입과 의사결정 권한의 간극",
-     "topic": "Securing AI in the UAE Enterprise — AI 도입 확대와 보안 의사결정·통제 준비도의 간극",
-     "source_url": "https://www.cpx.net/insights/media/new-idc-study-identifies-governance-gap-as-ai-adoption-accelerates-across-uae-enterprises/",
-     "reason": "CPX·Microsoft·IDC의 UAE 기업 AI 도입·거버넌스 조사 후보를 선정했으나, 대표 공식 발표와 공식 보고서 소개 페이지 모두 웹 조회 도구에서 본문을 읽지 못했습니다. 정책에 따라 각 동일 공개 URL을 urllib로 20초 제한·로그인 및 우회 없이 1회 조회한 결과 모두 HTTP 403, 본문 error code: 1010을 반환했습니다. 공식 본문·발표일·수치를 확인할 수 없어 원고 작성과 사실 검증을 완료하지 않았습니다. 조회 시각·최종 URL·상태·응답 본문은 source-evidence/*.json에 보존했"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261017:daily:AI 공모주 분석": {
-   "at": "2026-10-17T07:51:51+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-17T08:02:47+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🔍 Iambic 공모주 분석: 공모가 16달러·1억5000만 달러 조달 총정리",
-     "topic": "Iambic Therapeutics 2026년 10월 IPO 최종 투자설명서",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1997038/000119312526422865/iambic_inception_424b4.htm",
-     "reason": "Iambic Therapeutics IPO 최종 투자설명서(424B4, 2026-10-15 제출)를 대표 원문으로 선정했으나 웹 도구는 not accessible을 반환했고, 같은 공개 URL을 urllib로 20초 제한 아래 1회 조회한 결과 HTTP 403 및 SEC 자동화 요청 차단 본문을 확인했다. 회사 IPO 가격 발표 URL은 HTTP 200으로 조회됐지만 핵심 공시 원문을 읽지 못했으므로 원고 작성·사실 검증을 완료하지 않았다. 정책에 따라 이 세션에서는 후보를 교체하지 않고 종료한다. 조회 시각·최종 URL·상태·응답"
-    },
-    {
-     "title": "🔍 Jio Platforms 공모주 분석: 10월 RHP와 AI 사업 공시 총정리",
-     "topic": "Jio Platforms Limited 2026년 10월 Red Herring Prospectus",
-     "source_url": "https://www.sebi.gov.in/sebi_data/commondocs/oct-2026/Jio%20Platforms%20Limited%20-%20Red%20Herring%20Prospectus%20and%20Abridged%20Prospectus_p.pdf",
-     "reason": "Jio Platforms의 2026-10-15 SEBI 게시 페이지와 2026-10-14 RHP를 요약한 17쪽 Abridged Prospectus는 웹 도구로 읽었다. 그러나 게시 페이지의 공식 링크가 가리키는 전체 RHP(https://www.sebi.gov.in/sebi_data/attachdocs/oct-2026/1792045029108.pdf)는 웹 도구에서 not accessible로 표시됐다. 동일 공개 URL을 urllib로 timeout=20 설정하여 1회 보완 조회한 결과 HTTP 200 및 application/"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "39074316104-1",
+  "at": "2026-10-18T07:15:46+09:00",
+  "expires": "2026-10-18T09:15:46+09:00",
+  "task": {
+   "day": "20261018",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "39074316104-1",
+   "at": "2026-10-18T07:15:46+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
