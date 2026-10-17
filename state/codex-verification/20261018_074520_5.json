@@ -1,0 +1,82 @@
+{
+ "claims": [
+  {
+   "claim": "Salt Security는 State of Agentic AI and API Security 2H 2026 조사 결과를 발표했다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "공식 발표 제목과 발표 문장, 18–22행"
+  },
+  {
+   "claim": "공식 발표일은 2026년 10월 13일이다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "공식 날짜 표기와 dateline, 16·22행"
+  },
+  {
+   "claim": "조사는 보안·기술 전문가 380명 초과의 응답을 포함한다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "조사 설명 및 About the research, 21–22·38행"
+  },
+  {
+   "claim": "자료는 수백 곳 고객 운영 환경의 Salt Labs 관측 자료를 결합했다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지; FAQ의 설문·관측 자료 구분도 대조",
+   "evidence": "production telemetry 및 표본 설명, 22·38행"
+  },
+  {
+   "claim": "49.8%는 지난 12개월간 조직이 의도·예상·승인하지 않은 에이전트 행동을 확인하거나 의심했다는 응답자 비율이다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지; 제목·표·FAQ·주의문에서도 확정 침해율로 표현하지 않았는지 확인",
+   "evidence": "central finding, 23행"
+  },
+  {
+   "claim": "12.5%는 최초 지시에서 도구·API를 거쳐 결과까지 모든 에이전트에 걸친 전체 경로를 일관되게 추적할 수 있다고 응답했다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "수정: 모든 에이전트에 걸친 범위라는 조건 보완",
+   "evidence": "Key findings의 complete agent path across all agents, 27행"
+  },
+  {
+   "claim": "17.5%는 운영 중 예상 밖 행동을 시작한 에이전트를 자동으로 중지할 수 있다고 응답했다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Key findings의 containment 항목, 28행"
+  },
+  {
+   "claim": "공식 발표는 대다수가 수동으로 개입하거나 애플리케이션을 오프라인으로 전환해야 한다고 설명한다.",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "Most can intervene only manually ... application offline, 28행"
+  },
+  {
+   "claim": "ITPro는 2026년 10월 14일 Salt Security의 같은 조사를 보도했다.",
+   "url": "https://www.itpro.com/security/ai-agents-have-a-mind-of-their-own-and-thats-a-problem-for-businesses",
+   "confirmed": true,
+   "action": "유지; 본문 연도 명시, 기존 newsroom 근거 URL을 실제 기사 URL로 교체",
+   "evidence": "게시일 87행, Salt 조사 및 수치 107–109행"
+  },
+  {
+   "claim": "ITPro 기사의 작성자는 Emma Woollacott이다.",
+   "url": "https://www.itpro.com/security/ai-agents-have-a-mind-of-their-own-and-thats-a-problem-for-businesses",
+   "confirmed": true,
+   "action": "유지; 기자 이름을 본문에 명시",
+   "evidence": "기사 byline, 85행"
+  },
+  {
+   "claim": "ITPro 기사는 Aembit이 의뢰한 다른 조사도 소개한다.",
+   "url": "https://www.itpro.com/security/ai-agents-have-a-mind-of-their-own-and-thats-a-problem-for-businesses",
+   "confirmed": true,
+   "action": "수정: 보도자료 재게시와 구분된다는 평가 대신 실제 기사 내용만 명시",
+   "evidence": "Earlier this year ... commissioned by Aembit, 135–137행"
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 공식 발표와 ITPro 기사 URL을 web.open으로 다시 열어 날짜와 본문을 직접 읽었다. 원고 전체(제목·요약·표·FAQ·맺음말 포함)의 외부 사실을 고유 주장 단위로 집계했으며 반복 문장은 중복 집계하지 않았다. 외부 사실 11건을 모두 확인했다. 49.8%의 확인/의심·지난 12개월 조건과 두 통제 수치의 응답 기준을 대조했다. 가격·성능 벤치마크·법적 사실 주장은 없다. 가상 시나리오·운영 제안·필자 해석과 자체 실행·검증 상태는 claims에서 제외했다. 전체 보고서와 설문 교차분석은 읽지 않았으며 검증 범위는 공개 발표 본문이다. 두 원문 모두 본문 조회에 성공해 HTTP 대체 조회와 skip.json 작성 사유는 발생하지 않았다. 발행·승인은 수행하지 않았다."
+}
