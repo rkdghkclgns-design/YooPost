@@ -1,0 +1,57 @@
+{
+ "topic": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real (2026-10-17 업데이트)",
+ "source_url": "https://api-docs.deepseek.com/news/news261017/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "publisher": "DeepSeek",
+   "published": "2026-10-17",
+   "official": true,
+   "date_note": "공식 발표 페이지의 Release 2026/10/17 표시 및 변경 기록의 Date: 2026-10-17 항목을 재확인."
+  },
+  {
+   "id": "S2",
+   "title": "Change Log — Date: 2026-10-17",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "publisher": "DeepSeek",
+   "published": "2026-10-17",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "publisher": "DeepSeek",
+   "published": "",
+   "official": true,
+   "date_note": "모델 카드 자체의 확정 발표일 표시를 사용하지 않음. 1017 업데이트 날짜는 S2의 2026-10-17 항목으로 확인."
+  },
+  {
+   "id": "S4",
+   "title": "AI News Today — Saturday, October 17, 2026",
+   "url": "https://aiweekly.co/ai-news-today",
+   "publisher": "AI Weekly",
+   "published": "2026-10-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://api-docs.deepseek.com/img/v4.1_261017_perf_cost_en.png",
+   "page_url": "https://api-docs.deepseek.com/news/news261017/",
+   "caption": "개발사가 공개한 DeepSWE v1.1 Pass@1과 작업당 평균 비용 비교. mini_swe_v2 환경이며 가로축은 로그 눈금.",
+   "credit": "DeepSeek"
+  }
+ ],
+ "factcheck": {
+  "claims": 38,
+  "confirmed": 38,
+  "removed": [],
+  "note": "이번 별도 사실 검증에서 S1·S2·S3를 다시 열었다. 웹 도구는 S1·S3 본문을 제공하지 못했으며, 이를 서버 오류로 단정하지 않고 동일 공개 URL을 requests로 각 1회, 제한 시간 20초로 재조회했다. 세 페이지 모두 HTTP 200 및 실제 발표·변경 기록·모델 카드 본문을 확인했다. 최종 URL·HTTP 상태·UTC 조회 시각·본문은 source-evidence/recheck-S1~S3.json 및 .md에 저장했다. 공식 도표도 재조회해 recheck-figure.json에 저장하고 직접 열람하여 축·단위·평가 환경을 확인했다. 반복되는 제목·요약·표·FAQ의 동일 외부 사실은 중복 집계하지 않아 38건 모두 확인했다. 실험 제안·작업 수행 여부는 claims에 넣지 않았다. 모델 실행이나 독립 벤치마크 재현은 수행하지 않았다. 요약의 평가값·가격 표현과 본문의 절감 폭 해석을 더 명확하게 수정했다. 삭제할 외부 사실 주장은 발견하지 않았다. AI Weekly 페이지도 다시 열어 2026-10-17 날짜와 해당 업데이트 보도를 확인했으며 이슈화 근거로만 사용했다. 승인·발행 작업은 수행하지 않았다."
+ },
+ "selection_note": "AI 언어 모델 고정. 이전 실패 Nemotron 소식과 URL을 제외. 9월 V4.1-Flash 소개와 다른 10월 17일 후속 업데이트의 변경점에 집중.",
+ "issue_coverage_note": "이번 검증에서 S4 원문을 다시 열어 Saturday, October 17, 2026 날짜와 DeepSeek V4.1-Flash-1017 보도를 확인. S4의 별도 스펙 주장은 본문 근거로 사용하지 않음. 이번에 재조회하지 않은 S5는 출처 목록에서 제외."
+}
