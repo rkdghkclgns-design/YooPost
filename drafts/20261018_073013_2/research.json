@@ -1,0 +1,33 @@
+{
+ "topic": "Vertafore Automates Policy Processing With Two New Velocity AI Agents for Independent Agencies",
+ "source_url": "https://www.vertafore.com/resources/press-releases/vertafore-automates-policy-processing-two-new-velocity-ai-agents",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Vertafore Automates Policy Processing With Two New Velocity AI Agents for Independent Agencies",
+   "url": "https://www.vertafore.com/resources/press-releases/vertafore-automates-policy-processing-two-new-velocity-ai-agents",
+   "publisher": "Vertafore",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Vertafore Adds Two AI Agents for Policy Processing",
+   "url": "https://iireporter.com/vertafore-adds-two-ai-agents-for-policy-processing/",
+   "publisher": "Insurance Innovation Reporter",
+   "published": "2026-10-15",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표 HTML의 이미지 요소를 조사했으나 본문 기능 화면·도표는 없고 사이트 로고와 푸터 인증 마크만 확인했습니다. OG 기본 이미지도 인용 대상에서 제외했습니다.",
+ "factcheck": {
+  "claims": 35,
+  "confirmed": 35,
+  "removed": [
+   "suspenses를 만든다는 구체적 동작 해석을 제거하고 원문 용어 수준으로 수정.",
+   "Check가 최대 90%를 줄일 수 있었다는 단정적 결과 표현을 줄일 수 있다는 원문 가능 표현으로 수정."
+  ],
+  "note": "이번 별도 검증에서 post.json 전체의 외부 사실을 고유 주장 단위로 추출·대조했다. 같은 사실의 제목·요약·표·FAQ 반복은 합산하지 않았다. 공식 URL의 웹 도구 접근 실패 후 urllib로 제한 시간 20초의 공개 요청을 한 번 수행해 HTTP 200, 최종 URL, 조회 시각, 전체 HTML을 source-evidence/vertafore-verification-recheck.json에 저장하고 발표 본문 및 날짜를 읽었다. 웹 도구 오류를 원문 서버 오류로 판단하지 않았다. IIR 기사도 다시 열어 본문·작성자·날짜를 읽었다. 2026-10-15 발표는 brief의 2026-10-18 KST 기준 최신 기간에 해당한다. 성능은 회사 초기 시험의 보고 사실만 확인했으며 자체 실행·성능 시험은 하지 않았다. 도입 질문·평가 방법·가상 시나리오·의견은 외부 사실 집계에서 제외했다. 제공 상태는 발표 당시 기준으로 명확히 했다. 근거가 충분하여 skip.json은 만들지 않았으며 승인·발행 작업은 수행하지 않았다."
+ }
+}
