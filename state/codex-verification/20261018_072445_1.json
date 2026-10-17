@@ -1,0 +1,233 @@
+{
+ "claims": [
+  {
+   "claim": "2026-10-17 DeepSeek-V4.1-Flash-1017 업데이트 발표",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Date: 2026-10-17 / DeepSeek-V4.1-Flash-1017 Update"
+  },
+  {
+   "claim": "기존 V4.1-Flash의 마이너 업데이트",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: is a minor update to DeepSeek-V4.1-Flash"
+  },
+  {
+   "claim": "개발사는 추론·코딩·에이전트·시각 벤치마크 개선을 보고",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: improvements across reasoning, coding, agentic tasks, and visual benchmarks"
+  },
+  {
+   "claim": "자체 피드백 강화학습으로 프로젝트 개발 개선을 설명",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: reinforcement learning with self-feedback ... end-to-end project development"
+  },
+  {
+   "claim": "발표문 데모: 자금성 3D 모델링",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 3D modeling of the Forbidden City"
+  },
+  {
+   "claim": "발표문 데모: 웹 레이싱 게임",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: A web-based racing game"
+  },
+  {
+   "claim": "발표문 데모: Godot 기반 Portal 2 재현",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: A Portal 2 recreation built with the Godot engine"
+  },
+  {
+   "claim": "발표문 데모: 시대 변화를 표현한 Valley of Ages 장면",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Valley of Ages — a 3D scene tracing the evolution"
+  },
+  {
+   "claim": "웹·앱도 새 모델로 업데이트",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: The official web and APP models have also been updated"
+  },
+  {
+   "claim": "API 호출 방식 유지",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: The API calling method and pricing remain unchanged"
+  },
+  {
+   "claim": "API 가격 유지",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: The API calling method and pricing remain unchanged"
+  },
+  {
+   "claim": "API 모델명 deepseek-flash로 최신 모델 접근",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: simply use deepseek-flash to access the latest model"
+  },
+  {
+   "claim": "Harness·CodeBuddy·WorkBuddy 최적화 공지",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: optimized for DeepSeek Harness, Tencent CodeBuddy, WorkBuddy"
+  },
+  {
+   "claim": "Harness 0.2.1-rc.1 이상 권장",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Please upgrade to DeepSeek Harness 0.2.1-rc.1 or later"
+  },
+  {
+   "claim": "Terminal-Bench 4.0 이전 31.2 / 1017 42.3",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 Terminal-Bench 4.0 행: 1017 42.3, 이전 31.2"
+  },
+  {
+   "claim": "DeepSWE v1.1 이전 74.2 / 1017 77.0",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 DeepSWE v1.1 행: 1017 77.0, 이전 74.2"
+  },
+  {
+   "claim": "ProgramBench 이전 20.3 / 1017 29.1",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 ProgramBench 행: 1017 29.1, 이전 20.3"
+  },
+  {
+   "claim": "NL2Repo-Bench 이전 65.4 / 1017 68.2",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 NL2Repo-Bench 행: 1017 68.2, 이전 65.4"
+  },
+  {
+   "claim": "Automation-Bench v1.0.6 이전 54.8 / 1017 60.5",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 Automation-Bench v1.0.6 행: 1017 60.5, 이전 54.8"
+  },
+  {
+   "claim": "Agents’ Last Exam 이전 31.8 / 1017 35.4",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 Agents’ Last Exam 행: 1017 35.4, 이전 31.8"
+  },
+  {
+   "claim": "Chartography (w/tools) 이전 78.9 / 1017 83.0",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 Chartography (w/tools) 행: 1017 83.0, 이전 78.9"
+  },
+  {
+   "claim": "BabyVision (w/tools) 이전 89.6 / 1017 92.5",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 BabyVision (w/tools) 행: 1017 92.5, 이전 89.6"
+  },
+  {
+   "claim": "ZeroBench-main (w/tools) 이전 49.0 / 1017 51.0",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 공식 모델 카드 비교 표의 ZeroBench-main (w/tools) 행: 1017 51.0, 이전 49.0"
+  },
+  {
+   "claim": "Terminal-Bench 4.0의 평가 환경은 Claude Code",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: We use the Claude Code harness for Terminal-Bench 4.0"
+  },
+  {
+   "claim": "DeepSWE v1.1의 평가 환경은 Mini-SWE-V2",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: the Mini-SWE-V2 harness for DeepSWE v1.1"
+  },
+  {
+   "claim": "ZeroBench-main은 Pass@5 평가",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: ZeroBench-main was evaluated with Pass@5"
+  },
+  {
+   "claim": "개발사는 작업 실행 시간과 출력 길이 감소를 보고",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: reduced the model's task runtime and output length"
+  },
+  {
+   "claim": "인용 도표는 DeepSWE v1.1 Pass@1 대 작업당 비용이며 mini_swe_v2 환경",
+   "url": "https://api-docs.deepseek.com/img/v4.1_261017_perf_cost_en.png",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 본문 캡션 DeepSWE v1.1 Pass@1 vs. cost per task ... mini-swe-v2 harness; 이미지 직접 열람"
+  },
+  {
+   "claim": "인용 도표 가로축은 USD 평균 작업 비용의 로그 눈금",
+   "url": "https://api-docs.deepseek.com/img/v4.1_261017_perf_cost_en.png",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: 직접 열람한 도표 축: Average cost per task (USD, log scale)"
+  },
+  {
+   "claim": "Search와 Fetch API 공개",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Search & Fetch APIs are now open to everyone!"
+  },
+  {
+   "claim": "Search 엔드포인트 요금 1000회당 $0.75",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Each endpoint: $0.75 per 1,000 calls"
+  },
+  {
+   "claim": "Fetch 엔드포인트 요금 1000회당 $0.75",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Each endpoint: $0.75 per 1,000 calls"
+  },
+  {
+   "claim": "DeepSeek API 사용자의 Harness·Claude Code·Codex 서버 측 Search·Fetch 호출 현재 무료",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Search & Fetch calls via server-side tools in DeepSeek Harness, Claude Code, and Codex are currently free for DeepSeek API users"
+  },
+  {
+   "claim": "해당 Search·Fetch 과금 시작 2026-10-31 16:00 UTC",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Billing starts Oct 31, 2026, at 16:00 UTC"
+  },
+  {
+   "claim": "Jinja 형식 채팅 템플릿 미포함",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: This release does not include a Jinja-format chat template"
+  },
+  {
+   "claim": "encoding 폴더에 Python 참조 구현 제공",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: encoding folder contains a self-contained Python reference implementation (encoding.py)"
+  },
+  {
+   "claim": "로컬 추론은 inference 폴더 안내 참조",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: Please refer to the inference folder for instructions on weight conversion and running inference locally"
+  },
+  {
+   "claim": "저장소와 가중치는 MIT 라이선스",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "confirmed": true,
+   "action": "공식 원문 재조회·본문 대조 후 유지. 근거: This repository and the model weights are licensed under the MIT License"
+  }
+ ],
+ "note": "이번 별도 사실 검증에서 S1·S2·S3를 다시 열었다. 웹 도구는 S1·S3 본문을 제공하지 못했으며, 이를 서버 오류로 단정하지 않고 동일 공개 URL을 requests로 각 1회, 제한 시간 20초로 재조회했다. 세 페이지 모두 HTTP 200 및 실제 발표·변경 기록·모델 카드 본문을 확인했다. 최종 URL·HTTP 상태·UTC 조회 시각·본문은 source-evidence/recheck-S1~S3.json 및 .md에 저장했다. 공식 도표도 재조회해 recheck-figure.json에 저장하고 직접 열람하여 축·단위·평가 환경을 확인했다. 반복되는 제목·요약·표·FAQ의 동일 외부 사실은 중복 집계하지 않아 38건 모두 확인했다. 실험 제안·작업 수행 여부는 claims에 넣지 않았다. 모델 실행이나 독립 벤치마크 재현은 수행하지 않았다. 요약의 평가값·가격 표현과 본문의 절감 폭 해석을 더 명확하게 수정했다. 삭제할 외부 사실 주장은 발견하지 않았다. AI Weekly 페이지도 다시 열어 2026-10-17 날짜와 해당 업데이트 보도를 확인했으며 이슈화 근거로만 사용했다. 승인·발행 작업은 수행하지 않았다."
+}

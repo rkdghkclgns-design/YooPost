@@ -3,24 +3,22 @@
   "20261018:daily:AI 언어 모델": {
    "at": "2026-10-18T07:15:46+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-18T07:24:47+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🤖 Nemotron 3.5 Super VL·Bolt 총정리: 24GB 로컬 AI 평가 가이드",
+     "topic": "NVIDIA Nemotron 3.5 Super VL 및 Bolt 모델 공개(2026-10-15)",
+     "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
+     "reason": "공식 연구 페이지의 인용 도표 원문 링크를 웹 도구로 열지 못했고, 같은 URL을 urllib로 20초 제한 재조회한 결과 HTTP 403. 확인하지 못한 도표와 설명을 삭제했으며 정책에 따라 이번 후보를 보류한다. 주요 본문 사실은 공식 원문으로 대조했으나 발행 승인하지 않는다. 실패 URL: https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/images/nvidia-nemotron-3.5/nemotron-3.5-bolt.png"
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "39074316104-1",
-  "at": "2026-10-18T07:15:46+09:00",
-  "expires": "2026-10-18T09:15:46+09:00",
-  "task": {
-   "day": "20261018",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 언어 모델",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "39074316104-1",
-   "at": "2026-10-18T07:15:46+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
