@@ -110,7 +110,12 @@
      "reason": "IBM 영국 AI 거버넌스 조사와 CPX·Microsoft·IDC UAE 조사를 연결하는 후보를 선정했습니다. IBM 공식 원문과 2026-10-15 TechRadar 독립 보도는 실제로 읽었습니다. 그러나 보조 공식 출처 https://www.cpx.net/insights/reports-whitepaper/securing-ai-in-the-uae-enterprise/ 는 웹 조회 도구에서 not accessible이 발생했고, 같은 공개 URL을 urllib로 timeout=20초 조건에서 1회 조회한 결과 HTTP 403 및 본"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
