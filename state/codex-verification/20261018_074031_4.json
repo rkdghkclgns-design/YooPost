@@ -1,0 +1,131 @@
+{
+ "claims": [
+  {
+   "claim": "ServiceNow가 AI Passport를 발표한 날짜는 2026-10-15이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L18–23."
+  },
+  {
+   "claim": "AI Passport는 암호학적으로 서명된 권한 증명서이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L27–27."
+  },
+  {
+   "claim": "실행 시점에 에이전트의 허용 범위를 확인하도록 설계됐다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L24–27."
+  },
+  {
+   "claim": "권한의 근거에 CMDB가 포함된다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L34–34."
+  },
+  {
+   "claim": "CMDB는 Configuration Management Database이며 기업 맥락의 기반이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L34–34."
+  },
+  {
+   "claim": "권한의 근거에 GRC 정책이 포함된다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L34–34."
+  },
+  {
+   "claim": "GRC는 Governance, Risk, and Compliance(거버넌스·위험·규정 준수)를 뜻한다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "수정: GRC 자체를 정책이라고 풀이한 문장을 삭제하고 약어의 뜻과 GRC 정책을 구분함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L34–34."
+  },
+  {
+   "claim": "권한의 근거에 업무 승인이 포함된다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L34–34."
+  },
+  {
+   "claim": "NVIDIA는 설계·출시 파트너이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L35–35."
+  },
+  {
+   "claim": "집행 구현에 NVIDIA Open Agent Safety Platform의 OpenShell과 Sentry를 활용한다고 발표했다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L35–35."
+  },
+  {
+   "claim": "미승인 AI 탐지가 발표에 포함됐다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L41–41."
+  },
+  {
+   "claim": "AI Cost Management가 발표에 포함됐다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L49–49."
+  },
+  {
+   "claim": "AI Passport의 제공 예상 시점은 2026년 4분기이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L63–63."
+  },
+  {
+   "claim": "미승인 AI 탐지의 제공 예상 시점은 2026년 4분기이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L63–63."
+  },
+  {
+   "claim": "AI Cost Management의 제공 예상 시점은 2026년 4분기이다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L63–63."
+  },
+  {
+   "claim": "금융 서비스용 Operational Resilience는 발표 당시 제공 중이었다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 회사가 발표한 설명·예상 일정으로 한정함.",
+   "evidence": "이번 검증에서 다시 읽은 공식 발표 본문 L63–63."
+  },
+  {
+   "claim": "발표는 운영 중인 AI의 발견과 지출·성과 측정을 함께 다룬다.",
+   "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx",
+   "confirmed": true,
+   "action": "유지: 발표 구성에 관한 설명이며 비용 절감 성과로 확대하지 않음.",
+   "evidence": "공식 발표 L24, L38–49에서 발견·통제·측정 및 비용 관리 설명을 확인."
+  },
+  {
+   "claim": "SiliconANGLE은 2026년 10월 15일 AI Passport를 포함한 ServiceNow의 AI 에이전트 통제 소식을 보도했다.",
+   "url": "https://siliconangle.com/2026/10/15/servicenow-adds-ai-agent-controls-and-employee-automation-tools/",
+   "confirmed": true,
+   "action": "유지: 기존 집계에서 빠진 외부 보도 날짜·내용 주장을 추가함.",
+   "evidence": "기사 L29에 날짜, L32에 제목, L38–55에 AI Passport 및 관련 통제 기능 보도를 확인."
+  }
+ ],
+ "note": "별도 사실 검증 단계에서 ServiceNow 공식 발표와 SiliconANGLE 기사를 웹 도구로 다시 열어 날짜와 본문을 직접 대조했다. 두 페이지 모두 본문 열람에 성공하여 HTTP 대체 조회는 필요하지 않았다. 같은 사실이 제목·요약·본문·표·FAQ에 반복된 경우 하나로 집계했다. 외부 사실은 18건이며 모두 확인됐다. 가격·성능 수치·법적 의무를 확정하는 주장은 원고에 없다. 가상 업무와 도입 검토 질문은 편집자의 제안으로 외부 사실 집계에서 제외했다. 제품을 실행하거나 현장 성과를 시험하지 않았다. 출처의 미래 기능과 일정은 회사의 발표·예상으로만 유지했다. 승인·발행·주제 교체는 수행하지 않았다."
+}

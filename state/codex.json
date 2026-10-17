@@ -62,24 +62,15 @@
   "20261018:daily:AI 뉴스 리뷰": {
    "at": "2026-10-18T07:36:25+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-18T07:40:34+09:00",
+   "rejected_candidates": [],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "39075734945-1",
-  "at": "2026-10-18T07:36:25+09:00",
-  "expires": "2026-10-18T09:36:25+09:00",
-  "task": {
-   "day": "20261018",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 뉴스 리뷰",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "39075734945-1",
-   "at": "2026-10-18T07:36:25+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
