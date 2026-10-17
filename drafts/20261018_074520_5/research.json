@@ -1,0 +1,40 @@
+{
+ "topic": "State of Agentic AI and API Security 2H 2026",
+ "source_url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "State of Agentic AI and API Security 2H 2026",
+   "url": "https://salt.security/press-releases/state-of-agentic-ai-and-api-security-2h-2026",
+   "publisher": "Salt Security",
+   "published": "2026-10-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI agents have a mind of their own – and that’s a problem for businesses",
+   "url": "https://www.itpro.com/security/ai-agents-have-a-mind-of-their-own-and-thats-a-problem-for-businesses",
+   "publisher": "ITPro",
+   "published": "2026-10-14",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표의 본문은 설명·수치·인용문으로 구성되어 있으며 관련 화면이나 도표가 없다. 로고·탐색 영역 이미지는 인용에서 제외했다.",
+ "factcheck": {
+  "claims": 11,
+  "confirmed": 11,
+  "removed": [
+   "ITPro 기사는 기자 이름과 다른 조사 설명이 있으므로 보도자료를 그대로 게시한 페이지와 구분할 수 있다는 평가를 삭제하고, 확인한 작성자·기사 내용으로 교체했다."
+  ],
+  "note": "별도 사실 검증 세션에서 공식 발표와 ITPro 기사 URL을 web.open으로 다시 열어 날짜와 본문을 직접 읽었다. 원고 전체(제목·요약·표·FAQ·맺음말 포함)의 외부 사실을 고유 주장 단위로 집계했으며 반복 문장은 중복 집계하지 않았다. 외부 사실 11건을 모두 확인했다. 49.8%의 확인/의심·지난 12개월 조건과 두 통제 수치의 응답 기준을 대조했다. 가격·성능 벤치마크·법적 사실 주장은 없다. 가상 시나리오·운영 제안·필자 해석과 자체 실행·검증 상태는 claims에서 제외했다. 전체 보고서와 설문 교차분석은 읽지 않았으며 검증 범위는 공개 발표 본문이다. 두 원문 모두 본문 조회에 성공해 HTTP 대체 조회와 skip.json 작성 사유는 발생하지 않았다. 발행·승인은 수행하지 않았다."
+ },
+ "selection_note": "2026-10-18 KST 기준 최근 7일 내 발표 및 독립 보도. brief-5.md 전체 기존 목록에서 같은 조사명·대표 URL 미검출. 기존 Manus 연구는 본문에서 재해설하지 않고 새 설문 발표만 다룸.",
+ "verification_scope": "공식 공개 발표와 독립 기사 본문을 별도 세션에서 재열람했다. 전체 보고서의 세부 방법론은 검증 범위 밖이다.",
+ "format_check": {
+  "body_chars_excluding_whitespace_code_link_targets_and_emphasis": 5378,
+  "sections": 7,
+  "tables": 4,
+  "faq": 5
+ }
+}
