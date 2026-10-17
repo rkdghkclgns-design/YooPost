@@ -1,0 +1,125 @@
+{
+ "claims": [
+  {
+   "claim": "Capital on Tap 보고서 발표일은 2026-10-12이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: 페이지 작성자 줄: 12 October 2026"
+  },
+  {
+   "claim": "보고서는 2026년 3분기 거래를 전년 동기와 비교한다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Sources and methodology: Q3 2026 (July to September) vs Q3 2025"
+  },
+  {
+   "claim": "자료는 Capital on Tap 사업용 카드 이용 영국 중소기업의 익명·집계 거래이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Sources and methodology 첫 문단"
+  },
+  {
+   "claim": "AI 구매 기업 비율은 Q3 2025 8.0%, Q3 2026 14.5%이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Businesses paying for AI tools 표"
+  },
+  {
+   "claim": "도입은 해당 분기 범주 또는 가맹점에서 한 번 이상 구매한 활성 기업의 비율이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Adoption is the share of active businesses that made at least one purchase"
+  },
+  {
+   "claim": "AI 도입 지표는 정해진 AI 공급자 목록을 기준으로 한다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: AI adoption is based on a defined list of AI providers"
+  },
+  {
+   "claim": "공급자 수치는 직접 결제만 포함하며 무료 요금제·앱스토어 구독·청구서 계약을 제외한다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Provider figures only include payments made directly ... not free plans, app store subscriptions or invoiced contracts"
+  },
+  {
+   "claim": "Q3 2026 ChatGPT 결제 기업 비율은 9.4%이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: AI adoption reached 1 in 7 small businesses 문단"
+  },
+  {
+   "claim": "Q3 2026 Claude 결제 기업 비율은 7.3%이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: 같은 문단: Claude ... 7.3%"
+  },
+  {
+   "claim": "Q3 2026 Claude의 AI 지출액 비중은 52.2%이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: 공급자별 지출액 표 Q3 2026"
+  },
+  {
+   "claim": "Q3 2026 ChatGPT의 AI 지출액 비중은 32.4%이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: 공급자별 지출액 표 Q3 2026"
+  },
+  {
+   "claim": "Allianz 공식 발표일은 2026-10-14이다.",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Allianz SE | Munich | Oct 14, 2026"
+  },
+  {
+   "claim": "Allianz는 독일·프랑스·이탈리아·스페인·폴란드·오스트리아·영국·미국의 국가별 성인 1,000명을 조사했다.",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Summary: representative sample of 1,000 adults in each ... adding UK and US"
+  },
+  {
+   "claim": "전체 취업 응답자의 직장 AI 교육 경험 비율은 17%이다.",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: Only 17% of all employed respondents across countries have received AI training at work"
+  },
+  {
+   "claim": "취업 응답자의 44%는 고용주가 AI 교육을 전혀 제공하지 않는다고 답했다.",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "confirmed": true,
+   "action": "유지. 이번 별도 검증에서 공식 본문 재열람: 44% report that their employer offers no AI training at all"
+  },
+  {
+   "claim": "EconoTimes는 Capital on Tap의 2026년 3분기 소프트웨어 지출과 AI 구매 비율을 보도했다.",
+   "url": "https://econotimes.com/UK-Small-Firms-Software-Spending-Rose-19-4-Capital-on-Tap-Data-Show-1755704",
+   "confirmed": true,
+   "action": "유지. HTTP 200 원문 기사에서 거래 자료·소프트웨어 지출·AI 구매 비율 설명을 확인했다."
+  },
+  {
+   "claim": "해당 EconoTimes 기사 발행일은 2026-10-16이다(UTC 기준).",
+   "url": "https://econotimes.com/UK-Small-Firms-Software-Spending-Rose-19-4-Capital-on-Tap-Data-Show-1755704",
+   "confirmed": true,
+   "action": "UTC 기준을 본문에 명시. 원문 time 및 datePublished는 2026-10-16T23:07:43Z로, 한국 시각은 10월 17일이다."
+  },
+  {
+   "claim": "14.5%는 영국 전체 기업이나 무료 AI 이용자를 포함한 전체 사용률이 아닌 해당 카드 자료의 구매 비율이다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 방법론의 카드 고객·활성 기업·직접 결제 범위로 확인. 제목과 소제목의 도입률을 구매 비율로 수정했다."
+  },
+  {
+   "claim": "Capital on Tap의 카드 구매 지표와 Allianz의 취업 응답자 교육 지표는 모집단과 측정 대상이 달라 비율 차이를 교육 격차로 계산할 수 없다.",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "confirmed": true,
+   "action": "유지. Allianz Summary의 성인 표본·취업 응답자 기준을 Capital on Tap Sources and methodology의 기업 카드 구매 기준과 대조했다. 다른 근거 URL: https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/"
+  },
+  {
+   "claim": "두 자료는 개별 회사의 생산성 개선이나 카드 구매와 교육 경험의 인과관계를 입증하지 않는다.",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "confirmed": true,
+   "action": "유지. 공식 본문의 구매 지표와 Allianz 요약의 별도 성인 설문 범위에 한정한 해석이다. 다른 근거 URL: https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html"
+  }
+ ],
+ "note": "별도 사실 검증 세션에서 post.json 전체(제목·요약·본문·표·FAQ·맺음말)를 읽고 동일한 외부 사실의 반복은 통합했다. 공식 URL 두 편을 웹 도구로 다시 열어 날짜·수치·방법론을 읽었다. EconoTimes는 웹 Cache miss 후 동일 공개 URL을 urllib로 1회(20초 제한) 조회하여 HTTP 200의 실제 기사 본문·발행 시각을 확인했고 source-evidence/factcheck-independent.json에 최종 URL·상태·조회 시각·본문을 저장했다. 기존 15개 항목 외 누락된 보도와 범위 해석 5개를 추가했다. 수치 삭제는 없고 구매 지표 표현과 보도일 시간대를 명확히 했다. 운영 표·가상 사례·권고는 작성자 제안으로 표시되어 외부 사실 집계에서 제외했다. 공식 발표와 독립 기사의 날짜는 brief의 최근 7일 범위에 해당한다. 자체 실행·검증 상태는 이 note에만 기록했다. 발행 승인·알림·git 작업·후보 교체는 수행하지 않았다."
+}
