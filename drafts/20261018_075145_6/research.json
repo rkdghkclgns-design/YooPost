@@ -1,0 +1,38 @@
+{
+ "topic": "Spend Trends On Tap Q3 2026과 Allianz Pulse 2026 on AI — 중소기업 AI 결제 확대와 직장 교육 점검",
+ "source_url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Spend Trends On Tap: July to September 2026",
+   "url": "https://www.capitalontap.com/en/blog/posts/spend-trends-on-tap-q3-2026/",
+   "publisher": "Capital on Tap",
+   "published": "2026-10-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Allianz Pulse 2026 on AI — The Uneasy AI Revolution",
+   "url": "https://www.allianz.com/en/economic_research/insights/publications/specials_fmo/261014-allianz-pulse-2026-on-ai.html",
+   "publisher": "Allianz SE",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "UK Small Firms’ Software Spending Rose 19.4%, Capital on Tap Data Show",
+   "url": "https://econotimes.com/UK-Small-Firms-Software-Spending-Rose-19-4-Capital-on-Tap-Data-Show-1755704",
+   "publisher": "EconoTimes",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "실제로 읽은 Capital on Tap 공식 HTML 본문의 이미지는 건설 작업자 대표 사진으로 AI 지출 분석에 적합한 인용 화면·도표가 아니며 데이터는 HTML 표로 제공된다. Allianz 공식 HTML 요약 본문에도 인용할 화면·도표가 없다. 로고·대표 사진은 사용하지 않았고 연결된 PDF 내부 이미지를 확인한 것으로 간주하지 않았다.",
+ "factcheck": {
+  "claims": 20,
+  "confirmed": 20,
+  "removed": [],
+  "note": "별도 사실 검증 세션에서 post.json 전체(제목·요약·본문·표·FAQ·맺음말)를 읽고 동일한 외부 사실의 반복은 통합했다. 공식 URL 두 편을 웹 도구로 다시 열어 날짜·수치·방법론을 읽었다. EconoTimes는 웹 Cache miss 후 동일 공개 URL을 urllib로 1회(20초 제한) 조회하여 HTTP 200의 실제 기사 본문·발행 시각을 확인했고 source-evidence/factcheck-independent.json에 최종 URL·상태·조회 시각·본문을 저장했다. 기존 15개 항목 외 누락된 보도와 범위 해석 5개를 추가했다. 수치 삭제는 없고 구매 지표 표현과 보도일 시간대를 명확히 했다. 운영 표·가상 사례·권고는 작성자 제안으로 표시되어 외부 사실 집계에서 제외했다. 공식 발표와 독립 기사의 날짜는 brief의 최근 7일 범위에 해당한다. 자체 실행·검증 상태는 이 note에만 기록했다. 발행 승인·알림·git 작업·후보 교체는 수행하지 않았다."
+ }
+}
