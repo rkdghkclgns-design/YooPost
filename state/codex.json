@@ -118,12 +118,11 @@
    }
   },
   "20261018:daily:AI 공모주 분석": {
-   "at": "2026-10-18T07:52:10+09:00",
-   "count": 1,
-   "status": "skipped",
+   "at": "2026-10-18T08:43:08+09:00",
+   "count": 2,
+   "status": "writing",
    "note": "다른 주제 재작성 2회 후 보류: Optimal AI Ltd의 2026-10-16 F-1/A 후보를 candidate.json에 먼저 기록했다. 대표 SEC 신고서 원문은 웹 도구에서 not accessible로 본문을 읽지 못했다. 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403 응답을 받아 원문 본문과 발표일을 확인하지 못했다. 응답 본문·최종 URL·조회 시각은 source-evidence/official-prospectus.json에 보존했다. 검색 요약과 제3자 신고서 목록은 공식 원문 확인",
    "failure_kind": "source_unavailable",
-   "finished_at": "2026-10-18T07:55:03+09:00",
    "rejected_candidates": [
     {
      "title": "🔍 Iambic 공모주 분석: 공모가 16달러·937만5000주 최종 투자설명서 총정리",
@@ -144,7 +143,6 @@
      "reason": "Optimal AI Ltd의 2026-10-16 F-1/A 후보를 candidate.json에 먼저 기록했다. 대표 SEC 신고서 원문은 웹 도구에서 not accessible로 본문을 읽지 못했다. 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403 응답을 받아 원문 본문과 발표일을 확인하지 못했다. 응답 본문·최종 URL·조회 시각은 source-evidence/official-prospectus.json에 보존했다. 검색 요약과 제3자 신고서 목록은 공식 원문 확인을 대신하지 않았다. 정책에 따라 "
     }
    ],
-   "next_retry_at": "2026-10-18T08:25:03+09:00",
    "last_notified": {
     "result": "skipped",
     "kind": "source_unavailable",
@@ -152,7 +150,21 @@
    }
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "39080067837-1",
+  "at": "2026-10-18T08:43:08+09:00",
+  "expires": "2026-10-18T10:43:08+09:00",
+  "task": {
+   "day": "20261018",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 공모주 분석",
+   "topic": "",
+   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: Optimal AI Ltd의 2026-10-16 F-1/A 후보를 candidate.json에 먼저 기록했다. 대표 SEC 신고서 원문은 웹 도구에서 not accessible로 본문을 읽지 못했다. 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403 응답을 받아 원문 본문과 발표일을 확인하지 못했다. 응답 본문·최종 URL·조회 시각은 source-evidence/official-prospectus.json에 보존했다. 검색 요약과 제3자 신고서 목록은 공식 ",
+   "owner": "39080067837-1",
+   "at": "2026-10-18T08:43:08+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
