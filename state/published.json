@@ -3274,5 +3274,21 @@
    "https://iireporter.com/vertafore-adds-two-ai-agents-for-policy-processing/"
   ],
   "draft_id": "20261018_073013_2"
+ },
+ {
+  "date": "2026-10-18",
+  "title": "🧠 TiGanEval 논문 분석: 불완전한 지시에서 성공률 53~67포인트 격차 총정리",
+  "topic": "Instructions Are Evidence, Not Objectives: Measuring Outcome Alignment of Agents",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.17757",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/tiganeval-5367.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.17757",
+   "https://arxiv.org/html/2610.17757v1",
+   "https://arxivtldr.org/weekly"
+  ],
+  "draft_id": "20261018_073556_3"
  }
 ]
