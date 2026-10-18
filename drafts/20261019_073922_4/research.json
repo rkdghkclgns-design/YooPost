@@ -1,0 +1,59 @@
+{
+ "topic": "RapidCanvas Raises $29M Series B to Bring Fortune 100-Grade AI to Every Enterprise",
+ "source_url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "RapidCanvas Raises $29M Series B to Bring Fortune 100-Grade AI to Every Enterprise",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "publisher": "RapidCanvas",
+   "published": "2026-10-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "RapidCanvas raises $29 million in Series B round led by Vertex Ventures SEA & India.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "publisher": "Vertex Ventures SEA & India",
+   "published": "2026-10-16",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "RapidCanvas raises $29M to develop custom AI applications for enterprises",
+   "url": "https://siliconangle.com/2026/10/16/rapidcanvas-raises-29m-to-develop-custom-ai-applications-for-enterprises/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "RapidCanvas raises $29M to build and run AI apps for enterprises",
+   "url": "https://thenextweb.com/news/rapidcanvas-29m-series-b-enterprise-ai",
+   "publisher": "The Next Web",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표 본문에서 확인한 이미지는 투자 유치 홍보용 대표 이미지입니다. 제품 화면·업무 흐름도·성능 도표가 없고 로고·홍보용 이미지는 본문 인용에서 제외하므로 image 블록을 넣지 않았습니다.",
+ "eligibility": {
+  "reference_date_kst": "2026-10-19",
+  "minimum_published": "2026-10-16",
+  "official_published": "2026-10-16",
+  "independent_coverage_published": [
+   "2026-10-16",
+   "2026-10-16"
+  ],
+  "duplicate_check": "brief-4.md 전체에서 RapidCanvas 및 대표 URL의 중복을 검색했으며 일치 없음. rejected-candidates.json의 중국 AI 기술 수출 관리 소식과 다른 후보.",
+  "note": "날짜는 task.json·brief-4.md에 명시된 작업 기준을 사용. 실제 조회 시각과 구분."
+ },
+ "factcheck": {
+  "claims": 28,
+  "confirmed": 28,
+  "removed": [],
+  "note": "이번 별도 사실 검증 세션에서 post.json의 제목·도입·요약·본문·표·FAQ·맺음말을 검토하고 S1·S2 공식 원문과 S3·S4 독립 보도를 web open으로 다시 열어 본문 및 페이지 날짜를 읽었다. 외부 사실은 반복을 합쳐 28건이며 모두 확인했다. C26의 두 매체 보도는 매체별로 나누고 각 실제 기사 URL을 부여했다. 회사 발표 수치는 독립 성능 검증으로 간주하지 않았다. 도입 질문·가상 상황·해석·자체 실행 여부는 외부 사실 개수에서 제외했다. 공식 본문 조회 실패가 없어 HTTP 대체 조회나 skip.json 생성 사유는 없다. 승인·발행은 수행하지 않았다. 확인 불가 또는 오기로 삭제한 외부 주장은 없다. 요약의 투자금과 납품 후 책임 설명에 회사 발표라는 귀속을 명확히 했다.",
+  "status": "completed"
+ },
+ "verification_evidence": "source-evidence/factcheck-reopened.json"
+}
