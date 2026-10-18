@@ -3418,5 +3418,22 @@
    "https://app.stationx.net/articles/sec-ai-news-openai-model-spent-strangers-crypto"
   ],
   "draft_id": "20261019_074527_5"
+ },
+ {
+  "date": "2026-10-19",
+  "title": "📊 ASSP·SS&C AI 조사 총정리: 데이터 장벽 62%·거버넌스 일관성 인식 43%",
+  "topic": "Trust, Ethics and Governance: How Safety Leaders Are Thinking About and Using AI",
+  "category": "AI 인사이트",
+  "source_url": "https://www.assp.org/research/ai-ethics",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/asspss-ai-62-43.html"
+  },
+  "sources": [
+   "https://www.assp.org/research/ai-ethics",
+   "https://www.assp.org/resources/free-learning-resource/new-research-finds-ai-adoption-accelerating-in-workplace-safety",
+   "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "https://hsereview.com/regional-coverage/north-america/assp-report-examines-ais-growing-role-in-occupational-safety"
+  ],
+  "draft_id": "20261019_075400_6"
  }
 ]
