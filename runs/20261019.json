@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-10-19T07:21:55+09:00",
   "first_taken_over": "2026-10-19T07:15:30+09:00",
   "reason": "실행 기록 없음",
-  "last_result": "done"
+  "last_result": "skipped"
  },
- "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+ "note": "다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.jso"
 }
