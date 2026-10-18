@@ -162,9 +162,9 @@
     }
    ],
    "last_notified": {
-    "result": "skipped",
-    "kind": "verification_failed",
-    "note": "다른 주제 재작성 2회 후 보류: 이전 실패 후보 5건과 다른 Jio Platforms의 2026-10-15 RHP 후보를 candidate.json에 먼저 기록했다. SEBI 공식 PDF는 웹 도구에서 Timeout fetching으로 본문을 읽지 못했지만 동일 URL 직접 조회에서는 HTTP 200 application/pdf가 반환됐다. 응답은 source-evidence/official-prospectus.json에 Base64로 보존했다. 압축 스트림에서 회사명·공모 개요·일정 등 일부 문자열은 읽었으나 PDF 글꼴 인코딩"
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
    },
    "finished_at": "2026-10-18T09:57:15+09:00",
    "next_retry_at": null
