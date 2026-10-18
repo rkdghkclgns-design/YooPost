@@ -3352,5 +3352,23 @@
    "https://www.newtimespace.com/en/ipo/1451230.html"
   ],
   "draft_id": "20261018_095713_7"
+ },
+ {
+  "date": "2026-10-19",
+  "title": "🤖 Perplexity Decider v1.2·Flash 총정리: 질문 묶음과 절반 입력 가격 사용 가이드",
+  "topic": "2026-10-16 pplx-decider-v1.2 및 pplx-decider-flash-v1.2 공개",
+  "category": "AI 언어 모델",
+  "source_url": "https://x.com/perplexitydevs/status/2111166029539758120",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/perplexity-decider-v12flash.html"
+  },
+  "sources": [
+   "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "https://x.com/perplexitydevs/status/2111166029539758120",
+   "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "https://chasingnext.com/updates/pplx-decider-v1-2"
+  ],
+  "draft_id": "20261019_072129_1"
  }
 ]
