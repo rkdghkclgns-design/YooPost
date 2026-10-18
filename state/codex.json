@@ -96,24 +96,22 @@
   "20261019:daily:AI 보안": {
    "at": "2026-10-19T07:39:51+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-19T07:45:29+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🔒 BadEngram 총정리: AI 메모리 변조로 숨는 백도어와 모델 무결성 점검",
+     "topic": "Pillar Security·Fujitsu의 2026-10-13 BadEngram 공동 연구 발표와 오픈 웨이트 모델 공급망 검증",
+     "source_url": "https://www.pillar.security/blog/badengram-a-new-attack-surface-in-open-weight-ai-models",
+     "reason": "BadEngram 후보의 2026-10-13 공식 블로그를 직접 읽었으나, 연결된 원 연구는 arXiv에서 2026-09-11 최초 공개·2026-09-30 최종 수정으로 확인된다. 최근 7일(2026-10-12 이후)의 신규 결과를 기존 연구와 구분해 입증하지 못해 최신 주제로 채택할 수 없다. 추가로 Fujitsu 블로그의 Qwen 공격 성공률은 HarmBench 50.4%·AdvBench 60.0%인 반면 arXiv v2 초록은 47.8%·64.0%여서 수치의 적용 버전도 확정할 수 없다. 검색 요약을 근거로 원고를 완성하지 "
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "39173188019-1",
-  "at": "2026-10-19T07:39:51+09:00",
-  "expires": "2026-10-19T09:39:51+09:00",
-  "task": {
-   "day": "20261019",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 보안",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "39173188019-1",
-   "at": "2026-10-19T07:39:51+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
