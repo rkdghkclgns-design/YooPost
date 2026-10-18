@@ -1,0 +1,55 @@
+{
+ "topic": "DayOne Data Centers 2026-10-05 F-1 신규 제출과 AI 데이터센터 IPO",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/2118192/000119312526414188/d223752df1.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DayOne Data Centers Limited Form F-1",
+   "url": "https://www.sec.gov/Archives/edgar/data/2118192/000119312526414188/d223752df1.htm",
+   "publisher": "U.S. SEC / DayOne Data Centers Limited",
+   "published": "2026-10-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DayOne Files Registration Statement for Proposed Initial Public Offering",
+   "url": "https://dayonedc.com/headliners/dayone-files-registration-statement-for-proposed-initial-public-offering",
+   "publisher": "DayOne",
+   "published": "2026-10-06",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Axios Pro Rata: Campaign cash",
+   "url": "https://www.axios.com/newsletters/axios-pro-rata-39a292f6-edf2-4429-b1d0-e562da2ba819",
+   "publisher": "Axios",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/2118192/000119312526414188/g223752g08m01.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/2118192/000119312526414188/d223752df1.htm",
+   "caption": "F-1에 수록된 ONEShell-Flex 설명 도식",
+   "credit": "DayOne Data Centers Limited / SEC F-1 p.116"
+  }
+ ],
+ "factcheck": {
+  "claims": 65,
+  "confirmed": 64,
+  "removed": [
+   "DayOne Data Centers Limited의 최초 공개 F-1: 최초 공개 여부 근거가 부족하여 최초 공개 표현 삭제"
+  ],
+  "note": "이번 별도 사실 검증에서 post.json 전체(제목·요약·표·FAQ·이미지 설명 포함)를 읽고 SEC F-1, 회사 발표, Axios 원문을 웹 open으로 다시 열었다. SEC 표지 3~165행, 운영 모델 247~250행, KPI 1044~1073행, 위험 요인 1087~1092·1315~1317행, 자금 용도 2269~2281행, 계약 3712·3733~3734행, 아키텍처·도식 3764~3786행, F-3 6576~6607행을 대조했다. 동일 주장의 반복은 한 번 집계했고, 단위 환산과 독립 보도 사실도 포함했다. 최초 공개 표현은 입증 부족으로 삭제하고 해지 협상 조건을 보완했다. 해석·독서 제안 및 자체 작업 설명은 집계에서 제외했다. 모든 원문의 본문과 날짜가 조회되어 HTTP 대체 조회는 필요하지 않았다. 검증은 해당 10월 5일 제출본의 사실 범위에 한하며 후속 공시의 현재 상태를 확정하지 않는다. 승인·발행·외부 메시지 전송은 수행하지 않았다."
+ },
+ "eligibility": {
+  "category": "AI 공모주 분석",
+  "window_start": "2026-10-05",
+  "brief_date_kst": "2026-10-19",
+  "representative_published": "2026-10-05",
+  "independent_coverage_published": "2026-10-06",
+  "duplicate_check": "brief-7.md의 전체 발행 글·최근 원고 및 rejected-candidates.json을 대조했다. DayOne의 해당 F-1 소식·URL은 목록에 없으며 Iambic·Optimal AI의 소식·대표 URL은 재사용하지 않았다."
+ }
+}
