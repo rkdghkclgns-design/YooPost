@@ -1,0 +1,66 @@
+{
+ "topic": "Trust, Ethics and Governance: How Safety Leaders Are Thinking About and Using AI",
+ "source_url": "https://www.assp.org/research/ai-ethics",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Trust, Ethics and Governance: How Safety Leaders Are Thinking About and Using AI",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "publisher": "American Society of Safety Professionals",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "New Research Finds AI Adoption Accelerating in Workplace Safety",
+   "url": "https://www.assp.org/resources/free-learning-resource/new-research-finds-ai-adoption-accelerating-in-workplace-safety",
+   "publisher": "American Society of Safety Professionals",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "As Enterprises Implement AI to Gain Productivity, Governance and Performance Measurement Present Scaling Opportunities: SS&C Survey",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "publisher": "SS&C Technologies Holdings",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "ASSP report examines AI’s growing role in occupational safety",
+   "url": "https://hsereview.com/regional-coverage/north-america/assp-report-examines-ais-growing-role-in-occupational-safety",
+   "publisher": "Health, Safety & Environment",
+   "published": "2026-10-14",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://www.assp.org/research/ai-ethics",
+   "caption": "ASSP 공식 조사 페이지의 Top 5 Barriers to AI Adoption 도표: 자원 투자 74%, 데이터 품질 62%, 책임 주체·추진자·우선순위 59%, 불신·자신감 및 개인정보·보안·편향 우려 각각 55%.",
+   "credit": "American Society of Safety Professionals",
+   "note": "HTML/CSS로 구성된 본문 도표. 독립 이미지 파일 URL이 없어 빈 문자열로 기록하며 원문 페이지의 해당 도표 캡처 후보로 제시한다. 썸네일·OG·로고가 아니다."
+  }
+ ],
+ "factcheck": {
+  "claims": 30,
+  "confirmed": 29,
+  "removed": [
+   "제목·소제목·FAQ의 전사 통제 43% 표현을 거버넌스 일관성 인식 43%로 수정",
+   "SIF의 중대 재해·사망 번역과 복수 영문 확장을 원문에 맞게 중상해·사망(serious injury and fatality)으로 수정"
+  ],
+  "note": "이번 별도 검증 세션에서 원고 전체의 외부 사실을 추출·대조했다. 동일 주장의 제목·요약·표·FAQ 반복은 한 건으로 통합했다. S1·S2는 웹 도구에서 본문 조회가 실패하여 같은 공개 URL을 urllib timeout=20으로 재조회했고 HTTP 200 실질 본문과 날짜를 읽었다. S4도 HTTP 200 원문을 재열람했다. 최종 URL·HTTP 상태·조회 시각·본문은 source-evidence/recheck-S1.json, recheck-S2.json, recheck-S4.json에 저장했다. S3는 웹 도구에서 공식 본문과 날짜·43%·조사 방법을 읽었다(turn0view2, 78~94행). 추가 urllib 요청은 타임아웃이었으며 recheck-S3.json에 그대로 기록했다. S3는 웹 도구에서 원문을 읽었으므로 원문 미확보로 판단하지 않았다. 기존 검증 집계를 그대로 승인하지 않고 재확인했다. PDF는 이번 검증 근거에 사용하지 않았다. 운영 제안·가상 적용 예시·일반화 및 인과 추론을 피하라는 해석, 자체 작업 상태는 외부 사실 집계에서 제외했다. 주장에 가격·제품 성능 수치·법적 의무는 없었다. 원고 승인·발행 및 주제 교체는 수행하지 않았다."
+ },
+ "selection": {
+  "category": "AI 인사이트",
+  "cutoff_kst": "2026-10-12",
+  "official_publication_date": "2026-10-14",
+  "independent_coverage_date": "2026-10-14",
+  "duplicate_check": "brief-6.md의 발행·최근 원고 목록 및 rejected-candidates.json에서 ASSP·보고서 제목·대표 URL·SS&C/ssnc를 대조했다. 아일랜드·IBM 탈락 소식과 다르다.",
+  "scope": "ASSP 공개 HTML 조사 결과를 중심으로 SS&C의 동시기 전사 통제 설문을 연결한 해설",
+  "source_access": "이번 세션 S1·S2는 웹 조회 실패 후 urllib HTTP 200 원문 재확인. S3는 웹 도구 원문 재열람 성공, 추가 urllib은 타임아웃. S4는 웹·urllib 모두 원문 재확인 성공. 과거 저장된 본문만으로 승인하지 않음."
+ }
+}
