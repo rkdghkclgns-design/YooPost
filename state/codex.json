@@ -1,176 +1,26 @@
 {
  "attempts": {
-  "20261018:daily:AI 언어 모델": {
-   "at": "2026-10-18T07:15:46+09:00",
+  "20261019:daily:AI 언어 모델": {
+   "at": "2026-10-19T07:15:30+09:00",
    "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:24:47+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🤖 Nemotron 3.5 Super VL·Bolt 총정리: 24GB 로컬 AI 평가 가이드",
-     "topic": "NVIDIA Nemotron 3.5 Super VL 및 Bolt 모델 공개(2026-10-15)",
-     "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
-     "reason": "공식 연구 페이지의 인용 도표 원문 링크를 웹 도구로 열지 못했고, 같은 URL을 urllib로 20초 제한 재조회한 결과 HTTP 403. 확인하지 못한 도표와 설명을 삭제했으며 정책에 따라 이번 후보를 보류한다. 주요 본문 사실은 공식 원문으로 대조했으나 발행 승인하지 않는다. 실패 URL: https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/images/nvidia-nemotron-3.5/nemotron-3.5-bolt.png"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 도구": {
-   "at": "2026-10-18T07:25:18+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:30:16+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🛠 AtScale for AI 총정리: 업무 지표 정의·계산·정확도 검증",
-     "topic": "AtScale Launches AtScale for AI to Close the Enterprise AI Accuracy Gap",
-     "source_url": "https://www.atscale.com/press/atscale-for-ai/",
-     "reason": "2026-10-15 발표로 검색된 AtScale for AI를 candidate.json에 먼저 기록했으나 대표 공식 원문 https://www.atscale.com/press/atscale-for-ai/ 본문 조회에 실패했습니다. 웹 도구 조회 실패 후 동일 공개 URL을 urllib로 20초 제한하여 1회 재조회한 결과 HTTP 403, 본문 error code: 1010이 반환되었습니다. 조회 시각·최종 URL·상태·본문은 source-evidence/atscale-http.json에 보존했습니다. 검색 요약이나 보도자료 재배"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 논문 분석": {
-   "at": "2026-10-18T07:30:45+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:35:58+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 뉴스 리뷰": {
-   "at": "2026-10-18T07:36:25+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:40:34+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 보안": {
-   "at": "2026-10-18T07:41:04+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:45:22+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 인사이트": {
-   "at": "2026-10-18T07:45:50+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-10-18T07:51:47+09:00",
-   "rejected_candidates": [
-    {
-     "title": "📊 Further AI 성숙도 보고서 총정리: 데이터 준비 5%가 던지는 운영 과제",
-     "topic": "Further State of Enterprise AI Maturity 2026 — AI 도입과 데이터 준비의 격차",
-     "source_url": "https://further.ai/news/the-state-of-enterprise-ai-maturity-2026",
-     "reason": "선정 후보 Further의 State of Enterprise AI Maturity 발표는 공식 원문 본문과 발표일(2026-10-13)을 확인했고 최근 7일 조건에 맞지만, 해당 기간에 이 소식을 다룬 독립 매체·커뮤니티 원문을 확인하지 못했습니다. 검색에서 확인된 GlobeNewswire와 National Law Review 자료는 Further 보도자료 배포·재배포여서 brief-6.md의 독립 보도 요건을 충족하지 않습니다. 공식 출처 접근 실패가 아닌 주제 적격성 미충족으로 보류합니다. policy.md에 따라 이 세션에서"
-    },
-    {
-     "title": "📊 IBM AI 거버넌스 조사 총정리: 도입 속도와 책임 체계의 격차",
-     "topic": "IBM 영국 AI 거버넌스 조사와 CPX·Microsoft·IDC UAE 조사로 보는 에이전트 책임 체계",
-     "source_url": "https://uk.newsroom.ibm.com/Eight-in-Ten-UK-Businesses-Struggle-to-Keep-Pace-with-AI-Governance-IBM-Study-Finds",
-     "reason": "IBM 영국 AI 거버넌스 조사와 CPX·Microsoft·IDC UAE 조사를 연결하는 후보를 선정했습니다. IBM 공식 원문과 2026-10-15 TechRadar 독립 보도는 실제로 읽었습니다. 그러나 보조 공식 출처 https://www.cpx.net/insights/reports-whitepaper/securing-ai-in-the-uae-enterprise/ 는 웹 조회 도구에서 not accessible이 발생했고, 같은 공개 URL을 urllib로 timeout=20초 조건에서 1회 조회한 결과 HTTP 403 및 본"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261018:daily:AI 공모주 분석": {
-   "at": "2026-10-18T09:50:46+09:00",
-   "count": 3,
-   "status": "done",
-   "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🔍 Iambic 공모주 분석: 공모가 16달러·937만5000주 최종 투자설명서 총정리",
-     "topic": "Iambic Therapeutics 2026-10-15 최종 투자설명서(424B4) — AI 신약개발 기업 IPO",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1997038/000119312526422865/iambic_inception_424b4.htm",
-     "reason": "선정 후보 Iambic Therapeutics의 2026-10-15 최종 투자설명서(424B4) 공식 원문을 웹 도구로 열었으나 용량 제한(Content length is too large)으로 본문을 읽지 못했습니다. 정책에 따라 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403 및 SEC 자동화 도구 접근 제한 페이지가 반환되었습니다. 검색 요약은 원문 확인으로 인정하지 않았으며 원고 작성과 사실 검증을 중단했습니다. 후보는 candidate.json, 최종 URL·HTTP 상태·조회 시각·응답 본"
-    },
-    {
-     "title": "🔍 DayOne 공모주 분석: F-1 제출과 AI 데이터센터 공시 총정리",
-     "topic": "DayOne Data Centers 2026-10-05 F-1 제출 — AI 데이터센터 기업 미국 IPO",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/2118192/000119312526414188/d223752df1.htm",
-     "reason": "DayOne Data Centers의 2026-10-05 F-1 제출을 새 후보로 선정하고 candidate.json에 먼저 기록했습니다. 이전 탈락 후보 Iambic의 소식·대표 원문은 재사용하지 않았습니다. SEC F-1 본문은 웹 도구에서 열려 제출일과 예비 공모 조건 등을 읽었고, 회사 공식 발표와 Axios 보도도 열었습니다. 그러나 공식 신고서 전체 본문 보존 및 별도 사실 검증 준비를 위한 동일 공개 URL의 urllib 직접 조회(제한 20초)에서 실제 HTTP 403과 SEC 자동화 도구 접근 제한 페이지가 반환됐습"
-    },
-    {
-     "title": "🔍 Optimal AI 공모주 분석: 10월 16일 F-1 정정 신고서 총정리",
-     "topic": "Optimal AI Ltd 2026-10-16 F-1/A 정정 신고서와 IPO 공시",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/2083345/000121390026110121/ea0305679-f1a3_optimal.htm",
-     "reason": "Optimal AI Ltd의 2026-10-16 F-1/A 후보를 candidate.json에 먼저 기록했다. 대표 SEC 신고서 원문은 웹 도구에서 not accessible로 본문을 읽지 못했다. 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403 응답을 받아 원문 본문과 발표일을 확인하지 못했다. 응답 본문·최종 URL·조회 시각은 source-evidence/official-prospectus.json에 보존했다. 검색 요약과 제3자 신고서 목록은 공식 원문 확인을 대신하지 않았다. 정책에 따라 "
-    },
-    {
-     "title": "🔍 Firmus 공모주 분석: ASX 상장 철회와 공시 확인",
-     "topic": "Firmus 2026년 10월 ASX IPO 철회와 자금 조달 계획의 공식 공시 확인",
-     "source_url": "https://firmus.co/newsroom",
-     "reason": "Firmus의 2026년 10월 ASX IPO 철회를 새 후보로 candidate.json에 먼저 기록했다. 2026-10-09 InvestorDaily 보도 본문은 직접 읽었으나, 공식 newsroom과 investor-communications 본문에서 2026-10-04 이후 발표된 IPO 철회 공시·투자설명서·주주서한 원문 및 발표일을 찾지 못했다. newsroom에 표시된 최신 소식은 2026년 9월이며 investor-communications는 문서 수령 방식 안내다. 공식 사이트·ASX 대상 검색에서도 해당 기간의 적"
-    },
-    {
-     "title": "🔍 Tattvance 공모 분석: AI 타투 플랫폼 S-1 신고서 확인",
-     "topic": "Tattvance Corp 2026-10-14 S-1 최초 등록 신고와 AI Tattoo Generator 공모 계획",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/2153476/000117152026000307/0001171520-26-000307-index.html",
-     "reason": "이전 탈락 후보 Iambic·DayOne·Optimal AI·Firmus와 다른 Tattvance Corp의 2026-10-14 S-1 최초 등록 신고를 새 후보로 선정해 candidate.json에 먼저 기록했다. SEC 공식 신고서 색인 URL은 웹 도구에서 not accessible로 읽지 못했다. 정책에 따라 동일 공개 URL을 urllib로 20초 제한 직접 조회한 결과 HTTP 403과 SEC 자동화 도구 접근 제한 페이지가 반환되어 신고서 본문과 공식 제출일을 직접 확인하지 못했다. 최종 URL·HTTP 상태·조회 시각"
-    },
-    {
-     "title": "🔍 Jio Platforms 공모주 분석: 10월 15일 RHP와 AI 사업 공시 확인",
-     "topic": "Jio Platforms 2026-10-15 Red Herring Prospectus — IPO 조건과 JioBrain AI 사업 공시",
-     "source_url": "https://www.sebi.gov.in/sebi_data/commondocs/oct-2026/Jio%20Platforms%20Limited%20-%20Red%20Herring%20Prospectus%20and%20Abridged%20Prospectus_p.pdf",
-     "reason": "이전 실패 후보 5건과 다른 Jio Platforms의 2026-10-15 RHP 후보를 candidate.json에 먼저 기록했다. SEBI 공식 PDF는 웹 도구에서 Timeout fetching으로 본문을 읽지 못했지만 동일 URL 직접 조회에서는 HTTP 200 application/pdf가 반환됐다. 응답은 source-evidence/official-prospectus.json에 Base64로 보존했다. 압축 스트림에서 회사명·공모 개요·일정 등 일부 문자열은 읽었으나 PDF 글꼴 인코딩과 조각난 텍스트 때문에 원문 발표"
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-10-18T09:57:15+09:00",
-   "next_retry_at": null
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "39171407744-1",
+  "at": "2026-10-19T07:15:30+09:00",
+  "expires": "2026-10-19T09:15:30+09:00",
+  "task": {
+   "day": "20261019",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "39171407744-1",
+   "at": "2026-10-19T07:15:30+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
