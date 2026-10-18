@@ -1,0 +1,377 @@
+{
+ "claims": [
+  {
+   "claim": "2026-10-15 arXiv v1 공개",
+   "url": "https://arxiv.org/abs/2610.22367",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Submission history 대조"
+  },
+  {
+   "claim": "저자 소속은 Harvard, Anthropic, QuEra",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Author affiliations 대조"
+  },
+  {
+   "claim": "평가 과제 8개 중 7개에서 T와 Q가 모두 감소",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Abstract; Discussion and outlook 대조"
+  },
+  {
+   "claim": "고전 함수 평가에 기반한 양자 기본 연산을 대상으로 함",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Introduction 대조"
+  },
+  {
+   "claim": "최적화용 복호화·수치 함수·화학 관련 연산을 포함",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Introduction; Table 1 대조"
+  },
+  {
+   "claim": "중첩 입력에 일반 고전 분기 경로 선택을 그대로 적용할 수 없음",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Introduction 대조"
+  },
+  {
+   "claim": "중간 정보는 임의 폐기하지 않고 보조 큐비트를 언컴퓨트해야 함",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Introduction 대조"
+  },
+  {
+   "claim": "알고리즘·표현·언컴퓨테이션의 공동 재설계가 연구 초점",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Discussion and outlook 대조"
+  },
+  {
+   "claim": "사람이 작성한 고정 명세와 빈 프로그램으로 탐색 시작",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "명세는 동작을 정하고 구현 방법은 지시하지 않음",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Introduction 대조"
+  },
+  {
+   "claim": "후보는 고수준 Python 회로 생성 프로그램",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "OpenEvolve를 사용",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "Claude Mythos 5가 구조와 코드 수정 제안",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "초기 알고리즘 계열을 분리해 발전시키고 좋은 후보를 공유",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "각 반복은 새 LLM 세션이며 부모 코드·평가·일부 대안과 요약을 제공",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "세션에 전체 탐색 이력을 제공하지 않음",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "MAP-Elites로 T,Q 평면의 다양한 절충안을 보존",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "평가기에서 명세 위반 후보를 거절하고 유효 후보를 TQ로 평가",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "조건부 산술 대신 조건부 데이터 교환과 공유 산술 경로 사용",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Design principles 대조"
+  },
+  {
+   "claim": "두 조건부 곱셈·덧셈을 하나의 공유 연산으로 바꾸는 예시 제시",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Design principles; Eq. 1 대조"
+  },
+  {
+   "claim": "현재 산술 상태의 관계로 일부 분기 이력을 복원",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Design principles 대조"
+  },
+  {
+   "claim": "복원은 지정된 초기화에서 도달 가능한 상태의 불변량에 의존",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Design principles 대조"
+  },
+  {
+   "claim": "허용 실패 확률로 드문 입력에 필요한 자원을 생략",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Design principles 대조"
+  },
+  {
+   "claim": "TQ는 Toffoli 수와 최대 동시 논리 큐비트 수의 곱",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Cost model and scoring; Eq. 22 대조"
+  },
+  {
+   "claim": "T는 Toffoli와 CCZ를 동등하게 세며 Q는 최대 동시 할당 논리 큐비트 수",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Cost model and scoring 대조"
+  },
+  {
+   "claim": "보고 배수는 기존 TQ를 발견 회로 TQ로 나눈 값",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 caption 대조"
+  },
+  {
+   "claim": "T는 작업량·시간의 대리지표이며 Q는 논리 공간 대리지표",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Methods 대조"
+  },
+  {
+   "claim": "큐비트 제약을 더 크게 가중하는 목적 함수도 가능",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Cost model and scoring 대조"
+  },
+  {
+   "claim": "마법 상태 공급 병렬성이 충분하면 Toffoli 깊이가 실행 시간을 제한할 수 있음",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Cost model and scoring 대조"
+  },
+  {
+   "claim": "TQ 개선 배수는 실제 실행 시간 측정 배수가 아님",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Methods; Cost model and scoring 대조"
+  },
+  {
+   "claim": "Reed–Solomon: 기존 5100000/1938, 새 440000/1837, TQ 배수 12",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "HHL 회전각: 기존 16000/300, 새 1348/115, 배수 32",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "쿨롱 퍼텐셜: 기존 6355/252, 새 1140/142, 배수 9.9",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "고정소수점 가우시안: 기존 24000/362, 새 1583/139, 배수 39",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "Fe₂S₂ alias–Select: 기존 55000/139, 새 15000/126, 배수 4.1",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "비가환 격자 게이지: 기존 1300000/1927, 새 170000/1859, 배수 7.7",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "Hermitian: 기존 약 1억/19만, 새 930000/2395",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "Hermitian 비교는 단순 가역 구현이며 선행 가역 컴파일이 없다는 주석",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 footnote dagger 대조"
+  },
+  {
+   "claim": "Hermitian 배수 칸은 대시",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "소수 p와 0이 아닌 입력 w에 대해 wx≡1 (mod p)인 x를 찾는 문제",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "수정: 본문에 소수 p·0이 아닌 입력 w 조건을 명시. 공식 Reversible modular inversion 절과 일치"
+  },
+  {
+   "claim": "divsteps의 새로운 가역 구조를 발견",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Reversible modular inversion 대조"
+  },
+  {
+   "claim": "모듈러 역원 완성 벤치마크 4000000/935",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 and footnote double dagger 대조"
+  },
+  {
+   "claim": "모듈러 역원의 기준선과 배수는 대시",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Table 1 대조"
+  },
+  {
+   "claim": "평가기는 출력·보존 입력·보조 큐비트 0 복구·위상을 검사",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Validation and statistical guarantees 대조"
+  },
+  {
+   "claim": "위상 오류는 출력 비트가 같아도 후속 간섭을 바꿀 수 있음",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Validation and statistical guarantees 대조"
+  },
+  {
+   "claim": "허용 회로 모델에서 비트열과 위상을 고전적으로 추적",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Circuit model and validity 대조"
+  },
+  {
+   "claim": "큰 입력 영역은 경로 표본 추출로 검사",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Validation and statistical guarantees 대조"
+  },
+  {
+   "claim": "표본 검사에는 통계적 보장을 따로 제시",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Validation and statistical guarantees; Eq. 20–21 대조"
+  },
+  {
+   "claim": "Reed–Solomon 최악 이력 35항목·665큐비트",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Reversible syndrome decoding for DQI 대조"
+  },
+  {
+   "claim": "DQI 분포에서 두 번째 이력 항목이 필요할 확률 1.0×10⁻⁴",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Reversible syndrome decoding for DQI 대조"
+  },
+  {
+   "claim": "실제 할당은 한 항목 19큐비트이며 드문 입력 실패 허용",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Reversible syndrome decoding for DQI 대조"
+  },
+  {
+   "claim": "보충 Figure S1은 단계별 비용과 이력 깊이 분포를 표시",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Supplementary Figure S1 caption 대조"
+  },
+  {
+   "claim": "표현력 있는 인터페이스와 저렴한 정합성·자원 평가가 확장 조건으로 제시됨",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Discussion and outlook 대조"
+  },
+  {
+   "claim": "가우시안 탐색에서 T 또는 Q가 일시 악화된 후 개선되는 후손 존재",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Evolutionary search 대조"
+  },
+  {
+   "claim": "하드웨어·디코더·오류 정정 구조에 따라 자원 중요도가 달라짐",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Discussion and outlook 대조"
+  },
+  {
+   "claim": "고정 계산 기저 변환 인터페이스는 인코딩 변경에서 오는 최적화를 제외",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Discussion and outlook 대조"
+  },
+  {
+   "claim": "과제 경계·입력 분포·표현·정확도 목표가 탐색의 가정을 규정",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Discussion and outlook 대조"
+  },
+  {
+   "claim": "arXiv v1 연구 원고라는 공개 형태",
+   "url": "https://arxiv.org/abs/2610.22367",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문 재열람, Submission history 대조"
+  },
+  {
+   "claim": "Quantum Computing Report가 이 연구를 2026-10-17에 보도했다",
+   "url": "https://quantumcomputingreport.com/harvard-anthropic-and-quera-use-llms-to-discover-quantum-circuits-with-up-to-9100x-lower-resource-costs/",
+   "confirmed": true,
+   "action": "유지: 해당 기사 제목·날짜·본문을 직접 재열람. 기술적 수치의 근거로 사용하지 않음"
+  },
+  {
+   "claim": "논문 제목과 저자는 Discovering state-of-the-art quantum circuits with large language models, Andi Gu·Alek H. Kemeny·Susanne F. Yelin·Mikhail D. Lukin이다",
+   "url": "https://arxiv.org/abs/2610.22367",
+   "confirmed": true,
+   "action": "유지: 소개 페이지 제목·저자 목록 대조"
+  },
+  {
+   "claim": "논문 HTML의 라이선스 표시는 CC BY-NC-SA 4.0이다",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: HTML 상단 라이선스 표기 확인. research 이미지 credit 대조"
+  },
+  {
+   "claim": "Figure S1 이미지 링크는 fig-dqi-rs.png이며 Reed–Solomon 단계별 비용과 이력 깊이 분포를 보여준다",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "confirmed": true,
+   "action": "유지: Figure S1 캡션 및 실제 이미지 링크를 열어 확인"
+  }
+ ],
+ "note": "2026-10-18 UTC 별도 사실 검증 세션에서 policy.md·task.json·brief-3.md 및 post.json 전체를 읽고 arXiv 소개 페이지·v1 HTML의 소속, 본문, 표 1, Methods, Evolutionary search, Figure S1 캡션과 이미지 링크를 다시 열어 대조했다. 독립 보도 날짜와 본문도 재조회했다. 기존 검증 기록의 true 값을 그대로 승인하지 않고 주장별로 다시 확인했다. 반복 사실은 한 항목으로 묶었으며 자체 실행 여부·검증 단계 상태·해석·독자 제안은 claims 집계에서 제외했다. 공식 본문에 접근 가능했고 핵심 주장 근거가 확보되어 skip.json 생성 사유는 없다. 실험 재현이나 발행 승인은 수행하지 않았다. 모듈러 역원의 입력 조건과 수치 정밀도 표현을 명확히 수정했으며 확인 불가해 삭제한 외부 주장은 없다."
+}
