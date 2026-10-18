@@ -1,0 +1,245 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "ASSP가 2026년 10월 14일 조사 결과를 발표했다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Published October 14, 2026 및 S2 발표 날짜 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C2",
+   "claim": "조사 제목은 Trust, Ethics and Governance: How Safety Leaders Are Thinking About and Using AI다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "페이지 제목 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C3",
+   "claim": "ASSP는 Kalorama Research와 온라인 조사를 진행했다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Methodology에서 연구 파트너와 온라인 방식 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C4",
+   "claim": "ASSP 조사 참여자는 안전 전문가 992명이다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Methodology 및 표본 규모 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C5",
+   "claim": "ASSP 표본은 회원·이전 회원·비회원 고객을 포함한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Sampling frame 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C6",
+   "claim": "ASSP 조사 기간은 2026년 7월 6일~8월 2일이다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Field dates 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C7",
+   "claim": "SS&C 발표일은 2026년 10월 14일이다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": true,
+   "evidence": "발표 제목 아래 날짜 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C8",
+   "claim": "SS&C는 금융서비스·헬스케어 분야 AI 도입을 조사했다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": true,
+   "evidence": "발표 첫 문단 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C9",
+   "claim": "SS&C 표본은 SS&C Deliver 2026 참석자·등록자 148명이다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": true,
+   "evidence": "Survey methodology 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C10",
+   "claim": "SS&C 설문 기간은 2026년 9월 15~21일이다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": true,
+   "evidence": "Survey methodology 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C11",
+   "claim": "SS&C 응답에서 전사 AI 거버넌스가 일관되게 적용된다고 느낀 비율은 43%다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": true,
+   "evidence": "felt AI governance was applied consistently across their entire business 표현과 43% 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C12",
+   "claim": "ASSP의 낮거나 초기 단계인 자원 투자 장벽 비율은 74%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Top 5 Barriers 표 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C13",
+   "claim": "ASSP의 데이터 품질 장벽 비율은 62%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Top 5 Barriers 표 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C14",
+   "claim": "ASSP의 책임 주체·추진자·조직 우선순위 부족 장벽 비율은 59%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Lack of ownership/champion/priority 59% 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C15",
+   "claim": "ASSP의 불신·불편함·자신감 부족 장벽 비율은 55%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Mistrust/discomfort/lack of confidence 55% 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C16",
+   "claim": "ASSP의 개인정보·보안·편향 우려 장벽 비율은 55%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Concerns about data privacy, security or bias 55% 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C17",
+   "claim": "AI 교육 경험자의 AI-EHS 지식 긍정 자기평가 비율은 75%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "The Training Effect의 AI-EHS knowledge very/somewhat 표 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C18",
+   "claim": "AI 교육 경험이 없는 응답자의 같은 지식 자기평가 비율은 56%다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "The Training Effect의 No AI training 56% 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C19",
+   "claim": "ASSP 공식 요약은 교육과 보고된 지식·자신감의 연관성을 설명한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Training is associated with higher reported knowledge and confidence 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C20",
+   "claim": "해당 교육 비교는 응답자의 자기평가이며 무작위 교육 효과 실험으로 소개되지 않는다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "rate themselves higher 및 온라인 설문 방법 확인. 효과 추정으로 서술하지 않음",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C21",
+   "claim": "EHS는 환경·보건·안전을 뜻한다.",
+   "url": "https://www.assp.org/resources/free-learning-resource/new-research-finds-ai-adoption-accelerating-in-workplace-safety",
+   "confirmed": true,
+   "evidence": "environmental health and safety (EHS) 명시 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C22",
+   "claim": "ASSP 공식 요약은 다수 응답자가 AI 검증과 작업자 안전·개입·징계의 최종 결정을 사람이 해야 한다고 동의한다고 설명한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Executive Summary 4 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C23",
+   "claim": "ASSP 발표는 Monique Parker를 회장으로 소개하며 인간 감독의 필수성을 강조한다.",
+   "url": "https://www.assp.org/resources/free-learning-resource/new-research-finds-ai-adoption-accelerating-in-workplace-safety",
+   "confirmed": true,
+   "evidence": "Monique Parker, CSP, president, ASSP 및 human oversight remains essential 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C24",
+   "claim": "ASSP 공식 요약은 시간 절약·데이터 통찰을 비교적 뚜렷하게 보고된 이점으로 설명한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Executive Summary 3 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C25",
+   "claim": "ASSP 공식 요약은 비용 절감·SIF 비율 감소 목표가 덜 일관되게 보고됐다고 설명한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "Executive Summary 3 확인",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "id": "C26",
+   "claim": "SIF는 원문에서 serious injury and fatality를 뜻한다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "S1 Executive Summary 3의 lower serious injury and fatality (SIF) rates",
+   "action": "수정: 원문 단수형 영문에 맞추고 한국어를 중상해·사망으로 정정"
+  },
+  {
+   "id": "C27",
+   "claim": "ASSP 공식 소개 페이지와 공식 보도자료의 도입 단계·시작 기간 요약 표현이 서로 다르다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "evidence": "S1 단계 표 58%·29% 및 66%/18개월, S2는 86%·66%/2년. 상세 숫자는 원고의 확정 논거에서 제외",
+   "action": "유지: 상충하는 도입률·기간 수치를 확정 논거로 쓰지 않고 두 원문 링크를 추가",
+   "urls": [
+    "https://www.assp.org/research/ai-ethics",
+    "https://www.assp.org/resources/free-learning-resource/new-research-finds-ai-adoption-accelerating-in-workplace-safety"
+   ]
+  },
+  {
+   "id": "C28",
+   "claim": "Health, Safety & Environment가 ASSP 조사를 2026년 10월 14일 자체 기사로 다뤘다. 기사는 투자·데이터·조직 장벽을 소개한다.",
+   "url": "https://hsereview.com/regional-coverage/north-america/assp-report-examines-ais-growing-role-in-occupational-safety",
+   "confirmed": true,
+   "evidence": "이번 세션 S4 원문 Date: 14th October 2026 및 투자·데이터·조직 장벽 설명을 재확인. source-evidence/recheck-S4.json",
+   "action": "유지: 이번 세션에서 재열람한 원문으로 확인"
+  },
+  {
+   "claim": "43%는 전사 통제 수준을 측정한 수치다.",
+   "url": "https://ssnc.gcs-web.com/news-releases/news-release-details/enterprises-implement-ai-gain-productivity-governance-and",
+   "confirmed": false,
+   "action": "수정: 제목·소제목·FAQ 질문의 전사 통제 43%를 거버넌스 일관성 인식 43%로 변경. 원문은 felt라고 표현하며 감사 측정치가 아님"
+  },
+  {
+   "claim": "ASSP의 영문 명칭은 American Society of Safety Professionals다.",
+   "url": "https://www.assp.org/research/ai-ethics",
+   "confirmed": true,
+   "action": "유지: S1 기관 명칭 확인; 본문의 한국어 명칭은 번역 표기"
+  }
+ ],
+ "note": "이번 별도 검증 세션에서 원고 전체의 외부 사실을 추출·대조했다. 동일 주장의 제목·요약·표·FAQ 반복은 한 건으로 통합했다. S1·S2는 웹 도구에서 본문 조회가 실패하여 같은 공개 URL을 urllib timeout=20으로 재조회했고 HTTP 200 실질 본문과 날짜를 읽었다. S4도 HTTP 200 원문을 재열람했다. 최종 URL·HTTP 상태·조회 시각·본문은 source-evidence/recheck-S1.json, recheck-S2.json, recheck-S4.json에 저장했다. S3는 웹 도구에서 공식 본문과 날짜·43%·조사 방법을 읽었다(turn0view2, 78~94행). 추가 urllib 요청은 타임아웃이었으며 recheck-S3.json에 그대로 기록했다. S3는 웹 도구에서 원문을 읽었으므로 원문 미확보로 판단하지 않았다. 기존 검증 집계를 그대로 승인하지 않고 재확인했다. PDF는 이번 검증 근거에 사용하지 않았다. 운영 제안·가상 적용 예시·일반화 및 인과 추론을 피하라는 해석, 자체 작업 상태는 외부 사실 집계에서 제외했다. 주장에 가격·제품 성능 수치·법적 의무는 없었다. 원고 승인·발행 및 주제 교체는 수행하지 않았다."
+}

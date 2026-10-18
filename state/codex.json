@@ -118,24 +118,28 @@
   "20261019:daily:AI 인사이트": {
    "at": "2026-10-19T07:45:58+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-19T07:54:03+09:00",
+   "rejected_candidates": [
+    {
+     "title": "📊 아일랜드 산업별 AI 도입 보고서: 실험에서 현장 적용으로 가는 조건 총정리",
+     "topic": "A Sectoral Study on Artificial Intelligence in Enterprise in Ireland: Impacts, opportunities, barriers and potential interventions",
+     "source_url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/october/minister-niamh-smyth-publishes-major-report-on-ai-adoption-and-enablement-across-irish-enterprise.html",
+     "reason": "아일랜드 산업별 AI 도입 보고서(2026-10-13)를 후보로 선정하고 정부 공식 발표·보고서 PDF 및 CorporateTraining.ie의 2026-10-13 독립 해설 본문을 읽었다. 여러 발표를 엮은 분석을 위해 조회한 Laois Chamber Alliance의 2026-10-13 공식 성명(AI investment and adoption must deliver productivity gains)은 웹 도구에서 Internal Error/Cache miss로 본문을 읽지 못했다. 정책에 따라 같은 공개 URL을 reque"
+    },
+    {
+     "title": "📊 IBM AI 거버넌스 조사: 경영진 보고와 실행 통제의 격차 총정리",
+     "topic": "IBM Study: Eight in Ten EMEA Enterprises Escalate AI Incidents to Board or C-Suite as AI Agents Test Governance",
+     "source_url": "https://it.newsroom.ibm.com/studio-ibm-incidenti-AI",
+     "reason": "이전 실패 후보인 아일랜드 AI 도입 보고서는 재사용하지 않고 IBM의 The New Realities of AI Governance 조사를 새 후보로 선정했다. IBM 이탈리아 공식 발표(https://it.newsroom.ibm.com/studio-ibm-incidenti-AI, 페이지 발표일 2026-10-15), TechRadar의 2026-10-15 독립 기사 및 Further의 2026-10-13 공식 발표 본문을 직접 읽었다. 그러나 IBM 공식 발표의 조사 원문 링크 https://newsroom.ibm.com/ima"
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "39173621449-1",
-  "at": "2026-10-19T07:45:58+09:00",
-  "expires": "2026-10-19T09:45:58+09:00",
-  "task": {
-   "day": "20261019",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 인사이트",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "39173621449-1",
-   "at": "2026-10-19T07:45:58+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
