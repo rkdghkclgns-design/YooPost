@@ -1,0 +1,266 @@
+{
+ "claims": [
+  {
+   "id": "C01",
+   "claim": "2026-10-16 Perplexity가 v1.2와 Flash를 발표했다.",
+   "url": "https://x.com/perplexitydevs/status/2111166029539758120",
+   "confirmed": true,
+   "evidence": "게시물에 두 모델명과 6:42 PM · Oct 16, 2026 표기.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S3.json"
+  },
+  {
+   "id": "C02",
+   "claim": "v1.2의 변경점은 요청 형식과 학습 데이터다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "모델 카드 첫 문단 Two things changed.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C03",
+   "claim": "v1.1은 질문별 순전파, v1.2는 입력과 여러 질문을 한 시퀀스로 처리한다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "Joint request format 문단.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C04",
+   "claim": "결정 모델은 자유로운 텍스트 대신 확률이 붙은 정형 답을 반환한다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "What a decision model is 및 Question type 표.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C05",
+   "claim": "질문 유형은 예·아니요, 선택지, 순서가 있는 평가 기준이다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "noul / choice / score 설명.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C06",
+   "claim": "기본 모델은 27B, Flash는 4B다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Parameters 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C07",
+   "claim": "두 모델의 입력은 텍스트와 이미지다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Input 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C08",
+   "claim": "두 모델의 문서상 컨텍스트 창은 256K 토큰이다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Context window 행; 실제 입력은 제한 미만이어야 함.",
+   "action": "256K 문서 표기는 유지하고, API 입력은 상태·이미지·모든 질문을 합쳐 256K 미만이라는 제한을 본문에 보완",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C09",
+   "claim": "기본 입력 요금은 100만 토큰당 $0.02다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Input price 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C10",
+   "claim": "Flash 입력 요금은 100만 토큰당 $0.01다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Input price 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C11",
+   "claim": "두 모델의 출력 토큰 요금은 무료다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Models 표 Output tokens 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C12",
+   "claim": "Flash는 Qwen3.5-4B에 기반한다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "모델 카드 첫 문단.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C13",
+   "claim": "Flash는 27B 결정 모델에서 증류했으며 교사의 전체 확률 분포를 학습한다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "distilled 및 full probability distributions 설명.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C14",
+   "claim": "Decision Index 0.3 종합은 v1.1 62.30, v1.2 묶음 68.09, 개별 67.75다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "Evaluation Overall Decision Index 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C15",
+   "claim": "종합 점수는 범주 단순 평균이 아니라 평가 묶음의 가중치를 쓴다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "Evaluation 표 아래 weighting 설명.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C16",
+   "claim": "Flash 종합은 묶음 58.88, 개별 60.05다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "Evaluation Overall Decision Index 행.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C17",
+   "claim": "기본 모델 카드는 관련 질문 묶음과 독립 후보 개별 평가를 권한다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "When to group questions recommendations.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C18",
+   "claim": "같은 요청의 질문은 서로 영향을 줄 수 있다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "When to group questions: This changes the answers.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C19",
+   "claim": "Perplexity는 최대 5배 추론 속도를 주장했다.",
+   "url": "https://x.com/perplexitydevs/status/2111166029539758120",
+   "confirmed": true,
+   "evidence": "게시물 Inference is up to 5x faster. 직접 재현 주장 아님.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S3.json"
+  },
+  {
+   "id": "C20",
+   "claim": "공식 단가상 Flash 입력 가격은 기본 모델의 절반이다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "0.01 / 0.02의 산술 비교; 전체 운영비와 구분.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C21",
+   "claim": "Flash는 질문별 요청부터 비교하는 것이 공식 권고에 부합한다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Grouping questions: Flash one question per request by default.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  },
+  {
+   "id": "C22",
+   "claim": "v1.2는 공개된 가중치를 가진 새 업데이트다.",
+   "url": "https://x.com/perplexitydevs/status/2111166029539758120",
+   "confirmed": true,
+   "evidence": "공식 발표 open weights 및 모델명 확인.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S3.json"
+  },
+  {
+   "id": "C23",
+   "claim": "기본 카드의 점수는 제조사가 공개한 평가다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+   "confirmed": true,
+   "evidence": "Perplexity 공식 계정의 모델 카드 Evaluation.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S1.json"
+  },
+  {
+   "id": "C24",
+   "claim": "Flash는 기본 모델보다 작은 별도 증류 선택지다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "small version 및 distilled 설명.",
+   "action": "재조회한 공식 본문과 일치하여 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C25",
+   "claim": "Chasing Next의 pplx-decider v1.2 소개 페이지에는 October 16, 2026이 표시되어 있다.",
+   "url": "https://chasingnext.com/updates/pplx-decider-v1-2",
+   "confirmed": true,
+   "evidence": "페이지 제목 바로 위 날짜를 직접 읽음.",
+   "action": "직접 재조회하여 확인, 유지",
+   "evidence_file": "source-evidence/recheck-S5.json"
+  },
+  {
+   "id": "C26",
+   "claim": "Chasing Next는 두 모델 크기, 여러 질문의 단일 패스 처리, 분류·태깅·라우팅 용도를 소개한다.",
+   "url": "https://chasingnext.com/updates/pplx-decider-v1-2",
+   "confirmed": true,
+   "evidence": "Details와 Best for 본문에서 확인.",
+   "action": "직접 재조회하여 확인, 유지",
+   "evidence_file": "source-evidence/recheck-S5.json"
+  },
+  {
+   "id": "C27",
+   "claim": "Flash는 기본 v1.2와 같은 공동 요청 형식과 API를 사용한다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "모델 카드 첫 문단 same joint request format, same API.",
+   "action": "직접 재조회하여 확인, 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C28",
+   "claim": "Flash의 공개 종합 평가에서는 질문별 요청 60.05가 묶음 요청 58.88보다 높다.",
+   "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+   "confirmed": true,
+   "evidence": "Evaluation 표의 두 열을 비교한 해석.",
+   "action": "직접 재조회하여 확인, 유지",
+   "evidence_file": "source-evidence/recheck-S2.json"
+  },
+  {
+   "id": "C29",
+   "claim": "Decisions API 입력은 state·이미지·모든 질문을 포함하여 256K 토큰 미만이어야 한다.",
+   "url": "https://docs.perplexity.ai/docs/decisions/quickstart",
+   "confirmed": true,
+   "evidence": "Request limits의 Input tokens per request 행.",
+   "action": "API 입력 제한을 본문에 보완",
+   "evidence_file": "source-evidence/recheck-S4.json"
+  }
+ ],
+ "note": "2026-10-18 UTC(2026-10-19 KST) 별도 사실 검증 세션에서 post.json 전체(제목·도입·요약·표·본문·FAQ·맺음말)를 대조했다. 반복 주장은 중복 집계하지 않았다. 공식 모델 카드 2개·API 문서·공식 X 발표와 독립 소개 페이지를 다시 열었다. X 웹 도구 Internal Error는 서버 HTTP 오류로 해석하지 않았으며, 같은 URL을 urllib timeout=20으로 로그인·쿠키·프록시 없이 한 번 조회하여 HTTP 200의 실제 게시물 본문과 Oct 16, 2026 날짜를 직접 읽었다. 각 출처의 최종 URL·HTTP 상태·조회 시각·전체 응답 본문은 source-evidence/recheck-S1~S5.json에 저장했다. 외부 사실 29건을 확인했고, 오류 또는 확인 불가로 삭제한 외부 주장은 없다. API 컨텍스트 표기와 실제 입력 제한을 구분하도록 본문을 보완했다. 활용 가정·저자 제안·용어 풀이·작업 상태 및 모델을 직접 실행하지 않았다는 설명은 외부 사실 집계에서 제외했다. 최대 5배는 회사 발표의 존재를 확인한 것이며 성능을 재현한 것이 아니다. 독립 소개는 원문을 읽었으나 독립 성능 재현으로 해석하지 않았다. 공식 본문과 독립 소개 날짜가 최신성 조건을 충족하여 skip.json은 생성하지 않는다. 승인·발행·다른 후보 교체는 수행하지 않았다."
+}

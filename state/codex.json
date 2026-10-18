@@ -3,24 +3,22 @@
   "20261019:daily:AI 언어 모델": {
    "at": "2026-10-19T07:15:30+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-10-19T07:21:30+09:00",
+   "rejected_candidates": [
+    {
+     "title": "Reflection Beam 가중치 공개와 배포 생태계 발표",
+     "topic": "Beam is now available — 2026-10-16 가중치 실제 공개 후속 발표",
+     "source_url": "https://reflection.ai/blog/beam-is-available",
+     "reason": "2026-10-16 Reflection의 Beam is now available 후속 발표를 후보로 선정했다. 기존 10월 5일 예고와 달리 가중치 실제 공개를 다루려 했으며, 공식 원문 및 10월 16일 TSN 독립 보도 본문을 웹 도구로 확인했다. 개발자 문서의 웹 도구 조회 오류는 동일 URL 직접 조회에서 HTTP 200 및 실제 본문·2026-10-16 수정일을 확인했다. 그러나 대표 공식 원문 https://reflection.ai/blog/beam-is-available 의 직접 조회(urllib, timeout=20)"
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "39171407744-1",
-  "at": "2026-10-19T07:15:30+09:00",
-  "expires": "2026-10-19T09:15:30+09:00",
-  "task": {
-   "day": "20261019",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 언어 모델",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "39171407744-1",
-   "at": "2026-10-19T07:15:30+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
