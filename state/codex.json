@@ -86,7 +86,12 @@
      "reason": "선정 후보는 2026-10-16 중국 상무부·과기부 제48호 공고의 AI 기술 수출 관리 초안이다. 대표 공고는 웹 도구에서 not accessible이었으나 동일 URL의 urllib 조회에서 HTTP 200과 발표일·실제 공고 본문을 확인하여 source-evidence/official-source.json에 보존했다. 공식 해설은 웹 도구에서 본문을 읽었지만 추가 직접 조회에서 HTTP 403 Forbidden이 발생했다. policy.md의 작성·검증 어느 단계든 공식 출처 HTTP 조회 실패 시 원고를 완성하지 않고 종료한"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
