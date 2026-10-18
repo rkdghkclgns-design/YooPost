@@ -136,7 +136,12 @@
      "reason": "이전 실패 후보인 아일랜드 AI 도입 보고서는 재사용하지 않고 IBM의 The New Realities of AI Governance 조사를 새 후보로 선정했다. IBM 이탈리아 공식 발표(https://it.newsroom.ibm.com/studio-ibm-incidenti-AI, 페이지 발표일 2026-10-15), TechRadar의 2026-10-15 독립 기사 및 Further의 2026-10-13 공식 발표 본문을 직접 읽었다. 그러나 IBM 공식 발표의 조사 원문 링크 https://newsroom.ibm.com/ima"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
