@@ -3403,5 +3403,20 @@
    "https://thenextweb.com/news/rapidcanvas-29m-series-b-enterprise-ai"
   ],
   "draft_id": "20261019_073922_4"
+ },
+ {
+  "date": "2026-10-19",
+  "title": "🔒 ProjectDiscovery AI 공급망 조사: 공개 이력 속 쓰기 토큰과 검증 한계 총정리",
+  "topic": "2026-10-14 ProjectDiscovery의 AI 연구소 직원 자격증명 노출·모델 공급망 조사",
+  "category": "AI 보안",
+  "source_url": "https://projectdiscovery.io/research/pwning-ai-labs-via-employees",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/projectdiscovery-ai.html"
+  },
+  "sources": [
+   "https://projectdiscovery.io/research/pwning-ai-labs-via-employees",
+   "https://app.stationx.net/articles/sec-ai-news-openai-model-spent-strangers-crypto"
+  ],
+  "draft_id": "20261019_074527_5"
  }
 ]
