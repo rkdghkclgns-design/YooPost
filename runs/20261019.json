@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 공모주 분석",
   "taken_over": "2026-10-19T08:30:29+09:00",
   "first_taken_over": "2026-10-19T07:15:30+09:00",
   "reason": "실행 기록 없음",
-  "last_result": "skipped"
+  "last_result": "done"
  },
- "note": "다른 주제 재작성 2회 후 보류: VN Studio의 2026-10-16 출시·인간 창작 기여 추적 기능을 새 후보로 candidate.json에 먼저 기록했다. 독립 매체 Advance Intelligence와 TAU-HOME의 2026-10-16 보도를 직접 열었으나, 대표 공식 원문 https://vn.ai/ 는 웹 조회 도구에서 https://www.vn.ai/ 로 이동한 뒤 본문 0줄을 반환했다. 정책에 따라 같은 공개 URL을 urllib로 제한 시간 20초로 한 번 직접 조회했다. HTTP 200이지만 스크립트·스타일을"
+ "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }
