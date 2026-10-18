@@ -25,8 +25,8 @@
   "20261019:daily:AI 도구": {
    "at": "2026-10-19T07:59:13+09:00",
    "count": 2,
-   "status": "writing",
-   "note": "다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.jso",
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: VN Studio의 2026-10-16 출시·인간 창작 기여 추적 기능을 새 후보로 candidate.json에 먼저 기록했다. 독립 매체 Advance Intelligence와 TAU-HOME의 2026-10-16 보도를 직접 열었으나, 대표 공식 원문 https://vn.ai/ 는 웹 조회 도구에서 https://www.vn.ai/ 로 이동한 뒤 본문 0줄을 반환했다. 정책에 따라 같은 공개 URL을 urllib로 제한 시간 20초로 한 번 직접 조회했다. HTTP 200이지만 스크립트·스타일을",
    "failure_kind": "source_unavailable",
    "rejected_candidates": [
     {
@@ -46,13 +46,33 @@
      "topic": "Cline v4.1.25의 Cloud sessions 점진 배포와 기본 모델 변경",
      "source_url": "https://cline.bot/changelog",
      "reason": "Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.json에 보존했다. 공식 제품 소개 페"
+    },
+    {
+     "title": "🛠 Tiden 의도 검증 총정리: 요구사항과 실행된 테스트를 잇는 도구",
+     "topic": "Tiden의 2026-10-16 출시 보도와 의도 검증 도구의 신규 발표 여부",
+     "source_url": "https://tiden.ai/changelog",
+     "reason": "Tiden을 신규 후보로 기록한 뒤 공식 변경 기록을 직접 열어 읽었다. 최신 변경 항목은 2026-10-14(CLI 0.33.0)이며 2026-10-16 이후 새 기능 발표는 확인되지 않았다. 독립 디렉터리 productdirs에는 10월 16일 출시 묶음이 있으나, 공식 quality-gate 페이지의 16 October 2026은 Updated로 표시되어 신규 출시일의 근거가 아니다. 이 페이지는 웹 도구 Internal Error 뒤 동일 URL을 urllib로 20초 제한으로 한 번 조회해 HTTP 200과 실제 본문을 확"
+    },
+    {
+     "title": "🛠 Etherscan Transaction Debugger: 실행 근거와 한계 총정리",
+     "topic": "Etherscan Transaction Debugger의 2026-10-16 안내와 신규 기능 발표 여부",
+     "source_url": "https://etherscan.io/ai",
+     "reason": "Etherscan Transaction Debugger의 2026-10-16 보도를 신규 후보로 기록하고 공식 Build with AI 페이지 https://etherscan.io/ai 를 조회했다. 웹 도구는 본문을 반환하지 못했으며, 정책에 따라 동일 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 403과 Just a moment 접속 확인 화면을 받았다. 실제 공식 발표 본문과 날짜를 읽을 수 없어 최신 신규 기능 여부 및 핵심 사실을 검증할 수 없다. 응답 전체·최종 URL·HTTP 상태·조회 "
+    },
+    {
+     "title": "🎬 VN Studio 인간 창작 기여 기록 기능과 활용 총정리",
+     "topic": "2026-10-16 VN Studio 출시와 인간 창작 기여 추적 기능",
+     "source_url": "https://vn.ai/",
+     "reason": "VN Studio의 2026-10-16 출시·인간 창작 기여 추적 기능을 새 후보로 candidate.json에 먼저 기록했다. 독립 매체 Advance Intelligence와 TAU-HOME의 2026-10-16 보도를 직접 열었으나, 대표 공식 원문 https://vn.ai/ 는 웹 조회 도구에서 https://www.vn.ai/ 로 이동한 뒤 본문 0줄을 반환했다. 정책에 따라 같은 공개 URL을 urllib로 제한 시간 20초로 한 번 직접 조회했다. HTTP 200이지만 스크립트·스타일을 제외한 가시 텍스트는 페이지 제목"
     }
    ],
    "last_notified": {
     "result": "skipped",
     "kind": "source_unavailable",
     "note": "다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.jso"
-   }
+   },
+   "finished_at": "2026-10-19T08:02:52+09:00",
+   "next_retry_at": "2026-10-19T09:02:52+09:00"
   },
   "20261019:daily:AI 논문 분석": {
    "at": "2026-10-19T07:27:29+09:00",
@@ -176,21 +196,7 @@
    }
   }
  },
- "lease": {
-  "owner": "39174542548-1",
-  "at": "2026-10-19T07:59:13+09:00",
-  "expires": "2026-10-19T09:59:13+09:00",
-  "task": {
-   "day": "20261019",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelo",
-   "owner": "39174542548-1",
-   "at": "2026-10-19T07:59:13+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
