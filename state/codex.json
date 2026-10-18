@@ -188,9 +188,9 @@
     }
    ],
    "last_notified": {
-    "result": "skipped",
-    "kind": "no_topic",
-    "note": "다른 주제 재작성 2회 후 보류: 2026-10-19 KST 기준 대표 원문 2026-10-05 이후 조건으로 국내외 AI IPO를 조사했으나 이번 조회 범위에서 최신성·비중복·공식 공시 근거·독립 보도 조건을 함께 충족하는 새 주제를 확인하지 못했다. Iambic 및 Optimal AI는 rejected-candidates.json에 따라 소식과 대표 URL을 제외했다. Transsion·ESWIN·래블업 10/14 정정·엠비디 10/15 정정·제논·엔키화이트햇·엘리스그룹 확정 공모·다비오 정정·디티에스 확정 공모는 brief-7"
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
    },
    "finished_at": "2026-10-19T08:34:52+09:00",
    "next_retry_at": null
