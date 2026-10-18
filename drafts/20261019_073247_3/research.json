@@ -1,0 +1,57 @@
+{
+ "topic": "Discovering state-of-the-art quantum circuits with large language models",
+ "source_url": "https://arxiv.org/abs/2610.22367",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Discovering state-of-the-art quantum circuits with large language models — abstract and submission history",
+   "url": "https://arxiv.org/abs/2610.22367",
+   "publisher": "arXiv / Andi Gu 등",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Discovering state-of-the-art quantum circuits with large language models — v1 full text",
+   "url": "https://arxiv.org/html/2610.22367v1",
+   "publisher": "Andi Gu, Alek H. Kemeny, Susanne F. Yelin, Mikhail D. Lukin / arXiv",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Harvard, Anthropic, and QuEra Use LLMs to Discover Quantum Circuits with Up to 9,100x Lower Resource Costs",
+   "url": "https://quantumcomputingreport.com/harvard-anthropic-and-quera-use-llms-to-discover-quantum-circuits-with-up-to-9100x-lower-resource-costs/",
+   "publisher": "Quantum Computing Report / Global Quantum Intelligence",
+   "published": "2026-10-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.22367v1/fig-dqi-rs.png",
+   "page_url": "https://arxiv.org/html/2610.22367v1",
+   "caption": "보충자료 Figure S1: Reed–Solomon 복호기의 단계별 Toffoli 비용과 DQI 표본의 이력 저장 깊이 분포",
+   "credit": "Andi Gu 외, arXiv:2610.22367v1, CC BY-NC-SA 4.0"
+  }
+ ],
+ "selection": {
+  "window_start": "2026-10-12",
+  "window_end": "2026-10-19",
+  "duplicate_check": "brief-3.md의 전체 발행 목록·최근 원고 및 rejected-candidates.json 대조: 동일 소식·대표 URL 없음",
+  "independent_coverage": "S3 2026-10-17 기사 직접 읽음. 수치·기술적 주장은 S2로 확인하며 보도만의 주장은 채택하지 않음."
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "2026-10-18 UTC 별도 사실 검증 세션에서 policy.md·task.json·brief-3.md 및 post.json 전체를 읽고 arXiv 소개 페이지·v1 HTML의 소속, 본문, 표 1, Methods, Evolutionary search, Figure S1 캡션과 이미지 링크를 다시 열어 대조했다. 독립 보도 날짜와 본문도 재조회했다. 기존 검증 기록의 true 값을 그대로 승인하지 않고 주장별로 다시 확인했다. 반복 사실은 한 항목으로 묶었으며 자체 실행 여부·검증 단계 상태·해석·독자 제안은 claims 집계에서 제외했다. 공식 본문에 접근 가능했고 핵심 주장 근거가 확보되어 skip.json 생성 사유는 없다. 실험 재현이나 발행 승인은 수행하지 않았다. 모듈러 역원의 입력 조건과 수치 정밀도 표현을 명확히 수정했으며 확인 불가해 삭제한 외부 주장은 없다."
+ },
+ "independent_coverage_check": {
+  "url": "https://quantumcomputingreport.com/harvard-anthropic-and-quera-use-llms-to-discover-quantum-circuits-with-up-to-9100x-lower-resource-costs/",
+  "published": "2026-10-17",
+  "read_method": "이번 별도 검증 세션의 web.open 기사 본문·날짜 재조회",
+  "result": "연구진과 독립된 Global Quantum Intelligence 기사 확인. 보도의 확장 수치 대신 공식 논문 표를 사용."
+ }
+}
