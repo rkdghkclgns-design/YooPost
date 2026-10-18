@@ -3,9 +3,9 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
-  "category": "AI 논문 분석",
-  "taken_over": "2026-10-19T07:27:29+09:00",
+  "status": "writing",
+  "category": "AI 뉴스 리뷰",
+  "taken_over": "2026-10-19T07:33:14+09:00",
   "first_taken_over": "2026-10-19T07:15:30+09:00",
   "reason": "실행 기록 없음",
   "last_result": "done"
