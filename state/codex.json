@@ -23,12 +23,11 @@
    }
   },
   "20261019:daily:AI 도구": {
-   "at": "2026-10-19T07:21:55+09:00",
-   "count": 1,
-   "status": "skipped",
+   "at": "2026-10-19T07:59:13+09:00",
+   "count": 2,
+   "status": "writing",
    "note": "다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.jso",
    "failure_kind": "source_unavailable",
-   "finished_at": "2026-10-19T07:26:59+09:00",
    "rejected_candidates": [
     {
      "title": "NVIDIA App MCP 서버: AI 에이전트 제어 기능과 설정 점검",
@@ -49,7 +48,6 @@
      "reason": "Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelog.json에 보존했다. 공식 제품 소개 페"
     }
    ],
-   "next_retry_at": "2026-10-19T07:56:59+09:00",
    "last_notified": {
     "result": "skipped",
     "kind": "source_unavailable",
@@ -178,7 +176,21 @@
    }
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "39174542548-1",
+  "at": "2026-10-19T07:59:13+09:00",
+  "expires": "2026-10-19T09:59:13+09:00",
+  "task": {
+   "day": "20261019",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 도구",
+   "topic": "",
+   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: Cline v4.1.25의 Cloud sessions·기본 모델 변경을 신규 후보로 선정했다. 독립 매체 검색에서 2026-10-16 업데이트 보도를 확인했으나 대표 공식 변경 기록 https://cline.bot/changelog 는 웹 조회 도구에서 본문을 읽지 못했다. 정책에 따라 같은 URL을 urllib로 제한 시간 20초로 한 번 직접 조회한 결과 HTTP 404를 확인했다. 최종 URL·HTTP 상태·조회 시각·응답 전체는 source-evidence/cline-changelo",
+   "owner": "39174542548-1",
+   "at": "2026-10-19T07:59:13+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
