@@ -1,0 +1,200 @@
+{
+ "claims": [
+  {
+   "claim": "RapidCanvas가 2026-10-16 투자 유치를 발표했다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. 공식 페이지 날짜와 본문 첫 문장의 Oct. 16, 2026을 재확인.",
+   "locations": "intro; sections[0].table"
+  },
+  {
+   "claim": "이번 투자 단계는 시리즈 B다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. 본문에서 Series B funding 확인.",
+   "locations": "title; summary; sections[0]"
+  },
+  {
+   "claim": "신규 조달액은 2,900만 달러다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. 본문 $29 million과 대조. 누적액과 구분.",
+   "locations": "title; summary; sections[0]; sections[3].table; faq[0]"
+  },
+  {
+   "claim": "누적 조달액은 5,250만 달러다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. financing brings total funding to $52.5 million 확인.",
+   "locations": "summary; sections[0]; faq[0]"
+  },
+  {
+   "claim": "Vertex Ventures SEA & India가 주도했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. 투자자 본문 led by와 일치.",
+   "locations": "summary; sections[0]"
+  },
+  {
+   "claim": "Hitachi Ventures가 참여했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. 본문 participation from 확인.",
+   "locations": "summary; sections[0]"
+  },
+  {
+   "claim": "기존 투자자 Accel도 참여했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. existing investors 명단과 일치.",
+   "locations": "sections[0].blocks[0]"
+  },
+  {
+   "claim": "기존 투자자 Peak XV Partners도 참여했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. existing investors 명단과 일치.",
+   "locations": "sections[0].blocks[0]"
+  },
+  {
+   "claim": "기존 투자자 Valley Capital Partners도 참여했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. existing investors 명단과 일치.",
+   "locations": "sections[0].blocks[0]"
+  },
+  {
+   "claim": "기존 투자자 Titanium Ventures도 참여했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. existing investors 명단과 일치.",
+   "locations": "sections[0].blocks[0]"
+  },
+  {
+   "claim": "현장 AI 엔지니어와 플랫폼을 결합한다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. pairs its AI platform with field AI engineers 확인.",
+   "locations": "summary; sections[1]; faq[1]"
+  },
+  {
+   "claim": "엔지니어가 고객 업무를 익히고 맞춤형 애플리케이션을 설계·구축한다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. learn business processes, design and build custom AI applications 확인.",
+   "locations": "sections[1].blocks[0]"
+  },
+  {
+   "claim": "회사는 엔지니어가 납품 뒤에도 결과에 책임을 진다고 설명한다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "회사 설명임을 명시하도록 문장 수정. stay accountable ... outcomes after delivery 확인. 무조건 성공 보증으로 해석하지 않음.",
+   "locations": "sections[1].blocks[0]"
+  },
+  {
+   "claim": "회사가 이 결합 방식을 Hybrid Approach로 부른다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. 부제와 본문의 Hybrid Approach 및 결합 설명 확인.",
+   "locations": "sections[1].heading; sections[1].blocks[0]"
+  },
+  {
+   "claim": "Enterprise Context Engine은 업무 맥락을 정리하는 제품이다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. requirements, tribal knowledge, data schemas, decision history를 capture한다는 문장 확인.",
+   "locations": "sections[2].blocks[0]; sections[2].table"
+  },
+  {
+   "claim": "Visual Development Canvas는 맞춤형 AI 개발용 제품이다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. lets AI engineers rapidly build custom AI solutions 확인.",
+   "locations": "sections[2].blocks[0]; sections[2].table"
+  },
+  {
+   "claim": "Operational Harness는 배포 후 관리와 거버넌스 제품이다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. manages and governs ... deployed in production 확인.",
+   "locations": "sections[2].blocks[0]; sections[2].table"
+  },
+  {
+   "claim": "회사는 최근 여섯 분기 ARR 8배 성장을 발표했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. 8x growth in annual recurring revenue over the past six quarters 확인. 회사 자기 보고로 한정.",
+   "locations": "sections[3]; faq[2]"
+  },
+  {
+   "claim": "고객의 40% 초과가 복수 AI 활용 사례를 실제 운영 중이라고 발표했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. More than 40% ... multiple AI use cases in production 확인. 40% 이상으로 바꾸지 않음.",
+   "locations": "sections[3].blocks[0]; sections[3].table"
+  },
+  {
+   "claim": "영업·시장 진출 조직과 파트너 확대에 자금을 쓸 계획이다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. grow go-to-market teams; expand private equity and advisory partners 확인. 계획 시제로 유지.",
+   "locations": "sections[4].blocks[0]"
+  },
+  {
+   "claim": "미국·브라질·인도에서 현장 AI 엔지니어 확충을 계획했다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. field AI engineering team across India, the U.S. and Brazil 확인.",
+   "locations": "sections[4].blocks[0]"
+  },
+  {
+   "claim": "업무 맥락 엔진에 투자할 예정이다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. deepening the Enterprise Context Engine 확인.",
+   "locations": "sections[4].blocks[0]"
+  },
+  {
+   "claim": "개발 스킬 라이브러리 확대에 투자할 예정이다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. expanding skills library behind Visual Development Canvas 확인.",
+   "locations": "sections[4].blocks[0]"
+  },
+  {
+   "claim": "운영 거버넌스 강화에 투자할 예정이다.",
+   "url": "https://www.vertexventures.sg/news/rapidcanvas-raises-29-million-in-series-b-round-led-by-vertex-ventures-sea-india/",
+   "confirmed": true,
+   "action": "유지. strengthening governance in Operational Harness 확인.",
+   "locations": "sections[4].blocks[0]"
+  },
+  {
+   "claim": "공식 발표가 말하는 대상 기업의 매출 범위는 1억~100억 달러다.",
+   "url": "https://www.rapidcanvas.ai/newsroom/rapidcanvas-raises-29m-series-b-to-bring-fortune-100-grade-ai-to-every-enterprise",
+   "confirmed": true,
+   "action": "유지. $100 million to $10 billion 확인. 매출 범위이지 기업가치가 아님.",
+   "locations": "sections[5].blocks[1]"
+  },
+  {
+   "claim": "SiliconANGLE은 2026-10-16 RapidCanvas의 투자와 기업용 AI 사업 방식을 보도했다.",
+   "url": "https://siliconangle.com/2026/10/16/rapidcanvas-raises-29m-to-develop-custom-ai-applications-for-enterprises/",
+   "confirmed": true,
+   "action": "유지. 이번 세션에서 기사에 표시된 날짜와 투자·사업 설명 본문을 직접 재열람해 확인."
+  },
+  {
+   "claim": "The Next Web은 2026-10-16 RapidCanvas의 투자와 기업용 AI 사업 방식을 보도했다.",
+   "url": "https://thenextweb.com/news/rapidcanvas-29m-series-b-enterprise-ai",
+   "confirmed": true,
+   "action": "유지. 이번 세션에서 기사에 표시된 날짜와 투자·사업 설명 본문을 직접 재열람해 확인."
+  },
+  {
+   "claim": "SiliconANGLE은 대상 기업의 연 매출을 1억~10억 달러로 적어 공식 발표의 1억~100억 달러와 차이가 있다.",
+   "url": "https://siliconangle.com/2026/10/16/rapidcanvas-raises-29m-to-develop-custom-ai-applications-for-enterprises/",
+   "confirmed": true,
+   "action": "유지. SiliconANGLE 본문 매출 범위를 공식 발표의 범위(C25)와 대조. 차이의 원인은 추측하지 않음."
+  }
+ ],
+ "note": "이번 별도 사실 검증 세션에서 post.json의 제목·도입·요약·본문·표·FAQ·맺음말을 검토하고 S1·S2 공식 원문과 S3·S4 독립 보도를 web open으로 다시 열어 본문 및 페이지 날짜를 읽었다. 외부 사실은 반복을 합쳐 28건이며 모두 확인했다. C26의 두 매체 보도는 매체별로 나누고 각 실제 기사 URL을 부여했다. 회사 발표 수치는 독립 성능 검증으로 간주하지 않았다. 도입 질문·가상 상황·해석·자체 실행 여부는 외부 사실 개수에서 제외했다. 공식 본문 조회 실패가 없어 HTTP 대체 조회나 skip.json 생성 사유는 없다. 승인·발행은 수행하지 않았다.",
+ "checked_at_utc": "2026-10-18T22:38:55.744771+00:00",
+ "evidence_file": "source-evidence/factcheck-reopened.json"
+}
