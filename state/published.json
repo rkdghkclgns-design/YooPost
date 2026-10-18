@@ -3370,5 +3370,21 @@
    "https://chasingnext.com/updates/pplx-decider-v1-2"
   ],
   "draft_id": "20261019_072129_1"
+ },
+ {
+  "date": "2026-10-19",
+  "title": "🧠 LLM 양자회로 논문 분석: 8개 과제 중 7개 자원 절감 총정리",
+  "topic": "Discovering state-of-the-art quantum circuits with large language models",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.22367",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/llm-8-7.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.22367",
+   "https://arxiv.org/html/2610.22367v1",
+   "https://quantumcomputingreport.com/harvard-anthropic-and-quera-use-llms-to-discover-quantum-circuits-with-up-to-9100x-lower-resource-costs/"
+  ],
+  "draft_id": "20261019_073247_3"
  }
 ]
