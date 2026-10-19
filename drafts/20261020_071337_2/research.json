@@ -1,0 +1,68 @@
+{
+ "topic": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool (TechCrunch, 2026-10-19) · AWS TorchNeuron: native PyTorch backend for Trainium",
+ "source_url": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Amazon opens its AWS Trainium AI chips to every PyTorch developer, no rewrite needed",
+   "url": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+   "publisher": "Amazon",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool",
+   "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "How Deepgram optimized voice AI at scale with AWS Trainium",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/",
+   "publisher": "AWS Machine Learning Blog",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "TorchNeuron: Native PyTorch on AWS Neuron (AWS Neuron documentation)",
+   "url": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-intro/pytorch-setup/pytorch-install.xhtml",
+   "publisher": "AWS Neuron",
+   "published": null,
+   "official": true,
+   "date_note": "페이지에 게시일 표기 없음(메타 태그도 없음). 상단에 \"Neuron 2.33.0 is released!\", 본문에 \"TorchNeuron is in public beta for the Neuron 2.33 release\" 확인."
+  },
+  {
+   "id": "S5",
+   "title": "Announcement: transition to native PyTorch support (TorchNeuron)",
+   "url": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/announcements/index/tag/announce-transition-pytorch-trainium.html",
+   "publisher": "AWS Neuron",
+   "published": "2025-12-16",
+   "official": true,
+   "date_note": "배경 설명용 과거 공지"
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/12/ML-21906-1-1.png",
+   "page_url": "https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/",
+   "caption": "Deepgram 사례: Nova-3 인코더·디코더를 미리 컴파일해 Rust 런타임으로 서빙하는 Trainium2 구성도",
+   "credit": "Amazon Web Services"
+  }
+ ],
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 48,
+  "removed": [
+   "아마존은 이것이 PyTorch를 바탕으로 만들어져 PyTorch에 익숙한 개발자가 그대로 쓸 수 있다고 설명합니다. ('새 프레임워크를 배우지 않아도 된다' 표현이 발표문에 없음 → 발표문의 하드웨어 등록·도구 호환 설명으로 교체)",
+   "글에 따르면 최적 설정은 작업과 병목에 따라 다릅니다. (원문에 없는 일반화 → 낮은 배치에서 호스트 디스패치 병목 설명으로 교체)",
+   "이 부분은 오픈소스 저장소와 Quickstart 문서가 공개되면 확인하셔야 합니다. (Quickstart 문서는 이미 링크돼 있음 → 수정)",
+   "실시간 대화 AI 기업 Cartesia / 뇌 발달 연구소 Lieber Institute for Brain Development (발표문에 '실시간'·정식 명칭 없음 → 발표문의 설명으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S2·S3·S4·S5 를 WebFetch·curl 로 다시 열어 52개 주장 대조. published 확인 — S1 메타 article:published_time 2026-10-19(본문엔 날짜 표기 없음), S2 본문 2026-10-19, S3 본문·메타 2026-10-19, S5 본문 16 December 2025, S4 날짜 표기 없음. 수정: ① '거의 수정 없이'(출처에 없음) → 아마존 표현 'no rewrite·설정 한 곳 변경'으로(도입·본문·표·FAQ·맺음말 모두) ② Colin Brace 발언 의역을 원문에 가깝게 번역하고 영어 원문 병기(직함 VP of Technology Software, Annapurna Labs 확인) ③ AMD·애플 칩 이식 문장은 아마존 발언이 아니라 TechCrunch 기자 서술 → 출처 귀속 수정 ④ CUDA 기본값 문장, 네오클라우드 문장, Trainium 정보 박스(가격 대비 성능·학습/추론 한 플랫폼=브레이스 발언, 토큰당 최저가 아님)를 원문대로 수정 ⑤ Deepgram 11~70%(S3 원문, 오프라인 배치·trn2.3xlarge 1대·복제본 8개)와 TechCrunch 70%('at production-grade accuracy')는 원문 확인, 범위 최대치 인용임을 유지 ⑥ Neuron 문서 'TorchNeuron is in public beta for the Neuron 2.33 release'·trn2/trn3·PrivateUse1·.to('neuron')·autocast·backend=\"neuron\"·mode 옵션 제거·import 불필요·DDP/FSDP2/DTensor/PP/CP 확인 ⑦ S1·S4 제목을 페이지 실제 제목으로 수정. 보완(확인된 사실): @nki.jit 커널 임포트 불필요, Quickstart·Troubleshooting 문서 존재, 하드웨어 중립 목표, Deepgram 글의 TorchNeuron 정의, 낮은 배치의 호스트 디스패치 병목, 가격은 평가 당시 인스턴스 가격. 인용 이미지 I1 은 HTTP 200 image/png 2364x1328 본문 그림 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
