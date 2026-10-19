@@ -128,3 +128,77 @@ test("watchdog endpoint requires the existing private storage credential", async
   });
   assert.equal(response.status, 401);
 });
+
+test("a transient GitHub read timeout retries without duplicate dispatches", async t => {
+  const f = fixture(t);
+  const fetch = globalThis.fetch;
+  let reads = 0;
+  globalThis.fetch = async (url, init) => {
+    const u = new URL(url);
+    if (u.pathname.includes("codex_fallback.yml/runs") && u.searchParams.get("status") === "queued") {
+      reads++;
+      if (reads === 1) throw new DOMException("read timed out", "TimeoutError");
+    }
+    return fetch(url, init);
+  };
+  const state = await f.tick();
+  assert.equal(state.status, "ok");
+  assert.equal(reads, 2);
+  for (const workflow of ["codex_fallback.yml", "cloud_drafts.yml"]) {
+    assert.equal(f.calls.filter(c => c.path.includes(workflow + "/dispatches")).length, 1);
+    assert.equal(state.workflows[workflow].actions.length, 1);
+  }
+});
+
+test("persistent GitHub read timeouts stop after one retry and identify the endpoint", async t => {
+  const f = fixture(t);
+  const fetch = globalThis.fetch;
+  let reads = 0;
+  globalThis.fetch = async (url, init) => {
+    const u = new URL(url);
+    if (u.pathname.includes("codex_fallback.yml/runs") && u.searchParams.get("status") === "queued") {
+      reads++;
+      throw new DOMException("read timed out", "TimeoutError");
+    }
+    return fetch(url, init);
+  };
+  const state = await f.tick();
+  assert.equal(state.status, "error");
+  assert.equal(reads, 2);
+  assert.match(state.error, /GET actions\/workflows\/codex_fallback.yml\/runs/);
+  assert.equal(f.calls.filter(c => c.path.endsWith("/dispatches")).length, 0);
+});
+
+test("an ambiguous dispatch timeout is not retried after restarting the watchdog", async t => {
+  const f = fixture(t);
+  const fetch = globalThis.fetch;
+  let dispatches = 0;
+  globalThis.fetch = async (url, init) => {
+    if (new URL(url).pathname.includes("codex_fallback.yml/dispatches")) {
+      dispatches++;
+      throw new DOMException("dispatch response timed out", "TimeoutError");
+    }
+    return fetch(url, init);
+  };
+  const state = await f.tick();
+  assert.equal(state.status, "error");
+  assert.equal(state.workflows["codex_fallback.yml"].actions.length, 1);
+  f.restart();
+  f.advance(60_000);
+  await f.tick();
+  assert.equal(dispatches, 1);
+});
+
+test("read retry cannot extend the watchdog's shared time budget", async t => {
+  const f = fixture(t);
+  const obj = new CloudWatchdog(f.ctx, f.env);
+  obj.deadline = Date.now() + 20_000;
+  let reads = 0;
+  globalThis.fetch = async () => {
+    reads++;
+    f.advance(20_001);
+    throw new DOMException("read timed out", "TimeoutError");
+  };
+  await assert.rejects(obj.api("actions/workflows/codex_fallback.yml/runs"), /시간 초과/);
+  assert.equal(reads, 1);
+});

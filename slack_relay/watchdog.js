@@ -40,19 +40,33 @@ export class CloudWatchdog {
 
   async api(path, method = "GET", body) {
     if (!this.env.GITHUB_TOKEN || !this.env.GITHUB_REPO) throw new Error("GitHub 인증 설정 필요");
-    const remaining = this.deadline - Date.now();
-    if (remaining <= 0) throw new Error("클라우드 점검 시간 초과 — 다음 예약에서 재확인");
-    const response = await fetch(`https://api.github.com/repos/${this.env.GITHUB_REPO}/${path}`, {
-      method,
-      headers: { Authorization: `Bearer ${this.env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "yoopost-watchdog", "Content-Type": "application/json" },
-      body: body === undefined ? undefined : JSON.stringify(body),
-      signal: AbortSignal.timeout(Math.min(5000, remaining)),
-    });
-    // 409는 취소 직전 작업 상태가 바뀐 경우도 포함한다. 다음 점검에서 다시 확인한다.
-    if (method === "POST" && path.endsWith("/cancel") && response.status === 409) return false;
-    if (!response.ok) throw new Error(`GitHub HTTP ${response.status} (${method} ${path.split("?")[0]})`);
-    return response.status === 204 || response.status === 202 ? true : response.json();
+    const endpoint = `${method} ${path.split("?")[0]}`;
+    for (let attempt = 0; ; attempt++) {
+      const remaining = this.deadline - Date.now();
+      if (remaining <= 0) throw new Error("클라우드 점검 시간 초과 — 다음 예약에서 재확인");
+      try {
+        const response = await fetch(`https://api.github.com/repos/${this.env.GITHUB_REPO}/${path}`, {
+          method,
+          headers: { Authorization: `Bearer ${this.env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "yoopost-watchdog", "Content-Type": "application/json" },
+          body: body === undefined ? undefined : JSON.stringify(body),
+          signal: AbortSignal.timeout(Math.min(5000, remaining)),
+        });
+        // 409는 취소 직전 작업 상태가 바뀐 경우도 포함한다. 다음 점검에서 다시 확인한다.
+        if (method === "POST" && path.endsWith("/cancel") && response.status === 409) return false;
+        if (!response.ok) throw new Error(`GitHub HTTP ${response.status} (${endpoint})`);
+        return response.status === 204 || response.status === 202 ? true : await response.json();
+      } catch (error) {
+        const transient = ["TimeoutError", "AbortError", "TypeError"].includes(error.name);
+        // 조회만 한 번 재시도한다. 요청 응답이 유실된 POST는 중복 실행 위험이 있다.
+        if (transient && method === "GET" && attempt === 0 && Date.now() < this.deadline) continue;
+        if (transient) {
+          const reason = error.name === "TypeError" ? "연결 실패" : "요청 시간 초과";
+          throw new Error(`GitHub ${reason} (${endpoint})`);
+        }
+        throw error;
+      }
+    }
   }
 
   async jobs(run) {
