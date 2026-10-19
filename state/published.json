@@ -3505,5 +3505,23 @@
    "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/announcements/index/tag/announce-transition-pytorch-trainium.html"
   ],
   "draft_id": "20261020_071337_2"
+ },
+ {
+  "date": "2026-10-20",
+  "title": "🖥 OpenGCUA 논문 분석: 8개 모델 평균 +19.6점·단계 53% 감소, 컴퓨터 사용 에이전트 오픈 스택 총정리",
+  "topic": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.22200",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/opengcua-8-196-53.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.22200",
+   "https://arxiv.org/html/2610.22200",
+   "https://huggingface.co/papers/2610.22200",
+   "https://aiweekly.co/alerts/alibabas-opengcua-lifts-8-models-by-196-points-on-osworld-v2",
+   "https://explainx.ai/blog/alibaba-opengcua-open-stack-generalist-computer-use-agents-osworld-v2-2026"
+  ],
+  "draft_id": "20261020_072044_3"
  }
 ]
