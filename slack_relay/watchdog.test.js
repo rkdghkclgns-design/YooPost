@@ -202,3 +202,23 @@ test("read retry cannot extend the watchdog's shared time budget", async t => {
   await assert.rejects(obj.api("actions/workflows/codex_fallback.yml/runs"), /시간 초과/);
   assert.equal(reads, 1);
 });
+
+test("endpoint diagnostics preserve the existing timeout notice deduplication", async t => {
+  const f = fixture(t);
+  const notice = "⚠️ YooPost 클라우드 복구 점검 실패: The operation was aborted due to timeout";
+  f.data.set("state", { workflows: {}, notices: { [notice]: Date.now() } });
+  const fetch = globalThis.fetch;
+  let method = "GET";
+  globalThis.fetch = async (url, init) => {
+    const u = new URL(url);
+    if ((method === "GET" && u.pathname.includes("codex_fallback.yml/runs") && u.searchParams.get("status") === "queued") ||
+        (method === "POST" && u.pathname.includes("codex_fallback.yml/dispatches"))) {
+      throw new DOMException("operation timed out", "TimeoutError");
+    }
+    return fetch(url, init);
+  };
+  assert.match((await f.tick()).error, /GET actions\/workflows/);
+  method = "POST";
+  assert.match((await f.tick()).error, /POST actions\/workflows/);
+  assert.equal(f.calls.filter(c => c.path.endsWith("chat.postMessage")).length, 0);
+});

@@ -29,7 +29,7 @@ export class CloudWatchdog {
       } catch (error) {
         state.status = "error";
         state.error = error.message.slice(0, 150);
-        await this.notice(state, `⚠️ YooPost 클라우드 복구 점검 실패: ${state.error}`);
+        await this.notice(state, `⚠️ YooPost 클라우드 복구 점검 실패: ${error.noticeMessage || state.error}`);
       }
       await this.save(state);
       return Response.json(state);
@@ -62,7 +62,10 @@ export class CloudWatchdog {
         if (transient && method === "GET" && attempt === 0 && Date.now() < this.deadline) continue;
         if (transient) {
           const reason = error.name === "TypeError" ? "연결 실패" : "요청 시간 초과";
-          throw new Error(`GitHub ${reason} (${endpoint})`);
+          const failure = new Error(`GitHub ${reason} (${endpoint})`);
+          // 상세 경로가 바뀌어도 같은 시간초과를 다시 알리지 않는다. 기존 알림 키도 유지한다.
+          failure.noticeMessage = error.name === "TypeError" ? "GitHub 연결 실패" : "The operation was aborted due to timeout";
+          throw failure;
         }
         throw error;
       }
