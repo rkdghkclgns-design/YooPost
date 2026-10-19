@@ -3487,5 +3487,23 @@
    "https://llm-stats.com/models/minimax-m3.1-flash"
   ],
   "draft_id": "20261020_070749_1"
+ },
+ {
+  "date": "2026-10-20",
+  "title": "🚀 AWS TorchNeuron 총정리: PyTorch 코드를 Trainium에서 돌리는 오픈소스 백엔드, 'cuda'를 'neuron'으로",
+  "topic": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool (TechCrunch, 2026-10-19) · AWS TorchNeuron: native PyTorch backend for Trainium",
+  "category": "AI 도구",
+  "source_url": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/aws-torchneuron-pytorch-trainium-cuda.html"
+  },
+  "sources": [
+   "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+   "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+   "https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/",
+   "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-intro/pytorch-setup/pytorch-install.xhtml",
+   "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/announcements/index/tag/announce-transition-pytorch-trainium.html"
+  ],
+  "draft_id": "20261020_071337_2"
  }
 ]
