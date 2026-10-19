@@ -1,0 +1,70 @@
+{
+ "topic": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+ "source_url": "https://arxiv.org/abs/2610.22200",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.22200",
+   "publisher": "arXiv",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use (arXiv HTML)",
+   "url": "https://arxiv.org/html/2610.22200",
+   "publisher": "arXiv",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenGCUA - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.22200",
+   "publisher": "Hugging Face",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Alibaba's OpenGCUA Lifts 8 Models by 19.6 Points on OSWorld-v2",
+   "url": "https://aiweekly.co/alerts/alibabas-opengcua-lifts-8-models-by-196-points-on-osworld-v2",
+   "publisher": "AI Weekly",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenGCUA: Alibaba Opens the Stack for Generalist Computer-Use Agents",
+   "url": "https://explainx.ai/blog/alibaba-opengcua-open-stack-generalist-computer-use-agents-osworld-v2-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.22200v1/OpenGCUA_osw2_v10_C_reasoning_compact_same_order.png",
+   "page_url": "https://arxiv.org/html/2610.22200",
+   "caption": "OSWorld-v2 실험 결과: 8개 모델의 점수와 실기기 추론 토큰 격차",
+   "credit": "OpenGCUA 저자 (arXiv 2610.22200, CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.22200v1/fig2_v3_candidate_B.png",
+   "page_url": "https://arxiv.org/html/2610.22200",
+   "caption": "OpenGCUA 등장 배경: Open Generalist CUA 개요도",
+   "credit": "OpenGCUA 저자 (arXiv 2610.22200, CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 68,
+  "confirmed": 67,
+  "removed": [
+   "OSWorld 연동 예제: 스크린샷 행동·코드 행동 참조 에이전트 (출처에서 확인 안 됨 → '표준 벤치마크에서 설계를 평가하는 예제'로 축소)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs/HTML(v1, 2026-10-15)·HF 논문 페이지(Published Oct 15)·AI Weekly(2026-10-16)·explainx.ai(2026-10-16) 모두 다시 열어 대조, 각 출처 published 날짜가 페이지 표기와 일치. 모델별 점수표 8행·평균 45.3→64.9(+19.6)·단계 53.0%·출력 토큰 27.2%·격차 39.1→18.0은 arXiv HTML 표 2와 일치. 수정: GPT-6 Astra 단계 102→34를 원문 102.1→33.5(-67.2%)로, 관찰 대상 오선택 사례 방향 정정(배경 탭 대신 전면 창을 캡처), 비용 15달러를 원문 15.26달러(OSWorld)·실기기 18.29/1.49달러로 구체화, 캐시 적중률·의도 주석 수치를 표 4로 보강, '작업 상태 자체 평가' 한계를 논문 3.2.1 문장(todo 기록은 모델 판단)으로 근거화, '전형적 GCUA 해석'을 explainx.ai 출처로 귀속, 코드 실행 vs GUI+CLI 수치를 원문 값(GLM 55.8→63.2, Qwen 단계 -17.0%)과 README 인용 평균(+6.1, -14.8%)으로 구분. 막힌(EGRESS_BLOCKED) 출처 없음."
+ }
+}
