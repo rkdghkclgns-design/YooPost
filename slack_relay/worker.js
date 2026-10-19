@@ -56,6 +56,10 @@ const DRAFT_PATH = /^\/draft\/([A-Za-z0-9][A-Za-z0-9._-]{0,119})$/;
 const MANUAL_WATCH_PATH = /^\/manual-watch\/([CG][A-Z0-9]{8,}-[0-9]{16})$/;
 const DELIVERY_PATH = /^\/delivery\/(d[a-f0-9]{64})$/;
 const PUBLISH_WATCH_MS = 15 * 60_000;
+// 발행 요청(GitHub dispatch)이 실패하면 1·2·4·8·15·30분 뒤 다시 보낸다 — 첫 요청부터 약 1시간.
+// Cloudflare→GitHub 연결이 수십 분 끊겨도(2026-10-19 약 25분) 경고·4시간 대기 없이 넘긴다.
+const DISPATCH_RETRY_MS = [1, 2, 4, 8, 15, 30].map(minutes => minutes * 60_000);
+const MAX_DISPATCH_ATTEMPTS = DISPATCH_RETRY_MS.length + 1;
 const MANUAL_START_WAIT_MS = 15 * 60_000;
 const MAX_DRAFT_BYTES = 2 * 1024 * 1024;
 const RETRYABLE = new Set(["pending", "failed"]);
@@ -453,19 +457,24 @@ export class DraftApproval {
         const draft = await this.env.IMAGES.get(`draft:${id}`, { type: "json" });
         if (!draft) return json({ result: "not a draft" }, 404);
         const current = record || { id, status: draft.status || "pending" };
+        // 발행 요청이 아직 한 번도 GitHub 에 닿지 않았으면(재시도 대기 중) ❌·✅ 를 바로 받는다.
+        const retrying = current.status === "approved" && current.dispatch_pending;
         if (input.action === "hold") {
-          if (!["pending", "failed", "held"].includes(current.status)) return json({ result: "already handled" });
-          await this.write(draft, { ...current, status: "held", held_by: input.user,
-            auto_approve_at: null, publish_watch_at: null, publish_retry_at: null, dispatch_pending: false }, null);
+          if (!["pending", "failed", "held"].includes(current.status) && !retrying) return json({ result: "already handled" });
+          await this.write(draft, { ...current, status: "held", held_by: input.user, auto_approve_at: null,
+            publish_watch_at: null, publish_retry_at: null, dispatch_pending: false, dispatch_attempts: 0,
+            dispatch_started_at: null }, null);
           await notifySlack(this.env, draft.slack?.channel, draft.slack?.ts,
             "⏸️ 원고를 보류했습니다. 자동 승인하지 않습니다. 다시 ✅ 를 누르면 승인합니다.");
           return json({ result: "held" });
         }
         if (input.action !== "approve") return new Response("invalid action", { status: 400 });
         if (!["pending", "failed", "held"].includes(current.status)
-            && !(current.status === "approved" && current.publish_alerted)) return json({ result: "already handled" });
-        await this.publish(draft, { ...current, auto_attempts: 0, dispatch_attempts: 0,
-          publish_attempts: 0, publish_alerted: false, publish_retry_at: null }, current.approved_by || input.user);
+            && !(current.status === "approved" && current.publish_alerted) && !retrying) return json({ result: "already handled" });
+        // 재시도 대기 중의 ✅ 는 다음 예약을 기다리지 않고 바로 다시 보낸다 (횟수 상한은 그대로 센다).
+        const base = retrying && !current.publish_alerted ? current : { ...current, auto_attempts: 0, dispatch_attempts: 0,
+          publish_attempts: 0, publish_alerted: false, publish_retry_at: null };
+        await this.publish(draft, base, current.approved_by || input.user);
         return json({ result: "dispatched" });
       }
       return new Response("method not allowed", { status: 405 });
@@ -633,13 +642,18 @@ export class DraftApproval {
   }
 
   async publish(draft, record, user) {
+    const attempts = (record.dispatch_attempts || 0) + 1;
     const approved = { ...record, status: "approved", approved_by: user,
       approved_at: record.approved_at || new Date(Date.now()).toISOString(), dispatch_pending: true,
-      dispatch_attempts: (record.dispatch_attempts || 0) + 1 };
+      dispatch_attempts: attempts,
+      // 이번 재시도 묶음의 시작 — 일일 원고의 4시간 재확인은 포기 시점이 아니라 여기서부터 잰다.
+      dispatch_started_at: attempts === 1 || !record.dispatch_started_at
+        ? new Date(Date.now()).toISOString() : record.dispatch_started_at };
     // 요청 도중 객체가 재시작되어도 다음 알람에서 복구한다. 발행 워크플로도 원고 ID 로 중복을 막는다.
-    await this.write(draft, approved, Date.now() + 60_000);
+    await this.write(draft, approved, Date.now() + dispatchRetryDelay(attempts));
     await dispatch(this.env, { draft_id: record.id, approved_by: user }, this.env.PUBLISH_WORKFLOW || "publish_draft.yml");
-    const watching = { ...approved, dispatch_pending: false, dispatch_attempts: 0, auto_approve_at: null,
+    const watching = { ...approved, dispatch_pending: false, dispatch_attempts: 0, dispatch_started_at: null,
+      auto_approve_at: null,
       publish_attempts: (record.publish_attempts || 0) + 1, publish_retry_at: null,
       publish_watch_at: new Date(Date.now() + PUBLISH_WATCH_MS).toISOString() };
     await this.write(draft, watching, Date.parse(watching.publish_watch_at));
@@ -648,9 +662,12 @@ export class DraftApproval {
   async stopPublishing(record) {
     let notified = record.publish_alerted;
     if (!notified) notified = await notifySlack(this.env, record.slack?.channel, record.slack?.ts,
-      record.daily_retry ? "⚠️ 일일 원고의 발행 완료를 확인하지 못했습니다. 같은 원고 ID로 4시간 후 다시 확인·요청합니다. 인증 갱신이 필요하면 조치해 주세요."
-        : "⚠️ 승인 후 발행 완료를 확인하지 못했습니다. 재시도 5회 후 중단했습니다. 실행·인증 상태를 확인하고 ✅로 다시 요청할 수 있습니다.");
-    const due = record.daily_retry ? Date.now() + 4 * 60 * 60_000 : null;
+      record.daily_retry ? "⚠️ 일일 원고의 발행 완료를 확인하지 못했습니다. 같은 원고 ID로 4시간 안에 다시 확인·요청합니다. 인증 갱신이 필요하면 조치해 주세요."
+        : "⚠️ 승인 후 발행을 요청하지 못했거나 완료를 확인하지 못해 중단했습니다. 실행·인증 상태를 확인하고 ✅로 다시 요청할 수 있습니다.");
+    // 일일 원고: 발행 요청 묶음을 시작한 지 4시간 뒤 (긴 재시도로 포기가 늦어져도 재확인이 밀리지 않게, 최소 15분 뒤)
+    const started = Date.parse(record.dispatch_started_at || "");
+    const due = record.daily_retry
+      ? Math.max(Date.now() + 15 * 60_000, (Number.isFinite(started) ? started : Date.now()) + 4 * 60 * 60_000) : null;
     await this.persist("approval", { ...record, publish_alerted: Boolean(notified),
       publish_retry_at: due ? new Date(due).toISOString() : null }, due || (notified ? null : Date.now() + 15 * 60_000));
   }
@@ -676,7 +693,7 @@ export class DraftApproval {
       if (watching && Date.parse(record.publish_watch_at) > Date.now()) {
         await this.ctx.storage.setAlarm(Date.parse(record.publish_watch_at)); return;
       }
-      if ((record.dispatch_pending && (record.dispatch_attempts || 0) >= 5)
+      if ((record.dispatch_pending && (record.dispatch_attempts || 0) >= MAX_DISPATCH_ATTEMPTS)
           || (watching && (record.publish_attempts || 0) >= 5)) return this.stopPublishing(record);
       const recovering = watching || (record.status === "approved" && record.dispatch_pending);
       if (!recovering && (record.status !== "pending" || !record.auto_approve_at || !autoApprovalEnabled(this.env))) {
@@ -711,8 +728,9 @@ export class DraftApproval {
       } catch (err) {
         console.error("auto approval dispatch failed", err.message);
         const latest = await this.ctx.storage.get("approval");
-        if ((latest.dispatch_attempts || 0) >= 5) await this.stopPublishing(latest);
-        else await this.ctx.storage.setAlarm(Date.now() + 60_000);
+        // 인증·권한·워크플로·입력 오류는 기다려도 풀리지 않는다 — 바로 알리고 멈춘다 (일일 원고는 4시간 재확인으로)
+        if (err.permanent || (latest.dispatch_attempts || 0) >= MAX_DISPATCH_ATTEMPTS) await this.stopPublishing(latest);
+        else await this.ctx.storage.setAlarm(Date.now() + dispatchRetryDelay(latest.dispatch_attempts));
       }
     });
   }
@@ -854,13 +872,26 @@ function timingSafeEqual(a, b) {
   return diff === 0;
 }
 
+// n번째 발행 요청이 실패한 뒤 다음 요청까지 기다릴 시간 (n = 1, 2, …)
+export function dispatchRetryDelay(attempts) {
+  const index = Math.min(Math.max(Number(attempts) || 1, 1), DISPATCH_RETRY_MS.length) - 1;
+  return DISPATCH_RETRY_MS[index];
+}
+
 export function dispatchUrl(env, workflow = env.GITHUB_WORKFLOW || "auto_post.yml") {
   return `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${workflow}/dispatches`;
 }
 
+function permanentError(message, status) {
+  const error = new Error(message);
+  error.status = status;
+  error.permanent = true;
+  return error;
+}
+
 async function dispatch(env, inputs, workflow) {
   if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) {
-    throw new Error("Worker 에 GITHUB_TOKEN / GITHUB_REPO 가 설정되지 않았습니다");
+    throw permanentError("Worker 에 GITHUB_TOKEN / GITHUB_REPO 가 설정되지 않았습니다");
   }
   const response = await fetch(dispatchUrl(env, workflow), {
     method: "POST",
@@ -875,7 +906,15 @@ async function dispatch(env, inputs, workflow) {
     signal: AbortSignal.timeout(10000),
   });
   if (response.status !== 204 && response.status !== 200) {
-    throw new Error(`GitHub API HTTP ${response.status}${await errorDetail(response)}`);
+    const detail = await errorDetail(response);
+    const message = `GitHub API HTTP ${response.status}${detail}`;
+    // 401 인증·404 워크플로·422 입력 오류, 요청 제한이 아닌 403 은 영구 오류. 5xx·429·요청 제한 403 은 재시도.
+    if ([401, 404, 422].includes(response.status) || (response.status === 403 && !/rate limit/i.test(detail))) {
+      throw permanentError(message, response.status);
+    }
+    const error = new Error(message);
+    error.status = response.status;
+    throw error;
   }
 }
 

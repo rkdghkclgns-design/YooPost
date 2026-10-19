@@ -166,7 +166,7 @@ test("published, excluded and failed drafts cancel auto approval", async t => {
   }
 });
 
-test("a dispatch error retries after one minute, with a five attempt cap", async t => {
+test("a dispatch error backs off 1·2·4·8·15·30 minutes (about an hour) before giving up", async t => {
   const f = fixture(t);
   await f.save();
   globalThis.fetch = async (url, init) => {
@@ -174,16 +174,181 @@ test("a dispatch error retries after one minute, with a five attempt cap", async
     return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
       : new Response("unavailable", { status: 503 });
   };
-  for (let i = 1; i <= 5; i++) {
-    f.advance(60_000);
+  const item = f.instances.get("d1");
+  f.advance(60_000); // 자동 승인 시각
+  const waits = [1, 2, 4, 8, 15, 30].map(m => m * 60_000);
+  for (let i = 1; i <= 7; i++) {
     await f.alarm();
     assert.equal((await f.read()).status, "approved");
     assert.equal((await f.read()).dispatch_attempts, i);
+    if (i <= waits.length) {
+      assert.equal(item.ctx.alarmAt, Date.now() + waits[i - 1]); // 실패할수록 간격을 늘린다
+      assert.ok(!calls.some(c => c.url.endsWith("chat.postMessage")), "포기 전에는 실패 경고를 보내지 않는다");
+      f.advance(waits[i - 1]);
+    }
   }
-  assert.equal(f.instances.get("d1").ctx.alarmAt, null);
-  assert.equal(publishes().length, 5);
+  assert.equal(item.ctx.alarmAt, null);
+  assert.equal(publishes().length, 7);
+  assert.match(calls.find(c => c.url.endsWith("chat.postMessage")).body.text, /완료를 확인하지 못해 중단했습니다/);
   await f.alarm(); // 알람 재전송도 재시도 상한을 우회하지 않는다
-  assert.equal(publishes().length, 5);
+  assert.equal(publishes().length, 7);
+});
+
+test("a 25-minute GitHub outage after approval still publishes once without a failure notice", async t => {
+  const f = fixture(t);
+  await f.save();
+  const outageEnds = Date.now() + 60_000 + 25 * 60_000;
+  const base = globalThis.fetch; // 슬랙 호출은 기본 흉내(원고 메시지 조회 포함)로 보낸다
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://slack.com/") || Date.now() >= outageEnds) return base(url, init);
+    calls.push({ url, body: init.body ? JSON.parse(init.body) : undefined });
+    throw new DOMException("The operation was aborted due to timeout", "TimeoutError");
+  };
+  const item = f.instances.get("d1");
+  f.advance(60_000);
+  await f.alarm(); // 자동 승인 → 첫 발행 요청 (끊김 중이라 실패)
+  for (let guard = 0; guard < 10 && (await f.read()).dispatch_pending; guard++) {
+    f.advance(item.ctx.alarmAt - Date.now());
+    await f.alarm();
+  }
+  const record = await f.read();
+  assert.equal(record.status, "approved");
+  assert.equal(record.dispatch_pending, false);
+  assert.equal(record.dispatch_attempts, 0); // 성공하면 재시도 횟수를 비운다
+  assert.ok(Date.now() >= outageEnds && Date.now() - outageEnds < 16 * 60_000);
+  assert.equal(calls.filter(c => c.url.includes("/publish_draft.yml/dispatches")).length, 6);
+  const notices = calls.filter(c => c.url.endsWith("chat.postMessage")).map(c => c.body.text);
+  assert.ok(!notices.some(text => text.includes("⚠️")), "끊김이 짧으면 실패 경고를 보내지 않는다");
+  assert.equal(notices.filter(text => text.includes("발행을 요청했습니다")).length, 1, "자동 승인 안내는 한 번만 남긴다");
+  assert.equal(calls.filter(c => c.url.endsWith("/chat.update")).length, 1); // 원고 메시지에 자동 승인 표시
+  assert.equal(item.ctx.alarmAt, Date.now() + 15 * 60_000); // 발행 완료 확인 대기로 넘어감
+});
+
+test("the restart-recovery alarm saved before each dispatch follows the backoff", async t => {
+  const f = fixture(t);
+  await f.save();
+  const item = f.instances.get("d1");
+  const inFlight = []; // 발행 요청을 보내는 순간(실패로 덮이기 전)의 알람 — 이때 객체가 죽으면 이 시각에 복구한다
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    if (String(url).startsWith("https://slack.com/")) return Response.json({ ok: true });
+    inFlight.push(item.ctx.alarmAt - Date.now());
+    return new Response("unavailable", { status: 503 });
+  };
+  f.advance(60_000);
+  for (let i = 0; i < 4; i++) { await f.alarm(); f.advance(item.ctx.alarmAt - Date.now()); }
+  assert.deepEqual(inFlight, [1, 2, 4, 8].map(m => m * 60_000));
+});
+
+test("permanent GitHub errors stop at once with a notice; rate limits keep the backoff", async t => {
+  const f = fixture(t);
+  await f.save();
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
+      : Response.json({ message: "Bad credentials" }, { status: 401 });
+  };
+  f.advance(60_000);
+  await f.alarm();
+  assert.equal(publishes().length, 1); // 인증 오류는 기다려도 풀리지 않는다
+  assert.equal((await f.read()).publish_alerted, true);
+  assert.equal(f.instances.get("d1").ctx.alarmAt, null);
+  assert.match(calls.find(c => c.url.endsWith("chat.postMessage")).body.text, /인증 상태를 확인/);
+
+  t.mock.restoreAll();
+  const g = fixture(t, "d2");
+  await g.save();
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
+      : Response.json({ message: "You have exceeded a secondary rate limit" }, { status: 403 });
+  };
+  g.advance(60_000);
+  await g.alarm();
+  assert.equal(g.instances.get("d2").ctx.alarmAt, Date.now() + 60_000); // 요청 제한은 잠시 뒤 다시
+  assert.notEqual((await g.read()).publish_alerted, true);
+});
+
+test("❌ during the dispatch backoff holds the draft and stops further requests", async t => {
+  const f = fixture(t);
+  await f.save();
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
+      : new Response("unavailable", { status: 503 });
+  };
+  f.advance(60_000);
+  await f.alarm(); // 자동 승인 → 발행 요청 실패 → 재시도 대기
+  assert.equal(await f.manual("x"), "held");
+  const record = await f.read();
+  assert.equal(record.status, "held");
+  assert.equal(record.dispatch_pending, false);
+  assert.equal(f.instances.get("d1").ctx.alarmAt, null);
+  f.advance(2 * 60 * 60_000);
+  await f.alarm();
+  assert.equal(publishes().length, 1);
+});
+
+test("✅ during the dispatch backoff retries at once and keeps counting toward the cap", async t => {
+  const f = fixture(t);
+  await f.save();
+  let down = true;
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    if (String(url).startsWith("https://slack.com/")) return Response.json({ ok: true });
+    return down ? new Response("unavailable", { status: 503 }) : new Response(null, { status: 204 });
+  };
+  f.advance(60_000);
+  await f.alarm();
+  await f.alarm(); // 이미 기다리는 중인 재시도
+  assert.equal((await f.read()).dispatch_attempts, 2);
+  down = false;
+  assert.equal(await f.manual(), "dispatched"); // 다음 예약(4분 뒤)을 기다리지 않는다
+  assert.equal(publishes().length, 3);
+  assert.equal((await f.read()).dispatch_pending, false);
+  assert.equal(await f.manual(), "already handled"); // 요청이 닿은 뒤에는 중복 요청하지 않는다
+});
+
+test("a daily draft that exhausts the backoff rechecks 4 hours after the first request", async t => {
+  const id = "20261019_072129_1", f = fixture(t, id);
+  await f.save();
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return String(url).startsWith("https://slack.com/") ? Response.json({ ok: true })
+      : new Response("unavailable", { status: 503 });
+  };
+  const item = f.instances.get(id);
+  f.advance(60_000);
+  const firstRequest = Date.now();
+  for (let i = 0; i < 7; i++) { await f.alarm(); if (item.ctx.alarmAt) f.advance(item.ctx.alarmAt - Date.now()); }
+  const record = await f.read();
+  assert.equal(record.publish_alerted, true);
+  assert.equal(Date.parse(record.publish_retry_at), firstRequest + 4 * 60 * 60_000);
+  assert.equal(item.ctx.alarmAt, firstRequest + 4 * 60 * 60_000);
+});
+
+test("a manual ✅ during an outage keeps retrying from the alarm with the same backoff", async t => {
+  const f = fixture(t);
+  await f.save();
+  let down = true;
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url, body: init.body ? JSON.parse(init.body) : undefined });
+    if (String(url).startsWith("https://slack.com/")) return Response.json({ ok: true });
+    if (down) throw new TypeError("network connection lost");
+    return new Response(null, { status: 204 });
+  };
+  await assert.rejects(f.manual()); // 발행 요청이 실패해도 승인은 저장된다
+  const item = f.instances.get("d1");
+  assert.equal((await f.read()).approved_by, "U1");
+  assert.equal(item.ctx.alarmAt, Date.now() + 60_000);
+  f.advance(60_000);
+  await f.alarm();
+  assert.equal(item.ctx.alarmAt, Date.now() + 2 * 60_000);
+  down = false;
+  f.advance(2 * 60_000);
+  await f.alarm();
+  assert.deepEqual(publishes().at(-1).body.inputs, { draft_id: "d1", approved_by: "U1" });
+  assert.equal((await f.read()).dispatch_pending, false);
 });
 
 test("the deadline is measured from the Slack post, not from the last upload", async t => {
