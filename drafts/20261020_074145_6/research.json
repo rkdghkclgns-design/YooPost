@@ -1,0 +1,88 @@
+{
+ "topic": "Federal Reserve Beige Book October 2026 — AI와 고용 (5개 지역 채용 지연·자연 감소)",
+ "source_url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Beige Book October 2026 — National Summary",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
+   "publisher": "Federal Reserve",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Beige Book October 2026 — Dallas",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-dallas.htm",
+   "publisher": "Federal Reserve Bank of Dallas",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Beige Book October 2026 — Minneapolis",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-minneapolis.htm",
+   "publisher": "Federal Reserve Bank of Minneapolis",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Beige Book October 2026 — Cleveland",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-cleveland.htm",
+   "publisher": "Federal Reserve Bank of Cleveland",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Beige Book October 2026 — Philadelphia",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-philadelphia.htm",
+   "publisher": "Federal Reserve Bank of Philadelphia",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "AI Isn't Coming for American Jobs Someday. The Fed Says It's Already Happening.",
+   "url": "https://247wallst.com/investing/2026/10/15/ai-isnt-coming-for-american-jobs-someday-the-fed-says-its-already-happening/",
+   "publisher": "24/7 Wall St.",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Fed Districts Detail AI Pressure on Hiring as Employment Grows",
+   "url": "https://www.tokenpost.com/news/technology/32137",
+   "publisher": "TokenPost",
+   "published": "2026-10-14",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Beige Book October 2026 — Atlanta",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-atlanta.htm",
+   "publisher": "Federal Reserve Bank of Atlanta",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 on Weak Early Seasonal Hiring",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "연준 베이지북은 글자 위주의 문서라 본문에 원고 내용을 보여 주는 그림·도표가 없습니다.",
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 51,
+  "removed": [
+   "매체가 인용한 … 빅테크 설비투자 규모 같은 수치(24/7 Wall St.가 인용한 골드만삭스 추정 2026년 빅테크 4사 설비투자 약 7,570억 달러) — 기사에 원자료 링크가 없고 검색으로도 확인되지 않아 삭제"
+  ],
+  "note": "Opus 검증: 연준 전국 요약·댈러스·클리블랜드·미니애폴리스·필라델피아·애틀랜타 지역 페이지(모두 'Last Update: October 14, 2026', 정보 수집 10월 5일까지)와 24/7 Wall St.(페이지 표기 Oct 15, 2026), TokenPost(페이지 표기 Oct 14, 2026), Challenger 9월 보고서(2026-10-01)를 다시 열어 문장 단위로 대조. 고친 것: ① '소비 지출 절반 넘게 고소득 가구'는 매체 주장이 아니라 연준 전국 요약 원문(Over half of the Districts…)이므로 연준 내용으로 바로잡고, '고용 없는 성장→소비 약화'만 매체 해석으로 구분 ② 'specialized, technical, and skilled trade workers' 번역을 '전문직'→'전문 분야·기술직·숙련 기능직 인력'으로 ③ 물가에 '완만 1곳' 추가(3+8+1) ④ AI 관련 감원 12만 건은 Challenger 원자료(1~9월 120,136건, 약 21%, 누적 1위 사유)로 확인해 출처 S9 추가·민간 집계로 명시. 보완: 클리블랜드 비인건비 압력 11기 연속 강함·판매가격 큰 폭 상승, 애틀랜타 고용 제자리·AI 도입 확대(단기 대규모 감축 예상 안 함, S8 추가), 댈러스 데이터센터 건설의 인건비 상승·텍사스 허가 동결."
+ }
+}
