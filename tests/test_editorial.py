@@ -73,3 +73,9 @@ def test_cutover_does_not_block_in_flight_legacy_drafts_but_new_day_cannot_omit_
     # A version declaration is checked immediately, even before the cutoff.
     research['editorial'] = {'standard_version': 1}
     assert editorial_problems(content, research, '20261020')
+
+
+def test_unusable_source_url_cannot_be_used_as_manifest_evidence():
+    content, research = sample()
+    research['sources'][1]['url'] = 'not-an-http-url'
+    assert any('출처 ID' in p for p in editorial_problems(content, research, '20261021'))

@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import re
 from .content import PostContent
+from .links import is_http_url
 
 STANDARD_VERSION = 1
 REQUIRED_FROM_DAY = "20261021"
@@ -52,7 +53,7 @@ def editorial_problems(content: PostContent, research: dict, day: str) -> list[s
     if not isinstance(items, list):
         return problems + ["editorial.contributions가 배열이 아닙니다"]
     sources = {str(s.get("id", "")).upper(): str(s.get("url", "")).split("#")[0].rstrip("/")
-               for s in research.get("sources", []) if isinstance(s, dict)}
+               for s in research.get("sources", []) if isinstance(s, dict) and is_http_url(str(s.get("url") or ""))}
     sections = {s.heading: _norm(" ".join(t for b in s.blocks if b.kind in {"paragraph", "info", "warning", "list", "table"} for t in b.texts()))
                 for s in content.sections}
     valid = []
