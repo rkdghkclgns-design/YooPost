@@ -1,0 +1,78 @@
+{
+ "topic": "Opening up the in-house search API — DeepSeek Search & Fetch (2026-10-17)",
+ "source_url": "https://api-docs.deepseek.com/updates/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Change Log — Opening up the in-house search API",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "publisher": "DeepSeek",
+   "published": "2026-10-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Search & Fetch",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "publisher": "DeepSeek",
+   "published": null,
+   "official": true,
+   "date_note": "문서 자체 게시일 표기 없음. 출시일은 S1의 날짜로 확인."
+  },
+  {
+   "id": "S3",
+   "title": "Search API Reference",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "publisher": "DeepSeek",
+   "published": null,
+   "official": true,
+   "date_note": "게시일 표기 없음. 응답 예시의 날짜는 게시일로 사용하지 않음."
+  },
+  {
+   "id": "S4",
+   "title": "Fetch API Reference",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "publisher": "DeepSeek",
+   "published": null,
+   "official": true,
+   "date_note": "게시일 표기 없음."
+  },
+  {
+   "id": "S5",
+   "title": "DeepSeek opens Search and Fetch APIs at $0.75 per 1,000",
+   "url": "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api",
+   "publisher": "Venture Atlas",
+   "published": "2026-10-17",
+   "official": false,
+   "note": "기사 자체는 다른 출처를 자동화된 AI 보조 조사로 요약했으며 자체 취재가 아니라고 밝힌다. 타사 매체 게재 사례로만 사용한다."
+  }
+ ],
+ "images": [],
+ "images_none_reason": "실제 읽은 공식 변경 기록·Search & Fetch 가이드·두 API 명세에는 본문 인용에 적합한 제품 화면이나 도표 이미지가 없다. 코드·표는 텍스트이며 WeChat QR코드는 인용 이미지에서 제외했다.",
+ "factcheck": {
+  "claims": 30,
+  "confirmed": 29,
+  "removed": [
+   "독립적인 보도 사례라는 표현을 타사 매체의 요약 사례로 수정",
+   "보도자료 재배포문 아님이라는 미입증 출처 분류 삭제"
+  ],
+  "note": "2026-10-19 별도 사실 검증 세션에서 post.json의 제목·도입·요약·표·본문·FAQ·맺음말을 대조했다. 반복된 외부 주장은 합산했다. 공식 변경 기록과 Fetch 명세, Venture Atlas 기사를 웹 도구로 다시 읽었다. 가이드와 Search 명세는 웹 도구가 본문을 반환하지 않아 동일 공개 URL을 urllib로 각각 한 번, 제한 시간 20초로 조회했고 둘 다 HTTP 200의 실제 문서 본문을 읽었다. 최종 URL·HTTP 상태·UTC 조회 시각·원본 HTML·추출 본문은 source-evidence/factcheck-guide.json 및 factcheck-search.json에 저장했다. 가격·출시일·입력 조건·요금 전환·호출 제한에 반하는 사실은 발견하지 않았다. 무료 적용 범위를 summary에도 명시하고 제목에 성공 요청 조건을 추가했다. 자체 실행 여부·품질 미측정 안내·작성자 제안과 프롬프트·검증 단계 설명은 외부 사실 개수에서 제외했다. 유료 API 호출·발행·승인·다른 주제 교체는 수행하지 않았다. 공식 문서의 게시일 미표기와 타사 매체의 AI 요약 성격은 유지했다. 타사 매체 게재 사실은 확인되나 자체 취재의 독립성까지 확인한 것은 아니다."
+ },
+ "eligibility": {
+  "category": "AI 도구",
+  "official_announcement_date": "2026-10-17",
+  "window_start": "2026-10-16",
+  "independent_coverage_date": "2026-10-17",
+  "duplicate_check": "brief-2.md 전체의 기존 소식·최근 원고 및 rejected-candidates.json 대조. 기존 DeepSeek-V4.1-Flash-1017 모델 성능 소식과 구분해 새 Search·Fetch API 개방만 다룬다. 대표 원문 updates/는 기존 글의 news/news261017/과 다르다.",
+  "rejected_candidate_reused": false,
+  "independent_coverage_note": "타사 매체의 2026-10-17 게재를 직접 확인했다. 자체 취재 보도가 아닌 AI 보조 요약이며 독립 성능 검증으로 사용하지 않는다."
+ },
+ "format_check": {
+  "body_chars_without_whitespace_code_urls_faq_summary": 5090,
+  "sections": 8,
+  "tables": 4,
+  "faq": 5,
+  "paragraph_emphasis": "모든 본문 paragraph에 강조 포함",
+  "json_valid": true
+ }
+}
