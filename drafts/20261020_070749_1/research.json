@@ -1,0 +1,70 @@
+{
+ "topic": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost",
+ "source_url": "https://www.minimax.io/blog/minimax-m31f",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "publisher": "MiniMax",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "MiniMax's new M3.1 Flash beats DeepSeek and Opus 5 on a key business benchmark at lower cost — but with a high hallucination rate",
+   "url": "https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate",
+   "publisher": "VentureBeat",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "MiniMax M3.1 Flash Launched With 200 Trillion Tokens of Proof. The Name Came Second.",
+   "url": "https://forkast.news/minimax-m3-1-flash-launched-with-200-trillion-tokens-of-proof-the-name-came-second/",
+   "publisher": "Forkast",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "The mysterious Space Bunny reveals itself: MiniMax launches M3.1 Flash, cutting agent task costs by 70%",
+   "url": "https://finance.biggo.com/news/4dc43d4f-0802-44a0-9a67-459a98cc892f",
+   "publisher": "BigGo Finance",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "MiniMax M3.1 Flash Benchmarks, Pricing & Context Window",
+   "url": "https://llm-stats.com/models/minimax-m3.1-flash",
+   "publisher": "LLM Stats",
+   "published": "2026-10-19",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+   "page_url": "https://www.minimax.io/blog/minimax-m31f",
+   "caption": "MiniMax M3.1 Flash 벤치마크 성능 공식 비교표",
+   "credit": "MiniMax"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://filecdn.minimax.chat/public/m31-flash-en-3-1792403273121.png",
+   "page_url": "https://www.minimax.io/blog/minimax-m31f",
+   "caption": "Agents' Last Exam 통과율과 총비용 비교 (벤치마크 성능)",
+   "credit": "MiniMax"
+  }
+ ],
+ "factcheck": {
+  "claims": 68,
+  "confirmed": 68,
+  "removed": [
+   "일부 사이트에 4,280억 파라미터라는 숫자가 돌지만 (어느 출처에서도 확인 안 됨 — 파라미터 미공개 문장으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): MiniMax 공식 블로그(본문·벤치마크 비교표 이미지), VentureBeat, Forkast, BigGo, llm-stats 를 다시 열어 수치·날짜·가격·출시 여부를 하나씩 대조. 수정: Space Bunny 처리량 '2,000억 토큰'→'200조 토큰'(공식·VB·Forkast·BigGo 모두 200 trillion), Automation-Bench v1.0.6 62.2→62.8(공식 비교표; VB 는 62.2로 보도해 병기), 가중치 공개일 Forkast 표현을 '10월 23일 무렵'으로. BigGo 수치(OSWorld 2.0 Kimi K3 58.3, CyberGym GLM-5.3 84.5·GPT-5.6 Sol 83.6)는 BigGo 원문 HTML과 MiniMax 공식 비교표 이미지로 둘 다 일치 확인. 보완: 공식 비교표의 OSWorld·ALE·CyberGym 비교 수치, ALE 비용 그림(I2), AA 문항당 비용 비교. 출처 published: S1 페이지 2026-10-19, S2 2026-10-19 12:38 PT, S3 2026-10-19 19:25 UTC, S4 2026-10-19T14:25Z, S5 'Released on Oct 19, 2026'(별도 게시일 없음) — 모두 일치. EGRESS_BLOCKED 출처 없음."
+ }
+}
