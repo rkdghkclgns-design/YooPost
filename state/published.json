@@ -3540,5 +3540,27 @@
    "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/"
   ],
   "draft_id": "20261020_072750_4"
+ },
+ {
+  "date": "2026-10-20",
+  "title": "🔒 OpenCode 콘솔 침해 총정리: 1.4% 사용자 API 키 노출과 AI 계정 요금 폭탄 대응법",
+  "topic": "Hackers hit AI coding tool OpenCode, running up charges on users' AI accounts (TechCrunch, 2026-10-19) — OpenCode Console 침해",
+  "category": "AI 보안",
+  "source_url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/opencode-14-api-ai.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+   "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/",
+   "https://www.stepsecurity.io/blog/opencode-security-breach",
+   "https://www.notebookcheck.net/OpenCode-hacked-users-urged-to-revoke-their-API-keys.1426957.0.html",
+   "https://superpowerdaily.com/posts/opencode-discloses-breach-as-users-report-unauthorized-ai-account-charges",
+   "https://dev.to/hacksgr/hackers-breached-opencode-and-charged-developers-hundreds-of-dollars-2if6",
+   "https://opencode.ai/changelog",
+   "https://securitylabs.datadoghq.com/articles/opencode-upgrade-remote-code-execution/",
+   "https://opencode.ai/docs/providers/"
+  ],
+  "draft_id": "20261020_073531_5"
  }
 ]
