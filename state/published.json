@@ -3451,5 +3451,23 @@
    "https://www.axios.com/newsletters/axios-pro-rata-39a292f6-edf2-4429-b1d0-e562da2ba819"
   ],
   "draft_id": "20261019_083450_7"
+ },
+ {
+  "date": "2026-10-19",
+  "title": "🛠 DeepSeek Search·Fetch API: 성공 요청 1,000회 $0.75 총정리",
+  "topic": "Opening up the in-house search API — DeepSeek Search & Fetch (2026-10-17)",
+  "category": "AI 도구",
+  "source_url": "https://api-docs.deepseek.com/updates/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/deepseek-searchfetch-api-1000-075.html"
+  },
+  "sources": [
+   "https://api-docs.deepseek.com/updates/",
+   "https://api-docs.deepseek.com/guides/search/",
+   "https://api-docs.deepseek.com/api/search/",
+   "https://api-docs.deepseek.com/api/fetch/",
+   "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api"
+  ],
+  "draft_id": "20261019_091057_2"
  }
 ]
