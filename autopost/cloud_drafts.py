@@ -33,6 +33,7 @@ from typing import Callable, Iterable, Mapping, Sequence
 
 from .claude_draft import DraftError, folder_category, load_draft
 from .constants import CATEGORIES
+from .editorial import editorial_problems
 from .draft_request import read_request, request_id_of
 from .freshness import folder_date, freshness_problems
 from .history import MAX_ENTRIES, HistoryEntry, PostHistory, combined, merge_published
@@ -224,6 +225,7 @@ def quality_report(folder: Path, min_chars: int) -> QualityReport:
         problems.append("인용 이미지 후보는 있는데 본문에 image 블록이 없습니다 — 관련 문단 뒤에 {\"type\": \"image\", \"image_id\": \"I1\"}")
     if not (isinstance(fc.get("claims"), int) and isinstance(fc.get("confirmed"), int)):
         problems.append("research.json factcheck(claims·confirmed)가 비어 있습니다 — 사실 검증이 끝나지 않았습니다")
+    problems.extend(editorial_problems(content, read_json(folder / "research.json"), folder_day(folder.name)))
     stats = (f"본문 {length:,}자 · 소제목 {len(content.sections)}개(이모지 {emoji}) · 표 {tables} · 박스 {boxes} · "
              f"FAQ {len(content.faq)} · 강조 문단 {highlighted}/{len(paragraphs)} · 출처 {len(files.sources)}"
              f"(공식 {official}) · 이미지 {len(known)}")

@@ -47,7 +47,7 @@ def draft_day(name):
         return datetime.now().strftime("%Y-%m-%d")
 
 
-def write_draft(folder, post=None, factcheck=None, official=True, images=True, published=None):
+def write_draft(folder, post=None, factcheck=None, official=True, images=True, published=None, editorial=True):
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "post.json").write_text(json.dumps(post or good_post(), ensure_ascii=False), encoding="utf-8")
     day = draft_day(folder.name) if published is None else published
@@ -57,6 +57,17 @@ def write_draft(folder, post=None, factcheck=None, official=True, images=True, p
                             {"id": "S2", "title": "Vera 보도", "url": PRESS, "publisher": "The Verge", "published": day}],
                 "images": [{"id": "I1", "image_url": "", "page_url": OFFICIAL, "caption": "사진"}] if images else [],
                 "factcheck": {"claims": 30, "confirmed": 30, "removed": []} if factcheck is None else factcheck}
+    # Complete fixture drafts also satisfy future editorial-policy dates. Legacy tests opt out explicitly.
+    value_sections = (post or good_post()).get("sections", [])
+    if editorial and len(value_sections) >= 2:
+        contributions = []
+        for i, section in enumerate(value_sections[:2]):
+            paragraph = next((b.get("text", "") for b in section.get("blocks", []) if b.get("type") == "paragraph"), "")
+            contributions.append({"kind": ("comparison", "decision_guide")[i], "section": section["heading"],
+                                  "excerpt": paragraph[:100 + i * 20], "source_ids": ["S1"],
+                                  "added_value": "테스트용 본문과 출처 연결 기록"})
+        research["editorial"] = {"standard_version": 1, "reader_question": "독자가 확인할 조건은 무엇인가요?",
+                                 "limitations": "실측하지 않은 형식 검사 테스트 자료입니다.", "contributions": contributions}
     (folder / "research.json").write_text(json.dumps(research, ensure_ascii=False), encoding="utf-8")
     return folder
 
@@ -439,6 +450,7 @@ def test_brief_reads_the_published_snapshot_and_branch_drafts(tmp_path, monkeypa
     write_draft(drafts / "20200101_070000_4", good_post(title="오래된 원고"))
     assert brief.main(["--category", "AI 보안", "--new", "--drafts-dir", str(drafts), "--published", str(published)]) == 0
     out = capsys.readouterr().out
+    assert "독자 가치·독창성 기준 v1" in out and "research.json" in out and "source_synthesis" in out
     assert "홀로4 총정리  (주제: Holo4 · https://h)" in out
     assert out.count("NVIDIA Vera CPU 공개") == 1  # 오래된 원고(폴더 이름 날짜 기준)는 빠짐
     assert f"[새 원고 폴더] {drafts}" in out
@@ -716,3 +728,24 @@ def test_partial_delivery_never_resends_held_or_published_draft(tmp_path, status
         lambda f: calls.append(f.name), {},
     )
     assert outcome.already == (folder.name,) and not calls and not records
+
+
+def test_new_day_quality_check_requires_editorial_record_without_blocking_existing_day(tmp_path):
+    assert quality_report(write_draft(tmp_path / '20261020_080000_4', editorial=False), 1000).ok
+    report = quality_report(write_draft(tmp_path / '20261021_080000_4', editorial=False), 1000)
+    assert not report.ok and any('editorial' in p for p in report.problems)
+
+
+def test_editorial_evidence_is_in_existing_sources_attachment(tmp_path):
+    from autopost.claude_draft import load_draft, sources_markdown
+    folder = write_draft(tmp_path / '20261020_080000_4')
+    research = read_json(folder / 'research.json')
+    research['editorial'] = {'standard_version': 1, 'reader_question': '어떤 조건을 확인하나요?',
+                             'limitations': '실측하지 않았습니다.', 'contributions': [
+                                 {'kind': 'decision_guide', 'section': '선택 기준', 'excerpt': '실제 본문 발췌',
+                                  'added_value': '도입을 보류하는 조건'}]}
+    write_json(folder / 'research.json', research)
+    files = load_draft(folder)
+    attachment = sources_markdown(files, files.sources, '검증 결과')
+    assert '어떤 조건을 확인하나요?' in attachment and '실제 본문 발췌' in attachment
+    assert '도입을 보류하는 조건' in attachment and '실측하지 않았습니다.' in attachment

@@ -9,6 +9,7 @@ from typing import Sequence
 from .constants import CATEGORIES, CLOSING_SIGNATURE, IPO_DISCLAIMER
 from .content import Block, PostContent, parse_post
 from .gemini import Gemini
+from .editorial import EDITORIAL_RULES
 from .research import FactSheet
 from .style_profile import StyleGuide
 
@@ -17,9 +18,9 @@ log = logging.getLogger(__name__)
 IPO_CATEGORY = "AI 공모주 분석"
 
 OUTPUT_SCHEMA = """{
-  "title": "이모지 1개 + 핵심 제품/모델명 + 핵심 수치·혜택 + '사용 가이드/총정리' 식 (60자 안팎)",
+  "title": "이모지 1개 + 핵심 제품/모델명 + 독자의 질문·변화·판단 기준 (60자 안팎, 총정리 접미사 강제 금지)",
   "category": "카테고리",
-  "intro": "안녕하세요! 로 시작하는 도입 문단 (4~6문장)",
+  "intro": "독자 질문과 기사 범위를 설명하는 도입 문단 (4~6문장)",
   "summary": ["한눈에 보기 항목 5~7개 (마지막 항목은 '이 글에서 배울 것: ...')"],
   "sections": [
     {"heading": "이모지 + 소제목",
@@ -35,7 +36,7 @@ OUTPUT_SCHEMA = """{
      ]}
   ],
   "faq": [{"q": "질문", "a": "답변 2~4문장"}],
-  "closing": "지금까지 ...에 대해 알아보았습니다. 로 시작하는 맺음말 (3~5문장)",
+  "closing": "독자의 질문에 답하고 선택 조건과 한계를 정리하는 맺음말 (3~5문장)",
   "caveat": "작성 기준일 뒤에 붙일 주의 문구 한 문장 (예: 가격·무료 기간은 바뀔 수 있으니 공식 문서에서 최신 정보를 확인하세요)",
   "hashtags": ["해시태그 10~15개, # 없이, 띄어쓰기 없이"],
   "source_ids": ["본문에서 사용한 출처 번호 S1, S2 ..."]
@@ -46,12 +47,12 @@ def style_rules(style: StyleGuide, blog_name: str) -> str:
     headings = "\n".join(f"  - {h}" for h in style.headings)
     emojis = " ".join(style.title_emojis)
     based = f"참고 블로그 전체 {style.total_posts}개 게시물 분석 결과" if style.total_posts else "참고 블로그 분석 결과"
-    return f"""[글 문법 — {based}를 그대로 따릅니다]
-1. 제목: 맨 앞에 이모지 1개({emojis} 등) + 제품·모델명 + 핵심 수치나 혜택 + '사용 가이드', '총정리' 같은 말.
+    return f"""[글 문법 — {based}는 시각 형식 참고이며, 문장과 관점은 주제에 맞게 작성합니다]
+1. 제목: 맨 앞에 이모지 1개({emojis} 등) + 제품·모델명 + 검증된 변화·독자의 질문 또는 판단 기준. '총정리/사용 가이드' 접미사를 반복하지 않습니다.
    무료로 쓸 수 있는 소식이면 🆓, 새 모델이면 🤖, 속도·성능이면 ⚡, 보안이면 🔒 를 주로 씁니다.
-   예) "🤖 ○○ 사용 가이드: 1M 컨텍스트·가격·벤치마크 총정리"
-2. intro: "안녕하세요! {{날짜}}, {{회사}}가 {{제품}}을 공개했습니다." 처럼 언제·누가·무엇을 발표했는지로 시작해
-   왜 주목할 만한지, 이 글에서 무엇을 다루는지 소개하고 "함께 살펴보시죠!" 식으로 끝냅니다.
+   예) "🤖 ○○의 긴 문맥, 우리 팀에 필요한가: 비용과 적용 조건 비교"
+2. intro: 독자가 풀려는 문제와 이번 발표의 변화를 설명합니다. 언제·누가·무엇을 발표했는지 확인해
+   왜 주목할 만한지, 이 글에서 무엇을 다루는지 소개합니다. 매번 같은 인사말과 전개를 복제하지 않습니다.
    발표 날짜는 [확인된 사실]에 적힌 날짜만 씁니다. 사실 목록에 발표일이 없으면 날짜를 빼고 "최근"처럼 쓰며,
    오늘 날짜(작성일)를 발표일처럼 쓰지 않습니다.
 3. summary: '한눈에 보기' 박스에 들어갈 핵심 요약 5~7줄. 마지막 줄은 "이 글에서 배울 것: ...".
@@ -64,7 +65,7 @@ def style_rules(style: StyleGuide, blog_name: str) -> str:
 6. 코드블록: 출처에 나온 설치 명령·설정·API 호출 예시, 또는 독자가 AI 에이전트나 모델에 그대로 붙여넣는
    '복사용 지시문/예제 프롬프트'에만 씁니다 (참고 블로그의 '에이전트에게 붙여넣기' 형식). 출처에 없는 명령·옵션·모델 ID를 지어내지 않습니다.
 7. faq: 독자가 실제로 궁금해할 질문 {max(4, style.faq_questions)}개 안팎. 답은 조사된 사실로만.
-8. closing: "지금까지 ○○에 대해 알아보았습니다."로 시작해 핵심을 정리하고, 남은 불확실성을 짚은 뒤
+8. closing: 이 글의 질문에 대한 답과 선택 기준을 정리하고, 남은 불확실성을 짚은 뒤
    "여러분도 한번 ○○을 직접 체험해보시길 추천드리면서 {CLOSING_SIGNATURE}" 로 끝냅니다.
 9. 문체: 존댓말(~습니다/~입니다), 친근하지만 정확하게. 전문용어는 처음 나올 때 괄호로 풀어 씁니다 (예: MoE(전문가 혼합)).
    블로그 이름은 '{blog_name}'.
@@ -99,6 +100,8 @@ def build_write_prompt(sheet: FactSheet, style: StyleGuide, blog_name: str, toda
 
 {FACT_RULES}
 
+{EDITORIAL_RULES}
+
 [분량] 본문(공백 제외, 코드블록 제외) {min_chars:,}~{style.target_chars:,}자. 짧게 끝내지 말고 배경·의미·사용법·주의점을 충분히 설명합니다.
 
 [조사 자료]
@@ -124,6 +127,8 @@ def build_revise_prompt(content_json: str, sheet: FactSheet, issues: Sequence[di
 - 표의 칸을 지울 때는 행 전체를 지웁니다.
 
 {FACT_RULES}
+
+{EDITORIAL_RULES}
 
 [조사 자료]
 {sheet.as_prompt()}
@@ -248,7 +253,7 @@ class PostWriter:
             return content
         log.warning("AI 원고가 짧아 재요청합니다 (%d자 < 최소 %d자)", length, self._min_chars)
         longer = prompt + (f"\n※ 직전 답변의 본문이 공백 제외 {length:,}자로 너무 짧았습니다. "
-                           f"조사 자료의 사실을 더 활용해 공백 제외 {self._min_chars:,}자 이상으로 쓰세요.")
+                           f"같은 설명을 반복하지 말고 근거가 있는 비교·조건·판단 기준을 보강해 공백 제외 {self._min_chars:,}자 이상으로 쓰세요.")
         retry, _ = self._gemini.generate(longer, parse, temperature=0.6, label="AI 원고 보강")
         return retry if retry.text_length() > length else content
 

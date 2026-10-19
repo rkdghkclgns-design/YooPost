@@ -34,6 +34,7 @@ from autopost.history import MAX_ENTRIES  # noqa: E402
 from autopost.pipeline import KST  # noqa: E402
 from autopost.style_profile import load_style  # noqa: E402
 from autopost.writer import FACT_RULES, OUTPUT_SCHEMA, style_rules  # noqa: E402
+from autopost.editorial import EDITORIAL_RULES  # noqa: E402
 
 DRAFTS = ROOT / "output" / "claude_drafts"
 
@@ -44,6 +45,14 @@ RESEARCH_SCHEMA = """{
                "published": "YYYY-MM-DD (그 페이지에 적힌 발표일 — 대표 원문·이슈 확인 출처는 필수)", "official": true}],
   "images": [{"id": "I1", "image_url": "이미지 파일 주소 (모르면 빈 문자열)", "page_url": "이미지가 실린 출처 페이지",
               "caption": "이미지 설명 한 줄", "credit": "저작권자"}],
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "이 글이 답하는 독자의 구체적인 질문",
+    "limitations": "직접 실행 여부·적용 조건·미확인 사항",
+    "contributions": [{"kind": "comparison|calculation|decision_guide|source_synthesis",
+      "section": "정확한 본문 소제목", "excerpt": "그 소제목 본문에서 연속 30자 이상을 그대로 복사",
+      "source_ids": ["S1"], "added_value": "원문 요약에서 더한 구체적인 판단 도움"}]
+  },
   "factcheck": {"claims": 40, "confirmed": 40, "removed": ["확인되지 않아 뺀 문장"], "note": "검증 방법 메모"}
 }"""
 
@@ -187,6 +196,7 @@ def main(argv: list[str] | None = None) -> int:
     print("\n" + CLAUDE_STEPS)
     print("\n" + style_rules(style, cfg.blog_name))
     print("\n" + FACT_RULES)
+    print("\n" + EDITORIAL_RULES)
     print(f"\n[분량] 본문(공백·코드블록 제외) {cfg.min_body_chars:,}~{style.target_chars:,}자")
     print("\n[post.json 형식]\n" + OUTPUT_SCHEMA)
     print("\n[research.json 형식]\n" + RESEARCH_SCHEMA)

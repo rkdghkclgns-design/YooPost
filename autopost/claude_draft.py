@@ -52,6 +52,7 @@ class DraftFiles:
     sources: tuple[Source, ...]
     candidates: tuple[ImageCandidate, ...]
     factcheck: Mapping[str, object] = field(default_factory=lambda: MappingProxyType({}))
+    editorial: Mapping[str, object] = field(default_factory=lambda: MappingProxyType({}))
 
 
 @dataclass(frozen=True)
@@ -117,7 +118,8 @@ def load_draft(folder: Path) -> DraftFiles:
     topic = str(research.get("topic") or content.title).strip()
     factcheck = research.get("factcheck") if isinstance(research.get("factcheck"), dict) else {}
     return DraftFiles(content, topic, str(research.get("source_url") or "").strip(), sources,
-                      parse_candidates(research.get("images")), MappingProxyType(dict(factcheck)))
+                      parse_candidates(research.get("images")), MappingProxyType(dict(factcheck)),
+                      MappingProxyType(dict(research["editorial"]) if isinstance(research.get("editorial"), dict) else {}))
 
 
 def sources_markdown(files: DraftFiles, sources: Sequence[Source], line: str) -> str:
@@ -132,6 +134,15 @@ def sources_markdown(files: DraftFiles, sources: Sequence[Source], line: str) ->
     note = files.factcheck.get("note")
     if note:
         lines += ["", f"검증 방법: {note}"]
+    if files.editorial:
+        lines += ["", "## 독자 가치 기록 (자동 형식 검사와 별도 AI 검증, 인간 검토 보증 아님)",
+                  f"독자 질문: {files.editorial.get('reader_question', '')}",
+                  f"한계: {files.editorial.get('limitations', '')}"]
+        contributions = files.editorial.get("contributions")
+        for item in contributions if isinstance(contributions, list) else []:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('section', '')} ({item.get('kind', '')}): {item.get('added_value', '')}")
+                lines.append(f"  본문 발췌: {item.get('excerpt', '')}")
     return "\n".join(lines) + "\n"
 
 

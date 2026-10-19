@@ -52,3 +52,7 @@ research.json.factcheck의 claims는 verification.json.claims 길이, confirmed�
 ## 일일 미발행 재조사
 
 일일 task(kind=daily)는 이전 실행의 제외 후보가 rejected-candidates.json으로 전달됩니다. 조회 실패·최신성 부족·중복·사실 검증 실패였던 소식과 대표 URL을 반복하지 말고 다른 적격 이슈·공식 출처를 조사하세요. no_topic·verification_failed도 Python 관리기가 최대 3개 후보·42분 안에서 교체하며, 대기 후 다음 workflow가 다시 조사합니다. 세션 내부에서 추가 후보 교체 루프를 만들지 마세요. 적격 자료가 없으면 구체적인 실패 사유를 남기세요. 발행 목표를 위해 기준을 낮추거나 검증 사실을 지어내지 마세요.
+
+## 독자 가치 기준 (2026-10-20 적용)
+
+공유 brief의 [독자 가치·독창성 기준 v1]을 따릅니다. 작성 단계부터 research.editorial을 채우고 별도 검증 단계에서 실제 본문·출처와 대조합니다. 최소 두 종류의 추가 분석과 한계가 없으면 형식 보정으로 숨기지 말고 본문을 보완하거나 verification_failed로 처리합니다. 단순 번역·보도자료 바꿔쓰기는 완성 원고가 아닙니다.
