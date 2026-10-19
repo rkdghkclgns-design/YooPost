@@ -3469,5 +3469,23 @@
    "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api"
   ],
   "draft_id": "20261019_091057_2"
+ },
+ {
+  "date": "2026-10-20",
+  "title": "🤖 MiniMax M3.1 Flash 총정리: 입력 $0.15·OSWorld 61.7·에이전트 비용 70% 절감",
+  "topic": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.minimax.io/blog/minimax-m31f",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/minimax-m31-flash-015osworld-617-70.html"
+  },
+  "sources": [
+   "https://www.minimax.io/blog/minimax-m31f",
+   "https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate",
+   "https://forkast.news/minimax-m3-1-flash-launched-with-200-trillion-tokens-of-proof-the-name-came-second/",
+   "https://finance.biggo.com/news/4dc43d4f-0802-44a0-9a67-459a98cc892f",
+   "https://llm-stats.com/models/minimax-m3.1-flash"
+  ],
+  "draft_id": "20261020_070749_1"
  }
 ]
