@@ -1,0 +1,105 @@
+{
+ "topic": "Hackers hit AI coding tool OpenCode, running up charges on users' AI accounts (TechCrunch, 2026-10-19) — OpenCode Console 침해",
+ "source_url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hackers hit AI coding tool OpenCode, running up charges on users' AI accounts",
+   "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenCode hack exposes API keys amid AI distillation attacks",
+   "url": "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/",
+   "publisher": "BleepingComputer",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenCode security breach (StepSecurity)",
+   "url": "https://www.stepsecurity.io/blog/opencode-security-breach",
+   "publisher": "StepSecurity",
+   "published": "2026-10-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenCode confirms breach as users report AI charges they never authorised",
+   "url": "https://www.notebookcheck.net/OpenCode-hacked-users-urged-to-revoke-their-API-keys.1426957.0.html",
+   "publisher": "Notebookcheck",
+   "published": "2026-10-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenCode discloses breach as users report unauthorized AI account charges",
+   "url": "https://superpowerdaily.com/posts/opencode-discloses-breach-as-users-report-unauthorized-ai-account-charges",
+   "publisher": "Superpower Daily",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Hackers breached OpenCode and charged developers hundreds of dollars",
+   "url": "https://dev.to/hacksgr/hackers-breached-opencode-and-charged-developers-hundreds-of-dollars-2if6",
+   "publisher": "DEV Community (Hacks.gr)",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "OpenCode changelog",
+   "url": "https://opencode.ai/changelog",
+   "publisher": "OpenCode",
+   "published": "2026-10-16",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Discovering and exploiting a remote code execution vulnerability in OpenCode (GHSA-632h-h47v-g4x4)",
+   "url": "https://securitylabs.datadoghq.com/articles/opencode-upgrade-remote-code-execution/",
+   "publisher": "Datadog Security Labs",
+   "published": "2026-09-24",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Providers | OpenCode docs",
+   "url": "https://opencode.ai/docs/providers/",
+   "publisher": "OpenCode",
+   "published": "2026-10-19",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/673b71f0790aabf30bd30bf8/6ad51292da6c0b90a9dad0e6_Screenshot%202026-10-18%20at%2011.40.01%E2%80%AFAM.png",
+   "page_url": "https://www.stepsecurity.io/blog/opencode-security-breach",
+   "caption": "OpenCode가 X에 올린 침해 공지 화면: 콘솔 사용자 1.4% 영향, 사건 진행 중 (StepSecurity 캡처)",
+   "credit": "StepSecurity"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/Users-on-X-also-report-that-their-accounts-have-been-drained.png",
+   "page_url": "https://www.notebookcheck.net/OpenCode-hacked-users-urged-to-revoke-their-API-keys.1426957.0.html",
+   "caption": "X에서 OpenCode 연결 키로 무단 요금이 나갔다고 호소하는 사용자 보고 화면 (OpenAI 281달러·Anthropic 168달러, 1,700달러 답글)",
+   "credit": "Notebookcheck"
+  }
+ ],
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 50,
+  "removed": [
+   "또 OpenAI가 9월 말 공개한 모델 증류 캠페인 차단 소식도 있었지만, 이번 OpenCode 사건과 연결된다는 보도는 읽지 못했습니다. 두 소식을 하나로 묶어 해석하지 않도록 주의하세요.",
+   "서드파티 도구에 키를 맡길 때는 키별로 권한과 한도를 나누는 습관이 안전합니다.",
+   "제공사 계정에 월 한도와 사용량 알림을 걸어 두면 키가 새어 나갔을 때 피해를 조기에 발견하는 데 도움이 될 수 있습니다. (근거 있는 '사용량 알림 확인'으로 교체, 지시문의 '예산·알림 한도 설정'도 삭제)",
+   "OpenCode는 터미널·데스크톱 앱·코드 편집기에서 쓰는 오픈소스, 모델 비종속 AI 코딩 에이전트입니다. (출처 미확인 수식어 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7을 WebFetch로 다시 열어 수치·날짜·인용·제공사 대응을 하나씩 대조, 이미지 2개는 내려받아 내용 확인. published: TechCrunch 2026-10-19, BleepingComputer 2026-10-19, StepSecurity 2026-10-18, Notebookcheck 2026-10-17(10-18 갱신), Superpower Daily 2026-10-19, DEV 'Oct 19'(2026), changelog 최신 v2.0.32 2026-10-16 — 모두 페이지 날짜와 일치. 수정: 공지·통지 날짜를 매체별로(BleepingComputer·TechCrunch 토요일=10/17, 최초 노출 10/17 00:30 UTC / StepSecurity 10/18 아침 이메일) 구분하고 StepSecurity 본문에 없는 '10/17 밤·같은 날 X 공지' 삭제; '24시간 가동'→around the clock; 회의론 인용을 TechCrunch 원문('a straightforward breach whose use for distillation remains unproven')으로; 미확인 4가지→3가지+증류 규정 반론; BleepingComputer의 데이터 노출 문구를 원문대로; 1,700달러 '약'→'넘게'; Notebookcheck 400달러는 본문(Anthropic)과 캡처(OpenAI 281+Anthropic 168) 차이 명시; StepSecurity '다섯 단계'→설치 확인 후 3단계로 정정; 제공사 조치는 TechCrunch 보도(OpenAI 환불은 TechCrunch가 전한 OpenAI 설명)이며 1차 성명 미확인임을 명시; 1.4%·'대규모 증류 공격'은 StepSecurity의 X 게시물 캡처(이미지 I1로 확인)와 TechCrunch·BleepingComputer·Notebookcheck로 확인. 보강: 공식 출처 S9 OpenCode docs(Providers, Last updated 2026-10-19)로 auth.json 저장 위치 확인, S8 Datadog Security Labs(2026-09-24)로 GHSA-632h-h47v-g4x4 날짜·영향 버전(1.14.30~1.18.21)·수정 버전(1.18.22) 확인. 방어 조언은 TechCrunch(제공사별 키 폐기·교체)·StepSecurity(이메일·auth.json·키 교체·대시보드)·Notebookcheck(앱 갱신·사용량 검토)에 근거한 것만 남김."
+ }
+}
