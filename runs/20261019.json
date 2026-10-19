@@ -1,14 +1,14 @@
 {
  "started": "2026-10-19T07:15:30+09:00",
- "finished": "",
+ "finished": "2026-10-19T09:11:00+09:00",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "done",
   "category": "AI 도구",
   "taken_over": "2026-10-19T09:05:26+09:00",
   "first_taken_over": "2026-10-19T07:15:30+09:00",
   "reason": "실행 기록 없음",
   "last_result": "done"
  },
- "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+ "note": "AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }

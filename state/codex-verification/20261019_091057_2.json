@@ -1,0 +1,216 @@
+{
+ "claims": [
+  {
+   "claim": "검색 API 개방 발표일은 2026-10-17이다.",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "검색 API 개방 발표일은 2026-10-17이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "검색 API 개방과 모델 업데이트는 별도 항목이다.",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "검색 API 개방과 모델 업데이트는 별도 항목이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Search는 검색 질의로 순위가 있는 구조화된 결과를 반환한다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Search는 검색 질의로 순위가 있는 구조화된 결과를 반환한다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Search 요청은 POST /v1/tools/search이다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Search 요청은 POST /v1/tools/search이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch 요청은 POST /v1/tools/fetch이다.",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch 요청은 POST /v1/tools/fetch이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch는 지정한 웹페이지의 제목과 Markdown 본문을 반환한다.",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch는 지정한 웹페이지의 제목과 Markdown 본문을 반환한다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "query는 필수이며 1~128 Unicode 문자이고 공백만일 수 없다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "query는 필수이며 1~128 Unicode 문자이고 공백만일 수 없다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "count의 기본값은 10이고 범위는 1~50이다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "count의 기본값은 10이고 범위는 1~50이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "need_content의 기본값은 false이며 false일 때 content는 빈 문자열이다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "need_content의 기본값은 false이며 false일 때 content는 빈 문자열이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "ori_question은 선택 항목이며 제공할 때 길이는 1~128자이다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "ori_question은 선택 항목이며 제공할 때 길이는 1~128자이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "검색 결과는 results 목록에 들어간다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "검색 결과는 results 목록에 들어간다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "검색 결과는 title·url·snippet·summary·content·date 등을 포함한다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "검색 결과는 title·url·snippet·summary·content·date 등을 포함한다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "검색 결과의 date는 알 수 없으면 null이다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "검색 결과의 date는 알 수 없으면 null이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "content는 본문을 확보할 수 없는 경우에도 비어 있을 수 있다.",
+   "url": "https://api-docs.deepseek.com/api/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "content는 본문을 확보할 수 없는 경우에도 비어 있을 수 있다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch url은 필수이다.",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch url은 필수이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch url은 최대 8192자이며 호스트가 있는 HTTP 또는 HTTPS 주소이다.",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch url은 최대 8192자이며 호스트가 있는 HTTP 또는 HTTPS 주소이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch url에는 사용자 이름이나 비밀번호를 포함할 수 없다.",
+   "url": "https://api-docs.deepseek.com/api/fetch/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch url에는 사용자 이름이나 비밀번호를 포함할 수 없다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Search 가격은 성공 요청 1,000회당 $0.75이다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Search 가격은 성공 요청 1,000회당 $0.75이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch 가격은 성공 요청 1,000회당 $0.75이다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch 가격은 성공 요청 1,000회당 $0.75이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "과금 조건은 HTTP 200 및 Search의 비어 있지 않은 results 또는 Fetch 본문 반환이다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "과금 조건은 HTTP 200 및 Search의 비어 있지 않은 results 또는 Fetch 본문 반환이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "실패·빈 검색 결과·시간 초과는 과금하지 않는다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "실패·빈 검색 결과·시간 초과는 과금하지 않는다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "count는 요청당 가격에 영향을 주지 않는다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "count는 요청당 가격에 영향을 주지 않는다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "지정 도구를 통해 DeepSeek API를 사용하는 서버 측 호출은 현재 무료이며 2026-11-01 베이징 시각 00:00부터 요청별 과금된다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "지정 도구를 통해 DeepSeek API를 사용하는 서버 측 호출은 현재 무료이며 2026-11-01 베이징 시각 00:00부터 요청별 과금된다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Search와 Fetch는 각각 계정당 초당 5회이며 서로 독립적이다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Search와 Fetch는 각각 계정당 초당 5회이며 서로 독립적이다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch에는 도메인별 제한도 있다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch에는 도메인별 제한도 있다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "수집은 대상 사이트 가용성과 접근 정책의 영향을 받는다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "수집은 대상 사이트 가용성과 접근 정책의 영향을 받는다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Fetch의 404는 여러 원인으로 사용 가능한 본문을 얻지 못한 경우를 포함한다.",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "confirmed": true,
+   "action": "재조회한 공식 본문과 대조하여 유지",
+   "evidence": "Fetch의 404는 여러 원인으로 사용 가능한 본문을 얻지 못한 경우를 포함한다. 해당 조건을 공식 본문에서 재확인함."
+  },
+  {
+   "claim": "Venture Atlas는 이 소식을 2026-10-17에 게재했다.",
+   "url": "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api",
+   "confirmed": true,
+   "action": "유지",
+   "evidence": "기사 상단 날짜와 제목·본문을 직접 확인했다."
+  },
+  {
+   "claim": "Venture Atlas는 자동화된 AI 보조 조사를 이용해 다른 출처를 요약했으며 자체 취재가 아니라고 밝힌다.",
+   "url": "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api",
+   "confirmed": true,
+   "action": "유지 및 자체 취재 아님을 명확히 함",
+   "evidence": "About this story의 작성 방식 안내에서 확인했다."
+  },
+  {
+   "claim": "Venture Atlas 기사를 독립적인 보도 사례로 분류할 수 있다.",
+   "url": "https://www.ventureatlas.org/news/2026-10-17-deepseek-search-api",
+   "confirmed": false,
+   "action": "독립적인 보도 사례라는 표현을 타사 매체의 요약 사례로 수정하고 research.sources의 보도자료 재배포문 아님 단정을 삭제",
+   "evidence": "페이지는 다른 출처의 AI 보조 요약이며 자체 취재가 아니라고 명시한다. 독립적인 취재 보도라는 의미로 확대할 근거가 부족하다."
+  }
+ ],
+ "note": "2026-10-19 별도 사실 검증 세션에서 post.json의 제목·도입·요약·표·본문·FAQ·맺음말을 대조했다. 반복된 외부 주장은 합산했다. 공식 변경 기록과 Fetch 명세, Venture Atlas 기사를 웹 도구로 다시 읽었다. 가이드와 Search 명세는 웹 도구가 본문을 반환하지 않아 동일 공개 URL을 urllib로 각각 한 번, 제한 시간 20초로 조회했고 둘 다 HTTP 200의 실제 문서 본문을 읽었다. 최종 URL·HTTP 상태·UTC 조회 시각·원본 HTML·추출 본문은 source-evidence/factcheck-guide.json 및 factcheck-search.json에 저장했다. 가격·출시일·입력 조건·요금 전환·호출 제한에 반하는 사실은 발견하지 않았다. 무료 적용 범위를 summary에도 명시하고 제목에 성공 요청 조건을 추가했다. 자체 실행 여부·품질 미측정 안내·작성자 제안과 프롬프트·검증 단계 설명은 외부 사실 개수에서 제외했다. 유료 API 호출·발행·승인·다른 주제 교체는 수행하지 않았다. 공식 문서의 게시일 미표기와 타사 매체의 AI 요약 성격은 유지했다. 타사 매체 게재 사실은 확인되나 자체 취재의 독립성까지 확인한 것은 아니다.",
+ "checked_at": "2026-10-19T00:10:26.572525+00:00"
+}
