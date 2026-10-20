@@ -1,0 +1,146 @@
+{
+ "topic": "Agents, rebuilt to do more for less (Notion, 2026-10-19) — 노션 에이전트 하니스 6세대·Auto 라우터·새 크레딧 체계",
+ "source_url": "https://www.notion.com/blog/notion-ai-more-for-less",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Agents, rebuilt to do more for less.",
+   "url": "https://www.notion.com/blog/notion-ai-more-for-less",
+   "publisher": "Notion",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Notion release notes: October 19, 2026",
+   "url": "https://www.notion.com/releases/2026-10-19",
+   "publisher": "Notion",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Notion Adds Browser Tools and 24-Hour Tasks to Its AI Agent",
+   "url": "https://www.tokenpost.com/news/technology/35598",
+   "publisher": "TokenPost",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Notion AI Rebuilt: 24-Hour Agents, Auto, New Credits",
+   "url": "https://cellcog.ai/blog/notion-ai-agents-rebuilt/",
+   "publisher": "CellCog",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Notion Enhances Its AI Agent with 24-Hour Task Support and Improved Capabilities",
+   "url": "https://www.kucoin.com/news/flash/notion-upgrades-ai-agent-with-24-hour-task-support-and-enhanced-capabilities",
+   "publisher": "KuCoin News (ChainCatcher 인용)",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Auto (Notion Help Center)",
+   "url": "https://www.notion.com/help/auto",
+   "publisher": "Notion",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Manage your AI credits (Notion Help Center)",
+   "url": "https://www.notion.com/help/manage-your-ai-credits",
+   "publisher": "Notion",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "How AI credits work for Custom Agents (Notion Help Center)",
+   "url": "https://www.notion.com/help/how-ai-credits-work-for-custom-agents",
+   "publisher": "Notion",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Notion Pricing",
+   "url": "https://www.notion.com/pricing",
+   "publisher": "Notion",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://images.ctfassets.net/spoqsaf9291f/4et0ZiqG3ZU1K1HrJoMTE/4b19eebb025aa7a359f1f959db784364/HVBHPQQbYAAhSe2.png",
+   "page_url": "https://www.notion.com/releases/2026-10-19",
+   "caption": "Auto와 Opus 5.5·GPT-6 Astra·Sol 6.1의 품질 대비 작업당 평균 크레딧 도표 (Auto 라우터의 '90% 저렴'을 읽는 법)",
+   "credit": "Notion"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://images.ctfassets.net/spoqsaf9291f/2Vl2HmdgUuIDwPp54dyC74/9d317cc008b34d12c622434c2ca2c009/HVBH47nakAAAx3r.jpeg",
+   "page_url": "https://www.notion.com/releases/2026-10-19",
+   "caption": "노션 MCP 연결 화면 (ChatGPT 구독 연결과 MCP, 무엇이 되고 안 되나)",
+   "credit": "Notion"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "노션의 새 에이전트·Auto·크레딧 체계에서 우리 팀의 월 크레딧으로 얼마나 일할 수 있고 어떤 팀에 맞는가?",
+  "limitations": "직접 실행·실측 없음. Auto의 품질·비용은 노션 자체 테스트이며 외부 검증이 없음. 작업당 크레딧은 노션 도움말의 추정치(실제 사용량은 다름)이고, 계산은 이를 나눈 가정 계산. 좌석 가격은 가격 페이지에 결제 방식 구분 없이 표시됨. 도움말·가격 페이지에는 작성일이 적혀 있지 않음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 월 크레딧으로 몇 번 일할 수 있나: 가정 계산",
+    "excerpt": "노션이 말한 '**약 10배**'는 도움말 추정치 기준으로 단순 작업에서만 정확히 맞고, 복잡한 작업으로 갈수록 격차가 **6배까지 줄어듭니다**.",
+    "source_ids": [
+     "S1",
+     "S6",
+     "S7"
+    ],
+    "added_value": "작업 규모별 배율(10배·8.5배·6배)과 월 가능 건수를 계산해 '약 10배' 주장의 적용 범위를 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 어떤 팀에 맞나: 선택 기준과 제외 조건",
+    "excerpt": "기존 팀이라면 전환 전후의 사용량을 비교할 수 있게 지금의 사용 기록을 남겨 두는 것이 좋습니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S7",
+     "S8"
+    ],
+    "added_value": "팀 상황별 권장·제외 조건과 11월 2일 전환 대비 행동을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 아직 확인되지 않은 것과 한계",
+    "excerpt": "CellCog는 AI 직원 제품을 파는 회사라 비교표가 자사 제품에 유리하게 짜여 있다고 스스로 밝혔습니다. 외부 기관이 Auto를 프런티어 모델과 견준 평가는 아직 없다는 점도 같은 글이 지적했습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S6"
+    ],
+    "added_value": "공식 글·릴리스 노트 도표·도움말과 두 매체를 대조해 '90%'가 비교 모델별 62~93%임을 보이고, 확인된 것과 미검증 부분(외부 검증·가격 기준)을 분리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 52,
+  "removed": [
+   "다만 TokenPost는 무엇을 위험하다고 판정하는지 기준이 설명되지 않았다고 짚었습니다. (TokenPost 원문에 없음)",
+   "CellCog에 따르면 … API 사용은 유료 Notion 크레딧으로 청구됩니다. (API 부분은 CellCog 단독, 공식 확인 불가 — Fable·Astra·공유 Custom Agent 부분만 공식 글 기준으로 남김)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 다시 열어 주장 54개 대조, published 는 S1(article:published_time 2026-10-19)·S2(페이지 October 19, 2026)·S3(Oct 20, 2026)·S4(19 October 2026)·S5(October 20, 2026) 모두 페이지 날짜와 일치. 작업당 크레딧(Auto 5·10·25 / Opus 5.5 50·85·150)·풀 이월/전환 불가·AI 회의록 12/1·10크레딧·공유 Custom Agent 소유자 Select 크레딧은 노션 도움말 S6~S8 로, Business 좌석 월 20달러는 가격 페이지 S9 로 공식 확인해 출처를 CellCog→공식으로 바꿈(S6~S9 는 페이지에 작성일 표시 없어 published 비움). 수정: TokenPost 가 '외부 검증 없음'을 말했다는 귀속 삭제(CellCog 만), '방법론 비공개'→도움말의 Elo·AI 심판 방식으로 정정, '앱 최대 50%'→'모바일 대화 로딩', ChatGPT 연결은 크레딧 미사용·Custom Agent 제외(공식)로 보강, 릴리스 노트 도표의 87%·93%·62% 추가, MCP 그림을 MCP 소제목으로 이동. 가정 계산(1500/5·10·25, 500/50·85·150, 배율 10·8.5·6, 1500/10=150시간) 재계산 일치. 이미지 2개 HTTP 200 image/* 2400px·1200px 확인."
+ }
+}
