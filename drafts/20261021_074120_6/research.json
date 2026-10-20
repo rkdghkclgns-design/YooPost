@@ -1,0 +1,110 @@
+{
+ "topic": "How Employment Is Changing at Anthropic (Anthropic, 2026-10-16) · TechCrunch 보도 — 주니어 채용 비중·에이전트 시간·병목 변화",
+ "source_url": "https://www.anthropic.com/research/employment-at-anthropic",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "How Employment Is Changing at Anthropic",
+   "url": "https://www.anthropic.com/research/employment-at-anthropic",
+   "publisher": "Anthropic",
+   "published": "2026-10-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
+   "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-17",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Federal Reserve Beige Book October 2026 — National Summary",
+   "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
+   "publisher": "Federal Reserve",
+   "published": "2026-10-14",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 on Weak Early Seasonal Hiring",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-10-01",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/e5dc89d3bceb2fcb9509ec35aa22f11131a9d8eb-1920x1080.png",
+   "page_url": "https://www.anthropic.com/research/employment-at-anthropic",
+   "caption": "Anthropic 내부 기술직 주니어 채용 감소를 보여 주는 도표 (Figure 1: Decline of entry-level technical hiring at Anthropic)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/042b829f8c8850b596dfb6feaa323d1e911b21bb-1920x1080.png",
+   "page_url": "https://www.anthropic.com/research/employment-at-anthropic",
+   "caption": "에이전트 작업 시간이 사람 근무 시간을 넘어서는 추이 (Figure 2: Agent hours overtake human hours)",
+   "credit": "Anthropic"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 시대의 고용 변화는 해고보다 채용 구성에서 먼저 나타나는가, 그리고 우리 조직은 어떤 지표로 이를 확인해야 하는가",
+  "limitations": "공개된 보고서·기사·통계의 요약 수치를 읽고 비교한 것으로 직접 재분석하거나 조직에 적용해 보지 않았다. Anthropic 데이터는 자체 보고이며 다른 조직에 일반화할 수 없고, 세 자료는 측정 대상이 달라 인과를 입증하지 못한다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산해 보기: 줄어든 것은 사람이 아니라 '들어오는 사람'",
+    "excerpt": "보고서의 비율을 그대로 나눠 보면 변화 폭이 더 선명해집니다. 아래 계산은 제가 출처의 두 수치를 나눈 것이",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "보고서의 두 비율(27→9, 21→14)을 나눠 신규 채용은 3분의 1, 부서 내 비중은 3분의 2로 줄었음을 보이고 채용과 재직 비중의 구조적 차이를 설명"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔭 세 자료를 겹쳐 읽기: 채용이 먼저, 해고는 나중인가",
+    "excerpt": "세 자료는 서로 다른 단위를 재므로 어느 쪽이 더 옳다고 단정할 수 없습니다. 해석하자면 한 회사의 내부 기",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "측정 대상·단위가 다른 세 자료를 한 표에 놓고 직접 비교가 불가능한 이유와 공통 가설의 한계를 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔭 세 자료를 겹쳐 읽기: 채용이 먼저, 해고는 나중인가",
+    "excerpt": "해고 발표 통계는 이미 일하는 사람이 나가는 사건을 세므로, 채용이 줄어드는 신호는 이 숫자에 잘 잡히지 않",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "감원 통계가 채용 조정을 잡지 못할 수 있다는 해석으로 서로 다른 세 원문을 연결"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직에 적용한다면: 상황별 판단 기준",
+    "excerpt": "아래는 보고서의 권고와 관측을 제 해석으로 정리한 판단 기준입니다. 보고서는 세 가지 특징으로 직원 지분 폭",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "역할별로 먼저 볼 지표와 피해야 할 해석을 구분해 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 64,
+  "removed": [
+   "FAQ: '9월 AI 사유 감원은 3,961건으로 줄었어도' 중 '줄었어도'(S4에 전월 대비 AI 사유 증감 없음)",
+   "세 자료 비교 문단: '감원 통계(AI 사유가 월별로 출렁인다)'(S4는 9월·누적만 제시 — '9월 5위 사유지만 누적 1위 사유'로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5, 2026-10-21 KST). S1~S4 원문을 다시 열어 대조(모두 HTTP 200, EGRESS_BLOCKED 없음). published 확인: S1 페이지 'Published Oct 16, 2026'·meta 2026-10-16, S2 'October 17, 2026'(1:21 PM PDT), S3 'Last Update: October 14, 2026', S4 'Publication date: Oct 01'(2026-10-01) — 모두 research.json 과 일치. 핵심 수치(21→14%, 27→9%, 61→56%, 2~4배, 3월 역전·8월 6배, 192 대 74, 커밋 5배, 80% 대기, 0.75단어/250wpm, 메타업무 10→22%, 지침 8,500건, 회의 20%/16%, 면접 5%→3배·7%→4배, 비기술 세션 2→90회, 17대1, 부서 이동 50%)는 S1 본문·그림 주석과 일치. 작성자 계산 검산: 9÷27=1/3, 14÷21=2/3, 10명×40h=400h×6=2,400h — 정확하며 본문에 '제 계산·보고서가 직접 제시한 값 아님'·'보고서에 없는 가정 예시'로 명시됨. 수정: ①커밋 5배는 그림 3 전체 추이이고 192 대 74 고정효과 비교(그림 4)와 별개 — 본문·요약·표 분리 ②20% 업무 대체와 고객 30% 증가는 서로 다른 직원 발언 ③'도입 전부터 상승 추세'는 완전 자율 에이전트 도입자에 대한 서술로 한정 ④4월 설문 27%·20%는 자유 응답, 문구 변경 한계는 44%/58%/75% 문항의 것 — 분리 ⑤챌린저 수치 단위 '건'→'명'(감원 인원), 누적 1위 사유 추가 ⑥도입부 '같은 주'→'같은 달'(S4는 10/1) ⑦3월 역전은 자율+대화형 합계 ⑧대면 조율 필수는 S1 서술로 귀속 ⑨일반화 한계 문장을 S1 표현('그대로 재현할 수 없다')에 맞춤 ⑩'요약본'→보고서 표현, 에이전트 '켜져 있던 시간'→실행 시간. 품질: 형광 강조 없는 문단 9개에 강조 추가. 이미지 I1·I2 열림 확인(PNG 1920x1080, 120,665/79,274 바이트, S1 그림 1·2 캡션과 일치). 원고 중심은 S1(Anthropic 보고서); S3 베이지북은 이미 발행한 '연준 베이지북 10월호 AI 고용' 글의 원문이나 이 원고에서는 한 문단·표 한 행의 맥락 보조로만 사용."
+ }
+}
