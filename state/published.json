@@ -3660,5 +3660,22 @@
    "https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/"
   ],
   "draft_id": "20261021_073016_4"
+ },
+ {
+  "date": "2026-10-21",
+  "title": "🔒 Aoki 인포스틸러, AI 코딩 도우미 키까지 노린다: 내 토큰은 어디에 남아 있나",
+  "topic": "Aoki: Infostealer Targets AI Coding Assistant Credentials",
+  "category": "AI 보안",
+  "source_url": "https://www.security.com/threat-intelligence/aoki-infostealer-ai-targeting",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/aoki-ai.html"
+  },
+  "sources": [
+   "https://www.security.com/threat-intelligence/aoki-infostealer-ai-targeting",
+   "https://www.infosecurity-magazine.com/news/aoki-infostealer-ai-coding/",
+   "https://cybersecuritynews.com/new-aoki-malware/",
+   "https://expertinsights.com/news/kynx-infostealer-stealing-data-from-ai-coding-tools"
+  ],
+  "draft_id": "20261021_073605_5"
  }
 ]
