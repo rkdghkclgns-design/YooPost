@@ -1,0 +1,115 @@
+{
+ "topic": "Has GPT-6-Astra Achieved Embodied Intelligence? (SenseNova 등, arXiv 2610.22471, 2026-10-15)",
+ "source_url": "https://arxiv.org/abs/2610.22471",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+   "url": "https://arxiv.org/abs/2610.22471",
+   "publisher": "arXiv (SenseNova 외 공동 연구팀)",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Has GPT-6-Astra Achieved Embodied Intelligence? (논문 전문 HTML)",
+   "url": "https://arxiv.org/html/2610.22471",
+   "publisher": "arXiv (SenseNova 외 공동 연구팀)",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "SenseNova Study: GPT-6-Astra Clears Robot Competence Threshold",
+   "url": "https://aiweekly.co/alerts/sensenova-study-gpt-6-astra-clears-robot-competence-threshold",
+   "publisher": "AI News Weekly",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "The Wall Clock Problem in Embodied Benchmarks",
+   "url": "https://dev.to/reidmarlow/the-wall-clock-problem-in-embodied-benchmarks-580d",
+   "publisher": "DEV Community (Reid Marlow)",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Has GPT-6-Astra Achieved Embodied Intelligence? (프로젝트 페이지)",
+   "url": "https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence",
+   "publisher": "SenseNova",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.22471v2/teaser.png",
+   "page_url": "https://arxiv.org/html/2610.22471",
+   "caption": "논문 개요 그림(Figure 1) — 이 논문이 던진 질문과 12개 벤치마크 결과",
+   "credit": "SenseNova 외 공동 연구팀 (arXiv 2610.22471)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.22471v2/rw_gallery.png",
+   "page_url": "https://arxiv.org/html/2610.22471",
+   "caption": "실물 로봇 8종 제로샷 제어 장면(Figure 8) — 실물 로봇 8종에서 벌어진 일",
+   "credit": "SenseNova 외 공동 연구팀 (arXiv 2610.22471)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.22471v2/fig7_failure_cases_v9.png",
+   "page_url": "https://arxiv.org/html/2610.22471",
+   "caption": "확장 예산에서도 남은 실패 사례(Figure 6) — 한계와 주의사항: 확인·복구·장기 과제",
+   "credit": "SenseNova 외 공동 연구팀 (arXiv 2610.22471)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GPT-6-Astra의 체화 지능 벤치마크 고득점(RoboDojo 81.9%)은 어떤 조건에서 나왔고, 토큰 비용과 실물 로봇 결과까지 보면 실용 단계로 읽어도 되는가?",
+  "limitations": "직접 로봇을 실행하거나 재현하지 않았고, 모든 수치는 arXiv 논문 v2의 자체 보고입니다. 토큰당 성공률은 논문이 밝힌 에피소드당 평균 토큰으로 계산했지만, ICL 구성과 나머지 구성의 평가 횟수(과제당 5회와 3회)가 다르고 ICL 준비 비용 반영 여부가 표에 드러나지 않아 대략적인 상대 비교용입니다. 독립 재현·피어리뷰는 확인하지 못했습니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🛠 하네스 절제 실험: 토큰 한 단위당 성공률을 계산해 보면",
+    "excerpt": "매 동작마다 점검하던 방식(A.2)을 4동작마다 점검(A.3)으로 바꾸면 토큰이 7.664M에서 2.796M",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "논문 표 13의 성공률과 에피소드당 평균 토큰 수로 구성별 토큰당 성공률과 추가 토큰당 한계 이득을 계산하고, 토큰이 적으면서 성공률이 높은 반례(B.1)까지 짚어 비용 대비 효율이 높은 구성을 비교할 수 있게 함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 외부 해설과 맞춰 보기: 시계가 멈추지 않는 세계",
+    "excerpt": "논문의 가정용 벤치마크 시안 예에서는 모델이 판단하는 동안에도 버너가 켜져 있어",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S2"
+    ],
+    "added_value": "논문의 월드 클록 규칙과 지연 한계를 외부 해설의 벽시계 문제와 연결하고, 해설이 논문 수치로 뒷받침되지 않는 부분을 구분함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 내 상황에서는 무엇을 볼까: 선택 기준과 제외 조건",
+    "excerpt": "정리하면, 점수만 보고 \"로봇 문제가 풀렸다\"고 읽는 것도, 실패 사례만 보고 \"쓸모없다\"고 읽는 것도 논문",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "독자의 상황별로 논문의 어느 결과를 볼지와 제외 조건을 표로 제시함"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 59,
+  "confirmed": 57,
+  "removed": [
+   "프로젝트 페이지 설명대로라면 성공률을 올리는 선택은 대체로 토큰 비용을 같이 올립니다. (B.1이 기준보다 토큰 1.908M<2.560M으로 적으면서 성공률 18.06%>15.56%로 높아 반례 — B.1 반례 문장으로 교체)",
+   "토큰이 전체 실행의 합계인지 과제 평균인지는 제가 확인한 요약에서 분명하지 않으므로, 구성끼리의 상대 비교로만 읽어야 합니다. (논문 부록 10절·표 13이 에피소드당 평균 입력+출력 토큰이라고 명시 — 확인된 단위로 교체, 요약·표 머리·FAQ·결정 표·limitations 함께 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(제출 2026-10-15 v1, 2026-10-19 v2 확인)와 HTML 전문을 curl로 직접 받아 표 2(벤치마크별 1×/10×, RoboDojo 54.2*·81.9·1× 시점 27.6, DexJoCo 78.2→87.3)·3장 하네스 표(A/B 전 행 SR·토큰)·부록 10절 표 13 설명(42개 과제, 과제당 3회·ICL은 표 5의 5회, '에피소드당 평균 토큰(M)')·2.3~2.4절(약 3배·2배 이상·98% 캐시·1M≈1달러·1M/1시간·9M/2시간·3시간 초과·지연 미포함)·4장(제로샷, 60분, 비상정지, 17/18·2/4·9/23·0/11·Piper 능동 시각·Tianji 0/3→3/3)·그림 12 캡션(달걀 약 90초)과 원고 수치를 하나씩 대조. 토큰당 성공률·63.5%·+28.34점·1.7점/M·6.9배·B.1 9.47점/M 재계산 일치. 수정: 토큰 단위를 에피소드당 평균으로 확정, FAQ1의 '최고 RoboDojo 성공률 54.17%'(81.9%와 모순)를 하네스 실험 한정으로 수정, 표 2의 1× 시점 27.6% 추가, 실물 표에 플랫폼 명시, 프로젝트 페이지 귀속 문장을 논문 귀속으로 변경, 강조 없는 문단 5곳 보완. S3(AI Weekly datePublished 2026-10-19T03:57Z)·S4(DEV datePublished 2026-10-19T16:31Z) 페이지 날짜와 published 일치. S5 프로젝트 페이지는 본문·메타에 게시일이 없어(기준선 수집일 'October 12, 2026'만 있음) published 빈 값 유지, 본문 주장은 모두 논문 원문(S1·S2)으로 확인. 인용 이미지 3장(v2 경로) HTTP 200 image/png, 실제 크기 teaser 1302×397·rw_gallery 840×565·fig7_failure_cases_v9 805×418로 모두 가로 480px 이상. EGRESS_BLOCKED 출처 없음."
+ }
+}
