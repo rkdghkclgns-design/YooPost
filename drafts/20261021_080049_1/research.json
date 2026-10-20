@@ -1,0 +1,128 @@
+{
+ "topic": "OpenAI says GPT-6 is much better with legacy programming languages such as COBOL and Fortran",
+ "source_url": "https://the-decoder.com/openai-says-gpt-6-is-much-better-with-legacy-programming-languages-such-as-cobol-and-fortran/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenAI says GPT-6 is much better with legacy programming languages such as COBOL and Fortran",
+   "url": "https://the-decoder.com/openai-says-gpt-6-is-much-better-with-legacy-programming-languages-such-as-cobol-and-fortran/",
+   "publisher": "The Decoder",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI reports sharp gains in COBOL migration with newest models",
+   "url": "https://techbriefly.com/2026/10/20/openai-gpt-6-cobol-migration-86-6-percent-accuracy/",
+   "publisher": "TechBriefly",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "GPT-6 Legacy Programming Shows OpenAI COBOL Improvement",
+   "url": "https://en.cryptonomist.ch/2026/10/20/gpt-6-legacy-programming-cobol/",
+   "publisher": "The Cryptonomist",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "openai/MultiLangBench (README)",
+   "url": "https://github.com/openai/MultiLangBench",
+   "publisher": "OpenAI (GitHub)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "GPT-6.1 Sol model documentation",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Advancing coding in low-resource programming languages (OpenAI News RSS 항목)",
+   "url": "https://openai.com/news/rss.xml",
+   "publisher": "OpenAI",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "API Pricing",
+   "url": "https://developers.openai.com/api/docs/pricing",
+   "publisher": "OpenAI",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 원문(openai.com)이 접속 환경에서 403 으로 열리지 않아 본문 그림을 확인하지 못했고, GitHub README 와 모델 문서는 글자 중심이며 매체 그림은 공식 출처가 아니라 쓰지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI가 발표한 COBOL 이관 86.6% 같은 점수를 믿고 레거시 시스템 이관을 AI에 맡겨도 되는가, 어디까지 확인해야 하는가",
+  "limitations": "OpenAI 공식 글(openai.com)은 403으로 본문을 읽지 못해 발표일·제목만 공식 뉴스 피드로 확인했고, 수치는 매체 3곳의 보도와 공개 README·모델 문서·요금표로 구성했다. 평가는 직접 실행하지 않았고 모든 수치는 OpenAI 자체 평가의 보도다. 비용 예시는 가정 계산이며, TechBriefly만 전한 GPT-5.6 Sol의 MultiLangBench 점수(비교 대상 모델이 다름)는 본문에서 뺐다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자로 다시 계산해 보기",
+    "excerpt": "COBOL 이관 점수 5.4%에서 86.6%로 오른 것은 포인트로 81.2점, 배율로 약 16배입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "보도된 점수를 포인트와 배율로 환산해 어느 평가의 개선이 큰지 보여 준다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자로 다시 계산해 보기",
+    "excerpt": "표본 1,000개를 돌린다고 가정하면 Luna는 약 770달러, GPT-5.6 Sol은 약 3,480달러로 차이가 2,710달러입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "표본당 비용 0.77달러와 3.48달러를 표본 1,000개 규모로 환산해 절감액을 제시한다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 매체마다 다른 비교 대상, 어떻게 읽을까",
+    "excerpt": "세 매체는 같은 GPT-6 Astra 87.4%를 전하면서도 비교 대상 모델을 서로 다르게 골랐습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "세 매체의 수치와 비교 대상 모델을 대조해 두 매체 이상에서 일치하는 숫자만 인용 대상으로 가려낸다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 코드에 적용해도 될까: 판단 기준",
+    "excerpt": "이관 대상이 금융 계산 코드라면 첫 번째 조건은 소수점 처리 방식이 원본과 일치하는지 사람이 확인하는 일입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "테스트 유무·소수점 규칙·목표 언어별로 적용 판단 기준과 확인 항목을 제시한다."
+   },
+   {
+    "kind": "calculation",
+    "section": "💰 GPT-6.1 Sol 요금표로 이관 비용 감 잡기",
+    "excerpt": "입력 20만 토큰은 요금표의 짧은 컨텍스트 기준(입력 27만 2천 토큰 이하) 안이어서 이 단가가 적용되며",
+    "source_ids": [
+     "S5",
+     "S7"
+    ],
+    "added_value": "공식 요금표의 짧은/긴 컨텍스트 경계로 가정 비용 0.90달러를 검산하고 경계를 넘을 때 단가를 제시한다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 53,
+  "confirmed": 52,
+  "removed": [
+   "TechBriefly는 Astra 87.4%의 비교 대상을 GPT-5.6 Sol의 26.8%로 적었습니다. (본문·표의 GPT-5.6 Sol MultiLangBench 26.8% — 한 매체만 전했고 다른 매체는 다른 모델(GPT-5.6 Terra 37.9%)과 비교해 원문 대조 불가, 수치 삭제·비교 대상 모델 차이만 남김)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). The Decoder·TechBriefly·Cryptonomist 기사(페이지 날짜 모두 2026-10-20, published 일치), openai/MultiLangBench README, GPT-6.1 Sol 모델 문서, API 요금표를 다시 열어 수치·이름·스펙·가격을 하나씩 대조. openai.com 원문은 403(대체 주소·아카이브도 실패)이라 OpenAI 공식 뉴스 RSS(openai.com/news/rss.xml)의 항목으로 제목·발표일 2026-10-19(월) 12:00 GMT만 확인해 S6 추가, 세부 수치는 'OpenAI 발표를 매체 보도로 확인'으로 본문에 명시. 'TechBriefly는 월요일 발표' 문장을 공식 피드 날짜로 교체. Terra 37.9%(Decoder·Cryptonomist)와 GPT-5.6 Sol 26.8%(TechBriefly)는 서로 다른 비교 모델이라 모순이 아니라 비교 대상 차이로 정리하고 한 매체 수치는 삭제. 요금표로 가정 비용 0.2×2+0.05×10=0.90달러 검산, 입력 20만은 짧은 컨텍스트(≤272K) 구간임을 확인해 긴 컨텍스트 단가(4/0.20/15달러) 보완. 배율·포인트 계산 재검산(Astra 대 Terra는 37.9 기준 49.5점·약 2.3배로 수정). README로 'SQLite 문서 제공·인터넷 없음' 확인. 형광 강조 12/23→23/23 보완. Inception 관련 내용 없음 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
