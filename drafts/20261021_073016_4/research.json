@@ -1,0 +1,98 @@
+{
+ "topic": "TorchTPU Is Now Open Source: Run Native PyTorch on TPUs (Google Cloud, 2026-10-20) / Google has joined Amazon in attacking Nvidia's stronghold with AI app developers (TechCrunch, 2026-10-20)",
+ "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "TorchTPU Is Now Open Source: Run Native PyTorch on TPUs",
+   "url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus",
+   "publisher": "Google Cloud Blog",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "google-pytorch/torch_tpu (README)",
+   "url": "https://github.com/google-pytorch/torch_tpu",
+   "publisher": "Google (GitHub)",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AWS TorchNeuron: native PyTorch backend for Trainium",
+   "url": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+   "publisher": "Amazon",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool",
+   "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Google has joined Amazon in attacking Nvidia's stronghold with AI app developers",
+   "url": "https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-20",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "구글 블로그 본문의 이미지는 캡션 없는 유튜브 썸네일뿐이고 GitHub README에도 도표가 없으며, 아마존 페이지의 그림은 이 글(구글 TorchTPU) 내용과 무관하거나 광고성 이미지여서 넣지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "구글 TorchTPU는 정확히 무엇이 새롭고, 아마존 TorchNeuron과 어떻게 다르며, PyTorch 팀은 지금 무엇을 확인해야 하는가",
+  "limitations": "직접 설치·실행·벤치마크를 하지 않았고 수치는 구글·아마존·고객사의 자체 보고. 가격·지원 TPU 전체 목록·알려진 제한은 읽은 문서에서 확인되지 않음. 아마존 공식 페이지에는 발표일이 적혀 있지 않아 published를 비워 둠(발표일 근거는 TechCrunch 10월 19·20일 기사).",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "⚖ 구글 TorchTPU와 아마존 TorchNeuron, 무엇이 같고 다른가요?",
+    "excerpt": "눈여겨볼 차이는 두 가지입니다. 하나는 PyTorch 본류에 대한 접근입니다. TechCrunch에 따르면 ",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "두 회사 자료의 칩·라이선스·전환 방식·협력 대상·사례 지표를 같은 항목으로 나란히 놓고, 지표가 달라 우열을 못 가린다는 조건을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀은 지금 TPU로 옮겨야 하나요? 판단 기준",
+    "excerpt": "CUDA 전용 커널이나 엔비디아 전용 라이브러리를 직접 쓰는 코드는 '설정 변경'만으로 옮겨지지 않을 가능성",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "팀 상황별 확인 항목과 보류 신호를 정리해 이전 검토 시 무엇을 먼저 볼지 제시(해석임을 표시)"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔭 이 발표가 시장에 던지는 의미와 한계",
+    "excerpt": "서로 다른 두 출처를 이어서 보면 한 가지가 더 보입니다. 구글 공식 글은 구체적인 기술 통합과 성능 사례를",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "구글 공식 기술 내용과 TechCrunch의 시장 해석을 연결해 가능성과 결과를 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 43,
+  "removed": [
+   "TechCrunch도 두 회사가 엔비디아 GPU와의 가격 비교를 내놓지 않았다고 지적합니다. (S5에 해당 서술 없음 → '구글 블로그와 TechCrunch 구글 기사는 가격 비교를 다루지 않았다'로 교체)",
+   "TechCrunch는 이를 칩 성능 경쟁이 아니라 소프트웨어 호환성의 병목을 겨냥한 움직임으로 읽습니다. (S5에 해당 프레이밍 없음 → 기사 실제 서술과 필자 해석으로 분리)",
+   "인도 기업 Zenteiq (S1에 국적 표기 없음 → 'Zenteiq.ai')"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 구글 클라우드 블로그(페이지 날짜 2026-10-20 일치)·S2 GitHub README·S3 아마존 공식 글(페이지에 발표일 없음 → published 빈 문자열)·S4 TechCrunch(2026-10-19 바이라인 일치)·S5 TechCrunch(2026-10-20 바이라인 일치)를 다시 열어 46개 주장 대조. 52% MFU(Qwen 3 8B, 최대 8,192 Ironwood TPU, 별도 문장에 8000 검증), Zenteiq 4배 이상·14.7억→59.7억 토큰/TPU v6e 1,000개, Deepgram '달러당 70% 더 많은 오디오'(S4 콜린 브레이스 인용, 아마존 공식 글엔 없음), 콜린 브레이스 락인 인용, 85%·2016·2022 리눅스 재단(S5), Apache 2.0(S2·S3), Trainium2/3·Cartesia(S3), torch_tpu 0.2.0·Python 3.11+·Dependencies TBD(S2) 확인. 고침: 구글의 상류 기여 '언급 없음' → 생태계 도구 상류 지원은 있으나 칩 종속 코드 분리 언급 없음으로 정정; '설정 한 줄 변경(아마존 시연 기준)' → '아마존 설명'; 아마존 협력 항목 표현 정리; TorchNeuron 공개 시점 박스를 'TechCrunch: 10/19 발표, 아마존 공식: 10/20 PyTorch Conference에서 오픈소스 공개 예정(날짜 표기 없음)'으로 사실대로 재작성; '내놓았다'→'발표했다'. EGRESS_BLOCKED 출처 없음. 중복 점검: 기존 글 'AWS TorchNeuron 총정리'와 S3·S4 출처가 겹치나, 이 원고는 구글 TorchTPU(S1·S2·S5) 중심이며 아마존 내용은 비교 표·박스에만 사용."
+ }
+}

@@ -1,0 +1,368 @@
+{
+ "title": "🚀 구글 TorchTPU 오픈소스 공개: 아마존 TorchNeuron과 나란히 보면 무엇이 같고 다를까",
+ "category": "AI 뉴스 리뷰",
+ "intro": "PyTorch 코드를 엔비디아 GPU가 아닌 다른 칩에서 돌리려면 보통 상당한 이식 작업이 필요했습니다. 2026년 10월 20일 구글이 메타 PyTorch 팀과 함께 만든 TorchTPU를 오픈소스로 공개했고, 하루 앞서 아마존은 TorchNeuron을 발표했다고 TechCrunch가 전했습니다. 이 글은 '구글의 새 발표가 정확히 무엇이며, 아마존 발표와 비교해 우리 팀의 선택에 어떤 도움이 되는가'라는 질문에 답합니다. 구글 공식 블로그와 GitHub README, TechCrunch 기사를 직접 읽고 확인된 내용만 정리했습니다.",
+ "summary": [
+  "구글이 2026년 10월 20일 TPU용 PyTorch 스택 TorchTPU를 오픈소스(Apache 2.0)로 공개했습니다.",
+  "eager 모드로 디버깅한 뒤 torch.compile로 최적화하는 두 단계 흐름을 제시합니다.",
+  "자체 보고 수치는 Qwen 3 8B 학습 최대 52% MFU, 8,192개 Ironwood TPU 확장입니다.",
+  "vLLM, SGLang, Ray, Hugging Face 등 주요 도구와 함께 나왔고 TPU agent suite는 얼리 프리뷰입니다.",
+  "아마존 TorchNeuron과 목표는 같지만 사례 지표가 달라 성능 우열은 가릴 수 없습니다.",
+  "이 글에서 배울 것: TorchTPU의 공식 내용, 아마존과의 비교 조건, 도입 판단 기준"
+ ],
+ "sections": [
+  {
+   "heading": "📰 TorchTPU 발표: 무슨 일이 있었나요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "2026년 10월 20일(현지 기준) 구글은 PyTorch Conference 2026에서 **TorchTPU**를 오픈소스로 공개했다고 밝혔습니다. 구글 클라우드 블로그는 TorchTPU를 'TPU용 네이티브 PyTorch 스택'이라고 소개하며, 메타의 PyTorch 팀과 함께 개발했고 GitHub의 google-pytorch/torch_tpu 저장소에서 받을 수 있다고 적었습니다. TPU가 GPU·CPU와 나란히 PyTorch의 기본 실행 대상이 된다는 것이 구글이 내세우는 핵심입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "이 소식이 이틀 사이 두 번 나온 점이 눈에 띕니다. TechCrunch는 10월 20일 기사에서 아마존이 하루 앞서 **TorchNeuron**을 발표했고, 구글이 그 뒤를 이었다고 정리했습니다. 두 회사 모두 'PyTorch 코드를 다시 쓰지 않고 자사 칩에서 돌린다'는 같은 약속을 하고 있습니다. 이 글은 아마존 쪽 발표를 다시 설명하지 않고, **구글이 새로 내놓은 것이 무엇이고 두 발표가 어디서 같고 어디서 다른지**에 집중합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "아마존 TorchNeuron은 이미 AI백과사전에서 별도로 다룬 소식입니다. 여기서는 구글 TorchTPU의 공식 문서 내용을 중심으로 쓰고, 아마존 내용은 비교에 필요한 부분만 가져옵니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch는 PyTorch가 **AI 앱의 약 85%**에서 쓰인다는 '일부 집계'를 인용하고, 메타가 2016년에 PyTorch를 만들어 2022년 리눅스 재단으로 넘겼다고 설명합니다. 85%라는 숫자는 기사가 직접 측정한 값이 아니라 인용이므로 정확한 점유율로 받아들이기보다 **'대다수'라는 방향성**으로 읽는 편이 안전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ TorchTPU는 어떻게 쓰고, 무엇이 들어 있나요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "구글 블로그에 따르면 기존 PyTorch 워크로드는 익숙한 API를 쓰면서 **최소한의 코드 변경**으로 TPU에서 돌아갑니다. 개발 흐름은 두 단계입니다. 먼저 **eager 모드**(한 줄씩 즉시 실행)로 디버깅하고, 이어서 **torch.compile**로 넘어가 TPU 활용도를 높이고 메모리 부담을 줄입니다. 표준 PyTorch API, 진단 도구, 분산 처리 기본 기능을 지원한다고 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "GitHub 저장소 README는 TorchTPU를 맞춤 ATen 커널(PyTorch 연산 단위), 컴파일 캐시, torch.compile 연동, 데이터·텐서 병렬 분산 학습, 디버깅·벤치마크 도구를 갖춘 TPU용 PyTorch 백엔드로 설명합니다. 라이선스는 **Apache 2.0**이고, 설치는 pip로 가능합니다. 아래는 README에 적힌 설치 명령입니다."
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "pip install torch_tpu==0.2.0 --extra-index-url https://download.pytorch.org/whl/cpu"
+    },
+    {
+     "type": "paragraph",
+     "text": "README는 이 추가 인덱스 주소가 CPU용 torch를 받기 위한 것이며, 빼면 CUDA 빌드의 torch가 설치된다고 경고합니다. 요구 사항은 **Python 3.11 이상**이고, 예제 노트북을 돌리려면 TPU VM이 필요하며 v6e 인스턴스가 가장 쉽다고 합니다. 저장소의 examples 폴더에는 Llama, Qwen, ResNet, DLRM, minGPT, UNet 예제가 있습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 아직 공개 문서에 없는 정보",
+     "text": "이 글을 쓴 시점에 읽은 구글 블로그와 README에는 지원하는 TPU 세대의 전체 목록, 알려진 제한 사항, 가격이 정리되어 있지 않았습니다. README의 'Dependencies' 항목은 'TBD'로 남아 있고, 최신 공개 버전은 0.2.0입니다. 도입을 검토한다면 사용자 가이드(torchtpu.readthedocs.io)와 저장소 이슈를 직접 확인하세요."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "공식 문서에 적힌 내용"
+     ],
+     "rows": [
+      [
+       "공개 형태",
+       "오픈소스, GitHub google-pytorch/torch_tpu"
+      ],
+      [
+       "라이선스",
+       "Apache 2.0 (README)"
+      ],
+      [
+       "실행 방식",
+       "eager 모드로 디버깅 후 torch.compile로 성능 최적화"
+      ],
+      [
+       "최신 공개 버전",
+       "0.2.0 (PyPI, README 기준)"
+      ],
+      [
+       "Python 요구 사항",
+       "3.11 이상"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "📊 구글이 제시한 숫자는 무엇이고 어떻게 읽어야 하나요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "구글 블로그가 내놓은 성능 수치는 두 가지입니다. 첫째, **TorchTitan**(PyTorch 분산 학습 도구)으로 Qwen 3 8B를 학습했을 때 **최대 52% MFU**(모델 FLOPs 활용률, 칩의 이론 성능 중 실제 모델 연산에 쓰인 비율)에 최대 **8,192개 Ironwood TPU(TPU v7x)**까지 거의 선형에 가까운 확장성과 안정성을 보였다고 합니다. 검증된 규모로는 'up to 8,000 Ironwood TPUs'가 명시되어 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "둘째, Zenteiq.ai의 사례입니다. TPU v6e 1,000개 위에서 GKE Inference Gateway와 llm-d를 쓰자 전체 추론 처리량이 **4배 이상** 늘었고, 하루 생성 토큰 용량이 **14.7억에서 59.7억 토큰**으로 커졌다고 합니다. 두 수치 모두 구글 블로그에 실린 자체 보고이며, 이 글에서 직접 재현한 값이 아닙니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 MFU 52%를 어떻게 볼까",
+     "text": "MFU는 같은 모델·같은 설정에서 칩이나 소프트웨어를 비교할 때 의미가 있습니다. 블로그는 비교 대상이 되는 엔비디아 GPU 수치를 함께 싣지 않았으므로, 52%만으로 GPU보다 빠르다 또는 느리다고 판단할 수 없습니다. 이 숫자는 'Qwen 3 8B 학습이 TPU 대규모 클러스터에서 안정적으로 확장된다'는 증거로 읽는 것이 정확합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Zenteiq 수치도 조건을 따져야 합니다. 4배라는 증가는 TorchTPU 하나의 효과가 아니라 GKE Inference Gateway와 llm-d를 함께 쓴 결과로 소개되어 있어, 이전 구성이 무엇이었는지 공개되지 않은 상태에서는 **TorchTPU 자체의 기여분을 분리할 수 없습니다**."
+    }
+   ]
+  },
+  {
+   "heading": "🧩 어떤 도구와 연결되나요? 생태계 지도",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "블로그는 TorchTPU가 단독 라이브러리가 아니라 **학습·추론·모델 배포 도구 여러 개**와 함께 나왔다고 강조합니다. 확인된 연동은 아래와 같습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "영역",
+      "도구",
+      "블로그에 적힌 내용"
+     ],
+     "rows": [
+      [
+       "학습",
+       "TorchTitan",
+       "Llama 3 70B/405B, Qwen 3 8B/32B, Qwen 3 235B(MoE), FLUX.1 12B 등 레시피"
+      ],
+      [
+       "강화학습",
+       "VeRL",
+       "프리뷰 단계, TPU 백엔드와 GRPO 참조 레시피"
+      ],
+      [
+       "오케스트레이션",
+       "Ray",
+       "CPU·GPU·TPU를 하나의 워크플로에서 다루는 네이티브 지원"
+      ],
+      [
+       "추론",
+       "vLLM (Inferact와 개발)",
+       "Pallas 커널 기반 PyTorch 백엔드, 연속 배칭·양자화·멀티칩 병렬"
+      ],
+      [
+       "추론",
+       "SGLang (RadixArk와 개발)",
+       "RadixAttention으로 KV 캐시 재사용"
+      ],
+      [
+       "서빙",
+       "llm-d 1.0",
+       "prefix 캐시 인식 라우팅, GKE에서 GPU/TPU 공통 엔드포인트"
+      ],
+      [
+       "모델 허브",
+       "Hugging Face",
+       "Transformers v5에서 device_map=\"tpu\", Diffusers 지원"
+      ],
+      [
+       "온디바이스",
+       "LiteRT-Torch",
+       "Hugging Face 모델을 LiteRT-LM으로 내보내기"
+      ],
+      [
+       "개발 보조",
+       "TPU agent suite",
+       "얼리 프리뷰, 여러 코딩 하네스와 플러그인으로 연동"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Hugging Face 쪽은 코드 한 줄이 인상적입니다. 블로그는 Transformers v5에서 **device_map=\"tpu\"** 인자로 모델을 TPU에 올릴 수 있다고 적었습니다. 이는 모델을 허브에서 받아 쓰는 많은 개발자에게 진입 장벽이 낮아졌다는 신호로 읽을 수 있습니다. 다만 모든 허브 모델이 같은 성능으로 도는지는 블로그에 나와 있지 않습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "TechCrunch는 여기에 구글이 모바일·노트북·임베디드용 LiteRT를 PyTorch 앱에 맞게 갱신했고, TPU agent suite로 이전과 오류 수정을 돕는다고 요약했습니다. agent suite는 공식 문서에 **얼리 프리뷰**로 표시되어 있으므로 실무 도입의 근거로 삼기에는 이릅니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚖ 구글 TorchTPU와 아마존 TorchNeuron, 무엇이 같고 다른가요?",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "두 발표는 목표가 같습니다. PyTorch 코드를 거의 그대로 둔 채 실행 칩만 바꾸게 해서, **엔비디아 CUDA에 묶인 기본값을 흔드는 것**입니다. TechCrunch 아마존 기사에 인용된 AWS 안나푸르나 랩스의 콜린 브레이스는 '진짜 이야기는 개발자에게 선택권이 없던 락인을 없애는 것'이라고 말했습니다. 아래 표는 두 회사 공식 자료에 적힌 내용만 나란히 놓은 것입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "비교 항목",
+      "구글 TorchTPU",
+      "아마존 TorchNeuron"
+     ],
+     "rows": [
+      [
+       "대상 칩",
+       "TPU (공식 글에 Ironwood v7x, v6e 언급)",
+       "Trainium2, Trainium3"
+      ],
+      [
+       "라이선스",
+       "Apache 2.0 (GitHub README)",
+       "Apache 2.0 (아마존 공식 글)"
+      ],
+      [
+       "전환 방식",
+       "'최소한의 코드 변경'",
+       "설정 한 줄 변경, 코드 재작성 없음(아마존 설명)"
+      ],
+      [
+       "협력 대상",
+       "메타 PyTorch 팀, Hugging Face, Inferact(vLLM), RadixArk(SGLang)",
+       "Hugging Face 지원, TorchTitan 연동, vLLM 기여, Cartesia 사례"
+      ],
+      [
+       "사례 수치",
+       "Qwen 3 8B 학습 MFU 최대 52%, Zenteiq 처리량 4배 이상",
+       "Deepgram이 달러당 오디오 처리량 70% 증가를 주장(TechCrunch 인용)"
+      ],
+      [
+       "상류(PyTorch 본류) 기여",
+       "Hugging Face·vLLM·SGLang·llm-d·TorchTitan·VeRL·Ray 등 생태계에 TPU 지원을 올린다고 설명(칩 종속 코드 분리는 언급 없음)",
+       "칩 종속 기능을 분리하는 코드를 PyTorch에 제출한다고 TechCrunch가 전함"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 이 표로 우열을 가릴 수 없습니다",
+     "text": "두 사례 수치는 모델, 규모, 비교 기준이 모두 다릅니다. MFU 52%와 '달러당 70%'는 서로 다른 지표이고 각사 또는 고객이 직접 밝힌 값입니다. 표는 '어떤 근거를 내놓았는가'를 비교한 것이지 성능 순위가 아닙니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "눈여겨볼 차이는 두 가지입니다. 하나는 PyTorch 본류에 대한 접근입니다. TechCrunch에 따르면 아마존은 PyTorch 자체에서 칩 종속 기능을 떼어내는 코드를 제출하고 있습니다. 구글 공식 글도 '네이티브 TPU 지원을 PyTorch 스택 상류로 가져온다'고 말하지만, 그 범위는 Hugging Face·vLLM·SGLang·llm-d·TorchTitan·VeRL·Ray 같은 생태계 도구이고 **PyTorch 본체에서 칩 종속 코드를 떼어내는 작업은 언급하지 않았습니다**. 다른 하나는 협력 범위입니다. 구글은 메타 PyTorch 팀과의 공동 개발과 vLLM·SGLang·llm-d 같은 추론 스택의 TPU 백엔드를 앞세웁니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 공개 시점 표기가 엇갈립니다",
+     "text": "TechCrunch(10월 19일 기사)는 아마존이 '월요일'(10월 19일)에 TorchNeuron을 내놓았다고 썼고, 다음 날 기사에서는 '하루 앞서 발표했다'고 표현했습니다. 반면 아마존 공식 글은 날짜 표기 없이 '10월 20일 PyTorch Conference North America에서 Apache 2.0 오픈소스로 공개될 예정'이라고 적었습니다. 즉 19일은 발표, 20일은 오픈소스 공개 예정일로 읽히지만, 실제 코드 공개 시점은 저장소의 릴리스 기록으로 확인하는 것이 좋습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧭 우리 팀은 지금 TPU로 옮겨야 하나요? 판단 기준",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "TorchTPU나 TorchNeuron이 나왔다고 모든 팀이 이전을 서두를 이유는 없습니다. 공식 자료만으로 세울 수 있는 판단 기준을 정리했습니다. 아래는 공개된 사실에서 끌어낸 **해석**이며, 직접 이전 테스트를 해 본 결과가 아닙니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "이미 구글 클라우드(GKE 포함)를 쓰고 있고 PyTorch·Hugging Face·vLLM 중심으로 개발한다면, 코드 변경이 적다는 공식 설명이 맞는지 소규모 워크로드로 먼저 검증해 볼 가치가 있습니다.",
+      "학습을 수천 칩으로 확장해야 하는 팀은 TorchTitan 레시피와 8,192개 Ironwood 확장 사례를 참고하되, 자기 모델 크기와 병렬화 방식이 사례(Qwen 3 8B)와 얼마나 가까운지 먼저 따져야 합니다.",
+      "CUDA 전용 커널이나 엔비디아 전용 라이브러리를 직접 쓰는 코드는 '설정 변경'만으로 옮겨지지 않을 가능성이 큽니다. 공식 글도 이런 경우의 호환 범위를 밝히지 않았습니다.",
+      "이전 이유가 비용이라면 가격 비교가 먼저입니다. 구글 블로그와 TechCrunch 구글 기사는 엔비디아 GPU와의 가격 비교를 다루지 않았습니다.",
+      "안정성이 중요한 프로덕션이라면 0.2.0 버전, 프리뷰 단계 도구(VeRL, TPU agent suite)를 구분해 확인하세요."
+     ]
+    },
+    {
+     "type": "table",
+     "headers": [
+      "상황",
+      "우선 확인할 것",
+      "보류 신호"
+     ],
+     "rows": [
+      [
+       "구글 클라우드 중심 PyTorch 팀",
+       "TorchTPU 예제로 소규모 학습·추론 재현",
+       "예제와 우리 모델의 연산 구성이 크게 다름"
+      ],
+      [
+       "엔비디아 GPU 전용 최적화 코드 보유",
+       "CUDA 전용 의존 코드의 비중",
+       "커스텀 CUDA 커널이 핵심 경로에 있음"
+      ],
+      [
+       "대규모 학습 계획",
+       "TorchTitan 레시피와 확장 사례 조건 비교",
+       "비교 가능한 GPU 대조 수치가 없음"
+      ],
+      [
+       "온디바이스 배포",
+       "LiteRT-Torch 내보내기 지원 모델 범위",
+       "대상 모델의 내보내기 사례 부재"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🔭 이 발표가 시장에 던지는 의미와 한계",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "두 회사가 같은 주에 같은 전략을 택한 점은 흥미롭습니다. TechCrunch는 대부분의 AI 앱이 **기본적으로 엔비디아 GPU에서 돌도록 쓰여 있다**는 점을 짚으며, 두 회사의 움직임을 엔비디아의 개발자 기반을 공략하는 시도로 정리했습니다. 그 기본값을 PyTorch 레벨에서 바꾸려는 시도라는 것이 이 글의 해석입니다. 같은 기사는 개발자들이 엔비디아를 대거 떠나지는 않겠지만, 아마존과 구글이 그 우위를 깎아내리려 애쓰고 있다고 덧붙였습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "서로 다른 두 출처를 이어서 보면 한 가지가 더 보입니다. 구글 공식 글은 구체적인 기술 통합과 성능 사례를, TechCrunch는 시장 구도와 신중론을 담았습니다. 즉 기술적으로는 '실행 가능성'이 입증 단계에 들어섰지만, 개발자가 실제로 얼마나 옮겼는지는 이 글이 읽은 두 회사 자료에 수치가 없습니다. 따라서 이번 발표의 의미는 '이전이 쉬워졌다'는 가능성의 문제이고, **'시장 점유가 바뀐다'는 결과의 문제는 아직 확인되지 않았습니다**."
+    },
+    {
+     "type": "info",
+     "title": "💡 앞으로 지켜볼 지표",
+     "text": "(1) 두 회사의 상류 PyTorch 기여가 정식 릴리스에 반영되는지, (2) torch_tpu가 0.2.0 이후 어떤 속도로 갱신되는지, (3) 엔비디아 GPU와 같은 조건에서 비교한 독립 벤치마크가 나오는지 확인해 보세요. 이 세 가지가 채워질 때 판단 근거가 훨씬 단단해집니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 이 글의 한계",
+     "text": "수치와 사례는 구글·아마존·고객사가 직접 밝힌 값이며 AI백과사전이 재현하지 않았습니다. 가격, 지원 TPU 전체 목록, 알려진 제한 사항은 읽은 공식 문서에서 확인되지 않아 다루지 않았습니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "TorchTPU는 무엇인가요?",
+   "a": "구글이 메타의 PyTorch 팀과 함께 만든 TPU용 네이티브 PyTorch 스택으로, 2026년 10월 20일 오픈소스로 공개됐습니다. 기존 PyTorch 코드를 최소한의 변경으로 TPU에서 실행하는 것이 목표입니다."
+  },
+  {
+   "q": "라이선스와 설치 방법은 어떻게 되나요?",
+   "a": "GitHub README 기준 Apache 2.0이며, pip로 torch_tpu 0.2.0을 설치할 수 있습니다. Python 3.11 이상이 필요하고, 추가 인덱스 주소를 빼면 CUDA 빌드 torch가 깔리므로 주의해야 합니다."
+  },
+  {
+   "q": "TorchTPU가 엔비디아 GPU보다 빠른가요?",
+   "a": "공식 문서에는 GPU와의 직접 비교 수치가 없습니다. Qwen 3 8B 학습에서 최대 52% MFU를 냈다는 자체 보고가 있을 뿐이어서 우열은 판단할 수 없습니다."
+  },
+  {
+   "q": "기존 코드를 전혀 안 고쳐도 되나요?",
+   "a": "구글은 '최소한의 코드 변경', TechCrunch는 설정 변경만으로 가능하다고 전합니다. 다만 CUDA 전용 커널을 쓰는 코드의 호환 범위는 공식 글에 나오지 않아, 직접 검증이 필요합니다."
+  },
+  {
+   "q": "아마존 TorchNeuron과 무엇이 다른가요?",
+   "a": "대상 칩(TPU 대 Trainium)과 협력 구성이 다릅니다. TechCrunch에 따르면 아마존은 PyTorch 본류에 칩 종속 기능 분리 코드를 제출하고 있고, 구글은 메타 PyTorch 팀과의 공동 개발과 추론 스택 연동을 앞세웁니다."
+  }
+ ],
+ "closing": "정리하면, 구글 TorchTPU는 TPU를 PyTorch의 기본 실행 대상으로 올리려는 오픈소스 시도이며 라이선스·설치·연동 도구는 공식 자료로 확인됩니다. 반면 GPU 대비 성능, 가격, 지원 범위의 한계는 아직 공개 자료만으로 판단할 수 없습니다. 구글 클라우드를 이미 쓰는 PyTorch 팀이라면 작은 워크로드로 검증해 보고, CUDA 전용 코드가 많은 팀은 호환 범위가 밝혀질 때까지 지켜보는 편이 합리적입니다. 여러분도 한번 TorchTPU 예제를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "공개 버전과 지원 범위는 빠르게 바뀔 수 있으니 구글 클라우드 문서와 GitHub 저장소에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "TorchTPU",
+  "구글TPU",
+  "PyTorch",
+  "아마존TorchNeuron",
+  "엔비디아CUDA",
+  "Trainium",
+  "Ironwood",
+  "AI칩",
+  "오픈소스",
+  "vLLM",
+  "HuggingFace",
+  "AI뉴스",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}
