@@ -3602,5 +3602,27 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261015000277"
   ],
   "draft_id": "20261020_075812_7"
+ },
+ {
+  "date": "2026-10-21",
+  "title": "🧮 노션 에이전트 24시간 작업과 Auto 90% 절감, 우리 팀 월 크레딧으로 몇 건 가능한가",
+  "topic": "Agents, rebuilt to do more for less (Notion, 2026-10-19) — 노션 에이전트 하니스 6세대·Auto 라우터·새 크레딧 체계",
+  "category": "AI 도구",
+  "source_url": "https://www.notion.com/blog/notion-ai-more-for-less",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/24-auto-90.html"
+  },
+  "sources": [
+   "https://www.notion.com/blog/notion-ai-more-for-less",
+   "https://www.notion.com/releases/2026-10-19",
+   "https://www.tokenpost.com/news/technology/35598",
+   "https://cellcog.ai/blog/notion-ai-agents-rebuilt/",
+   "https://www.kucoin.com/news/flash/notion-upgrades-ai-agent-with-24-hour-task-support-and-enhanced-capabilities",
+   "https://www.notion.com/help/auto",
+   "https://www.notion.com/help/manage-your-ai-credits",
+   "https://www.notion.com/help/how-ai-credits-work-for-custom-agents",
+   "https://www.notion.com/pricing"
+  ],
+  "draft_id": "20261021_071437_2"
  }
 ]
