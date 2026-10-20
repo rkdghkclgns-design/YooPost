@@ -3642,5 +3642,23 @@
    "https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence"
   ],
   "draft_id": "20261021_072147_3"
+ },
+ {
+  "date": "2026-10-21",
+  "title": "🚀 구글 TorchTPU 오픈소스 공개: 아마존 TorchNeuron과 나란히 보면 무엇이 같고 다를까",
+  "topic": "TorchTPU Is Now Open Source: Run Native PyTorch on TPUs (Google Cloud, 2026-10-20) / Google has joined Amazon in attacking Nvidia's stronghold with AI app developers (TechCrunch, 2026-10-20)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/torchtpu-torchneuron.html"
+  },
+  "sources": [
+   "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus",
+   "https://github.com/google-pytorch/torch_tpu",
+   "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai",
+   "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+   "https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/"
+  ],
+  "draft_id": "20261021_073016_4"
  }
 ]
