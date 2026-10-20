@@ -3624,5 +3624,23 @@
    "https://www.notion.com/pricing"
   ],
   "draft_id": "20261021_071437_2"
+ },
+ {
+  "date": "2026-10-21",
+  "title": "🤖 GPT-6-Astra 체화 지능 논문: RoboDojo 81.9%는 어떤 조건의 점수일까",
+  "topic": "Has GPT-6-Astra Achieved Embodied Intelligence? (SenseNova 등, arXiv 2610.22471, 2026-10-15)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.22471",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gpt-6-astra-robodojo-819.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.22471",
+   "https://arxiv.org/html/2610.22471",
+   "https://aiweekly.co/alerts/sensenova-study-gpt-6-astra-clears-robot-competence-threshold",
+   "https://dev.to/reidmarlow/the-wall-clock-problem-in-embodied-benchmarks-580d",
+   "https://sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence"
+  ],
+  "draft_id": "20261021_072147_3"
  }
 ]
