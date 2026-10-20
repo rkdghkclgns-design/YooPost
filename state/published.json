@@ -3712,5 +3712,25 @@
    "https://www.sedaily.com/article/20076033"
   ],
   "draft_id": "20261021_074821_7"
+ },
+ {
+  "date": "2026-10-21",
+  "title": "🤖 GPT-6.1 Sol의 COBOL 이관 86.6%, 레거시 시스템에 맡겨도 될까: 점수 재계산과 판단 기준",
+  "topic": "OpenAI says GPT-6 is much better with legacy programming languages such as COBOL and Fortran",
+  "category": "AI 언어 모델",
+  "source_url": "https://the-decoder.com/openai-says-gpt-6-is-much-better-with-legacy-programming-languages-such-as-cobol-and-fortran/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gpt-61-sol-cobol-866.html"
+  },
+  "sources": [
+   "https://the-decoder.com/openai-says-gpt-6-is-much-better-with-legacy-programming-languages-such-as-cobol-and-fortran/",
+   "https://techbriefly.com/2026/10/20/openai-gpt-6-cobol-migration-86-6-percent-accuracy/",
+   "https://en.cryptonomist.ch/2026/10/20/gpt-6-legacy-programming-cobol/",
+   "https://github.com/openai/MultiLangBench",
+   "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+   "https://openai.com/news/rss.xml",
+   "https://developers.openai.com/api/docs/pricing"
+  ],
+  "draft_id": "20261021_080049_1"
  }
 ]
