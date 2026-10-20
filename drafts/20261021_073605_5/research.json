@@ -1,0 +1,86 @@
+{
+ "topic": "Aoki: Infostealer Targets AI Coding Assistant Credentials",
+ "source_url": "https://www.security.com/threat-intelligence/aoki-infostealer-ai-targeting",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Aoki: Infostealer Targets AI Coding Assistant Credentials",
+   "url": "https://www.security.com/threat-intelligence/aoki-infostealer-ai-targeting",
+   "publisher": "Symantec Threat Hunter Team (Broadcom, security.com)",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "New Aoki Infostealer Targets AI Coding Assistant Credentials",
+   "url": "https://www.infosecurity-magazine.com/news/aoki-infostealer-ai-coding/",
+   "publisher": "Infosecurity Magazine",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "New Aoki Malware Targets ChatGPT, Claude, Codex and Gemini to Steal Credentials",
+   "url": "https://cybersecuritynews.com/new-aoki-malware/",
+   "publisher": "Cyber Security News",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Kynx Infostealer Ships With Dedicated Module for Stealing Data From AI Coding Tools",
+   "url": "https://expertinsights.com/news/kynx-infostealer-stealing-data-from-ai-coding-tools",
+   "publisher": "Expert Insights",
+   "published": "2026-08-10",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Symantec 보고서 본문에는 글자와 목록뿐이고 내용을 보여 주는 도표·화면 그림이 없으며, 페이지의 그림은 일반 대표 사진이라 쓰지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Aoki 인포스틸러가 노리는 AI 코딩 도우미 자격증명은 무엇이며, Kynx와 무엇이 같고 다르고, 내 상황에서는 무엇부터 점검해야 하는가",
+  "limitations": "악성코드를 직접 실행·분석하지 않았고 공개 보고서와 보도만 근거로 함. Symantec과 SOCRadar의 표본이 달라 대상 목록의 직접 우열 비교는 불가. 감염 규모·배후·제공사 대응은 미확인. 대응 우선순위는 필자 해석.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔍 Aoki와 Kynx 비교: 같은 흐름인가",
+    "excerpt": "두 보고서는 서로 다른 연구팀이 서로 다른 표본을 보고 쓴 것이라 대상 목록의 숫자나 도구 이름을 직접 비교해 우열을 가릴 수 없습니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "Aoki와 Kynx의 대상 도구·기능 표현·배후 정보를 같은 항목으로 나란히 놓고, 표본이 달라 우열을 가릴 수 없다는 비교 조건을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 상황별 대응 판단표",
+    "excerpt": "감염이 의심되는 PC에서 로그아웃하거나 키를 재발급하면 새 키가 다시 유출될 수 있으므로",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "독자 상황(감염 의심, 업무 PC 사용, 보안팀, AWS 키 공존)별로 먼저 할 일과 제외 조건을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 Aoki와 Kynx 비교: 같은 흐름인가",
+    "excerpt": "이는 두 보고서를 엮은 추론이며, 시장 전체 규모를 보여 주는 통계가 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "서로 다른 두 원문(Symantec, SOCRadar 보도)을 연결해 흐름 가능성을 해석하되 표본 두 개의 한계를 밝힘"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 42,
+  "removed": [
+   "보고서 안에서도 샘플마다 대상이 조금씩 다를 수 있다는 뜻이므로 (원문에 근거 없는 추론 — 이유가 설명되지 않았다는 문장으로 교체)",
+   "로그인 순간에 묻는 인증과 달리, 훔친 세션 토큰은 이미 인증이 끝난 상태를 담고 있기 때문이라는 설명입니다 (Cyber Security News에 없는 설명을 기사에 귀속 — 필자 해석으로 표시해 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 Symantec·S2 Infosecurity·S4 Expert Insights는 WebFetch로, S3 Cyber Security News는 WebFetch 빈 응답이라 curl로 원문을 받아 대조(EGRESS_BLOCKED 출처 없음). published: S1·S2 2026-10-15, S3 2026-10-16(article:published_time), S4 2026-08-10 모두 페이지 날짜와 일치. 수정: Aoki 최초 관찰 '2026년 초'→'2026년 들어'(earlier in 2026); '계속 늘어나는 중'→'활발히 개발 중'(S2 인용); Infosecurity의 카드 비교는 '결제 카드 정보만큼'으로(지갑 언급은 Symantec 원문에만); Infosecurity '핵심 도구로 줄여 소개' 표현을 원문대로(첫머리 Claude·Codex·Cursor·Gemini, 뒤에 Copilot·JetBrains AI Assistant·Kiro 추가)·Symantec 요약 목록(Claude·Codex·Cursor·Codeium·Gemini) 대조; Symantec 탐지·차단 조건을 'IOC 파일이 있으면'으로; Kynx와의 관계 '무관한'→'연관이 보고되지 않은'. Kynx 비교표(SOCRadar, 8개 도구·DevGrabber 문자열·구독형·지갑/게임/VPN) S4 원문과 일치, 배경 자료로만 사용. 방어 중심 확인: IoC 해시·도메인·C&C 경로·감염 방식 상세 없음. 이미지 0개는 Symantec 본문에 도표가 없어 images_none_reason 유지. 강조 없는 문단 3개에 강조 보완."
+ }
+}
