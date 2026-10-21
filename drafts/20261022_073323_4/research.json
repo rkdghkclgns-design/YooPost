@@ -1,0 +1,128 @@
+{
+ "topic": "Notice of Order Regarding Exclusion and Removal of DeepSeek Products from Federal Civilian Executive Branch Information Technology Systems and Procurements (DHS, Federal Register 2026-21447)",
+ "source_url": "https://public-inspection.federalregister.gov/2026-21447.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Notice of Order Regarding Exclusion and Removal of DeepSeek Products (Federal Register 2026-21447, DHS-2026-0628) + Exclusion and Removal Order #2026-01",
+   "url": "https://public-inspection.federalregister.gov/2026-21447.pdf",
+   "publisher": "U.S. Department of Homeland Security / Federal Register",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "US orders federal agencies to remove China's DeepSeek AI from their systems",
+   "url": "https://techcrunch.com/2026/10/20/us-orders-federal-agencies-to-remove-chinas-deepseek-ai-from-their-systems/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "US orders civilian federal agencies to remove DeepSeek from their systems",
+   "url": "https://thenextweb.com/news/us-bars-deepseek-federal-agencies",
+   "publisher": "The Next Web",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "US Orders DeepSeek Off Government Systems — Including Third-Party Tools Built on It",
+   "url": "https://www.ibtimes.co.uk/us-agencies-remove-deepseek-products-government-systems-1826567",
+   "publisher": "IBTimes UK",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "U.S. Orders DeepSeek Removed From Federal Civilian Systems, Bans New Purchases",
+   "url": "https://thehackernews.com/2026/10/us-orders-deepseek-removed-from-federal.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "FAR 52.204-30 Federal Acquisition Supply Chain Security Act Orders—Prohibition",
+   "url": "https://www.acquisition.gov/far/52.204-30",
+   "publisher": "Acquisition.gov (GSA)",
+   "published": "2026-03-13",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "41 CFR 201-1.303 Issuance of orders and related activities",
+   "url": "https://www.ecfr.gov/current/title-41/subtitle-C/chapter-201/part-201-1/subpart-C/section-201-1.303",
+   "publisher": "eCFR (National Archives)",
+   "published": "2021-09-27",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 관보 공고문과 스캔된 명령서 PDF로, 원고 내용을 보여 주는 본문 도표·스크린샷이 웹 이미지로 제공되지 않으며 매체 기사 그림은 로고·썸네일뿐이다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "DHS의 DeepSeek 제외·제거 명령은 누구에게 무엇을 요구하고, 7월 24일 날짜의 명령이 10월에야 공개된 상황에서 예외 신청 60일과 제3자 제품 조항을 어떻게 읽어야 하는가",
+  "limitations": "관보 공고문(텍스트 2쪽)과 스캔된 명령서 4쪽을 이미지로 직접 읽고, FAR 52.204-30·41 CFR 201-1.303/304 규정과 매체 4곳을 대조했다. DeepSeek 제품을 직접 실행·점검하지 않았다. 60일 기한의 기준일(issuance)과 ‘DeepSeek 구현’·제3자 제품 범위는 명령서에 정의가 없어 확정하지 않았다. 7월 24일은 명령서에 적힌 최초 발령일이며 7월에 공개됐다는 자료는 찾지 못했다. FASC 권고 원문, SAM.gov 등재 여부, 기관별 이행·예외 신청 현황은 확인하지 못했다. 점검 가이드는 명령서·규정 문구에서 도출한 해석이며 법률 자문이 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 날짜로 따져 보는 예외 신청 60일",
+    "excerpt": "발령일을 명령서에 적힌 최초 발령일 7월 24일로 보면 60일째는 9월 22일",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "60일 기한을 두 기준일(명령서 최초 발령일 7/24, 관보 게재일 10/20)로 달력 계산해(9/22, 12/19; 관보 접수일은 발령 87일째) 이미 지났을 가능성과 남았을 가능성을 비교하고, 공고문의 ‘issuance’ 표현과 기준일 미정의라는 한계를 밝힘"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 점검 가이드: 누가 무엇을 확인해야 하나",
+    "excerpt": "내가 연방 민간 행정부처인지, 그 기관에 제품이나 서비스를 납품하는 업체인지",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5",
+     "S6",
+     "S7"
+    ],
+    "added_value": "기관·납품업체·무관한 조직별로 점검 순서를 나누고, 납품업체에는 명령서 대신 FAR 52.204-30(3개월마다 SAM.gov 확인, 3영업일 보고, 10영업일 후속)과 41 CFR 201-1.303(e) 적용 범위를 연결함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⏱ 날짜로 따져 보는 예외 신청 60일",
+    "excerpt": "TechCrunch 기사는 기관이 예외를 신청할 수 있다고만 쓰고 이행 시점이나 60일 기한은 다루지 않습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "보도(예외 가능만 언급, 기한 미기재)와 명령서 원문(제외 즉시·제거 즉시 또는 예외 신청·60일 서면)을 대조해 원문 우선 이유를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 무슨 일이 있었나요? 공개 경과 정리",
+    "excerpt": "이 날짜는 일반 공개일이 아니라 명령서에 적힌 발령 날짜이며, 7월에 이 명령서가 공개됐다는 자료는 이번 검증에서 찾지 못했습니다",
+    "source_ids": [
+     "S1",
+     "S5",
+     "S7"
+    ],
+    "added_value": "명령서 날짜(7/24)와 관보 공개(10/19~20)의 87일 시차를 규정(41 CFR 201-1.303(f)(2) 공개 재량)과 함께 설명해 ‘최근 소식’의 의미를 정직하게 밝힘"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 74,
+  "removed": [
+   "명령서 #2026-01의 첫 공개일은 2026년 7월 24일 (→ ‘명령서에 적힌 최초 발령일’로 수정, 7월 공개 근거 없음)",
+   "TechCrunch 기사는 ‘준수 기한이 기사에 나오지 않는다’는 식으로 읽히지만 (→ 기사에 기한 언급이 없다는 사실로 수정)",
+   "2026년 9월 보고서가 … 중국 AI 기업 여섯 곳을 … 지목 (→ 9월 보고서에 따르면 미국이 지목, 으로 수정)",
+   "DeepSeek도 블룸버그와 로이터의 문의에 답하지 않았다 (→ 두 보도에 DeepSeek 논평이 없었다로 수정)",
+   "명령서의 첫 두 근거(서버 위치, 계정 정보 수집)는 DeepSeek가 직접 호스팅하는 인스턴스를 전제 (→ ‘호스팅 인스턴스’ 조건은 개인정보 수집 문장에만 있음으로 수정)",
+   "국가안보 시스템·SCI: 국방부·DNI가 별도 명령을 냄 (→ 낼 수 있음)",
+   "제3자 제품은 제거 대상에만 포함된 것처럼 쓴 서술 (→ 조달 제외 각주 13도 제3자 구현 포함으로 보완)"
+  ],
+  "note": "주장 74개(수정 후 전부 출처로 확인, 원래 문장 7개는 틀리거나 과장돼 removed 에 적은 대로 삭제·교체). Opus 검증(claude-opus-5-5). 관보 PDF 2026-21447을 내려받아 1~2쪽은 텍스트, 3~6쪽(스캔 명령서)은 PNG로 변환해 직접 읽음: Original Release Date July 24, 2026, Mullin 서명·Vought CC, 적용 대상, 위험 요약, 각주 8~14, 필수 조치(제외 즉시·제거 즉시 또는 예외), 예외 60일 서면·5개 항목·CISA 심사, 임시 조치, 1년·매년 재검토, FR Doc Filed 10/19/2026 8:45 am·Publication 10/20/2026 확인. TechCrunch(2026-10-20)·TNW(2026-10-19)·IBTimes(2026-10-19) 본문과 article:published_time 메타가 published와 일치함을 확인. 새 출처 S5 The Hacker News(2026-10-21, 87일 시차·implementations 미정의·FAR 52.204-30), S6 FAR 52.204-30 원문, S7 41 CFR 201-1.303(eCFR) 원문으로 계약업체 의무·공개 재량을 확인(41 CFR 201-1.304(b) 예외 유형도 대조). 날짜 계산은 Python으로 재계산: 7/24+60=9/22, 7/24→10/19=87일, 9/22→10/19=27일, 10/20+60=12/19, 10/22 기준 30일 경과/58일 남음, 2026-10-20=화요일. 최신성: 명령서 날짜는 7/24이나 7월 공개 자료는 검색에서 찾지 못했고 여러 매체가 10/19 관보 열람 공개 이후 보도 — 대표 원문 발표일 2026-10-20(관보 게재)로 두고 본문에 시차를 명시. CyberScoop의 ‘6월 26일 서한’ 보도는 스캔 원문(7월 24일)과 달라 쓰지 않음. EGRESS_BLOCKED 출처 없음(federalregister.gov 웹페이지는 차단 페이지로 돌려져 PDF만 사용)."
+ }
+}
