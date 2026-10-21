@@ -1,0 +1,103 @@
+{
+ "topic": "Introducing Claude Duet (Anthropic, 2026-10-21) — 능동형 에이전트 앱 연구 미리보기 / VentureBeat 보도",
+ "source_url": "https://claude.com/resources/articles/claude-duet",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Claude Duet",
+   "url": "https://claude.com/resources/articles/claude-duet",
+   "publisher": "Anthropic",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic unveils Claude Duet (iClarified): Anthropic Introduces Claude Duet AI Assistant for iPhone and Android",
+   "url": "https://www.iclarified.com/102954/anthropic-introduces-claude-duet-ai-assistant-for-iphone-and-android-video",
+   "publisher": "iClarified",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic's answer to Muse is here: Claude Duet, a mobile and desktop AI agent that takes actions proactively",
+   "url": "https://venturebeat.com/technology/anthropics-answer-to-muse-is-here-claude-duet-a-mobile-and-desktop-ai-agent-that-takes-actions-proactively",
+   "publisher": "VentureBeat",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Claude Duet (제품 페이지)",
+   "url": "https://claude.com/product/claude-duet",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI adds $500 ChatGPT tier, Dots for paid plans",
+   "url": "https://www.implicator.ai/openai-500-chatgpt-tier-dots-paid-plans/",
+   "publisher": "Implicator.ai",
+   "published": "2026-09-29",
+   "official": false
+  }
+ ],
+ "images": [],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "먼저 알려 주고 대신 일하는 Claude Duet에 업무를 맡겨도 되는지, 어떤 일부터 시험해야 하는지",
+  "limitations": "직접 실행하지 않았고 대기자 명단 단계라 기능은 공식 글·제품 페이지와 보도에 적힌 범위만 다뤘다. 경쟁 서비스 정보는 VentureBeat·Implicator.ai 보도에 근거하며, Muse 이용자 수는 Sensor Tower 추정치이고 Dots 가격은 OpenAI 공식 요금 페이지로 직접 확인하지 못했다. 조건이 달라 우열을 단정하지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "⚖ Duet과 Muse·Dots·Cowork 비교: 같은 조건으로 읽기",
+    "excerpt": "Duet의 **월 20달러 진입점**이 Dots를 쓰는 데 필요한 개인 ChatGPT Pro 최소 월 100달러보다 낮다고 봤고",
+    "source_ids": [
+     "S3",
+     "S5"
+    ],
+    "added_value": "보도된 구독·접근 조건을 같은 표로 묶고, Dots 100달러 최소 요금을 별도 매체(S5)로 교차 확인했으며, 기존 구독자는 계산이 달라지고 발표 시점·대상이 달라 우열을 단정하지 않는다는 조건을 명시했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧪 먼저 시험해 볼 업무 고르기: 판단 기준과 제외 조건",
+    "excerpt": "그래서 대기자 명단에서 열리면 처음부터 급여나 결제를 맡기기보다, 결과를 사람이 쉽게 확인할 수 있는 작업부터 시험하는 편이 안전합니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "승인 구조와 한계를 독자 상황별 시험 업무·미룰 업무로 바꾸고 직접 기록할 항목을 제시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔒 안전장치와 한계: 공식 설명과 보도를 대조해 읽기",
+    "excerpt": "안전장치의 서술일 뿐 모든 무단 행동이나 유출을 막는다는 증명은 아니라고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "Anthropic의 자체 설명과 외부 매체의 평가를 대조해 공식 주장과 검증된 사실의 경계를 보여 준다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [
+   "아래 그림은 공식 글이 함께 보여 준 연동 앱 로고입니다. (+ 로고 PNG 인용 이미지 I1 과 image 블록 — 로고는 본문 그림 기준 미달)"
+  ],
+  "corrected": [
+   "Team·Enterprise 제외: 공식 글(S1)에 없는 내용 → 제품 페이지(S4)·iClarified(S2) 근거로 출처 표기 수정 (본문·표·FAQ)",
+   "Meta Muse: '9월 8일 출시' 표 → '9월 출시'(VentureBeat: Meta introduced Muse in September; 9월 8일은 Sensor Tower 기준 데뷔일로 본문에 유지), 다운로드·DAU 를 Sensor Tower 추정치로 명시하고 미국 1,020만 건 추가",
+   "Dots 최소 요금: VentureBeat 원문 'the $100 minimum individual Pro subscription for Dots' 에 맞춰 '개인 ChatGPT Pro 최소 월 100달러'로 고치고 Implicator.ai(S5, 2026-09-29)로 교차 확인, '첫 Dot이 더 큰 플랜에 묶여' → '각자 더 넓은 구독에 포함돼'",
+   "Shopify 편집기: '미리보기 편집기는 아직 예정' → 원문 'richer visual editor ... coming soon' 에 맞춰 수정",
+   "Link 구매: 'Duet이 품목을 확인' → '사용자와 품목을 확인'(confirms the item with you)",
+   "'API·감사 로그 등은 발표되지 않았습니다' → '공식 글에 나와 있지 않습니다'로 범위 한정",
+   "한계 표 '확인 사이에 도착한 일을 놓칠 수 있음'은 공식 글이 아닌 제품 페이지(S4)에 있어 표 머리글을 '공식 글·제품 페이지'로 수정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S2·S3 를 WebFetch 로 다시 열어 주장별로 원문 문장과 대조, 제품 페이지(S4)·Implicator.ai(S5) 추가 확인. 발표일: S1 페이지 메타 article:published_time 2026-10-21, S2·S3 페이지 표기 2026-10-21, S5 2026-09-29 일치(S4 는 날짜 표기 없음). EGRESS_BLOCKED 출처 없음. 독자 가치 v1: 비교 조건(Dots 요금·Muse 추정치)·한계를 원문과 대조해 본문과 editorial 을 함께 수정. 인용 이미지: 공식 본문 그림이 아이콘·인물 사진·로고뿐이라 images_none_reason 처리."
+ },
+ "images_none_reason": "공식 글(S1) 본문 그림은 앱 아이콘·추천인 인물 사진·연동 앱 로고 묶음뿐이고, 제품 페이지(S4)의 화면 예시는 그림 파일이 아닌 HTML 목업과 로고 SVG라 '내용과 관련된 본문 그림(제품 화면·도표)' 기준에 맞는 공식 그림이 없음. 로고 PNG 는 기준상 제외."
+}
