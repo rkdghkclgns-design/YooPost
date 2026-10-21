@@ -3768,5 +3768,25 @@
    "https://www.implicator.ai/openai-500-chatgpt-tier-dots-paid-plans/"
   ],
   "draft_id": "20261022_071636_2"
+ },
+ {
+  "date": "2026-10-22",
+  "title": "🧠 MemT-1.0, 긴 대화 기억을 모델 안에 넣으면 검색 없이 충분할까: 점수·속도·한계 비교",
+  "topic": "MemT-1.0: Towards Memory-Native Evolution",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.26825",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/memt-10.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.26825",
+   "https://arxiv.org/html/2610.26825v2",
+   "https://huggingface.co/papers/2610.26825",
+   "https://arxiv.org/abs/2607.26760",
+   "https://huggingface.co/MemTensor/MemT-1.0-Nano",
+   "https://huggingface.co/MemTensor/MemT-1.0-Flash",
+   "https://www.163.com/tech/article/L9MF6HG400098IEO.html"
+  ],
+  "draft_id": "20261022_072344_3"
  }
 ]
