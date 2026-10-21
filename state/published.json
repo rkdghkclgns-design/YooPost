@@ -3825,5 +3825,23 @@
    "https://forkast.news/?p=132219"
   ],
   "draft_id": "20261022_074244_5"
+ },
+ {
+  "date": "2026-10-22",
+  "title": "🏭 텍사스 데이터센터 대기질 보고서: 전기를 어디서 얻느냐에 따라 발전 NOx가 2~10배 벌어진다",
+  "topic": "Texas Data Centers and Air Quality: An Assessment of Potential Impacts (HARC, 2026-10-20) — 텍사스 데이터센터 2031년 대기오염 시나리오",
+  "category": "AI 인사이트",
+  "source_url": "https://harcresearch.org/research/texas-data-center-air-quality/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/nox-210.html"
+  },
+  "sources": [
+   "https://harcresearch.org/research/texas-data-center-air-quality/",
+   "https://www.insurancejournal.com/news/southcentral/2026/10/20/889686.htm",
+   "https://www.nationofchange.org/2026/10/20/texas-report-projects-data-center-growth-would-push-air-pollution-back-toward-2000s-levels/",
+   "https://www.yahoo.com/news/science/articles/texas-data-center-boom-could-012842238.html",
+   "https://www.tpr.org/environment/2026-07-28/environmental-groups-threaten-lawsuit-over-west-side-san-antonio-data-centers"
+  ],
+  "draft_id": "20261022_074747_6"
  }
 ]
