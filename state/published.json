@@ -3808,5 +3808,22 @@
    "https://www.ecfr.gov/current/title-41/subtitle-C/chapter-201/part-201-1/subpart-C/section-201-1.303"
   ],
   "draft_id": "20261022_073323_4"
+ },
+ {
+  "date": "2026-10-22",
+  "title": "🔒 CERT-In 'AI 에이전트는 공격 경로' 긴급 권고: 우리 조직은 무엇부터 점검해야 할까",
+  "topic": "CERT-In Advisory CIAD-2026-0049: AI Agents as Attack Vectors (2026-10-15)",
+  "category": "AI 보안",
+  "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0049",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cert-in-ai.html"
+  },
+  "sources": [
+   "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0049",
+   "https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324",
+   "https://thefederal.com/category/news/cert-in-flags-unauthorised-ai-agent-access-to-indian-organisations-data-259736",
+   "https://forkast.news/?p=132219"
+  ],
+  "draft_id": "20261022_074244_5"
  }
 ]
