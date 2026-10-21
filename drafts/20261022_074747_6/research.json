@@ -1,0 +1,112 @@
+{
+ "topic": "Texas Data Centers and Air Quality: An Assessment of Potential Impacts (HARC, 2026-10-20) — 텍사스 데이터센터 2031년 대기오염 시나리오",
+ "source_url": "https://harcresearch.org/research/texas-data-center-air-quality/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Texas Data Centers and Air Quality: An Assessment of Potential Impacts",
+   "url": "https://harcresearch.org/research/texas-data-center-air-quality/",
+   "publisher": "Houston Advanced Research Center",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Texas Data Center Boom Threatens Progress on Air Quality (Texas Tribune, Alejandra Martinez)",
+   "url": "https://www.insurancejournal.com/news/southcentral/2026/10/20/889686.htm",
+   "publisher": "Insurance Journal (Texas Tribune 재게재)",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Texas report projects data center growth would push air pollution back toward 2000s levels",
+   "url": "https://www.nationofchange.org/2026/10/20/texas-report-projects-data-center-growth-would-push-air-pollution-back-toward-2000s-levels/",
+   "publisher": "NationofChange",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Texas data center boom could erase decades of progress on air quality (Texas Tribune/KXAN)",
+   "url": "https://www.yahoo.com/news/science/articles/texas-data-center-boom-could-012842238.html",
+   "publisher": "Yahoo News (KXAN, Nexstar)",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Environmental groups threaten lawsuit over West Side San Antonio data centers",
+   "url": "https://www.tpr.org/environment/2026-07-28/environmental-groups-threaten-lawsuit-over-west-side-san-antonio-data-centers",
+   "publisher": "Texas Public Radio",
+   "published": "2026-07-28",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "HARC 페이지 본문에는 보고서 도표 이미지가 없고 인터랙티브 차트와 표(Table 1)만 있으며, 페이지 이미지는 로고·아이콘·뉴스 썸네일뿐이라 인용할 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "데이터센터가 어떤 전기를 쓰느냐에 따라 2031년 텍사스 대기질 영향이 얼마나 달라지고, 그 수치를 어떤 조건으로 읽어야 하는가",
+  "limitations": "HARC 페이지와 보도 4건(트리뷴 재게재 2건, NationofChange, TPR)만 읽었고 시나리오별 전체 수치·인터랙티브 차트 세부값은 읽지 못함. 35%·거의 400%는 트리뷴 보도에만 있고 136%의 시나리오 귀속은 HARC(예상 전력망 구성)와 트리뷴(천연가스 문맥)이 다름 — 본문은 HARC 조건을 따름. 직접 실행·측정 없음. 439GW×7,008GWh 환산은 HARC 가동 가정을 보도 수치에 적용한 산술 상한 예시이며 전망이 아님. 소송 관련 내용은 단체 주장.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "⚖️ 전력 공급 방식 비교: 얼마나 차이 나나",
+    "excerpt": "이 4배는 시설 단위의 배출 배수이고, 위 2~10배는 주 전체 데이터센터 발전 배출을 수요 전망별로 비교한 모델 값이라 조건이 다릅니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "HARC 모델 배수(데이터센터 발전 NOx 2~10배, VOC 2~165배)와 트리뷴 인용 시설 단위 4배, 트리뷴의 '거의 400%' 변화율을 구분해 비교 조건을 밝힘"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 직접 계산해 보기: 80% 가동 1GW는 전기를 얼마나 쓰나",
+    "excerpt": "1GW 시설이 연중 24시간 용량의 80%로 돌면 연간 전력 사용량은 1GW × 0.8 × 8,760시간 = **7,008GWh(약 7.0TWh)** 입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "HARC 가동 가정으로 연간 사용량·냉각 몫·439GW 환산을 식과 함께 제시하고 상한 예시임을 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 두 자료를 겹쳐 읽으면 보이는 것",
+    "excerpt": "두 자료를 이으면 이런 해석이 가능합니다. 보고서가 가장 큰 폭의 차이로 보여 주는 것은 **전력 공급 방식**이고, 보도는 그 선택을 가르는 현실 변수로 **연결 대기와 허가 구조**를 지목합니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "added_value": "HARC 모델 자료와 보도의 허가·연결 대기 배경을 연결해 해석(해석임을 표시)"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이 보고서를 어떻게 읽어야 하나: 한계와 판단 기준",
+    "excerpt": "또 하나, 이 보고서는 **전망 모델**이지 실측 배출 조사가 아닙니다. 천연가스 연소 배출계수도 전 기간 일정하게 고정했습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "독자 유형별 확인 포인트와 주의점 표 제공"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [
+   "현장 연소(발전기·터빈) — HARC 페이지에 '발전기' 표현 없음 → '현장 연소(HARC 방법론에서는 왕복 엔진·열병합 연소 터빈 등)'로 수정",
+   "보고서가 스스로 밝힌 한계는 네 가지로 정리됩니다 / 시나리오 가정과 한계 5가지 — HARC 한계 목록은 4개보다 많음 → '핵심 한계'와 목록 표현으로 수정",
+   "기준선과 전력망 전망은 2017~2025년 추세에 기대고 — 2017~2025는 전력망 배출계수 연료 구성 자료, 기준선은 TCEQ 2018~2024 → 수정",
+   "전력망 구성 시나리오 136%의 출처를 'HARC 페이지, 트리뷴 보도'로 묶은 표기 — 트리뷴은 136%를 천연가스 의존 문맥에서 서술 → HARC 조건 기준으로 쓰고 차이를 명시",
+   "35%·거의 400%를 보고서 수치처럼 쓴 요약·FAQ 문장 — 트리뷴 보도에만 있음을 명시하도록 수정",
+   "전력망 연결 3~5년을 일반 사실처럼 쓴 요약 문장 — 가마라 부사장 발언으로 귀속",
+   "439GW '잠재적 수요' 표현 — 트리뷴 원문('대형 프로젝트가 전력망에서 필요로 할 수 있는 추정 전력') 기준으로 수정",
+   "9월 21일 허가 중단 지시 — NationofChange가 Foley 정리를 인용한 보도임을 표시, 소송 의향 통지·허가 회피는 단체 주장임을 표시",
+   "'2024년 대비 2002년' 표 설명 → '2002년 대비 2024년'으로 수정",
+   "요약 '보고서는 전망 모델이며 시나리오별 극단 가정과 한계가 있습니다'는 본문 반복이라 출처 귀속 문장으로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): HARC 페이지(발표일 10.20.2026, 저자·가정·136%/VOC 32%/PM2.5 2006/SO2 18%/2~10배/2~165배/Table 1 25개 값/한계 목록)를 다시 열어 대조. 35%·거의 400%·288개·5~11,000MW·439GW·미국 발전 1/3·ERCOT 500건/24건·EIP 32곳·3~5년·4배·후원 공개 문구는 인슈어런스 저널 재게재 트리뷴 기사(2026-10-20)에서 확인, KXAN/야후판(2026-10-21 01:28 UTC 표기)에서 수치 교차 확인(후원 문구는 없음). HARC 페이지에는 35%·400% 없음. 9/21 지시·10/19 기한·소송 의향 통지 세부는 NationofChange(2026-10-20, Foley·Inside Climate News 인용), 7/22(2026)·60일 절차·벡사 카운티 오존 위반은 TPR(2026-07-28, S5 추가)로 확인. 계산 재확인: 1×0.8×8,760=7,008GWh, 7,008×0.4=2,803.2GWh, 439×7,008=3,076,512GWh. 각 출처 published 가 페이지 날짜와 일치. EGRESS_BLOCKED 출처 없음. Sierra Club 9월 소송 제기 보도자료는 내용이 열리지 않아 쓰지 않음."
+ }
+}
