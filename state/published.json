@@ -3750,5 +3750,23 @@
    "https://www.inceptionlabs.ai/"
   ],
   "draft_id": "20261022_070633_1"
+ },
+ {
+  "date": "2026-10-22",
+  "title": "🤖 Claude Duet 공개: 먼저 알려 주는 AI 비서, 결제·계약까지 맡겨도 될까",
+  "topic": "Introducing Claude Duet (Anthropic, 2026-10-21) — 능동형 에이전트 앱 연구 미리보기 / VentureBeat 보도",
+  "category": "AI 도구",
+  "source_url": "https://claude.com/resources/articles/claude-duet",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-duet-ai.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/claude-duet",
+   "https://www.iclarified.com/102954/anthropic-introduces-claude-duet-ai-assistant-for-iphone-and-android-video",
+   "https://venturebeat.com/technology/anthropics-answer-to-muse-is-here-claude-duet-a-mobile-and-desktop-ai-agent-that-takes-actions-proactively",
+   "https://claude.com/product/claude-duet",
+   "https://www.implicator.ai/openai-500-chatgpt-tier-dots-paid-plans/"
+  ],
+  "draft_id": "20261022_071636_2"
  }
 ]
