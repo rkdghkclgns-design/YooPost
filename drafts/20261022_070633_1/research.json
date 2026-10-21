@@ -1,0 +1,119 @@
+{
+ "topic": "Mercury 3 flagship diffusion LLM — 1M 문맥·초당 1,068토큰·출시 할인가 (Inception, 2026-10-19)",
+ "source_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Mercury 3",
+   "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+   "publisher": "Inception",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Models & Pricing",
+   "url": "https://docs.inceptionlabs.ai/get-started/models",
+   "publisher": "Inception Docs",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Inception Releases Mercury 3, Its Flagship Diffusion LLM",
+   "url": "https://www.unite.ai/inception-releases-mercury-3-its-flagship-diffusion-llm/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Inception launches Mercury 3 at 1,068 tokens per second",
+   "url": "https://runtimewire.com/article/inception-mercury-3-diffusion-llm-launch",
+   "publisher": "RuntimeWire",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Inception — Mercury diffusion LLMs (homepage)",
+   "url": "https://www.inceptionlabs.ai/",
+   "publisher": "Inception",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?lossless=1&width=1364&height=1678",
+   "page_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+   "caption": "Mercury 3 속도와 성능 벤치마크 비교표 — GPT-6 Luna·Claude Haiku 5.5 대비, medium 추론 강도 (Benchmark results vs. models in its class)",
+   "credit": "Inception"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://framerusercontent.com/images/uA54aGA7yoIF8XSjD3KfiSp9efs.png?lossless=1&width=1296&height=1298",
+   "page_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+   "caption": "Mercury 세대별 모델 품질과 파라미터 규모 — Mercury 1(mini)부터 Mercury 3까지 (Model Quality vs. Model Size)",
+   "credit": "Inception"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Mercury 3의 속도·가격 주장이 내 서비스의 응답 시간과 월 비용에 어떤 의미이고, 어떤 경우에 도입을 검토할 만한가",
+  "limitations": "직접 실행·측정하지 않았고 속도·벤치마크·파트너 결과는 회사 보고값이며 독립 검증이 확인되지 않았다. 벤치마크 도표의 측정 세부 조건(medium 표시 외)과 1,068토큰/초의 입력 길이·배치 조건은 공개되지 않았다. 비용은 가정 시나리오의 산술이고, 경쟁 모델 가격은 Inception 도표 표기값이며, 출시 할인 종료일은 확인되지 않았다. Mercury 2·2.5 신규 가입 종료·11월 15일 종료는 Unite.AI 보도뿐이고 현재 공식 모델 문서에는 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 내 서비스 비용은 얼마나 달라질까 (가정 계산)",
+    "excerpt": "같은 가정에 넣으면 20 × 0.10 + 5 × 0.50 = **4.50달러**입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공식 가격표와 Inception 도표의 경쟁 모델 가격을 요청 1만 건 시나리오에 적용해 세대별·경쟁 모델별 비용과 캐시 적중 시 비용을 계산하고, 할인 종료 후 경쟁 모델보다 비싸지는 점을 드러냈다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 속도와 성능 주장, 어디까지 확인됐나",
+    "excerpt": "나눠 보면 1,068 ÷ 130 ≈ 8.2배, 1,068 ÷ 240 ≈ 4.5배로, 회사가 말한 **4~8배가 이 두 비교에서 나온 값**임을 알 수 있습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "회사 도표의 속도·12개 벤치마크를 나란히 놓아 '4~8배'의 계산 근거를 밝히고, 경쟁 모델이 앞선 4개 지표(긴 문맥·일부 코딩)를 짚었다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 이전 세대와 경쟁 모델 사이에서 고르는 기준",
+    "excerpt": "**사용자가 기다리는 짧은 응답**(교육 힌트, 검색 답변, 고객 상담, 음성)이 가장 잘 맞는 영역입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "상황별로 도입 판단과 보류 조건을 나눠 제시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🎯 이전 세대와 경쟁 모델 사이에서 고르는 기준",
+    "excerpt": "그러나 이 글을 쓰며 다시 연 공식 모델 문서에는 이런 문구가 없고, 두 모델이 가격과 함께 목록에 남아 있으며 Mercury 2.5는 '이전 세대' 모델로 소개됩니다.",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "매체 보도(공식 페이지 인용)와 현재 공식 문서의 차이를 대조해 확인되지 않은 지점과 확인 방법을 밝혔다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 60,
+  "confirmed": 54,
+  "removed": [
+   "도입부: 'Stefano Ermon은 매체 인터뷰에서 이 모델을 \"우리의 가장 강력한 모델\"이라고 불렀다고 전해집니다' (어느 출처에도 없음 — RuntimeWire 의 X 게시물 인용 '초당 1,000토큰 이상, 이전 모델보다 개선'으로 교체)",
+   "확산형 설명: '전체 초안을 먼저 만든 뒤 여러 번 다듬으며'·'이미지 생성에서 쓰던 확산 방식을 텍스트에 적용' (출처에 없음 — S5 홈페이지의 '여러 토큰을 병렬 생성'만 남김)",
+   "관련 모델: 'Mercury Voice … Unite.AI는 170ms 미만이라고 전했습니다' (Unite.AI 는 공식 모델 페이지 수치라 했지만 현재 공식 문서에 없음 — 공식 블로그의 TTFAT 설명으로 교체)",
+   "관련 모델: 'Unite.AI는 출력 가격 0달러 표기가 목록 오류일 수 있다고 적었습니다' (S3 에 없음 — 문서의 '출력은 집계만, 과금 안 함'으로 교체)",
+   "한계: 'Unite.AI는 방법론 설명이 부족하며 파트너 후기가 홍보성이라고 지적했습니다' (S3 에 그런 비판 없음 — 삭제, S3 가 AI 작성 기사임을 밝힘)",
+   "벤치마크 점수·조건 '확인되지 않음/공개되지 않음' 서술(요약·📊·표·🎯·한계·FAQ·맺음말) — S1 본문 도표에 12개 벤치마크 점수가 있어 틀림, 실제 점수·예외 4개로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5, 2026-10-22 KST). S1~S4 와 새 출처 S5(Inception 홈페이지)를 WebFetch·curl 로 다시 열어 대조 (모두 HTTP 200, EGRESS_BLOCKED 없음). published 확인: S1 'Oct 19, 2026'(블로그 목록·본문), S3 'Published October 19, 2026'·meta 2026-10-19T14:01-04:00, S4 'Oct 19th, 2026, 12:06pm CT'·meta 2026-10-19T17:06Z — 모두 research.json 과 일치, S2·S5 는 페이지에 날짜 없음(published 비움). 확인: 1,068토큰/초(NVIDIA GPU), 1M 문맥(2.5 는 260K), 131,072/65,536/50,000 최대 출력, 정가 0.20/0.02/0.70·할인 0.10/0.01/0.35, 2.5 0.20/0.02/0.75, 2 0.25/0.025/0.75·128K, 캐시 90%, 40배 파라미터·3배 지능, 1억 무료 토큰, OpenRouter·Baseten·Vercel, OpenAI 호환, 파트너 수치(Mind2Web 50과제 50%·GPT-6.1-Sol, 약 1초, 80ms·0.9초·2.2초, Lorikeet), Voice 엔터프라이즈 전용, Decide v1/decisions·입력만 과금, 엔터프라이즈 데이터 보관 설정. S1 본문 도표(I1)로 벤치마크 12개 점수·속도 130/240토큰/초·경쟁 모델 가격 0.10/0.50 을 확인해 추가. 계산 재검증: 20×0.10+5×0.35=3.75, 정가 7.50, 2.5 7.75(정가 대비 약 3.2%↓), 2 8.75, 캐시 15×0.01+5×0.10+5×0.35=2.40·정가 4.80, 경쟁 모델 20×0.10+5×0.50=4.50(정가 Mercury 3 보다 쌈), 1,068÷130≈8.2·÷240≈4.5(=4~8배 근거), 500/1,068≈0.47초·5,000≈4.7초·131,072≈123초, 1M/260K≈3.85배. 고친 것: TinyFish '비슷한'→'같은' 토큰·단계(프런티어 모델 대비), OpenAI 호환 서술을 블로그 원문('재작성 없이')으로, '문서에 예시 코드 없음' 삭제(문서에 예시 있음), 요약의 '절반 아래'를 할인가 한정으로. Mercury 2/2.5 신규 가입 종료·11월 15일: S3 는 '공식 모델 페이지'를 인용하지만 현재 S2 원문(HTML 전체 검색)에 'new users'·'November'·종료 문구가 없고 2.5 는 'previous-generation' 으로 목록에 남아 있음 — 본문·표·FAQ 에서 'Unite.AI 보도, 공식 문서 미확인'으로 명확히 구분(공식 문서가 '이용 가능'이라 적었다는 기존 서술도 과장이라 수정). images_none_reason 은 틀려(S1 본문에 도표 2개) I1·I2 로 교체, 두 image_url 직접 열어 200 image/png·1364/1296px 확인. editorial: calculation·comparison 발췌·한계를 새 본문과 맞춤."
+ }
+}
