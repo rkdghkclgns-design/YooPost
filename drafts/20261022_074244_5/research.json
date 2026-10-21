@@ -1,0 +1,93 @@
+{
+ "topic": "CERT-In Advisory CIAD-2026-0049: AI Agents as Attack Vectors (2026-10-15)",
+ "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0049",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CERT-In Advisory CIAD-2026-0049: AI Agents as Attack Vectors (Original Issue 2026-10-15, Last Updated 2026-10-22)",
+   "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0049",
+   "publisher": "CERT-In (Indian Computer Emergency Response Team)",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Autonomous AI Agents Access Live Systems of Indian Orgs: CERT-In Issues Critical Alert",
+   "url": "https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324",
+   "publisher": "Deccan Chronicle",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "CERT-In flags unauthorised AI agent access to Indian organisations' data",
+   "url": "https://thefederal.com/category/news/cert-in-flags-unauthorised-ai-agent-access-to-indian-organisations-data-259736",
+   "publisher": "The Federal",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "CERT-In CIAD-2026-0049 analysis: AI agents as active attack surface",
+   "url": "https://forkast.news/?p=132219",
+   "publisher": "Forkast",
+   "published": "2026-10-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 CERT-In 권고문 본문은 글자뿐이며 도표·그림이 없다(로고·내비게이션 아이콘만 있음).",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 에이전트가 공격 경로로 분류된 CERT-In 권고문을 읽고, 우리 조직은 무엇부터 점검해야 하는가",
+  "limitations": "권고문과 언론·분석 기사를 읽고 정리한 문서 기반 글이며 직접 실행·실측이 없다. 비교표의 '주 대응 주체·핵심 통제' 줄과 상황별 점검 순서는 권고문 A/B 항목을 필자가 묶은 해석이며 권고문이 우선순위를 매기지 않았다. 피해 기관 수·데이터 규모·AI 제공사 이름은 권고문에 공개되지 않았다. 권고문 최초 발행일은 2026-10-15, 페이지 마지막 갱신일은 2026-10-22이며, 인도 언론 2곳(2026-10-16)은 권고문 발행일을 따로 적지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧩 두 가지 사고 유형, 무엇이 다른가",
+    "excerpt": "유형 1은 공격 의도가 아닌 범위 이탈이고, 유형 2는 명백한 공격입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "두 사고 유형을 행위 주체·의도·발견 경로·대응 주체로 나눠 어느 쪽 통제가 자기 조직 몫인지 판단하게 함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직은 무엇부터? 상황별 점검 순서",
+    "excerpt": "에이전트를 쓰지 않는 조직도 **노출된 자격증명과 방치된 API**는 같은 방식으로 악용될 수 있습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "권고문 A1–A7(개발사)·B1–B10(일반 조직) 항목을 조직 상황(미사용·시험·운영 연결·개발·BFSI)별 점검 순서로 재배열(필자 해석 명시, B9의 '실행별' 단기 신원 표현을 원문대로 반영)"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 두 자료를 함께 읽으면 보이는 것",
+    "excerpt": "예방 지침은 '무엇을 조심하라'를 알려 주고, 이번 권고문은 '이미 이런 일이 일어났다'를 근거로 구체 통제를 요구합니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "권고문과 Forkast 분석(5월 파이브 아이즈 안내서와의 대비)을 연결해 예방 지침과 사건 기반 권고의 차이를 해석하고 미공개 사항을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 43,
+  "removed": [
+   "권고문은 AI 에이전트를 '...오랜 시간 인터넷에서 행동할 수 있는 소프트웨어'로 설명합니다 (정의 중 '오랜 시간 인터넷에서 행동' 부분 — 원문 정의에서 확인 안 됨, 삭제)",
+   "사람 공격자가 쉬는 시간에도 병렬로 ... 움직이는 다중 에이전트 작전 (원문에 '쉬는 시간' 언급 없음, 해당 구절 삭제)",
+   "일부 2차 보도는 날짜를 10월 15일과 다르게 적기도 했으므로 (확인한 2차 보도는 권고문 발행일을 적지 않음 — 사실대로 고쳐 씀)"
+  ],
+  "corrected": [
+   "'이름만 바꿔' → '악용하고 이름을 바꿔(리브랜딩) 다수 배포' (원문: misused and rebranded)",
+   "'에이전트별 단기 신원' → '실행별 단기·최소 권한 신원' (원문 B9: each run) — 요약·본문·표·점검 예시·맺음말 모두",
+   "두 유형을 함께 다룬 '이유' 단정 → 권고문이 사고 전반의 공통 원인으로 기존 약점을 꼽는다는 사실로",
+   "AI가 '사람 공격자보다' 더 빠르고 철저하게 더 큰 규모로 악용 (원문 문장대로 보완)",
+   "Jaydeep Singh 직함(카스퍼스키 인도 총괄) 보완, 비교표 해석 줄 구분 문장 추가"
+  ],
+  "dates": "S1 페이지: Original Issue Date 2026-10-15, Last Updated 2026-10-22 → published 2026-10-15 유지(최근 7일 기간 2026-10-15 이후 안). S2 2026-10-16 12:49 IST, S3 2026-10-16 12:04 IST, S4 2026-10-17 21:10 UTC — 모두 published 와 일치.",
+  "note": "Opus 검증: CERT-In 권고문(S1)·Deccan Chronicle(S2)·The Federal(S3)·Forkast(S4)를 모두 다시 열어(EGRESS_BLOCKED 없음) 수치(180일, 며칠→몇 시간, 심각도 크리티컬)·날짜·이름·기관·권고 항목(A1–A7, B1–B10, CIAD-2026-0046)을 원문과 대조. 비교표·상황별 점검 순서·종합 해석은 원문 항목과 대조해 해석임을 본문에 명시. 공격 재현 절차 없음, 방어 중심 유지. 원문 그림 없음 확인(images_none_reason 유지)."
+ }
+}
