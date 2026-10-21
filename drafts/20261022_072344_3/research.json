@@ -1,0 +1,132 @@
+{
+ "topic": "MemT-1.0: Towards Memory-Native Evolution",
+ "source_url": "https://arxiv.org/abs/2610.26825",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "MemT-1.0: Towards Memory-Native Evolution (arXiv abs)",
+   "url": "https://arxiv.org/abs/2610.26825",
+   "publisher": "arXiv (MemTensor Team, Zhiyu Li 외 73명)",
+   "published": "2026-10-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "MemT-1.0: Towards Memory-Native Evolution (arXiv HTML v2 전문)",
+   "url": "https://arxiv.org/html/2610.26825v2",
+   "publisher": "arXiv",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "MemT-1.0: Towards Memory-Native Evolution (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.26825",
+   "publisher": "Hugging Face",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Metis: Memory Foundation Model (arXiv abs)",
+   "url": "https://arxiv.org/abs/2607.26760",
+   "publisher": "arXiv",
+   "published": "2026-07-29",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "MemTensor/MemT-1.0-Nano 모델 카드 (Hugging Face)",
+   "url": "https://huggingface.co/MemTensor/MemT-1.0-Nano",
+   "publisher": "MemTensor (Hugging Face)",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "MemTensor/MemT-1.0-Flash 모델 카드 (Hugging Face)",
+   "url": "https://huggingface.co/MemTensor/MemT-1.0-Flash",
+   "publisher": "MemTensor (Hugging Face)",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "记忆张量开源MemT 1.0：长历史推理提速近4倍，存储缩减130倍",
+   "url": "https://www.163.com/tech/article/L9MF6HG400098IEO.html",
+   "publisher": "网易科技 (NetEase Tech)",
+   "published": "2026-10-20",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.26825v2/memt-arc.png",
+   "page_url": "https://arxiv.org/html/2610.26825v2",
+   "caption": "MemT-1.0 구조: 네이티브 메모리 블록과 Mixture-of-Storage 아키텍처 도표",
+   "credit": "MemT-1.0 논문 (arXiv 2610.26825) Figure 4"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.26825v2/figure_performance.png",
+   "page_url": "https://arxiv.org/html/2610.26825v2",
+   "caption": "메모리 벤치마크: MemT-1.0과 기준선의 메모리 성능 비교 그림",
+   "credit": "MemT-1.0 논문 (arXiv 2610.26825) Figure 1"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.26825v2/figure_efficiency.png",
+   "page_url": "https://arxiv.org/html/2610.26825v2",
+   "caption": "속도와 저장 공간: 기록 길이별 추론 효율과 저장 비교 그림",
+   "credit": "MemT-1.0 논문 (arXiv 2610.26825) Figure 3"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "긴 대화 기억을 모델 안의 고정 크기 메모리에 넣는 MemT-1.0이 검색·전체 문맥 방식을 대체할 수 있는가, 어떤 기록 길이와 조건에서 검토할 만한가?",
+  "limitations": "모델을 직접 실행·재현하지 않았고 모든 수치는 논문 저자 보고 값이다. 표 간 차이·비율·128K 저장량은 논문 숫자로 계산한 값이며, 텍스트·파라미터 방식마다 백본이 다르고 판정 프롬프트(OmniMemEval)는 저자 조직의 도구다. 효율 수치는 GPU 2장·요청 1개 조건이다. 독립 재현과 실서비스 비용은 확인하지 못했다. Hugging Face 추천 수(155)는 확인 시점 값이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 메모리 벤치마크: 파라미터 방식 1·2위, 텍스트 방식과는 격차",
+    "excerpt": "반대로 **텍스트 기반 방식과의 격차**도 숫자로 보입니다. 제 계산으로 Flash(50.60)는 MemOS",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "파라미터 내장·검색·전체 문맥 방식의 11개 벤치마크 평균을 한 표에 놓고 Flash가 MemOS와 약 18점, Full Context와 약 14점 격차임을 계산해 대체 가능성을 판단하게 함"
+   },
+   {
+    "kind": "calculation",
+    "section": "⚡ 속도와 저장 공간: 128K부터 이득이 생기는 계산",
+    "excerpt": "저장 공간은 더 극적입니다. 기록 길이와 무관하게 Nano의 궤적당 상태는 일정하고, 논문 표에는 FP32 ",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Nano 상태 40MiB×약 66배로 128K 전체 문맥 저장량 약 2.6GiB를 추정하고, 그림 3의 256K 값 5.061GiB의 절반(약 2.5GiB)과 대조해 저장 이득을 체감 가능하게 함(가정·오차 명시)"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 필요한가: 상황별 선택 기준",
+    "excerpt": "논문 수치만으로 상황별 선택 기준을 정리해 보겠습니다. 이는 **제 추론**이며 직접 실험한 결과가 아닙니다",
+    "source_ids": [
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "기록 길이·정확 회상 필요·가중치 라이선스(모델 카드)별로 도입 여부와 제외 조건을 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 66,
+  "removed": [
+   "Hugging Face Papers 에도 2026-10-20 자로 올라와 있어 커뮤니티에서 읽히는 논문으로 확인됩니다. 다만 제가 읽은 Hugging Face 페이지에서는 추천 수와 댓글을 확인하지 못했으므로 반응의 크기는 말할 수 없습니다. (페이지 표시일 Oct 19·추천 155개로 교체)",
+   "같은 팀의 정확 회상 도구와 섞어 쓸 수 있는지는 논문에서 다루지 않았습니다. (MemOS 소속 관계는 논문에 명시되지 않아 삭제)",
+   "모델 가중치와 서비스 가능 여부는 제가 확인하지 못했고, 논문 라이선스는 CC BY-NC-SA 4.0으로 표시됩니다(비상업 조건 포함). (가중치 공개·Nano Apache 2.0·Flash MIT 모델 카드 확인 후 수정; 표·FAQ·맺음말·경고 박스의 같은 내용도 수정)",
+   "하니스가 저장 시점을 정하는 설정에서는 Nano가 62.80·63.56으로 텍스트(61.80·63.00)를 소폭 앞섰습니다. (서로 다른 지표·벤치마크를 섞은 문장 → Verified pass³·Multilingual 평균으로 명시)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(제출 이력 v1 2026-10-19·v2 2026-10-20, 저자 74명, 66쪽, CC BY-NC-SA 4.0), arXiv HTML v2 본문의 수식 alttext까지 추출해 Table 2(11개 평균·LME·BEAM 값, 평균 재계산 일치), Table 3(일반 능력 0.0/−0.9/LCB −5.8), Table 4(절단 실험 7행·ΔAVG), Table 5(SWE-bench 12행, 셀이 붙어 추출된 부분 대조), Table 6(층 수·전문가 1개·FP32 40MiB) 대조. 효율 1.20/1.86/3.99배는 6.5절 원문, 그림 3 절댓값(30.07/16.19초, 94.47/23.69초)으로 비율 재계산 일치. 저장 2.6GiB는 40MiB×66=2,640MiB와 그림 3의 256K 5.061GiB 절반(≈2.5GiB)으로 교차 확인, 추정임을 본문에 명시. 소속은 논문 표기 'MemTensor Team'과 HF 조직만 남기고 MemOS 관련 서술 삭제. Metis abs(2026-07-29) 확인. HF Papers 페이지 표시일 Oct 19에 맞춰 S3 published 2026-10-20→2026-10-19 수정. HF 모델 카드(S5·S6) 추가로 가중치 공개·라이선스 확인. 인용 이미지 3개 HTTP 200 image/png, 가로 2000px 이상 확인. EGRESS_BLOCKED 출처 없음. 이슈화 출처로 网易科技 기사(S7, article:published_time 2026-10-20)를 직접 읽고 추가: 11개 평균 50.6/47.0, 1.86·3.99배, TTFT 104~112ms·445ms, 256K 40MiB 대 5.06GiB(약 130배), SWE 평균 66.07→69.73·60.00→63.56(하니스 설정) 모두 논문과 일치."
+ }
+}
