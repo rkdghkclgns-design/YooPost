@@ -3732,5 +3732,23 @@
    "https://developers.openai.com/api/docs/pricing"
   ],
   "draft_id": "20261021_080049_1"
+ },
+ {
+  "date": "2026-10-22",
+  "title": "⚡ Mercury 3 확산형 LLM, 초당 1,068토큰이 내 서비스 비용과 응답 시간을 얼마나 바꿀까",
+  "topic": "Mercury 3 flagship diffusion LLM — 1M 문맥·초당 1,068토큰·출시 할인가 (Inception, 2026-10-19)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/mercury-3-llm-1068.html"
+  },
+  "sources": [
+   "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+   "https://docs.inceptionlabs.ai/get-started/models",
+   "https://www.unite.ai/inception-releases-mercury-3-its-flagship-diffusion-llm/",
+   "https://runtimewire.com/article/inception-mercury-3-diffusion-llm-launch",
+   "https://www.inceptionlabs.ai/"
+  ],
+  "draft_id": "20261022_070633_1"
  }
 ]
