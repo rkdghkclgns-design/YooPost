@@ -3897,5 +3897,22 @@
    "https://ppc.land/walmart-lets-ai-agents-buy-within-customer-set-limits-such-as-50-or-100/"
   ],
   "draft_id": "20261023_071440_2"
+ },
+ {
+  "date": "2026-10-23",
+  "title": "🎬 Looking Ahead 논문 분석: 미래 청크를 맞히게 했더니 5B 비디오 모델 Physics-IQ 30.4에서 33.8로, 근거와 한계",
+  "topic": "Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.29989",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/looking-ahead-5b-physics-iq-304-338.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.29989",
+   "https://arxiv.org/html/2610.29989",
+   "https://huggingface.co/papers/2610.29989",
+   "https://arxiv.org/abs/2606.11187"
+  ],
+  "draft_id": "20261023_072209_3"
  }
 ]
