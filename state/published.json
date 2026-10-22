@@ -3952,5 +3952,24 @@
    "https://www.aikido.dev/blog/litellm-compromised-infostealer-rat"
   ],
   "draft_id": "20261023_073809_5"
+ },
+ {
+  "date": "2026-10-23",
+  "title": "🩺 Microsoft MAI-DxO 83% 대 의사 36%, 이 숫자는 어떤 조건에서 읽어야 할까",
+  "topic": "Microsoft AI: Building medical superintelligence — MAI-DxO Science 게재 (2026-10-22)",
+  "category": "AI 인사이트",
+  "source_url": "https://microsoft.ai/news/building-medical-superintelligence/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/microsoft-mai-dxo-83-36.html"
+  },
+  "sources": [
+   "https://microsoft.ai/news/building-medical-superintelligence/",
+   "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
+   "https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/",
+   "https://arxiv.org/abs/2506.22405",
+   "https://haverin.substack.com/p/microsoft-medical-superintelligence-healthcare-ai",
+   "https://aiweekly.co/alerts/microsofts-mai-dxo-beats-doctors-83-to-36-on-nejm-cases"
+  ],
+  "draft_id": "20261023_074607_6"
  }
 ]
