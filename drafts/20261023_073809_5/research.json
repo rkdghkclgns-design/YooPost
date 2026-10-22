@@ -1,0 +1,108 @@
+{
+ "topic": "LiteLLM v1.107.0 Compromise (LiteLLM, 2026-10-21) — 릴리스 파이프라인 침해와 악성 PyPI·도커 산출물 / The Hacker News·Wiz·JFrog·Aikido 분석",
+ "source_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "LiteLLM v1.107.0 Compromise (security incident, Oct 21 2026)",
+   "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+   "publisher": "LiteLLM",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ThreatsDay/LiteLLM suspects GitHub token leak in release compromise",
+   "url": "https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "LiteLLM compromised: steals credentials",
+   "url": "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+   "publisher": "Wiz",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "LiteLLM hijacked again",
+   "url": "https://research.jfrog.com/post/litellm-hijacked-again/",
+   "publisher": "JFrog Security Research",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "LiteLLM compromised: infostealer and RAT",
+   "url": "https://www.aikido.dev/blog/litellm-compromised-infostealer-rat",
+   "publisher": "Aikido Security",
+   "published": "2026-10-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.datocms-assets.com/75231/1792601134-payload-flow.svg?fm=png&w=1600",
+   "page_url": "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+   "caption": "어떤 비밀이 노출될 수 있었나: LiteLLM 1.107.0 페이로드 실행 흐름도(설치, 시작, 실행, 유출·원격 실행 단계와 수집 대상)",
+   "credit": "Wiz"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "LiteLLM 악성 1.107.0 의 노출 구간은 얼마였고, 내 환경이 영향권인지 어떤 순서로 판단하고 점검해야 하는가",
+  "limitations": "악성 파일을 직접 실행하거나 재현하지 않았고 공개 자료의 시각·권고만 정리했다. 초기 침투 경로와 실제 유출 범위는 조사 중이다. 노출 시간은 공지(10월 21일 20:30 UTC 갱신본) 시각의 차이이며 종료 시각은 상한값이다. Claude Code 토큰 노출은 LiteLLM 공지의 주장이며 Anthropic 확인은 읽은 자료에 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 노출 시간대 계산: 몇 분 동안 열려 있었나",
+    "excerpt": "**PyPI 는 11:39~13:23 으로 104분**, **GHCR 는 11:46~13:51 로 125분**, **Docker Hub 는 11:46~14:20 으로 154분**입니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "공지의 UTC 시작·종료 시각을 빼서 배포처별 노출 분을 계산하고, 초 단위 시작 시각·상한값 의미와 Aikido(11:39~12:47)·Wiz(13:20·약 13:53) 시각 차이를 박스로 대조해 한계를 밝혔다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직은 어떻게 판단할까",
+    "excerpt": "공개 자료로 상황별 판단 기준을 정리하면 아래와 같습니다. 이는 출처의 권고를 상황에 맞춰 묶은 **해석**이며",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "설치 방식(미고정, 변경 가능 태그, 고정, 엔터프라이즈)별로 영향 여부와 다음 행동을 구분했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧾 의심되는 설치 이력 확인하기",
+    "excerpt": "확인의 순서가 중요합니다. 공지는 영향 환경에서 먼저 **pip 를 실행하지 말라**고 합니다. 파이썬이 시작될 때 악성 후크가 다시 실행되기 때문입니다.",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공지·JFrog·Aikido 의 점검 항목을 하나의 순서표로 묶고 출처별로 표시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 50,
+  "confirmed": 50,
+  "removed": [
+   "(표) Claude Code 토큰이 응답 본문과 로그에 남을 수 있다고 공지 → 'GitHub CLI 토큰'을 Claude Code 가 응답 본문에 넣을 수 있다는 공지 주장으로 정정",
+   "(표) 월요일의 권한 확대가 출발점으로 지목됨 → 공지의 원인 분석에 포함됨(공지는 '출발점'이라 하지 않음)",
+   "한 사람의 자격 증명이 승인과 기록 삭제를 모두 할 수 있으면 독립 통제라고 부르기 어렵다 → 실제로는 서로 다른 세 자격 증명이 쓰여 해석 문장 교체",
+   "개발팀은 전체 지표(IOC) 안내를 추후 내겠다 → '침해 흔적을 찾는 구체적 방법을 추후 공개'로 정정",
+   "(FAQ) JFrog 와 Socket 은 연결 증거가 없다 → Socket 발언은 The Hacker News 인용으로 출처 명시, 동일 운영자 가능성 배제 안 함 추가",
+   "초기 침투는 ... 낯선 계정이 의심 → 낯선 계정은 발견 사실, 침투 경로는 최근 패치된 취약점 의심으로 정정",
+   "(표) .pc_once_ 표식 = 수집 단계 실행 신호 → 수집·전송이 이미 일어난 신호(공지·JFrog·Aikido)로 정정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S5 를 curl 로 다시 열어 본문 대조, published 를 페이지 메타와 대조(S1 2026-10-21T10:00Z, S2 2026-10-22 08:28 UTC, S3 2026-10-21T09:44-04:00, S4 21 Oct 2026, S5 Oct 21 2026 — 모두 일치). 노출 시간은 공지 UTC 타임라인으로 재계산(104·125·154분, 초 단위 시작 시 103·124·153분, 종료는 상한). Aikido PyPI 구간 11:39~12:47(68분)·Wiz 13:20/약 13:53 차이와 '4:00 AM PST'(=12:00 UTC) 불일치를 경고 박스에 명시. 10월 19일=월요일(THN·달력). Claude Code 의 GitHub CLI 토큰 노출은 LiteLLM 공지 주장으로 표기. 인용 이미지: Wiz 본문 SVG 는 HTTP 200 image/svg+xml(viewBox 1600x900)이나 파이프라인이 SVG 를 거부하므로 같은 자산의 imgix PNG 변환(?fm=png&w=1600, HTTP 200 image/png 1600x900)으로 교체. editorial 발췌는 ** 서식 포함 본문과 일치하도록 수정."
+ }
+}
