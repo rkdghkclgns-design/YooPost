@@ -1,6 +1,6 @@
 import json
 import subprocess
-from datetime import timedelta
+from datetime import datetime, timedelta
 from types import SimpleNamespace
 
 import pytest
@@ -306,7 +306,16 @@ def test_complete_keeps_cli_failure_and_service_wait_without_draft(branch_repo, 
     monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
     monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
     monkeypatch.setattr(codex_cloud, "status", lambda: {"synced": True, "daily": []})
-    live = codex_cloud.datetime.now(codex_cloud.KST)
+    # 5시간 뒤가 다음 KST 날짜가 되면 일일 요청은 재시도 대상이 아니다.
+    # 서비스 대기 해제는 같은 날 오전의 고정 시계로 검사한다.
+    live = NOW.replace(hour=10, minute=0, second=0, microsecond=0)
+
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return live if tz is None else live.astimezone(tz)
+
+    monkeypatch.setattr(codex_cloud, "datetime", Clock)
     selected = task(day=live.strftime("%Y%m%d"), owner="123-1", category=category)
     state = reserve({}, selected, "previous", live - timedelta(hours=5))
     state = settle(state, selected, "previous", "failed", "previous failure")
@@ -325,6 +334,7 @@ def test_complete_keeps_cli_failure_and_service_wait_without_draft(branch_repo, 
     assert attempt["failure_kind"] == "usage_limit"
     assert not retry_ready(ended, selected, live + timedelta(hours=3))
     assert retry_ready(ended, selected, live + timedelta(hours=5))
+    assert not retry_ready(ended, selected, live + timedelta(days=1))
     assert not choose_task({"synced": True, "daily": [{"category": "AI 보안"}]}, ended, live + timedelta(hours=3))
     assert not list(tree.glob("drafts/*/post.json"))
 
