@@ -1,0 +1,122 @@
+{
+ "topic": "Introducing Flint (Recursive, 2026-10-21) — 40B MoE 로컬 코딩 모델 / The Decoder 보도",
+ "source_url": "https://recursive.com/updates/introducing-recursive-flint",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Flint",
+   "url": "https://recursive.com/updates/introducing-recursive-flint",
+   "publisher": "Recursive",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "RecursiveSI/flint 모델 카드",
+   "url": "https://huggingface.co/RecursiveSI/flint",
+   "publisher": "Recursive (Hugging Face)",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Recursive shows first result of its AI-driven research process with Flint",
+   "url": "https://the-decoder.com/recursive-shows-first-result-of-its-ai-driven-research-process-with-flint/",
+   "publisher": "The Decoder",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Recursive releases Flint, an open-weight coding model for local use",
+   "url": "https://digg.com/tech/kqx88z14",
+   "publisher": "Digg",
+   "published": "2026-10-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://framerusercontent.com/images/r0ZvZoY4jdnhGrjQFOVH8C8aFGo.png?width=12800&height=7200",
+   "page_url": "https://recursive.com/updates/introducing-recursive-flint",
+   "caption": "Flint 모델 구조와 M4 Pro에서의 품질·디코딩 속도 비교 차트",
+   "credit": "Recursive"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?width=12800&height=7200",
+   "page_url": "https://recursive.com/updates/introducing-recursive-flint",
+   "caption": "RTX Spark와 Mac에서 나온 속도 숫자 — Flint 로컬 추론 속도 차트",
+   "credit": "Recursive"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://framerusercontent.com/images/Pr0KZ9ZtzPrFHMFZxCtZXjud04.png?width=12800&height=7200",
+   "page_url": "https://recursive.com/updates/introducing-recursive-flint",
+   "caption": "같은 표에서 비교하면 — Flint 벤치마크 6종 성능 비교 차트",
+   "credit": "Recursive"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Flint는 같은 하드웨어에서 돌릴 수 있는 다른 로컬 코딩 모델보다 속도를 얻는 대신 정확도에서 무엇을 내주는가, 내 환경에 맞는가?",
+  "limitations": "모든 점수·속도는 Recursive가 발표한 수치이며 일부(†, SWE-bench Pro v2 전체 포함)는 내부 측정이다. 비교 모델 점수는 평가 설정이 다를 수 있다(Terminal-Bench 웹 검색 풀이 처리 등). 필자는 모델을 직접 실행하지 않았고 독립 재현 결과를 확인하지 못했다. 평균 점수·배율은 차트 값으로 필자가 다시 계산한 값이다(검증자가 원본 차트 이미지와 대조·재계산).",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 같은 표에서 비교하면: Flint는 MoE 중 앞서고, 밀집 모델에는 항목별로 갈린다",
+    "excerpt": "표를 읽으면 **Flint는 희소 MoE 비교군 중 LiveCodeBench v6(Qwen3.6 80.4 대",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "비교군을 희소 MoE와 밀집 모델로 나눠 항목별 우열과 큰 격차를 구분하고, 내부 측정(†) 혼재 때문에 작은 차이는 단정하지 않도록 조건을 밝힘"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 직접 계산해 본 평균 점수와 속도 배율",
+    "excerpt": "따라서 평균 속도는 Flint(MLX)가 약 **6.8배**(68.89÷10.11), Flint(llama.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "차트 값으로 6개 평균 점수와 속도 배율(68.89÷10.11 등)을 계산해 '점수를 얼마 양보하고 속도를 몇 배 얻는지'를 수치로 제시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💻 어떤 사람에게 맞을까: 선택 기준과 제외 조건",
+    "excerpt": "아래는 공개된 수치와 한계를 근거로 한 필자의 판단 기준입니다. 속도, 코드 외부 반출 여부, 긴 작업의 정",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "보안·호출 빈도·사양·작업 크기별로 Flint가 맞는 경우와 다른 선택이 나은 경우를 분리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧪 Eureka Machine과 4비트 출력층: 회사가 설명한 제작 방식",
+    "excerpt": "공식 글(자랑할 점)과 매체 기사(검증되지 않은 점)를 함께 놓으면, '4개월 만에 만든 모델'이라는 속도는",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공식 글의 제작 방식 설명과 매체의 검증 한계 지적을 연결해 '4개월'은 주장, '자동 연구 때문'은 미확인으로 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 54,
+  "removed": [],
+  "corrected": [
+   "제목·본문 '5~7배' → '평균 4.7~6.8배' (llama.cpp 47.58÷10.11=4.71, MLX 68.89÷10.11=6.81)",
+   "NVFP4 '16비트보다 0.7점 낮은 수준' → '0.7점 이내 차이' (S1 'within 0.7 points')",
+   "'2배 정도 빠르다' → '최대 2배' (S1 'up to twice as fast')",
+   "SWE-bench Pro v2 행에 † 추가 — 차트 제목 자체에 †(전체 내부 측정)",
+   "Eureka Machine '상당 부분을 맡음' → '거의 모든 부분을 도움' (S1 'helped develop nearly every part')",
+   "사양 행 'M4 Pro급 이상' 추정 표현 → 측정 하드웨어(M4 Pro 48GiB·RTX Spark 64GB)만 표기",
+   "보완: 평균 속도는 프리필 제외·Muse 124k 측정 각주, Terminal-Bench 웹 검색 풀이 실패 처리(모델 카드) 추가"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 curl 로 다시 열어 본문 대조(EGRESS_BLOCKED 출처 없음). 차트 3장(framerusercontent 12800x7200 PNG, HTTP 200 image/png)을 내려받아 원고의 벤치마크 42개 값·M4 Pro/RTX Spark 속도 값 전부 일치 확인. 6개 평균(Flint 80.57, Qwen3.8 84.65, Muse 74.82, Qwen3.6 71.67, Gemma4 70.38)과 배율(6.81·4.71·10.09·1.33·1.11) 재계산 일치, 산점도 차트 위치와도 일치. 컨텍스트: S1 'up to 512k, 256k 이내 권장' / S2 'Documented context configuration 262,144 tokens' — 두 표기 병기 유지. published 확인: S1 Framer 'Published Oct 21, 2026 7:28 PM UTC'(본문에 보이는 날짜 없음, The Decoder·Digg 가 10-21 공개로 확인), S2 HF createdAt 2026-10-21, S3 article:published_time 2026-10-22, S4 published_time 2026-10-21 — 모두 research.json 과 같음. 모든 수치는 개발사 수치임을 본문에 명시."
+ }
+}
