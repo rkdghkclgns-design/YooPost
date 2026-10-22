@@ -87,6 +87,30 @@ test("server assigned between status checks prevents cancellation", async t => {
   assert.equal(f.calls.filter(c => c.path.endsWith("/cancel")).length, 0);
 });
 
+test("queued status with execution evidence is not an unassigned server", async t => {
+  for (const evidence of [
+    { started_at: "2026-10-06T08:50:00Z" },
+    { runner_id: 123 },
+    { steps: [{ name: "Install fonts", status: "in_progress" }] },
+    { steps: [{ name: "Set up job", status: "completed", conclusion: "success" }] },
+  ]) {
+    const f = fixture(t, { runs: [queued], jobs: [{ ...waitingJobs[0], ...evidence }] });
+    await f.tick();
+    assert.equal(f.calls.filter(c => c.path.endsWith("/cancel")).length, 0);
+    assert.equal(f.calls.filter(c => c.path.includes("codex_fallback.yml/dispatches")).length, 0);
+  }
+});
+
+test("completed job execution does not protect a stale unassigned follow-up", async t => {
+  const f = fixture(t, { runs: [{ ...queued, status: "in_progress" }], jobs: [
+    { name: "write", status: "completed", started_at: old, completed_at: old, runner_id: 123,
+      steps: [{ status: "completed" }] },
+    { name: "complete", status: "queued", created_at: old, started_at: null, runner_id: null },
+  ] });
+  await f.tick();
+  assert.equal(f.calls.filter(c => c.path.endsWith("/cancel")).length, 1);
+});
+
 test("finishing a long write gives the result-saving job time to appear", async t => {
   const f = fixture(t, { runs: [{ ...queued, status: "in_progress" }], jobs: [
     { name: "write", status: "completed", completed_at: "2026-10-07T00:49:00Z", runner_id: 1 },

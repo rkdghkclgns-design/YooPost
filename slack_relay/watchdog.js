@@ -78,8 +78,16 @@ export class CloudWatchdog {
     return data.jobs || [];
   }
 
+  executing(jobs) {
+    return jobs.some(job => job.status === "in_progress" || (ACTIVE.includes(job.status) && (
+      Number(job.runner_id) > 0 || Number.isFinite(Date.parse(job.started_at)) ||
+      (job.steps || []).some(step => ["in_progress", "completed"].includes(step.status))
+    )));
+  }
+
   stale(run, jobs, now) {
-    if (run.status === "completed" || jobs.some(j => j.status === "in_progress")) return false;
+    // GitHub가 queued를 반환해도 시작 시각·runner·단계가 있으면 서버 미배정으로 취소하지 않는다.
+    if (run.status === "completed" || this.executing(jobs)) return false;
     const queued = jobs.filter(j => ACTIVE.includes(j.status));
     // 대기 단계가 하나라도 새로 생겼으면 시작할 시간을 준다.
     const finished = jobs.map(j => Date.parse(j.completed_at)).filter(Number.isFinite);
@@ -120,7 +128,7 @@ export class CloudWatchdog {
     // 실제 서버에서 수행 중인 작업을 취소하지 않는다. 같은 그룹의 후속 대기도 유지한다.
     for (const run of running) {
       const jobs = await this.jobs(run);
-      if (jobs.some(j => j.status === "in_progress")) {
+      if (this.executing(jobs)) {
         item.status = "running";
         item.run = run.id;
         if (item.recovering) {
