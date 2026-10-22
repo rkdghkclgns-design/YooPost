@@ -1,0 +1,121 @@
+{
+ "topic": "Microsoft AI: Building medical superintelligence — MAI-DxO Science 게재 (2026-10-22)",
+ "source_url": "https://microsoft.ai/news/building-medical-superintelligence/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Building medical superintelligence (Microsoft AI)",
+   "url": "https://microsoft.ai/news/building-medical-superintelligence/",
+   "publisher": "Microsoft AI",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Microsoft's Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases 'medical superintelligence'",
+   "url": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "AMIE clinical study in The Lancet (Google)",
+   "url": "https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/",
+   "publisher": "Google",
+   "published": "2026-10-08",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Sequential Diagnosis with Language Models",
+   "url": "https://arxiv.org/abs/2506.22405",
+   "publisher": "arXiv (Microsoft AI)",
+   "published": "2025-06-27",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Whatever Happened to Microsoft's Medical Superintelligence?",
+   "url": "https://haverin.substack.com/p/microsoft-medical-superintelligence-healthcare-ai",
+   "publisher": "Haverin (Substack)",
+   "published": "2026-09-14",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Microsoft's MAI-DxO Beats Doctors 83% to 36% on NEJM Cases",
+   "url": "https://aiweekly.co/alerts/microsofts-mai-dxo-beats-doctors-83-to-36-on-nejm-cases",
+   "publisher": "AI Weekly",
+   "published": "2026-10-22",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(Microsoft AI 블로그, Google AMIE 블로그) 본문에 차트·도표·스크린샷이 없고 글자뿐인 문서이며, 확인된 그림은 히어로 아이콘뿐이라 넣지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "MAI-DxO '83% 대 의사 36%'는 어떤 비교 조건에서 나온 숫자이며, 오케스트레이터의 몫과 비용 효과는 얼마인가?",
+  "limitations": "Science 논문 본문은 접속이 막혀 읽지 못했고 Microsoft 블로그와 TechCrunch 보도에 적힌 수치를 사용했다. 직접 실행·재현하지 않았으며 환산은 보도된 근사치를 이용한 단순 계산이다. 모든 성능 수치는 벤치마크(SDBench) 시뮬레이션 결과로 실제 환자 임상 결과가 아니며, 비교 의사는 1차 진료의·일반 내과의 단독 수행이다(전문의·의사 팀 미포함). 비용은 벤치마크 추정 검사 비용이다. 의료 조언이 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 비용·정확도 재계산: 오케스트레이터가 더한 몫은 얼마인가",
+    "excerpt": "GPT-5의 비용 변화를 비율로 바꾸면 3,000 ÷ 8,400 ≈ **약 36% 절감**, 남는 비용은 대략 5,400달러입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "보도된 비용·정확도 근사치로 절감률과 정답 한 건당 비용을 환산해 오케스트레이터의 경제적 효과를 가늠하게 했다."
+   },
+   {
+    "kind": "comparison",
+    "section": "🧪 숫자를 읽는 조건: 누구와, 무엇으로 비교했나",
+    "excerpt": "여기서 눈여겨볼 점은 응급실 사례의 격차가 **80% 대 47%로 줄어든다**는 것입니다. 복잡 사례에서 2.3~3.7배였던 배율이 일상적인 응급 사례에서는 1.7배대로 내려갑니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "복잡 사례와 응급실 사례의 배율을 나란히 놓고 비교 집단 조건을 표로 정리했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🏥 병원 현장으로 가는 길: Beth Israel·Mayo·구글 AMIE",
+    "excerpt": "두 연구는 **측정하는 것이 다릅니다**. MAI-DxO의 83%는 벤치마크 정답률이고, AMIE의 90%는 의사의 최종 진단과 얼마나 겹쳤는지입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "Microsoft의 벤치마크와 Google의 임상 연구가 측정하는 대상이 다르다는 점을 연결해 우열 단정을 막았다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별 판단 기준: 헤드라인을 어떻게 받아들일까",
+    "excerpt": "**기반 모델이 좋아질수록 오케스트레이션의 한계 이득이 줄어든다**는 점은 개발자에게 실용적인 시사점입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "독자 유형별로 확인할 질문과 이번 발표에서 알 수 있는 범위를 표로 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [
+   "MIMIC-IV-ED를 '미국 응급실' 사례로 설명한 부분의 '미국'(출처에 없음)",
+   "Suleyman이 이번 결과를 '의료 초지능으로 가는 한 걸음'이라 불렀다는 표현(출처 확인 불가 — Microsoft의 정의로 고쳐 씀)",
+   "'2027년까지 의료 기록이 어떻게 전개될지 예측하는 데서 돌파구' (TechCrunch 인용과 불일치 — '의료 기록에서 코딩과 같은 수준의 돌파구 직전'으로 수정)"
+  ],
+  "corrected": [
+   "MAI-DxO 설명: '서로 이의 제기' → 블로그 원문대로 '여러 차례 토론하며 근거에 따라 판단 갱신'",
+   "GPT-5.5 재평가: '이득 유지' → '유지되고 오히려 커짐'(blog: persisted – and improved)",
+   "의사 21명: arXiv가 아니라 Haverin Substack(S5) 정리로 출처 귀속 수정 (arXiv 초록엔 인원수 없음)",
+   "Mayo Clinic: '의료용 프런티어 모델 개발' → 블로그 '최첨단 AI·임상 전문성·장기 다중모달 데이터 결합' + TechCrunch '의료 파운데이션 모델 훈련, 내년(2027) 출시 계획'",
+   "응급실 GPT-5.5 '사실상 이득 없음' → '이득이 거의 없음(보도 기준)'",
+   "⚠️ 확인하지 못한 것 박스에 의료 조언 아님·일반 공개 서비스 아님·의료진 상담 문구 추가"
+  ],
+  "calculations": "83/22=3.77, 83/36=2.31, 80/47=1.70; 3000/8400=35.7%≈36%; 8400-3000=5400; 8400/0.789≈10,646; 5400/0.829≈6,514; 1-6514/10646≈38.8%≈39%; GPT-5.5 87-72=15p, Gemini 69-46.4=22.6p; 모델 격차 72-46.4=25.6p → 87-69=18p — 모두 일치",
+  "published_check": "S1 2026-10-22, S2 2026-10-22, S3 2026-10-08, S4 v1 2025-06-27(v2 2025-07-02), S5 2026-09-14, S6 2026-10-22 — 모두 페이지 날짜와 일치",
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 원문 문장과 대조. Science 논문 페이지는 403 으로 읽지 못해 논문 수치는 Microsoft 블로그(S1)·TechCrunch(S2)에 적힌 것만 사용. 22%·80%·47%는 S1, 78.9%·$8,400·$3,000·72→87%·46.4→69%·응급실 85%·1차진료의/내과의 비교·전문의 팀 미포함·5개사 모델은 S2(S6 교차확인). AMIE 98명·75%·감별진단 90% 일치·중단 0건·대조군 언급 없음은 S3 와 일치. Haverin 비판(동료 심사·제품·임상 배치 없음, 정확도 정체)은 S5 와 일치."
+ }
+}
