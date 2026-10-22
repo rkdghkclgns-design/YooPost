@@ -3864,5 +3864,22 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261020000365"
   ],
   "draft_id": "20261022_075748_7"
+ },
+ {
+  "date": "2026-10-23",
+  "title": "🧠 Recursive Flint 공개: 40B MoE 로컬 코딩 모델, 밀집 27B보다 평균 4.7~6.8배 빠른 대신 무엇을 내줄까",
+  "topic": "Introducing Flint (Recursive, 2026-10-21) — 40B MoE 로컬 코딩 모델 / The Decoder 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://recursive.com/updates/introducing-recursive-flint",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/recursive-flint-40b-moe-27b-4768.html"
+  },
+  "sources": [
+   "https://recursive.com/updates/introducing-recursive-flint",
+   "https://huggingface.co/RecursiveSI/flint",
+   "https://the-decoder.com/recursive-shows-first-result-of-its-ai-driven-research-process-with-flint/",
+   "https://digg.com/tech/kqx88z14"
+  ],
+  "draft_id": "20261023_070641_1"
  }
 ]
