@@ -3934,5 +3934,23 @@
    "https://www.sec.gov/Archives/edgar/data/1652044/000119312526251560/d135361ds3asr.htm"
   ],
   "draft_id": "20261023_072859_4"
+ },
+ {
+  "date": "2026-10-23",
+  "title": "🔒 LiteLLM 1.107.0 악성 릴리스, 노출 구간 104~154분 안에 우리 키는 안전했나",
+  "topic": "LiteLLM v1.107.0 Compromise (LiteLLM, 2026-10-21) — 릴리스 파이프라인 침해와 악성 PyPI·도커 산출물 / The Hacker News·Wiz·JFrog·Aikido 분석",
+  "category": "AI 보안",
+  "source_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/litellm-11070-104154.html"
+  },
+  "sources": [
+   "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+   "https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html",
+   "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+   "https://research.jfrog.com/post/litellm-hijacked-again/",
+   "https://www.aikido.dev/blog/litellm-compromised-infostealer-rat"
+  ],
+  "draft_id": "20261023_073809_5"
  }
 ]
