@@ -1,0 +1,133 @@
+{
+ "topic": "Meta plans a new non-voting stock class (Class C) to fund its AI buildout — Form 8-K (2026-10-19 event, filed 2026-10-21) / TechCrunch·Semafor 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-20261019.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Meta Platforms, Inc. Form 8-K — Class C non-voting common stock, stock dividend, Founder Alignment Agreement",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-20261019.htm",
+   "publisher": "Meta Platforms / SEC EDGAR",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta Reports Third Quarter 2026 Results (Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-09302026xexhibit991.htm",
+   "publisher": "Meta Platforms / SEC EDGAR",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Meta Platforms, Inc. Form PRE 14C — preliminary information statement on Class C recapitalization",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066710/meta-20261021.htm",
+   "publisher": "Meta Platforms / SEC EDGAR",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Meta wants to pay for its broad AI buildout with a newly created class of stock",
+   "url": "https://techcrunch.com/2026/10/21/meta-wants-to-pay-for-its-broad-ai-buildout-with-a-newly-created-class-of-stock/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Meta plans nonvoting shares to fund AI spending",
+   "url": "https://www.semafor.com/article/10/21/2026/meta-plans-nonvoting-shares-eyeing-more-stock-sales-to-fund-its-ai-dreams",
+   "publisher": "Semafor",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Alphabet Announces Upsize and Pricing of $84.75 Billion Equity Capital Raise (Form 8-K Exhibit 99.2)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560dex992.htm",
+   "publisher": "Alphabet / SEC EDGAR",
+   "published": "2026-06-02",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Alphabet Inc. Form S-3ASR — Description of capital stock (Class C, Transfer Restriction Agreements)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526251560/d135361ds3asr.htm",
+   "publisher": "Alphabet / SEC EDGAR",
+   "published": "2026-06-01",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처가 SEC 제출 서류와 실적 보도자료라 Class C 내용을 보여 주는 본문 그림이 없습니다(PRE 14C의 그림은 서명·임원 보상 그래프로 이 글 내용과 무관).",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Meta가 의결권 없는 Class C 주식을 만들면 기존 주주의 의결권과 창업자 지분, 자금 조달에는 구체적으로 무엇이 달라지고 무엇은 그대로인가?",
+  "limitations": "직접 실행·실측 없음. 모든 계산은 공시 숫자의 단순 산술이며 가정 계산(5% 신규 발행)은 설명용입니다. 알파벳 비교는 알파벳 SEC 서류(S-3ASR, 8-K 보도자료)로 확인했으나 시점·조달 방식이 달라 구조 비교에 한정됩니다. 공동 창업자 합산 의결권(Semafor의 '50% 약간 상회')은 1차 자료로 확인하지 못해 뺐습니다. 기준일·지급일·실제 발행 규모는 미공개입니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔒 창업자 정렬 계약: 20%는 바로, 80%는 묶어서",
+    "excerpt": "계산의 기준은 2.5% × 32 = 80%로, 서류의 80% 묶음 비율과 정확히 맞아떨어집니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "분기당 2.5% 해제를 연도별 누적 매도 가능 비율로 환산하고, 리더십 조건 미충족 시 기간이 길어질 수 있음을 명시했습니다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🔢 주식 수로 다시 계산해 보기",
+    "excerpt": "1:1 배당이면 새로 생기는 Class C는 두 값의 합인 약 2,556,241,253주입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공시된 주식 수로 Class C 규모와 저커버그 몫을 산술하고 13.4% 경제적 지분과 대조해 맞는지 확인했습니다."
+   },
+   {
+    "kind": "comparison",
+    "section": "⚖ 알파벳 사례와 나란히 보면: 같은 점과 다른 점",
+    "excerpt": "Meta는 20%를 바로 풀어 주고 80%만 묶은 뒤 분기마다 2.5%씩 풀어 준다는 점에서 구조가 다릅니다.",
+    "source_ids": [
+     "S1",
+     "S6",
+     "S7"
+    ],
+    "added_value": "Semafor의 알파벳 비교를 알파벳 SEC 서류로 다시 확인해, 1:1 배당 방식·의결권 없음·창업자 양도 제한 계약·2026년 847.5억 달러 조달 구성을 Meta 공시와 같은 항목으로 비교했습니다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖ 알파벳 사례와 나란히 보면: 같은 점과 다른 점",
+    "excerpt": "Meta의 정보 설명서도 알파벳의 약 800억 달러 조달 발표를 자본 조달 환경의 예로 들었습니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "Semafor의 순발행자 지적, PRE 14C의 알파벳 조달 언급, 8-K의 Class C 환매 조항을 연결해 해석으로 표시했습니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 아직 정해지지 않은 것과 확인할 일정",
+    "excerpt": "현재 확정된 것은 정관 승인, 주주 서면 동의, 배당 비율, 효력 예정일, 창업자 정렬 계약의 조건입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "확정된 것과 미정인 것을 나누고 독자 상황별로 먼저 볼 서류를 안내했습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 78,
+  "removed": [
+   "2배 기준은 대략 $1,161.20이며 분할 효과 조정 방식에 따라 달라지므로 서류의 정의를 확인해야 합니다. ($580.60은 종가가 아니라 30일 거래량 가중 평균이고 배당 조정 대상이라 삭제·재작성)",
+   "알파벳은 2014년 2대 1 주식 분할로 ... 공동 창업자의 합산 지배력을 50% 약간 넘는 수준으로 유지했고 (50% 부분 1차 자료 미확인으로 삭제)",
+   "Semafor 기사는 알파벳 쪽에 비슷한 제한이 있는지 다루지 않았으므로 두 구조의 우열은 말할 수 없습니다. / 표의 '창업자 매도 제한: 기사에 언급 없음' (알파벳 S-3ASR에 양도 제한 계약이 있어 삭제·재작성)",
+   "회계 처리: 주식 분할 형태의 주식 배당, 자본 총액 변화 없음 (서류 표현과 달라 '보통주 증가·이익잉여금 감소·소급 조정'으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). 8-K·EX-99.1·PRE 14C·TechCrunch·Semafor를 다시 열어 대조. PRE 14C 발표일은 파일명 대신 EDGAR 접수 색인(0001628280-26-066710-index: Filing Date 2026-10-21, Accepted 16:10:30)으로 확인, 8-K 색인도 Filing Date 2026-10-21. TechCrunch(2026-10-21T22:45Z)·Semafor(2026-10-21T19:12Z) 메타 날짜 일치. 수정: 발행 주식 수 기준일 10월 16일→10월 20일(기준일), $580.60을 종가→30일 거래량 가중 평균(배당 조정)으로, 리더십 조건 표현, 회계 처리 행, 32분기 '최소' 표기. 알파벳 사례는 Semafor 대신 알파벳 S-3ASR(2026-06-01: 2014-03-27 기준 Class C 1:1 배당, Class C 무의결권, 창업자 양도 제한 계약)과 8-K EX-99.2(2026-06-02: 총 847.5억 달러, A·C 각 25,459,689주)로 확인·재작성, 확인 못한 '50% 약간 상회'는 삭제. 계산 재검산: 34.91/64.601=0.540, 34.91/9.86=3.54, 34.91×4=139.64, 2,214,472,367+341,768,886=2,556,241,253, 342,435,851×0.2/0.8/0.025=68,487,170/273,948,681/8,560,896, 342,435,851/2,556,241,253=13.40%(PRE 14C 13.4%와 일치), 13.4%/1.05=12.76%. 5% 신규 발행은 본문에 설명용 가정으로 두 번 표시. 주제는 Meta가 AI 인프라 투자 자금 조달 수단으로 Class C를 만든 것(EX-99.1·PRE 14C가 AI 투자 규모를 명시)이라 AI 뉴스 리뷰 범위에 맞음. 보완: 강조 없는 문단 4곳에 형광 강조 추가, 3분기 영업현금흐름 327.9억 달러·잉여현금흐름 -21.2억 달러(EX-99.1 확인) 추가, PRE 14C의 알파벳·SpaceX·Anthropic·OpenAI 조달 환경 언급 추가."
+ }
+}
