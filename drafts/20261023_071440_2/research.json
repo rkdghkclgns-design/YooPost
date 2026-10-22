@@ -1,0 +1,88 @@
+{
+ "topic": "Walmart Makes It Possible for Agents to Shop on Behalf of Customers, While Keeping Customers in Control (Walmart, 2026-10-21) — Agent Profiles·Agent Gateway·에이전트 약관 / TechCrunch·PPC Land 보도",
+ "source_url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Walmart Makes It Possible for Agents to Shop on Behalf of Customers, While Keeping Customers in Control",
+   "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers",
+   "publisher": "Walmart",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "While Amazon blocks AI agents, Walmart rolls out the welcome mat",
+   "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Walmart lets AI agents buy within customer-set limits such as $50 or $100",
+   "url": "https://ppc.land/walmart-lets-ai-agents-buy-within-customer-set-limits-such-as-50-or-100/",
+   "publisher": "PPC Land",
+   "published": "2026-10-22",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 Walmart 뉴스룸 글 본문에 사진·도표가 없고 헤더·푸터 로고뿐이라 인용할 본문 그림이 없음 (TechCrunch의 Getty 매장 사진은 내용과 무관한 스톡 이미지)",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "쇼핑 에이전트에게 구매를 맡길 때 Walmart의 프로필·한도·약관에서 무엇이 확정이고 무엇이 비어 있으며, 내 상황에는 어떤 승인 방식이 맞는가?",
+  "limitations": "공개된 공식 글과 두 매체 기사만 읽은 정리이며 Agent Profiles·Gateway를 직접 실행하지 않았음. 승인 방식 선택 기준은 필자의 해석. 출시 날짜·한도 기준·베타 참여사는 미공개. Gateway 베타 페이지(walmart.com/agents)는 봇 확인 화면으로 열리지 않아, 그 페이지에만 근거한 설명(초대 방식·중단 가능·Sparky 경유)은 본문에서 뺐음.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 세 글을 맞춰 읽으면: 확인된 것과 비어 있는 것",
+    "excerpt": "이 비교에서 **공식 글에만 있는 확정 사항**은 세 구성 요소의 이름과 일곱 가지 약관",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 글·TechCrunch·PPC Land를 쟁점별 표로 맞춰 확정 사항과 보도가 남긴 질문을 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💼 내 상황별로 승인 방식을 고르는 기준",
+    "excerpt": "프로필이 나오기 전에는 에이전트가 지금처럼 내 계정으로 로그인하기 때문에 위 표의 분리 확인을 할 수 없습니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "전 구매 승인과 지출 한도 두 선택지를 사용자 상황별로 고르는 기준과 제외 조건을 제시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🪪 Agent Profiles: 지금의 계정 공유 방식과 무엇이 다른가",
+    "excerpt": "오늘날 AI 에이전트는 **고객 본인의 계정으로 로그인**해서 쇼핑합니다. 그래서 에이전트가 산 물건과 사람이 산 물건이 한 계정에 섞입니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "현재 계정 공유 방식과 프로필 도입 후를 같은 항목으로 비교"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 43,
+  "removed": [
+   "Gateway 표 '접근 조건: 초대 방식이며 언제든 중단될 수 있다고 베타 페이지에 적힘 (PPC Land)' — walmart.com/agents 가 봇 확인 화면으로 막혀 원 페이지 확인 불가, 다른 출처로도 확인 안 됨",
+   "비교표 'Gateway 구조: PPC Land: 베타 페이지는 Sparky를 거친다고 설명, 공식 글에는 언급 없음' — 같은 이유로 확인 불가, 또한 공식 글에 Sparky 언급이 있어 '언급 없음'은 부정확",
+   "비교표 'Gateway 접근' 칸의 '초대 방식' 문구"
+  ],
+  "corrected": [
+   "약관: '번호를 매겨 일곱 가지' → 공식 글은 글머리표 7개 항목 (번호 없음)",
+   "대화형 커머스 연동 목록에 공식 글대로 Sparky 추가 (본문·경고 박스·비교표)",
+   "TechCrunch: 'Summit에서 발표가 나왔다' → 수요일 발표, John Furner CEO가 Masters of Scale Summit에서 소개",
+   "권한 '바꾸거나 끌 수 있고' → 공식 글은 '끌 수 있다(turn off)'",
+   "'할인과 수수료' → '적용되는 혜택(offers)과 수수료'",
+   "반품 조항 'TechCrunch도 그대로 인용' → TechCrunch가 안심 요소로 짚었다고 수정",
+   "비교표에 공식 글·PPC Land 가격 쟁점 행 추가 (두 출처에서 확인)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Walmart 뉴스룸(페이지 날짜 Oct. 21, 2026 = published 일치, 본문 그림 없음 확인), S2 TechCrunch(Oct 21, 2026 12:30 PM PDT 일치), S3 PPC Land(October 22, 2026 일치)를 다시 열어 문장별 대조. 한도 예시 $50/$100/$200·'in the next month'·프로필 3단계·MCP('model text protocol' 표기)·약관 7항목·같은 가격·Walmart+ 불필요·Sam's Club 범위·Amazon의 Muse 차단(9월 20일, PPC Land) 확인. walmart.com/agents 는 봇 확인 화면이라 읽지 못했고 웹 검색으로도 베타 페이지 내용(초대 방식·Sparky 경유)을 확인할 수 없어 해당 문장을 뺌. 독자 가치 기준 v1 기여 3건(source_synthesis/decision_guide/comparison)의 발췌가 본문에 그대로 있음을 확인."
+ }
+}
