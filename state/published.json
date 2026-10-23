@@ -4065,5 +4065,25 @@
    "https://security.paloaltonetworks.com/CVE-2026-109618"
   ],
   "draft_id": "20261024_074248_5"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "🏦 은행이 AI 에이전트의 계좌 접속을 막는 이유: 내 돈을 맡기기 전 확인할 4가지",
+  "topic": "Big Banks Won't Let Outside AI Agents Move Money (PYMNTS, 2026-10-19) — JPMorgan·Citi·Bank of America·Schwab의 외부 AI 에이전트 차단",
+  "category": "AI 인사이트",
+  "source_url": "https://www.pymnts.com/?p=4326961",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/ai-4.html"
+  },
+  "sources": [
+   "https://www.apollo.com/institutional/insights-news/insights/daily-spark/is-an-agentic-bank-run-coming",
+   "https://www.pymnts.com/?p=4326961",
+   "https://fstech.co.uk/fst/Citi_BofA_Block_AI_Agents.php",
+   "https://www.retailbankerinternational.com/news/us-banks-limit-ai-agents-access/",
+   "https://www.bankingdive.com/news/fdic-travis-hill-agentic-ai-deposit-impact-money2020/833573/",
+   "https://aiweekly.co/alerts/amazon-yelp-delta-join-banks-blocking-third-party-ai-agents",
+   "https://gizmodo.com/after-muse-launch-u-s-banks-are-saying-hell-no-to-ai-agents-moving-money-2000827221"
+  ],
+  "draft_id": "20261024_075052_6"
  }
 ]
