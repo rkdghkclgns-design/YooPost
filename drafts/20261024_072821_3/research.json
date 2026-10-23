@@ -1,0 +1,115 @@
+{
+ "topic": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+ "source_url": "https://arxiv.org/abs/2610.31329",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+   "url": "https://arxiv.org/abs/2610.31329",
+   "publisher": "arXiv (Tencent 연구진)",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.31329",
+   "publisher": "Hugging Face",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "WeVisOne-VL 프로젝트 페이지",
+   "url": "https://tencent.github.io/WeVisOne-VL",
+   "publisher": "Tencent",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Tencent/WeVisOne-VL (GitHub README)",
+   "url": "https://github.com/Tencent/WeVisOne-VL",
+   "publisher": "Tencent",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://tencent.github.io/WeVisOne-VL/static/images/model.webp",
+   "page_url": "https://tencent.github.io/WeVisOne-VL",
+   "caption": "WeVisOne-VL 구조: <OBJ> 토큰과 픽셀 디코더로 물체에서 픽셀까지 가는 구조",
+   "credit": "Tencent WeVisOne-VL 프로젝트 페이지"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://tencent.github.io/WeVisOne-VL/static/images/data_engine.webp",
+   "page_url": "https://tencent.github.io/WeVisOne-VL",
+   "caption": "WeVisOne-VL 데이터 엔진: 약 1억 장 데이터 엔진의 수집·검증·마스크 확장 흐름",
+   "credit": "Tencent WeVisOne-VL 프로젝트 페이지"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "WeVisOne-VL 한 모델이 검출·OCR·분할·매팅을 모두 한다는 4B 점수표는 어떤 조건에서 읽고, 우리 업무에 쓸지 어떻게 판단해야 할까?",
+  "limitations": "모델을 직접 실행하지 않았고 모든 점수는 저자 보고 값이다. 기술 보고서 전체 결과표, 속도·메모리, 단계별 기여도(ablation), WeRef-Bench 구성은 확인하지 못했다. 격차 계산은 README 반올림 값 기준의 제 계산이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 4B 점수표를 같은 기준으로 다시 읽기",
+    "excerpt": "요약표에는 기준선 이름이 없고, 상세표와 맞춰 보면 '최고 기준선'은 지표마다 다른 모델입니다. 10개 중 6개는 LocateAnything-3B",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "README 요약표 10개 점수를 같은 표로 옮기고, 이름이 빠진 기준선을 README 펼침 상세표에서 찾아 지표별 모델(LocateAnything-3B 6개 등)을 채웠으며, 지표 방향과 점수 차를 계산하고 4B가 1위가 아닌 칸과 기준선 크기 차이를 짚었다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 격차를 계산하면 보이는 것과 숨은 조건",
+    "excerpt": "SFT 세 단계 합계는 9,020만+4,050만+4,180만으로 **약 1억 7,250만 샘플**이고, 강화학습 17만 8천 샘플은 그중 약 0.10% 규모입니다",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "MAD 감소율·상대 상승·SFT 합계·RL 비중을 식과 함께 계산해 격차의 크기를 지표별로 비교하게 했고, 단위 차이와 반올림 한계를 밝혔다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 어떤 팀에게 맞고 어떤 팀은 기다려야 할까",
+    "excerpt": "프로젝트 페이지는 **연구용**(시각 그라운딩·OCR·분할·매팅)을 의도한 용도로 밝히고 개인 식별 용도는 아니라고 적었습니다",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "업무 상황별로 근거가 되는 공개 지표와 먼저 확인할 조건, 제외 조건(사람 식별·파인튜닝 코드 미공개)을 표로 정리했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 WeVisOne-VL이 나온 배경과 이번 주 반응",
+    "excerpt": "Hugging Face 논문 페이지는 이 논문을 2026-10-23 일간 1위로 표시했고 추천은 221개였습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "arXiv 제출일과 Hugging Face 일간 순위·추천 수, 같은 날 2위 추천 수를 연결해 이번 주 이슈화 정도를 근거와 함께 가늠했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "README는 그 모델 이름을 행마다 적지 않았습니다 (README 펼침 상세표에 기준선 모델이 있어 지표별 모델명으로 교체)",
+   "할 일 목록에는 매팅 주석기 공개와 파인튜닝 코드가 남아 있습니다 … 서로 어긋납니다 (현재 README TODO 는 매팅 주석기 완료, 미완료는 파인튜닝 코드뿐 — 수정)",
+   "2B 점수는 제가 읽은 자료에 없었습니다 (README 상세표에 2B 점수 있음 — 수정)",
+   "같은 크기끼리 비교했는지는 확인되지 않았습니다 (README 상세표의 기준선 크기 3B~13B 로 수정)",
+   "어떤 임계값에서 계산했는지는 기술 보고서를 열어 확인해야 합니다 (README: IoU 0.5:0.95 평균, 그리디 디코딩, 시각 토큰 1,960개 이하 — 수정)",
+   "predict 의 구체적인 인자 이름…확인하지 못했으므로 (README 예시의 image·task·query 로 수정)",
+   "2단계 SFT…의도까지 밝힌 문장은 읽지 못했습니다 (프로젝트 페이지의 'Boost recall of small, crowded objects' 로 수정)",
+   "WeRef-Bench 는…같은 연구 계열이 만든 것으로 보입니다 (확인 안 됨 — '제 추측'으로 낮춤, 맺음말도 같이)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(제출 2026-10-22 v1, 초록 'over 30 benchmarks')·HF 논문 페이지(Published on Oct 22, 2026-10-23 #1 Paper of the day, 추천 221, 댓글 1개=제출자)·HF 2026-10-23 일간 목록(2위 163)·프로젝트 페이지(구조·데이터·SFT 90.2M/40.5M/41.8M·RL 178K·연구용 문구)·GitHub README(10개 지표·상세표·TODO/News·설치·라이선스)를 curl 로 다시 열어 대조. README 10개 수치와 차이 열 10개, 감소율 52.6%(8.1/15.4=52.60%)·56.3%(12.6/22.4=56.25%), PointBench 2.86%, SFT 합계 17,250만, RL 비중 0.103% 재계산 일치. 이미지 2개 HTTP 200 image/webp 2400px 확인. S2 published 를 페이지 표기(Published on Oct 22)에 맞춰 2026-10-23→2026-10-22 로 수정. S3·S4 는 페이지에 날짜가 없어 published 비워 둠. 막힌 출처 없음."
+ }
+}
