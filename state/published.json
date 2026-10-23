@@ -4108,5 +4108,23 @@
    "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261016000412&dcmNo=11617317&eleId=11&offset=192566&length=49051&dtd=dart4.xsd"
   ],
   "draft_id": "20261024_075927_7"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "📱 Meta Muse 1,000만 계정의 정체: 실적 발표 숫자와 설치·유지율·설비투자를 함께 읽는 법",
+  "topic": "Meta Reports Third Quarter 2026 Results (Meta, 2026-10-21) — Muse 1,000만 이상·설비투자 1,350억~1,450억 달러 / TechCrunch·AP 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/meta-muse-1000.html"
+  },
+  "sources": [
+   "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+   "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/",
+   "https://www.wdbo.com/news/business/meta-q3-revenue-tops/LJSNKSJRPQ4XHC7YWQH2BFT3LE/",
+   "https://techcrunch.com/2026/10/20/metas-muse-hits-10m-u-s-downloads-in-40-days-a-milestone-reached-by-only-11-other-apps/",
+   "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066773/meta-20260930.htm"
+  ],
+  "draft_id": "20261024_081200_4"
  }
 ]
