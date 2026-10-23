@@ -3988,5 +3988,24 @@
    "https://newstomato.com/ReadNews.aspx?no=1315595"
   ],
   "draft_id": "20261023_075259_7"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "⚡ OpenAI Decisions API 정식 공개: '10배 빠르다'는 판단 API, 일반 LLM 호출과 비용·지연이 얼마나 다를까",
+  "topic": "OpenAI Decisions API generally available with gpt-6-luna (OpenAI 개발자 변경 기록, 2026-10-22) / TechCrunch 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://developers.openai.com/api/docs/changelog",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai-decisions-api-10-api-llm.html"
+  },
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog",
+   "https://developers.openai.com/api/docs/guides/decisions",
+   "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
+   "https://oodaloop.com/briefs/technology/openai-makes-its-structured-decision-api-generally-available-to-intensify-agentic-and-low-latency-competition/",
+   "https://www.firecrawl.dev/blog/openai-decisions-api-vs-jev",
+   "https://developers.openai.com/api/docs/pricing"
+  ],
+  "draft_id": "20261024_071437_1"
  }
 ]
