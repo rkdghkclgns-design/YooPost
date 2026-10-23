@@ -4026,5 +4026,22 @@
    "https://www.engadget.com/2293844/1password-opens-up-ai-agents-muse-dots-grok/"
   ],
   "draft_id": "20261024_072147_2"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "🔎 WeVisOne-VL 논문 분석: 검출·OCR·분할·매팅을 한 모델에서, 4B 점수표는 어떤 조건에서 읽어야 할까",
+  "topic": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.31329",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/wevisone-vl-ocr-4b.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.31329",
+   "https://huggingface.co/papers/2610.31329",
+   "https://tencent.github.io/WeVisOne-VL",
+   "https://github.com/Tencent/WeVisOne-VL"
+  ],
+  "draft_id": "20261024_072821_3"
  }
 ]
