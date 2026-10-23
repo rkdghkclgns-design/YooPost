@@ -4007,5 +4007,24 @@
    "https://developers.openai.com/api/docs/pricing"
   ],
   "draft_id": "20261024_071437_1"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "🔑 1Password for Agents 공개: 에이전트가 비밀번호 없이 로그인하는 구조, 지금 쓸 수 있는 곳은 어디까지일까",
+  "topic": "Introducing 1Password for Agents (1Password, 2026-10-22) — 개인용 AI 에이전트 비밀번호 비노출 로그인 / TechCrunch·Digital Trends·Engadget 보도",
+  "category": "AI 도구",
+  "source_url": "https://1password.com/blog/1password-for-ai-agents",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/1password-for-agents.html"
+  },
+  "sources": [
+   "https://1password.com/press/2026/october/1password-for-agents-trust-layer-personal-ai-agents",
+   "https://1password.com/blog/1password-for-ai-agents",
+   "https://1password.com/personal-ai-agent-integrations",
+   "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+   "https://www.digitaltrends.com/computing/1password-wants-ai-agents-to-handle-logins-without-ever-taking-a-peek-at-your-passwords/",
+   "https://www.engadget.com/2293844/1password-opens-up-ai-agents-muse-dots-grok/"
+  ],
+  "draft_id": "20261024_072147_2"
  }
 ]
