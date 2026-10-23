@@ -4043,5 +4043,27 @@
    "https://github.com/Tencent/WeVisOne-VL"
   ],
   "draft_id": "20261024_072821_3"
+ },
+ {
+  "date": "2026-10-24",
+  "title": "🔒 PHP2Shell: AI가 파고든 PHP 치명 취약점 2건, 우리 서버는 무엇부터 확인해야 할까",
+  "topic": "Security advisory: Critical remote code execution vulnerabilities, update now — PHP2Shell (CVE-2026-109618·CVE-2026-109619), PHP 2026-10-21 / Wiz·BleepingComputer·AP 보도",
+  "category": "AI 보안",
+  "source_url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/php2shell-ai-php-2.html"
+  },
+  "sources": [
+   "https://www.php.net/archive/2026.php#2026-10-21-5",
+   "https://www.wiz.io/blog/php2shell-php-rce",
+   "https://bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws",
+   "https://helpnetsecurity.com/2026/10/21/php2shell-php-vulnerabilities-patched-cve-2026-109618-cve-2026-109619",
+   "https://www.adn.com/nation-world/2026/10/21/websites-scramble-to-fix-software-flaw-that-could-put-much-of-internet-at-risk/",
+   "https://ppc.land/openai-says-gpt-5-6-sol-found-a-php-flaw-before-attackers-did/",
+   "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+   "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/",
+   "https://security.paloaltonetworks.com/CVE-2026-109618"
+  ],
+  "draft_id": "20261024_074248_5"
  }
 ]
