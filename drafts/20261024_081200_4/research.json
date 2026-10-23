@@ -1,0 +1,112 @@
+{
+ "topic": "Meta Reports Third Quarter 2026 Results (Meta, 2026-10-21) — Muse 1,000만 이상·설비투자 1,350억~1,450억 달러 / TechCrunch·AP 보도",
+ "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Meta Reports Third Quarter 2026 Results",
+   "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+   "publisher": "Meta Platforms (투자자 관계)",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta says Muse has over 10M users, with shopping a top activity",
+   "url": "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Meta Q3 revenue tops estimates and Zuckerberg says Muse accounts have topped 10 million (AP)",
+   "url": "https://www.wdbo.com/news/business/meta-q3-revenue-tops/LJSNKSJRPQ4XHC7YWQH2BFT3LE/",
+   "publisher": "AP (WDBO 게재)",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Meta's Muse hits 10M U.S. downloads in 40 days, a milestone reached by only 11 other apps",
+   "url": "https://techcrunch.com/2026/10/20/metas-muse-hits-10m-u-s-downloads-in-40-days-a-milestone-reached-by-only-11-other-apps/",
+   "publisher": "TechCrunch (Sensor Tower 자료)",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Meta Platforms, Inc. Form 10-Q (quarterly period ended 2026-09-30)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066773/meta-20260930.htm",
+   "publisher": "Meta Platforms / SEC EDGAR",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 Meta 실적 보도자료와 SEC 분기보고서는 글자·표로만 구성되어 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Meta가 말한 Muse 1,000만이 무엇을 센 숫자이고, 외부 추정치·Meta 재무 수치와 함께 놓으면 성장과 투자 부담을 어디까지 읽을 수 있는가",
+  "limitations": "직접 앱을 사용하거나 실측하지 않았고 실적 설명회 녹취록 원문은 확인하지 못해 발언은 TechCrunch·AP 보도에 의존했다. Sensor Tower 수치는 한 업체의 추정이며 Muse의 전용 운영비는 공개되지 않았다. 10-Q 수치는 SEC 원문을 직접 열어 확인했고, 계산은 보도자료·공시의 숫자로 한 단순 산수다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔢 '1,000만'은 계정일까 다운로드일까: 두 숫자 맞춰 보기",
+    "excerpt": "Meta가 말한 25%를 계정 1,000만 개에 곱하면 약 250만 명이 되는데, 이는 Sensor Tower가 10월 16일 처음 넘었다고 한 일일 이용자 250만 명과 크기가 비슷합니다.",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "Meta 발언의 25%와 Sensor Tower DAU를 곱셈으로 대조하고 기준 차이를 명시해 독자가 숫자를 합치지 않도록 함"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔁 경쟁 AI 앱과 같은 조건에서 비교하면",
+    "excerpt": "Muse는 1,020만 건, ChatGPT는 370만 건, Grok은 50만 건, Claude는 20만 건입니다.",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "같은 40일·미국 조건의 다운로드와 유지율 격차를 계산하고 비교 불공정 요소(지역·광고비)를 병기"
+   },
+   {
+    "kind": "calculation",
+    "section": "💸 설비투자 계산: 분기 349.1억 달러는 현금 흐름 대비 어느 정도일까",
+    "excerpt": "3분기 설비투자 349.1억 달러는 같은 분기 영업활동 현금흐름 327.9억 달러보다 21.2억 달러 많았습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "설비투자와 영업현금흐름·매출·법적 비용 제외 이익률을 식과 함께 계산해 투자 부담과 일회성 비용을 분리"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 판단 기준",
+    "excerpt": "아직 확인되지 않은 것을 먼저 적으면 독자가 숫자를 과하게 읽지 않습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "독자 목적별로 볼 숫자와 쓰면 안 되는 해석을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "corrected": [
+   "'52개 주 법무장관' → '미국 주·준주·워싱턴 DC 법무장관 52명'(보도자료·10-Q 표현, 총 지급액 최대 약 185.9억 달러 추가)",
+   "'영업이익률 하락의 주된 원인은 일회성 법적 비용' → 법적 비용 제외 영업이익률 약 35%도 전년 40%보다 낮고 10-Q가 인프라·외부 AI 토큰 비용 증가도 이유로 든다는 점 추가(본문·FAQ)",
+   "쇼핑 4분의 1 이상의 모집단을 TechCrunch 원문대로 'AI 에이전트로 쇼핑한 적극 이용자'로 정정",
+   "광고비 39%(9월 23%)가 Sensor Tower 자료임을 명시",
+   "실적 설명회 발언에 TechCrunch·AP 보도 기준 표기 추가(도입 문단·1,000만 문단·FAQ)",
+   "10-Q 주석 10의 약정 구성(에너지·Reality Labs 하드웨어)과 지급 시점(약정 2026년 458.5억·2027년 1,214.1억 달러, 리스 2026~2036년 시작·1년 초과~30년) 보완 — '지급 시점을 확인하지 못했다'는 경고 수정"
+  ],
+  "removed": [
+   "계정 설정은 설치 뒤 가입 단계를 통과한 사람의 수이고, 다운로드는 설치 건수입니다. (출처 없는 정의 — AP 표현 인용으로 교체)",
+   "여러분도 한번 Muse를 직접 체험해보시길 추천드리면서 (Muse는 미국·캐나다 전용이라 국내 독자에게 부정확 — 후속 발표 안내로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 보도자료는 curl 403(Cloudflare)이라 WebFetch로 원문 문장 인용을 받아 페이지 날짜 2026-10-21·매출 646.0억·영업이익률 20%(전년 40%)·설비투자 349.1억(금융리스 원금 포함)·영업현금흐름 327.9억·FCF −21.2억·법적 비용 98.9억(52명 법무장관 합의)·영업이익 129.9억/법적 비용 제외 228.8억·2026 설비투자 전망 1,350억~1,450억(이전 1,300억~1,450억, 금융리스 원금 포함)·Class C 2027-01-19 효력·Zuckerberg 발언 확인. S2·S3·S4는 curl로 전문을 받아 확인, article:published_time 2026-10-21/2026-10-21/2026-10-20이 published와 일치. S5 10-Q는 sec.gov 원문 HTML을 직접 받아 유형자산 취득 83,055/48,308백만·건설 중 자산 89,499/50,521백만·시작 전 리스 약 3,557.3억·해지 불가 약정 4,545.2억·매출 64,601백만·영업이익 12,988백만 확인(EDGAR 접수일 2026-10-22, 문서 서명일 2026-10-21이나 published는 지어내지 않고 비워 둠). 계산 재계산: 34.91−32.79=2.12, 34.91÷64.601=54.0%, 22.88÷64.601=35.4%, 34.91×4=139.64, 83.055÷48.308−1=71.9%, 10.2÷3.7=2.76, 0.25×1,000만=250만 — 모두 일치. Muse 1,000만 계정(Meta 발언, 미국·캐나다, AP)과 Sensor Tower 미국 다운로드 1,020만은 본문·표·FAQ에서 합치지 않고 기준 차이를 명시함을 확인. 설비투자 전망 범위는 보도자료와 AP 모두 1,350억~1,450억 달러(이전 1,300억~1,450억). 투자 권유·수익 전망 문구 없음. EGRESS_BLOCKED 출처 없음."
+ }
+}
