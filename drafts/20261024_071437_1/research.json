@@ -1,0 +1,103 @@
+{
+  "topic": "OpenAI Decisions API generally available with gpt-6-luna (OpenAI 개발자 변경 기록, 2026-10-22) / TechCrunch 보도",
+  "source_url": "https://developers.openai.com/api/docs/changelog",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "OpenAI API Changelog — Decisions API is now generally available with gpt-6-luna (2026-10-22)",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "publisher": "OpenAI",
+      "published": "2026-10-22",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Decisions API guide (OpenAI API docs)",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "publisher": "OpenAI",
+      "published": "",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
+      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-22",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "OpenAI Makes Its Structured Decision API Generally Available to Intensify Agentic and Low-Latency Competition",
+      "url": "https://oodaloop.com/briefs/technology/openai-makes-its-structured-decision-api-generally-available-to-intensify-agentic-and-low-latency-competition/",
+      "publisher": "OODAloop",
+      "published": "2026-10-23",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "OpenAI's Decisions API vs Jev: Inside the Decision-Model Architecture",
+      "url": "https://www.firecrawl.dev/blog/openai-decisions-api-vs-jev",
+      "publisher": "Firecrawl",
+      "published": "2026-09-30",
+      "official": false
+    },
+    {
+      "id": "S6",
+      "title": "API pricing (OpenAI API docs) — gpt-6-luna",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "publisher": "OpenAI",
+      "published": "",
+      "official": true
+    }
+  ],
+  "images": [],
+  "images_none_reason": "공식 변경 기록·문서·가격 페이지는 본문 그림이 없는 글자 문서입니다. TechCrunch 기사의 이미지는 머리말 스크린샷뿐이라 쓰지 않았습니다.",
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "OpenAI Decisions API 정식 공개로 무엇이 바뀌었고, 일반 LLM 호출·Jev 대비 비용·지연 차이는 어떤 조건에서 읽어야 하며 내 서비스에는 맞을까?",
+    "limitations": "직접 API 를 호출하지 않았고 속도 수치는 OpenAI DevDay 슬라이드(Firecrawl 인용)·TechCrunch 가 전한 OpenAI 발언이며 독립 측정은 없습니다. 비용 계산은 글에 밝힌 가정(100만 건, 입력 2,100토큰, 출력 20토큰)과 표준 단문맥 단가에 따른 것이며 캐시 쓰기 비용·지역 할증은 계산에서 뺐습니다. Jev 수치는 9월 30일자 비교 글 기준입니다. 문서·가격 페이지에는 날짜가 적혀 있지 않습니다.",
+    "contributions": [
+      {
+        "kind": "calculation",
+        "section": "💰 비용·지연 시간 직접 계산해 보기",
+        "excerpt": "가격 페이지상 gpt-6-luna 는 캐시 입력 단가($0.01)가 같으므로, 같은 조건으로 캐시를 쓰면 차이는 출력분 $10 정도로 남습니다.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ],
+        "added_value": "공개 단가에 가정(100만 건·입력 2,100토큰)을 곱해 Decisions 와 Responses 의 월 비용 차이를 계산하고, 절감폭이 작아 이 API 의 핵심 가치가 지연 단축임을 보였습니다."
+      },
+      {
+        "kind": "comparison",
+        "section": "📊 Responses API·Jev 와 어떤 기준으로 고를까",
+        "excerpt": "지연은 한쪽이 벤더 슬라이드, 다른 쪽이 운영 텔레메트리라 같은 조건의 비교가 아닙니다",
+        "source_ids": [
+          "S3",
+          "S5"
+        ],
+        "added_value": "Decisions API 와 Jev 의 지연·단가·순위를 한 표에 놓되 측정 출처와 날짜가 달라 우열을 단정할 수 없음을 명시하고 상황별 선택 기준으로 이었습니다."
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "📰 Decisions API 정식 공개, 무엇이 바뀌었나",
+        "excerpt": "같은 기사는 이 API 를 TypeSafe 의 Jev 와 경쟁하는 제품으로 다루며, OpenRouter 에서는 현재 TypeSafe 제품이 가장 많이 호출된다고 정리합니다.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ],
+        "added_value": "공식 변경 기록의 날짜·한도 변화와 TechCrunch 의 경쟁 구도 보도를 나눠 읽도록 연결했습니다."
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 46,
+    "confirmed": 43,
+    "removed": [
+      "같은 기사는 이 시장에서 TypeSafe 의 Jev 가 먼저 자리를 잡았고 OpenAI 가 추격하는 구도라고 정리합니다. (TechCrunch 에 없는 표현 — 'Jev 경쟁 제품·OpenRouter 최다 호출'로 교체)",
+      "자유로운 문장이나 객체는 만들지 않습니다. (문서에 없는 문장 — 'typed answers, 설명·객체는 Structured Outputs' 로 교체, 요약·FAQ 포함)",
+      "캐시 쓰기 단가는 제가 읽은 페이지에서 확인하지 못해 (가격 페이지에 gpt-6-luna 캐시 쓰기 $0.125/$0.25 확인 — 수치로 교체)"
+    ],
+    "note": "Opus 검증(claude-opus-5-5): S1 변경 기록(10/6 베타·10/15 GPT-Live 연동·10/22 GA·200→400·캐시·이미지·input_json, 9/22 gpt-6-luna $0.10/$0.01/$0.50), S2 문서(엔드포인트·입력·질문 유형 예시·1~400·$0.10·출력 무과금·캐시 규칙·ZDR/HIPAA·리전·10배), S6 가격표, S3 TechCrunch(10/22, Handa 100~180ms·지수 순위 3/14·7/8·Box/Datadog/Ramp/Speak 초기 시험·Speak CTO Andrew Hsu 1.4→0.13초·9/29 DevDay), S4 OODAloop(10/23, 100~180ms·400개·$0.01 캐시), S5 Firecrawl(9/30, 150ms vs 1.6초 슬라이드·Jev $0.042·P50 0.21/P95 0.34초·텍스트만·HN 보정 비판)를 모두 다시 열어 대조. 속도 수치는 벤더·매체 인용으로 출처 표기 유지(독립 측정 없음 명시). 계산식 재계산 일치(220/210/30/40, 4.5%, 0.75초/8초). 고객 표현 '정식 공개 첫 고객'→'초기 시험 고객', 점수 예시 '버그'→'이슈(Safari 내보내기 실패)', 제목의 150ms 단정→'10배 빠르다' 인용으로 수정. published: S1·S3·S4·S5 페이지 날짜와 일치, S2·S6 은 페이지에 날짜 없음(지어내지 않음). EGRESS_BLOCKED 출처 없음."
+  }
+}
