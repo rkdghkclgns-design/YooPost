@@ -1,0 +1,132 @@
+{
+ "topic": "Security advisory: Critical remote code execution vulnerabilities, update now — PHP2Shell (CVE-2026-109618·CVE-2026-109619), PHP 2026-10-21 / Wiz·BleepingComputer·AP 보도",
+ "source_url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Security advisory: Critical remote code execution vulnerabilities, update now (PHP 보안 권고)",
+   "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+   "publisher": "The PHP Group",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "PHP2Shell (Wiz Research 블로그)",
+   "url": "https://www.wiz.io/blog/php2shell-php-rce",
+   "publisher": "Wiz",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "PHP ships emergency patches for critical PHP2Shell flaws",
+   "url": "https://bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws",
+   "publisher": "BleepingComputer",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "PHP2Shell: PHP vulnerabilities patched (CVE-2026-109618, CVE-2026-109619)",
+   "url": "https://helpnetsecurity.com/2026/10/21/php2shell-php-vulnerabilities-patched-cve-2026-109618-cve-2026-109619",
+   "publisher": "Help Net Security",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Some websites go dark as operators address an AI-detected flaw in web programming language",
+   "url": "https://www.adn.com/nation-world/2026/10/21/websites-scramble-to-fix-software-flaw-that-could-put-much-of-internet-at-risk/",
+   "publisher": "Associated Press (Anchorage Daily News)",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI says GPT-5.6 Sol found a PHP flaw before attackers did",
+   "url": "https://ppc.land/openai-says-gpt-5-6-sol-found-a-php-flaw-before-attackers-did/",
+   "publisher": "PPC Land",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "PHP Issues Emergency Patches for Two Critical PHP2Shell RCE Flaws as Exploit Attempts Emerge",
+   "url": "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Amazon threat intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot",
+   "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/",
+   "publisher": "AWS Security Blog (Amazon)",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Products",
+   "url": "https://security.paloaltonetworks.com/CVE-2026-109618",
+   "publisher": "Palo Alto Networks",
+   "published": "2026-10-21",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(PHP 권고)는 글자뿐이고, Wiz 블로그의 본문 그림은 설명 없는 인라인 base64 이미지라 내려받을 수 있는 주소와 캡션을 확인하지 못했다. 언론 기사의 그림은 로고·홍보 이미지여서 쓰지 않는다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "PHP2Shell 공개 직후 서버 운영자는 무엇을 어떤 순서로 확인해야 하고, 이번 발표에서 AI의 역할은 어디까지 확인됐는가",
+  "limitations": "직접 익스플로잇·패치·도구를 실행하지 않았고 공식 권고와 보도에 적힌 내용만 정리했다. OpenAI 블로그 원문은 열리지 않아 PPC Land·AP 요약에 의존했다. 일수 계산은 Wiz·Amazon 블로그에 적힌 날짜의 단순 계산이며 점검 순서는 해석이다. Palo Alto 수정 핫픽스 날짜는 권고의 예상치다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "✅ 우리 서버 점검 순서: 상황별 판단 기준",
+    "excerpt": "아래는 공식 권고와 보도에서 확인된 조치를 상황별로 묶은 **판단 기준**이며, 제 해석이 포함돼 있습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S3",
+     "S9"
+    ],
+    "added_value": "권고·보도의 조치를 운영 상황(지원 계열, 8.1 이하, 즉시 패치 불가, 호스팅 사용)별 선택 기준과 제외 조건으로 재구성"
+   },
+   {
+    "kind": "calculation",
+    "section": "⏱ 공개까지의 시간표 계산: 유출과 공격 시도 사이",
+    "excerpt": "계산식은 각 날짜 사이의 달력 일수이며, 8월 24일에서 10월 21일은 8월 25~31일 7일 + 9월 30일 + 10월 1~21일 21일 = 58일입니다",
+    "source_ids": [
+     "S2",
+     "S8"
+    ],
+    "added_value": "Wiz 시간표와 Amazon MadPot 허니팟 날짜를 일수로 계산(63·58·30·4일)해 조율 기간과 공개 직전 위험 구간을 비교"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔬 AI는 어디까지 관여했나: 발표별 서술 비교",
+    "excerpt": "이 표는 같은 사건을 서로 다른 조건으로 서술한 것이라 우열을 가리는 용도가 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5",
+     "S6"
+    ],
+    "added_value": "공식 권고·Wiz·AP·BleepingComputer·PPC Land의 AI 역할 서술과 CVE 설명 차이를 대조해 단독 발견 주장의 확정 한계를 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 50,
+  "removed": [
+   "취약점 자체는 '오래된 코드의' 메모리 처리 문제 (오래된 코드라는 근거 없음 → 'PHP 내부의 메모리·요청 상태 처리 문제'로 수정)",
+   "AP 표의 'AI 에이전트가 발견을 도왔고' (AP 기사에 없음 → 'OpenAI가 두 달간 연합을 이끌었고 AI가 공격자보다 먼저 결함을 찾은 것으로 보임'으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). PHP 공식 아카이브(10-20 사전 공지·10-21 권고·릴리스 공지·10-23 공지)를 다시 열어 CVE-2026-109618/109619, 수정 버전 8.5.12/8.4.27/8.3.36/8.2.35, 8.6.0 RC4, 7.4·8.0·8.1 소스 백포트, 영향 SAPI, 완화 설정, CVSS v4.0 9.2(사전 공지에 PHP가 직접 명시 → '보도됐고'를 PHP 평가로 수정), CVE-2026-115560 대조. CVE 설명은 PHP 권고(OOM 손상/낡은 전역 상태)와 Wiz(업로드 진행률 UAF/backtrace UAF·OPcache 혼동)가 다름을 확인, 권고 기준 유지. 점유율: BleepingComputer 75~80%, Wiz 70%, AP는 Arctic Wolf 관계자 추정 약 70% — 출처 표기 보완. 일수 재계산 63·58·30·4일 일치, 계산식 문구 명확화. Amazon 허니팟(10-17)은 Help Net 외 Amazon 공식 블로그(S8)로 확인해 추가, Palo Alto 언급은 PA 공식 권고(S9)로 확인해 영향 계열·핫픽스 예정일(10-26~30)로 교체. Hal Pomeranz 인용 원문(embedded installations·forgotten apps)에 맞게 수정. post_max_size=8M은 업로드 불필요 앱 조건 추가, 8.2 지원 종료일(2026-12-31) 추가, Wiz가 Calif·OpenAI에 감사 표시한 점 추가. 'AI 단독 발견' 단정 없음 확인, OpenAI는 AP·PPC Land 인용으로만. 모든 출처 published 가 페이지 날짜와 일치(S1~S9 2026-10-21). 익스플로잇 코드·공격 요청 형태 미포함 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
