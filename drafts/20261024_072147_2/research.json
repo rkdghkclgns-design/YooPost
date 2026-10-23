@@ -1,0 +1,119 @@
+{
+ "topic": "Introducing 1Password for Agents (1Password, 2026-10-22) — 개인용 AI 에이전트 비밀번호 비노출 로그인 / TechCrunch·Digital Trends·Engadget 보도",
+ "source_url": "https://1password.com/blog/1password-for-ai-agents",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "1Password for Agents Launches as the Trust Layer for Personal AI Agents",
+   "url": "https://1password.com/press/2026/october/1password-for-agents-trust-layer-personal-ai-agents",
+   "publisher": "1Password",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Introducing 1Password for Agents",
+   "url": "https://1password.com/blog/1password-for-ai-agents",
+   "publisher": "1Password",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "1Password for Agents (personal AI agent integrations)",
+   "url": "https://1password.com/personal-ai-agent-integrations",
+   "publisher": "1Password",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
+   "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "1Password wants AI agents to handle logins without ever taking a peek at your passwords",
+   "url": "https://www.digitaltrends.com/computing/1password-wants-ai-agents-to-handle-logins-without-ever-taking-a-peek-at-your-passwords/",
+   "publisher": "Digital Trends",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "1Password will let Muse, Dots and Grok Bot sign in to sites for you without getting your credentials",
+   "url": "https://www.engadget.com/2293844/1password-opens-up-ai-agents-muse-dots-grok/",
+   "publisher": "Engadget",
+   "published": "2026-10-22",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://images.ctfassets.net/2h488pz7kgfv/3dbgADZomZq6BBa5e0S3nv/fef22d894ed9f813775adb4e820de23d/01-2x.webp",
+   "page_url": "https://1password.com/personal-ai-agent-integrations",
+   "caption": "로그인 승인 5단계 — 에이전트(Muse)가 로그인을 요청하는 1Password 화면",
+   "credit": "1Password"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://images.ctfassets.net/2h488pz7kgfv/51uUf3Gf5xBZ6aDcaSE3OB/5695a619926aa150121fee53d9e9f547/03-2x.webp",
+   "page_url": "https://1password.com/personal-ai-agent-integrations",
+   "caption": "에이전트가 보는 것과 보지 못하는 것 — 연결된 계정 목록과 제거(Remove) 화면",
+   "credit": "1Password"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "1Password for Agents 로 에이전트가 정말 비밀번호 없이 로그인하는가, 어떤 에이전트에서 지금 쓸 수 있고 내 상황에 맞는가?",
+  "limitations": "제품을 직접 실행하지 않았고 공식 글과 매체 3곳의 보도만 대조했다. Axios 원문은 접속이 막혀 읽지 못해 TechCrunch 가 전한 범위로만 썼다. 보안 주장은 1Password 설명이며 독립 검증은 확인되지 않았다. 승인 유지 기간은 공식 자료에 없다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 에이전트별 지금 상태 비교",
+    "excerpt": "Claude Duet·ChatGPT Work·dots·Town Townie 는 '곧 제공'이라고 구분했습니다",
+    "source_ids": [
+     "S2",
+     "S5",
+     "S6",
+     "S4"
+    ],
+    "added_value": "공식 블로그의 순차 적용·곧 제공 구분과 Engadget 의 '이제 작동' 표현, Digital Trends·TechCrunch 의 표현을 에이전트별 표로 대조해 지금 쓸 수 있는 곳을 가려 준다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내게 맞는지 고르는 기준",
+    "excerpt": "먼저 **계정 종류**를 봅니다. 블로그는 1Password.com 의 Individual 과 Family 계정에 추가 비용 없이 제공한다고 했고",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "계정 종류·사용 에이전트·저장 방식·맡길 작업별로 적용 여부와 제외 조건을 표로 정리해 독자가 자기 상황에서 판단하게 한다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 매체 반응과 은행 경고",
+    "excerpt": "은행은 '에이전트 활동이 사용자 요청인지 모른다'고 말하고, 1Password 는 '에이전트가 사용자 승인을 거쳐 로그인한다'고 말합니다.",
+    "source_ids": [
+     "S4",
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "TechCrunch 가 전한 은행 쪽 우려와 1Password 의 승인 흐름을 이어, 해결되지 않은 지점(승인 기록의 은행 전달)을 명시한다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 47,
+  "removed": [
+   "Engadget 은 접근이 세션 단위이고 승인된 항목에 한정되며 다음 세션으로 이어지지 않는다고 전했는데, 이는 Engadget 의 서술이므로 정확한 기간은 공식 문서에서 다시 확인해야 합니다. (공식 자료에 없음 — 삭제, 한계에서도 삭제)"
+  ],
+  "note": "Opus 검증: S1·S2·S3·S4·S5·S6 을 다시 열어 주장 52개 대조. 고친 것: ① 블로그의 '흔한 지름길'·'통제할 수 없는 곳' 표현은 원문에 없어 블로그 실제 서술(붙여 넣기=자격 증명 접근 허용, 작업 범위를 넘을 수 있음)로 교체 ② 보도자료는 번호 붙은 5단계가 아니라 서술이라 '설명을 나누면 다섯 단계'로 수정 ③ Digital Trends 는 '지금 작동'이 아니라 블로그와 같은 구분(Muse·Grok Bot 적용 중, 나머지 아직 오는 중)이었고 '이제 작동(now works with)'은 Engadget 표현 — 본문·표·FAQ·contributions 수정 ④ Digital Trends 가 '독립 시험 없음·로그인 후 보유 불명'을 지적했다는 문장은 기사에 없어, 읽은 자료 전체에 독립 검증이 인용되지 않았다는 검증자 관찰로 교체 ⑤ Anthropic 인용문 원문('soon 1Password will complete the sign-in')을 그대로 반영, Grok Bot 회사 표기 차이(SpaceXSI/Engadget SpaceXAI) 구체화. 은행 내용은 TechCrunch 서술 범위만(Axios 원문 미열람). published 대조: S1 2026-10-22 9:00am EDT, S2 2026-10-22, S4 2026-10-22 12:07 PDT, S5 2026-10-22, S6 Updated 2026-10-22 — 일치. S3 제품 페이지는 날짜 없음(published 비움). 이미지 2개 HTTP 200 image/webp 1252x832 확인."
+ }
+}
