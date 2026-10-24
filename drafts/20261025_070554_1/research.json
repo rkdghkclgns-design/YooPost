@@ -1,0 +1,109 @@
+{
+ "topic": "Kimi K3.1 Pro (Moonshot AI, 2026-10-23) — 2.8T MoE·100만 토큰·입력 $2/출력 $10, 오픈 가중치 11월 4일 약속 / Artificial Analysis·The Decoder·Simon Willison 보도",
+ "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Kimi K3.1 Pro",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "publisher": "Moonshot AI (Kimi)",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Kimi K3.1 Pro launch benchmarks",
+   "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "publisher": "Artificial Analysis",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5",
+   "url": "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/",
+   "publisher": "The Decoder",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Introducing Kimi K3.1 Pro",
+   "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+   "publisher": "Simon Willison's Weblog",
+   "published": "2026-10-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchcad-results-v2.webp",
+   "page_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "caption": "BenchCAD 결과: 도구 사용 여부에 따른 Voxel IoU 비교",
+   "credit": "Moonshot AI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+   "page_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "caption": "Kimi Hallu Bench 환각률 비교 (낮을수록 좋음)",
+   "credit": "Moonshot AI"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/finance-productivity-v4.webp",
+   "page_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "caption": "금융 업무 지표: OfficeQA Pro v2와 Frontier Finance 결과",
+   "credit": "Moonshot AI"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Kimi K3.1 Pro의 가격 인하가 실제 월 비용과 선택에 어떤 차이를 만드는가, 그리고 어떤 수치를 얼마나 믿을 수 있는가",
+  "limitations": "모델을 직접 실행하지 않았고 모든 수치는 공개 자료 기준이다. 월 비용 표는 입력 10M·출력 2M 토큰, 캐시 없음, 출력 토큰 동일이라는 가정 계산이다. 가중치 미공개, 라이선스 미확인.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 가격 인하와 월 비용 계산",
+    "excerpt": "이 가정에서는 K3.1 Pro가 K3보다 **월 $20(약 33%) 저렴**하고, Highspeed는 K3보",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 단가로 월 $60/$40/$80 가정 계산을 하고, 출력 토큰 14% 증가 시 효과가 줄어드는 점을 보였다"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크: 자체 수치와 제3자 수치",
+    "excerpt": "Terminal-Bench 4.0은 Moonshot 자체 표에서 65.7%로 Opus 5.5의 66.4%, ",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "같은 지표의 자체 수치와 제3자 수치를 구분해 한 표에 나열하고 우열 단정을 피했다"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀은 K3.1 Pro를 써야 할까",
+    "excerpt": "선택 기준은 세 가지로 좁혀집니다. 첫째, **비용이 병목인가**입니다. 단가가 33% 내렸더라도 과제당 출",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "비용·속도·오픈 가중치 상황별 선택과 제외 조건을 정리했다"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 88,
+  "removed": [
+   "마지막으로 가격표에는 달러 가격 외에 Kimi 플랫폼의 위안화 표기가 따로 있고 (공식 블로그·출처에 위안화 표기 없음)",
+   "Terminal-Bench 4.0 'Moonshot 자체' 행의 'K3 13%' (K3 13%는 Artificial Analysis 수치이며 Moonshot 표에 없음 — AA 행에만 남김)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 Kimi 블로그·S2 Artificial Analysis·S3 The Decoder·S4 Simon Willison 을 다시 열어 수치·날짜·가격·스펙·출시 여부 대조. 수정: '재무 분석'→'재무 모델링(Financial Modeling)'; 과제당 비용 $1.98 은 AA가 'K3와 거의 같음'으로만 적어 K3 $2.00 은 The Decoder 출처로 표기; Highspeed 가격은 블로그에 가격표가 없어 The Decoder 출처로 표기; 개요 표 머리글을 '공식 블로그·Artificial Analysis 기준'으로(파라미터·입력 형식은 블로그에 없음); 위안화 표기 문장 삭제; Moonshot 자체 Terminal-Bench 행의 K3 13% 삭제. 발표일: S2·S3·S4 페이지 날짜 2026-10-23 일치, S1 은 날짜 표기 없음 — 본문 그림 경로 20261023 과 S2·S3·S4 로 2026-10-23 확인. 월 비용 검산: 10×3+2×15=60, 10×2+2×10=40, 10×4+2×20=80, 절감 20/60=33%, 출력 14% 증가 시 2.28×10=22.8 → 합계 42.8 정확. 인용 이미지 3개 HTTP 200 image/webp 2400px 확인, 캡션 내용 일치. EGRESS_BLOCKED 출처 없음."
+ }
+}
