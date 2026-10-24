@@ -4126,5 +4126,22 @@
    "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066773/meta-20260930.htm"
   ],
   "draft_id": "20261024_081200_4"
+ },
+ {
+  "date": "2026-10-25",
+  "title": "🤖 Kimi K3.1 Pro 공개: 입력 $2·출력 $10으로 내린 3T급 모델, 월 비용은 얼마나 달라질까",
+  "topic": "Kimi K3.1 Pro (Moonshot AI, 2026-10-23) — 2.8T MoE·100만 토큰·입력 $2/출력 $10, 오픈 가중치 11월 4일 약속 / Artificial Analysis·The Decoder·Simon Willison 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/kimi-k31-pro-2-10-3t.html"
+  },
+  "sources": [
+   "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/",
+   "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/"
+  ],
+  "draft_id": "20261025_070554_1"
  }
 ]
