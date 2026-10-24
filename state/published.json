@@ -4198,5 +4198,25 @@
    "https://www.anthropic.com/research/investigating-unintended-model-actions"
   ],
   "draft_id": "20261025_072518_4"
+ },
+ {
+  "date": "2026-10-25",
+  "title": "🔒 x402 SDK 치명 결함 3건: 결제 에이전트의 지갑 한도, 무엇부터 점검할까",
+  "topic": "25 Vulnerabilities in the x402 Protocol: Inside Three Critical Findings",
+  "category": "AI 보안",
+  "source_url": "https://v12.sh/blog/x402",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/x402-sdk-3.html"
+  },
+  "sources": [
+   "https://v12.sh/blog/x402",
+   "https://thehackernews.com/2026/10/critical-x402-sdk-flaw-could-let.html",
+   "https://raw.githubusercontent.com/x402-foundation/x402/main/README.md",
+   "https://raw.githubusercontent.com/x402-foundation/x402/main/SECURITY.md",
+   "https://registry.npmjs.org/@x402/svm",
+   "https://osv.dev/vulnerability/GHSA-qr2g-p6q7-w82m",
+   "https://pypi.org/project/x402/"
+  ],
+  "draft_id": "20261025_073205_5"
  }
 ]
