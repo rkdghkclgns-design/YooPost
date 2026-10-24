@@ -4180,5 +4180,23 @@
    "https://github.com/THUSI-Lab/GameScaling"
   ],
   "draft_id": "20261025_071803_3"
+ },
+ {
+  "date": "2026-10-25",
+  "title": "🔐 OpenAI의 '실제 인터넷 학습 중단', 외부 감시 점검 결과와 함께 읽으면 무엇이 달라 보일까",
+  "topic": "OpenAI says it will no longer train its AI models on the live internet — 함께 공개된 Red-Teaming OpenAI's Internal Agent Monitoring Systems (METR, 2026-10-22)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/openai.html"
+  },
+  "sources": [
+   "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+   "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+   "https://www.digitaltrends.com/computing/openai-is-locking-its-most-advanced-ai-models-offline-after-a-string-of-security-scares/",
+   "https://winbuzzer.com/2026/10/24/openai-takes-its-most-advanced-ai-offline-for-training-xcxwbn/",
+   "https://www.anthropic.com/research/investigating-unintended-model-actions"
+  ],
+  "draft_id": "20261025_072518_4"
  }
 ]
