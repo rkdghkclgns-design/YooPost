@@ -1,0 +1,124 @@
+{
+ "topic": "25 Vulnerabilities in the x402 Protocol: Inside Three Critical Findings",
+ "source_url": "https://v12.sh/blog/x402",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "25 Vulnerabilities in the x402 Protocol: Inside Three Critical Findings",
+   "url": "https://v12.sh/blog/x402",
+   "publisher": "V12",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Critical x402 SDK Flaw Could Let Malicious APIs Drain AI Agents’ Token Balances",
+   "url": "https://thehackernews.com/2026/10/critical-x402-sdk-flaw-could-let.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "x402-foundation/x402 README",
+   "url": "https://raw.githubusercontent.com/x402-foundation/x402/main/README.md",
+   "publisher": "x402 Foundation",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "x402 Security policy (SECURITY.md)",
+   "url": "https://raw.githubusercontent.com/x402-foundation/x402/main/SECURITY.md",
+   "publisher": "x402 Foundation",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "@x402/svm package metadata (npm registry)",
+   "url": "https://registry.npmjs.org/@x402/svm",
+   "publisher": "npm",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "GHSA-qr2g-p6q7-w82m: x402 SDK Security Advisory (OSV)",
+   "url": "https://osv.dev/vulnerability/GHSA-qr2g-p6q7-w82m",
+   "publisher": "OSV",
+   "published": "2026-03-07",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "x402 (PyPI project)",
+   "url": "https://pypi.org/project/x402/",
+   "publisher": "PyPI",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "page_url": "https://raw.githubusercontent.com/x402-foundation/x402/main/README.md",
+   "image_url": "https://raw.githubusercontent.com/x402-foundation/x402/main/static/flow.png",
+   "caption": "x402 결제 흐름: 클라이언트·서버·퍼실리테이터(/verify·/settle)·블록체인 사이의 402 결제 필요 요청과 검증·정산 순서",
+   "credit": "x402 Foundation (GitHub README)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "x402로 자동 결제하는 에이전트나 서버를 운영한다면, 이번 결함 3건에 비추어 무엇부터 점검해야 하는가",
+  "limitations": "SDK를 실행하거나 공격을 재현하지 않았고 V12 글·The Hacker News 기사·저장소 문서·npm 배포본 비교로 정리했다. CVE·심각도 점수가 없고, 높음 13건·중간·낮음 9건의 내용과 수정 여부는 확인되지 않았다. 100달러 계산은 가정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 한도 설정이 노출액을 어떻게 바꾸나",
+    "excerpt": "악성 API가 같은 요청을 100번 반복하게 만들 때 이론상 최대 노출액은 1달러 × 100번 =",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "건당 1달러 기본 상한만으로는 반복 요청 시 노출액이 총예산 없이 커질 수 있음을 가정 계산으로 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📅 공개 경과와 수정 현황 비교",
+    "excerpt": "V12의 표현은 기한이므로 8월 18일 수정과 어긋나지 않으며, npm 레지스트리에서도 @x402/core·svm·fetch·axios·extensions 2.23.0이 모두 8월 18일(UTC)에 올라온 것으로 확인됩니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "원리 중심의 V12 글과 버전 중심의 기사를 항목별로 대조하고, 8월 20일(V12 기한)과 8월 18일(기사 릴리스)을 npm 등록 시각으로 맞춰 수정 배포일을 확인"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 점검 기준",
+    "excerpt": "가맹점·퍼실리테이터(결제 검증을 대행하는 서버) 운영자라면 솔라나 TypeScript 검증기(@x402/svm)의 버전이 2.22.0 이하인지 확인해야 합니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "클라이언트·가맹점·SIWx 사용자별로 확인할 항목과 해당 없음 조건을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [
+   "대응 기한과 범위는 정해져 있지 않으며 (SECURITY.md 에 없는 내용)",
+   "다만 ... 정확한 일자는 단정하지 않겠습니다 (npm 등록 시각으로 8월 18일 확인되어 대체)",
+   "첫 바이트만 전송은 `0c`, 승인은 `0d` (재현 상세라 원리 설명으로 축약)"
+  ],
+  "corrected": [
+   "S2 제목: Flaws -> Flaw (실제 페이지 제목)",
+   "요약: 'CVE와 보안 권고는 없으며' -> 'CVE 번호와 이 결함들에 대한 보안 권고는 없고' (OSV 에 3월의 별개 svm 권고 GHSA-qr2g 존재)",
+   "요약: '총예산은 앱이 정해야' -> 'V12는 총예산도 두라고 권고' (출처 표현에 맞춤)",
+   "계산 근거 귀속: 1달러 상한=THN, 건당·총 예산=V12 로 분리; 예전 한도에 '외부 서명기 제한' 추가",
+   "표: V12 CVE '목록에 없음' -> '언급 없음', THN 'PR 번호 나열' -> 'PR 링크 제시'"
+  ],
+  "note": "Opus 검증(claude-opus-5-5, 2026-10-25 KST). V12 글(article:published_time 2026-10-22)·THN 기사(datePublished 2026-10-23) 원문을 다시 내려받아 수치·날짜·이름·버전을 문장 단위로 대조. 25건=치명3+높음13+중간·낮음9 합 검산. 수정 시점: V12 'fixed by August 20th'(기한)와 THN 'August 18 releases'는 모순 아님 — npm registry 에서 @x402/core·svm·fetch·axios·extensions 2.23.0 이 모두 2026-08-18(UTC) 등록, 2.22.0 은 2026-08-11. 영향 버전: npm 배포본 svm 2.22.0/2.23.0 비교 결과 2.23.0 에 명령 종류(discriminator) 검사 코드 추가 확인(THN 범위와 일치). 최신 2.28.0(2026-09-29)·PyPI x402 2.25.0(2026-09-29) 확인. CVE/점수: V12·THN 모두 미제시, OSV 에 이번 영향 버전 대상 권고 없음(svm 은 3월 GHSA-qr2g, fixed 2.6.0 만). 1달러×100번=100달러 검산. README(흐름·/verify·/settle)·SECURITY.md 는 raw.githubusercontent 로 확인(github.com 페이지는 세션에서 403이라 raw 주소로 교체). 공격 재현 상세는 빼고 방어 관점 유지. 인용 이미지: README 본문의 결제 흐름도(static/flow.png, 4224x2720, image/png 200) 추가. PyPI 프로젝트 페이지(S7) 추가."
+ }
+}
