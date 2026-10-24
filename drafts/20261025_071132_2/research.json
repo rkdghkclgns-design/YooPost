@@ -1,0 +1,99 @@
+{
+  "topic": "Donating Agent Skills to the Agentic AI Foundation (Anthropic, 2026-10-22) — 리눅스 재단 AAIF 신규 프로젝트 4종 / Blockchain.News·DEV Community 보도",
+  "source_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Donating Agent Skills to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "publisher": "Anthropic",
+      "published": "2026-10-22",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox",
+      "url": "https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox",
+      "publisher": "Linux Foundation",
+      "published": "2026-10-22",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "Agentic AI Foundation Surpasses 300 Members in Less Than One Year",
+      "url": "https://www.linuxfoundation.org/press/agentic-ai-foundation-surpasses-300-members-in-less-than-one-year",
+      "publisher": "Linux Foundation",
+      "published": "2026-10-22",
+      "official": true
+    },
+    {
+      "id": "S4",
+      "title": "Anthropic donates Agent Skills standard to AAIF",
+      "url": "https://blockchain.news/news/anthropic-donates-agent-skills-standard-to-aaif",
+      "publisher": "Blockchain.News",
+      "published": "2026-10-22",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Anthropic Just Gave Away Agent Skills",
+      "url": "https://dev.to/max_quimby/anthropic-just-gave-away-agent-skills-4g3k",
+      "publisher": "DEV Community",
+      "published": "2026-10-24",
+      "official": false,
+      "note": "페이지 표시 'Posted on Oct 24'(연도 없음), 본문이 2026-10-22 발표를 다루고 저작권 표기 2016-2026 이므로 2026-10-24"
+    },
+    {
+      "id": "S6",
+      "title": "ToxicSkills: Malicious AI Agent Skills on ClawHub",
+      "url": "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub",
+      "publisher": "Snyk",
+      "published": "2026-02-05",
+      "official": false
+    }
+  ],
+  "images": [],
+  "images_none_reason": "공식 출처(Anthropic 발표, 리눅스 재단 보도자료)가 글자 중심이며 본문에 제품 화면·도표가 없고 푸터 아이콘만 있음",
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "Agent Skills가 AAIF로 기증된 지금, SKILL.md 스킬을 쓰는 팀은 무엇을 바꾸고 무엇을 점검해야 하는가",
+    "limitations": "직접 스킬을 설치·실행해 보지 않았고 발표문·보도·커뮤니티 글·Snyk 보고서만 읽었다. 70개 플랫폼별 지원 수준은 확인하지 못했다. Snyk 감사는 2026년 2월 ClawHub·skills.sh 대상이라 현재 전체 스킬에 일반화할 수 없다. 평균 설치 수는 분포를 모르는 단순 나눗셈이다.",
+    "contributions": [
+      {
+        "kind": "calculation",
+        "section": "🔢 설치 2억 8천만 건, 어떻게 읽어야 할까",
+        "excerpt": "두 숫자를 나누면 게시된 스킬 하나당 평균 약 280회(발표가 '거의'라고 했으므로 실제로는 280회를 조금 밑돌 수 있음) 설치라는 계산이 나옵니다",
+        "source_ids": [
+          "S1"
+        ],
+        "added_value": "발표 수치 두 개를 나눠 평균을 구하고, 분포를 모르므로 보통 스킬의 인기로 읽지 말라는 한계를 붙임"
+      },
+      {
+        "kind": "comparison",
+        "section": "🧱 리눅스 재단이 밝힌 4개 새 프로젝트",
+        "excerpt": "네 프로젝트는 서로 다른 층을 맡고 있어서, 한 덩어리로 보기보다 표로 나눠 보는 편이 이해하기 쉽습니다",
+        "source_ids": [
+          "S2"
+        ],
+        "added_value": "네 프로젝트를 기증 주체·역할 기준으로 나란히 비교하고, 에이전트 개발 순서의 층으로 해석(해석임을 표시)"
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🛠 우리 팀이 지금 해 볼 일: 상황별 선택 기준",
+        "excerpt": "발표된 사실로 정할 수 있는 행동은 많지 않습니다. 그래서 상황별로 지금 바꿀 것과 기다릴 것을 나눴습니다",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S6"
+        ],
+        "added_value": "스킬 사용 상황 네 가지별로 지금 할 일과 기다릴 일을 구분"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 46,
+    "confirmed": 46,
+    "removed": [],
+    "note": "Opus 검증 (claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 주장 46개 대조. 수정: 설치 수 'nearly 280 million' → '2억 8천만 건 가까이'(평균 280/1 백만=약 280회, 검산), Claude Code 개발 배경 문장, 로더 주체를 Anthropic 발표(S1)로, '1년 전 출시'는 LF 보도자료 속 Soria Parra 인용, OpenSandbox 설명(격리→범용 샌드박스), DEV 글쓴이 소속 표현, 스킬 로딩 방식. Snyk 3,984개 중 76건은 Snyk 원 보고서(2026-02-05)로 확인해 S6 추가, 76/3984≈1.9% 검산. published: S1·S2·S3 2026-10-22, S4 2026-10-22 19:14 UTC, S5 'Oct 24'(2026), S6 2026-02-05 페이지 표시와 일치. 신규 회원 60 vs 58 불일치는 본문대로 인용 안 함. 막힌 출처 없음."
+  }
+}
