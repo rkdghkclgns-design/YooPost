@@ -4162,5 +4162,23 @@
    "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub"
   ],
   "draft_id": "20261025_071132_2"
+ },
+ {
+  "date": "2026-10-25",
+  "title": "🎮 GameScaling 논문: 게임 AI는 데이터만 늘리면 될까, 120개 설정 실험이 본 한계",
+  "topic": "Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds (miHoYo·칭화대 등, arXiv 2610.28698, 2026-10-20)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.28698",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gamescaling-ai-120.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.28698",
+   "https://huggingface.co/papers/2610.28698",
+   "https://gamescaling.github.io/",
+   "https://arxiv.org/html/2610.28698",
+   "https://github.com/THUSI-Lab/GameScaling"
+  ],
+  "draft_id": "20261025_071803_3"
  }
 ]
