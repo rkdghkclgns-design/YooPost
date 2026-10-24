@@ -1,0 +1,112 @@
+{
+ "topic": "Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds (miHoYo·칭화대 등, arXiv 2610.28698, 2026-10-20)",
+ "source_url": "https://arxiv.org/abs/2610.28698",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds",
+   "url": "https://arxiv.org/abs/2610.28698",
+   "publisher": "arXiv (Zhang et al.)",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Paper page - Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds",
+   "url": "https://huggingface.co/papers/2610.28698",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Scaling in Games: Continued Pre-Training for Embodied Agents in Diverse Virtual Worlds (프로젝트 페이지)",
+   "url": "https://gamescaling.github.io/",
+   "publisher": "GameScaling 저자 프로젝트 페이지",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Scaling in Games (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2610.28698",
+   "publisher": "arXiv (Zhang et al.)",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "THUSI-Lab/GameScaling (GitHub README)",
+   "url": "https://github.com/THUSI-Lab/GameScaling",
+   "publisher": "THUSI-Lab (GitHub)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://gamescaling.github.io/assets/img/fig_benchmark_grid_4x5_model_axis.png",
+   "page_url": "https://gamescaling.github.io/",
+   "caption": "데이터 양·모델 크기·혼합 구성에 따른 벤치마크 점수 격자",
+   "credit": "Zhang et al., GameScaling 프로젝트 페이지"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://gamescaling.github.io/assets/img/fig2_loss_grid_4x5_fits.png",
+   "page_url": "https://gamescaling.github.io/",
+   "caption": "데이터·모델 크기·다양성에 따른 손실과 맞춘 스케일링 법칙",
+   "credit": "Zhang et al., GameScaling 프로젝트 페이지"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://gamescaling.github.io/assets/img/fig_mcu_test_time_scaling.png",
+   "page_url": "https://gamescaling.github.io/",
+   "caption": "MCU에서 허용 단계 수에 따른 누적 성공률(테스트 시점 스케일링)",
+   "credit": "Zhang et al., GameScaling 프로젝트 페이지"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "게임 에이전트에서 데이터·다양성·모델 크기를 키우면 어느 세계까지 좋아지고, 프런티어 모델과의 점수 비교는 어떤 조건에서 읽어야 하는가",
+  "limitations": "모델을 직접 내려받아 실행하거나 재현하지 않았고 논문·프로젝트 페이지·README의 보고 수치에 의존했다. 부록의 맞춤 계수 세부 값은 다루지 않았다. 격차와 유지율은 논문 표 값으로 한 단순 계산이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🏆 Minecraft 전문 모델·프런티어 모델과의 비교",
+    "excerpt": "표 값으로는 27B-S1(63.3)이 같은 그룹 기존 모델 중 최고인 GameWAM",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "표 1 숫자를 같은 지표로 나란히 놓고 Minecraft 전용 그룹 최고(GameWAM 50.7)와의 격차 12.6포인트를 계산해 본문 서술(약 13포인트)과 맞는지 확인"
+   },
+   {
+    "kind": "calculation",
+    "section": "⏱ 실시간 점수 계산: 프런티어 모델은 얼마나 잃나",
+    "excerpt": "계산해 보면 TP에서는 프런티어 모델이 GameScaling보다 훨씬 높지만 RT에서는 순서가 뒤집힙니다. ",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "표 2의 TP·RT 평균으로 RT÷TP 유지율을 직접 계산해 순위 역전이 지연 때문인지 점수 자체 때문인지 분리"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 판단 기준과 한계",
+    "excerpt": "공개 범위도 짚어야 합니다. 저장소 README에 따르면 가중치와 추론 코드는 Apache 2.0이고 S1과",
+    "source_ids": [
+     "S3",
+     "S5"
+    ],
+    "added_value": "독자 목적별로 근거 수치와 피해야 할 해석을 구분하고 공개 범위(체크포인트·코드·데이터)를 README로 확인"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 86,
+  "confirmed": 86,
+  "removed": [
+   "본문 서술은 격차를 약 13포인트로 적고 있어 표와 어긋나므로, 이 글은 표 값을 기준으로 삼았습니다. (오류: 표 1의 Minecraft 전용 그룹 최고는 MAIN-VLA 41.5가 아니라 GameWAM 50.7이며, 63.3-50.7=12.6포인트로 본문 '13포인트'와 일치 — 문장 삭제 후 정정)"
+  ],
+  "note": "Opus 검증: arXiv abs(제출 20 Oct 2026, v1)·arXiv HTML 전문(표 1·표 2·3.1절·4장·6장·부록 B.4·C·Table 16)·프로젝트 페이지·HF Papers(Published on Oct 20, Daily 제출 Oct 22)·GitHub README(raw.githubusercontent 로 열람, github.com 페이지는 이 세션에서 403)를 다시 열어 수치를 하나씩 대조. 정정: 표 1 '전문 모델 최고'를 MAIN-VLA 41.5→GameWAM 50.7(6B)로, 격차 21.8p→12.6p(본문 약 13p와 일치), 요약·표·editorial 동반 수정. 표 2 RT÷TP 유지율 6개 재계산 일치(35/34/40/94/89/61%). think 구간·200ms 행동 덩어리·5Hz/30Hz·33ms×6 은 논문 3.1절(S4)로 확인해 '프로젝트 자료' 표기를 '논문 3.1절'로 교체(새 출처 추가 없음). 테스트 시점 증가폭 17~18p→17.0~18.4p로 정밀화. S4 published 를 HTML 표기(v1 20 Oct 2026)로 기재. 인용 이미지 3개 모두 200 image/png 확인."
+ }
+}
