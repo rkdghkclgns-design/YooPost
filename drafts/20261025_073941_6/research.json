@@ -1,0 +1,121 @@
+{
+ "topic": "Trump says data center companies should pay communities a 'dividend' (Truth Social, 2026-10-21) — Reuters·TNW·InvestmentNews 보도",
+ "source_url": "https://www.trumpstruth.org/statuses/42533",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Donald J. Trump 트루스소셜 게시물(2026-10-21 1:37 AM, 데이터센터 배당)",
+   "url": "https://www.trumpstruth.org/statuses/42533",
+   "publisher": "Donald J. Trump (Truth Social 게시물, trumpstruth.org 보관본)",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Trump says companies should pay dividend to communities to make data centers popular",
+   "url": "https://gvwire.com/2026/10/21/trump-says-companies-should-pay-dividend-to-communities-to-make-data-centers-popular/",
+   "publisher": "Reuters (GV Wire 게재)",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Donald Trump says data centre companies should pay communities a 'dividend'",
+   "url": "https://thenextweb.com/news/trump-data-centre-dividend-communities",
+   "publisher": "TNW",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Trump urges data centers to pay communities a 'dividend' for support",
+   "url": "https://www.investmentnews.com/equities/trump-urges-data-centers-to-pay-communities-a-dividend-for-support/268679",
+   "publisher": "InvestmentNews",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Investors see risk from U.S. midterms to AI trade as data-centre backlash builds",
+   "url": "https://www.theglobeandmail.com/investing/article-investors-see-risk-from-us-midterms-to-ai-trade-as-data-centre/",
+   "publisher": "Reuters (The Globe and Mail 게재)",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Cracks are beginning to show in the stock market as doubts about AI investments grow",
+   "url": "https://www.nbcnews.com/business/markets/stock-market-ai-data-centers-doubts-rcna603710",
+   "publisher": "NBC News",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Americans' views on data centers have turned more negative",
+   "url": "https://www.helpnetsecurity.com/2026/09/24/americans-views-on-data-centers/",
+   "publisher": "Help Net Security (Pew Research Center 설문 보도)",
+   "published": "2026-09-24",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처가 글자 중심의 SNS 게시물이고, 본문 그림이 있는 출처(Data Center Watch 지도)는 게시일을 확인하지 못해 쓰지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "트럼프의 '데이터센터 배당' 제안은 무엇을 정하고 무엇을 비워 뒀으며, 급증한 반대 여론과 선거·투자 위험을 함께 보면 독자는 무엇을 확인해야 하나?",
+  "limitations": "게시물 전문은 인용하지 않았고(게시 시각·일부 구절만 보관본에서 확인) Pew 원문은 접속이 막혀 Help Net Security·InvestmentNews 보도의 수치를 사용했다(일자리·세수 항목은 Help Net Security 보도만). 직접 실행·실측은 없으며 %p 계산과 연결 해석은 필자의 정리다. 배당 시행 여부와 금액은 확인되지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📉 여론 숫자 직접 계산: 반대는 얼마나 빨리 늘었나",
+    "excerpt": "세 항목의 평균 상승폭은 약 15.3%p입니다. 이 계산은 기사에 실린 두 시점의 비율을 뺀 것이며, 1월 ",
+    "source_ids": [
+     "S7",
+     "S4"
+    ],
+    "added_value": "Pew 보도의 1월·7~8월 비율 차이를 %p로 계산하고 평균 상승폭을 구해 반대 증가 속도를 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💹 시장은 어떻게 읽나: 선거·부채·지역 협상을 한 줄로 잇기",
+    "excerpt": "트럼프의 게시물은 지역 반대라는 단기 마찰을 거래로 풀겠다는 제안이고, ",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "트루스소셜 게시물과 로이터 분석을 단기 마찰·중기 선거 위험으로 연결해 해석"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 확인표: 누가 무엇을 먼저 볼까",
+    "excerpt": "주민이 얼마를 받는다'는 식의 결론은 낼 수 없습니다. 또한 배당이 지급되더라도 전기요금, 물 사용, 환경 ",
+    "source_ids": [
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "독자 유형별 확인 항목과 결론을 낼 수 없는 제외 조건을 제시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🗳 정당별 숫자는 질문이 달라 나란히 놓지 않는다",
+    "excerpt": "각 조사 안에서의 정당 간 격차는 로이터/입소스 26%p(민주당 69%,",
+    "source_ids": [
+     "S3",
+     "S5"
+    ],
+    "added_value": "질문 성격이 다른 두 조사를 합산하지 않고 조사 내 격차만 계산해 비교"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "이 구조 때문에 배당 제안은 반대가 강한 지역에서 얼마나 통할지 불확실하다는 분석이 나옵니다.",
+   "또 Pew 조사에서 데이터센터가 일자리나 세수에 도움이 된다는 응답 비율은 따로 크게 부각되지 않았다는 점도, 보상 논리가 설득력을 얻으려면 지역 경제 효과를 구체적으로 보여 줘야 함을 시사합니다."
+  ],
+  "note": "Opus 검증: S1~S7 을 다시 열어 수치·날짜·이름·인용·여론조사 수치를 대조, 각 출처 published 와 페이지 날짜 일치 확인. 고친 것: 2월 발전소 발언 출처(InvestmentNews→로이터 S2), 게시물 '빈칸' 항목을 매체별 실제 표현으로(지급 주체→결정 주체·재원·배분), 'MAKE DEALS' 문구는 글의 끝이 아니라 포함 문구로, 앤트로픽·머스크 발표 시점('같은 날'→주말·월요일), 로이터/입소스는 10월 발표·등록 유권자이며 TNW 가 아니라 로이터(S5) 출처, 4% 응답은 세 항목 한정. Pew 핵심 수치는 Help Net Security·InvestmentNews 두 매체 일치, 일자리·세수는 Help Net Security 단독으로 표기. Data Center Watch 수치는 TNW 보도 기준 표기. 트루스소셜 보관본은 시각(10/21 1:37 AM EDT)과 일부 구절만 확인, 전문 미인용. 출처 근거 없는 해석 문장 2개 삭제."
+ }
+}
