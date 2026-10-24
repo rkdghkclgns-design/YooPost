@@ -1,0 +1,94 @@
+{
+ "topic": "OpenAI says it will no longer train its AI models on the live internet — 함께 공개된 Red-Teaming OpenAI's Internal Agent Monitoring Systems (METR, 2026-10-22)",
+ "source_url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Red-Teaming OpenAI's Internal Agent Monitoring Systems",
+   "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+   "publisher": "METR",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI says it will no longer train its AI models on the live internet, citing 'significant risks'",
+   "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI is locking its most advanced AI models offline after a string of security scares",
+   "url": "https://www.digitaltrends.com/computing/openai-is-locking-its-most-advanced-ai-models-offline-after-a-string-of-security-scares/",
+   "publisher": "Digital Trends",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI Takes Its Most Advanced AI Offline for Training",
+   "url": "https://winbuzzer.com/2026/10/24/openai-takes-its-most-advanced-ai-offline-for-training-xcxwbn/",
+   "publisher": "WinBuzzer",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Investigating unintended model actions in our evaluations and internal use",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "publisher": "Anthropic",
+   "published": "2026-10-09",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 METR 글에 본문 그림이 없고(로고·썸네일뿐), Anthropic 글에서도 이 주제의 본문 그림을 확인하지 못했으며 OpenAI 원문은 열리지 않았다. 매체 기사 속 그림은 로고·합성 사진이라 쓰지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI의 라이브 인터넷 학습 중단 발표를 METR의 감시 점검 결과와 Anthropic 조치와 함께 놓고 읽으면, AI 공급사를 평가할 때 무엇을 확인해야 하는가",
+  "limitations": "OpenAI 원문(openai.com)은 403으로 열리지 않아 TechCrunch·Digital Trends·WinBuzzer 인용에 의존(매체 간 대조, 한 매체에서만 나온 OpenAI 주장은 제외). 직접 실행·실측 없음. 감시 범위 약 89%는 서로 다른 모집단의 추정치를 곱한 작성자 어림 계산이며 METR 발표 수치가 아님. METR은 OpenAI의 패치 주장을 검증하지 않음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 감시 범위 숫자를 직접 다시 계산해 보기",
+    "excerpt": "실제로 감시를 받은 비율은 0.992 × 0.90 ≈ **0.89, 즉 약 89%**라는 어림값이 나옵니다(이 글의 계산이며 METR이 발표한 수치가 아닙니다).",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "METR의 감시 대상 비율과 압축 공백 10%를 겹쳐 어림 범위를 계산하고 모집단 불일치 한계를 표시함"
+   },
+   {
+    "kind": "comparison",
+    "section": "⚖ OpenAI와 Anthropic, 같은 방향 다른 범위",
+    "excerpt": "두 회사의 문장을 같은 조건에서 나란히 놓으면 차이가 보입니다. WinBuzzer는 Anthropic이 기존 차단을 모든 내부 평가로 확대했고",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "대상·대체 수단·해제 조건·밝힌 어려움 4개 축으로 두 회사의 조치를 표로 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀이 도입을 검토할 때 던질 질문",
+    "excerpt": "학습 단계의 격리와 운영 중 감시는 서로 다른 안전장치이므로 두 가지를 따로 물어야 합니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "상황별 확인 질문과 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 50,
+  "removed": [
+   "Digital Trends는 OpenAI가 팀을 이룬 에이전트로 방어를 시험하다 Brotli 압축 라이브러리의 코드 실행 취약점을 찾았고 수정판이 나왔다고 전했습니다. (… 업데이트 여부 확인 권고 포함) — Digital Trends 한 곳에서만 나오는 OpenAI 주장이라 삭제",
+   "WinBuzzer는 OpenAI가 '충분한 안전장치'의 기준을 공개적으로 정의하지 않았다고 지적합니다. — WinBuzzer 기사에 없는 내용이라 삭제(종료일 없음으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): METR(2026-10-22)·TechCrunch(2026-10-23)·Digital Trends(2026-10-24)·WinBuzzer(2026-10-24)·Anthropic(2026-10-09) 5개 출처를 다시 열어 주장 52개 대조, 각 출처 published 가 페이지 날짜와 일치 확인. OpenAI 원문은 403이라 3개 매체 간 일치 여부로 판단: 9월 20일 사건(3곳), 10월 1일 재개(DT·WB), 오프라인 웹 학습(TC·WB·DT), 해제 조건(DT·WB), 성능 미입증(TC·DT) 일치 확인. 수정: WinBuzzer '한 걸음 더 나아갔다' 평가는 기사에 없어 두 문구 차이 기술+본 글 해석으로 고침, Anthropic 인용문 원문 구두점(—)으로 수정, 모니터 오류율 표의 '24시간' 주석은 load-shed 수치와 혼동이라 'METR이 제시받은 정보 기준'으로 수정, 악용 미확인 범위를 압축 공백으로 한정, TechCrunch 기자명 원문 표기, 89% 문장에 '이 글의 계산이며 METR 발표 수치 아님' 명시. 6~25%·89%·11일은 작성자 계산(해석 표시 있음). 10월 23일=금요일 확인."
+ }
+}
