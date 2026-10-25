@@ -4364,5 +4364,24 @@
    "https://dealsite.co.kr/articles/169635"
   ],
   "draft_id": "20261026_074416_7"
+ },
+ {
+  "date": "2026-10-26",
+  "title": "🔔 GitHub Teams 앱에 Copilot 통합: 11월 16일 전 무엇을 점검해야 할까",
+  "topic": "Turn notifications into code with GitHub Copilot in Teams",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/github-teams-copilot-11-16.html"
+  },
+  "sources": [
+   "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+   "https://www.analyticsinsight.net/news/github-copilot-in-teams-can-now-turn-notifications-into-pull-requests",
+   "https://github.com/orgs/community/discussions/211133",
+   "https://pupuweb.com/mc1515929-microsoft-teams-github-app-consolidation-and-legacy-github-app-deprecation/",
+   "https://github.blog/changelog/2025-09-19-work-with-copilot-coding-agent-in-microsoft-teams/",
+   "https://docs.github.com/en/integrations/how-tos/teams/integrate-github-with-teams"
+  ],
+  "draft_id": "20261026_071313_2"
  }
 ]
