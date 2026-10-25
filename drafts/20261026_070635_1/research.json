@@ -1,0 +1,87 @@
+{
+ "topic": "Dessa, the Conversation Model trained only on speech (Block) — TechCrunch·The Decoder 보도",
+ "source_url": "https://block.xyz/dessa",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Dessa, the Conversation Model trained only on speech",
+   "url": "https://block.xyz/dessa",
+   "publisher": "Block",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Block's new voice model sounds eerily human",
+   "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
+   "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
+   "publisher": "The Decoder",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Block Unveils Dessa, a Full-Duplex Speech Model Trained on Conversation",
+   "url": "https://www.unite.ai/block-unveils-dessa-a-full-duplex-speech-model-trained-on-conversation/",
+   "publisher": "Unite.AI",
+   "published": "2026-10-23",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 페이지 본문에는 이미지 없이 오디오 샘플만 실려 있고, 매체 기사에서도 인용할 본문 도표를 확인하지 못함",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Dessa의 '텍스트 없이 음성만 학습' 발표에서 지금 확인된 것은 무엇이고, 팀은 지금 무엇을 판단할 수 있는가",
+  "limitations": "모델을 직접 실행하거나 데모 음성을 평가하지 않았고, 공식 페이지·TechCrunch·The Decoder에 적힌 내용만 정리함. 파라미터·지연·벤치마크·가격은 공개되지 않아 비용 계산은 하지 않음. GPT-Live·ElevenLabs·Fish Audio의 사양은 확인하지 않음.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 음성 모델 접근법 비교: Dessa는 어디에 서 있나",
+    "excerpt": "세 접근법은 **서로 다른 조건에서 설명된 것**이라 어느 쪽이 더 낫다고 말할 근거가 없습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "Dessa·전이중·음성 태그 접근을 조건이 다름을 명시한 채 나란히 놓아 우열 단정을 피함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 세 자료를 겹쳐 읽기: 무엇이 일치하고 무엇이 빠졌나",
+    "excerpt": "반면 두 매체는 Block의 설명을 옮기는 성격이 강하고, **독립적으로 모델을 써 보고 검증한 결과는 어느 기사에도 없습니다**",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 페이지와 두 매체를 항목별로 대조해 일치 사항과 어느 곳에도 없는 정보를 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 필요한가: 상황별 판단 기준",
+    "excerpt": "**'로컬에서 돈다'와 '업무에 쓸 만하다'는 다른 문제**입니다. 실행 환경만 공개됐을 뿐 응답 지연, 오류율",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "독자 상황별로 지금 할 일과 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 40,
+  "removed": [
+   "다만 기사는 내부에 언어 모델 요소가 있는지, 구조가 어떤지는 밝혀지지 않았다고 적습니다. (TechCrunch에 그런 문장 없음 — '세 자료 어디에도 내부 구조가 공개되지 않았다'로 고침)",
+   "Dessa가 OpenAI와 무관한 제3자 모델 GPT-Live-1과 대화 (Block 페이지는 OpenAI를 언급하지 않고 'ChatGPT Live'라고 부름 — 'OpenAI와 무관한' 삭제, 문구를 페이지대로 고침)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). block.xyz/dessa·TechCrunch·The Decoder를 다시 열어 주장 42개 대조, Unite.AI(2026-10-23) 추가. 고침: 'Block(옛 Square)의 AI 연구 조직'→'Square·Cash App을 운영하는 Block의 사내 소규모 AI 연구실'(S1·S3), Thurairatnam을 페이지의 'Dessa lead'로 명시, TechCrunch의 감정 태그 문장을 '분명하지 않다'로, 안전 시험 시나리오를 TechCrunch의 추정으로, 지식 출처·구조 문장 수정. 발표일: block.xyz/dessa 페이지와 메타에는 게시일이 없음(개인정보 고지 시행일 2026-10-21만 있음). S1 published 2026-10-23 은 페이지 표기가 아니라 발표일로, TechCrunch(2026-10-24 기사, Dorsey X 게시 10월 23일)와 Unite.AI(2026-10-23 게시, '10월 23일 발표')로 교차 확인했고 본문 ⚠️ 박스에 밝힘. X(x.com 402)·ANI(403)는 열지 못해 출처로 쓰지 않음. 도입에 음성 모델을 언어 모델 카테고리에서 다루는 이유 한 문장 추가."
+ }
+}
