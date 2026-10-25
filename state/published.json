@@ -4271,5 +4271,25 @@
    "https://www.unite.ai/block-unveils-dessa-a-full-duplex-speech-model-trained-on-conversation/"
   ],
   "draft_id": "20261026_070635_1"
+ },
+ {
+  "date": "2026-10-26",
+  "title": "🎮 Matrix-Game 4.0 논문 분석: 게임 규칙은 엔진에, 화면은 AI에 맡기면 RTX 5090에서 112ms",
+  "topic": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.27999",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/matrix-game-40-ai-rtx-5090-112ms.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.27999",
+   "https://arxiv.org/html/2610.27999",
+   "https://huggingface.co/papers/2610.27999",
+   "https://huggingface.co/Skywork/Matrix-Game-4.0",
+   "https://matrix-game-v4-0.github.io/page/",
+   "https://foro3d.com/en/2026/octubre/matrix-game-40-mundos-interactivos-con-ia-y-motor-de-juego.html",
+   "https://runtimewire.com/article/skywork-matrix-game-4-engine-neural-rendering"
+  ],
+  "draft_id": "20261026_071749_3"
  }
 ]
