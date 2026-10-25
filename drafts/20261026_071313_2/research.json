@@ -1,0 +1,109 @@
+{
+ "topic": "Turn notifications into code with GitHub Copilot in Teams",
+ "source_url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Turn notifications into code with GitHub Copilot in Teams - GitHub Changelog",
+   "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+   "publisher": "GitHub",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GitHub Copilot in Teams Can Now Turn Notifications into Pull Requests",
+   "url": "https://www.analyticsinsight.net/news/github-copilot-in-teams-can-now-turn-notifications-into-pull-requests",
+   "publisher": "Analytics Insight",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Turn notifications into code with GitHub Copilot in Teams (GitHub Community discussion #211133)",
+   "url": "https://github.com/orgs/community/discussions/211133",
+   "publisher": "GitHub Community",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "MC1515929 - Microsoft Teams: GitHub app consolidation and legacy GitHub app deprecation",
+   "url": "https://pupuweb.com/mc1515929-microsoft-teams-github-app-consolidation-and-legacy-github-app-deprecation/",
+   "publisher": "PUPUWEB",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Work with Copilot coding agent in Microsoft Teams - GitHub Changelog",
+   "url": "https://github.blog/changelog/2025-09-19-work-with-copilot-coding-agent-in-microsoft-teams/",
+   "publisher": "GitHub",
+   "published": "2025-09-19",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "About the GitHub integration for Teams",
+   "url": "https://docs.github.com/en/integrations/how-tos/teams/integrate-github-with-teams",
+   "publisher": "GitHub Docs",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 변경 로그는 대표 이미지 외 본문 그림이 없고, 인용 가능한 본문 스크린샷이 있는 페이지는 2025년 프리뷰 앱 글뿐이어서 현재 통합 앱을 보여 주지 못해 넣지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Teams에서 GitHub 알림과 Copilot이 통합되면 우리 팀은 11월 16일 전에 무엇을 확인하고 누가 어떤 조건을 갖춰야 하는가",
+  "limitations": "앱을 직접 설치·실행하지 않았으며 공개 문서와 보도만 대조함. 가격·사용량 규칙은 확인하지 못함. Microsoft 공지 MC1515929는 원문이 아닌 PUPUWEB 재게시본(10/20, 기간 밖 보조 출처)으로만 읽어 보조 근거로만 씀. GitHub Docs(S6)는 페이지에 날짜가 없어 published를 비움.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧭 한눈에 보는 달라진 점: 2025년 미리보기 앱과 비교",
+    "excerpt": "**이슈·풀 리퀘스트·Actions 워크플로 알림**에 집중했습니다. 알림 앱과 에이전트 앱이 따로 있던 셈입니다.",
+    "added_value": "2025년 프리뷰와 2026년 통합 앱을 같은 항목으로 나란히 비교해 무엇이 합쳐지고 무엇이 남았는지 보여 줌",
+    "source_ids": [
+     "S1",
+     "S5"
+    ]
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "✅ 쓰려면 무엇이 필요한가: 출처별 조건 대조",
+    "excerpt": "10월 23일 변경 로그 본문에는 요금제나 라이선스 조건이 **없습니다**. 조건은 같은 날 올라온 GitHub 커뮤니티 글과 Analytics Insight 기사에 나옵니다.",
+    "added_value": "공식 변경 로그에 없는 조건을 커뮤니티 글·매체·Microsoft 공지 재게시본에서 가져와 출처별 범위와 한계를 대조",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ]
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💻 상황별 판단 가이드: 지금 도입할까, 기다릴까",
+    "excerpt": "핵심 질문은 '이미 Teams에서 GitHub 알림을 받고 있는가', 'Copilot 유료 플랜이 있는가'",
+    "added_value": "팀 상황별로 해야 할 일과 근거를 연결한 선택 기준",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ]
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 50,
+  "confirmed": 46,
+  "removed": [
+   "GitHub가 같은 날 올린 다른 변경 로그에도 11월 16일이 나오지만 그것은 Copilot 모델 지원 중단 이야기라 이 앱과 별개입니다. (출처 없음 → S4의 '2026년 11월 16일까지' 문장으로 대체)",
+   "이 항목은 10월 23일 공지에는 없는 내용이라 문서가 갱신 전 상태일 수 있습니다. (추측 → 삭제, S6 전제조건으로 대체)",
+   "Microsoft Community Hub의 소개 글(Teams 블로그)은 제목만 확인되고 본문은 읽지 못해 출처로 쓰지 않았습니다. (확인 불가)",
+   "또 한 건의 보도는 접속이 거부되어 제외했습니다. (확인 불가)",
+   "[수정] 'GitHub Notifications만 쓰는 중 → 11월 16일 전에 앱을 업데이트' → 기한 근거 없음, '최신 버전으로 직접 업데이트'(S1·S4)로 고침"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 다시 열어 대조. published 날짜: S1 2026-10-23, S2 2026-10-25(5:40am), S3 2026-10-23, S4 2026-10-20(MC 원문 10/19), S5 2025-09-19 모두 페이지 표기와 일치, S6 날짜 표기 없음→공란. 요금제·라이선스·샌드박스 조건은 S1에 없고 S2·S3(및 S6)에만 있음을 본문에서 그대로 귀속. 레거시 앱 종료 11월 16일: S1은 연도 없음, 2026년은 S2·S3·S4로 확인. S4는 기간 밖 보조 출처로 관리자 조치·RSC·배포 일정에만 쓰고 대표 이슈 근거(source_url=S1)로 쓰지 않음. S6 'Microsoft Public Developer Preview enabled for your Teams client' 전제조건과 Copilot cloud agent 공개 프리뷰 표기 확인. 보완: S6 기타 전제조건·샌드박스 정책 공유, S4 관리자 조치, S5 repo= 지정 방식."
+ }
+}
