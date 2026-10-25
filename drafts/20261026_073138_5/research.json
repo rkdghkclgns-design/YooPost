@@ -1,0 +1,110 @@
+{
+ "topic": "CVE-2026-111497: Node.js Brotli decoder out-of-bounds write permits remote code execution (Node.js October 2026 Security Releases)",
+ "source_url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Wednesday, October 21, 2026 Security Releases",
+   "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+   "publisher": "Node.js Project",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "google/brotli releases v1.2.1 / v1.1.1 / v1.0.10",
+   "url": "https://github.com/google/brotli/releases",
+   "publisher": "Google (GitHub)",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software",
+   "url": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Python packages vulnerable to Node2Shell: Brotli CVE-2026-111497",
+   "url": "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+   "publisher": "Aikido Security",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI AI Agents Demonstrate VM Escapes and Secret Cross-Sandbox Communication",
+   "url": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Node.js v24.22.1 (LTS) release notes",
+   "url": "https://github.com/nodejs/node/releases/tag/v24.22.1",
+   "publisher": "Node.js Project (GitHub)",
+   "published": "2026-10-21",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(Node.js 공지·GitHub 릴리스 노트)는 글자 위주이고 본문에 도표·스크린샷이 없으며, Aikido 본문의 유일한 그림은 공유용 로고 이미지(대체 텍스트 없음)라 쓰지 않았다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Node.js를 업데이트했다면 끝인가, 아니면 Python·Bun·Envoy 등 다른 Brotli 사본까지 어떤 순서로 확인해야 하는가?",
+  "limitations": "직접 취약 환경을 구성하거나 패치를 실행해 확인하지 않았다. 우선순위 표는 출처의 노출 조건을 재배열한 해석이다. 배포판별 패치 상태는 10월 22~23일 보도 기준이며 이후 변동을 확인하지 못했다. Dependabot 표시 여부는 두 출처가 엇갈려 확정하지 않았다. Google 9.2·Red Hat 8.1 점수는 The Hacker News 보도로만 확인했다(GitHub 권고 GHSA-9v8h-qqgm-4m35 는 열리지 않음).",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧮 우선순위 판단 가이드: 내 서비스는 어디부터 고칠까",
+    "excerpt": "점수 순서가 아니라 **신뢰할 수 없는 Brotli 입력이 닿는 경로**를 기준으로 했으며",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "제품별 노출 조건을 서비스 상황별 패치 순서로 재배열해 독자가 자기 환경에서 먼저 볼 항목을 고르게 함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 스캐너가 놓칠 수 있는 지점",
+    "excerpt": "두 글의 발행일이 10월 24일과 23일(25일 갱신)로 가까워서 **어느 쪽이 맞는지 확정하지 않고**",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "THN과 Aikido의 스캐너 탐지 서술이 엇갈리는 점을 대조하고 직접 버전 확인으로 이어지게 함"
+   },
+   {
+    "kind": "comparison",
+    "section": "🧩 영향권 지도: 사본마다 따로 고쳐야 한다",
+    "excerpt": "조건 열은 '이 상황이면 먼저 고친다'는 판단 기준으로 쓸 수 있습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "제품별 영향 버전·수정판·노출 조건을 한 표에서 같은 항목으로 비교"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [],
+  "corrected": [
+   "심각도: 'Google은 CVSS 4.0 9.2, Red Hat 8.1' 단정 → The Hacker News 보도로 귀속(요약·표·💡박스·한계 문단), Node.js '높음'은 공지(S1)로 분리",
+   "Envoy 영향 버전 '각 계열 최신 직전 버전까지' → 보도에 나열된 1.36.11·1.37.7·1.38.5·1.39.2",
+   "타임라인 10월 22일 'Python Brotli 수정판 공개' → 'Aikido는 공개 다음 날로 기술' 귀속, Amazon Linux 보류는 보도 귀속",
+   "배포판 상태 문단 'The Hacker News 보도에 따르면'으로 귀속, Debian 수정일 10월 23일 명시",
+   "Node.js 수정판 표 근거 S1·S6(릴리스 노트 Brotli cherry-pick)으로 교체",
+   "Imperva 시연은 The Hacker News 보도 귀속·공격 코드 미공개 명시",
+   "Node.js 20.x: '선택밖에 없다' 단정 완화, 공지의 EOL 문구·상용 지원 안내 추가",
+   "완화책 표에 Aikido의 'Node.js fetch()는 Brotli 자동 해제를 끄는 표준 설정 없음' 보완"
+  ],
+  "note": "Opus 검증(claude-opus-5-5, 2026-10-26 KST): S1 Node.js 공지(2026-10-21, 22.23.4/24.22.1/26.12.1, CVE-2026-111497 High, 보고 Khai Tran·Sylvie Mayer, 수정 mcollina·aduh95, 우회책 없음), S2 google/brotli 릴리스(v1.0.10/1.1.1/1.2.1 '21 Oct', 연도 미표기·THN 'no new Brotli release ... until October 21'로 교차), S3 THN(2026-10-24: 9.2/8.1·영향/수정 버전·CISA 10/23·Debian·Amazon Linux·Dependabot·완화책·재시작), S4 Aikido(2026-10-23, 25일 갱신: Python 클라이언트 조건·8,280만·PYSEC·명령어·pip-audit/Dependabot 'should now'), S5 THN(2026-10-25: 고연산 레드팀·Node2Shell/HTTP2Shell·VM 탈출), S6 v24.22.1 릴리스 노트(2026-10-21) 재열람. 각 출처 published 는 페이지 날짜와 일치. 심각도 9.2 는 GHSA 404 로 THN 에만 근거해 귀속 표기. 배포판 상태·Dependabot 표시 여부는 출처 귀속 수준으로만 서술. 악용 절차·공격 코드 상세 없음."
+ }
+}
