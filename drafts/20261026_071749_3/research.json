@@ -1,0 +1,126 @@
+{
+ "topic": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds",
+ "source_url": "https://arxiv.org/abs/2610.27999",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.27999",
+   "publisher": "arXiv",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Matrix-Game 4.0 (arXiv HTML 본문)",
+   "url": "https://arxiv.org/html/2610.27999",
+   "publisher": "arXiv / Skywork AI",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Matrix-Game 4.0 - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.27999",
+   "publisher": "Hugging Face",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Skywork/Matrix-Game-4.0 model card",
+   "url": "https://huggingface.co/Skywork/Matrix-Game-4.0",
+   "publisher": "Skywork (Hugging Face)",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Matrix-Game 4.0 project page",
+   "url": "https://matrix-game-v4-0.github.io/page/",
+   "publisher": "Skywork AI",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Matrix-Game 4.0: interactive AI worlds with a game engine",
+   "url": "https://foro3d.com/en/2026/octubre/matrix-game-40-mundos-interactivos-con-ia-y-motor-de-juego.html",
+   "publisher": "Foro3D",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Skywork AI releases Matrix-Game 4.0 with game logic in code",
+   "url": "https://runtimewire.com/article/skywork-matrix-game-4-engine-neural-rendering",
+   "publisher": "RuntimeWire",
+   "published": "2026-10-15",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://matrix-game-v4-0.github.io/page/assets/fig/overview_en.png",
+   "page_url": "https://matrix-game-v4-0.github.io/page/",
+   "caption": "구조 해부: 게임 엔진, 코딩 에이전트, 비디오 렌더러가 이어지는 방법 개요 그림",
+   "credit": "Skywork AI / Matrix-Game 4.0 project page"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "엔진과 영상 렌더러를 분리한 Matrix-Game 4.0의 112ms·60FPS 수치는 어떤 조건에서 읽어야 하며 무엇이 속도를 만들었는가",
+  "limitations": "필자가 모델을 직접 실행·측정하지 않았고 모든 수치는 논문·공개 페이지 보고값이다. 논문은 정량 화질 지표가 없고, 표 3의 지연 비교는 시스템마다 측정 정의·해상도·하드웨어가 달라 순위로 단정하기 어렵다(논문 자체는 최저 지연을 주장). 화질 그림은 2단계 모델, 83 FPS는 1단계 값이다. 프로젝트 페이지의 헤드라인 수치는 정적 캡처에서 0으로 보이지만 페이지 소스의 카운터 목표값(83 FPS, 112ms, 48ms, 480p, GPU 1장)은 논문 본문과 같다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⚡ 속도 분석: 4.5 FPS에서 83.4 FPS까지 한 단계씩",
+    "excerpt": "논문이 밝힌 4프레임 청크 처리 시간 48ms를 4로 나눠도 12ms입니다. 화면을 60 FPS로 보여 주려면 4프레임 청크의",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "FPS·청크 처리 시간(48ms)·60FPS 표시 시간으로 실시간 여유를 직접 계산하고, 논문이 직접 제시한 값이 아님을 구분함"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 다른 시스템과 비교해도 되는가",
+    "excerpt": "조건을 맞춰 읽으면 이렇습니다. Matrix-Game 4.0은 이 표에서 **가장 낮은 해상도 축에 속하면서 소비자용 GPU ",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "지연 수치를 해상도·GPU·측정 정의와 함께 읽어 우열 단정을 막는 판단 기준 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 매체 반응과 공개 범위",
+    "excerpt": "입니다. 논문은 네 장면(공중전 포함)으로 학습했다고 밝히지만, 모델 카드의 공개 장면은 세 가지입니다. 또한 모델 카드는 훈",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "논문의 학습 장면 4개와 모델 카드의 공개 장면 3개, 훈련 코드·데이터 미포함을 연결해 재현 범위를 해석함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "⚠ 한계와 어떤 독자에게 맞는가",
+    "excerpt": "독자 상황별로 정리하면, 연구 목적이라면 논문과 코드부터 보고, 제작 목적이라면 480p와 장면별 학습 때문에 프로토타입 실험",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S6"
+    ],
+    "added_value": "독자 유형별로 이 결과를 어떻게 쓸지와 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 82,
+  "removed": [
+   "다만 논문 스스로 직접 비교가 어렵다고 밝혔습니다. 지연 수치는 각 시스템이 보고한 값이고 하드웨어·해상도·정의가 달라 직접 비교할 수 없다고 밝힙니다. (논문에 없는 진술 — 논문은 오히려 최저 지연·다음 시스템의 약 1/5이라고 주장. 표 주석 기준으로 다시 씀)",
+   "FAQ: 논문이 스스로 하드웨어·해상도·측정 정의가 달라 직접 비교가 어렵다고 밝혔습니다. (같은 오귀속, 표 주석 기준으로 다시 씀)",
+   "이는 논문 수치로 낸 단순 평균이며 클립 길이 분포는 논문에서 확인되지 않았습니다. (논문 3.1절에 슈팅·공중전 클립 약 1분 명시 — 장면별 평균으로 교체)",
+   "Foro3D: 데모는 ... 제작 도구는 아니라는 취지 (기사에 '제작 도구 아님' 표현 없음 — 기사 문장대로 수정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs·HTML 본문(v1, 2026-10-20)으로 표 1·2·3, 4.1~4.3절, 5절 결과, 6.1·6.4절, 8절 수치를 모두 대조 — 표 2의 9개 행, 19배·9.9배, 48ms, 83/57 FPS·18.2 GiB, RTX 5080 67 FPS·12.8 GiB, 5070 Ti 58 FPS·10.9 GiB, 표 1 클립·시간 합계, 표 3 지연·해상도·연산 자원·공개 범위 일치. 직접 계산(12ms/프레임, 66.7ms-48ms=18.7ms, 평균 54초, 장면별 평균) 재계산 일치. HF 모델 카드(장면 3개, 5,001,016,512 BF16, Apache-2.0, 훈련 코드·데이터 미포함, 한계·보장 없음), 프로젝트 페이지(하니스 프롬프트, 본문 방법 그림 overview_en.png 4500x2500 image/png 200, 카운터 목표값 83/112/48/480/1이 논문과 같음), HF Papers('Published on Oct 20 · Submitted on Oct 21', #1 Paper of the day), RuntimeWire(Published Oct 15 / Updated Oct 22, X 발표 근거), Foro3D(WebFetch로 읽음, Published on October 21, 2026) 재확인. 수정: 표 3 비교에 대한 논문 진술 오귀속 정정, 클립 길이 문장 정정, S3 published 2026-10-21→2026-10-20(페이지 표기), low-poly 번역, 모델 카드·Foro3D 표현을 원문대로. 보완: 화질 그림은 2단계 모델(약 57 FPS)이고 83 FPS는 1단계라는 점, 16 GiB GPU, Steam 기술 프리뷰 목표, 장면별 평균 클립 길이. 날짜 없는 S4·S5 published 비움 확인."
+ }
+}
