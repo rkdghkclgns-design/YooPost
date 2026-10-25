@@ -4254,5 +4254,22 @@
    "https://www.ibtomato.com/ExternalView.aspx?no=19853&type=1"
   ],
   "draft_id": "20261025_074608_7"
+ },
+ {
+  "date": "2026-10-26",
+  "title": "🎙 Block Dessa 공개: 텍스트 없이 음성만 배운 대화 모델, 지금 무엇까지 믿을 수 있을까",
+  "topic": "Dessa, the Conversation Model trained only on speech (Block) — TechCrunch·The Decoder 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://block.xyz/dessa",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/block-dessa.html"
+  },
+  "sources": [
+   "https://block.xyz/dessa",
+   "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+   "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
+   "https://www.unite.ai/block-unveils-dessa-a-full-duplex-speech-model-trained-on-conversation/"
+  ],
+  "draft_id": "20261026_070635_1"
  }
 ]
