@@ -4311,5 +4311,24 @@
    "https://replit.com/blog/free-the-models"
   ],
   "draft_id": "20261026_072536_4"
+ },
+ {
+  "date": "2026-10-26",
+  "title": "🔒 Brotli CVE-2026-111497: Node.js만 고치면 끝일까, 우리 서비스의 Brotli 사본을 찾는 순서",
+  "topic": "CVE-2026-111497: Node.js Brotli decoder out-of-bounds write permits remote code execution (Node.js October 2026 Security Releases)",
+  "category": "AI 보안",
+  "source_url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/brotli-cve-2026-111497-nodejs-brotli.html"
+  },
+  "sources": [
+   "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+   "https://github.com/google/brotli/releases",
+   "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+   "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+   "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
+   "https://github.com/nodejs/node/releases/tag/v24.22.1"
+  ],
+  "draft_id": "20261026_073138_5"
  }
 ]
