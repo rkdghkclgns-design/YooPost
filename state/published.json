@@ -4330,5 +4330,21 @@
    "https://github.com/nodejs/node/releases/tag/v24.22.1"
   ],
   "draft_id": "20261026_073138_5"
+ },
+ {
+  "date": "2026-10-26",
+  "title": "📉 Apollo 슬록의 'AI 재무 효과 제로' 주장, S&P 493 차트로 어디까지 확인될까",
+  "topic": "No Signs of AI Payoff Outside the Tech Sector (Apollo, Torsten Slok, 2026-10-24) / TechCrunch 보도 (2026-10-25)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/apollo-ai-s-493.html"
+  },
+  "sources": [
+   "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+   "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+   "https://ramp.com/data/ai-index"
+  ],
+  "draft_id": "20261026_073729_6"
  }
 ]
