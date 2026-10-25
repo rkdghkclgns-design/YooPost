@@ -1,0 +1,111 @@
+{
+ "topic": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers (The Decoder, 2026-10-25, The Information 인용)",
+ "source_url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers",
+   "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/",
+   "publisher": "The Decoder",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI Discounts Up to 90% vs Anthropic: What Is Verified",
+   "url": "https://explainx.ai/blog/openai-discounts-up-to-90-percent-poach-anthropic-customers-rippling-replit-datacamp-claimed-vs-verified-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI used 30%-plus discounts to win Replit's $100M AI spend from Anthropic",
+   "url": "https://www.aichatdaily.com/ai-business/openai-used-30-plus-discounts-win-replit-s",
+   "publisher": "AI Chat Daily",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI News, Oct 25: OpenAI Is Buying Anthropic's Customers",
+   "url": "https://www.usecarly.com/blog/ai-news-2026-10-25/",
+   "publisher": "Carly",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Replit makes OpenAI its default over Anthropic, CEO says",
+   "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-17",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO",
+   "url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo/",
+   "publisher": "The Decoder",
+   "published": "2026-10-15",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Free the models: Harness design at the frontier",
+   "url": "https://replit.com/blog/free-the-models",
+   "publisher": "Replit",
+   "published": "2026-09-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "읽은 출처 페이지 본문에 이 소식과 관련된 도표·화면이 없음(The Decoder 기사는 본문 이미지 없음, Replit 블로그는 도표를 글로만 설명, 해설 블로그 그림은 일러스트).",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI의 '최대 90%' 할인 보도는 무엇을 뜻하며, AI 공급사를 고르는 팀은 어떤 기준으로 판단해야 하는가",
+  "limitations": "원보도(The Information)는 유료라 직접 읽지 못했고 The Decoder와 2차 정리글로 확인했다. 개별 사례 숫자에 대한 OpenAI·Anthropic의 확인은 읽은 자료에 없다. 계산은 보도된 숫자만 쓴 단순 산술이며 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 같은 기준으로 다시 계산해 보면",
+    "excerpt": "1억 달러가 **할인 전 금액**이라면 할인액은 연 3,000만 달러를 넘습니다. 1억 달러가 **할인 후 ",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "Replit 할인 문구의 두 해석(할인 전/후 금액)에 따른 할인액 하한과 Rippling 점유율 이동폭, 은행 단가 인하율을 식과 가정과 함께 제시."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 Replit: 서로 다른 세 자료를 이어 읽기",
+    "excerpt": "이 숫자로 계산하면 가장 높은 설정의 Astra는 Replit Agent보다 **점수가 2%포인트 높은 대신",
+    "source_ids": [
+     "S5",
+     "S7"
+    ],
+    "added_value": "TechCrunch의 기본값 정정 보도와 Replit 공식 블로그의 작업당 비용 수치를 연결해 토큰 할인율만으로는 비용을 판단할 수 없음을 보임."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 AI 공급사를 고르는 팀을 위한 판단 기준",
+    "excerpt": "이 보도에서 개발 조직과 구매 담당자가 가져갈 수 있는 것은 어느 회사가 이겼는가가 아니라 **협상과 비교를",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "계약 갱신·기본 모델 교체·다중 공급사·조건부 제안 상황별로 볼 것과 피할 것을 표로 정리."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 34,
+  "confirmed": 31,
+  "removed": [
+   "다른 곳은 할인 조건이 Claude Code를 쓰지 않는 것이었다고 적었습니다. (읽은 출처 어디에도 없음 — 본문·'확인되지 않은 것' 목록·FAQ 함께 수정)",
+   "한 블로그는 Anthropic이 상장을 앞둔 시점에 경쟁사가 고객 이탈을 부각하는 것이 유리할 수 있다고 지적했습니다. (출처에 없음 — Carly의 '상장 몇 주 앞둔 시점이라 시기가 나쁘다'는 확인된 문장으로 교체)",
+   "CEO Amjad Masad는 10월 16일 TechCrunch Disrupt 무대에서 (TechCrunch는 'Thursday'로만 적어 날짜가 출처 간 불일치 — 날짜 삭제)"
+  ],
+  "note": "Opus 검증: S1·S2·S3·S4·S5·S6·S7을 다시 열어 수치·이름·날짜 대조, 각 페이지 표시 날짜와 published 일치 확인(S5는 10/16 최초·10/17 갱신). 원보도(The Information, 유료)는 직접 못 읽어 '보도에 따르면'으로만 서술. Replit 블로그 DeepSWE v1.1(72%·$2.11 / Astra low 67%·$1.60 / xhigh 74%·$4.43)·Terminal-Bench 4.0(49%·$2.53 / 60%·$5.86) 확인. 계산 재확인: 1억÷0.7=1억4,286만→할인 약 4,286만(약 4,290만 표기), 1−7÷20=65%, 20×500=1만·7×500=3,500, 4.43÷2.11=2.10배, 5.86÷2.53=2.32배, +36·−39%p, 합 73→70%. 수정: OpenAI 재협상 여유를 '한 달 정도'→'그 달 남은 기간+한 달'(explainx), 15% 할인 출처를 '매체들'→'한 블로그', DataCamp 40%는 AI Chat Daily 단독 보도로 명시."
+ }
+}
