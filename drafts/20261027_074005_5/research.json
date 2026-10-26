@@ -1,0 +1,99 @@
+{
+ "topic": "Markdown Is the New Executable — Downloads 폴더의 AGENTS.md로 코딩 에이전트를 속이는 공격 (Forever Security, 2026-10-22) / Help Net Security 보도 (2026-10-26)",
+ "source_url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Markdown Is the New Executable",
+   "url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder",
+   "publisher": "Forever Security",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI coding agents fall for malicious instructions planted in the Downloads folder",
+   "url": "https://www.helpnetsecurity.com/2026/10/26/ai-coding-agents-malware-openai-codex/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Malfex npm malware campaign: three payloads and an adversary that signs their work",
+   "url": "https://checkmarx.com/zero-post/malfex-npm-malware-campaign-three-payloads-and-an-adversary-that-signs-their-work/",
+   "publisher": "Checkmarx Zero",
+   "published": "2026-10-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AGENTS.md (Codex agent configuration)",
+   "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+   "publisher": "OpenAI",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Settings files and precedence (Claude Code)",
+   "url": "https://code.claude.com/docs/en/settings",
+   "publisher": "Anthropic",
+   "official": true,
+   "published": "2026-10-22"
+  },
+  {
+   "id": "S6",
+   "title": "Script management with launchd in Terminal on Mac",
+   "url": "https://support.apple.com/guide/terminal/script-management-with-launchd-apdc6c1077b-5d5d-4d35-9c19-60f2397b2369/mac",
+   "publisher": "Apple",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 본문 확인 결과 관련 그림 없음: Forever 글은 장식용 표지(og:image)·저자 사진·인증 배지뿐, Codex·Claude Code·Apple 문서는 로고 외 그림 없음. Help Net Security는 일반 삽화, Checkmarx(비공식)는 Windows 페이로드 코드 화면이라 이 글 문단과 맞지 않아 인용하지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Downloads 폴더에서 코딩 에이전트를 켜 본 개발자는 어떤 설정 파일을 무엇부터 확인해야 하는가",
+  "limitations": "직접 재현·실행하지 않은 공개 자료 해설. 성공률은 Forever의 자체 시험 값이며 제조사 입장은 확인되지 않음.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 세 자료를 이어 읽으면 보이는 것",
+    "excerpt": "여기서 눈에 띄는 차이가 있습니다. Checkmarx는 이 캠페인이 **Windows만 노린다**고 적었는데",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "Forever의 launchctl 사용과 Checkmarx의 Windows 전용 설명을 대조해 같은 페이로드로 단정할 수 없음을 밝힘"
+   },
+   {
+    "kind": "calculation",
+    "section": "📏 AGENTS.md는 어디까지 읽히나: 공식 문서로 본 계산",
+    "excerpt": "이 기준을 연구진이 말한 약 13KB 파일에 대어 보면 대략 **기본 상한의 40% 안팎**입니다(13을 3",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "13KB 파일을 Codex 기본 32 KiB 상한과 비교해 약 40%임을 어림 계산하고 가정을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내 컴퓨터 점검 순서: 상황별 판단 기준",
+    "excerpt": "연구진의 완화책은 간단합니다. Downloads 폴더에서 에이전트를 켜지 말고, 직접 쓰지 않은 AGENTS",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "연구진 완화책을 사용자 상황별 점검 순서로 재구성"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 47,
+  "removed": [
+   "이 주장이 맞다면 서명 검증이나 파일 형식 차단 같은 기존 방어가 잘 맞지 않습니다. (출처에 없는 '서명 검증·파일 형식 차단' → 연구진 표현 '실행 파일을 막는 장치가 적용되지 않음'으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5를 다시 내려받아 본문과 대조, published는 S1 time datetime 2026-10-22·S2 article:published_time 2026-10-26·S3 datePublished 2026-10-05와 일치, S5는 dateModified 2026-10-22로 기입, S4는 페이지에 날짜 없음. 성공률(Codex 90%+, Claude 설정 쓰기 약 50%, 같은 세션 약 5분의 1)·13KB·고객 약 절반·세션 약 4분의 1은 S1·S2의 Forever 자체 시험/원격측정 값으로 확인. Codex 32 KiB·폴더당 1파일·Git 루트 규칙은 S4, 신뢰 전 permissions.allow·env 보류와 defaultMode 제한은 S5, MALFEX 12개 중 8개·2023년 8월·40,767회(2026-10-01)·Windows 전용·function-color 래퍼·macOS/Linux 조용히 실패는 S3로 확인. 13/32≈0.41(KB=1000 기준 0.40)로 '40% 안팎' 맞음. 고친 것: 샌드박스 문장 오독('명령을 멈추게 해 탈출 시도 안 함'→'클라이언트가 스스로 샌드박스를 끄게 함'), 고객 사례 '최종 피해 여부 알려진 바 없음'→'코드 실행 전에 차단'(S1), 도입부 '설치로 이끌었다'→'설치를 시키려 했다', '약 40,767회'→정확 수치, 대부분 시험이 무해한 대체물이었다는 한계 추가, launchctl=macOS 근거로 Apple 문서(S6) 추가 및 Checkmarx의 macOS 조용히 실패 분석 추가(과장 없이 '확정 불가' 해석 유지), 강조 없는 문단 4곳 보완."
+ }
+}
