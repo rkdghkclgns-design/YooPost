@@ -4383,5 +4383,23 @@
    "https://docs.github.com/en/integrations/how-tos/teams/integrate-github-with-teams"
   ],
   "draft_id": "20261026_071313_2"
+ },
+ {
+  "date": "2026-10-27",
+  "title": "🧮 GPT-6.1 Terra 공개: 가격 절반, 작업당 비용 $0.40. 우리 서비스 월 비용은 얼마나 달라질까",
+  "topic": "GPT-6.1 Terra System Card Addendum (OpenAI, 2026-10-26) — 입력 $1/출력 $5 중급 모델 / Artificial Analysis·The Next Web·9to5Mac·The Decoder 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gpt-61-terra-040.html"
+  },
+  "sources": [
+   "https://deploymentsafety.openai.com/gpt-6-1-terra",
+   "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier",
+   "https://thenextweb.com/news/openai-gpt-6-1-terra-computer-use",
+   "https://9to5mac.com/2026/10/26/openai-upgrades-chatgpt-and-codex-with-new-gpt-6-1-terra-model/",
+   "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/"
+  ],
+  "draft_id": "20261027_070616_1"
  }
 ]
