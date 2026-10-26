@@ -4440,5 +4440,25 @@
    "https://github.com/diclogic/ai-daily-digest/issues/191"
   ],
   "draft_id": "20261027_072211_3"
+ },
+ {
+  "date": "2026-10-27",
+  "title": "🏦 Anthropic S-1 공개: 상반기 매출 163억 달러와 순손실 807억 달러, 어떻게 함께 읽을까",
+  "topic": "Anthropic officially files for its public debut — Anthropic, PBC Form S-1 (SEC, 2026-10-26) / TechCrunch·PPC Land·Yahoo Finance 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/anthropic-s-1-163-807.html"
+  },
+  "sources": [
+   "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+   "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
+   "https://ppc.land/anthropics-ipo-filing-shows-16-3bn-of-revenue-and-no-plan-to-sell-ads/",
+   "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+   "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+   "https://www.anthropic.com/news/claude-is-a-space-to-think"
+  ],
+  "draft_id": "20261027_073007_4"
  }
 ]
