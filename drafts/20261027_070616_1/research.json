@@ -1,0 +1,106 @@
+{
+ "topic": "GPT-6.1 Terra System Card Addendum (OpenAI, 2026-10-26) — 입력 $1/출력 $5 중급 모델 / Artificial Analysis·The Next Web·9to5Mac·The Decoder 보도",
+ "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GPT-6.1 Terra System Card Addendum",
+   "url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+   "publisher": "OpenAI",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GPT-6.1 Terra pushes the cost efficiency frontier",
+   "url": "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier",
+   "publisher": "Artificial Analysis",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI launches GPT-6.1 Terra",
+   "url": "https://thenextweb.com/news/openai-gpt-6-1-terra-computer-use",
+   "publisher": "The Next Web",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI upgrades ChatGPT and Codex with new GPT-6.1 Terra model",
+   "url": "https://9to5mac.com/2026/10/26/openai-upgrades-chatgpt-and-codex-with-new-gpt-6-1-terra-model/",
+   "publisher": "9to5Mac",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+   "url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/",
+   "publisher": "The Decoder",
+   "published": "2026-10-26",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-1-terra/assets/images/image1.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+   "caption": "시스템 카드의 안전 항목: 생물 평가 막대그래프(코로나바이러스-ACE2 세포 진입 평가, GPT-6.1 Terra 0.4741, 지표 임계값 0.75)",
+   "credit": "OpenAI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-1-terra/assets/images/image5.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+   "caption": "환각과 정직성: 지연시간 대비 환각 오류율 그래프(GPT-6.1 Terra 대 GPT-5.6 Terra 등)",
+   "credit": "OpenAI"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GPT-6.1 Terra로 바꾸면 우리 서비스의 월 비용과 품질은 어떻게 달라지는가?",
+  "limitations": "직접 실행·측정하지 않았고 시스템 카드·제3자 분석·보도에 적힌 수치만 정리했다. 컨텍스트 길이 등 세부 사양과 OpenAI 공식 발표 페이지(403)는 읽지 못했다. 월 비용 계산은 캐시·추론 토큰을 제외한 단순 가정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 가격표를 계산으로 바꿔 보기",
+    "excerpt": "월 입력 1억 토큰·출력 2000만 토큰을 쓰는 서비스라면 GPT-6.1 Terra는 100달러에 100달러를 더한 200달러",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "항목별 인하율과 가상 월 사용량 기준 총비용(200달러 대 440달러 대 400달러)을 직접 계산해 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 그래서 바꿔야 할까: 쓰임새별 판단표",
+    "excerpt": "하루 수천 건의 양식 입력이나 화면 조작을 맡기는 팀이라면 Terra부터 시험하고, 가장 어려운 코딩만 Sol이나 Astra로",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "쓰임새별로 Terra·Sol·Astra 선택 기준과 근거를 표로 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛡 시스템 카드의 안전 항목: 좋아진 점과 남은 숙제",
+    "excerpt": "반대로 카드에는 조심할 대목도 있습니다. 경고를 받고도 제한을 어긴 경로로",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "보도가 강조한 개선점과 시스템 카드의 불리한 수치를 함께 놓고 에이전트 도입 시 주의점으로 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 51,
+  "confirmed": 51,
+  "removed": [],
+  "note": "Opus 검증: 출처 S1~S5를 다시 열어 51개 주장(가격·벤치마크·안전 수치·제공 대상·발표 맥락)을 대조. 모든 출처 published 2026-10-26 페이지 날짜와 일치, EGRESS_BLOCKED 출처 없음. 월 비용 계산(1억 입력·2000만 출력: 100+100=200달러, 200+240=440달러, 54.5%≈55% 절감, Sonnet 5.5 200+200=400달러) 재계산 일치. 수정: 모델 소개 인용을 시스템 카드 원문대로, 29.6% 비교 대상 모델명 정정(GPT-6 Astra·GPT-6 Luna·GPT-6.1 Sol), 지시 계층 99.99%는 Astra·Sol 수치로 정정, 프롬프트 주입 96.2→98.8%는 The Decoder 출처 명시, 지능 지수 48/52/42 출처(The Decoder 게재 AA 그래프) 명시, GDP 평가명을 GDP.pdf로, Terminal-Bench AA 자체 측정 약 20점 병기, Opus 5.5 9배 주장은 독립 검증 안 됨(TNW)으로 서술, 무료 사용자 문장 완화, 이미지 캡션 '기준선'→'지표 임계값'. 이미지 2개 HTTP 200 image/png(1680x840, 2048x799) 확인. 형광 강조 없는 문단 보완."
+ }
+}
