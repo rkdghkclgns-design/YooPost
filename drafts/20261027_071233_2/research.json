@@ -1,0 +1,123 @@
+{
+ "topic": "Claude Code changelog 2.1.305–2.1.311 (Anthropic, 2026-10-20~10-26) — 샌드박스·MCP·권한 변경 / DEV Community 정리 2편",
+ "source_url": "https://code.claude.com/docs/en/changelog",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Code changelog (2.1.305–2.1.311)",
+   "url": "https://code.claude.com/docs/en/changelog",
+   "publisher": "Anthropic",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "This week in Claude Code, Codex and Gemini CLI (week of October 25, 2026)",
+   "url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-october-25-2026-1jjf",
+   "publisher": "DEV Community (aicoding-guide)",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Codex changelog (CLI 0.163.0, 0.164.0)",
+   "url": "https://learn.chatgpt.com/docs/changelog",
+   "publisher": "OpenAI",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Codex CLI v0.163 turns Daybreak back on by default",
+   "url": "https://aicoding-guide.com/en/posts/codex-update-0-163/",
+   "publisher": "aicoding-guide",
+   "published": "2026-10-19",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Claude Code 2.1.309 and 2.1.310 patched 15 guardrail bypasses in two days: deny rules, sandbox, and fail-open hooks",
+   "url": "https://dev.to/piekwerk/claude-code-21309-and-21310-patched-15-guardrail-bypasses-in-two-days-deny-rules-sandbox-and-1n1",
+   "publisher": "DEV Community (piekwerk)",
+   "published": "2026-10-24",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Configure permissions (Claude Code Docs)",
+   "url": "https://code.claude.com/docs/en/permissions",
+   "publisher": "Anthropic",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Choose a permission mode — Protected paths (Claude Code Docs)",
+   "url": "https://code.claude.com/docs/en/permission-modes",
+   "publisher": "Anthropic",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Sandboxing (Claude Code Docs)",
+   "url": "https://code.claude.com/docs/en/sandboxing",
+   "publisher": "Anthropic",
+   "published": "2026-10-25",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "Gemini CLI latest stable release: v0.65.0 (changelog)",
+   "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/latest.md",
+   "publisher": "Google (Gemini CLI)",
+   "published": "2026-10-20",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://mintcdn.com/claude-code/oa7CKjMeIChox26S/images/permission-prompt-bash-light.png?fit=max&auto=format&n=oa7CKjMeIChox26S&q=85&s=87585d008a29304873466399f7b476f6",
+   "page_url": "https://code.claude.com/docs/en/permissions",
+   "caption": "권한 규칙 확인 창: ask 규칙에 걸린 Bash 명령(npm test)에 대해 Claude Code 가 승인 여부를 묻는 화면",
+   "credit": "Anthropic (Claude Code Docs)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Claude Code 2.1.305~311로 올리기 전에, 내 팀 설정에서 어떤 변경부터 확인해야 하는가",
+  "limitations": "직접 설치·실행·재현하지 않았고 공식 변경 기록·문서와 서드파티 글을 읽어 정리했다. 우회 수정 건수(10여 건·15건)는 세는 기준에 따라 달라지는 집계이며 사용자 반응(댓글)은 확인하지 못했다. Codex는 0.164.0(10-23) 단일 버전 기록이라 같은 조건의 비교가 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⚖ Codex 0.164.0 와 나란히 보기: 같은 주, 다른 손질",
+    "excerpt": "숫자만 놓고 계산하면 이렇습니다. Claude Code 는 10월 20일부터 26일까지 7일 동안 7개 버전이 올라왔으니 평균 하루 1개 꼴입니다. Cod",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "7일 7버전 대 8일 간격 1버전이라는 빈도 계산과, 버전 단위가 달라 우열 비교가 불가능하다는 한계 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 업그레이드 전 점검: 내 팀은 어떤 항목부터 볼까",
+    "excerpt": "제외 조건도 있습니다. MCP 서버를 쓰지 않고, 샌드박스 안에서 브라우저도 돌리지 않고, ultrareview 도 쓰지 않는다면 이번 주 변경 중 직접 ",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀 상황별 확인 항목과 영향이 적은 제외 조건 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 41,
+  "removed": [
+   "DEV 글은 일부 항목이 어느 버전에 속하는지 적지 않았다고 스스로 밝히는 부분이 있습니다.",
+   "(공식 기록은 allowNestedUserNamespaces 를) 필요할 때만 켜라고 적습니다. — 본문·FAQ 두 곳"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): code.claude.com/docs/en/changelog(.md) 를 다시 내려받아 2.1.305~2.1.311 각 항목·날짜(10-20, 10-21×2, 10-22×2, 10-23, 10-26)·버그 수정 건수(22/2/26/62/14/56)를 대조. 수정: 버전 표의 '공식 기록의 요약' 열은 공식 요약이 아니라 작성자 요약이어서 열 이름을 바꾸고 2.1.305 의 '자동 모드 변경'(기록에 없음)을 실제 항목으로 교체, '다수 수정' 표현을 실제 건수로 교체; '공식 기록은 개별 항목을 세어 주지 않는다'를 고침. (a) 샌드박스·권한 우회 10여 건과 2.1.310 Windows 훅(Git Bash 없음·따옴표 문자열 명령) 수정은 공식 changelog 원문에서 직접 확인(2.1.309 해당 항목 14건, 2.1.310 1건) — 근거를 공식 기록으로 바꿈. (b) deny→ask→allow 평가 순서는 공식 permissions 문서, permissions.allow 가 보호 경로(.git 등) 쓰기를 미리 승인 못함은 공식 permission-modes 문서로 확인해 서드파티 출처(S5) 대신 공식 문서로 교체. allowNestedUserNamespaces 경고는 공식 sandboxing 문서로 보강. Codex 0.164.0(10-23)·0.163.0(10-15)·기능 목록·macOS 샌드박스 강화는 OpenAI 변경 기록으로, Gemini CLI v0.65.0(10-20)·OTLP 헤더·읽기 전용 강제는 Gemini CLI 공식 changelog(raw GitHub; geminicli.com HTML 은 아직 v0.64.0 표시)로 확인. (c) 기간 안 이슈 출처로 DEV Community piekwerk 글(2026-10-24, 2.1.309·2.1.310 안전장치 수정 15건 분석)을 직접 읽어 추가 — classmethod(10-23)·evolcrm(10-23)·ai-tldr(10-22)·remio(10-21)는 3일 기간 밖이라 넣지 않음. (d) 공식 changelog HTML 의 img 는 로고 2개뿐이라 본문 그림이 없음을 확인 — 대신 공식 permissions 문서 본문의 Bash 권한 확인 창 스크린샷(1512×680, HTTP 200 image/png 확인)을 I1 로 넣고 images_none_reason 을 지움. published 는 각 페이지 datePublished/릴리스 날짜/문서 dateModified 와 대조(S1 최신 항목 10-26, S2 10-24, S3 10-23, S4 10-19)."
+ }
+}
