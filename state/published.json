@@ -4423,5 +4423,22 @@
    "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/latest.md"
   ],
   "draft_id": "20261027_071233_2"
+ },
+ {
+  "date": "2026-10-27",
+  "title": "🎬 StreamEval: 화질 좋은 실시간 영상 생성 모델은 시킨 대로도 움직일까",
+  "topic": "StreamEval: Evaluating Interactive Streaming Video Generation Models",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.28402",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/streameval.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.28402",
+   "https://huggingface.co/papers/2610.28402",
+   "https://arxiv.org/html/2610.28402v2",
+   "https://github.com/diclogic/ai-daily-digest/issues/191"
+  ],
+  "draft_id": "20261027_072211_3"
  }
 ]
