@@ -1,0 +1,98 @@
+{
+ "topic": "StreamEval: Evaluating Interactive Streaming Video Generation Models",
+ "source_url": "https://arxiv.org/abs/2610.28402",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "StreamEval: Evaluating Interactive Streaming Video Generation Models (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.28402",
+   "publisher": "arXiv",
+   "published": "2026-10-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "StreamEval: Evaluating Interactive Streaming Video Generation Models (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.28402",
+   "publisher": "Hugging Face",
+   "published": "2026-10-22",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "StreamEval (arXiv HTML v2 full text)",
+   "url": "https://arxiv.org/html/2610.28402v2",
+   "publisher": "arXiv",
+   "published": "2026-10-23",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "AI Daily Digest — 2026-10-23 (Issue #191)",
+   "url": "https://github.com/diclogic/ai-daily-digest/issues/191",
+   "publisher": "GitHub (diclogic/ai-daily-digest)",
+   "published": "2026-10-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.28402v2/01_overview.png",
+   "page_url": "https://arxiv.org/html/2610.28402v2",
+   "caption": "벤치마크 구성: 아바타 상호작용, 월드 생성, 실시간 영상 편집에 걸친 5개 과제 개요 (논문 그림 1)",
+   "credit": "StreamEval Team (arXiv 2610.28402)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.28402v2/03_construction.png",
+   "page_url": "https://arxiv.org/html/2610.28402v2",
+   "caption": "10개 지표와 벤치마크 구축·검증 과정 (논문 그림 2)",
+   "credit": "StreamEval Team (arXiv 2610.28402)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "화질과 정체성 유지가 좋은 실시간 영상 생성 모델은 사용자의 요청도 그대로 수행하는가, 그리고 StreamEval 점수를 어떻게 읽어야 하는가",
+  "limitations": "필자가 모델이나 평가 코드를 직접 실행하지 않았고 논문과 허깅페이스 페이지의 기술을 정리했다. 논문은 사람 심사와 자동 심사의 일치도를 보고하지 않았고, 반복 실행 변동도 확인하지 못했다. 8,460 세션 수치는 가정 계산이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔍 화질과 요청 수행은 왜 따로 움직이나",
+    "excerpt": "Vidu S2 Avatar는 아바타 수행에서 종합 점수 81.71로 선두이지만, 요청 수행을 재는 Following 점수는 36.90이었고 이것이 일",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "같은 모델의 종합 점수와 요청 수행 지표를 나란히 놓아 두 점수가 다른 것을 재고 있음을 보였다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 평가 규모를 가늠해 보기",
+    "excerpt": "가정 계산입니다. 논문은 과제마다 60개 사례를 두고 사례·모델마다 3회 반복한다고 밝혔습니다. 한 구성이 자기 과제의 60개 사례를 모두 3회 돌렸다고 가정하면",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "논문이 밝힌 사례 수·반복 횟수·구성 수로 평가 세션 규모를 가정 계산으로 어림하고 가정의 한계를 표시했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 활용 기준",
+    "excerpt": "실시간 대화 아바타를 고르는 팀이라면 대화 과제의 종합 점수와 A-V Sync를 함께 보는 편이 안전합니다. 논문 기준으로 대화 종합 선두는 Vidu S2 Ava",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 지표와 주의점을 정리하고 종합 선두와 지표 선두가 다른 사례를 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 80,
+  "confirmed": 78,
+  "removed": [
+   "장시간 세션을 포함한 덕분에 짧은 클립에서는 드러나지 않는 상태 누적 문제를 볼 수 있다는 것이 설계의 장점입니다. (논문 근거 없는 해석 — 길이 구간 동일 가중 집계 사실로 교체)",
+   "허깅페이스 Papers는 ... 2026년 10월 18~24일 주간 목록에서도 이 논문(2610.28402)이 보였습니다. (주간 목록 페이지는 출처에 없어 삭제, 대신 S2 페이지의 #2 Paper of the day·업보트 654 기재)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs(2610.28402, v1 2026-10-20·v2 2026-10-23)와 HTML v2 전문을 curl 로 다시 받아 수치·모델명·표(표 2~6)·3.1 평가 구성·2.5 심사 보정·3.2.2 집계식·7 기여 절을 대조. 고친 것: 저자 이름·소속 '확인 불가'→논문 7절의 15명·협력 기관으로 정정, 허깅페이스 업보트 '읽히지 않음'→S2 페이지의 #2 Paper of the day·업보트 654·10월 22일 Jungang Li 제출로 정정, 종합 점수 '평균 방식 미확인'→논문 식(2)(3)의 동일 가중 평균+아바타 과제 5점 가산으로 정정(93.98=88.98+5), 500/250ms 샘플링은 A-V Sync 측정에 한정됨을 명시, VLM 심사 보정은 표적 양성·음성 점검 사례로 오탐 5%·미탐 10%·미결 10% 기준을 둔 것이며 사람 일치도는 미보고(결론에서 향후 과제)임을 원문으로 확인해 반영, 데이터 공개는 '초록이 밝힘'으로 표현(2.2절은 '공개 예정' 표현). 8,460 = 47×60×3 산술 일치, 47=15+7+17+5+3 및 '보고된 부분집합 기준' 원문 확인 후 '상한 추정'→'어림값'. MemFlow 33.36·Rolling Forcing 33.01(표 4) 확인, 우열 단정 없음 유지. Krea 25.93 은 표 4 전체 최고이며 저자 HF 코멘트가 '텍스트 조건' 이라 표기. 출처 날짜: S2 published 2026-10-21→2026-10-22(페이지 submittedOnDailyAt, Published on Oct 20 은 arXiv 날짜), S3 2026-10-20→2026-10-23(HTML v2 표기). S4 추가: GitHub AI Daily Digest #191(2026-10-23, WebFetch 로 읽음) — 이 요약의 '일간 1위' 서술은 HF 표시(2위)와 달라 옮기지 않음. github.com/StreamEval 저장소는 이 세션에서 403 으로 읽지 못해 출처로 쓰지 않음. 인용 그림 2개 HTTP 200 image/png(2032×1027, 1600×700) 확인."
+ }
+}
