@@ -4479,5 +4479,26 @@
    "https://support.apple.com/guide/terminal/script-management-with-launchd-apdc6c1077b-5d5d-4d35-9c19-60f2397b2369/mac"
   ],
   "draft_id": "20261027_074005_5"
+ },
+ {
+  "date": "2026-10-27",
+  "title": "💸 SpaceX 400억 달러 GPU 임대 약정, 분기 원금 20억 달러와 빠진 정보는 무엇일까",
+  "topic": "SpaceX Secures $40 Billion in the Largest GPU Financing Ever (Apollo, 2026-10-26) / SpaceX Form 8-K / TechCrunch 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://www.apollo.com/insights-news/pressreleases/2026/10/spacex-secures--40-billion-in-the-largest-gpu-financing-ever",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/spacex-400-gpu-20.html"
+  },
+  "sources": [
+   "https://www.apollo.com/insights-news/pressreleases/2026/10/spacex-secures--40-billion-in-the-largest-gpu-financing-ever",
+   "https://www.sec.gov/Archives/edgar/data/1181412/000110465926118614/tm2628247d1_8k.htm",
+   "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+   "https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/",
+   "https://techcrunch.com/2026/10/21/blackstones-jas-khaira-says-fears-over-ai-buildout-debt-are-overblown/",
+   "https://enterpriseam.com/ksa/2026/10/19/investors-turn-on-the-debt-behind-the-ai-build-out/",
+   "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm",
+   "https://www.networkworld.com/article/4236617/ai-datacenter-capex-will-far-exceed-forecast-revenue-through-2030.html"
+  ],
+  "draft_id": "20261027_074710_6"
  }
 ]
