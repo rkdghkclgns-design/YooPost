@@ -1,0 +1,132 @@
+{
+ "topic": "SpaceX Secures $40 Billion in the Largest GPU Financing Ever (Apollo, 2026-10-26) / SpaceX Form 8-K / TechCrunch 보도",
+ "source_url": "https://www.apollo.com/insights-news/pressreleases/2026/10/spacex-secures--40-billion-in-the-largest-gpu-financing-ever",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "SpaceX Secures $40 Billion in the Largest GPU Financing Ever",
+   "url": "https://www.apollo.com/insights-news/pressreleases/2026/10/spacex-secures--40-billion-in-the-largest-gpu-financing-ever",
+   "publisher": "Apollo Global Management",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Space Exploration Technologies Corp. Form 8-K (Item 8.01, 2026-10-26)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926118614/tm2628247d1_8k.htm",
+   "publisher": "SEC EDGAR (SpaceX)",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "SpaceX locks in $40B GPU financing deal with Apollo",
+   "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "SpaceX's AI business is beating expectations",
+   "url": "https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Blackstone's Jas Khaira says fears over AI-buildout debt are overblown",
+   "url": "https://techcrunch.com/2026/10/21/blackstones-jas-khaira-says-fears-over-ai-buildout-debt-are-overblown/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Investors turn on the debt behind the AI build-out",
+   "url": "https://enterpriseam.com/ksa/2026/10/19/investors-turn-on-the-debt-behind-the-ai-build-out/",
+   "publisher": "EnterpriseAM",
+   "published": "2026-10-18",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Space Exploration Technologies Corp. Form 10-Q (quarter ended 2026-09-30)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm",
+   "publisher": "SEC EDGAR (SpaceX)",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "AI datacenter capex will far exceed forecast revenue through 2030",
+   "url": "https://www.networkworld.com/article/4236617/ai-datacenter-capex-will-far-exceed-forecast-revenue-through-2030.html",
+   "publisher": "Network World",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "아폴로 보도자료·SEC 8-K·10-Q 본문은 글자와 표뿐이고(로고·사이트 그림만 있음), TechCrunch 세 기사에도 본문 도표·스크린샷 없이 머리 사진(SpaceX 제공)만 있어 원고 내용과 관련된 본문 그림이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "SpaceX의 약 400억 달러 GPU 임대 약정에서 확인된 것과 비어 있는 것은 무엇이고, 원금 규모는 어떻게 계산하나",
+  "limitations": "직접 실행한 실험은 없고 공개 자료만 사용했다. 금리·잔존가치·매입 선택권·종결 조건은 비공개이며, 분기 20억 달러는 원금(대체로 1/20)만 단순화해 모든 묶음이 동시에 시작한다고 가정한 계산이다. AI(SI) 부문 매출은 10-Q의 75억 6천만 달러를 썼고, 부문 이익 4억 3,100만 달러와 Cursor 관련 일회성 보상 12억 달러는 TechCrunch 보도값이다(10-Q 본문에서 직접 확인하지 못함). 채권 가격은 EnterpriseAM 2차 인용, 가트너 수치는 가트너 원문이 열리지 않아 Network World 보도로 확인했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔢 임대료 산수: 분기 20억 달러 원금은 어떻게 나오나",
+    "excerpt": "총 원금 약 400억 달러를 20으로 나누면 분기당 약 20억 달러, 4개 분기를 합한 연간 약 80억 달러입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "8-K의 1/20 분기 원금 조항과 총액 약 400억 달러로 분기·연간 원금을 계산하고 이자 제외 한계를 명시함"
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 실적과 나란히 놓으면: 설비투자 대비 이 계약의 크기",
+    "excerpt": "3분기 AI 부문 매출 75억 6천만 달러(10-Q)로 이익 4억 3,100만 달러(TechCrunch)를 나누면 약 5.7%입니다.",
+    "source_ids": [
+     "S4",
+     "S7"
+    ],
+    "added_value": "10-Q 부문 매출과 보도된 부문 이익으로 이익률 약 5.7%, 일회성 보상 제외 가정 시 약 21.6%를 계산하되 회사 조정치가 아님을 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 서로 다른 자료를 이어 읽기: 임대 구조가 말하는 것",
+    "excerpt": "아폴로의 보도자료는 거래 의미를 강조하고, 8-K는 조건과 한계를 적으며, 언론은 시장 배경을 붙입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "added_value": "보도자료·8-K·언론·블랙스톤 인터뷰가 각각 강조하는 것과 빠뜨린 것을 연결해 해석"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이 뉴스를 읽는 사람별 판단 기준",
+    "excerpt": "CFO가 말한 1년 미만 회수 기간을 문자 그대로 400억 달러에 적용하면 해당 장비가 1년 안에 400억 달러 넘게 벌어야 합니다.",
+    "source_ids": [
+     "S1",
+     "S7"
+    ],
+    "added_value": "독자 상황별 확인 항목과 제외해야 할 해석, 회수 기간 주장의 확인 가능 범위를 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 60,
+  "removed": [
+   "10월 18일 EnterpriseAM은 파이낸셜타임스와 블룸버그를 인용해 데이터센터 채권이 액면가 아래로 내려갔다고 전했습니다. (블룸버그 인용 대상이 채권 가격이 아니어서 'FT 등 해외 보도 정리'로 수정)",
+   "이 매체는 가트너가 ... 소비자·기업의 AI 서비스 지출은 약 3조 6천억 달러로 예상된다고 보았다고도 전했습니다. (EnterpriseAM 재인용 문장 삭제 → Network World 보도로 확인한 가트너 수치로 교체, 3.6조 달러는 '지출'이 아니라 AI 데이터센터 귀속 매출 전망)",
+   "이 글은 실적 발표 당일 기사의 75억 달러를 기준으로 계산했습니다. (10-Q 7,560백만 달러로 교체)",
+   "머스크가 실적 발표에서 지적한 대로 (TechCrunch 보도 인용으로 표현 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 아폴로 보도자료(2026-10-26 표기)·SEC 8-K(보고일 10-24, 서명·제출 10-26)·TechCrunch 3건(10/20·10/21·10/26 표기)·EnterpriseAM(메타 2026-10-18)을 다시 열어 수치·날짜·이름 대조. AI 부문 매출 75억/76억 불일치는 SpaceX 3분기 10-Q(2026-10-22 제출) 부문 정보 SI 7,560백만 달러로 정리하고 이익률 재계산(431/7,560=5.7%, 1,631/7,560=21.6%), 연환산 302억 달러, 400÷20=20억/분기·연 80억, 400÷400=1.0·400÷350≈1.14배 재검산. 8-K 원금 비율 'generally 1/20'에 '대체로' 추가. 블룸버그 인용 귀속 오류 수정, Firmus는 '상장 취소'→'IPO 계획 철회'. 가트너 원문(gartner.com 2026-10-14)은 403으로 열리지 않아 Network World(2026-10-16)로 확인·교체. CoreWeave 채권 가격은 원 거래 자료 미확인으로 2차 인용 표시 유지. 부문 이익 4억 3,100만·일회성 보상 12억은 10-Q 본문이 잘려 TechCrunch로만 확인(표기 유지). 공식 출처 본문 그림 없음 확인."
+ }
+}
