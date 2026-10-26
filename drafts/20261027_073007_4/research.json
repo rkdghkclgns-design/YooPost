@@ -1,0 +1,118 @@
+{
+ "topic": "Anthropic officially files for its public debut — Anthropic, PBC Form S-1 (SEC, 2026-10-26) / TechCrunch·PPC Land·Yahoo Finance 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Anthropic, PBC - Form S-1 Registration Statement",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "publisher": "SEC (Anthropic, PBC)",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic officially files for its public debut",
+   "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic's IPO filing reveals its strategy for keeping enterprise customers hooked",
+   "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic's IPO filing shows $16.3bn of revenue and no plan to sell ads",
+   "url": "https://ppc.land/anthropics-ipo-filing-shows-16-3bn-of-revenue-and-no-plan-to-sell-ads/",
+   "publisher": "PPC Land",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Anthropic IPO live updates: S-1 filing discloses $16.3B in first-half revenue, plans to list as 'ANT'",
+   "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+   "publisher": "Yahoo Finance",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Anthropic, PBC S-1 filing index (accession 0001628280-26-067168)",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+   "publisher": "SEC",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Claude is a space to think",
+   "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+   "publisher": "Anthropic",
+   "published": "2026-02-04",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/mda2aa.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "caption": "고객 기반 성장 도표: 연 매출 10만 달러 이상 고객 수 (2023-12 약 20곳에서 2026-09-30 1만 1,900곳 초과)",
+   "credit": "Anthropic, PBC (SEC S-1)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "S-1의 상반기 매출 163억 달러와 순손실 807억 달러는 어떻게 함께 읽어야 하고, 정정 서류에서 무엇을 확인해야 하나?",
+  "limitations": "SEC S-1 본문(약 14MB)을 내려받아 요약 재무·분기 표·고객 지표·거버넌스·위험 요인·향후 매도 가능 주식 표·재무제표 주석 일부를 읽었고 부록·재무제표 주석 전체는 검토하지 않았다. 비율은 서류 수치로 직접 계산한 값이며 S-1의 매출 대비 비율 표와 대조했다. 직접 실행·실측은 없다. 상장 목표 주간(11월 16일 주)은 월스트리트저널 보도를 전한 PPC Land 기사에 의존한다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 비용 구조를 직접 계산하면: 매출 대비 컴퓨트 비중",
+    "excerpt": "2025년 1분기에는 컴퓨트 비용이 매출의 2.5배였지만 2026년 2분기에는 **매출의 약 48%**까지 내려왔습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "분기 매출·컴퓨트 비용을 나눠 251%에서 48%로의 하락과 매출 144% 대 컴퓨트 64% 증가를 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🔍 빈칸과 다음 확인 지점: 무엇을 기다려야 하나",
+    "excerpt": "독자 유형별로 보면 판단 기준이 달라집니다. **AI 서비스를 쓰는 개발·구매 담당자**라면 이번 서류에서 중요한 것은 공모가가 아니라 컴퓨트 확보와 클라우드 파트너 관계입니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "독자 유형별 판단 기준과 정정 서류에서 확인할 칸을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🏢 고객과 유통 구조: 1만 1,900곳이 말하는 것",
+    "excerpt": "두 번째 단서는 '무엇을 함께 쓰는가'입니다. TechCrunch의 두 번째 기사가 짚었듯, S-1에 따르면 2026년 3분기에 연 10만 달러 이상 고객의 **50% 넘게가 Claude Platform(API)과 자체 앱(Claude Code·Cowork 등) 1개 이상을 함께 썼고**",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "S-1 고객 도표·제품 병용·지출 격차(TechCrunch가 짚은 대목)와 S-1 주석의 마켓플레이스 매출 비중(PPC Land도 보도)을 연결해 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 73,
+  "confirmed": 73,
+  "removed": [
+   "이 항목에는 파트너 수수료가 들어 있는 것으로 보이며, 서류 요약만으로는 항목별 상세를 모두 확인하기 어렵습니다. (S-1 MD&A의 비용 정의로 대체)",
+   "이 일정은 서류 원문을 직접 확인하지 못해 보도 정리에 의존한 부분이라 정정 서류에서 다시 보는 것이 좋습니다. (S-1 '향후 매도 가능 주식' 표로 직접 확인해 대체)",
+   "서류 전체에서 광고 사업이 없다는 사실을 글자 하나하나 확인한 것은 아니므로 PPC Land의 정리라는 점을 밝혀 둡니다. (S-1 본문 검색 결과와 Anthropic 2026-02-04 공식 글로 대체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): SEC S-1 원문(14.2MB)·제출 색인을 다시 내려받아 요약 재무·분기 표·매출 대비 비율 표·대차대조표·고객 지표·거버넌스·위험 요인·락업 표·CSP 마켓플레이스 주석을 대조. 직접 계산 비율(14배, 3.55배, 89.6%, 144%, 64%, 18.5%, 분기별 251·177·148·144·72·48%)은 S-1 수치로 재계산해 일치 확인(S-1 비율 표와도 일치). 고친 것: 333-299633은 S-1 표지가 아닌 SEC 색인 파일 번호로 표기, 영업손실-순손실 간격에 기타 영업외비용 87.57억·이자수익 11.11억 반영(표에 행 추가), '상위 5% 고객'→S-1 원문대로 'Claude Enterprise 사용자'(월평균 75달러 미만 대비 약 20배), 'Claude Code 또는 Cowork'→'Claude Code·Cowork 등 1개 이상', Class T 서술을 'Class T 이사 선출·해임'으로, '수익 보장 없음'→'수익성 달성·유지 못할 수 있음', Anthropic Direct를 '칩 직접 임차·전용 시설'로, 3분기 경고에 86배 배수 사실 추가. 보도 의존 주장 처리: 락업 일정·마켓플레이스 48%(2025 상반기 44%)·CSP 경쟁 위험·보험 업계 경고는 S-1 원문으로 직접 확인해 S-1 근거로 고침, 광고 없음은 S-1 본문 'advertising' 검색과 Anthropic 2026-02-04 공식 글(S7 추가)로 확인, 11월 16일 주간 상장 목표는 S-1에 없어 'WSJ 보도를 PPC Land가 전함'으로 보도 기준 명시. 출처 published: TechCrunch 2건(article:published_time 2026-10-26), PPC Land(2026-10-26), Yahoo Finance(datePublished 2026-10-26), SEC 색인 Filing Date 2026-10-26·S-1 표지 'As filed ... October 26, 2026', Anthropic 글 2026-02-04 모두 페이지 날짜와 일치. EGRESS_BLOCKED 출처 없음. 인용 이미지 mda2aa.jpg는 HTTP 200 image/jpeg, 1872x840 확인. 투자 권유·수익 전망 문장 없음."
+ }
+}
