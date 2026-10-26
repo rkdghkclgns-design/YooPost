@@ -4460,5 +4460,24 @@
    "https://www.anthropic.com/news/claude-is-a-space-to-think"
   ],
   "draft_id": "20261027_073007_4"
+ },
+ {
+  "date": "2026-10-27",
+  "title": "🔒 Downloads 폴더의 AGENTS.md 한 장이 에이전트를 움직였다: 내 설정 파일은 무엇부터 열어볼까",
+  "topic": "Markdown Is the New Executable — Downloads 폴더의 AGENTS.md로 코딩 에이전트를 속이는 공격 (Forever Security, 2026-10-22) / Help Net Security 보도 (2026-10-26)",
+  "category": "AI 보안",
+  "source_url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/downloads-agentsmd.html"
+  },
+  "sources": [
+   "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder",
+   "https://www.helpnetsecurity.com/2026/10/26/ai-coding-agents-malware-openai-codex/",
+   "https://checkmarx.com/zero-post/malfex-npm-malware-campaign-three-payloads-and-an-adversary-that-signs-their-work/",
+   "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+   "https://code.claude.com/docs/en/settings",
+   "https://support.apple.com/guide/terminal/script-management-with-launchd-apdc6c1077b-5d5d-4d35-9c19-60f2397b2369/mac"
+  ],
+  "draft_id": "20261027_074005_5"
  }
 ]
