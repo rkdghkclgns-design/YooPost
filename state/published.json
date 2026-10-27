@@ -4609,5 +4609,27 @@
    "https://www.theregister.com/a/5305215"
   ],
   "draft_id": "20261028_073554_5"
+ },
+ {
+  "date": "2026-10-28",
+  "title": "🏗 AWS '2027년 대체로 매진' 발언, 2,200억 달러 투자와 마이너스 현금흐름은 어떻게 함께 읽을까",
+  "topic": "Amazon CEO Andy Jassy on the $220 Billion AI Buildout (The a16z Show, 2026-10-23) — AWS 용량 2027년 대체로 매진·2028년 상당 부분 / 24/7 Wall St.·TIKR·No Diligence·Shattered 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://podcasts.apple.com/us/podcast/amazon-ceo-andy-jassy-on-the-%24220-billion-ai-buildout/id842818711?i=1000797758421",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/aws-2027-2200.html"
+  },
+  "sources": [
+   "https://podcasts.apple.com/us/podcast/amazon-ceo-andy-jassy-on-the-%24220-billion-ai-buildout/id842818711?i=1000797758421",
+   "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results",
+   "https://247wallst.com/investing/2026/10/24/amazons-aws-has-already-sold-a-good-chunk-of-2028-capacity/",
+   "https://nodiligence.substack.com/p/day-37-aws-is-sold-out-into-2028",
+   "https://www.tikr.com/blog/andy-jassy-ai-inference-is-still-10-times-too-expensive-amazons-own-chips-are-his-answer",
+   "https://shattered.io/aws-capacity-largely-sold-out-2027-jassy-220b-2026/",
+   "https://getscuttlebutt.substack.com/p/amazons-ceo-says-aws-capacity-is",
+   "https://tomtunguz.com/aws-answers-the-cloud-race/",
+   "https://www.dukascopy.com/swiss/it/marketwatch/market-News/News/155601/"
+  ],
+  "draft_id": "20261028_074146_6"
  }
 ]
