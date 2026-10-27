@@ -4592,5 +4592,22 @@
    "https://www.kotaku.com/microsoft-gives-voluntary-exit-offer-to-60000-employees-roughly-a-25-percent-of-its-total-workforce-2000749790"
   ],
   "draft_id": "20261028_072744_4"
+ },
+ {
+  "date": "2026-10-28",
+  "title": "🔒 Symantec이 포착한 'Skynet 모드' AI 공격 에이전트, 노출된 내 AI 서버는 무엇부터 점검할까",
+  "topic": "Autonomous LLMjacking: \"Skynet\" Agent Hijacks Exposed AI Models to Run Attacks (Symantec, 2026-10-21) / Infosecurity Magazine·Help Net Security·The Register 보도",
+  "category": "AI 보안",
+  "source_url": "https://www.security.com/threat-intelligence/ai-llmjacking-skynet",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/symantec-skynet-ai-ai.html"
+  },
+  "sources": [
+   "https://www.security.com/threat-intelligence/ai-llmjacking-skynet",
+   "https://www.infosecurity-magazine.com/news/symantec-ai-agent-llmjacking/",
+   "https://www.helpnetsecurity.com/2026/10/23/llmjacking-agent-hijacks-exposed-ai-models/",
+   "https://www.theregister.com/a/5305215"
+  ],
+  "draft_id": "20261028_073554_5"
  }
 ]
