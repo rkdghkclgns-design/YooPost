@@ -4517,5 +4517,23 @@
    "https://www.edaily.co.kr/News/Read?newsId=02778166645578808"
   ],
   "draft_id": "20261027_080953_7"
+ },
+ {
+  "date": "2026-10-28",
+  "title": "🤖 LFM3-1.7B 공개: 1GB대 로컬 에이전트 모델, 어떤 일에 맡기고 무엇은 맡기지 말까",
+  "topic": "Introducing LFM3: Every Modality for Specialized Intelligence",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.liquid.ai/blog/lfm3",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/lfm3-17b-1gb.html"
+  },
+  "sources": [
+   "https://www.liquid.ai/blog/lfm3",
+   "https://huggingface.co/LiquidAI/LFM3-1.7B",
+   "https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices",
+   "https://aiweekly.co/alerts/liquid-ai-opens-six-model-lfm3-family-at-256k-context",
+   "https://huggingface.co/collections/LiquidAI/lfm3-6adc03dcfe62bfd2fcd8eea7"
+  ],
+  "draft_id": "20261028_070558_1"
  }
 ]
