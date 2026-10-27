@@ -4535,5 +4535,24 @@
    "https://huggingface.co/collections/LiquidAI/lfm3-6adc03dcfe62bfd2fcd8eea7"
   ],
   "draft_id": "20261028_070558_1"
+ },
+ {
+  "date": "2026-10-28",
+  "title": "🌐 Opera WebAI 프리뷰: 사이트가 내 PC의 AI를 쓰게 둘까, 켜기 전 확인할 조건 5가지",
+  "topic": "Opera doubles down on local AI, shipping models directly in its browsers (Opera, 2026-10-27) — WebAI 초기 프리뷰 / TechCrunch·9to5Mac·Digital Trends·Thurrott 보도",
+  "category": "AI 도구",
+  "source_url": "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/opera-webai-pc-ai-5.html"
+  },
+  "sources": [
+   "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+   "https://next.opera.com/blog/web-ai-local-ai/",
+   "https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/",
+   "https://9to5mac.com/2026/10/27/opera-one-now-lets-mac-users-run-apples-foundation-model-directly-in-the-browser/",
+   "https://www.digitaltrends.com/computing/opera-wants-websites-to-run-ai-on-your-laptop-instead-of-sending-your-data-to-the-cloud/",
+   "https://www.thurrott.com/a-i/343282/opera-is-bringing-local-ai-to-its-web-browsers-with-webai"
+  ],
+  "draft_id": "20261028_071314_2"
  }
 ]
