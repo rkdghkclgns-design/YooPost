@@ -4554,5 +4554,24 @@
    "https://www.thurrott.com/a-i/343282/opera-is-bringing-local-ai-to-its-web-browsers-with-webai"
   ],
   "draft_id": "20261028_071314_2"
+ },
+ {
+  "date": "2026-10-28",
+  "title": "🧠 Trajectory2Gym: 성공한 도구 호출 기록을 다 학습시키면 안 되는 이유, Qwen3 5개 크기 실험으로 본 판단 기준",
+  "topic": "Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.33568",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/trajectory2gym-qwen3-5.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.33568",
+   "https://arxiv.org/html/2610.33568v1",
+   "https://huggingface.co/papers/2610.33568",
+   "https://huggingface.co/papers/date/2026-10-27",
+   "https://yihaohu0118.github.io/Trajectory2Gym-page/",
+   "https://raw.githubusercontent.com/yihaohu0118/Trajectory2Gym/HEAD/README.md"
+  ],
+  "draft_id": "20261028_071934_3"
  }
 ]
