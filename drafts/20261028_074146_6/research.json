@@ -1,0 +1,140 @@
+{
+  "topic": "Amazon CEO Andy Jassy on the $220 Billion AI Buildout (The a16z Show, 2026-10-23) — AWS 용량 2027년 대체로 매진·2028년 상당 부분 / 24/7 Wall St.·TIKR·No Diligence·Shattered 보도",
+  "source_url": "https://podcasts.apple.com/us/podcast/amazon-ceo-andy-jassy-on-the-%24220-billion-ai-buildout/id842818711?i=1000797758421",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Amazon CEO Andy Jassy on the $220 Billion AI Buildout (The a16z Show, Episode 1236)",
+      "url": "https://podcasts.apple.com/us/podcast/amazon-ceo-andy-jassy-on-the-%24220-billion-ai-buildout/id842818711?i=1000797758421",
+      "publisher": "a16z (Apple Podcasts)",
+      "published": "2026-10-23",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Amazon.com Announces Second Quarter Results",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results",
+      "publisher": "Amazon.com, Inc.",
+      "published": "2026-07-30",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "Amazon's AWS Has Already Sold 'a Good Chunk' of 2028 Capacity",
+      "url": "https://247wallst.com/investing/2026/10/24/amazons-aws-has-already-sold-a-good-chunk-of-2028-capacity/",
+      "publisher": "24/7 Wall St.",
+      "published": "2026-10-24",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "DAY 37: AWS is sold out into 2028 and pays before it bills",
+      "url": "https://nodiligence.substack.com/p/day-37-aws-is-sold-out-into-2028",
+      "publisher": "No Diligence (Substack)",
+      "published": "2026-10-25",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Andy Jassy: AI Inference Is Still '10 Times Too Expensive.' Amazon's Own Chips Are His Answer",
+      "url": "https://www.tikr.com/blog/andy-jassy-ai-inference-is-still-10-times-too-expensive-amazons-own-chips-are-his-answer",
+      "publisher": "TIKR",
+      "published": "2026-10-26",
+      "official": false
+    },
+    {
+      "id": "S6",
+      "title": "AWS Sold Out Through 2027? What Jassy Really Said",
+      "url": "https://shattered.io/aws-capacity-largely-sold-out-2027-jassy-220b-2026/",
+      "publisher": "Shattered",
+      "published": "2026-10-24",
+      "official": false
+    },
+    {
+      "id": "S7",
+      "title": "Amazon's CEO says AWS capacity is sold out for 2026 and largely for 2027 (Scuttlebutt Newsletter)",
+      "url": "https://getscuttlebutt.substack.com/p/amazons-ceo-says-aws-capacity-is",
+      "publisher": "Scuttlebutt",
+      "published": "2026-10-24",
+      "official": false
+    },
+    {
+      "id": "S8",
+      "title": "AWS Answers the Cloud Race",
+      "url": "https://tomtunguz.com/aws-answers-the-cloud-race/",
+      "publisher": "Tom Tunguz",
+      "published": "2026-07-30",
+      "official": false
+    },
+    {
+      "id": "S9",
+      "title": "Amazon Raises 2026 Capex to $220B",
+      "url": "https://www.dukascopy.com/swiss/it/marketwatch/market-News/News/155601/",
+      "publisher": "Dukascopy Bank",
+      "published": "2026-07-31",
+      "official": false
+    }
+  ],
+  "images": [],
+  "images_none_reason": "공식 출처인 팟캐스트 목록 페이지와 아마존 실적 발표문에는 내용과 관련된 본문 도표·스크린샷이 없고 아마존 로고와 앨범 아트만 있음",
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "AWS가 2027년 용량이 대체로 매진됐다고 한 발언은 무엇을 입증하고 무엇은 입증하지 못하며, 2,200억 달러 투자와 마이너스 현금흐름을 함께 보면 내 서비스 계획에 무엇을 점검해야 하나?",
+    "limitations": "팟캐스트 전문·녹취록을 확인하지 못해 발언은 2차 매체 인용을 교차한 것이며, 매체별 따옴표 표기가 다름. 계산은 아마존 2분기 발표문 숫자를 이 글에서 단순 연 환산한 해석이고 직접 실행·실측은 없음. capex 2,200억 달러 상향은 실적 콜 보도로 확인(발표문에는 전망치 없음). 매진 용량 규모·선결제·고객 집중도는 미공개(AWS 전체 계약 잔고 4,960억 달러만 공개).",
+    "contributions": [
+      {
+        "kind": "comparison",
+        "section": "📏 헤드라인과 실제 발언 사이의 거리",
+        "excerpt": "그렇다고 발언이 틀렸다는 뜻은 아닙니다. 다만 글을 읽는 쪽은 '아마존이 그렇게 말했다'와",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S6"
+        ],
+        "added_value": "보도 제목의 '2028년까지 매진'과 발언 요지('상당 부분')를 항목별로 나란히 놓고, 확인되는 것과 안 되는 것을 구분해 과장 헤드라인을 걸러 읽게 함"
+      },
+      {
+        "kind": "calculation",
+        "section": "🧮 2,200억 달러를 계산으로 읽기",
+        "excerpt": "1,614 − 1,690 = −76이므로 발표문의 숫자와 서로 맞습니다.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S6"
+        ],
+        "added_value": "하루 투자액, 분기 연 환산, 영업이익률, 현금 대비 투자 비율을 출처 숫자로 직접 계산해 규모감을 제공(가정과 한계 명시)"
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "🧩 두 자료를 이어 읽기: 수요는 많은데 현금은 먼저 나간다",
+        "excerpt": "두 자료를 이으면 '수요가 큰 사업일수록 선투자 구간이 길어진다'는 구조가 보입니다.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ],
+        "added_value": "팟캐스트 소개문과 주주서한 인용을 연결해 수요 초과와 현금 유출이 공존하는 구조를 해석하되 한 블로거의 해석임을 표시"
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🧭 그래서 우리 팀은 무엇을 점검할까: 상황별 판단 기준",
+        "excerpt": "발언 중 '온디맨드와 Bedrock용은 늘 일부 남겨 둔다'는 부분만 근거가 있고, 나머지는 해석입니다.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S5"
+        ],
+        "added_value": "학습·추론·비용·투자 등 독자 상황별로 확인할 항목과 제외 조건을 제시"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 48,
+    "confirmed": 45,
+    "removed": [
+      "이 수치는 TIKR 기사의 서술이어서 아마존 발표문으로 직접 확인하지는 못했습니다. (Tom Tunguz·Dukascopy로 capex 2,000억→2,200억·메모리 원인 확인 후 귀속 문장으로 교체)",
+      "AI 연구소와 대기업이 큰 덩어리를 차지한다는 보도 ('대기업' 근거 없음 → AI 연구소만)",
+      "땅·전력·건물처럼 수명이 긴 자산은 먼저 사고, 칩은 고객 약정이 생긴 뒤 늦게 산다는 것이 이 글쓴이의 분석입니다. (No Diligence 원문과 다름 → 건물 약 2년 전·서버/네트워크 몇 달 전으로 교체)"
+    ],
+    "note": "Opus 검증(claude-opus-5-5). S1~S7 전부 다시 열어 확인, published 페이지 날짜 일치(TIKR 은 'Last updated Oct 26' 만 표기, Shattered 'Updated Oct 24'). 발언 인용은 24/7·Shattered·No Diligence·Scuttlebutt·TIKR 교차 — 귀속 수정: Shattered 는 'sold out into 2028' 프레임을 디 인포메이션에만 귀속(로이터는 '2027 대체로 매진'), 소개문 'meaningful' 표현은 소개문에 없어 수정. 2분기 설비 구매: 발표문 현금흐름표 총액 542.08억·매각/인센티브 1.132억 차감 순액 530.8억(≈531억, CFO 언급 cash capex 531억) — 둘 다 맞는 숫자로 총액/순액 구분 명시. capex 200억 상향(메모리)은 S8 Tom Tunguz(7/30)·S9 Dukascopy(7/31)·TIKR 로 확인(VectorShift 녹취 요약은 '약 2,000억' 문장만 보여 불일치 있었으나 3개 보도 일치로 채택, 발표문엔 전망치 없음을 본문에 명시). AWS 계약 잔고 4,960억 달러(2분기) 공개 사실 반영해 '잔고 미공개' 서술 수정. TIKR 에너지 '공정가치·일회성' 표현 → 원문대로 '에너지 계약 관련 이익 약 5.51억'. 계산 재확인(발표문 기준): 2,200/365=6.03억/일, 542×4=2,168·531×4=2,124, AWS 42,232×4=1,689억, 16,621/42,232=39.4%, 순설비구매 1,690/영업CF 1,614=104.7%, 1,614−1,690=−76(발표문 FCF −76억 일치), 1조/1,688=5.9배. EGRESS_BLOCKED 출처 없음(gurufocus 403 은 출처로 쓰지 않음)."
+  }
+}
