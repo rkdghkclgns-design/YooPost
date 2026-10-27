@@ -1,0 +1,130 @@
+{
+ "topic": "Introducing a Voluntary Exit Offer (Microsoft, Amy Coleman, 2026-10-26) / TechCrunch·KIRO 7·AFP·IT Pro·Kotaku 보도",
+ "source_url": "https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing a Voluntary Exit Offer",
+   "url": "https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/",
+   "publisher": "The Official Microsoft Blog",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Microsoft offers buyouts to around 60,000 employees",
+   "url": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft offers buyouts to roughly 60,000 employees",
+   "url": "https://www.kiro7.com/news/local/microsoft-offers-mass-buyouts-thousands-employees/K2A2ZZD4DJCHDCKRRAISG7VJCE/",
+   "publisher": "KIRO 7 News Seattle",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft offers voluntary exit packages to 60,000 staff",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-offers-voluntary-exit-packages-164136211.html",
+   "publisher": "AFP via Yahoo Finance",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Microsoft's 'voluntary exit' offer explained",
+   "url": "https://www.itpro.com/business/business-strategy/microsofts-voluntary-exit-offer-explained-why-is-the-company-offering-staff-buyouts-and-which-staff-are-eligible",
+   "publisher": "IT Pro",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Microsoft Gives 'Voluntary Exit Offer' To 60,000 Employees, Roughly A 25 Percent Of Its Total Workforce",
+   "url": "https://www.kotaku.com/microsoft-gives-voluntary-exit-offer-to-60000-employees-roughly-a-25-percent-of-its-total-workforce-2000749790",
+   "publisher": "Kotaku",
+   "published": "2026-10-26",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 글은 본문에 그림이 없는 사내 안내문이고, 보도 기사의 이미지는 인물·로고 사진이라 원고 내용을 보여 주는 도표가 아니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Microsoft의 자발적 퇴직 제안 '6만 명'은 확정된 감원 규모인가, 그리고 공식 글과 보도 중 무엇이 확인된 사실인가?",
+  "limitations": "직접 실행·체험 없음. Business Insider·Bloomberg·Reuters·CNBC 원문은 읽지 못하고 다른 매체의 인용으로만 확인. 부서 목록·지급액·마감일·신청 인원은 미공개. 신청률 계산은 가정이며 회사의 전망이 아님.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 보도마다 다른 대상 범위를 맞춰 읽기",
+    "excerpt": "반면 데이터센터, 보안, 상업 사업의 제외 여부는 매체마다 달라서 **하나로 단정할 수 없습니다**. 보도마다 취재원이 다르기 때문일 수 있으며",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공식 글·TechCrunch·KIRO 7·AFP·IT Pro의 대상 범위를 항목별로 대조해 일치(국가·직급·마케팅 제외)와 불일치(데이터센터·보안·상업 사업·영업)를 구분"
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 6만 명이라는 숫자를 계산해 보기",
+    "excerpt": "같은 6만 명이라도 신청률이 5%인지 30%인지에 따라 결과는 **여섯 배**까지 차이가 납니다. Microsoft 대변인은",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "60,000÷223,000≈26.9%(AFP 약 27%와 일치), 228,000−223,000=5,000, 신청률 30%·5%·6% 가정 시 18,000(전체의 8.1%)·3,000(1.3%)·3,600(1.6%)명으로 대상자와 실제 퇴직자를 구분 — 30%는 봄 프로그램 신청률(TechCrunch가 Bloomberg 인용), 5~6%는 대변인이 든 비슷한 회사 사례(KIRO 7)"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔁 봄의 자발적 은퇴 프로그램과 무엇이 다른가요?",
+    "excerpt": "이번 제안은 추가 유인이 붙은 패키지보다 **표준 퇴직금 방식**에 가깝습니다.",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4",
+     "S6"
+    ],
+    "added_value": "봄 프로그램과 이번 제안을 같은 항목으로 비교하고 보도 간 숫자 차이를 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별로 확인할 것",
+    "excerpt": "공식 글의 확정 사실과 매체의 취재원 인용을 따로 적고, 숫자는 '대상자'인지 '실제 퇴직자'인지 구분하는 것입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "직원·협력사·업계 독자별 확인 항목과 보류할 해석을 구분"
+   }
+  ],
+  "verification": "Opus 검증: 계산식 60000/223000=0.269, 0.30*60000=18000, 0.05*60000=3000, 0.06*60000=3600, 18000/223000=0.081, 3000/223000=0.013, 3600/223000=0.016, 30/5=6배 재계산 일치. 가정 출처(30%·5~6%)를 원문과 대조해 귀속 수정."
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "corrected": [
+   "콜먼 메모 인용('새로운 것'·'배우겠다'): TechCrunch와 Kotaku 공동 인용 → '배우겠다'는 Kotaku 인용, TechCrunch는 '새로운 것'만",
+   "TechCrunch '덜 충격적' → 원문 'more disruptive approach of mass layoffs' 표현에 맞게 수정",
+   "'영업·마케팅 제외 일치' → 마케팅만 모든 보도 일치, 영업은 TechCrunch·AFP·KIRO 7, Reuters(IT Pro) 목록엔 없음",
+   "5~6% 귀속: '비슷한 프로그램' → 대변인이 든 비슷한 회사들의 이탈 비율(KIRO 7)",
+   "봄 프로그램 대상: '근속이 긴 미국 직원' 단정 → 은퇴 연령대(TechCrunch)·장기 근속(Kotaku) 보도로 귀속",
+   "봄 신청 비율 출처: Bloomberg(TechCrunch 경유)·CNBC(AFP 경유) 함께 표기",
+   "FAQ 4,800명 감원: IT Pro 원문 표현(봄 은퇴 제안 뒤 감원)대로 귀속"
+  ],
+  "removed": [
+   "같은 사실을 서로 다른 취재원이 다른 시점에 전한 결과로 보이며 (근거 없는 추정)",
+   "같은 사건을 서로 다른 시점에 쓴 보도의 차이로 보이며 (근거 없는 추정)"
+  ],
+  "published_check": "S1 Oct 26, 2026 / S2 October 26, 2026 / S3 October 26, 2026 / S4 Monday, October 26, 2026 / S5 Published 27 October 2026 / S6 October 26, 2026 — 모두 research.json published 와 일치",
+  "note": "Opus 검증 (claude-opus-5-5): 공식 블로그(S1)와 TechCrunch·KIRO 7·AFP(Yahoo)·IT Pro·Kotaku 를 WebFetch 로 다시 열어 수치·날짜·이름·직함·인용을 하나씩 대조. 6만 명·부서 목록·봄 프로그램 인원(8,600/8,750/9,000)은 공식 글에 없고 보도별로 다르므로 모두 매체 귀속으로 표기. Business Insider·Bloomberg·Reuters·CNBC 는 직접 읽지 않았고 직접 읽은 매체가 인용한 범위로만 귀속. 4,800명 감원은 IT Pro 외 KOMO·ynetnews 검색 결과로 교차 확인. 계산식 재계산 일치. 막힌(EGRESS_BLOCKED) 출처 없음."
+ }
+}
