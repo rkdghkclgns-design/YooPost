@@ -1,0 +1,123 @@
+{
+ "topic": "Opera doubles down on local AI, shipping models directly in its browsers (Opera, 2026-10-27) — WebAI 초기 프리뷰 / TechCrunch·9to5Mac·Digital Trends·Thurrott 보도",
+ "source_url": "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Opera doubles down on local AI, shipping models directly in its browsers",
+   "url": "https://press.opera.com/2026/10/27/opera-doubles-down-on-local-ai-shipping-models-directly-in-its-browsers/",
+   "publisher": "Opera",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "WebAI in Opera: local AI running in the browser",
+   "url": "https://next.opera.com/blog/web-ai-local-ai/",
+   "publisher": "Opera",
+   "published": "2026-10-22",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Opera introduces a new web standard to let users deploy AI locally in their browser",
+   "url": "https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Opera One now lets Mac users run Apple's foundation model directly in the browser",
+   "url": "https://9to5mac.com/2026/10/27/opera-one-now-lets-mac-users-run-apples-foundation-model-directly-in-the-browser/",
+   "publisher": "9to5Mac",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Opera wants websites to run AI on your laptop instead of sending your data to the cloud",
+   "url": "https://www.digitaltrends.com/computing/opera-wants-websites-to-run-ai-on-your-laptop-instead-of-sending-your-data-to-the-cloud/",
+   "publisher": "Digital Trends",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Opera is Bringing Local AI to its Web Browsers with WebAI",
+   "url": "https://www.thurrott.com/a-i/343282/opera-is-bringing-local-ai-to-its-web-browsers-with-webai",
+   "publisher": "Thurrott.com",
+   "published": "2026-10-27",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://next.opera.com/assets/images/blog/web-ai-local-ai/article-img-01.png",
+   "page_url": "https://next.opera.com/blog/web-ai-local-ai/",
+   "caption": "WebAI 켜는 순서: Opera 설정 화면의 WebAI 스위치",
+   "credit": "Opera"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://next.opera.com/assets/images/blog/web-ai-local-ai/article-img-03.png",
+   "page_url": "https://next.opera.com/blog/web-ai-local-ai/",
+   "caption": "WebAI 켜는 순서: 내려받은 모델 목록이 보이는 WebAI 패널",
+   "credit": "Opera"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "웹사이트·확장 프로그램이 내 PC의 로컬 AI를 쓰게 하는 Opera WebAI 프리뷰를 내 환경에서 켜도 되는가, 켜기 전에 무엇을 확인해야 하는가",
+  "limitations": "필자는 WebAI 를 직접 실행하지 않았고 공개된 보도자료·개발자 블로그·매체 기사만 읽었다. 최소 사양, 성능 벤치마크, 독립 프라이버시 감사, 다른 브라우저 채택, GX·Neon 일정은 확인되지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔍 클라우드 AI API 와 로컬 WebAI, 무엇이 달라지나",
+    "excerpt": "WebAI 는 **글 분류, 간단한 요약·정리, 의미가 비슷한 문장 묶기**처럼 가벼운 작업에서",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "처리 위치·개발자 부담·사용자 부담·속도·환경·표준 여부를 같은 질문으로 나란히 놓고, 성능 수치가 없는 항목은 우열을 매기지 않음"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 어떤 상황에 켜고, 어떤 경우엔 미룰까",
+    "excerpt": "아래는 확인된 지원 환경, 옵트인 구조, 성능 불확실성을 근거로 정리한 **판단 기준(해석)** 입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "독자의 OS·저장 공간·업무 정책·개발자 여부별로 켜 볼지 미룰지 기준과 제외 조건을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚠ 한계와 아직 확인되지 않은 것",
+    "excerpt": "Opera 개발자 블로그 본문은 WebAI 가 Opera One, Opera GX, Opera Neon 에서 초기 프리뷰라고 쓰는 반면",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "added_value": "개발자 블로그(세 브라우저 프리뷰)와 보도자료·TechCrunch·9to5Mac·Digital Trends(One 먼저, GX·Neon 뒤따름), 앞뒤가 엇갈린 Thurrott 를 대조하고 개발자 블로그의 설치 안내가 Opera One 만 다룬다는 점까지 확인해 어느 쪽을 따랐는지 밝힘"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 41,
+  "removed": [
+   "Digital Trends 는 ... 아직 '제안된' 표준이므로 다른 브라우저로 얼마나 퍼질지는 불확실하다고 정리했습니다. (Digital Trends 기사에 해당 내용 없음)",
+   "속도·정확도 벤치마크·독립 프라이버시 감사가 없다는 점을 'Digital Trends 도 같은 점을 짚었습니다' (DT 는 최소 성능 요구 사항 미공개만 지적 → 최소 사양 항목으로 옮김)",
+   "개발 중이던 내용이 보도자료 시점에 정리됐을 가능성도 있지만 이는 이 글의 추측이며 확인된 사실이 아닙니다. (근거 없는 추측 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). 출처 6개를 모두 다시 열어(curl+WebFetch, 차단 없음) 본문과 메타 발표일 대조: S1 2026-10-27(article:published_time), S2 페이지 표기 October 22, 2026, S3~S6 모두 2026-10-27 — research.json published 와 일치. 이미지 I1·I2 는 HTTP 200 image/png, 1920x1080 본문 그림, alt 와 캡션 일치. 고침: Kolondra 직함(EVP Browsers and AI), API 3종-기능 일대일 대응은 블로그가 명시하지 않음으로 수정, TechCrunch 는 Opera 발표문을 인용한 것으로 수정, Semantic Art 설명 출처를 개발자 블로그로 수정, Kocemba 인용 출처(보도자료) 명시. GX·Neon 상태: 개발자 블로그만 '세 브라우저 early preview', 보도자료·TechCrunch·9to5Mac·DT 는 'One 먼저, GX·Neon to follow/soon/later', Thurrott 는 앞뒤 혼재 — 원고는 보도자료 표현을 따르고 차이를 한계 절에 명시."
+ }
+}
