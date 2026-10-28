@@ -1,0 +1,113 @@
+{
+ "topic": "Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan (TrendAI, 2026-10-27)",
+ "source_url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan",
+   "url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+   "publisher": "TrendAI (Trend Micro)",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets",
+   "url": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "GMO Cybersecurity Says ARTEX Was Used in Attacks Targeting Japanese Firms",
+   "url": "https://letsdatascience.com/news/gmo-cybersecurity-links-china-built-ai-tool-artex-to-japan-b-91cc98b1",
+   "publisher": "Let's Data Science",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance",
+   "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+   "publisher": "CrowdStrike",
+   "published": "2026-10-07",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "AI agents broke into 100+ sites for one hacker at $50 each, researcher says",
+   "url": "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge",
+   "publisher": "The Next Web",
+   "published": "2026-10-19",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/ch6z6vqj/production/600d14d20221a2b01cbc615fdf223d028a31f900-1509x863.png?rect=1,0,1508,863&w=1108&h=634&fit=max&auto=format",
+   "page_url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+   "caption": "사례 A: CyberStrikeAI 관리 콘솔 화면 (간체 중국어)",
+   "credit": "TrendAI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.sanity.io/images/ch6z6vqj/production/a571fe3798df98c0cf1d615c9b321243da3eafc6-1920x840.png?rect=1,0,1919,840&w=1108&h=485&fit=max&auto=format",
+   "page_url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+   "caption": "세 사례의 2026년 관측 기간 (사례 C는 1월 말~10월 중순)",
+   "credit": "TrendAI"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://cdn.sanity.io/images/ch6z6vqj/production/e5d928f4b4d5004083962c21170fefedea700b80-1800x760.png?rect=1,0,1799,760&w=1108&h=468&fit=max&auto=format",
+   "page_url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+   "caption": "세 사례 비교: AI가 맡은 범위로 본 AI 개입 스펙트럼",
+   "credit": "TrendAI"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI가 일본 조직 공격에 실제로 어디까지 쓰였고, 우리 조직은 무엇부터 점검해야 하나?",
+  "limitations": "공개 디렉터리에서 회수된 3개 인프라에 근거한 분석이며 모든 AI 공격을 대표하지 않는다. 관측 기간은 회수한 스냅숏 기준이라 실제 활동은 더 일찍 시작됐을 수 있다. 사례 C의 AI 보조는 문체 지표 기반 추정이고 방어 효과 실측은 없다. 직접 실행·재현은 하지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 세 사례 비교: AI는 어디까지 개입했나",
+    "excerpt": "세 사례를 같은 항목으로 나란히 놓으면 AI 개입 수준과 결과의 관계가 보입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "세 사례를 AI 역할·기간·규모·진입점·심층 침투 항목으로 같은 표에 재배열하고, 지표가 직접 비교용이 아님을 명시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 ARTEX·Cairn 보도와 함께 읽으면 보이는 것",
+    "excerpt": "이 세 출처를 연결하면, 서로 다른 도구(ARTEX, CyberStrikeAI, Cairn)와",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "TrendAI·CrowdStrike·NorForge 보도를 연결해 공격 서버 노출이라는 공통 패턴을 해석으로 제시하고 수치 합산을 경고했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 방어 우선순위: 우리 조직은 무엇부터 점검할까",
+    "excerpt": "보고서가 제시한 방어 우선순위는 여섯 가지이고, 각각 어떤 사례를 막는 데 해당하는지 표시돼 있습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "보고서의 방어 우선순위 6개를 독자 조직의 상황별 점검 순서로 재구성했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "보고서는 남의 AI 서비스 접근 권한을 가로채 '합치는' 도구 (원문에 '합치는' 기능 언급 없음 — '가로채려는 도구와 장치'로 수정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 TrendAI 원문(영어판 2026-10-27, 일본어 원문 10-23 페이지 표기 확인)·S2 The Hacker News(10-27)·S3 Let's Data Science(10-20, GMO 발표 10-19)·S4 CrowdStrike(10-07)·S5 The Next Web(10-19)을 다시 열어 수치·날짜·이름·기관·공격 사례 주장 62개를 대조. EGRESS_BLOCKED 출처 없음. 수정 9곳: TrendAI 소속 표현(연구 조직→트렌드마이크로의 TrendAI), NCO 국문 명칭, '약한 자격 증명' 공통점 서술(원문은 노출 레거시·기본 설정 약점)→요약·FAQ 수정, AI 서비스 가로채기 도구 표현·목적 '추정', 운영자 동일성('증거 없음'→'알 수 없음') 2곳, Cairn '노린'→'침입'(TNW 독자 미확인 명시), 불확실성 주체(NorForge 자체→기사), IOC 공유 계획 표현 2곳. 관측 기간 스냅숏 한계 추가. 인용 이미지 3개 HTTP 200 image/png 확인·내용 확인(I2 캡션 수정). 방어 가이드는 보고서 권고 6개의 상황별 재배열로 공격 절차 상세 없음(방어 중심)."
+ }
+}
