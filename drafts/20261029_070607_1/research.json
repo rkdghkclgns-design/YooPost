@@ -1,0 +1,105 @@
+{
+ "topic": "Gemini 4 Carbon: our next frontier model (Google, 2026-10-28)",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gemini 4 Carbon: our next frontier model",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "publisher": "Google",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google Deepmind releases Gemini 4 Carbon just two weeks after Argon with gains across the board",
+   "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/",
+   "publisher": "The Decoder",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google unveils Gemini 4 Carbon with advanced cybersecurity features",
+   "url": "https://www.investing.com/news/stock-market-news/google-unveils-gemini-4-carbon-with-advanced-cybersecurity-features-4980345",
+   "publisher": "Investing.com",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Gemini Developer API pricing",
+   "url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "publisher": "Google",
+   "published": "2026-10-28",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon__evals-table.original.png",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "caption": "Gemini 4 Carbon 벤치마크 성능 비교표",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_secbench-pro.original.png",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "caption": "Gemini 4 Carbon 사이버보안 벤치마크(SEC-bench Pro) 결과",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Argon 2주 뒤 나온 Gemini 4 Carbon은 무엇이 달라졌고, 가격·접근 조건을 볼 때 우리 팀은 지금 무엇을 판단해야 하는가",
+  "limitations": "직접 실행하지 않았고 공식 글과 보도의 공개 수치만 사용. Artificial Analysis·Vals·Arena 수치는 각 사이트 원문이 아니라 The Decoder 정리로 확인(Coding Agent Index의 Opus 5.5 62점은 The Decoder 요점 정리에만 있음). 작업당 비용 계산 기준(정가)은 The Decoder 설명 기준. Carbon 도입가 종료일·일반 공개일·컨텍스트 길이는 공식 미공개 — Argon 공식 가격표의 2026-11-30 종료일은 참고로만 제시.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 비용 계산: 도입 가격 vs 정가, 그리고 작업당 비용",
+    "excerpt": "인트로 가격 기준으로 입력 100만 토큰과 출력 20만 토큰을 쓰면 2달러와 2달러를 합쳐 4달러",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "도입가와 정가의 단가로 같은 사용량의 비용 차이를 계산해 도입 기간 종료 후 비용을 가늠하게 함"
+   },
+   {
+    "kind": "comparison",
+    "section": "💰 비용 계산: 도입 가격 vs 정가, 그리고 작업당 비용",
+    "excerpt": "Carbon은 출력 토큰을 작업당 약 12만 3천 개 쓰고 Claude Opus 5.5는 약 17만 3천 개를 썼으므로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "작업당 비용과 출력 토큰 수를 같은 평가 기준으로 모델 간 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에는 맞을까: 상황별 선택 기준",
+    "excerpt": "Carbon은 지금 당장 선택지가 되는 모델이 아닙니다. 공식 글 기준으로 일반 개발자 접근은 날짜가 없는 '가능한 한 빨리'입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀 상황별로 지금 할 일과 기다릴 일을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 50,
+  "confirmed": 48,
+  "removed": [
+   "['도입 할인 기간', '2026년 말까지(The Decoder 보도)'] 표 행 — 공식 근거 없음, 'Carbon 공식 글·가격표에 없음 (참고: Argon 공식 가격표는 2026-11-30까지 도입가)'로 교체",
+   "The Decoder는 도입 할인이 2026년 말까지 이어진다고 전했고 … 보도 기준으로만 참고하시기 바랍니다. — 공식 가격표(Argon 2026-11-30 종료)와 대조한 문단으로 교체"
+  ],
+  "corrected": [
+   "WebDev Arena: 'The Decoder와 Investing.com은 1769점' → Investing.com 1769, The Decoder는 한 기사 안에 1,769와 1,768을 함께 표기(구글 공식 1768 유지)",
+   "작업당 비용 정가 기준: 'The Decoder가 적었습니다' → The Decoder가 Artificial Analysis의 정가 계산 방식을 설명했다고 정정, 23% 계산식을 1 − 7.76÷10.04 로 정정",
+   "'Argon 출시 약 2주' → 구글 표현임을 명시하고 Argon 첫 발표일(2026-09-30, 공식 글) 병기",
+   "정렬 '한 단계 더 끌어올렸다' → 공식 글 표현(같은 다층 안전·보안 체계 기반)으로 정정",
+   "맺음말 '직접 체험' 권유 → 일반 공개 뒤로 정정(현재 일반 접근 불가)"
+  ],
+  "note": "Opus 검증: S1(구글 공식, 페이지 날짜 Oct 28, 2026)·S2(The Decoder, Oct 28, 2026)·S3(Investing.com, Oct 28, 2026 01:11 PM) 모두 다시 열어 published 일치 확인, EGRESS_BLOCKED 출처 없음. 추가 확인: Argon 공식 글(Sep 30, 2026), Gemini API 가격 페이지(S4, Last updated 2026-10-28). 인용 이미지 2개 image/png HTTP 200 확인. editorial contributions(계산·비교·판단 가이드) 수치를 원문과 대조: 1M 입력+0.2M 출력 = $4(도입가)/$8(정가), 7.76/10.04≈0.77, 123k/173k≈0.71 확인."
+ }
+}
