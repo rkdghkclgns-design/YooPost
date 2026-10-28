@@ -1,0 +1,96 @@
+{
+ "topic": "As AI agents reshape the web, Google opens Gemini and Search to more apps (TechCrunch, 2026-10-28) / 공식: Build and manage Connected Apps in one place (Google, 2026-10-28)",
+ "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Build and manage Connected Apps in one place",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+   "publisher": "Google",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+   "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Connect apps to Search (AI Mode)",
+   "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+   "publisher": "Google",
+   "published": "2026-07-16",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "New Connected Apps in Gemini",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+   "publisher": "Google",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Gemini gains 14 third-party apps including Experian and Adobe",
+   "url": "https://ppc.land/gemini-gains-14-third-party-apps-including-experian-and-adobe/",
+   "publisher": "PPC Land",
+   "published": "2026-09-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Applist.width-1200.format-webp.webp",
+   "page_url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+   "caption": "Connected Console 에서 연결 앱을 편집하고 테스트하는 화면 (개발자가 거치는 단계)",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "내 앱이 Gemini 와 Search 에 들어가려면 무엇이 필요하고, 지금 준비를 시작할 만한가?",
+  "limitations": "플랫폼을 직접 신청·실행하지 않았고 공식 글과 보도만 읽었다. 심사 기준·수수료·일반 공개 일정·앱 개수 집계 차이는 출처에 없어 단정하지 않았다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 앱을 올려야 할까: 상황별 판단 기준",
+    "excerpt": "플랫폼이 프리뷰이고 심사 조건이 공개되지 않았으므로, 지금 결정할 수 있는 것은 **준비를 시작할지**입니다. 아래 표는 공식 발표에 적힌 조건만으로 만든 판단 기준이며",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 단계를 개발자 상황별 준비 행동과 제외 조건으로 바꾸고, 기존 Search 사례에서 뽑은 점검 질문을 붙였다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🗓 7월·9월·10월 발표를 이어 보면",
+    "excerpt": "ppc.land 는 이 14개가 8월 12일에 이름이 나온 13개에 더해져 합계 27개가 된다고 계산했습니다. 반면 10월 28일 공식 글과 TechCrunch 는 50개 넘는다고 하므로",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "7월·9월·10월 발표와 외부 파트너 27개·8월 목록 표 41개·50개 이상 집계 차이를 연결하고 설명할 수 없는 지점을 표시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 42,
+  "removed": [
+   "같은 날 Google 은 Gemini 4 Carbon 도 발표했지만 이 글은 모델이 아니라 앱 연결 플랫폼만 다룹니다. 두 발표의 관계는 확인한 출처에 없습니다. (출처에 없음)",
+   "이름이 나온 곳은 Adobe, Calm, Peloton 이고 Experian 과 Localiza 도 이미 연결된 파트너로 언급됩니다. (공식 글은 Adobe·Experian·Localiza·Peloton 이 Gemini 에서 이미 가능, Calm 이 신규라고 적음 → 수정)",
+   "앱을 쓰려면 Gemini 에 로그인해야 하고 (출처에 없음 → ppc.land 의 '8월 목록 외부 서비스 대부분 개인 Google 계정 필요'로 수정)",
+   "앱을 직접 언급해 요청 (S4 는 'ask Gemini for what you need directly' → '필요한 것을 바로 요청'으로 수정)"
+  ],
+  "note": "Opus 검증: S1~S5 를 모두 다시 열어 주장 46개를 대조. 발표일은 페이지 표기와 일치(S1 2026-10-28 메타 article:published_time 확인, S2 2026-10-28 10:00 PDT, S3 2026-07-16, S4 2026-09-23, S5 2026-09-23). EGRESS_BLOCKED 출처 없음. 1건 삭제·3건 수정, ppc.land 의 8월 목록 41개·AI Mode 미국 영어 제한을 확인 후 보완. 인용 이미지 I1 은 S1 본문 그림(alt: Connected Apps UI where you can edit and test, WebP 1200px, HTTP 200) 확인. 섹션 10개→8개로 통합(🔍 비교를 📊 에, 🎯 사례 분석을 🧭 에 합침, 중복 문단 제거). 독자 가치 기록의 발췌를 30자 이상 본문 문장으로 교정."
+ }
+}
