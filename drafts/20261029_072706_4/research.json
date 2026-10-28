@@ -1,0 +1,113 @@
+{
+ "topic": "Anthropic just launched tools to show companies what their AI spending is buying (TechCrunch, 2026-10-28) / Smart reports, surveys, and pooled group budgets for Claude Enterprise (Anthropic, 2026-10-28)",
+ "source_url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Smart reports, surveys, and pooled group budgets for Claude Enterprise",
+   "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+   "publisher": "Anthropic",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Get started with smart reports",
+   "url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+   "publisher": "Anthropic Help Center",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Create surveys for your organization",
+   "url": "https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization",
+   "publisher": "Anthropic Help Center",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Manage pooled group budgets on Enterprise plans",
+   "url": "https://support.claude.com/en/articles/17005973-manage-pooled-group-budgets-on-enterprise-plans",
+   "publisher": "Anthropic Help Center",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+   "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-28",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://assets.claude.com/1ed37b4afed48de6da20d4be0d99e76a98be3c9d.png",
+   "page_url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+   "caption": "앱 내 설문 편집 화면: 서술형 질문과 소요 시간 변화를 묻는 선택형 질문",
+   "credit": "Anthropic"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Claude Enterprise의 스마트 리포트·설문·공유 예산은 각각 무엇을 보여 주며, 내 조직 구성에서 켜기 전에 무엇을 확인해야 하는가",
+  "limitations": "직접 실행하지 않고 공식 페이지·도움말 3건·TechCrunch 기사만 읽고 정리. 월 10건을 넘는 스마트 리포트의 비용과 효과 실증 자료는 확인되지 않음. 공유 예산 계산은 가정 숫자 예시(본문에 가정으로 표시).",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 공유 그룹 예산은 어떻게 설정하고 계산하나요?",
+    "excerpt": "위 표의 입력값은 설명을 위해 제가 만든 **가정**이고 실제 조직의 숫자가 아닙니다. 계산식은 문서가 제안한 '약 3배' 규칙을 그대로 곱한 ",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "도움말의 '약 3배' 시작값 규칙을 가정 숫자에 적용하고, 균등 분할과 개인 한도를 비교해 공유 예산의 의미를 보임"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직에는 어떤 기능부터 맞을까요?",
+    "excerpt": "선택 기준을 정리하면 이렇습니다. **지출 상한부터 관리해야 하는 팀**은 공유 예산이 가장 직접적입니다. **어떤 일에 돈이 쓰이는지 모르는 ",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "CMEK·HIPAA·ZDR 조건별 제외 규칙을 한 표로 맞추고 팀 상황별 시작 기능을 제안"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📈 왜 지금 이 도구가 나왔을까요? 매체 보도로 읽는 맥락",
+    "excerpt": "두 자료를 연결하면 이렇게 읽을 수 있습니다. 비용 비중은 아직 작지만 증가 속도가 빠르니, 재무 담당자는 '얼마 쓰는가'뿐 아니라 '무엇을 샀",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "공식 기능 설명과 TechCrunch의 지출 증가 인용을 엮어 도구 3종이 답하는 재무 질문을 해석"
+   },
+   {
+    "kind": "comparison",
+    "section": "📝 앱 내 설문은 숫자 옆에 사람의 목소리를 붙입니다",
+    "excerpt": "결과는 설문이 진행되는 동안 집계되어 응답 수, 응답률, 객관식 막대 차트, 서술 응답 목록으로 보입니다. CSV로 내보내면 응답 한 건이 한 ",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "설문(구성원 진술)과 리포트(기록 표본 추정)가 서로 다른 종류의 근거임을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 75,
+  "confirmed": 75,
+  "removed": [
+   "OpenAI Astra가 'Jellyfish 데이터상' Anthropic 채택을 '뚜렷하게' 늦추지 않았다는 표현(기사 본문은 기자 평가로만 서술 — 출처 귀속·수식어 삭제)",
+   "FAQ '10건을 넘길 때의 차단 여부는 문서에 없다'(도움말에 한도 도달 시 새 리포트 생성 불가·계정 팀 문의가 적혀 있어 교체)",
+   "'그래서 공식 페이지는 설문을 함께 내놓았습니다'(문서에 없는 인과 서술 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5, 2026-10-29 KST): S1~S5 원문과 I1 이미지를 다시 내려받아 모든 수치·날짜·이름·경로·조건을 대조. 고친 것: 공유 예산 권한(소유자·Billing 관리 역할), 공유 예산 대상 플랜(좌석제+사용 크레딧 포함), 설문 표시 시점(작업이 끊기는 지점·실행 중 작업 미중단), Jellyfish 소개(개발자용 도구 업체), 전환 비용 발언의 인과 방향, Astra 평가의 귀속, 스마트 리포트 한도 도달 시 동작(FAQ·한계 문단), 도움말 날짜 표기 문구, I1 캡션(시간 '절약'→'변화'). 날짜: S1 페이지 'October 28, 2026'·meta 2026-10-28 일치, S5 article:published_time 2026-10-28T19:19:58Z 일치. S2~S4는 페이지에 'Updated today'만 있고 datePublished가 없어 메타 dateModified(2026-10-28T17:49~17:50Z)를 published로 쓴 것은 최종 갱신일로서 적절(최초 게시일은 아님, 발표일 근거는 S1). EGRESS_BLOCKED 출처 없음(5건 모두 200). 표의 '언급 없음' 칸: S3·S4 본문에 ZDR/HIPAA/CMEK 언급이 없음을 확인. 가정 계산표는 본문에 가정임이 명시돼 있고 3배 규칙·나눗셈 결과 검산 일치."
+ }
+}
