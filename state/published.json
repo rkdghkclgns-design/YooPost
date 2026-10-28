@@ -4703,5 +4703,23 @@
    "https://arxiv.org/pdf/2610.34073v1"
   ],
   "draft_id": "20261029_071921_3"
+ },
+ {
+  "date": "2026-10-29",
+  "title": "🧾 Claude Enterprise 스마트 리포트·설문·공유 예산: AI 지출을 설명해야 하는 팀이 켜기 전 확인할 조건",
+  "topic": "Anthropic just launched tools to show companies what their AI spending is buying (TechCrunch, 2026-10-28) / Smart reports, surveys, and pooled group budgets for Claude Enterprise (Anthropic, 2026-10-28)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/claude-enterprise-ai.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+   "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+   "https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization",
+   "https://support.claude.com/en/articles/17005973-manage-pooled-group-budgets-on-enterprise-plans",
+   "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/"
+  ],
+  "draft_id": "20261029_072706_4"
  }
 ]
