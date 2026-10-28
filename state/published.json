@@ -4650,5 +4650,22 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261021000341"
   ],
   "draft_id": "20261028_075133_7"
+ },
+ {
+  "date": "2026-10-29",
+  "title": "🤖 Gemini 4 Carbon, Argon 2주 만의 후속작: 달라진 점과 가격·접근 조건 정리",
+  "topic": "Gemini 4 Carbon: our next frontier model (Google, 2026-10-28)",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/gemini-4-carbon-argon-2.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/",
+   "https://www.investing.com/news/stock-market-news/google-unveils-gemini-4-carbon-with-advanced-cybersecurity-features-4980345",
+   "https://ai.google.dev/gemini-api/docs/pricing"
+  ],
+  "draft_id": "20261029_070607_1"
  }
 ]
