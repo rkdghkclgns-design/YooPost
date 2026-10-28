@@ -4685,5 +4685,23 @@
    "https://ppc.land/gemini-gains-14-third-party-apps-including-experian-and-adobe/"
   ],
   "draft_id": "20261029_071318_2"
+ },
+ {
+  "date": "2026-10-29",
+  "title": "🧠 Memory Tax: 에이전트 메모리는 naive RAG보다 나을까, 99칸 점수표로 본 판단 기준",
+  "topic": "Memory Tax: Dissecting the Net Value of Agent Memory",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.34073",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/memory-tax-naive-rag-99.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.34073",
+   "https://huggingface.co/papers/2610.34073",
+   "https://arxiv.org/html/2610.34073v1",
+   "https://aiweekly.co/alerts/paper-naive-raw-rag-beats-agentic-memory-systems-on-6-of-7-benchmark-model",
+   "https://arxiv.org/pdf/2610.34073v1"
+  ],
+  "draft_id": "20261029_071921_3"
  }
 ]
