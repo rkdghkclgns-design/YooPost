@@ -4667,5 +4667,23 @@
    "https://ai.google.dev/gemini-api/docs/pricing"
   ],
   "draft_id": "20261029_070607_1"
+ },
+ {
+  "date": "2026-10-29",
+  "title": "🔌 Google Connected Apps 플랫폼 프리뷰: 앱 하나로 Gemini와 검색에 들어가려면 무엇이 필요할까",
+  "topic": "As AI agents reshape the web, Google opens Gemini and Search to more apps (TechCrunch, 2026-10-28) / 공식: Build and manage Connected Apps in one place (Google, 2026-10-28)",
+  "category": "AI 도구",
+  "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/google-connected-apps-gemini.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+   "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+   "https://blog.google/products-and-platforms/products/search/connected-apps/",
+   "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+   "https://ppc.land/gemini-gains-14-third-party-apps-including-experian-and-adobe/"
+  ],
+  "draft_id": "20261029_071318_2"
  }
 ]
