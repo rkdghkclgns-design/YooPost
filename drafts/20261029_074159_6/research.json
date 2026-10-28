@@ -1,0 +1,114 @@
+{
+ "topic": "Artificial intelligence in UK financial services - 2026 (Bank of England and FCA, 2026-10-26)",
+ "source_url": "https://www.bankofengland.co.uk/report/2026/artificial-intelligence-in-uk-financial-services-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Artificial intelligence in UK financial services - 2026",
+   "url": "https://www.bankofengland.co.uk/report/2026/artificial-intelligence-in-uk-financial-services-2026",
+   "publisher": "Bank of England / FCA",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "BoE and FCA publish joint report on AI in UK financial services",
+   "url": "https://www.regulationtomorrow.com/2026/10/boe-and-fca-publish-joint-report-on-ai-in-uk-financial-services/",
+   "publisher": "Norton Rose Fulbright (Global Regulation Tomorrow)",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The Most Important Number in the BoE-FCA AI Survey Isn't 2 Percent",
+   "url": "https://alanparis.substack.com/p/the-most-important-number-in-the",
+   "publisher": "Alan Paris (Substack)",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "The FCA Says It Will Become an 'Agentic' Regulator and That 86% of UK Financial Firms Now Use AI. It Is Not Writing New Rules",
+   "url": "https://www.trade2spike.com/ai-in-action/fca-plans-to-become-agentic-regulator-86-percent-of-uk-firms-use-ai-no-new-rules",
+   "publisher": "Trade2Spike",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Building the future of finance in the age of AI",
+   "url": "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+   "publisher": "Financial Conduct Authority",
+   "published": "2026-10-19",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "BoE 보고서 페이지의 차트 24개는 모두 base64 인라인 PNG로 내장되어 별도 이미지 파일 주소가 없고(페이지의 나머지 그림은 BoE·FCA 로고), FCA 연설 페이지에는 연사 사진(가로 382px)과 메뉴 배너만 있어 관련 본문 그림이 없음. 해설·보도 출처에도 관련 도표 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트 도입률이 높다는 조사 결과를 우리 조직의 자율 범위·외부 의존·배포 후 통제 점검으로 어떻게 바꿔 읽을까",
+  "limitations": "자기 보고식 영국 금융권 설문(응답 196곳, 대부분 수치는 전체 설문 105곳 기준)이며 연도별 비교는 모집단·질문이 달라 제한적. FCA 연설문은 실제 발언과 다를 수 있는 초안. 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 86%라는 숫자는 무엇을 센 것일까",
+    "excerpt": "다만 보고서는 연도별 수치가 완전히 비교 가능한 것은 아니라고 직접 경고합니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "2022·2024·2026 수치를 한 표에 놓고 사용 사례/시스템 기준·분류 이름이 다른 한계를 붙여 추세 과대 해석을 막음"
+   },
+   {
+    "kind": "comparison",
+    "section": "☁️ 외부 업체 의존: 전체 39%, 중요 시스템 53%",
+    "excerpt": "내부 시스템은 안을 들여다보고 통제하지만, 외부 시스템은 계약서와 업체 설명서에 기대는 구조라는 차이가 드러납니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "2024·2026 외부 비중과 내부/외부 이해도(77% 대 24%)를 같은 조건으로 놓고 우열 단정은 피함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직이라면: 상황별 점검 기준",
+    "excerpt": "해설자 Alan Paris가 다음 조사에서 물어야 한다고 제안한 질문도 같은 맥락입니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "조사의 세 축을 상황별 점검 질문과 미룰 일로 바꾼 표"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛡 출입문은 튼튼하고 실행 중은 얇다",
+    "excerpt": "Norton Rose Fulbright도 사전 통제는 잘 갖춰졌지만 배포 후 모니터링은 덜 보편적이라고 정리했고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "보고서 수치와 두 해설의 같은 결론을 연결해 배포 후 통제 공백을 짚음"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 77,
+  "confirmed": 77,
+  "removed": [
+   "이 46%는 보고서 본문이 아니라 해설 글의 인용이므로, 원문 확인 전에는 참고 수준으로만 둡니다. (보고서 3.2절·표 B에서 46%·22% 확인 → S1 근거로 다시 씀)",
+   "이 조사는 가운데 단계가 어디까지인지를 더 묻는 방향으로 다음 설문이 발전해야 함을 시사합니다. (보고서가 이미 4단계로 물었으므로 삭제)",
+   "이 내용은 연설문 초안을 인용한 2차 보도라 원문 확인이 필요합니다. / '궁극적으로 에이전틱한' 인용 (FCA 연설 원문 S5로 다시 씀, 원문에 없는 'ultimately' 표현 삭제)",
+   "필자는 보고서 본문 일부만 읽었고 (보고서 전문 확인)"
+  ],
+  "corrected": [
+   "'3년 사이 28%포인트 상승' → '4년 사이'(2022→2026)",
+   "'대형 회사의 94%' → '전체 설문 응답 회사의 94%'(보고서 2.1절, 시범 포함 97%)",
+   "광범위한 자율성 정의: '사람의 실시간 개입 없이' → '실시간 개입이 제한된'(보고서 3.2절 limited real-time human involvement)",
+   "외부 업체 구현 2022년 '-' → 17%(보고서 4.1절)",
+   "17%/56% 비교: 사용 사례 기준 vs 시스템 기준, 보고서가 직접 비교 불가라고 명시",
+   "79%·54%는 각각 클라우드·컴퓨팅 관계, 모델·API 관계 기준으로 명확화; 90% 초과 통제는 데이터 위험 통제임을 명시",
+   "FCA 연설 내용을 Trade2Spike 2차 보도에서 FCA 원문(S5, 2026-10-19, 초안 표시)으로 교체"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): BoE 보고서 페이지 전문(약 4.6만 자, 1~11절·표 A/B)을 curl로 받아 모든 수치 대조, published 2026-10-26 페이지 datePublished와 일치. S2(Norton Rose Fulbright)는 curl 403이나 WebFetch로 읽어 2026-10-26 날짜·'Pre-deployment controls are well established, but post-deployment monitoring is less common' 확인. S3 Alan Paris(2026-10-26) 46%·'The gate is strong. The runtime is thin.'·세 질문 확인. S4 Trade2Spike(2026-10-20) 확인. FCA 연설 원문 S5(First published 19/10/2026) 추가해 연설 주장 재확인. 인용 이미지: 보고서 차트는 base64 인라인뿐, 다른 공식 페이지에 관련 본문 그림 없음 → images_none_reason 유지."
+ }
+}
