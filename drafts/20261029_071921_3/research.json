@@ -1,0 +1,126 @@
+{
+ "topic": "Memory Tax: Dissecting the Net Value of Agent Memory",
+ "source_url": "https://arxiv.org/abs/2610.34073",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Memory Tax: Dissecting the Net Value of Agent Memory (arXiv 2610.34073)",
+   "url": "https://arxiv.org/abs/2610.34073",
+   "publisher": "arXiv (UIUC·Tsinghua 등)",
+   "published": "2026-10-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Memory Tax: Dissecting the Net Value of Agent Memory — Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.34073",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Memory Tax: Dissecting the Net Value of Agent Memory (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2610.34073v1",
+   "publisher": "arXiv",
+   "published": "2026-10-25",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Paper: Naive Raw-RAG Beats Agentic Memory Systems on 6 of 7 Benchmark-Model Settings, 30.4x Faster Than EverMemOS",
+   "url": "https://aiweekly.co/alerts/paper-naive-raw-rag-beats-agentic-memory-systems-on-6-of-7-benchmark-model",
+   "publisher": "AI Weekly",
+   "published": "2026-10-23",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Memory Tax: Dissecting the Net Value of Agent Memory (arXiv PDF v1)",
+   "url": "https://arxiv.org/pdf/2610.34073v1",
+   "publisher": "arXiv",
+   "published": "2026-10-25",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.34073v1/Figures/4_lme_27b_score-token.png",
+   "page_url": "https://arxiv.org/html/2610.34073v1",
+   "caption": "점수표 읽기: LongMemEval-s에서 정확도와 토큰 비용을 함께 본 Pareto 그림",
+   "credit": "Xuan He 등, arXiv 2610.34073 (CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.34073v1/Figures/4_oracle_compare.png",
+   "page_url": "https://arxiv.org/html/2610.34073v1",
+   "caption": "세금은 어디서 생기나: 정답 메모리 단위를 줬을 때의 성능과 메모리 세금 비교",
+   "credit": "Xuan He 등, arXiv 2610.34073 (CC BY 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.34073v1/Figures/4_access_rounds_lme_27b.png",
+   "page_url": "https://arxiv.org/html/2610.34073v1",
+   "caption": "세금은 어디서 생기나: 증거를 모두 찾을 때까지 필요한 검색 라운드, 원문 조각 대 메모리 단위",
+   "credit": "Xuan He 등, arXiv 2610.34073 (CC BY 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트에 요약·구조화 메모리를 따로 만들면 원문 RAG보다 실제로 나아지는가, 도입 전 무엇을 확인해야 하나",
+  "limitations": "직접 실행·재현하지 않고 논문 본문과 표를 읽어 정리했다. 99칸 집계는 Table 1 괄호 값을 세어 얻은 계산이다. 벤치마크는 정적·오프라인·영어 중심이며 일부는 표본 평가다(PersonaMem-v2 20%, MINT-Eval 10%, luna 백본의 LongMemEval-s 20%).",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 점수표 읽기: 11개 시스템 중 누가 RAG를 넘었나",
+    "excerpt": "표시된 차이 값을 세어 보면 99칸 중 양수는 9칸이고 **90칸은 RAG(2라운드)보다 낮습니다**. ",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "논문 Table 1의 11개 메모리 시스템×9개 칸 차이 값을 세어 양수 9칸, 음수 90칸이라는 집계를 더하고, 양수가 PersonaMem-v2·MINT-Eval에 몰리고 LongMemEval-s 33칸은 모두 음수임을 보였다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 우리 에이전트에 메모리를 넣기 전 판단 기준",
+    "excerpt": "공통 원칙은 **메모리 단독 점수가 아니라 RAG 대비 순가치로 판단하라**는 것입니다. 메모리를 쓰기로 했",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "논문 결과를 상황별 선택 기준과 확인 항목으로 바꿔, 어떤 질문 유형에서 RAG를 먼저 측정할지 정리했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 벤치마크 여유 공간과 다른 메모리 영역",
+    "excerpt": "AI Weekly가 2026-10-23에 소개한 별도 논문(arXiv 2610.30755)은 dense re",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "별개 연구진의 Raw-RAG 논문 보도와 Memory Tax 결과를 연결해 방향의 일치를 보이되, 실험이 서로 다르므로 합산하지 않는다고 명시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 56,
+  "confirmed": 54,
+  "removed": [
+   "Hugging Face Papers에도 올라 같은 주 인기 목록에서 확인됩니다. (도입)",
+   "같은 주 Daily Papers 상위 목록에도 보였습니다. (1절)"
+  ],
+  "corrected": [
+   "메모리 시스템 수 12개 → 11개 (논문 Baselines·Table 1: Flat 3, Hier 3, Graph 3, Trained 2) — 제목·도입·요약·2절·3절 소제목·FAQ",
+   "Table 1 집계 108칸 중 양수 10칸·98칸 낮음 → 99칸 중 양수 9칸·90칸 낮음, LongMemEval-s 36칸 → 33칸 (본문·요약·FAQ·editorial)",
+   "S2 published 2026-10-27 → 2026-10-25 (HF 페이지 'Published on Oct 25'), 본문 HF 날짜 2026-10-27 → Daily Papers 등록일 2026-10-28",
+   "Retrieval Scope 정렬 설명을 원문 표현대로 수정, Table 4가 Qwen3.6-27B 기준임을 명시"
+  ],
+  "added": [
+   "luna 백본 LongMemEval-s 20% 표본 평가 (논문 Limitations)",
+   "제1저자 Xuan He의 HF Papers 요약 글",
+   "S5 arXiv PDF v1 (HTML판에 빠진 6장 표 Table 4 확인용)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs·HTML v1·PDF v1, Hugging Face Papers 페이지와 2026-10-28 Daily Papers 목록, AI Weekly 기사를 다시 열어 대조. Table 1 99칸은 RAG(2rd) 대비 괄호 값과 점수 차를 스크립트로 재계산(양수 9, 음수 90, 0 없음). Table 2·3·4, Gold Context, IDF/RAG-Hybrid, 한계 문단 수치 일치 확인. 이미지 3개 image/png 200 확인. 모든 출처 published 페이지 표기와 대조(S1·S3·S5 2026-10-25 Submitted, S2 Published on Oct 25, S4 October 23, 2026)."
+ }
+}
