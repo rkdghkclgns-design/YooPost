@@ -4721,5 +4721,23 @@
    "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/"
   ],
   "draft_id": "20261029_072706_4"
+ },
+ {
+  "date": "2026-10-29",
+  "title": "🔒 TrendAI가 본 일본 겨냥 AI 공격 3건: 44개 에이전트 자동화와 사람 주도 공격, 방어는 무엇이 달라질까",
+  "topic": "Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan (TrendAI, 2026-10-27)",
+  "category": "AI 보안",
+  "source_url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/trendai-ai-3-44.html"
+  },
+  "sources": [
+   "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+   "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+   "https://letsdatascience.com/news/gmo-cybersecurity-links-china-built-ai-tool-artex-to-japan-b-91cc98b1",
+   "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+   "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge"
+  ],
+  "draft_id": "20261029_073345_5"
  }
 ]
