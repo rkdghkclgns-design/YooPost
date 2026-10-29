@@ -1,0 +1,124 @@
+{
+  "topic": "Microsoft Announces First Quarter Results (FY27 Q1) — Azure $33.2 billion, OpenAI $10 billion revenue (Microsoft, 2026-10-28) / TechCrunch 보도",
+  "source_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Microsoft Announces First Quarter Results (fiscal year 2027)",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+      "publisher": "Microsoft",
+      "published": "2026-10-28",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Microsoft just shared Azure's actual revenue in dollars: $33.2 billion",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-28",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Microsoft recorded $10 billion in revenue from OpenAI",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-28",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
+      "publisher": "TechCrunch",
+      "published": "2026-10-28",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Microsoft Corporation Form 10-Q for the quarter ended September 30, 2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+      "publisher": "Microsoft (SEC EDGAR)",
+      "published": "2026-10-28",
+      "official": true
+    }
+  ],
+  "images": [],
+  "images_none_reason": "Microsoft 실적 발표·metrics 페이지 본문에는 도표·차트·스크린샷이 없고(로고·연차보고서 표지·SNS 아이콘뿐), 10-Q는 표 위주 공시 문서이며, TechCrunch 기사 이미지는 대표 이미지라 쓰지 않았습니다.",
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "Microsoft가 처음 달러로 공개한 Azure 매출과 OpenAI 관련 매출, 설비투자는 AI 투자 경쟁에 대해 무엇을 말해 주며 어떤 숫자는 단정하면 안 되는가?",
+    "limitations": "직접 실행·측정한 내용 없음. 컨퍼런스 콜(전망·Copilot 지표)은 읽지 않음. TechCrunch의 설비투자 '452억 달러 이상'은 Microsoft 현금흐름표(393.67억)와 10-Q 금융리스 사용권 자산(51.92억)을 더해도 재현되지 않아 산정 기준을 확인하지 못함. 시장 예상 323억 달러·Hood 7월 전망 44~45%·Google Cloud 307억 달러·6월 지분 약 25%·FY26 OpenAI 매출 241억 달러는 TechCrunch에만 있어 그렇게 표시함. OpenAI 100억 달러의 항목별 구성은 10-Q에도 없음. 계산은 공개 수치의 단순 나눗셈임.",
+    "contributions": [
+      {
+        "kind": "calculation",
+        "section": "☁ Azure 331억 6,500만 달러: 증가폭과 비중을 직접 계산하면",
+        "excerpt": "차이는 10,781백만 달러(약 107억 8,100만 달러)이며 이를 1년 전 값으로 나누면 약 48.2%로, 공식 발표의 '",
+        "source_ids": [
+          "S1"
+        ],
+        "added_value": "Microsoft가 공개한 Azure 매출과 1년 전 값으로 증가액·증가율·총매출 대비 비중을 직접 계산해 발표의 48%와 TechCrunch의 36%를 검산했습니다."
+      },
+      {
+        "kind": "calculation",
+        "section": "🧮 순이익 32%와 18%: 무엇이 둘을 갈랐나",
+        "excerpt": "계산해 보면 1년 전 GAAP 순이익은 약 277억 달러(366.29억 ÷ 1.32)이고 1년 전 비GAAP 순이익은 약 30",
+        "source_ids": [
+          "S1",
+          "S5"
+        ],
+        "added_value": "GAAP 32%와 비GAAP 18%의 차이를 증가율로 역산하고 10-Q 조정표의 실제 1년 전 값과 대조해 OpenAI 투자 손익의 기저 효과임을 보였습니다."
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "🤝 OpenAI 100억 달러: 어디까지 말할 수 있을까",
+        "excerpt": "2026 회계연도 전체의 OpenAI 관련 매출은 241억 달러였으므로 분기 평균은 약 60억 달러입니다. 이번 분기 100억",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S5"
+        ],
+        "added_value": "TechCrunch의 OpenAI 매출 기사와 Microsoft 총매출 수치를 연결해 비중과 분기 평균 대비 배율을 계산하고, 내역 미공개라는 한계를 명시했습니다."
+      },
+      {
+        "kind": "comparison",
+        "section": "🏗 설비투자 394억 달러와 452억 달러, 왜 숫자가 둘일까",
+        "excerpt": "공식 자료의 현금흐름 항목 '부동산·설비 취득(Additions to property and equipmen",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ],
+        "added_value": "공식 현금흐름표 값, 10-Q 금융리스 사용권 자산, TechCrunch 값을 한 표에서 비교하고 단순 합산으로도 TechCrunch 값이 재현되지 않음을 보여 정의 확인이 필요함을 드러냈습니다."
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🧭 이 숫자를 읽는 법: 독자 상황별 확인 기준",
+        "excerpt": "이 표는 같은 숫자를 누가 어떤 목적으로 읽느냐에 따라 먼저 확인할 항목을 정리한 것입니다",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "added_value": "독자 상황별로 먼저 볼 숫자와 인용 시 주의점을 정리했습니다."
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 62,
+    "confirmed": 62,
+    "removed": [],
+    "corrected": [
+      "제목: '처음 달러로 나온 Azure' → 'Azure 분기 매출이 처음 달러로' (TechCrunch: 'never disclosed Azure's quarterly revenue in dollars', 과거 연간 이정표 언급은 있었음)",
+      "OpenAI 100억 달러: TechCrunch 전언 → Microsoft 10-Q 관련 당사자 주석 직접 확인(수익 배분 포함 100억 달러, 매출채권 72억/60억 달러, 지분 약 24%)으로 귀속 변경",
+      "설비투자: TechCrunch 'topped $45.2 billion' → '452억 달러를 넘어'; 10-Q 금융리스 사용권 자산 51.92억 달러 추가, 합산 약 445.6억 달러로도 452억 달러 재현 안 됨을 명시",
+      "Agents and Infra 정의: TechCrunch 'Azure+M365 클라우드' 설명에 10-Q 정의(서버·오피스 라이선스, 산업 솔루션, 지원 서비스 포함) 추가, '공식 자료에 정의 없음' 문장 수정, 10-Q의 Azure 지표 재정의 언급",
+      "전체 영업이익률 49.7% → 49.8% (45,915 ÷ 92,279)",
+      "1년 전 GAAP/비GAAP 순이익 역산값을 10-Q 조정표 실제값(277.47억/308.33억, 차이 30.86억)과 대조해 병기, 세전 OpenAI 손익(+2.72억/−40.61억) 추가",
+      "Google Cloud 비교: TechCrunch 원문대로 Workspace 포함·'매출 약 두 배, 성장률 약 두 배(TechCrunch 계산)'로 정정",
+      "'약 59.1십억 달러' → '약 591억 달러', 맺음말 '체험' → '확인'"
+    ],
+    "note": "Opus 검증 (claude-opus-5-5). Microsoft 실적 발표 페이지(WebFetch, 페이지 날짜 October 28, 2026)와 metrics 페이지, SEC EDGAR 10-Q(제출일 2026-10-28) 원문을 다시 열어 매출·영업이익·순이익(GAAP/비GAAP)·EPS·Azure 33,165/22,384·RPO·부문 매출/영업이익·Windows OEM·Xbox·검색·M365 성장률·OpenAI 손익·현금흐름표 39,367/19,394·금융리스를 대조. TechCrunch 3편은 article:published_time(2026-10-28 UTC, 14:25~14:58 PDT)과 본문을 직접 읽어 시장 예상 323억·초과 약 8.5억·Hood 44~45%·Google Cloud 307억·36%·11%·241억·연 400억·20% 미확인·2026년 4월 합의·지분 25%→24%·10분기 연속·452억을 확인하고 TechCrunch로 귀속. 원고의 계산식(48.2%, 35.9%, 10.8%, 1.66배, 2.03배, 42.7%/49.0%, 52.8%/34.6%/49.8%)을 원 수치로 재계산. 인용 이미지: Microsoft 실적·metrics 페이지 본문에 도표·차트 없음(로고·연차보고서 표지·SNS 아이콘뿐), 10-Q는 표 위주 문서, TechCrunch 대표 이미지는 사용 불가라 images_none_reason 유지. EGRESS_BLOCKED/403 전용 주장 없음(Microsoft 페이지는 curl 403이었으나 WebFetch로 본문 확인, 10-Q로 교차 확인)."
+  }
+}
