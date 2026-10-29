@@ -1,0 +1,149 @@
+{
+ "topic": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude (Anthropic Frontier Red Team, 2026-10-27) / The Hacker News·Cyber Kendra·explainx 보도",
+ "source_url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+   "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+   "publisher": "Anthropic",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+   "url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Claude Found 62 Chrome CVEs and a Zero-Click Linux RCE",
+   "url": "https://www.cyberkendra.com/2026/10/anthropic-claude-exploit-chains-chrome-safari-linux.html",
+   "publisher": "Cyber Kendra",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Claude exploit chains: Chrome, Safari, Android, Windows, Linux vulnerability research",
+   "url": "https://www.explainx.ai/blog/anthropic-claude-exploit-chains-chrome-safari-android-windows-linux-vulnerability-research-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Stable Channel Update for Desktop (Chrome 156.0.8078.73/.74)",
+   "url": "https://chromereleases.googleblog.com/2026/10/",
+   "publisher": "Google Chrome Releases",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "CVE-2026-98432 Detail",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98432",
+   "publisher": "NIST NVD",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "CVE-2026-98432 (Red Hat Customer Portal)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-98432",
+   "publisher": "Red Hat",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "CVE-2026-98432 (Ubuntu Security)",
+   "url": "https://ubuntu.com/security/CVE-2026-98432",
+   "publisher": "Canonical Ubuntu",
+   "published": "2026-10-15",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "HTTP.sys Denial of Service Vulnerability CVE-2026-33096",
+   "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33096",
+   "publisher": "Microsoft MSRC",
+   "published": "2026-04-14",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "About the security content of iOS 26.5.2 and iPadOS 26.5.2",
+   "url": "https://support.apple.com/en-us/127594",
+   "publisher": "Apple",
+   "published": "2026-06-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Anthropic 게시글 본문에는 그림·도표가 없고(텍스트·목록뿐), The Hacker News·Cyber Kendra는 대표(hero) 이미지와 광고·관련글 썸네일뿐이며, explainx 그림은 주제와 무관한 장식 이미지입니다. 벤더 기록(NVD·MSRC·Red Hat·Ubuntu·Chrome Releases·Apple)은 텍스트 페이지라 인용할 본문 그림이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI가 만든 익스플로잇 체인 보도를 본 개인·관리자가 무엇부터 패치 확인하고, 보도마다 다른 수치를 어떻게 구분해 읽어야 하는가",
+  "limitations": "직접 실행·재현하지 않았고 보도 4곳과 벤더 기록을 비교한 정리입니다. 독립 재현은 공개되지 않았으며 Android 체인은 벤더 기록이 없습니다. Chrome 크레디트는 10-27 Chrome 156 공지 한 건만 직접 셌고, 28개 미분류 계산은 두 유형이 겹치지 않는다는 가정에 의존합니다. 심각도 점수는 기관 기록 갱신에 따라 바뀔 수 있습니다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 보도마다 엇갈리는 부분: Anthropic 주장과 공개 기록의 거리",
+    "excerpt": "'Xinyang Ge (Anthropic), assisted by Claude' 표기는 6건",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ],
+    "added_value": "Anthropic 주장, 보도 3곳의 수치, Chrome Releases·NVD·MSRC·Red Hat·Ubuntu 기록을 직접 대조해 확정된 사실과 벤더 주장, 보도 간 불일치를 분리했습니다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🔢 숫자로 읽기: 53분, 62개, 그리고 그 안의 비율",
+    "excerpt": "샌드박스 탈출은 약 21%(13/62), 렌더러 장악은 약 34%(21/62)이고",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "출처의 62·13·21과 48분·5분으로 비중과 합산 시간을 계산하고 가정과 한계를 표시했습니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 점검 가이드: 상황별로 무엇을 확인할까",
+    "excerpt": "Windows 서버는 **2026년 4월 보안 업데이트**(MSRC, 2026-04-14)를 적용했는지 확인합니다",
+    "source_ids": [
+     "S3",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "S10"
+    ],
+    "added_value": "개인 사용자와 서버 관리자로 나눠 벤더 기록 기준의 수정 버전·완화책과 제외 조건을 정리했습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "Red Hat이 공격 복잡도가 높다며 8.1로 평가했다(explainx 전언) → 현재 Red Hat 기록은 5.9 Moderate(초안), 수정 연기로 교체하고 explainx 수치는 불일치로 표기",
+   "Ubuntu 26.04 LTS는 '평가 필요' 상태(Cyber Kendra) → Ubuntu 트래커(10-28 갱신)의 '취약, 작업 중'으로 교체",
+   "수정 커널 '메인라인 7.3-rc7'(Cyber Kendra) → NVD 기록의 수정 버전 목록(5.10.272~7.2.10, 7.3)으로 교체",
+   "Windows 체인 '충돌·재시작 반복' → 출처에 '재시작 반복' 없음, '원격 시스템 충돌(DoS)'로 수정",
+   "Google 크레디트 인용 'Xinyang Ge of Anthropic, assisted by Claude' → 릴리스 노트 원문 'Xinyang Ge (Anthropic), assisted by Claude'로 수정",
+   "Android '잠긴 도난 폰' → Anthropic은 Pixel 9로 시험했고 도난은 시나리오이므로 '잠긴 기기(도난 폰 시나리오)'로 수정",
+   "Windows '4월 누적 업데이트' → MSRC 2026-04-14 보안 업데이트로 근거 교체"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): Anthropic 원문(S1, 페이지 날짜 Oct 27, 2026)과 THN(Oct 28)·Cyber Kendra(Oct 28)·explainx(Oct 27, 10-29 업데이트) 재열람, published 일치 확인. 벤더 기록 직접 대조: Chrome Releases 2026-10-27 Chrome 156 공지(보안 수정 52개 중 'Xinyang Ge (Anthropic), assisted by Claude' 6건, 'Xinyang Ge'만 11건, 'Anthropic and Ada Logics' 2건 — 62개 전체 크레디트는 미확인), NVD/CVE.org CVE-2026-98432(ipv4 tcp_v4_syn_recv_sock, MPTCP 언급 없음, 커널 CNA 9.8, 수정 버전), Red Hat(5.9 Moderate, AC:H, RHEL 8/9/10 Fix deferred), Ubuntu(9.8, 우선순위 High, 26.04 LTS 취약·작업 중), MSRC CVE-2026-33096(HTTP.sys DoS, 7.5 Important, 2026-04-14, exploited No, HTTP/3 비활성화 완화), Apple iOS 26.5.2(2026-06-29, CVE-2026-43715 Anthropic 크레디트). Anthropic의 MPTCP·QUIC 설명과 공개 기록의 관계는 '보도·기록 간 불일치, 미확인'으로 서술. EGRESS_BLOCKED/403 출처 없음. 익스플로잇 절차는 쓰지 않고 패치·완화 점검 관점으로 유지. explainx·Cyber Kendra·THN 수치는 모두 매체명 귀속."
+ }
+}
