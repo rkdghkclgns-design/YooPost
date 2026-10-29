@@ -1,0 +1,139 @@
+{
+ "topic": "DynaFlow: Learning Free-Form Multi-Agent Orchestration (NUS, arXiv 2610.34467, 2026-10-25)",
+ "source_url": "https://arxiv.org/abs/2610.34467",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration — abstract and submission history",
+   "url": "https://arxiv.org/abs/2610.34467",
+   "publisher": "Ruhao Liu et al. / arXiv",
+   "published": "2026-10-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration — full text v1 (HTML)",
+   "url": "https://arxiv.org/html/2610.34467v1",
+   "publisher": "Ruhao Liu et al. / arXiv",
+   "published": "2026-10-25",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - DynaFlow: Learning Free-Form Multi-Agent Orchestration",
+   "url": "https://huggingface.co/papers/2610.34467",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "DynaFlow lässt KI-Agenten ihre Zusammenarbeit selbst planen",
+   "url": "https://www.mind-verse.de/news/dynaflow-flexible-multi-agent-orchestrierung-0cbac352507f",
+   "publisher": "Mindverse News",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "amiya-special/Dynaflow README (GitHub)",
+   "url": "https://raw.githubusercontent.com/amiya-special/Dynaflow/main/README.md",
+   "publisher": "Ruhao Liu et al. / GitHub",
+   "published": "2026-10-25",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.34467v1/fig_pareto_agents_line.svg",
+   "page_url": "https://arxiv.org/html/2610.34467v1",
+   "caption": "그림 1: 질문당 평균 에이전트 역할 수와 전체 정확도 (에이전트 협업 규모와 정확도)",
+   "credit": "Ruhao Liu et al., arXiv (CC BY 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.34467v1/fig2_delta_vs_direct_diamond_on_base.svg",
+   "page_url": "https://arxiv.org/html/2610.34467v1",
+   "caption": "그림 3: 벤치마크별 기본 모델 직접 답 대비 Forced 모드 정확도 변화 (훈련 전후)",
+   "credit": "Ruhao Liu et al., arXiv (CC BY 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.34467v1/fig_workflow_structure_patterns.svg",
+   "page_url": "https://arxiv.org/html/2610.34467v1",
+   "caption": "그림 5: 훈련 단계별 워크플로 구조 분포 (병렬·순차 하이브리드 구조 변화)",
+   "credit": "Ruhao Liu et al., arXiv (CC BY 4.0)"
+  }
+ ],
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 74,
+  "removed": [
+   "Figure 1 캡션 수치로는 약 17%입니다 (요약)",
+   "질문당 평균 역할 수(Figure 1 캡션) 표 행의 (4.16-3.44)/4.16 = 약 17% 계산 — 서로 다른 단위(역할 수 vs 하위 에이전트 수)를 섞은 계산이라 삭제·교체",
+   "본문 2.44와 캡션 3.44가 어긋난다는 불일치 주장 — 그림 축(Direct=1)상 메인 에이전트 포함 값으로 정합, 설명 교체",
+   "HF 페이지가 MIT 라이선스를 소개한다는 주장(HF에 없음) → GitHub README(S5) 근거로 교체",
+   "FAQ의 'Mindverse 기사는 MIT 라이선스로 공개됐다고 전합니다' → README 근거로 교체"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs·HTML v1(본문·Table 1/2/3/6·부록 A~E)·HF Papers(추천 142, 댓글 원문)·Mindverse·GitHub raw README/LICENSE 재열람. published: abs/HTML 25 Oct 2026, HF 'Published on Oct 25', Mindverse 27.10.2026 일치. Table 1·2 전 칸 원문 대조, 계산 재검산(+12.21=9.60+2.61, -6.39, 격차 10.75/1.02/0.14, 41.3%, 맞힌 수 606 대 531, 비HotpotQA 439/488 대 435/488). 1단계 2,031(4절) vs 2,257(부록 C·Table 3), 2,254 중 712(부록 E) 원문 확인. 이미지 3개 HTTP 200 image/svg+xml, 렌더링해 캡션·본문 수치(Figure 3 막대, Figure 5 3.4/83.2/85.6·12.6/93.3/97.7) 대조. Mindverse는 수치 근거로 쓰지 않음(외부 시각·비용 미측정 언급만, 논문으로도 확인)."
+ },
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "모델이 직접 짠 워크플로로 얻었다는 88.08%는 어떤 조건의 점수이고, 우리 환경에 그대로 기대해도 되는가",
+  "limitations": "논문 v1과 두 개의 소개 자료만 읽었으며 코드를 실행하거나 점수를 재현하지 않았다. 모든 수치는 저자 자체 평가이고, 지연·토큰 비용은 논문에 없다. 본문의 단계별 기여·맞힌 문제 수 환산·호출 감소율은 논문 표를 이용한 이 글의 계산이다. Figure 1 역할 수가 메인 에이전트를 포함한다는 해석은 그림 축 위치에 근거한 추정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔬 같은 조건으로 다시 묶어 보기: 훈련 단계 × 실행 모드",
+    "excerpt": "여기서 계산할 수 있는 것이 세 가지 있습니다. 첫째, 훈련 전 Dynamic(65.12)은 Direct(71.51)보다 ",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Table 2의 같은 조건 수치를 빼서 훈련 전 Dynamic이 Direct보다 6.39p 낮고 단계별 기여가 +9.60/+2.61임을 보였다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 실험 결과: 688문제, 여섯 벤치마크의 점수표",
+    "excerpt": "검색이 필요 없는 나머지 488문제(AIME·PolyMATH·GPQA)만 묶으면 DynaFlow Forced 439문제(약 89.96%)",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Table 1 정확도를 맞힌 문제 수로 환산(75문제 차이 중 71문제가 검색 조건이 다른 HotpotQA)하고, 같은 조건인 488문제만 묶으면 격차가 0.82p임을 계산했다. GPQA 열세·AIME 한 문제 3.33p도 짚었다."
+   },
+   {
+    "kind": "calculation",
+    "section": "💰 Dynamic 모드가 아끼는 것: 하위 에이전트 호출 계산",
+    "excerpt": "메인 에이전트 1개를 더해 센 값으로 보면 2.44 + 1 = 3.44로 본문과 맞습니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Figure 1 캡션 3.44(역할 수)와 본문 2.44(하위 에이전트 수)의 단위 차이를 그림 축으로 확인하고, 같은 단위끼리 41%(하위 에이전트)·약 33%(역할 수, 가정 명시)로 계산했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💻 어떤 팀이 어떻게 활용할 수 있을까: 판단 기준",
+    "excerpt": "내 데이터에서 Direct, Dynamic, Forced를 같은 모델로 돌려 정확도와 호출 수를 함께 기록해 보세요.",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "상황별 도입 판단표와 제외 조건, 직접 해 볼 최소 검증 실험을 제안했다(해석이며 논문 권고 아님)."
+   }
+  ]
+ },
+ "reading_notes": {
+  "S1": "arXiv 초록·제출 내역(v1 2026-10-25) 직접 열람.",
+  "S2": "arXiv HTML v1 본문·표·부록 열람; 그림 3개는 HTTP 200 image/svg+xml 확인. 그림 3개 SVG 렌더링해 내용 확인(Figure 1 가로축 Direct=1, Forced≈5.2 → 역할 수는 메인 에이전트 포함으로 판단).",
+  "S3": "HF Papers 페이지의 추천 142, 댓글, 깃허브 링크 확인.",
+  "S4": "Mindverse 기사 열람, AI 보조 작성·편집 검토 기사로 표기돼 근거가 아닌 외부 시각 용도로만 사용.",
+  "S5": "raw.githubusercontent.com README·LICENSE 직접 열람(200): Node.js 24+·npm·Docker, OpenAI 호환 스트리밍 API, MIT. github.com 페이지는 403이라 raw 파일만 사용. 페이지에 날짜가 없어 published 는 논문 v1 날짜로 둠."
+ },
+ "selection": {
+  "as_of_kst": "2026-10-30",
+  "window_start": "2026-10-23",
+  "category_preserved": true,
+  "duplicate_check": "brief의 이미 쓴 글·최근 30일 원고에 DynaFlow·2610.34467 없음.",
+  "coverage": "HF Papers 인기 목록에서 선택, HF Papers(2026-10-25)와 Mindverse(2026-10-27)가 기간 내 다룸."
+ }
+}
