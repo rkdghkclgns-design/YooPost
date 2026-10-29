@@ -1,0 +1,139 @@
+{
+ "topic": "Introducing Particle-1 (Particle, 2026-10-28)",
+ "source_url": "https://particle.ai/blog/introducing-particle-1",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Particle-1",
+   "url": "https://particle.ai/blog/introducing-particle-1",
+   "publisher": "Particle",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Particle launches Particle-1, a software-engineering model built for token efficiency",
+   "url": "https://digg.com/ai/3gpt6jeo",
+   "publisher": "Digg",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Suhail Doshi launches Particle to cut coding agents' token use",
+   "url": "https://runtimewire.com/article/suhail-doshi-particle-particle-1",
+   "publisher": "Runtime Wire",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Particle-1 is now available on AI Gateway",
+   "url": "https://creatorstoolbox.com/blog/vercel-particle-1-is-now-available-on-ai-gateway",
+   "publisher": "Creators Toolbox",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Particle-1 (particle/particle-1) — Vercel AI Gateway",
+   "url": "https://vercel.com/ai-gateway/models/particle-1",
+   "publisher": "Vercel",
+   "official": true,
+   "published": "2026-10-28"
+  },
+  {
+   "id": "S6",
+   "title": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient",
+   "url": "https://api-docs.deepseek.com/news/news260910",
+   "publisher": "DeepSeek",
+   "published": "2026-09-10",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Particle-1 reaches coding agents through two access routes",
+   "url": "https://opentools.ai/news/particle-1-api-vercel-ai-gateway-coding-agent-access-routes",
+   "publisher": "OpenTools",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Usage & billing - Particle API Documentation",
+   "url": "https://docs.particle.ai/usage-billing",
+   "publisher": "Particle",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Model catalog - Particle API Documentation",
+   "url": "https://docs.particle.ai/models",
+   "publisher": "Particle",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/6ace8efc702b317d7a00de10/6ae14ba7d6ca5d658214913a_6ae14ad84c5ad4ffb2f2aa3c_particle-1-cascade-updated.svg",
+   "page_url": "https://particle.ai/blog/introducing-particle-1",
+   "caption": "Particle-1 두 단계 강화학습(코딩 → 코딩+데이터 엔지니어링) 중 평균 토큰 감소율 변화",
+   "credit": "Particle"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "출력 토큰을 줄였다는 Particle-1은 같은 정답률 조건에서 우리 코딩 에이전트 비용을 얼마나 줄일 수 있고, 어떤 팀이 먼저 시험해 볼 만한가?",
+  "limitations": "직접 실행하거나 측정하지 않았다. 모든 성능·비용 수치는 Particle 자체 평가이며 독립 검증은 확인되지 않았다. 성공 1건당 비용은 공식 차트의 벤치마크별 평균값(작업당 비용 ÷ 통과율)으로 만든 필자 추정이다. 1,000건 환산 금액은 공식 글의 계산용 가격($0.30/$1.20)을 전제로 한다. Vercel 이 시간대별 가격을 어떻게 적용하는지는 페이지 본문에 설명이 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 성공 1건당 비용으로 다시 계산해 보기",
+    "excerpt": "이 가정으로 계산하면 성공 1건당 비용은 벤치마크별로 **약 34.5%~49.0% 낮습니다**",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공식 차트 네 탭의 작업당 비용(실패 시도 포함)을 통과율로 나눠 성공 1건당 기대 비용을 추정하고, 통과율이 낮은 세 벤치마크에서는 절감 폭이 줄어든다는 점과 가정을 밝힘"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 가격과 접속 경로 비교",
+    "excerpt": "가격은 세 곳에 서로 다른 숫자로 적혀 있지만, 따져 보면 **서로 다른 기준의 값**입니다.",
+    "source_ids": [
+     "S1",
+     "S5",
+     "S8"
+    ],
+    "added_value": "공식 글의 계산용 가격, API 문서의 피크·오프피크 기본가, Vercel 표시가를 한 표로 맞춰 가격 차이의 이유를 설명"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "⚠ 한계와 주의사항, 그리고 어떤 팀에 맞는가",
+    "excerpt": "위 표는 상황별로 먼저 해 볼 일을 정리한 것입니다. 핵심은 '비용이 줄었다'가 아니라 ",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S7",
+     "S8"
+    ],
+    "added_value": "상황별로 먼저 할 일과 보류 조건을 정리해 도입 판단을 돕는다"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 76,
+  "confirmed": 76,
+  "removed": [
+   "이 차트에는 벤치마크 이름이 따로 표시돼 있지 않다고 공식 글이 설명하므로, 네 벤치마크를 합친 평균으로 읽는 것이 안전합니다. (사실과 다름 — 첫 차트 기본 탭은 DeepSWE 1.1, 'DeepSWE 1.1 탭' 서술로 교체)",
+   "합격률은 기반 모델의 신뢰구간 안이라고 하며, 평균 통과율은 72.57% 대 71.15%입니다. (평균이 아니라 DeepSWE 1.1 값 — 요약 교체)",
+   "Particle 공식 글과 Vercel 모델 페이지의 가격이 서로 다르고, 이유는 두 페이지 어디에도 설명돼 있지 않습니다. 프로모션, 공급자별 가격, 표기 시점 차이 중 무엇인지 확인되지 않았으니 … (공식 글 가격은 벤치마크 계산용, Vercel 값은 API 문서 오프피크가와 같음 — 가격 절 재작성)",
+   "이 글은 차트의 개별 값을 확인하지 못했으므로 해석하지 않지만 … (Harvey LAB 강도별 실제 값으로 교체)",
+   "Digg 와 Creators Toolbox 모두 이 결과가 Particle의 자체 평가이고 외부 감사나 독립 벤치마크 실행은 언급되지 않았다고 전합니다. (Creators Toolbox 에 해당 내용 없음 — Digg·OpenTools 서술로 교체)",
+   "… 그 답은 아직 입증되지 않았다고 평가합니다. (Runtime Wire 원문에 없음 — 삭제)",
+   "평균 롤아웃 길이 감소 (이미지 캡션 — 그림 축은 Mean token reduction, 캡션 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S7 전부 curl 로 다시 열어 본문·메타 날짜 대조: S1 'Oct 28, 2026', S2/S3/S4 2026-10-28, S5 datePublished 2026-10-28(published 추가), S6 2026/09/10, S7 datePublished 2026-10-29(10-28→수정). S1 첫 차트 HTML(aria-label 'DeepSWE 1.1 Cost')과 내장 차트 데이터에서 네 벤치마크 값을 추출해 감소율·성공 1건당 비용(작업당 비용÷통과율, 실패 시도 포함 비용이라는 주석 근거, 필자 추정 표시)을 재계산. 가격 불일치는 Particle API 문서(S8 usage-billing, S9 models, 새로 추가)로 확인: 블로그 $0.30/$0.006/$1.20=벤치마크 계산용, 문서 기본가 피크 $0.25/$0.03/$1.00·오프피크 50% $0.125/$0.015/$0.50, Vercel 페이지 inputCost 0.125/outputCost 0.50(표기 $0.13)=오프피크 값과 동일. 인용 이미지 I1 은 HTTP 200 image/svg+xml, 844×342, S1 본문 학습 그림임을 확인(캡션 수정). EGRESS_BLOCKED 출처 없음."
+ }
+}
