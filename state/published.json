@@ -4835,5 +4835,23 @@
    "https://raw.githubusercontent.com/amiya-special/Dynaflow/main/README.md"
   ],
   "draft_id": "20261030_072513_3"
+ },
+ {
+  "date": "2026-10-30",
+  "title": "📊 Azure 분기 매출이 처음 달러로 나왔다: Microsoft 331억 달러·OpenAI 100억 달러 어떻게 읽을까",
+  "topic": "Microsoft Announces First Quarter Results (FY27 Q1) — Azure $33.2 billion, OpenAI $10 billion revenue (Microsoft, 2026-10-28) / TechCrunch 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/azure-microsoft-331-openai-100.html"
+  },
+  "sources": [
+   "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+   "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+   "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+   "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
+   "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+  ],
+  "draft_id": "20261030_073409_4"
  }
 ]
