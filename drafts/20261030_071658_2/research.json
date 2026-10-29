@@ -1,0 +1,130 @@
+{
+ "topic": "Route and orchestrate models with GitHub Copilot Fusion (GitHub Changelog, 2026-10-28) — Fusion GA·GitHub Universe 2026 / VentureBeat 보도",
+ "source_url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Route and orchestrate models with GitHub Copilot Fusion",
+   "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Work from anywhere with a new, connected Copilot cloud experience",
+   "url": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "GitHub Universe 2026: Evolving every layer of the stack",
+   "url": "https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "GitHub Copilot Fusion mixes models to achieve near-Opus 5.5 coding performance at half the per-task cost",
+   "url": "https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost",
+   "publisher": "VentureBeat",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "GitHub Enterprise now includes access to GitHub Copilot",
+   "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Copilot Automations now learn from outcomes and self-improve",
+   "url": "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "GitHub Copilot Fusion now supports selection of local models",
+   "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+   "caption": "Copilot Fusion 실행 방식 3가지(Single·Cascade·Critique)를 비교한 다이어그램",
+   "credit": "GitHub"
+  },
+  {
+   "id": "I2",
+   "image_url": "",
+   "page_url": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
+   "caption": "클라우드 세션의 Connectors 탭: Sentry 등 내장 커넥터와 사용자 정의 MCP 서버 목록",
+   "credit": "GitHub"
+  },
+  {
+   "id": "I3",
+   "image_url": "",
+   "page_url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+   "caption": "Copilot CLI에서 로컬 모델 MAI Code 1.1 Flash를 내려받는 화면과 모델 선택기",
+   "credit": "GitHub"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Copilot Fusion에 모델 선택을 맡기면 작업당 비용과 성능이 실제로 어떻게 달라지고, 우리 팀은 언제 켜야 하는가",
+  "limitations": "직접 실행·실측한 결과가 아니며 Artificial Analysis 수치는 VentureBeat 보도로 확인했다. Claude Code 점수 '약 62'는 VentureBeat 표기다. 시간 40% 단축은 GitHub 주장(AA 미보고), 최대 77%는 GitHub 자체 DeepSWE 평가 값으로 독립 검증되지 않았고, 할인 적용 계산은 가정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 우리 팀 비용으로 환산하기: 계산과 그 한계",
+    "excerpt": "차이는 $11.42 − $5.59 = **$5.83**이고, 비율로는 5.83 ÷ 11.42 ≈ **약 51%** 낮아",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "작업당 비용 두 수치로 차액·비율·1,000건 환산을 계산하고 할인 적용은 가정으로 표시"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크로 보는 성능: 점수는 비슷하고 비용은 절반",
+    "excerpt": "FrontierCode에서는 Fusion 51, Claude Code 56, Devin Fusion 54로 Fusion이 가장 낮았습니다",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "같은 지수 안에서 종합 점수·비용·토큰·하위 평가를 나란히 비교해 Fusion이 약한 영역을 드러냄"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 팀 상황별 판단 기준: 켜볼 만한 경우와 보류할 경우",
+    "excerpt": "어떤 팀에는 Fusion이 맞고 어떤 팀에는 지금 모델 고정이 나을 수 있습니다",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S7"
+    ],
+    "added_value": "하위 평가 결과·정책·로컬 모델 제한을 상황별 선택 기준으로 변환"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 63,
+  "removed": [
+   "이 기능은 지난 9월 연구 프리뷰로 공개됐던 Project HydraFusion (공개 시기 '9월'은 S1·S3·S4 어디에도 없어 '앞서'로 바꿈)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S3·S5~S7 github.blog 원문을 curl 로 다시 받아 본문·datePublished(모두 2026-10-28) 대조, S4 VentureBeat 는 WebFetch 로 다시 읽어 수치·인용·발행일(2026-10-28, Carl Franzen) 확인. 수정: Devin Fusion 토큰 'Fusion보다 약 30% 많음'→'Fusion이 약 30% 적음'(원문 표현), Claude Code '약 62'는 VentureBeat 표기·GitHub은 '2점 이내'로 귀속 명시, 40%는 GitHub 주장(AA 미보고)·77%는 나델라가 홍보한 GitHub 자체 DeepSWE 평가 값(VentureBeat가 Ken Yeung 보도 인용, 기반 데이터 미확인)으로 귀속 정정, 맺음말 '2점 안팎'→'2점 이내', 30% 할인 계산식 $5.59×(1−0.30)≈$3.91 명시·51%=(11.42−5.59)/11.42=0.5105 재계산 확인, 점수 1점당 비용 계산 추가(5.59/60≈0.093, 8.00/62≈0.129, 11.42/62≈0.184), VentureBeat '사람 검토 비용 미포함' 서술을 원문대로 '따로 따져야 한다'로 수정, 샌드박스 청구 '그 전에는 무료' 오독 수정, 예산 소진 시 '먼저 멈춤' 삭제·좌석과 완성 기능 유지로 정정, 모델 풀 'AA가 확인' → VentureBeat 전언으로, BYOK 로컬 라우팅을 Copilot CLI 한정으로 정정·로컬 모델 지원 클라이언트 추가, 클라우드 경험 유료 요금제 GA 추가, 코드 리뷰 Max 세부 미공개를 VentureBeat 귀속. 이미지: 기존 I1·I2 는 HTTP 200 image/* 였으나 페이지의 CoverImage(wp-post-image, 대표 이미지)라 제거. 본문 그림(github.com/user-attachments)은 이 세션에서 403(프록시 차단)으로 열 수 없어 image_url 을 비우고 page_url·캡션만 넣음(S1 실행 방식 다이어그램, S2 Connectors 탭, S7 MAI Code 다운로드 화면 — alt 텍스트로 내용 확인)."
+ }
+}

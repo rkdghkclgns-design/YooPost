@@ -1,0 +1,393 @@
+{
+ "title": "⚡ GitHub Copilot Fusion 정식 출시: 모델 고르기 대신 맡기면 작업당 비용은 정말 절반일까",
+ "category": "AI 도구",
+ "intro": "AI 코딩 도구를 쓰다 보면 '이 작업에는 어떤 모델을 골라야 하지?'라는 고민이 반복됩니다. 비싼 모델은 정확하지만 비용이 크고, 가벼운 모델은 싸지만 어려운 작업에서 막히기 때문입니다. GitHub는 2026년 10월 28일 열린 GitHub Universe 2026에서 모델 선택 자체를 시스템에 맡기는 **Copilot Fusion**을 정식 출시(GA)했다고 밝혔습니다. 같은 날 클라우드 에이전트 세션을 여러 화면에서 이어 쓰는 기능과 Copilot Automations 개선, 엔터프라이즈 요금 방식 변화도 함께 발표됐습니다. 이 글은 홍보 문구를 그대로 옮기기보다, 공개된 벤치마크 수치로 '작업당 비용이 얼마나 다른지'를 직접 계산해 보고 어떤 팀이 Fusion을 켜볼 만한지 판단 기준을 정리합니다.",
+ "summary": [
+  "Copilot Fusion은 모델 하나를 고르는 대신 작업마다 모델을 라우팅(경로 지정)·조합하는 시스템으로, 모든 Copilot 요금제에서 정식 출시됐습니다.",
+  "효과 수준은 Standard·High·Max 세 가지이고, 실행 방식은 Single·Cascade·Critique 세 가지입니다.",
+  "Artificial Analysis 코딩 에이전트 지수에서 Fusion Max는 60점, 작업당 평균 비용은 $5.59로 Claude Code(Opus 5.5 Max)의 $11.42보다 약 51% 낮았습니다.",
+  "다만 FrontierCode 하위 점수에서는 Fusion 51, Claude Code 56으로 뒤졌고, 시간 40% 절감은 GitHub가 밝힌 수치입니다.",
+  "청구는 Fusion이 쓴 모델마다 해당 모델 정가로 하며, 유료 요금제는 한시적으로 모델 비용 30% 할인을 받습니다.",
+  "이 글에서 배울 것: Fusion의 구조, 벤치마크 비용 계산, 팀 상황별 도입 판단 기준, 함께 발표된 클라우드 세션·Automations·엔터프라이즈 요금의 핵심"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Fusion 등장 배경: 모델 선택 부담을 시스템으로 옮기다",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub는 2026년 10월 28일 GitHub Universe 2026에서 **Copilot Fusion**의 정식 출시를 알렸습니다. 공식 변경 기록은 사용자가 모델 하나를 고르는 것이 아니라 '작업마다 모델을 라우팅하고 조율하는 시스템'을 고르는 것이라고 설명합니다. 이 기능은 앞서 연구 프리뷰로 공개됐던 **Project HydraFusion**의 다중 모델 조율과 Copilot의 자동 모델 선택(auto)을 합친 것입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "GitHub의 최고 제품 책임자 Mario Rodriguez는 VentureBeat 인터뷰에서 **\"모델이 아니라 런타임에서 동작하는 조율 엔진\"**이라고 표현했습니다. 즉 새로운 거대 모델이 나온 것이 아니라, 이미 있는 모델들을 작업에 맞게 배치하는 계층이 생긴 것입니다. 이 점을 이해하면 이후의 비용·성능 수치를 읽기가 쉬워집니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "같은 행사에서 GitHub는 에이전트 중심의 **Copilot 앱**을 소개하며 코드 작성뿐 아니라 명세 작성, 설계 논의, 텔레메트리 분석까지 다룬다고 밝혔습니다. 또 여러 저장소에 걸친 작업을 관리형 병렬 세션으로 돌리고 한곳에서 진행 상황을 확인하는 **Copilot projects**가 Copilot 앱에서 그날부터 제공됩니다. 코드 리뷰에는 Lite·Balanced 위에 더 깊은 **Max** 등급이 추가됐고, ReviewBench의 심각한 이슈 항목에서 가장 높은 F1 점수를 기록했다고 GitHub는 설명했습니다. 다만 VentureBeat는 세부 분해 결과가 공개되지 않았다고 짚었습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 Fusion이 쓰는 모델은 고정이 아닙니다",
+     "text": "VentureBeat에 따르면 Fusion의 모델 풀에는 Claude Opus 5.5, Claude Sonnet 5.5, GPT-6 Astra, GPT-6 Sol이 포함됩니다. 실제 사용 모델은 요청과 조직 정책에 따라 달라집니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ Fusion 공식 스펙 정리: 효과 수준 3단계와 실행 방식 3가지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Fusion은 **Standard·High·Max** 세 가지 효과 수준을 제공합니다. Standard는 일상적인 코딩용 범용 모델, High는 어려운 작업과 깊은 추론용 모델, Max는 복잡하고 까다로운 작업용으로 가장 강력한 모델을 우선한다고 공식 변경 기록이 설명합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "실행 방식",
+      "동작",
+      "언제 유리한가(해석)"
+     ],
+     "rows": [
+      [
+       "Single",
+       "한 모델이 작업을 곧바로 끝냅니다",
+       "작업이 단순해 추가 확인이 필요 없을 때"
+      ],
+      [
+       "Cascade",
+       "효율적인 모델이 초안을 쓰고 품질 점검에서 통과하면 채택, 아니면 더 강한 모델로 올립니다",
+       "대부분 쉬운 작업이라 비용을 아끼고 싶을 때"
+      ],
+      [
+       "Critique",
+       "한 모델이 초안, 다른 모델이 검토, 처음 모델이 수정합니다",
+       "정확도가 중요하고 두 번째 시각이 도움이 될 때"
+      ]
+     ]
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "paragraph",
+     "text": "출시 시점에 지원하는 곳은 Visual Studio Code, GitHub Copilot 앱, GitHub Copilot CLI, JetBrains IDE이며 더 많은 클라이언트가 추가될 예정입니다. 사용법은 클라이언트를 업데이트하고 모델 선택기에서 **Copilot Fusion**을 고른 뒤 효과 수준을 정하는 것입니다. 연구 프리뷰에서 auto, HydraFusion, HydraFusion Max를 켜 둔 사용자는 대응하는 Fusion 효과 수준으로 자동 이동합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "제공 요금제",
+       "모든 Copilot 요금제"
+      ],
+      [
+       "지원 클라이언트",
+       "VS Code, Copilot 앱, Copilot CLI, JetBrains"
+      ],
+      [
+       "청구",
+       "Fusion이 쓴 모델마다 해당 모델의 표준 요율"
+      ],
+      [
+       "한시 할인",
+       "유료 Copilot 요금제 사용자는 모델 비용 30% 할인(기간 한정)"
+      ],
+      [
+       "관리자 설정",
+       "후보 모델 확인, 모델별 Fusion 허용 정책, 기본 모델 지정"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "📊 벤치마크로 보는 성능: 점수는 비슷하고 비용은 절반",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub는 변경 기록에서 Artificial Analysis Coding Agent Index 기준으로 **\"Fusion Max는 60점으로 Opus 5.5 Max를 쓴 Claude Code와 2점 이내\"**라고 밝혔습니다. VentureBeat는 같은 평가(Coding Agent Index v2.0, 세 가지 코딩 평가를 같은 비중으로 합산)의 세부 수치를 정리했습니다. 표의 Claude Code 점수 '약 62'는 VentureBeat의 표기이며, GitHub 변경 기록은 정확한 점수 대신 '2점 이내'라고만 적었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "시스템",
+      "지수 점수",
+      "작업당 평균 비용",
+      "작업당 토큰"
+     ],
+     "rows": [
+      [
+       "Copilot Fusion Max",
+       "60",
+       "$5.59",
+       "720만"
+      ],
+      [
+       "Claude Code(Opus 5.5 Max)",
+       "약 62",
+       "$11.42",
+       "Fusion의 약 2배"
+      ],
+      [
+       "Devin Fusion(Opus 5.5 Max + GPT-6 Luna High)",
+       "62",
+       "$8.00",
+       "Fusion보다 많음(Fusion이 약 30% 적음)"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "하위 평가를 보면 **Terminal-Bench 4.0에서는 Fusion이 71점으로 앞섰고**, 저장소 질의응답인 SWE-Atlas-QnA-AA에서 Fusion은 57점이었습니다. 반면 저장소 변경을 보는 FrontierCode에서는 Fusion 51, Claude Code 56, Devin Fusion 54로 Fusion이 가장 낮았습니다. 종합 점수만 보고 모든 영역에서 대등하다고 읽으면 안 됩니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 시간·절감률 수치의 출처를 구분하세요",
+     "text": "'작업당 시간 약 40% 단축'은 GitHub가 밝힌 수치이며, Artificial Analysis가 해당 시간 데이터를 보고한 것은 아닙니다. 마이크로소프트 CEO 사티아 나델라가 홍보한 '최대 77% 절감'은 VentureBeat에 따르면 Artificial Analysis 평균이 아니라 GitHub 자체 DeepSWE 평가에서 나온 값(The AI Economy의 Ken Yeung 보도 인용)이며, VentureBeat도 그 기반 데이터를 확인하지 못했다고 밝혔습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧮 우리 팀 비용으로 환산하기: 계산과 그 한계",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공개 수치를 가지고 간단히 계산해 보겠습니다. 작업당 평균 비용은 Fusion Max $5.59, Claude Code(Opus 5.5 Max) $11.42입니다. 차이는 $11.42 − $5.59 = **$5.83**이고, 비율로는 5.83 ÷ 11.42 ≈ **약 51%** 낮아 VentureBeat가 전한 '약 51% 절감'과 일치합니다. 같은 종류의 작업을 1,000건 처리한다고 가정하면 $5,590 대 $11,420, 차이는 $5,830입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "가정",
+      "계산",
+      "결과"
+     ],
+     "rows": [
+      [
+       "작업 1,000건, Fusion Max",
+       "$5.59 × 1,000",
+       "$5,590"
+      ],
+      [
+       "작업 1,000건, Claude Code(Opus 5.5 Max)",
+       "$11.42 × 1,000",
+       "$11,420"
+      ],
+      [
+       "Fusion에 30% 할인을 그대로 적용(가정)",
+       "$5.59 × (1 − 0.30)",
+       "약 $3.91"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "세 번째 줄은 어디까지나 **가정 계산**입니다. 30% 할인은 '모델 비용'에 적용된다고 공지됐을 뿐, 벤치마크의 평균 비용이 모두 모델 비용인지는 공개 자료로 확인되지 않습니다. 또한 이 수치는 벤치마크 작업의 평균이어서 우리 저장소의 작업 난이도와 같다고 볼 수 없습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "여기서 주의할 점은 비교 조건입니다. Fusion Max와 Claude Code(Opus 5.5 Max)는 같은 지수에서 측정됐지만 Devin Fusion처럼 모델 구성이 다른 시스템도 섞여 있어, 점수 차이를 모델 자체의 우열로 읽을 수 없습니다. 예를 들어 Devin Fusion은 점수 62에 비용 $8.00이라 Fusion보다 점수는 높고 비용도 높습니다. 작업당 비용을 점수로 나눠 보면 Fusion Max는 $5.59 ÷ 60 ≈ **약 $0.093**, Devin Fusion은 $8.00 ÷ 62 ≈ 약 $0.129, Claude Code는 $11.42 ÷ 62 ≈ 약 $0.184입니다(Claude Code 점수는 '약 62'를 쓴 근사치). 즉 이 표는 '무엇이 최고인가'가 아니라 '점수 한 단위를 얻는 데 드는 비용이 어떻게 다른가'를 보는 자료입니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 비용이 줄어든 이유의 절반은 '일을 덜 한 것'",
+     "text": "VentureBeat는 Fusion의 토큰 사용량이 Opus 구성의 약 절반이라는 점을 짚으며, 절감의 적어도 일부가 더 싼 토큰이 아니라 모델이 하는 일의 양이 줄어서 생겼다고 해석했습니다. 또 팀은 사람의 검토, 실수, 재시도, 통합, 보안 작업 비용을 따로 따져야 한다고 덧붙였습니다."
+    }
+   ]
+  },
+  {
+   "heading": "☁ 같은 날 발표된 클라우드 세션과 Automations 변화",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Fusion과 함께 발표된 **Copilot 클라우드 경험**은 github.com, GitHub Mobile, Copilot CLI, Copilot 앱, VS Code, Slack, Microsoft Teams를 하나로 묶으며, 유료 Copilot 요금제에서 정식 제공됩니다. 세션이 화면을 옮겨 다녀도 따라오고 모든 화면에서 같은 세션 목록을 보여 줍니다. 각 클라우드 세션은 기본적으로 GitHub가 관리하는 격리된 샌드박스에서 돌며, 총 실행 시간 1시간 제한이 없고 종료할 때 스냅샷을 저장해 나중에 이어서 할 수 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "세션 안에서는 Bash, GitHub CLI, 코드 검색을 쓸 수 있고, Sentry·Linear·Cloudflare 같은 내장 커넥터는 Customize 메뉴에서 한 번 설정하면 됩니다. **키 기반 인증을 쓰는 사용자 정의 MCP 서버**도 지원합니다. 에이전트의 자율 범위는 사용자가 정하며 승인이 필요한 도구 호출은 Copilot이 먼저 묻습니다. 저장소에 쓰기 권한이 없으면 읽기 전용으로만 동작하고, 조직 저장소의 세션 데이터를 보려면 SSO가 필요합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I2"
+    },
+    {
+     "type": "paragraph",
+     "text": "포함된 Actions 컴퓨트는 고정된 러너 분(minute) 대신 **달러 기준의 공유 한도**로 바뀌어 표준 호스티드 러너, 클라우드 샌드박스, 더 큰 호스티드 러너(Team·Enterprise Cloud 한정)에 함께 쓰입니다. 클라우드 샌드박스 사용에 대한 청구는 2026년 11월부터 시작되며, 포함된 무료 사용량은 이 공유 한도에서 차감됩니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Copilot Automations**는 저장소에서 클라우드로 도는 자동화이며 수동 실행, 이벤트 트리거, 예약 실행이 가능합니다. 이번에 추가된 '스스로 개선' 기능은 이슈 분류 자동화가 붙인 라벨을 사람이 바꿨는지, 코드 리뷰 댓글을 개발자가 받아들였는지 같은 신호를 모아 프롬프트·도구·트리거 변경안을 제안합니다. 변경은 알림을 받은 뒤 **수락 또는 거절**해야 적용되고, Pro·Pro+·Max·Business·Enterprise 요금제에서 쓸 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🏢 엔터프라이즈 요금 변화: 좌석 대신 예산",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub Enterprise 고객은 GitHub 또는 Microsoft 계정 팀을 통해 라이선스를 가진 모든 사용자에게 Copilot을 포함할 수 있게 됐습니다. 이 방식에는 **사용자당 월 AI 크레딧이 없고**, 첫 요청부터 기업 예산에서 사용량이 차감됩니다. 예산이 없어도 코드 완성과 다음 편집 제안은 계속 동작하지만, Copilot Chat·코드 리뷰·클라우드 Copilot은 남은 예산이 있어야 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "상태"
+     ],
+     "rows": [
+      [
+       "계정 팀 고객",
+       "GitHub Enterprise Cloud에서 지금 이용 가능"
+      ],
+      [
+       "셀프서비스 고객",
+       "단계적 출시, 날짜는 '몇 주 안에' 공유 예정"
+      ],
+      [
+       "Copilot Business·Enterprise",
+       "기존처럼 구매 가능"
+      ],
+      [
+       "GitHub Enterprise 라이선스가 없는 사용자",
+       "Copilot Standalone 월 $10"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 예산이 바닥나면 일부 기능을 쓸 수 없습니다",
+     "text": "VentureBeat는 월간 AI 크레딧 사용량의 대표 사례가 공개되지 않아, 구매자가 기존 좌석 기반 조건과 자기 사용량을 직접 비교해야 한다고 지적했습니다. GitHub 변경 기록에 따르면 예산이 바닥나도 좌석과 코드 완성 같은 기능은 남지만, Chat·코드 리뷰·클라우드 Copilot은 예산이 있어야 씁니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧭 팀 상황별 판단 기준: 켜볼 만한 경우와 보류할 경우",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 공개 자료를 근거로 한 **해석**이며 직접 실행한 결과가 아닙니다. 어떤 팀에는 Fusion이 맞고 어떤 팀에는 지금 모델 고정이 나을 수 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "상황",
+      "판단(해석)",
+      "근거"
+     ],
+     "rows": [
+      [
+       "여러 모델 비용·성능을 직접 비교할 시간이 없는 팀",
+       "Standard나 High부터 켜 보기",
+       "작업별 라우팅을 시스템이 맡음"
+      ],
+      [
+       "저장소 단위 대규모 변경이 많은 팀",
+       "Fusion Max를 별도 검증 후 도입",
+       "FrontierCode에서 Claude Code 56 대 Fusion 51"
+      ],
+      [
+       "터미널·명령줄 작업이 많은 팀",
+       "Max를 시험해 볼 가치",
+       "Terminal-Bench 4.0에서 Fusion 71로 선두"
+      ],
+      [
+       "조직이 허용 모델을 제한한 곳",
+       "관리자가 후보 모델부터 확인",
+       "Fusion은 조직 모델 정책 안의 모델만 사용"
+      ],
+      [
+       "네트워크 없이 로컬 추론을 기대하는 경우",
+       "기대와 다름",
+       "로컬 추론이 세션을 오프라인으로 만들지 않는다고 명시"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "도입 순서도 생각해 볼 만합니다. 먼저 관리자가 Fusion 후보 모델을 확인하고, **허용하지 않을 모델을 Fusion에서만 끌 수 있다**는 점을 활용하면 다른 팀의 모델 사용을 건드리지 않고 시험할 수 있습니다. 관리자는 엔터프라이즈 관리형 설정으로 원하는 효과 수준의 Fusion을 기본 모델로 지정할 수도 있습니다. 다만 인터뷰에서 어떤 모델이 쓰였는지 조직이 볼 수 있다는 답은 나왔지만 요청별 감사 기록이 어디까지 제공되는지는 확인되지 않았으므로, 감사 요건이 있는 조직은 도입 전에 공식 문서로 확인해야 합니다. 한시적 30% 할인이 끝난 뒤의 비용도 함께 계산해 두는 편이 안전합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "직접 해 보려면 에이전트에게 다음과 같이 점검을 맡길 수 있습니다. 이 지시문은 출처에 있는 명령이 아니라 **독자가 쓸 수 있는 예시 프롬프트**입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "지난 2주간 우리 저장소의 작업 중 난이도가 낮은 것 3개와 높은 것 3개를 골라줘.\n각 작업에 Fusion Standard와 지금 쓰는 모델을 쓴다고 가정하고, 어떤 기준으로 결과를 비교해야 하는지\n(통과한 테스트 수, 리뷰 수정 횟수, 소요 시간) 체크리스트로 정리해줘."
+    }
+   ]
+  },
+  {
+   "heading": "🖥 로컬 모델 선택(실험적): 가능한 것과 제한",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "GitHub는 Fusion이 **로컬 모델 선택**도 지원한다고 같은 날 밝혔습니다. 실험적 옵트인 프리뷰로 Copilot CLI, Copilot 앱, VS Code에서 쓸 수 있으며, Fusion을 Standard로 두면 Copilot이 온디바이스 모델과 클라우드 모델 중 적합한 쪽을 고릅니다. 라우팅 결정은 클라우드에서 이뤄집니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "관리형 설정은 지원 기기의 Windows에서 Windows ML 제공자와 **MAI Code 1.1 Flash**를 쓰는 경우입니다. 관리형 다운로드는 Windows 전용이지만, Copilot CLI의 로컬 Fusion 라우팅은 Windows·macOS·Linux에서 OpenAI 호환 로컬 서버로 직접 구성한 MAI Code 1.1 Flash 또는 Qwen3.8 Flash Next에도 동작하며, 다운로드와 추론 환경은 사용자가 관리합니다. VS Code에서는 `chat.copilot.localModel.enabled` 설정을 켜야 합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I3"
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 로컬이라고 안전하거나 오프라인은 아닙니다",
+     "text": "공식 문서는 로컬 추론이 세션을 오프라인으로 만들지 않으며, 로컬 모델은 클라우드 모델과 다른 안전 보호 장치를 가질 수 있다고 경고합니다. BYOK로 추가한 모델이 자동으로 Fusion 라우팅 대상이 되는 것도 아닙니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Copilot Fusion은 새로운 AI 모델인가요?",
+   "a": "아닙니다. GitHub의 Mario Rodriguez는 모델이 아니라 런타임 조율 엔진이라고 설명했습니다. 이미 있는 모델들을 작업에 맞게 고르고 조합하는 계층입니다."
+  },
+  {
+   "q": "Fusion은 어떤 요금제에서 쓸 수 있나요?",
+   "a": "공식 변경 기록은 모든 Copilot 요금제에서 사용할 수 있다고 밝혔습니다. VS Code, Copilot 앱, Copilot CLI, JetBrains에서 모델 선택기의 Copilot Fusion을 고르면 됩니다. 단, 조직 정책에서 허용된 모델만 쓰입니다."
+  },
+  {
+   "q": "비용은 어떻게 청구되나요?",
+   "a": "Fusion이 호출한 모델마다 그 모델의 표준 요율로 청구됩니다. 유료 Copilot 요금제 사용자에게는 한시적으로 모델 비용 30% 할인이 적용되며, 정확한 종료 시점은 변경 기록에 적혀 있지 않습니다."
+  },
+  {
+   "q": "'비용 절반'은 확인된 사실인가요?",
+   "a": "Artificial Analysis의 코딩 에이전트 지수에서 작업당 평균 비용이 $5.59 대 $11.42로 약 51% 낮았습니다. 다만 FrontierCode 점수는 Fusion이 더 낮았고, 시간 40% 절감과 최대 77% 절감은 독립 검증된 수치가 아닙니다."
+  },
+  {
+   "q": "Copilot Automations의 자동 개선은 사람 확인 없이 적용되나요?",
+   "a": "아닙니다. 개선안이 제안되면 알림이 오고, 사용자가 각 변경을 수락하거나 거절한 뒤에야 적용됩니다."
+  }
+ ],
+ "closing": "정리하면 Fusion은 '모델을 고르는 수고'를 줄이면서 공개된 벤치마크에서 Claude Code(Opus 5.5 Max) 대비 점수 차이 2점 이내, 작업당 평균 비용 약 51% 절감이라는 결과를 보였습니다. 하지만 저장소 변경 영역에서는 뒤졌고, 시간 절감 수치는 GitHub의 주장이며, 사람의 검토 비용은 계산에 들어 있지 않습니다. 그래서 일상 작업에는 Standard나 High로 먼저 켜 보고, 대규모 변경에는 Max를 별도로 검증하는 순서를 권합니다. 이 글은 직접 실행한 결과가 아니라 공개 자료를 바탕으로 한 정리이므로 실제 비용은 각자의 저장소에서 확인해 보시길 바랍니다. 여러분도 한번 Copilot Fusion을 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "할인 기간·요금·지원 클라이언트는 바뀔 수 있으니 GitHub 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "GitHubCopilot",
+  "CopilotFusion",
+  "GitHubUniverse2026",
+  "AI코딩도구",
+  "모델라우팅",
+  "코딩에이전트",
+  "ArtificialAnalysis",
+  "CopilotAutomations",
+  "클라우드에이전트",
+  "개발자도구",
+  "AI백과사전",
+  "VSCode",
+  "엔터프라이즈AI"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7"
+ ]
+}
