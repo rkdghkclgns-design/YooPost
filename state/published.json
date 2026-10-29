@@ -4817,5 +4817,23 @@
    "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models"
   ],
   "draft_id": "20261030_071658_2"
+ },
+ {
+  "date": "2026-10-30",
+  "title": "🧠 DynaFlow 논문 분석: 모델이 직접 짠 워크플로로 688문제 88.08%, 점수표를 같은 조건끼리 읽는 법",
+  "topic": "DynaFlow: Learning Free-Form Multi-Agent Orchestration (NUS, arXiv 2610.34467, 2026-10-25)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.34467",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/dynaflow-688-8808.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.34467",
+   "https://arxiv.org/html/2610.34467v1",
+   "https://huggingface.co/papers/2610.34467",
+   "https://www.mind-verse.de/news/dynaflow-flexible-multi-agent-orchestrierung-0cbac352507f",
+   "https://raw.githubusercontent.com/amiya-special/Dynaflow/main/README.md"
+  ],
+  "draft_id": "20261030_072513_3"
  }
 ]
