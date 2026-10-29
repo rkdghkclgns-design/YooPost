@@ -1,0 +1,122 @@
+{
+ "topic": "Better Work, More to Learn: The 2026 AI Worker Report (ZipRecruiter Economic Research, 2026-10-26) / Canadian HR Reporter 보도 (2026-10-27)",
+ "source_url": "https://www.ziprecruiter-research.org/economic-insights-research/2026-ai-worker-report",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Better Work, More to Learn: The 2026 AI Worker Report",
+   "url": "https://www.ziprecruiter-research.org/economic-insights-research/2026-ai-worker-report",
+   "publisher": "ZipRecruiter Economic Research",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Does AI make work more enjoyable?",
+   "url": "https://www.hrreporter.com/focus-areas/culture-and-engagement/does-ai-make-work-more-enjoyable/395080",
+   "publisher": "Canadian HR Reporter",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Workers Find AI Makes Jobs More Enjoyable, but Senior Execs Reap Most of the Rewards, ZipRecruiter Finds",
+   "url": "https://www.jobboardhive.com/2026/10/26/workers-find-ai-makes-jobs-more-enjoyable-but-senior-execs-reap-most-of-the-rewards-ziprecruiter-finds/",
+   "publisher": "Job Board Hive",
+   "published": "2026-10-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "ZipRecruiter Report Reveals AI Training Gap",
+   "url": "https://hrtechedge.com/talent-management/ziprecruiter-report-finds-ai-training-gap-among-workers/",
+   "publisher": "HRTech Edge",
+   "published": "2026-10-26",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://datawrapper.dwcdn.net/f0I7U/full.png",
+   "page_url": "https://www.ziprecruiter-research.org/economic-insights-research/2026-ai-worker-report",
+   "caption": "직급별 'AI로 일이 더 즐거워졌다' 응답: 임원급 76.5%, 신입급 39.8%, 일반 직원 34.6% (만족 격차)",
+   "credit": "ZipRecruiter Economic Research (ZipRecruiter AI Worker Survey, 2026년 9월)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://datawrapper.dwcdn.net/0WApW/full.png",
+   "page_url": "https://www.ziprecruiter-research.org/economic-insights-research/2026-ai-worker-report",
+   "caption": "직급별 고용주 AI 교육 경험: 임원급 83.5% (차트 표기 신입급 46.4%, 일반 직원 45.3% — 본문 문장과 뒤바뀜)",
+   "credit": "ZipRecruiter Economic Research (ZipRecruiter AI Worker Survey, 2026년 9월)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://datawrapper.dwcdn.net/TW5Lt/full.png",
+   "page_url": "https://www.ziprecruiter-research.org/economic-insights-research/2026-ai-worker-report",
+   "caption": "AI로 일이 더 즐거워졌다 52.6%, 같다 17.6%, 덜 즐거워졌다 5.5%, 내 역할에서 AI를 쓰지 않음 24.2%",
+   "credit": "ZipRecruiter Economic Research (ZipRecruiter AI Worker Survey, 2026년 9월)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI를 쓰는 직장인이 82.5%인 조직에서 도입 효과는 왜 직급에 따라 다르게 체감되며, 팀 리더는 무엇을 먼저 확인해야 하는가",
+  "limitations": "직접 설문·조직 적용을 하지 않았다. 표본은 PureSpectrum 온라인 패널의 미국 근로자 1,500명 이상(자기 보고)이며 직급별 표본 수·가중 방식은 공개되지 않았다. 인과는 확인되지 않았고, 차이·비율 값은 공개된 비율끼리의 단순 계산이다. 교육 비율은 본문 문장과 차트에서 신입급·일반 직원 값이 뒤바뀌어 있다. 이직 의향은 실제 이직이 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 격차를 직접 계산해 보면: 만족 36.7%p, 교육 37~38%p",
+    "excerpt": "다만 두 지표가 같은 사람들 안에서 인과로 이어진다는 증거는 이 설문에 없습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공개된 비율을 빼고 나눠 직급 간 만족·교육·미사용 격차를 한 번에 비교하게 하고, 본문 문장과 차트의 교육 수치 불일치(45.3%/46.4%)를 반영해 격차를 범위(37.1~38.2%p)로 제시한다(계산식과 한계를 본문에 명시)."
+   },
+   {
+    "kind": "calculation",
+    "section": "🎓 교육은 왜 아래로 내려가지 않나: 접근 vs 광범위한 교육",
+    "excerpt": "교육을 받은 사람 중 광범위한 교육까지 받은 사람은 절반이 안 되고 나머지 약 54%는 그보다 얕은 교육에 머문다는 계산이 됩니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "교육 경험과 광범위한 교육의 비율을 나눠 '받았다'와 '깊이 받았다'의 차이를 수치로 보여 준다(가정 명시)."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚠ 이 숫자를 읽을 때의 한계: 자기 보고, 반올림, 인과",
+    "excerpt": "원문의 52.6%는 HRTech Edge와 Job Board Hive에서",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "원문과 반올림 보도의 숫자 차이, 원문 안의 28.9% 표현 차이(enough/extensive), 본문·차트 수치 불일치를 대조해 인용 시 기준을 제시한다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 팀 리더·HR을 위한 점검표: 우리 조직에서 누가 뒤처지고 있나",
+    "excerpt": "자기 팀의 직급 구성이 신입급 중심이라면 위 격차가 더 크게 다가올 가능성이 있습니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀 구성별로 먼저 확인할 항목과 근거 숫자를 연결해 점검 순서를 제공한다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "(수정) 'ZipRecruiter 원문은 28.9%를 광범위한 교육으로 적고 일부 요약은 충분한 교육으로 옮겼다' → 원문 자체가 요약에서 enough, 본문에서 extensive 를 씀",
+   "(수정) '임원급 중에서도 27%는 매우 걱정' → 원문은 C-suite 27%",
+   "(수정) 'AI를 쓰는 비기술 직무' → 직무 설명에 AI가 언급된 비기술 직무(AI-enabled jobs)",
+   "(수정) '평균은 임원급 답에 끌려 올라갈 수 있다' → 근거 없는 추정이라 '평균만으로는 직급별 차이가 보이지 않는다'로 교체",
+   "(수정) '거의 같은 크기의 두 집단' → 39.3%·37.2%는 별개 문항이라 겹칠 수 있음으로 교체",
+   "(수정) '보고서 본문에는 차트 이미지가 따로 게재되지 않아' → 사실과 다름(Datawrapper 차트 5개 게재), 문장 삭제·차트 3개 인용 추가",
+   "(수정) 'Bachaud 발언을 Canadian HR Reporter가 전했다' → 보고서 원문에 실린 발언으로 정정",
+   "(수정) '응답 시점의 감정에 영향을 받는다' → 단정 완화"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 curl 로 다시 열어(모두 HTTP 200) 본문 대조. published 메타·페이지 표기 모두 일치(S1 2026-10-26 datePublished, S2 Oct 27 2026, S3 October 26 2026, S4 2026-10-26). 표본 1,500+·조사 2026-09-08~21·PureSpectrum·82.5/78/52.6/5.5/76.5/39.8/83.5/45.3/46.4/26.6/30.5/5/62.8/28.9/39.3/37.2/54.7/34.3/40.2/44.6/67.3/45.3/27/49.9/57/25.1/30.9/30.5/20.4/159/53/169/1.9→4.3 확인. 자체 계산 36.7·38.2·37.1%p, 5.32배, 0.46, 22.7·10.1%p, 2.26배 재계산 일치하고 본문에 '계산값'과 식 표기. S1 차트(Datawrapper f0I7U·0WApW·TW5Lt) PNG 를 열어 확인: 교육 차트는 신입급 46.4%·IC 45.3% 로 본문 문장(IC 46.4%·신입 45.3%)과 반대 — 본문·FAQ에 불일치 명시. 반올림 보도(53/6/77/40/25/29/31%)는 S3·S4 에서 확인. Siegel 발언은 S3·S4 공통. EGRESS_BLOCKED/403 출처 없음. 인과 단정 없음(보고서의 'may be a link' 수준만 서술)."
+ }
+}
