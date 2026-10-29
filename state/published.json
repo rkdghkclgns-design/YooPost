@@ -4797,5 +4797,25 @@
    "https://docs.particle.ai/models"
   ],
   "draft_id": "20261030_070544_1"
+ },
+ {
+  "date": "2026-10-30",
+  "title": "⚡ GitHub Copilot Fusion 정식 출시: 모델 고르기 대신 맡기면 작업당 비용은 정말 절반일까",
+  "topic": "Route and orchestrate models with GitHub Copilot Fusion (GitHub Changelog, 2026-10-28) — Fusion GA·GitHub Universe 2026 / VentureBeat 보도",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/github-copilot-fusion.html"
+  },
+  "sources": [
+   "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+   "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
+   "https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/",
+   "https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost",
+   "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+   "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve",
+   "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models"
+  ],
+  "draft_id": "20261030_071658_2"
  }
 ]
