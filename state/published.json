@@ -4775,5 +4775,27 @@
    "https://www.newstomato.com/ReadNews.aspx?no=1318352"
   ],
   "draft_id": "20261029_080939_7"
+ },
+ {
+  "date": "2026-10-30",
+  "title": "🤖 Particle-1: DeepSeek 기반 코딩 모델이 출력 토큰을 28~52% 줄였다는 주장, 우리 비용엔 얼마나?",
+  "topic": "Introducing Particle-1 (Particle, 2026-10-28)",
+  "category": "AI 언어 모델",
+  "source_url": "https://particle.ai/blog/introducing-particle-1",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/particle-1-deepseek-2852.html"
+  },
+  "sources": [
+   "https://particle.ai/blog/introducing-particle-1",
+   "https://digg.com/ai/3gpt6jeo",
+   "https://runtimewire.com/article/suhail-doshi-particle-particle-1",
+   "https://creatorstoolbox.com/blog/vercel-particle-1-is-now-available-on-ai-gateway",
+   "https://vercel.com/ai-gateway/models/particle-1",
+   "https://api-docs.deepseek.com/news/news260910",
+   "https://opentools.ai/news/particle-1-api-vercel-ai-gateway-coding-agent-access-routes",
+   "https://docs.particle.ai/usage-billing",
+   "https://docs.particle.ai/models"
+  ],
+  "draft_id": "20261030_070544_1"
  }
 ]
