@@ -1,0 +1,116 @@
+{
+ "topic": "NVIDIA Nemotron 3.5 Transcribe and Granary v2 (Hugging Face blog, 2026-10-28)",
+ "source_url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2",
+   "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+   "publisher": "NVIDIA (Hugging Face Blog)",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "NVIDIA-Nemotron-3.5-Transcribe-30B-A4B model card",
+   "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "publisher": "NVIDIA (Hugging Face)",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Voice AI in vogue: Nvidia releases new open transcription model",
+   "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Everything That Happened in AI Today Thursday, October 29",
+   "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-29-2026/",
+   "publisher": "The Neuron",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "AI Brief - October 29, 2026",
+   "url": "https://samonai.substack.com/p/ai-brief-october-29-2026",
+   "publisher": "Sam on AI",
+   "published": "2026-10-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn-uploads.huggingface.co/production/uploads/68127936de624fb6f57d9989/vGIg17AxweCAnacvnPOet.png",
+   "page_url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+   "caption": "벤치마크: Hugging Face Open ASR Leaderboard에서 열린 가중치 모델 1위 (Figure 1)",
+   "credit": "NVIDIA / Hugging Face"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn-uploads.huggingface.co/production/uploads/68127936de624fb6f57d9989/a7N1ycYypBeM7WKuUphE7.png",
+   "page_url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+   "caption": "벤치마크: Artificial Analysis 정확도 대비 활성 파라미터 도표 (AA-WER 2.80%)",
+   "credit": "NVIDIA / Artificial Analysis / Hugging Face"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "회의·상담 녹음 처리에 Nemotron 3.5 Transcribe를 검토할 가치가 있는가, 어떤 조건에서 맞는가",
+  "limitations": "모델을 직접 실행하지 않았고 성능 수치는 NVIDIA·파트너 보고이며 독립 재현 자료는 확인하지 못했다. 한국어는 모델 카드 언어 표에 지원·'Leading' 등급으로 올라 있으나 한국어 개별 오류율 수치는 확인하지 못했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 100시간 3분·45.8% 감소 직접 계산해 보기",
+    "excerpt": "차이 10.27%p를 22.44%로 나누면 약 45.8%로, 블로그가 적은 '45.8% 상대 감소'와 일치합니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "블로그의 22.44%→12.17%와 일반 영어 1.54%→1.69% 수치로 상대 변화율과 처리 배수를 계산해 이득과 대가를 함께 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 맞을까: 상황별 선택 기준",
+    "excerpt": "회의 녹음을 문서화하는 팀이라면 8명 이하·1시간 이하 녹음인지 먼저 확인하세요",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "입력 한계·라이브 불가·언어별 지원 차이를 독자 상황별 선택·제외 기준으로 바꿈"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크 숫자, 어떤 조건에서 읽어야 할까",
+    "excerpt": "블로그는 Hugging Face Open ASR Leaderboard에서 영어 평균 단어 오류율(WER, 낮을수록 좋음) ",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "블로그 5.33%와 모델 카드 4.71%, AA·화자 구분 수치의 조건 차이를 나눠 우열 단정을 피함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 다른 매체는 이 소식을 어떻게 다뤘나",
+    "excerpt": "독립 검증 결과를 확인할 수 있는 자료는 이번 조사에서 찾지 못했습니다.",
+    "source_ids": [
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "세 매체가 공통으로 짚은 라이브 불가와 보고 수치 한계, Sam on AI의 문서 불일치 지적을 연결해 도입 전 점검 항목으로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 블로그 HTML(datePublished 2026-10-28)과 S2 모델 카드 README 원문을 직접 내려받아 수치·이름·스펙을 문자열로 대조, S3 TechCrunch(2026-10-28, Julie Bort)·S4 The Neuron(2026-10-29)·S5 Sam on AI(2026-10-29)를 다시 열어 확인. 출처 published 모두 페이지 날짜와 일치, EGRESS_BLOCKED 출처 없음. 직접 계산 재확인: 6,000분÷3분=2,000배(3분 '미만'이므로 최소), (22.44−12.17)÷22.44=45.77%≈45.8%, (1.69−1.54)÷1.54=9.74%≈9.7%, 4÷30=13.3%·4.3÷34=12.6%, 18.38−18.26=0.12%p. 크기 30B/활성 4B(블로그·TechCrunch) vs 34B/4.3B(모델 카드), 영어 WER 5.33%(블로그 Open ASR) vs 4.71%(모델 카드 9개 세트) 출처별 분리 표기 확인. 수정 4건: ① 한국어 '확인하지 못함' → 모델 카드 언어 표에 한국어 ASR·번역·다화자·코드스위칭 ✓, 'Leading' 등급으로 실제 기재되어 있어 사실대로 고침(한국어 개별 WER 수치는 카드에 없음을 명시) — 표·FAQ·맺음말·editorial.limitations ② FAQ 화자 8명 출처를 모델 카드→블로그로 정정 ③ 'NeMo Speech(OpenAI 호환 API)' → 'vLLM+NeMo Speech로 띄우는 OpenAI 호환 서버' ④ SGLang-Omni 미지원 항목을 카드 문구대로(단어 타임스탬프·화자 표시 출력·번역). 기타: DAI 수치를 DER로 명시, 다화자 cpWER 데이터셋 명시. 인용 이미지 2개 HTTP 200 image/png(2512×901, 2396×1224), 블로그 본문 Figure 1·2 확인."
+ }
+}
