@@ -1,0 +1,405 @@
+{
+ "claims": [
+  {
+   "claim": "10월 26일은 2차 정정 공시일이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2026년 10월 26일 2차 정정",
+   "action": "유지"
+  },
+  {
+   "claim": "최초 제출일은 10월 7일이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2026년 10월 07일 최초 제출일",
+   "action": "유지"
+  },
+  {
+   "claim": "1차 정정은 10월 23일이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2026년 10월 23일 1차 정정",
+   "action": "유지"
+  },
+  {
+   "claim": "이번 정정 사유는 공모 일정 변경이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "금번 정정은 공모일정 변경에 따른 기재사항 정정",
+   "action": "유지"
+  },
+  {
+   "claim": "수요예측은 10월 26~30일에서 11월 16~20일로 변경됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "기간정정에 따른 공모 일정 변동 내역",
+   "action": "유지"
+  },
+  {
+   "claim": "청약은 11월 4~5일에서 11월 24~25일로 변경됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "청약기일 정정 전·후",
+   "action": "유지"
+  },
+  {
+   "claim": "공모가 확정공고는 11월 3일에서 11월 23일로 변경됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "수요예측 정정 전·후 공모가액 확정공고",
+   "action": "유지"
+  },
+  {
+   "claim": "배정공고는 11월 9일에서 11월 27일로 변경됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "배정공고일 정정 전·후",
+   "action": "유지"
+  },
+  {
+   "claim": "납입일은 11월 9일에서 11월 27일로 변경됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "납입기일 정정 전·후",
+   "action": "유지"
+  },
+  {
+   "claim": "공모주식수는 220만주다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "기명식 보통주 2,200,000주",
+   "action": "유지"
+  },
+  {
+   "claim": "예정 모집가액 9,700원과 총액 21,340,000,000원이 기재됐다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "모집 또는 매출 조건 정정 후",
+   "action": "유지"
+  },
+  {
+   "claim": "시설자금은 15,592백만원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "자금의 사용목적 정정 후",
+   "action": "유지"
+  },
+  {
+   "claim": "운영자금은 5,432백만원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "자금의 사용목적 정정 후",
+   "action": "유지"
+  },
+  {
+   "claim": "사용목적 합계는 21,024백만원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "자금의 사용목적 정정 후",
+   "action": "유지"
+  },
+  {
+   "claim": "자금 사용표의 기준일만 10월 23일에서 26일로 바뀌고 위 금액은 같다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주11 정정 전·후 대조",
+   "action": "유지"
+  },
+  {
+   "claim": "초과 증거금 환불 예정일은 11월 27일이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주7 정정 후 초과 청약증거금 환불",
+   "action": "유지"
+  },
+  {
+   "claim": "증거금은 무이자다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주7 정정 후 이 경우 청약증거금은 무이자로 합니다",
+   "action": "유지"
+  },
+  {
+   "claim": "균등배정 후 추가납입 필요시 11월 26일 17:00까지다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주4·주6 정정 후 추가납입 기한",
+   "action": "유지"
+  },
+  {
+   "claim": "일반청약자 증거금률은 50%다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주3 정정 후 일반청약자 50%",
+   "action": "유지"
+  },
+  {
+   "claim": "일정은 효력발생일·회사·시장 상황 등에 따라 바뀔 수 있다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주1 정정 후 일정 변동 유의사항",
+   "action": "유지"
+  },
+  {
+   "claim": "수요예측 경쟁률과 실제 투자 수요를 구분해야 한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주8 정정 후 경쟁률 주의사항",
+   "action": "유지"
+  },
+  {
+   "claim": "상대가치법 PER 평가를 적용한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "공모가 산정 요약표 평가방법 상대가치법 평가모형 PER",
+   "action": "유지"
+  },
+  {
+   "claim": "평가 이익은 2026년 2분기 LTM 조정 당기순이익이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "공모가 산정 요약표 적용 재무수치",
+   "action": "유지"
+  },
+  {
+   "claim": "적용 조정 이익은 4,995백만원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "적용 당기순이익 (조정) 4,995백만원",
+   "action": "유지"
+  },
+  {
+   "claim": "비교기업 PER은 40.96배다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "비교기업 PER 40.96배",
+   "action": "유지"
+  },
+  {
+   "claim": "적용 주식수는 14,799,500주다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "적용 주식수 14,799,500주",
+   "action": "유지"
+  },
+  {
+   "claim": "주당 평가가액은 13,823원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주당 평가가액 13,823원",
+   "action": "유지"
+  },
+  {
+   "claim": "희망공모가는 9,700~12,200원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "공모가 산정 결과",
+   "action": "유지"
+  },
+  {
+   "claim": "할인율은 하단 29.83%, 상단 11.74%다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "주당 평가가액에 대한 할인율 29.83% ~11.74%",
+   "action": "유지"
+  },
+  {
+   "claim": "수요예측 후 협의로 최종 공모가를 정할 예정이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "확정 공모가액 결정방법",
+   "action": "유지"
+  },
+  {
+   "claim": "최종 비교기업은 와이즈넛·비아이매트릭스·Brains Technology다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "최종 비교기업 선정 결과",
+   "action": "유지"
+  },
+  {
+   "claim": "각 PER은 18.29·50.05·54.52배다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "4차 유사기업 선정 결과 및 최종 비교기업",
+   "action": "유지"
+  },
+  {
+   "claim": "Brains Technology는 7월 결산 일본 그로스 상장사다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "비교기업 차이 유의사항",
+   "action": "유지"
+  },
+  {
+   "claim": "해외 비교기업과 회계기준·시장·통화 등이 다르다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "평가 유의사항",
+   "action": "유지"
+  },
+  {
+   "claim": "6월 30일 이전 종료 최근 4개 분기 합산 LTM을 적용했다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "결산월 차이를 보완하기 위한 LTM 적용 설명",
+   "action": "유지"
+  },
+  {
+   "claim": "시가총액과 이익을 현지통화로 적용했다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "PER 산출 시 환율의 영향 배제",
+   "action": "유지"
+  },
+  {
+   "claim": "회계기준과 시장 간 차이의 비교 제약은 남는다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "비교 제약은 해소되지 아니합니다",
+   "action": "유지"
+  },
+  {
+   "claim": "평가가액은 향후 주가를 보증·예측하는 것이 아니다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "대표주관회사 평가가치 유의사항",
+   "action": "유지"
+  },
+  {
+   "claim": "수요예측 시작은 21일, 청약 시작은 20일 이동했다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "공시 전후 날짜 차감",
+   "action": "유지"
+  },
+  {
+   "claim": "4,995백만원은 4,995,000,000원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "백만원 단위 ×1,000,000",
+   "action": "유지"
+  },
+  {
+   "claim": "표시 수치 검산은 약 13,824.5원, 원문과 약 1.5원 차이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "4,995,000,000×40.96÷14,799,500=13,824.4670428055",
+   "action": "유지"
+  },
+  {
+   "claim": "할인율 검산은 약 29.83%·11.74%다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "(1−9,700/13,823)×100 및 (1−12,200/13,823)×100",
+   "action": "유지"
+  },
+  {
+   "claim": "표시 비교기업 PER 평균은 40.953…배다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "(18.29+50.05+54.52)/3",
+   "action": "유지"
+  },
+  {
+   "claim": "밴드 상단 가정 모집총액은 26,840,000,000원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2,200,000×12,200",
+   "action": "유지"
+  },
+  {
+   "claim": "하단 모집총액과 사용계획 합계 차이는 316백만원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "21,340−21,024",
+   "action": "유지"
+  },
+  {
+   "claim": "사용계획 중 시설자금 74.16%·운영자금 25.84%다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "15,592÷21,024×100 및 5,432÷21,024×100",
+   "action": "유지"
+  },
+  {
+   "claim": "신고서는 반올림 전 조정 이익 4,994,982,336원과 적용 PER 40.9557배를 공개한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "본문에 원수치와 각주 근거 추가"
+  },
+  {
+   "claim": "4,994,982,336×40.9557÷14,799,500=약 13,822.97원이며 원 단위 반올림 시 13,823원이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "직접 재계산 후 추가"
+  },
+  {
+   "claim": "더벨은 2026-10-26 13:08:19 기사에서 일본 비교기업 추가와 조정 이익 변경을 다뤘다",
+   "url": "https://www.thebell.co.kr/front/newsview.asp?code=0705&key=202610261110303040106853",
+   "confirmed": true,
+   "action": "기사 제목·날짜·본문을 직접 읽어 확인; 독립 이슈화 자료로 유지"
+  },
+  {
+   "claim": "더벨 기사에서 다룬 일본 비교기업 추가와 이익 변경은 10월 26일 2차 정정에서 새로 발생했다",
+   "url": "https://www.thebell.co.kr/front/newsview.asp?code=0705&key=202610261110303040106853",
+   "confirmed": false,
+   "action": "수정: 기사 본문은 10월 23일 정정을 다룸; 26일 일정 정정과 구분"
+  },
+  {
+   "claim": "인수인의 의견은 21,024백만원을 공모희망가액 하단 기준 순수입금으로 명시한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "자금계획 설명 보완"
+  },
+  {
+   "claim": "공모 후 발행주식 14,332,500주에 미행사 선택권 467,000주를 더해 평가 주식수 14,799,500주를 산출한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "반복 FAQ를 주식수 구분 설명으로 교체"
+  },
+  {
+   "claim": "LTM 당기순이익 2,944백만원에 금융부채 관련 손익 1,802백만원과 주식보상비용 249백만원을 조정해 4,995백만원을 제시한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "조정 이익 FAQ 추가; 2,944+1,802+249=4,995 재계산"
+  },
+  {
+   "claim": "국내 비교기업에는 12월 결산과 최근 사업연도 영업이익 200억원 미만 조건을 적용하지만 해외에는 적용하지 않는다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "비교 조건 차이 FAQ 추가"
+  },
+  {
+   "claim": "균등배정 추가납입이 기한 안에 이뤄지지 않으면 추가납입 의사가 없었던 것으로 간주한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=1&offset=842&length=83214&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "기한 미이행 조건 FAQ 추가"
+  },
+  {
+   "claim": "LTM은 최근 12개월 누적을 뜻한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "원문의 Last Twelve Months 및 최근 12개월 누적 표기 확인"
+  },
+  {
+   "claim": "PER은 주가와 이익의 관계를 나타내는 배수이다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "PER 비교평가모형 및 이익×PER 평가 산식 확인"
+  },
+  {
+   "claim": "제논은 생성형 AI 플랫폼 GenOS를 자체 개발·공급하는 사업을 영위한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "AI 카테고리 적합성 확인; 기존 공모 소개 반복을 피하려 본문 사업 소개는 추가하지 않음"
+  },
+  {
+   "claim": "공시의 비교기업 평균 PER은 반올림 전 금액으로 산출한다",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261026000001&dcmNo=11626479&eleId=20&offset=854677&length=1015560&dtd=dart4.xsd",
+   "confirmed": true,
+   "action": "원문 유사기업 PER 산출 주5 확인; 표시값 평균과의 차이 설명 보완"
+  }
+ ],
+ "note": "2026-10-30 UTC(10월 31일 KST) 별도 검증. 기존 확인 숫자를 승인 근거로 사용하지 않고 S1~S3을 다시 열었다. 웹 도구 접근 오류 후 정책에 따라 동일 공개 URL을 urllib로 각 1회, timeout=20초, 로그인·쿠키·우회 없이 조회했다. 모두 HTTP 200이며 공시 제목·제출일·정정표·인수인의 의견 실제 본문을 읽었다. 최종 URL·상태·조회시각·본문은 source-evidence/recheck-S1~S3.json에 저장했다. S4는 웹 도구로 제목·2026-10-26 발행시각·23일 정정 설명을 읽었다. 최초 46개 외부 주장을 원문과 재대조하고 누락·수정 전 주장 및 추가 분석 근거를 보충했다. 반복 출현은 동일 주장으로 묶었다. 계산은 Python으로 재계산했다. 작업 수행·미실행 및 검증 상태 설명은 claims에서 제외했다. 가짜 사용 경험은 없고 반복 FAQ와 마지막 요약 문단·작업 설명 문단을 제거했다. editorial의 발췌는 본문과 정확히 일치하도록 갱신하고 decision_guide의 평가 근거를 S3로 보충했다. 대표 공시 10월 26일은 brief의 10월 17일 이후 조건에 부합한다. brief의 기존 제논 10월 7일 원고와 구분되는 후속 정정 일정이 핵심이다. 원문 조회 성공 및 사실·독자 가치 근거 확보로 skip.json은 작성하지 않았다. 발행·승인은 수행하지 않았다. 기존 원고의 자체 작업 설명인 원수치 미재현 문장은 claims 집계에서 제외하고, 공개 각주의 원수치로 재현한 설명으로 교체했다."
+}
