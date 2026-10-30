@@ -4911,5 +4911,25 @@
    "https://ibtomato.com/View.aspx?no=19914&type=1"
   ],
   "draft_id": "20261030_080013_7"
+ },
+ {
+  "date": "2026-10-31",
+  "title": "🤖 GitHub Copilot 공유 자동화와 Agent Merge, 우리 저장소에서 켜도 될까: 비용 상한·승인 조건 점검",
+  "topic": "GitHub Copilot Automations(공유 자동화·트리거/도구/비용 상한·자기 개선)와 Agent Merge — GitHub Changelog, GitHub Universe 2026 (2026-10-28) / DEV Community 정리 (2026-10-30)",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/github-copilot-agent-merge.html"
+  },
+  "sources": [
+   "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+   "https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations",
+   "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve",
+   "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud",
+   "https://docs.github.com/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations",
+   "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/watch-and-fix-pull-requests",
+   "https://dev.to/pwd9000/github-universe-2026-what-devops-engineers-need-to-know-1ap9"
+  ],
+  "draft_id": "20261031_071219_2"
  }
 ]
