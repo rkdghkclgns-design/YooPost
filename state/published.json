@@ -4931,5 +4931,22 @@
    "https://dev.to/pwd9000/github-universe-2026-what-devops-engineers-need-to-know-1ap9"
   ],
   "draft_id": "20261031_071219_2"
+ },
+ {
+  "date": "2026-10-31",
+  "title": "🖼 IDM 논문 분석: 2번 계산으로 LongText 94.25%, 외부 인코더 없는 모멘트 손실의 몫은 얼마일까",
+  "topic": "Intrinsic Distribution Matching (arXiv 2610.39633, 2026-10-29)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.39633",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/idm-2-longtext-9425.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.39633",
+   "https://huggingface.co/papers/2610.39633",
+   "https://arxiv.org/html/2610.39633v1",
+   "https://github.com/inclusionAI/IDM"
+  ],
+  "draft_id": "20261031_071856_3"
  }
 ]
