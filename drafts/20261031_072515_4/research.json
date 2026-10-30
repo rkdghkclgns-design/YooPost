@@ -1,0 +1,112 @@
+{
+ "topic": "Anthropic expected to receive high 'junk' rating from credit agencies following IPO, report says (TechCrunch, 2026-10-30)",
+ "source_url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Anthropic expected to receive high 'junk' rating from credit agencies following IPO, report says",
+   "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic Could Get Junk Credit Rating After IPO, Warns Blackstone (BX)",
+   "url": "https://www.tipranks.com/news/anthropic-could-get-junk-credit-rating-after-ipo-warns-blackstone-bx",
+   "publisher": "TipRanks",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+   "url": "https://www.anthropic.com/news/s1-sec",
+   "publisher": "Anthropic",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic wins BB+ rating from KBRA, nears investment grade",
+   "url": "https://www.digitaltoday.co.kr/en/view/115881/anthropic-wins-bb-plus-rating-from-kbra-nears-investment-grade",
+   "publisher": "Digital Today",
+   "published": "2026-10-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Anthropic Landed BB+ KBRA Rating in June Ahead of $35B Apollo Deal",
+   "url": "https://aiweekly.co/alerts/anthropic-landed-bb-kbra-rating-in-june-ahead-of-35b-apollo-deal",
+   "publisher": "AI Weekly",
+   "published": "2026-10-16",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Blackstone Sees Anthropic Staying Junk-Rated After IPO, Raising Concerns Over $63 Billion Funding Plan",
+   "url": "https://finance.biggo.com/news/0057d980-9d63-4d19-b7f3-0ecf07e6e7ad",
+   "publisher": "BigGo Finance",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "TechCrunch 본문 그림은 Dario Amodei의 G7 행사 사진(Getty)뿐이고 원고 내용을 보여 주는 도표가 아니며, Anthropic 안내문은 글자뿐이라 관련 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Blackstone의 '상장 후 높은 정크 등급' 전망은 무엇이 확정이고 무엇이 예측이며, 독자는 무엇을 더 확인해야 하나",
+  "limitations": "FT 원문과 SEC S-1 본문은 직접 읽지 않았고 매체 인용(TechCrunch·TipRanks·Digital Today·AI Weekly·BigGo)에 의존함. 직접 실험·실측·전문가 검토 없음. 630억/350억 달러 거래 관계 미확인. BigGo의 손실 내역·North Star 구조 수치는 단일 매체 보도.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🧾 이번 전망까지의 흐름: 10월 중순부터 10월 30일까지",
+    "excerpt": "Kroll Bond Rating Agency(KBRA)가 6월에 Anthropic에 BB+",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "added_value": "10월 중순 KBRA 등급·조달 구조 보도와 10월 30일 Blackstone 전망을 시간순으로 연결해 서로 다른 거래 규모를 합치지 말아야 하는 이유를 밝힘"
+   },
+   {
+    "kind": "comparison",
+    "section": "📄 상장 서류에 적힌 것과 아직 비어 있는 것",
+    "excerpt": "Anthropic이 10월 26일 공개한 안내에 따르면 Anthropic, PBC는 SEC",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 안내로 확정된 사항과 매체 인용 수준의 미정 사항을 같은 표에서 대비"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별 점검 기준: 이 보도를 어떻게 활용할까",
+    "excerpt": "해석으로 덧붙이면, **'정크'라는 단어만 보고 판단하기보다 같은 날 함께 나온 현금 보유",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 먼저 확인할 자료와 이번 보도로 알 수 없는 것을 구분하는 점검표 제공"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [],
+  "corrected": [
+   "'정크 등급이 곧 재무가 위험하다는 뜻은 아닙니다'(단정) → '정크 등급 전망 하나만으로 재무 상태 전체를 판단하기는 어렵습니다'",
+   "'신용평가사가 공식 등급을 공표한 것이 아니며' → KBRA BB+ 가 이미 있으므로 'Moody's·S&P·Fitch 같은 주요 평가사' 로 한정 (요약·표·FAQ 동일)",
+   "'투기등급 채권은 일부 투자자가 담기 어려울 수 있다는 일반적 설명(미확인)' → Digital Today(FT 인용) 확인 문장으로 교체",
+   "요약 '이전 투자적격 예상'에 '보도에 따르면' 추가, TipRanks 현금·손실 문장에 '보도에 따르면' 추가",
+   "해시태그 'AI투자' → 'AI금융' (투자 권유 오해 방지)"
+  ],
+  "added": [
+   "S6 BigGo(2026-10-30): North Star 선순위 약 450억(Broadcom 보증 420억+)·후순위 180억·Blackstone 90억 10%+·KBRA BB+(긍정적)·DBRS BB·TPU 1.5GW, 순손실 중 724억 비현금 평가손실·영업손실 6.93억(전년 21억), 주요 3사 공식 등급 없음 — North Star 구조 수치는 FourWeekMBA(10-30)·CoinGape 보도와 일치"
+  ],
+  "note": "Opus 검증: S1~S5 를 WebFetch 로 다시 열어 수치·날짜·이름 대조, 각 published 가 페이지 날짜와 일치(S4 페이지는 10-31 업데이트 표기, 최초 게시 10-17). '지난 12개월' 은 TechCrunch 원문 구절 확인. 630억/350억 관계는 단정하지 않음 확인. 기간 내 추가 출처로 BigGo(10-30) 직접 읽어 S6 추가. invezz·tradersunion·huggingnews 는 403 으로 못 읽어 출처로 쓰지 않음. FT·SEC 원문은 읽지 않음 — 관련 문장은 매체 인용 표현. 투자 권유 표현 없음 확인."
+ }
+}
