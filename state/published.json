@@ -4967,5 +4967,22 @@
    "https://finance.biggo.com/news/0057d980-9d63-4d19-b7f3-0ecf07e6e7ad"
   ],
   "draft_id": "20261031_072515_4"
+ },
+ {
+  "date": "2026-10-31",
+  "title": "🔒 Cursor의 Claude Code 확장 2.1.313 변조 사건: 내 PC도 점검 대상인지 가리는 순서",
+  "topic": "Security notice — malicious version of Anthropic.claude-code (2.1.313) identified in the Cursor Extension Marketplace (Cursor, 2026-10-29) / BleepingComputer·The Hacker News·Help Net Security 보도",
+  "category": "AI 보안",
+  "source_url": "https://cursor.com/blog/claude-code-extension-security-notice",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/10/cursor-claude-code-21313-pc.html"
+  },
+  "sources": [
+   "https://cursor.com/blog/claude-code-extension-security-notice",
+   "https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/",
+   "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+   "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/"
+  ],
+  "draft_id": "20261031_073213_5"
  }
 ]
