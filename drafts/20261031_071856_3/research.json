@@ -1,0 +1,99 @@
+{
+ "topic": "Intrinsic Distribution Matching (arXiv 2610.39633, 2026-10-29)",
+ "source_url": "https://arxiv.org/abs/2610.39633",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Intrinsic Distribution Matching",
+   "url": "https://arxiv.org/abs/2610.39633",
+   "publisher": "arXiv",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Intrinsic Distribution Matching - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.39633",
+   "publisher": "Hugging Face",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Intrinsic Distribution Matching (HTML v1)",
+   "url": "https://arxiv.org/html/2610.39633v1",
+   "publisher": "arXiv",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "inclusionAI/IDM README",
+   "url": "https://github.com/inclusionAI/IDM",
+   "publisher": "inclusionAI (GitHub)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.39633v1/fig1_merged.png",
+   "page_url": "https://arxiv.org/html/2610.39633v1",
+   "caption": "IDM(Z-Image) 2 NFE 로 생성한 텍스트 렌더링·인물 예시 (결과 읽기)",
+   "credit": "Deyuan Liu et al., arXiv 2610.39633"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.39633v1/NFE1.png",
+   "page_url": "https://arxiv.org/html/2610.39633v1",
+   "caption": "Z-Image 에서 샘플링 예산별 비교 (속도와 품질)",
+   "credit": "Deyuan Liu et al., arXiv 2610.39633"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "2 NFE 텍스트-이미지 증류에서 IDM 의 LongText 점수는 어떤 조건에서 나왔고, 모멘트 손실은 실제로 얼마나 기여했나",
+  "limitations": "모델을 직접 실행하지 않았고 논문 v1, Hugging Face 논문 페이지, GitHub README 만 읽었습니다. 시드 분산은 논문에 없고, 가중치는 읽은 시점에 공개 전이었습니다. 두 손실 전체 기여(1.57점) 뺄셈은 필자의 해석입니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔬 어떤 손실이 얼마나 기여했나: 모멘트 손실 효과는 작고 점수 손실이 더 큽니다",
+    "excerpt": "계산해 보면 모멘트 손실을 더해서 얻은 이득은 GenEval 기준 0.35점",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "논문 Table 5 의 제거 행을 빼서 논문이 밝힌 모멘트 손실 몫(0.35~0.41점)과 필자가 계산한 두 손실 전체 기여(GenEval 1.57점)를 구분해 보였습니다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 결과 읽기: 2 NFE 점수표를 같은 조건끼리 비교하면",
+    "excerpt": "Z-Image-Turbo++ 와 비교하면 LongText-CN 은 ",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "같은 2 NFE 행끼리의 격차를 계산하고 8 NFE 기준선과 APEX DPG 처럼 뒤집히는 지점을 함께 표시해 '최고' 주장의 범위를 좁혔습니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 판단 기준: 이 논문의 숫자를 내 서비스에 가져가도 될까",
+    "excerpt": "반대로 일반 장면 생성이 중심이면 GenEval 과 FID 차이가 작아서",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "서비스 상황별로 봐야 할 지표와 제외 조건(가중치 미공개, 학습 데이터 차이)을 정리했습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 54,
+  "removed": [
+   "또 APEX 의 DPG 값이 표마다 84.59~88.64 로 다르게 나오는데, 어느 체크포인트인지는 읽은 본문에서 설명을 찾지 못했습니다. (84.59 는 Table 4 APEX(Qwen-Image) 1 NFE 값이라 비교 대상이 달라 삭제, Table 5 캡션 근거 문장으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(제출 2026-10-29 08:57 UTC)·HTML v1 본문과 Table 1/4/5·§5.1·§5.3, Hugging Face 논문 페이지(Published Oct 29, Submitted Oct 30, #1 Paper of the day, 업보트 235), GitHub README(raw.githubusercontent.com 로 읽음, 'Model weights: Coming soon')를 다시 열어 54개 주장 대조. 수정: S2 published 2026-10-30→2026-10-29(페이지 표기), HF 날짜 문장, GPU 장비-백본 대응(논문에 명시 없음), 60만/500만은 '프롬프트 수'가 아니라 합성 샘플 수, Sana-Sprint '가장 빠름'(1.6B 0.24초 행 있음) 수정, 교사/실시간 특징 GenEval 77.36/77.51 명시, 'coming soon' 문장을 S4 README·S2 로 확인. 모멘트 손실 몫 0.35/0.38/0.41 은 논문 본문 값, 총 기여 1.57/1.55 는 필자 계산임을 info 박스에 구분 표시. 이미지 I1(Figure 2)·I2(Figure 6) image/png 200 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
