@@ -1,0 +1,298 @@
+{
+ "title": "🔒 Cursor의 Claude Code 확장 2.1.313 변조 사건: 내 PC도 점검 대상인지 가리는 순서",
+ "category": "AI 보안",
+ "intro": "안녕하세요! AI백과사전입니다. Cursor는 2026년 10월 29일 보안 공지에서 변조된 Anthropic Claude Code 확장이 자사 마켓플레이스에 약 11시간 올라 있었다고 밝혔습니다. 이 확장은 영구적인 SSH 백도어를 심으려고 시도했습니다. The Hacker News는 Cursor가 X 게시물에서 영향 사용자를 최대 5,000명으로 밝혔다고 전했습니다. BleepingComputer, The Hacker News, Help Net Security도 10월 30일 이 사건을 다뤘습니다. 이 글은 사건을 되풀이하기보다 내가 점검 대상인지 판단하는 순서와 아직 모르는 점을 정리합니다.",
+ "summary": [
+  "Cursor 공지: 2026-10-29 오전 2:27~오후 1:35(태평양시) 변조 확장이 마켓플레이스에 노출",
+  "영향 버전은 Cursor 공지 기준 2.1.312·2.1.313, 영향 규모는 최대 5,000명(The Hacker News가 전한 Cursor의 X 게시물)",
+  "확장은 호스트 정보 수집, SSH 키 추가 시도, 역방향 터널, 지속 설치를 시도",
+  "Cursor는 마켓플레이스를 닫고 재구축했고, Anthropic은 2.1.314를 게시했다고 보도됨",
+  "게시 경로와 시스템 침해 여부는 아직 확인되지 않음",
+  "이 글에서 배울 것: 내가 점검 대상인지 가리는 순서와 정리 절차"
+ ],
+ "sections": [
+  {
+   "heading": "🔒 무슨 일이 있었나: 10월 29일 11시간 동안 열려 있던 확장",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Cursor는 2026년 10월 29일 보안 공지에서, 태평양시 기준 **오전 2시 27분부터 오후 1시 35분까지** 변조된 Anthropic Claude Code 확장이 Cursor 확장 마켓플레이스에 올라 있었다고 밝혔습니다. 이 확장은 영구적인 SSH 백도어(원격 접속 통로)를 심으려고 시도합니다. The Hacker News는 Cursor가 X 게시물에서 영향 사용자를 **최대 5,000명**으로 밝혔다고 전했습니다. 보안 공지 본문에는 이 숫자가 없습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "공지는 10월 30일 오전 11시 30분(태평양시)에 침해 지표(IOC)와 영향 버전 설명을 고쳐 다시 올라왔습니다. Cursor는 문제의 버전이 **Anthropic이 만든 것이 아니라고** 밝혔고, 공식 배포본이나 다른 버전이 영향을 받았다는 증거는 없다고 적었습니다. The Hacker News는 이 확장이 가짜 확장이 아니라 정식 확장 ID `anthropic.claude-code`의 업데이트 형태로 배포됐다고 전했습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "이 글은 Cursor 공지, BleepingComputer, The Hacker News, Help Net Security 네 곳에서 직접 읽은 내용만 정리합니다. 공격을 재현하는 방법이 아니라 내 PC가 해당되는지 확인하고 정리하는 방어 순서를 다룹니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "확인된 내용",
+      "출처"
+     ],
+     "rows": [
+      [
+       "노출 시간",
+       "2026-10-29 오전 2:27~오후 1:35 (태평양시)",
+       "Cursor 공지"
+      ],
+      [
+       "영향 규모",
+       "최대 5,000명",
+       "The Hacker News (Cursor X 게시 인용)"
+      ],
+      [
+       "확장 이름",
+       "Anthropic.claude-code",
+       "Cursor 공지"
+      ],
+      [
+       "Anthropic 제작 여부",
+       "Anthropic이 만든 버전이 아님",
+       "Cursor 공지, The Hacker News"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🧩 변조된 확장은 무엇을 했나: 로더, SSH 키, 지속 설치",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "OpenSourceMalware 분석을 인용한 The Hacker News 보도에 따르면, 변조된 번들에는 정상 확장 코드 앞에 **66줄짜리 로더**가 끼워져 있었습니다. BleepingComputer는 Phorion과 OpenSourceMalware 연구진이 `extension.js` 맨 앞에서 악성 자바스크립트 로더를 찾았고 나머지 코드는 그대로였다고 전했습니다. 이 코드는 확장이 로드될 때 실행되며 Claude Code를 따로 쓰지 않아도 동작합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "Cursor 공지가 설명하는 동작은 네 가지입니다. 호스트 이름, 사용자 이름, 운영체제, 홈 디렉터리, 환경 변수 **이름**, 작업 디렉터리, Git 이메일, 공인 IP를 수집해 보내고, 공격자 소유 키를 `authorized_keys`에 넣으려 하며, 역방향 SSH 터널을 열려 하고, macOS에서는 LaunchAgent, Windows에서는 예약 작업과 시작 폴더 대체 방식으로 지속 설치를 시도합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    },
+    {
+     "type": "subheading",
+     "text": "환경 변수는 값이 아니라 이름만 수집"
+    },
+    {
+     "type": "paragraph",
+     "text": "The Hacker News에 따르면 KEY, TOKEN, SECRET, PASS, AWS, GCP가 들어간 환경 변수 **최대 40개의 이름**을 모았습니다. 값이 아니라 이름이므로 바로 비밀이 넘어갔다는 뜻은 아니지만, 어떤 비밀이 그 PC에 있는지 알려 주는 단서가 됩니다. Cursor도 제한된 수집이 이후 자격 증명 접근 가능성을 배제하지는 않는다고 적었습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 백도어 실패가 안전을 뜻하지 않습니다",
+     "text": "Cursor는 관리자 권한이 없으면 코드 오류 때문에 대체로 실패한다고 했고, BleepingComputer도 코딩 오류로 많은 시스템에서 백도어가 작동하지 않았을 가능성을 전했습니다. 그러나 두 곳 모두 정찰 정보는 실패해도 전송됐다고 하고, Cursor는 키 추가와 지속 설치가 이뤄졌으므로 **그래도 정리 절차를 밟으라고** 권했습니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 Cursor와 Anthropic의 대응: 마켓플레이스 차단과 2.1.314",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Cursor는 탐지 뒤 문제 버전을 내리고 추가 배포를 막았으며, 예방 차원에서 마켓플레이스 전체를 닫은 뒤 다시 구축해 열었다고 밝혔습니다. 접근 기록을 점검해 다른 확장이 변조되지 않았음을 확인했고 자체 키를 교체했으며, 호스팅 업체와 협력해 공격자 서버를 내렸다고 합니다. 공지 시점에 그 서버는 **더 이상 작동하지 않는다**고 적혀 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "The Hacker News는 Anthropic이 **버전 2.1.314**를 Open VSX와 Microsoft VS Code Marketplace에 올렸다고 전했습니다. 이는 The Hacker News의 보도이며, 같은 기사에 Anthropic의 직접 발언은 없었습니다. 이 글에서는 Open VSX 게시 여부를 따로 확인하지 않았습니다(미확인). BleepingComputer는 두 회사에 문의했고 답을 받으면 기사를 고치겠다고 적었습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "대응 주체",
+      "확인된 조치"
+     ],
+     "rows": [
+      [
+       "Cursor",
+       "문제 버전 제거, 마켓플레이스 폐쇄 후 재구축, 키 교체, 공격자 서버 차단 요청"
+      ],
+      [
+       "Anthropic",
+       "2.1.314를 Open VSX와 VS Code Marketplace에 게시 (The Hacker News 보도)"
+      ],
+      [
+       "연구진",
+       "OpenSourceMalware와 Phorion이 악성 로더를 분석 (BleepingComputer, Help Net Security)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "❓ 아직 모르는 것: 어떻게 게시됐나, 어디까지 퍼졌나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 큰 빈칸은 **공격자가 어떻게 Anthropic 이름으로 업데이트를 올렸는가**입니다. The Hacker News는 올린 방식이 불분명하다고 했고, BleepingComputer는 Cursor나 Anthropic 시스템이 침해됐는지도 아직 답이 없다고 적었습니다. 그래서 이 사건의 원인을 확장 개발사의 계정 문제로 단정할 수 없습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "범위도 보도마다 조심스럽습니다. The Hacker News는 Open VSX나 Microsoft의 VS Code Marketplace에 퍼졌다는 증거가 없다고 정정했고, BleepingComputer는 npm, Open VSX, Microsoft 마켓플레이스도 영향을 받았다는 초기 보도가 있었으나 이후 **Cursor가 유일한 배포처**로 확인됐다고 전했습니다. Help Net Security도 Open VSX 판도 변조됐다는 보도에 반론이 나왔다고 기사를 고쳤습니다. Open VSX 쪽은 이 글에서 직접 확인하지 않았습니다(미확인)."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 플랫폼 표기가 엇갈립니다",
+     "text": "Cursor는 영향 플랫폼을 Windows와 macOS로 적었지만 침해 지표에는 리눅스 경로와 cron 항목도 나옵니다. The Hacker News와 Help Net Security도 리눅스를 포함한 세 운영체제 동작을 설명했습니다. 이 차이에 대한 설명은 공지에 없으므로, 리눅스를 쓴다면 지표 항목까지 함께 살펴보는 편이 안전합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🧭 내 PC가 해당되는지 판단하는 순서",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "확인 순서는 단순합니다. 먼저 Cursor에 Claude Code 확장을 설치한 시점이 2026년 10월 29일 태평양시 기준 오전 2시 27분부터 오후 1시 35분 사이였는지 봅니다. 그 사이에 설치하거나 자동 업데이트로 받았다면 **버전 2.1.312·2.1.313 여부**와 SSH 키를 함께 확인해야 합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "해당될 수 있다면 Cursor 공지가 안내한 순서를 따릅니다. 호스트의 SSH 키 파일에서 라벨 `svc-telemetry`가 있는지 보고, 보안 텔레메트리에서 공지에 실린 지표를 검색하며, 흔적이 있으면 그 호스트를 격리합니다. 키와 지속 설치와 터널 프로세스를 지우고, 접근 가능했던 자격 증명과 세션은 **신뢰할 수 있는 다른 PC에서** 교체합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "내 상황",
+      "먼저 할 일",
+      "근거"
+     ],
+     "rows": [
+      [
+       "노출 시간 밖에 설치, 2.1.314 이상",
+       "정상으로 보이나 확장 목록과 버전 확인",
+       "Cursor 공지, The Hacker News"
+      ],
+      [
+       "노출 시간 안에 설치·자동 업데이트",
+       "SSH 키 `svc-telemetry` 확인, 지속 설치 점검",
+       "Cursor 공지"
+      ],
+      [
+       "키나 지속 설치 발견",
+       "호스트 격리, 정리 스크립트 실행, 자격 증명 교체, 재구축 검토",
+       "Cursor 공지"
+      ],
+      [
+       "VS Code나 Open VSX에서만 설치",
+       "영향 증거 없음으로 보도됐으나 버전 확인",
+       "The Hacker News"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 삭제만으로는 부족합니다",
+     "text": "Help Net Security가 전한 Phorion의 경고와 Cursor 공지 모두 확장을 지워도 백도어가 남을 수 있다고 안내합니다. Cursor는 호스트를 다시 만드는 방안까지 고려하라고 했습니다. 정리 스크립트는 macOS용과 Windows용이 공지에 따로 있고, 남은 흔적이 있으면 0이 아닌 종료 코드를 반환합니다."
+    }
+   ]
+  },
+  {
+   "heading": "🔁 두 보도를 나란히 읽으면 보이는 것",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Cursor는 영향 버전을 2.1.312와 2.1.313으로 적었고, The Hacker News는 2.1.313만 언급했습니다. BleepingComputer와 Help Net Security도 2.1.313만 적었고, Cursor 공지 제목에도 2.1.313만 있습니다. 두 글을 함께 읽으면 **버전을 하나만 보고 안심하면 안 된다**는 결론이 나옵니다. 점검할 때는 Cursor 공지의 범위를 기준으로 삼는 편이 안전합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "또 하나는 **원인 단정 금지**입니다. Cursor는 Anthropic이 만든 버전이 아니라고 했지만 BleepingComputer는 어떻게 게시됐는지 모른다고 적었습니다. 두 글을 합치면 확인된 사실은 '정식 확장 ID로 변조 버전이 Cursor 마켓플레이스에 올랐다'까지이고, 누구의 어떤 계정이 쓰였는지는 열린 질문입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "쟁점",
+      "Cursor 공지",
+      "보도"
+     ],
+     "rows": [
+      [
+       "영향 버전",
+       "2.1.312, 2.1.313",
+       "The Hacker News 등은 2.1.313만 언급"
+      ],
+      [
+       "퍼진 곳",
+       "Cursor 마켓플레이스",
+       "타 마켓플레이스 영향은 확인 안 됨"
+      ],
+      [
+       "백도어 성공",
+       "대체로 실패 가능, 그래도 정리 권고",
+       "BleepingComputer도 코딩 오류 언급"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🛡 개발 도구 확장 보안, 오늘 할 수 있는 점검",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이번 건은 에이전트 도구 자체의 취약점이 아니라 **확장 배포 경로**가 문제가 된 사례로 보입니다(필자 해석). 그래서 대응도 모델 설정이 아니라 설치된 확장, 자동 업데이트, 자격 증명 보관 방식에서 시작합니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "Cursor와 VS Code에 설치된 확장 목록과 버전을 한 번 훑고, 2026-10-29 기간에 업데이트된 항목을 확인합니다.",
+      "개발 PC의 `authorized_keys`에 내가 넣지 않은 키가 없는지 봅니다.",
+      "개발 PC에 둔 토큰과 클라우드 키를 필요한 만큼만 남기고, 노출이 의심되면 다른 PC에서 교체합니다.",
+      "확장 자동 업데이트를 쓰는 조직은 중요한 도구의 업데이트를 지연 적용하거나 승인하는 정책을 검토합니다. 이는 일반적인 방어 제안이며 Cursor 공지의 항목은 아닙니다."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 팀에 공유할 한 줄",
+     "text": "'10월 29일 Cursor에서 받은 Claude Code 확장 2.1.312·2.1.313은 점검 대상, 지금은 2.1.314 이상 확인'이라고 공유하면 대부분의 질문이 정리됩니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "어떤 버전이 문제였나요?",
+   "a": "Cursor 공지는 Anthropic.claude-code 2.1.312와 2.1.313을 영향 버전으로 적었습니다. The Hacker News, BleepingComputer, Help Net Security는 2.1.313만 보도했습니다. 두 기록이 다르므로 Cursor 공지 기준으로 점검하는 것이 안전합니다."
+  },
+  {
+   "q": "Claude Code 자체가 해킹된 건가요?",
+   "a": "Cursor는 문제 버전이 Anthropic이 만든 것이 아니라고 밝혔습니다. 다만 BleepingComputer는 어떻게 게시됐고 Cursor나 Anthropic 시스템이 침해됐는지는 아직 확인되지 않았다고 전했습니다."
+  },
+  {
+   "q": "확장을 지우면 끝인가요?",
+   "a": "아닙니다. Cursor 공지와 Phorion(Help Net Security 보도)은 삭제만으로 백도어가 사라지지 않을 수 있다고 안내합니다. SSH 키, 지속 설치, 터널 프로세스를 따로 정리하고 자격 증명을 교체해야 합니다."
+  },
+  {
+   "q": "환경 변수 값도 유출됐나요?",
+   "a": "The Hacker News에 따르면 수집된 것은 KEY, TOKEN 등이 들어간 환경 변수의 이름이었고 값은 아닙니다. 다만 Cursor는 제한된 수집이 이후 자격 증명 접근 가능성을 배제하지 않는다고 했습니다."
+  },
+  {
+   "q": "VS Code만 쓰면 안전한가요?",
+   "a": "The Hacker News는 Open VSX나 Microsoft VS Code Marketplace에 퍼졌다는 증거가 없다고 전했고 Cursor도 다른 배포본이 영향받았다는 증거가 없다고 했습니다. 그래도 버전이 2.1.314 이상인지는 확인해 두세요."
+  }
+ ],
+ "closing": "독자의 질문은 '내 PC도 점검 대상인가'였습니다. 답은 노출 시간 안에 Cursor에서 Claude Code 확장을 설치하거나 자동 업데이트로 받았는지, 그리고 `svc-telemetry` 키나 지속 설치 흔적이 있는지입니다. 어떻게 게시됐는지와 마켓플레이스 침해 여부는 아직 공개되지 않았습니다. 이 글은 직접 실행해 확인한 것이 아니라 공지와 보도를 읽고 정리한 내용입니다. 여러분도 한번 개발 도구 확장 목록을 직접 점검해 보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "공지와 보도는 계속 수정될 수 있으니 Cursor 보안 공지에서 최신 영향 버전과 침해 지표를 확인하세요.",
+ "hashtags": [
+  "Cursor",
+  "ClaudeCode",
+  "Anthropic",
+  "확장보안",
+  "공급망공격",
+  "SSH백도어",
+  "VSCode",
+  "개발자보안",
+  "AI코딩도구",
+  "마켓플레이스",
+  "보안점검",
+  "AI보안"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4"
+ ]
+}

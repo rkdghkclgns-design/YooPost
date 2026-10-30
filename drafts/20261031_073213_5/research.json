@@ -1,0 +1,88 @@
+{
+ "topic": "Security notice — malicious version of Anthropic.claude-code (2.1.313) identified in the Cursor Extension Marketplace (Cursor, 2026-10-29) / BleepingComputer·The Hacker News·Help Net Security 보도",
+ "source_url": "https://cursor.com/blog/claude-code-extension-security-notice",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Security notice — malicious version of Anthropic.claude-code identified in the Cursor Extension Marketplace",
+   "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+   "publisher": "Cursor",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Malicious Claude Code extension on Cursor planted SSH backdoors",
+   "url": "https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/",
+   "publisher": "BleepingComputer",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
+   "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+   "publisher": "The Hacker News",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Claude Code extension poisoned with persistent SSH backdoor",
+   "url": "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.bleepstatic.com/images/news/u/1220909/2026/October/attackchain(2).jpg",
+   "page_url": "https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/",
+   "caption": "anthropic.claude-code 2.1.313 공격 흐름: 로더, SSH 키 추가, 지속 설치, 정보 전송 (변조된 확장은 무엇을 했나)",
+   "credit": "OpenSourceMalware / BleepingComputer"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Cursor에서 Claude Code 확장을 쓰는 내 PC가 이번 변조 사건의 점검 대상인지, 대상이면 무엇부터 해야 하는가",
+  "limitations": "공지와 보도를 읽고 정리했으며 직접 확장을 실행·분석하지 않았다. 게시 경로, 시스템 침해 여부, 플랫폼 범위는 확인되지 않았고, Open VSX 쪽 영향·2.1.314 게시는 직접 확인하지 않았다(미확인, 보도 기준).",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 PC가 해당되는지 판단하는 순서",
+    "excerpt": "확인 순서는 단순합니다. 먼저 Cursor에 Claude Code 확장을 설치한 시점이 2026년 10월 2",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "노출 시간·버전·SSH 키 순서로 독자가 상황별 점검 대상 여부를 가리게 함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔁 두 보도를 나란히 읽으면 보이는 것",
+    "excerpt": "Cursor는 영향 버전을 2.1.312와 2.1.313으로 적었고, The Hacker News는 2.1.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "Cursor 공지와 The Hacker News의 영향 버전 표기 차이를 연결해 점검 기준을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 42,
+  "removed": [
+   "Sophos와 Cursor 공지 모두 확장을 지워도 백도어가 남을 수 있다고 안내합니다. (Sophos는 어느 출처에도 없음 → Phorion(Help Net Security 보도)으로 교체)",
+   "아닙니다. Sophos와 Cursor 공지는 삭제만으로 백도어가 사라지지 않을 수 있다고 안내합니다. (FAQ, 같은 이유로 교체)",
+   "Cursor는 영향을 받았을 수 있는 사용자를 최대 5,000명으로 추정했습니다. (Cursor 공지 본문에 숫자 없음 → The Hacker News가 전한 Cursor X 게시물로 출처 정정, 도입·요약·표 모두)",
+   "BleepingComputer는 기사 작성 시점에 Anthropic과 Cursor가 질문에 답하지 않았다고 적었습니다. (기사는 '문의했고 답을 받으면 갱신'이라고만 함, Cursor는 공지를 냈음 → 정정)",
+   "BleepingComputer는 npm, Open VSX, Microsoft 마켓플레이스도 영향을 받았다는 초기 보도가 확인되지 않았다고 전했습니다. (기사는 이후 Cursor가 유일한 배포처로 확인됐다고 함 → 정정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S3 을 WebFetch 로 다시 열어 노출 시간·영향 버전(2.1.312/2.1.313, 공지 제목·보도는 2.1.313만)·플랫폼(Windows·macOS 표기 vs 리눅스 IOC·cron 불일치)·동작·IOC·정리 절차·Cursor 조치를 하나씩 대조. Anthropic 관련은 2.1.314 게시만 The Hacker News 보도로 표기, 직접 발언 없음 확인. 기간 안 출처 S4(Help Net Security, 2026-10-30)를 직접 읽어 추가. 각 published 가 페이지 날짜와 일치(S1 Oct 29 2026, S2·S3·S4 Oct 30 2026). Open VSX 영향·2.1.314 게시는 본문에 '미확인(보도 기준)'으로 표기 — 참고로 open-vsx.org API 버전 목록에 2.1.314·2.1.312 가 있고 2.1.313 은 없었으나 출처로 쓰지 않음. EGRESS_BLOCKED 출처 없음. 인용 이미지 I1 은 HTTP 200 image/jpeg 1092x777 확인. 공격 재현 방법은 쓰지 않음."
+ }
+}
