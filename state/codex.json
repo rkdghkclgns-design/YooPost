@@ -21,7 +21,12 @@
      "reason": "Anthropic 실패 후보를 재사용하지 않고 Sensing4D AI의 2026-10-21 F-1 신규 제출을 선정했다. 웹 조회 도구에서는 SEC 신고서 본문과 2026-10-21 Renaissance Capital 독립 보도를 열어 읽었지만, 별도 검증을 위한 동일 SEC 원문 직접 HTTP 조회가 2026-10-30T23:28:00.692735+00:00에 HTTP 403 Forbidden으로 실패했다. 응답은 SEC 자동화 도구 차단 안내문이며 신고서 본문이 아니다. 웹 도구 성공과 직접 조회 실패를 구분한다. policy."
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
