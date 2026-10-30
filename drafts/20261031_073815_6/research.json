@@ -1,0 +1,120 @@
+{
+ "topic": "Alphabet Q3 2026 results — Google Cloud revenue +103%, backlog $561B, capex $51.4B, FCF -$9.1B (Alphabet 8-K, 2026-10-28)",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Alphabet Inc. Form 8-K Exhibit 99.1 — Q3 2026 results",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
+   "publisher": "Alphabet (SEC)",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Alphabet (GOOGL) Q3 2026 Earnings Call Transcript",
+   "url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+   "publisher": "The Motley Fool",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Alphabet's Cloud Business Just Doubled. The Stock Fell 12%. Is it a Buy?",
+   "url": "https://www.fool.com/investing/2026/10/29/alphabet-s-cloud-business-just-doubled-the-stock-fell-12-is-it-a-buy/",
+   "publisher": "The Motley Fool",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Alphabet Q3 Earnings Call Highlights",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-q3-earnings-call-highlights-050416594.html",
+   "publisher": "MarketBeat via Yahoo Finance",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Alphabet Inc. Form 10-Q — quarter ended September 30, 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000084/goog-20260930.htm",
+   "publisher": "Alphabet (SEC)",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Alphabet sinks 10% as it holds 2026 capex unchanged, expects significant increase in 2027",
+   "url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html",
+   "publisher": "CNBC",
+   "published": "2026-10-28",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 8-K·10-Q 는 표·텍스트뿐이다. 구글 블로그 Q3 실적 발표문(blog.google, 2026-10-28)의 하이라이트 그림은 Content-Type 이 application/octet-stream 으로 내려와 이미지 확인을 통과하지 못하고, 나머지 그림은 og:image 대표 이미지라 쓸 수 없어 인용 이미지를 넣지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "클라우드 매출이 두 배가 됐는데 Alphabet 의 AI 투자는 수주잔고·현금흐름 기준으로 어떻게 읽어야 하나",
+  "limitations": "직접 실행·실측 없음. 공시와 실적 발표 기록·기사 4건을 읽고 단순 계산한 해설이며 수주잔고 구성·2027년 투자액·낙폭 확정치는 미공개 또는 매체별로 상이.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📚 수주잔고 5,610억 달러를 매출 속도로 바꿔 보면",
+    "excerpt": "5,610억 달러의 55%를 계산하면 약 **3,086억 달러**입니다.",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "수주잔고 55%를 24개월 균등 가정으로 연평균과 현재 매출 연환산에 맞대어 비교(가정·한계 명시)."
+   },
+   {
+    "kind": "calculation",
+    "section": "💸 투자는 늘고 현금은 줄었다: 자금은 어디서 나왔나",
+    "excerpt": "영업현금흐름 422억 9,000만 달러로 이를 충당하는 비율은 약 82.4%에 그쳐",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "설비투자 대비 영업현금흐름 충당률과 매출 대비 투자 비중을 계산해 자금 조달 구조를 보임."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 검색 둔화와 일회성 손실: 주가는 무엇에 반응했나",
+    "excerpt": "공시의 본업 지표(영업이익 +30%, 클라우드 이익률 36.2%)는 견조하고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "공시 숫자와 매체의 시장 반응 서술을 연결해 순이익 감소 원인과 시장 우려 지점을 분리."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별로 이 실적을 읽는 기준",
+    "excerpt": "아래 표는 투자 권유가 아니라 **어느 숫자를 먼저 볼지**를 정리한 것입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 숫자와 주의점을 제시."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "corrected": [
+   "Gemini 앱 이용자 '10억 명을 넘었으며' → '10억 명에 도달'(8-K: reached one billion), 토큰 '약 320억' → '거의 320억'(nearly 32 billion)",
+   "설비투자의 65%가 서버·네트워크 → 기술 인프라 투자 중 약 65%(CFO 발언 범위에 맞춤, 본문·표)",
+   "CFO 마진 발언: '제3자 용량 4분기 본격 가동' → '3분기 말부터 사용 시작, 4분기에 사용 확대'(실적 발표 기록)",
+   "현금·시장성 증권 2,651억·장기부채 1,251억: 기사(Yahoo/MarketBeat) 단일 출처 → 8-K 재무상태표 265,098·125,102 백만 달러로 교체",
+   "영업 외 손실 82억 vs 87억: 8-K 표의 서로 다른 줄(영업 외 손익 전체 -8,221 / 주식 평가손실 -8,664)임을 명시, SpaceX 지분은 10-Q('largely from SpaceX')로 공시 확인되어 유지",
+   "'부족분을 주식·채권으로 메웠다' 인과 서술 → '같은 분기에 조달했다'로 완화",
+   "시장 예상치 미기재 → CNBC(LSEG) 매출 1,282.2억 예상/1,275.8억 실제, 조정 EPS 3.02 예상/2.67 실제로 보강"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). SEC 8-K Exhibit 99.1(2026-10-28)과 10-Q(접수 2026-10-28 20:29 ET, 제출일 2026-10-29)를 직접 내려받아 손익·재무상태·현금흐름·부문·OI&E 표와 대조. Motley Fool 실적 발표 기록(2026-10-29T05:24Z)·시장 반응 기사(2026-10-29T18:49Z), Yahoo/MarketBeat(2026-10-29T05:04Z) 재확인, 다른 회사 매체로 CNBC(2026-10-28, 'Alphabet sinks 10%...')를 추가해 낙폭·LSEG 예상치·2027 설비투자 확인. 각 출처 published 는 페이지 메타 날짜와 일치. 직접 계산 재검산: 클라우드 이익률 11,121/30,709=36.2%(전년 3,594/15,157=23.7%, +12.5%p), 매출 2.03배·이익 3.09배, 수주잔고 5,610×0.55=3,085.5≈3,086억·÷2=1,543억/년, 클라우드 연환산 307.09×4=1,228억, 수주잔고 증가 470억(9.1%), 설비투자/매출 51,355/127,577=40.3%, 영업현금흐름/설비투자 42,290/51,355=82.4%, FCF 42,290−51,355=−9,065, 조달 합계 12,371+28,700≈411억, 조정 EPS 2.12+0.55=2.67(CNBC 값과 일치). 작성자 메모: ① 낙폭 Motley Fool 본문 약 10%·제목 12%·CNBC 'more than 10%' 병기 ② 8-K 기준, SpaceX 는 10-Q 로 확인 ③ TPU '거의 100곳'(쿠리안 준비 발언)·'100곳 이상 의미 있는 고객'(쿠리안 질의응답) 둘 다 기록에서 확인 ④ 현금·부채 8-K 로 교체. EGRESS_BLOCKED 출처 없음. Reuters·Bloomberg 는 검색 도구에서 접근 불가. 투자 권유·주가 전망 문장 없음 확인."
+ }
+}
