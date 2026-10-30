@@ -1,6 +1,14 @@
 {
  "started": "2026-10-31T07:05:15+09:00",
- "finished": "2026-10-31T07:58:43+09:00",
+ "finished": "",
  "network": "full",
- "activity_at": "2026-10-31T07:05:15+09:00"
+ "activity_at": "2026-10-31T07:05:15+09:00",
+ "fallback": {
+  "provider": "codex",
+  "status": "writing",
+  "category": "AI 공모주 분석",
+  "taken_over": "2026-10-31T08:26:08+09:00",
+  "first_taken_over": "2026-10-31T08:26:08+09:00",
+  "reason": "실행 종료"
+ }
 }
