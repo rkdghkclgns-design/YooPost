@@ -1,0 +1,123 @@
+{
+ "topic": "GitHub Copilot Automations(공유 자동화·트리거/도구/비용 상한·자기 개선)와 Agent Merge — GitHub Changelog, GitHub Universe 2026 (2026-10-28) / DEV Community 정리 (2026-10-30)",
+ "source_url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Build shared workflows for your team with Copilot Automations",
+   "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+   "publisher": "GitHub Changelog",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "New tools, triggers, and cost controls for Copilot Automations",
+   "url": "https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations",
+   "publisher": "GitHub Changelog",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Copilot Automations now learn from outcomes and self-improve",
+   "url": "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve",
+   "publisher": "GitHub Changelog",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Agent Merge watches and fixes pull requests in the cloud",
+   "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud",
+   "publisher": "GitHub Changelog",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "About Copilot Automations",
+   "url": "https://docs.github.com/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations",
+   "publisher": "GitHub Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Getting pull requests ready to merge with Agent Merge",
+   "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/watch-and-fix-pull-requests",
+   "publisher": "GitHub Docs",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "GitHub Universe 2026: What DevOps Engineers Need to Know",
+   "url": "https://dev.to/pwd9000/github-universe-2026-what-devops-engineers-need-to-know-1ap9",
+   "publisher": "DEV Community (Marcel.Lupo)",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://github.blog/wp-content/uploads/2026/11/679691292-a8f3baf0-700e-442a-9b09-8fa4b1f684e9.jpg?resize=2064%2C1096",
+   "page_url": "https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations",
+   "caption": "AI 크레딧 상한: 자동화 생성 화면의 도구·트리거·AI 크레딧 한도 설정 영역",
+   "credit": "GitHub"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://github.blog/wp-content/uploads/2026/11/680960714-f07967c3-c256-495b-83d6-8b4776deda52.jpg?resize=2064%2C1096",
+   "page_url": "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve",
+   "caption": "자기 개선 자동화: 개선 제안을 승인하는 화면",
+   "credit": "GitHub"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "우리 팀 저장소에서 Copilot 공유 자동화와 Agent Merge를 켜도 되는가, 켜기 전에 어떤 정책·한도·승인 규칙을 확인해야 하는가",
+  "limitations": "직접 실행하거나 사용량을 측정하지 않았고 공식 변경 기록·문서만 근거로 했다. 크레딧 단가, 실행당 소모량, 성공률은 공개 자료에 없다. 가정 계산(100/500)은 설명용 임의 값이다. 개념 문서(S5·S6)는 페이지에 날짜가 없고 예시 트리거 수가 변경 기록과 달라 문서 갱신 시점이 다를 수 있다. DEV Community 글은 한 개발자의 의견이다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 맞을까: 상황별 도입 판단표",
+    "excerpt": "이 순서는 공식 항목의 조건에서 이끌어 낸 제안이지 GitHub의 공식 권고는 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "공식 항목·문서의 제약(공개 저장소 미지원, 포크 PR 미지원, 쓰기 권한 없는 이벤트 무시, 청구 정책, VS Code 버전)을 독자의 상황별 선택·제외 조건으로 재배열하고 시작 범위를 제안"
+   },
+   {
+    "kind": "calculation",
+    "section": "💳 AI 크레딧 상한: 실행당·일·주·월 한도를 어떻게 조합할까",
+    "excerpt": "모든 실행이 한도까지 쓴다고 가정하면 하루 약 5건(500÷100)에서 새 실행이 막히지만",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "실행당·일 한도 조합의 가정 계산(500÷100)과 '이미 도는 실행은 멈추지 않는다'는 문서 문장에서 이끌어 낸 초과 가능성을 가정·한계와 함께 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚠ 한계와 아직 공개되지 않은 것",
+    "excerpt": "자동화가 만든 PR은 저장소가 승인을 요구하면 추가 승인이 필요하고, 그 PR에서 돌 GitHub Actions 워크플로는 쓰기 권한자가 승인하기 전까지 실행되지 않는다고 문서는 설명합니다.",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "변경 기록(공유 자동화)과 개념 문서(승인·워크플로 실행 조건)를 연결해 무인 병합까지 남은 사람의 확인 지점을 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 변경 기록(페이지 datetime 2026-10-28, universe26 태그 확인), S5·S6 GitHub Docs(페이지에 날짜 없음, published 빈칸 유지), S7 DEV Community(페이지 날짜 30-10-2026)를 다시 열어 수치(트리거 24개=이슈6·PR12·토론3·보안3, 도구 20개, 실행당 최소 30 크레딧, UTC 00:00·월요일·매월 1일 초기화, VS Code 1.144)·플랜·정책명·메뉴 경로·청구 대상·미지원 조건을 대조. 수정 4건: 연쇄 트리거 순환 위험을 DEV 필자 주장이 아닌 이 글의 추론으로 표시, AI Scan은 Code Security AI 크레딧이라고 정정, '변경 이력 화면'을 공식 항목의 change history 표현으로 정정, 설정 경로를 Settings > Copilot > Cloud 로 정정. 크레딧 100/500 계산은 '설명용 가정'·추론 표시 유지 확인. 이미지 I1·I2는 본문 img(og:image 아님, alt 문구로 캡션 대조), HTTP 200 image/jpeg 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
