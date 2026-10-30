@@ -43,7 +43,7 @@ from autopost.cloud_drafts import (  # noqa: E402
 )
 from autopost.config import load_config  # noqa: E402
 from autopost.codex_fallback import fallback_requests, takeover_record  # noqa: E402
-from autopost.cloud_codex import cloud_lease  # noqa: E402
+from autopost.cloud_codex import cloud_lease, daily_skip_history  # noqa: E402
 from autopost.daily_run import daily_health  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
 from autopost.draft_request import (  # noqa: E402
@@ -464,10 +464,14 @@ def fallback_status() -> int:
     if not SYNC["ok"]:
         print(json.dumps({"synced": False, "error": "원고 브랜치 동기화 실패"}, ensure_ascii=False))
         return 2
+    now = datetime.now(KST)
+    previous_skips = daily_skip_history(TREE, now, pushed_folders())
     print(json.dumps({"synced": True, "locked_by": lock_holder().get("owner", ""),
                       "cloud_running": cloud_running(), "cloud_pending": cloud_pending(),
                       "claude": daily_health(TREE, datetime.now(KST)),
-                      "daily": [{"category": g.category, "reason": g.reason} for g in gaps()],
+                      "daily": [{"category": g.category, "reason": g.reason,
+                                 **({"previous_attempt": previous_skips[g.category]}
+                                    if g.category in previous_skips else {})} for g in gaps()],
                       "requests": fallback_requests(TREE, datetime.now(KST), pushed_folders())}, ensure_ascii=False))
     return 0
 

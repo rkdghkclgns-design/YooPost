@@ -22,7 +22,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, daily_task, recover_terminal_lease, reserve, settle, task_key, validate_primary_source, validate_verification  # noqa: E402
+from autopost.cloud_codex import STATE_FILE, choose_task, cloud_lease, daily_task, recover_terminal_lease, reserve, settle, task_attempt, task_key, validate_primary_source, validate_verification  # noqa: E402
 from autopost.codex_fallback import parsed_time  # noqa: E402
 from autopost.cloud_drafts import DRAFTS, RUNS, STATE, draft_folders, is_skip, missing_categories, quality_report, read_json, recent_days, write_json  # noqa: E402
 from autopost.constants import CATEGORIES  # noqa: E402
@@ -215,7 +215,7 @@ def plan(work: Path) -> int:
     output("work", "true")  # 이후 입력 준비 실패에도 complete job이 임대를 해제한다
     work.mkdir(parents=True, exist_ok=True)
     write_json(work / "task.json", task)
-    previous = (state.get("attempts") or {}).get(task_key(task)) or {}
+    previous = task_attempt(state, task)
     excluded = []
     failures = read_json(helper.TREE / STATE / "failures.json")
     for folder in draft_folders(helper.TREE / DRAFTS, (task["day"],)):

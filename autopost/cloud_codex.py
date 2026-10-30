@@ -4,7 +4,9 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from .cloud_drafts import STATE, read_json
+from .cloud_drafts import DRAFTS, SKIP_FILE, STATE, draft_folders, folder_category, is_skip, read_json
+from .constants import CATEGORIES
+from .draft_request import request_id_of
 from .codex_fallback import parsed_time
 
 STATE_FILE = "codex.json"
@@ -41,8 +43,42 @@ def task_key(task: dict) -> str:
     return f"{task['day']}:{task.get('request') or 'daily'}:{task.get('category') or 'auto'}"
 
 
+def daily_skip_history(tree: Path, now: datetime, pushed: set[str]) -> dict:
+    """첫 Codex 인계도 원격 일일 건너뜀의 완료 시각·횟수에서 이어 간다."""
+    grouped: dict[str, list[tuple[datetime, str, dict]]] = {}
+    day = now.strftime("%Y%m%d")
+    for folder in draft_folders(tree / DRAFTS, [day]):
+        if folder.name not in pushed or not is_skip(folder) or request_id_of(folder):
+            continue
+        skipped = read_json(folder / SKIP_FILE)
+        category = folder_category(folder.name)
+        at = parsed_time(skipped.get("at"))
+        if category not in CATEGORIES or skipped.get("category") != category or not at \
+                or at.astimezone(now.tzinfo).strftime("%Y%m%d") != day or at > now:
+            continue
+        grouped.setdefault(category, []).append((at, folder.name, skipped))
+    history = {}
+    for category, items in grouped.items():
+        items.sort(key=lambda item: (item[0], item[1]))
+        finished, _, last = items[-1]
+        history[category] = {"at": finished.isoformat(timespec="seconds"),
+            "finished_at": finished.isoformat(timespec="seconds"), "status": "skipped",
+            "count": len(items), "note": str(last.get("reason") or "")[:300],
+            "skip_ids": [item[1] for item in items]}
+    return history
+
+
+def task_attempt(state: dict, task: dict) -> dict:
+    """기존 Codex 기록이 있으면 이력을 다시 합산하거나 완료 시각을 되돌리지 않는다."""
+    attempts = state.get("attempts") or {}
+    key = task_key(task)
+    if key in attempts:
+        return attempts[key] or {}
+    return (task.get("previous_attempt") or {}) if daily_task(task) else {}
+
+
 def retry_ready(state: dict, task: dict, now: datetime) -> bool:
-    attempt = (state.get("attempts") or {}).get(task_key(task)) or {}
+    attempt = task_attempt(state, task)
     count = int(attempt.get("count") or 0)
     if daily_task(task) and task["day"] != now.strftime("%Y%m%d"):
         return False
@@ -81,14 +117,14 @@ def choose_task(status: dict, state: dict, now: datetime) -> dict:
              if retry_ready(state, {**base, **gap}, now)]
     # 실패한 첫 카테고리가 아직 시도하지 않은 나머지 카테고리를 가로막지 않는다.
     return min(ready, key=lambda task: (
-        int(((state.get("attempts") or {}).get(task_key(task)) or {}).get("count") or 0),
-        str(((state.get("attempts") or {}).get(task_key(task)) or {}).get("at") or "")), default={})
+        int(task_attempt(state, task).get("count") or 0),
+        str(task_attempt(state, task).get("at") or "")), default={})
 
 
 def reserve(state: dict, task: dict, owner: str, now: datetime) -> dict:
     attempts = {k: v for k, v in (state.get("attempts") or {}).items() if k.startswith(task["day"] + ":")}
     key = task_key(task)
-    previous = attempts.get(key) or {}
+    previous = task_attempt(state, task)
     attempts[key] = {**previous, "at": now.isoformat(timespec="seconds"), "count": int(previous.get("count") or 0) + 1,
                      "status": "writing"}
     for field in ("finished_at", "next_retry_at"):

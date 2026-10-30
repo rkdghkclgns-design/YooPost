@@ -635,3 +635,123 @@ def test_rejected_candidates_survive_reservation_and_artifact_loss():
     assert following["attempts"][task_key(selected)]["rejected_candidates"] == failed
     ended = settle(following,selected,"two","failed",now=NOW+timedelta(hours=2))
     assert ended["attempts"][task_key(selected)]["rejected_candidates"] == failed
+
+
+def test_initial_daily_skip_waits_thirty_minutes_and_preserves_backoff_count():
+    finished = NOW - timedelta(minutes=30)
+    prior = {"at": finished.isoformat(), "finished_at": finished.isoformat(),
+             "status": "skipped", "count": 1, "note": "적격 후보 없음"}
+    gap = {"category": "AI 도구", "reason": "건너뜀", "previous_attempt": prior}
+    status = {"synced": True, "daily": [gap]}
+    assert choose_task(status, {}, NOW - timedelta(seconds=1)) == {}
+    selected = choose_task(status, {}, NOW)
+    assert selected["category"] == "AI 도구"
+    reserved = reserve({}, selected, "owner", NOW)
+    assert reserved["attempts"][task_key(selected)]["count"] == 2
+    ended = settle(reserved, selected, "owner", "skipped", now=NOW + timedelta(minutes=42))
+    assert retry_at(ended["attempts"][task_key(selected)], selected) == NOW + timedelta(minutes=102)
+    assert choose_task({"synced": True, "daily": [gap, {"category": "AI 보안"}]}, {}, NOW)["category"] == "AI 보안"
+
+
+def test_recorded_codex_attempt_and_service_wait_take_precedence_over_old_skip():
+    prior = {"at": (NOW-timedelta(hours=3)).isoformat(), "finished_at": (NOW-timedelta(hours=3)).isoformat(),
+             "status": "skipped", "count": 1}
+    selected = task(previous_attempt=prior)
+    state = {"attempts": {task_key(selected): {"at": NOW.isoformat(), "finished_at": NOW.isoformat(),
+             "status": "failed", "count": 8, "rejected_candidates": [{"title": "이전 제외 후보"}]}}}
+    status = {"synced": True, "daily": [{"category": "AI 도구", "previous_attempt": prior}]}
+    assert not choose_task(status, state, NOW + timedelta(minutes=119))
+    ready = choose_task(status, state, NOW + timedelta(minutes=120))
+    assert ready["category"] == "AI 도구"
+    reserved = reserve(state, ready, "owner", NOW + timedelta(minutes=120))
+    assert reserved["attempts"][task_key(selected)]["count"] == 9
+    assert reserved["attempts"][task_key(selected)]["rejected_candidates"] == [{"title": "이전 제외 후보"}]
+    assert not choose_task(status, {"service_wait": {"until": (NOW+timedelta(hours=4)).isoformat()}}, NOW)
+    manual = task(request=RID, kind="single", previous_attempt=prior)
+    assert reserve({}, manual, "manual", NOW)["attempts"][task_key(manual)]["count"] == 1
+
+
+def test_daily_skip_history_uses_only_current_remote_daily_completion_times(tmp_path):
+    from autopost.cloud_codex import daily_skip_history
+    day = NOW.strftime("%Y%m%d")
+    valid = [f"{day}_070000_2", f"{day}_080000_2"]
+    for name, at in zip(valid, [NOW-timedelta(hours=2), NOW-timedelta(hours=1)]):
+        write_json(tmp_path / "drafts" / name / "skip.json", {"category": "AI 도구", "reason": "적격 후보 없음", "at": at.isoformat()})
+    invalid = {
+        f"{day}_081000_2": with_request({"category": "AI 도구", "at": NOW.isoformat()}, RID, "all"),
+        f"{day}_082000_2": {"category": "AI 도구", "at": (NOW+timedelta(hours=1)).isoformat()},
+        f"{day}_083000_2": {"category": "AI 도구", "at": "invalid"},
+        f"{day}_084000_2": {"category": "AI 도구", "at": NOW.replace(tzinfo=None).isoformat()},
+        f"{day}_085000_2": {"category": "AI 보안", "at": NOW.isoformat()},
+        f"{day}_090000_2": {"category": "AI 도구", "at": NOW.isoformat()},
+        f"{(NOW-timedelta(days=1)).strftime('%Y%m%d')}_070000_2": {"category": "AI 도구", "at": (NOW-timedelta(days=1)).isoformat()},
+    }
+    for name, data in invalid.items():
+        write_json(tmp_path / "drafts" / name / "skip.json", data)
+    pushed = set(valid) | (set(invalid) - {f"{day}_090000_2"})
+    history = daily_skip_history(tmp_path, NOW, pushed)
+    assert set(history) == {"AI 도구"}
+    assert history["AI 도구"]["count"] == 2
+    assert history["AI 도구"]["finished_at"] == (NOW-timedelta(hours=1)).isoformat()
+    assert history["AI 도구"]["skip_ids"] == valid
+
+
+def test_fallback_status_exposes_remote_skip_history_for_the_first_handoff(tmp_path, monkeypatch, capsys):
+    helper = codex_cloud.helper
+    folder = tmp_path / "drafts" / f"{NOW.strftime('%Y%m%d')}_075839_2"
+    finished = NOW - timedelta(minutes=27)
+    write_json(folder / "skip.json", {"category": "AI 도구", "reason": "적격 후보 없음", "at": finished.isoformat()})
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return NOW
+    monkeypatch.setattr(helper, "datetime", Clock)
+    monkeypatch.setattr(helper, "TREE", tmp_path)
+    monkeypatch.setattr(helper, "SYNC", {"ok": True})
+    monkeypatch.setattr(helper, "pushed_folders", lambda: {folder.name})
+    monkeypatch.setattr(helper, "gaps", lambda: [SimpleNamespace(category="AI 도구", reason="건너뜀")])
+    monkeypatch.setattr(helper, "lock_holder", lambda: {})
+    monkeypatch.setattr(helper, "cloud_running", lambda: False)
+    monkeypatch.setattr(helper, "cloud_pending", lambda: False)
+    monkeypatch.setattr(helper, "daily_health", lambda *args: {"running": False})
+    monkeypatch.setattr(helper, "fallback_requests", lambda *args: [])
+    assert helper.fallback_status() == 0
+    current = json.loads(capsys.readouterr().out)
+    assert current["daily"][0]["previous_attempt"]["finished_at"] == finished.isoformat()
+    assert choose_task(current, {}, NOW) == {}
+
+
+@pytest.mark.parametrize("ready", [False, True])
+def test_plan_waits_for_initial_skip_completion_and_passes_its_history(tmp_path, monkeypatch, ready):
+    helper = codex_cloud.helper
+    live = NOW.replace(hour=8, minute=28, second=39, microsecond=0)
+    finished = live - timedelta(minutes=30)
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return live if ready else live-timedelta(seconds=1)
+    monkeypatch.setattr(codex_cloud, "datetime", Clock)
+    monkeypatch.setattr(helper, "TREE", tmp_path / "tree")
+    monkeypatch.setattr(codex_cloud, "sync", lambda: None)
+    monkeypatch.setattr(codex_cloud, "recover_previous_run", lambda state: state)
+    monkeypatch.setenv("GITHUB_RUN_ID", "123")
+    monkeypatch.setenv("GITHUB_RUN_ATTEMPT", "1")
+    monkeypatch.setenv("CODEX_AUTH_READY", "true")
+    monkeypatch.setattr(codex_cloud, "status", lambda: {"synced": True, "daily": [{
+        "category": "AI 도구", "reason": "건너뜀", "previous_attempt": {
+        "at": finished.isoformat(), "finished_at": finished.isoformat(), "status": "skipped",
+        "count": 1, "note": "공식 원문 확인 불가", "skip_ids": ["initial-skip"]}}]})
+    monkeypatch.setattr(codex_cloud, "save_state", lambda state, *args: write_json(helper.TREE / "state/codex.json", state))
+    monkeypatch.setattr(codex_cloud.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(stdout="brief"))
+    monkeypatch.setattr(codex_cloud, "notice", lambda *args: None)
+    monkeypatch.setattr(codex_cloud, "output", lambda *args: None)
+    work = tmp_path / "work"
+    assert codex_cloud.plan(work) == 0
+    state = read_json(helper.TREE / "state/codex.json")
+    if ready:
+        selected = read_json(work / "task.json")
+        assert state["attempts"][task_key(selected)]["count"] == 2
+        assert state["attempts"][task_key(selected)]["skip_ids"] == ["initial-skip"]
+        assert read_json(work / "retry-history.json")["previous_failure"] == "공식 원문 확인 불가"
+    else:
+        assert not state.get("lease") and not (work / "task.json").exists()
