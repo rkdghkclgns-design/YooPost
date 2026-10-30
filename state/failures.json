@@ -1,23 +1,4 @@
 {
- "20261001_072950_4": {
-  "hash": "401d162778d019c7",
-  "reason": "이미 발행한 주제와 겹칩니다: AMD to Acquire World Labs to Advance the Future of AI Compute (AMD, 2026-09-28) (그래도 올리려면 --allow-duplicate)",
-  "attempts": 1,
-  "permanent": true
- },
- "20261001_074849_7": {
-  "hash": "1f056b2cb8a9f260",
-  "reason": "이미 발행한 주제와 겹칩니다: 인텔리빅스 코스닥 공모 — 증권신고서(지분증권, 2026-09-16): 신주 2,500,000주·희망가 7,600~9,000원, 수요예측 10/12~16·청약 10/21~22 (그래도 올리려면 --allow-duplicate)",
-  "attempts": 1,
-  "permanent": true
- },
- "20261001_074227_6": {
-  "hash": "092868eaf0883db9",
-  "reason": "겹침으로 제외: 발행한 글 '📊 마이크로소프트 AI 확산 보고서 총정리: 세계 18.8%·한국 40.6%(12위), AI 사용률 숫자 읽는 법' (같은 소식의 원문을 함께 다룸) https://aibaekgwasajeon.blogspot.com/2026/09/ai-188-40612-ai.html",
-  "attempts": 1,
-  "permanent": true,
-  "excluded": true
- },
  "20261002_171449_7": {
   "hash": "e256e49477a1a028",
   "reason": "겹침으로 제외: 발행한 글 '🔬 이에스티 공모주 분석: 코스닥 신주 220만주·희망가 10,600~12,400원, 정전척 증권신고서 총정리' (같은 원문 https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260921000211) https://aibaekgwasajeon.blogspot.com/2026/10/220-1060012400.html",
