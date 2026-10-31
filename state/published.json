@@ -5109,5 +5109,22 @@
    "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm"
   ],
   "draft_id": "20261101_072515_4"
+ },
+ {
+  "date": "2026-11-01",
+  "title": "🔒 AI 코딩 도구 내장 브라우저 5종, HTML 한 장이 디스크를 읽었다: 내 신뢰 목록부터 점검할 순서",
+  "topic": "EMBRACE: How We Hacked the Browsers Embedded in Top Five Desktop AI Assistants (Forever Security, 2026-10-29)",
+  "category": "AI 보안",
+  "source_url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-5-html.html"
+  },
+  "sources": [
+   "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+   "https://www.helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities/",
+   "https://code.visualstudio.com/docs/editing/workspaces/workspace-trust",
+   "https://hackread.com/claude-code-desktop-flaw-html-steal-credentials/"
+  ],
+  "draft_id": "20261101_073120_5"
  }
 ]
