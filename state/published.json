@@ -5074,5 +5074,22 @@
    "https://fourweekmba.com/ai-granola-adds-free-voice-typing-to-compete-with-2b-wispr/"
   ],
   "draft_id": "20261101_071432_2"
+ },
+ {
+  "date": "2026-11-01",
+  "title": "🌍 Hy-Nomas 논문 분석: 80억 파라미터 월드 모델, 승률표는 어떤 조건에서 읽어야 할까",
+  "topic": "Hy-Nomas: Towards Free-form Interactive World Generation",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.36729",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/hy-nomas-80.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.36729",
+   "https://arxiv.org/html/2610.36729v1",
+   "https://huggingface.co/papers/2610.36729",
+   "https://alphasignal.ai/news/tencent-opens-hy-nomas-an-interactive-video-world-model-running-on-one-rtx-4090"
+  ],
+  "draft_id": "20261101_071921_3"
  }
 ]
