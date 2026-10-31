@@ -1,0 +1,100 @@
+{
+ "topic": "Amazon.com Announces Third Quarter Results — Q3 2026: AWS +39% to $46.0B, capex $77.3B, TTM FCF -$42.4B (Amazon 8-K, 2026-10-29) / Constellation Research·BigGo Finance·MarketBeat 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872426000038/amzn-20260930xex991.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Amazon.com Announces Third Quarter Results (Form 8-K Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872426000038/amzn-20260930xex991.htm",
+   "publisher": "Amazon.com, Inc. (SEC)",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AWS Q3 revenue growth surges 39%, capex stings Amazon's cash flow",
+   "url": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow",
+   "publisher": "Constellation Research",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Amazon's AWS Backlog Hits $578 Billion as Jassy Maps Out a $1 Trillion Cloud Future",
+   "url": "https://finance.biggo.com/news/ef681f0f-ae38-481c-b7cf-649ddcad79b3",
+   "publisher": "BigGo Finance",
+   "published": "2026-10-31",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Amazon.com Q3 Earnings Call Highlights",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-q3-earnings-call-001416198.html",
+   "publisher": "MarketBeat via Yahoo Finance",
+   "published": "2026-10-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.constellationr.com/sites/default/files/styles/responsive_600w/public/media/image/2026/10/screenshot_2026-10-29_162708.png.webp?itok=iR7eYzsA",
+   "page_url": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow",
+   "caption": "Amazon 2026년 3분기 부문 정보표(North America·International·AWS 매출·영업이익)",
+   "credit": "Amazon.com, Inc. 보도자료 표 / Constellation Research"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AWS 39% 성장과 설비투자 773억 달러·잉여현금흐름 -424억 달러를 어떻게 함께 읽어야 하는가",
+  "limitations": "직접 실행·실측 없음. 모든 비율은 보도자료 숫자의 단순 계산이며 글쓴이 해석. 수주잔고와 직전 분기 잔고·2027년 전망은 컨퍼런스콜 보도 기준(보도자료에 총액 없음). 구글 클라우드 등 타사 비교는 하지 않음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산으로 보는 이익의 쏠림",
+    "excerpt": "AWS를 뺀 나머지 부문의 영업이익이 약 59.9억 달러에서 약 103.0억 달러로 더 빠르게 늘었기 때문입니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "부문 정보표의 백만 달러 숫자로 AWS 이익 비중이 65.6%에서 63.3%로 낮아졌음을 계산해, 이익 쏠림 여부를 판단하게 함"
+   },
+   {
+    "kind": "calculation",
+    "section": "🏗 설비투자와 현금흐름: 번 돈보다 더 쓴 1년",
+    "excerpt": "최근 12개월 설비투자 2,152억 달러는 같은 기간 영업현금흐름 1,683억 달러의 약 128%입니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "설비투자를 AWS 분기 매출·영업현금흐름과 같은 단위로 나눠 규모감을 제시하고 수익성 지표가 아님을 한계로 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별 판단 기준: 이 숫자를 어떻게 쓸까",
+    "excerpt": "한쪽만 보면 AI 호황이나 과잉 투자라는 서로 다른 이야기를 만들어 낼 수 있고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 숫자와 주의점을 표로 나눠 판단 기준을 제공"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📈 수주잔고와 경영진의 전망",
+    "excerpt": "직전 분기 말 잔고가 4,960억 달러였다고 적어, 한 분기에 약 820억 달러(약 16.5%) 늘어난 셈입니다",
+    "source_ids": [
+     "S3",
+     "S4",
+     "S1"
+    ],
+    "added_value": "통화 보도 두 건(5,780억·4,960억 달러)을 보도자료와 구분해 연결하고 출처 성격을 표시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 SEC 8-K Ex.99.1 원문 재확인 — 매출 2,019억(180,169→201,944백만, +12%), 영업이익 28,076/17,422백만, 영업이익률 13.9%·역대 최고, 순이익 20,685/21,187, EPS 1.89/1.95, Anthropic 세전 95억, 부문표(NA 112,852·8,723/4,789, Intl 43,108·1,580/1,199·5%(환율 제외 8%), AWS 45,984·17,773/11,434·39%·38.7%·런레이트 1,840억), 분기 설비투자 77,259/35,095백만, TTM 매입 215,192/120,131, 순액 210,657(+82%), 영업현금흐름 168,300(+29%)/130,691, FCF −42,357/+14,788, 2026 capex 약 2,200억, 2027·2028 40% 이상 전망, Bedrock 7배·17배, AgentCore, 추가 모델, TorchNeuron 확인. 재계산: 63.30%·65.63%, 103.03/59.88억, 1.680배, 127.9%, +79.1%, 2.20배(+120%), 5,780/4,960=+16.5%(820억), 5,780/1,840=3.14배 — 모두 일치. AWS 영업이익 증가 6,339백만이라 '약 64억'→'약 63억' 수정. 수주잔고 5,780억·세 자릿수 증가는 MarketBeat(S4), 직전 분기 4,960억·BofA(Justin Post) 3,100억은 BigGo(S3)에만 있어 매체 귀속 명시(보도자료에 없음). 'Jassy CEO가 세 자릿수 증가를 말했다'는 직접 발언 귀속을 매체 보도 표현으로 완화. Trainium '판매' → MarketBeat 표현대로 'AWS 밖에서도 쓸 수 있게'로 수정. 14초·추론 절반 이상·1조 달러는 S2(Constellation), 20배·20억 달러 절감은 S3·S4로 확인. published: S1 2026-10-29, S2 2026-10-29(Larry Dignan), S3 2026-10-31, S4 2026-10-29 페이지 표기 일치. 인용 이미지는 S2 본문 그림(부문 정보표 스크린샷)을 열어 내용 확인, 본문 600w 주소로 교체."
+ }
+}
