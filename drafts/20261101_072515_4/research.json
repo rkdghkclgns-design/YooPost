@@ -1,0 +1,96 @@
+{
+ "topic": "OpenAI pares fundraising goal, now seeking up to $20 billion in latest round (CNBC, 2026-10-31) / OpenAI reportedly lowers funding target for new round (TechCrunch, 2026-10-31)",
+ "source_url": "https://www.cnbc.com/2026/10/31/openai-funding-target-cut-10-billion.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenAI pares fundraising goal, now seeking up to $20 billion in latest round",
+   "url": "https://www.cnbc.com/2026/10/31/openai-funding-target-cut-10-billion.html",
+   "publisher": "CNBC",
+   "published": "2026-10-31",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI reportedly lowers funding target for new round",
+   "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-31",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Cracks are emerging in the AI spending boom",
+   "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI cuts its valuation target to $1.25tn as it nears a $30bn round",
+   "url": "https://thenextweb.com/news/openai-funding-round-1-25tn-uae-coatue",
+   "publisher": "The Next Web",
+   "published": "2026-10-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Alphabet Announces Third Quarter 2026 Results (Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
+   "publisher": "Alphabet (SEC 8-K)",
+   "published": "2026-10-28",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "읽은 기사들의 본문 그림은 CEO 사진·로고뿐이며 라운드 내용을 보여 주는 도표·화면이 없어 넣지 않았다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI 투자 라운드 목표 감액 보도에서 확인된 사실은 무엇이고, 감액 폭과 의미를 어떻게 읽어야 하는가",
+  "limitations": "FT·WSJ 원문과 OpenAI 공식 발표는 직접 확인하지 못했고 CNBC·TechCrunch 인용에 의존한다. 라운드가 미마감이라 숫자는 바뀔 수 있으며 가치 기준(프리/포스트머니)이 매체마다 다르다. 계산은 기사 숫자로 한 단순 산술이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 감액 폭을 직접 계산해 보면",
+    "excerpt": "가치를 지키면서 모으는 금액을 줄였다는 해석이 가능하지만, 이는 숫자에서 끌어낸 추론이며",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "300억→200억 달러(약 33%), 1조 4,000억→1조 2,500억 달러(약 10.7%)를 비율로 환산해 감액의 크기와 비대칭을 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖ 매체마다 다르게 적은 부분",
+    "excerpt": "110억 달러 확보 같은 숫자는 한 매체 인용으로만 확인되므로 가볍게 다루는 편이 안전합니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "CNBC와 TechCrunch를 쟁점별로 대조해 합의된 사실과 한 매체만 전한 숫자를 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자는 이 소식을 어떻게 판단하면 좋을까요?",
+    "excerpt": "따라서 서비스 이용자에게 직접적인 변화가 보도된 것은 아니라고 읽는 것이 정확합니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 볼 신호와 결론을 미룰 것을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [
+   "TechCrunch(…) 개별 투자자 이름은 이번에 읽은 기사에서 확인되지 않습니다. (TNW·CNBC에 코츠 등 이름이 있어 부정확 — 'CNBC는 라운드가 아직 닫히지 않았다고 전했습니다'로 교체)",
+   "두 기사 모두 OpenAI가 즉시 논평하지 않았다고 적었습니다. (TechCrunch는 논평 요청만 밝힘 — 각 매체 표현대로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). CNBC(2026-10-31 3:56PM EDT)·TechCrunch(10-31, 10-30)·TNW(10-25 UTC)·Alphabet 8-K Ex.99.1(10-28)을 WebFetch로 다시 열어 published 일치 확인. FT·WSJ 원문은 열지 않음 — 모든 FT/WSJ 숫자는 CNBC·TechCrunch 인용으로 귀속 표기(요약 문구에 'CNBC가 전한 FT 보도', 'TechCrunch가 전한 WSJ 보도' 추가, 1조 2,500억 달러는 CNBC가 FT 인용이며 직접 확인한 것은 200억 달러뿐임을 명시). TechCrunch의 UAE 주도는 FT 인용으로 귀속. 가치 기준: CNBC=FT 인용 포스트머니, TNW=신규 자금 제외('does not include the new money'), 3월 8,520억=자금 포함 — 원고 서술 일치. 계산 재확인: 10/30=33.3%, 150/1400=10.71%, 11/20=55%, 1250/852=1.467배. 8-K: 설비투자 51,355M·FCF -9,065M·클라우드 30,709M(전년 15,157M, +103%) 일치. 쉰들러 표기 수정, 강조 없는 문단 5개 보완. EGRESS_BLOCKED 출처 없음."
+ }
+}
