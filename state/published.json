@@ -5038,5 +5038,23 @@
    "https://www.thebell.co.kr/front/newsview.asp?code=0705&key=202610261110303040106853"
   ],
   "draft_id": "20261031_083416_7"
+ },
+ {
+  "date": "2026-11-01",
+  "title": "🧠 Mistral Large 4 가중치 공개, 프리뷰와 무엇이 달라졌고 누가 써도 되나",
+  "topic": "Mistral Large 4 (Le Chonk) open-weight release (Mistral AI, 2026-10-29)",
+  "category": "AI 언어 모델",
+  "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/mistral-large-4.html"
+  },
+  "sources": [
+   "https://mistral.ai/news/mistral-large-4-oss/",
+   "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+   "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE",
+   "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/",
+   "https://www.silicon.co.uk/cloud/ai/mistral-le-chonk-631804"
+  ],
+  "draft_id": "20261101_070616_1"
  }
 ]
