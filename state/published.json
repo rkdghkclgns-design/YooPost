@@ -5056,5 +5056,23 @@
    "https://www.silicon.co.uk/cloud/ai/mistral-le-chonk-631804"
   ],
   "draft_id": "20261101_070616_1"
+ },
+ {
+  "date": "2026-11-01",
+  "title": "🎙 Granola 무료 음성 입력 출시: 회의록 앱이 받아쓰기까지, Mac에서 켜기 전 확인할 조건",
+  "topic": "Granola crunches up a dictation feature to compete with Wispr (TechCrunch, 2026-10-29) — Granola Voice Typing",
+  "category": "AI 도구",
+  "source_url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/granola-mac.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+   "https://www.granola.ai/voice-typing",
+   "https://docs.granola.ai/help-center/voice-typing/intro",
+   "https://docs.granola.ai/help-center/voice-typing/troubleshooting-dictation",
+   "https://fourweekmba.com/ai-granola-adds-free-voice-typing-to-compete-with-2b-wispr/"
+  ],
+  "draft_id": "20261101_071432_2"
  }
 ]
