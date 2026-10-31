@@ -1,0 +1,114 @@
+{
+ "topic": "Mistral Large 4 (Le Chonk) open-weight release (Mistral AI, 2026-10-29)",
+ "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Mistral Large 4 (Le Chonk): Open-Weight Release",
+   "url": "https://mistral.ai/news/mistral-large-4-oss/",
+   "publisher": "Mistral AI",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "mistralai/Mistral-Large-4-1T-A52B (Hugging Face 모델 카드)",
+   "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+   "publisher": "Mistral AI / Hugging Face",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Mistral Ecosystem Open-Weight License",
+   "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE",
+   "publisher": "Mistral AI / Hugging Face",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall",
+   "url": "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/",
+   "publisher": "The Decoder",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Mistral Large 4 preview coverage (Silicon UK)",
+   "url": "https://www.silicon.co.uk/cloud/ai/mistral-le-chonk-631804",
+   "publisher": "Silicon UK",
+   "published": "2026-10-07",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/AAII-Agentic-Coding-Index-Mistral-1200x861.png",
+   "page_url": "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/",
+   "caption": "코딩 에이전트 지수와 비용을 비교한 도표 (성능 비교)",
+   "credit": "Artificial Analysis / The Decoder"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/aaii-cyber-index-mistral-large-4-score-vs-cost-1200x830.png",
+   "page_url": "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/",
+   "caption": "Cyber Index 점수와 과제당 비용 도표 (성능 비교)",
+   "credit": "Artificial Analysis / The Decoder"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Mistral Large 4 가중치 공개에서 프리뷰 대비 무엇이 달라졌고, 우리 상황에서 쓸 수 있는가?",
+  "limitations": "직접 실행·벤치마크 재현은 하지 않았고 모든 성능 수치는 Mistral·Artificial Analysis 발표값입니다. 비용 예시는 임의로 가정한 사용량이며 라이선스 해석은 법률 자문이 아닙니다. Mistral 공식 글 본문에는 날짜가 없어 페이지 메타의 게재일(2026-10-29)을 사용했고, 프리뷰 정확한 공개일은 출처에서 확인하지 못해 '이달 초'로만 적었습니다. Artificial Analysis 페이지는 게재일이 없어 출처에서 제외했습니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 가격이 절반이 된 것을 비용으로 환산하면",
+    "excerpt": "현재 목록가로는 입력 $7.00 + 출력 $4.20 = **$11.20**, 프리뷰 가격으로는 $13.60 + $8.36 = **$21.96**입니다",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "출처의 단가로 가정 사용량의 월 비용을 프리뷰 가격과 나란히 계산"
+   },
+   {
+    "kind": "comparison",
+    "section": "🆕 프리뷰와 정식 공개, 무엇이 달라졌나",
+    "excerpt": "눈에 띄는 점은 **코딩 에이전트 쪽 개선 폭은 크지만 종합 지능 지표는 1점 오르는 데 그쳤다**는 것입니다",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "프리뷰와 정식 공개의 지표를 같은 조건으로 나열하고 변화율을 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "⚖️ 라이선스: 우리 회사는 써도 되나",
+    "excerpt": "아래는 이 조항을 상황별로 풀어 쓴 판단표입니다. 법률 자문이 아니므로 애매하면 Mistral에 문의해야 합니다",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "라이선스 MaaS 정의를 독자의 사용 상황별 판단표로 풀어 씀"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 57,
+  "removed": [
+   "프리뷰 공개일 '10월 6일'(출처에 날짜 없음 → '이달 초·약 3주 전'으로 수정, 도입·요약·흐름 문단)",
+   "The Decoder는 출시 후 2주간 입력 $0.68·출력 $2.09의 할인가가 적용된다고 전합니다. (오류: 프리뷰 출시 때의 지난 할인 → 수정)",
+   "출시 할인: The Decoder 기준 2주간이라 11월 중순쯤 끝날 수 있습니다 (삭제)",
+   "입력 단가도 중앙값($0.47)보다 높습니다. (Artificial Analysis 페이지만 근거, 발표일 없는 출처 제외로 삭제)",
+   "Artificial Analysis 페이지는 이 모델을 22개 중 9위로 표시합니다. (삭제, 같은 이유)",
+   "Artificial Analysis 페이지 기준으로 이 모델을 제공하는 API 업체는 Mistral 자신뿐 (삭제, 모델 카드 내용만 유지)",
+   "Coding Agent Index '48%로 GLM-5.3과 같고, 평균 47% 적게' → 'GLM-5.3과 사실상 같은 수준, GLM-5.3보다 토큰 47% 적게'로 수정",
+   "'하이브리드(지시·추론)' 표현 삭제(출처 문구 미확인), 'DeepSeek V4.1 Flash 1017' 오타 수정, API 모델 ID mistral-large-4 → mistral-large-4-0 수정",
+   "'Microsoft Foundry가 첫 클라우드 제공처' → '첫' 미확인, 제공처 나열로 수정",
+   "'Terminal-Bench 상위권에는 다른 오픈 모델이 앞서' → Kimi K3.1 Pro 가중치 미공개(11월 4일 예정)라 표현 수정"
+  ],
+  "note": "Opus 검증: Mistral 공식 글(datePublished 메타 2026-10-29 확인), HF 모델 카드·LICENSE(최근 수정 2026-10-29), The Decoder(2026-10-29), Silicon UK(2026-10-07)를 다시 열어 수치·이름·가격·스펙을 하나씩 대조. Artificial Analysis 페이지는 게재일이 없어 출처에서 빼고 해당 수치는 The Decoder 인용분만 남김. 인용 이미지 2개는 HTTP 200 image/png 확인."
+ }
+}
