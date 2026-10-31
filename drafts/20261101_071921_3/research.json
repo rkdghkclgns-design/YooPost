@@ -1,0 +1,104 @@
+{
+ "topic": "Hy-Nomas: Towards Free-form Interactive World Generation",
+ "source_url": "https://arxiv.org/abs/2610.36729",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hy-Nomas: Towards Free-form Interactive World Generation (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2610.36729",
+   "publisher": "arXiv (Tencent Hy Visual Generation Team)",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hy-Nomas: Towards Free-form Interactive World Generation (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2610.36729v1",
+   "publisher": "arXiv (Tencent Hy Visual Generation Team)",
+   "published": "2026-10-27",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hy-Nomas: Towards Free-form Interactive World Generation (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.36729",
+   "publisher": "Hugging Face",
+   "published": "2026-10-28",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Tencent Opens Hy-Nomas, an Interactive Video World Model Running on One RTX 4090",
+   "url": "https://alphasignal.ai/news/tencent-opens-hy-nomas-an-interactive-video-world-model-running-on-one-rtx-4090",
+   "publisher": "AlphaSignal",
+   "published": "2026-10-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.36729v1/teaser.png",
+   "page_url": "https://arxiv.org/html/2610.36729v1",
+   "caption": "Hy-Nomas가 텍스트와 카메라 조작을 번갈아 받아 상호작용형 영상 세계를 생성하는 예시 (핵심 아이디어 개요)",
+   "credit": "Hy-Nomas 논문 Figure 1 (arXiv 2610.36729)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.36729v1/Hy-Nomas-Bench4_indoor.png",
+   "page_url": "https://arxiv.org/html/2610.36729v1",
+   "caption": "공간 기억(Bench-4) 평가 설계: 기준 물체와 왕복 카메라 궤적",
+   "credit": "Hy-Nomas 논문 Figure 11 (arXiv 2610.36729)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.36729v1/Hy-Nomas-Bench_overview_clear.png",
+   "page_url": "https://arxiv.org/html/2610.36729v1",
+   "caption": "Hy-Nomas-Bench 개요: 사례, 세계 설정, 제어 입력, 평가 방식",
+   "credit": "Hy-Nomas 논문 Figure 10 (arXiv 2610.36729)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Hy-Nomas의 사람 평가 승률은 어떤 상대·벤치 조건에서 나온 숫자이며, 소비자 GPU에서 쓸 만한 모델로 볼 수 있는가?",
+  "limitations": "모델을 직접 실행하지 않았고 모든 수치는 arXiv 논문 본문(HTML 전체)과 보도에서 가져왔다. 독립 재현 결과와 실제 생성 지연 시간은 논문·보도에 없어 확인하지 못했다. 계산은 출처 수치의 단순 산술이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🥊 같은 조건끼리 읽는 사람 평가 점수표",
+    "excerpt": "비교 상대와 벤치가 행마다 다르므로 **행끼리 합쳐 평균을 내거나 순위를 매기지 않는 것이 맞습니다.**",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "13개 비교를 상대·벤치별로 나열하고 Genie 3가 일부 벤치에서만 비교됐음을 밝혀 합산 평균 해석을 막는다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 계산으로 읽는 속도·메모리 수치",
+    "excerpt": "여기서 **20.53 GiB** 는 '100초짜리 한 편을 만드는 동안의 최대 점유량'이지, 여러 세션을 동",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "100→4회 샘플링(25배), 2,400프레임, 세그먼트 평균 약 14.3초를 출처 수치로 계산하고 가정과 한계를 표시했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 누구에게 맞고 누구에게는 이른가",
+    "excerpt": "이 표의 모든 행은 **논문이 제시한 조건의 범위 안에서만** 유효합니다. 같은 프롬프트로 다른 모델과 직접",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "도입 상황별로 어떤 벤치 수치를 근거로 삼고 무엇을 직접 재확인해야 하는지 정리했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 61,
+  "removed": [
+   "물리적 그럴듯함에서 HappyOyster 대비 승률 45.0%에는 무승부 43.3%가 따라붙어 우위가 좁다. (‘저자들이 직접 적은 약점’ 목록에 있었으나 논문에 없는 서술 → 논문의 루프형 궤적 데이터 가설로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(2026-10-27 제출, 38명)·arXiv HTML v1 전문(끝까지)·AlphaSignal(datePublished 2026-10-23)·HF Papers(Published 2026-10-28, WebFetch)를 다시 열어 수치·표 13행·LoRA·벤치 구성·메모리(20.53 GiB, 100초/7세그먼트/1280×704/24FPS)·증류 100→4·360K 토큰·희소 어텐션 25% 확인. 수정: 기관을 논문 HTML 표기 'Tencent Hy Visual Generation Team'으로(HunyuanVideo 1.5 기반 명시), INT8·SWA·CPU 오프로딩은 논문 6.2절로도 확인(Apache 2.0만 AlphaSignal 기준), 지연 시간은 논문에 없음 명시, I2 캡션·Figure 11 번호 수정, editorial limitations 갱신. 이미지 3개 HTTP 200 image/png, 폭 1500px 이상."
+ }
+}
