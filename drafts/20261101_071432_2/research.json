@@ -1,0 +1,93 @@
+{
+ "topic": "Granola crunches up a dictation feature to compete with Wispr (TechCrunch, 2026-10-29) — Granola Voice Typing",
+ "source_url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Granola crunches up a dictation feature to compete with Wispr",
+   "url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Voice typing: voice-to-text dictation in any app | Granola",
+   "url": "https://www.granola.ai/voice-typing",
+   "publisher": "Granola",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Voice Typing (intro) - Granola help center",
+   "url": "https://docs.granola.ai/help-center/voice-typing/intro",
+   "publisher": "Granola",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Troubleshooting dictation - Granola help center",
+   "url": "https://docs.granola.ai/help-center/voice-typing/troubleshooting-dictation",
+   "publisher": "Granola",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Granola Adds Free Voice Typing to Compete With $2B Wispr",
+   "url": "https://fourweekmba.com/ai-granola-adds-free-voice-typing-to-compete-with-2b-wispr/",
+   "publisher": "FourWeekMBA",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Mac에서 Granola 무료 음성 입력을 켜기 전에 어떤 조건을 확인해야 하고, 4배 빠르다는 주장은 내 작업 시간으로 얼마나 환산되는가",
+  "limitations": "직접 실행하거나 측정하지 않았고 공식 도움말·보도에 적힌 내용만 정리했다. 개인정보 저장 방식, 한국어 정확도, 타 앱과의 같은 조건 비교는 확인하지 못했다. 소개 페이지와 도움말 문서에는 날짜가 적혀 있지 않아 발표일은 TechCrunch 보도일(2026-10-29)을 따랐다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 \"4배 빠르다\"를 내 작업 시간으로 계산해 보기",
+    "excerpt": "4배 빠르다는 수치는 말하는 속도 분당 160단어와 타이핑 속도 분당 40단어를 비교한 Granola의 가정입니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Granola가 제시한 분당 160/40단어를 400단어 메일에 대입해 10분 대 2.5분, 이론상 7.5분 단축으로 환산하고 수정 시간이 빠진 상한값임을 밝힘"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "💡 상황별 선택 기준: 지금 써볼 사람과 기다릴 사람",
+    "excerpt": "메일 답장이나 슬랙 메시지처럼 짧고 형식이 가벼운 글에는 가장 먼저 시험해 볼 만합니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "플랫폼·오프라인·보안 정책·언어 환경별로 바로 써볼 사람과 기다릴 사람을 가르는 기준표 제공"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 두 자료를 연결해 읽기: 무료 무제한과 환경 조건",
+    "excerpt": "무료와 무제한이라는 조건은 이용료의 문제이고, 인터넷 연결과 접근성 권한이라는 조건은 작업 환경의 문제입니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "보도의 무료·무제한과 도움말의 인터넷·권한 조건을 연결해 이용 조건과 환경 조건을 따로 점검하라는 판단 기준을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 45,
+  "removed": [
+   "도움말 페이지의 수정 시각이 발표일보다 앞서 있는 경우가 있어, 기능이 정확히 언제부터 쓸 수 있었는지는 이 글의 자료로는 가릴 수 없습니다."
+  ],
+  "note": "Opus 검증: S1(TechCrunch, 페이지·article:published_time 2026-10-29)·S2(Granola 소개)·S3·S4(Granola 도움말)·S5(FourWeekMBA, 바이라인 2026-10-30)를 다시 열어 수치(160/40wpm·4배·20분·최대 3개 언어·15억/20억 달러)·플랫폼·가격·단축키·권한·제한 사항을 하나씩 대조. S2·S3·S4는 페이지에 날짜가 없어 published 를 지움(날짜 없는 출처). 도움말 수정 시각에 근거한 문장은 페이지에 날짜가 없어 확인 불가로 삭제. Speechify·Fireflies 언급은 TechCrunch 원문 표현대로 정정. 소제목 9개→8개(🔍 섹션을 📊 섹션에 h3로 통합), 문장부호 누락 수정. 본문 그림이 없어 images 를 비우고 images_none_reason 기록. 400단어 계산(10분·2.5분·7.5분·3,200단어) 재계산 확인."
+ },
+ "images_none_reason": "공식 소개 페이지(granola.ai/voice-typing)의 그림은 배경 아트·로고뿐이고 도움말 문서 2곳(S3·S4)은 본문 그림이 없으며, TechCrunch(S1)는 대표 이미지(썸네일)만 있어 원고 내용을 보여 주는 본문 화면·도표가 없음"
+}
