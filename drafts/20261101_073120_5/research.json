@@ -1,0 +1,118 @@
+{
+ "topic": "EMBRACE: How We Hacked the Browsers Embedded in Top Five Desktop AI Assistants (Forever Security, 2026-10-29)",
+ "source_url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "EMBRACE: [Technical Overview] How We Hacked the Browsers Embedded in Top Five Desktop AI Assistants",
+   "url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+   "publisher": "Forever Security",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Researchers broke the browsers built into VS Code, Cursor, Copilot, Codex and Claude Desktop",
+   "url": "https://www.helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities/",
+   "publisher": "Help Net Security",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Workspace Trust",
+   "url": "https://code.visualstudio.com/docs/editing/workspaces/workspace-trust",
+   "publisher": "Visual Studio Code (Microsoft)",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Claude Code Desktop Flaw Let Malicious HTML Steal Developer Credentials",
+   "url": "https://hackread.com/claude-code-desktop-flaw-html-steal-credentials/",
+   "publisher": "Hackread",
+   "published": "2026-10-16",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://forever.security/_astro/impacted-products.E4KSfshl_owpcv.svg",
+   "page_url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+   "caption": "내장 브라우저 5종에서 깨진 하나의 가정이 코드 실행·주소 위조·파일 유출 세 갈래로 나뉘는 도표",
+   "credit": "Forever Security"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://forever.security/_astro/copilot-spoof-bar.CUyHt_YY_1MNQ1.webp",
+   "page_url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+   "caption": "Copilot 주소 위조: 공격자 서버 로그인 화면 위에 github.com/login 이 표시된 화면",
+   "credit": "Forever Security"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://forever.security/_astro/file-worker-escape.D5CYcRTC_ZcpJGG.svg",
+   "page_url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+   "caption": "파일 읽기 공격: 웹 워커가 접근 제한을 벗어나 디스크 전체를 읽는 구조 도표",
+   "credit": "Forever Security"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 코딩 도구의 내장 브라우저 취약점 중 내 환경에서 어느 제품이 이미 고쳐졌고 무엇부터 점검해야 하는가",
+  "limitations": "공격을 직접 재현하지 않았고 연구진 보고와 Help Net Security·Hackread 보도를 옮겼다. 상태는 2026-10-29 기준이며 벤더 입장문 전문·악용 여부·CVE 계획은 확인하지 못했다. Noma 신고일은 출처마다 다르다(7/24 vs 7/4). 경과 일수는 직접 계산한 값이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧭 내장 브라우저는 일반 브라우저와 무엇이 다른가",
+    "excerpt": "제품마다 풀어 놓은 부분이 달라서, 깨진 규칙도 달랐습니다. 아래 표는 연구가 보여 준 대응 관계를 한눈에 정리한 것입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "다섯 제품에서 어떤 브라우저 규칙이 깨졌는지를 같은 틀로 나란히 비교해 결과 유형 차이를 보이게 했다."
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 제품별 상태와 신고 이후 경과 일수",
+    "excerpt": "날짜 차이를 직접 계산하면 다음과 같습니다. 계산식은 단순히 두 날짜 사이의 일수이며",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "신고일과 기준일 사이 일수를 직접 계산(2026년 달력, 양 끝 날짜 차이)해 열려 있는 기간을 가늠하게 했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛡 Workspace Trust 는 무엇을 막고 무엇은 못 막나",
+    "excerpt": "두 문서를 이어 읽으면 긴장 관계가 보입니다. 문서의 설계는 '신뢰하지 않은 폴더에서는 에이전트가 돌지 않는다'이고",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "VS Code 공식 문서의 설계와 연구진의 반론을 연결해, 신뢰를 누른 뒤에 방어선이 어떻게 작동하는지 해석했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧰 오늘 해 볼 점검 순서와 상황별 판단",
+    "excerpt": "이를 사용 상황별 판단표로 다시 묶었습니다. 어디까지나 제가 정리한 선택 기준이며",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "사용 제품과 습관별로 먼저 할 일과 미룰 수 있는 일을 구분하는 선택 기준을 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 41,
+  "removed": [
+   "연구진은 노출될 수 있는 정보를 SSH 키, 클라우드 자격 증명, 개발자 토큰이라고 정리했습니다. (S1 은 .env·npm 토큰·hosts·개인 문서를 열거하고 클라우드 자격 증명은 그림 캡션의 파일명 예시뿐 → '보호되는 파일 형식이 없다'로 교체)",
+   "이후에는 눈에 띄는 흔적이 없습니다. (S1 은 'reads are silent' 만 언급 → '파일 읽기가 조용히 진행' 으로 교체)",
+   "에이전트의 탭 목록에도 가짜 주소가 반복됐습니다. (S1 은 에이전트에게 탭 위치로 전달된다고만 함 → 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 를 2026-11-01 KST 에 WebFetch 로 다시 열어 주장별 대조. published 확인: S1 페이지 'October 29, 2026', S2 2026-10-29(Mirko Zorz), S3 'Last updated 10/28/2026', S4 2026-10-16(Deeba Ahmed). 경과 일수 재계산(9/10→10/1=21, 9/26→10/13=17, 9/10→10/29=49, 7/27→10/29=94) 일치. 수정: 일반 브라우저 3규칙을 S1 표현(파일 접근·앱 통신·주소 결정)으로 바로잡고 표의 Cursor·Copilot 행 수정, .DS_Store 폴더 파악을 Codex 전용으로 쓴 오류 수정(S1: 워커 기반 읽기 설명, Codex 는 검사 자체가 없음), Codex 표 행 수정, Help Net 점검 '세 가지'→'두 가지', CVE '없음'→'언급 없음', Weizman 발언을 질문·답 형태로 정확히, 샌드박스 재시도 출처를 Help Net 으로 귀속, Microsoft 거절 사유를 연구진 일정표·Help Net 요약으로 귀속(벤더 입장문 미확인 명시), SneakPeek 일정(7/4 보고·7/24 첫 패치·당일 우회·8/17 1.30096.1)을 S4 그대로 적고 Noma 신고일이 S1·S2(7/24)와 S4(7/4)에서 어긋남을 단정 없이 병기, Copilot 발견일 9/26·v1.1.27 추가. 공격 단계는 원문 수준 이하로 유지(코드·페이로드 없음). 인용 이미지 3개 HTTP 200 image/* 확인. 웹 페이지 안 지시문은 무시."
+ }
+}
