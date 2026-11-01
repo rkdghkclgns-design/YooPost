@@ -1,0 +1,107 @@
+{
+ "topic": "Investor's Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future?",
+ "source_url": "https://arxiv.org/abs/2610.38342",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Investor's Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future? (arXiv abs)",
+   "url": "https://arxiv.org/abs/2610.38342",
+   "publisher": "arXiv",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Investor's Last Exam (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2610.38342",
+   "publisher": "arXiv",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - Investor's Last Exam (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2610.38342",
+   "publisher": "Hugging Face",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Investor's Last Exam (ProphetLab 공식 벤치마크 페이지)",
+   "url": "https://prophet-lab.cn/benchmarks/investor-last-exam-v1/",
+   "publisher": "ProphetLab",
+   "official": true,
+   "published": "2026-10-27"
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2610.38342v1/ile-concept.png",
+   "page_url": "https://arxiv.org/html/2610.38342",
+   "caption": "기준 시각 이전 자료만 쓰는 ILE 평가 구조(그림 2)",
+   "credit": "Jiang et al., arXiv 2610.38342"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2610.38342v1/combined_cases.png",
+   "page_url": "https://arxiv.org/html/2610.38342",
+   "caption": "기준 시각 이후 출처 누수와 재무 해석 사례(그림 4)",
+   "credit": "Jiang et al., arXiv 2610.38342"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2610.38342v1/research80_model_icons_spaced.png",
+   "page_url": "https://arxiv.org/html/2610.38342",
+   "caption": "점수 대비 과제당 비용과 도구 호출 수(그림 5)",
+   "credit": "Jiang et al., arXiv 2610.38342"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "보고서·증거 정리 점수가 높은 AI 에이전트는 예측과 모의 수익률에서도 우수한가, 그리고 점수·비용·제출 규칙을 어떻게 같이 읽어야 하는가",
+  "limitations": "벤치마크를 직접 실행하지 않았고 모든 수치는 논문 보고 값. 순위 대조와 점수당 비용은 표 숫자로 직접 계산한 해석. 독립 재현·리더보드는 확인하지 못함.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💸 점수 대비 비용: 3.9점에 22배를 낼 가치가 있나",
+    "excerpt": "표의 마지막 열은 과제당 비용÷전체 점수로 계산했습니다. 비용 배수는 과제당 비용끼리 나눈 값으로 7.96÷0.36≈22.1배",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "표의 점수와 비용으로 비용 배수와 점수당 비용을 계산하고 가정의 한계를 밝힘"
+   },
+   {
+    "kind": "comparison",
+    "section": "📈 모의 수익률과 점수는 왜 어긋났나",
+    "excerpt": "순위는 논문 표 3의 전체 점수와 표 4의 수익률을 대조해 제가 매긴 것입니다. 전체 점수 5위인 Qwen 3.8 Max",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "전체 점수 순위와 수익률 순위를 같은 시스템끼리 대조해 불일치를 보임"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀은 이 결과를 어떻게 쓸까",
+    "excerpt": "아래는 논문 수치에서 끌어낸 제 해석이며, 논문이 제시한 지침이 아닙니다. 금융 분석 보조 에이전트를 도입하",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "도입 상황별로 먼저 볼 지표와 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 68,
+  "removed": [
+   "논문은 이를 공개 웹 연구의 한계로 제시하며, 확정된 결론이 아니라고 선을 긋습니다. (논문에 없는 표현 — 공개 웹 궤적 점수는 정보 경계 안 점수로 볼 수 없다는 원문 내용으로 교체)",
+   "논문 스스로 이 시뮬레이션이 … 투자 판단 전반을 평가하는 것이 아니라고 밝힙니다. (원문은 '예측이 가리킨 포지션의 주가 손익'이라는 정의만 있음 — 정의로 교체)",
+   "값싼 모델이 더 많이 돌려서 점수를 만든다는 뜻이므로 … (원문에 없는 인과 주장 — 논문 문장 '가장 많은 검색·계산 호출'과 해석 표시로 교체)",
+   "벤치마크 웹사이트 prophet-lab.cn … 제가 읽은 페이지에는 리더보드나 점수가 없었습니다. (공식 벤치마크 페이지에 리더보드 메뉴가 있음 — 숫자는 스크립트로 불러와 확인 못 했다고 정정)"
+  ],
+  "note": "Opus 검증: arXiv abs·HTML 전문(본문 표 1~5, 부록 I.1·I.2·I.4·판정자 민감도 포함, 작성자가 못 읽은 중간부 전체)을 다시 받아 원고의 수치·이름·날짜·순위·직접 계산값(26.4/23.1/25.0점 차, 22.1·25.3배, 점수당 비용 5개, 엄격 모드 9.7점 차, 수익률·점수 순위 10개)을 표 값과 대조. 정정: 저자 소속 출처(HF→논문·공식 페이지), Opus 제출 거절(5개 과제→5개 궤적에서 3회 모두 거절), 도구 검사 범위('표 조작' 삭제), 증거-예측 차 표현(20점대 중반→23~26점), 계산식 문장(점수당 비용과 비용 배수 구분), 시장 시뮬레이션에서 Step 5 Preview 제외 사실 추가, 실현 예측 점수(Flash 40.3·Astra 37.7·Opus 37.6) 추가. S4 는 날짜 없는 홈페이지 대신 날짜(2026-10-27 스냅샷)가 적힌 공식 벤치마크 페이지로 교체. 발표일: arXiv 2026-10-28(citation_date), HF Papers 제출 2026-10-30. 이미지 3개 HTTP 200 image/png, 가로 1719~2041px, 그림 2·4·5 와 캡션 일치. 벤치마크를 직접 실행하지 않았음을 본문에 명시."
+ }
+}
