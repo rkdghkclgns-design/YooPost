@@ -5202,5 +5202,22 @@
    "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/001-domain.md"
   ],
   "draft_id": "20261102_071646_2"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "📈 Investor's Last Exam: 보고서 잘 쓰는 AI는 숫자도 잘 맞힐까, 11개 모델 점수·비용·수익률 비교",
+  "topic": "Investor's Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future?",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.38342",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/investors-last-exam-ai-11.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.38342",
+   "https://arxiv.org/html/2610.38342",
+   "https://huggingface.co/papers/2610.38342",
+   "https://prophet-lab.cn/benchmarks/investor-last-exam-v1/"
+  ],
+  "draft_id": "20261102_072443_3"
  }
 ]
