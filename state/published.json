@@ -5219,5 +5219,28 @@
    "https://prophet-lab.cn/benchmarks/investor-last-exam-v1/"
   ],
   "draft_id": "20261102_072443_3"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "💳 엔비디아의 Nscale 신용보증 논의, Anthropic 450억 달러 용량은 누구의 신용 위에 서 있나",
+  "topic": "Nvidia in talks to give credit support for Nscale's deal with Anthropic, The Information reports (Reuters, 2026-10-29) / Nvidia verhandelt Kreditgarantien für Anthropic-Vertrag (Dr. Web, 2026-10-30)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.drweb.de/nvidia-kreditgarantie-nscale-anthropic/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/nscale-anthropic-450.html"
+  },
+  "sources": [
+   "https://www.drweb.de/nvidia-kreditgarantie-nscale-anthropic/",
+   "https://desking.app/blog/nvidia-discusses-billions-in-credit-guarantees-for-anthropic-s-ai-data-center",
+   "https://www.placera.se/telegram/nvidia-nvidia-kan-garantera-miljardlan-till-nscale-for-anthropic-projekt-the-information-20261030",
+   "https://www.aichatdaily.com/ai-business/nvidia-talks-guarantee-billions-nscale-debt-anthropic-data",
+   "http://wsau.com/2026/10/29/nvidia-in-talks-to-give-credit-support-for-nscales-deal-with-anthropic-the-information-reports/",
+   "https://aiweekly.co/alerts/bond-traders-fret-over-70b-in-ai-shadow-credit-backstops",
+   "https://thenextweb.com/news/nscale-3-5-billion-pre-ipo-financing-nvidia-third-point-103bn-contracts-narvik-norway-new-york-listing",
+   "https://w.media/?p=44550",
+   "https://www.sec.gov/Archives/edgar/data/2110365/000119312526395475/ck0002110365-20260918.htm",
+   "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+  ],
+  "draft_id": "20261102_073124_4"
  }
 ]
