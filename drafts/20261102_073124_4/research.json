@@ -1,0 +1,155 @@
+{
+ "topic": "Nvidia in talks to give credit support for Nscale's deal with Anthropic, The Information reports (Reuters, 2026-10-29) / Nvidia verhandelt Kreditgarantien für Anthropic-Vertrag (Dr. Web, 2026-10-30)",
+ "source_url": "https://www.drweb.de/nvidia-kreditgarantie-nscale-anthropic/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Nvidia verhandelt laut The Information über Kreditgarantien für einen 45-Mrd.-Dollar-Vertrag mit Anthropic",
+   "url": "https://www.drweb.de/nvidia-kreditgarantie-nscale-anthropic/",
+   "publisher": "Dr. Web",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Nvidia Discusses Billions in Credit Guarantees for Anthropic's AI Data Center",
+   "url": "https://desking.app/blog/nvidia-discusses-billions-in-credit-guarantees-for-anthropic-s-ai-data-center",
+   "publisher": "Desking App",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Nvidia kan garantera miljardlån till Nscale för Anthropic-projekt – The Information",
+   "url": "https://www.placera.se/telegram/nvidia-nvidia-kan-garantera-miljardlan-till-nscale-for-anthropic-projekt-the-information-20261030",
+   "publisher": "Placera (Finwire)",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Nvidia in talks to guarantee billions in Nscale debt for Anthropic data center",
+   "url": "https://www.aichatdaily.com/ai-business/nvidia-talks-guarantee-billions-nscale-debt-anthropic-data",
+   "publisher": "AI Chat Daily",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Nvidia in talks to give credit support for Nscale's deal with Anthropic, The Information reports",
+   "url": "http://wsau.com/2026/10/29/nvidia-in-talks-to-give-credit-support-for-nscales-deal-with-anthropic-the-information-reports/",
+   "publisher": "Reuters (WSAU)",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Bond Traders Fret Over $70B in AI Shadow Credit Backstops",
+   "url": "https://aiweekly.co/alerts/bond-traders-fret-over-70b-in-ai-shadow-credit-backstops",
+   "publisher": "AI Weekly (Bloomberg 재배포)",
+   "published": "2026-08-16",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Nscale seeks $3.5B before a New York IPO",
+   "url": "https://thenextweb.com/news/nscale-3-5-billion-pre-ipo-financing-nvidia-third-point-103bn-contracts-narvik-norway-new-york-listing",
+   "publisher": "The Next Web",
+   "published": "2026-09-04",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Nscale shops second Anthropic deal at Monarch data center campus",
+   "url": "https://w.media/?p=44550",
+   "publisher": "w.media",
+   "published": "2026-10-20",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Nscale Limited Form S-1 Registration Statement",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526395475/ck0002110365-20260918.htm",
+   "publisher": "Nscale Limited (SEC EDGAR)",
+   "published": "2026-09-18",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "NVIDIA Corporation Form 10-Q (quarter ended July 26, 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+   "publisher": "NVIDIA Corporation (SEC EDGAR)",
+   "published": "2026-08-26",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 문서 없이 매체 보도만 있는 금융 협의 소식이라 본문에 실린 도표·화면 그림이 없다 (글자 기사만 읽음).",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "엔비디아의 Nscale 신용보증 논의는 무엇이고, Anthropic 약 450억 달러 용량 계약이 어떤 자금 구조 위에 서 있으며 독자는 무엇을 확인해야 하는가",
+  "limitations": "The Information 원문(유료)은 직접 읽지 못해 Reuters·4개 매체 요약을 교차 비교했다. Nscale S-1·엔비디아 10-Q는 SEC 원문을 직접 읽었으나 보증 협의 자체는 공시에 없다. 직접 실행·실측 없음. 연평균 75억 달러는 보도된 6년 기준 단순 평균이고, 43%는 S-1의 '최대' 지급액과 TCV(정의가 완전히 같지 않음)로 계산했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 Anthropic 계약 규모를 숫자로 읽기",
+    "excerpt": "다만 이는 단순 평균일 뿐입니다. S-1은 계약이 4개 단계(tranche)로 나뉘고",
+    "source_ids": [
+     "S4",
+     "S5",
+     "S9"
+    ],
+    "added_value": "450억÷6년=연평균 약 75억 달러, S-1 기준 446억÷1,034억≈43% 계산과 단계별 인수·정의 차이 한계 명시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🤝 엔비디아와 Nscale의 기존 관계 비교",
+    "excerpt": "Dr. Web은 같은 거래를 유로로 환산해 약 10억 유로, 7억 4,800만 유로, 신탁계좌 4억 900만 유로로 적었습니다.",
+    "source_ids": [
+     "S1",
+     "S9",
+     "S10"
+    ],
+    "added_value": "엔비디아의 고객·주주·보증인 역할을 S-1 날짜·달러 금액으로 시점별 비교하고, 매체 유로 환산값과 맞지 않는 부분을 공시 기준으로 정정"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 판단 기준 — 누가 무엇을 확인해야 할까",
+    "excerpt": "이 소식은 Anthropic의 Claude를 쓰는 개인에게 당장 바뀌는 점이 없습니다.",
+    "source_ids": [
+     "S1",
+     "S5",
+     "S9"
+    ],
+    "added_value": "독자 상황별로 확인할 질문(다중 경로, 자금 확정, 인도 지연 해지 조건)을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🏗 Monarch 캠퍼스와 Nscale 재무를 함께 읽기",
+    "excerpt": "Nscale S-1에 따르면 2026년 상반기 **매출은 1억 4,060만 달러, 순손실은 10억 2,010만 달러**였습니다",
+    "source_ids": [
+     "S1",
+     "S7",
+     "S8",
+     "S9"
+    ],
+    "added_value": "w.media 캠퍼스 정보, TNW GPU 계약, Dr. Web 유로 환산값, S-1 재무·TCV를 연결해 계약 잔량과 매출 규모 차이를 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 58,
+  "removed": [
+   "Reuters: CoreWeave 주가가 약 500억 달러 부채 부담 우려로 급락해 글로벌 AI 주식 하락을 부추겼고 Firmus는 300억 달러 상장 계획을 접었다 (Reuters 원문에 없음 → '부채 조달 우려로 타격'으로 축소, FAQ 동일)",
+   "Desking도 446억·450억 두 값이 약간 다르다고 직접 밝혔다 (원문에 없음)",
+   "한 매체는 보증이 엔비디아의 우발부채로 잡힌다고 정리했다 (원문 표현 아님 → Desking '조건부 의무' + 엔비디아 10-Q '신용파생상품 분류'로 교체)",
+   "AI Chat Daily: 엔비디아 2026년 7월 분기보고서에 고객 지원 약정 최대 1,645억 달러 (10-Q 원문에서 확인 안 됨 → 삭제, 10-Q의 임차 보증 명목 35.29억·에스크로 7.12억·5,000억 MoU로 교체)",
+   "Dr. Web: 두 사이트 보증이 모두 승인되면 노출이 크게 커진다 (원문에 없음)",
+   "Dr. Web도 수치를 잠정적으로 다뤄야 한다고 적었다 (원문 표현 아님 → 유료·익명 취재원·금액/이자/서명 시점 미정으로 교체)",
+   "Reuters 계열은 보증을 두 번째 건물과 연결해 쓴다 (Reuters는 건물 특정 안 함 → AI Chat Daily로 귀속 정정)",
+   "TNW: 엔비디아가 자기 칩 구매자 자금을 대는 구조 (TNW는 상장 전 투자 맥락 → 표현 정정)"
+  ],
+  "note": "Opus 검증: Reuters(WSAU)·Dr. Web·Desking·AI Chat Daily·Placera·TNW·w.media·AI Weekly를 다시 열어 문장별 대조, 모든 출처 published가 페이지 날짜와 일치함 확인. SEC EDGAR에서 Nscale S-1(2026-09-18)과 엔비디아 10-Q(2026-08-26) 원문을 직접 받아 공식 출처로 추가 — Anthropic 계약(2026-08-25, 4건, 최대 약 446억 달러, 인도·가용성 조건, 지연 단계 무책임 해지, 9/18 기준 구속력 있는 조달 약정 없음), 엔비디아 MSA 12억 달러·시리즈 B 약 4억 달러(2025-10-08)·Ward County 보증 8억 6,030만 달러·에스크로 4억 7천만 달러, 2026 상반기 매출 1억 4,060만·순손실 10억 2,010만 달러, TCV 26억/1,034억 달러, 런던 본사 확인. Dr. Web의 '2025년 9월 2억 6,100만 유로 투자'는 S-1과 불일치해 S-1 기준으로 정정. 유로 표기는 Dr. Web 환산값으로 명시하고 본문 기준은 달러. 보증 협의는 공식 발표 없음 — '보도에 따르면'·미서명 표현 유지 확인. 같은 날 원고 3편(GPT-6 Rosalind, DeepSeek Super-Agent, Investor's Last Exam)과 소식 겹침 없음."
+ }
+}
