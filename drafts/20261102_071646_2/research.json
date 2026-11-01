@@ -1,0 +1,115 @@
+{
+ "topic": "DeepSeek open-sources Super-Agent (dsh-superagent), a coding agent that reads team chats",
+ "source_url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "deepseek-ai/dsh-superagent-prototype (README, 커밋 기록)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "dsh-superagent 철학 문서 (docs/000-philosophy.md)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/000-philosophy.md",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "dsh-superagent 권한 모델 (docs/002-authorization.md)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/002-authorization.md",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "dsh-superagent 배포 문서 (docs/006-deployment.md)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/006-deployment.md",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "dsh-superagent 설치 가이드 (SETUP.md)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/SETUP.md",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "DeepSeek open-sources Super-Agent, a coding agent that reads team chats",
+   "url": "https://thenextweb.com/news/deepseek-super-agent-open-source-coding-agent",
+   "publisher": "The Next Web",
+   "published": "2026-11-01",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "DeepSeek's Open-Source Super-Agent for Coding",
+   "url": "https://www.briefs.co/news/deepseek-unveils-open-source-super-agent-aimed-at-claude-cod/",
+   "publisher": "Briefs",
+   "published": "2026-11-01",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "DeepSeek Super-agent: A Proactive Open-Source Coding Agent Prototype — What It Actually Is, and What It Is Not Yet",
+   "url": "https://dev.to/paullovelace/deepseek-super-agent-a-proactive-open-source-coding-agent-prototype-what-it-actually-is-and-438a",
+   "publisher": "DEV Community",
+   "published": "2026-11-01",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "dsh-superagent 도메인 모델 (docs/001-domain.md)",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/001-domain.md",
+   "publisher": "DeepSeek Harness Team (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 GitHub README와 문서는 글자뿐이라 본문 그림이 없고, TNW 대표 이미지는 스톡 사진이라 쓰지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "우리 팀 GitHub 저장소에 DeepSeek의 dsh-superagent를 붙여도 되는지, 붙이기 전 어떤 권한·운영 조건을 확인해야 하는가",
+  "limitations": "직접 설치·실행하지 않았고 공개 저장소 문서(README·SETUP·docs 000/001/002/006)와 보도(TNW·Briefs·DEV)만 근거로 함. 성능·비용·로드맵은 공개 자료에 없음. Bloomberg·SCMP 원문은 열람하지 못해 TNW 인용 범위로만 언급.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "⚖️ 도입 판단 가이드: 이런 팀에는 맞고 이런 팀에는 이릅니다",
+    "excerpt": "아래는 공개 문서에서 읽은 조건을 제가 정리한 **판단 기준**이며, 실제 실행 결과가 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "README·배포·설치·철학 문서의 조건(github.com 단일 저장소, GHES 미지원, 전용 계정·OS 격리 권고, 운영자 책임)을 팀 상황별 도입/보류 기준으로 재구성"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 서로 다른 자료를 이어 보기: 설계 철학과 'AI 팀' 우려",
+    "excerpt": "두 자료를 이어 읽으면 이런 **해석**이 가능합니다. 이 에이전트가 사람의 주의를 줄이는 방향을 강조하는 이유는, 여러 주체를 조율하는 비용 자체가 문제가 될 수 있다는 인식과 맞닿아 있을 수 있다는 것입니다.",
+    "source_ids": [
+     "S2",
+     "S6"
+    ],
+    "added_value": "철학 문서와 TNW의 CooperBench 인용을 연결하되 무관한 측정이라는 한계를 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 70,
+  "confirmed": 70,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5). 저장소 README·SETUP·docs/000·001·002·006을 raw.githubusercontent.com으로 다시 받아 대조하고, git clone으로 커밋 기록(6337fc8, 2026-10-31 20:05 +0800, 단일 커밋)과 LICENSE(MIT, DeepSeek Harness Team) 확인. TNW(메타 article:published_time 2026-11-01)·DEV(datePublished 2026-11-01)는 curl로, Briefs는 curl 403이라 WebFetch로 열어 2026-11-01 표기와 '약 1,000억 위안(150억 달러)' 문장 확인(150억 달러는 TNW로도 교차 확인). 모든 출처 published가 페이지 날짜와 일치. 수정 7건: ①dsh 0.2.1-rc.3 고정 안내 출처를 SETUP→배포 문서로 정정(+engines.dsh 조건) ②자동 병합 '기본값'→설치 가이드 권장 답 ③재시작 시 대체 배정 시작 보완 ④본문에 없는 판단표 '운영 인력' 항목 언급 수정 ⑤시간당 점검의 stop 표시는 점검이 아니라 stop 명령이 남김으로 정정, 종료 코드 0 동작 추가 ⑥WeChat 게시물은 '공개 경로'가 아니라 설계 설명(TNW)으로 정정 ⑦FAQ 허용 목록·버전 문장을 문서 범위로 정정. 보완: 워커가 운영자 홈 디렉터리를 읽을 수 있다는 배포 문서 문장 추가, 흐름 근거로 docs/001-domain.md(S9) 추가. 직접 실행 서술 없음(모두 문서 기반이라고 명시)."
+ }
+}
