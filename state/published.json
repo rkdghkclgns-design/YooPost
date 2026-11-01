@@ -5161,5 +5161,24 @@
    "https://news.bizwatch.co.kr/article/market/2026/10/23/0021"
   ],
   "draft_id": "20261101_074820_7"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "🧬 GPT-6 Rosalind 공개: Astra와 같은 가중치에 생물학 거절 기준만 바꾼 모델, 누가 쓰고 얼마일까",
+  "topic": "GPT-6 Rosalind (GPT-Rosalind-6 System Card Addendum, OpenAI, 2026-10-30)",
+  "category": "AI 언어 모델",
+  "source_url": "https://deploymentsafety.openai.com/gpt-rosalind-6",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gpt-6-rosalind-astra.html"
+  },
+  "sources": [
+   "https://deploymentsafety.openai.com/gpt-rosalind-6",
+   "https://developers.openai.com/api/docs/changelog",
+   "https://forkast.news/gpt-6-rosalind-research-access-boundaries/",
+   "https://aiweekly.co/alerts/openai-ships-gpt-rosalind-6-biology-model-to-trusted-users",
+   "https://developers.openai.com/api/docs/pricing",
+   "https://developers.openai.com/api/docs/guides/your-data"
+  ],
+  "draft_id": "20261102_070738_1"
  }
 ]
