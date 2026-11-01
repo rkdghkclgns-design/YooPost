@@ -5180,5 +5180,27 @@
    "https://developers.openai.com/api/docs/guides/your-data"
   ],
   "draft_id": "20261102_070738_1"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "🤖 DeepSeek Super-Agent 공개: 팀 저장소에 켜기 전에 확인할 권한·운영 조건 5가지",
+  "topic": "DeepSeek open-sources Super-Agent (dsh-superagent), a coding agent that reads team chats",
+  "category": "AI 도구",
+  "source_url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/deepseek-super-agent-5.html"
+  },
+  "sources": [
+   "https://github.com/deepseek-ai/dsh-superagent-prototype",
+   "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/000-philosophy.md",
+   "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/002-authorization.md",
+   "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/006-deployment.md",
+   "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/SETUP.md",
+   "https://thenextweb.com/news/deepseek-super-agent-open-source-coding-agent",
+   "https://www.briefs.co/news/deepseek-unveils-open-source-super-agent-aimed-at-claude-cod/",
+   "https://dev.to/paullovelace/deepseek-super-agent-a-proactive-open-source-coding-agent-prototype-what-it-actually-is-and-438a",
+   "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/001-domain.md"
+  ],
+  "draft_id": "20261102_071646_2"
  }
 ]
