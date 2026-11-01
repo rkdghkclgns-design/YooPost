@@ -1,0 +1,125 @@
+{
+ "topic": "Reddit Q3 2026 Shareholder Letter — 검색 유입 주당 100만 건 감소·로그인 중심 경험 전환 (Reddit, 2026-10-29) / Reuters(The Star)·CXO Digital Pulse·The Register 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001713445/000171344526000114/exhibit992q326.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Reddit, Inc. Form 8-K Exhibit 99.2 — Q3 2026 Shareholder Letter",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001713445/000171344526000114/exhibit992q326.htm",
+   "publisher": "Reddit, Inc. (SEC)",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Reddit, Inc. Form 8-K — Q3 2026 Earnings Press Release",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001713445/000171344526000114/earningspressreleaseq326.htm",
+   "publisher": "Reddit, Inc. (SEC)",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Reddit puts logged in experience first as Google AI hits traffic",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/10/30/reddit-search-traffic-slumps-will-push-visitor-sign-ins-to-curb-ai-scraping",
+   "publisher": "The Star (Reuters)",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Reddit Plans Mandatory Sign-Ins as Google AI Search Reduces Referral Traffic",
+   "url": "https://www.cxodigitalpulse.com/?p=64373",
+   "publisher": "CXO Digital Pulse",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Google struggling to make AI Mode searches pay",
+   "url": "https://www.theregister.com/ai-and-ml/2026/10/29/google-struggling-to-make-ai-mode-searches-pay/5306181",
+   "publisher": "The Register",
+   "published": "2026-10-29",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/1713445/000171344526000114/exhibit992q326015.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/0001713445/000171344526000114/exhibit992q326.htm",
+   "caption": "Reddit 3분기 지역별 핵심 지표 표: 로그인·로그아웃 DAUq와 지역별 매출·ARPU",
+   "credit": "Reddit, Inc. Q3 2026 Shareholder Letter (SEC Exhibit 99.2)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/1713445/000171344526000114/exhibit992q326009.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/0001713445/000171344526000114/exhibit992q326.htm",
+   "caption": "Reddit 3분기 ARPU 추이: 미국 13.82달러·해외 2.43달러",
+   "credit": "Reddit, Inc. Q3 2026 Shareholder Letter (SEC Exhibit 99.2)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 답변이 먼저 나오는 검색 환경에서 Reddit의 검색 유입 감소와 로그인 전환 계획은 숫자로 무엇을 말하고, 무엇은 아직 모르는가",
+  "limitations": "공시·보도에 적힌 내용만 정리했고 직접 트래픽을 측정하거나 사이트를 시험하지 않았다. 계산값은 서한 숫자로 만든 단순 비율이며 광고 단가·이용자별 실제 매출과 다를 수 있다. 서한은 Google AI Mode를 언급하지 않아 원인은 CEO 발언 보도에만 근거한다. 로그인 전환의 구체적 방식과 시험 시장은 공개되지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산 ①: 130.3M 이용자 중 로그아웃은 얼마나 되나",
+    "excerpt": "이 비율은 제가 서한 숫자로 계산한 값이며 서한이 직접 적은 비율은 아닙니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "서한의 로그인·로그아웃 DAUq에서 로그아웃 비중(약 58.9%)을 계산하고 감소 가정 시 영향 규모를 가정임을 밝히고 제시"
+   },
+   {
+    "kind": "calculation",
+    "section": "💵 계산 ②: 미국 이용자 1명과 해외 이용자 1명의 매출 차이",
+    "excerpt": "그래서 이용자 1명의 가치 차이는 서한의 ARPU 기준 **약 5.7배**로 읽는 편이 정확하며",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "지역 매출 ÷ 이용자 단순 계산(14.18·2.21달러)과 서한 공식 ARPU(13.82·2.43달러)를 나란히 놓고, 차이가 ARPU 정의(광고 노출 지역 기준)에서 온다는 점을 설명"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 Google AI Mode 쟁점: 두 회사의 말을 같은 조건으로 놓기",
+    "excerpt": "이 두 말은 모순이 아닙니다. 질의는 늘어도 외부 사이트로 나가는 클릭은 늘지 않을 수 있고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "Reddit 서한·CEO 발언과 Alphabet 임원 발언을 측정 대상별로 구분해 연결하고 인과 단정을 피함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 판단 기준: 로그인 전환은 누구에게 어떤 영향이 있나",
+    "excerpt": "아래 표는 독자의 상황별로 지금 확인할 항목을 정리한 제 해석입니다. 시행 방식(예: 읽기 전용 열람 허용 여부)은 공개된 자료에 없어 가정하지 않았습니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "독자 유형별로 확인할 항목과 보류 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 66,
+  "removed": [],
+  "corrected": [
+   "'로그인 이용자 80% 이상 수익화는 CEO 발언일 뿐 서한에 없음' → 서한 본문에 '앱·로그인 DAUq가 참여의 대부분과 수익화의 80% 이상'이 있음(로이터는 CEO 발언으로 전함)으로 정정(요약·용어·마지막 절)",
+   "Alphabet 발표 '같은 날(10/29)' → 10월 28일(미국 시간, 더 레지스터 '수요일' 실적 발표)로 정정",
+   "주가 낙폭: CXO 9%는 CXO가 로이터를 인용한 수치 → '보도에 따르면'·인용 관계 명시(로이터/The Star 18%)",
+   "미국 로그아웃 비중 20.9% → 21.0%(27.3÷130.3=20.95%)",
+   "4분기 조정 EBITDA 변화율 +19.4~26.9% → +19.3~26.8%(서한 3분기 402.3M 기준)",
+   "이용자당 매출 14.18/2.21달러(단순 계산, 검산 일치)에 서한 공식 ARPU 13.82/2.43달러(약 5.7배)를 병기하고 정의 차이(광고 노출 지역 기준) 설명",
+   "'예측치가 아니라고 선을 그었다'(서한에 없는 표현) → '감소 속도가 이어지면'이라는 조건부 전망으로 정정(요약·표·FAQ)",
+   "'주로 로그인한 경험' → 서한 표현 'logged-in-only'와 'primarily logged-in' 병기, 해외 시험 이유 해석이 서한 근거로 오인되지 않게 분리",
+   "Alphabet 검색 둔화 → 검색 매출 성장 12%(전년 3분기 14.5%)로 구체화(더 레지스터)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). SEC 8-K(접수 2026-10-29) Exhibit 99.2 주주 서한·99.1 보도자료를 직접 내려받아 본문·지역별 핵심 지표 표·조정 EBITDA 조정표와 대조. 직접 계산 재검산: 로그아웃 76.8/130.3=58.94%, 로그인 53.5/130.3=41.06%, 미국 로그아웃 27.3/130.3=20.95%, 해외 로그아웃 49.5/130.3=37.99%, 미국 매출 718.9/895.0=80.32%, 미국 DAUq 50.7/130.3=38.91%, 718.9/50.7=14.18, 176.1/79.6=2.21(6.4배; 공식 ARPU 13.82/2.43=5.7배), 10% 가정 130.3×0.1=13.03M→13.03/76.8=17.0%, 매출 가이던스 1000/895=1.117·1030/895=1.151, EBITDA 480/402.3=1.193·510/402.3=1.268, 마진 495/1015=48.8%(3분기 44.9%, +3.9%p). 로이터(The Star 게재본, 2026-10-30 메타·화면 날짜 일치)에서 시간외 18%·미국 DAUq 상장 후 첫 감소·'Google is crawling us as hard as ever'·AI Mode 발언·라이선스(OpenAI·Google)와 소송(Anthropic·Perplexity·스크래핑 업체 3곳)·EBITDA 추정치 512.2M 확인, 모두 '로이터에 따르면/보도에 따르면' 표기. CXO Digital Pulse(2026-10-30, 메타·화면 일치)는 '9% 이상'을 로이터 인용으로 적어 그대로 표기. The Register(화면 'Thu 29 Oct 2026 01:12 UTC', 메타 2026-10-29 일치)에서 신들러 발언·질의 성장 5년 최고·AI Mode 광고 전 세계 확대 확인. 서한에 Google/AI Mode 표현 없음 확인('AI search' 일반 언급만). 인용 이미지: 서한 본문 슬라이드 15(지역별 핵심 지표 표)·9(ARPU 추이) jpg 를 직접 열어 200 image/jpeg, 1055×1365·1365×768 확인. 기존 글(2026-10-31 Alphabet 8-K 클라우드 글)과는 다른 소식(Reddit 실적·로그인 전환)이며 Alphabet 관련은 보조 맥락으로 축소. EGRESS_BLOCKED 출처 없음. 투자 권유·주가 전망 문장 없음 확인(경고 박스에 매수·매도 권유 아님 명시)."
+ }
+}
