@@ -5242,5 +5242,22 @@
    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
   ],
   "draft_id": "20261102_073124_4"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "🔒 AI 에이전트 프레임워크 ARTEX가 11일간 200곳을 겨눴다: CrowdStrike 보고서로 읽는 방어 우선순위",
+  "topic": "VAPOR PANDA Uses ARTEX to Scale Global Campaign (CrowdStrike, 2026-10-29)",
+  "category": "AI 보안",
+  "source_url": "http://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-artex-11-200-crowdstrike.html"
+  },
+  "sources": [
+   "http://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign",
+   "https://www.nbcnews.com/tech/security/china-linked-hackers-used-ai-target-200-organizations-crowdstrike-says-rcna606343",
+   "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+   "https://cybersecuritynews.com/hackers-use-ai-agents/"
+  ],
+  "draft_id": "20261102_074027_5"
  }
 ]
