@@ -1,0 +1,93 @@
+{
+ "topic": "Marvell and Lumentum to Combine, Creating a Category Leader in AI Connectivity (Lumentum Form 8-K Exhibit 99.1, 2026-11-02)",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Marvell and Lumentum to Combine, Creating a Category Leader in AI Connectivity (Form 8-K Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm",
+   "publisher": "Lumentum Holdings / SEC",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Marvell-Lumentum investor presentation (Form 8-K Exhibit 99.2)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex992.htm",
+   "publisher": "Lumentum Holdings / SEC",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Raymond James upgrades Lumentum stock rating on Marvell deal value",
+   "url": "https://www.investing.com/news/analyst-ratings/raymond-james-upgrades-lumentum-stock-rating-on-marvell-deal-value-93CH-4992600",
+   "publisher": "Investing.com",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Mizuho lowers Lumentum stock price target on Marvell acquisition",
+   "url": "https://www.investing.com/news/analyst-ratings/mizuho-lowers-lumentum-stock-price-target-on-marvell-acquisition-93CH-4992633",
+   "publisher": "Investing.com",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Marvell nears a deal to buy Nvidia-backed Lumentum, Bloomberg reports",
+   "url": "https://thenextweb.com/news/marvell-lumentum-deal-talks-bloomberg",
+   "publisher": "The Next Web",
+   "published": "2026-10-29",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(8-K 보도자료·투자자 자료)는 텍스트 문서이며 본문 그림이 없다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "전액 주식 인수인 Marvell-Lumentum 거래의 1,132달러는 Marvell 주가에 따라 얼마로 바뀌고, 합병 후 지분 33%는 Lumentum의 기여도와 어떻게 비교되는가",
+  "limitations": "직접 실행한 것은 없고 공시 숫자로 계산했다. 투자자 자료의 매출·마진은 최근 분기 연환산값(Marvell은 8월 27일 가이던스 중간값)이라 연간 실적과 다를 수 있고, 주가 숫자는 출처마다 시점이 달라 단정하지 않았다. Benzinga·Seeking Alpha는 403 으로 읽지 못해 인용하지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 교환비율 계산: Marvell 주가가 움직이면 Lumentum의 값은",
+    "excerpt": "헤드라인의 1,132달러를 4.5로 나누면 Marvell 기준가가 약",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "고정 교환비율에서 가정 주가별 Lumentum 교환 가치를 직접 계산해 헤드라인 가격이 고정값이 아님을 보임"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖ 합쳐진 회사 안에서 두 회사의 몫",
+    "excerpt": "이익률이 더 높아 영업이익 몫이 매출 몫보다 크지만 지분에는 아직 못 미칩니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "발표문의 지분 비율과 투자자 자료의 매출·이익률을 연결해 지분 대비 기여도를 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별 판단 기준과 아직 모르는 것",
+    "excerpt": "아래 표는 독자 상황별로 먼저 확인할 항목을 정리한 것으로, 투자 조언이 아니라 공시를 읽는 순서입니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 항목과 미공개 항목을 표로 분리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "기사 속 숫자 일부는 앞서 말한 것처럼 서로 맞지 않습니다. (Investing.com 기사 숫자 불일치 단정 — 삭제 후 '시점이 다를 수 있어 맞대기 어렵다'로 대체)",
+   "기사 스스로도 두 숫자가 맞지 않는다고 밝히며 (Mizuho 기사 본문에 그런 언급 없음 — 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). SEC EDGAR 8-K(0001193125-26-442758, 제출일 2026-11-02) Exhibit 99.1·99.2 원문을 curl 로 다시 받아 교환비율 4.500·EV 1,150억 달러·1주당 약 1,132달러·프리미엄 약 23.9%(10/28 미영향 종가)·지분 약 67:33(완전희석)·마감 2028년 상반기·이사회 7명+3명·매출 12.6/5.1/17.7·총이익률 58/53/57·영업이익률 37/42/39·EPS CAGR 76/66%·시너지 10억 달러+·TAM 4,000/900+/5,500억 달러 대조. 정정 3건: 'Marvell 기준가가 공시에 명시되지 않음'→투자자 자료 9쪽 미영향 주가 약 252달러 명시, '매출·마진 기간 미표시'(본문·경고 박스·limitations)→최근 분기 연환산(Marvell FQ3'27 가이던스 중간값, Lumentum FQ1'27), Mizuho 기사 '스스로 불일치 인정' 문장 삭제. 계산 검산: 1,132/4.5=251.56, 1,132/1.239=913.6, 가정 주가 250/225/200/175 → 1,125/1,012.5/900/787.5(+23.1/+10.8/-1.5/-13.8%), 매출 몫 28.8%, 영업이익 4.66/2.14 → 31.5%, 합산 OM 38.4%, 시너지/영업이익 14.7%, 171.41×4.5=771.3(684.27 대비 +12.7%). Investing.com S3(11-02 14:13)·S4(11-02 14:46)·TNW S5(10-29) 다시 열어 RJ·Mizuho 수치·시세표·AI 작성 고지·TNW 수치 확인. published 는 각 페이지 표기 날짜와 일치(S1·S2 는 EDGAR 제출일 2026-11-02). 보강: 이사회 만장일치 승인, 4개 연결 범위 거리, 결합 기업가치 2,750억 달러 이상(10/30 기준), Lumentum 같은 날 실적 발표 — 모두 S1·S2 로 확인. 투자 권유·수익 전망 문장 없음."
+ }
+}
