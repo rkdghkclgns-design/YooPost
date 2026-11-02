@@ -5318,5 +5318,23 @@
    "https://cryptobriefing.com/meituan-releases-longcat-2-5-multimodal-model/"
   ],
   "draft_id": "20261103_070701_1"
+ },
+ {
+  "date": "2026-11-03",
+  "title": "🔀 ChatGPT Chat·Work 탭 통합 예고: Codex와 한도를 같이 쓰면 내 사용량은 어떻게 달라질까",
+  "topic": "OpenAI is finally merging ChatGPT's Chat and Work tabs (TechCrunch, 2026-11-02)",
+  "category": "AI 도구",
+  "source_url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/chatgpt-chatwork-codex.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+   "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/",
+   "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-doubles-chatgpt-pro-usage-limits-after-backlash-over-planned-50-percent-cut/",
+   "https://learn.chatgpt.com/docs/pricing",
+   "https://community.openai.com/t/please-keep-chatgpt-and-codex-usage-limits-separate-in-december-2026/1411466?page=7"
+  ],
+  "draft_id": "20261103_071458_2"
  }
 ]
