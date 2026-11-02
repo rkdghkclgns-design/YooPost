@@ -5336,5 +5336,21 @@
    "https://community.openai.com/t/please-keep-chatgpt-and-codex-usage-limits-separate-in-december-2026/1411466?page=7"
   ],
   "draft_id": "20261103_071458_2"
+ },
+ {
+  "date": "2026-11-03",
+  "title": "🦾 PDRVLA 논문 분석: 영상 생성 없이 물리 토큰 50개로 로봇을 움직인다는 주장, 점수표는 어디까지 믿을까",
+  "topic": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2610.37381",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/pdrvla-50.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2610.37381",
+   "https://huggingface.co/papers/2610.37381",
+   "https://arxiv.org/html/2610.37381v2"
+  ],
+  "draft_id": "20261103_072055_3"
  }
 ]
