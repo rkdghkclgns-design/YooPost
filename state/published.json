@@ -5296,5 +5296,27 @@
    "https://news.bizwatch.co.kr/article/market/2026/10/30/0043"
   ],
   "draft_id": "20261102_075604_7"
+ },
+ {
+  "date": "2026-11-03",
+  "title": "🐱 LongCat-2.5 공개: 입력 $0.30·출력 $1.20, 캐시 적중 40만 토큰이면 작업당 얼마일까",
+  "topic": "Meituan LongCat-2.5 공개 — LongCat API Platform Change Log (Meituan, 2026-11-02)",
+  "category": "AI 언어 모델",
+  "source_url": "https://longcat.chat/platform/docs/change-log",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/longcat-25-030-120-40.html"
+  },
+  "sources": [
+   "https://longcat.chat/platform/docs/change-log",
+   "https://longcat.chat/platform/docs/pricing/longcat-2.5",
+   "https://longcat.chat/platform/docs/",
+   "https://longcat.chat/platform/docs/api/model-params",
+   "https://longcat.chat/platform/docs/image-video-understanding",
+   "https://longcat.chat/platform/docs/claude-code",
+   "https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/",
+   "https://aiweekly.co/alerts/meituan-ships-longcat-25-a-16t-param-multimodal-agent-model",
+   "https://cryptobriefing.com/meituan-releases-longcat-2-5-multimodal-model/"
+  ],
+  "draft_id": "20261103_070701_1"
  }
 ]
