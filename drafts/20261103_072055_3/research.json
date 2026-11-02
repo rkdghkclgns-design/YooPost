@@ -1,0 +1,86 @@
+{
+  "topic": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+  "source_url": "https://arxiv.org/abs/2610.37381",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations (arXiv abstract, v1 2026-10-27)",
+      "url": "https://arxiv.org/abs/2610.37381",
+      "publisher": "arXiv",
+      "published": "2026-10-27",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Paper page - PDRVLA (Hugging Face Papers)",
+      "url": "https://huggingface.co/papers/2610.37381",
+      "publisher": "Hugging Face",
+      "published": "2026-10-28",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "PDRVLA (arXiv HTML v2, 2026-10-29 개정본: 본문·표·소거 실험·부록)",
+      "url": "https://arxiv.org/html/2610.37381v2",
+      "publisher": "arXiv",
+      "published": "2026-10-29",
+      "official": true
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "https://arxiv.org/html/2610.37381v2/figures/physical_wm_training_main.png",
+      "page_url": "https://arxiv.org/html/2610.37381v2",
+      "caption": "PDRVLA 소거 실험: 월드 모델 보조 감독 유무에 따른 RGB·깊이·광학 흐름 정규화 학습 MSE 곡선 (논문 Figure 5)",
+      "credit": "Wang et al., PDRVLA (arXiv:2610.37381v2), Figure 5"
+    }
+  ],
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "PDRVLA의 점수 우위와 소거 실험은 실제로 얼마나 크고, 현장 도입 판단에 쓸 근거가 있는가",
+    "limitations": "논문 본문과 부록 A~D(arXiv HTML v2)를 읽었고 직접 실행한 실험은 없다. 차이 계산은 논문 표의 숫자를 뺀 값이며, 비교 모델 점수는 논문이 각 원 논문·저장소에서 가져온 값이라 같은 조건 비교가 아니고 오차 범위도 표에 없다. HF 추천 수는 11월 3일 확인값으로 바뀔 수 있다.",
+    "contributions": [
+      {
+        "kind": "calculation",
+        "section": "📊 PDRVLA 벤치마크 점수표: 직전 최고 모델과 얼마나 차이 날까",
+        "excerpt": "네 벤치마크 모두 1%p 안쪽**이고, 특히 LIBERO는 이미 점수가 천장에 가까워",
+        "source_ids": [
+          "S3"
+        ],
+        "added_value": "표의 점수에서 직전 최고 모델과의 차이를 직접 계산해 0.2~0.9%p임을 보이고 우열 해석의 한계를 짚음"
+      },
+      {
+        "kind": "calculation",
+        "section": "🔬 소거 실험으로 본 PDRVLA 기여: 어느 요소가 점수를 만들었나",
+        "excerpt": "하위 과제 조건과 물체 자세 감독의 기여는 LIBERO-Plus 전체 기준 각각 0.30%p, 0.19%p",
+        "source_ids": [
+          "S3"
+        ],
+        "added_value": "소거 수치 전후 값을 빼서 개별 요소 기여가 작고 ECoT는 항목에 따라 방향이 갈리며, 소거 실험이 독립 설정이라 본 점수 분해 근거가 아님을 짚음"
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🧭 PDRVLA를 읽는 판단 기준: 연구자와 현장 도입 담당자의 선택",
+        "excerpt": "구조는 설득력 있는 절충안이지만, 점수 우위는 작고 현장 근거는 비어 있습니다.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "added_value": "독자 상황별로 논문에서 볼 점과 추가 확인 항목을 구분"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 72,
+    "confirmed": 68,
+    "removed": [
+      "이 논문은 Hugging Face Papers에서도 10월 28일자로 소개되어 10월 25~31일 주간 목록에서 추천 수 155로 맨 위에 올랐습니다. (주간 순위 페이지는 출처로 넣지 않아 삭제, 논문 페이지 추천 수 158로 수정)",
+      "소거 실험에서 개별 요소의 기여는 0.19~0.30%p 수준이어서, 점수 상승을 한 가지 요소의 공으로 돌리기 어렵습니다. (ECoT는 +1.1~3.2%p, 소거 실험은 독립 설정이라 본 점수 분해 근거 아님 → 범위 한정해 재작성)",
+      "모듈 입력 층, 교차 어텐션 위치, 질의 수 비교는 부록 B에 있다고 하지만 이 글에서는 해당 부록을 읽지 못했습니다. (부록 B를 읽어 실제 수치로 대체)",
+      "하위 과제 정보를 너무 드물게 갱신하면 오히려 해가 된다는 뜻으로 읽힙니다. (일반화 해석 → 이 평가 범위로 축소)"
+    ],
+    "note": "Opus 검증(claude-opus-5-5): arXiv 초록(v1 2026-10-27, v2 2026-10-29), arXiv HTML v2 전문(본문 표 5~14, 부록 A~D, 수식 alttext로 57.3M·1.4%·150M·손실 가중치 확인), HF Papers 페이지(published 2026-10-28, upvotes 158, 소속 표기, 코드 링크 없음)를 다시 열어 대조. 수정: 소속은 arXiv HTML 저자란에도 있음(교신 저자 메일 jd.com/pku.edu.cn), 정책 손실은 L_act+0.1·L_VL+0.1·L_direct, LIBERO-Plus는 별도 미세조정 없이 LIBERO 체크포인트 평가, 기준선 점수는 각 논문·저장소 값(같은 조건 아님), 월드 모델은 실행 때 쓰지 않는다고 논문이 명시, WM 소거는 예측 오차만 측정, S3 published 를 페이지 표기 29 Oct 2026 으로 정정. 보완: 세부 항목 열세(Long·당근→접시·LIBERO-Plus 3개 항목) 문단, 부록 B 수치, Figure 5 인용 이미지(PNG 2559x894, HTTP 200 확인). 점수표·격차 0.2~0.9%p·물리 토큰 50개·Qwen3.5-4B·데이터 규모·미세조정 설정·소거 수치 모두 원문과 일치."
+  }
+}
