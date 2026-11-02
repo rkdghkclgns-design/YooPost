@@ -1,0 +1,119 @@
+{
+ "topic": "Canada announces landmark investment in Cohere to scale secure, sovereign AI (Prime Minister of Canada, 2026-10-29)",
+ "source_url": "https://www.pm.gc.ca/en/node/54489",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Canada announces landmark investment in Cohere to scale secure, sovereign AI",
+   "url": "https://www.pm.gc.ca/en/node/54489",
+   "publisher": "캐나다 총리실",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Cohere advances its C$4 billion commitment to strengthen Canada's AI leadership and significantly expand its national workforce",
+   "url": "https://cohere.com/blog/cohere-canada-commitment",
+   "publisher": "Cohere",
+   "published": "2026-10-30",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Ottawa to invest up to $1.6B in Cohere (Global News / Canadian Press)",
+   "url": "https://globalnews.ca/news/12126174/ottawa-ai-investment-cohere/",
+   "publisher": "Global News",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Feds to buy stake in Cohere as part of planned $7-billion Series E at $36-billion valuation",
+   "url": "https://betakit.com/?p=411497",
+   "publisher": "BetaKit",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Why Ottawa's Cohere AI investment is a major red flag",
+   "url": "https://thehub.ca/2026/10/30/why-ottawas-cohere-ai-investment-is-a-major-red-flag/",
+   "publisher": "The Hub",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Canada to take equity stake in AI firm",
+   "url": "https://www.semafor.com/article/10/29/2026/canada-to-take-equity-stake-in-ai-firm",
+   "publisher": "Semafor",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(총리실 발표문·Cohere 블로그) 본문에 이 글 내용과 관련된 도표·화면 그림이 없고 로고·대표 이미지뿐입니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "캐나다 정부의 Cohere 투자 발표에 나온 16억·17억·40억·70억 숫자는 각각 누구의 어떤 약속이며 어떻게 맞춰 읽어야 하나",
+  "limitations": "직접 실행·실측 없이 공개 문서 대조와 단순 산술만 사용했습니다. 지분율은 상한 투자액과 BetaKit가 전한 기업가치('C$36B 가까이')로 어림한 값이며 상업 조건·최종 라운드 규모는 공개되지 않았습니다. 기업가치와 라운드 규모는 정부·Cohere 자료가 아닌 BetaKit 보도입니다. Semafor의 영국 금액은 통화가 명시되지 않아 옮기지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧮 숫자 맞추기: 16억, 17억, 40억, 70억은 서로 다른 숫자",
+    "excerpt": "이 표에서 가장 흔한 실수는 **16억과 17억을 더해 33억으로 읽는 것**입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "주체·기간·성격이 다른 다섯 숫자를 한 표로 나란히 놓고 합산 금지 이유를 설명"
+   },
+   {
+    "kind": "calculation",
+    "section": "📐 지분율 계산: 4.5%라는 숫자는 어디서 나왔나",
+    "excerpt": "정부 투자 상한 C$1.6B을 BetaKit가 전한 라운드 후 기업가치 'C$36B 가까이'로 나누면",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공식 투자 상한과 보도된 기업가치로 지분율 약 4.4~4.5%를 직접 검산하고 가정과 한계를 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🌍 해외 맥락: 영국 사례와 AI 주권 경쟁",
+    "excerpt": "Semafor 기사는 캐나다의 지분 투자 상한을 통화 표시 없이 '$1.1 billion'으로 적었고",
+    "source_ids": [
+     "S1",
+     "S6"
+    ],
+    "added_value": "통화와 투자 형태가 다른 캐나다·영국 발표를 같은 잣대로 비교하지 않도록 정리"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별 판단 기준: 무엇을 확인해야 하나",
+    "excerpt": "아래는 이번 발표에서 공개된 것과 아직 공개되지 않은 것을 기준으로 만든 점검표입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 공개된 정보와 비어 있는 정보를 구분한 점검표"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 38,
+  "removed": [
+   "Global News 기사 하단의 독자 댓글도 대체로 회의적이었다고 요약되지만, 이는 일부 독자 반응이지 여론조사가 아닙니다. (기사 본문이 아닌 변동 댓글 — 삭제)",
+   "영국은 8,000만 달러 규모 자국 AI 펀드 ... 1억 6,000만 달러를 추가로 투자 (Semafor가 '$'만 표기·통화 미명시, 펀드 금액 정정 이력 — 금액 삭제, 통화 미명시 사실만 남김)",
+   "Semafor 기사는 캐나다의 지분 투자 상한을 미국 달러 11억 달러로 적었고 (통화 미명시 — '통화 표시 없이 $1.1 billion'으로 수정)",
+   "BetaKit 등이 전한 라운드 후 기업가치 약 C$35.7B (BetaKit 원문은 'nearly $36 billion, post-money' — 35.7은 원문에 없음, 1.6÷36≈4.4%로 검산해 4.4~4.5%로 수정, 4.5%는 The Hub 논평 수치로 유지)",
+   "총리실이 적은 Cohere 쪽 약속은 여섯 가지 (총리실 목록은 5개 + 단계 집행·정기 보고 조건 — 개수 표현 삭제·문장 수정)",
+   "보조금이 아니라 상업적 투자 (총리실 자료에 '보조금' 대비 표현 없음 — '상업적 투자, 지분으로 성과 공유'로 수정), '지분 가치 상승' → '회사 성장 성과 공유'로 원문 표현에 맞춤"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 총리실(10-29)·Cohere 블로그(10-30)·Global News/CP(10-29)·BetaKit(10-29)·The Hub(10-30, Commentary)·Semafor를 WebFetch로 다시 열어 수치·날짜·인용 대조. 16억(정부 지분 상한, C$, 단계 집행)·17억(Cohere 2030년까지 추가 컴퓨팅, C$)·40억(Cohere 2024~2031 R&D·인프라 'more than C$4 billion')·70억(BetaKit 시리즈 E 최대 C$7B, initial close) 각각 출처·통화·의미 재확인. 일자리: 총리실 2030년 기술직 1,000+ / Cohere 2031년 1,500+(기술직 약 1,000), 학생 250+ 2029 일치. 고메즈 '미·중 밖 최대 AI 기업'은 Global News 간접 인용으로 확인. The Hub 부채 조달 주장은 논평 의견으로 표시 유지. Semafor 페이지 표시 날짜는 'Updated Oct 30, 2026'뿐이라 published를 2026-10-30으로 맞춤(URL 경로는 10/29). 나머지 출처 published는 페이지 날짜와 일치. 투자 권유 문장 없음."
+ }
+}
