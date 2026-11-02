@@ -5370,5 +5370,22 @@
    "https://thenextweb.com/news/marvell-lumentum-deal-talks-bloomberg"
   ],
   "draft_id": "20261103_072730_4"
+ },
+ {
+  "date": "2026-11-03",
+  "title": "🔒 ChatGPT 공유 링크 취약점, 이미 고쳐졌다면 무엇을 확인해야 할까: 이용자와 개발자 점검 기준",
+  "topic": "A Shared ChatGPT Link Could Run Attacker Code in Your Session and Read Private Chats (The Hacker News, 2026-10-31) / Parameter: We found a gap at OpenAI (2026-10-28)",
+  "category": "AI 보안",
+  "source_url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/chatgpt.html"
+  },
+  "sources": [
+   "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+   "https://thehackernews.com/2026/10/a-shared-chatgpt-link-could-run.html",
+   "https://gbhackers.com/researchers-discover-high-severity-chatgpt-flaw/",
+   "https://shiftdelete.net/en/chatgpt-shared-link-flaw"
+  ],
+  "draft_id": "20261103_073355_5"
  }
 ]
