@@ -5460,5 +5460,22 @@
    "https://www.ibtimes.co.uk/elon-musk-grok-bot-costs-weekly-limits-1829842"
   ],
   "draft_id": "20261104_071435_2"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "🧰 CoworkOS 논문 분석: Codex 급이라는 오픈 하니스, 12개 점수표와 +9.76점 자기개선은 어디까지 믿을까",
+  "topic": "CoworkOS: Scaling Agent Coworkers for Real-world Automation",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.03178",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/coworkos-codex-12-976.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.03178",
+   "https://arxiv.org/html/2611.03178v1",
+   "https://huggingface.co/papers/2611.03178",
+   "https://aiweekly.co/alerts/renmins-coworkos-harness-lifts-qwen36-from-3319-to-4295"
+  ],
+  "draft_id": "20261104_072024_3"
  }
 ]
