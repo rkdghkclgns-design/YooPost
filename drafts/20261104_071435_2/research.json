@@ -1,0 +1,102 @@
+{
+ "topic": "Elon Musk throttles Grok Bot limits due to 'unsustainably high' costs (TechCrunch, 2026-11-02)",
+ "source_url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Grok Bot",
+   "url": "https://x.ai/news/introducing-grok-bot",
+   "publisher": "xAI",
+   "published": "2026-08-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Grok Bot: more plans",
+   "url": "https://x.ai/news/grok-bot-more-plans",
+   "publisher": "xAI",
+   "published": "2026-08-26",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Elon Musk throttles Grok Bot limits due to 'unsustainably high' costs",
+   "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Grok Bot users hit weekly limits early, Elon Musk explains what happened",
+   "url": "https://www.teslarati.com/grok-bot-users-hit-weekly-limits-early-elon-musk-explains-what-happened/",
+   "publisher": "Teslarati",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Grok Bot Throttled After xAI Costs Outpaced Subscription Revenue",
+   "url": "https://finance.yahoo.com/technology/ai/articles/grok-bot-throttled-xai-costs-193755002.html",
+   "publisher": "Yahoo Finance (Gadget Review)",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Elon Musk Cuts Users Off Grok Bot Amid Worry Over Cost, Saying It Is 'Unsustainably High'",
+   "url": "https://www.ibtimes.co.uk/elon-musk-grok-bot-costs-weekly-limits-1829842",
+   "publisher": "IBTimes UK",
+   "published": "2026-11-03",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(xAI 발표문) 본문에 그림이 없고, 언론 기사의 유일한 그림은 로고가 찍힌 휴대폰 사진이라 글 내용과 관련된 본문 그림이 아님",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트형 AI 도구 Grok Bot 의 주간 한도가 갑자기 찬 이유는 무엇이고, 사용자는 무엇을 확인·대비해야 하나?",
+  "limitations": "직접 Grok Bot 을 실행하지 않았고 모든 사용량 수치는 보도·사용자 제보 기준이다. 풀 크기·등급별 배율·xAI 비용은 공개되지 않았으며, 계산은 7일 주기 가정에 기반한 추정이다. 머스크의 X 게시물 원문은 직접 열지 못하고 TechCrunch·Teslarati 인용으로 확인했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자로 읽기: 사용 속도와 성장 속도",
+    "excerpt": "하루 평균 약 33%씩 쓴 셈이고, 7일에 걸쳐 고르게 쓸 때의 하루 약 14.3%와 비교하면",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "출처의 '초기화 4일 전 100%' 사례를 주기 가정으로 하루 사용 속도로 환산해 균등 사용과 비교"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔄 출시 때 약속과 지금 보도된 구조의 차이",
+    "excerpt": "이 글은 두 설명이 어떻게 이어지는지(요금제별로 다른지, 중간에 바뀐 것인지)를 출처만으로는 확정할 수 없다고 봅니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "8월 공식 발표의 '별도 사용량'과 11월 보도의 '공유 풀'을 연결해 문구 차이를 드러내고 단정은 피함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내 상황에 맞춰 판단하기: 에이전트 도구 사용량 점검 기준",
+    "excerpt": "따라서 도구 선택 시 '기능'과 함께 '한도가 바뀔 수 있다는 위험'을 같이 보는 편이 안전합니다.",
+    "source_ids": [
+     "S3",
+     "S5",
+     "S6"
+    ],
+    "added_value": "독자 상황별 점검 항목과 근거를 표로 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 41,
+  "removed": [
+   "대시보드 이상 가능성을 언급한 보도도 있지만 (⚠️ 수치 인용 주의 박스 — S5·S3·S4 어디에도 대시보드 오류 언급 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 수치·날짜·이름·가격·요금제·인용문을 하나씩 대조. 모든 출처 접속됨(EGRESS_BLOCKED 없음), published 가 페이지 표기 날짜와 일치(S1 8/11, S2 8/26, S3·S4·S5 11/2, S6 11/3). 2026-11-01 일요일 확인. 머스크 X 게시물은 직접 열지 않고 TechCrunch·Teslarati·IBTimes 인용으로만 사용, 사용량 점프(50%→100%, 56%→100%)·4일 남은 사례·한도 절반 체감은 사용자 제보로 표시됨. 80만 유료 주간 사용자는 Yahoo(TechSpot 인용) 기준으로 출처 표기 수정, '오류 여부' 표 근거를 머스크 확인(TechCrunch 보도)으로 수정, 상위 등급 허용량 문장을 Yahoo 출처로 명시. 계산(7일 주기 가정 하루 33% vs 14.3%, 약 2.3배; DAU 최소 6배)은 근거·한계를 본문 표에 명시, editorial 대조 통과. 공식 xAI 페이지 본문에 그림 없음 확인."
+ }
+}
