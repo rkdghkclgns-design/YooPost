@@ -1,0 +1,85 @@
+{
+ "topic": "Message threads (Anthropic, Claude Platform Messages API 공개 베타, 2026-11-02)",
+ "source_url": "https://claude.com/resources/articles/message-threads",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Message threads",
+   "url": "https://claude.com/resources/articles/message-threads",
+   "publisher": "Anthropic (claude.com)",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Message threads - Claude API Docs",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+   "publisher": "Anthropic (Claude Docs)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic's Message Threads cut time to first token by 35 percent for long conversations",
+   "url": "https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/",
+   "publisher": "The Decoder",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Claude Platform release notes (November 2, 2026)",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "publisher": "Anthropic (Claude Docs)",
+   "published": "2026-11-02",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 글과 개발자 문서 본문에 도표·스크린샷이 없고(글자와 코드뿐), The Decoder 기사에도 본문 그림이 없어 인용할 이미지가 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "긴 에이전트 대화를 Claude API 로 돌리는 팀이 Message Threads 를 켜면 무엇이 빨라지고, 무엇은 그대로이며, 어떤 조건에서는 쓸 수 없는가?",
+  "limitations": "직접 API 를 호출하거나 속도를 측정하지 않았고 모든 수치는 Anthropic 발표값이다. 공개 베타라 지원 모델·비지원 기능이 바뀔 수 있다. 개발자 문서 페이지에는 발행일이 적혀 있지 않다. 짧은 대화에서의 효과는 자료에 없다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 맞을까: 도입 판단 기준",
+    "excerpt": "비용 절감이 목적이라면 스레드가 아니라 프롬프트 캐싱을 따로 설계해야 합니다",
+    "source_ids": [
+     "S2",
+     "S1"
+    ],
+    "added_value": "문서의 지원·비지원 조건을 독자 상황(대화 길이, 배치, ZDR·HIPAA, 압축)별 도입 가능 여부로 재배열하고, 비용 절감용이 아니라는 점을 캐싱 규칙과 연결해 판단 기준으로 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 35% 감소 수치를 어떻게 읽을까",
+    "excerpt": "줄어든 것은 **첫 토큰까지의 시간**이지 답변 전체 생성 시간이나 비용이 아닙니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 글의 35%·토큰 불변, 문서의 서버 처리 구조 설명, The Decoder 재인용을 연결해 수치의 적용 범위(긴 구간 중앙값, 첫 토큰 시간 한정)를 구분"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 일반 요청과 스레드 요청, 무엇이 달라지나",
+    "excerpt": "요청 하나하나가 대화 전체를 다시 싣는 구조에서, 이어 말할 때는 바뀐 부분만 보내는 구조로 옮겨 가는 것",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "스레드 유무를 전송 내용·서버 처리·상태 기준·캐싱·수정 가능 여부의 같은 기준으로 비교해 변화 범위와 best-effort 한계를 함께 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5): 공식 글(S1, 페이지 날짜 2026-11-02)·개발자 문서(S2)·The Decoder(S3, 페이지 날짜 2026-11-03)를 다시 열어 날짜·35%(500k~1M 토큰, 중앙값 TTFT)·토큰/요금/한도 불변·제공 플랫폼 4곳·베타 헤더·5분 만료/1시간 내 삭제·비지원 기능(배치·토큰 계산·압축·컨텍스트 편집·HIPAA·추론 훅·ZDR)·오류 코드·cache_control 4개 제한·스트리밍·거절/대체 모델·cURL 예시를 원문과 대조. \"대부분의 Claude Code 사용자에게 기본으로 켜져 있다\"는 공식 글 원문(With message threads on by default for most Claude Code users)으로 확인, 35% 수치가 그 맥락에서 나온 값임을 본문에 반영. 지원 모델은 문서 메타데이터의 17개 목록(Fable 5.1~Sonnet 4.5)과 Availability의 \"beta on every model\"로 확인해 서술을 구체화. 수정: 404 원인을 문서 목록대로(만료·미저장 턴·대체 모델 응답), SDK 도구 실행기를 \"베타 도구 실행기, 끌 수 있음\"으로, 캐시 문장을 문서 표현대로, cURL 예시에 빠진 원문 주석 줄 복원. 개발자 문서 페이지에는 날짜가 없어 published 를 비워 두고, 날짜가 적힌 공식 릴리스 노트(S4, 2026-11-02 항목)를 직접 읽어 출처로 추가. 모든 출처는 EGRESS_BLOCKED 없이 직접 읽음."
+ }
+}
