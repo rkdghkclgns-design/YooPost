@@ -1,0 +1,101 @@
+{
+ "topic": "Anthropic amended S-1 (Q3 2026) — Anthropic's amended IPO paperwork reveals soaring Q3 revenue and a stunning compute bill / Anthropic is still grappling with the economics of compute",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Anthropic, PBC Form S-1/A (Amendment No. 1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "publisher": "SEC EDGAR (Anthropic, PBC)",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic is still grappling with the economics of compute",
+   "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic's amended IPO paperwork reveals soaring Q3 revenue and a stunning compute bill",
+   "url": "https://uk.finance.yahoo.com/news/anthropics-amended-ipo-paperwork-reveals-153730799.html",
+   "publisher": "Business Insider (Yahoo Finance UK)",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic Swings To $567 Million Operating Loss In Q3 As Compute Costs Surge, Discloses $895 Billion In Commitments",
+   "url": "https://officechai.com/ai/anthropic-q3-2026-operating-loss-895-billion-compute-commitments/",
+   "publisher": "OfficeChai",
+   "published": "2026-11-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/mda3e.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "caption": "컴퓨트 1달러당 매출: 분기별 매출·컴퓨트 비용과 3분기 1.72배",
+   "credit": "Anthropic, PBC (SEC S-1/A)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/mda4ca.jpg",
+   "page_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "caption": "조정 영업이익률 분기 추이: 2분기 19%, 3분기 15%",
+   "credit": "Anthropic, PBC (SEC S-1/A)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "매출이 빠르게 늘던 Anthropic의 3분기 영업이익이 왜 영업손실로 바뀌었고, 이 컴퓨트 경제성 숫자를 어떤 순서로 읽어야 하나?",
+  "limitations": "공시 본문과 보도를 읽고 정리한 해설이며 직접 서비스를 사용·측정하지 않았다. 단기 컴퓨트의 단가 프리미엄, IPO 조건, 향후 마진은 공개되지 않았다. 단기 컴퓨트 50억 달러가 컴퓨트·인프라 비용 중 정확히 얼마로 인식됐는지는 공시가 명시하지 않아 제외 계산은 극단적 가정으로만 제시했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 컴퓨트 1달러당 매출: 2.08배에서 1.72배로 꺾인 이유",
+    "excerpt": "컴퓨트 비용이 매출의 몇 퍼센트인지 직접 나눠 보면, 2026년 1분기 약 71.6%, 2분기 약 48.1%, 3분기 약 58.2%입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공시 분기 손익표의 컴퓨트 비용과 매출로 분기별 비율을 직접 계산하고 차트 배수와 대조, 단기 컴퓨트 제외 민감도 계산에 한계를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 판단 기준: 이 숫자를 내 상황에 어떻게 읽을까",
+    "excerpt": "매출이 빠르게 늘어도 컴퓨트 조달 방식에 따라 이익 구조가 한 분기 만에 바뀔 수 있다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 확인할 질문과 공시 숫자를 연결"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🗞 세 곳의 보도를 나란히 놓고 읽기: 무엇을 앞세웠나",
+    "excerpt": "세 매체가 같은 공시에서 뽑은 숫자는 대체로 일치하지만, 무엇을 앞세우는지가 다릅니다.",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "세 매체가 앞세운 포인트와 기자 해석·공시 사실의 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 86,
+  "confirmed": 86,
+  "removed": [
+   "TechCrunch가 11월 3일 이 문제를 'AI 컴퓨트의 경제성'이라는 틀로 다루면서 다른 매체들도 같은 숫자를 전했습니다. (순서 오류: BI·OfficeChai 11-02가 먼저 — 순서대로 고쳐 씀)",
+   "이 두 항목은 필자가 공시 본문에서 직접 대조하지 못한 숫자라서, 총액을 곧바로 확정 지출로 읽지 말라는 정도의 참고로만 사용하세요. (공시 본문 213.8B·451.2B 로 직접 확인해 대체)",
+   "공시 문장은 '컴퓨트 50억 달러'라고만 적어 비용 항목과 정확히 같은 단위인지는 본문만으로 단정할 수 없습니다. (공시 문맥대로 다시 씀)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): SEC S-1/A(Amendment No.1, 'As filed ... November 2, 2026') 본문 14MB 를 내려받아 분기 손익표(매출 376/787/1,382/2,040/4,731/11,555/16,956, 컴퓨트 944/1,390/2,047/2,945/3,387/5,558/9,863, 영업손익 974→(567), 순손실 (66,309)/(23,291), 조정 영업이익 2,235/2,463·이익률 19%/15%)와 문장(1,127%·382%, $5.0B 단기·$2.0B 비현금, $6.5B 9개월, 9개월 비율 57% vs 172%, 48%→58%, $895.4B/$447.5B/$69.8B, $213.8B 해지·조건부 중 12개월분 $4.3B, 미개시 임대 $451.2B, 유동성 $146.6B=95.6+36.3+14.8, NPA $77.0B·지분 $5.0B, 12~18개월, Anthropic Direct, 4개 칩 계열)를 대조. 분기별 컴퓨트 비중(251.1/176.6/148.1/144.4/71.6/48.1/58.2%)·배수·증가율(매출 +47%, 비용 +77%)·28.7%·77%·1.8배 재계산 일치. 차트 이미지 mda3e.jpg(1872x1044, 0.40x~1.72x, 4.3x)·mda4ca.jpg(1872x892, 19%/15%) HTTP 200 image/jpeg 확인. TechCrunch(2026-11-03T17:07Z)·Business Insider/Yahoo(2026-11-02T16:21Z)·OfficeChai(2026-11-02T17:52Z) 본문·발표일 메타 확인, 막힌 출처 없음. OfficeChai 재인용 2,140억·4,510억은 공시 본문 213.8B·451.2B 로 직접 확인. 이전 글(10-26 S-1 상반기)과 겹치는 배경은 1문장, 투자 권유·전망 단정 없음."
+ }
+}
