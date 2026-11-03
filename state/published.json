@@ -5516,5 +5516,22 @@
    "https://finance.yahoo.com/markets/stocks/article/crowdstrike-says-it-will-buy-2-ai-cybersecurity-startups-announces-kill-switch-for-ai-agents-163631619.html"
   ],
   "draft_id": "20261104_073626_5"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "💸 Anthropic 3분기 매출 170억 달러에 영업손실 5.67억: 단기 컴퓨트 50억 달러가 바꾼 숫자 읽기",
+  "topic": "Anthropic amended S-1 (Q3 2026) — Anthropic's amended IPO paperwork reveals soaring Q3 revenue and a stunning compute bill / Anthropic is still grappling with the economics of compute",
+  "category": "AI 인사이트",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/anthropic-3-170-567-50.html"
+  },
+  "sources": [
+   "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
+   "https://uk.finance.yahoo.com/news/anthropics-amended-ipo-paperwork-reveals-153730799.html",
+   "https://officechai.com/ai/anthropic-q3-2026-operating-loss-895-billion-compute-commitments/"
+  ],
+  "draft_id": "20261104_074257_6"
  }
 ]
