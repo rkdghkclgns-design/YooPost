@@ -1,0 +1,98 @@
+{
+ "topic": "CoworkOS: Scaling Agent Coworkers for Real-world Automation",
+ "source_url": "https://arxiv.org/abs/2611.03178",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CoworkOS: Scaling Agent Coworkers for Real-world Automation (arXiv 2611.03178)",
+   "url": "https://arxiv.org/abs/2611.03178",
+   "publisher": "arXiv (Renmin University of China 등)",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CoworkOS: Scaling Agent Coworkers for Real-world Automation (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2611.03178v1",
+   "publisher": "arXiv (Renmin University of China 등)",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Scaling Agent Coworkers for Real-world Automation (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2611.03178",
+   "publisher": "Hugging Face",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Renmin's CoworkOS Harness Lifts Qwen3.6 From 33.19 to 42.95",
+   "url": "https://aiweekly.co/alerts/renmins-coworkos-harness-lifts-qwen36-from-3319-to-4295",
+   "publisher": "AI Weekly",
+   "published": "2026-11-03",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.03178v1/cowork_v4.png",
+   "page_url": "https://arxiv.org/html/2611.03178v1",
+   "caption": "CoworkOS 개요 그림(논문 그림 2): 요구 사항, 사람-에이전트 협업, 10개 벤치마크 성능 개요, 5라운드 자기개선",
+   "credit": "CoworkOS 저자들 (arXiv 2611.03178, CC BY-NC-SA 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.03178v1/framework-body.png",
+   "page_url": "https://arxiv.org/html/2611.03178v1",
+   "caption": "세 겹 구조: 메인 에이전트·코디네이터·서브에이전트와 공유 행동 공간을 보여 주는 하니스 그림",
+   "credit": "CoworkOS 저자들 (arXiv 2611.03178, CC BY-NC-SA 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "CoworkOS 가 Codex·DeepSeek Harness 와 견줄 만하다는 주장과 5라운드 자기개선 +9.76점은 논문 표의 숫자로 어디까지 뒷받침되는가?",
+  "limitations": "CoworkOS 를 직접 실행·재현하지 않았고 모든 수치는 저자 보고다. 논문은 네 하니스를 같은 GLM-5.3 설정으로 비교했다고 적었지만 반복 횟수, LLM 심사 모델 이름, 하니스별 프롬프트·도구 설정, 비용·토큰은 본문과 부록 A.1 에 없다. 행 단위 집계·증가폭 분해는 글쓴이가 논문 Table 1·2 숫자로 계산한 값이다. AI Weekly 의 '4 of 12 SOTA' 기준은 확인하지 못했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔁 5라운드 자기개선 실험: 33.19에서 42.95까지",
+    "excerpt": "논문 Table 2 의 R0·R5 를 벤치마크별로 빼면 AutomationBench **+33.15**, SkillsBench",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "벤치마크별 R0→R5 증가폭을 직접 뺄셈해 증가폭 합 78.09 중 AutomationBench 비중(약 42.5%)과 Automation 제외 7개 평균 증가(+6.42)를 제시해, 평균 +9.76점이 어디서 왔는지 분해했다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 12개 벤치마크 점수표, 같은 조건끼리 읽기",
+    "excerpt": "영역 평균 대신 12개 행을 하나씩 비교해 보았습니다. CoworkOS 가 네 하니스 중 최고점인 행은 SkillsBench(",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "영역 평균 대신 12개 행을 같은 표 안에서 다시 세어 6개 최고점·DeepSeek Harness 와 9승 3패를 얻고, 논문 본문이 꼽은 5개·AI Weekly 원 제목의 4개와 숫자가 어긋남을 밝혀(GDPVal 은 Elo·승률 두 지표, 4개 기준은 미공개) 'SOTA 개수' 대신 행별 점수 차를 보게 했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💼 우리 팀에 맞는 하니스인가: 판단 기준",
+    "excerpt": "점수 차가 작다는 사실은 오히려 판단 기준을 바꿔 줍니다. 순위보다 **어떤 일을 맡기느냐** 가 중요하다는 뜻이기 때문입니다",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "업무 유형별로 읽을 지표와 제외 조건을 표로 정리해 독자가 자기 상황에 맞는 점수 행을 고르게 했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 70,
+  "removed": [
+   "초록은 … 여섯 갈래의 실제 작업 사례를 24개 보여 준다고 하며 … 작업을 전제로 합니다 (초록에는 24개가 없음 — 그림 1·6 근거로 고쳐 씀)",
+   "원래 제목은 '12개 중 4개에서 SOTA 를 넘었다'는 식으로 더 강하게 썼으나 본문은 '경쟁력 있다'로 표현했다고 합니다 (AI Weekly 에 그런 대비 서술 없음 — 페이지 문구 그대로 고쳐 씀)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). arXiv abs·HTML v1 본문·Table 1·Table 2·부록 A.1/A.3, HF Papers, AI Weekly 를 curl 로 다시 열어 대조(막힌 출처 없음). Table 1 의 48개 점수·영역 평균, Table 2 의 R0~R5·Δ 전부 HTML 표와 일치. 행 단위 집계 재계산: CoworkOS 최고점 6행(표 굵은 글씨와 일치, 본문은 GDPVal 제외 5개로 서술), DSH 대비 9승 3패, Δ 합 78.09, Automation 비중 42.45%→본문 42.4%를 42.5%로 수정, Automation 제외 평균 36.36→42.78(+6.42), 29.4%, 라운드별 증감 확인. 수정: '같은 모델인지 확인 못함'→논문은 네 하니스를 같은 GLM-5.3 설정으로 비교했다고 명시(반복 횟수·심사 모델 미공개)로 정정, AI Weekly '4 of 12 SOTA'(원 제목)와 표 6개·본문 5개 차이 서술, 24개 사례 출처를 초록→그림 1·6 으로 정정, 실패 분석 부재 서술 범위 조정, I1 캡션 '12개'→그림 2(c) 기준 '10개 벤치마크'로 정정, S3 published 를 페이지 표기 'Published on Nov 2'(publishedAt 2026-11-02)로 맞춤(Daily Papers 등록 11-03 은 본문에 표기). 이미지 image_url 2개 HTTP 200 image/png(1579×1075, 2000×1125) 확인. published: S1·S2 2026-11-02(Submitted on 2 Nov 2026), S4 2026-11-03(datePublished) 페이지와 일치."
+ }
+}
