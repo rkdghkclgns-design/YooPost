@@ -1,0 +1,112 @@
+{
+ "topic": "CrowdStrike to acquire Fiddler and Dreadnode, launches AI Kill Switch in Falcon Guardian (CrowdStrike, 2026-11-03)",
+ "source_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CrowdStrike Delivers AI Security and Safety for the Enterprise",
+   "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/",
+   "publisher": "CrowdStrike",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CrowdStrike to Acquire Fiddler to Deliver Agent Observability for AI Trust",
+   "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-fiddler-to-deliver-agent-observability/",
+   "publisher": "CrowdStrike",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "CrowdStrike to Acquire Dreadnode to Advance AI Trust and Deliver Automated AI Security Testing for the Agentic Enterprise",
+   "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-dreadnode-advance-ai-trust/",
+   "publisher": "CrowdStrike",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "CrowdStrike Introduces the AI Kill Switch for AI Safety",
+   "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-introduces-ai-kill-switch-for-ai-safety/",
+   "publisher": "CrowdStrike",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "CrowdStrike to shell out nearly $500M for 2 AI security startups as the market for securing agents takes off",
+   "url": "https://techcrunch.com/2026/11/03/crowdstrike-to-shell-out-nearly-500m-for-2-ai-security-startups-as-the-market-for-securing-agents-takes-off/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "CrowdStrike agrees to buy AI security startups Fiddler and Dreadnode",
+   "url": "https://thenextweb.com/news/crowdstrike-fiddler-dreadnode-acquisitions-ai-kill-switch",
+   "publisher": "The Next Web",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "CrowdStrike says it will buy 2 AI cybersecurity startups, announces 'kill switch' for AI agents",
+   "url": "https://finance.yahoo.com/markets/stocks/article/crowdstrike-says-it-will-buy-2-ai-cybersecurity-startups-announces-kill-switch-for-ai-agents-163631619.html",
+   "publisher": "Yahoo Finance",
+   "published": "2026-11-03",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 4개 페이지 본문에 제품 화면·도표 등 내용과 관련된 그림이 없고(로고·아이콘뿐), 매체 기사의 사진은 행사 부스·인물 사진이라 내용과 무관해 넣지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "CrowdStrike의 AI Kill Switch와 Fiddler·Dreadnode 인수 발표 중 지금 쓸 수 있는 것은 무엇이고, 금액 보도는 어디까지 믿을 수 있으며, 우리 조직은 무엇부터 점검해야 하나?",
+  "limitations": "보도자료와 매체 기사를 읽고 정리했으며 제품을 직접 실행하거나 측정하지 않았습니다. 금액은 WSJ 인용 보도이며(회사별 금액·투자금은 TechCrunch 단독) 회사가 확인하지 않았고, 비율 계산은 보도·PitchBook 숫자만 쓴 참고값입니다. 출시 일정은 회계연도 표기만 공개돼 정확한 날짜는 모릅니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 금액 숫자는 어떻게 읽어야 하나",
+    "excerpt": "보도된 인수가를 누적 투자금으로 나누면 Fiddler는 약 4.0배(400 ÷ 99), Dreadnode는 약 6.8배(95 ÷ 14)입니다. ",
+    "source_ids": [
+     "S5",
+     "S7"
+    ],
+    "added_value": "WSJ 인용 인수가와 PitchBook 투자금을 나눈 참고 비율(4.0배·6.8배)과 합계 일치 검산, 단일 출처·추정치 한계를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧰 우리 조직은 무엇부터 점검할까",
+    "excerpt": "먼저 어떤 에이전트가 어떤 권한으로 돌고 있는지 **목록을 만들고**, 그다음 행동 기록이 남는지 확인하고, 마지막으로 비상 시 끌 절차를 정합",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 기능 범주를 상황별 점검 순서(목록→기록→비상 절차)로 재배열한 판단 기준"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛑 AI Kill Switch는 무엇을 어디까지 멈추나",
+    "excerpt": "눈여겨볼 단서는 적용 범위입니다. 공식 발표는 현재 **AI Gateway(게이트웨이)에서 먼저 종료**하고, 엔드포인트(개별 PC·서버) 단계",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S6"
+    ],
+    "added_value": "두 공식 보도자료의 게이트웨이 우선·엔드포인트 예정 문구를 연결해 현재 적용 범위를 가름"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 51,
+  "removed": [
+   "한 가지 더, 일부 매체가 다른 숫자를 내놓았습니다. 예컨대 한 매체는 약 3억 달러와 2억 달러라는 다른 배분과 다른 종결 시점을 전했지만, 공식 발표나 다른 두 매체와 맞지 않아 이 글에서는 쓰지 않았습니다. (출처 없음 — 확인 불가, 관련 '보도 편차' 문단도 WSJ 단일 출처 설명으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S7 7개 출처를 모두 다시 열어(WebFetch + crowdstrike.com 원문 HTML) 주장 52개 대조. 4개 공식 보도자료 datePublished 2026-11-03T08:00Z, TechCrunch 2026-11-03, TNW 2026-11-03, Yahoo Finance 2026-11-03 — research.json published 와 일치. EGRESS_BLOCKED 출처 없음. 수정: (1) Agentic Identity·Cloud Expansion '계획 단계'→'새 기능으로 소개, 제공 시점 미공개'(S1에 'planned' 표기 없음, 'New Innovations' 아래) (2) ⚠️ 박스 '공식 발표는 일부 기능을 계획이라고 적었고'→Kill Switch 보도자료(S4)의 '미출시 기능은 개발 중·변경 가능, 구매는 현재 제공 기능 기준' 문구로 정확히 인용 (3) Kill Switch: '관리자가 실행·보안 책임자가 결정'(S4)으로 고치고 '사람이 누르는 비상 스위치'는 저자 정리로 표시, 자동 종료 조건 미기재 명시 (4) 금액: 회사별 금액·PitchBook 투자금이 TechCrunch 단독(WSJ 인용) 수치이고 합계 4억 9,500만은 Yahoo Finance도 WSJ 인용임을 도입·요약·본문·표·FAQ에 명시, TechCrunch 헤드라인은 'nearly $500M' (5) '최대 98% 평가 비용 절감'을 회사 주장으로 명시(S2: purpose-built models without external LLM calls, 기준선 미공개) (6) '오늘부터'→'발표일(11월 3일)부터'(원고 기준일 KST 11-04) (7) TechCrunch 시장 문장을 원문('정책·절차가 AI 도입을 못 따라감')에 맞춤. 비율 재계산: 400÷99=4.04≈4.0배, 95÷14=6.79≈6.8배, 400+95=495 확인. 출시 구분 확인: Kill Switch·AI Gateway·Agent-Level Hooks·SafeMind·AI 공급망·Claude Cowork 연동 = Available Today, Endpoint Network Inspection Windows GA/Mac early access, Falcon Observe·자동 AI 보안 테스트 = Q4 FY27 GA, 두 인수 종결 Q4 FY27 예상(S1~S4 일치). editorial 기여(계산·판단 기준·출처 종합) 본문과 대조 확인."
+ }
+}
