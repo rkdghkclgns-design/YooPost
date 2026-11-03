@@ -1,0 +1,109 @@
+{
+ "topic": "Khaled bin Mohamed bin Zayed meets Sam Altman and witnesses signing of agreements with OpenAI (Abu Dhabi Media Office, 2026-11-02)",
+ "source_url": "https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-meets-sam-altman-and-witnesses-signing-of-agreements-with-openai/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Khaled bin Mohamed bin Zayed meets Sam Altman and witnesses signing of agreements with OpenAI",
+   "url": "https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-meets-sam-altman-and-witnesses-signing-of-agreements-with-openai/",
+   "publisher": "Abu Dhabi Media Office",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI deepens Abu Dhabi foothold as Sam Altman inks deals spanning energy, government and investment",
+   "url": "https://www.cnbc.com/2026/11/02/openai-abu-dhabi-ai-deals.html",
+   "publisher": "CNBC",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Abu Dhabi's ADNOC, G42 sign deal with OpenAI as Sam Altman travels to UAE (Reuters)",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/11/02/abu-dhabi039s-adnoc-g42-sign-deal-with-openai-as-sam-altman-travels-to-uae",
+   "publisher": "Reuters via The Star",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's Sam Altman courts Abu Dhabi ahead of IPO",
+   "url": "https://www.semafor.com/article/11/02/2026/openais-sam-altman-courts-abu-dhabi-ahead-of-ipo",
+   "publisher": "Semafor",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Foreign AI Firm With Alleged China Ties Strikes Deal With US Tech Giant",
+   "url": "https://dailycaller.com/2026/11/02/openai-g42-adnoc-china-mike-gallagher-john-moolenaar-mark-mills/",
+   "publisher": "Daily Caller News Foundation",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI and UAE Deepen Ties: Four Abu Dhabi Deals and a Funding Round of Up to $20 Billion",
+   "url": "https://xenospectrum.com/en/openai-abu-dhabi-four-deals-inception42/",
+   "publisher": "XenoSpectrum",
+   "published": "2026-11-02",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 글자뿐인 정부 보도 페이지이고, 본문에 합의 내용을 보여 주는 도표·스크린샷이 없어 인용할 그림이 없습니다.",
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 46,
+  "removed": [
+   "CNBC(S2)도 네 건 모두 재무 조건을 밝히지 않았다고 전합니다. (CNBC 기사에 해당 문장 없음 → Semafor 명시·나머지는 금액 미기재로 수정)",
+   "기사는 이를 모두 '주장'으로 소개하며 독자적으로 검증하지 않았다고 밝힙니다. (데일리콜러에 '검증하지 않았다'는 문장 없음 → 제목의 'Alleged' 표현으로 수정, FAQ 동일 수정)",
+   "반대로 네 매체가 일치한 부분… 합의가 4건, ADNOC이 에너지 업계 최초, 금액 미공개 (로이터는 4건을 말하지 않고 CNBC는 '최초'를 말하지 않음 → 출처별로 나눠 수정)",
+   "올트먼은 에너지가 회사의 주요 과제 가운데 하나이며 AI를 돌리는 데 필요한 전력이 큰 비용 요인이라고 말했다 (로이터 원문 표현에 맞게 '물리적 세계가 비용을 좌우하는 요인'으로 수정)",
+   "마크 밀스는 이 합의에 본질적인 미국 안보 위험이 없다고 봤다 (원문은 '해외에서 처리되는 미국 데이터'에 대한 발언 → 수정)",
+   "표: 금액 'CNBC·로이터·Semafor 모두 공개 없음', 합의 수 행 → 출처별로 수정",
+   "투자 라운드 섹션의 이전 글(OpenAI 투자 라운드 목표 300억→200억 달러)과 겹치는 배경 → 한 문장으로 줄이고 11월 2일 새 보도(로이터 약정 시점·FT 인용 UAE 컨소시엄 최대 투자자·컴퓨팅 임대 옵션) 위주로 재작성"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 주장별 대조. 모든 출처 접속 가능(EGRESS_BLOCKED 없음), 페이지 날짜 모두 2026-11-02 로 published 와 일치(Semafor 는 2026-11-02 갱신 표기, XenoSpectrum 은 메타 날짜). ADNOC 의 Frontier 플랫폼·에이전트·업무 연결은 Semafor 단독 보도임을 본문·표에 명시. 라운드 금액은 CNBC 본문 200억 달러 vs 같은 페이지 영상 설명 300억 달러/1.25조, 로이터 1.4조 이상으로 출처별 서술 확인. 데일리콜러 인물 이름 원문 표기는 Bret Swanson."
+ },
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI가 아부다비에서 서명한 합의 4건은 각각 무엇을 확인해 주고, 금액이 없는 상태에서 매체별 표현 차이는 어떻게 읽어야 하나?",
+  "limitations": "직접 실행하거나 계약서를 확인한 것이 아니며, 공식 보도와 매체 기사 5곳만 읽었다. 금액·기간(5년 합의 제외)·확대 범위는 공개되지 않았고 라운드 숫자는 보도마다 다르다. ADNOC 의 Frontier 플랫폼·에이전트 설명은 Semafor 단독 보도다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧩 합의 4건을 한 표로 비교하기",
+    "excerpt": "가장 구체적인 것은 정부 건입니다. 공식 보도는 **아부다비 정부 지원부(Department of Gover",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "네 합의를 당사자·범위·공개된 구체성으로 같은 칸에 놓아 어느 건이 구체적이고 어느 건이 비어 있는지 비교."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖ 매체마다 엇갈린 부분을 맞춰 읽기",
+    "excerpt": "가장 큰 차이는 두 군데입니다. 첫째는 에너지 건의 범위로, 공식 보도보다 Semafor가 더 구체적으로 썼",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S6"
+    ],
+    "added_value": "공식 보도, Semafor, XenoSpectrum의 표현 차이를 항목별로 대조하고 일치한 교집합과 단독 표현을 구분."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자별로 무엇을 확인하면 될까",
+    "excerpt": "공통 원칙은 간단합니다. 공식 보도에 적힌 문장은 **사실로**, 한 매체만 전한 문장은 **'보도에 따르면",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 것과 지금 단정하지 말 것을 나눠 제시."
+   }
+  ]
+ }
+}
