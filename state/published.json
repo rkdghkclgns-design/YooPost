@@ -5477,5 +5477,24 @@
    "https://aiweekly.co/alerts/renmins-coworkos-harness-lifts-qwen36-from-3319-to-4295"
   ],
   "draft_id": "20261104_072024_3"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "🌍 OpenAI의 아부다비 합의 4건, 금액 없는 발표에서 확인된 것과 아직 모르는 것",
+  "topic": "Khaled bin Mohamed bin Zayed meets Sam Altman and witnesses signing of agreements with OpenAI (Abu Dhabi Media Office, 2026-11-02)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-meets-sam-altman-and-witnesses-signing-of-agreements-with-openai/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/openai-4.html"
+  },
+  "sources": [
+   "https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-meets-sam-altman-and-witnesses-signing-of-agreements-with-openai/",
+   "https://www.cnbc.com/2026/11/02/openai-abu-dhabi-ai-deals.html",
+   "https://www.thestar.com.my/tech/tech-news/2026/11/02/abu-dhabi039s-adnoc-g42-sign-deal-with-openai-as-sam-altman-travels-to-uae",
+   "https://www.semafor.com/article/11/02/2026/openais-sam-altman-courts-abu-dhabi-ahead-of-ipo",
+   "https://dailycaller.com/2026/11/02/openai-g42-adnoc-china-mike-gallagher-john-moolenaar-mark-mills/",
+   "https://xenospectrum.com/en/openai-abu-dhabi-four-deals-inception42/"
+  ],
+  "draft_id": "20261104_072814_4"
  }
 ]
