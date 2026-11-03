@@ -5424,5 +5424,22 @@
    "https://www.boannews.com/news/articleView.html?idxno=146326"
   ],
   "draft_id": "20261103_074638_7"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "⚡ Claude Message Threads 공개 베타: 긴 에이전트 대화 첫 토큰 35% 단축, 켜도 되는 조건은?",
+  "topic": "Message threads (Anthropic, Claude Platform Messages API 공개 베타, 2026-11-02)",
+  "category": "AI 언어 모델",
+  "source_url": "https://claude.com/resources/articles/message-threads",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-message-threads-35.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/message-threads",
+   "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+   "https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/",
+   "https://platform.claude.com/docs/en/release-notes/overview"
+  ],
+  "draft_id": "20261104_070619_1"
  }
 ]
