@@ -5441,5 +5441,24 @@
    "https://platform.claude.com/docs/en/release-notes/overview"
   ],
   "draft_id": "20261104_070619_1"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "🤖 Grok Bot 주간 한도가 갑자기 찼다: 머스크가 밝힌 '지속 불가능한 비용'과 에이전트 사용량 점검법",
+  "topic": "Elon Musk throttles Grok Bot limits due to 'unsustainably high' costs (TechCrunch, 2026-11-02)",
+  "category": "AI 도구",
+  "source_url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/grok-bot.html"
+  },
+  "sources": [
+   "https://x.ai/news/introducing-grok-bot",
+   "https://x.ai/news/grok-bot-more-plans",
+   "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+   "https://www.teslarati.com/grok-bot-users-hit-weekly-limits-early-elon-musk-explains-what-happened/",
+   "https://finance.yahoo.com/technology/ai/articles/grok-bot-throttled-xai-costs-193755002.html",
+   "https://www.ibtimes.co.uk/elon-musk-grok-bot-costs-weekly-limits-1829842"
+  ],
+  "draft_id": "20261104_071435_2"
  }
 ]
