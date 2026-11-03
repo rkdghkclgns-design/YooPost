@@ -5496,5 +5496,25 @@
    "https://xenospectrum.com/en/openai-abu-dhabi-four-deals-inception42/"
   ],
   "draft_id": "20261104_072814_4"
+ },
+ {
+  "date": "2026-11-04",
+  "title": "🔒 CrowdStrike, AI 에이전트 보안 업체 2곳 인수와 Kill Switch: 지금 쓸 수 있는 것은 무엇일까",
+  "topic": "CrowdStrike to acquire Fiddler and Dreadnode, launches AI Kill Switch in Falcon Guardian (CrowdStrike, 2026-11-03)",
+  "category": "AI 보안",
+  "source_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/crowdstrike-ai-2-kill-switch.html"
+  },
+  "sources": [
+   "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/",
+   "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-fiddler-to-deliver-agent-observability/",
+   "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-dreadnode-advance-ai-trust/",
+   "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-introduces-ai-kill-switch-for-ai-safety/",
+   "https://techcrunch.com/2026/11/03/crowdstrike-to-shell-out-nearly-500m-for-2-ai-security-startups-as-the-market-for-securing-agents-takes-off/",
+   "https://thenextweb.com/news/crowdstrike-fiddler-dreadnode-acquisitions-ai-kill-switch",
+   "https://finance.yahoo.com/markets/stocks/article/crowdstrike-says-it-will-buy-2-ai-cybersecurity-startups-announces-kill-switch-for-ai-agents-163631619.html"
+  ],
+  "draft_id": "20261104_073626_5"
  }
 ]
