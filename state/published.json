@@ -5650,5 +5650,22 @@
    "https://nvd.nist.gov/vuln/detail/CVE-2026-40217"
   ],
   "draft_id": "20261105_073329_5"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🗳 OpenAI '2028 AI 선거' 에세이, 숫자·제안·비판을 가려 읽는 법",
+  "topic": "OpenAI is already trying to shape the 2028 election (TechCrunch, 2026-11-04) / Special Edition: 2028 – The AI Election (OpenAI Global Affairs, Chris Lehane, 2026-11-04)",
+  "category": "AI 인사이트",
+  "source_url": "https://openaiglobalaffairs.substack.com/p/special-edition-2028-the-ai-election",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/openai-2028-ai.html"
+  },
+  "sources": [
+   "https://openaiglobalaffairs.substack.com/p/special-edition-2028-the-ai-election",
+   "https://techcrunch.com/2026/11/04/openai-is-already-trying-to-shape-the-2028-election/",
+   "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction/",
+   "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/"
+  ],
+  "draft_id": "20261105_074150_6"
  }
 ]
