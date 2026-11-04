@@ -1,0 +1,94 @@
+{
+ "topic": "Google, K-12 학생 계정 AI 기본 꺼짐 발표와 Search 접근 논란 (AI learning era updates 2026 / TechCrunch 보도)",
+ "source_url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Google 교육 블로그: AI learning era updates 2026",
+   "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+   "publisher": "Google",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google will let schools disable its AI tools, but not without sacrificing Search",
+   "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google faces backlash for plan that would turn off Search for schools that restrict AI",
+   "url": "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "DuckDuckGo pitches itself to schools amid backlash over Google's AI policy",
+   "url": "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-04",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 Google 글의 본문 그림은 교사와 학생이 Chromebook을 보는 머리말 사진 한 장뿐이고 기능·도표·화면을 보여 주는 본문 그림이 없으며, TechCrunch 기사에도 해당 내용의 도표가 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "학교가 AI를 쓰지 않으면서 구글 검색은 계속 쓸 수 있는가, 공식 글과 보도는 어떻게 다른가",
+  "limitations": "뉴욕타임스 원문과 구글 X 게시물 원문은 직접 열지 못해 TechCrunch 기사(인용·게시물 일부 포함)에 의존. 시행일(TechCrunch는 '내년'이라 전함)·관리자 설정 화면은 공식 글에 없음. 직접 실행한 검증 없음.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 공식 글과 언론 보도, 무엇이 같고 무엇이 다른가요?",
+    "excerpt": "Google 공식 글은 검색을 포함한 네 제품의 학생 계정 접근을 학교 관리자가 켜기 전까지 꺼 두는 것으로 설명하고, AI를 제한하면 검색도 막힌다는 표현은 담지 않았습니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 글(검색 포함 4개 제품 개별 기본 꺼짐)·11/3 보도(필립스: AI 제한 시 검색 불가)·구글 X 해명(11/3 게시, 11/4 보도: 각각 켤 수 있음)을 날짜·화자별로 대조해 정책 해석 위험을 드러냄"
+   },
+   {
+    "kind": "comparison",
+    "section": "🎓 Guided Learning은 어디서 어떻게 다른가요?",
+    "excerpt": "Gemini 안의 Guided Learning은 열린 질문과 단계별 풀이로 코칭하는 학습 도구이고, 검색 안의 Guided Learning은 숙제 도움 요청을 감지했을 때 답 대신 풀이 과정을 안내하는 방식입니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "같은 이름의 Guided Learning을 제품별 기능·교사 가시성·공개 시점으로 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 학교·학부모를 위한 판단 기준",
+    "excerpt": "관리자가 지금 확인해야 할 것은 세 가지입니다. 첫째 우리 학교가 쓰는 계정이 K-12 학생 계정인지, 둘째 검색에서 AI 개요를 막고 싶은지 아니면 검색 자체가 필요한지, 셋째 구글이 개별 허용을 어떤 화면에서 제공하는지입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "학교 상황별 확인 순서를 제시하고 근거 자료의 불일치를 표시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 48,
+  "removed": [],
+  "corrected": [
+   "구글 X 해명 날짜: '11월 4일' → X 게시물은 11월 3일(@NewsFromGoogle, 11/3 표기), 보도가 11월 4일 (도입·요약·표·본문·판단표·한계·FAQ·맺음말)",
+   "공식 글 인용 '몇 달 앞서 알리겠다' → '변경 적용 전, 앞으로 몇 달 안에 구체적 내용을 공유' (원문: in the coming months ahead of the changes rolling out)",
+   "'공식 글은 검색 접근 제한을 설명하지 않음' → 공식 글은 검색도 기본 꺼짐 4개 제품에 넣었으나 AI 제한 시 검색이 함께 막힌다는 설명은 없음",
+   "Gemini Guided Learning '이미 제공 중이라고 서술' → 공식 글은 '더 많은 제품으로 확대'라고만 씀",
+   "바즈바즈 발언을 원문 문구(Forcing AI on school children / Prove Google wrong)대로, 직함 chief public affairs officer",
+   "Chromebook 5,000만 대·Classroom 1억 5,000만 명 수치의 출처를 S3 → S4(DuckDuckGo 기사)로",
+   "구글 '더 많은 선택' 문구를 X 게시물 원문(more choice, not less)대로; 블루먼솔 발언이 X 게시물임을 명시; 리나 칸 인용 원문대로 보강",
+   "보완: TechCrunch(11/3)의 '내년(next year) 시행' 보도 추가"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S4 를 curl 로 원문 HTML 을 내려받아 본문 문장과 한 줄씩 대조. published: S1 페이지 'Nov 03, 2026'·meta 2026-11-03, S2 2026-11-03 08:30 PST, S3 2026-11-04 08:17 PST, S4 2026-11-04 11:29 PST — research.json 값과 일치. 정치인 발언(샌더스 extortion·블루먼솔·칸·맘다니)과 DuckDuckGo 내용(와인버그 get in touch for help, 바즈바즈, 이메일 주장, Duck.ai·AI 검색 도우미, 설정에서 끄기, noai.duckduckgo.com)은 S3·S4 원문에 있음을 확인. 막힌(EGRESS_BLOCKED) 출처 없음. 뉴욕타임스·X 원문은 출처에 넣지 않고 TechCrunch 전달로만 표기. editorial v1 의 excerpt 3개가 해당 소제목 본문에 그대로 있는지 확인(1개는 본문 수정에 맞춰 갱신)."
+ }
+}
