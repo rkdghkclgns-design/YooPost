@@ -1,0 +1,146 @@
+{
+  "topic": "See the agents, set the terms: new visibility and control for personal agents (Cloudflare, 2026-11-04)",
+  "source_url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "See the agents, set the terms: new visibility and control for personal agents",
+      "url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+      "publisher": "Cloudflare Blog",
+      "published": "2026-11-04",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Granular access controls for the top Personal Agents (Changelog)",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-11-04-personal-agent-policies/",
+      "publisher": "Cloudflare Developers",
+      "published": "2026-11-04",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "Block AI bots — AI Crawler and Agent access policies (Cloudflare docs)",
+      "url": "https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/",
+      "publisher": "Cloudflare Developers",
+      "published": "2026-11-02",
+      "official": true
+    },
+    {
+      "id": "S4",
+      "title": "Cloudflare Adds Personal Agent Analytics and Per-Agent Access Controls",
+      "url": "https://www.unite.ai/cloudflare-adds-personal-agent-analytics-and-per-agent-access-controls",
+      "publisher": "Unite.AI",
+      "published": "2026-11-04",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "See the agents, set the terms: new visibility and control for personal agents (daily.dev)",
+      "url": "https://daily.dev/posts/see-the-agents-set-the-terms-new-visibility-and-control-for-personal-agents-bv9q19pqe",
+      "publisher": "daily.dev",
+      "published": "2026-11-04",
+      "official": false
+    },
+    {
+      "id": "S6",
+      "title": "Cloudflare changes AI crawler access rules",
+      "url": "https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/",
+      "publisher": "Help Net Security",
+      "published": "2026-07-02",
+      "official": false
+    },
+    {
+      "id": "S7",
+      "title": "New Account Abuse Protection Dashboard (Changelog)",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-11-02-account-abuse-protection-dashboard/",
+      "publisher": "Cloudflare Developers",
+      "published": "2026-11-02",
+      "official": true
+    },
+    {
+      "id": "S8",
+      "title": "See which AI assistants act for your users in Account Abuse Protection (Changelog)",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-11-03-aap-ai-assistant-scope/",
+      "publisher": "Cloudflare Developers",
+      "published": "2026-11-03",
+      "official": true
+    },
+    {
+      "id": "S9",
+      "title": "Account Abuse Protection (Cloudflare docs)",
+      "url": "https://developers.cloudflare.com/bots/account-abuse-protection/",
+      "publisher": "Cloudflare Developers",
+      "published": "2026-10-22",
+      "official": true
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "https://blog.cloudflare.com/_image?href=https%3A%2F%2Fblog.cloudflare.com%2F_emdash%2Fapi%2Fmedia%2Ffile%2F01M6JYKD1CGXFJ5SC7JWJYC5G9.01M6JYKFAED0TKN0TWHZFX5BSX.png&w=715&h=447&f=webp&fit=cover&position=center",
+      "page_url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+      "caption": "Top statistics 의 새 Personal Assistants 위젯: 방문 에이전트와 요청 수",
+      "credit": "Cloudflare"
+    },
+    {
+      "id": "I2",
+      "image_url": "https://blog.cloudflare.com/_image?href=https%3A%2F%2Fblog.cloudflare.com%2F_emdash%2Fapi%2Fmedia%2Ffile%2F01M6J04XR4YS52RPXCZCNYR0MC.01M6J04YF8M6049PYFDF04MHFE.png&w=715&h=654&f=webp&fit=cover&position=center",
+      "page_url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+      "caption": "AI Crawler and Agent access policies 설정: 개인 에이전트 허용·차단 정책",
+      "credit": "Cloudflare"
+    },
+    {
+      "id": "I3",
+      "image_url": "https://blog.cloudflare.com/_image?href=https%3A%2F%2Fblog.cloudflare.com%2F_emdash%2Fapi%2Fmedia%2Ffile%2F01M6JYMHV07C8NVT4GHMMCNJBW.01M6JYMJWFEVB3GGA9DG37Q0Q5.png&w=715&h=554&f=webp&fit=cover&position=center",
+      "page_url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+      "caption": "Account Abuse Protection 개요: 사용자 전체의 개인 비서 활동과 로그인·가입",
+      "credit": "Cloudflare"
+    }
+  ],
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "Cloudflare 의 개인 에이전트 분석·정책이 정확히 무엇이며, 내 사이트 유형에서는 어떤 순서로 점검해야 하는가",
+    "limitations": "직접 대시보드에서 실행하지 않았고 공식 블로그·변경 기록·문서와 보도를 읽고 정리함. 지원 에이전트 이름·요금제는 자료에 없으며, 신규 도메인 기본값은 7월 보도(9월 15일부터 광고 페이지 기본 차단 예고)와 11월 2일 갱신 문서(모두 허용 기본)가 다름. Unite.AI(AI 생성 기사)의 계정 대시보드 소개일(10월 2일)은 Cloudflare 변경 기록(11월 2일)과 달라 공식 기록을 따름.",
+    "contributions": [
+      {
+        "kind": "decision_guide",
+        "section": "🧭 사이트 유형별 점검 순서",
+        "excerpt": "이 순서를 쓰는 이유는 분석을 먼저 보고 정책을 나중에 정해야 근거가 생기기 때문입니다.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "added_value": "공식 옵션을 쇼핑몰·광고 사이트·로그인 서비스·문서 사이트별 점검 순서와 주의점으로 재구성"
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "🔗 7월 분류 체계와 11월 변경, 어떻게 이어지나",
+        "excerpt": "세 자료를 이어 보면 흐름이 분명해집니다. 7월에는 범주별 정책이 생겼고",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4",
+          "S6"
+        ],
+        "added_value": "7월 범주 분류와 11월 개인 에이전트 예외를 연결하고, 기본값 서술 불일치를 독자에게 알림"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 64,
+    "confirmed": 63,
+    "removed": [
+      "Unite.AI 에 따르면 이 해시는 고객이 고른 식별자(이메일·사용자 이름 등)를 도메인별 ID로 바꾼 것이며, 이 대시보드는 2026년 10월 2일에 소개됐습니다. (10월 2일은 Cloudflare 변경 기록 2026-11-02 와 불일치 → 삭제, 해시 설명은 공식 문서 S9 로 교체)"
+    ],
+    "corrected": [
+      "Top statistics 필터로 로그인·상품·결제·오류를 볼 수 있다는 설명은 Unite.AI 해석이 아니라 Cloudflare 블로그 원문 → 출처 표기 수정",
+      "'넉 달 전 도입한' → '7월 1일 도입된' (Unite.AI 원문 표현에 맞춤)",
+      "Account Abuse Protection 개요 '활성 에이전트가 몇 개' → '어떤 개인 에이전트가 활동 중' (원문: which personal agents are active)",
+      "계정 단위 보기 범위: 11월 3일 변경 기록(S8)으로 '로그인·가입 이벤트에만, 인식 못한 비서는 일반 트래픽' 확인해 보완",
+      "신규 도메인 기본값 경고: S6(2026-07-02, 9월 15일부터 학습·에이전트 광고 페이지 기본 차단 예고)·S3(2026-11-02 갱신, 신규 도메인 Search·Agents·Training 모두 Allow 기본) 원문과 일치 확인, S1 의 온보딩 권장 정책 설명 추가"
+    ],
+    "note": "Opus 검증 (claude-opus-5-5): S1~S6 을 모두 직접 다시 열어(HTTP 200, EGRESS_BLOCKED 없음) 주장별 대조. 각 출처 published 를 페이지 표기·메타(datePublished/Last updated)와 대조해 모두 일치(S3 는 'Last updated Nov 2, 2026'). 추가 확인 출처 S7·S8(Cloudflare changelog 2026-11-02/03)·S9(AAP 문서, Last updated 2026-10-22). 인용 이미지 I1~I3 image_url 직접 열어 HTTP 200 image/webp 715px 폭 확인, 원문 figcaption 과 캡션 내용 일치. editorial v1 의 excerpt·section 이 본문과 일치함을 확인."
+  }
+}
