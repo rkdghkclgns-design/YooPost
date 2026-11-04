@@ -1,0 +1,97 @@
+{
+ "topic": "OpenAI is already trying to shape the 2028 election (TechCrunch, 2026-11-04) / Special Edition: 2028 – The AI Election (OpenAI Global Affairs, Chris Lehane, 2026-11-04)",
+ "source_url": "https://openaiglobalaffairs.substack.com/p/special-edition-2028-the-ai-election",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Special Edition: 2028 – The AI Election",
+   "url": "https://openaiglobalaffairs.substack.com/p/special-edition-2028-the-ai-election",
+   "publisher": "OpenAI Global Affairs (The Prompt)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI is already trying to shape the 2028 election",
+   "url": "https://techcrunch.com/2026/11/04/openai-is-already-trying-to-shape-the-2028-election/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Everyone can find a reason to dislike data center construction",
+   "url": "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-22",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic and OpenAI want to embed safety evaluators. Will they really be independent?",
+   "url": "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/",
+   "publisher": "TechCrunch",
+   "published": "2026-09-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 에세이 본문의 그림은 로고와 장식용 '2028' 일러스트뿐이고 내용을 보여 주는 도표·화면이 없어 넣지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI의 2028 대선 에세이에서 어떤 숫자와 제안이 근거이고, 어떤 것이 주장이며 아직 확인되지 않았나?",
+  "limitations": "직접 실행·실측 없음. 에세이의 여론 수치는 원 조사 출처를 열지 않았고 에세이가 제시한 대로 옮김. OpenAI의 후원·광고 계획은 확인되지 않음. 출처 간 연결은 필자의 해석.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔁 OpenAI의 입장은 얼마나 달라졌나: 세 출처를 이어 읽기",
+    "excerpt": "두 기사를 이으면, 에세이가 요구하는 '독립 평가'는 정책 구호가 되기 전에 **이미 운영 조건이 미정인 약속**이라는 해석이 가능합니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "에세이의 독립 평가 요구를 9월 기사에서 확인된 미정 운영 조건과 연결해 약속의 강도를 가늠하게 함"
+   },
+   {
+    "kind": "comparison",
+    "section": "🏗 데이터센터 논쟁: 에세이와 현장 연구를 같은 표에 놓기",
+    "excerpt": "두 자료는 **측정 대상이 달라서** 직접 모순이라고 단정할 수 없습니다. 에세이의 2만 5천 명은 전기공·배관공·건설 노동자·엔지니어 같은 숙련 인력 수요이고, 보고서의 고용 우려는 완공 뒤 장기 고용에 관한 이야기입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "숙련 인력 수요와 완공 뒤 장기 고용, 광고 비율과 시민 설문처럼 측정 대상이 다른 수치를 구분해 비교 오류를 막음"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🗂 누가 이 글을 어떻게 읽어야 하나: 상황별 기준",
+    "excerpt": "에세이는 2028년을 겨냥하지만, 오늘 실무에서 영향을 받는 사람도 있습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 볼 지점과 보류할 판단을 나눠 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 49,
+  "confirmed": 49,
+  "removed": [],
+  "corrected": [
+   "'아직 유권자의 생각이 굳지 않았기 때문에' → 에세이 표현('2028년엔 더 많은 유권자가 AI를 직접 경험')으로 수정",
+   "65% 수치: '2026년 조사' → '2026년 선거와 관련해 필자가 본 조사'(조사 기관 미기재)",
+   "생활비 행: '확인하지 못했습니다' → 에세이는 구체 정책 대신 평가 질문만 제시(원문 확인)",
+   "이라크 비유: '논쟁적'이라는 테크크런치 평가는 원문에 없어 '심지어(going so far as) 비유했다'로 수정(표·FAQ)",
+   "데이터센터 반대 성격: '조율된 캠페인이 아니라고 분석' → 원문의 'post-partisan'·'매우 자연발생적'으로 수정",
+   "중국 영향력 공작: '정황' → 원문의 'likely' 반영",
+   "2만 5천 명: '건설 단계 인력' 단정 → 에세이가 나열한 숙련 인력(전기공·배관공·건설 노동자·엔지니어) 수요로 수정",
+   "아이와 노동자 제안: 원문 기준(연령별 보호·AI 동반자 제한·농촌 학생 AI 교육·노동자 훈련, AFT·건설 노조 협력)으로 수정",
+   "editorial v1: 데이터센터 비교 발췌가 30자 미만이라 수정된 본문 문장까지 포함하도록 늘리고 added_value 를 본문에 맞춤",
+   "품질 보완: 형광 강조 없는 문단 4곳에 강조 추가, 한계 문단에 '에세이가 조사 기관·문항·표본을 밝히지 않음'(S1 원문 확인) 추가"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 OpenAI 에세이·S2~S4 TechCrunch 원문을 WebFetch 로 다시 열어 수치(65%·1/5·25%p·66/53/24%·41/84/74%·8/10·25,000·44명·18개월·60%·680억 달러·약 1주·3일)·날짜·이름·직함·인용(브레넌)·정책 이력(SB 1047·2025 주 규제 제한·독립 평가자)·제안 5개를 대조. 에세이 여론 수치는 조사 기관이 명시되지 않아('polling I've seen') 원 조사는 확인 불가 — 본문에 '에세이가 제시한 수치'로만 표기돼 있음을 확인. published 4건 모두 페이지 날짜와 일치(S1 2026-11-04, S2 2026-11-04, S3 2026-09-22, S4 2026-09-16). EGRESS_BLOCKED 출처 없음. editorial v1 의 excerpt 3개가 본문에 그대로 있고 source_ids·limitations 가 본문과 맞음을 확인."
+ }
+}
