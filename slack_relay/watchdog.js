@@ -4,6 +4,17 @@ const STALE = 15 * MINUTE;
 const INTERVAL = 30 * MINUTE;
 const WORKFLOWS = ["codex_fallback.yml", "cloud_drafts.yml"];
 const ACTIVE = ["in_progress", "queued", "waiting", "pending"];
+// 시간 초과·연결 실패·GitHub 5xx 같은 일시적 오류는 5분 점검이 연속 3번(약 15분) 실패해야 알린다.
+// 한 번씩 튀는 오류(2026-10-19·10-22·11-04)로 경고가 울리지 않게 한다. 인증·설정 오류는 바로 알린다.
+const ALERT_AFTER_FAILED_CHECKS = 3;
+const RECOVERED_NOTICE = "✅ YooPost 클라우드 복구 점검이 다시 정상입니다.";
+
+function transientFailure(message, noticeMessage) {
+  const failure = new Error(message);
+  failure.transient = true;
+  if (noticeMessage) failure.noticeMessage = noticeMessage;
+  return failure;
+}
 
 export class CloudWatchdog {
   constructor(ctx, env) { this.ctx = ctx; this.env = env; }
@@ -24,12 +35,22 @@ export class CloudWatchdog {
           if (workflow === "codex_fallback.yml" && this.env.CODEX_FALLBACK_ENABLED !== "true") continue;
           await this.check(workflow, state);
         }
+        if (state.failure_alerted) await this.notice(state, RECOVERED_NOTICE);
         state.status = "ok";
         state.error = "";
+        state.failures = 0;
+        state.failure_alerted = false;
       } catch (error) {
         state.status = "error";
         state.error = error.message.slice(0, 150);
-        await this.notice(state, `⚠️ YooPost 클라우드 복구 점검 실패: ${error.noticeMessage || state.error}`);
+        state.failures = (state.failures || 0) + 1;
+        if (!error.transient) {
+          await this.notice(state, `⚠️ YooPost 클라우드 복구 점검 실패: ${error.noticeMessage || state.error}`);
+        } else if (state.failures >= ALERT_AFTER_FAILED_CHECKS) {
+          state.failure_alerted = true;
+          await this.notice(state, `⚠️ YooPost 클라우드 복구 점검이 연속 ${ALERT_AFTER_FAILED_CHECKS}번(약 15분) 실패했습니다: `
+            + (error.noticeMessage || state.error.replace(/ \(.*\)$/, "")));
+        }
       }
       await this.save(state);
       return Response.json(state);
@@ -43,7 +64,7 @@ export class CloudWatchdog {
     const endpoint = `${method} ${path.split("?")[0]}`;
     for (let attempt = 0; ; attempt++) {
       const remaining = this.deadline - Date.now();
-      if (remaining <= 0) throw new Error("클라우드 점검 시간 초과 — 다음 예약에서 재확인");
+      if (remaining <= 0) throw transientFailure("클라우드 점검 시간 초과 — 다음 예약에서 재확인");
       try {
         const response = await fetch(`https://api.github.com/repos/${this.env.GITHUB_REPO}/${path}`, {
           method,
@@ -54,18 +75,22 @@ export class CloudWatchdog {
         });
         // 409는 취소 직전 작업 상태가 바뀐 경우도 포함한다. 다음 점검에서 다시 확인한다.
         if (method === "POST" && path.endsWith("/cancel") && response.status === 409) return false;
-        if (!response.ok) throw new Error(`GitHub HTTP ${response.status} (${endpoint})`);
+        if (!response.ok) {
+          const message = `GitHub HTTP ${response.status} (${endpoint})`;
+          // 5xx·429 는 GitHub 쪽의 일시적 오류다. 인증·권한·경로 오류는 기다려도 풀리지 않는다.
+          if (response.status >= 500 || response.status === 429) throw transientFailure(message);
+          throw new Error(message);
+        }
         return response.status === 204 || response.status === 202 ? true : await response.json();
       } catch (error) {
-        const transient = ["TimeoutError", "AbortError", "TypeError"].includes(error.name);
+        const network = ["TimeoutError", "AbortError", "TypeError"].includes(error.name);
         // 조회만 한 번 재시도한다. 요청 응답이 유실된 POST는 중복 실행 위험이 있다.
-        if (transient && method === "GET" && attempt === 0 && Date.now() < this.deadline) continue;
-        if (transient) {
+        if ((network || error.transient) && method === "GET" && attempt === 0 && Date.now() < this.deadline) continue;
+        if (network) {
           const reason = error.name === "TypeError" ? "연결 실패" : "요청 시간 초과";
-          const failure = new Error(`GitHub ${reason} (${endpoint})`);
           // 상세 경로가 바뀌어도 같은 시간초과를 다시 알리지 않는다. 기존 알림 키도 유지한다.
-          failure.noticeMessage = error.name === "TypeError" ? "GitHub 연결 실패" : "The operation was aborted due to timeout";
-          throw failure;
+          throw transientFailure(`GitHub ${reason} (${endpoint})`,
+            error.name === "TypeError" ? "GitHub 연결 실패" : "The operation was aborted due to timeout");
         }
         throw error;
       }

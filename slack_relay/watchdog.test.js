@@ -227,6 +227,85 @@ test("read retry cannot extend the watchdog's shared time budget", async t => {
   assert.equal(reads, 1);
 });
 
+function flaky(f, fail) {
+  // 첫 조회(codex_fallback 대기 목록)를 fail() 이 정하는 대로 실패시킨다
+  const fetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    const u = new URL(url);
+    if (u.pathname.includes("codex_fallback.yml/runs") && u.searchParams.get("status") === "queued") {
+      const outcome = fail();
+      if (outcome === "timeout") throw new DOMException("operation timed out", "TimeoutError");
+      if (typeof outcome === "number") return Response.json({ message: "Server Error" }, { status: outcome });
+    }
+    return fetch(url, init);
+  };
+}
+const posts = f => f.calls.filter(c => c.path.endsWith("chat.postMessage"));
+
+test("a GitHub 5xx read is retried once like a timeout", async t => {
+  for (const status of [500, 502, 503, 504, 429]) {
+    const f = fixture(t);
+    let reads = 0;
+    flaky(f, () => (++reads === 1 ? status : null));
+    const state = await f.tick();
+    assert.equal(state.status, "ok", `HTTP ${status}`);
+    assert.equal(reads, 2);
+    t.mock.restoreAll();
+  }
+});
+
+test("transient GitHub failures alert only after three failed checks in a row, then report recovery", async t => {
+  const f = fixture(t);
+  let down = true;
+  flaky(f, () => (down ? 500 : null));
+  for (let i = 1; i <= 2; i++) {
+    const state = await f.tick();
+    assert.equal(state.status, "error");
+    assert.equal(state.failures, i);
+    assert.equal(posts(f).length, 0, "한두 번의 일시적 오류는 알리지 않는다");
+    f.advance(5 * 60_000);
+  }
+  await f.tick(); // 세 번째 연속 실패 — 약 15분
+  assert.equal(posts(f).length, 1);
+  assert.match(posts(f)[0].body.text, /연속 3번.*GitHub HTTP 500/);
+  f.advance(5 * 60_000);
+  await f.tick(); // 계속 실패해도 같은 경고를 반복하지 않는다
+  assert.equal(posts(f).length, 1);
+  down = false;
+  f.advance(5 * 60_000);
+  const state = await f.tick();
+  assert.equal(state.status, "ok");
+  assert.equal(state.failures, 0);
+  assert.equal(posts(f).length, 2);
+  assert.match(posts(f)[1].body.text, /다시 정상/);
+});
+
+test("one failed check between successes never alerts", async t => {
+  const f = fixture(t);
+  let tick = 0;
+  flaky(f, () => (tick === 1 || tick === 3 ? "timeout" : null));
+  for (tick = 0; tick < 6; tick++) { await f.tick(); f.advance(5 * 60_000); }
+  assert.equal(posts(f).length, 0);
+  assert.equal(f.data.get("state").failures, 0);
+});
+
+test("a 5xx on a dispatch is not retried (the request may already have started a run)", async t => {
+  const f = fixture(t);
+  const fetch = globalThis.fetch;
+  let dispatches = 0;
+  globalThis.fetch = async (url, init) => {
+    if (new URL(url).pathname.includes("codex_fallback.yml/dispatches")) {
+      dispatches++;
+      return Response.json({ message: "Server Error" }, { status: 502 });
+    }
+    return fetch(url, init);
+  };
+  const state = await f.tick();
+  assert.equal(state.status, "error");
+  assert.equal(dispatches, 1);
+  assert.equal(posts(f).length, 0);
+});
+
 test("endpoint diagnostics preserve the existing timeout notice deduplication", async t => {
   const f = fixture(t);
   const notice = "⚠️ YooPost 클라우드 복구 점검 실패: The operation was aborted due to timeout";
