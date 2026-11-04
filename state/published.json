@@ -5551,5 +5551,27 @@
    "https://www.fnnews.com/news/202611031814417362"
   ],
   "draft_id": "20261104_075343_7"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🤖 텐센트 Hy4 정식판, 8월 프리뷰와 무엇이 달라졌나: 시각 이해·컴퓨터 조작·가격 조건",
+  "topic": "Tencent Launches Upgraded Hy4 AI Model With Visual Understanding (Caixin Global, 2026-11-05)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.tencentcloud.com/products/tokenhub",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/hy4-8.html"
+  },
+  "sources": [
+   "https://www.tencentcloud.com/products/tokenhub",
+   "https://huggingface.co/tencent/Hy4-preview",
+   "https://finance.biggo.com/news/8735235c-68bf-45f8-9ba8-530eb8847d6a",
+   "https://panews.io/articles/01a1a509-67cb-767f-b692-bac8d93c7f9e",
+   "https://www.caixinglobal.com/2026-11-05/tencent-launches-upgraded-hy4-ai-model-with-visual-understanding-102501068.html",
+   "https://www.chaincatcher.com/en/article/2301727",
+   "https://benchlm.ai/models/hy4",
+   "https://www.eesel.ai/blog/tencent-hy4",
+   "https://openrouter.ai/tencent/hy4"
+  ],
+  "draft_id": "20261105_070600_1"
  }
 ]
