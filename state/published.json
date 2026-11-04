@@ -5614,5 +5614,22 @@
    "https://cctest.ai/en/articles/wave-forcing-turning-long-video-generation-into-continuous-streaming"
   ],
   "draft_id": "20261105_071923_3"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🏫 구글 K-12 AI 기본 꺼짐 발표, 학교는 검색을 지킬 수 있을까: 공식 글과 보도 비교",
+  "topic": "Google, K-12 학생 계정 AI 기본 꺼짐 발표와 Search 접근 논란 (AI learning era updates 2026 / TechCrunch 보도)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/k-12-ai.html"
+  },
+  "sources": [
+   "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+   "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/",
+   "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
+   "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/"
+  ],
+  "draft_id": "20261105_072642_4"
  }
 ]
