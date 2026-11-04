@@ -5631,5 +5631,24 @@
    "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/"
   ],
   "draft_id": "20261105_072642_4"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🔒 구글이 경고한 LLMjacking, 하루 10만 달러 청구를 막으려면 무엇부터 점검할까",
+  "topic": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources (Google GTIG/Mandiant, 2026-11-02)",
+  "category": "AI 보안",
+  "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/llmjacking-10.html"
+  },
+  "sources": [
+   "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+   "https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/",
+   "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html",
+   "https://www.security.com/threat-intelligence/openai-claude-unauthorized-relays",
+   "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p",
+   "https://nvd.nist.gov/vuln/detail/CVE-2026-40217"
+  ],
+  "draft_id": "20261105_073329_5"
  }
 ]
