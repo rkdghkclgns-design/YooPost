@@ -1,0 +1,124 @@
+{
+ "topic": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources (Google GTIG/Mandiant, 2026-11-02)",
+ "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+   "publisher": "Google Cloud Threat Intelligence (GTIG·Mandiant)",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
+   "url": "https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google Warns LLMjacking Attacks Are Costing Some Enterprises Up to $1 Million in Cloud Charges",
+   "url": "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html",
+   "publisher": "The Hacker News",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Sandbox Flipped to 'Danger-Full-Access' (unauthorized AI coding relays)",
+   "url": "https://www.security.com/threat-intelligence/openai-claude-unauthorized-relays",
+   "publisher": "Symantec Threat Hunter Team (Broadcom)",
+   "published": "2026-10-29",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Sandbox escape in custom-code guardrail (GHSA-wxxx-gvqv-xp7p, CVE-2026-40217)",
+   "url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p",
+   "publisher": "BerriAI LiteLLM (GitHub Security Advisory)",
+   "published": "2026-05-07",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "CVE-2026-40217 Detail",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40217",
+   "publisher": "NIST NVD",
+   "published": "2026-04-10",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/Figure_1_Usage_chart_showing_LLMJacking_ge.max-2000x2000_ttHac9S.png",
+   "page_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+   "caption": "LLMjacking으로 API 요청이 급증한 사용량 차트",
+   "credit": "Google Cloud"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/Figure_3_Screenshot_of_Jet_Night_Plans_and.max-1400x1400.png",
+   "page_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+   "caption": "Jet Night 요금제 화면(믹서 경제)",
+   "credit": "Google Cloud"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "구글이 경고한 LLMjacking 청구 사고를 막으려면 우리 조직은 무엇부터 점검해야 하는가",
+  "limitations": "공개 보고서와 권고를 읽고 정리한 것으로 탐지 규칙·설정을 직접 실행하거나 검증하지 않았다. 수치와 전망은 구글 보고 기준이며, CVE-2026-40217은 구글 보고서(/key/regenerate 권한 상승)와 LiteLLM 공식 권고·CVE 기록(/guardrails/test_custom_code 샌드박스 탈출 RCE)의 설명이 달라 구글이 관찰한 결함을 확정할 수 없다. 요금 절감률·호출률 계산은 보고서 수치의 단순 산술이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 숫자로 보는 믹서 경제 (해석·계산)",
+    "excerpt": "이 두 수치로 단순 계산하면 Jet Night 요금은 시장 하한 대비 **40% 저렴**, 상한 대비 **약 76% 저렴**합니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "월 60달러와 시장 100~250달러로 절감률(1-60/100=40%, 1-60/250=76%), 50만 건÷28,800초로 평균 호출률(초당 약 17건), 100만 달러÷50만 건으로 호출당 약 2달러를 계산하고, 요금제 조건 차이·'8시간 미만'·단순 평균이라는 한계를 밝힘"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 시만텍 릴레이 분석과 엮어 읽기",
+    "excerpt": "하나는 돈의 유출, 다른 하나는 데이터와 실행 권한의 유출 위험이라는 점에서 방어 항목이 다릅니다",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "구글의 청구 피해와 시만텍의 릴레이 노출 위험을 연결해 방어 항목이 다름을 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 우리 조직은 무엇부터 점검할까 (선택 기준)",
+    "excerpt": "모두 한꺼번에 할 수 없으니 **상황별로 우선순위**를 정해 볼 수 있습니다. 아래는 보고서 항목을 독자의 상황에 맞춰 재배열한 것이며",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "조직 상황별(LLM 미사용/사용/게이트웨이/깃허브/코딩 에이전트)로 점검 우선순위와 근거 권고를 매핑"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 43,
+  "removed": [
+   "재판매 접근의 순간 요청률 '초당 1,000건 초과 가능'(블리핑컴퓨터 자체 서술, 구글 원문·다른 출처에 없음 — 표 행 삭제)",
+   "'시만텍 분석은 구글 보고서가 인용한 사건입니다'(구글 원문에 시만텍 언급 없음 — 더 해커 뉴스가 함께 소개한 별개 사건으로 수정)",
+   "점검표 '승인된 접근 경로 제공'(시만텍 권고에 없음 — 권고에 있는 송신 허용 목록 제한으로 교체)"
+  ],
+  "corrected": [
+   "CVE-2026-40217: LiteLLM 공식 GHSA-wxxx-gvqv-xp7p(2026-05-07)·NVD/MITRE CVE 기록(2026-04-10)은 /guardrails/test_custom_code 샌드박스 탈출 RCE(기본 설정에서 proxy-admin 자격 필요, 1.83.11 이상 수정)로 설명 — 구글의 /key/regenerate PROXY_ADMIN 설명과 불일치를 경고 박스·표·맺음말에 명시, 조치는 공식 권고 기준으로",
+   "'8시간 안에' → '8시간이 채 안 되는 동안'(원문 less than eight hours)",
+   "시만텍 영향 조직: 한국·대만·말레이시아 '자회사' → 그 나라에 본사를 둔 다국적 기업의 현지 법인, 반도체·제약·해운 업종 추가",
+   "'한 줄 명령으로 설정 변경' → '설정 스크립트 실행'",
+   "D1337-KAIROS '가칭 페르소나' → '페르소나', 에이전트 백도어 → Manus 에이전트 프레임워크 기반 컨테이너 백도어"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 구글 원문을 3회 다시 열어 수치(하루 10만 달러 초과·누적 100만 달러·8시간 미만 50만 건·Jet Night 월 약 60달러 vs 100~250달러)·행위자·탐지/완화 권고·그림 캡션 대조, S2·S3·S4 재확인(페이지 날짜 = published 모두 일치: 11-02, 11-03, 11-03, 10-29). CVE는 NVD API·MITRE CVE API·OSV·LiteLLM GitHub 권고로 1차 확인(S5·S6 추가). 계산 재계산: 1-60/100=40%, 1-60/250=76%, 500,000/28,800초≈17.4건/초, 100만/50만=2달러. 인용 이미지 2개 200 image/png 확인. 기존 글(시만텍 Skynet 2026-10-21 원문, 10-28 발행)·LiteLLM 1.107.0 침해 글과 다른 구글 GTIG 11-02 보고서 중심임을 확인. EGRESS_BLOCKED 출처 없음. editorial v1 발췌 3개 본문 일치·계산식·한계 갱신."
+ }
+}
