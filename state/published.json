@@ -5573,5 +5573,27 @@
    "https://openrouter.ai/tencent/hy4"
   ],
   "draft_id": "20261105_070600_1"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🔍 Cloudflare 개인 에이전트 분석·정책 추가: 내 사이트는 AI 비서를 막아야 할까, 받아야 할까",
+  "topic": "See the agents, set the terms: new visibility and control for personal agents (Cloudflare, 2026-11-04)",
+  "category": "AI 도구",
+  "source_url": "https://blog.cloudflare.com/personal-agents-visibility-control",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/cloudflare-ai.html"
+  },
+  "sources": [
+   "https://blog.cloudflare.com/personal-agents-visibility-control",
+   "https://developers.cloudflare.com/changelog/post/2026-11-04-personal-agent-policies/",
+   "https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/",
+   "https://www.unite.ai/cloudflare-adds-personal-agent-analytics-and-per-agent-access-controls",
+   "https://daily.dev/posts/see-the-agents-set-the-terms-new-visibility-and-control-for-personal-agents-bv9q19pqe",
+   "https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/",
+   "https://developers.cloudflare.com/changelog/post/2026-11-02-account-abuse-protection-dashboard/",
+   "https://developers.cloudflare.com/changelog/post/2026-11-03-aap-ai-assistant-scope/",
+   "https://developers.cloudflare.com/bots/account-abuse-protection/"
+  ],
+  "draft_id": "20261105_071306_2"
  }
 ]
