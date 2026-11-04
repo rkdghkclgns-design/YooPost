@@ -5595,5 +5595,24 @@
    "https://developers.cloudflare.com/bots/account-abuse-protection/"
   ],
   "draft_id": "20261105_071306_2"
+ },
+ {
+  "date": "2026-11-05",
+  "title": "🌊 Wave Forcing 논문 분석: 8×H200에서 134.8 FPS, 실시간 긴 영상 생성의 속도·안정성 점수는 어디까지 믿을까",
+  "topic": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation (arXiv 2611.00859, SJTU DENG Lab, 2026-10-31)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.00859",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/wave-forcing-8h200-1348-fps.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.00859",
+   "https://sjtu-deng-lab.github.io/WaveForcing/",
+   "https://github.com/SJTU-DENG-Lab/WaveForcing",
+   "https://huggingface.co/papers/2611.00859",
+   "https://arxiv.org/html/2611.00859",
+   "https://cctest.ai/en/articles/wave-forcing-turning-long-video-generation-into-continuous-streaming"
+  ],
+  "draft_id": "20261105_071923_3"
  }
 ]
