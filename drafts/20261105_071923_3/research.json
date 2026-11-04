@@ -1,0 +1,115 @@
+{
+ "topic": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation (arXiv 2611.00859, SJTU DENG Lab, 2026-10-31)",
+ "source_url": "https://arxiv.org/abs/2611.00859",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.00859",
+   "publisher": "arXiv / SJTU DENG Lab",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Wave Forcing project page",
+   "url": "https://sjtu-deng-lab.github.io/WaveForcing/",
+   "publisher": "SJTU DENG Lab",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "SJTU-DENG-Lab/WaveForcing (GitHub README)",
+   "url": "https://github.com/SJTU-DENG-Lab/WaveForcing",
+   "publisher": "SJTU DENG Lab (GitHub)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.00859",
+   "publisher": "Hugging Face",
+   "published": "2026-10-31",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Wave Forcing (arXiv HTML full text)",
+   "url": "https://arxiv.org/html/2611.00859",
+   "publisher": "arXiv / SJTU DENG Lab",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Wave Forcing: Turning Long-Video Generation into Continuous Streaming",
+   "url": "https://cctest.ai/en/articles/wave-forcing-turning-long-video-generation-into-continuous-streaming",
+   "publisher": "CCTest Blog",
+   "published": "2026-11-03",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://sjtu-deng-lab.github.io/WaveForcing/static/images/paper/qual_reading.jpg",
+   "page_url": "https://sjtu-deng-lab.github.io/WaveForcing/",
+   "caption": "실험 결과: 긴 영상 정성 비교(Causal Forcing, Rolling Forcing, Wave Forcing 4·5단계)",
+   "credit": "SJTU DENG Lab, Wave Forcing project page"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://sjtu-deng-lab.github.io/WaveForcing/static/images/paper/qual_burger.jpg",
+   "page_url": "https://sjtu-deng-lab.github.io/WaveForcing/",
+   "caption": "학습 구성 요소 제거 실험(ablation): 전체 모델과 제거 모델의 정성 비교",
+   "credit": "SJTU DENG Lab, Wave Forcing project page"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Wave Forcing의 134.8 FPS와 품질 점수는 어떤 조건에서 나온 숫자이고, 우리 환경에서 어디까지 옮겨 읽을 수 있는가?",
+  "limitations": "논문·프로젝트 페이지·README만 읽었고 코드 실행·영상 생성·독립 재현은 하지 않았다. 모든 성능은 저자 보고치이며, 논문은 효율 실험(그림 7)을 더미 DiT 가중치로 쟀다고 적고 14B 속도는 품질 결과가 아니다. 직접 계산은 논문 표 수치로 한 산술이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 직접 계산해 본 숫자: 8장의 GPU는 얼마나 효율적으로 쓰였나",
+    "excerpt": "8장 가운데 3장은 VAE 디코딩 전용이라 **'GPU 8장 모두가 생성에 쓰인 것'은 아닙니다**",
+    "source_ids": [
+     "S5",
+     "S3"
+    ],
+    "added_value": "논문 표의 FPS 수치로 GPU 증설 효율(약 88%)과 실시간 대비 배율(약 8.4배)을 계산하고 VAE 전용 GPU 3장을 감안해 읽는 법을 제시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔬 학습 구성 요소 제거 실험(ablation)이 말해 주는 것",
+    "excerpt": "결국 전체 모델은 '움직임-안정성' 사이의 절충점이며, 논문도 전체 모델이 가장 균형이 좋다고 평가합니다.",
+    "source_ids": [
+     "S5"
+    ],
+    "added_value": "ablation 5개 행을 움직임·안정성 축으로 대비해 한 지표만 보고 고르면 생기는 위험을 설명"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 공개 범위와 우리 환경에서 따져 볼 기준",
+    "excerpt": "GPU 1~2장뿐이라면: 이 방식의 이득은 단계 수만큼의 복제본(S+1장)에서 나오므로 같은 속도를 기대하기 어렵습니다.",
+    "source_ids": [
+     "S3",
+     "S5"
+    ],
+    "added_value": "README의 환경·라이선스와 논문 한계를 GPU 규모·용도별 선택 기준으로 변환"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 82,
+  "confirmed": 82,
+  "removed": [
+   "Hugging Face 논문 페이지와 트렌딩 목록에서도 같은 시기에 주목받았습니다.",
+   "같은 시기 Hugging Face 트렌딩 목록에서도 확인됩니다."
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(제출 2026-10-31, citation_date 일치)·arXiv HTML 본문 표 1·2·4·6, 5.3·5.5·7절과 수치 대조, 공식 README·프로젝트 페이지·HF Papers(Published Oct 31, 11/3 Daily Papers #2, 추천 121) 재확인. 자체 계산 6건 재계산 일치(7.07/8=0.884, 134.81/16=8.43, 1593/134.81=11.82s, 1593/16=99.6s, 96.46/17.46=5.52, 134.81/127.06=+6.1%). 수정: '청크당 전방 계산 2회'를 논문 정의(S+1회, 1단계여도 2회)로 고침(요약·도입·본문·맺음말), 확인 안 된 'HF 트렌딩 목록' 문장을 HF Daily Papers 11/3 2위로 교체, Causal Forcing 30·75초 주인공 소실은 정성 예시임을 명시, 효율 실험 더미 가중치(그림 7)와 README 설명 차이 보완. 다른 매체 탐색(WebSearch): CCTest 블로그 기사(2026-11-03, article:published_time 일치)를 직접 읽고 S6 추가; hyper.ai·paperswithcode.co 는 논문 요약 미러라 제외. 프로젝트 페이지·GitHub README 는 페이지에 날짜 표기가 없어 published 는 arXiv 발표일 기준. 인용 이미지 2개 HTTP 200 image/jpeg, 프로젝트 페이지 본문 정성 비교·ablation 그림으로 확인. editorial v1 의 contributions 3건 소제목·발췌 문구가 본문에 있음을 확인."
+ }
+}
