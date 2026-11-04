@@ -1,0 +1,120 @@
+{
+ "topic": "Tencent Launches Upgraded Hy4 AI Model With Visual Understanding (Caixin Global, 2026-11-05)",
+ "source_url": "https://www.tencentcloud.com/products/tokenhub",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Tencent Cloud TokenHub — Tencent Hy4",
+   "url": "https://www.tencentcloud.com/products/tokenhub",
+   "publisher": "Tencent Cloud",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "tencent/Hy4-preview model card",
+   "url": "https://huggingface.co/tencent/Hy4-preview",
+   "publisher": "Tencent (Hugging Face)",
+   "published": "2026-08-28",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Tencent Unveils Official Version of Hunyuan Hy4",
+   "url": "https://finance.biggo.com/news/8735235c-68bf-45f8-9ba8-530eb8847d6a",
+   "publisher": "BigGo Finance",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Tencent Hunyuan Releases Hy4, Its Latest-Generation Large Language Model",
+   "url": "https://panews.io/articles/01a1a509-67cb-767f-b692-bac8d93c7f9e",
+   "publisher": "PANews",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Tencent Launches Upgraded Hy4 AI Model With Visual Understanding",
+   "url": "https://www.caixinglobal.com/2026-11-05/tencent-launches-upgraded-hy4-ai-model-with-visual-understanding-102501068.html",
+   "publisher": "Caixin Global",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Tencent Hunyuan Hy4 officially launched on B.AI",
+   "url": "https://www.chaincatcher.com/en/article/2301727",
+   "publisher": "ChainCatcher",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Hy4 (Tencent) benchmark scores",
+   "url": "https://benchlm.ai/models/hy4",
+   "publisher": "BenchLM",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Tencent Hunyuan Hy4: specs, benchmarks, and pricing explained",
+   "url": "https://www.eesel.ai/blog/tencent-hy4",
+   "publisher": "eesel AI",
+   "published": "2026-08-30",
+   "official": false
+  },
+  {
+   "id": "S9",
+   "title": "Tencent: Hy4 (tencent/hy4)",
+   "url": "https://openrouter.ai/tencent/hy4",
+   "publisher": "OpenRouter",
+   "published": "2026-11-04",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "읽을 수 있었던 공식 페이지(TokenHub 제품 소개, Hugging Face 프리뷰 모델 카드)는 글자 중심이고 Hy4 정식판 내용을 보여 주는 본문 그림이 없었으며, 공식 발표문 페이지는 접속이 차단되었습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Hy4 정식판은 8월 프리뷰와 무엇이 달라졌고, 우리 팀이 지금 도입해 볼 만한가?",
+  "limitations": "텐센트 공식 발표문(hy.tencent.ai)은 접속이 차단되어 직접 읽지 못했고 매체 보도·TokenHub·OpenRouter 페이지로 확인했다. 직접 실행하지 않았다. 정식판 구조·라이선스는 미확인이며 가격은 OpenRouter 표기 기준이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 Hy4 비용 감 잡기: 입력 토큰 기준 계산",
+    "excerpt": "여기서는 공개된 입력 단가만으로 간단히 계산해 봅니다. 입력 토큰 1억 개(100M)를 처리한다고 가정하면 ",
+    "source_ids": [
+     "S9",
+     "S3"
+    ],
+    "added_value": "OpenRouter 공개 단가로 입력 1억·출력 2천만 토큰 사용 시 비용을 계산하고, 할인 종료 시 비용과 가정·한계를 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 맞을까: 상황별 선택 기준",
+    "excerpt": "선택 기준을 세 가지로 나누어 정리하면 이렇습니다. 첫째, 이미 텐센트 클라우드나 WorkBuddy·Code",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6"
+    ],
+    "added_value": "상황별 도입 판단 기준과 제외 조건을 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 47,
+  "removed": [
+   "한편 Caixin은 정식판을 770B 파라미터의 오픈소스 모델로 소개했습니다. (Caixin 본문이 아닌 AI 요약 영역에만 있음)",
+   "Caixin은 입력 토큰 100만 개당 6위안이라고 전했고 … (6위안 단가·600/300위안 계산·FAQ 가격 답변 — Caixin 본문 확인 불가, OpenRouter 확인 단가로 교체)",
+   "모델 가중치와 시스템 카드를 곧 공개 (시스템 카드는 어느 출처에도 없음 — 요약·본문·FAQ 에서 '시스템 카드' 삭제)",
+   "싱가포르 기반 플랫폼 B.AI (기반 국가 확인 불가 — '싱가포르 기반' 삭제)",
+   "사람의 개입 없이 (마우스 배아 재구성 문구 — 출처에 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): TokenHub·HF 모델 카드·BigGo·PANews·Caixin·ChainCatcher·BenchLM·eesel 을 다시 열어 주장별 대조, HF API·OpenRouter API/페이지로 추가 확인. 출처 날짜: TokenHub 페이지에는 날짜 표기가 없음 — 정식판 공개일 2026-11-04 는 BigGo(2026-11-04T07:36Z)·PANews(11월 4일)·ChainCatcher·OpenRouter tencent/hy4 등록 시각(2026-11-04 04:20 UTC)으로 확인해 유지. HF Hy4-preview 페이지에도 날짜 없음 — HF API createdAt 2026-08-27T08:52Z, lastModified 2026-08-28, 과학기술일보(stdaily 2026-08-28)·eesel 이 8월 28일 공개로 보도해 2026-08-28 유지. Caixin 페이지 'Published: Nov. 5, 2026 12:00 a.m. GMT+8' 일치. BenchLM 은 'Last updated: November 4, 2026' 만 있음. eesel 'Last edited August 30, 2026' 일치. 벤치마크는 BenchLM 2차 자료로 본문·경고 박스에 출처 표기. 비용 계산은 OpenRouter 단가로 다시 하고 가정 계산임을 본문에 명시. 차단된 hy.tencent.ai 발표문에만 기대는 주장은 없음(모두 접속된 출처로 확인). WorkBuddy·CodeBuddy '추가 연동 비용 없이'는 근거가 없어 '익숙한 채널에서'로 완화. editorial v1: reader_question·limitations 는 본문과 일치(정식판 출력 단가 미확인 → OpenRouter 로 확인되어 limitations 갱신), contributions 2개 excerpt 가 본문에 그대로 있음을 확인."
+ }
+}
