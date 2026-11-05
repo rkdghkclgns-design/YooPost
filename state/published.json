@@ -5794,5 +5794,28 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000472"
   ],
   "draft_id": "20261106_075921_7"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "🤖 Ripple-65B Preview, 65B가 501B를 0.4점 앞섰다는 주장: 코딩 에이전트에 쓸 만한가",
+  "topic": "Introducing Ripple-65B Preview, a Frontier Open-Weight Model (Ricursive Intelligence, 2026-11-04)",
+  "category": "AI 언어 모델",
+  "source_url": "https://ricursive.com/ripple",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ripple-65b-preview-65b-501b-04.html"
+  },
+  "sources": [
+   "https://ricursive.com/ripple",
+   "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+   "https://officechai.com/ai/ricursive-intelligence-ripple-65b-preview/",
+   "https://www.eesel.ai/blog/ripple-65b",
+   "https://cryptobriefing.com/ricursive-ripple-65b-preview-coding-benchmarks/",
+   "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+   "https://huggingface.co/ricursiveAI/Ripple-65B-Preview-NVFP4/tree/main",
+   "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/tree/main",
+   "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/blob/main/inference/server/README.md",
+   "https://huggingface.co/ricursiveAI/Ripple-65B-Preview-NVFP4/blob/main/inference/local/spark.py"
+  ],
+  "draft_id": "20261106_081212_1"
  }
 ]
