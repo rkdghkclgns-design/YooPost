@@ -5759,5 +5759,23 @@
    "https://thenextweb.com/news/openai-gpt-6-cyber-launch-firefox-linux-daybreak-red"
   ],
   "draft_id": "20261106_073731_5"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "🧠 METR이 추정한 Anthropic AI 연구개발 1.9배 가속, 숫자는 어디까지 믿을까",
+  "topic": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026 (METR, 2026-11-05)",
+  "category": "AI 인사이트",
+  "source_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/metr-anthropic-ai-19.html"
+  },
+  "sources": [
+   "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+   "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+   "https://kingy.ai/blog/metr-anthropic-ai-rd-acceleration-assessment/",
+   "https://kingy.ai/blog/anthropic-recursive-self-improvement-acceleration-warning/",
+   "https://thebusinessjournal.com/anthropic-ai-development-accelerates-metr-report/"
+  ],
+  "draft_id": "20261106_074833_6"
  }
 ]
