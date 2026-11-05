@@ -5723,5 +5723,23 @@
    "https://huggingface.co/papers/date/2026-11-05"
   ],
   "draft_id": "20261106_072226_3"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "🏗 OpenAI 커뮤니티 컴팩트, 데이터센터 이웃은 무엇을 약속받았나: 지킨다는 것과 요구한다는 것의 구분",
+  "topic": "OpenAI National Community Compact and Compute Campus Policy Blueprint (OpenAI, 2026-11-05) — Decrypt·Reuters·The Neuron 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://cdn.openai.com/pdf/community-compact.pdf",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/openai.html"
+  },
+  "sources": [
+   "https://cdn.openai.com/pdf/community-compact.pdf",
+   "https://cdn.openai.com/pdf/compute-campus-policy-blueprint.pdf",
+   "https://decrypt.co/382674/openai-promises-foot-ai-power-bill-after-voter-revolt",
+   "https://www.investing.com/news/stock-market-news/openai-kicks-off-charm-offensive-to-change-voters-view-of-data-centers-5002831",
+   "https://www.theneuron.ai/news/openai-data-center-reset-no-ndas-public-officials/"
+  ],
+  "draft_id": "20261106_072945_4"
  }
 ]
