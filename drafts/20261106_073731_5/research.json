@@ -1,0 +1,109 @@
+{
+ "topic": "GPT-6 Cyber System Card Addendum (OpenAI, 2026-11-05) / TechCrunch·Fortune·The Decoder·The Next Web 보도",
+ "source_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GPT-6 Cyber System Card Addendum",
+   "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+   "publisher": "OpenAI",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI released a new cybersecurity model. Is that enough?",
+   "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI debuts new cybersecurity-focused AI model amid growing alarm about AI-driven cyber attacks",
+   "url": "https://fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model-amid-growing-alarm-about-ai-driven-cyber-attacks/",
+   "publisher": "Fortune",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's GPT-6 Cyber can both break into systems and propose how to fix them",
+   "url": "https://the-decoder.com/openais-gpt-6-cyber-can-both-break-into-systems-and-propose-how-to-fix-them/",
+   "publisher": "The Decoder",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI's GPT-6 Cyber found 81 new Firefox flaws and is rated 'Critical'",
+   "url": "https://thenextweb.com/news/openai-gpt-6-cyber-launch-firefox-linux-daybreak-red",
+   "publisher": "The Next Web",
+   "published": "2026-11-05",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-cyber/assets/images/image10.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+   "caption": "ExploitGym 성능 수치: GPT-5.6 Sol 30.3%, GPT-6 Astra 42.4%, GPT-6 Cyber 48.5%",
+   "credit": "OpenAI GPT-6 Cyber System Card Addendum (Figure 7)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-cyber/assets/images/image6.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+   "caption": "외부 평가(Irregular) CyScenarioBench: GPT-6 Cyber 11/11, GPT-6 Astra 8/11 해결",
+   "credit": "OpenAI GPT-6 Cyber System Card Addendum"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GPT-6 Cyber는 정말 취약점을 대량으로 찾아내며, 일반 조직이 쓸 수 있는가 또는 무엇을 준비해야 하는가",
+  "limitations": "OpenAI 소개 페이지(openai.com)는 접속이 막혀 읽지 못했고, 시스템 카드와 매체 보도 네 건만 읽었다. Linux·Firefox 수치는 시스템 카드에 없고 보도 기반이며, Mozilla 공지로 Firefox 81건 단위를 확인하지 못했다. 직접 실행하거나 결과를 재현하지 않았으며, 비용 계산은 거친 참고치다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 성능 수치 읽기: Astra와 같은 조건 비교",
+    "excerpt": "외부 기관 Irregular의 평가에서 CyScenarioBench는 **11개 중 11개**를 한 번 이상 풀어",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "시스템 카드의 Astra 대비 수치를 같은 평가별로 나열하고 차이와 비율을 계산해, 앞선 평가와 뒤처진 평가(FrontierCyber)를 함께 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧪 실전 결과 해석: Linux 커널 948건과 Firefox 81건",
+    "excerpt": "Linux 쪽은 표현이 갈립니다. TechCrunch는 '스캔하고 패치를 준비하는 데 쓰였으며 잠재적 문제 948건을 찾았다'고 쓴 반면",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "네 매체가 같은 948건을 어떻게 설명했는지 표로 대조하고, 588/948(약 62%)·1,724/2,308(약 75%)·948/1,724(약 55%) 비율과 1,213,430달러/948건(약 1,280달러) 단가를 재계산해 확정할 수 없는 부분을 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직에 필요한가: 상황별 판단 기준",
+    "excerpt": "판단의 핵심은 **모델 성능보다 접근 요건**입니다. 일반 조직이 이 모델을 직접 쓸 가능성은 낮지만",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "조직 유형별 접근 가능성과 선행 보안 요건을 표로 재배열해 도입 판단을 돕는 기준 제공"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 67,
+  "confirmed": 66,
+  "removed": [
+   "방어자가 늘어나는 업무량에 압도될 수 있다는 지적도 있습니다. (TechCrunch 본문에서 확인되지 않음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 시스템 카드·TechCrunch·Fortune을 다시 열어 주장별로 대조하고, 같은 날 보도한 The Decoder·The Next Web을 추가로 읽어 보강(5개 출처 모두 페이지/메타 발표일 2026-11-05 확인). 수정: 조직 보안 요건(SSO·MFA·관리 기기·최소 권한, IP 허용 목록은 Daybreak Red API 기본값), Private Safety Processing 설명·30일 보관, 오용 시 제한·정지·취소, Linux 948건을 매체 4곳 병기(TechCrunch '잠재적 문제' vs 나머지 '익스플로잇', Decoder 2,308→1,724→948 단계), 건당 비용을 1,213,430/948≈1,280달러로 재계산(기존 1,266달러 대체), Firefox 81건은 Mozilla 공지(MFSA)로 81건 단위 확인 불가 → 보도 기반 수치로 명시. 모델명: TechCrunch만 'ChatGPT Cyber', 시스템 카드·Fortune·Decoder·TNW는 GPT-6 Cyber. 계산값(차이 %p, 31.25%/33.33%, 62%, 75%, 55%) 재계산 확인. images_none_reason 이 틀려(시스템 카드 본문에 Figure 1~12 존재) ExploitGym·CyScenarioBench 그림 2개를 HTTP 200 image/png(2048px)로 확인해 넣음. openai.com 발표 페이지는 403이라 출처에서 제외. 같은 회사 원고(커뮤니티 컴팩트·2028 선거)와 주제 겹침 없음."
+ }
+}
