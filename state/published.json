@@ -5684,5 +5684,26 @@
    "https://glasswallet.com/blog/ipo-2344-analysis/"
   ],
   "draft_id": "20261105_074832_7"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "📱 Siri AI 개발자 프리뷰: 우리 앱을 지금 연결해도 될까, 스킬과 한도로 판단하기",
+  "topic": "Siri AI Developer Preview (Apple Developer News, 2026-11-03)",
+  "category": "AI 도구",
+  "source_url": "https://developer.apple.com/news/?id=gdk2umrf",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/siri-ai.html"
+  },
+  "sources": [
+   "https://developer.apple.com/news/?id=gdk2umrf",
+   "https://ppc.land/apple-opens-siri-ai-to-all-developers-but-apps-cant-ship-it-until-spring/",
+   "https://thenextweb.com/news/apple-siri-ai-developer-preview-app-intents-usage-limits-fee",
+   "https://www.cultofmac.com/news/ios-27-3-beta-siri-ai-audio-intelligence",
+   "https://macworld.com/article/3276244/with-ios-27-3-the-siri-ai-floodgates-are-about-to-open.html",
+   "https://developer.apple.com/documentation/appintents/siri-ai-developer-preview",
+   "https://developer.apple.com/documentation/appintents/orchestrating-complex-actions-with-app-skills",
+   "https://developer.apple.com/documentation/appintents/bringing-custom-actions-and-content-to-siri"
+  ],
+  "draft_id": "20261106_071539_2"
  }
 ]
