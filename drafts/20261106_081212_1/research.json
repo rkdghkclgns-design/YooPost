@@ -1,0 +1,158 @@
+{
+ "topic": "Introducing Ripple-65B Preview, a Frontier Open-Weight Model (Ricursive Intelligence, 2026-11-04)",
+ "source_url": "https://ricursive.com/ripple",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Ripple-65B Preview, a Frontier Open-Weight Model",
+   "url": "https://ricursive.com/ripple",
+   "publisher": "Ricursive Intelligence",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Ripple-65B-Preview model card",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+   "publisher": "Hugging Face (Ricursive Intelligence)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Ricursive Intelligence Releases Ripple-65B Preview, Says It's SOTA US Open Model On Agentic Coding Built On A $32 Million Compute Budget",
+   "url": "https://officechai.com/ai/ricursive-intelligence-ripple-65b-preview/",
+   "publisher": "OfficeChai",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Ripple-65B Preview: benchmarks, price and how to run it",
+   "url": "https://www.eesel.ai/blog/ripple-65b",
+   "publisher": "eesel AI",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Ricursive Intelligence's Ripple-65B Preview claims coding lead among US open models",
+   "url": "https://cryptobriefing.com/ricursive-ripple-65b-preview-coding-benchmarks/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "ricursiveAI/Ripple-65B-Preview - API Pricing & Providers",
+   "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+   "publisher": "OpenRouter",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "ricursiveAI/Ripple-65B-Preview-NVFP4 — Files and versions",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview-NVFP4/tree/main",
+   "publisher": "Hugging Face (Ricursive Intelligence)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "ricursiveAI/Ripple-65B-Preview — Files and versions",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/tree/main",
+   "publisher": "Hugging Face (Ricursive Intelligence)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "Ripple on B200 (inference/server/README.md)",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/blob/main/inference/server/README.md",
+   "publisher": "Hugging Face (Ricursive Intelligence)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "Offline Ripple inference on DGX Spark (inference/local/spark.py)",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview-NVFP4/blob/main/inference/local/spark.py",
+   "publisher": "Hugging Face (Ricursive Intelligence)",
+   "published": "2026-11-04",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://framerusercontent.com/images/4KGXiT2iGQwuS6X9fVHGPaRFmO4.png",
+   "page_url": "https://ricursive.com/ripple",
+   "caption": "벤치마크: Terminal-Bench 2.1 점수와 모델 크기(파라미터) 비교 차트 — Ripple 80.52, Beam 1.0 80.1, '15x smaller' 표시",
+   "credit": "Ricursive Intelligence"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "65B 밀집 오픈 웨이트 모델 Ripple-65B Preview의 코딩 성능 주장은 어디까지 믿을 수 있고, 어떤 팀의 코딩 에이전트에 맞는가",
+  "limitations": "직접 모델을 실행하지 않았고 성능·비용 수치는 회사 보고(공식 페이지·모델 카드)와 매체 정리를 인용했다. 매체 간 경쟁 모델 수치가 달라 공식 모델 카드 값을 기준으로 했고, 그중 기울임 값은 Ricursive 자체 평가다. 가격·컨텍스트·공급자는 2026-11-06(KST) OpenRouter 목록 기준이며 가격 계산은 가정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 크기와 비용 계산: 65B가 '작다'는 말의 실제 의미",
+    "excerpt": "Ripple의 총 파라미터는 65B이고 Beam은 501B이므로 총 크기로는 약 7.7배 차이가 납니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "총 파라미터 비율과 활성 파라미터를 분리해 '작다'의 의미를 계산으로 보였다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 크기와 비용 계산: 65B가 '작다'는 말의 실제 의미",
+    "excerpt": "1회 호출에 입력 100만 토큰과 출력 20만 토큰을 쓰는 작업이라면 입력 0.20달러에 출력 0.12달러를 더해 약 0.32달러",
+    "source_ids": [
+     "S6"
+    ],
+    "added_value": "OpenRouter 목록 단가로 호출당 비용을 가정 계산하고, 생각 모드 끄기 스위치가 없어 출력량이 늘 수 있다는 한계를 붙였다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 벤치마크: 어디서 앞서고 어디서 뒤지나",
+    "excerpt": "공식 Terminus 2 하네스로 다시 돌린 Terminal-Bench 2.1에서는 Beam이 70.8로 내려가고 Muse Spark Open이 78.7로 올라갑니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "모델 카드의 하네스별 행과 매체 기사(오피스차이)의 상충 수치를 대조해 0.4점 차이의 해석 한계와 공식 값 기준을 밝혔다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 누구에게 맞나: 선택 기준과 제외 조건",
+    "excerpt": "DGX Spark급 장비에서 한 번에 요청 하나씩 코딩 보조를 돌리는 개인·소규모 팀이라면 NVFP4 체크포인트가 출발점입니다",
+    "source_ids": [
+     "S2",
+     "S7",
+     "S10",
+     "S4"
+    ],
+    "added_value": "상황별 선택·제외 기준을 표와 문단으로 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 121,
+  "confirmed": 114,
+  "removed": [
+   "OpenRouter에서는 16,384 토큰(출력 14,745)으로 막혀 있다 — eesel.ai 단독, OpenRouter 목록 재확인 결과 컨텍스트 1,048,576·최대 출력 131,072 토큰이라 현재 값으로 교체(요약·표·본문·FAQ·결정표·코드·목록 모두)",
+   "Together AI 페이지에는 '곧 제공'으로 표시됐다 — eesel.ai 단독, 다른 출처 미확인으로 삭제",
+   "eesel.ai도 회사 블로그와 모델 카드의 일부 값이 서로 다르다고 지적 — 블로그 본문에서 해당 값 확인 불가로 삭제(오피스차이 기사와 모델 카드의 차이로 대체)",
+   "공식 소개 페이지의 날짜 표기는 2026-11-05 — 페이지에 보이는 날짜 없음(Framer 빌드 주석뿐)으로 삭제, 발표일 11월 4일로 정정",
+   "Mac용 커뮤니티 GGUF 변환본은 Ricursive가 검증하지 않음 — eesel.ai 단독 표현, '모델 카드에 연결된 커뮤니티 파생 모델이며 공식 체크포인트 아님'으로 교체",
+   "eesel.ai는 모델 카드 표 22개 항목 중 1위가 2개뿐이라고 정리 — 모델 카드 재계산(22개 행 중 3행, 21종 중 2종)으로 교체",
+   "Olmo·Prime Intellect·RadixArk·NVIDIA 감사 '라고 LavX 뉴스가 전합니다' — 공식 페이지 직접 근거로 교체, LavX 출처 제외"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 공식 페이지(S1)·HF 모델 카드 README 원문(S2)·NVFP4/BF16 파일 목록(S7·S8, 57.2GB·130GB)·서버 README(S9, B200·1M·250tok/s·생각 모드 스위치 없음)·spark.py(S10, GB10 전용·131072 컨텍스트·max-running-requests 1)·OpenRouter 목록/API(S6, $0.20/$0.60/캐시 $0.05·GMI Cloud 단일·1,048,576)를 직접 다시 열어 대조. 벤치마크 표 28개 값은 모델 카드 원문과 일치, 경쟁 모델 수치는 공식 모델 카드 값 기준(오피스차이의 72.4·39.6·5.0·63.8 표기 차이를 경고 박스에 명시). 계산 재확인: 501/65=7.71, 975/65=15.0, 1M×0.20+0.2M×0.60=0.32달러. 발표일: S1 페이지에 보이는 날짜가 없고 HTML의 Framer 'Published Nov 5, 2026 9:22 PM UTC'는 사이트 재배포 시각(LavX가 11-04 20:08 UTC에 이미 인용, HF 저장소 생성 2026-11-04T02:41Z, 크립토브리핑·OpenRouter 'released on November 4, 2026')이라 2026-11-04로 정정. S2는 본문에 날짜가 없어 페이지 데이터의 createdAt 2026-11-04로 유지. 매체 날짜: 오피스차이 11-05(article:published_time), eesel 11-04(Last edited 표기), 크립토브리핑 11-04(바이라인, curl 403이지만 WebFetch로 읽음). LavX(S6 구)는 출처 10개 제한으로 제외."
+ }
+}
