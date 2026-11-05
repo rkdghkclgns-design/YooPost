@@ -1,0 +1,100 @@
+{
+ "topic": "OpenAI National Community Compact and Compute Campus Policy Blueprint (OpenAI, 2026-11-05) — Decrypt·Reuters·The Neuron 보도",
+ "source_url": "https://cdn.openai.com/pdf/community-compact.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "OpenAI's National Community Compact: Building With Communities, Not Just In Them",
+   "url": "https://cdn.openai.com/pdf/community-compact.pdf",
+   "publisher": "OpenAI",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI Infrastructure That Works for America: Our Compute Campus Policy Blueprint",
+   "url": "https://cdn.openai.com/pdf/compute-campus-policy-blueprint.pdf",
+   "publisher": "OpenAI",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI Promises to Foot AI's Power Bill After Voter Revolt. Who Enforces It?",
+   "url": "https://decrypt.co/382674/openai-promises-foot-ai-power-bill-after-voter-revolt",
+   "publisher": "Decrypt",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI kicks off charm offensive to change voters' view of data centers (Reuters)",
+   "url": "https://www.investing.com/news/stock-market-news/openai-kicks-off-charm-offensive-to-change-voters-view-of-data-centers-5002831",
+   "publisher": "Reuters via Investing.com",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI's Data Center Reset: No NDAs for Public Officials",
+   "url": "https://www.theneuron.ai/news/openai-data-center-reset-no-ndas-public-officials/",
+   "publisher": "The Neuron",
+   "published": "2026-11-05",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "대표 원문이 PDF 문서이고 본문에 도표·스크린샷 없이 글과 목록뿐이라 인용할 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "OpenAI의 커뮤니티 컴팩트는 데이터센터 인근 주민과 공무원에게 무엇을 실제로 약속하고, 어디까지가 약속이고 어디부터가 정부에 대한 요구인가",
+  "limitations": "공개 문서와 보도를 비교한 해설이며 약속 이행이나 현장은 직접 확인하지 않았다. 계산은 문서 수치의 단순 환산이고 기간·대상 가정이 있다. OpenAI 공식 발표 페이지는 접속이 막혀 읽지 못했고 PDF 본문을 읽었다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 지역 투자와 일자리 숫자를 같은 기준으로 나눠 보기",
+    "excerpt": "480만 달러를 학생 14,000명으로 나누면 **학생 1인당 약 343달러**입니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "출처 수치를 단위·식과 함께 나눠 급식 지원 1인당 금액, 투자 비중, 급여 총액 규모를 제시하고 기간 불명 등 한계를 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧭 이 약속이 나를 지켜 주는가: 상황별 확인표",
+    "excerpt": "로이터는 오라클 같은 파트너가 OpenAI 데이터센터 인프라의 상당 부분을 짓고 소유하며",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "로이터의 파트너 소유 구조와 디크립트의 적용 여부 미확인 지적을 이어 독자의 소유 구조 확인 질문으로 연결"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이 약속이 나를 지켜 주는가: 상황별 확인표",
+    "excerpt": "NDA를 요구받았는지, 요구되면 예외 사유가 보안·영업 비밀 범위인지",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "주민·파트너 시설 인근 주민·공무원·전력회사 상황별로 먼저 확인할 항목과 그 근거 문서를 표로 정리"
+   },
+   {
+    "kind": "calculation",
+    "section": "⚡ 전기요금 약속을 숫자로 읽기",
+    "excerpt": "월 15달러는 **연 180달러**(15달러×12개월)입니다. 다만 이는 조지아 파워의 '일반 주택 고객' 예상치를 단순 환산한 것이며",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "조지아 파워 인용 월 절감 예상을 연 단위로 환산하고 일반 주택 고객 기준이라는 한계를 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): 두 OpenAI PDF(cdn.openai.com, 표지 'November 2026'만 표기 — 11-05 발표일은 Reuters 'Nov 5 ... on Thursday'·Decrypt article:published_time 2026-11-05·The Neuron datePublished 2026-11-05 기준)를 내려받아 pdftotext 로 전문 대조, Decrypt·The Neuron 은 HTML 전문, Reuters(Investing.com)는 WebFetch 로 재확인(발행 2026-11-05). 계산 재계산: 4,800,000/14,000=342.86→약 343달러, (4.8M+2M)/80M=8.5%, 2,500×80,000=2억 달러, 40/41=97.56%→약 97.6%, 15×12=180달러 — 모두 일치. 수정 4건: ①'컴팩트는 약속을 다섯 갈래로 나눕니다'→ 컴팩트는 7~8개 항목(다섯 갈래는 청사진의 'five fundamental commitments')이라 '여러 항목'으로 수정 ②조지아 파워 월 15달러 절감을 '이(1,000MW 합의)를 근거로'라고 쓴 부분→ 청사진은 합의가 조지아 파워 비용 절감 계획에 '기여'한다고만 적어 인과를 약화(본문·FAQ) ③'청사진은 구속적 의무가 아니라고 정리' 주어 불명→ The Neuron 의 'Publishing it doesn't enact those protections' 로 출처 명시 ④'더 뉴런이 가장 구체적 기준점으로 평가'→ 원문대로 NDA 금지 약속이 'concrete standard' 라는 평가로 수정. 그 외 리헌 직함(chief global affairs officer) 표기, 지역 채용 목표 조건부 표현 보완. 기존 글('트럼프 데이터센터 배당' Truth Social 10/21, 'OpenAI 2028 AI 선거' 11/4)과는 다른 원문·다른 소식으로 겹치지 않음 확인. 직접 열어 확인되지 않은 출처 없음(EGRESS_BLOCKED 없음; Investing.com 은 curl 403 이었으나 WebFetch 로 열림)."
+ }
+}
