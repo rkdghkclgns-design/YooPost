@@ -5741,5 +5741,23 @@
    "https://www.theneuron.ai/news/openai-data-center-reset-no-ndas-public-officials/"
   ],
   "draft_id": "20261106_072945_4"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "🔒 GPT-6 Cyber 공개: Linux 익스플로잇 948건·Firefox 81건 주장, 접근 조건과 안전장치로 읽는 의미",
+  "topic": "GPT-6 Cyber System Card Addendum (OpenAI, 2026-11-05) / TechCrunch·Fortune·The Decoder·The Next Web 보도",
+  "category": "AI 보안",
+  "source_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gpt-6-cyber-linux-948firefox-81.html"
+  },
+  "sources": [
+   "https://deploymentsafety.openai.com/gpt-6-cyber",
+   "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+   "https://fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model-amid-growing-alarm-about-ai-driven-cyber-attacks/",
+   "https://the-decoder.com/openais-gpt-6-cyber-can-both-break-into-systems-and-propose-how-to-fix-them/",
+   "https://thenextweb.com/news/openai-gpt-6-cyber-launch-firefox-linux-daybreak-red"
+  ],
+  "draft_id": "20261106_073731_5"
  }
 ]
