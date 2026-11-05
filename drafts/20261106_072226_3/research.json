@@ -1,0 +1,102 @@
+{
+ "topic": "What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?",
+ "source_url": "https://arxiv.org/abs/2611.06483",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents? (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.06483",
+   "publisher": "arXiv",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents? (arXiv HTML full text)",
+   "url": "https://arxiv.org/html/2611.06483",
+   "publisher": "arXiv",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?",
+   "url": "https://huggingface.co/papers/2611.06483",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "GaryStack/Rethinking-Agent-RL (GitHub repository README)",
+   "url": "https://github.com/GaryStack/Rethinking-Agent-RL",
+   "publisher": "GitHub (paper authors)",
+   "published": "2026-10-30",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hugging Face Daily Papers 2026-11-05",
+   "url": "https://huggingface.co/papers/date/2026-11-05",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-05",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.06483v1/agent-rl-intro-figure_v6.png",
+   "page_url": "https://arxiv.org/html/2611.06483",
+   "caption": "논문 Figure 1: 오류 복구와 상호작용 예산 의존성에 대한 핵심 발견 개요",
+   "credit": "Zhu et al., arXiv 2611.06483"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "멀티턴 에이전트 RL은 정확히 무엇을 개선하며, 턴 예산이 짧은 배포 환경에서도 그 이득이 유지되는가?",
+  "limitations": "직접 실행·재현하지 않았고 논문 수치를 정리·산술한 것이다. 실험은 주로 Qwen3-4B/8B 소형 모델(부록에 다른 8B급 2종)이다. 논문 전문은 부록 E.4 까지 읽었다. 공개 GitHub 저장소는 읽었으나 실행하지 않았고, 저장소 스스로 논문 수치 재현은 검증되지 않았다고 밝힌다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🛠 BudgetMix RL: 학습 중에 턴 예산을 섞는다",
+    "excerpt": "네 과제의 25% 예산 변화량을 단순 평균하면 (8.9 + 8.9 + 6.0 + 5.8) / 4 = ",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "논문 표 1의 Pass@8 값에서 과제별 변화량과 네 과제 단순 평균(약 7.4, 1.4포인트)을 계산하고 논문 전체 평균과 구분함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 상황엔 어떻게 적용할까: 판단 기준",
+    "excerpt": "논문의 결과를 실무 판단으로 옮기면 질문은 \"우리 서비스가 허용하는 턴 수가",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "턴 제한·오류 복구 비중·과정 감독 가용성별로 논문 결과를 적용할 때 확인할 항목을 정리"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔍 핵심 결과 2: 다음 행동은 고르게 좋아지지 않았다",
+    "excerpt": "오류 상태 이후 성공률 차이는 FrozenLake가 51.3 - 38.6 = 12.7%포인트",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "RL과 기본 모델의 오류 후 성공률 격차를 과제별 포인트 차이로 환산"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "논문이 같은 값을 따로 제시했는지는 확인하지 못했습니다. (전문 확인: 논문에 차이 값 없음으로 수정)",
+   "논문 HTML의 끝부분 일부(부록 B.5 이후)는 읽지 못했습니다. (부록 E.4까지 읽어 삭제)",
+   "제가 읽은 논문 페이지와 Hugging Face 페이지에서는 공개 코드나 모델 가중치 주소를 확인하지 못했습니다. (GitHub 저장소 공개 확인으로 교체)",
+   "예산 압박이 있으면 모델이 불필요한 단계를 줄이도록 배우기 때문으로 해석할 수 있지만, 이는 추정입니다. (논문 근거 없는 추정 — 논문 5.2의 설명으로 교체)",
+   "더 큰 모델이나 다른 학습 설정에서도 같은 패턴이 나오는지는 이 논문이 다루지 않았습니다. (부록 C.2/D.2 다른 8B급 모델 결과와 어긋나 수정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(citation_date 2026/11/04, v1 Wed 4 Nov 2026 13:24 UTC)·HTML v1 전문(부록 A~E.4)·HF 논문 페이지(Published Nov 4, Submitted Nov 5, upvotes 31, githubRepo)·HF Daily 2026-11-05 목록(38편 중 추천 5위)·프로젝트 페이지·GitHub 저장소 README/coverage.md(MIT, News 2026-10-30 코드 공개, 수치 재현 미검증)를 직접 열어 대조. 표 1 Pass@8 값 16개와 작성자 계산(25% 평균 29.6/4=7.4, 100% 5.4/4=1.35≈1.4, 오류 후 성공률 차 12.7·15.6포인트)을 재계산해 일치 확인. 고친 것: 'Avg. gain 은 두 모델 크기를 합친 평균'(오류 — 모델 크기별 세 알고리즘 평균), '거의 동등'→논문 표현 'parity 유지', HF '상위권'→추천 31·38편 중 5위로 구체화, 코드 공개 여부·부록 B.5 이후 미확인 문구를 확인 결과로 교체, 큰 모델 FAQ 를 부록 결과에 맞춤. 보완: 오류 상태 구성이 근사(proxy)라는 부록 B.5, BFCL 오류 수정률 41.4% vs 27.2%(E.4), 길이 맞춘 LLR 185.9/805.8 nats(E.2), BudgetMix 단계 보상 약 0.1 우위(E.3). S4 를 날짜가 바뀌는 /papers 대신 날짜 고정 주소로 교체, S5(GitHub) 추가. published: S1·S2 2026-11-04 = 페이지 제출일, S3 2026-11-05 = 페이지의 'Submitted on Nov 5'(논문 Published on Nov 4 도 함께 표시), S4 2026-11-05 = 목록 날짜, S5 2026-10-30 = README News 날짜. EGRESS_BLOCKED 출처 없음(모두 curl/git 로 직접 읽음). 이미지 I1 은 HTTP 200 image/png 1535x369, 논문 HTML 본문 Figure 1."
+ }
+}
