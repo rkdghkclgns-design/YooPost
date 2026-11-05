@@ -5705,5 +5705,23 @@
    "https://developer.apple.com/documentation/appintents/bringing-custom-actions-and-content-to-siri"
   ],
   "draft_id": "20261106_071539_2"
+ },
+ {
+  "date": "2026-11-06",
+  "title": "🧠 멀티턴 강화학습은 에이전트의 무엇을 높일까: 턴 예산이 빠듯하면 이득이 줄어든다",
+  "topic": "What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.06483",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/blog-post.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.06483",
+   "https://arxiv.org/html/2611.06483",
+   "https://huggingface.co/papers/2611.06483",
+   "https://github.com/GaryStack/Rethinking-Agent-RL",
+   "https://huggingface.co/papers/date/2026-11-05"
+  ],
+  "draft_id": "20261106_072226_3"
  }
 ]
