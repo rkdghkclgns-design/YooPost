@@ -5888,5 +5888,24 @@
    "https://fourweekmba.com/ai-ramp-ai-index-september-2026-anthropic-openai-spend/"
   ],
   "draft_id": "20261107_072924_4"
+ },
+ {
+  "date": "2026-11-07",
+  "title": "🔒 ChatGPT Lockdown Mode 우회 보고, 수정 48일 뒤 공개: 내 계정은 무엇을 점검할까",
+  "topic": "Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction (The Hacker News, 2026-11-05) / ChatGPT Lockdown Mode Bypass: Phishing, Malware Delivery, and Silent Data Exfiltration (Check Point Research, 2026-11-05)",
+  "category": "AI 보안",
+  "source_url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/chatgpt-lockdown-mode-48.html"
+  },
+  "sources": [
+   "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+   "https://blog.checkpoint.com/security/chatgpt-lockdown-mode-bypass-reveals-a-wider-challenge-in-ai-security/",
+   "https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html",
+   "https://www.cryptika.com/hackers-could-bypass-chatgpt-lockdown-mode-to-steal-conversations-without-users-knowing/",
+   "https://itnerd.blog/2026/11/05/check-point-research-bypassed-chatgpts-lockdown-mode/",
+   "https://helpnetsecurity.com/2026/02/16/chatgpt-lockdown-mode-elevated-risk"
+  ],
+  "draft_id": "20261107_073606_5"
  }
 ]
