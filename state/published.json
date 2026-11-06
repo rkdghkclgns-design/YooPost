@@ -5817,5 +5817,23 @@
    "https://huggingface.co/ricursiveAI/Ripple-65B-Preview-NVFP4/blob/main/inference/local/spark.py"
   ],
   "draft_id": "20261106_081212_1"
+ },
+ {
+  "date": "2026-11-07",
+  "title": "🧠 Inkling 2 Small 공개: 닫힌 가중치로 먼저, Apache 2.0은 다음 주, 지금 써볼 만한가",
+  "topic": "Introducing Inkling 2 Small (Thinking Machines Lab, 2026-11-05) — Cryptobriefing·Dataconomy 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/inkling-2-small-apache-20.html"
+  },
+  "sources": [
+   "https://thinkingmachines.ai/news/inkling-2-small/",
+   "https://dataconomy.com/2026/11/06/thinking-machines-unveils-594b-parameter-inkling-2-small/",
+   "https://cryptobriefing.com/thinking-machines-inkling-2-small-release/",
+   "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+   "https://thinkingmachines.ai/model-card/inkling-2-small/"
+  ],
+  "draft_id": "20261107_070757_1"
  }
 ]
