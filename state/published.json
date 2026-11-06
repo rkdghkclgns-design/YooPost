@@ -5853,5 +5853,22 @@
    "https://aistudio.google.com/docs/pricing"
   ],
   "draft_id": "20261107_071351_2"
+ },
+ {
+  "date": "2026-11-07",
+  "title": "🧠 TurnWise: 스트리밍 영상 AI, 턴마다 점수를 따로 주면 반복 답변이 줄어드나",
+  "topic": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.06728",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/turnwise-ai.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.06728",
+   "https://arxiv.org/html/2611.06728v1",
+   "https://huggingface.co/papers/2611.06728",
+   "https://raw.githubusercontent.com/XD111ds/turn-wise-rl/main/README.md"
+  ],
+  "draft_id": "20261107_072026_3"
  }
 ]
