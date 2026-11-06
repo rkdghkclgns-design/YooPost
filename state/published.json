@@ -5835,5 +5835,23 @@
    "https://thinkingmachines.ai/model-card/inkling-2-small/"
   ],
   "draft_id": "20261107_070757_1"
+ },
+ {
+  "date": "2026-11-07",
+  "title": "🎬 Gemini Omni 1.2 Flash, 15초 영상이 초당 30% 싸졌다: 클립 한 편 값과 12월 3일 자동 전환 점검",
+  "topic": "Gemini Omni 1.2 Flash: 15-second video and lower pricing (Google DeepMind, 2026-11-05)",
+  "category": "AI 도구",
+  "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gemini-omni-12-flash-15-30-12-3.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available",
+   "https://thenextweb.com/news/google-gemini-omni-1-2-flash-video-15-seconds-price-cut",
+   "https://dev.to/gabrielanhaia/gemini-omni-12-flash-is-30-cheaper-your-11-calls-move-to-it-on-december-3-anyway-34de",
+   "https://aistudio.google.com/docs/pricing"
+  ],
+  "draft_id": "20261107_071351_2"
  }
 ]
