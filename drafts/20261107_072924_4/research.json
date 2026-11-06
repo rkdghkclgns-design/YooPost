@@ -1,0 +1,116 @@
+{
+ "topic": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+ "source_url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+   "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Ramp AI Index (data through Sep 2026, token spend week ending Oct 23)",
+   "url": "https://ramp.com/data/ai-index",
+   "publisher": "Ramp",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Ramp Data Shows Business AI Token Use Outpacing Spending Growth",
+   "url": "https://www.unite.ai/ramp-data-shows-business-ai-token-use-outpacing-spending-growth/",
+   "publisher": "Unite.AI",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Cracks are emerging in the AI spending boom",
+   "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Anthropic Leads OpenAI in Ramp's September 2026 AI Spend Index, and What the Token Price Collapse Says About Business AI",
+   "url": "https://fourweekmba.com/ai-ramp-ai-index-september-2026-anthropic-openai-spend/",
+   "publisher": "FourWeekMBA",
+   "published": "2026-09-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "TechCrunch 본문 그림은 Ramp 경제학자 인물 사진뿐이고 Ramp AI Index 페이지 본문에도 차트 이미지가 없어(표만 있음) 원고 내용을 보여 주는 인용 그림이 없습니다. 대신 표로 정리했습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 사용량은 늘었는데 왜 기업의 AI 지출 증가는 둔화됐다고 하며, 이 숫자를 팀의 AI 예산 점검에 어떻게 쓸 수 있는가",
+  "limitations": "Ramp 공개 수치를 곱하고 나눈 추정이며 원자료·직접 실행·실측은 없다. Ramp 표본은 대표성이 없고 상위 1% 수치는 변동성이 크다. 기업가치 하락(Bloomberg)과 6억 달러 가격 인하 영향(Anthropic 서류 인용)은 TechCrunch 이차 인용이다. Ramp 페이지에는 발표일 표기가 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 토큰 37.1% 늘고 지출 8.9% 늘었다면: 가격 하락 계산",
+    "excerpt": "평균 토큰 1개당 지출은 1.089 ÷ 1.371 ≈ **0.794배**, 즉 약 **20.6% 낮아진** 셈입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "사용량·지출 증가율에서 단위당 지출 변화를 추정하고 Ramp 의 26.8% 혼합 가격 하락과 비교해 차이 이유를 설명"
+   },
+   {
+    "kind": "calculation",
+    "section": "🥇 Anthropic 과 OpenAI 의 점유율은 어떻게 달라졌나",
+    "excerpt": "Anthropic 은 1.089 × (60.5 ÷ 51.3) ≈ **×1.28**",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "전체 지출 증가율과 점유율 변화를 결합해 회사별 지출 변화를 추정하고 반올림·표본 한계를 명시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🏢 누가 얼마나 쓰나: 중앙값 15.70달러 vs 상위 1% 9,567.53달러",
+    "excerpt": "상위 1% 는 중앙값의 약 **609배**(9,567.53 ÷ 15.70)",
+    "source_ids": [
+     "S2",
+     "S1",
+     "S3"
+    ],
+    "added_value": "8월·9월 구간별 변화율과 정점 대비/바닥 대비 기준 차이로 TechCrunch 서술과 Ramp 수치가 모순이 아님을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 IPO·투자 분위기와 엮어 읽기: 연결할 수 있는 것과 없는 것",
+    "excerpt": "다만 이 연결은 **해석**입니다. Ramp 데이터는 기업 고객의 지출이고 설비투자는 빅테크의 투자입니다.",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "구매자 지출 데이터와 빅테크 설비투자 기사를 연결하되 해석의 경계와 데이터가 말할 수 없는 것을 표로 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 우리 팀 AI 예산을 점검할 때 쓰는 체크리스트",
+    "excerpt": "**첫째**, 청구서 총액이 아니라 '단가 × 사용량'으로 분해해 볼 것. **둘째**, 가격 인하가 지출 증가율에 먼저 반영되므로",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀 상황별로 확인할 지표와 선택지를 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 53,
+  "removed": [
+   "Unite.AI 와 SaaStr 은 모두 상위 1% 가 OpenAI·Anthropic 지출의 약 80% 를 차지한다고 정리했습니다. (SaaStr 는 출처에 없음 — Unite.AI 만으로 고침)",
+   "SaaStr 도 같은 이유로 한 달 변화에 의미를 과하게 부여하지 말라고 경고합니다. (출처 없음)",
+   "지수는 직접 계약이나 무료 크레딧 사용은 잡히지 않아 활동을 낮게 볼 수 있다 (Unite.AI 원문은 무료 도구·개인 계정 — 고침)",
+   "Anthropic 의 가격 인하는 매출 성장률을 약 6억 달러 낮춘 것으로 보도되었습니다... 'reportedly' 추정치 (TechCrunch 원문은 Anthropic 이 최근 서류에서 밝혔다고 씀 — 고침, 이차 인용 표기 유지)",
+   "바닥에 가까운 8월 (근거 없음 — 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): TechCrunch 11/06·10/30, Ramp AI Index, Unite.AI, FourWeekMBA 를 WebFetch 로 다시 열어 수치·날짜·이름 대조. 고침: OpenAI 점유율 하락 9.0%p→9.1%p(44.2−35.1), Kharazian 직함 lead economist, 비용 통제 주체 '대형 고객'→'성숙한 기업', 벤처 기업 편중은 TechCrunch 기사 속 지적으로, 6억 달러는 Anthropic 서류 인용(TechCrunch 이차 인용), FourWeekMBA·Unite.AI 인용 문구를 원문대로. 필자 계산 1.089/1.371=0.794, 1.089×60.5/51.3=1.28, 1.089×35.1/44.2=0.86, 9567.53/15.70=609, 8→9월 +6.5/+9.9/+11.7%, 잔여 4.4% 재계산 일치. published: S1·S3 2026-11-06, S4 2026-10-30, S5 2026-09-09 페이지 표기와 일치, S2 는 날짜 표기 없어 비움. EGRESS_BLOCKED 출처 없음, Bloomberg 원문은 미확인(이차 인용 표기). 형광 강조 모든 문단 보완."
+ }
+}
