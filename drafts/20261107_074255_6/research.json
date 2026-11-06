@@ -1,0 +1,109 @@
+{
+ "topic": "October 2026 Challenger Report — October Layoffs at Three-Year Low; Seasonal Hiring Plans Up 26%",
+ "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "October Layoffs at Three-Year Low; Seasonal Hiring Plans Up 26%",
+   "url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "U.S. October job cuts hit 43,994, the lowest for the month since 2023",
+   "url": "https://news.outsourceaccelerator.com/challenger-october-job-cuts/",
+   "publisher": "Outsource Accelerator",
+   "published": "2026-11-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 on Weak Early Seasonal Hiring",
+   "url": "https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/",
+   "publisher": "Challenger, Gray & Christmas",
+   "published": "2026-10-01",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft offers 'voluntary exit' buyouts to 60,000 employees in US, UK & Canada",
+   "url": "https://www.shacknews.com/article/151147/microsoft-voluntary-exit-offer-buyouts-60000-us-uk-canada",
+   "publisher": "Shacknews",
+   "published": "2026-10-26",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.challengergray.com/wp-content/uploads/2026/11/Challenger_Report_October_2026_Job_Cuts_Chart-1024x580.png",
+   "page_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+   "caption": "2026년 10월까지 월별 감원 발표 건수를 2025년과 비교한 차트",
+   "credit": "Challenger, Gray & Christmas"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.challengergray.com/wp-content/uploads/2026/11/Challenger_Report_October_2026_Seasonal_Timing_Chart-1024x580.png",
+   "page_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+   "caption": "계절 채용 발표 시점: 연도별 9월·10월 채용 계획 비교 차트",
+   "credit": "Challenger, Gray & Christmas"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "챌린저 10월 보고서에서 AI 감원 사유 1위가 바뀐 것은 AI 감원이 줄었다는 뜻인가, 그리고 숫자를 어떻게 읽어야 하나",
+  "limitations": "직접 데이터를 재분석하지 않았고 보고서 본문 수치와 단순 사칙연산만 사용. 비중(10월 AI 약 2.9%)·10월 평균 대비 약 22% 낮음·가상 수락률 표는 이 글의 계산이며 챌린저의 값이 아님. 9월·10월 비교는 같은 기관·같은 집계 방식의 두 보고서라 조건이 같지만 '발표' 기준이며 실제 해고·AI 대체 인원이 아님. 가상 표는 60,000명 기준·10월 반영 가정. Microsoft 제안은 2차 보도(Shacknews) 기준이며 수락률·챌린저 반영 시점은 미공개. 운송 100,000건과 UPS의 대응은 이 글의 대조.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔁 9월과 10월을 나란히 보면: 비교 표",
+    "excerpt": "표에서 보이듯 AI 누적 건수가 늘어난 폭은 정확히 10월 한 달 건수(1,265건)와 같습니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "9월·10월 두 보고서를 같은 기준으로 나란히 놓고 월 건수와 누적 증가분의 관계를 보였다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 계산: AI 사유는 10월에 얼마나 작았나",
+    "excerpt": "정리하면 AI 사유 비중은 9월 약 9%에서 10월 약 3%로 내려갔습니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "보고서 수치를 나눠 10월 AI 비중 약 2.9%(1,265÷43,994), 9월 약 9.2%를 식과 함께 제시하고 보고서가 밝힌 연간 약 20%와 구분했다. 10월 평균 대비 약 22% 낮음(43,994÷56,348)도 1장에 계산식으로 표시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 Microsoft 자발적 퇴직 제안은 왜 빠졌나",
+    "excerpt": "위 표는 가상의 수락 비율을 넣어 본 단순 계산입니다(60,000명 기준, 모두 10월에 반영된다고 가정).",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "챌린저의 자발적 프로그램 집계 기준(S1)과 Microsoft 제안 보도(S4)를 연결해, 60,000명 기준·10월 반영 가정 아래 가상 수락 비율별 집계 영향을 가늠하게 했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별로 이 보고서를 읽는 기준",
+    "excerpt": "이 보고서가 말해 주는 것은 기업이 감원 이유를 AI보다 경기 여건으로 설명하는 비중이 10월에 커졌다는 사실까지입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "독자 유형별로 먼저 볼 숫자와 주의점을 나눠 보고서 활용 기준을 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [
+   "두 회사 합계 40만 명이 기술·운송 합계 40만 건과 규모가 맞아 보이지만, 분류가 정확히 대응하는지는 보고서에서 확인하지 못했으므로 추정으로만 적습니다. (S1이 Amazon을 기술 업종으로 분류한다고 명시 — 확인된 문장으로 교체)",
+   "Microsoft의 인사 책임자 에이미 콜먼(Amy Coleman)이 직원에게 알렸습니다. (S4는 직함을 Executive Vice President, 공식 발표문 게시로만 적음 — 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1(챌린저 10월 보고서, meta 2026-11-05)·S3(9월 보고서, meta 2026-10-01)·S2(Outsource Accelerator, 페이지 2026-11-07)·S4(Shacknews, 2026-10-26) 원문을 다시 열어 수치·날짜·이름 64건 대조. published 4건 모두 페이지 날짜와 일치. 필자 계산 재계산: 10월 AI 비중 1,265/43,994=2.88%, 9월 3,961/43,281=9.15%, 누적 19.67%, 43,994/56,348=0.781(평균 대비 약 22% 낮음), 기술 171,501-154,445=17,056, 계절 470,400/655,304=71.8%, 가상 수락률 표 4행·60,000/43,994=1.36배. 수정: '1.4배 가까이'→'약 1.36배', '챌린저가 추적한 2009년 이후'→'적어도 2009년 이후', Amazon/UPS 10월 발표 문장을 원문대로, '앤디 챌린저의 표현' 문장 정리, 가상 표 가정(60,000명 기준·10월 반영) 명시. 보완: 9월 발표 비중 60%→29%→17%(S1). Microsoft 제안은 S4 범위로만 서술. 인용 이미지 2개 HTTP 200 image/png 1024x580 확인. 막힌 출처 없음."
+ }
+}
