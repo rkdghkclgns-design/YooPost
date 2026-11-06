@@ -1,0 +1,112 @@
+{
+  "topic": "Gemini Omni 1.2 Flash: 15-second video and lower pricing (Google DeepMind, 2026-11-05)",
+  "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "publisher": "Google DeepMind (Google Blog)",
+      "published": "2026-11-05",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Gemini Omni 1.2 Flash now generally available",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available",
+      "publisher": "Google Cloud Blog",
+      "published": "2026-11-06",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "Google's Gemini Omni 1.2 Flash makes 15-second AI videos for less",
+      "url": "https://thenextweb.com/news/google-gemini-omni-1-2-flash-video-15-seconds-price-cut",
+      "publisher": "The Next Web",
+      "published": "2026-11-05",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Gemini Omni 1.2 Flash Is 30% Cheaper. Your 1.1 Calls Move to It on December 3 Anyway",
+      "url": "https://dev.to/gabrielanhaia/gemini-omni-12-flash-is-30-cheaper-your-11-calls-move-to-it-on-december-3-anyway-34de",
+      "publisher": "DEV Community",
+      "published": "2026-11-06",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Gemini Developer API pricing (Gemini Omni 1.2 Flash / 1.1 Flash)",
+      "url": "https://aistudio.google.com/docs/pricing",
+      "publisher": "Google AI Studio",
+      "published": "",
+      "official": true
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "",
+      "page_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "caption": "1.1과 1.2 비교: 같은 포스터 프롬프트에서 참조 이미지 반영도 예시",
+      "credit": "Google DeepMind"
+    },
+    {
+      "id": "I2",
+      "image_url": "",
+      "page_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "caption": "모델 사진과 의상 사진으로 만든 15초 가상 착장 영상 예시",
+      "credit": "Google DeepMind"
+    }
+  ],
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "Omni 1.2 Flash의 30% 인하는 클립 한 편 값으로는 얼마이고, 12월 3일 자동 전환 전에 무엇을 점검해야 하나",
+    "limitations": "직접 영상을 생성해 보지 않았고 품질·속도는 평가하지 않았다. 일관성 개선·62% 선호 수치는 구글 자체 비교이며, 15초 총액 환산은 가격 페이지(S5)의 토큰 단가×초당 토큰 산술이다. Tier 1 한도(분당 8건·하루 40건)는 개발자 글(S4) 기준이며 가격 페이지에는 없다.",
+    "contributions": [
+      {
+        "kind": "calculation",
+        "section": "💰 초당 30% 인하, 클립 한 편 값으로 환산하면",
+        "excerpt": "15초 클립 한 편의 총액으로 환산하면 두 세대의 차이는 훨씬 작아집니다. 1.2의 15초 720p 클립은 ",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ],
+        "added_value": "초당 단가(토큰 단가×초당 토큰)를 15초 클립 총액으로 환산해, 30% 인하가 같은 길이 기준일 뿐 길이가 늘면 1.1의 10초 클립과 비슷해짐을 보였다."
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🧭 상황별 선택 기준: 지금 1.2로 옮길까",
+        "excerpt": "이미 1.1로 만든 결과물을 같은 길이로 다시 만들 일이 많다면, 12월 3일 이전에 1.2로 직접 바꿔 비",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "added_value": "사용 상황별로 옮길지 여부와 제외 조건(무료 등급 없음, 약점 영역)을 표로 정리했다."
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "🔁 12월 3일 자동 전환, 개발자가 점검할 것",
+        "excerpt": "이 전환은 가격만 바꾸지 않습니다. DEV Community 글이 정리한 바로는 1.2 모델 페이지는 영상에",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ],
+        "added_value": "공식 글의 기능 설명과 개발자 글의 모델 페이지 대조를 연결해 자동 전환 시 달라질 수 있는 출력 형태와 점검 항목을 도출했다."
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 54,
+    "confirmed": 52,
+    "removed": [
+      "해커뉴스에서도 공식 글 링크가 약 270점, 댓글 약 200개를 얻어 개발자 사이의 관심이 컸음을 보여 줍니다. 다만 댓글 내용은 이 글에서 읽지 않았으므로 반응의 방향은 말할 수 없습니다.",
+      "1.1의 이전 최대 길이를 한 외부 글이 달리 적은 경우도 있었으나 공식 글과 다수 보도의 10초를 따랐습니다."
+    ],
+    "note": "Opus 검증(claude-opus-5-5): S1~S4 와 가격 페이지(aistudio.google.com/docs/pricing, 날짜 없음 → S5 published 빈칸으로 추가)를 다시 열어 수치·날짜·이름·가격·스펙·제공 범위를 하나씩 대조. published 는 S1 2026-11-05(메타 datePublished 일치)·S2 2026-11-06·S3 2026-11-05·S4 Nov 6 표기로 일치, 막힌 출처 없음. 계산식 재검산: 5,792×12/1e6≈0.0695, 5,792×17.5/1e6≈0.1014, 15초 720p 1.2≈1.04(가격 페이지 값과 일치), 10초 720p 1.1≈1.01, 4K/720p=17,376/5,792=3배, 360p·1080p·4K 15초≈0.35·1.56·3.13. 고친 것: 0.07×15≈1.04 오류식을 토큰식으로 교체, 0.10달러 근거를 공식 글→가격 페이지로 정정, store=false '매번 새 생성 과금'(원문에 없음)→'이후 턴 편집 불가', '환경 변수'→'설정값', '파일 크기' 삭제, 62% 관련 개발자 글 요약을 원문대로 수정, 배포 기록 문장을 추론으로 표시, Gemini for business 표현 구체화. 출처 없는 해커뉴스 수치·근거 없는 외부 글 언급 삭제. 이미지: 공식 글 본문 그림은 모두 영상 포스터(wagtailvideo)뿐이라 image_url 은 비우고 page_url 만 둠."
+  }
+}
