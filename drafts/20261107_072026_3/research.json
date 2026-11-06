@@ -1,0 +1,110 @@
+{
+ "topic": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit",
+ "source_url": "https://arxiv.org/abs/2611.06728",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.06728",
+   "publisher": "arXiv",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2611.06728v1",
+   "publisher": "arXiv",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2611.06728",
+   "publisher": "Hugging Face",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "XD111ds/turn-wise-rl README (공식 학습 코드 저장소)",
+   "url": "https://raw.githubusercontent.com/XD111ds/turn-wise-rl/main/README.md",
+   "publisher": "GitHub (논문 저자)",
+   "published": "2026-11-05",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.06728v1/teaser_1024.png",
+   "page_url": "https://arxiv.org/html/2611.06728v1",
+   "caption": "공유 이점이 반복 답변을 강화하는 문제와 TurnWise의 남은 보상 크레딧 비교",
+   "credit": "Dong et al., arXiv 2611.06728"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.06728v1/fig2.png",
+   "page_url": "https://arxiv.org/html/2611.06728v1",
+   "caption": "TurnWise 개요: 그룹 샘플링, 침묵 보완 접두 점수, 턴 평균 손실",
+   "credit": "Dong et al., arXiv 2611.06728"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2611.06728v1/credit_allocation.png",
+   "page_url": "https://arxiv.org/html/2611.06728v1",
+   "caption": "실제 학습 궤적에서 턴 단위와 전역 이점 할당 비교, 반복 답변의 이점 부호",
+   "credit": "Dong et al., arXiv 2611.06728"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "스트리밍 영상 모델의 RL에서 턴마다 크레딧을 따로 주면 반복 답변이 실제로 얼마나 줄고, 그 결과를 어디까지 믿을 수 있는가?",
+  "limitations": "직접 실행·재현하지 않았고 모든 수치는 논문 보고값이다. 보상(gpt-oss-20b)·평가(GPT-5.6-luna)가 LLM 판정에 의존하며 두 백본·세 벤치마크로 한정, 분산 정보 없음. 외부 반응은 Hugging Face Papers 한 곳(오늘의 논문 1위·업보트 127, 확인 시점 기준)뿐이고 실질 댓글은 없다. 한계 서술은 논문에 한계 섹션이 없어 작성자 관찰로 표시했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧪 어떤 부품이 효과를 냈나: 소거 실험",
+    "excerpt": "직접 계산하면 반복률 감소율은 (15.53 − 5.98) ÷ 15.53 ≈ **61.5%**",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "소거 표 수치로 반복률 감소율(61.5%·38.9%)과 F1 격차를 검산하고, 반복률 최저가 SFT(3.79)라 단독 지표로 쓰면 안 된다는 점을 짚었다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 결과: 어디서 얼마나 좋아졌나",
+    "excerpt": "계산하면 3B에서 표의 최고 기존 점수와의 격차는 ProactiveVQA **+3.96**",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "같은 백본 안에서 최고 비교값과의 격차를 뺄셈해 논문 Δ와 대조하고, StreamingBench의 기준이 SFT이며 기존 RL 방법이 모두 SFT보다 낮았다는 점과 백본 간 직접 비교의 한계를 밝혔다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 우리 팀에 적용할 때의 판단 기준",
+    "excerpt": "아래 표는 논문 내용을 바탕으로 제가 정리한 해석이며, 저자가 직접 제시한 권고가 아닙니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "상황별 도입 조건과 제외 조건(Qwen2.5-VL 외 이식, 판정 모델 변경)을 표로 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 130,
+  "confirmed": 124,
+  "removed": [
+   "허깅페이스 쪽에서는 … 업보트 수와 댓글 내용은 페이지에서 확인되지 않아 반응으로 인용하지 않았습니다 (실제로는 업보트 127·오늘의 논문 1위 표시가 있어 확인된 내용으로 교체)",
+   "허깅페이스 논문 페이지에 … 학습 데이터셋(shuai22/mmduet2-training-data) 링크가 있습니다 (HF 페이지는 '데이터셋 0' — 논문 HTML·README 링크로 정정)",
+   "'TurnWise 대비 최고 기존 방법' 열은 … 제가 뺄셈한 값입니다 (표에 그런 열이 없음 — 본문 설명 정정)",
+   "기존 방식이 반복 답변의 절반 이상에 '잘했다'는 신호를 줄 수 있었다는 뜻입니다 (전역 방식에서 양수 이점은 반복 답변 2,972개 중 722개, 약 24.3% — 정정)",
+   "α 워밍업: 해결하려는 문제 '학습 초기 불안정' (논문은 공유→턴별 크레딧의 점진적 전환이라고만 설명 — 정정)",
+   "소거 표의 기준 행과 표 1 수치가 정확히 맞물리지 않는 부분이 있고 표 머리글 정렬도 불분명합니다 (재대조 결과 Base·SFT·MMDuet2·TurnWise 행이 표 1 3B 값과 정확히 일치 — 경고 내용 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv 초록(S1)·HTML 전문(S2)의 표 1·2·3, 4.1~4.3절, 5.1~5.3절, 그림 4 캡션을 다시 열어 모든 수치를 한 줄씩 대조하고 감소율(61.5%·38.9%)·Δ 6개·432/722·722/2972를 재계산. Hugging Face Papers(S3)는 'Published on Nov 4'·'Submitted on Nov 5 #1 Paper of the day'·업보트 127 확인, published를 페이지 표기 2026-11-04로 맞춤. GitHub 페이지는 이 세션에서 프록시로 막혀 같은 저장소의 raw README로 출처를 바꿔 설치 절차·기본값·라이선스·코드 공개일(2026-11-05) 확인. 인용 이미지 3개는 HTTP 200 image/png(2040·2040·819px) 확인. 한계 서술은 작성자 관찰로 표시 유지."
+ }
+}
