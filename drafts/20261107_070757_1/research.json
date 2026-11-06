@@ -1,0 +1,109 @@
+{
+ "topic": "Introducing Inkling 2 Small (Thinking Machines Lab, 2026-11-05) — Cryptobriefing·Dataconomy 보도",
+ "source_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Inkling 2 Small",
+   "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+   "publisher": "Thinking Machines Lab",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Thinking Machines Unveils 594B-parameter Inkling 2 Small AI Model",
+   "url": "https://dataconomy.com/2026/11/06/thinking-machines-unveils-594b-parameter-inkling-2-small/",
+   "publisher": "Dataconomy",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Thinking Machines releases Inkling 2 Small, scores 31 on AI Index",
+   "url": "https://cryptobriefing.com/thinking-machines-inkling-2-small-release/",
+   "publisher": "Cryptobriefing",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Models & Pricing - Tinker Documentation",
+   "url": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+   "publisher": "Thinking Machines Lab",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Inkling 2 Small Model Card",
+   "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+   "publisher": "Thinking Machines Lab",
+   "published": "2026-11-05",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://thinkingmachines.ai/_astro/tinkerbench-replay-poster.DZeJZVkT.png",
+   "page_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+   "caption": "Tinker 비용 사례: 자율 시계열 예측 과제의 마지막 재생 화면",
+   "credit": "Thinking Machines Lab"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://thinkingmachines.ai/_astro/wine-tasting-three-glasses.aWBtNGl4_1ivKwy.webp",
+   "page_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+   "caption": "공식 스펙: 이미지 입력 예시로 실린 와인 세 잔 사진",
+   "credit": "Thinking Machines Lab"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Inkling 2 Small의 코딩 점수는 비교 모델과 같은 줄에서 어디쯤이고, 가중치 공개 전인 지금 Tinker에서 써볼 만한가?",
+  "limitations": "직접 실행하지 않았고 점수는 대부분 회사 보고값이다. Tinker 단가는 공식 가격 문서(날짜 표기 없음)와 Cryptobriefing 보도가 일치하지만 토큰 수는 가정값이고 캐시 할인·학습 비용은 계산에서 뺐다. 순위는 회사가 고른 비교 모델 안의 순위이며 하네스·시도 횟수가 같은지는 PMPP-Hard 외에는 미확인. 가중치 공개·외부 안전 시험 결과는 미확인.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 코딩 점수를 같은 줄에서 읽기: 오픈 가중치 모델과의 비교",
+    "excerpt": "Vibe Code Bench와 Terminal Bench Science에서는 3위입니다. 표 안에서 1위는 DeepSeek-V4.1-Flash-1017이 네 행",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "회사가 고른 6행 코딩 비교표에서 행별 순위를 다시 세고, 점수 공백으로 모수가 다른 행과 PMPP-Hard의 지표별(평균 해결 수·AUC·Pass@4) 순위 차이를 구분해 우열 단정을 피하게 함"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 Tinker 요금으로 작업 비용 어림하기",
+    "excerpt": "가격이 '100만 토큰당'이므로 토큰 수를 100만으로 나눈 값에 단가를 곱합니다",
+    "source_ids": [
+     "S4",
+     "S3",
+     "S1"
+    ],
+    "added_value": "공식 가격 문서 단가(보도와 일치)와 가정 토큰 수로 작업별 비용을 식과 함께 제시하고 입력 단가 비중을 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 지금 Tinker에서 쓸까, 가중치를 기다릴까: 선택 기준",
+    "excerpt": "아래는 제 해석이며, 출처에 있는 사실(닫힌 가중치·다음 주 예정·회사 보고 점수·한계 항목)에서만 근거를 가져왔습니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 시험·보류·제외 조건을 공식 한계와 공개 일정에 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 72,
+  "removed": [
+   "공식 글은 DesignArena Website 점수 1340을 '단일 1위가 아닌 웹사이트 리더보드 기록'으로 두었습니다. (공식 글에 없는 표현 — 공식 그림의 실제 위치와 '최상위 오픈 가중치 모델이 될 것' 문장으로 교체)",
+   "다만 가격은 공식 글에 없고 Cryptobriefing에만 나오므로, 이 글에서는 가격을 매체 보도로 구분해 씁니다. (Tinker 공식 가격 문서에서 같은 단가 확인 — 공식 출처로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 글·S2 Dataconomy는 curl 로 원문 전체를 읽고, S3 Cryptobriefing(curl 403, EGRESS_BLOCKED 아님)은 WebFetch 로 읽어 대조. published 확인: S1 meta datePublished 2026-11-05·본문 'Nov 5, 2026', S2 article:published_time 2026-11-06, S3 'Thu 5 Nov 2026 18:58 EST', S5 모델 카드 'Date of release Nov 5, 2026', S4 가격 문서는 날짜 표기 없음. 고침: ① 코딩 비교표가 실제로 6행(Terminal Bench Science v0.1 누락) — 행 추가, '5행 중 4행 2위'→'6행 중 4행 2위·2행 3위', DeepSeek 1위 3행→4행(요약·본문·editorial excerpt 함께). ② PMPP-Hard: 평균 해결 수 6위는 맞지만 공식 표 정렬 기준 AUC 로는 5위·Pass@4 64 를 함께 표기, 비교 조건(최대 추론·PI 하네스·같은 압축) 추가, GLM 5.2 42 추가. ③ DesignArena: 공식 글에 없는 표현을 빼고 공식 그림(11/5 스냅샷, 1,340 으로 3번째)과 Cryptobriefing '전체 4위·오픈 1위'의 차이를 명시. ④ 토큰 단가 $0.30/$1.00: Cryptobriefing 단독이 아니라 Tinker 공식 가격 문서(S4, '모든 가격은 100만 토큰당')에서 확인 — 가정 표기는 토큰 수에만 남기고 캐시 $0.03·학습 $1.50/$3.00 추가, 계산식 4.00/8.00/40.00 재계산 일치. ⑤ 컨텍스트 경고: 모델 카드(S5) 최대 1M, Tinker 제공은 64K·256K 로 수정, 현재 라이선스 Tinker 이용약관 추가. ⑥ '두 번째 세대의 첫 모델'→'두 번째 세대를 여는 모델'(원문 표현에 맞춤). ⑦ 자율 실험 4시간 17분(재생 기록)·약 4.5시간(본문 요약) 병기, '예측 점수 두 배 넘게'와 '보지 않은 8~9월 데이터 오차 약 15% 감소'는 서로 다른 지표로 따로 유지(재생 그림에서 unseen 기본 10%→SFT 4 23% 확인). 인용 이미지 2개는 열어 PNG 1032x643·WebP 1000x750 확인."
+ }
+}
