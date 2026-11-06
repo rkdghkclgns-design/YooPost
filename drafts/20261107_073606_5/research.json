@@ -1,0 +1,127 @@
+{
+ "topic": "Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction (The Hacker News, 2026-11-05) / ChatGPT Lockdown Mode Bypass: Phishing, Malware Delivery, and Silent Data Exfiltration (Check Point Research, 2026-11-05)",
+ "source_url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "ChatGPT Lockdown Mode Bypass: Phishing, Malware Delivery, and Silent Data Exfiltration",
+   "url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+   "publisher": "Check Point Research",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ChatGPT Lockdown Mode Bypass Reveals a Wider Challenge in AI Security",
+   "url": "https://blog.checkpoint.com/security/chatgpt-lockdown-mode-bypass-reveals-a-wider-challenge-in-ai-security/",
+   "publisher": "Check Point Blog",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction",
+   "url": "https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html",
+   "publisher": "The Hacker News",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Hackers Could Bypass ChatGPT Lockdown Mode to Steal Conversations Without Users Knowing",
+   "url": "https://www.cryptika.com/hackers-could-bypass-chatgpt-lockdown-mode-to-steal-conversations-without-users-knowing/",
+   "publisher": "Cryptika",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Check Point Research bypassed ChatGPT's Lockdown Mode",
+   "url": "https://itnerd.blog/2026/11/05/check-point-research-bypassed-chatgpts-lockdown-mode/",
+   "publisher": "ITnerd",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "ChatGPT gets new security feature to fight prompt injection attacks",
+   "url": "https://helpnetsecurity.com/2026/02/16/chatgpt-lockdown-mode-elevated-risk",
+   "publisher": "Help Net Security",
+   "published": "2026-02-16",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://research.checkpoint.com/wp-content/uploads/2026/10/image-1-6.png",
+   "page_url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+   "caption": "ChatGPT 코드 블록의 HTML 페이지 미리보기 화면 (HTML 미리보기 샌드박스)",
+   "credit": "Check Point Research"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://research.checkpoint.com/wp-content/uploads/2026/10/image-3-1-1024x465.png",
+   "page_url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+   "caption": "HTML 미리보기 iframe의 sandbox 속성과 허용된 팝업 권한 표시 (팝업 권한 제거 전)",
+   "credit": "Check Point Research"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "이미 수정된 ChatGPT Lockdown Mode 우회 보고를 개인 이용자와 보안 담당자는 어떻게 읽고 무엇을 점검해야 하는가",
+  "limitations": "보고서와 보도를 읽고 정리한 것으로 직접 재현·시험하지 않았다. 영향 버전·CVE·실제 악용 여부·OpenAI의 별도 성명·최초 신고일은 확인되지 않았고 OpenAI 도움말 페이지는 접속이 막혀 읽지 못했다. 상황별 점검 표와 프롬프트 예시는 출처 권고를 바탕으로 한 글쓴이의 해석이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🗓 수정에서 공개까지 48일: 타임라인 계산",
+    "excerpt": "계산은 단순합니다. 9월 18일부터 9월 30일까지 12일, 10월 31일, 11월 1~5일 5일을 더하면 ",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "수정일(9월 18일)과 공개일(11월 5일)을 날짜 계산해 48일 간격을 만들고, 발견~수정 기간은 계산할 수 없다는 한계를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 상황별 점검 기준: 누가 무엇을 확인할까",
+    "excerpt": "수정이 끝난 사건이라 즉시 조치가 필요한 것은 거의 없습니다. 그래도 읽는 사람의 상황에 따라 확인할 일은 ",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "출처별 권고를 개인·팀 관리자·보안 담당자·민감 정보 취급자의 상황별 점검 표로 재구성"
+   },
+   {
+    "kind": "comparison",
+    "section": "🖥 데스크톱 앱과 브라우저, 영향은 어떻게 달랐나",
+    "excerpt": "여기서 읽어야 할 것은 **'제로클릭'이 모든 시나리오에 붙는 말이 아니라는 점**입니다. Check Point 보고서와 Cryptika 모두 데스크톱 앱에서 악성코드 전달에는 여전히 다운로드 링크 클릭이 필요했다고 구분했습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "제로클릭이 유출 시나리오에만 해당하고 악성코드 전달은 클릭이 필요했다는 차이를 환경별로 대조"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 매체와 업체는 같은 사건을 어떻게 다뤘나",
+    "excerpt": "여러 곳을 겹쳐 읽으면 한 가지 공통 결론이 남습니다. 기능 하나가 강하다고 해서 **둘러싼 앱 전체가 안전",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "서로 다른 매체·업체 글의 강조점을 표로 비교하고 공통 결론과 이전 공유 링크 취약점과의 관계를 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 주장 44건 대조, 각 출처 published 가 페이지 날짜와 일치함 확인(S1~S3·S5 2026-11-05, S4 2026-11-06, S6 2026-02-16). EGRESS_BLOCKED 출처 없음. 수정: (1) '새 기능마다 취약점 기회' 발언을 연구 책임자 발언→THN이 전한 Check Point 성명으로 바로잡고 Check Point 블로그 문구 추가 (2) 'Electron에 한정되지 않음'은 보고서가 아닌 THN 서술로 정정 (3) 데스크톱 악성코드 전달 클릭 필요·브라우저 계정 불필요는 보고서(S1)에도 있음을 반영(요약·표·본문·FAQ) (4) 표의 '가장 심각' 출처를 Check Point 블로그로 정정 (5) 9/18 수정은 Check Point 서술(OpenAI가 CPR에 알림)임을 도입·본문에 명시 (6) window.open 차단 방식을 '승인을 거치게 재정의'로 정확화. 48일 계산(9/18→11/5: 12+31+5) 재계산 확인, 비교 조건(데스크톱/브라우저 클릭 여부)과 한계를 S1·S4 와 대조. Lockdown Mode 제공 범위는 S6(2/16 기업·교육 등, 일반은 추후)·S4(2/13 비즈니스, 6/4 개인)·S3(6월 소개) 병기 유지. OpenAI '고위험 사용자용·완전 보호 아님'은 S4 전언으로만 확인되어 1차 미확인 표기 유지, OpenAI 공식 입장·도움말(403) 미확인 표기 유지. 인용 이미지 2개는 200 image/png, 763x634·1024x465 확인. 공격 재현 절차·악용 코드 없음(방어 중심) 확인."
+ }
+}
