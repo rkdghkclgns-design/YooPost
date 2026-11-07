@@ -1,0 +1,119 @@
+{
+ "topic": "Voters in ten states will vote on data center-related ballot measures November 3 (Ballotpedia, 2026-11-03) — 데이터센터 주민투표 결과 보도 (Fox Business 2026-11-05)",
+ "source_url": "https://news.ballotpedia.org/?p=52125",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Voters in ten states will vote on data center-related ballot measures November 3",
+   "url": "https://news.ballotpedia.org/?p=52125",
+   "publisher": "Ballotpedia News",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Data centers were on the ballot, and voters sent unmistakable message",
+   "url": "https://www.foxbusiness.com/politics/data-centers-ballot-voters-sent-unmistakable-message",
+   "publisher": "Fox Business",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The GOP Wasn't the Only Midterms Loser. Voters Slapped Data Centers With Limits.",
+   "url": "https://truthout.org/articles/the-gop-wasnt-the-only-midterms-loser-voters-slapped-data-centers-with-limits/",
+   "publisher": "Truthout",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Data Centers on the Ballot: Where Things Stand",
+   "url": "https://statecapitallobbyist.com/artificial-intelligence-ai/data-centers/data-centers-on-the-ballot-where-things-stand/",
+   "publisher": "State Capital Lobbyist",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Ohio leads states in number of local ballot measures on data centers for 2026",
+   "url": "https://news.ballotpedia.org/2026/09/21/ohio-leads-states-in-number-of-local-ballot-measures-on-data-centers-for-2026/",
+   "publisher": "Ballotpedia News",
+   "published": "2026-09-21",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://news.ballotpedia.org/wp-content/uploads/2026/09/a8jJ3-data-center-related-local-ballot-measures-2026-1024x905-1.png",
+   "page_url": "https://news.ballotpedia.org/2026/09/21/ohio-leads-states-in-number-of-local-ballot-measures-on-data-centers-for-2026/",
+   "caption": "2026년 주별 데이터센터 관련 지역 주민투표 안건 수(9월 21일 기준 38건·8개 주, 11월 3일 최종 41건과 집계 시점이 다름)",
+   "credit": "Ballotpedia"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "데이터센터 주민투표 ‘41건 중 40건 제한’이라는 헤드라인은 무엇의 합이며, 어디까지 확인된 사실이고 AI 인프라에 어떤 신호인가?",
+  "limitations": "직접 실행·실측 없음. Ballotpedia 결과 페이지와 NYT·WaPo·CNBC 원문은 읽지 못했고, 결과는 State Capital Lobbyist 안건별 표(2026-11-05 08:45 ET 비공식)와 Fox Business 보도로 확인. 27+13 분해는 Ballotpedia 11-03 분류(28/13)와 State Capital Lobbyist 안건별 결과를 한 건씩 대조해 확인했으나 카운티 인증 전이라 바뀔 수 있음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자 읽기: 40 대 1을 28과 13으로 쪼개면",
+    "excerpt": "찬성 표가 제한을 뜻하는 안건 28건 가운데 27건이 가결됐고, 나머지 1건이 노스다코타 하우드의 검토 요건안(찬성 24%로 부결)입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "Ballotpedia 안건 분류와 State Capital Lobbyist 안건별 결과를 한 건씩 대조해 40건의 구성(27 가결+13 부결)을 확인하고 비공식 집계 한계를 표시"
+   },
+   {
+    "kind": "comparison",
+    "section": "📋 안건 유형별 비교: 금지, 모라토리엄, 자문, 용도변경",
+    "excerpt": "같은 ‘제한 방향 결과’라도 구속력 있는 금지와 구속력 없는 의견 수렴은 사업자에게 미치는 영향이 다릅니다",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "유형별 법적 힘 차이로 헤드라인 숫자를 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 왜 전국 이슈가 됐나: 세 매체를 겹쳐 읽기",
+    "excerpt": "이 56%를 Truthout은 NBC 출구조사로 소개해 인용 출처 표기가 다릅니다",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "서로 다른 매체의 여론조사 인용을 대조해 해석을 제한"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 판단 기준: 누가 무엇을 확인해야 하나",
+    "excerpt": "도 분명히 해 둘 필요가 있습니다. 첫째, 노스다코타 하우드처럼 개발 쪽이 이긴 곳이 있어",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "독자 상황별 확인 항목과 제외 조건"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 68,
+  "confirmed": 68,
+  "removed": [
+   "‘올해 결정된 47건 중 46건이 제한 방향이라는 집계’ — 출처에 47/46 집계 없음 → 이 글의 계산(40/41+6/6)으로 표기 변경",
+   "‘제한 28건 중 27건 통과, 촉진 13건 모두 부결’을 ‘두 출처 분류를 연결한 추론’으로 쓴 문장 → State Capital Lobbyist 안건별 표로 41건을 한 건씩 대조해 확인된 사실로 고쳐 씀(제목 수치 유지)",
+   "‘애시빌의 개발 관련 주민발의’ → 주민투표(referendum)로 정정",
+   "‘Truthout은 … 옹호 성향의 글’ 표현 → 해석이 강한 기사로 중립화(Truthout 은 News 섹션 기사)",
+   "‘히노호사가 … 그가 공약했다’ 모호한 주어 → 당선인이 선거운동에서 내세웠다로 정정, 공화당 지지층 과반도 반대했다는 Fox 인용 추가(정치 중립)",
+   "‘위스콘신 3건·캘리포니아 2건·뉴햄프셔 2건’이 11월 3일 수치처럼 읽히던 문장 → 올해 전체 수치로 명시, 노스다코타 표 안건 수 2→1(+12월 맨던)",
+   "‘댄 디오리오 … 부사장’ → 수석부사장(EVP)",
+   "‘뉴욕은 50MW 이상 신규 시설에 1년 모라토리엄을 두고 있다’ → 7월 주지사 행정명령으로 주 허가 발급 1년 중단으로 정정",
+   "‘앞선 쟁점은 정부 부패, 이란 전쟁, 생활비’ → 5개 중 1개 미기재라 ‘앞선 쟁점으로는 … 꼽혔다’로 정정"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 Ballotpedia 11-03(페이지 2026-11-03 8:27PM), S2 Fox Business(페이지 2026-11-05 7:48AM EST), S3 Truthout(페이지 2026-11-06), S4 State Capital Lobbyist(페이지 2026-11-04, 결과 11-05 08:45 ET 기준), S5 Ballotpedia(페이지 2026-09-21) 모두 WebFetch 로 다시 열어 published 일치 확인. 핵심 수치 40/41: Fox(‘all but one of 41’, Ballotpedia 분석·CNBC 집계)와 State Capital Lobbyist(‘40 limit, 1 allow’) 일치. 27+13: S1 분류(제한 28/촉진 13)와 S4 오하이오 21·일리노이 7·기타 13건 안건별 표(찬성 의미·가부·득표율)를 대조 — 제한 28 중 가결 27(하우드 24% 부결), 촉진 13(윌밍턴4·애시빌·먼로빌·일리노이 자문5·볼더시티·다운) 전부 부결 확인. 56%: Fox 는 WaPo 인용 선거일 여론조사(기관 미기재), Truthout 은 NBC 출구조사로 표기 — 본문에 차이 명시. Ballotpedia 결과 페이지(ballotpedia.org/2026_local_ballot_measures)는 빈 내용으로 읽지 못함. EGRESS_BLOCKED 출처 없음. 인용 이미지 URL 200 image/png 확인. 정치 주장은 매체 인용으로만 쓰고 인과 주장 배제."
+ }
+}
