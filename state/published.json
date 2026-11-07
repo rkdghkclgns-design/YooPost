@@ -5942,5 +5942,23 @@
    "https://dealsite.co.kr/articles/169635"
   ],
   "draft_id": "20261107_074955_7"
+ },
+ {
+  "date": "2026-11-08",
+  "title": "🎙 Meta Muse 음성·아바타 첫 공개 적용: 78% 선호도와 GPU 12세션 수치로 따져 보기",
+  "topic": "Give Your Muse a Voice — Muse 음성 대화·표현형 아바타 (Meta, 2026-11-05) / TNW·TechBooky·iClarified 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/meta-muse-78-gpu-12.html"
+  },
+  "sources": [
+   "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+   "https://research.meta.ai/blog/bringing-your-muse-to-life",
+   "https://thenextweb.com/news/meta-muse-ai-voice-chat-animated-avatars",
+   "https://www.techbooky.com/meta-adds-voice-and-expressive-avatars-to-muse-ai-agent",
+   "https://iclarified.com/103320/meta-adds-realtime-voice-conversations-and-expressive-avatars-to-muse-video"
+  ],
+  "draft_id": "20261108_070535_1"
  }
 ]
