@@ -5996,5 +5996,23 @@
    "https://arxiv.org/html/2611.05306v1"
   ],
   "draft_id": "20261108_072133_3"
+ },
+ {
+  "date": "2026-11-08",
+  "title": "🏗 Microsoft가 Nscale 텍사스 확장 옵션을 접었다: 1,034억 달러 계약 중 활성분은 약 2.5%",
+  "topic": "Microsoft reportedly rejects option to expand Nscale's Texas AI deal (TNW, FT 인용, 2026-11-05)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/microsoft-nscale-1034-25.html"
+  },
+  "sources": [
+   "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+   "https://runtimewire.com/article/microsoft-rejects-nscale-texas-expansion-option-35b-ipo",
+   "https://aiweekly.co/alerts/microsoft-rejects-option-to-more-than-double-nscales-texas-ai-data-center",
+   "https://www.sec.gov/Archives/edgar/data/2110365/000119312526395475/ck0002110365-20260918.htm",
+   "https://pulse2.com/nscale-ipo-filing-reveals-103-4-billion-in-active-and-contracted-ai-infrastructure-agreements/"
+  ],
+  "draft_id": "20261108_072816_4"
  }
 ]
