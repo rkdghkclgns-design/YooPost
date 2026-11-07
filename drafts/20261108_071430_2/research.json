@@ -1,0 +1,97 @@
+{
+ "topic": "Perplexity Teammates — Teammates, fully local Computer on Mac, and Voice mode (Perplexity 변경 기록, 2026-11-06)",
+ "source_url": "https://www.perplexity.ai/changelog",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Perplexity Changelog: Teammates, fully local Computer on Mac, and Voice mode",
+   "url": "https://www.perplexity.ai/changelog",
+   "publisher": "Perplexity",
+   "published": "2026-11-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Perplexity Teammates (제품 페이지)",
+   "url": "https://perplexity.ai/hub/products/teammate",
+   "publisher": "Perplexity",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Perplexity Teammates Bring Always-On AI Agents",
+   "url": "https://shiftdelete.net/en/perplexity-teammates-ai-agents",
+   "publisher": "ShiftDelete.Net",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Perplexity's Teammates Gives AI Agents Persistent Roles and Memory",
+   "url": "https://alphasignal.ai/news/perplexity-s-teammates-gives-ai-agents-persistent-roles-and-memory",
+   "publisher": "AlphaSignal",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Making SPACE: Secure and efficient runtimes for long-running agents",
+   "url": "https://www.perplexity.ai/hub/blog/making-space-secure-and-efficient-runtimes-for-long-running-agents",
+   "publisher": "Perplexity",
+   "published": "2026-07-15",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://frontend-cdn.perplexity.ai/_agi_assets/marketing/hub/products/teammates/uc-engineer-2400.webp",
+   "page_url": "https://perplexity.ai/hub/products/teammate",
+   "caption": "Engineer 사용 사례에 실린 공식 삽화 — 모니터 일을 팀메이트에게 맡기고 쉬는 온콜 엔지니어",
+   "credit": "Perplexity"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://frontend-cdn.perplexity.ai/_agi_assets/marketing/hub/products/teammates/uc-ads-2400.webp",
+   "page_url": "https://perplexity.ai/hub/products/teammate",
+   "caption": "Ads Manager 사용 사례에 실린 공식 삽화 — 광고 소재 시안을 고르는 장면",
+   "credit": "Perplexity"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "며칠씩 이어 갈 일을 Perplexity 팀메이트에게 맡겨도 되는가, 비용과 권한은 어디까지 확인됐는가",
+  "limitations": "직접 실행하지 않았고 공식 제품 페이지·변경 기록·런타임 보안 글과 두 매체 보도만 읽었다. 크레딧 단가, 프로모션 크기·기한, 엔터프라이즈 제공 시기는 미공개다. Max 월 200달러·10,000 크레딧은 AlphaSignal 보도로만 확인했다. 제품 페이지에는 날짜 표기가 없어 published 를 비웠고, 공개 날짜는 변경 기록(2026-11-06)과 ShiftDelete(2026-11-05)에서만 가져왔다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 맡겨도 될까: 상황별 판단 기준",
+    "excerpt": "한 가지 일을 오래 맡기고 중간 보고만 받고 싶다면 팀메이트가 맞고, 한 번 묻고 끝나는 일이라면 기존 Computer 세션으로 충분합니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "출처의 기능 설명과 우려를 일의 성격·개입·권한 범위별 선택 기준으로 바꿔 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 비용 읽기: 출처마다 다르게 적힌 크레딧 설명",
+    "excerpt": "공식 페이지는 프로모션 기간 무료 사용 뒤 Max에 포함된 크레딧을 쓴다고만 밝히고 금액은 적지 않았습니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "세 출처의 비용 설명이 다른 점과 공식 페이지에 수치가 없다는 점을 표로 맞대어 비용 계산이 아직 불가능함을 밝힘"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): 출처 5곳(S1 변경 기록·S2 제품 페이지·S3 ShiftDelete·S4 AlphaSignal·S5 SPACE 블로그)을 2026-11-08 KST 에 직접 다시 열어 원문과 대조. EGRESS_BLOCKED 출처 없음. 발표일: S1 페이지 표기 11/06/26, S3 페이지 표기 05.11.2026, S4 화면은 '2 days ago'이고 JSON-LD datePublished 2026-11-05, S5 Jul 15, 2026 — 모두 일치. S2 제품 페이지는 날짜 표기가 없어(©2026 뿐) 변경 기록 날짜를 넣었던 published 를 비움(지어내지 않음 규칙). 수정 6곳: 공개 시점 표현(11월 5일 '보도'로 알렸다 → ShiftDelete 기준 11월 5일 공개, 도입·배경 2곳), ShiftDelete 의 패러다임 전환 설명을 CEO 발언이 아니라 회사 설명으로 바로잡음, FAQ 의 Computer 능력/추가 능력 구분 바로잡음, 플러그인·권한 상속은 AlphaSignal 이 전한 Perplexity 설명으로 출처 명시, SPACE 블로그가 '제품 메뉴에만 링크'라는 서술을 '제품 페이지가 Read more about agent security 로 연결'로 바로잡음, '연구 프리뷰'는 ShiftDelete 출처로 명시. 온콜 시연의 502·재시도 예산 원인은 공식 페이지 문구로 보강. S5 제목 표기(Making SPACE) 수정, 이미지 2개 HTTP 200 image/webp 2400x1350 확인 후 캡션을 실제 그림에 맞게 고침. editorial limitations 를 실제 읽은 출처·날짜 처리에 맞게 갱신, contributions 발췌는 본문과 일치 유지."
+ }
+}
