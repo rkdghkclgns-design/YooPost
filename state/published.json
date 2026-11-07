@@ -6014,5 +6014,22 @@
    "https://pulse2.com/nscale-ipo-filing-reveals-103-4-billion-in-active-and-contracted-ai-infrastructure-agreements/"
   ],
   "draft_id": "20261108_072816_4"
+ },
+ {
+  "date": "2026-11-08",
+  "title": "🔒 Codex 탈옥 번들 Haiou의 '프롬프트 애드웨어': 인사말 한마디에 광고가 나온다면 무엇을 점검할까",
+  "topic": "Free the Model, Sell the Gateway: Prompt Adware hidden in Jailbreak Bundles (Check Point Research, 2026-11-03) / The Hacker News·LDS·GridinSoft 보도",
+  "category": "AI 보안",
+  "source_url": "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/codex-haiou.html"
+  },
+  "sources": [
+   "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/",
+   "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html",
+   "https://letsdatascience.com/news/check-point-finds-codex-jailbreak-bundle-injecting-hidden-ad-df25ecf0",
+   "https://blog.gridinsoft.com/haiou-codex-greeting-prompt-adware/"
+  ],
+  "draft_id": "20261108_073714_5"
  }
 ]
