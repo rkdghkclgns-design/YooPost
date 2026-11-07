@@ -5978,5 +5978,23 @@
    "https://www.perplexity.ai/hub/blog/making-space-secure-and-efficient-runtimes-for-long-running-agents"
   ],
   "draft_id": "20261108_071430_2"
+ },
+ {
+  "date": "2026-11-08",
+  "title": "🧠 \"긴 컨텍스트는 필요 없다\" 논문, 비용 3.6~7배와 정확도 유지는 어디까지 믿을까",
+  "topic": "You don't need long context (arXiv 2611.05306, 2026-11-03) — 자주 압축해 짧은 컨텍스트로 장기·긴 입력 작업을 수행",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.05306",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/367.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.05306",
+   "https://huggingface.co/papers/2611.05306",
+   "https://aiweekly.co/alerts/arxiv-you-dont-need-long-context-paper-finds-36-7x-cost-savings-from-compaction",
+   "https://fourweekmba.com/ai-nvidia-256k-context-costs-up-to-7x-opus-hit-70-2-at-16k/",
+   "https://arxiv.org/html/2611.05306v1"
+  ],
+  "draft_id": "20261108_072133_3"
  }
 ]
