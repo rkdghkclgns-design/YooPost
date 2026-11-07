@@ -1,0 +1,114 @@
+{
+ "topic": "Suzhou Denglin Technology(登临科技, 9917.HK) 홍콩 글로벌 공모 — 2026-10-30 투자설명서·공모 공고: H주 6,125,000주·HK$231.0~288.0, 거래 개시 예정 2026-11-10",
+ "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/2026103000005.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Suzhou Denglin Technology Co., Ltd. 글로벌 공모 공고 (Global Offering announcement, HKEX)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/2026103000005.pdf",
+   "publisher": "HKEXnews (Suzhou Denglin Technology)",
+   "published": "2026-10-30",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Suzhou Denglin Technology Co., Ltd. 글로벌 공모 투자설명서 (Prospectus dated October 30, 2026)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/2026103000023.pdf",
+   "publisher": "HKEXnews (Suzhou Denglin Technology)",
+   "published": "2026-10-30",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "港股IPO早播报：宏芯宇和登临科技等6家公司开启招股",
+   "url": "https://www.cls.cn/detail/2520345",
+   "publisher": "财联社 (Cailian)",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "登临科技-P(09917.HK)拟全球发售612.5万股H股 预计11月10日上市",
+   "url": "https://m.gelonghui.com/news/5338820",
+   "publisher": "格隆汇 (Gelonghui)",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Denglin advances Hong Kong IPO plans",
+   "url": "https://www.jonpeddie.com/news/denglin-advances-hong-kong-ipo-plans/",
+   "publisher": "Jon Peddie Research",
+   "published": "2026-10-29",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "登临科技通过港交所聆讯 (Denglin passes HKEX listing hearing)",
+   "url": "https://m.rccaijing.com/news-7520311383423645395.html",
+   "publisher": "瑞财经 (Ruicaijing)",
+   "published": "2026-10-27",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 HKEX 공모 공고·투자설명서 PDF 두 건뿐이고, 그 안의 도표(연혁·시장 차트)는 PDF 내부에 들어 있어 내려받을 수 있는 본문 이미지 주소가 없습니다. 언론 출처는 공식 페이지가 아니며, 관련 없는 대표 이미지·로고는 넣지 않습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Denglin 홍콩 공모의 조건은 무엇이며, 급증한 매출과 18C 위험 문구·고객 집중도·차입금을 같은 기준으로 놓으면 어떻게 읽히는가",
+  "limitations": "최종 공모가·경쟁률·배정 결과(2026-11-09 공고 예정)는 11월 8일 HKEXnews 검색 기준 아직 공시되지 않아 다루지 못했다. 필자 계산은 공시 수치 기반 단순 계산이며 월별 매출 균등 가정, HK$7.8=US$1 환산 가정 등을 표시했다. 직접 청약·거래 경험이나 상장 후 시장 반응은 다루지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 공모가 범위로 계산해 본 규모",
+    "excerpt": "필자가 646.4÷(6.125×288)로 확인해도 같은 수준입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공고문의 주식 수와 공모가 범위, 투자설명서의 발행 주식 수로 총 공모금액·시가총액·희석률·기초투자자 비중을 직접 재계산해 보도 수치와 일치하는지 확인"
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 매출·손실·현금: 숫자를 같은 기준으로 놓아 보기",
+    "excerpt": "필자가 (449.3+792.8)÷27.6으로 다시 계산하면 약 45.0개월로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "회사가 제시한 현금 지속 기간 44.9개월을 현금·미사용 한도·월 소진액으로 검산하고, 2025년 월평균 매출 대비 2026년 월평균 매출을 환산"
+   },
+   {
+    "kind": "comparison",
+    "section": "🧩 매출 구성과 고객 집중도 비교",
+    "excerpt": "전체 매출총이익률 50.9%는 **마진이 높은 IP 라이선스가 끌어올린 값**입니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "2025년과 2026년 1~4월 매출 구성·마진을 같은 표로 비교해 제품 마진(41.9%)과 서비스 마진(95.4%)을 분리; 시장 순위표(1위 83.1%·2위 12.3%·3위 1.0%)로 순위와 실제 규모를 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 공시와 보도를 나란히 놓고 읽기",
+    "excerpt": "투자설명서와 대조하면 40.27%는 '최종 실무 가능일' 기준 수치이고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5",
+     "S6"
+    ],
+    "added_value": "공고문·투자설명서·현지 보도·분석 매체의 서로 다른 수치(출처 불명 조달 계획액 대 공모 조건, 공모 전 의결권 40.27% 대 공모 후 지분 36.22%)를 구분해 혼동 방지"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 76,
+  "confirmed": 74,
+  "removed": [
+   "3위인데 점유율이 1.0%라는 점은 이 시장 전체가 아직 소수 사업자에 집중돼 있거나 Denglin 자체가 작다는 뜻으로 읽을 수 있습니다. (근거 없는 추론 → 투자설명서 순위표 83.1%/12.3%/1.0% 로 교체)",
+   "앞의 수치는 청문 전 보도에 나온 계획치이고 공시 수치가 실제 공모 조건입니다. (JPR 원문에 '청문 전 보도' 근거 없음 → 'reportedly' 출처 불명으로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). HKEX 공모 공고(2026103000005.pdf, 'Hong Kong, October 30, 2026')와 투자설명서(2026103000023.pdf, 431쪽, 'prospectus dated October 30, 2026')를 직접 내려받아 pdftotext 로 대조: 주식 수·배정 비율·공모가 범위·일정·거래 단위·재배정 규칙(612,500주/HK$231)·초과배정 918,750주·스폰서·안정화 매니저, 18C 사전 상업화 문구·HK$80억 요건, 시장 규모·순위, 매출·제품별 판매량·ASP·매출총이익률·순손실·조정 손익, 현금·cash burn·44.9/88.8개월, 차입금 533.2→986.9(85.1%), 고객·공급사 집중도, 기초투자자 HK$646.4m·36.64%·6개월 락업, 자금 용도·배당 모두 일치. 시가총액 140.51억/157.85억/175.18억, 공모금액, 10.07%, 36.64%, 45.0개월, 3,357% 필자 검산 일치. 瑞财经 40.27%·RMB71.9억은 투자설명서(지배주주 장·Pre-IPO 표)로 확인해 본문 보완(공모 후 36.22%). 언론 4곳(cls 2026-10-30, gelonghui 10-30, JPR 2026-10-29 meta, rccaijing 2026-10-27) 다시 열어 published 일치 확인, EGRESS_BLOCKED 출처 없음. HKEXnews 9917 검색(11/8) 결과 가격 공고 미게시 확인. 수익 전망·매수 권유·공모가 적정성 단정 없음."
+ }
+}
