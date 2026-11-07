@@ -1,0 +1,95 @@
+{
+ "topic": "Microsoft reportedly rejects option to expand Nscale's Texas AI deal (TNW, FT 인용, 2026-11-05)",
+ "source_url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Microsoft reportedly rejects option to expand Nscale's Texas AI deal",
+   "url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+   "publisher": "The Next Web",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Microsoft rejects option to more than double Nscale Texas contract ahead of $35B IPO",
+   "url": "https://runtimewire.com/article/microsoft-rejects-nscale-texas-expansion-option-35b-ipo",
+   "publisher": "RuntimeWire",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft rejects option to more than double Nscale's Texas AI data center",
+   "url": "https://aiweekly.co/alerts/microsoft-rejects-option-to-more-than-double-nscales-texas-ai-data-center",
+   "publisher": "AI Weekly",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Nscale Ltd. Form S-1 registration statement",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526395475/ck0002110365-20260918.htm",
+   "publisher": "Nscale Ltd. / SEC",
+   "published": "2026-09-18",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Nscale IPO Filing Reveals $103.4 Billion In Active And Contracted AI Infrastructure Agreements",
+   "url": "https://pulse2.com/nscale-ipo-filing-reveals-103-4-billion-in-active-and-contracted-ai-infrastructure-agreements/",
+   "publisher": "Pulse 2.0",
+   "published": "2026-09-22",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 SEC S-1(글자·표 중심)이라 이번 내용을 보여 주는 본문 도표·화면이 없고, TNW 본문에는 그림이 없으며(머리 사진은 Microsoft 두바이 사무실 사진) 다른 매체 기사도 관련 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Microsoft가 Nscale 텍사스 확장 옵션을 접은 것은 S-1의 1,034억 달러 계약 대비 얼마나 큰 일이며, 무엇이 아직 확인되지 않았나",
+  "limitations": "FT 원문·Reuters·Nscale/Microsoft 입장은 읽지 못했고 옵션 미행사와 그 시점은 FT 단일 보도(TNW·RuntimeWire·AI Weekly 인용)에 의존한다. S-1은 약 17만 자를 두 번에 나눈 요약 응답으로 읽었고 그 범위에서 바스트로·텍사스 옵션 문구는 나오지 않았다. 계산은 정의가 다를 수 있는 숫자를 나눈 가정이다. 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산: 총액 대비 실제 가동분은 얼마나 될까",
+    "excerpt": "투자자가 보는 1,034억 달러의 대부분은 앞으로 데이터센터가 제때 지어지고",
+    "source_ids": [
+     "S4",
+     "S2"
+    ],
+    "added_value": "S-1의 활성 TCV 26억 달러와 총 TCV 1,034억 달러를 나눠 활성 비중과 손실/매출, 가치 배수를 직접 계산하고 정의 한계를 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 서로 다른 자료를 이어 읽으면 보이는 차이",
+    "excerpt": "S-1 발췌에서 확인된 Microsoft 배치는 포르투갈 SIN02 사이트의",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "TNW·AI Weekly·S-1의 요일, 700MW 대 240MW, Anthropic 거래 성격, Microsoft 배치 지역 차이를 대조해 단정 가능한 범위를 제시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🏗 옵션 거절은 무엇을 뜻하고 무엇을 뜻하지 않나",
+    "excerpt": "옵션 거절 소식은 이 위험 요인과 같은 방향의 사건으로 읽힐 수 있지만, 옵션 미행사는 계약 해지가 아니고",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 볼 지표와 제외 조건을 나눠 과잉 해석을 막음"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [
+   "옵션 거절 소식은 이 위험 요인이 현실의 사건으로 나타난 한 사례로 읽을 수 있지만 (과잉 해석 — '같은 방향의 사건으로 읽힐 수 있지만, 옵션 미행사는 해지가 아니고'로 교체)",
+   "상장은 아직 효력이 발생하지 않았고 주식수와 가격대도 정해지지 않았다고 S-1에 적혀 있습니다 (S-1 표지 문구대로 '등록 효력 전 판매 불가·주식 수·가격 빈칸'으로 교체)"
+  ],
+  "note": "Opus 검증: TNW(2026-11-05 09:56 GMT)·RuntimeWire(2026-11-05)·AI Weekly(2026-11-05 06:31 UTC)·Pulse 2.0(2026-09-22)·SEC S-1(표지 'As filed ... September 18, 2026')을 다시 열어 published 날짜 일치 확인. S-1은 0~10만 자/10만 자~끝 두 번 요약 응답으로 다시 읽어 1,034억·26억·매출 1억4,060만/1,040만·순손실 10억2,010만·조정 EBITDA -1억9,920만·최대 고객 52%/73%(이름 미기재)·Microsoft SOW 최대 약 438억(2033년 12월, 선택적 연장 제외)·Anthropic 2026-08-25 최대 약 446억·SIN02 Vera Rubin NVL72 66,000개 이상(2027년 말)·지연 해지권·Anthropic 자금 조달 약정 없음 확인, 바스트로·텍사스 옵션은 S-1에 나오지 않음(텍사스는 휴스턴 사무소뿐). 필자 계산 재계산: 2.6/103.4=2.51%, (43.8+44.6)/103.4=85.5%, 1020.1/140.6=7.26배, 140.6×0.52=73.1M, 35/2.6=13.5배, 35/103.4=0.34배 — 모두 일치. 수정: 700MW 옵션 시점 '2027년 하반기'→'2027년 말'(TNW 'from late 2027', 2025년 10월 계약 당시 Nscale 발표), 옵션 미행사만 FT 단일 보도이고 배경 수치는 TNW 정리임을 구분, 지연 해지권을 '일부 고객 계약'으로, 자금 조달 미확정을 Anthropic 계약(Monarch Compute Campus) 범위로 한정, SOW 체결 기간(2025년 9월~2026년 4월) 보완, Pulse 표 행 정리, Aker CEO 발언(TNW)·GB300 약 20만 개 전체 계약·Ionic Digital 임차 보완. FT 요일 차이(TNW 목요일·AI Weekly 수요일)는 표대로 단정하지 않음. EGRESS_BLOCKED 출처 없음(FT·Reuters·DCD는 출처에 넣지 않음). images_none_reason 확인: TNW 본문 그림 없음."
+ }
+}
