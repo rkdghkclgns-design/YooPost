@@ -1,0 +1,107 @@
+{
+ "topic": "Give Your Muse a Voice — Muse 음성 대화·표현형 아바타 (Meta, 2026-11-05) / TNW·TechBooky·iClarified 보도",
+ "source_url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Give Your Muse a Voice",
+   "url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+   "publisher": "Meta",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Bringing Your Muse to Life (Muse Realtime Avatar)",
+   "url": "https://research.meta.ai/blog/bringing-your-muse-to-life",
+   "publisher": "Meta AI Research",
+   "published": "2026-09-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Meta adds real-time voice chat and animated avatars to its Muse app",
+   "url": "https://thenextweb.com/news/meta-muse-ai-voice-chat-animated-avatars",
+   "publisher": "The Next Web",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Meta adds voice and expressive avatars to Muse AI agent",
+   "url": "https://www.techbooky.com/meta-adds-voice-and-expressive-avatars-to-muse-ai-agent",
+   "publisher": "TechBooky",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Meta Adds Real-Time Voice Conversations and Expressive Avatars to Muse",
+   "url": "https://iclarified.com/103320/meta-adds-realtime-voice-conversations-and-expressive-avatars-to-muse-video",
+   "publisher": "iClarified",
+   "published": "2026-11-05",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://research.meta.ai/articles/bringing-your-muse-to-life/images/muse-realtime-avatar-streaming-architecture-v3.webp",
+   "page_url": "https://research.meta.ai/blog/bringing-your-muse-to-life",
+   "caption": "Muse Realtime Avatar 스트리밍 구조 다이어그램: 음성 토큰이 아바타 DiT를 거쳐 음성·영상이 함께 나오는 과정",
+   "credit": "Meta AI Research"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://research.meta.ai/articles/bringing-your-muse-to-life/images/muse-realtime-avatar-live-evaluation-results-v5.webp",
+   "page_url": "https://research.meta.ai/blog/bringing-your-muse-to-life",
+   "caption": "선호도 표 읽는 법: Muse Realtime Avatar의 Runway·HeyGen 대비 라이브 평가 결과",
+   "credit": "Meta AI Research"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Muse의 음성·아바타 기능을 공개 수치로 평가하면 어떤 조건에서 믿을 수 있고, 서비스 규모로는 얼마나 무거운가",
+  "limitations": "앱을 직접 실행하지 않았고 선호도·용량 수치는 모두 Meta 공개 자료다. 평가자 수와 요금·한도·개인정보 처리는 확인되지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 78%와 88%: 선호도 표를 조건과 함께 읽는 법",
+    "excerpt": "50%에서 6포인트밖에 벌어지지 않았고, Meta 스스로 이 항목이 Runway와 통계적으로 구분되지 않는다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "평가 항목별 선호도를 50% 기준 격차로 환산해 약한 항목을 드러냄"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 서비스를 운영한다면: 동시 세션과 GPU 대수 계산",
+    "excerpt": "속도 쪽도 확인해 보면 8프레임은 25fps에서 320ms 분량이고 생성에 20ms가 걸리므로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "GB200당 12세션 수치로 동시 접속 규모별 영상 생성 GPU 하한을 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 누가 지금 신경 써야 할까: 상황별 판단",
+    "excerpt": "아래는 공개된 조건만으로 세운 판단 기준입니다. 직접 실행한 경험은 없습니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 지금 할 일과 확인 불가 항목을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 59,
+  "removed": [
+   "TechBooky는 이 이름들이 모델 버전이 아니라 기능 이름이라고 정리했고 (💡 이름부터 구분 박스 · 비교표 '기술 이름' 행 외부 보도 칸 — TechBooky 원문에 없는 내용)",
+   "그럼에도 한 대가 12세션만 받는 이유는 이 16배 여유를 여러 세션이 나눠 쓰고 지연 목표를 지켜야 하기 때문으로 보이지만 (출처 없는 추정 — 블로그 기재 사실(BF16 기준 대비 8배)로 교체)",
+   "사람 선호도에서 학생은 약 55% 대 45%로 교사와 거의 비슷했다고 합니다 (그림에서 어느 쪽이 학생인지 표시가 분명하지 않아 '약 55 대 45로 거의 반반'으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Meta 뉴스룸·S2 Meta 연구 블로그·S3 TNW·S4 TechBooky·S5 iClarified 를 다시 열어 대조(EGRESS_BLOCKED 없음). published 는 각 페이지 article:published_time/표시 날짜와 일치(S1 11-05·갱신 11-06, S2 09-23, S3 11-05, S4 11-06, S5 11-05). 선호도 표 12개 수치는 S2 본문 그림(live-evaluation-results-v5)을 직접 열어 대조, 50% 대비 격차 12개 모두 검산 일치. GPU 하한(120→10, 1,000→84, 10,000→834대), 320÷20=16배, 20÷8=2.5ms 검산 일치. 고친 것: TechBooky '기능 이름/모델 버전' 주장 삭제(박스·비교표), 비교표 연령 행 외부 보도 칸을 'iClarified: 18세 이상'으로 수정(S5 확인), TechBooky 한계 문구를 원문대로 '끼어들기·즉각 응답은 회사 주장'으로 수정(2곳), 교사·학생 선호도 표현 수정, 12세션 이유 추정 문장을 'BF16 기준 대비 8배'(S2)로 교체, 스펙표 동시 세션 행에 8배 추가. 인용 이미지 2개 HTTP 200 image/webp(1136x1003, 1920x1228) 확인."
+ }
+}
