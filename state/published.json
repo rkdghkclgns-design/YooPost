@@ -5960,5 +5960,23 @@
    "https://iclarified.com/103320/meta-adds-realtime-voice-conversations-and-expressive-avatars-to-muse-video"
   ],
   "draft_id": "20261108_070535_1"
+ },
+ {
+  "date": "2026-11-08",
+  "title": "🤝 Perplexity 팀메이트 공개: 며칠씩 맡길 AI 담당자, 권한과 크레딧은 어디까지 확인됐나",
+  "topic": "Perplexity Teammates — Teammates, fully local Computer on Mac, and Voice mode (Perplexity 변경 기록, 2026-11-06)",
+  "category": "AI 도구",
+  "source_url": "https://www.perplexity.ai/changelog",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/perplexity-ai.html"
+  },
+  "sources": [
+   "https://www.perplexity.ai/changelog",
+   "https://perplexity.ai/hub/products/teammate",
+   "https://shiftdelete.net/en/perplexity-teammates-ai-agents",
+   "https://alphasignal.ai/news/perplexity-s-teammates-gives-ai-agents-persistent-roles-and-memory",
+   "https://www.perplexity.ai/hub/blog/making-space-secure-and-efficient-runtimes-for-long-running-agents"
+  ],
+  "draft_id": "20261108_071430_2"
  }
 ]
