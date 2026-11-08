@@ -6156,5 +6156,22 @@
    "https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork"
   ],
   "draft_id": "20261109_073537_5"
+ },
+ {
+  "date": "2026-11-09",
+  "title": "📊 GDPx 최고 점수 12%의 의미: 모델 13개를 영역별·비용별로 다시 읽기",
+  "topic": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains (SemiAnalysis)",
+  "category": "AI 인사이트",
+  "source_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gdpx-12-13.html"
+  },
+  "sources": [
+   "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+   "https://aiweekly.co/alerts/semianalysis-launches-gdpx-best-frontier-model-hits-12",
+   "https://letsdatascience.com/blog/semianalysis-gdpx-206-expert-tasks-claude-opus-5-5-won-12",
+   "https://xenospectrum.com/en/gdpx-ai-work-benchmark/"
+  ],
+  "draft_id": "20261109_074224_6"
  }
 ]
