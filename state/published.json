@@ -6120,5 +6120,24 @@
    "https://arxiv.org/pdf/2611.08449"
   ],
   "draft_id": "20261109_072137_3"
+ },
+ {
+  "date": "2026-11-09",
+  "title": "🏗 구글이 크루소의 와이오밍 부지를 인수했다: 170억 달러 발표와 '밀려남' 보도를 나란히 읽기",
+  "topic": "Crusoe Announces Wyoming Data Center Campus Update — Google acquires Crusoe's Wyoming data center site (Crusoe, 2026-11-06) / The Next Web 보도 / Google Wyoming $17B (2026-11-05)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/170.html"
+  },
+  "sources": [
+   "https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update",
+   "https://thenextweb.com/news/google-buys-crusoe-wyoming-data-centre-site",
+   "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/wyoming-data-center/",
+   "https://thenextweb.com/news/google-wyoming-data-centre-17b-fuel-cells-carbon-capture",
+   "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers",
+   "https://cowboystatedaily.com/2026/07/08/google-revealed-as-owner-of-wyomings-largest-data-center-now-project-tembo/"
+  ],
+  "draft_id": "20261109_072816_4"
  }
 ]
