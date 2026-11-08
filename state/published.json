@@ -6139,5 +6139,22 @@
    "https://cowboystatedaily.com/2026/07/08/google-revealed-as-owner-of-wyomings-largest-data-center-now-project-tembo/"
   ],
   "draft_id": "20261109_072816_4"
+ },
+ {
+  "date": "2026-11-09",
+  "title": "🔒 Claude Dispatch 'ThisBash' 보고: 브라우저 확장이 데스크톱 에이전트를 움직일 때 점검할 5가지",
+  "topic": "Claude Dispatch ThisBash — 브라우저 확장이 Claude Desktop 에 명령을 전달할 수 있다는 보고 (Forever Security, 2026-11-04)",
+  "category": "AI 보안",
+  "source_url": "https://forever.security/blog/thisbash-claude-dispatch-browser-extension-rce",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-dispatch-thisbash-5.html"
+  },
+  "sources": [
+   "https://forever.security/blog/thisbash-claude-dispatch-browser-extension-rce",
+   "https://www.theregister.com/research/2026/11/05/anthropic-wont-fix-a-claude-dispatch-flaw-that-could-let-attackers-execute-remote-commands-across-corporate-boundaries/5307684",
+   "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html",
+   "https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork"
+  ],
+  "draft_id": "20261109_073537_5"
  }
 ]
