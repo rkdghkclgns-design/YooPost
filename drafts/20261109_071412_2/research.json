@@ -1,0 +1,91 @@
+{
+ "topic": "Design the Muse App, Just for You — Meta Muse Spaces (Meta, 2026-11-06) / TechCrunch·MarketScale·Silicon Report 보도",
+ "source_url": "https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Design the Muse App, Just for You (Spaces in the Muse App)",
+   "url": "https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
+   "publisher": "Meta",
+   "published": "2026-11-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+   "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Meta adds Spaces to Muse, letting its AI agent build trackers and planners",
+   "url": "https://www.marketscale.com/industries/software-and-technology/meta-muse-spaces-ai-agent-trackers-planners",
+   "publisher": "MarketScale",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Meta launches Spaces for Muse",
+   "url": "https://www.siliconreport.com/meta-launches-spaces-for-muse-agent-collaboration",
+   "publisher": "Silicon Report",
+   "published": "2026-11-06",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(Meta 뉴스룸) 본문에는 정지 이미지가 없고 영상 2개만 실려 있음. 다른 공식 페이지에서도 Spaces 본문 그림을 찾지 못함(TechCrunch 스크린샷은 비공식 출처라 쓰지 않음)",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Meta Muse 의 Spaces 는 무엇이고, 어떤 상황에서 일반 대화 대신 쓸 만한가",
+  "limitations": "직접 실행하지 않았고 공개 문서와 보도만 근거로 함. 지원 국가·플랫폼·요금제·연결 앱·갱신 주기·한도는 미공개. 표의 분류와 선택 기준은 해석.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 일반 대화와 Spaces 비교: 무엇이 달라지나",
+    "excerpt": "출처 설명만으로 일반 대화창과 Spaces 의 차이를 정리하면 아래와 같습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "일반 대화와 Spaces 를 단위·유지·외부 정보·조작·공유 다섯 축으로 비교해 성능이 아닌 구조 차이임을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 어떤 사람에게 맞나: 상황별 선택 기준",
+    "excerpt": "판단을 한 문장으로 줄이면, **목적이 분명하고 오래 가는 작업은 Spaces, 일회성 질문은 대화**입니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "상황별 적합도와 확인할 점, 제외 조건(팀 공유·민감 자료·일회성 질문)을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 출처를 겹쳐 읽기: 무엇이 확인되고 무엇이 비어 있나",
+    "excerpt": "**네 곳 모두** 사용자가 대화로 설명하면 Muse 가 트래커·플래너 같은 공간을 만들고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 문서와 3개 매체를 겹쳐 확인된 사항과 미공개 사항(국가·요금제·앱 목록·갱신 주기·한도)을 표로 구분 — 세부 날짜(9월 8일 출시·10월 21일 실적 발표)와 Muse 사업 모델(소비자 무료·기업 수수료 계획)은 Silicon Report 로 보완"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 47,
+  "removed": [
+   "Muse Voice 를 '표현형 아바타' 기능으로 설명한 부분(본문·박스·FAQ) — 출처 4곳에서 확인되지 않아 '음성 명령·화상 대화'로 고침",
+   "'더 협업적으로 쓸 수 있도록 공유 방법을 탐색 중'의 '더 협업적으로' — Meta 원문은 '공유 방법을 탐색 중'뿐이라 뺌(본문·FAQ)",
+   "'MarketScale 이 저커버그 게시물만 1차 출처라고 밝혔다' — 원문에 그런 표기가 없어 'TechCrunch 에 따르면'으로 전하고 출처로 TechCrunch 2건·X 게시물을 적었다로 고침",
+   "'네 곳 모두 프로젝트 보드를 만든다' — Meta 문서에는 'project board' 표현이 없어 '트래커·플래너 같은 공간'으로 고치고 '프로젝트 보드는 세 매체 보도'로 한정",
+   "'사업자용 요금이나 기능은 출처에 나오지 않는다' — Silicon Report 가 Muse 의 기업 수수료 계획을 전하므로 'Spaces 의 사업자용 요금'으로 한정하고 내용 보완"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 출처 S1~S4 를 모두 WebFetch 로 다시 열어(EGRESS_BLOCKED 없음) 주장 52개를 대조. 각 출처 published 2026-11-06 이 페이지 날짜와 일치 확인. 정의 문구('더 개인화된 Muse', 'Muse 의 일부', '출발점일 뿐', '처음부터 개인적', 'Muse 가 제공되는 모든 곳'), 9개 예시, 1,000만 명·10월 21일·9월 8일, Muse Voice 11월 5일(목), 경쟁 제품, MarketScale 미공개 항목을 원문 인용으로 확인. 10월 실적 발표일·Muse 출시일·사업 모델·Muse Wonder 특화 모델 문단을 확인된 사실로 보완(문단 기준 분량 5,000자 이상). 2026-10-21 표기와 Muse Voice 미국 대상은 S2·S4 근거."
+ }
+}
