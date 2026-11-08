@@ -1,0 +1,105 @@
+{
+ "topic": "Crusoe Announces Wyoming Data Center Campus Update — Google acquires Crusoe's Wyoming data center site (Crusoe, 2026-11-06) / The Next Web 보도 / Google Wyoming $17B (2026-11-05)",
+ "source_url": "https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Crusoe Announces Wyoming Data Center Campus Update (Google Acquires Crusoe's Wyoming Data Center Site)",
+   "url": "https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update",
+   "publisher": "Crusoe",
+   "published": "2026-11-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google takes over the Wyoming data centre site Crusoe had planned",
+   "url": "https://thenextweb.com/news/google-buys-crusoe-wyoming-data-centre-site",
+   "publisher": "The Next Web",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Investing in Wyoming's infrastructure, energy and workforce",
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/wyoming-data-center/",
+   "publisher": "Google",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Google's first Wyoming data centre will run on gas with carbon capture",
+   "url": "https://thenextweb.com/news/google-wyoming-data-centre-17b-fuel-cells-carbon-capture",
+   "publisher": "The Next Web",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
+   "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers",
+   "publisher": "TechCrunch",
+   "published": "2026-11-07",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Say Hello To Google, The Mystery Owner Behind Wyoming's Largest Data Center Project (Project Tembo)",
+   "url": "https://cowboystatedaily.com/2026/07/08/google-revealed-as-owner-of-wyomings-largest-data-center-now-project-tembo/",
+   "publisher": "Cowboy State Daily",
+   "published": "2026-07-08",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 본문의 그림이 크루소·구글 로고 카드(배너)와 구글 글의 지역 행사 사진뿐이라 원고 내용(거래·전력·탄소 포집 조건)을 보여 주는 도표·화면이 없고, 로고·장식 이미지는 쓰지 않는 규칙이라 넣지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "크루소의 와이오밍 부지를 구글이 인수한 것은 퇴장인가 직접 건설 선언인가, 공식 발표와 보도에서 확인된 사실과 해석은 어디서 갈리는가?",
+  "limitations": "직접 취재·계약서 확인 없음. Bloomberg 원문은 읽지 못해 TNW 인용으로만 다룸. 구글 캠퍼스 확정 용량은 공개되지 않아 7월 지역 매체 2.7GW·TNW 10GW 수치에 의존. 26%·7%는 서로 다른 출처를 묶은 가정 계산.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 702MW는 캠퍼스 전체의 몇 퍼센트일까: 가정 계산",
+    "excerpt": ", 약 26%입니다. 연료전지 한 건이 캠퍼스 최대 용량의 4분의 1 남짓에 해당한다는 뜻이고, 구글이 Tallgrass·Bl",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S6"
+    ],
+    "added_value": "구글 공식 702MW를 지역 매체 2.7GW(약 26%)와 TNW가 전한 장기 최대 10GW(약 7%) 두 분모로 나눠 비율이 분모에 따라 크게 달라짐을 보이고, 동일 캠퍼스 미확인·정격 용량 한계를 명시한 가정 계산"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 크루소의 '완료'와 Bloomberg의 '밀려남': 두 설명을 겹쳐 보기",
+    "excerpt": "Cowboy State Daily의 7월 8일 보도는 크루소가 Bloomberg에 공사를 '일시 중단(pause)'하라는 요청을 받았다고 말했지만",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S6"
+    ],
+    "added_value": "크루소 공식 글, Bloomberg를 인용한 TNW, 7월 지역 매체 보도를 겹쳐 세 설명의 발화 주체와 한계를 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 읽는 법: 누가 무엇을 확인하면 될까",
+    "excerpt": "정리한 선택 기준입니다. 투자 판단이나 전망이 아니라 읽기 순서에 대한 제안입니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 먼저 확인할 항목과 해석에서 제외할 것을 표로 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 46,
+  "removed": [
+   "11월 6일 Bloomberg 보도는 구글이 크루소가 제안했던 와이오밍 데이터센터를 인수했다는 내용으로, TNW가 링크를 달았습니다. (TNW는 Bloomberg를 인수 보도로 인용하지 않음)",
+   "고용 인원은 … 일부 매체만 별도 숫자를 전하는데 (확인한 출처에 없음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 모두 WebFetch로 다시 열어 확인(막힌 출처 없음, published 날짜 6건 모두 페이지 날짜와 일치, S6은 배경용 2026-07-08). 수정: ① '일시 중단(pause)' 표현은 TNW가 아니라 Cowboy State Daily(크루소가 Bloomberg에 한 말)로 출처 정정 ② '양사 모두 조건 비공개'는 크루소 글이 아니라 TNW 전달로 정정 ③ 6GW·40GW는 CEO 발언으로 표시 ④ 200명 주민 모임 문장을 구글 원문대로(샤이엔 시내 모임, 구글과 협력사) ⑤ '40건에서 제한' → '40건에서 거부'(TNW 원문), TechCrunch 표현 원문대로 ⑥ OpenAI NDA 발언은 진행자 발언·'supposedly' 단서로 완화 ⑦ 매체 기사 수 세→네 건. 보완: TNW가 전한 크루소·Tallgrass 원래 프로젝트 최대 10GW를 두 번째 분모로 추가(702÷10,000≈7%, 가정 계산 표시). 26% 계산(702÷2,700=0.26)은 S3·S6 수치와 일치하고 가정으로 표시됨. Bloomberg 원문은 미열람, TNW 인용으로만 표시됨을 확인. 이미지: 크루소 본문 그림은 'Crusoe X Google' 로고 배너, 구글 본문 그림은 행사 사진뿐이라 images_none_reason 유지."
+ }
+}
