@@ -1,0 +1,100 @@
+{
+ "topic": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains (SemiAnalysis)",
+ "source_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+   "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+   "publisher": "SemiAnalysis",
+   "published": "2026-11-02",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "SemiAnalysis Launches GDPx; Best Frontier Model Hits 12%",
+   "url": "https://aiweekly.co/alerts/semianalysis-launches-gdpx-best-frontier-model-hits-12",
+   "publisher": "AI News Weekly",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "SemiAnalysis GDPx: 206 expert tasks, Claude Opus 5.5 won with 12%",
+   "url": "https://letsdatascience.com/blog/semianalysis-gdpx-206-expert-tasks-claude-opus-5-5-won-12",
+   "publisher": "Let's Data Science",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GDPx AI work benchmark",
+   "url": "https://xenospectrum.com/en/gdpx-ai-work-benchmark/",
+   "publisher": "XenoSpectrum",
+   "published": "2026-11-02",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png",
+   "page_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+   "caption": "GDPx 종합 순위: 13개 모델의 점수·작업당 비용·출력 토큰",
+   "credit": "SemiAnalysis"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png",
+   "page_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+   "caption": "비교: 안전 분류기 영향 영역을 뺀 8개 영역 순위",
+   "credit": "SemiAnalysis"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GDPx 최고 점수 12%는 무엇을 뜻하며, 업무용 모델을 고를 때 순위·비용·채점 조건을 어떻게 읽어야 하는가?",
+  "limitations": "직접 실행한 실험은 없고 모든 점수·비용은 SemiAnalysis 공개 그림(I1·I2)·본문과 보도에서 가져왔다. 원문 일부는 유료로 미확인. 1%포인트당 비용과 11개→8개 영역 변화폭은 이 글이 그림 값으로 계산한 값이며 SemiAnalysis 지표가 아니다. 파트너 14곳은 원문 소제목에서 확인, 총 과제 수 206개와 영역별 과제 수 일부는 보도(S3·S4) 기준.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔀 비교: 안전 분류기 영향 영역을 빼면 순위가 바뀐다",
+    "excerpt": "변화 열은 두 그림의 점수 차이를 이 글이 계산한 값입니다. **Astra 와 Sol 이 각각 2.2%포인트",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "11개 영역 종합과 8개 영역 순위를 모델별로 나란히 놓고 변화폭을 계산해 영역 구성의 효과를 보였다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 계산: 점수 1%포인트에 드는 비용",
+    "excerpt": "출처 표의 '작업당 비용'을 점수(%포인트)로 나누면 1점을 얻는 데 든 평균 비용이 나옵니다. 이 식은 이",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공개된 작업당 비용을 종합 점수로 나눠 1%포인트당 비용을 계산하고 선형 비교의 한계를 밝혔다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 판단 기준",
+    "excerpt": "가장 흔한 실수는 종합 1위를 그대로 '우리 업무의 1위'로 읽는 것입니다. 이 벤치마크는 11개 영역을 같",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "업무 유형별로 어떤 수치를 봐야 하는지와 적용 제외 조건을 정리했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 63,
+  "removed": [
+   "같은 주에 여러 매체가 이 소식을 다뤘지만, 대부분은 헤드라인 숫자만 전했습니다. (확인 불가 평가 — '같은 날 여러 매체가 다뤘다'로 수정)",
+   "이메일 작성 같은 쉬운 업무와 8시간짜리 전문가 과제는 난이도가 전혀 다릅니다. (XenoSpectrum 에 없는 내용 — 출처 문장으로 교체)",
+   "사이버보안 선두 Muse Wonder Full '거절이 적어' (원문·보도에 거절 언급 없음 — 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 원문(공개 부분 전체 2회 분할 읽기, datePublished 2026-11-02T01:51:42Z)·S2(2026-11-02)·S3(2026-11-02)·S4(2026-11-02) 재확인. I1·I2 원본 PNG(200 image/png, 2048px)를 내려받아 13개 모델 점수·작업당 비용·출력 토큰과 8개 영역 점수를 표와 대조 — 변화폭 9건·1%p당 비용 9건·Opus/Carbon 비용 3.2배·1~13위 차 9.3%p 재계산 일치. 파트너 14곳은 원문 소제목('A collaboration with 14 specialized data partners')으로 확인, 총 206개는 원문 공개 부분에 없어 보도 기준 유지(생물학 13·정렬 18·퀀트 10은 원문 일치). 수정: 영역 선정 이유(1~2년 가속·첫 1조 달러 AI 매출), Terminal Bench '거의 50%', Carbon 평가 문구, XenoSpectrum 문구 2곳(제약 해제 시 순위 추론 불가·제3자 재현 아님), 12~25회 시도 출처를 Let's Data Science 로 정정, 법률 '4개 모델 20회 시도', 거래 자료실 약 2,000개 파일, 안전 분류기 영역 표현."
+ }
+}
