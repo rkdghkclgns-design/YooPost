@@ -1,0 +1,109 @@
+{
+ "topic": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+ "source_url": "https://arxiv.org/abs/2611.08449",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+   "url": "https://arxiv.org/abs/2611.08449",
+   "publisher": "arXiv (NVIDIA 외)",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "VFlash: Enabling System-1 VLMs (프로젝트 페이지)",
+   "url": "https://research.nvidia.com/labs/lpr/vflash",
+   "publisher": "NVIDIA Research",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hugging Face Papers: VFlash",
+   "url": "https://huggingface.co/papers/2611.08449",
+   "publisher": "Hugging Face",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "NVIDIA VFlash robot planning speed trajectory accuracy",
+   "url": "https://interestingengineering.com/ai-robotics/nvidia-vflash-robot-planning-speed-trajectory-accuracy",
+   "publisher": "Interesting Engineering",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding (논문 PDF v1)",
+   "url": "https://arxiv.org/pdf/2611.08449",
+   "publisher": "arXiv (NVIDIA 외)",
+   "published": "2026-11-05",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://research.nvidia.com/labs/lpr/vflash/assets/figures/generalist-overview.png",
+   "page_url": "https://research.nvidia.com/labs/lpr/vflash",
+   "caption": "Flash Primitive Decoding 작동 방식: 시각 계획 유형, 일반 디코딩, 지연·정확도 결과 개요",
+   "credit": "NVIDIA Research"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "구조가 정해진 시각 계획을 한 번에 디코딩하면 정확도를 지키며 빨라지는가, 보고된 12배·25배·5.1배는 각각 무엇을 잰 값인가",
+  "limitations": "직접 실행·재현하지 않음. 수치는 arXiv 논문 PDF v1 본문·부록(표 6~8, 11, 부록 F.3)과 프로젝트 페이지로 대조함. 프로젝트 페이지에는 날짜가 없어 published 를 비워 둠. 지연 측정은 기록 24개(로봇)·5개(주행)의 작은 표본이고, 디코딩 외 단계는 세 디코더가 같은 평균값을 공유하며 MolmoSpaces AR 디코딩은 별도 프로파일에서 옴. TensorRT 맞춤 런타임 조건.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 속도 숫자 다시 계산: 12배, 25배, 5.1배는 무엇이 다른가",
+    "excerpt": "**디코딩 구간만** 떼어 보면 3,107.6ms에서 258.2ms로 줄어 약 12.0배입니다.",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "전체 지연 5.05배와 디코딩 12.0배를 논문 표 11 숫자로 계산하고, 디코딩 외 445.1ms가 세 디코더에 공유된 고정값(측정 설계)임을 밝혀 측정 범위 차이를 설명"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 정확도 결과: 오차는 줄었고, 로봇 성공률은 어디서 올랐나",
+    "excerpt": "**AR 방식으로 만든 계획(61.0)이 원래 기준선(62.6)보다 오히려 낮았다**",
+    "source_ids": [
+     "S2",
+     "S5",
+     "S4"
+    ],
+    "added_value": "같은 MolmoSpaces 조건의 다섯 설정을 작업별로 비교해 작업마다 이득이 다름(Open +3.5점)을 도출"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧪 어떤 팀에 맞을까: 도입 판단 기준",
+    "excerpt": "첫째, 출력이 점·상자·경로처럼 **구조가 정해진 형태**라면 FPD의 전제와 맞습니다. 둘째, 드래프터 학습에 **주석이 달린 기하 데이터**가 필요하므로 그런 데이터가 없으면 비용이 먼저 듭니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "출력 구조·주석 데이터·런타임·하드웨어 조건별로 도입 여부 판단 기준 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 66,
+  "removed": [],
+  "corrected": [
+   "HF Papers '주간 목록 4위' → 페이지 표기 '#2 Paper of the day', 추천 106",
+   "'LIBERO 계열은 숫자를 싣지 않음' → 논문 그림 3의 +0.8/+1.9/+6.8점으로 수정",
+   "Spark 3,356.5→649.9ms 출처를 '기사 수치'에서 논문 표 11로 수정",
+   "'지연은 AR·DFlash와만 비교' → 주행은 Qwen-Drive-1.0 도 비교, 정확도는 기존 모델과도 비교로 수정",
+   "디코딩 외 445.1ms 동일은 논문이 비디코딩 단계 평균을 공유한 측정 설계임을 명시, MolmoSpaces AR 디코딩 별도 프로파일 단서 추가",
+   "'최대 61%' 근거를 논문 본문 3D ADE 18~49%(3D 전용)·28~61%(2D+3D)로 보완, 42.6%는 프로젝트 페이지 집계로 구분",
+   "25배의 데이터셋별 값(24.8/23.5/26.4배, H100 배치 1) 보완"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs·논문 PDF v1 본문/부록(표 6·7·8·11, 그림 3, 부록 E·F.3)·NVIDIA 프로젝트 페이지·HF Papers·Interesting Engineering 을 모두 직접 내려받아(EGRESS 차단 없음) 수치·이름·날짜를 대조, 계산식(5.05배, 80.2%, 12.0배, 445.1ms, 87%, +7.6/+11.6/+12.8/+3.5/-1.0점, 0.04m) 재계산 일치. S2 프로젝트 페이지는 본문·메타에 날짜가 없어(HTTP Last-Modified 2026-11-07 뿐) published 를 비움. I1 은 프로젝트 페이지 본문 개요 그림(HTTP 200 image/png, 2600x998) — 시각 계획 유형·일반 디코딩·지연/정확도 개요로 본문 'Flash Primitive Decoding' 문단과 관련."
+ }
+}
