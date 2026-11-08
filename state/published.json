@@ -6102,5 +6102,23 @@
    "https://www.siliconreport.com/meta-launches-spaces-for-muse-agent-collaboration"
   ],
   "draft_id": "20261109_071412_2"
+ },
+ {
+  "date": "2026-11-09",
+  "title": "🤖 NVIDIA VFlash, 로봇 계획을 한 번에 쓰면 정말 5배 빨라질까: 12배·25배·70.2% 숫자 다시 계산",
+  "topic": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.08449",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/nvidia-vflash-5-1225702.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.08449",
+   "https://research.nvidia.com/labs/lpr/vflash",
+   "https://huggingface.co/papers/2611.08449",
+   "https://interestingengineering.com/ai-robotics/nvidia-vflash-robot-planning-speed-trajectory-accuracy",
+   "https://arxiv.org/pdf/2611.08449"
+  ],
+  "draft_id": "20261109_072137_3"
  }
 ]
