@@ -6190,5 +6190,22 @@
    "https://core.asiae.co.kr/article/2026072708075305812"
   ],
   "draft_id": "20261109_075128_7"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "🤖 Claude Fable 5.2, 입력 $10에서 $8로 내렸다: Opus 5.5에서 갈아탈 조건",
+  "topic": "Anthropic releases Mythos 5.2 and Fable 5.2 (Claude Fable 5.2 and Claude Mythos 5.2)",
+  "category": "AI 언어 모델",
+  "source_url": "https://anthropic.com/claude-fable-and-mythos-5-2",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-fable-52-10-8-opus-55.html"
+  },
+  "sources": [
+   "https://anthropic.com/claude-fable-and-mythos-5-2",
+   "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+   "https://platform.claude.com/docs/en/about-claude/pricing",
+   "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
+  ],
+  "draft_id": "20261110_070549_1"
  }
 ]
