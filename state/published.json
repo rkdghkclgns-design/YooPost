@@ -6239,5 +6239,21 @@
    "https://huggingface.co/datasets/antins-labs/VisSearch-Bench-v1"
   ],
   "draft_id": "20261110_071950_3"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "🤖 구글 TPU 8tx·8i Max 공개: 기밀 추론과 긴 컨텍스트, 어느 쪽이 내 일일까",
+  "topic": "Our newest TPUs: 8tx and 8i Max, built for the agentic era (Google, 2026-11-09) / TechTarget·Bloomberg 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/tpu-8tx8i-max.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+   "https://www.techtarget.com/news/google-specializes-tpus-for-agentic-confidential-computing/874084/",
+   "https://finance.yahoo.com/technology/ai/articles/google-escalates-nvidia-rivalry-specialized-123000247.html"
+  ],
+  "draft_id": "20261110_072622_4"
  }
 ]
