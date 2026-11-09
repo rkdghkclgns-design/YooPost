@@ -1,0 +1,95 @@
+{
+ "topic": "Anthropic releases Mythos 5.2 and Fable 5.2 (Claude Fable 5.2 and Claude Mythos 5.2)",
+ "source_url": "https://anthropic.com/claude-fable-and-mythos-5-2",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Fable 5.2 and Claude Mythos 5.2",
+   "url": "https://anthropic.com/claude-fable-and-mythos-5-2",
+   "publisher": "Anthropic",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic releases Mythos 5.2 and Fable 5.2",
+   "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-09",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Pricing - Claude Platform Docs",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "publisher": "Anthropic",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2 ahead of IPO",
+   "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html",
+   "publisher": "CNBC",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "입력 가격이 내려간 Fable 5.2로 Opus 5.5에서 갈아탈 만한가",
+  "limitations": "직접 실행하지 않았고 벤치마크·사례는 Anthropic 자체 발표. Medium 강도의 토큰 절감폭과 작업당 정확한 비용은 미공개. 비용 표는 입력 100만·출력 20만 토큰 가정에 가격표를 곱한 예시.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크 비교: Fable 5.1·Opus 5.5·경쟁 모델",
+    "excerpt": "AutomationBench에서는 Gemini 4 Carbon(53.9%)이 Fable 5.2(51.4%)보다 **2.5%p 높고**",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "같은 행의 모델 점수를 차이(%p)로 바꾸고 1위가 아닌 항목을 짚음"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 작업 비용 가정 계산: 가격 인하와 빠른 모드",
+    "excerpt": "같은 토큰 양이라면 Fable 5.2 표준은 Fable 5.1보다 **20% 싸고**(20달러에서 16달러), Opus 5.5 표준보다는 정확히 2배 비쌉니다",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "공식 가격 문서의 Fable 5.1·5.2·Opus 5.5 가격을 같은 가정 작업량에 곱해 이전 모델·대안 모델·빠른 모드 비용을 비교"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔒 안전·차단 정책: 두 출처를 엮어 읽기",
+    "excerpt": "공식 발표도 평가 인식이 평가 해석을 어렵게 만든다고 인정합니다. **좋은 안전 점수와 평가 해석의 불확실성이 함께 존재한다**는 뜻으로 읽을 수 있습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공식 수치와 TechCrunch의 평가 인식 단서를 연결"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 Fable 5.2 활용 시나리오와 선택 기준",
+    "excerpt": "이미 Opus 5.5를 일상 작업에 쓰고 있다면, 에이전트 코딩이나 긴 자동화 작업처럼",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "점수 차이가 큰 영역과 Opus 5.5 대비 2배인 토큰 가격을 함께 놓고 갈아탈 조건과 제외 조건 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 84,
+  "confirmed": 84,
+  "removed": [
+   "출력 가격의 이전 값은 이번에 읽은 출처에 없어서 출력 쪽 인하율은 계산하지 않았습니다. (공식 가격 문서로 Fable 5.1 $10·$50 확인 — 출력 20% 인하로 교체)",
+   "이 수치는 차트에서 읽은 대략값이라는 점을 감안하세요. (45.3%·45.5%는 차트 설명 본문에 적힌 값 — 틀린 단서라 삭제)",
+   "표기되지 않은 Elo 행 (AA-Briefcase v1.1 Elo 행으로 정정, 본문·FAQ)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 발표·S2 TechCrunch를 다시 열어 원문 텍스트(벤치마크 표·차트 설명·안전·가용성·각주)와 주장 하나씩 대조, S3 공식 가격 문서(Fable 5.1 $10/$50, Fable 5.2 $8/$40, 빠른 모드 $16/$80, Opus 5.5 $4/$20)와 S4 CNBC(2026-11-09, 5.1 대비 20% 인하·11월 9일 일반 제공)를 추가. published: S1 페이지 'November 9, 2026', S2 2026-11-09T19:24Z, S4 Nov. 9, 2026 2:00 PM EST 일치, S3 문서는 날짜 표기 없음. 막힌 출처 없음. 정정: 출력 가격 인하(50→40) 반영·비용 표에 Fable 5.1·Opus 5.5 행 추가, Elo 행 이름, 안전장치 표기 범위(Fable·Opus만), FrontierCode 효율 설명, AI R&D 능력 '낮춤'→'훈련 단계에서 향상 제한', ZDR 대상 '엔터프라이즈 고객'→'자격을 갖춘 고객', CVE 각주(거짓 양성→심각도 과장 20건 중 1건), 샌드박스 Opus 5.5 3.3% 추가, 물리 '기여'→'풀었다', Rust 이전은 초기 버전 에이전트 팀, 제공 시점 서술(사전 제공·11월 9일 일반 제공), 구독 혜택은 이번 주 한정. 본문 그림은 인터랙티브 차트뿐이라 images_none_reason 기록. editorial 계산·종합 발췌 본문과 맞춤."
+ },
+ "images_none_reason": "공식 발표 페이지의 벤치마크·비용·안전 차트는 이미지 파일이 아니라 페이지 코드로 그린 인터랙티브 차트이고, 페이지에 있는 이미지 파일은 대표 이미지(og:image)와 관련 글 썸네일뿐이라 본문 인용 그림으로 쓸 수 없음"
+}
