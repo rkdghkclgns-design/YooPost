@@ -1,0 +1,76 @@
+{
+ "topic": "Introducing Muse Ember (Meta, 2026-11-09) / Meta's Muse Ember matches Claude Haiku at a third of the cost per task (The Next Web, 2026-11-09)",
+ "source_url": "https://research.meta.ai/blog/muse-ember",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Muse Ember",
+   "url": "https://research.meta.ai/blog/muse-ember",
+   "publisher": "Meta AI Research",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Meta's Muse Ember matches Claude Haiku at a third of the cost per task",
+   "url": "https://thenextweb.com/news/meta-muse-ember-small-ai-model-haiku-luna",
+   "publisher": "The Next Web",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Meta 블로그 본문에는 헤더 이미지(og:image)와 파트너 로고만 있고 인용할 본문 그림이 없으며, The Next Web 본문 그림도 확인되지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "내 에이전트의 반복 하위 작업 중 어떤 부분을 Muse Ember 같은 저가 모델로 넘겨도 되는가",
+  "limitations": "모델을 직접 실행하지 않았고 모든 성능 수치는 Meta 발표와 The Next Web 보도에 적힌 값입니다. 비용 계산은 가정한 토큰 수에 공개 단가를 곱한 예시이며 구간 단가 적용 방식은 확인되지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 한 건당 비용 계산: 캐시와 200K 경계",
+    "excerpt": "계산에서 읽을 점은 두 가지입니다. 첫째, 앞부분이 반복되는 에이전트 루프에서는 **캐시 적중만으로 A의 비",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공개 단가로 캐시 적용·200K 초과 시 한 건당 비용을 계산해 캐시로 약 절반, 200K 초과로 3배가 됨을 보임"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크: 이긴 곳과 진 곳을 나란히 보기",
+    "excerpt": "Haiku가 앞선 항목은 FrontierCode 2.0 하나**입니다. The Next Web은 이 벤치마크",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "세 모델을 같은 표에서 비교하고 Ember가 지는 항목(FrontierCode)과 측정 주체 차이를 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 서브에이전트에 맡길 일과 남길 일",
+    "excerpt": "세 가지 상황별 기준을 정리하면 이렇습니다. **분류, 추출, 라우팅처럼 틀리면 바로 되돌릴 수 있는 일**",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "벤치마크를 작업 유형에 대응시켜 Ember를 먼저 시험할 일과 Haiku를 병행 비교할 일을 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 벤치마크: 이긴 곳과 진 곳을 나란히 보기",
+    "excerpt": "종합 지수로는 Artificial Analysis Intelligence Index에서 Ember가 최고 설",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "Meta 발표의 지수 점수와 TNW의 Haiku·Luna 비용 보도를 연결해 건당 비용 비율을 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증: S1(research.meta.ai, 페이지 날짜 2026-11-09)·S2(The Next Web, 2026-11-09 7:34pm GMT)를 다시 열어 모델 ID·컨텍스트·최대 출력·입력 형식·Responses API·단가 6종(200K 이하/초과)·제공처(Google Cloud·Oracle Cloud 포함)·벤치마크 표 9항목 27개 수치·AA 지수(Ember 36, Haiku 36, Luna 28, Spark 1.3 37)·건당 비용($0.14/$0.41/$0.15/$2.39)·FrontierCode 설명·가중치 비공개(S2)·Meta 내부 평가 각주(ALE Linux 부분집합, PSI 내부 종합)·Terminal-Bench 최고 공개 하네스·파트너 5곳 발언·안전 프레임워크를 대조. 비용 계산표 4행과 비율(약 절반, 3배, 2.9배, 17배)을 재계산해 일치. 고친 것: 요약의 '가장 작고 저렴한'→'가장 작고 효율적인'(Meta 표현), 파트너 발언에 Cline 창업자 이름과 회사별 평가 항목 명시, topic 의 TNW 제목을 실제 제목으로 수정, 형광 강조 없는 문단에 강조 추가. 두 출처 모두 EGRESS_BLOCKED 아님."
+ }
+}
