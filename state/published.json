@@ -6222,5 +6222,22 @@
    "https://thenextweb.com/news/meta-muse-ember-small-ai-model-haiku-luna"
   ],
   "draft_id": "20261110_071308_2"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "🔎 VisSearch-Bench, 이미지 검색 에이전트 최고 26.47%: 54개 과제의 의미 읽기",
+  "topic": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents (arXiv 2611.04894, 2026-11-03) — Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.04894",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/vissearch-bench-2647-54.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.04894",
+   "https://arxiv.org/html/2611.04894v1",
+   "https://huggingface.co/papers/2611.04894",
+   "https://huggingface.co/datasets/antins-labs/VisSearch-Bench-v1"
+  ],
+  "draft_id": "20261110_071950_3"
  }
 ]
