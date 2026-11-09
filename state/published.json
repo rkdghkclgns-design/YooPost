@@ -6255,5 +6255,23 @@
    "https://finance.yahoo.com/technology/ai/articles/google-escalates-nvidia-rivalry-specialized-123000247.html"
   ],
   "draft_id": "20261110_072622_4"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "🔒 Claude Code '다시 묻지 않음' 승인에 비밀번호가 남는다: 공개 사본 1,122곳, 무엇부터 점검할까",
+  "topic": "Apiiro: Claude Code 'don't ask again' approvals leak secrets into public GitHub repos (2026-11-05)",
+  "category": "AI 보안",
+  "source_url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-code-1122.html"
+  },
+  "sources": [
+   "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
+   "https://itwire.com/business-it-news/security/claude-code-approval-files-found-exposing-company-secrets-on-github-says-apirro-researchers",
+   "https://runtimewire.com/article/claude-code-dont-ask-again-secrets-public-github-settings-files",
+   "https://github.com/anthropics/claude-code/issues/5544",
+   "https://code.claude.com/docs/en/settings"
+  ],
+  "draft_id": "20261110_073243_5"
  }
 ]
