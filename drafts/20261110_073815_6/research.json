@@ -1,0 +1,91 @@
+{
+ "topic": "Apple Cuts Internal AI Usage Budgets in Move to Reduce Spending (Bloomberg 보도, 9to5Mac 2026-11-04)",
+ "source_url": "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Report: Apple reduces employees' AI token allowances as Ternus moves to cut costs",
+   "url": "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/",
+   "publisher": "9to5Mac",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Apple cuts engineers' daily AI budgets as it reins in spending",
+   "url": "https://thenextweb.com/news/apple-cuts-employee-ai-token-budgets",
+   "publisher": "TNW",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Apple Reportedly Cuts Engineers' AI Spending Cap by 33% — but Will It Save Money?",
+   "url": "https://www.eweek.com/news/apple-engineers-ai-spending-caps/",
+   "publisher": "eWEEK",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Apple reports fourth quarter results (Form 8-K Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm",
+   "publisher": "Apple Inc. / SEC",
+   "published": "2026-11-02",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처 본문의 그림은 인물·제품 사진뿐이고 한도·비용 내용을 보여 주는 도표가 없으며, 공시는 글자·표 문서입니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "직원 AI 사용 한도를 낮추면 회사는 실제로 얼마나 아끼고, 팀은 한도 도입 전에 무엇을 먼저 재야 하나?",
+  "limitations": "Bloomberg 원문은 403 으로 읽지 못해 인용 매체 3곳으로 확인했다. 한도 금액은 익명 취재원 보도이며 Apple 은 논평 거절. 연 250일·1,000명·월 근무일 21일은 설명용 가정이다. 직접 실행·실측은 없다. 타사 한도는 TNW·9to5Mac 인용이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 한도를 연간으로 환산하면: 계산과 한계",
+    "excerpt": "‘1,000명’은 계산을 쉽게 하려는 예시일 뿐 Apple 의 실제 인원이 아닙니다. 이 예시에서 한도를 $300 에서 $100 으로 낮췄을 때",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "보도된 일 한도를 250일 가정으로 연간 환산하고 공시 R&D 와 맞대 상한 조정의 규모(1,000명 예시 0.11%)를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 Apple 공시로 본 비용 압력",
+    "excerpt": "4분기 연구개발비 $11,730 백만을 같은 분기 매출 $114,477 백만으로 나누면 약 **10.2%** 입니다. 다만 eWeek 이 지적하",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "공시 수치와 eWeek 의 지적을 연결해 R&D 증가를 AI 비용으로 단정하지 못하는 이유를 설명"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔍 다른 회사의 한도와 나란히 보기",
+    "excerpt": "표의 행은 **단위가 서로 달라 우열이나 ‘누가 가장 짠가’를 가릴 수 없습니다.** 직군(엔지니어 대 일반 직원), 지급 방식(중앙 지원 대 ",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "타사 한도를 단위별로 나열하고 단위가 달라 우열 비교가 불가함을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [],
+  "corrected": [
+   "Ternus 가 8월에 200명 넘게 감원 → Ternus 는 9월 1일 CEO 취임, 8월 감원은 Apple(취임 전) 으로 주체·시점 정정",
+   "'Apple 은 회사 전체로는 AI 활용을 늘리려는 입장으로 보도돼' → eWeek(직원에게 AI 를 더 쓰라고 요청)·9to5Mac(당시 CEO Tim Cook 독려) 출처 명시",
+   "'Bloomberg 가 11월 4일 보도' (Bloomberg 원문 403 으로 날짜 미확인) → 9to5Mac·TNW 11월 4일, eWeek 11월 5일 인용 보도로 표현",
+   "Tesla 월 환산 '4.3주 → $867' 계산 불일치 → '약 4.33주' 로 수정",
+   "공시 표 4분기 매출 2025 값 '—' → 102,466 (공시) 보완, 증감 +12,011(약 11.7%, 공시 표기 12%)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). 9to5Mac(페이지 날짜 2026-11-04)·TNW(2026-11-04)·eWeek(2026-11-05) 본문과 SEC 8-K Ex.99.1(EDGAR Filing Date 2026-11-02)을 다시 열어 한도 금액($300→$200·$100·$25)·예외 신청·싼/기기 내 모델·Apple 논평 거절(TNW)·$300 전액 사용자 드묾·Ternus 9/1 취임·8월 200명+ 감원·타사 한도(Microsoft 7월 부서 예산, Tesla 주 $200, Uber 도구당 월 $1,500 은 TNW / Accenture 월 $29 는 9to5Mac·TNW)·eWeek 의 절감 논리·Amazon 업데이트 지침·Microsoft 로컬 AI 120GB RAM 을 확인. R&D 45,765/34,550(+11,215, 32.5%)·영업비용 75,539/62,151(+21.5%)·4분기 R&D 11,730/8,866·매출 114,477/102,466·R&D/매출 10.2%, 250일 환산($75,000/$50,000/$25,000/$6,250)·1,000명 예시 천장과 R&D 대비 비율(0.16/0.11/0.05/0.014%)·$300→$100 최대 $50M·시나리오 표·21일·4.33주 환산을 직접 다시 계산. Bloomberg 원문(403)에만 의존하는 주장은 인용 매체로 교차 확인된 것만 남김. 품질 기준 v1 editorial(계산·출처 종합·비교) 대조 결과 본문과 일치."
+ }
+}
