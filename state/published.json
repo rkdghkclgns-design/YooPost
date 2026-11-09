@@ -6273,5 +6273,22 @@
    "https://code.claude.com/docs/en/settings"
   ],
   "draft_id": "20261110_073243_5"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "💸 Apple 직원 AI 한도 일 $300→$200: 상한 조정은 얼마나 아끼나",
+  "topic": "Apple Cuts Internal AI Usage Budgets in Move to Reduce Spending (Bloomberg 보도, 9to5Mac 2026-11-04)",
+  "category": "AI 인사이트",
+  "source_url": "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/apple-ai-300200.html"
+  },
+  "sources": [
+   "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/",
+   "https://thenextweb.com/news/apple-cuts-employee-ai-token-budgets",
+   "https://www.eweek.com/news/apple-engineers-ai-spending-caps/",
+   "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm"
+  ],
+  "draft_id": "20261110_073815_6"
  }
 ]
