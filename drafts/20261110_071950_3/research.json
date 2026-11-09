@@ -1,0 +1,113 @@
+{
+ "topic": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents (arXiv 2611.04894, 2026-11-03) — Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.04894",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents (arXiv 초록)",
+   "url": "https://arxiv.org/abs/2611.04894",
+   "publisher": "arXiv (Ant Group 소속 저자)",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "VisSearch-Bench (arXiv HTML v1 본문)",
+   "url": "https://arxiv.org/html/2611.04894v1",
+   "publisher": "arXiv (Ant Group 소속 저자)",
+   "published": "2026-11-03",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - VisSearch-Bench (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2611.04894",
+   "publisher": "Hugging Face",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "antins-labs/VisSearch-Bench-v1 (Hugging Face 데이터셋 카드)",
+   "url": "https://huggingface.co/datasets/antins-labs/VisSearch-Bench-v1",
+   "publisher": "Hugging Face (antins-labs 업로드)",
+   "published": "2026-11-07",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.04894v1/VisSearch_Table3_Accuracy_Correcte-crop.png",
+   "page_url": "https://arxiv.org/html/2611.04894v1",
+   "caption": "Direct, ReAct, DeerFlow 방식별 VisSearch-Bench 정확도 비교",
+   "credit": "VisSearch-Bench 저자 (arXiv 2611.04894)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.04894v1/22222_fig11-crop.png",
+   "page_url": "https://arxiv.org/html/2611.04894v1",
+   "caption": "VisSearch-Bench 개요: 다섯 가지 과제 유형과 분야별 예시",
+   "credit": "VisSearch-Bench 저자 (arXiv 2611.04894)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "이미지로 검색하는 에이전트를 도입하려는 독자가 최고 점수 26.47%를 과제 수·지표·평가 조건으로 어떻게 읽어야 하는가",
+  "limitations": "벤치마크를 직접 실행하지 않았다. 판정에 쓴 LLM 이름과 판정 일관성 검증은 논문에 없고, 데이터셋 라이선스 표시는 unknown 이다. Figure 5(도구 사용·효율) 세부 수치는 본문 설명만 반영했다. 환산은 표 수치 기반 단순 계산이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 16개 모델 결과와 계산으로 다시 읽기",
+    "excerpt": "204개 중 26.47%는 54개, 25.49%는 52개입니다. 즉 1위와 GPT-5.5의 차이는 2개 과제입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "정확도 백분율을 204개 과제 수로 환산해 1위와 GPT-5.5의 차이가 2개 과제임을 보이고, Direct 대비 약 4.5배 증가를 계산함"
+   },
+   {
+    "kind": "comparison",
+    "section": "🧭 유형별 결과와 정보 접근 방식 실험",
+    "excerpt": "논문에 따르면 Full에서 Caption으로 바꾸면 이 모델은 정답 20개를 잃고 13개를 얻었습니다. 순손실 7개는 204개의 약 3.43%로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "Text·Caption·Full 조건의 같은 모델 비교를 순손실 7개=3.43%로 정확도 차이와 대조해 일관성을 확인"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 평가 조건과 도입 판단 기준",
+    "excerpt": "표의 '약 2.94%p'는 34개 유형에서 과제 1개가 차지하는 비율(1/34)을 계산한 값입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "독자 상황별로 볼 지표와 제외 조건을 표로 정리하고 유형별 1과제=약 2.94%p 해상도를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔬 도구 호출과 실패 양상, 그리고 Hugging Face 토론",
+    "excerpt": "논문 표의 수치(Set-wise 최고 11.76%)와 저자 댓글의 실패 설명",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "논문 표의 유형별 수치와 Hugging Face 토론의 저자 실패 설명을 연결하되 인과 증명이 아님을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 96,
+  "confirmed": 96,
+  "removed": [
+   "저자 소속은 Hugging Face 논문 페이지에 Ant Group으로 적혀 있습니다 (논문 소속 칭화대·Ant Group·인민대로 정정)",
+   "빈 칸('-')은 그 방식으로 평가한 값이 이 요약에 없다는 뜻 (논문이 해당 조합을 평가하지 않음으로 정정)",
+   "표 형식 과제는 표 단위 F1로 채점 (과제별 규칙·표 맞추기 과제는 행 단위 F1로 정정)",
+   "논문 오류 분석도 ... 전체 집합을 빠짐없이 채우지 못하는 경우가 많고 (논문 4.3절 표현대로 정정)",
+   "도구를 더 많이 부른다고 정확도가 높아지지는 않는다 ('항상'으로 정정)",
+   "어떤 유형이 가장 힘들게 하느냐는 질문에 Set-wise를 꼽았습니다 / 토론은 저자 본인 글 위주 (댓글 원문대로 정정)",
+   "판정 일관성을 ... 제가 읽은 범위에서 확인하지 못했습니다 / HTML 마지막 약 7,000자 못 읽음 (부록까지 전부 읽어 '논문에 없음'으로 정정)",
+   "코드·데이터 공개 여부와 라이선스도 확인되지 않아 (GitHub·HF 데이터셋 공개, 라이선스 unknown 으로 정정)"
+  ],
+  "note": "Opus 검증: arXiv 초록(Submitted 3 Nov 2026)·HTML v1 본문과 부록 A~F 전체, HF Papers 페이지(Published on Nov 3 · Submitted Nov 6, 추천 22, 댓글)·HF 데이터셋 카드(License unknown, 204행)를 다시 열어 확인. 표 3(주요 결과)·표 4(유형별)·표 5(시각 접근)·표 6(Full→Caption 득실)·표 2(구성)·표 S2(하이퍼파라미터)를 원고 표·본문 수치와 한 칸씩 대조해 모두 일치. 환산값(54·52·12개, 4.5배, 150개, 0.49%p, 1/34=2.94%p, 7/204=3.43%)은 재계산. 인용 그림 2개 HTTP 200 image/png, 1889px·1377px 확인, I1 은 결과 절로 이동. EGRESS_BLOCKED 출처 없음."
+ }
+}
