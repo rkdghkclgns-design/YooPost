@@ -6207,5 +6207,20 @@
    "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
   ],
   "draft_id": "20261110_070549_1"
+ },
+ {
+  "date": "2026-11-10",
+  "title": "🤖 Meta Muse Ember, 에이전트의 반복 작업을 맡겨도 될까: 비용 계산과 Haiku 우세 항목",
+  "topic": "Introducing Muse Ember (Meta, 2026-11-09) / Meta's Muse Ember matches Claude Haiku at a third of the cost per task (The Next Web, 2026-11-09)",
+  "category": "AI 도구",
+  "source_url": "https://research.meta.ai/blog/muse-ember",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/meta-muse-ember-haiku.html"
+  },
+  "sources": [
+   "https://research.meta.ai/blog/muse-ember",
+   "https://thenextweb.com/news/meta-muse-ember-small-ai-model-haiku-luna"
+  ],
+  "draft_id": "20261110_071308_2"
  }
 ]
