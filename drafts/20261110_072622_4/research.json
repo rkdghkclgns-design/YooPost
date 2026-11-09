@@ -1,0 +1,97 @@
+{
+ "topic": "Our newest TPUs: 8tx and 8i Max, built for the agentic era (Google, 2026-11-09) / TechTarget·Bloomberg 보도",
+ "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Our newest TPUs: 8tx and 8i Max, built for the agentic era",
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+   "publisher": "Google",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google specializes TPUs for agentic, confidential computing",
+   "url": "https://www.techtarget.com/news/google-specializes-tpus-for-agentic-confidential-computing/874084/",
+   "publisher": "TechTarget",
+   "published": "2026-11-09",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google Escalates Nvidia Rivalry With Specialized Versions of AI Chips",
+   "url": "https://finance.yahoo.com/technology/ai/articles/google-escalates-nvidia-rivalry-specialized-123000247.html",
+   "publisher": "Bloomberg (Yahoo Finance 전재)",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+   "caption": "확장된 8세대 TPU 라인업: TPU 8t, 8i, 8tx, 8i Max",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "TPU 8t·8i·8tx·8i Max 중 내 작업은 어느 쪽에 가깝고, 지금 확인된 것과 아직 모르는 것은 무엇인가",
+  "limitations": "직접 실행·측정 없음. 구글 자체 성능 주장과 분석가 전망 기반. 가격·출시일은 공식 미공개, 가용 시점은 블룸버그 인용 한 곳뿐. 연 성장 배수는 2년 균일 성장 가정의 단순 계산.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 세 출처를 같은 항목으로 맞춰 비교하기",
+    "excerpt": "이 표에서 가장 눈에 띄는 차이는 **고객 수**입니다. 구글은 '거의 100곳(nearly 100)', 테",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "세 출처의 항목별 차이(8i Max 절대값, 지연 표현, 고객 수, 가용 시점)를 같은 표로 맞춰 우열·불일치를 드러냄"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 블룸버그 수치를 다시 계산해 보면",
+    "excerpt": "이 두 숫자만으로 단순 계산하면 135 ÷ 12 = **약 11.25배**입니다. 2026년에서 2028년까",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "전망치 두 개와 분석가 주장을 배수·연 성장률·가격비로 환산하고 가정을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 내 상황에서는 무엇을 보면 될까요? 선택 기준",
+    "excerpt": "TPU 8tx와 8i Max는 **지금 신청해 쓰는 상품이 아닙니다.** 구글 글은 출시일·가격을 적지 않았",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "상황별로 볼 시스템과 확인할 것, 제외 조건을 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 45,
+  "removed": [
+   "(무어헤드가) 추론 전용 하드웨어 전문화가 맞는 선택이라고 평가했습니다 — 테크타깃 원문에서 확인되지 않아 삭제"
+  ],
+  "corrected": [
+   "바흐다트 직함: AI·인프라 최고 기술 책임자(SVP) → 수석 부사장 겸 AI·인프라 Chief Technologist",
+   "TPU 8i 추론 가격 대비 성능 '최대 80%' → '80%'(구글·테크타깃 표현, 본문·표 2곳)",
+   "무어헤드: 테크타깃에 '말했다' → 이메일로 '적었다'",
+   "8i Max 용도: 블룸버그 '의약 연구·수학·소프트웨어 개발' → 바흐다트 발언 '신약 개발·수학, 코딩도 중요'",
+   "비교표 AMD 행 테크타깃 '언급(8tx 호스트)' → '언급 없음'(테크타깃 기사에 AMD·EPYC 없음)",
+   "고객 수: 테크타깃은 '고객과 파트너 100곳 이상'(본문·표·경고 박스)",
+   "계산표 입력 '135억÷12억' → '1,350억 ÷ 120억 달러', 블룸버그 인텔리전스 전망이 구글 클라우드 사용분 제외임을 명시",
+   "위험 요인 '구성 부품·제조 부족' → '메모리 등 핵심 부품과 제조 역량 부족' + 가용 TPU 전량 계약(블룸버그)",
+   "'테크타깃도 같은 이유로 쓰지 못했다' → '구글이 가격·가용 시점을 밝히지 않았다고 적었다'",
+   "요약: 가용 시점 '내년'을 바흐다트 발언으로 명시"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 구글 블로그·S2 TechTarget·S3 Bloomberg(Yahoo 전재)를 다시 열어 주장별 대조. 세 출처 published 2026-11-09 를 페이지 메타(article:published_time / datePublished)로 확인. 8i Max SRAM 768MB·HBM 17.2TB/s 는 TechTarget 에만 있고 구글 글엔 상대값(8i 의 2배)만 있음을 확인(본문에 출처 구분 유지). 고객 수 구글 'nearly 100 customers' vs TechTarget 'more than 100 customers and partners' 확인. '내년 이용 가능'은 Bloomberg 의 바흐다트 발언('he said')으로만 확인, 구글·TechTarget 은 날짜·가격 없음. 자체 계산 135÷12=11.25, √11.25≈3.354(연 +235%), 100÷70≈1.43 재계산 일치. 인용 이미지 I1: 본문 라인업 그림 storage.googleapis.com/.../8th-Gen-range_samesize.width-1200.format-webp.webp 는 HTTP 200·WebP 1200x675 이지만 서버 Content-Type 이 application/octet-stream 이라 image/* 기준 미충족 → image_url 비워 둠(page_url 유지). EGRESS_BLOCKED 출처 없음."
+ }
+}
