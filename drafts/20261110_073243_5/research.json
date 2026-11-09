@@ -1,0 +1,103 @@
+{
+ "topic": "Apiiro: Claude Code 'don't ask again' approvals leak secrets into public GitHub repos (2026-11-05)",
+ "source_url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Code's \"Don't Ask Again\" file (Apiiro 연구 보도)",
+   "url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
+   "publisher": "The Hacker News",
+   "published": "2026-11-07",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Claude Code approval files found exposing company secrets on GitHub, says Apiiro researchers",
+   "url": "https://itwire.com/business-it-news/security/claude-code-approval-files-found-exposing-company-secrets-on-github-says-apirro-researchers",
+   "publisher": "iTWire",
+   "published": "2026-11-07",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Apiiro finds secrets in 1,122 public Claude Code settings files",
+   "url": "https://runtimewire.com/article/claude-code-dont-ask-again-secrets-public-github-settings-files",
+   "publisher": "RuntimeWire",
+   "published": "2026-11-07",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "[BUG] approved bash commands containing credentials are stored as is with plain text credentials in settings.local.json (#5544)",
+   "url": "https://github.com/anthropics/claude-code/issues/5544",
+   "publisher": "GitHub (anthropics/claude-code)",
+   "published": "2025-08-11",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Settings files and precedence (Claude Code Docs)",
+   "url": "https://code.claude.com/docs/en/settings",
+   "publisher": "Anthropic (Claude Code 공식 문서)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQVOrBlt7EwCzNEBgEvGmZt6L9NtTw0cDMJzh46DkBbRQFYTW3STOiQVVoFAV4ubNrE0J5KNYuQfm85YxBFLANDlOvJnyC4dCpVj6e_RZB8GS5vOicQM6IVJ8UFv77vuMlXk-_YtyNBxuhzIkFFkyQzaOS_7Hbz5J8IJB55KqRBl_1rzBjBdqiKmfbnzw/s1700-nu-rw-lo-l85-e365/leaked.png",
+   "page_url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
+   "caption": "📊 숫자로 보는 노출 규모: 공개 settings.local.json 비밀 1,379개의 종류별 분포 (데이터베이스 직접 접속 501개)",
+   "credit": "The Hacker News"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "\"다시 묻지 않음\" 승인을 써 온 개발자는 Claude Code 의 승인 기록 파일 노출 보고에서 무엇을 사실로 보고 어떤 순서로 점검해야 하는가",
+  "limitations": "Apiiro 원문(HTTP 403)과 Claude Code 동작을 직접 읽거나 재현하지 못했다. 수치는 THN·iTWire·RuntimeWire 가 인용한 Apiiro 주장이며, 비밀의 유효성·악용 여부·Anthropic 의 직접 입장은 확인되지 않았다. 전역 git 제외 동작은 Claude Code 공식 문서로 확인했다. 비율은 출처 수치로 계산했고 gitleaks·TruffleHog 탐지 중복은 출처에 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 직접 계산해 본 비율과 스캐너의 빈틈",
+    "excerpt": "두 검사기 중 하나 이상이 잡은 파일은 1,122 - 215 = 907개로 약 80.8% 입니다. 한 검사기",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "출처의 564·643·215 와 1,122 로 검사기별 탐지 비율을 계산하고 합집합 가정의 한계를 명시했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 판단 기준",
+    "excerpt": "아래 표는 출처의 권고를 독자의 상황별로 다시 묶은 해석입니다. 출처가 우선순위를 이렇게 나눈 것은 아니므로",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "출처의 권고와 수치를 독자의 저장소 상황별 우선순위로 재구성했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⏳ 2025년부터 보고된 문제: Anthropic 의 응답은 어디에",
+    "excerpt": "GitHub 의 anthropics/claude-code 저장소에는 2025년 8월 11일 이슈 #5544 ",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "GitHub 이슈 원문과 보도를 연결해 2025-08 보고부터 2026-01 자동 종료까지의 경과와 확인되지 않은 부분을 정리했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 48,
+  "removed": [
+   "연구진은 최신 모델로 알려진 Opus 5.5 와 Fable 5.1 에서도 같은 동작을 재현했다고 합니다. ('최신 모델로 알려진' 수식어 출처 없음 → THN 인용으로 수정)",
+   "보안 업체가 자사 제품과 연결된 연구를 낸 경우가 많으므로 (출처 없는 일반화 → 삭제)",
+   "그래서 다른 컴퓨터, 다른 도구, 이미 커밋된 파일에는 아무 효과가 없습니다. ('다른 도구' 출처 없음 → 삭제, 컴퓨터 한 대·추적 파일 한계는 iTWire 로 귀속 수정)",
+   "댓글 6개 중 사람이 쓴 것은 2개 (개수 불확실 → '대부분 봇 알림'으로 수정)"
+  ],
+  "note": "Opus 검증: THN(2026-11-07)·iTWire(2026-11-07)·RuntimeWire(2026-11-07, 갱신 같은 날)·GitHub 이슈 #5544 를 다시 열어 104,185/103,617/1,122/1,379/379/43/42/23/63/734·509/211·74/298·76,011/2,539·1,994/564·643·215/217일/1,105·539/16개 에이전트/Opus 5.5·Fable 5.1/ironPeak 2026-02/이슈 2025-08-11 개설·2026-01-03 봇 자동 종료(not planned) 대조 — 모두 일치. 비율(50.3·57.3·80.8·19.2%)과 THN 본문 도표의 DB 직접 접속 501개(379+122, 36.3%) 재계산. 공식 출처 S5(Claude Code 공식 문서 Settings files and precedence, 날짜 표기 없음 → published 비움)로 전역 git 제외 동작·'Yes, and don't ask again' 저장 위치·Bash 패턴(:* 동등) 확인·보강. 'The Hacker News 는 보호가 한 컴퓨터에만 적용' 귀속을 iTWire 로 수정, 인용 그림(THN 본문 도표, 1400x846 image/webp 200 확인)을 수치 절로 옮기고 캡션 구체화. Apiiro 원문(403)은 읽지 못해 Apiiro 에만 의존하는 주장은 두지 않음 — 모든 수치는 THN 등 보도로 확인."
+ }
+}
