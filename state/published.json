@@ -6310,5 +6310,22 @@
    "https://bbn.kiwoom.com/rfCI5737"
   ],
   "draft_id": "20261110_074435_7"
+ },
+ {
+  "date": "2026-11-11",
+  "title": "🤖 Gemini 4 Carbon 일반 공개: 접근 조건과 도입 기간 이후 비용은?",
+  "topic": "Gemini 4 Carbon 2026-11-10 일반 공개 — 유료 개발자·기업·Ultra 접근 확대",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gemini-4-carbon.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+   "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+   "https://oossa.com/en/google-opens-gemini-4-carbon-to-paying-developers-and-businesses"
+  ],
+  "draft_id": "20261111_072320_1"
  }
 ]
