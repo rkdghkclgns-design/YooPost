@@ -117,24 +117,15 @@
   "20261111:daily:AI 인사이트": {
    "at": "2026-11-11T08:04:21+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-11-11T08:11:51+09:00",
+   "rejected_candidates": [],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "42920142745-1",
-  "at": "2026-11-11T08:04:21+09:00",
-  "expires": "2026-11-11T10:04:21+09:00",
-  "task": {
-   "day": "20261111",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 인사이트",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "42920142745-1",
-   "at": "2026-11-11T08:04:21+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
