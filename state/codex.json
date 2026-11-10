@@ -87,12 +87,11 @@
    }
   },
   "20261111:daily:AI 보안": {
-   "at": "2026-11-11T07:54:04+09:00",
-   "count": 1,
-   "status": "done",
+   "at": "2026-11-11T08:35:43+09:00",
+   "count": 2,
+   "status": "writing",
    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
    "failure_kind": "",
-   "finished_at": "2026-11-11T08:03:50+09:00",
    "rejected_candidates": [
     {
      "title": "🔒 Fireworks AI 침해 범위 확대, Notion AI 대화까지: 통지받은 팀의 점검 순서",
@@ -107,7 +106,6 @@
      "reason": "기존 제외 후보 Fireworks AI와 다른 NEAR AI의 2026-11-09 SGLang 침해 보고서를 선정했다. 대표 공식 URL은 웹 도구에서 not accessible 오류였으나 정책에 따른 20초 제한 urllib 직접 조회에서 HTTP 200으로 발표일과 사고 보고서 본문을 확보해 읽었다. 다만 기간 내 독립 이슈화 근거인 Crypto.news의 2026-11-10 보도는 웹 도구 Internal Error 후 동일 URL 직접 조회에서도 HTTP 403(error code: 1010)으로 본문을 읽지 못했다. 검색 "
     }
    ],
-   "next_retry_at": null,
    "last_notified": {
     "result": "done",
     "kind": "result_invalid",
@@ -152,7 +150,21 @@
    }
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "42924622793-1",
+  "at": "2026-11-11T08:35:43+09:00",
+  "expires": "2026-11-11T10:35:43+09:00",
+  "task": {
+   "day": "20261111",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 보안",
+   "topic": "",
+   "reason": "전송 실패(재시도 중단): 겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html",
+   "owner": "42924622793-1",
+   "at": "2026-11-11T08:35:43+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
