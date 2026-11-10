@@ -1,0 +1,691 @@
+{
+ "stage": "separate_sequential_factcheck",
+ "checked_at": "2026-11-10T22:42:16.027434+00:00",
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "Xinjie Lin·Qingle Liu 등 연구진의 논문이며 최초 제출일은 2026-11-06이다.",
+   "url": "https://arxiv.org/abs/2611.09017",
+   "source_ids": [
+    "S1"
+   ],
+   "location": "발표 기록",
+   "evidence": "vanced search --> Computer Science > Computer Vision and Pattern Recognition arXiv:2611.09017 (cs) [Submitted on 6 Nov 2026] Title: Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds Authors: Xinjie Lin , Qingle Liu , Wenyi Li , Joh",
+   "confirmed": true,
+   "action": "수정: 공개일 표현을 arXiv 제출일로 명확히 함. 저자·제출일 재확인.",
+   "evidence_file": "source-evidence/session-abstract.json"
+  },
+  {
+   "id": "C2",
+   "claim": "145개 과제, 9개 유형으로 L1·L2·L3를 나눈다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.2 / Table 1",
+   "evidence": "capabilities across construction levels unclear. We propose Frontier3DBench, a unified benchmark of 145 tasks across 9 categories spanning object, scene, and interactive open-world creation, with joint evaluation of appearance, structure, and behavior. Experiments with 11 model–harness configuratio",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C3",
+   "claim": "L1 물체 65개, L2 장면 65개, L3 월드 15개이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 1",
+   "evidence": "ollowing these principles, we introduce Frontier3DBench , comprising 145 tasks across 9 categories: 65 object tasks, 65 scene tasks, and 15 interactive open-world tasks. The suite covers generation, reconstruction, and scene editing in Blender, together with interactive world construction in Unreal Engine. Evaluation of 11 model–harness",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C4",
+   "claim": "L1/L2 결과물은 편집 가능한 Blender 프로젝트이고 L3는 Unreal Engine 프로젝트이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.1",
+   "evidence": "er},&\\text{L1 objects and L2 scenes},\\\\ \\text{Unreal Engine},&\\text{L3 open worlds}.\\end{cases} (1) For L1 and L2, y y contains Blender project files for the resulting object or scene, executable construction or editing code, and task-required exports. For L3, y y contains Unreal En",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C5",
+   "claim": "텍스트 생성·이미지 복원·기존 장면 편집 과제가 있다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.1 / Table 1",
+   "evidence": "pearance. Ref2Scene-RealPhoto 25 Real photograph + instruction Recover spatial layout and contents. SceneEdit 10 Initial scene + reference + instruction Edit the target while preserving surroundings. L3 · Open worlds 15 Output: interactive Unreal Engine projects Text2Env 5 Text ins",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C6",
+   "claim": "SceneEdit는 목표 변경과 보호 대상 보존을 평가한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.3.2",
+   "evidence": "t, using matched reference and candidate boxes with penalties for missing or extra instances. T T : target modification Whether the requested edit is achieved in the designated region, within the permitted geometry, material, or lighting changes. P P : preservation Whether protected conte",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C7",
+   "claim": "월드 입력의 상호작용 계약은 기능 구역·개체·초기 상태·가능한 조작을 명시한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.1",
+   "evidence": "itial scene, the requested modification, and the content to preserve. For L3, the input includes an interaction contract specifying functional zones, entities, initial states, and available operations. Source assets and evaluation annotations are used only for scoring and are not provided to the agent. Output. Given x x , a coding agent 𝒜 \\mathcal{A} produces a submis",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C8",
+   "claim": "11개의 모델·하네스 구성을 비교한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.1",
+   "evidence": "rement procedures are detailed in Appendix A.2 . 3 Experiments 3.1 Experimental Setting We evaluate 11 frontier models: GPT-6.1-sol, GPT-6-astra, GPT-6-luna, Claude Opus 5.5, Kimi-K3, Kimi-K3.1-Pro, MiniMax-M3.1-Flash, DeepSeek-v4.1-Flash, GLM-5.3-Flash, Doubao-Seed-Evolving, and Qwen3.8",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C9",
+   "claim": "GPT 모델은 Codex, Opus는 Claude Code 하네스를 사용한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.1",
+   "evidence": "5.3-Flash, Doubao-Seed-Evolving, and Qwen3.8-Max. Each model runs in its developer’s agent harness: Codex for the GPT models, Claude Code for Claude Opus 5.5, Kimi CLI for the Kimi models, DeepSeek Harness (DSH) for DeepSeek-v4.1-Flash, and ZCode for GLM-5.3-Flash. MiniMax-M3.1-Flash, Qwen3.8-Max, and Doubao-Seed-Evolving, wh",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C10",
+   "claim": "자체 하네스가 없는 일부 구성은 Claude Code에서 실행한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.1",
+   "evidence": "v4.1-Flash, and ZCode for GLM-5.3-Flash. MiniMax-M3.1-Flash, Qwen3.8-Max, and Doubao-Seed-Evolving, which do not provide their own harness, run in Claude Code. Each configuration uses the same harness for all three levels. In the text, we abbreviate GPT-6.1-sol, GPT-6-astra, GPT-6-luna, and Claude Opus 5.5 as Sol, Astra, Luna,",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C11",
+   "claim": "Sol/Codex의 L1·L2·L3·종합은 71.21·70.35·58.89·66.02이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3",
+   "evidence": "C I2C I2C (SV) Avg. B2S R2S R2S (RP) SE Avg. T2E I2E Avg. GPT-6.1-sol Codex 66.02 82.10 69.61 66.26 71.21 79.87 60.95 60.86 84.44 70.35 61.31 57.68 58.89 GPT-6-astra Codex 63.85 79.54 68.44 62.28 68.63 74.71 48.03 53.91 74.11 62.51 64.07 59.88 61.28 Claude Opus 5.5 Claude Code 62.29 84.05 66.73 58.00 67.37 73.31 52.28 54.",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C12",
+   "claim": "Astra/Codex의 L1·L2·L3·종합은 68.63·62.51·61.28·63.85이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3",
+   "evidence": ".26 71.21 79.87 60.95 60.86 84.44 70.35 61.31 57.68 58.89 GPT-6-astra Codex 63.85 79.54 68.44 62.28 68.63 74.71 48.03 53.91 74.11 62.51 64.07 59.88 61.28 Claude Opus 5.5 Claude Code 62.29 84.05 66.73 58.00 67.37 73.31 52.28 54.43 72.00 62.61 58.59 58.05 58.23 DeepSeek-v4.1-Flash DSH 57.45 83.17 57.49 56.92 63.20 76.36 42.",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C13",
+   "claim": "Opus/Claude Code의 L1·L2·L3·종합은 67.37·62.61·58.23·62.29이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3",
+   "evidence": "74.71 48.03 53.91 74.11 62.51 64.07 59.88 61.28 Claude Opus 5.5 Claude Code 62.29 84.05 66.73 58.00 67.37 73.31 52.28 54.43 72.00 62.61 58.59 58.05 58.23 DeepSeek-v4.1-Flash DSH 57.45 83.17 57.49 56.92 63.20 76.36 42.44 52.73 76.00 62.00 49.91 49.63 49.72 Kimi-K3.1-Pro Kimi CLI 55.96 83.34 56.25 53.23 61.34 77.04 45.06 48",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C14",
+   "claim": "Sol은 종합 선두, Astra는 월드 선두이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.2",
+   "evidence": "er, the highest scores are shared by three configurations: Sol leads six, Opus leads Text2Code, and Astra leads Text2Env and Img2Env. No single configuration leads every category. Table 3 : Performance on 145 tasks (0–100, ↑ \\uparrow ), ranked by Total, the overall score (Eq. 2 ). T2C: Text2Code; I2C:",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C15",
+   "claim": "Opus의 Text2Code 점수 84.05는 해당 유형 선두이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.3",
+   "evidence": "Astra leads both open-world categories with the highest L3 mean of 61.28. Opus instead achieves the highest text-to-object score of 84.05. These complementary strengths make task-specific profiles useful for model selection. Text-driven generation and reference reconstruction show distinct strengths. Kimi-",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C16",
+   "claim": "L1/L2는 과제당 32시간 내 최대 6회 시도를 허용한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.1",
+   "evidence": "eneration and evaluation, and model requests use a restricted host gateway. L1/L2 generation allows at most six attempts within a 32-hour budget per task; a new attempt starts after a timeout, a transport error, or a failed public execution or delivery check, and receives the execution errors without score feedback. L3 ag",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C17",
+   "claim": "실행·제출 검사 실패 등에서 오류를 받고 재시도하지만 점수 피드백은 없다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.1",
+   "evidence": "fter a timeout, a transport error, or a failed public execution or delivery check, and receives the execution errors without score feedback. L3 agents work under a 24-hour time limit. The released code uses longer identifiers for some task families and harnesses (e.g., Image2Code , Reference2Scene , Image2En",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C18",
+   "claim": "L3의 제한 시간은 24시간이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.1",
+   "evidence": "ailed public execution or delivery check, and receives the execution errors without score feedback. L3 agents work under a 24-hour time limit. The released code uses longer identifiers for some task families and harnesses (e.g., Image2Code , Reference2Scene , Image2Environment , and kimi-codecli ), which corre",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C19",
+   "claim": "점수는 0~100 품질 점수를 단계별 평균한 가중합이며 성공률이 아니다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.3.4 / Eq.2",
+   "evidence": " the environment supports the complete activity without teleportation or reset. 2.3.4 Overall Score Task scores are reported on a 0–100 scale and averaged within each level, including measured zeros. The overall score combines the three level means: S overall = 0.30 ​ S L1 + 0.30 ​ S L2 + 0.40 ​ S L3 . S_{\\mathrm{overall}}=0.30S_{\\mathrm{L1",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C20",
+   "claim": "종합 가중치는 L1 0.30, L2 0.30, L3 0.40이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Eq.2",
+   "evidence": "s the three level means: S overall = 0.30 ​ S L1 + 0.30 ​ S L2 + 0.40 ​ S L3 . S_{\\mathrm{overall}}=0.30S_{\\mathrm{L1}}+0.30S_{\\mathrm{L2}}+0.40S_{\\mathrm{L3}}. (2) The higher weight on open worlds emphasizes the integration of visual construction, interactive mechanisms, and ",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C21",
+   "claim": "월드 비중은 시각·상호작용·완결 활동 통합을 강조한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.3.4",
+   "evidence": " ​ S L3 . S_{\\mathrm{overall}}=0.30S_{\\mathrm{L1}}+0.30S_{\\mathrm{L2}}+0.40S_{\\mathrm{L3}}. (2) The higher weight on open worlds emphasizes the integration of visual construction, interactive mechanisms, and complete activities. Measurement procedures are detailed in Appendix A.2 . 3 Experiments 3.1 Experimental Setting We ",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C22",
+   "claim": "반올림 공개 수치로 Sol 66.024, Astra 63.854점이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3 / Eq.2에서 계산",
+   "evidence": " L1: Objects L2: Scenes L3: Open worlds T2C I2C I2C (SV) Avg. B2S R2S R2S (RP) SE Avg. T2E I2E Avg. GPT-6.1-sol Codex 66.02 82.10 69.61 66.26 71.21 79.87 60.95 60.86 84.44 70.35 61.31 57.68 58.89 GPT-6-astra Codex 63.85 79.54 68.44 62.28 68.63 74.71 48.03 53.91 74.11 62.51 64.07 59.88 61.28 C",
+   "confirmed": true,
+   "action": "유지: 재조회한 표·계수로 재계산. 반올림 및 명목 계수 한계를 본문에서 확인.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C23",
+   "claim": "Sol−Astra의 가중 차이는 L1 +0.774, L2 +2.352, L3 −0.956, 총 약 2.17점이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3 / Eq.2에서 계산",
+   "evidence": "ll score of 66.02, with level means of 71.21 on objects, 70.35 on scenes, and 58.89 on open worlds. Its lead over the runner-up is 2.17 points, with scene construction contributing the largest weighted advantage. Across the 9 task categories, however, the highest scores are shared by three configurations: Sol l",
+   "confirmed": true,
+   "action": "유지: 재조회한 표·계수로 재계산. 반올림 및 명목 계수 한계를 본문에서 확인.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C24",
+   "claim": "과제당 월드 대 물체의 명목 가중치 비율은 (0.40/15)/(0.30/65) ≈5.78이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 1 / Eq.2에서 계산",
+   "evidence": "ollowing these principles, we introduce Frontier3DBench , comprising 145 tasks across 9 categories: 65 object tasks, 65 scene tasks, and 15 interactive open-world tasks. The suite covers generation, reconstruction, and scene editing in Blender, together with interactive world construction in Unreal Engine. Evaluation of 11 model–harness",
+   "confirmed": true,
+   "action": "유지: 재조회한 표·계수로 재계산. 반올림 및 명목 계수 한계를 본문에서 확인.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C25",
+   "claim": "모든 구성은 물체·장면 각각에서 참고 복원보다 텍스트 생성 점수가 높다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.2",
+   "evidence": "ference reconstruction and interactive world construction remain challenging across configurations. Every configuration scores higher on text-to-object generation than on either object-reconstruction category, and higher on brief-driven scene generation than on either scene-reconstruction category. Text-to-object scores range from",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C26",
+   "claim": "텍스트 생성과 참고 복원은 서로 다른 채점식을 쓴다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix A.1",
+   "evidence": "2Scene , and Ref2Scene-RealPhoto , the score is Q ref = 0.20 ​ V + 0.50 ​ I + 0.20 ​ L + 0.10 ​ D . Q_{\\mathrm{ref}}=0.20V+0.50I+0.20L+0.10D. (4) Here V V measures visual fidelity to the input reference, I I measures image similarity, L L measures projected object placement and count, ",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C27",
+   "claim": "Sol의 Text2Code·다중 시점·단일 시점 점수는 82.10·69.61·66.26이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3",
+   "evidence": "L3: Open worlds T2C I2C I2C (SV) Avg. B2S R2S R2S (RP) SE Avg. T2E I2E Avg. GPT-6.1-sol Codex 66.02 82.10 69.61 66.26 71.21 79.87 60.95 60.86 84.44 70.35 61.31 57.68 58.89 GPT-6-astra Codex 63.85 79.54 68.44 62.28 68.63 74.71 48.03 53.91 74.11 62.51 64.07 59.88 61.28 Claude Opus 5.5 Cla",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C28",
+   "claim": "Qwen3.8-Max의 같은 세 유형 점수는 81.98·43.97·37.34이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 3",
+   "evidence": ".62 48.97 48.29 56.01 68.56 41.96 44.60 72.91 55.92 37.87 33.68 35.08 Qwen3.8-Max Claude Code 46.03 81.98 43.97 37.34 50.19 69.56 32.42 39.65 58.49 50.64 43.83 37.25 39.44 Doubao-Seed-Evolving Claude Code 42.94 78.60 43.71 42.36 51.24 66.52 33.39 37.63 61.74 49.58 28.71 33.23 31.72 Refe",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C29",
+   "claim": "MiniMax는 종합 52.55점, SceneEdit 78.70점으로 해당 유형 2위이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.3 / Table 3",
+   "evidence": "of specified geometry and appearance. Scene editing reveals strengths beyond the top overall ranks. MiniMax ranks second in editing at 78.70 despite placing sixth overall, ahead of both Astra and Opus. Kimi-K3 and GLM also exceed the cross-model editing mean, scoring 73.22 and 72.91. Their ability to modify existing scenes stands out rela",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C30",
+   "claim": "11구성×15월드=165 제출물의 동작 세부 항목 평균을 분석한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.4",
+   "evidence": "youts, and visual details. Third, local mechanisms remain far stronger than coordinated activities: across all 165 L3 submissions (11 configurations × \\times 15 tasks), the local-mechanism component of interaction correctness averages 83.08/100, compared with 20.82 for motion clearance and 30.26 fo",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C31",
+   "claim": "개별 장치·간섭 여유·상태/워크플로 평균은 83.08·20.82·30.26이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Abstract / §3.4",
+   "evidence": "ions, the local-mechanism, motion-clearance, and state/workflow components of H H (Appendix A.2.3 ) average 83.08, 20.82, and 30.26, respectively. 3.5 Cost Efficiency Analysis Figure 5 compares the overall score with estimated average API cost per task across all 145 tasks. Costs cover recorded usage",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C32",
+   "claim": "개별 검사는 존재·동작 효과·도달 불가 거리 조작 거절을 본다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix A.2.3",
+   "evidence": "rkflow checks with weights 0.40 0.40 , 0.25 0.25 , and 0.35 0.35 , respectively. Local tests weight entity presence, observable action effects, and invalid-reach rejection by 0.20 0.20 , 0.50 0.50 , and 0.30 0.30 , respectively, averaging within and across mechanism roles. The Minecraft task uses task-specific probes with the same weights.",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C33",
+   "claim": "연속 워크플로는 순간이동과 초기화를 금지한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix A.2.3",
+   "evidence": "fied end-state predicates and complete-route success. Local probes can place test fixtures, whereas continuous workflows prohibit teleportation and resets. Appendix B Experimental Protocols B.1 Tasks and Runtime Configurations We evaluate 145 tasks: 65 object tasks (L1), 65 scene tasks (L2), and 15 interactive-world tasks ",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C34",
+   "claim": "L3 내 시각·충실도·공간·상호작용 계수는 0.60·0.20·0.05·0.15이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Eq.6",
+   "evidence": "t-conditioned L3 tasks use Q world = 0.60 ​ A + 0.20 ​ F + 0.05 ​ G + 0.15 ​ H . Q_{\\mathrm{world}}=0.60A+0.20F+0.05G+0.15H. (6) A A measures visual quality, F F task fidelity, G G spatial layout, and H H interaction correctness. A.2 Component Measurements Task-specific checks validate execut",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C35",
+   "claim": "상태/워크플로는 상호작용 H 내부의 35%이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix A.2.3",
+   "evidence": "r movement. H H combines local mechanisms, motion clearance, and state/workflow checks with weights 0.40 0.40 , 0.25 0.25 , and 0.35 0.35 , respectively. Local tests weight entity presence, observable action effects, and invalid-reach rejection by 0.20 0.20 , 0.50 0.50 , and 0.30 0.30 , respectively, avera",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C36",
+   "claim": "상태/워크플로의 종합 점수 명목 계수는 0.40×0.15×0.35=0.021=2.1%이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Eq.2 / Eq.6 / Appendix A.2.3에서 계산",
+   "evidence": "t-conditioned L3 tasks use Q world = 0.60 ​ A + 0.20 ​ F + 0.05 ​ G + 0.15 ​ H . Q_{\\mathrm{world}}=0.60A+0.20F+0.05G+0.15H. (6) A A measures visual quality, F F task fidelity, G G spatial layout, and H H interaction correctness. A.2 Component Measurements Task-specific checks validate execut",
+   "confirmed": true,
+   "action": "유지: 재조회한 표·계수로 재계산. 반올림 및 명목 계수 한계를 본문에서 확인.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C37",
+   "claim": "비용은 최종 성공 생성 시도의 기록된 API 사용량 추정이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.5 / Appendix B.2",
+   "evidence": "estimated average API cost per task across all 145 tasks. Costs cover recorded usage in each task’s final successful generation attempt and weight every task equally, while the overall score uses the 30/30/40 level weights. We use the midpoint of each exported cost range as its plotting coordinate; accou",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C38",
+   "claim": "작업당 평균 추정 비용은 Luna 약 $0.27, DeepSeek $0.45, Sol $1.01이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.5",
+   "evidence": ", DeepSeek, and Sol define the score–cost frontier at the plotted estimates. Luna achieves 48.56 at approximately $0.27 per task, DeepSeek achieves 57.45 at $0.45, and Sol reaches the highest overall score of 66.02 at $1.01. Moving from DeepSeek to Sol gains 8.57 points at roughly 2.2 times the es",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C40",
+   "claim": "평가·도구·인프라·캐시 저장·세금은 비용에서 제외한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.2",
+   "evidence": "igurations, and GLM, so their estimates are lower bounds. The estimates cover generation API usage; judging, tool use, infrastructure, cache storage, and taxes are not included. The vertical bars show 95% task-bootstrap intervals for the overall score. We jointly resample task identities across all 11 configurations within each level, drawing 6",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C41",
+   "claim": "DeepSeek 등의 부분 기록 비용 추정치는 하한이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.2",
+   "evidence": "e figure plots range midpoints for model positions and the Pareto line and omits horizontal ranges. Usage records are partial for DeepSeek, both Kimi configurations, and GLM, so their estimates are lower bounds. The estimates cover generation API usage; judging, tool use, infrastructure, cache storage, and ",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C42",
+   "claim": "비용은 145과제를 동일 가중 평균하고 성능 종합은 30/30/40을 쓴다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.5 / Appendix B.2",
+   "evidence": "ss all 145 tasks. Costs cover recorded usage in each task’s final successful generation attempt and weight every task equally, while the overall score uses the 30/30/40 level weights. We use the midpoint of each exported cost range as its plotting coordinate; accounting and pricing assumptions are detailed in Appendix B.2 . Luna, DeepSeek, and Sol de",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C43",
+   "claim": "생성 모델 식별을 가린 렌더링 증거를 사용하고 시각 판단에 GPT-6-astra가 참여한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix A.2.2 / A.2.3",
+   "evidence": "evidence views, together with the input references or, for SceneEdit, the initial and target views. Generator identity is hidden from the judge at all levels. Visual fidelity is V = ∑ j a j ​ g j / 4 V=\\sum_{j}a_{j}g_{j}/4 , where ∑ j a j = 1 \\sum_{j}a_{j}=1 and g j ∈ { 0 , 1 , 2 , 3 , 4 } g_{j}\\in\\{0,1,2,3,4\\} denotes absent",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C44",
+   "claim": "네이티브 장면 검사와 별도 관찰자 실행 검사를 사용한다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§2.3 / Appendix A.2.3",
+   "evidence": "ive scene and a GLB export) or four native L2 variants. A.2.3 Open-World Measurements The evaluator rebuilds the submitted Unreal Engine project with an independent observer in a separate workspace and measures rendered appearance, geometry, motion, character trajectories, and inventory changes. Both image- and text-conditioned tasks are scored with Eq. 6 . The vis",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C45",
+   "claim": "사람 평가 표본은 참고 기반 L1/L2의 45항목, 평가자 8명, 후보 4개, 360개 순위이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.7 / Appendix B.3",
+   "evidence": "tructure. 3.7 Human–Score Agreement To evaluate alignment with human visual judgments, we conduct a four-candidate ranking study with eight raters over 45 items from the four reference-conditioned L1/L2 task families (Img2Code, Img2Code-SingleView, Ref2Scene, and Ref2Scene-RealPhoto), yielding 360 judgments. Automatic scores ali",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C46",
+   "claim": "사람과 자동 평가의 최상위 일치율 79.2%, 전체 순서 일치율 44.7%이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Table 4 / §3.7",
+   "evidence": "ents. Automatic scores align with human fidelity rankings. Mean Kendall τ b \\tau_{b} is 0.727, with 79.2% top-one agreement and 44.7% exact-order agreement (Table 4 ), indicating stronger agreement on the winner than on the complete ordering. Human raters agree with one another at a mean τ b \\tau_{b} of 0.679 across 1260 sa",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C47",
+   "claim": "사람 순위 검증은 4개 참고 기반 물체·장면 유형이며 L3 연속 활동 검증이 아니다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "§3.7 / Appendix B.3",
+   "evidence": "isual judgments, we conduct a four-candidate ranking study with eight raters over 45 items from the four reference-conditioned L1/L2 task families (Img2Code, Img2Code-SingleView, Ref2Scene, and Ref2Scene-RealPhoto), yielding 360 judgments. Automatic scores align with human fidelity rankings. Mean Kendall τ b \\tau_{",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C48",
+   "claim": "인용 이미지 I1은 과제의 입력에서 Blender·Unreal 결과물까지의 구성도이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Figure 2",
+   "evidence": "ts the required interactions and state persistence as the player moves through the generated world. Figure 2 : Task formulation. Agents receive instructions and optional references or initial assets, then produce code and assets for Blender objects and scenes (L1/L2) or Unreal Engine open worlds (",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C49",
+   "claim": "논문 HTML에는 CC BY 4.0 라이선스가 표시된다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "본문 라이선스 표기",
+   "evidence": "orld tasks. B.2 Cost Accounting and Uncertainty B.3 Human-Evaluation Protocol C More Visual Results License: CC BY 4.0 arXiv:2611.09017v1 [cs.CV] 06 Nov 2026 \\contribution [*]Equal Contribution \\contribution [‡]Corresponding Authors \\metadata [Homepage] https://lab.einsia.ai/frontier3dbe",
+   "confirmed": true,
+   "action": "유지: 이번 별도 검증에서 공식 원문을 재조회하여 해당 절·표·산식과 대조.",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C50",
+   "claim": "비용 추정의 단가는 2026-10-30 기준 Standard API 가격이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "confirmed": true,
+   "action": "유지/보완: 이번 재조회 본문에서 확인하고 적용 조건을 본문에 반영.",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.2",
+   "evidence": "Prices follow the providers’ Standard API pricing as of October 30, 2026. CNY prices are converted at 6.6684 CNY per USD using the November 5, 2026 exchange rate; USD quotes require no conversion. Qwen’s cache-read price is set to 10% of its ordinary input price. Cost ranges reflect variation in cache-write lifetime, peak and off-peak pricing, and long-context tiers. For aggregated input counts above a context threshold, the long-context multiplier is applied to the upper bound. The figure plots",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C51",
+   "claim": "사람 평가 후보는 최고·최저 유효 점수와 구간 삼등분 지점 주변에서 고르며 인접 후보는 최소 4점 차이다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "confirmed": true,
+   "action": "유지/보완: 이번 재조회 본문에서 확인하고 적용 조건을 본문에 반영.",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.3",
+   "evidence": "Each item contains the highest- and lowest-scoring valid runs and the two nearest the score interval’s trisection points, with adjacent options at least four points apart. Eight raters rank every item by reference fidelity, producing 360 complete rankings. Raters view the reference and four equally sized candidate images labelled A–D, with model identities and scores hidden. Candidate labels are permuted independently for each rater and item. Kendall’s τ b \\tau_{b} , top-one agreement, and exact",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C52",
+   "claim": "에이전트에 영어 과제 지시문과 공개 과제 자료를 제공했다.",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "confirmed": true,
+   "action": "유지/보완: 이번 재조회 본문에서 확인하고 적용 조건을 본문에 반영.",
+   "source_ids": [
+    "S2"
+   ],
+   "location": "Appendix B.1",
+   "evidence": "Agents receive the English task instruction and public task assets; evaluator files and scores are not accessible during generation. At all levels, general network access is disabled during generation and evaluation, and model requests use a restricted host gateway. L1/L2 generation allows at most six attempts within a 32-hour budget per task; a new attempt starts after a timeout, a transport error, or a failed public execution or delivery check, and receives the execution errors without score f",
+   "evidence_file": "source-evidence/session-paper.json"
+  },
+  {
+   "id": "C53",
+   "claim": "Vector Wire의 2026-11-09 연구 소개 페이지에 Frontier3DBench가 실렸다.",
+   "url": "https://vectorwire.ai/research/2026-11-09",
+   "confirmed": true,
+   "action": "유지/보완: 이번 재조회 본문에서 확인하고 적용 조건을 본문에 반영.",
+   "source_ids": [
+    "S3"
+   ],
+   "location": "페이지 날짜·Frontier 목록",
+   "evidence": "Frontier3DBench GPT-6.1-sol achieves the highest overall score of 66.02/100 on Frontier3DBench, while all 11 configurations struggle with reference reconstruction. Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds Agents Benchmark arXiv PDF Meituan-Robotics-0 Meituan-Robotics-0 achieves 93.6% success on RoboTwin 2.0 and outperforms π0.5 on three real-robot tasks. Robotics Authorization Drift in LLM Agents Frontier-capable LLM agents exhibit authorizat",
+   "evidence_file": "source-evidence/session-coverage.json"
+  }
+ ],
+ "note": "2026-11-10 UTC 별도 사실 검증에서 공식 초록·논문 전체 및 독립 소개를 다시 읽음. source-evidence/session-{abstract,paper,coverage}.json에 최종 URL·HTTP 200·조회 시각·본문 저장. 웹 도구에서 소개 페이지를 읽지 못해 정책에 따라 requests로 20초 제한 1회 조회했고 실제 본문과 datePublished 2026-11-09 확인. 검증표는 반복된 주장을 한 번만 집계하며 기존 C39는 C38과 중복되어 통합. 외부 사실과 출처 기반 계산만 집계; 직접 실행·재현·사람 검토를 수행했다는 주장은 없음. 제출일 표현 명확화, 모델 가중치의 모호한 표현 수정, 가격 기준일·사람 표본 선정 조건·영어 입력 조건 보완. 반복 FAQ를 방법론의 추가 질문으로 교체. 최신성은 2026-11-06 제출로 brief의 2026-11-04 이후 조건 충족. 외부 발행·Slack·git 접속 없음. 주제 교체·발행 승인 없음.",
+ "editorial_check": {
+  "passed": true,
+  "kinds": [
+   "calculation",
+   "decision_guide"
+  ],
+  "findings": "본문의 정확한 소제목과 30자 이상 연속 발췌를 대조. 65/65/15 과제수, 30/30/40 가중치, 중첩 계수 및 반올림 계산 재확인. 생성/복원은 입력·채점식이 달라 동등 난도 비교가 아님. 도입 제안은 직접 실행 성과가 아니며 비용 누락·가격 기준일·사람 표본 선정·영어 입력 한계 명시."
+ }
+}
