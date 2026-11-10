@@ -1,0 +1,76 @@
+{
+ "topic": "AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level",
+ "source_url": "https://google-deepmind.github.io/code-verification/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level",
+   "url": "https://google-deepmind.github.io/code-verification/",
+   "publisher": "Google DeepMind / Google",
+   "published": "2026-11-10",
+   "official": true,
+   "note": "이번 별도 검증에서 동일 공개 URL을 직접 재조회해 HTTP 200, 본문 및 표시 날짜를 확인. source-evidence/recheck-official.json 참조."
+  },
+  {
+   "id": "S2",
+   "title": "Google DeepMind melds humans and AI agents to vet Signal’s secure messaging techniques",
+   "url": "https://www.theregister.com/ai-and-ml/2026/11/10/google-deepmind-melds-humans-and-ai-agents-to-vet-signals-secure-messaging-techniques/5308625",
+   "publisher": "The Register",
+   "published": "2026-11-10",
+   "official": false,
+   "note": "이번 별도 검증에서 동일 공개 URL을 직접 재조회해 HTTP 200, 본문 및 표시 날짜를 확인. source-evidence/recheck-independent.json 참조."
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://google-deepmind.github.io/code-verification/paper/figures/fig-workflow.svg",
+   "page_url": "https://google-deepmind.github.io/code-verification/",
+   "caption": "명세 작성, 실행 코드 연결, 증명 생성 및 검사로 이어지는 AlphaProof Code 절차. 음영은 신뢰해야 할 요소를 나타냅니다.",
+   "credit": "Google DeepMind / Google, 논문 Figure 1"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Signal 핵심 코드의 보안 증명은 어디까지 보장하며 우리 팀은 어떤 조건에서 활용할 수 있는가?",
+  "limitations": "직접 빌드·실행·증명 재현 없음. 논문은 특정 CLI·버전·환경과 명세의 보장이다. 계산은 줄 수의 근사 비교이며 비용·안전 확률을 추정하지 않는다. 상황별 권고는 편집 해석이다. 증명과 신뢰 정의의 줄 수는 문서 포함 조건이 같지 않다. 26,000줄은 외부 도구·빌드 스크립트·Lean까지 망라한 전체 신뢰 기반 총량이 아니다. 비교는 공격자 모델의 차이를 보여 주며 우열을 뜻하지 않는다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 650만 줄과 2만6000줄을 어떻게 읽을까",
+    "excerpt": "위 계산은 **논문이 제시한 근사 줄 수를 나눈 편집 분석**입니다. 원문은 증명 코드 집계에 주석과 빈 줄을 포함하며, 저장소의 신뢰할 정의 약 1만8000줄은 문서 설명까지 포함하면 약 2만8000줄이라고 구분합니다. 따라서 250배와 0.4%는 문서 포함 조건까지 통일한 생산성 비교가 아닙니다. 기계어 의미론 한 줄과 증명 한 줄의 검토 난도도 같다고 가정하지 않았으므로, 이 비율을 검토 비용 절감률이나 안전 확률로 읽을 근거는 없습니다. [공식 논문](https://google-deepmind.github.io/code-verification/)",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "18,000+8,000≈26,000줄, 6,500,000÷26,000≈250배, 역비율≈0.4%를 산출하되 문서 포함 조건과 코드 역할이 달라 비용·생산성·위험 비교로 전환할 수 없음을 설명",
+    "conditions": "논문이 보고한 근사 줄 수 사용. 증명은 주석·빈 줄 포함, 저장소 정의는 문서 제외 수치. 전체 신뢰 기반의 줄 수나 노동시간 비교가 아님."
+   },
+   {
+    "kind": "comparison",
+    "section": "🔍 두 보안 모델과 남아 있는 신뢰 경계",
+    "excerpt": "특히 **연결 수립 단계의 양자 관련 보장과 래칫의 양자 공격 후 회복 보장은 다릅니다**. 논문 토론 절은 계산적 정리가 고전적이며, 래칫 정리들은 공격자가 SPQR 키를 선택할 수 있게 두기 때문에 SPQR이 목표로 하는 양자 공격 후 회복을 증명하지 않는다고 명시합니다. “양자 내성 프로토콜을 다뤘다”는 설명만으로 모든 양자 관련 성질을 증명했다고 받아들이면 범위를 넘습니다. [공식 논문](https://google-deepmind.github.io/code-verification/)",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "기호적 모델과 계산적 모델의 양자 관련 보장 범위를 구분",
+    "conditions": "같은 논문의 기호적·계산적 정리를 보장 범위 축으로 비교. 공격자 모델이 다르므로 강약·성능 순위를 매기지 않음."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 우리 팀은 어떤 경우에 검토할 가치가 있을까",
+    "excerpt": "표의 기준은 **논문의 결과를 상황별 질문으로 재구성한 편집 제안**입니다. 비용 대비 효과를 실측한 순위표는 아닙니다. 당장 구매할 제품이나 공개 API의 가격을 이 연구에서 도출할 수 없으며, 각 팀의 명세 검토 능력도 다릅니다. 비교 가능한 대상 코드와 승인할 사람이 없으면, 먼저 필요한 보장을 문장으로 쓰고 가정을 드러내는 단계에서 시작하는 편이 합리적입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "대상과 명세 검토 능력을 기준으로 적용 검토와 보류 조건을 제시",
+    "conditions": "버전·빌드·명세·외부 계약과 검토자를 특정할 수 있다는 조건의 편집 제안. 비용 효과 실측이나 제품 도입 성공 사례 아님."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 49,
+  "confirmed": 49,
+  "removed": [],
+  "note": "2026-11-10T23:02 UTC 별도 사실 검증: 웹 도구는 두 URL 모두 접근 오류였으나 동일 URL을 urllib timeout=20으로 각 1회 직접 재조회하여 HTTP 200·최종 URL·시각·본문을 source-evidence/recheck-official.json 및 recheck-independent.json에 저장했다. 논문 표제·Abstract·§1–7·§9 및 Figure 1 설명과 독립 기사 본문을 주장별로 대조했다. 49개는 중복을 합친 외부 사실이며 자체 작업 설명과 편집 계산·제안은 집계에서 제외했다. 재현 실행·독립 보안 감사는 하지 않았다. 가짜 사용 경험은 발견되지 않았다. 집계 조건·전체 신뢰 기반 설명을 보완하고 FAQ의 반복 요약을 상황별 질문으로 교체했다. 독자 가치 3종의 발췌·출처·조건·한계를 본문과 대조했으며 주장 불일치나 근거 부족으로 삭제한 외부 사실은 없다. 승인·발행 작업은 수행하지 않았다."
+ }
+}
