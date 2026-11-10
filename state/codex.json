@@ -18,24 +18,34 @@
   "20261111:daily:AI 도구": {
    "at": "2026-11-11T07:23:50+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: 이전 제외 후보인 IBM Imagine Enterprise·Adobe Firefly와 다른 Claude Sheets·Whiteboards·Interactive Connectors 발표를 candidate.json에 선정 기록했다. 대표 공식 원문 https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors 및 독립 보도 https://techcrunch.co",
+   "failure_kind": "source_unavailable",
+   "finished_at": "2026-11-11T07:36:21+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🧩 IBM·Microsoft Imagine Enterprise, 우리 회사는 도입을 어디서 시작할까",
+     "topic": "IBM and Microsoft Announce a New AI Agent Platform Designed for Industry-Specific Transformation",
+     "source_url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation",
+     "reason": "대표 공식 발표 S1을 웹 도구로 열지 못했고 동일 URL 20초 제한 HTTP 재조회에서도 403이 반환됨. S2·S3에서 확인한 사실만 남겼으나 핵심 원문 재검증은 미완료. 도입 옵션 비교 삭제 후 독자 가치 두 종류 기준도 미충족하여 승인 불가."
+    },
+    {
+     "title": "🎨 Adobe Firefly 확장, 한 번의 편집과 반복 제작 중 어디에 맞을까",
+     "topic": "Adobe MAX 2026: Firefly AI creative studio 확장과 Creative Agent·Firefly Graph 발표",
+     "source_url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands",
+     "reason": "공식 Adobe 발표의 외부 사실 24개는 재조회 본문으로 확인했으나, 필수 독립 보도 원문은 웹 도구 접근 실패 후 직접 재조회에서도 HTTP 403으로 실패했다. 최신 이슈화 요건을 재검증할 수 없어 승인 보류. 후보 교체는 수행하지 않음."
+    },
+    {
+     "title": "🧩 Claude Sheets·Whiteboards, 회의 아이디어를 업무 문서로 옮길 때 확인할 조건",
+     "topic": "More ways to work with Claude: Sheets, Whiteboards, and Interactive Connectors",
+     "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+     "reason": "이전 제외 후보인 IBM Imagine Enterprise·Adobe Firefly와 다른 Claude Sheets·Whiteboards·Interactive Connectors 발표를 candidate.json에 선정 기록했다. 대표 공식 원문 https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors 및 독립 보도 https://techcrunch.com/2026/11/10/anthro"
+    }
+   ],
+   "next_retry_at": "2026-11-11T08:06:21+09:00"
   }
  },
- "lease": {
-  "owner": "42914113303-1",
-  "at": "2026-11-11T07:23:50+09:00",
-  "expires": "2026-11-11T09:23:50+09:00",
-  "task": {
-   "day": "20261111",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "42914113303-1",
-   "at": "2026-11-11T07:23:50+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",

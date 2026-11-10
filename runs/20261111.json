@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-11-11T07:23:50+09:00",
   "first_taken_over": "2026-11-11T07:16:06+09:00",
   "reason": "실행 기록 없음",
-  "last_result": "done"
+  "last_result": "skipped"
  },
- "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+ "note": "다른 주제 재작성 2회 후 보류: 이전 제외 후보인 IBM Imagine Enterprise·Adobe Firefly와 다른 Claude Sheets·Whiteboards·Interactive Connectors 발표를 candidate.json에 선정 기록했다. 대표 공식 원문 https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors 및 독립 보도 https://techcrunch.co"
 }
