@@ -1,0 +1,384 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "정정 신고일은 2026-11-03이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2026년 11월 03일",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C2",
+   "claim": "정정표는 수익성·매출채권·최근 재무정보·비교기업·평가 산출·평가 일정을 보완한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "수익성 관련 위험",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C3",
+   "claim": "정정요구·명령 관련 여부는 부로 표시돼 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "정정요구ㆍ명령관련 여부",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C4",
+   "claim": "3분기 하락을 고려하면서 반기 연환산 평가를 유지했다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "기존 반기 연환산 기준을 유지",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C5",
+   "claim": "반기 연결 매출 145,031백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "145,031",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C6",
+   "claim": "반기 연결 영업이익 11,445백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "11,445",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C7",
+   "claim": "반기 연결 영업이익률 7.89%이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "7.89%",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C8",
+   "claim": "반기 재무제표는 감사받았다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "동 반기재무제표는 지정감사인인 삼덕회계법인의 감사를 받았습니다",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C9",
+   "claim": "3분기 연결 매출 66,850백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "66,850",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C10",
+   "claim": "3분기 연결 영업이익 2,689백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2,689",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C11",
+   "claim": "3분기 연결 영업이익률 4.02%이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "4.02%",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C12",
+   "claim": "3분기는 7~9월이며 미감사·미검토 가결산이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "감사 또는 검토를 받지 않은 회사 자체 결산",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C13",
+   "claim": "가결산 수치는 확정 실적과 달라질 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "향후 확정 실적과 차이가 발생할 수 있습니다",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C14",
+   "claim": "반기 분기 평균 대비 연결 매출 약 7.8%, 영업이익 약 53.0% 감소한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "53.0%",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C15",
+   "claim": "별도 3분기 매출은 45,562백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "45,562",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C16",
+   "claim": "별도 3분기 영업이익은 112백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "112",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C17",
+   "claim": "별도 3분기 영업이익률은 0.25%이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "0.25%",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C18",
+   "claim": "별도 9월 매출 14,081백만원, 영업손실 562백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "영업손실은 약 562백만원",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C19",
+   "claim": "2025년 연결 수익성 개선은 지배기업 기여가 컸다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "지배기업인 ㈜씨앤엠의 수익성 개선에 주로 기인",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C20",
+   "claim": "최대 매출처 분기별 단가는 전분기 평균환율을 반영한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "당분기 판매단가는 전분기 평균 원/유로 환율을 기준",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C21",
+   "claim": "기준환율 상승 시 유로 단가 인하, 하락 시 인상 구조이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "기준환율이 하락할 경우 유로화 표시 판매단가가 인상",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C22",
+   "claim": "3분기 단가기준 1,745.55원/유로, 실제평균 1,630.83원/유로이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "1,745.55",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C23",
+   "claim": "단가조정과 실제 환율 하락이 함께 매출에 부담을 주었다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "매출액에 이중으로 부정적인 영향",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C24",
+   "claim": "동일 원화목표가격과 환율 전액반영 가정 시 4분기 유로단가 약 7.0% 인상 효과이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "약 7.0% 인상되는 효과",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C25",
+   "claim": "10월 평균 1,497.12원/유로는 4분기 단가 기준 1,630.83원/유로보다 약 8.2% 낮다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2026년 10월 평균환율은 1,497.12원/€으로 4분기 판매단가 산정 기준환율인 1,630.83원/€ 대비 약 8.2% 낮은 수준",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지.",
+   "calculation": "(1497.12 / 1630.83 - 1) × 100 = -8.198893%"
+  },
+  {
+   "id": "C26",
+   "claim": "반기 연환산 평가 순이익은 18,990백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "18,990",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C27",
+   "claim": "2026년 2분기 말 기준 LTM 당기순이익은 17,283백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "17,283",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C28",
+   "claim": "연환산은 하반기 상반기 동일 수준 가정이며 실제 연간 이익은 달라질 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "하반기 실적이 상반기와 동일한 수준으로 실현된다는 가정",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C29",
+   "claim": "주관사는 현행 가격·원재료 환경, 반기 매출 편차, 비교기업 평가기간 일치를 유지 이유로 제시했다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "비교대상회사 간 평가기간 및 원재료 가격 환경을 일치",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C30",
+   "claim": "원문은 수익성 하락의 일시성 및 반기 수준 회복을 보장하지 않는다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "회복될 것을 보장하는 것은 아닙니다",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C31",
+   "claim": "환율 추가하락·원재료 상승·발주 회복 지연 시 부진 지속 위험이 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "수익성 부진이 지속될 가능성",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C32",
+   "claim": "데이터센터·대형공조 EC모터 시설 1,900백만원, 연구개발 1,600백만원 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "1,900",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C33",
+   "claim": "로봇 관절 액추에이터 시설 4,800백만원, 연구개발 2,200백만원 계획이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "4,800",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C34",
+   "claim": "공모가 하단 10,000원 기준 순수입금은 28,500백만원이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "공모 순수입금은 28,500백만원",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C35",
+   "claim": "연구개발·시설투자 사용기간은 2027~2029년이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "2027년부터 2029년까지",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C36",
+   "claim": "로봇·방산은 공시 기준 매출이 없는 개발 단계이다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "매출이 발생하지 않은 개발 단계",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C37",
+   "claim": "자금계획은 실제 공모가·비용·경영환경에 따라 달라질 수 있다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "추후 확정 공모가액 및 실제 비용 발생 여부에 따라 변동",
+   "action": "재조회한 공시 본문의 정정 후 표·설명·주석과 대조하여 유지."
+  },
+  {
+   "id": "C38",
+   "claim": "반기 분기평균 및 감소율 계산",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "result": [
+    72515.5,
+    5722.5,
+    -7.812812433203931,
+    -53.010048055919626
+   ],
+   "action": "공시 입력 수치를 확인하고 독립 재계산. 본문에 단위·분모·고정 조건·한계를 유지."
+  },
+  {
+   "id": "C39",
+   "claim": "유로화 단가 조건부 변화율",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "result": [
+    7.034454848144822
+   ],
+   "action": "공시 입력 수치를 확인하고 독립 재계산. 본문에 단위·분모·고정 조건·한계를 유지."
+  },
+  {
+   "id": "C40",
+   "claim": "평가 이익 차이 및 LTM 대비 비율",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "result": [
+    1707,
+    9.876757507377192
+   ],
+   "action": "공시 입력 수치를 확인하고 독립 재계산. 본문에 단위·분모·고정 조건·한계를 유지."
+  },
+  {
+   "id": "C41",
+   "claim": "CEO경제신문 기사는 2026-11-10 입력됐고 씨앤엠을 그 주 청약 기업으로 다루며 11월 3일 정정 신고서를 연결한다.",
+   "url": "https://www.ceoeconomy.com/news/articleView.html?idxno=23366",
+   "confirmed": true,
+   "evidence": "입력 2026.11.10 16:22; 씨앤엠; rcpNo=20261103000363",
+   "action": "이번 별도 검증에서 누락된 주장을 추가 추출하여 실제 재조회 본문과 대조. 유지."
+  },
+  {
+   "id": "C42",
+   "claim": "공시의 연결 표는 기업집단, 별도 표는 지배기업의 손익을 구분해 제시한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "최근 2개년도 및 반기 이후 매출 및 손익현황(별도기준), (연결기준)",
+   "action": "이번 별도 검증에서 누락된 주장을 추가 추출하여 실제 재조회 본문과 대조. 유지."
+  },
+  {
+   "id": "C43",
+   "claim": "공모자금 사용계획에는 데이터센터 냉각용 EC 팬모터와 로봇용 통합 관절 액추에이터 사업이 포함된다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=21&offset=1707444&length=29547&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "데이터센터 냉각용 EC 팬모터; 로봇용 통합 관절 액추에이터",
+   "action": "이번 별도 검증에서 누락된 주장을 추가 추출하여 실제 재조회 본문과 대조. 유지."
+  },
+  {
+   "id": "C44",
+   "claim": "공시는 자동차용 모터 사업의 매출·수익성 및 환율·원가 영향을 설명한다.",
+   "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd",
+   "confirmed": true,
+   "evidence": "지배기업의 자동차용 모터 매출액; 환율연동 가격제; 원재료 가격 상승",
+   "action": "이번 별도 검증에서 누락된 주장을 추가 추출하여 실제 재조회 본문과 대조. 유지."
+  }
+ ],
+ "note": "별도 사실 검증에서 S1~S4 URL을 다시 열었으며 웹 도구 조회 실패 후 동일 공개 URL을 urllib timeout=20으로 각 1회 조회했다. 모두 HTTP 200이고 실제 공시·기사 본문을 읽었다. 최종 URL·조회 시각·본문은 source-evidence/recheck-S1~S4.json에 저장했다. 기존 40개 외부 주장·계산을 재검증하고 누락 4개를 추가했다. 제목·요약·표의 동일 주장은 통합 집계했다. 기존 발행 이력 언급 2곳은 이번 자료만으로 확인할 수 없는 작업 이력이라 삭제했으며 외부 사실 개수에 넣지 않았다. FAQ의 수치 반복을 제거하고 공시 읽기 방법으로 수정했다. 직접 사용·실측 경험을 주장하는 문장은 없었다. S3의 보도일·보도 내용 자체는 실제 읽은 해당 기사로 검증했으며 기업 재무 사실은 공식 공시로만 판단했다. 이 검증은 발행 승인이나 모든 기존 게시물과의 중복 검증을 뜻하지 않는다.",
+ "editorial_review": {
+  "passed": true,
+  "kinds": [
+   "comparison",
+   "calculation",
+   "decision_guide"
+  ],
+  "note": "서로 다른 세 소제목의 연속 발췌가 실제 본문과 일치함을 확인했다. 기간 평균 비교·이익 기준 민감도·질문별 후속 확인표의 추가 판단 도움을 확인했다. 공시 설명 자체인 7% 단가 효과는 독창적 계산 기여로 세지 않았다. comparison과 calculation의 입력값·식·비교 범위·한계를 본문 및 research.editorial에 명시했다."
+ },
+ "eligibility": {
+  "category": "AI 공모주 분석",
+  "window_start": "2026-10-28",
+  "official_published": "2026-11-03",
+  "independent_published": "2026-11-10",
+  "note": "기간 조건은 공시 2026-11-03과 독립 기사 2026-11-10으로 확인. 기존 발행 글 전체 본문은 이번 세션에서 조회하지 않았으므로 중복 없음으로 단정하지 않음."
+ }
+}
