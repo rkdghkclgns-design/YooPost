@@ -89,24 +89,28 @@
   "20261111:daily:AI 보안": {
    "at": "2026-11-11T07:54:04+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-11-11T08:03:50+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🔒 Fireworks AI 침해 범위 확대, Notion AI 대화까지: 통지받은 팀의 점검 순서",
+     "topic": "Fireworks AI 2026-11-09 보안 공지 업데이트와 Notion AI Insights 대화 영향",
+     "source_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+     "reason": "2026-11-09 Fireworks AI 보안 공지 업데이트를 선정하고 대표 공식 원문 본문은 웹 도구로 읽었다. 그러나 핵심 후속 근거인 Notion 공식 사고 공지와 독립 이슈화 근거인 BleepingComputer 보도는 웹 도구에서 Internal Error로 열리지 않았다. 정책에 따라 각 공개 URL을 urllib로 20초 제한·인증 없이 한 번 직접 조회했으나 두 URL 모두 HTTP 403으로 본문을 확보하지 못했다. Notion AI 대화 영향 및 독립 보도를 검색 요약만으로 검증할 수 없어 작성·사실 검증을 완료"
+    },
+    {
+     "title": "🔒 NEAR AI 침해, 기밀 추론 요청도 관찰 가능: TEE를 어디까지 믿어야 할까",
+     "topic": "NEAR AI Security Incident Report: SGLang Vulnerability (2026-11-09)",
+     "source_url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
+     "reason": "기존 제외 후보 Fireworks AI와 다른 NEAR AI의 2026-11-09 SGLang 침해 보고서를 선정했다. 대표 공식 URL은 웹 도구에서 not accessible 오류였으나 정책에 따른 20초 제한 urllib 직접 조회에서 HTTP 200으로 발표일과 사고 보고서 본문을 확보해 읽었다. 다만 기간 내 독립 이슈화 근거인 Crypto.news의 2026-11-10 보도는 웹 도구 Internal Error 후 동일 URL 직접 조회에서도 HTTP 403(error code: 1010)으로 본문을 읽지 못했다. 검색 "
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "42918658242-1",
-  "at": "2026-11-11T07:54:04+09:00",
-  "expires": "2026-11-11T09:54:04+09:00",
-  "task": {
-   "day": "20261111",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 보안",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "42918658242-1",
-   "at": "2026-11-11T07:54:04+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
