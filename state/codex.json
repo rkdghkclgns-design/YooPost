@@ -89,9 +89,9 @@
   "20261111:daily:AI 보안": {
    "at": "2026-11-11T08:35:43+09:00",
    "count": 2,
-   "status": "writing",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
+   "status": "skipped",
+   "note": "다른 주제 재작성 2회 후 보류: 기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지",
+   "failure_kind": "source_unavailable",
    "rejected_candidates": [
     {
      "title": "🔒 Fireworks AI 침해 범위 확대, Notion AI 대화까지: 통지받은 팀의 점검 순서",
@@ -104,13 +104,39 @@
      "topic": "NEAR AI Security Incident Report: SGLang Vulnerability (2026-11-09)",
      "source_url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
      "reason": "기존 제외 후보 Fireworks AI와 다른 NEAR AI의 2026-11-09 SGLang 침해 보고서를 선정했다. 대표 공식 URL은 웹 도구에서 not accessible 오류였으나 정책에 따른 20초 제한 urllib 직접 조회에서 HTTP 200으로 발표일과 사고 보고서 본문을 확보해 읽었다. 다만 기간 내 독립 이슈화 근거인 Crypto.news의 2026-11-10 보도는 웹 도구 Internal Error 후 동일 URL 직접 조회에서도 HTTP 403(error code: 1010)으로 본문을 읽지 못했다. 검색 "
+    },
+    {
+     "title": "🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까",
+     "topic": "AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level",
+     "source_url": "https://google-deepmind.github.io/code-verification/",
+     "reason": "겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html"
+    },
+    {
+     "title": "🔒 ARTEX 운영 콘솔 분석: 자율 공격 관찰에서 방어팀이 구분할 증거",
+     "topic": "Hacking on Autopilot: Inside ARTEX Cybercrime Campaigns (Check Point Research, 2026-11-05)",
+     "source_url": "https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/",
+     "reason": "2026-11-05 Check Point Research의 ARTEX 운영 콘솔 분석을 새 후보로 선정했다. 대표 공식 원문은 웹 도구로 발표일과 본문을 읽었고 직접 조회에서도 HTTP 200 본문을 확보했다. 다만 기간 내 독립 보도인 AI Security Wire(2026-11-09)는 웹 도구에서 Internal Error/not accessible이었으며, 동일 공개 URL을 인증·쿠키·우회 없이 urllib로 20초 제한 1회 조회한 결과 HTTP 403 및 Just a moment 접속 확인 화면이 반환됐다. 이는 원문 "
+    },
+    {
+     "title": "🔒 NIST AI 보안 분류 초안: 에이전트 권한과 외부 데이터를 어디서 통제할까",
+     "topic": "NIST SP 2400-102e2026 initial public draft: Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
+     "source_url": "https://csrc.nist.gov/pubs/sp/2400-102/e2026/ipd",
+     "reason": "기존 제외 후보 및 발행 소식과 다른 NIST SP 2400-102e2026 공개 초안을 선정했다. 공식 소개 페이지를 직접 열어 발표일 2026-11-09, 의견 마감 2026-12-18 및 에이전트 공격 분류가 이번 판의 초점임을 확인했다. 그러나 핵심 공식 PDF https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.2400-102e2026.ipd.pdf 와 독립 매체 https://harnessbrief.com/editions/2026-11-10/ 는 웹 조회 도구에서"
+    },
+    {
+     "title": "🔒 BOSSAI의 12개 에이전트: 방어팀은 자동화보다 무엇을 먼저 확인할까",
+     "topic": "BOSSAI: Inside the AI attack mesh that targeted Taiwan’s emergency services",
+     "source_url": "https://www.acronis.com/en/tru/posts/bossai-inside-the-ai-attack-mesh-that-targeted-taiwans-emergency-services/",
+     "reason": "기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지 않는다. policy.md의 작성"
     }
    ],
    "last_notified": {
     "result": "done",
     "kind": "result_invalid",
     "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
+   },
+   "finished_at": "2026-11-11T08:39:44+09:00",
+   "next_retry_at": "2026-11-11T09:39:44+09:00"
   },
   "20261111:daily:AI 인사이트": {
    "at": "2026-11-11T08:04:21+09:00",
@@ -150,21 +176,7 @@
    }
   }
  },
- "lease": {
-  "owner": "42924622793-1",
-  "at": "2026-11-11T08:35:43+09:00",
-  "expires": "2026-11-11T10:35:43+09:00",
-  "task": {
-   "day": "20261111",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 보안",
-   "topic": "",
-   "reason": "전송 실패(재시도 중단): 겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html",
-   "owner": "42924622793-1",
-   "at": "2026-11-11T08:35:43+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
