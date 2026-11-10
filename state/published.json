@@ -6327,5 +6327,21 @@
    "https://oossa.com/en/google-opens-gemini-4-carbon-to-paying-developers-and-businesses"
   ],
   "draft_id": "20261111_072320_1"
+ },
+ {
+  "date": "2026-11-11",
+  "title": "🧊 Frontier3DBench: 3D 에이전트의 66.02점, 실제 작업을 맡겨도 될까",
+  "topic": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.09017",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/frontier3dbench-3d-6602.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.09017",
+   "https://arxiv.org/html/2611.09017v1",
+   "https://vectorwire.ai/research/2026-11-09"
+  ],
+  "draft_id": "20261111_074515_3"
  }
 ]
