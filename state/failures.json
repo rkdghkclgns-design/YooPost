@@ -1,1 +1,9 @@
-{}
+{
+ "20261111_080348_5": {
+  "hash": "4cc4c4ca8a09ffc5",
+  "reason": "겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html",
+  "attempts": 1,
+  "permanent": true,
+  "excluded": true
+ }
+}

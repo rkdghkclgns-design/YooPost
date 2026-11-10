@@ -6359,5 +6359,20 @@
    "https://thenextweb.com/news/adobe-disney-ai-alliance-firefly-foundry"
   ],
   "draft_id": "20261111_075330_4"
+ },
+ {
+  "date": "2026-11-11",
+  "title": "🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까",
+  "topic": "AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level",
+  "category": "AI 보안",
+  "source_url": "https://google-deepmind.github.io/code-verification/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html"
+  },
+  "sources": [
+   "https://google-deepmind.github.io/code-verification/",
+   "https://www.theregister.com/ai-and-ml/2026/11/10/google-deepmind-melds-humans-and-ai-agents-to-vet-signals-secure-messaging-techniques/5308625"
+  ],
+  "draft_id": "20261111_080348_5"
  }
 ]
