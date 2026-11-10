@@ -79,7 +79,12 @@
      "reason": "선정 후보는 Adobe·Google의 2026-11-10 제휴 확대 발표다. 공식 Adobe·Google 원문은 웹 도구에서 본문을 열지 못했으나 동일 URL의 HTTP 재조회에서 각각 200 응답을 받아 발표 본문과 날짜를 직접 읽었다. 다만 필수 조건인 기간 내 독립 매체의 실제 본문 확인을 완료하지 못했다. MarketScreener의 Dow Jones 기사와 The Next Web 기사는 웹 도구 조회 실패 후 동일 공개 URL을 각각 한 번 HTTP 조회했으나 모두 403으로 차단되었다. 검색 요약을 독립 보도의 본문 열람"
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
