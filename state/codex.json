@@ -91,5 +91,12 @@
    "reason": "사용자의 다른 원고 생성 지시. 실패한 AI 도구 원고의 대체 주제 작성."
   }
  },
- "service_wait": {}
+ "service_wait": {
+  "failure_kind": "usage_limit",
+  "until": "2026-11-10T15:37:35+09:00",
+  "source_run_id": 42743963101,
+  "source_job_id": 129591603682,
+  "source": "scheduled_probe",
+  "finished_at": "2026-11-10T11:37:35+09:00"
+ }
 }
