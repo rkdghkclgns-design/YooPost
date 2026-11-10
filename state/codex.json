@@ -107,7 +107,12 @@
      "reason": "기존 제외 후보 Fireworks AI와 다른 NEAR AI의 2026-11-09 SGLang 침해 보고서를 선정했다. 대표 공식 URL은 웹 도구에서 not accessible 오류였으나 정책에 따른 20초 제한 urllib 직접 조회에서 HTTP 200으로 발표일과 사고 보고서 본문을 확보해 읽었다. 다만 기간 내 독립 이슈화 근거인 Crypto.news의 2026-11-10 보도는 웹 도구 Internal Error 후 동일 URL 직접 조회에서도 HTTP 403(error code: 1010)으로 본문을 읽지 못했다. 검색 "
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
