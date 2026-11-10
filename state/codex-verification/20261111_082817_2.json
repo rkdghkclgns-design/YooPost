@@ -1,0 +1,236 @@
+{
+ "claims": [
+  {
+   "claim": "Spacefast는 Automattic이 공개한 서비스다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 본문 21행"
+  },
+  {
+   "claim": "공식 발표일은 2026년 11월 9일이다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 날짜 14행"
+  },
+  {
+   "claim": "기존 AI·에이전트와 연결해 앱·웹사이트를 게시하고 관리한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "18행 (이번 원문 재조회 대조), 25~26행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "호스팅을 제공한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "29행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "SQL 데이터베이스를 제공한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "29행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "내장 앱 인증은 예정 기능으로 소개된다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "29행 (이번 원문 재조회 대조) coming soon"
+  },
+  {
+   "claim": "비공개가 기본값이다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "31행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "비밀번호 방식의 공유를 공식 발표에서 소개한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 31행"
+  },
+  {
+   "claim": "초대 방식의 공유를 공식 발표에서 소개한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 31행"
+  },
+  {
+   "claim": "공유 링크 방식의 공유를 공식 발표에서 소개한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 31행"
+  },
+  {
+   "claim": "웹 전체 공개 방식의 공유를 공식 발표에서 소개한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 31행"
+  },
+  {
+   "claim": "게시마다 새 버전이 생긴다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "30행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "버전별 고정 URL이 제공된다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "30행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "되돌리기 기능이 소개된다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "30행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "민감한 에이전트 작업에는 승인 확인이 소개된다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "33행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "롤백을 민감한 에이전트 작업의 승인 확인 예로 든다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 33행"
+  },
+  {
+   "claim": "DNS 변경을 민감한 에이전트 작업의 승인 확인 예로 든다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "공식 발표 33행"
+  },
+  {
+   "claim": "지원 프레임워크 경로를 통한 앱 게시가 안내된다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "114행 (이번 원문 재조회 대조) 및 407~409행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "실행 환경 기능은 배포 경로에 따라 달라진다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "114행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "보관된 버전의 파일을 내려받을 수 있다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "417~419행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "정적 사이트는 대체로 다른 호스트로 그대로 이동할 수 있다고 안내한다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "419행 (이번 원문 재조회 대조) usually 한정 유지"
+  },
+  {
+   "claim": "Spacefast 실행 환경을 쓰는 앱의 이전에는 코드 변경이 필요하다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "419행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "앱 데이터는 별도로 내보낸다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "419행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "Spacefast는 인프라에 비용을 부과한다고 설명한다.",
+   "url": "https://automattic.com/2026/11/09/meet-spacefast/",
+   "confirmed": true,
+   "action": "원문 재조회로 확인하여 유지. 공식 설명의 범위이며 실측 보증은 아님.",
+   "evidence": "37행 (이번 원문 재조회 대조)"
+  },
+  {
+   "claim": "제품 안내의 지원 경로에는 Next.js·TanStack Start·Astro·PHP가 기재되어 있다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 안내 114행"
+  },
+  {
+   "claim": "제품 FAQ의 지원 앱 경로에는 Next.js·Astro·TanStack Start가 열거되며 PHP는 열거되지 않는다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 409행"
+  },
+  {
+   "claim": "소유권 미확보 Space는 통상 생성 또는 파일 변경을 수반하는 마지막 게시 뒤 33시간 20분에 만료되며 생성 후 30일 상한이 적용된다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 422행"
+  },
+  {
+   "claim": "Space의 소유권을 확보하면 익명 사용 만료 조건이 제거된다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 422행"
+  },
+  {
+   "claim": "되돌리기는 이력에 남아 있는 버전에 한하며 보관 버전에는 요금제 이력 정책이 적용된다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 412·422행"
+  },
+  {
+   "claim": "새 Space의 URL만으로 접근 권한이 생기지 않는다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 416행"
+  },
+  {
+   "claim": "검색 색인은 별도 설정이다.",
+   "url": "https://spacefast.com/",
+   "confirmed": true,
+   "action": "공개·복구 판단에 필요한 조건으로 본문 또는 FAQ에 추가.",
+   "evidence": "제품 FAQ 416행"
+  }
+ ],
+ "note": "이번 별도 사실 검증에서 공식 발표·제품 안내와 TechCrunch 원문을 다시 열어 읽었다. 공식 발표와 독립 보도에 표시된 날짜는 모두 2026-11-09로 brief의 2026-11-08 이후 조건을 충족한다. S2는 발행일 없는 상시 안내이며 최신성 근거가 아니다. 외부 사실은 중복 문장 대신 구별되는 주장 단위로 집계했고 가상 예시·제안·자체 작업 설명은 제외했다. 제품 실행·계정 연결·배포·성능 측정은 하지 않았다. 새 주제 선정·승인·발행·알림도 하지 않았다.",
+ "editorial_review": {
+  "passed": true,
+  "findings": [
+   "비교·원문 종합·상황별 선택 지침 3종류가 서로 다른 소제목에 존재하며 발췌는 실제 본문과 일치.",
+   "두 표의 목적은 기능 상태 대조와 가정별 진행·보류 판단으로 구별됨.",
+   "계산 기여 없음. 성능 우열·실측 경험 주장 없음. 지원 경로·이력 보관·만료 조건의 한계를 명시."
+  ]
+ },
+ "format_review": {
+  "section_text_characters_excluding_spaces_code_links": 5030,
+  "sections": 7,
+  "tables": 2,
+  "faq": 4
+ }
+}
