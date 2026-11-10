@@ -6408,5 +6408,21 @@
    "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261103000363&dcmNo=11640036&eleId=1&offset=843&length=174154&dtd=dart4.xsd"
   ],
   "draft_id": "20261111_082123_7"
+ },
+ {
+  "date": "2026-11-11",
+  "title": "🧩 Spacefast, AI로 만든 앱을 공개하기 전에 무엇을 확인할까",
+  "topic": "Meet Spacefast, Everything Your Agents Need to Bring Your Ideas to Life",
+  "category": "AI 도구",
+  "source_url": "https://automattic.com/2026/11/09/meet-spacefast/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/spacefast-ai.html"
+  },
+  "sources": [
+   "https://automattic.com/2026/11/09/meet-spacefast/",
+   "https://spacefast.com/",
+   "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/"
+  ],
+  "draft_id": "20261111_082817_2"
  }
 ]
