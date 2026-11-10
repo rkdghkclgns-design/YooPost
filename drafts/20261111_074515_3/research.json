@@ -1,0 +1,85 @@
+{
+ "topic": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds",
+ "source_url": "https://arxiv.org/abs/2611.09017",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds — Abstract and submission history",
+   "url": "https://arxiv.org/abs/2611.09017",
+   "publisher": "Xinjie Lin et al. / arXiv",
+   "published": "2026-11-06",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds (v1 full text)",
+   "url": "https://arxiv.org/html/2611.09017v1",
+   "publisher": "Xinjie Lin et al. / arXiv",
+   "published": "2026-11-06",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AI Research Papers, November 9, 2026 — Vector Wire",
+   "url": "https://vectorwire.ai/research/2026-11-09",
+   "publisher": "Vector Wire",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.09017v1/Figures/task_formulation.png",
+   "page_url": "https://arxiv.org/html/2611.09017v1",
+   "caption": "논문 그림 2: 입력 지시·참고 자료에서 Blender 및 Unreal Engine 결과물로 이어지는 과제 구성",
+   "credit": "Xinjie Lin et al., Frontier3DBench, Figure 2 (CC BY 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "3D 제작 에이전트의 종합 점수 66.02점을 보고 실제 복원·편집·상호작용 업무를 맡겨도 될까?",
+  "limitations": "직접 실행·재현 없음. 모델과 하네스 조합 비교이며 생성·복원은 입력과 채점식이 다름. 사람 일치도는 참고 기반 L1/L2의 점수 간격을 둔 후보 표본에 한정되며 L3 동작 검증이 아님. 영어 지시 실험으로 한국어 성능 미확인. 비용은 2026-10-30 단가에 기초한 추정으로 총원가가 아니고 일부 기록은 하한. 공개 반올림 수치와 명목 계수 계산이며 통계적 유의성·도입 효과를 입증하지 않음. 독립 소개는 이슈화 근거이며 독립 재현 근거가 아님.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 가중치를 풀어 보면: 월드 15개가 차지하는 몫",
+    "excerpt": "각 과제가 받는 종합 가중치도 계산할 수 있습니다. 물체 하나는 0.30÷65, 월드 하나는 0.40÷15입니다. 두 비율을 나누면 **월드 과제 하나의 명목 가중치는 물체 과제 하나의 약 5.78배**입니다. 이는 월드 제작이 그만큼 어렵거나 중요하다는 객관적 단위가 아니라 평가 설계의 결과입니다. 내 업무가 주로 물체 제작이라면 종합 순위보다 L1과 그 안의 해당 과제 유형을 먼저 보는 이유가 됩니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "단계별 평균의 가중합과 과제당 명목 비중을 직접 계산해 종합 순위의 업무 적합성 한계를 설명합니다.",
+    "conditions": "공식 v1의 동일 모델·하네스 표와 단계별 평균을 사용. 반올림 표시값 기반 산술.",
+    "limitations": "명목 가중치로 실제 중요도·성공률을 뜻하지 않으며 다른 항목의 간접 영향은 포함하지 않음."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 그럴듯한 생성과 정확한 복원을 나눠 맡기기",
+    "excerpt": "제안드리는 배정 원칙은 **허용되는 자유도부터 정하는 것**입니다. 시안처럼 형태를 여러 방식으로 표현해도 되는 일과, 특정 제품의 형상이나 공간 배치를 보존해야 하는 일을 나누세요. 후자라면 결과 이미지가 보기 좋은지와 별개로 누락된 부품, 상대 크기, 위치를 확인할 검수 항목이 필요합니다. 이 표는 논문의 입력·평가 구분을 업무 검수로 옮긴 제안이며, 실제 고객 과제로 효과를 시험한 결과는 아닙니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "입력 자유도와 결과물 종류에 따라 우선할 유형과 검수 기준을 구분합니다.",
+    "conditions": "과제 입력과 결과물 종류별 선택 제안. 생성·복원의 점수 차이를 동등 난도나 업무 성과 차이로 해석하지 않음.",
+    "limitations": "실제 고객 과제에서 검수 효과를 시험하지 않았으며 특정 모델 도입 성과를 보장하지 않음."
+   },
+   {
+    "kind": "calculation",
+    "section": "🚪 문은 열리는데 활동은 끝내지 못하는 이유",
+    "excerpt": "여기에는 점수 구조의 한계도 있습니다. L3 점수에서 시각 품질은 60%, 과제 충실도는 20%, 공간 배치는 5%, 상호작용 정확성은 15%입니다. 그리고 상호작용 정확성 안에서 상태·워크플로 비중은 35%입니다. 산식을 곱하면 **상태·워크플로 항목의 종합 점수상 명목 비중은 0.40×0.15×0.35 = 2.1%**입니다. 이는 구성 요소의 계수 계산이며 다른 시각·공간 항목이 사용성에 주는 영향까지 없다고 주장하는 값은 아닙니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "상태·워크플로의 중첩 가중치 2.1%를 계산해 연속 행동의 별도 합격 조건이 필요한 이유를 제시합니다.",
+    "conditions": "공식 v1의 동일 모델·하네스 표와 단계별 평균을 사용. 반올림 표시값 기반 산술.",
+    "limitations": "명목 가중치로 실제 중요도·성공률을 뜻하지 않으며 다른 항목의 간접 영향은 포함하지 않음."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "note": "2026-11-10 UTC 별도 사실 검증에서 공식 초록·논문 전체 및 독립 소개를 다시 읽음. source-evidence/session-{abstract,paper,coverage}.json에 최종 URL·HTTP 200·조회 시각·본문 저장. 웹 도구에서 소개 페이지를 읽지 못해 정책에 따라 requests로 20초 제한 1회 조회했고 실제 본문과 datePublished 2026-11-09 확인. 검증표는 반복된 주장을 한 번만 집계하며 기존 C39는 C38과 중복되어 통합. 외부 사실과 출처 기반 계산만 집계; 직접 실행·재현·사람 검토를 수행했다는 주장은 없음. 제출일 표현 명확화, 모델 가중치의 모호한 표현 수정, 가격 기준일·사람 표본 선정 조건·영어 입력 조건 보완. 반복 FAQ를 방법론의 추가 질문으로 교체. 최신성은 2026-11-06 제출로 brief의 2026-11-04 이후 조건 충족. 외부 발행·Slack·git 접속 없음. 주제 교체·발행 승인 없음. 검증 불가 외부 사실의 삭제는 없으며 문구 수정 및 반복 제거를 수행."
+ }
+}
