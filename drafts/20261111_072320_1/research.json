@@ -1,0 +1,93 @@
+{
+ "topic": "Gemini 4 Carbon 2026-11-10 일반 공개 — 유료 개발자·기업·Ultra 접근 확대",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gemini 4 Carbon is now available",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "publisher": "Google",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Gemini 4 Carbon is now available for developers.",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+   "publisher": "Google",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Gemini 4 Carbon - Model Card",
+   "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+   "publisher": "Google DeepMind",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Google opens Gemini 4 Carbon to paying developers and businesses",
+   "url": "https://oossa.com/en/google-opens-gemini-4-carbon-to-paying-developers-and-businesses",
+   "publisher": "Oossa",
+   "published": "2026-11-10",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_misalignment.width-1200.format-webp.webp",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "caption": "Google의 일반 공개 발표에 실린 모델 생애주기 전반의 비정렬(misalignment) 측정 도표. 공급자 평가이며 무오류 보장이 아닙니다.",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Carbon 일반 공개 후 내 계정과 업무에서 무엇을 먼저 확인하고 어떤 작업부터 비교해야 할까?",
+  "limitations": "모델·API·/swarm을 직접 실행하지 않았다. 계산은 입력 10만·출력 2만 토큰 및 동일 작업 100회라는 고정 사용량 가정이며 캐시·세금·환율·도구 비용을 제외한다. 사고 토큰을 포함한 실제 청구 사용량과 제품별 한도는 이 자료만으로 확정하지 않았다. Argon과의 동일 조건 성능 비교나 비용 우열을 입증하지 않는다. 공급자의 업무 구분과 모델 카드 한계를 연결한 선택 제안이며 독립 실측이 아니다. 독립 보도는 이슈화 확인에만 썼다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 도입 가격의 끝을 반영한 작업 예산 계산",
+    "excerpt": "계산 예시의 가정은 **캐시 할인 없이 입력 10만 토큰·출력 2만 토큰**을 처리하는 작업입니다. 단위가 100만 토큰이므로 입력은 0.1, 출력은 0.02를 곱합니다. 도입 기간에는 0.1×2+0.02×10=0.40달러, 이후에는 0.1×4+0.02×20=0.80달러입니다. 이는 같은 사용량을 넣었을 때의 단순 토큰 요금이며, 실제 작업을 실행해 측정한 비용은 아닙니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "입력·출력 단위를 환산해 동일 작업의 도입 기간 전후 비용과 100회 예산을 계산했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "⚖️ Argon을 유지할 업무와 Carbon을 시험할 업무",
+    "excerpt": "비교의 단위도 **한 번의 답변보다 검토를 마친 과제**로 잡는 편이 유용합니다. 사람이 수정한 시간, 재시도한 횟수, 최종 결과의 근거 누락을 함께 기록하면 됩니다. 이 항목들은 발표에 있는 성능 수치가 아니라 독자를 위한 평가 설계입니다. 예산이 같아도 정확성 요구와 응답 대기 허용 시간이 다르면 선택이 달라질 수 있으므로, 한 가지 점수로 업무 전체의 승자를 정하지 않는 편을 권합니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "단순 모델 순위 대신 현재 작업의 실패·검토 시간·지연 허용 범위를 기준으로 전환 우선순위와 보류 조건을 제안했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖️ Argon을 유지할 업무와 Carbon을 시험할 업무",
+    "excerpt": "모델 카드는 Carbon이 Argon보다 더 많은 사고 토큰을 써서 가설을 탐색하고 검증을 이어갈 수 있으며, **때때로 지연이나 타임아웃이 생길 수 있다**고 설명합니다. 발표의 업무 구분과 카드의 한계를 연결하면 도입 순서를 정할 수 있습니다. 짧고 반복적인 요청보다, 현재 모델의 답을 사람이 여러 차례 되돌려 보내는 과제를 먼저 후보로 삼는 방식입니다. 이는 두 공식 원문을 연결한 이 글의 해석입니다. [Carbon 모델 카드](https://deepmind.google/models/model-cards/gemini-4-carbon/)",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공개 발표의 Argon·Carbon 역할 구분과 모델 카드의 토큰·지연 한계를 연결해 시험 대상 업무를 구체화했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 33,
+  "confirmed": 33,
+  "removed": [
+   "research.topic의 미확인 10월 28일 예고 날짜",
+   "첫 섹션의 반복된 범위 설명 및 info 박스",
+   "본문을 반복하던 기존 FAQ 답변"
+  ],
+  "note": "이번 세션에서 네 원문 재조회 후 33개 외부 사실을 확인했다. 비정렬 도표 표현을 정정하고 근거 없는 예고 날짜를 삭제했다. 독자 가치 3종의 발췌·출처·가정·한계를 최종 본문과 대조했다. 계산은 산술 검산이며 실측이 아니다. 상세 근거는 verification.json과 source-evidence/recheck-S*.json."
+ }
+}
