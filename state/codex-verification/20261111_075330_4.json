@@ -1,0 +1,143 @@
+{
+ "claims": [
+  {
+   "claim": "Adobe·Disney 다년 전략적 제휴 발표일은 2026-11-09이다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 날짜 표기와 도입부: 2026년 11월 9일, 다년 전략 제휴 발표."
+  },
+  {
+   "claim": "Adobe는 Disney의 공식 AI 혁신 파트너가 된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 파트너 지위 문단: Disney의 공식 AI 혁신 파트너로 Adobe를 명시."
+  },
+  {
+   "claim": "이번 제휴는 Disney의 제작 업무를 지원한다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 기술 지원 문단: Disney 제작 과정 지원을 목적으로 명시."
+  },
+  {
+   "claim": "이번 제휴의 일반 고객 대상 전용 모델 사용 권한은 이 발표로 확인되지 않는다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 전체 발표는 Disney와의 협력 대상·지원 내용을 설명하며 일반 고객의 전용 모델 사용 권한은 정하지 않음. 부재 확인은 해당 발표에 한정."
+  },
+  {
+   "claim": "2026-06-16 발표는 Imagineering의 테마파크 설계 및 사전 시각화 협력이다.",
+   "url": "https://news.adobe.com/news/2026/06/adobe-and-disney-imagineering-collaborate",
+   "confirmed": true,
+   "action": "유지 — S2 날짜와 도입부: 2026년 6월 16일, Imagineering R&D의 설계·사전 시각화 협력."
+  },
+  {
+   "claim": "11월 발표는 StudioLAB과 ESPN Edge 협력을 포함한다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 조직별 항목: StudioLAB 및 ESPN Edge 포함."
+  },
+  {
+   "claim": "제휴에는 공동 마케팅 성격의 활동도 포함된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 도입부 및 말미: 공동 마케팅, 행사 협력과 미디어 활동 포함."
+  },
+  {
+   "claim": "Adobe는 Firefly, Firefly Foundry, Premiere, Photoshop 조기 접근을 제공한다고 설명한다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 기술 지원 문단: Firefly·Foundry·Premiere·Photoshop 조기 접근 열거."
+  },
+  {
+   "claim": "제휴에는 전담 엔지니어링과 연구 자원 지원이 포함된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 기술 지원 문단: 전담 엔지니어링·연구 자원 포함."
+  },
+  {
+   "claim": "맞춤 모델은 Disney 캐릭터 특성·환경·시각 스타일을 대상으로 설명된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 맞춤 모델 문단: 캐릭터 특성, 환경, 시각 스타일을 맞춤화 지식으로 명시."
+  },
+  {
+   "claim": "Imagineering은 Foundry를 이미 사용 중이라고 11월 발표에 적혀 있다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 Imagineering 문단: 이미 사용하는 상태로 서술. 자체 실측이 아닌 Adobe 발표 내용."
+  },
+  {
+   "claim": "사용 예시에는 손그림을 2D 콘셉트 아트로 변환하는 모델이 포함된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 Imagineering 문단: 손그림에서 2D 콘셉트 아트로 바꾸는 예시."
+  },
+  {
+   "claim": "사용 예시에는 브랜드에 맞는 이미지 생성 모델이 포함된다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 Imagineering 문단: 브랜드·프랜차이즈에 맞춘 이미지 생성 예시."
+  },
+  {
+   "claim": "StudioLAB과 ESPN Edge 공동 프로젝트는 진행 중이라고 발표되어 있다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 말미: 두 조직과 공동 혁신 프로젝트가 진행 중이라고 서술."
+  },
+  {
+   "claim": "확인한 11월 발표에는 작업별 전후 비교 측정값이 제시되지 않는다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 발표 전체에 작업별 전후 시간·품질 측정값 없음. 성능 효과가 없다는 의미는 아님."
+  },
+  {
+   "claim": "Adobe는 맞춤 모델 출력을 commercially safe 및 production-ready라고 설명한다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 맞춤 모델 문단의 상업적 안전성·제작 준비도 표현은 Adobe 주장. 개별 결과물 권리 보증 근거로는 사용하지 않음."
+  },
+  {
+   "claim": "The Next Web의 이 소식 보도 날짜는 2026-11-09이다.",
+   "url": "https://thenextweb.com/news/adobe-disney-ai-alliance-firefly-foundry",
+   "confirmed": true,
+   "action": "유지 — S3 날짜 및 Published 표기: 2026년 11월 9일."
+  },
+  {
+   "claim": "The Next Web 보도는 Imagineering에서 스튜디오·ESPN으로 협력이 확대되는 내용을 다룬다.",
+   "url": "https://thenextweb.com/news/adobe-disney-ai-alliance-firefly-foundry",
+   "confirmed": true,
+   "action": "유지 — S3 부제와 본문: Imagineering에서 스튜디오·ESPN으로 협력 범위 확대 보도."
+  },
+  {
+   "claim": "이 발표만으로 독자 조직의 가격이나 지원 수준을 알 수 없다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 전체에 일반 고객 가격표나 지원 계약 수준 없음. 해당 발표만으로 독자 조직 조건을 알 수 없다는 한정 진술."
+  },
+  {
+   "claim": "StudioLAB은 The Walt Disney Studios의 혁신 조직이다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 StudioLAB 항목에서 소속과 내부 창작 업무 탐색 역할 확인."
+  },
+  {
+   "claim": "ESPN Edge 협력은 팬 참여, 콘텐츠 전달, ESPN 아카이브 활용 방안을 탐색한다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 ESPN Edge 항목에서 탐색 대상 확인. 완료된 서비스로 표현하지 않음."
+  },
+  {
+   "claim": "6월 발표와 11월 발표는 같은 Adobe·Disney 협력의 서로 다른 시점 자료이다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1·S2 제목·도입부와 날짜를 대조. 비교 축을 조직·업무 범위로 제한."
+  },
+  {
+   "claim": "11월 제휴는 일반 관객 대상 완성 서비스의 즉시 출시 발표로 확인되지 않는다.",
+   "url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+   "confirmed": true,
+   "action": "유지 — S1 전체는 협력과 탐색 계획 및 진행 중 프로젝트 설명. 완성 서비스 출시로 확대하지 않음."
+  }
+ ],
+ "note": "이번 별도 검증 세션에서 S1·S2·S3 원문을 각각 다시 web.open으로 읽고 post 전체(요약·표·FAQ 포함)를 대조했다. 반복되는 동일 주장은 합산했다. 기존 19건에 조직 소속·역할·비교 대상·완성 서비스 여부 4건을 별도 명시했다. 거짓 사용 경험은 발견되지 않았다. 반복 조언은 본문과 FAQ에서 수정했다. 모델을 실행하거나 성능을 측정하지 않았으며 승인·발행은 수행하지 않았다. 확인된 주장은 발표의 존재·내용에 대한 확인이며 회사가 주장하는 효과의 독립 실증을 뜻하지 않는다. 독자 가치 검토: research.editorial.review 참조. 외부 사실 주장 23건만 집계하며 작업 상태는 집계하지 않는다. 원문 조회 실패 없음. 새 후보 선정이나 주제 교체 없음."
+}
