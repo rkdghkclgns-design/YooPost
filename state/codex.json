@@ -137,9 +137,9 @@
     }
    ],
    "last_notified": {
-    "result": "skipped",
-    "kind": "source_unavailable",
-    "note": "다른 주제 재작성 2회 후 보류: 기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지"
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
    },
    "finished_at": "2026-11-11T09:49:28+09:00",
    "next_retry_at": null
