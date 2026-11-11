@@ -1,0 +1,55 @@
+{
+ "topic": "Office Party: A Flaw in Anthropic’s Official Skills Allows Malicious Code Execution",
+ "source_url": "https://www.air.security/blog-posts/office-party",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Office Party: A Flaw in Anthropic’s Official Skills Allows Malicious Code Execution",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "publisher": "AIR Security",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Attackers Crash Claude’s ‘Office Party’ Flaw to Run Malicious Code on Linux",
+   "url": "https://www.darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux",
+   "publisher": "Dark Reading",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 원문의 본문 그림 1개를 조사했다. 웹 이미지 열기는 Internal Error였고 동일 공개 PNG의 직접 조회는 HTTP 200으로 확보했으나 이미지 렌더링 결과를 확인하지 못했다. 내용을 시각 검증하지 못해 인용 이미지와 image 블록은 제외했다. 증거는 source-evidence/figure.json에 보존했다. 대표 이미지와 저자 사진은 인용 후보에서 제외했다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Linux 문서 생성 스킬을 계속 쓰기 전에 어떤 실행 조건과 승인 범위를 확인해야 하는가?",
+  "limitations": "공격 재현·실제 사용 경험·자사 환경 조사 없음. 현재 배포본 패치 상태 미검증. 수정 상태는 AIR이 2026-11-05에 전한 main 상태로 한정. 공급사 입장은 AIR의 간접 전달이다. 두 재현의 파일 공급 단계와 후속 동작을 비교하며 전체 실험 환경 동일성·공격 빈도·위험 우열을 입증하지 않는다. 운영 표와 가정은 필자의 제안이며 검증된 해결책·안전 인증·정량 위험 평가가 아니다. 계산 또는 source_synthesis 기여는 주장하지 않는다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔍 두 재현 경로의 공통 조건과 차이 비교",
+    "excerpt": "**두 경로를 같은 문서 작업이 시작되기 전의 준비 단계로 비교**해보겠습니다. AIR이 보고한 차이는 파일을 직접 두었는지, 다른 스킬이 보조 파일을 풀면서 두었는지입니다. 이후 문서 스킬이 기존 파일을 신뢰하는 연결은 같습니다. 따라서 개별 스킬만 따로 검토할지, 앞선 작업이 남긴 파일까지 확인할지를 정하는 데 이 비교를 사용할 수 있겠습니다. 다만 두 실험의 전체 환경이 동일했다거나 어느 경로가 더 자주 악용된다고 판단할 자료는 이 비교에 없습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "같은 준비 단계의 파일 공급 방법과 공통 후속 동작을 비교해 조사 대상을 쓰기 주체와 작업 간 잔존 파일로 구분한다. 전체 환경 동일성·발생 빈도·성능 비교는 아니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 업무 상황에 따라 점검 순서를 정하기",
+    "excerpt": "또 다른 가정으로 외주 담당자가 작성한 스킬을 시험하는 날과 정기 문서 작업일이 겹친다고 해보겠습니다. 일정을 서로 다른 담당자가 관리한다면 각자는 자기 작업의 승인만 알고 있을 수 있습니다. 이때는 보안 등급을 임의로 매기기보다 **시험 작업과 정기 업무의 환경을 함께 검토할 책임자**를 먼저 지정하는 편이 현실적이겠습니다. 승인 범위에는 어떤 자료로 어느 업무까지 수행하는지도 적어두세요.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "가정 업무를 명시해 개별 승인과 환경 공동 검토의 차이를 설명"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 15,
+  "confirmed": 15,
+  "removed": [],
+  "note": "2026-11-11 별도 검증에서 공식 원문 전체와 독립 기사 본문을 웹으로 재열람했다. 기존 검증 결과를 그대로 승인하지 않고 제목·요약·본문·표·FAQ·맺음말·해시태그를 대조했다. 반복되는 동일 외부 사실은 통합 집계했다. 가격·성능 수치·법적 사실 주장은 없다. 독립 기사 날짜도 외부 사실 1건으로 집계했다. 자체 실행 여부·검증 상태·필자의 제안·가정은 claims에서 제외했다. 공격 실험·자사 환경 조사·현재 배포본 확인은 수행하지 않았다. 웹 원문 읽기 성공으로 HTTP 대체 조회는 필요하지 않았다. 게시·발행 승인은 수행하지 않았다. 확인 불가한 외부 사실로 삭제한 항목은 없다. 반복된 기록 관리 문단을 실제 경로 대조와 승인 제외 범위 설명으로 교체하고 FAQ 반복을 줄였다."
+ }
+}
