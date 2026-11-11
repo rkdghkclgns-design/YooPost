@@ -1,0 +1,119 @@
+{
+ "topic": "Introducing Businesses in ChatGPT in beta (OpenAI Developer Community, 2026-11-10) / TechCrunch·The Next Web·Techstrong 보도",
+ "source_url": "https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Businesses in ChatGPT in beta",
+   "url": "https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI rolls out new business profiles, making ChatGPT just a little bit more like Google",
+   "url": "https://techcrunch.com/2026/11/10/openai-rolls-out-new-business-profiles-making-chatgpt-just-a-little-bit-more-like-google",
+   "publisher": "TechCrunch",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI lets businesses claim ChatGPT profiles and launch their own agents",
+   "url": "https://thenextweb.com/news/openai-businesses-in-chatgpt-business-agents",
+   "publisher": "The Next Web",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI Launches Business Hub and Branded AI Agents to Connect Retailers Directly with ChatGPT Shoppers",
+   "url": "https://techstrong.ai/articles/openai-launches-business-hub-and-branded-ai-agents-to-connect-retailers-directly-with-chatgpt-shoppers/",
+   "publisher": "Techstrong.ai",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI Puts Verified Business Profiles and Agents in ChatGPT",
+   "url": "https://aiweekly.co/alerts/openai-puts-verified-business-profiles-and-agents-in-chatgpt",
+   "publisher": "AI News Weekly",
+   "published": "2026-11-10",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://us1.discourse-cdn.com/openai1/original/4X/7/3/8/738e67f76963213c242f0f28005668a561dbe299.jpeg",
+   "page_url": "https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865",
+   "caption": "Business Agent 빌더 화면 예시 — 에이전트 이름·지침·사업 배경·상품 피드 입력과 게시 버튼",
+   "credit": "OpenAI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://us1.discourse-cdn.com/openai1/original/4X/5/c/b/5cb1224fe04883bc55fcd3bfc048c98ee921f5ae.jpeg",
+   "page_url": "https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865",
+   "caption": "Business Hub 통계 화면 예시 — 언급 수·주요 주제·에이전트 인사이트와 사업 정보 수정",
+   "credit": "OpenAI"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "소규모 사업자는 ChatGPT의 Business Hub 프로필 클레임과 Business Agent를 지금 어디까지 도입해야 하는가?",
+  "limitations": "OpenAI 공식 웹페이지·도움말은 열람이 막혀 읽지 못했고 공식 커뮤니티 공지와 매체 보도로 작성. 직접 Business Hub를 사용해 보지 않았으며 판단 표는 공개 조건을 정리한 해석. 자격 기준·베타 이후 요금은 미공개.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 사업은 지금 무엇을 해야 하나: 상황별 판단 기준",
+    "excerpt": "**판단의 핵심**은 ‘정보 정정’과 ‘대화형 상담’을 분리하는 것입니다. 정정은 틀린 정보를 바로잡는 위험",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "상황별로 정보 정정과 에이전트 도입을 분리해 먼저 할 일과 미룰 일을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 클레임과 에이전트는 조건이 어떻게 다른가",
+    "excerpt": "이 글은 이 차이를 **프로필 클레임은 상대적으로 넓고, 에이전트는 미국 이커머스·온라인 서비스로 좁다**고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공지의 상충하는 두 문장과 매체별 서술을 대조해 클레임·에이전트의 대상 범위를 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 광고와 노출: 클레임하면 더 많이 추천될까",
+    "excerpt": "정리하면 공개된 설명은 세 겹입니다. 클레임은 정보 정확성을 위한 것이고, 노출 우대를 약속하지 않으며, 광",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "노출 비보장 발언과 후원 에이전트 광고 설명을 연결해 기대치를 분리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 47,
+  "removed": [
+   "같은 스레드의 ‘에이전트에 엔터프라이즈 계정이 필요하다’거나 ‘노출에 광고가 개입한다’는 추측도 공식 확인이 없으므로 이 글은 사실로 다루지 않습니다. (스레드 10개 글 어디에도 없는 내용 — 실제 있는 이용자 정리(정부 신분증·영상 셀피)로 교체)"
+  ],
+  "corrected": [
+   "28일 단위: Techstrong 원문은 대화 주제(발견 주제)만 rolling 28-day windows 로 묶는다고 함 — 지표 전체가 28일 단위라는 서술을 고치고, 지표는 최소 개인정보 기준을 넘을 때만 제공된다는 내용 추가 (본문·표)",
+   "Benji Shomair 표기 '베니'→'벤지', 직함을 TechCrunch 원문대로 수익화 담당 부사장(VP of Monetization)으로",
+   "The Next Web 은 '통계가 ChatGPT 에 한정돼 별도 도구 필요'라고 쓰지 않음 — 원문(Peec AI 같은 노출 추정 스타트업을 압박할 수 있음)대로 수정",
+   "공지 자격 문구: 'Available to eligible ecommerce and online service businesses in the U.S.' 는 Business Agent 설명 바로 뒤 문장이며 '기능 전체'라고 명시하지 않음 — 📊 문단·FAQ 표현 수정",
+   "Techstrong 요금: '무료라고만 전했다' → 베타 무료 + 수익화 임원들이 향후 상업적 등급 가능성을 열어 둠 (한계 목록·FAQ)",
+   "Colorful Clatter '가상의' 단정 → 'OpenAI 예시 화면에 쓰인 이름'",
+   "후원 노출에 별도 표시(Techstrong) 추가",
+   "커뮤니티 반응: Persona 인증 실패·재제출 불가는 한 이용자(MateoHysa) 보고, DNS 30분은 이용자 요약의 'appears to' 표현이라 '30분으로 보여'로 완화, 24~48시간 전파는 원 게시글 근거로 추가. 강조 없는 문단 8곳에 형광 강조 보완"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 은 Discourse JSON(/t/1414865.json)으로 공지 원문·댓글 10개 전부 확인(작성자 VeitB 는 커뮤니티 모더레이터·staff, Announcements 범주, created_at 2026-11-10T21:16Z). S2~S5 는 페이지를 다시 받아 본문과 article:published_time/datePublished 대조 — S2 2026-11-10T18:49Z, S3 2026-11-10T19:06Z, S4 2026-11-11T15:19Z, S5 2026-11-10T20:02Z 로 research.json published 와 모두 일치. Persona 신원 인증·소유 확인 방법(도메인·전화·이메일·Shopify)·파란 체크·베타 무료·순위 비보장·해외 지역/오프라인 미국 한정은 S4 원문과 일치, 28일은 대화 주제에만 해당해 수정. Sponsored Agents(9월 시험)·Digiday 인용·에이전트 규칙(AI 고지·정확한 가격·압박 금지·구매/개인정보 명시 승인)·Visa 에이전트 결제·브랜드 사이트 연결은 S3 원문과 일치(S5 도 같은 문장 인용). 공지의 자격 문구 두 개(U.S. 이커머스·온라인 서비스 / ChatGPT 이용 가능 지역 클레임)는 S1 원문 그대로이며 앞 문장은 Agent 설명 직후에 위치. openai.com·help.openai.com 은 403 이라 출처로 쓰지 않음(막힌 출처로만 확인되는 주장 없음). 인용 이미지 I1·I2 는 HTTP 200 image/jpeg 680x383 이며 화면 내용(Agent builder·18 products·Publish agent / Mentions 1,234·Conversations 15,356·Outbound clicks 5,432)이 캡션·본문 서술과 일치."
+ }
+}
