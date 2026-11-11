@@ -89,9 +89,9 @@
   "20261111:daily:AI 보안": {
    "at": "2026-11-11T09:41:05+09:00",
    "count": 3,
-   "status": "writing",
-   "note": "다른 주제 재작성 2회 후 보류: 기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지",
-   "failure_kind": "source_unavailable",
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
    "rejected_candidates": [
     {
      "title": "🔒 Fireworks AI 침해 범위 확대, Notion AI 대화까지: 통지받은 팀의 점검 순서",
@@ -128,13 +128,21 @@
      "topic": "BOSSAI: Inside the AI attack mesh that targeted Taiwan’s emergency services",
      "source_url": "https://www.acronis.com/en/tru/posts/bossai-inside-the-ai-attack-mesh-that-targeted-taiwans-emergency-services/",
      "reason": "기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지 않는다. policy.md의 작성"
+    },
+    {
+     "title": "🔒 GPUStack 취약점 KEV 등재: AI 추론 서버 운영팀이 먼저 확인할 범위",
+     "topic": "CISA 2026-11-09 GPUStack CVE-2026-102895 Known Exploited Vulnerabilities 등재",
+     "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+     "reason": "기존 발행·제외 후보와 다른 GPUStack CVE-2026-102895의 2026-11-09 CISA KEV 등재를 candidate.json에 먼저 기록하고 조사했다. 대표 CISA 카탈로그는 웹 도구에서 403 조회 오류가 났지만, 동일 URL을 urllib로 20초 제한·인증·쿠키·프록시·우회 없이 1회 직접 조회한 결과 HTTP 200으로 GPUStack 항목, 등재일 2026-11-09, 기한 2026-11-12 및 영향 설명을 실제 읽었다. 독립 매체 Cyber-Threat.net의 2026-11-09 기사 본문도 웹 "
     }
    ],
    "last_notified": {
     "result": "skipped",
     "kind": "source_unavailable",
     "note": "다른 주제 재작성 2회 후 보류: 기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지"
-   }
+   },
+   "finished_at": "2026-11-11T09:49:28+09:00",
+   "next_retry_at": null
   },
   "20261111:daily:AI 인사이트": {
    "at": "2026-11-11T08:04:21+09:00",
@@ -174,31 +182,7 @@
    }
   }
  },
- "lease": {
-  "owner": "42933232319-1",
-  "at": "2026-11-11T09:41:05+09:00",
-  "expires": "2026-11-11T11:41:05+09:00",
-  "task": {
-   "day": "20261111",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 보안",
-   "topic": "",
-   "reason": "전송 실패(재시도 중단): 겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html",
-   "previous_attempt": {
-    "at": "2026-11-11T08:39:42+09:00",
-    "finished_at": "2026-11-11T08:39:42+09:00",
-    "status": "skipped",
-    "count": 1,
-    "note": "다른 주제 재작성 2회 후 보류: 기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지",
-    "skip_ids": [
-     "20261111_083942_5"
-    ]
-   },
-   "owner": "42933232319-1",
-   "at": "2026-11-11T09:41:05+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",

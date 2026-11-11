@@ -1,0 +1,128 @@
+{
+ "verified_at": "2026-11-11T00:48:54.530996+00:00",
+ "method": "공식 원문과 독립 기사 전체 본문 재열람. 주장별 본문 대조 및 추가 분석의 발췌·출처·조건·한계 점검.",
+ "claims": [
+  {
+   "claim": "AIR Security의 Office Party 공개일은 2026-11-05이다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "원문 저자 영역 날짜 November 5, 2026",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "AIR 연구 대상은 Anthropic의 공식 docx·pptx·xlsx 스킬이다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "도입 및 Built-In Is Not Bulletproof",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "연구는 Linux 문서 처리 경로의 코드 실행 문제를 다룬다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "도입 및 FAQ Which systems are affected?",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "문서 변환은 soffice.py를 통한 LibreOffice 호출을 포함한다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "The Shim That Trusts Anyone 첫 문단",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "Unix 소켓 생성 실패 시 LD_PRELOAD 보조 라이브러리 경로가 사용된다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "The Shim That Trusts Anyone 두 번째 문단",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "임시 경로의 라이브러리 파일명은 lo_socket_shim.so이다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "_SHIM_SO 코드 및 fixed path 설명",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "이미 존재하는 라이브러리는 작성자·내용 확인 없이 재사용된다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "No checks 설명과 _ensure_shim 코드",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "AIR은 파일 직접 배치 경로를 재현했다고 보고한다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "How We Tested It 첫 재현",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "AIR은 다른 스킬이 파일을 푸는 경로를 재현했다고 보고한다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "How We Tested It 두 번째 재현",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "AIR은 스킬과 외부 의존성의 지속 검토를 권고한다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "Takeaways for Security Teams 1~3",
+   "action": "유지. 이번 별도 검증에서 공식 원문의 해당 본문을 다시 읽어 확인."
+  },
+  {
+   "claim": "AIR은 2026-11-05 기준 anthropics/skills의 main에 해당 고정 경로 로직이 남아 있다고 적는다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "Anthropic’s Response 마지막 문단",
+   "action": "범위 명확화. 현재 제품 상태가 아닌 연구가 전한 날짜와 main 상태로 한정."
+  },
+  {
+   "claim": "Anthropic이 샌드박스 내부이므로 보안 경계 밖으로 판단했다는 설명은 AIR의 전달이다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "evidence": "Anthropic’s Response 첫 문단",
+   "action": "유지. 공급사 직접 답변이 아닌 AIR의 간접 전달로 한정."
+  },
+  {
+   "claim": "Dark Reading은 Office Party 관련 독립 기사를 2026-11-09에 보도했다.",
+   "url": "https://www.darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux",
+   "confirmed": true,
+   "action": "유지. 기사 제목·기자·표시 날짜·인터뷰 본문 재확인. 기사 내부 today는 공식 발표일 근거에서 제외."
+  },
+  {
+   "claim": "AIR 설명상 공격자는 문서 작업 전에 사용되는 임시 경로에 라이브러리 파일을 둘 수 있어야 한다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "action": "조건 보완. 파일을 미리 공급할 수 있다는 전제를 본문에 명시."
+  },
+  {
+   "claim": "AIR 설명상 라이브러리 코드는 LibreOffice 내부에서 에이전트를 실행한 사용자의 권한으로 실행된다.",
+   "url": "https://www.air.security/blog-posts/office-party",
+   "confirmed": true,
+   "action": "범위 보완. 샌드박스 탈출·권한 상승으로 확대하지 않도록 실행 위치와 권한 명시."
+  }
+ ],
+ "source_checks": [
+  {
+   "url": "https://www.air.security/blog-posts/office-party",
+   "published": "2026-11-05",
+   "result": "이번 세션에서 본문 전체 재열람 성공. 저자 영역 날짜, The Shim That Trusts Anyone의 코드와 설명, How We Tested It, Anthropic’s Response, Takeaways, FAQ 대조."
+  },
+  {
+   "url": "https://www.darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux",
+   "published": "2026-11-09",
+   "result": "이번 세션에서 본문 재열람 성공. 제목·Elizabeth Montalbano·표시 날짜·AIR CTO 이메일 인터뷰·공급사 미회신 설명 확인. 독립 보도 요건 충족."
+  }
+ ],
+ "editorial_review": {
+  "comparison": "파일 공급 단계라는 같은 기준에서 두 재현 경로를 비교. 공통 후속 동작과 서로 다른 공급 주체를 표로 대조. 전체 환경 동일성이나 위험 우열은 입증하지 않았다고 명시.",
+  "decision_guide": "가정 상황에서 공동 환경 검토 책임자와 승인 범위를 정하는 제안. 실제 사례·검증된 해결책으로 표현하지 않음.",
+  "excerpt_check": "두 기여의 excerpt가 각 section의 실제 paragraph 연속 원문 30자 이상과 일치하며 S1을 근거로 사용. 서로 다른 두 소제목과 두 종류 충족.",
+  "repetition": "첫 표는 확보할 자료, 둘째는 재현 경로, 셋째는 상황별 판단으로 목적 분리. 기록 관리 문단과 FAQ 반복 수정. 가짜 사용 경험 없음.",
+  "limitations": "공격 재현·실제 사용 경험·자사 환경 조사 없음. 현재 배포본 패치 상태 미검증. 수정 상태는 AIR이 2026-11-05에 전한 main 상태로 한정. 공급사 입장은 AIR의 간접 전달이다. 두 재현의 파일 공급 단계와 후속 동작을 비교하며 전체 실험 환경 동일성·공격 빈도·위험 우열을 입증하지 않는다. 운영 표와 가정은 필자의 제안이며 검증된 해결책·안전 인증·정량 위험 평가가 아니다. 계산 또는 source_synthesis 기여는 주장하지 않는다."
+ },
+ "note": "2026-11-11 별도 검증에서 공식 원문 전체와 독립 기사 본문을 웹으로 재열람했다. 기존 검증 결과를 그대로 승인하지 않고 제목·요약·본문·표·FAQ·맺음말·해시태그를 대조했다. 반복되는 동일 외부 사실은 통합 집계했다. 가격·성능 수치·법적 사실 주장은 없다. 독립 기사 날짜도 외부 사실 1건으로 집계했다. 자체 실행 여부·검증 상태·필자의 제안·가정은 claims에서 제외했다. 공격 실험·자사 환경 조사·현재 배포본 확인은 수행하지 않았다. 웹 원문 읽기 성공으로 HTTP 대체 조회는 필요하지 않았다. 게시·발행 승인은 수행하지 않았다."
+}
