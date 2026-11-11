@@ -6439,5 +6439,23 @@
    "https://www.darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux"
   ],
   "draft_id": "20261111_094926_5"
+ },
+ {
+  "date": "2026-11-12",
+  "title": "🤖 Qwen4-Max 프리뷰, 벤치마크 없이 2주만 열린 유료 모델을 지금 써 볼까: 크레딧 환산과 조건 정리",
+  "topic": "Qwen4-Max Preview (qwen4-max-preview) — Alibaba Cloud Model Studio, 2026-11-11",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/qwen4-max-2.html"
+  },
+  "sources": [
+   "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
+   "https://docs.qwencloud.com/token-plan/personal/token-plan-personal-overview",
+   "https://dev.to/yong_yu_f98e15562e9b120a0/qwen4-max-preview-token-plan-only-default-is-xhigh-and-it-retires-on-nov-25-5acn",
+   "https://ashutoshai.com/ai-compass/2026/11/10/qwen-qwen4-max-preview/",
+   "https://chaincatcher.com/en/article/2303601"
+  ],
+  "draft_id": "20261112_070934_1"
  }
 ]
