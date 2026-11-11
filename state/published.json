@@ -6424,5 +6424,20 @@
    "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/"
   ],
   "draft_id": "20261111_082817_2"
+ },
+ {
+  "date": "2026-11-11",
+  "title": "🔒 Claude Office Party: Linux 문서 스킬을 계속 쓰기 전 확인할 조건",
+  "topic": "Office Party: A Flaw in Anthropic’s Official Skills Allows Malicious Code Execution",
+  "category": "AI 보안",
+  "source_url": "https://www.air.security/blog-posts/office-party",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-office-party-linux.html"
+  },
+  "sources": [
+   "https://www.air.security/blog-posts/office-party",
+   "https://www.darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux"
+  ],
+  "draft_id": "20261111_094926_5"
  }
 ]
