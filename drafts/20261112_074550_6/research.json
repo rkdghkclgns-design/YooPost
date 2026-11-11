@@ -1,0 +1,122 @@
+{
+ "topic": "2026-11-05 나스닥 급락 — Tech-stock rout accelerates retreat from the AI trade (Reuters, 2026-11-06) / Qualcomm FY2026 Q4 results (2026-11-04)",
+ "source_url": "https://www.thestar.com.my/tech/tech-news/2026/11/06/tech-stock-rout-accelerates-retreat-from-the-ai-trade",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Qualcomm Form 8-K Exhibit 99.1 — Fourth Quarter and Fiscal 2026 Results",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000804328/000080432826000127/qcom092726erex991.htm",
+   "publisher": "Qualcomm (SEC)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Tech-stock rout accelerates retreat from the AI trade (Reuters)",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/11/06/tech-stock-rout-accelerates-retreat-from-the-ai-trade",
+   "publisher": "The Star (Reuters)",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Nasdaq 100 suffers worst day since 2020",
+   "url": "https://investinglive.com/stocks/nasdaq-100-suffers-worst-day-since-2020/",
+   "publisher": "InvestingLive",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "QUICK TAKE | Why Did the Nasdaq Fall 5.5%? Seven Things to Know About Wall Street's AI Sell-Off",
+   "url": "https://openthemagazine.com/technology/quick-take-why-did-the-nasdaq-fall-55-seven-things-to-know-about-wall-streets-ai-sell-off",
+   "publisher": "Open Magazine",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Nasdaq 100 falls over 4% as chip stocks drop a day after the midterm rally",
+   "url": "https://stockanalysis.com/news/nasdaq-100-falls-chip-stocks-slide/",
+   "publisher": "StockAnalysis",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Nasdaq 100 drops 6.3% and erases $2.3 trillion in market value",
+   "url": "https://www.siliconreport.com/nasdaq-100-drops-6-3-and-erases-2-3-trillion-in-market-value",
+   "publisher": "Silicon Report",
+   "published": "2026-11-05",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Nasdaq 100 jumps 3.3% as chip stocks rebound from last week's AI selloff, while Nvidia falls 4.6%",
+   "url": "https://stockanalysis.com/news/nasdaq-100-rallies-after-ai-selloff-nvidia-falls/",
+   "publisher": "StockAnalysis",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(SEC 8-K Ex.99.1)는 표만 있는 문서이고, 매체 기사 본문 그림은 보도 사진·스톡 사진(트레이더·전광판·프로세서·모니터)뿐이며 지수·실적 차트가 없어 원고 내용과 직접 관련된 그림이 없다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "11월 5일 나스닥 급락의 숫자와 원인 설명 중 무엇이 확인된 사실이고 무엇이 해석인가",
+  "limitations": "직접 시장 데이터를 조회한 것이 아니라 기사·SEC 제출 자료의 숫자를 읽고 검산했다. 6~7일 시세, 공식 거래소 통계는 확인하지 못했다. UBS '2028년 용량 약 30% 위험'은 StockAnalysis(로이터 기사 링크)·Finimize 의 인용 보도로만 확인되고 UBS 원문 보고서(reuters.com 접속 차단 포함)는 확인하지 못해 '인용 보도 기준'으로 한정했다. 시가총액 역산과 회복 계산은 근사이며 투자 판단용이 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자가 기사마다 다른 이유와 검산법",
+    "excerpt": "다우는 1,833.16포인트 내려 51,528.16 에 마감했으므로 전날 마감은 53,361.32 이고, 1,833.16 ÷ 53,361.32 ",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "기사 속 포인트와 퍼센트가 서로 맞는지 직접 검산하고 시가총액 역산 방식을 제시"
+   },
+   {
+    "kind": "calculation",
+    "section": "📱 도화선으로 지목된 퀄컴 공시 직접 읽기",
+    "excerpt": "표의 증감률을 거꾸로 계산하면 1년 전 규모를 짐작할 수 있습니다. 핸드셋 5,137 ÷ 0.74 는 약 6,942백만 달러, 자동차 1,990",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공시 증감률에서 전년 규모와 핸드셋 감소·자동차 증가 폭을 역산"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 원인 주장 정리: 누가 무엇을 말했나",
+    "excerpt": "선거 요인은 **서로 다른 기사가 같은 방향으로 인용**한 점이 눈에 띕니다. 로이터는 화요일(11월 3일) 선거에서 향후 건설을 제한할 수 있",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S6"
+    ],
+    "added_value": "로이터·Open·실리콘리포트의 원인 설명을 출처별로 분리해 확인 수준을 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 숫자를 읽을 때 쓰는 판단 기준",
+    "excerpt": "계획을 세울 때는 **세 가지 질문**을 순서대로 던져 보면 좋습니다. 첫째, 이 숫자는 장중인가 마감인가. 둘째, 이 원인 설명은 사실인가 분",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "상황별로 먼저 확인할 것과 이번 출처로 알 수 없는 것을 분리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "원인 표의 'InvestingLive' 퀄컴·Arm 실적 원인 출처 표기 (InvestingLive 는 퀄컴을 언급하지 않고 Arm −13.08% 만 기록 — 출처 목록에서 뺌)",
+   "'모건스탠리와 UBS 가 … 전해졌다(reportedly)' (원문에 reportedly 없음, 로이터 인용으로 고침)",
+   "'사마나는 성장 중심에서 현금흐름 중심으로' (원문은 성장주→가치주 투자자 이동, 고침)",
+   "'국채 금리 하락·금 상승으로 위험 회피가 넓게 퍼졌다' 해석 문구 (원문 서술로 축소)",
+   "SOX·S&P 시총 비교표의 로이터 열 'S&P −4.36%(Open 인용)'·'약 3조 달러' 배치 (Open 매거진 열로 분리, 로이터(The Star) 본문에는 3조 달러 없음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 SEC 8-K Ex.99.1, S2 The Star(Reuters), S3 InvestingLive, S4 Open, S5·S7 StockAnalysis, S6 Silicon Report 를 모두 다시 열어 수치·인용·날짜 대조. published 는 페이지 날짜와 일치(S2 6 Nov 2026 MYT·Reuters 데이트라인 Nov 5, S4 Last Updated 2026-11-06 IST, S6 바이라인 Nov 5 PT). 검산: NDX 1,807.36/28,437.17=6.356%, 나스닥 종합 1,421.52/25,736.52=5.523%, S&P 334.77/7,688.62=4.354%, 다우 1,833.16/53,361.32=3.435%, R2K 127.11/2,856.95=4.449%; 10월 6일 종가 24,315/0.881≈27,599; 시총 역산 2.3/0.063≈36.5조, 2.8/0.044≈63.6조; 회복 1/0.9364=1.0679(약 6.8%), 0.9364×1.033≈0.967; 퀄컴 전년 핸드셋 5,137/0.74≈6,942·자동차 1,990/1.89≈1,053·IoT 1,888/1.04≈1,815, 감소 1,805 vs 증가 937(약 52%), 자동차+IoT 3,878, 가이던스 중간 10,800/10,442≈1.034. SOX −11%(로이터 장중)·−12.3%(실리콘리포트, 시점 미표기), S&P 시총 약 3조(Open 의 로이터 인용)·2.8조(실리콘리포트) 출처 병기 확인. UBS 30% 는 reuters.com 차단으로 원문 미확인 — 인용 보도 기준으로 한정. 11월 9일 시각 12:30→기사 12:38 ET 게시(S&P·다우 12:32 기준)로 고침. 매체 본문 이미지는 보도 사진·스톡 사진뿐이고 차트 없음, SEC 자료는 표뿐 — images_none_reason 유지. 투자 권유·수익 전망 문장 없음."
+ }
+}
