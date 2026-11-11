@@ -3,9 +3,9 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
+  "status": "writing",
   "category": "AI 보안",
-  "taken_over": "2026-11-11T08:35:43+09:00",
+  "taken_over": "2026-11-11T09:41:05+09:00",
   "first_taken_over": "2026-11-11T07:16:06+09:00",
   "reason": "실행 기록 없음",
   "last_result": "skipped"
