@@ -54,7 +54,7 @@ jobs:
           cache: pip
 
       - name: 한글 폰트 설치 (대표 이미지)
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
+        run: bash scripts/install_nanum_font.sh
 
       - name: 패키지 설치
         run: pip install -r requirements.txt

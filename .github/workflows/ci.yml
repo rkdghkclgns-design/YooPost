@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
+      - run: bash scripts/install_nanum_font.sh
       - run: pip install -r requirements-dev.txt
       - run: pytest --cov=autopost --cov-fail-under=80
 
