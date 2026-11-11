@@ -1,0 +1,206 @@
+{
+ "topic": "Microsoft VS Code 1.145.3 security release — MCP·agent-related vulnerabilities (GitHub Security Advisories, 2026-11-10) / NT Compatible·Cursor forum 보도",
+ "source_url": "https://github.com/microsoft/vscode/security/advisories/GHSA-crhv-2887-p3xr",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "VS Code - Remote Code Execution via Malicious MCP Installation Links (GHSA-crhv-2887-p3xr, CVE-2026-114171)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-crhv-2887-p3xr",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Remote Code Execution via MCP Elicitation Notifications (GHSA-66hq-jw93-462h, CVE-2026-120779)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-66hq-jw93-462h",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Command Execution via Agent-Originated Local Commands (GHSA-w9fm-7vcm-cvq4, CVE-2026-120782)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-w9fm-7vcm-cvq4",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Remote Code Execution via Unvalidated MCP SSE Endpoints (GHSA-4x35-6qr8-ww48, CVE-2026-119983)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-4x35-6qr8-ww48",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Remote Code Execution via JavaScript Debugger Auto-Attach (GHSA-3grj-pfwj-fffm, CVE-2026-70094)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-3grj-pfwj-fffm",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Remote Code Execution via Network Workspace Trust Bypass (GHSA-g3fj-wc2g-v3j5, CVE-2026-119985)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-g3fj-wc2g-v3j5",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Information Disclosure via Integrated Browser File Uploads (GHSA-f56j-7499-5hch, CVE-2026-102230)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-f56j-7499-5hch",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Remote Code Execution via serve-web Release Downgrade (GHSA-xfg5-fq3p-cx69, CVE-2026-120780)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-xfg5-fq3p-cx69",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "microsoft/vscode Security Advisories 목록 (2026-11-10 게시 16건, 1~2쪽)",
+   "url": "https://github.com/microsoft/vscode/security/advisories",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "microsoft/vscode Releases — 1.145.3",
+   "url": "https://github.com/microsoft/vscode/releases",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S11",
+   "title": "Visual Studio Code 1.145.3 Security Patch Covering 17 Vulnerabilities",
+   "url": "https://www.ntcompatible.com/story/visual-studio-code-11453-security-patch-covering-17-vulnerabilities",
+   "publisher": "NT Compatible",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S12",
+   "title": "Is Cursor 3.29.15 exposed to the Chrome 0-day and VS Code MCP CVEs? (Cursor Community Forum)",
+   "url": "https://forum.cursor.com/t/is-cursor-3-29-15-exposed-to-the-chrome-0-day-and-vs-code-mcp-cves/178029",
+   "publisher": "Cursor Community Forum",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S13",
+   "title": "Visual Studio Code v1.145 업데이트 노트 (1.145.3 보안 항목)",
+   "url": "https://code.visualstudio.com/updates/v1_145",
+   "publisher": "Microsoft (Visual Studio Code)",
+   "published": "2026-11-04",
+   "official": true
+  },
+  {
+   "id": "S14",
+   "title": "microsoft/vscode Issues — milestone 1.145.3 closed (candidate) 17건",
+   "url": "https://github.com/microsoft/vscode/issues?q=milestone%3A1.145.3+state%3Aclosed+label%3Acandidate",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S15",
+   "title": "Workspace Trust Bypass via Prototype Pollution in Workspace Configuration (GHSA-fp22-hgv9-mq6q, CVE-2026-121662)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-fp22-hgv9-mq6q",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S16",
+   "title": "Workspace Trust Bypass via Settings Group Key Override (GHSA-x5cm-xmvw-73rv, CVE-2026-121663)",
+   "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-x5cm-xmvw-73rv",
+   "publisher": "Microsoft (VS Code GitHub)",
+   "published": "2026-11-10",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 GitHub 보안 권고·릴리스 페이지는 글자뿐인 문서로, 본문에 실린 도표·스크린샷이 없어 인용 이미지를 넣지 않았다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "VS Code에서 AI 코딩 에이전트·MCP 서버를 쓰는 사람이 1.145.3 업데이트 전후로 어떤 위험부터 점검해야 하는가",
+  "limitations": "직접 실행·재현하지 않았고 GitHub 권고 10건 본문을 읽었다(11월 10일 자 16건 중 나머지 6건은 목록의 제목·심각도만). 악용 여부·NVD 점수·Cursor 등 포크 제품 영향은 확인하지 못했다. CVSS 기본·시간 점수는 권고 벡터로 직접 계산했다. 상황별 순서는 권고 우회책에 기반한 필자의 해석이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧪 공격 조건으로 나눠 본 위험 비교",
+    "excerpt": "이 표에서 가장 눈에 띄는 차이는 **디버거 자동 연결 건**입니다. 권고는 '작업 영역 신뢰가 보호하기 전에' 시작 시점의 실행 파일 탐색 설정이 영향을 줄 수 있었다고 쓰고 있어",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S15",
+     "S16"
+    ],
+    "added_value": "권고 여러 건의 전제 조건(폴더 열기·링크 클릭/승인·악성 서버 연결·에이전트 입력 영향)을 같은 기준으로 묶어 비교했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🗂 내 상황별 업데이트·점검 순서",
+    "excerpt": "모든 행의 첫 번째 조치는 같습니다. 1.145.3 이상으로 올리는 것입니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5",
+     "S7",
+     "S8"
+    ],
+    "added_value": "독자의 사용 상황별로 권고의 우회책을 재배열해 업데이트 전 점검 순서를 제시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 다른 편집기 사용자들의 반응",
+    "excerpt": "중요한 점은 이 포럼 스레드에 **Cursor 측 공식 답변이나 패치 일정이 아직 없다**는 것입니다.",
+    "source_ids": [
+     "S2",
+     "S11",
+     "S12"
+    ],
+    "added_value": "공식 권고와 외부 보도·포럼을 연결해 VS Code 기반 제품의 영향 여부가 미확인임을 분명히 했다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🛠 MCP·에이전트 경로 취약점 5건 읽기",
+    "excerpt": "권고에 적힌 벡터를 CVSS 3.1 공식으로 계산해 보면 **기본 점수는 9.6, 시간 지표(E:U/RL:O/RC:C)를 반영한 값은 8.3**이 나옵니다.",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S5",
+     "S12"
+    ],
+    "added_value": "권고 표기 점수와 포럼이 전한 NVD 점수의 차이를 같은 벡터의 기본·시간 점수로 계산해 설명했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 66,
+  "confirmed": 63,
+  "removed": [
+   "SSE 권고는 노출이 의심될 때 낯선 MCP 서버에 넘겼을 수 있는 자격 증명을 교체하라고 권합니다. (권고에 자격 증명 교체 권고 없음 — 노출 가능성 설명 + 필자 판단 예방책으로 고쳐 씀)",
+   "SSE 권고는 적힌 CVSS 벡터를 3.1 공식으로 계산하면 표기된 7.7과 다르게 나온다 (재계산 결과 기본 8.8·시간 지표 반영 7.7로 표기와 일치 — 정정)",
+   "보안 권고 목록에는 10건이 11월 10일 자로 게시 / 첫 페이지 10건 중 9건 High·1건 Moderate (목록 2쪽까지 16건, High 14·Moderate 2로 정정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): GitHub 권고 10건 본문(GHSA-crhv·66hq·w9fm·4x35·3grj·g3fj·f56j·xfg5·fp22·x5cm)을 WebFetch로 다시 열어 CVE·심각도·점수·벡터·영향/수정 버전·전제 조건·수정·우회책 대조. 권고 목록 1~2쪽에서 11월 10일 자 16건 확인. 17건은 업데이트 노트가 링크한 1.145.3 마일스톤(closed·candidate 17건)으로 확인해 S14 추가, S15·S16(앞서 제목만 본 2건) 본문 확인 후 추가. CVSS 3.1 기본/시간 점수를 직접 계산(8.8→7.7, 9.6→8.3, 7.8→6.8, 8.3→7.2)해 모든 표기 점수가 시간 지표 반영값과 일치함을 확인; 9.6은 포럼이 전한 NVD 값(직접 미확인)으로 한정. NT Compatible의 '8건 CVE/9건 커밋만'은 공식 목록과 달라 차이로 명시. 릴리스 페이지(1.145.3 11-10, 1.146.0 11-11), 업데이트 노트(1.145 11-04), NT Compatible(11-11), Cursor 포럼(11-11, 공식 답변 없음) 발표일 대조 일치. EGRESS_BLOCKED 출처 없음. 공격 절차 없음(방어 관점)."
+ }
+}
