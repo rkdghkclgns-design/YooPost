@@ -6513,5 +6513,30 @@
    "https://www.nysenate.gov/legislation/laws/GBS/A44-B"
   ],
   "draft_id": "20261112_072945_4"
+ },
+ {
+  "date": "2026-11-12",
+  "title": "🔒 VS Code 1.145.3 보안 패치, MCP·에이전트 취약점은 무엇부터 점검할까",
+  "topic": "Microsoft VS Code 1.145.3 security release — MCP·agent-related vulnerabilities (GitHub Security Advisories, 2026-11-10) / NT Compatible·Cursor forum 보도",
+  "category": "AI 보안",
+  "source_url": "https://github.com/microsoft/vscode/security/advisories/GHSA-crhv-2887-p3xr",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/vs-code-11453-mcp.html"
+  },
+  "sources": [
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-crhv-2887-p3xr",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-66hq-jw93-462h",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-w9fm-7vcm-cvq4",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-4x35-6qr8-ww48",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-3grj-pfwj-fffm",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-g3fj-wc2g-v3j5",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-f56j-7499-5hch",
+   "https://github.com/microsoft/vscode/security/advisories/GHSA-xfg5-fq3p-cx69",
+   "https://github.com/microsoft/vscode/security/advisories",
+   "https://github.com/microsoft/vscode/releases",
+   "https://www.ntcompatible.com/story/visual-studio-code-11453-security-patch-covering-17-vulnerabilities",
+   "https://forum.cursor.com/t/is-cursor-3-29-15-exposed-to-the-chrome-0-day-and-vs-code-mcp-cves/178029"
+  ],
+  "draft_id": "20261112_073804_5"
  }
 ]
