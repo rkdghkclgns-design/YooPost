@@ -1,0 +1,88 @@
+{
+ "topic": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv 2611.10866, 2026-11-07) — Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.10866",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.10866",
+   "publisher": "arXiv",
+   "published": "2026-11-07",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2611.10866v1",
+   "publisher": "arXiv",
+   "published": "2026-11-07",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Hugging Face Papers: The Surprising Effectiveness of Deleting Weights in LLM Post-Training",
+   "url": "https://huggingface.co/papers/2611.10866",
+   "publisher": "Hugging Face",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "NeurIPS 2026 Poster: The Surprising Effectiveness of Deleting Weights in LLM Reasoning and Adaptation",
+   "url": "https://neurips.cc/virtual/2026/poster/154971",
+   "publisher": "NeurIPS",
+   "published": "2026-09-25",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.10866v1/method.png",
+   "page_url": "https://arxiv.org/html/2611.10866v1",
+   "caption": "Deletion Tuning 방법: 양의 로짓 가중치는 남기고 음의 로짓 가중치는 0으로 지우는 마스크 구조",
+   "credit": "Lu et al., arXiv 2611.10866 (CC BY 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "가중치를 지우기만 하는 후처리 Deletion Tuning 이 FFT·LoRA 대비 정확도·저장 크기·망각에서 무엇을 얻고 포기하는가?",
+  "limitations": "논문 보고값만 사용했고 코드 실행·재현은 하지 않았다. 반복 실행 오차는 확인하지 못했다. 외부 매체 기사·독립 재현은 찾지 못했고 커뮤니티 반응은 Hugging Face 댓글 2개뿐이다. 차이·비율·배수는 표의 값으로 이 글이 계산했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💾 저장 크기 계산: '수천 배 작다'는 숫자를 직접 나눠 보기",
+    "excerpt": "Llama 8B 는 30,633 ÷ 8.4 ≈ **3,647배**, Qwen 14B 는 56,343 ÷ 11.4 ≈ 4,942배",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "논문 표의 MB 값을 직접 나눠 FFT 대비 배수를 구하고 LoRA r=1 대비 1.2~4.2배로 비교 기준을 바꿔 과장 여부를 판단하게 함."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 FFT와 비교: 큰 모델에서 따라잡고 작은 모델에서는 모자란다",
+    "excerpt": "점수 차이로 보면 Qwen 3B(-2.37점)가 0.5B(-1.37점)보다 벌어져",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "규모별 FFT 대비 차이·비율을 계산해 일치 주장이 큰 모델에서만 성립하고, 격차가 크기마다 단조롭게 줄지는 않음(Qwen 3B)을 보임."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 어떤 상황에서 쓸 만한가: 선택 기준과 제외 조건",
+    "excerpt": "논문 숫자에서 끌어낸 이 글의 해석입니다. 아래 기준은 저자가 제시한 것이 아니라 표에서 추론한 것이며",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "모델 크기·메모리·과제 영역별로 후보 여부와 제외 조건을 표로 제시."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [],
+  "note": "Opus 검증 (claude-opus-5-5). 주장 58개 중 51개 원문 그대로 확인, 7개는 원문에 맞게 고친 뒤 확인. arXiv abs·HTML v1 원문을 curl 로 받아 표 1·2·3·4·5·6, 4·5절 본문과 대조: 정확도·MB 값 전부 일치, 차이·FFT 대비 비율·FFT/DT 배수(4,714·3,647·4,942·3,935)·LoRA r=1/DT 배수(2.7·1.2·4.2·1.4) 재계산 일치. 수정 7건: (1) '지운 가중치당 0.03비트' → 논문은 '대상 가중치당 약 0.03비트' (2) α 10³→10⁴ 는 GRPO 기본값(SFT·SDFT 다름)으로 한정 (3) '0.5B→3B→7B 로 격차가 줄어' → 비율은 늘지만 Qwen 3B 점수차(-2.37)가 0.5B(-1.37)보다 커 단조 감소 아님을 명시 (4) 'LoRA 최대 5.4점' → 논문은 LoRA·MTH 합쳐 최대 5.4점 (5) '초록과 본문은 모든 GRPO 실행' → 초록 0.05% 미만/본문 표 1 GRPO 실행으로 구분 (6) '가장 작은 규모 90~99%' → '작은 규모' (7) NeurIPS 표기 caveat: 학회 페이지(S4) 제목은 '…in LLM Reasoning and Adaptation'(제목도 다름), 방법명 Bit-Mask Tuning(BMT) — '같은 제목' 표현 정정, 12월 9일 포스터 일정 추가. S3 HF Papers 페이지: 'Published on Nov 7 · Submitted by Jack Lu on Nov 11'(publishedAt 2026-11-07, submittedOnDailyAt 2026-11-11) — published 2026-11-11 은 HF 등록일 기준으로 맞음, 추천 13·댓글 2·댓글 내용·GitHub/마스크 모델 링크 확인. S1 citation_date 2026/11/07, S4 JSON-LD datePublished 2026-09-25 일치. 인용 이미지 method.png HTTP 200 image/png 592x140 (Figure 1 마스크 구조, 캡션 일치). EGRESS_BLOCKED 출처 없음."
+ }
+}
