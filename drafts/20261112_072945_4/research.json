@@ -1,0 +1,130 @@
+{
+ "topic": "New York RAISE Portal and NY Center for AI Responsibility and Research launch (Governor Hochul, 2026-11-10) / TechCrunch: OpenAI, Anthropic face new oversight as New York's AI safety law takes effect",
+ "source_url": "https://governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Governor Hochul Declares NY Will Lead the Nation in AI Science and Safety; Launches New Research Institute",
+   "url": "https://governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research",
+   "publisher": "New York State Governor's Office",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "OpenAI, Anthropic face new oversight as New York's AI safety law takes effect",
+   "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "AI Safety: Governor Hochul announces next steps to regulate major AI developers (DFS press release)",
+   "url": "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20260921",
+   "publisher": "NYS Department of Financial Services",
+   "published": "2026-09-21",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "New York Finalizes RAISE Act for Frontier AI Models; Law Takes Effect January 1, 2027",
+   "url": "https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027",
+   "publisher": "Wiley Rein LLP",
+   "published": "2026-04-03",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "The RAISE Act vs. SB 53: A Tale of Two Frontier AI Laws",
+   "url": "https://fpf.org/blog/the-raise-act-vs-sb-53-a-tale-of-two-frontier-ai-laws/",
+   "publisher": "Future of Privacy Forum",
+   "published": "2026-01-08",
+   "official": false,
+   "updated": "2026-10-22",
+   "note": "페이지 표기: 게시 2026-01-08, Last Updated 2026-10-22"
+  },
+  {
+   "id": "S6",
+   "title": "New York Gov. Hochul signs RAISE Act (CIO Dive)",
+   "url": "https://www.ciodive.com/news/new-york-ai-model-safety-requirements/808557/",
+   "publisher": "CIO Dive",
+   "published": "2025-12-22",
+   "official": false,
+   "note": "페이지 표기 Published Dec. 22, 2025; 서명은 12월(정확한 날짜 미기재)"
+  },
+  {
+   "id": "S7",
+   "title": "Information for Frontier Developers (DIGIT, NYS DFS)",
+   "url": "https://www.dfs.ny.gov/digit/Frontier-Developers",
+   "publisher": "NYS Department of Financial Services (DIGIT)",
+   "published": "2026-11-10",
+   "official": true,
+   "note": "페이지에 날짜 표기 없음, 11-10 보도자료가 공개를 밝힌 요건 웹사이트로 확인"
+  },
+  {
+   "id": "S8",
+   "title": "New York General Business Law Article 44-B (RAISE Act) §1420·§1427·§1428",
+   "url": "https://www.nysenate.gov/legislation/laws/GBS/A44-B",
+   "publisher": "New York State Senate",
+   "published": "2026-04-03",
+   "official": true,
+   "note": "최신 개정본(2026-04-03) 표기, 시행 2027-01-01"
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 본문의 그림은 행사 사진뿐이고 원고 내용(요건·비교)을 보여 주는 도표·화면이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "뉴욕 RAISE 포털 개시로 우리(또는 내가 아는) AI 회사가 등록 대상인지, 캘리포니아 SB 53와 무엇이 다른지",
+  "limitations": "포털을 직접 사용하지 않았고 공식 보도자료·언론·법률 해설을 읽고 정리했다. 포털 양식·분담금 액수·등록 회사 명단은 확인하지 못했다. 법률 자문이 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⚖️ 캘리포니아 SB 53와 무엇이 다른가요 (비교)",
+    "excerpt": "보고 기한을 시간으로 환산하면 15일은 15×24=**360시간**이고 72시간의 **5배**입니다.",
+    "source_ids": [
+     "S4",
+     "S5"
+    ],
+    "added_value": "15일과 72시간을 같은 단위(시간)로 환산해 5배 차이를 보여 주고 해석 한계를 밝힘"
+   },
+   {
+    "kind": "comparison",
+    "section": "⚖️ 캘리포니아 SB 53와 무엇이 다른가요 (비교)",
+    "excerpt": "가장 자주 나오는 질문은 '이미 캘리포니아에 비슷한 법이 있는데 뉴욕은 무엇이 다른가'입니다.",
+    "source_ids": [
+     "S4",
+     "S5"
+    ],
+    "added_value": "두 법을 같은 항목(범위·보고 기한·벌칙·감독·내부고발자)으로 맞춘 비교표"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 회사도 해당될까요 (판단 기준)",
+    "excerpt": "아래는 법률 자문이 아니라 공개된 정의를 기준으로 만든 **1차 점검 순서**입니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "10^26 연산·매출 5억 달러·뉴욕 운영 기준을 상황별 적용 가능성 표로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [],
+  "corrected": [
+   "법률 해설이 AI 소송 태스크포스 행정명령을 짚었다 → CIO Dive 보도로 고침(Wiley Rein 은 연방 AI 법 추진과의 긴장만 언급)",
+   "벌칙(100만/300만 달러, 하루 1,000달러): Wiley Rein 단독 → 일반사업법 §1427·§1428(개정 2026-04-03)과 TechCrunch 11-10 기사로 확인, 대형 개발사·검찰총장·사무국 주체 명시",
+   "등록 회사 목록 공개 '해설되나' → §1428 조문 규정으로 고침",
+   "공시서 내용·주기, 분기 요약 기한(분기 후 30일), 투명성 보고서 '배포 전' → '배포 전 또는 동시', 위험 평가 요약은 대형 개발사만: DIGIT 개발사 안내 기준으로 고침",
+   "연구자 80여 명 → 과학자 80명 넘게, 첫 모집 분야 4개 이름을 보도자료 표현대로 고침",
+   "TechCrunch 5,500만 달러 = 3,000만+2,500만(1월 발표), 주 운영 자금 금액 미공개 명시",
+   "CIO Dive 서명일: 12월 22일은 기사 게시일, 정확한 서명일 미기재로 표기",
+   "SB 53 비교표 범위: FPF 기준 뉴욕의 지역 한정·대학 연구 예외 추가; FPF 출처는 게시 2026-01-08·갱신 2026-10-22 로 기록"
+  ],
+  "note": "Opus 검증: S1(주지사실 11-10)·S2(TechCrunch 11-10)·S3(DFS 9-21)·S4(Wiley 4-03)·S5(FPF)·S6(CIO Dive 12-22) 를 다시 열고, DIGIT 요건 웹사이트(dfs.ny.gov/digit/Frontier-Developers)와 뉴욕주 상원 법령 조문(§1420·§1427·§1428, 개정 2026-04-03)을 새로 열어 정의·의무·벌칙을 현행 기준으로 확인. 각 출처 published 를 페이지 표기와 대조. 계산(15일=360시간=72시간의 5배, 1,000달러×30일=3만 달러, 3,000만+2,500만=5,500만 달러) 재검증. 막힌 출처 없음."
+ }
+}
