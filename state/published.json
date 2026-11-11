@@ -6538,5 +6538,25 @@
    "https://forum.cursor.com/t/is-cursor-3-29-15-exposed-to-the-chrome-0-day-and-vs-code-mcp-cves/178029"
   ],
   "draft_id": "20261112_073804_5"
+ },
+ {
+  "date": "2026-11-12",
+  "title": "📉 나스닥 100 하루 6.36% 급락, AI 불안은 무엇에서 시작됐나: 퀄컴 공시와 원인 주장 나눠 읽기",
+  "topic": "2026-11-05 나스닥 급락 — Tech-stock rout accelerates retreat from the AI trade (Reuters, 2026-11-06) / Qualcomm FY2026 Q4 results (2026-11-04)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.thestar.com.my/tech/tech-news/2026/11/06/tech-stock-rout-accelerates-retreat-from-the-ai-trade",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/100-636-ai.html"
+  },
+  "sources": [
+   "https://www.sec.gov/Archives/edgar/data/0000804328/000080432826000127/qcom092726erex991.htm",
+   "https://www.thestar.com.my/tech/tech-news/2026/11/06/tech-stock-rout-accelerates-retreat-from-the-ai-trade",
+   "https://investinglive.com/stocks/nasdaq-100-suffers-worst-day-since-2020/",
+   "https://openthemagazine.com/technology/quick-take-why-did-the-nasdaq-fall-55-seven-things-to-know-about-wall-streets-ai-sell-off",
+   "https://stockanalysis.com/news/nasdaq-100-falls-chip-stocks-slide/",
+   "https://www.siliconreport.com/nasdaq-100-drops-6-3-and-erases-2-3-trillion-in-market-value",
+   "https://stockanalysis.com/news/nasdaq-100-rallies-after-ai-selloff-nvidia-falls/"
+  ],
+  "draft_id": "20261112_074550_6"
  }
 ]
