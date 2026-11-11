@@ -6475,5 +6475,22 @@
    "https://aiweekly.co/alerts/openai-puts-verified-business-profiles-and-agents-in-chatgpt"
   ],
   "draft_id": "20261112_071546_2"
+ },
+ {
+  "date": "2026-11-12",
+  "title": "✂️ 가중치 0.05%만 지워도 FFT를 따라잡을까: Deletion Tuning의 정확도·크기·망각 계산",
+  "topic": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv 2611.10866, 2026-11-07) — Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.10866",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/005-fft-deletion-tuning.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.10866",
+   "https://arxiv.org/html/2611.10866v1",
+   "https://huggingface.co/papers/2611.10866",
+   "https://neurips.cc/virtual/2026/poster/154971"
+  ],
+  "draft_id": "20261112_072234_3"
  }
 ]
