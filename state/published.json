@@ -6492,5 +6492,26 @@
    "https://neurips.cc/virtual/2026/poster/154971"
   ],
   "draft_id": "20261112_072234_3"
+ },
+ {
+  "date": "2026-11-12",
+  "title": "🗽 뉴욕 RAISE 포털 개시, 우리 AI 회사도 등록 대상일까: 캘리포니아 법과 72시간 규칙 비교",
+  "topic": "New York RAISE Portal and NY Center for AI Responsibility and Research launch (Governor Hochul, 2026-11-10) / TechCrunch: OpenAI, Anthropic face new oversight as New York's AI safety law takes effect",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/raise-ai-72.html"
+  },
+  "sources": [
+   "https://governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research",
+   "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+   "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20260921",
+   "https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027",
+   "https://fpf.org/blog/the-raise-act-vs-sb-53-a-tale-of-two-frontier-ai-laws/",
+   "https://www.ciodive.com/news/new-york-ai-model-safety-requirements/808557/",
+   "https://www.dfs.ny.gov/digit/Frontier-Developers",
+   "https://www.nysenate.gov/legislation/laws/GBS/A44-B"
+  ],
+  "draft_id": "20261112_072945_4"
  }
 ]
