@@ -1,0 +1,106 @@
+{
+ "topic": "Update on the October 2026 Security Incident (Fireworks AI, 2026-11-09) / BleepingComputer·The Register 보도",
+ "source_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Update on the October 2026 Security Incident",
+   "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+   "publisher": "Fireworks AI",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "October 2026 Security Incident (original bulletin)",
+   "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident",
+   "publisher": "Fireworks AI",
+   "published": "2026-10-09",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Fireworks AI discloses new breach after cloud provider hack",
+   "url": "https://bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Fireworks AI gets burned twice as customer data exposure widens",
+   "url": "https://www.theregister.com/a/5308722",
+   "publisher": "The Register",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Fireworks expands breach disclosure to datasets and model weights",
+   "url": "https://www.siliconreport.com/fireworks-expands-breach-disclosure-to-datasets-and-model-weights",
+   "publisher": "Silicon Report",
+   "published": "2026-11-09",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처 페이지(공지·기사)는 글자 위주이고 원고 내용을 보여 주는 본문 도표·스크린샷이 없어 인용하지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Fireworks AI 보안 사고 갱신에서 피해 범위는 무엇이 달라졌고, 고객은 어떤 상황에서 무엇을 확인해야 하는가",
+  "limitations": "직접 실행·실측 없음. 공개된 회사 공지와 언론 보도에 근거하며 영향 고객 수·호스팅 업체·최종 조사 결과는 미공개. 상황별 우선순위는 필자의 해석.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧩 첫 공지와 이번 갱신, 무엇이 달라졌나",
+    "excerpt": "이는 **같은 사고가 커진 것이 아니라 별개의 두 번째 침해 경로가 드러난 것**으로 읽힙니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "10월 첫 공지와 11월 갱신의 노출 범위·경로·조치를 같은 항목으로 비교해 '증거 없음'이 바뀐 지점을 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 고객은 무엇을 확인해야 하나: 상황별 판단 기준",
+    "excerpt": "아래 표는 위 공식 안내를 바탕으로 필자가 상황별로 정리한 **판단 기준**입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "통지 여부·데이터 보관 형태별로 확인 우선순위를 나눠 독자의 행동 기준을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 번지는 영향: 호스팅 업체와 하류 고객",
+    "excerpt": "내가 직접 Fireworks를 쓰지 않아도, 내가 쓰는 SaaS의 AI 기능이 Fireworks 같은 추론 공급자를 거칠 수 있습니다.",
+    "source_ids": [
+     "S4",
+     "S5",
+     "S1"
+    ],
+    "added_value": "공식 공지와 서로 다른 두 매체의 하류 고객·호스팅 업체 정보를 연결해 공급망 관점으로 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "The Register는 Bloomberg를 인용해 Fireworks가 11월 9일 고객에게 두 번째 침해를 알렸고 (11월 9일 고객 통지 날짜는 S4 본문에 없음 — 해당 구절 삭제)",
+   "SiliconReport는 영향받은 고객으로 Notion과 Cursor를 언급하며 (S5는 '함께 대응 중인 고객'으로만 언급 — 영향 단정 삭제, 문장 수정)"
+  ],
+  "corrected": [
+   "BleepingComputer 'second breach' 표현 → 실제 표현 'new security breach'로 수정 (S3 제목도 실제 헤드라인으로 수정)",
+   "타임라인 10월 6일 출처를 S2(공식 첫 공지 타임라인)·S4로 보강",
+   "11월 9일 행: '고객 통지' → '영향 고객 개별 통지 안내'(날짜 없는 통지)",
+   "10월 25일: '추가 무단 접근 증거 없음' → '추가로 성공한 무단 접근 없음'(S1 표현)",
+   "Notion 통지: 'AI 어시스턴트와의 일부 대화' → 'Notion AI와의 일부 대화 기록', 식별 정보 관련 Register 표현에 맞춤",
+   "Unit 42·법 집행기관: '함께 포렌식' → '법 집행기관 통보, Unit 42 포렌식 지원'",
+   "LLMJacking FAQ 정의를 S1 표현(토큰을 불법 라우팅 게이트웨이에 판매)에 맞춤",
+   "통지 수신 시 행동: 비밀값 이름·지문은 Fireworks가 보안 채널로 제공 가능하다는 S2 표현에 맞춤",
+   "공급망 '3단계' 표현과 운영 시사점 세 가지를 필자 해석으로 명시"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S2 공식 공지와 S3·S4·S5 기사를 WebFetch로 다시 열어 수치·날짜·이름·타임라인·피해 범위를 대조. published 날짜 확인: S1 Last updated 2026-11-09, S2 2026-10-09(10-10 갱신), S3 2026-11-10, S4 2026-11-10, S5 2026-11-09 — 모두 일치. 막힌 출처 없음. 영향 고객 수·호스팅 업체명 미공개(S3·S4 확인). Notion 하류 영향은 The Register 간접 인용으로 표시. 상황별 우선순위 표는 필자 해석으로 표시. editorial 발췌문 3개 본문 일치 확인."
+ }
+}
