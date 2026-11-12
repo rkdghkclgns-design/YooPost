@@ -1,0 +1,105 @@
+{
+ "topic": "NVIDIA Announces CEO Transition — Jensen Huang resigns, Colette Kress interim CEO, Harvey C. Jones first Board Chair (SEC 8-K, 2026-11-12) / CNBC·Al Jazeera 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "NVIDIA Announces CEO Transition (Exhibit 99.1 to Form 8-K)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+   "publisher": "NVIDIA / SEC EDGAR",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "NVIDIA Corp Form 8-K (report date 2026-11-11, Item 5.02)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvda-20261111.htm",
+   "publisher": "SEC EDGAR",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "NVIDIA Announces CEO Transition",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+   "publisher": "NVIDIA Newsroom",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Nvidia stock closes down over 4% after CEO Jensen Huang announces resignation",
+   "url": "https://www.cnbc.com/2026/11/12/nvidia-nvda-jensen-huang-second-affair.html",
+   "publisher": "CNBC",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Why did Nvidia CEO Jensen Huang resign, and who is Colette Kress?",
+   "url": "https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress",
+   "publisher": "Al Jazeera",
+   "published": "2026-11-12",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처는 글자 중심의 공시·보도자료이며 본문에 내용과 관련된 도표·화면 그림이 없다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "엔비디아 황 CEO 사임 발표에서 공시로 확정된 것과 보도·해석에 그치는 것은 무엇이고, 다음에 무엇을 확인해야 하나?",
+  "limitations": "직접 실행·실측 없음. 공시·보도 문서를 읽고 정리했으며 사임 이유는 공식 문서에 없어 다루지 않음. 매출 계산은 알자지라가 전한 두 수치의 산술이며 회계연도 정의는 원문 기준.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 확인된 사실과 보도된 것을 구분하기",
+    "excerpt": "표에서 보듯 **사임 이유는 8-K에 적혀 있지 않고**, 8-K 본문도 이견이나 사유를 명시하지 않았다고 확인됩니다. 알자지라는 이사회가 사임",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공식 문서 2종과 매체 2곳을 같은 질문으로 대조해 확정 사실과 보도를 분리"
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 숫자로 보기: 크레스 재임 기간의 매출과 시장 반응",
+    "excerpt": "**12년 동안 매출이 약 52배**가 됐다는 계산은 이 회사 경영진이 그동안 어떤 규모의 변화를 다뤘는지 보여 줍니다. 다만 이 수치만으로 크",
+    "source_ids": [
+     "S5"
+    ],
+    "added_value": "41.3억→2,159억 달러 수치로 배수(약 52.3배)와 12년 CAGR(약 39%)을 식과 가정과 함께 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🗓 다음에 확인할 일정과 점검표",
+    "excerpt": "점검표의 핵심은 **'기대한다'와 '확정했다'의 차이**입니다. 존스의 연속성 발언은 이사회 의장의 기대 표명이고, 보도자료는 이를 '운영·고객",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "독자 상황별로 공시로 알 수 있는 것과 아직 모르는 것을 구분한 점검표"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 41,
+  "removed": [
+   "이틀 전까지의 이사회 조사 소식과 이어지는 후속 소식입니다. (날짜 간격 미확인 — 알자지라는 '일요일'로만 적음)",
+   "이 조사 결과는 아직 나오지 않았다고 알자지라는 미해결 질문으로 꼽았습니다. (원문에서 확인 안 됨)",
+   "개인에 대한 보도 가운데 일부는 매체 스스로 '미확인'이라고 구분했습니다. (인물 관련 — 출처 문구로 확인 안 됨)"
+  ],
+  "corrected": [
+   "스퀘어웨이브벤처스: '사모 가족 투자사' → 8-K 표현 'private family office'(패밀리 오피스)",
+   "크레스 경력: '시스코와 마이크로소프트에서 약 25년 가까이' → 보도자료 'nearly 25 years ... including Cisco and Microsoft'",
+   "CNBC 표 칸 '회사가 밝힌 이유 없음' → '회사가 밝힌 이유를 전하지 않음'; FAQ에서 CNBC가 '이유를 밝히지 않았다고 전함' 삭제(알자지라만 명시)",
+   "8-K 본문의 사임 수락일 11월 11일 명시(보고 기준일 11-11, 보도자료·서명 11-12)",
+   "월가 애널리스트 20% 발언: '이름을 밝히지 않은 여러 애널리스트'로 귀속 명확화; 시가총액 문장 주어 수정",
+   "트럼프 발언을 알자지라 원문대로(트루스소셜, 후임 제안)로 구체화; CNBC 출처 제목을 실제 기사 제목으로 수정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): SEC 8-K 본문(nvda-20261111.htm)·Exhibit 99.1·엔비디아 뉴스룸·CNBC·알자지라를 다시 열어 주장별 대조. 5개 출처 모두 페이지 날짜 2026-11-12 일치. 계산 재검산: 215.9÷4.13=52.28(약 52.3배), (52.28)^(1/12)−1=39.06%(약 39%). 인물 관련 개인사·미확인 보도는 본문에서 제외, 애널리스트 의견은 의견으로 귀속 유지."
+ }
+}
