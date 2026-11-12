@@ -6630,5 +6630,23 @@
    "https://huggingface.co/robbyant/lingbot-touch-tiny"
   ],
   "draft_id": "20261113_071643_3"
+ },
+ {
+  "date": "2026-11-13",
+  "title": "🔒 Fireworks AI 보안 사고 갱신: 데이터셋·모델 가중치까지 번졌나, 고객이 확인할 것",
+  "topic": "Update on the October 2026 Security Incident (Fireworks AI, 2026-11-09) / BleepingComputer·The Register 보도",
+  "category": "AI 보안",
+  "source_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/fireworks-ai.html"
+  },
+  "sources": [
+   "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+   "https://fireworks.ai/security/bulletins/october-2026-security-incident",
+   "https://bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack",
+   "https://www.theregister.com/a/5308722",
+   "https://www.siliconreport.com/fireworks-expands-breach-disclosure-to-datasets-and-model-weights"
+  ],
+  "draft_id": "20261113_072833_5"
  }
 ]
