@@ -1,0 +1,82 @@
+{
+ "topic": "IBM and Microsoft Announce a New AI Agent Platform Designed for Industry-Specific Transformation",
+ "source_url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "IBM and Microsoft Announce a New AI Agent Platform Designed for Industry-Specific Transformation",
+   "url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation",
+   "publisher": "IBM Newsroom",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Microsoft, IBM team up on AI agent platform",
+   "url": "https://www.ciodive.com/news/microsoft-ibm-team-up-ai-agent-platform/874152/",
+   "publisher": "CIO Dive",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "IBM and Microsoft Launch Imagine Enterprise for Industry AI Agents",
+   "url": "https://www.unite.ai/?p=512016",
+   "publisher": "Unite.AI",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "New Microsoft Initiative Aims to Help Move AI Projects from Experimentation to Production",
+   "url": "https://thejournal.com/articles/2026/07/08/new-microsoft-initiative-aims-to-help-move-ai-projects-from-experimentation-to-production.aspx",
+   "publisher": "THE Journal",
+   "published": "2026-07-08",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "IBM 발표문의 이미지는 배너 한 장뿐이고 CIO Dive 이미지는 Getty 헤더 사진이어서 본문 내용을 보여 주는 제품 화면·도표가 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "IBM·마이크로소프트의 Imagine Enterprise는 무엇으로 구성되며, 공개된 근거로 우리 조직이 검토할 만한가?",
+  "limitations": "직접 실행·시험하지 않았고 발표문과 보도만 읽었다. 가격·일정·운영 성과는 공개되지 않았다. Unite.AI 세부는 2차 보도이며 판단 기준 표는 추론이다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 근거는 얼마나 단단한가: 숫자와 증거 따져 보기",
+    "excerpt": "이 6,000명은 Imagine Enterprise의 6,000개 에이전트와",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "세 문서에서 일치하는 사실과 비어 있는 운영 성과를 대조하고 서로 다른 6,000 수치를 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 우리 조직은 검토할 만한가: 상황별 판단 기준",
+    "excerpt": "직접 시험하거나 성능을 측정한 결과가 아니며, 각 항목의 기준은 필자의 추론입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "업종·환경·근거 요구 수준별 검토 방향과 추론임을 표시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🏦 산업 틀과 도입 방식: 처음엔 세 업종, 세 가지 길",
+    "excerpt": "세 번째 열은 발표문이 아니라 필자의 해석입니다. 발표문은 비용, 계약 형태, 서비스 수준을 밝히지 않으므로",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "세 도입 방식을 운영 주체별로 비교하되 비용 비교 근거가 없음을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 42,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5, 2026-11-13 KST): S1 IBM 뉴스룸·S2 CIO Dive·S3 Unite.AI·S4 THE Journal 을 다시 열어 날짜(published 와 페이지 날짜 일치: 11-10·11-10·11-10·07-08), 6,000개 이상 에이전트·자산(IBM), 도구 이름, 초기 3개 업종·확대 후보, 3가지 도입 방식, 자격을 갖춘 프로젝트 대상 전방 배치 엔지니어, SEI 탐색·약 2조 달러(2026-09-30 기준)·Sneha Shah, Mohamad Ali·Rodrigo Kede Lima 발언, Gartner 4%, Krishna 발언(데이터·워크플로·인프라·하이브리드 클라우드), Unite.AI 거버넌스·Digital Steward·AI 작성 명의, Frontier Company 25억 달러·약 6,000명 엔지니어·전문가(S4)를 대조. 6,000개 에이전트(IBM)와 약 6,000명(Frontier Company) 구분이 출처와 맞음. CIO Dive 에 SEI 언급 없음 확인. IBM 발표문 본문 그림은 배너뿐(images_none_reason 유지). 막힌 출처 없음. 틀린 주장 없음; SEI 자산 기준일 추가, 강조 없는 문단 10곳에 형광 강조 보완. editorial 발췌 3개 본문 일치 확인."
+ }
+}
