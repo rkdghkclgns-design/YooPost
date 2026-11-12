@@ -1,0 +1,103 @@
+{
+ "topic": "Gemini Decisions API: Fast, calibrated multimodal decisions (Google DeepMind, 2026-11-11) — Gemini Decision 1 / Channel Insider·ITdaily·DEV Community 보도",
+ "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "publisher": "Google (Google DeepMind)",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google's Gemini Decisions API Targets Faster, Cheaper AI Workflows",
+   "url": "https://www.channelinsider.com/ai/news-google-gemini-decisions-api-ai-agents-channel/",
+   "publisher": "Channel Insider",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google releases Gemini Decisions API for fast multiple-choice decisions",
+   "url": "https://itdaily.com/news/software/gemini-decisions-api-multiple-choice-decisions/",
+   "publisher": "ITdaily",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Fast multimodal control flow with the Gemini Decisions API",
+   "url": "https://dev.to/philschmid/fast-multimodal-control-flow-with-the-gemini-decisions-api-533b",
+   "publisher": "DEV Community (Philipp Schmid)",
+   "published": "2026-11-12",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/decisions-architecture_f0NFXU9.width-1200.format-webp.webp",
+   "page_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "caption": "Gemini Decisions API 구조: 멀티모달 입력과 질문이 Gemini Decision 1을 거쳐 보정된 답으로 나오는 도식",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp",
+   "page_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "caption": "벤치마크 표: Gemini Decision 1과 TypeSafe Jev 1.14·GPT-6 Luna·Gemini 3.5 Flash-Lite 비교",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "분류·라우팅 단계를 Gemini Decisions API로 바꿔도 되는지, 공식 벤치마크에서 어디가 강하고 약하며 질문 묶음 비용은 얼마나 달라지는가",
+  "limitations": "API를 직접 호출하거나 벤치마크를 재현하지 않았고, 성능·비용 수치는 모두 Google 자체 비교표 값이다. 비용 계산의 토큰 수는 가정이며 독립 검증·커뮤니티 사용 후기는 확인하지 못했다. 공식 문서 페이지는 날짜가 없어 출처로 넣지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크 표 읽기: 9개 중 7개에서 앞섰고 2개는 뒤졌다",
+    "excerpt": "Mind2Web Multimodal에서는 TypeSafe Jev 1.14가 0.6%p 높고 When2Call에서는 2.1%p 높습니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공식 글의 '전반적 우위' 문장을 표의 항목별 수치로 되짚어 앞선 7개와 뒤진 2개, 비교 모델이 비어 있는 2개 항목을 구분하고 총 가격 차이(Jev 대비 약 29%, Flash-Lite 대비 4.7배)를 계산함"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 비용 계산: 질문을 묶으면 입력 비용이 얼마나 줄까",
+    "excerpt": "가정이 맞다면 묶음 처리는 같은 모델에서 입력 비용이 **약 15.6배 적습니다**",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 단가 $0.10/100만 토큰과 '공유 입력 1회 과금' 구조에 가정(입력 10,000토큰, 질문 20개×150토큰)을 넣어 묶음 대 개별 요청 비용을 비교하고 의존 질문의 지연 합산도 추정함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 도입 판단 기준: 쓸 일과 쓰지 말아야 할 일",
+    "excerpt": "가장 현실적인 도입 순서는 기존 라우팅·분류 로직 중 질문이 독립적인 한 곳을 골라",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 스펙·한계와 세 매체의 단서를 상황별 적합·제외 판단표로 재구성하고 그림자 모드 도입 순서를 제안함"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 66,
+  "removed": [
+   "반복되는 입력을 캐시로 싸게 쓰는 길은 이 API에서 기대하기 어렵습니다. 같은 입력을 여러 번 쓰려면 묶어서 한 번에 보내는 편이 비용 면에서 유일한 절약책에 가깝습니다. (Channel Insider는 '캐싱 관련 한계'만 전함 — 단정 삭제, 확인 필요 문장으로 대체)",
+   "보도한 Channel Insider와 ITdaily도 독립 검증은 하지 않았다고 밝힙니다 (두 매체가 그렇게 '밝힌' 문장 없음 — 'Google에 따르면'으로 인용했다는 사실로 수정)",
+   "Channel Insider 표의 '효율·비용 주장은 독립 검증 아님' (원문에 없음 — 'Google 발표로 인용'으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 블로그 HTML을 직접 받아 발표일(meta article:published_time 2026-11-11, 페이지 표기 Nov 11, 2026)·스펙(256K, 1,000개 질문, 2~255 선택지, 150~250ms/50~100ms·16K·1~100개, $0.10/100만·출력 0, 무료 티어)·질문 형식(noul/choice/score)·사례(Notebook 40%, Stitch, CC 200+, 검색 MCP)·연동 목록·Cloud 'coming soon'·코드 예시(원문과 대조, 동일)를 확인. 벤치마크 표 이미지(I2)를 열어 9개 정확도·ECE·총 가격·각주 전 수치 일치 확인, 도식(I1)으로 has_spill 0.95·wipe_with_cloth·1.19/2.00 확인. S2(2026-11-12, Aminu Abdullahi)·S3(2026-11-12, Cédric Van Loon)·S4(datePublished 2026-11-12T01:00:57Z, 페이지 'Nov 12') 재확인. 계산 재검증: 203,000÷13,000≈15.6, $1.30/$20.30, $0.88÷$0.68≈1.29, $4.14÷$0.88≈4.7, 450~750ms. 수정: '바닥 얼룩'→'조리대 얼룩'(코드·이미지 기준), DEV 글 '같은 날'→'다음 날(11월 12일)', 세 매체 공통 150~250ms→DEV는 '약 200ms', '맥락 평가'→'맥락 채점'(context grading), 독립 검증 관련 문장·캐싱 단정 문장 수정. EGRESS_BLOCKED 출처 없음."
+ }
+}
