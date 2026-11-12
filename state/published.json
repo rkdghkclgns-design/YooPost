@@ -6648,5 +6648,25 @@
    "https://www.siliconreport.com/fireworks-expands-breach-disclosure-to-datasets-and-model-weights"
   ],
   "draft_id": "20261113_072833_5"
+ },
+ {
+  "date": "2026-11-13",
+  "title": "🧭 스탠퍼드 AI100 2026 보고서: 스케일링 한계와 '아직 본전 못 뽑는 AI', 우리 계획에 무엇이 달라질까",
+  "topic": "AI Goes Mainstream: The Scaling Era and the Rise of Generative AI (Stanford One Hundred Year Study on AI, AI100 2026 Study Panel Report)",
+  "category": "AI 인사이트",
+  "source_url": "https://ai100.stanford.edu/reports/2026-report",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai100-2026-ai.html"
+  },
+  "sources": [
+   "https://ai100.stanford.edu/reports/2026-report",
+   "https://ai100.stanford.edu/sites/g/files/sbiybj36086/files/media/file/ai100_report_2026.pdf",
+   "https://hai.stanford.edu/news/the-world-has-changed-insights-from-the-new-ai100-report",
+   "https://www.theregister.com/a/5308574",
+   "https://thenextweb.com/news/stanford-ai100-report-2026-ai-goes-mainstream",
+   "https://www.unite.ai/?p=511125",
+   "https://cryptobriefing.com/stanford-ai100-report-ai-scaling-limits/"
+  ],
+  "draft_id": "20261113_073247_6"
  }
 ]
