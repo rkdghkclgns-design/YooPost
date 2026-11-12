@@ -6611,5 +6611,24 @@
    "https://thejournal.com/articles/2026/07/08/new-microsoft-initiative-aims-to-help-move-ai-projects-from-experimentation-to-production.aspx"
   ],
   "draft_id": "20261113_071204_2"
+ },
+ {
+  "date": "2026-11-13",
+  "title": "🧤 LingBot-Touch 논문: 로봇에 촉각을 넣으면 14~25점 오를까, 원시 센서와 학습 토큰의 차이",
+  "topic": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation (LingBot-Touch, Robbyant, arXiv 2611.12806, 2026-11-09)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.12806",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/lingbot-touch-1425.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.12806",
+   "https://huggingface.co/papers/2611.12806",
+   "https://www.humanoidsdaily.com/news/robbyant-lingbot-touch-open-source-tactile-model",
+   "https://aiweekly.co/alerts/robbyants-lingbot-touch-unifies-three-tactile-sensor-types",
+   "https://interestingengineering.com/ai-robotics/robots-gain-touch-with-china-dataset",
+   "https://huggingface.co/robbyant/lingbot-touch-tiny"
+  ],
+  "draft_id": "20261113_071643_3"
  }
 ]
