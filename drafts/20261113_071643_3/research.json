@@ -1,0 +1,111 @@
+{
+ "topic": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation (LingBot-Touch, Robbyant, arXiv 2611.12806, 2026-11-09)",
+ "source_url": "https://arxiv.org/abs/2611.12806",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+   "url": "https://arxiv.org/abs/2611.12806",
+   "publisher": "arXiv",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hugging Face Papers: Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+   "url": "https://huggingface.co/papers/2611.12806",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-09",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Robbyant LingBot-Touch open-source tactile model",
+   "url": "https://www.humanoidsdaily.com/news/robbyant-lingbot-touch-open-source-tactile-model",
+   "publisher": "Humanoids Daily",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Robbyant's LingBot-Touch unifies three tactile sensor types",
+   "url": "https://aiweekly.co/alerts/robbyants-lingbot-touch-unifies-three-tactile-sensor-types",
+   "publisher": "AI News Weekly",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Robots gain touch with China dataset",
+   "url": "https://interestingengineering.com/ai-robotics/robots-gain-touch-with-china-dataset",
+   "publisher": "Interesting Engineering",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "robbyant/lingbot-touch-tiny model card",
+   "url": "https://huggingface.co/robbyant/lingbot-touch-tiny",
+   "publisher": "Hugging Face (Robbyant)",
+   "published": "2026-11-09",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "arXiv 초록 페이지·Hugging Face 논문 페이지·모델 카드 본문에는 그림이 없고, arXiv HTML 본문은 404, 프로젝트 페이지의 이미지는 로고·장식뿐이라 관련 본문 그림 주소를 확인하지 못함 (논문 그림은 PDF 안에만 있음)",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "로봇에 촉각을 넣으면 얼마나 나아지고, 그 이득은 센서 추가에서 오는가 학습된 표현에서 오는가",
+  "limitations": "수치는 arXiv 논문 PDF(v1) 본문·표 2와 대조했으나 저자 보고 값이며 제3자 재현 없음. 직접 실행·실측 없음. 계산 표는 표 2 과제별 값의 26개 과제 단순 평균으로 계산.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⚖️ 계산: 촉각 자체의 몫과 '표현'의 몫 나누기",
+    "excerpt": "학습된 토큰이 원시 신호 위에 더 얹은 몫(12.0~16.6점)이 원시 신호의 증가분(6.6~11.2점)보다 큽니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "논문 표 2의 과제별 성공률을 정책별로 평균해 원시 촉각 점수와 표현 학습의 몫을 따로 계산, Diffusion Policy 는 예외(6.9 대 7.0)임을 확인"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 로봇에 넣어도 될까: 상황별 판단 기준",
+    "excerpt": "자기 정책에 촉각 없음, 원시 신호, 학습 토큰 세 구성을 같은 시연 수로 비교하세요",
+    "source_ids": [
+     "S1",
+     "S6"
+    ],
+    "added_value": "센서 종류·접촉 부위·공개 범위별 도입 판단과 검증 순서를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 한계와 아직 모르는 것",
+    "excerpt": "같은 논문 안에서도 표현이 다르므로 인용할 때는 표 2 기준 값을 쓰시길 권합니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "논문 서론·본문·표와 두 매체 기사의 수치 차이(14~26 vs 13.9~24.8, 5.3M vs 5.46M)와 후원 공개를 대조해 인용 기준을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 74,
+  "removed": [
+   "가장 큰 과제별 도약은 T-Rex 의 Sharpa Wave 병뚜껑 돌리기로 (논문 표 2상 T-Rex 카드 빼기 32→92%, LingBot-VLA 지퍼 11→55% 가 더 큼 — '논문이 꼽은 큰 도약 사례'로 수정)",
+   "이 차이는 반올림이나 표기 기준 때문일 수 있지만 기사만으로는 원인을 알 수 없습니다 (논문 PDF 대조로 원인 확인되어 삭제)",
+   "실제로 Interesting Engineering 은 XHand 의 자기 센서가 사전학습에 없었는데도 장갑 데이터에서 자기식 촉각 정보를 익혔다고 전합니다 (논문 4.3절 서술로 교체)"
+  ],
+  "corrections": [
+   "FTP-1 5개 과제 비교: 'FTP-1 55.9%, FTP-1 교체 67.5%' → 55.9%는 촉각 없는 LingBot-VLA, FTP-1 67.5%, LingBot-Touch 82.2%",
+   "계산 표 Diffusion Policy: 반올림 평균으로 계산한 28.6%/7.0점 → 표 2 과제별 값 평균 28.7%/6.9점, '네 정책 모두 같거나 큼' → 세 정책은 크고 DP 는 6.9 대 7.0 으로 비슷",
+   "Tiny 5.46M 대 5.3M '기사 간 차이' → 논문 5.46M 확정, IE 5.3M 은 오기",
+   "13.9~24.8 대 약 14~26 '기사 간 차이' → 논문 서론(14~26)과 본문·표 2(13.9~24.8) 자체 차이로 정정",
+   "0.13~0.16%: 논문은 T-Rex·π0.5·LingBot-VLA 세 정책 기준임을 명시",
+   "수치 출처를 기사에서 논문 PDF 로 바꾸고 info 박스·caveat·FAQ·editorial 한계 수정, 모델 카드(S6) 출처 추가"
+  ],
+  "note": "Opus 검증: arXiv PDF(https://arxiv.org/pdf/2611.12806, v1 27쪽)를 내려받아 pdftotext 로 본문·표 2·부록 표 4와 모든 수치 대조, 표 2의 26개 과제×4정책 값으로 평균·차이·악화 쌍 수(22/104, 9, 5) 재계산. HF 논문 페이지(#1 Paper of the day 2026-11-10, 19명), HF 모델 카드(Apache 2.0, 입력 처리·공개 범위), Humanoids Daily(앤트그룹 산하, Robotera 12자유도, 후원 공개), Interesting Engineering(5.3M·14~26), AI Weekly(HF 1위) 재확인. 각 출처 published 와 페이지 날짜 일치 확인(arXiv citation_date 2026/11/09)."
+ }
+}
