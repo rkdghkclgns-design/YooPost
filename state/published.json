@@ -6577,5 +6577,22 @@
    "https://www.hankyung.com/article/2026111110541"
   ],
   "draft_id": "20261112_075424_7"
+ },
+ {
+  "date": "2026-11-13",
+  "title": "🤖 Gemini Decision 1, 분류·라우팅을 맡겨도 될까: 7개 1위·2개 열세와 질문 묶음 비용 계산",
+  "topic": "Gemini Decisions API: Fast, calibrated multimodal decisions (Google DeepMind, 2026-11-11) — Gemini Decision 1 / Channel Insider·ITdaily·DEV Community 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gemini-decision-1-7-12.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "https://www.channelinsider.com/ai/news-google-gemini-decisions-api-ai-agents-channel/",
+   "https://itdaily.com/news/software/gemini-decisions-api-multiple-choice-decisions/",
+   "https://dev.to/philschmid/fast-multimodal-control-flow-with-the-gemini-decisions-api-533b"
+  ],
+  "draft_id": "20261113_070555_1"
  }
 ]
