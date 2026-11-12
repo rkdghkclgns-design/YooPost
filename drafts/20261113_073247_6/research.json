@@ -1,0 +1,117 @@
+{
+ "topic": "AI Goes Mainstream: The Scaling Era and the Rise of Generative AI (Stanford One Hundred Year Study on AI, AI100 2026 Study Panel Report)",
+ "source_url": "https://ai100.stanford.edu/reports/2026-report",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "2026 Report — AI Goes Mainstream: The Scaling Era and the Rise of Generative AI",
+   "url": "https://ai100.stanford.edu/reports/2026-report",
+   "publisher": "Stanford AI100",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "The One Hundred Year Study on Artificial Intelligence (AI100) 2026 Study Panel Report (PDF)",
+   "url": "https://ai100.stanford.edu/sites/g/files/sbiybj36086/files/media/file/ai100_report_2026.pdf",
+   "publisher": "Stanford AI100",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "The World Has Changed: Insights From The New AI100 Report",
+   "url": "https://hai.stanford.edu/news/the-world-has-changed-insights-from-the-new-ai100-report",
+   "publisher": "Stanford HAI",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Stanford's century-long AI study admits it's already out of date",
+   "url": "https://www.theregister.com/a/5308574",
+   "publisher": "The Register",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Stanford's 100-year AI study says scaling is running out of road",
+   "url": "https://thenextweb.com/news/stanford-ai100-report-2026-ai-goes-mainstream",
+   "publisher": "The Next Web",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Stanford AI100 Report Finds Scaling Limits as AI's Impact Widens",
+   "url": "https://www.unite.ai/?p=511125",
+   "publisher": "Unite.AI",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Stanford's AI100 report says AI's scaling run faces real limits",
+   "url": "https://cryptobriefing.com/stanford-ai100-report-ai-scaling-limits/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-10",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 페이지와 HAI 소개 글 본문에 보고서 도표·그림이 없고(배너·헤더 일러스트만 있음), 글자 중심 보고서라 인용 이미지를 넣지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "스탠퍼드 AI100 2026 보고서의 주장 중 무엇이 여러 출처로 확인되고, 도입·투자 계획에 어떻게 질문으로 옮길 수 있는가",
+  "limitations": "보고서 PDF(90쪽)는 핵심 요점(Key Takeaways)·서문·AI 고지·관련 대목만 대조했고 각 장 전체를 요약하지 않음. 직접 실행·실측 없음. 의사결정 표는 필자 해석이며 보고서 권고가 아님. 샌드박스 2.5시간·데이터센터 안건 41건 중 40건은 The Next Web 한 곳에만 있어 판단 근거에서 제외.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "⚙️ 핵심 진단 1: 스케일링 시대의 끝자락",
+    "excerpt": "다음 단계는 **더 똑똑한 알고리즘, 작은 모델, 더 나은 기억, 추론 특화 학습, 추론 시점의 연산 확대**에 기댈 것으로 ",
+    "source_ids": [
+     "S7",
+     "S2",
+     "S5"
+    ],
+    "added_value": "지난 5년의 성능 동력과 보고서가 전망한 다음 동력, 걸림돌을 같은 항목으로 나란히 비교"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 네 매체는 무엇을 강조했나: 출처 종합",
+    "excerpt": "같은 보고서라도 매체마다 골라 담은 부분이 다릅니다. 아래 표는 이번에 ",
+    "source_ids": [
+     "S7",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "added_value": "공식 소개와 매체 4곳의 강조점·고유 정보를 대조해 보고서 문장과 기사 자체 보도를 분리"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 그래서 무엇을 확인할까: 상황별 판단 기준",
+    "excerpt": "아래 표는 보고서의 서술을 독자 상황에 대응시킨 필자의 해석이며, 어느 열도 보고",
+    "source_ids": [
+     "S7",
+     "S2",
+     "S5"
+    ],
+    "added_value": "독자 상황별로 보고서 서술을 확인 질문으로 옮기고 필자 해석임을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "같은 스탠퍼드가 매년 내는 AI Index가 그 역할을 하는 별도 간행물이라는 점도 구분해 둘 만합니다. ('매년' 미확인 → 보고서가 AI Index Report 2026을 인용한다는 사실로 교체)",
+   "공식 페이지에는 'Five Years On' 장이 있지만, 그 장의 내용은 확인하지 못했습니다. (PDF 확인으로 불필요해져 삭제)",
+   "보고서 PDF를 읽지 못했다는 도입·정보 상자·FAQ·맺음말·caveat 문장 (PDF 재시도 성공으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). 보고서 PDF를 다시 받아 pdftotext로 읽음(90쪽): 12개 핵심 요점, 'Over 15% of U.S. stock market gains in 2025 ... Nvidia stock alone', 'AI is not yet paying its way', 2026-09 확정, 패널 12명·울드리지 의장·맥일레이스 상임위원장, 2014 시작, AI 고지, 요점 12 문장 확인. HAI 글(Shana Lynch, 2026-11-10, 소제목 11개, 비율 없이 'significant share')·매체 4곳 모두 페이지 날짜 2026-11-10으로 published 일치. 고침: 군사 '새 국제 규칙 요구'→'새로운 교전 규칙 필요'(요점 7), 엔비디아 15%를 '한 곳만 확인'→보고서+2개 매체 확인, 출처 표의 '그 글에만 있는 정보'를 '그 출처로 확인한 정보'로, 샌드박스 사례는 PDF상 2026년 7~8월 공개·2.5시간 수치 없음을 명시. 미확인 2건(TNW 2.5시간, 41건 중 40건 부결)은 '한 곳에만 나온 주장' 상자에 제외 표시로 유지(confirmed 제외)."
+ }
+}
