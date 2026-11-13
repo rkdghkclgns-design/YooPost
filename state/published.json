@@ -6760,5 +6760,22 @@
    "https://huggingface.co/papers/trending"
   ],
   "draft_id": "20261114_072106_3"
+ },
+ {
+  "date": "2026-11-14",
+  "title": "🛍 ChatGPT Wallet 공개: AI 에이전트가 내 카드로 결제해도 될까, 확인할 조건 정리",
+  "topic": "Introducing ChatGPT Wallet (OpenAI Developer Community, 2026-11-13) / ChatGPT's new Wallet lets AI agents shop and check out for you (TechCrunch, 2026-11-13)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://community.openai.com/t/introducing-chatgpt-wallet/1416044",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/chatgpt-wallet-ai.html"
+  },
+  "sources": [
+   "https://community.openai.com/t/introducing-chatgpt-wallet/1416044",
+   "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+   "https://www.androidauthority.com/chatgpt-wallet-3735154/",
+   "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/"
+  ],
+  "draft_id": "20261114_072700_4"
  }
 ]
