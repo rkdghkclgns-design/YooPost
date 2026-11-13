@@ -1,0 +1,90 @@
+{
+ "topic": "CoreWeave Reports Strong Third Quarter 2026 Results — 백로그 1,325억 달러·순이자비용 8.46억 달러, 조달 방식 변화",
+ "source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Third-Quarter-2026-Results/default.aspx",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CoreWeave Reports Strong Third Quarter 2026 Results",
+   "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Third-Quarter-2026-Results/default.aspx",
+   "publisher": "CoreWeave",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CoreWeave soars more than 24% for best day since April 2025 after strong Q3 report",
+   "url": "https://www.cnbc.com/2026/11/11/coreweave-crwv-outlook-earnings-ai.html",
+   "publisher": "CNBC",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "CoreWeave rules out new unsecured debt as revenue jumps 168% to $3.66bn",
+   "url": "https://thenextweb.com/news/coreweave-forecast-q3-2026-revenue-unsecured-debt",
+   "publisher": "The Next Web",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "CoreWeave earnings put debt-fueled AI build-out under scrutiny",
+   "url": "https://www.cnbc.com/2026/11/10/coreweave-earnings-preview-debt-capex.html",
+   "publisher": "CNBC",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "CoreWeave provides silver lining for neoclouds as Nvidia storm swirls",
+   "url": "https://cnbc.com/2026/11/11/coreweave-provides-silver-lining-for-neoclouds-as-nvidia-storm-swirls.html",
+   "publisher": "CNBC",
+   "published": "2026-11-11",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "실적 보도자료(표 중심 텍스트)와 기사 본문에 원고 내용을 보여 주는 도표·차트 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 서비스를 운영하는 팀이 GPU 용량 공급사 CoreWeave의 3분기 숫자에서 재무 체력과 조달 방식 변화를 어떻게 읽어야 하는가",
+  "limitations": "직접 서비스를 사용하거나 재무 모델을 실행하지 않았고 보도자료·기사 수치로 단순 나눗셈만 했다. 4분기 설비투자 역산은 정의 차이로 어림값이다. 자산 단위 대출·선수금은 예고·예상치이며 체결·수령은 미확인이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 이자와 설비투자, 번 돈을 얼마나 앞서나",
+    "excerpt": "영업에서 번 돈보다 이자가 더 많이 나간다는 뜻이고, 순손실이 나온 이유가 여기에 있습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "이자비용을 매출·GAAP 영업이익·조정 영업이익과 나누고 설비투자와 영업현금흐름 차이를 계산해 자금 조달 의존도를 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔌 백로그 1,325억 달러는 얼마나 현실에 가까운가",
+    "excerpt": "계약이 가동보다 빠르게 쌓이는 구조라 연말 목표(1.85GW 이상)를 지켜도 계약분은 상당 부분 앞으로 지어야 합니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "보도자료의 가동·계약 전력과 CNBC 인용 CEO 발언을 연결해 계약과 가동 사이의 간격을 해석"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 AI 서비스를 쓰는 팀이 확인할 4가지",
+    "excerpt": "이 표는 AI 서비스 운영 팀이 공급사 계약을 점검할 때의 질문 목록으로 쓸 수 있습니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공급사 숫자를 AI 서비스 운영 팀의 계약 점검 질문으로 바꾸고 제외 조건을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 보도자료(손익·현금흐름·9개월 매출 8,314백만·가이던스·전력·조달·CEO 선수금 90억 달러 '향후 3개월' 문구), S2 CNBC(24.71%·자산 단위 대출 1~2주·고등급 투자등급·7~7.5%·10배 초과 신청·Zacks 블랭크·Visible Alpha·CDS 11%), S3 TNW(CFO 무담보 부채 발언·50억 달러 미만·6월 말 백로그 1,040억·LSEG 35.5억·총부채 469억·Anthropic/Nvidia·루리아), S4 CNBC(주가 -40%·9.75% 2031년물 16.7%→15.5%·CDS 1,278→1,152bp·2028년까지 원금 약 150억·터린/챌핀/랭)를 다시 열어 대조. 각 출처 published 가 페이지 날짜와 일치. 글쓴이 계산 전부 재검산(배수·23.1%·4.1/2.2배·7,466·17,920·4분기 설비투자 134억~154억·4분기 매출 역산 4,686~4,986백만과 이자 비율 21~25%·백로그 +27%·약 10배·37%·2.7배·4.8배). 수정: 보도자료 '제목'→'부제', 터린 발언을 '가이던스 초과'→'예상보다 좋을 것(1.95GW vs 1.85GW)', CDS '11%포인트'→'11%'(원문 past 11%), 7~7.5% 문장에 발언자(CEO) 명시·선수금 90억 달러의 보도자료 근거 추가. 막힌 출처 없음. 투자 권유·수익 전망 표현 없음 확인."
+ }
+}
