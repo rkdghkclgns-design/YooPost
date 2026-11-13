@@ -6703,5 +6703,23 @@
    "https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress"
   ],
   "draft_id": "20261113_074924_4"
+ },
+ {
+  "date": "2026-11-14",
+  "title": "🤖 Gemini 4 Hydrogen, 입력 $1.50 에이전트 모델로 갈아탈까: 비용 계산과 확인할 조건",
+  "topic": "Introducing Gemini 4 Hydrogen for Agentic Workflows (Google, 2026-11-12) / Gemini API 가격 페이지·SiliconANGLE·iGeeksBlog·CTRL 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gemini-4-hydrogen-150.html"
+  },
+  "sources": [
+   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "https://siliconangle.com/2026/11/12/google-releases-gemini-4-hydrogen-a-lower-cost-model-said-to-outscore-argon/",
+   "https://www.igeeksblog.com/gemini-4-hydrogen-launch/",
+   "https://ctrlmag.com/blog/google-gemini-4-hydrogen-pricing-search-api-antigravity",
+   "https://aistudio.google.com/docs/pricing"
+  ],
+  "draft_id": "20261114_070633_1"
  }
 ]
