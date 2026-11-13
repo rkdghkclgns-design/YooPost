@@ -1,0 +1,110 @@
+{
+ "topic": "Introducing Gemini 4 Hydrogen for Agentic Workflows (Google, 2026-11-12) / Gemini API 가격 페이지·SiliconANGLE·iGeeksBlog·CTRL 보도",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Gemini 4 Hydrogen for Agentic Workflows",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "publisher": "Google",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google releases Gemini 4 Hydrogen, a lower-cost model said to outscore Argon",
+   "url": "https://siliconangle.com/2026/11/12/google-releases-gemini-4-hydrogen-a-lower-cost-model-said-to-outscore-argon/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google launches Gemini 4 Hydrogen, a faster and lower-cost model",
+   "url": "https://www.igeeksblog.com/gemini-4-hydrogen-launch/",
+   "publisher": "iGeeksBlog",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Google Launches Gemini 4 Hydrogen at $1.50 and $7.50 per Million Tokens Across Search, API, and Antigravity",
+   "url": "https://ctrlmag.com/blog/google-gemini-4-hydrogen-pricing-search-api-antigravity",
+   "publisher": "CTRL",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Gemini Developer API pricing",
+   "url": "https://aistudio.google.com/docs/pricing",
+   "publisher": "Google",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/gemini-4-hydrogen_benchmarks_table.gif",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "caption": "Gemini 4 Hydrogen과 다른 모델의 벤치마크 비교 표",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/gemini-4-hydrogen_t-bench_graph.gif",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "caption": "Terminal-Bench 벤치마크 성능 차트",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트 작업을 돌리는 팀이 Gemini 4 Hydrogen으로 갈아타면 비용과 속도에서 얻는 것은 무엇이고 무엇을 먼저 확인해야 하나",
+  "limitations": "직접 실행·측정하지 않았고 성능 수치는 구글 자체 발표와 매체 인용에 근거한다. 비용 계산은 입력 100만·출력 20만 토큰이라는 필자 가정이며 모델별 실제 토큰 사용량 차이와 Batch·Flex 가격(공식 가격 페이지상 절반)은 반영하지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 비용 계산: 같은 작업에 얼마나 드나",
+    "excerpt": "이 가정에서 Hydrogen은 지금 기준 **25% 저렴하고, 12월 1일 이후에는 62.5% 저렴**합니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "출처의 단가로 같은 가정 작업의 총비용을 직접 계산해 11월 30일 전후 차이를 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "💡 어떤 팀이 먼저 써 볼까",
+    "excerpt": "평소 쓰는 프롬프트 20~30개를 Hydrogen의 high와 xhigh, 기존 모델로 돌려",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "상황별 선택·제외 기준과 시험 절차를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚠️ 한계와 주의사항",
+    "excerpt": "구글의 2.5배 속도 주장도 **Gemini 3.8 Flash와 비교한 값**이지 경쟁사 모델과의 비교가 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "구글 발표와 제3자 테스트를 대조해 주장의 비교 대상을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "캐시 입력 '4,096토큰 이상 프롬프트' 조건 (CTRL·구글 가격 페이지에 없음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1 구글 블로그·S2 SiliconANGLE·S3 iGeeksBlog·S4 CTRL 재열람, published 가 페이지 표기와 일치함 확인(S1 11-12 게시·11-13 업데이트, S2 URL·페이지 2026-11-12, S3·S4 2026-11-13). Carbon $2/$10 은 S2(Argon만)·S4(인상 후 가격만)로 확인되지 않아 구글 공식 가격 페이지(S5)를 추가해 Carbon·Argon $2/$10(11-30까지)→$4/$20(12-01부터), Hydrogen 캐시 $0.075·Batch/Flex 확인. 비용 계산(입력 100만+출력 20만: $3.00/$4.00/$8.00, 25%·62.5%) 재계산 일치. 수정: Carbon·Argon 역할 설명을 구글 원문대로, 파트너 테스트 작업 종류(SQL·그래프·데이터 워크플로)로 정정, 가격 인상 출처를 S5 중심으로, Theo 테스트 조건 보완, iGeeksBlog 출시 서술 정정, Batch/Flex 서술 공식 가격으로 교체, h2 이모지 변형 선택자 보완. 인용 이미지 2개 200 image/gif 확인. 막힌 출처 없음."
+ }
+}
