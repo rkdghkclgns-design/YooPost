@@ -6777,5 +6777,24 @@
    "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/"
   ],
   "draft_id": "20261114_072700_4"
+ },
+ {
+  "date": "2026-11-14",
+  "title": "🔒 뉴런 10개 미만으로 에이전트 모델에 백도어를, 받아 쓰는 모델은 어떻게 점검할까",
+  "topic": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents (Microsoft Research, 2026-11-10) / Detecting sleeper agents hiding in AI model neurons (Microsoft Security) / The Hacker News·CSO Online·The Next Web 보도",
+  "category": "AI 보안",
+  "source_url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/10.html"
+  },
+  "sources": [
+   "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+   "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
+   "https://github.com/anadim/anadim.github.io/blob/master/papers/Lazarus.pdf",
+   "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html",
+   "https://www.csoonline.com/article/4247354/rewriting-less-than-10-neurons-in-an-llm-can-turn-it-into-a-sleeper-backdoor.html",
+   "https://thenextweb.com/news/microsoft-lazarus-ai-agent-backdoor-neurons"
+  ],
+  "draft_id": "20261114_073225_5"
  }
 ]
