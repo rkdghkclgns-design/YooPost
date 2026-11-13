@@ -1,0 +1,144 @@
+{
+ "topic": "Run agents securely and efficiently with the next generation AgentCore runtime (AWS Machine Learning Blog, 2026-11-12) / AWS What's New: AgentCore Runtime V2 기본값 전환",
+ "source_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Run agents securely and efficiently with the next generation AgentCore runtime",
+   "url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+   "publisher": "AWS Machine Learning Blog",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AWS Bedrock AgentCore V2 Is Now Default: 8 vCPUs, 32 GB Per Session",
+   "url": "https://www.how2shout.com/news/agentcore-runtime-v2-default-8-vcpu-32gb.html",
+   "publisher": "H2S Media (How2Shout)",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The new AgentCore runtime: elastic, optimized, and consistently fast starts",
+   "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+   "publisher": "AWS Machine Learning Blog",
+   "published": "2026-09-18",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "AWS reworks Bedrock AgentCore runtime for elastic memory, fast cold starts",
+   "url": "https://unite.ai/aws-reworks-bedrock-agentcore-runtime-for-elastic-memory-fast-cold-starts",
+   "publisher": "Unite.AI",
+   "published": "2026-09-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "AWS Ships AgentCore Runtime V2 — and the Cloud Agent Infrastructure Layer Is Now Complete",
+   "url": "https://forkast.news/aws-ships-agentcore-runtime-v2-and-the-cloud-agent-infrastructure-layer-is-now-complete/",
+   "publisher": "Forkast",
+   "published": "2026-09-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "New AgentCore Runtime is now the default for new runtimes (What's New)",
+   "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/new-agentcore-runtime-default/",
+   "publisher": "AWS What's New",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Amazon Bedrock AgentCore Pricing",
+   "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+   "publisher": "Amazon Web Services",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Quotas for Amazon Bedrock AgentCore",
+   "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/bedrock-agentcore-limits.html",
+   "publisher": "AWS Documentation",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/17/ML-21766-2.png",
+   "page_url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+   "caption": "이미지 크기별 P75 콜드 스타트 지연: 기존 런타임과 새 런타임 비교 (시작 속도 소제목)",
+   "credit": "AWS Machine Learning Blog (Amazon Web Services)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/17/ML-21766-1.png",
+   "page_url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+   "caption": "세션 메모리 사용량: 기존 런타임과 새 런타임 비교 (요금 계산 소제목)",
+   "credit": "AWS Machine Learning Blog (Amazon Web Services)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AgentCore 런타임 V2 가 새 배포의 기본값이 된 지금, 단가가 오른 V2 로 옮기면 내 에이전트의 시작 시간과 요금이 어떻게 달라지나",
+  "limitations": "직접 V2 런타임을 실행해 측정하지 않았고 모든 수치는 AWS 블로그·공지·요금 페이지·할당량 문서와 보도에 근거한다. V2 의 CPU 청구 시간 감소폭, 약정 요금을 지금 쓸 수 있는지, 11월 기준 생성 시간 제약은 확인하지 못했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 요금 계산: 단가는 오르고 청구 시간은 줄어든다, 손익분기점은 어디일까",
+    "excerpt": "V2 의 GB-시간 단가가 V1 의 약 1.79배이므로, 메모리 청구 시간이 V1 의 1 ",
+    "source_ids": [
+     "S7",
+     "S2"
+    ],
+    "added_value": "단가표 두 값을 나눠 메모리 항목의 손익분기점(청구 GB-시간 약 44% 감소)과 68% 감소 시 지수를 계산"
+   },
+   {
+    "kind": "calculation",
+    "section": "⚡ 시작 속도 29.7초가 2초 미만으로, 15배라는 숫자를 읽는 법",
+    "excerpt": "29.7 ÷ 2 는 약 14.9 이므로, **15배는 이 측정에서 나온 값으로 보입니다**. 9월 블로그 그래프의 2 GB 측정값(V2 1.9초)으로 나누면 약 15.6배입니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6"
+    ],
+    "added_value": "15배 헤드라인이 2 GB 이미지 측정(29.7초→1.9~2초)에서 나온 값임을 역산(약 14.9~15.6배)하고 200 MB 에서는 약 2.8배임을 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 에이전트는 V2로 옮겨야 할까: 상황별 판단 기준",
+    "excerpt": "**기존 런타임은 직접 옮길 때까지 V1 에 머뭅니다.** 새로 만드는 런타임은 지원 리전에서 V2 가 기본이 되므로, 새 배포를 자동화 스크립트로 만들던 팀은 의도하지 않게 V2 단가로 청구될 수 있습니다.",
+    "source_ids": [
+     "S6",
+     "S7",
+     "S2"
+    ],
+    "added_value": "이미지 크기·유휴 시간·메모리 사용 패턴별로 V2 이득 가능성과 확인 항목을 표로 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 AgentCore 런타임 V2 등장 배경: 9월의 선택 기능이 11월의 기본값이 되기까지",
+    "excerpt": "11월 12일에는 상황이 한 단계 바뀌었습니다. AWS 블로그는 차세대 ",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6",
+     "S2"
+    ],
+    "added_value": "9월 선택 기능과 11월 기본값 전환을 AWS 블로그 2개·새 소식 공지·보도로 연결해 새로 바뀐 점만 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "How2Shout 도 가격·성능 수치가 AWS 에서 왔고 독립적으로 검증되지 않았다고 밝혔습니다. (S2 원문에 그런 문장 없음)",
+   "컨테이너가 120초 안에 정상 상태를 보고하지 못하면 생성이 실패하며 (S3·S4 어디에도 없음)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1·S2·S3·S4·S5 를 다시 열어 주장 58개 대조, AWS What's New(S6)·요금 페이지(S7)·할당량 문서(S8) 추가. 수정: 19개 리전·기본값 전환·29.7초→2초 미만·platformVersion V1/V2 를 보도 인용에서 AWS 공지(S6) 근거로 교체; V1/V2 단가($0.0895·$0.00945 / $0.1276·$0.0169)·120초 유휴 회수·128 MB 최소 청구를 요금 페이지로 확인; V1 2 vCPU·8 GB 를 할당량 문서 기본값으로 확인(8 vCPU·32 GB 는 V2 리소스 구성 사용 시), V1 이미지 최대 2 GB 추가; 'AWS 가 대부분 에이전트 청구액이 줄어든다고 설명' → S1 실제 표현('같은 일에 덜 낸다')으로 수정; 34 ms 출처를 AWS 9월 블로그로; 그래프(I1) 실측값 200 MB 5.3초·2 GB 29.7초·V2 1.9초 반영해 배율 2.7→2.8배, 2 GB 14.9배(2초 기준)~15.6배(1.9초 기준); 약정 기준선 단가($0.0997·$0.0132, '2026년 10월까지 출시' 표기)·I/O 대기 중 CPU 0 추가; 환경 변수 제약은 현재 할당량 문서상 V1·V2 모두 4 KB 로 풀린 것으로 수정. 계산 재검산: 0.1276/0.0895=1.426(+43%), 0.0169/0.00945=1.788(+79%), 1/1.788=0.559→GB-시간 44% 이상 감소 필요, 1.788×0.32=0.572(지수 57), 29.7/2=14.85, 29.7/1.9=15.6, 5.3/1.9=2.8. published 확인: S1 2026-11-12, S3·S4 2026-09-18, S5 2026-09-21 일치; S2 는 별도 발행일 없이 'Last updated: November 13, 2026' 만 있어 2026-11-13 유지(대표 원문 아님); S6 2026-11-12. 이미지 I1·I2 는 image/png 로 열리고 캡션 일치. EGRESS_BLOCKED 출처 없음."
+ }
+}
