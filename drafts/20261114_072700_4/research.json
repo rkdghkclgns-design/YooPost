@@ -1,0 +1,88 @@
+{
+ "topic": "Introducing ChatGPT Wallet (OpenAI Developer Community, 2026-11-13) / ChatGPT's new Wallet lets AI agents shop and check out for you (TechCrunch, 2026-11-13)",
+ "source_url": "https://community.openai.com/t/introducing-chatgpt-wallet/1416044",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing ChatGPT Wallet - Dots",
+   "url": "https://community.openai.com/t/introducing-chatgpt-wallet/1416044",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ChatGPT's new Wallet lets AI agents shop and check out for you",
+   "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI rolls out ChatGPT Wallet to let Dots AI agents make purchases",
+   "url": "https://www.androidauthority.com/chatgpt-wallet-3735154/",
+   "publisher": "Android Authority",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+   "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-12",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "읽을 수 있었던 공식 출처(OpenAI 개발자 커뮤니티 공지) 본문에 이미지가 없고, openai.com 공식 발표문과 도움말 센터는 접속이 403으로 막혀 본문 그림을 확인하지 못했습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트에게 카드 정보를 주지 않고 결제를 맡긴다는 ChatGPT Wallet은 무엇을 보장하고 무엇이 비어 있으며, 내 상황에서 지금 써 볼 만한가?",
+  "limitations": "직접 Wallet을 사용해 보지 못했고(미국 Pro 일부 제한 출시), openai.com 공식 발표문·도움말 센터는 403으로 읽지 못해 커뮤니티 공지와 보도에 의존했습니다. 판단 기준은 보도된 조건에 대한 이 글의 해석입니다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🧭 지금 써 볼지, 기다릴지 판단 기준",
+    "excerpt": "Wallet은 결제 수단 쪽의 안전 문제를 먼저 풀려는 시도이고, 판매처 쪽의 수용 문제는 아직 풀리지 않았습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "OpenAI 공지의 가맹점 안내와 TechCrunch의 판매처 차단 사례를 연결해 결제 보안과 판매처 수용이 다른 층의 문제임을 해석"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 지금 써 볼지, 기다릴지 판단 기준",
+    "excerpt": "출시 직후에는 확인 가능한 승인 화면이 유일한 통제 수단입니다. 금액이 크거나 되돌리기 어려운 구매는 직접 ",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "제공 조건·계획 단계 기능·보안 우려를 독자 상황별 시도/대기 기준과 확인 체크리스트로 변환"
+   },
+   {
+    "kind": "comparison",
+    "section": "🏪 가맹점은 에이전트를 받아 줄까요?",
+    "excerpt": "TechCrunch: 에이전트를 막고 Alexa로 유도 / Android Authority: Meta Muse 차단 보도",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "OpenAI·Amazon·유나이티드의 서로 다른 입장을 한 표로 비교해 에이전트 구매의 병목을 판매처 쪽으로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [
+   "결제 토큰 설명의 '일회용' 표현 (출처에 없음 → 카드 번호·보안 코드·유효기간 대체로 수정)",
+   "'TechCrunch는 가맹점 파트너가 명시되지 않았고 수수료도 언급되지 않았다고 전합니다' (TechCrunch 본문에 없는 귀속 → 읽은 자료에 언급이 없다는 사실로 수정, 표·💡 박스 포함)"
+  ],
+  "note": "Opus 검증: S1~S4 를 다시 내려받아 본문·article:published_time 대조(S1 2026-11-13T21:27Z, S2 2026-11-13T16:00Z, S3 2026-11-13T19:05Z, S4 2026-11-12T17:17Z — published 모두 일치). 44개 주장 중 수정 8건: 일회용 토큰 삭제, 가맹점이 '필요한 정보만' 받는다→'필요한 정보를 받는다', 'OpenAI가 공개한 사이버 보안 사고'→'자사 모델의 보안 침해를 OpenAI가 인정', Muse 차단은 GeekWire 인용으로 명시, 유나이티드 제한 범위(여행사·예약 중개 사이트), dots 소개 문구, TechCrunch 수수료·파트너 미언급 귀속 3곳 수정, 18세 조건 출처를 TechCrunch로 한정. openai.com(403) 전용 주장 없음."
+ }
+}
