@@ -6742,5 +6742,23 @@
    "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/bedrock-agentcore-limits.html"
   ],
   "draft_id": "20261114_071242_2"
+ },
+ {
+  "date": "2026-11-14",
+  "title": "🧠 액터로는 42.9%인 모델이 교사로는 1.5B 정책을 82.9%로: 감독자를 어떻게 고를까",
+  "topic": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents (arXiv 2611.17167, Zhejiang University·Baidu, 2026-11-12) — Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.17167",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/429-15b-829.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.17167",
+   "https://arxiv.org/html/2611.17167v1",
+   "https://huggingface.co/papers/2611.17167",
+   "https://github.com/ZJU-REAL/decision-agents",
+   "https://huggingface.co/papers/trending"
+  ],
+  "draft_id": "20261114_072106_3"
  }
 ]
