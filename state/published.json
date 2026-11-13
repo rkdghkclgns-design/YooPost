@@ -6721,5 +6721,26 @@
    "https://aistudio.google.com/docs/pricing"
   ],
   "draft_id": "20261114_070633_1"
+ },
+ {
+  "date": "2026-11-14",
+  "title": "🤖 AgentCore 런타임 V2 기본값 전환: 단가 43%·79% 오른 새 런타임, 내 에이전트는 이득일까",
+  "topic": "Run agents securely and efficiently with the next generation AgentCore runtime (AWS Machine Learning Blog, 2026-11-12) / AWS What's New: AgentCore Runtime V2 기본값 전환",
+  "category": "AI 도구",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/agentcore-v2-4379.html"
+  },
+  "sources": [
+   "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+   "https://www.how2shout.com/news/agentcore-runtime-v2-default-8-vcpu-32gb.html",
+   "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+   "https://unite.ai/aws-reworks-bedrock-agentcore-runtime-for-elastic-memory-fast-cold-starts",
+   "https://forkast.news/aws-ships-agentcore-runtime-v2-and-the-cloud-agent-infrastructure-layer-is-now-complete/",
+   "https://aws.amazon.com/about-aws/whats-new/2026/11/new-agentcore-runtime-default/",
+   "https://aws.amazon.com/bedrock/agentcore/pricing/",
+   "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/bedrock-agentcore-limits.html"
+  ],
+  "draft_id": "20261114_071242_2"
  }
 ]
