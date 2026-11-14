@@ -1,0 +1,95 @@
+{
+ "topic": "LangChain Raises $300M to Enable Every Company to Own Its Intelligence (LangChain, 2026-11-13) / AI agent startup LangChain hits $3B valuation (TechCrunch, 2026-11-13)",
+ "source_url": "https://www.langchain.com/blog/series-c",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "LangChain Raises $300M to Enable Every Company to Own Its Intelligence",
+   "url": "https://www.langchain.com/blog/series-c",
+   "publisher": "LangChain",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI agent startup LangChain hits $3B valuation",
+   "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "LangChain raises $125M to build the platform for agent engineering",
+   "url": "https://www.langchain.com/blog/series-b",
+   "publisher": "LangChain",
+   "published": "2025-10-20",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Open source agentic startup LangChain hits $1.25B valuation",
+   "url": "https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation",
+   "publisher": "TechCrunch",
+   "published": "2025-10-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6af52a53dfc23de1ad3a2804_langchain-product-stackvF.png",
+   "page_url": "https://www.langchain.com/blog/series-c",
+   "caption": "LangChain 제품 구성도 — 에이전트 런타임·개선·거버넌스",
+   "credit": "LangChain"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "에이전트 관리 플랫폼 스타트업의 30억 달러 평가는 무엇을 근거로 했고, 에이전트를 도입하는 팀은 무엇을 확인해야 하는가",
+  "limitations": "공개 자료만 정리했고 제품을 직접 실행하지 않았다. 자금 사용처, 가치 산정 기준(투자 전·후), 매출은 공개되지 않았다. 고객 사례는 회사 주장이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 1년 전 라운드와 숫자로 비교하기",
+    "excerpt": "이 계산은 두 발표문에 적힌 숫자를 단순히 나눈 것이며, 두 라운드의 조건(우선주 권리 등)이 같은지는 공개",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "두 발표문의 금액·가치를 나눠 증가 배율을 계산하고 조건 비교 불가 한계를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 에이전트를 도입하는 팀을 위한 판단 기준",
+    "excerpt": "아래 표는 공식 글에 나온 설명을 바탕으로 한 확인 질문 목록이며, 우열을 가리는 평가가 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀 상황별 확인 질문과 제외 조건 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔭 왜 지금 '에이전트 관리' 쪽으로 무게가 실렸나요?",
+    "excerpt": "두 자료를 함께 읽으면 흐름이 보입니다. 2025년 10월 글은 LangChain·LangGraph·Lang",
+    "source_ids": [
+     "S3",
+     "S1",
+     "S4"
+    ],
+    "added_value": "2025년과 2026년 발표문의 제품 서술 차이를 연결한 해석(해석임을 표시)"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "corrected": [
+   "'모델·클라우드·생태계에 묶이지 않는다'를 공식 글 주장으로 쓴 문장 → 공식 글은 framework-agnostic·모델 선택 자유로, 종속 없음 표현은 TechCrunch 서술로 구분 (본문·판단 표)",
+   "'먼저 시작했다는 점이 강점이라고 LangChain이 말한다(회사 입장)' → TechCrunch 자체 서술('head start')로 수정"
+  ],
+  "note": "Opus 검증: S1~S4 4개 출처를 모두 다시 열어 금액·가치·투자자(본문·하단 명단)·7,000곳·고객명·Clay/Workday 수치·제품 구성·게이트웨이 기능·11월 20일 행사·자금 사용처 미공개·2025-10 라운드 지표(9,000만 다운로드·35%·12배·GitHub 별 11만 8,000)·시드/시리즈A 이력 대조. 각 출처 published 가 페이지 날짜와 일치(S1 2026-11-13, S2 2026-11-13, S3 2025-10-20, S4 2025-10-21). 두 자료 모두 pre/post-money 미표기 확인 — 10% 지분 계산은 '만약 post-money라면' 가정으로 명시돼 유지. 인용 이미지 URL 200 image/png 확인. 막힌(EGRESS_BLOCKED) 출처 없음."
+ }
+}
