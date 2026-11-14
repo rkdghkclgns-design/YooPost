@@ -6905,5 +6905,22 @@
    "https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation"
   ],
   "draft_id": "20261115_072527_4"
+ },
+ {
+  "date": "2026-11-15",
+  "title": "🔒 AWS mcp-gateway-registry SSRF(CVE-2026-125926): 1.25.0 패치만으로는 부족한 이유",
+  "topic": "Bulletin 2026-180-AWS: CVE-2026-125926 — SSRF in mcp-gateway-registry (AWS, 2026-11-11) / Cyber Security News 보도(2026-11-12)",
+  "category": "AI 보안",
+  "source_url": "https://aws.amazon.com/security/security-bulletins/2026-180-aws/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/aws-mcp-gateway-registry-ssrfcve-2026.html"
+  },
+  "sources": [
+   "https://aws.amazon.com/security/security-bulletins/2026-180-aws/",
+   "https://github.com/agentic-community/mcp-gateway-registry/security/advisories/GHSA-fc39-fwh3-wv5r",
+   "https://cybersecuritynews.com/aws-mcp-gateway-security-flaw",
+   "https://github.com/agentic-community/mcp-gateway-registry/releases/tag/1.35.0"
+  ],
+  "draft_id": "20261115_073047_5"
  }
 ]
