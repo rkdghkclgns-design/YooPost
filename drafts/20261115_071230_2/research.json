@@ -1,0 +1,112 @@
+{
+ "topic": "Operate Claude Managed Agents inside your security perimeter (Anthropic, 2026-11-12) — 자체 호스팅 Claude Managed Agents 프라이빗 베타 / 라이선스 원문·Help Net Security·CellCog 해설",
+ "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Operate Claude Managed Agents inside your security perimeter",
+   "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "publisher": "Anthropic",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Self-hosted Claude Managed Agents (Claude Platform Docs)",
+   "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+   "publisher": "Anthropic",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Differences from the hosted service (Claude Platform Docs)",
+   "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/differences",
+   "publisher": "Anthropic",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Self-hosted Claude Managed Agents keeps agent credentials in your environment",
+   "url": "https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/",
+   "publisher": "Help Net Security",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Self-Hosted Claude Managed Agents: Beta, Limits, License",
+   "url": "https://cellcog.ai/blog/claude-managed-agents-self-hosted/",
+   "publisher": "CellCog",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Software License Agreement: Claude Managed Agents Server",
+   "url": "https://www.anthropic.com/legal/self-hosted-managed-agents-license",
+   "publisher": "Anthropic",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Data and access in self-hosted Claude Managed Agents (Claude Platform Docs)",
+   "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access",
+   "publisher": "Anthropic",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://assets.claude.com/7607c90e3d3d6e3bf9f7d1af0d39afb006be1413.svg",
+   "page_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "caption": "자체 호스팅 Claude Managed Agents 구성도 (자체 호스팅 Managed Agents 등장 배경)",
+   "credit": "Anthropic"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "우리 팀은 Claude Managed Agents 서버를 직접 운영해야 하는가, 호스티드나 자체 호스팅 샌드박스로 충분한가",
+  "limitations": "서버를 설치하거나 실행하지 않았고 공식 문서·라이선스 원문·해설을 읽은 비교·해석입니다. 가격, 정식 출시일은 확인되지 않았고, 공개된 라이선스 원문이 베타 고객 계약에 그대로 적용되는지는 확인되지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔀 세 가지 호스팅 방식, 누가 무엇을 맡나",
+    "excerpt": "표에서 읽을 수 있는 차이는 두 가지입니다. 첫째, 이번 베타가 새로 가져온 것은",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "샌드박스·서비스·모델 세 칸을 같은 기준으로 놓고 이번 베타가 바꾼 칸과 새로 생긴 선택권을 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📜 라이선스와 운영 의무: 계약서 기한을 운영 체계로 바꾸기",
+    "excerpt": "안전 공지가 오면 8시간 안에 기능을 끄거나 롤백하고 안전 업데이트는 영업일 1일 안에 배포할 체계, 즉 **야간·주말에도 반응할 담당자**가 필요해집니다",
+    "source_ids": [
+     "S2",
+     "S6",
+     "S5"
+    ],
+    "added_value": "문서의 책임 이전 설명과 라이선스 원문의 기한을 이어 필요한 운영 체계(야간·주말 대응 담당자)로 환산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 우리 팀에 맞을까: 상황별 판단 기준",
+    "excerpt": "제외 조건도 분명합니다. **접근이 요청제**이므로 지금은 Anthropic 계정 담당자를 통해 문의해야 하고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "상황별로 호스팅 방식과 제외 조건을 표로 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증: S1(2026-11-12 표기)·S2·S3·S4(2026-11-12)·S5(2026-11-12, 11-13 재검토) 재열람, 날짜 없는 공식 문서 S2·S3·S7은 published 비움. 라이선스 기한·책임 한도·모델 제한·사용 신호·지원 의무는 공식 라이선스 원문 S6(2026-11-12 시행)으로 조항 번호까지 확인해 본문을 해설자 정리→계약서 원문 기준으로 수정, '원격 접근 없음'은 공식 S7로 확인. 기능 수(서버 전용 4·불가 7·동작 차이 14), 100 KiB, 제공자별 web_search/web_fetch, PostgreSQL 16+, 관리자 CLI 플랫폼, 세 자격 증명, 강제 푸시, 워커 재사용 S3/S2로 확인. 인용 이미지 SVG 200 image/svg+xml 확인. 막힌 출처 없음."
+ }
+}
