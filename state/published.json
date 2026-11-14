@@ -6888,5 +6888,22 @@
    "https://huggingface.co/papers/date/2026-11-13"
   ],
   "draft_id": "20261115_071902_3"
+ },
+ {
+  "date": "2026-11-15",
+  "title": "🧩 LangChain, 3억 달러 시리즈 C로 기업가치 30억 달러: 에이전트 관리 플랫폼에 돈이 몰리는 이유",
+  "topic": "LangChain Raises $300M to Enable Every Company to Own Its Intelligence (LangChain, 2026-11-13) / AI agent startup LangChain hits $3B valuation (TechCrunch, 2026-11-13)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://www.langchain.com/blog/series-c",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/langchain-3-c-30.html"
+  },
+  "sources": [
+   "https://www.langchain.com/blog/series-c",
+   "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+   "https://www.langchain.com/blog/series-b",
+   "https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation"
+  ],
+  "draft_id": "20261115_072527_4"
  }
 ]
