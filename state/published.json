@@ -6871,5 +6871,22 @@
    "https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access"
   ],
   "draft_id": "20261115_071230_2"
+ },
+ {
+  "date": "2026-11-15",
+  "title": "🧠 빠른 판단 AI는 믿어도 될까: SO-Arena가 가른 정확도와 신뢰도 차이",
+  "topic": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models (arXiv 2611.15777, 2026-11-11) / Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.15777",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-so-arena.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.15777",
+   "https://arxiv.org/html/2611.15777",
+   "https://huggingface.co/papers/2611.15777",
+   "https://huggingface.co/papers/date/2026-11-13"
+  ],
+  "draft_id": "20261115_071902_3"
  }
 ]
