@@ -1,0 +1,92 @@
+{
+ "topic": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models (arXiv 2611.15777, 2026-11-11) / Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.15777",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models (arXiv abs)",
+   "url": "https://arxiv.org/abs/2611.15777",
+   "publisher": "arXiv (Lichen Li 등)",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "SO-Arena (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2611.15777",
+   "publisher": "arXiv (Lichen Li 등)",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+   "url": "https://huggingface.co/papers/2611.15777",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-11",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Daily Papers - Hugging Face (2026-11-13)",
+   "url": "https://huggingface.co/papers/date/2026-11-13",
+   "publisher": "Hugging Face",
+   "published": "2026-11-13",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.15777v1/s1-deep-dive-paper.png",
+   "page_url": "https://arxiv.org/html/2611.15777",
+   "caption": "SO-Arena 한눈에 보기 (a): 21개 모델의 리더보드 점수, 크기·접근 방식별로 묶음 (논문 Figure 2a)",
+   "credit": "Li et al., arXiv 2611.15777 (CC BY 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "정답률이 높은 빠른 판단(System One) 모델을 에이전트의 분기 판단에 써도 되는가, 어떤 영역에서 믿을 만하고 어디서 추론형이 필요한가?",
+  "limitations": "논문 보고값을 읽고 정리했으며 공개된 데이터셋·코드로 직접 재현하지 않았습니다. GLiDE 점수와 평균은 부록 표의 차이를 더한 제 계산이고 과제 수 가중이 없습니다. 신뢰도 예시 값(S=0.9, N=0.1)은 가정입니다. 별도 언론 기사는 찾지 못했고 이슈 근거는 Hugging Face 논문 페이지와 일일 논문 목록입니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 영역별 비교: GLiDE는 Luna와 어디서 비슷하고 어디서 벌어지나",
+    "excerpt": "영역 11개의 차이를 단순 합산하면 -65.2이고 평균은 약 -5.9점입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "부록 표의 영역별 차이를 합산해 격차가 다단계 도출 세 영역에 몰려 있음을 보이고, 가중 없는 단순 평균이라는 가정을 밝힘."
+   },
+   {
+    "kind": "calculation",
+    "section": "🔬 신뢰도를 재는 법: 순서 안정성과 정답 부재 인식",
+    "excerpt": "기하평균을 쓰면 한쪽이 낮을 때 다른 쪽이 높아도 종합 점수가 크게 오르지 않습니다. 예를",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "R=√(S·N) 식에 가정 값을 넣어 한쪽이 낮을 때 종합 점수가 오르지 않음을 예시로 보임(가정 표시)."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 시스템에 적용한다면: 판단 기준과 제외 조건",
+    "excerpt": "상황별로 정리하면 이렇습니다. 첫째, 의도 분류·감정 판별·안전 필터처럼 **직접 판단이나 세밀한 근거 판단**이 중심이고 호출량이 많은 곳은 System One 후보로 검토할 만합니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "영역별 결과를 호출량 많은 분류 판단 대 다단계 도출 분기로 나눠 선택·제외 기준을 제시하고 자체 점검 방법을 제안."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 51,
+  "removed": [
+   "논문 본문에는 벤치마크·코드 공개 여부가 확인되지 않았으므로, 재현 가능 여부는 공식 페이지에서 따로 확인해야 합니다. (틀림: arXiv 초록에 프로젝트 페이지, HF 저자 글에 데이터셋·GitHub 주소가 있음 → 사실로 교체, 맺음말·limitations 의 '공개 여부 확인 못함'도 수정)",
+   "제가 확인한 범위에서 별도의 언론 기사나 연구자 토론은 찾지 못했으므로, 커뮤니티 반응은 정리하지 않습니다. (HF 페이지에 독자 질문 댓글이 있음 → upvote 134·댓글로 교체)",
+   "다만 폐쇄형 API의 지연은 ... 직접 비교하기 어렵다는 단서가 붙습니다. (논문에 '비교 어렵다'는 문장 없음 → 측정 조건만 적고 해석은 제 해석으로 표시)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(제출 2026-11-11 확인)·arXiv HTML 전문(표 1·2, 부록 영역별 표, 식 5~7, 4.1~4.2절, 부록 A·B)·HF 논문 페이지(Published on Nov 11, 2026-11-13 일일 등록, upvote 134, NUS 소속, 저자 글의 Homepage/Dataset/GitHub)·HF Daily Papers 2026-11-13 날짜 페이지(1위, NVIDIA·Meta·Ant Group 동반)를 curl 로 다시 열어 대조. 영역별 GLiDE 점수 11개와 합계 -65.2·평균 -5.93·8개 영역 합 +8.5·평균 +1.06 재계산 일치, R=√(0.9×0.1)=0.30 일치(가정 표시 유지). 79.7-70.2=9.5 일치. S3 published 를 페이지 표기(Published on Nov 11)에 맞춰 2026-11-13→2026-11-11, S4 url 을 날짜 페이지로 교체. 인용 이미지 PNG 200(image/png) 확인, 그림이 Figure 2(a) 만이라 캡션 수정. EGRESS_BLOCKED 출처 없음."
+ }
+}
