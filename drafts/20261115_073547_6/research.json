@@ -1,0 +1,96 @@
+{
+ "topic": "AI Investment and the U.S. Economy (CRS In Focus IF13346, 2026-11-12) / Goldman Sachs 2027 AI investment forecast (Reuters via The Star, 2026-11-12)",
+ "source_url": "https://www.everycrsreport.com/reports/IF13346.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI Investment and the U.S. Economy (CRS In Focus IF13346)",
+   "url": "https://www.everycrsreport.com/reports/IF13346.html",
+   "publisher": "Congressional Research Service (EveryCRSReport.com 게재본 — 페이지에 출처 Congress.gov·원문 링크 표기, PDF 해시가 Congress.gov 원문과 일치)",
+   "published": "2026-11-12",
+   "official": true,
+   "note": "congress.gov/crs-product/IF13346 은 403. 게재본 페이지 메타데이터(Source: Congress.gov, publisher: Congressional Research Service)와 PDF(SHA1 6985156…, CRS 면책문·저자 Weinstock·Labonte 포함)로 CRS 원문임을 확인해 official: true 유지."
+  },
+  {
+   "id": "S2",
+   "title": "AI to stay dominant force behind US business investment in 2027, Goldman says",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/11/12/ai-to-stay-dominant-force-behind-us-business-investment-in-2027-goldman-says",
+   "publisher": "The Star (Reuters)",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Goldman sees AI spending hitting $1.4 trillion by end-2027, nearly 4% of the US economy",
+   "url": "https://investinglive.com/stocks/goldman-sees-ai-spending-hitting-1-4-trillion-by-end-2027-nearly-4-of-the-us-economy/",
+   "publisher": "investingLive",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Technology Shocks, the AI Boom, and the U.S. Current Account (FEDS Notes)",
+   "url": "https://www.federalreserve.gov/econres/notes/feds-notes/technology-shocks-the-ai-boomandthe-u-s-current-account-20260714.html",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "published": "2026-07-14",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "CRS 보고서의 도표(Figure 1·2)는 PDF 안에만 있고 웹 페이지 본문에는 이미지 파일로 실려 있지 않으며, 다른 출처 페이지도 글자 중심입니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 투자 규모 숫자와 실제 성장 기여 숫자는 왜 다르고, 뉴스를 어떻게 읽어야 하는가",
+  "limitations": "출처 숫자에 뺄셈·비율만 적용했고 원자료·모형을 직접 재현하지 않았다. CRS 그림 수치와 BIS 원문은 확인하지 못해 BIS 1.5배는 CRS 인용으로만 표기했다. 연준 노트의 90%는 본문 기준(해외 조달, 공급처는 동아시아 집중)으로 한정했다. 56%는 '9,000억 달러 초과' 기준의 상한 근사다. 직접 실행·실측은 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 같은 투자, 다른 기여: 반도체를 넣고 빼면 0.6 대 0.2",
+    "excerpt": "설비투자에서는 반도체 몫이 1.0%포인트(5.3 빼기 4.3)인데, GDP에서는 0.4%포인트(0.6 빼기 0.2)가 반도체에서 나옵니다",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "보도된 포함·제외 수치를 빼서 반도체가 설비투자 1.0%p, GDP 0.4%p(약 3분의 2)를 차지함을 보이고 수입 상쇄 구조와 연결"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 연준 노트가 보태는 수입 의존의 배경",
+    "excerpt": "CRS 보고서는 반대 시각도 놓치지 않습니다. 뉴욕 연은의 연구는 경상수지 적자 확대를 주로 정부 재정적자 확대 탓으로 보며",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "연준 FEDS 노트의 수입 의존·모형 한계와 CRS가 인용한 뉴욕 연은 해석을 나란히 놓아 원인 평가가 갈림을 보여 줌"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 읽기 기준: 숫자를 만나면 무엇을 확인할까",
+    "excerpt": "원문이 이렇게 말한 것은 아닙니다. 투자 판단이 아니라 뉴스를 읽는 기준입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "상황별로 총지출·순기여, 지출 범위·연도, 추정 여부를 확인하도록 한 읽기 기준(저자 해석 표시)"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 53,
+  "removed": [
+   "보고서는 그 밖의 구체적 정책 대안은 다루지 않습니다. (CRS가 재정·통화 긴축을 언급하므로 부정확 — 긴축이 완만했다는 확인된 서술로 대체)"
+  ],
+  "corrected": [
+   "연준 FEDS 노트 90%: 요약문의 '동아시아 조달' 대신 본문 기준 '첨단기술 장비재의 약 90% 해외 조달, 공급처는 동아시아 집중'으로 한정하고 요약·본문 차이를 명시, 10% 악화를 0.2%p/평균 3% 적자로 보충",
+   "56% 계산: (1.4-0.9)/0.9≈55.6% 재계산, 증가 폭 5,000억 달러와 함께 '최대' 상한 근사로 명시",
+   "BIS 1.5배: 'CRS에 따르면 … CRS 인용으로만 전함'으로 표기 (본문·FAQ)",
+   "골드만삭스 물가 0.5%p·2028년 2.8%: CRS 인용임을 명시",
+   "로이터 '위험 요인' 문장: 골드만삭스의 위험 요인이 아니라 전망이 나온 배경의 우려로 고침",
+   "CRS 개요 문장 인과 순서를 원문대로 고침 (AI→차입·투자·주가 급증→성장 원천, 다른 부분 둔화)",
+   "investingLive 12월 연준 인상 가능성: 해당 기사 서술·미검증 단서 유지",
+   "한계 박스의 '직접 재계산하지 않았다'를 원자료·모형 미재현으로 고침 (본문 계산과 모순 제거)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): 4개 출처를 curl 로 다시 열어 본문 대조. S1 everycrsreport 게재본은 Source: Congress.gov·원문 링크·publisher Congressional Research Service 표기, PDF SHA1 이 Congress.gov 원문 메타데이터와 일치하고 CRS 면책문·저자 포함 → official: true 유지(publisher 표기 보강). published 날짜 대조: S1 November 12, 2026 · S2 2026-11-12 16:54 MYT · S3 2026-11-12 22:11 GMT · S4 July 14, 2026 — 모두 일치. 2026-11-11=수요일 확인. EGRESS_BLOCKED 출처 없음. 투자 권유 표현 없음."
+ }
+}
