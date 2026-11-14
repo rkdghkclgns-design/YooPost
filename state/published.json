@@ -6851,5 +6851,25 @@
    "https://arxiv.org/abs/2610.38120"
   ],
   "draft_id": "20261115_070517_1"
+ },
+ {
+  "date": "2026-11-15",
+  "title": "🏢 Claude Managed Agents 서버를 우리 망에서 직접 돌린다: 프라이빗 베타 전에 따질 운영 부담",
+  "topic": "Operate Claude Managed Agents inside your security perimeter (Anthropic, 2026-11-12) — 자체 호스팅 Claude Managed Agents 프라이빗 베타 / 라이선스 원문·Help Net Security·CellCog 해설",
+  "category": "AI 도구",
+  "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-managed-agents.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+   "https://platform.claude.com/docs/en/managed-agents/self-hosted/differences",
+   "https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/",
+   "https://cellcog.ai/blog/claude-managed-agents-self-hosted/",
+   "https://www.anthropic.com/legal/self-hosted-managed-agents-license",
+   "https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access"
+  ],
+  "draft_id": "20261115_071230_2"
  }
 ]
