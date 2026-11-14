@@ -6832,5 +6832,24 @@
    "https://dart.fss.or.kr/report/viewer.do?rcpNo=20261113001531&dcmNo=11656307&dtd=dart4.xsd&eleId=10&offset=653171&length=14629"
   ],
   "draft_id": "20261114_074700_7"
+ },
+ {
+  "date": "2026-11-15",
+  "title": "🔒 IBM Granite LLMON 프리뷰: 지시와 자료를 구조로 나누면 인젝션이 얼마나 줄까, 숫자로 읽기",
+  "topic": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B (IBM Granite, Hugging Face blog, 2026-11-12) / Unite.AI·DEV Community 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ibm-granite-llmon.html"
+  },
+  "sources": [
+   "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "https://huggingface.co/ibm-granite/granite-4.1-8b-llmon-preview",
+   "https://www.unite.ai/ibm-releases-granite-models-designed-to-resist-prompt-injection/",
+   "https://dev.to/mikefluff/ibm-ships-granite-41-previews-tuned-to-resist-prompt-injection-3ag5",
+   "https://github.com/generative-computing/llmon",
+   "https://arxiv.org/abs/2610.38120"
+  ],
+  "draft_id": "20261115_070517_1"
  }
 ]
