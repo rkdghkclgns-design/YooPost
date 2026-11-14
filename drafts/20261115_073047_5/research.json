@@ -1,0 +1,76 @@
+{
+ "topic": "Bulletin 2026-180-AWS: CVE-2026-125926 — SSRF in mcp-gateway-registry (AWS, 2026-11-11) / Cyber Security News 보도(2026-11-12)",
+ "source_url": "https://aws.amazon.com/security/security-bulletins/2026-180-aws/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Bulletin 2026-180-AWS: CVE-2026-125926 — SSRF in the server registration and update API in mcp-gateway-registry",
+   "url": "https://aws.amazon.com/security/security-bulletins/2026-180-aws/",
+   "publisher": "Amazon Web Services",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GHSA-fc39-fwh3-wv5r: Server-Side Request Forgery (SSRF) in mcp-gateway-registry",
+   "url": "https://github.com/agentic-community/mcp-gateway-registry/security/advisories/GHSA-fc39-fwh3-wv5r",
+   "publisher": "mcp-gateway-registry (GitHub Security Advisories)",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AWS MCP Gateway Security Flaw Allowing Access to Internal Networks and Cloud Credentials",
+   "url": "https://cybersecuritynews.com/aws-mcp-gateway-security-flaw",
+   "publisher": "Cyber Security News",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "mcp-gateway-registry 1.35.0 release notes",
+   "url": "https://github.com/agentic-community/mcp-gateway-registry/releases/tag/1.35.0",
+   "publisher": "mcp-gateway-registry (GitHub)",
+   "published": "2026-10-29",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "AWS 보안 공지와 GitHub 권고는 글자뿐인 문서이며 본문에 도표·스크린샷이 없음(AWS 공지 직접 확인).",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "mcp-gateway-registry를 운영 중인데 이번 SSRF 공지가 내 배포에 해당하는가, 업그레이드 말고 무엇을 점검해야 하는가",
+  "limitations": "취약한 버전을 직접 설치·재현하거나 패치를 시험하지 않았고 공지·권고·기사·릴리스 페이지를 읽고 정리함. 실제 악용 사례와 개별 환경 피해 여부는 확인되지 않음.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내 배포는 어디에 해당하나: 상황별 판단 기준",
+    "excerpt": "이 순서의 요점은 **업그레이드, 저장 설정 점검, 로그 검토, 자격 증명 교체**가 한 묶음이라는 점입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공지의 조치 항목을 독자의 버전·환경별 판단표로 재배열하고 1.25.0~1.34.0도 영향 범위라는 점을 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 문서 세 곳을 겹쳐 읽으면 보이는 것",
+    "excerpt": "정리하면 **점수는 GitHub 권고에서만** 확인됩니다. 8.5라는 숫자는 '인증된 저권한 사용자, 낮은 복잡도, 범위 변경, 기밀성 영향 높음'이라는 벡터에서 나온 것이고",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "서로 다른 세 문서의 심각도·자격 증명·악용 표기를 대조해 확정된 것과 가능성 수준을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [
+   "릴리스 노트에는 업그레이드 시 주의할 점이 여럿 적혀 있습니다. 예를 들어 서버 메타데이터 쓰기 한도가 64KB에서 10KB로 줄었고, Helm 배포에서 번들 Keycloak을 쓴다면 업그레이드 전에 기존 시크릿을 Helm이 관리하도록 표시해야 합니다. ... (앞 절 표와 중복이라 삭제, 내용 자체는 확인됨)"
+  ],
+  "note": "Opus 검증: S1 AWS 공지(2026-11-11 게시, Important, CVSS 미기재, 1.0.3~1.34.0/1.35.0, 1.25.0 별개 수정, 임시조치·업그레이드 후 조치 3개, novice-22, GHSA 참조, 본문 그림 없음), S2 GHSA(2026-11-11, High 8.5 벡터, CWE-918, 메타데이터 서비스 언급), S3 Cyber Security News(2026-11-12, 인증 필요·악용 미확인·포크 수정 필요), S4 1.35.0 릴리스(2026-10-29, SSRF 언급 없음 확인, 변경점·업그레이드 명령 확인)를 다시 열어 대조. 수정: 제목·요약·본문의 '1.25.0 이상이어도 안전하지 않음'을 출처대로 '1.25.0~1.34.0'으로 한정(1.35.0 이상은 수정됨), 릴리스 노트는 다른 보안 항목은 있으나 SSRF 언급만 없으므로 '보안 수정이 드러나지 않음'을 'SSRF 수정'으로 한정, 비공식 매체가 포함된 절 제목의 '공식 문서'를 '문서'로, 132커밋은 확인 시점 기준으로 표기. 각 출처 published 가 페이지 표기 날짜와 일치함을 확인."
+ }
+}
