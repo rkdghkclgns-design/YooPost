@@ -1,0 +1,120 @@
+{
+ "topic": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B (IBM Granite, Hugging Face blog, 2026-11-12) / Unite.AI·DEV Community 보도",
+ "source_url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+   "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "publisher": "IBM Granite (Hugging Face blog)",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ibm-granite/granite-4.1-8b-llmon-preview (model card)",
+   "url": "https://huggingface.co/ibm-granite/granite-4.1-8b-llmon-preview",
+   "publisher": "IBM Granite (Hugging Face)",
+   "published": "2026-11-12",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "IBM Releases Granite Models Designed to Resist Prompt Injection",
+   "url": "https://www.unite.ai/ibm-releases-granite-models-designed-to-resist-prompt-injection/",
+   "publisher": "Unite.AI",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "IBM ships Granite 4.1 previews tuned to resist prompt injection",
+   "url": "https://dev.to/mikefluff/ibm-ships-granite-41-previews-tuned-to-resist-prompt-injection-3ag5",
+   "publisher": "DEV Community",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "generative-computing/llmon (GitHub)",
+   "url": "https://github.com/generative-computing/llmon",
+   "publisher": "GitHub (generative-computing)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Post-Training Large Language Models with LLMON (arXiv 2610.38120)",
+   "url": "https://arxiv.org/abs/2610.38120",
+   "publisher": "arXiv (IBM Research)",
+   "published": "2026-10-28",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn-uploads.huggingface.co/production/uploads/6484ca4d5ff9a3d2ee52a83b/3UqXuyb58P8n3NiHnJiK4.png",
+   "page_url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "caption": "OPI 인젝션 견고성 비교 그래프: LLMON 프리뷰 모델과 다른 모델",
+   "credit": "IBM Granite"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn-uploads.huggingface.co/production/uploads/6484ca4d5ff9a3d2ee52a83b/VMIEO4qYlmxLhK0DmMO6C.png",
+   "page_url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "caption": "일반 성능 비교 표: Granite 4.1 Instruct와 LLMON 프리뷰의 7개 범주 벤치마크 점수",
+   "credit": "IBM Granite"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "IBM이 내세운 LLMON 프리뷰의 인젝션 견고성 수치는 무엇을 비교한 것이고, 일반 성능을 얼마나 유지하며, 어떤 조건에서 시험해 볼 만한가?",
+  "limitations": "직접 실행·재현하지 않았고 모든 수치는 IBM·매체 보고입니다. 컨텍스트 길이·독립 검증·다국어 견고성은 확인하지 못했습니다. 차이 열은 IBM 표의 뺄셈 계산입니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧪 일반 성능은 얼마나 유지되나: 표로 다시 계산",
+    "excerpt": "계산해 보면 8B는 평균이 74.90에서 74.76으로 0.14점 낮아져 사실상 같은 수준이고, 3B는 68.09에서 69.44로 1.35점 올랐습니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "IBM 표의 범주별 점수에서 차이를 직접 계산해 평균에 가려진 8B 수학 -4.46점을 드러냄"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 우리 팀에 맞을까: 선택 기준",
+    "excerpt": "종합하면 이 프리뷰는 '인젝션에 강한 작은 모델'이라기보다 '지시와 자료를 구조로 나누는 접근을 시험해 볼 연구용 모델'에 가깝습니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "상황별 시험 여부와 제외 조건을 모델 카드 한계와 연결해 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 OPI 인젝션 견고성: 숫자 읽는 법",
+    "excerpt": "그래프 화살표는 '%포인트'로 표시되어 있어, 견고성 값(0~1)의 차이를 퍼센트포인트로 나타낸 것으로 읽는 것이 맞습니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S6"
+    ],
+    "added_value": "블로그 본문의 '47% 더'와 그래프의 '%포인트' 표기, 논문의 공격 성공률 수치, 매체가 정리한 한계를 대조해 수치의 비교 범위를 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 54,
+  "removed": [
+   "DEV Community 글은 퍼센트 향상의 기준선이 명확히 정의되지 않아 숫자만으로는 해석하기 어렵다고 지적합니다. (DEV 원문에 없는 내용 — 블로그 본문 '47% more'와 그래프 '%-point' 표기 대조로 교체)",
+   "서빙은 vLLM과 SGLang이 문서에 언급됩니다. (모델 카드 README 본문에 없음)",
+   "Unite.AI는 ... 모델 구조는 바꾸지 않았다고 전합니다. (Unite.AI 외 확인 불가)",
+   "후속 논문(2610.38120)의 인용 번호도 매체마다 표기가 달라 직접 확인이 필요합니다. (근거 없음 — arXiv 에서 번호 확인)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 블로그 본문·그래프 PNG 2개를 직접 열어 OPI 9,000건·견고성 정의·47/95%포인트·7개 범주 표 전 수치 대조, 차이 열 재계산 일치. S2 모델 카드 README 원문·HF API 로 공개일 2026-11-12, Apache 2.0, 언어 12개, 한계 문구, GPQA 35.05/41.96·DeepMind Math 70.86/80.07·BigCodeBench 44.04/35.00·MMLU 74.20/73.84 확인 (Unite.AI 단독 수치 아님). 8B vs 9B: HF API safetensors 8,791,592,960 → 표기 9B 로 설명 수정. 53~100%→0.02~5.6%·4.6B 토큰은 arXiv 2610.38120(2026-10-28 제출) 초록으로 확인해 S6 추가. 코드 예시를 모델 카드 원문으로 교체(exec False 예). DEV Community 발행일은 페이지에 'Nov 13'(연도 없음)뿐이라 DEV API published_at 2026-11-13T04:30:22Z 로 연도 확인. Unite.AI 2026-11-12 페이지 날짜 일치. S5 GitHub 는 페이지에 날짜 없음(published 비움). 블로그 본문 그림 I2(비교 표) 추가, 두 image_url 모두 HTTP 200 image/png 확인(2400px·1080px)."
+ }
+}
