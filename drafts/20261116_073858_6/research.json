@@ -1,0 +1,96 @@
+{
+ "topic": "Financial Stability Report, November 2026 (Federal Reserve Board, 2026-11-13) — 상자 5.1 '금융안정 위험 설문'(AI 87%)·상자 2.2 '데이터센터 확충의 레버리지' / CNBC 보도",
+ "source_url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Financial Stability Report, November 2026",
+   "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Financial Stability Report (보고서 목록 페이지)",
+   "url": "https://www.federalreserve.gov/publications/financial-stability-report.htm",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "AI risks are the biggest threat to the financial system, Fed survey finds",
+   "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html",
+   "publisher": "CNBC",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Federal Reserve survey finds AI is now the top financial stability risk",
+   "url": "https://cryptobriefing.com/fed-survey-ai-top-financial-stability-risk/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Fed AI Risk Survey: 87% of Market Contacts Flag Concerns",
+   "url": "https://bravenewcoin.com/insights/fed-ai-risk-survey-87-percent-financial-stability-crypto",
+   "publisher": "Brave New Coin",
+   "published": "2026-11-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처가 PDF 보고서이고 도표는 본문 속 벡터 그림이라 직접 열어 확인한 별도 이미지 파일 주소가 없으며, 보도 기사의 그림은 원고 내용을 보여 주는 도표가 아님",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "연준 보고서에서 'AI 위험 87%'는 무엇을 뜻하고, 같은 보고서의 데이터센터 부채 숫자와 겹쳐 읽으면 AI 서비스를 만들거나 도입하는 팀은 무엇을 점검해야 하나",
+  "limitations": "직접 실행·실측 없음. 보고서 PDF와 보도 3건 기준. 상자 5.1 그림의 막대 값은 본문에 없어 개요 요약 그림(가을 상위 5개 항목·봄 비교)의 값을 썼고 6위 이하 값은 미확인. 인원 환산·%포인트 차이는 이 글의 계산. 응답자 구성과 두 설문의 질문 동일성은 미확인. 1.1조 달러(전체 공개 부채)와 3조 달러 초과(7개사 할인 전 의무)는 집계 대상이 달라 비교하지 않음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔢 87%는 몇 명인가: 작은 표본 읽는 법",
+    "excerpt": "23명 가운데 87%는 약 20명이고, 봄 조사 20명 가운데 50%는 10명입니다",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "비율을 표본 크기(23명·20명)로 사람 수로 환산하고, 개요 요약 그림의 봄·가을 값 차이(%포인트)를 계산해 보고서가 말한 '가장 크게 늘어난 세 항목'과 대조"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 두 대목을 겹쳐 보기: 설문의 걱정과 부채 상자의 구조",
+    "excerpt": "설문이 말한 '복잡한 AI 금융'이 보고서의 부채 상자에서는 어떤 구조를 가리키는지 겹쳐 보면",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "설문 속 걱정과 같은 보고서 부채 상자의 구조를 연결하되 예측이 아닌 점검 신호로 한정"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별로 보면: 이 보고서에서 무엇을 가져갈까",
+    "excerpt": "이 표는 연준이 권고한 행동이 아니라 보고서 숫자를 읽는 독자가 스스로 점검할 질문",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 볼 대목과 점검 질문, 제외 조건을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 58,
+  "removed": [
+   "직접 계산해 보면 임대 의무 1조 달러와 기타 계약 의무 2조 달러를 더해 3조 달러, 여기에 공개 시장 미상환 부채 1.1조 달러를 놓으면 의무 쪽이 부채보다 2배 넘게 크다는 감을 얻을 수 있습니다. (보고서 주석상 직접 비교 불가이며 집계 대상도 7개사 vs 전체로 달라 삭제·대체)",
+   "그래프의 막대 값도 본문에 숫자로 적혀 있지 않아, 이 글은 CNBC 가 전한 비율을 그대로 인용합니다. (보고서 개요 3쪽 요약 그림에 값이 있어 수정)",
+   "보고서의 전반적 평가는 금융 시스템이 대체로 안정적 / 연준 보고서 전체는 시스템이 대체로 안정적이라고 평가 (원문에 없는 표현 — '은행 부문은 전반적으로 건전·회복력' 및 '자산 가치 압력 높음'으로 수정)",
+   "거래·결제·청산 시스템 (원문 trading, settlement, or payment systems — '거래·결제·지급'으로 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 연준 PDF(financial-stability-report-20261113.pdf)를 내려받아 pdftotext·페이지 이미지로 상자 5.1·2.2, 개요 요약 그림(87/52/48/43/43%, 봄 50/35/20/20/30%), 1장(1,500억 달러·주가수익비율·기간 프리미엄), 5장(에이전트 시스템 사이버 사건), 주석(할인 전 금액·7개사·144A) 대조. S2 목록 페이지에서 2026-11-13 확인. S3 CNBC(2026-11-13 4:00 PM EST 표기)·S4 Crypto Briefing(2026-11-13 표기)은 WebFetch로, S5 Brave New Coin은 직접 내려받아 datePublished 2026-11-16T01:00:45+13:00·페이지 '16 Nov 2026' 표기 확인(23명/20명, 언급 빈도·확률 아님, 11월 소식 이전 수집). 막힌 출처 없음. 수정 4건, 확인된 사실로 봄·가을 비교 표·에이전트 사이버 문단·집계 대상 설명 보완. 투자 연상 해시태그(AI투자) 교체."
+ }
+}
