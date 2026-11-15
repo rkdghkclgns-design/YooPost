@@ -6957,5 +6957,23 @@
    "https://www.etoday.co.kr/news/view/2647904"
   ],
   "draft_id": "20261115_074215_7"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🔎 DeepSeek 앱 기능이 API로: 검색·파일·음성 도구 요금, 우리 서비스에 붙일 만큼 쌀까",
+  "topic": "The full DeepSeek App experience, now via API (DeepSeek, 2026-11-13)",
+  "category": "AI 도구",
+  "source_url": "https://api-docs.deepseek.com/news/news261113/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/deepseek-api.html"
+  },
+  "sources": [
+   "https://api-docs.deepseek.com/news/news261113/",
+   "https://api-docs.deepseek.com/guides/build_a_chatbot",
+   "https://api-docs.deepseek.com/updates/",
+   "https://cryptobriefing.com/deepseek-opens-app-features-developers-api/",
+   "https://casrai.org/news/deepseek-app-capabilities-api-2026"
+  ],
+  "draft_id": "20261116_070655_2"
  }
 ]
