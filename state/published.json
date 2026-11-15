@@ -6992,5 +6992,26 @@
    "https://arxiv.org/html/2611.15131"
   ],
   "draft_id": "20261116_071321_3"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🌐 Microsoft 365 장애로 Copilot까지 멈춘 18시간, 우리 팀은 무엇부터 점검하고 크레딧은 얼마나 받을까",
+  "topic": "Microsoft's latest email outage turned into a full-blown global cloud crisis (TechCrunch, 2026-11-13)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/microsoft-365-copilot-18.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+   "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+   "https://www.windowslatest.com/2026/11/13/microsoft-365-outage-you-may-get-money-off-your-bill-if-you-use-it-for-work-but-youll-have-to-ask-microsoft-for-it-as-a-server-failure-takes-down-outlook-teams-and-exchange/",
+   "https://www.rescana.com/post/microsoft-365-outage-exchange-online-saas-concentration-risk-november-2026",
+   "https://cybersecuritynews.com/massive-microsoft-365-outage/",
+   "https://www.engadget.com/2315259/multiple-microsoft-365-services-are-experiencing-an-outage/",
+   "https://www.windowslatest.com/2026/11/14/microsoft-is-begging-you-not-to-blame-ai-for-the-microsoft-365-outage-insisting-it-was-a-botched-network-upgrade/",
+   "https://www.microsoft.com/licensing/docs/documents/download/OnlineSvcsConsolidatedSLA(WW)(English)(October_2026)(CR).docx"
+  ],
+  "draft_id": "20261116_072321_4"
  }
 ]
