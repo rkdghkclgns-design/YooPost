@@ -7013,5 +7013,23 @@
    "https://www.microsoft.com/licensing/docs/documents/download/OnlineSvcsConsolidatedSLA(WW)(English)(October_2026)(CR).docx"
   ],
   "draft_id": "20261116_072321_4"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🔒 NEAR AI 침해: 기밀 컴퓨팅이 있어도 SGLang 결함이 뚫렸다면 무엇부터 점검할까",
+  "topic": "Security incident report: SGLang vulnerability (NEAR AI, 2026-11-09)",
+  "category": "AI 보안",
+  "source_url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/near-ai-sglang.html"
+  },
+  "sources": [
+   "https://near.ai/blog/security-incident-report-sglang-vulnerability",
+   "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+   "https://decrypt.co/382965/near-ai-breach-exposes-user-details-data-ai-agents",
+   "https://theblock.co/news/defi/2026-11-10-near-ai-security-breach-437002",
+   "https://kb.cert.org/vuls/id/281278"
+  ],
+  "draft_id": "20261116_073316_5"
  }
 ]
