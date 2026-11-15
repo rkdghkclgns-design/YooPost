@@ -1,0 +1,89 @@
+{
+ "topic": "Security incident report: SGLang vulnerability (NEAR AI, 2026-11-09)",
+ "source_url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Security Incident Report — SGLang vulnerability",
+   "url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
+   "publisher": "NEAR AI",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "SGLang RCE exploit breaches NEAR AI",
+   "url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+   "publisher": "The Hacker News",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Near AI breach exposes user details, data from 18 AI agents",
+   "url": "https://decrypt.co/382965/near-ai-breach-exposes-user-details-data-ai-agents",
+   "publisher": "Decrypt",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "NEAR AI says SGLang vulnerability exposed user account details in security breach",
+   "url": "https://theblock.co/news/defi/2026-11-10-near-ai-security-breach-437002",
+   "publisher": "The Block",
+   "published": "2026-11-10",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "VU#281278 SGLang contains six different vulnerabilities including RCE, data exfiltration, and credential disclosure",
+   "url": "https://kb.cert.org/vuls/id/281278",
+   "publisher": "CERT/CC",
+   "published": "2026-07-30",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보고서의 본문 그림은 표지 이미지 하나뿐이고, 보도 기사의 그림도 설명 없는 대표 사진이어서 원고 내용을 보여 주는 도표·화면이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "기밀 컴퓨팅을 쓰는 AI 서비스가 SGLang 결함으로 뚫렸다는데, 이용자·소유자·운영자는 무엇을 어떤 순서로 확인해야 하나",
+  "limitations": "직접 실행·재현하지 않았고 회사 보고서와 보도 기준. 쓰인 CVE·SGLang 버전·후속 X 글 원문·침해 서버의 Brave Leo 대화 처리 여부는 미공개·미확인. 7월 CERT/CC 권고와의 연결은 위험 종류의 비교일 뿐 같은 결함이라는 근거는 없음.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 두 문서를 겹쳐 보면: SGLang 7월 권고와 이번 사고의 거리",
+    "excerpt": "같은 엔진에 원격 코드 실행(RCE) 계열 결함이 여럿 알려져 있었다면, 그 엔진을 공개 경로에 두는 서비스는",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "added_value": "사고 보고와 7월 CERT/CC 권고를 연결하되 같은 CVE 라고 단정하지 않고 위험의 종류만 겹쳐 읽도록 함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 내 상황별 점검 순서: 이용자·에이전트 소유자·직접 운영자",
+    "excerpt": "표의 마지막 두 행은 출처가 직접 지시한 것이 아니라 공개된 두 문서(NEAR AI 보고서, CERT/CC 권고)를 바탕으로 한",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "이용자·에이전트 소유자·API 고객·SGLang 운영자별로 먼저 할 일과 하지 않아도 되는 일을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 34,
+  "confirmed": 34,
+  "removed": [],
+  "corrected": [
+   "CERT/CC: 'CVE-2026-15969·15971 인증 없는 RCE 두 건' → 15969 는 인증 없는 RCE, 15971 은 선택 기능 dumper(DUMPER_SERVER_PORT 설정 시) RCE 로 정정 (본문·editorial excerpt 의 '인증 없는 RCE 계열'도 'RCE 계열'로)",
+   "The Hacker News Brave Leo: 'Leo 대화 노출 여부 미공개' → '침해된 서버가 Leo 대화를 처리했는지 미공개'로 정정 (본문·표)",
+   "The Hacker News CVE·버전·SGLang 수정판: 기사 자체에 없다 → 회사가 밝히지 않았다고 기사가 전함으로 정정",
+   "점검표 '토큰을 임의로 바꿔도 되지만' — 출처 없는 문구를 회사가 모든 에이전트 토큰을 교체했다는 사실로 바꿈",
+   "'공격 경로로 거론된 곳이 은퇴한 기능의 내부 시스템' → 최초 거점은 추론 서버이므로 '계정 정보가 빠져나간 곳'으로 정정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 near.ai 보고서(페이지 날짜 2026-11-09, TEE 인용문 원문 일치, 약 100명·18개·2곳·11월 8일·security@near.ai·규제 통지·SGLang 프로젝트 제보·탐지 시각 없음 확인), S2 THN(2026-11-10, '지난 일요일'=11월 8일 일요일, X 후속 글은 기사 인용으로만 표기), S3 Decrypt(2026-11-10), S4 The Block(2026-11-10, 18개 에이전트 소유자 개별 연락), S5 CERT/CC VU#281278(2026-07-30, CVE 6건·패치 없음·벤더 Unknown·조율 실패·SGLANG_USE_PICKLE_IPC 기본 true·완화책) 을 모두 다시 열어 대조. 막힌 출처 없음. 공격 절차(엔드포인트·페이로드)는 본문에 없고 방어 중심. 인용 이미지: S1 본문 그림은 대체 텍스트 없는 표지 하나뿐임을 확인해 images_none_reason 유지."
+ }
+}
