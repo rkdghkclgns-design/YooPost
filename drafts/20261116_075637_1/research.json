@@ -1,0 +1,104 @@
+{
+ "topic": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol (MathArena 종합 순위, 2026-11-13 갱신)",
+ "source_url": "https://matharena.ai/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "MathArena - Evaluating LLMs on Uncontaminated Math Competitions (종합 순위, 11월 13일 Fable 5.2·Gemini 4 Carbon 추가)",
+   "url": "https://matharena.ai/",
+   "publisher": "MathArena (ETH Zurich SRI Lab, INSAIT)",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "MathArena - Gemini 4 Carbon (high) 모델 페이지",
+   "url": "https://matharena.ai/models/gemini_gemini_4_carbon",
+   "publisher": "MathArena (ETH Zurich SRI Lab, INSAIT)",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+   "url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/",
+   "publisher": "The Decoder",
+   "published": "2026-11-14",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Gemini 4 Carbon 일반 공개 (Gemini 4 Carbon now available)",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "publisher": "Google",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "MathArena - 전체 모델 순위",
+   "url": "https://matharena.ai/models",
+   "publisher": "MathArena (ETH Zurich SRI Lab, INSAIT)",
+   "published": "2026-11-13",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "MathArena 페이지 본문에는 차트 이미지가 없고(성능·비용 그래프는 토글 뒤에 숨어 있음) The Decoder 기사에도 본문 그림이 없다. 구글 글의 그림은 오분류 지표 차트로 이 원고 내용과 관련이 없다.",
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "corrected": [
+   "Carbon 제한 시간 '1200초' → 'timeout 값 1200'(페이지에 단위 없음)",
+   "'순위표에 오르려면 최소 42문항' → '기대 성능 그래프에 나오려면'",
+   "비용 예측 '로그-선형 회귀' → '로그 비용 최소제곱 회귀'(본문 표·FAQ)",
+   "Carbon 가격 표기 '입력 $2.00/출력 $10.00' → 페이지 표기 '읽기(입력) 2.0/쓰기(출력) 10.0'",
+   "OpenAI 미공개 모델 문장을 The Decoder 원문(나비에-스토크스 주장, 미공개)대로 수정",
+   "Sol '1%p당 비용이 가장 낮은 상위권' → '위 표의 상위권 모델 가운데'(Inkling 2 Small이 더 낮음)",
+   "S2 published 2026-11-13 → 2026-11-10(모델 페이지에 적힌 유일한 날짜)",
+   "h2 9개 → 8개('⚠ 한계와 주의사항'을 '🎯 상황별 선택 기준과 한계'에 합침)"
+  ],
+  "added": [
+   "ArXivMath가 폐기(deprecated) 대회라 94.28%가 종합 기대 성능에 들어가지 않는다는 문장(MathArena 대회 목록에서 확인)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): matharena.ai 종합 페이지(11월 13일 갱신 노트·상위 4행·방법론·대회 목록), /models(4·6·7·8·9·11·12·15·22위 행), Carbon 모델 페이지(설정·가격·대회별 결과·IRT 사례), The Decoder 11월 14일 기사(Matthias Bastian, Dekoninck 인용, 15배·40배, 시간 초과·11시간), 구글 11월 10일 글(도입가 $2/$10 ~11-30, 이후 $4/$20, 제공 경로, CursorBench 4.0)을 모두 다시 열어 대조. 1%p당 비용(0.184/0.486/0.0133/0.068/0.0125), 14.7배·37.6배·2.6분의 1, 4.8·2.6·23.3·10.5점 차, +36.6%·-46.2%, $31.40 가정치를 재계산해 일치 확인. EGRESS_BLOCKED 출처 없음. S5(/models)는 페이지에 별도 게시일이 없고 결과 추가일 11-13은 S1 갱신 노트 기준."
+ },
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "MathArena 1위 Gemini 4 Carbon의 성능 우위가 Sol 대비 약 14.7배의 문제당 비용을 정당화하는가?",
+  "limitations": "수학 평가에 한정되며 추론 강도(high/max)가 달라 같은 조건의 비교가 아니다. 성능은 IRT로 추정한 기대값이고 오차 범위가 겹친다. 11월 30일 이후 비용은 단가 2배 가정의 추정이다. ArXivMath는 폐기 대회로 종합 기대 성능에 들어가지 않는다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 점수 1점당 비용 계산",
+    "excerpt": "문제당 비용으로 보면 Carbon은 GPT-6.1 Sol의 약 **14.7배**(15.70 ÷ 1.07), ",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "출처 표의 비용·성능을 나누어 성능 1%p당 비용과 모델 간 비용 배율을 계산했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 상황별 선택 기준과 한계",
+    "excerpt": "최고 정확도가 필요하고 문제당 비용에 여유가 있는 경우**: Carbon이 기대 성능 1위입니다. 다만 도입",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "성능·비용·가격 변경 조건을 상황별 선택과 제외 조건으로 정리했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 Carbon 가격표와 도입 기간 이후",
+    "excerpt": "MathArena 모델 페이지는 Carbon 가격(100만 토큰당 달러)을 읽기(입력) **2.0**",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "MathArena의 문제당 비용과 구글의 도입 가격 종료 일정을 연결해 가정 계산으로 보여 주었다."
+   }
+  ]
+ }
+}
