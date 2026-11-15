@@ -6975,5 +6975,22 @@
    "https://casrai.org/news/deepseek-app-capabilities-api-2026"
   ],
   "draft_id": "20261116_070655_2"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🧠 Duo v1 논문 분석: 말하고 듣는 전이중 세계 모델, 93.3%의 속뜻은?",
+  "topic": "Duo: A Reciprocal World Model for Full-Duplex Interaction (arXiv 2611.15131)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.15131",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/duo-v1-933.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.15131",
+   "https://huggingface.co/papers/2611.15131",
+   "https://huggingface.co/papers/date/2026-11-13",
+   "https://arxiv.org/html/2611.15131"
+  ],
+  "draft_id": "20261116_071321_3"
  }
 ]
