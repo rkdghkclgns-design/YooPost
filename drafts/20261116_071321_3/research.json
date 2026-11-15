@@ -1,0 +1,119 @@
+{
+ "topic": "Duo: A Reciprocal World Model for Full-Duplex Interaction (arXiv 2611.15131)",
+ "source_url": "https://arxiv.org/abs/2611.15131",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction (arXiv abs)",
+   "url": "https://arxiv.org/abs/2611.15131",
+   "publisher": "arXiv",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction (Hugging Face Papers)",
+   "url": "https://huggingface.co/papers/2611.15131",
+   "publisher": "Hugging Face",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Daily Papers 2026-11-13 (Hugging Face)",
+   "url": "https://huggingface.co/papers/date/2026-11-13",
+   "publisher": "Hugging Face",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Duo v1 논문 전문 (arXiv HTML)",
+   "url": "https://arxiv.org/html/2611.15131",
+   "publisher": "arXiv",
+   "published": "2026-11-11",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.15131v1/duo-architecture-chy.png",
+   "page_url": "https://arxiv.org/html/2611.15131",
+   "caption": "Duo v1 구조: Intent 은닉 상태와 사용자 오디오·영상을 조건으로 받는 Realization 모듈",
+   "credit": "Duo 저자, arXiv 2611.15131"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.15131v1/duo-dmd-training.png",
+   "page_url": "https://arxiv.org/html/2611.15131",
+   "caption": "이중 롤아웃 증류가 적용된 DMD 학습 과정",
+   "credit": "Duo 저자, arXiv 2611.15131"
+  },
+  {
+   "id": "I4",
+   "image_url": "https://arxiv.org/html/2611.15131v1/duo-streaming-spaced-timeline-architecture.png",
+   "page_url": "https://arxiv.org/html/2611.15131",
+   "caption": "GPU 8장에서의 스트리밍 추론 타임라인과 지연 구성",
+   "credit": "Duo 저자, arXiv 2611.15131"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Duo v1의 사람 평가 93.3%는 무엇을 증명하고 무엇을 증명하지 못하며, 실시간 전이중 세계 모델로서 어디까지 믿을 수 있는가",
+  "limitations": "논문 HTML 전문·arXiv 초록·Hugging Face 논문 페이지를 읽고 정리한 것이며 모델을 직접 실행하지 않았다. 다른 시스템과의 정량 비교와 단일 GPU 성능은 논문에 없고, GitHub 저장소 내용은 이 세션에서 열지 못해 링크 존재만 언급했다. 58ms 비교는 식 (15) 합계와 조각 길이를 단순히 뺀 값으로 논문의 주기 조건(식 16)과 다르다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 평가 결과: 93.3%의 속뜻",
+    "excerpt": "표의 수치로 간단히 계산해 보면 실패 12건 중 **8건(약 66.7%)이 내용 반응성**에서 나왔습니다. 내용 반응성을 뺀 나머지 5개 기준만 보면 146/15",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "기준별 통과 수에서 실패 12건 중 8건이 내용 반응성이고 나머지 기준만 보면 146/150(97.3%)임을 계산해 평균 뒤의 병목을 드러냄"
+   },
+   {
+    "kind": "calculation",
+    "section": "⏱ 실시간성: 지연 시간 계산",
+    "excerpt": "해석을 덧붙이면, 한 조각의 길이가 17/24초(약 708ms)인데 식 (15) 합계의 최댓값이 650ms이므로 둘의 차이는 **약 58ms**입니다.",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "식 (15) 합계 최댓값 650ms와 조각 길이 약 708ms의 차이 약 58ms를 산출하되, 논문의 실제 주기 조건(식 16)과 다른 단순 비교임과 GPU 8장 전제를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 이 논문을 어떻게 읽고 활용할까",
+    "excerpt": "다만 논문의 실시간 구성은 GPU 8장 서버 기준이고 단일 GPU 성능은 확인되지 않았으므로, 대부분의 독자에게는 당장 돌려 보는 대상이라기보다 **설계를 참고하는 대상**입니다.",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "가중치 저장소 4종 공개(논문·HF 페이지 링크)와 GPU 8장 하드웨어 전제를 함께 근거로 독자 상황별 참고 부분과 주의점을 구분"
+   }
+  ],
+  "verified_by": "claude-opus-5-5"
+ },
+ "factcheck": {
+  "claims": 56,
+  "confirmed": 55,
+  "removed": [
+   "Hugging Face Papers 페이지에는 2026-11-13 02:10 GMT 게시로 표시되며 (게시 시각이 페이지에서 확인되지 않음)",
+   "Duo v1은 모델 가중치나 데모 링크가 Hugging Face Papers 페이지에 표시되지 않았습니다 / 공개 가중치·라이선스는 확인된 자료가 없습니다 (사실과 달라 공개 사실로 고침)",
+   "해당 페이지에는 사용자 댓글이 없어 커뮤니티의 구체적 평가는 확인되지 않았습니다 (사용자 댓글 1건이 있어 고침)"
+  ],
+  "corrected": [
+   "지연 합계 330~650ms는 식 (15) 기준 Intent+생성+오버헤드이며 디코딩 30ms는 포함되지 않음 (본문·표·요약·FAQ)",
+   "58ms 여유: 식 (15) 합계와 조각 길이의 단순 차이이며 논문의 실제 주기 조건(식 16)과 다름을 명시",
+   "Intent 기반 모델: '이름 미명시' → 논문이 Qwen3-VL 기술 보고서(Bai et al., 2025)를 인용",
+   "어텐션 마스크: 조각 k 자신의 깨끗한 미디어도 볼 수 없음, '이전 텍스트' 삭제, 학습 시퀀스 순서 정정",
+   "SSIM·pHash·0.40초·얼굴 크기 기준은 녹화가 아니라 합성 데이터 품질 검사 → 녹화 데이터 기준(실제 화자, 720p 이상, 오버레이 없음)으로 표·본문 정정",
+   "휘도 34.2/99 비교는 모델 롤아웃 평가가 아니라 학습 데이터 합성 방식 비교 → 데이터 단락으로 옮기고 I3 이미지 제거(이미지 최대 3개)",
+   "'there is a world to explore, but no one to talk to' 출처: HF 페이지 → 논문 서론",
+   "S3 주소 /date/2026-11-14 는 2026-11-13 목록으로 넘어가므로 주소·제목·published 를 2026-11-13 으로 정정",
+   "감정 일치·입 모양 동기화는 논문에 비율로만 나오며 29/30·27/30은 환산값임을 명시"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(S1, Submitted 11 Nov 2026 확인)·arXiv HTML 전문(S4, 7.1 Human Evaluation·6.1 식 15·16·Fig.11·5.1~5.3·4.1~4.3 직접 대조)·HF 논문 페이지(S2, Published Nov 11·Submitted Nov 13, 43 추천, 댓글·인용 모델 4종 확인)·HF 일간 목록(S3, Nov 13 순위)을 curl 로 다시 열어 확인. 93.3%(168/180), 73.3%(22/30), 96.7%, 90.0%, 90~160/200~450/30/40ms, 708ms, 41.7ms 원문 일치. 8/12=66.7%, 146/150=97.3%, 708-650=58ms 재계산 일치. HF 모델 카드에서 라이선스(MiniMax H3 커뮤니티)도 확인했으나 HF 도메인 공식 출처 추가 시 이슈 판정 기준과 겹쳐 출처로 넣지 않고 라이선스 명칭은 본문에서 뺌. GitHub 저장소는 세션 권한으로 열지 못해 링크 존재만 기술. 이미지 3개 arXiv HTML 원본 PNG 200 확인."
+ }
+}
