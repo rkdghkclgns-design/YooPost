@@ -7031,5 +7031,23 @@
    "https://kb.cert.org/vuls/id/281278"
   ],
   "draft_id": "20261116_073316_5"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🏦 연준 보고서 속 'AI 위험 87%': 23명 설문과 6,800억 달러 부채를 어떻게 읽어야 할까",
+  "topic": "Financial Stability Report, November 2026 (Federal Reserve Board, 2026-11-13) — 상자 5.1 '금융안정 위험 설문'(AI 87%)·상자 2.2 '데이터센터 확충의 레버리지' / CNBC 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-87-23-6800.html"
+  },
+  "sources": [
+   "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+   "https://www.federalreserve.gov/publications/financial-stability-report.htm",
+   "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html",
+   "https://cryptobriefing.com/fed-survey-ai-top-financial-stability-risk/",
+   "https://bravenewcoin.com/insights/fed-ai-risk-survey-87-percent-financial-stability-crypto"
+  ],
+  "draft_id": "20261116_073858_6"
  }
 ]
