@@ -1,0 +1,99 @@
+{
+ "topic": "The full DeepSeek App experience, now via API (DeepSeek, 2026-11-13)",
+ "source_url": "https://api-docs.deepseek.com/news/news261113/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The full DeepSeek App experience, now via API",
+   "url": "https://api-docs.deepseek.com/news/news261113/",
+   "publisher": "DeepSeek API Docs",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Build a Chatbot (DeepSeek API Docs)",
+   "url": "https://api-docs.deepseek.com/guides/build_a_chatbot",
+   "publisher": "DeepSeek API Docs",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Change Log (2026-11-13: Full suite of application APIs)",
+   "url": "https://api-docs.deepseek.com/updates/",
+   "publisher": "DeepSeek API Docs",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "DeepSeek opens its full app toolkit to developers through its API",
+   "url": "https://cryptobriefing.com/deepseek-opens-app-features-developers-api/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "DeepSeek opens its app features through the API",
+   "url": "https://casrai.org/news/deepseek-app-capabilities-api-2026",
+   "publisher": "CASRAI",
+   "published": "2026-11-14",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://api-docs.deepseek.com/img/app_api_261113_pricing_en.png",
+   "page_url": "https://api-docs.deepseek.com/news/news261113/",
+   "caption": "DeepSeek 도구 API 요금표: Search·Fetch·OCR·ASR·TTS 가격",
+   "credit": "DeepSeek"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "DeepSeek이 API로 연 앱 기능을 내 서비스에 붙이면 무엇을 직접 안 만들어도 되고, 도구 요금은 얼마이며, 무엇을 책임져야 하나",
+  "limitations": "공식 문서·가이드·가격표 이미지와 두 매체 기사를 읽어 정리했으며 직접 호출하지 않았다. 성능·지연 시간·데이터 보관 위치·할인 종료일·토큰 요금은 확인되지 않았다. 월 요금 계산의 사용량은 모두 가정이다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내장 도구와 독립 API, 무엇이 다르고 어떻게 고를까",
+    "excerpt": "내장 도구는 요청에 도구 선언을 넣으면 켜지고, 독립 API는 검색·가져오기·OCR·음성 인식·음성 합성을 각각 따로 호출하는 방식이라 직접 만",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "내장 도구와 독립 API를 상황별로 고르는 기준을 공식 구조에서 끌어내 표로 정리"
+   },
+   {
+    "kind": "calculation",
+    "section": "💰 도구 요금 읽기: 토큰 요금 외에 얼마가 더 붙나",
+    "excerpt": "하루 1,000건의 대화가 각각 검색 2회와 페이지 가져오기 1회를 한다고 가정하면, 한 달(30일) 도구 요금은 검색 60,000회 45달러와",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공식 가격표의 요율로 사용량 가정별 월 도구 요금을 계산하고 정가·할인가를 병기"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 다른 곳은 이렇게 읽었다: 두 매체와 공식 문서를 이어 보기",
+    "excerpt": "이 분석은 DeepSeek 공식 문서가 밝힌 조건과 두 매체가 덧붙인 해석을 이어 읽은 것이며, 공식 문서에 없는 데이터 보관 위치나 보존 기간",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공식 문서와 두 매체의 해석을 이어 데이터 이동·책임 문제가 도입자 몫으로 남는다는 결론과 점검 목록을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 43,
+  "removed": [
+   "이 금액에는 모델 토큰 요금과 안전 점검 비용이 들어 있지 않습니다. → '안전 점검 비용' 부분 삭제 (안전 점검에 별도 요금이 있는지 공식 문서·가격표에서 확인되지 않음)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 발표문(페이지 날짜 2026/11/13)·S3 변경 기록(2026-11-13, 2026-10-17 항목)·S2 챗봇 가이드(페이지에 날짜 없음, 엔드포인트·도구 선언·curl 예시·무시되는 파라미터·max_tokens·준수 요건·데모 원문 대조)·가격표 이미지(직접 내려받아 3463x4438 PNG 판독: Search/Fetch $0.75/1K, OCR $0.225/1K pages, ASR $0.058/h(정가 0.116), TTS $0.225/10K chars(정가 0.45), 50% OFF Limited time)를 다시 열어 확인. 요금 계산 7건 재계산 일치. S4 Crypto Briefing(2026-11-13 15:37 EST)·S5 CASRAI(2026-11-14) 해석 대조. 수정: FAQ에서 'Crypto Briefing도 도구를 붙이는 변화로 설명' → Crypto Briefing은 deepseek-flash를 '새 모델'로 소개했으므로 공식 변경 기록 기준으로 고쳐 씀. S5 제목을 페이지 표기대로 수정. 막힌(EGRESS_BLOCKED) 출처 없음."
+ }
+}
