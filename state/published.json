@@ -7066,5 +7066,23 @@
    "https://newstomato.com/ReadNews.aspx?no=1319338"
   ],
   "draft_id": "20261116_074701_7"
+ },
+ {
+  "date": "2026-11-16",
+  "title": "🤖 Gemini 4 Carbon, MathArena 1위: 85.4% 성능에 문제당 $15.70, Sol 대비 비용 14.7배 따져보기",
+  "topic": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol (MathArena 종합 순위, 2026-11-13 갱신)",
+  "category": "AI 언어 모델",
+  "source_url": "https://matharena.ai/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gemini-4-carbon-matharena-1-854-1570.html"
+  },
+  "sources": [
+   "https://matharena.ai/",
+   "https://matharena.ai/models/gemini_gemini_4_carbon",
+   "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/",
+   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "https://matharena.ai/models"
+  ],
+  "draft_id": "20261116_075637_1"
  }
 ]
