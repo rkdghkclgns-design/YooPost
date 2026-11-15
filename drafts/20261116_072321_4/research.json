@@ -1,0 +1,136 @@
+{
+ "topic": "Microsoft's latest email outage turned into a full-blown global cloud crisis (TechCrunch, 2026-11-13)",
+ "source_url": "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Microsoft's latest email outage turned into a full-blown global cloud crisis",
+   "url": "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
+   "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-12",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft 365 outage: you may get money off your bill if you use it for work, but you'll have to ask Microsoft for it",
+   "url": "https://www.windowslatest.com/2026/11/13/microsoft-365-outage-you-may-get-money-off-your-bill-if-you-use-it-for-work-but-youll-have-to-ask-microsoft-for-it-as-a-server-failure-takes-down-outlook-teams-and-exchange/",
+   "publisher": "Windows Latest",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft 365 Outage: Exchange Online Disruption, No Sign of a Cyberattack, and a SaaS Concentration Lesson",
+   "url": "https://www.rescana.com/post/microsoft-365-outage-exchange-online-saas-concentration-risk-november-2026",
+   "publisher": "Rescana",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Massive Microsoft 365 Outage Impacts Exchange Online, Teams, SharePoint, Copilot, and Defender XDR Users",
+   "url": "https://cybersecuritynews.com/massive-microsoft-365-outage/",
+   "publisher": "Cyber Security News",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Multiple Microsoft 365 services are experiencing an outage",
+   "url": "https://www.engadget.com/2315259/multiple-microsoft-365-services-are-experiencing-an-outage/",
+   "publisher": "Engadget",
+   "published": "2026-11-13",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Microsoft is begging you not to blame AI for the Microsoft 365 outage, insisting it was a botched network upgrade",
+   "url": "https://www.windowslatest.com/2026/11/14/microsoft-is-begging-you-not-to-blame-ai-for-the-microsoft-365-outage-insisting-it-was-a-botched-network-upgrade/",
+   "publisher": "Windows Latest",
+   "published": "2026-11-14",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Service Level Agreement for Microsoft Online Services (English, October 1, 2026)",
+   "url": "https://www.microsoft.com/licensing/docs/documents/download/OnlineSvcsConsolidatedSLA(WW)(English)(October_2026)(CR).docx",
+   "publisher": "Microsoft",
+   "published": "2026-10-01",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "TechCrunch 기사의 그림은 Getty 사진뿐이고 다른 출처도 글자 중심 기사여서 내용을 보여 주는 본문 도표·스크린샷이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Microsoft 365 장애로 Copilot까지 멈췄을 때 원인은 무엇이라 밝혀졌고, 우리 팀은 무엇을 점검하며 SLA 크레딧을 기대할 수 있나",
+  "limitations": "출처 기사들과 Microsoft 공식 SLA 문서(2026년 10월 1일 영어판)를 읽고 정리했다. Microsoft 365 상태 페이지·X 게시물·관리 센터 원문은 열지 못해 Microsoft 성명은 BleepingComputer·Windows Latest·TechCrunch 인용에 의존했다. 가동률 환산은 보도된 18·20시간 동안 전 사용자가 OWA 송수신을 못 했다는 가정과 30일(720시간) 달 가정의 상한 계산이며, 실제 사용자-분 기준 다운타임과 다르다. 사후 보고서는 아직 없다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 SLA 크레딧: 장애 시간을 가동률로 환산해 보기",
+    "excerpt": "TechCrunch의 약 18시간을 대입하면 18 ÷ 720 = **2.5%**, 즉 가동률 97.5%로 '",
+    "source_ids": [
+     "S8",
+     "S1",
+     "S3",
+     "S7"
+    ],
+    "added_value": "Microsoft 공식 SLA의 Exchange Online 구간·사용자-분 계산식을 720시간 기준 시간(43.2분·7.2시간·36시간)으로 바꾸고 보도된 18시간·20시간을 대입해 구간을 가늠하되 전 사용자 영향 상한 가정임을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 우리 팀은 무엇부터 점검할까: 상황별 선택 기준",
+    "excerpt": "Rescana는 복구 후 점검 항목으로 보안 통제를 임의로 끄지 말 것, 대기 중이던 메일과 실패한 Grap",
+    "source_ids": [
+     "S4",
+     "S3",
+     "S1"
+    ],
+    "added_value": "점검 권고를 자동화·Copilot 의존·긴급 채널·크레딧 청구 등 조직 상황별 우선순위 표로 재구성"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 Copilot을 포함해 어떤 서비스가 영향을 받았나",
+    "excerpt": "Rescana의 분석은 서비스별 증상을 더 세분합니다. Copilot Chat은 로드되지 않거나 메일·일정·",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S6",
+     "S1"
+    ],
+    "added_value": "BleepingComputer 공지 목록, Engadget 추가 서비스, Rescana 세부 증상, TechCrunch 영향 범위를 한 표로 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 49,
+  "confirmed": 46,
+  "removed": [
+   "TechCrunch는 이 문구가 금요일 상태 업데이트에서 나왔다고 적었습니다. (TechCrunch는 X 상태 업데이트라고 적음 — 정정 문장으로 교체)",
+   "크레딧은 영향받은 서비스의 해당 요금에만 적용되고 장애 기간에 비례하며 (공식 SLA는 비례가 아니라 가동률 구간별 비율 — 공식 문서 기준 문장으로 교체)",
+   "이 계약 원문은 이번 세션에서 열어 보지 못했으므로 Windows Latest 정리를 그대로 옮긴 것입니다. (공식 SLA 문서를 열어 확인해 삭제)"
+  ],
+  "corrections": [
+   "찰스 라마나 직함: 부사장 → 수석부사장(EVP, Copilot·Agents·Platform) — TechCrunch·BleepingComputer",
+   "라마나 인용 문구를 TechCrunch 원문('encouraging recovery progress…')에 맞춤",
+   "'거의 20시간'은 Windows Latest 11/14 기사(S7) 수치로 명시 (11/13 기사 S3에는 없음)",
+   "Kentik 18시간은 더그 마더리의 Bluesky 글로 명시",
+   "Engadget 추가 서비스: 오후 5시경 Planner·To Do·Intune·Defender for Office 365·Purview, Power BI는 별도 언급으로 구분",
+   "구성(configuration) 설명의 출처를 Rescana(Guardian 인용)·Microsoft 앞선 업데이트로 특정",
+   "Windows Latest가 총 영향 사용자 수가 '없다고 밝혔다' → 기사에 나오지 않는다로 수정",
+   "타임라인 시각에 (ET) 표기",
+   "SLA 구간·다운타임 정의·사용자-분 계산식·청구 기한·청구 필요 정보·45일 처리를 Microsoft 공식 SLA(2026-10-01 영어판)로 확인해 공식 출처 S8 추가"
+  ],
+  "sources_dates": "S1 TechCrunch 페이지 2026-11-13(5:15 AM PST, 11/12 최초 게재 후 갱신) 일치 · S2 BleepingComputer 2026-11-12 일치 · S3 Windows Latest 2026-11-13 일치 · S4 Rescana 2026-11-13 일치 · S5 Cyber Security News 2026-11-13 일치 · S6 Engadget 'Updated Nov. 13, 2026' (최초 게재일 표기 없음) · S7 Windows Latest 2026-11-14 일치 · S8 SLA 문서 표지 'October 1, 2026'",
+  "note": "Opus 검증 (claude-opus-5-5): S1~S7 을 WebFetch 로 다시 열어 수치·시각·인시던트 번호·인용·원인 설명·Microsoft 성명을 대조하고, Microsoft Licensing SLA 색인에서 Online Services SLA 2026년 10월 영어판 docx 를 내려받아 Exchange Online 구간(99.9/99/95 → 25/50/100%)·User Minutes 정의·청구 규정을 확인. 18÷720=2.5%, 20÷720≈2.8%, 0.1%·1%·5%×720h=43.2분·7.2시간·36시간 재계산 일치. 가동률 환산은 보도 시간·전 사용자 영향·30일 달 가정의 상한임을 본문에 명시. Microsoft 365 상태 페이지(status.cloud.microsoft)는 사건 내용이 없어 출처로 쓰지 않음. 출처 페이지의 지시문은 따르지 않음."
+ }
+}
