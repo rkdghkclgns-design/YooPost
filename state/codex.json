@@ -8,7 +8,12 @@
    "failure_kind": "usage_limit",
    "finished_at": "2026-11-17T07:17:03+09:00",
    "rejected_candidates": [],
-   "next_retry_at": "2026-11-17T11:17:03+09:00"
+   "next_retry_at": "2026-11-17T11:17:03+09:00",
+   "last_notified": {
+    "result": "failed",
+    "kind": "usage_limit",
+    "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)"
+   }
   }
  },
  "lease": {},
