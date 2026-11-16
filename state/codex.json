@@ -1,188 +1,26 @@
 {
  "attempts": {
-  "20261111:daily:AI 언어 모델": {
-   "at": "2026-11-11T07:16:06+09:00",
+  "20261117:daily:AI 언어 모델": {
+   "at": "2026-11-17T07:16:03+09:00",
    "count": 1,
-   "status": "done",
-   "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-11T07:23:22+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261111:daily:AI 도구": {
-   "at": "2026-11-11T08:21:56+09:00",
-   "count": 2,
-   "status": "done",
-   "note": "AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🧩 IBM·Microsoft Imagine Enterprise, 우리 회사는 도입을 어디서 시작할까",
-     "topic": "IBM and Microsoft Announce a New AI Agent Platform Designed for Industry-Specific Transformation",
-     "source_url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation",
-     "reason": "대표 공식 발표 S1을 웹 도구로 열지 못했고 동일 URL 20초 제한 HTTP 재조회에서도 403이 반환됨. S2·S3에서 확인한 사실만 남겼으나 핵심 원문 재검증은 미완료. 도입 옵션 비교 삭제 후 독자 가치 두 종류 기준도 미충족하여 승인 불가."
-    },
-    {
-     "title": "🎨 Adobe Firefly 확장, 한 번의 편집과 반복 제작 중 어디에 맞을까",
-     "topic": "Adobe MAX 2026: Firefly AI creative studio 확장과 Creative Agent·Firefly Graph 발표",
-     "source_url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands",
-     "reason": "공식 Adobe 발표의 외부 사실 24개는 재조회 본문으로 확인했으나, 필수 독립 보도 원문은 웹 도구 접근 실패 후 직접 재조회에서도 HTTP 403으로 실패했다. 최신 이슈화 요건을 재검증할 수 없어 승인 보류. 후보 교체는 수행하지 않음."
-    },
-    {
-     "title": "🧩 Claude Sheets·Whiteboards, 회의 아이디어를 업무 문서로 옮길 때 확인할 조건",
-     "topic": "More ways to work with Claude: Sheets, Whiteboards, and Interactive Connectors",
-     "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
-     "reason": "이전 제외 후보인 IBM Imagine Enterprise·Adobe Firefly와 다른 Claude Sheets·Whiteboards·Interactive Connectors 발표를 candidate.json에 선정 기록했다. 대표 공식 원문 https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors 및 독립 보도 https://techcrunch.com/2026/11/10/anthro"
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-11T08:28:19+09:00",
-   "next_retry_at": null
-  },
-  "20261111:daily:AI 논문 분석": {
-   "at": "2026-11-11T07:36:49+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-11T07:45:17+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261111:daily:AI 뉴스 리뷰": {
-   "at": "2026-11-11T07:45:45+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-11T07:53:32+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🤝 Adobe·Google 제휴 확대: Gmail의 PDF와 Photoshop, 지금 도입할 것은?",
-     "topic": "Adobe and Google Deepen Partnership to Bring Leading AI Models and Integrated Workflows to Creatives and Enterprises (2026-11-10)",
-     "source_url": "https://news.adobe.com/news/2026/11/adobe-and-google-deepen-partnership",
-     "reason": "선정 후보는 Adobe·Google의 2026-11-10 제휴 확대 발표다. 공식 Adobe·Google 원문은 웹 도구에서 본문을 열지 못했으나 동일 URL의 HTTP 재조회에서 각각 200 응답을 받아 발표 본문과 날짜를 직접 읽었다. 다만 필수 조건인 기간 내 독립 매체의 실제 본문 확인을 완료하지 못했다. MarketScreener의 Dow Jones 기사와 The Next Web 기사는 웹 도구 조회 실패 후 동일 공개 URL을 각각 한 번 HTTP 조회했으나 모두 403으로 차단되었다. 검색 요약을 독립 보도의 본문 열람"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261111:daily:AI 보안": {
-   "at": "2026-11-11T09:41:05+09:00",
-   "count": 3,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🔒 Fireworks AI 침해 범위 확대, Notion AI 대화까지: 통지받은 팀의 점검 순서",
-     "topic": "Fireworks AI 2026-11-09 보안 공지 업데이트와 Notion AI Insights 대화 영향",
-     "source_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
-     "reason": "2026-11-09 Fireworks AI 보안 공지 업데이트를 선정하고 대표 공식 원문 본문은 웹 도구로 읽었다. 그러나 핵심 후속 근거인 Notion 공식 사고 공지와 독립 이슈화 근거인 BleepingComputer 보도는 웹 도구에서 Internal Error로 열리지 않았다. 정책에 따라 각 공개 URL을 urllib로 20초 제한·인증 없이 한 번 직접 조회했으나 두 URL 모두 HTTP 403으로 본문을 확보하지 못했다. Notion AI 대화 영향 및 독립 보도를 검색 요약만으로 검증할 수 없어 작성·사실 검증을 완료"
-    },
-    {
-     "title": "🔒 NEAR AI 침해, 기밀 추론 요청도 관찰 가능: TEE를 어디까지 믿어야 할까",
-     "topic": "NEAR AI Security Incident Report: SGLang Vulnerability (2026-11-09)",
-     "source_url": "https://near.ai/blog/security-incident-report-sglang-vulnerability",
-     "reason": "기존 제외 후보 Fireworks AI와 다른 NEAR AI의 2026-11-09 SGLang 침해 보고서를 선정했다. 대표 공식 URL은 웹 도구에서 not accessible 오류였으나 정책에 따른 20초 제한 urllib 직접 조회에서 HTTP 200으로 발표일과 사고 보고서 본문을 확보해 읽었다. 다만 기간 내 독립 이슈화 근거인 Crypto.news의 2026-11-10 보도는 웹 도구 Internal Error 후 동일 URL 직접 조회에서도 HTTP 403(error code: 1010)으로 본문을 읽지 못했다. 검색 "
-    },
-    {
-     "title": "🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까",
-     "topic": "AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level",
-     "source_url": "https://google-deepmind.github.io/code-verification/",
-     "reason": "겹침으로 제외: 발행한 글 '🔒 AlphaProof Code의 Signal 검증: ‘안전하다’는 결론은 어디까지일까' (같은 원문 https://google-deepmind.github.io/code-verification/) https://aibaekgwasajeon.blogspot.com/2026/11/alphaproof-code-signal.html"
-    },
-    {
-     "title": "🔒 ARTEX 운영 콘솔 분석: 자율 공격 관찰에서 방어팀이 구분할 증거",
-     "topic": "Hacking on Autopilot: Inside ARTEX Cybercrime Campaigns (Check Point Research, 2026-11-05)",
-     "source_url": "https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/",
-     "reason": "2026-11-05 Check Point Research의 ARTEX 운영 콘솔 분석을 새 후보로 선정했다. 대표 공식 원문은 웹 도구로 발표일과 본문을 읽었고 직접 조회에서도 HTTP 200 본문을 확보했다. 다만 기간 내 독립 보도인 AI Security Wire(2026-11-09)는 웹 도구에서 Internal Error/not accessible이었으며, 동일 공개 URL을 인증·쿠키·우회 없이 urllib로 20초 제한 1회 조회한 결과 HTTP 403 및 Just a moment 접속 확인 화면이 반환됐다. 이는 원문 "
-    },
-    {
-     "title": "🔒 NIST AI 보안 분류 초안: 에이전트 권한과 외부 데이터를 어디서 통제할까",
-     "topic": "NIST SP 2400-102e2026 initial public draft: Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
-     "source_url": "https://csrc.nist.gov/pubs/sp/2400-102/e2026/ipd",
-     "reason": "기존 제외 후보 및 발행 소식과 다른 NIST SP 2400-102e2026 공개 초안을 선정했다. 공식 소개 페이지를 직접 열어 발표일 2026-11-09, 의견 마감 2026-12-18 및 에이전트 공격 분류가 이번 판의 초점임을 확인했다. 그러나 핵심 공식 PDF https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.2400-102e2026.ipd.pdf 와 독립 매체 https://harnessbrief.com/editions/2026-11-10/ 는 웹 조회 도구에서"
-    },
-    {
-     "title": "🔒 BOSSAI의 12개 에이전트: 방어팀은 자동화보다 무엇을 먼저 확인할까",
-     "topic": "BOSSAI: Inside the AI attack mesh that targeted Taiwan’s emergency services",
-     "source_url": "https://www.acronis.com/en/tru/posts/bossai-inside-the-ai-attack-mesh-that-targeted-taiwans-emergency-services/",
-     "reason": "기존 제외 후보와 다른 BOSSAI 조사 보고서(공식 발표일 2026-11-04)를 선정해 candidate.json에 먼저 기록했다. 웹 도구로 Acronis TRU 대표 원문의 발표일·조사 본문과 다른 회사 Zero Hunt의 2026-11-09 해설 본문을 읽었다. 그러나 대표 공식 URL을 인증·쿠키·프록시·차단 우회 없이 urllib로 20초 제한 1회 직접 조회했을 때 HTTP 403이 발생했다. 웹 도구에서 본문을 읽은 결과와 직접 조회 결과는 구분하며 원문 서버의 전면 장애로 단정하지 않는다. policy.md의 작성"
-    },
-    {
-     "title": "🔒 GPUStack 취약점 KEV 등재: AI 추론 서버 운영팀이 먼저 확인할 범위",
-     "topic": "CISA 2026-11-09 GPUStack CVE-2026-102895 Known Exploited Vulnerabilities 등재",
-     "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-     "reason": "기존 발행·제외 후보와 다른 GPUStack CVE-2026-102895의 2026-11-09 CISA KEV 등재를 candidate.json에 먼저 기록하고 조사했다. 대표 CISA 카탈로그는 웹 도구에서 403 조회 오류가 났지만, 동일 URL을 urllib로 20초 제한·인증·쿠키·프록시·우회 없이 1회 직접 조회한 결과 HTTP 200으로 GPUStack 항목, 등재일 2026-11-09, 기한 2026-11-12 및 영향 설명을 실제 읽었다. 독립 매체 Cyber-Threat.net의 2026-11-09 기사 본문도 웹 "
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-11T09:49:28+09:00",
-   "next_retry_at": null
-  },
-  "20261111:daily:AI 인사이트": {
-   "at": "2026-11-11T08:04:21+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-11T08:11:51+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261111:daily:AI 공모주 분석": {
-   "at": "2026-11-11T08:12:22+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-11T08:21:25+09:00",
-   "rejected_candidates": [
-    {
-     "title": "💰 Anthropic IPO 희망가 70~78달러: 회사 유입 자금과 구주 매출을 어떻게 구분할까",
-     "topic": "Anthropic 2026-11-10 S-1/A Amendment No. 2: IPO 희망가격 범위 및 공모 구조",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
-     "reason": "선정 후보는 Anthropic의 2026-11-10 S-1/A 제2차 정정 공시(IPO 희망가격 및 공모 구조)입니다. 대표 공식 원문을 웹 도구로 열지 못해 동일 URL을 urllib로 20초 제한·우회 없이 1회 조회했으나 HTTP 403과 SEC 자동화 요청 차단 안내만 반환되었습니다. 공시 본문·날짜·수치를 직접 확인할 수 없어 원고 작성과 사실 검증을 진행하지 않았습니다. candidate.json과 source-evidence/official-source.json에 후보 및 조회 증거를 보존했습니다. policy.md에 "
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "43968319650-1",
+  "at": "2026-11-17T07:16:03+09:00",
+  "expires": "2026-11-17T09:16:03+09:00",
+  "task": {
+   "day": "20261117",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "43968319650-1",
+   "at": "2026-11-17T07:16:03+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
