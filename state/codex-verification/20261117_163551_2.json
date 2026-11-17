@@ -1,0 +1,307 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "Google의 AdMob AI 도구 공식 발표일은 2026-11-16이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "Nov 16, 2026",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C2",
+   "claim": "발표는 광고 설정·통합 오류·브랜드 안전성 작업을 다룬다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "manually managing ad setups, fixing integration errors, and auditing brand safety",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C3",
+   "claim": "AdMob agent skills는 현재 작업 구현에 활용 가능하다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "agent skills can help you implement tasks today",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C4",
+   "claim": "Ask AdMob는 Gemini 기반 대화형 에이전트다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "a conversational agent built with Gemini",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C5",
+   "claim": "Ask AdMob는 AdMob 계정 안에서 제공될 계획이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "will live directly in your AdMob account",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C6",
+   "claim": "Ask AdMob는 향후 몇 달 동안 테스트 시작 예정이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "begin testing these capabilities over the next few months",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C7",
+   "claim": "AdMob MCP 서버는 개발 환경을 AdMob에 연결한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "connect your developer environments directly with AdMob",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C8",
+   "claim": "MCP 서버는 초기 테스트 중이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "This is in early testing",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C9",
+   "claim": "MCP 서버는 2027년 초 더 많은 개발자로 확대 예정이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "expanding to more developers early next year; 발표일 2026-11-16",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C10",
+   "claim": "스킬은 지식·지시·작업 흐름을 묶은 모듈이다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "portable, self-contained modules ... knowledge, instructions, and workflows",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C11",
+   "claim": "발표의 스킬 작업 예시는 Next-Gen SDK 이전이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "migrating to the Google Mobile Ads Next-Gen SDK",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C12",
+   "claim": "발표의 스킬 작업 예시는 SDK 통합 검증이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "validating your SDK implementation",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C13",
+   "claim": "발표의 스킬 작업 예시는 새 광고 형식 구현이다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "implementing new ad formats in your app",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C14",
+   "claim": "Android 문서에는 초기 SDK 통합 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "get-started: adding ... setting the application ID, and initializing",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C15",
+   "claim": "Android 문서에는 배너 구현 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "google-mobile-ads-banner",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C16",
+   "claim": "Android 문서에는 전면 광고 구현 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "google-mobile-ads-interstitial",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C17",
+   "claim": "Android 문서에는 보상형 광고 구현 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "google-mobile-ads-rewarded",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C18",
+   "claim": "Android 문서에는 기존 SDK에서 Next-Gen으로 이전하는 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "google-mobile-ads-android-migrate-to-next-gen",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C19",
+   "claim": "Android 문서에는 출시 전 점검 및 흔한 오류 검증 작업이 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "validating ... pre-launch audits ... common implementation errors",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C20",
+   "claim": "스킬을 지원하는 여러 AI 코딩 도우미에서 사용할 수 있다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "AI assistants that support skills, including Antigravity, Claude Code, Codex, and Cursor",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C21",
+   "claim": "Ask AdMob 문제 해결 허브는 설정 이상과 SDK 통합 문제를 찾도록 설명된다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "spot setup anomalies and SDK integration issues",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C22",
+   "claim": "Ask AdMob는 광고 로드 상태를 보고 개선 권고를 제시하도록 설명된다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "visibility into how ads are loading in your app ... recommendations",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C23",
+   "claim": "유사 집단 기준으로 SDK 입찰 참여자와 예상 수익 개선을 추천한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "peer benchmarks ... recommend high-value SDK bidders with predicted revenue uplifts",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C24",
+   "claim": "미디에이션 그룹 최적화를 돕는다고 설명한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "help optimize your mediation groups",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C25",
+   "claim": "타사 네트워크 설정 오타와 최저 가격 불일치를 점검한다고 설명한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "third-party network configuration ... typos and floor price discrepancies",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C26",
+   "claim": "자연어로 맞춤 브랜드 안전 규칙을 구성하는 기능을 예고한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "configure custom brand safety rules using simple, natural-language prompts in your AdMob UI",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C27",
+   "claim": "Ask AdMob 권고는 적용 전에 사용자 검토와 승인을 거친다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "reviewing and approving every recommendation before it’s applied",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C28",
+   "claim": "MCP 서버는 계정 데이터 읽기를 예고한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "read account data",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C29",
+   "claim": "MCP 서버는 새 광고 단위 작성을 예고한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "write new ad units",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C30",
+   "claim": "MCP 서버는 미디에이션 설정 관리를 예고한다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "manage mediation settings",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C31",
+   "claim": "MCP 업데이트는 운영 반영 전 검토와 승인을 거친다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "review and approve the updates before you push them to production",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C32",
+   "claim": "공식 스킬 문서는 설치 및 최신 SDK 기능·권고를 위한 업데이트 방법을 제시한다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "Install the agent skills; Update the agent skills",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C33",
+   "claim": "공식 발표에는 개별 앱 수익 증가율·회수 기간·검토 시간·오류 처리 비용 계산 근거가 없다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "공식 발표 전문을 다시 읽음. predicted revenue uplifts 설명 외 계산용 개별 수치 없음.",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C34",
+   "claim": "공식 발표 본문에는 한국어 제공 범위·구체적 요금·계정별 접근 조건·규칙 해석 정확도 수치가 명시되지 않았다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "발표 본문 전체에서 해당 조건과 정확도 수치를 찾지 못함. 제품 전체에 정보가 없다는 뜻으로 확대하지 않음.",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C35",
+   "claim": "스킬 문서의 확인된 최종 갱신일은 2026-11-16 UTC다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "Last updated 2026-11-16 UTC.",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "id": "C36",
+   "claim": "광고 단위는 앱 광고 구현과 연결되는 관리 대상이며 SDK는 앱 광고 구현 구성요소다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "ad unit IDs ... managing ad configuration files ... validate ad code for your app",
+   "action": "재조회한 공식 원문과 일치하여 유지. 예정·테스트 기능은 해당 상태로 한정."
+  },
+  {
+   "claim": "발표의 predicted revenue uplifts는 예상치이며 개별 앱의 실측 성과 수치로 제시되지 않았다.",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "confirmed": true,
+   "evidence": "predicted revenue uplifts; 본문에 개별 앱 실측 결과 없음.",
+   "action": "범위를 해당 원문에 한정하여 유지."
+  },
+  {
+   "claim": "Android 문서는 통합 오류 점검을 돕는다고 설명하며 모든 오류 제거를 보증하지 않는다.",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "confirmed": true,
+   "evidence": "Assists with validating ... common implementation errors; 문서 본문에 전 오류 제거 보증 없음.",
+   "action": "범위를 해당 원문에 한정하여 유지."
+  }
+ ],
+ "note": "이번 별도 검증에서 공식 발표와 Android 개발 문서를 다시 읽었다. 웹 도구에서 공식 발표를 읽지 못해 동일 URL을 urllib timeout=20으로 한 번 조회했으며 HTTP 200·최종 URL·조회 시각·실제 본문·발표일을 source-evidence/admob-recheck.json에 저장했다. 개발 문서는 웹 도구에서 본문과 2026-11-16 UTC 갱신일을 읽었다. TNW 기사도 재조회하여 2026-11-16 발행과 동일 소식의 독립 보도를 확인했다. 기존 검증 결과를 그대로 승인하지 않고 본문·표·FAQ를 대조했다. 중복된 외부 사실은 합산하지 않았다. C37의 방향성 해석은 외부 사실 집계에서 제외하고 이 note에 기록한다. 설치·실행·계정 접속·실측은 하지 않았다. 단위·가격·법적 효력·성능 수치나 계산 결과는 원고에 없다. comparison과 decision_guide의 발췌를 본문과 대조하고 조건·제외 조건·한계를 보완했다. 마지막 섹션의 반복 요약과 중복 도입 표를 검토 기록 제안으로 교체하고 FAQ의 반복을 줄였다. 확인 불가로 삭제할 외부 사실은 발견하지 않았다. 발행 승인이나 게시 작업은 하지 않았다."
+}

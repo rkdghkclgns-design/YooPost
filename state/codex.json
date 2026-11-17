@@ -25,15 +25,24 @@
   "20261117:daily:AI 도구": {
    "at": "2026-11-17T16:25:02+09:00",
    "count": 2,
-   "status": "writing",
-   "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)",
-   "failure_kind": "usage_limit",
-   "rejected_candidates": [],
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "rejected_candidates": [
+    {
+     "title": "🤖 Sabre·Grok Bot 여행 에이전트, 예약 변경을 어디까지 맡길 수 있을까",
+     "topic": "Sabre Mosaic Travel Connector 및 선제형 여행 API 발표 (2026-11-16)",
+     "source_url": "https://sabre.gcs-web.com/node/20256/pdf",
+     "reason": "선정 후보는 Sabre의 2026-11-16 Mosaic Travel Connector·Grok Bot 및 선제형 여행 API 발표입니다. 대표 공식 원문 https://sabre.gcs-web.com/node/20256/pdf 를 웹 도구로 열었으나 not accessible 오류로 본문을 읽지 못했습니다. 정책에 따라 동일 공개 URL을 urllib로 제한 시간 20초에 한 번 조회했으나 The read operation timed out으로 종료되어 HTTP 상태와 실제 발표 본문·날짜를 확인하지 못했습니다. 검색 요약을 원문"
+    }
+   ],
    "last_notified": {
     "result": "failed",
     "kind": "usage_limit",
     "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)"
-   }
+   },
+   "finished_at": "2026-11-17T16:35:53+09:00",
+   "next_retry_at": null
   },
   "20261117:daily:AI 논문 분석": {
    "at": "2026-11-17T15:26:03+09:00",
@@ -118,21 +127,7 @@
    }
   }
  },
- "lease": {
-  "owner": "44038477978-1",
-  "at": "2026-11-17T16:25:02+09:00",
-  "expires": "2026-11-17T18:25:02+09:00",
-  "task": {
-   "day": "20261117",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "44038477978-1",
-   "at": "2026-11-17T16:25:02+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
