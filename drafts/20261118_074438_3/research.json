@@ -1,0 +1,66 @@
+{
+ "topic": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+ "source_url": "https://arxiv.org/abs/2611.20218",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+   "url": "https://arxiv.org/abs/2611.20218",
+   "publisher": "arXiv",
+   "published": "2026-11-15",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations — full text",
+   "url": "https://arxiv.org/html/2611.20218",
+   "publisher": "TokenWave AI / arXiv",
+   "published": "2026-11-15",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Tuesday, 17 November 2026 — AI Edge Briefing",
+   "url": "https://aiedgebriefing.com/2026-11-17/",
+   "publisher": "AI Edge Briefing",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "논문의 도표는 확인했으나 본문 표로 지표와 조건을 설명할 수 있어 별도 인용 이미지를 선정하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "코딩 에이전트의 부분 성공을 업무 완료로 믿어도 될까?",
+  "limitations": "논문은 프리프린트이며 직접 실행하거나 독립 재현하지 않았습니다. 모의 동료와 비공개 테스트의 결과를 실제 조직의 성공률로 일반화할 수 없습니다. Oracle-Spec 비교는 두 모델에 한정되고 명세 제공과 정보 탐색 생략이 동시에 바뀝니다. 모델 간 비교에는 스캐폴드 차이도 섞입니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧪 요구사항을 처음부터 주면 달라질까",
+    "excerpt": "연구진은 Seed Evolving과 GPT-6 Astra에 대해 같은 과제와 저장소, 테스트, 실행 예산을 두고 두 조건을 비교했습니다. CoWork에서는 기록과 동료를 통해 요구사항을 찾고, **Oracle-Spec에서는 완전한 요구사항을 처음부터 받으며 동료를 상담하지 않습니다.** 이 비교는 정보 수집 방식이 바뀌었을 때 결과가 어떻게 달라지는지 보여줍니다. 명세의 직접 제공과 검색·확인 과정의 생략이 함께 바뀌므로 두 효과를 따로 분리한 비교는 아닙니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "같은 과제·저장소·테스트·예산에서 비교하되 명세 제공과 동료 상담 생략이 함께 바뀐 조건을 명시해 결과를 단일 원인의 효과로 오독하지 않게 합니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "📊 부분 성공과 전체 완료는 다릅니다",
+    "excerpt": "Claude-Opus-5.5는 F2P 63.84%, 전체 과제 통과율 6.93%를 기록했습니다. GPT-6 Astra는 각각 62.91%, 7.92%였습니다. **두 숫자는 분모와 조건이 다르므로 63%에서 7%를 빼서 실패율로 해석하면 안 됩니다.** 하나는 테스트 노드의 비율이고 다른 하나는 모든 조건을 충족한 과제의 비율입니다. [논문 결과](https://arxiv.org/html/2611.20218)",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "테스트 노드와 과제라는 서로 다른 분모를 대조하여 퍼센트 차이를 실패율로 계산하는 오류를 막습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 20,
+  "confirmed": 20,
+  "removed": [
+   "독립 매체의 보도 사실은 확인했으나 외부 사실 검증 기록을 공식 원문 중심으로 유지하기 위해 본문 문장을 삭제했습니다.",
+   "본문에서 반복되는 설명 문단 3개를 삭제했습니다."
+  ],
+  "note": "논문 소개 및 본문을 다시 읽고 수치와 조건을 확인했습니다. 독립 매체는 웹 도구 실패 후 동일 URL 직접 조회로 본문과 날짜를 확인했습니다. 직접 실행 경험은 주장하지 않았습니다. 비교는 명세 제공과 탐색 생략의 결합 효과이며, 독자 가치와 한계를 본문과 대조했습니다."
+ }
+}
