@@ -1,0 +1,84 @@
+{
+ "topic": "Advancing computer-use agents for healthcare teams",
+ "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Advancing computer-use agents for healthcare teams",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "publisher": "OpenAI",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "More ways to move care forward with ChatGPT for Healthcare",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "publisher": "OpenAI",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "HLTH 2026: CVS Health, Cigna and Abridge collaborating with OpenAI to test computer-use agents",
+   "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/hlth26-cvs-health-cigna-and-ambience-collaborating-openai-test-computer-use",
+   "publisher": "Fierce Healthcare",
+   "published": "2026-11-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표에서 본문 내용을 명확히 설명하는 정지 도표나 화면 이미지의 직접 인용 가능성을 확인하지 못했습니다. 로고와 표지 이미지는 제외했습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "의료팀은 컴퓨터 사용 에이전트에 어떤 업무를 맡기고 어떤 검토를 남겨야 할까?",
+  "limitations": "직접 서비스를 실행하거나 병원 환경에서 효과를 측정하지 않았습니다. 임상 안전성 325개 과제와 유용성 646건 평가는 분모와 평가 질문이 달라 합산할 수 없습니다. 행정 벤치마크는 두 모델 모두 최대 추론 노력이라는 공개 조건에서의 점수·과제당 비용이며 병원 전체 비용이나 다른 환경의 성과로 일반화할 수 없습니다. 파트너 사례는 운영·계획·시연이 섞여 있습니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 평가 숫자는 어떻게 읽어야 할까요?",
+    "excerpt": "두 수치는 분모와 질문이 다르므로 하나의 성공률로 합치거나 같은 과제를 같은 방식으로 평가한 결과로 취급해서는 안 됩니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "안전성 325개 과제와 유용성 646건 평가의 서로 다른 분모·질문을 구분하여 하나의 성공률로 합산하는 오류를 막습니다. 동일 과제 여부는 확인되지 않습니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 어디부터 맡길지 정하는 기준",
+    "excerpt": "예를 들어 기록을 모아 담당자에게 보여 주는 작업은 사람이 내용을 확인하기 좋은 출발점이 될 수 있습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "초안과 외부 제출을 나누고 사람의 승인 및 되돌리기 절차를 정하는 상황별 판단 기준입니다. 실제 업무 효과는 조직별 검증이 필요합니다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔎 검색·플러그인과 에이전트의 차이",
+    "excerpt": "반면 여러 화면에서 실제로 버튼을 누르는 단계까지 필요하다면 **컴퓨터 사용의 행동 권한과 승인 절차**가 추가 판단 대상입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "두 공식 발표의 검색·플러그인·화면 조작을 업무 목적과 승인 필요성으로 연결합니다. 기능 간 성능 우열이나 모든 시스템의 연결 가능성을 주장하지 않습니다."
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 평가 숫자는 어떻게 읽어야 할까요?",
+    "excerpt": "같은 벤치마크에서 두 점수의 차이는 2.5%포인트입니다. 다만 이 차이만으로 특정 병원의 오류 위험이나 업무 적합성을 판단할 수는 없습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "최대 추론 노력 조건의 채점 점수 94.3%에서 91.8%를 빼 2.5%포인트를 계산했습니다. 과제별 오류율이나 실제 병원 효과의 차이가 아닙니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 24,
+  "confirmed": 24,
+  "removed": [
+   "첫 섹션의 도입 인사 반복을 삭제하고 도움 정도 평가를 다른 모수라고 표현한 부분을 별도 평가 항목으로 명확화했습니다."
+  ],
+  "note": "별도 검증에서 공식 발표 2건과 독립 보도 본문을 다시 읽었습니다. 중복되는 외부 주장은 묶어 집계했습니다. 직접 실행 및 현장 검증은 하지 않았습니다. 확인 불가로 삭제한 외부 사실 주장은 없습니다."
+ }
+}
