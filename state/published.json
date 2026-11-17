@@ -7165,5 +7165,21 @@
    "https://www.investing.com/news/stock-market-news/exclusiveinvestors-flock-to-anthropic-ipo-but-question-durability-of-ai-lead-5026644"
   ],
   "draft_id": "20261117_161325_7"
+ },
+ {
+  "date": "2026-11-17",
+  "title": "🤖 Hy4 flash, 일상 업무용 저가 모델로 바꿔도 될까: 정가·할인·내부 평가 읽기",
+  "topic": "Tencent Hy4 flash 신규 출시(2026-11-16): 일상 업무 모델의 비용과 적용 조건",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/hy4-flash.html"
+  },
+  "sources": [
+   "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "https://technode.com/2026/11/16/tencent-launches-hy4-flash-cutting-ai-task-costs-by-95-in-internal-tests/"
+  ],
+  "draft_id": "20261117_162427_1"
  }
 ]
