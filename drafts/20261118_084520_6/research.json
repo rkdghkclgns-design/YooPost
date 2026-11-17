@@ -1,0 +1,67 @@
+{
+ "topic": "AI 확산과 생산성 효과: 더 널리, 더 효율적으로, 그러나 아직 얕게",
+ "source_url": "https://www.bok.or.kr/portal/bbs/P0002353/view.do?depth=200433&menuNo=200433&nttId=11066699&oldMenuNo=201150&programType=newsData&relate=Y",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI 확산과 생산성 효과: 더 널리, 더 효율적으로, 그러나 아직 얕게",
+   "url": "https://www.bok.or.kr/portal/bbs/P0002353/view.do?depth=200433&menuNo=200433&nttId=11066699&oldMenuNo=201150&programType=newsData&relate=Y",
+   "publisher": "한국은행",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "BOK 이슈노트 제2026-29호 보고서 본문",
+   "url": "https://www.bok.or.kr/fileSrc/portal/bc2ebe3cc2c04c4aa52c3ca351068a2e/1/5609e24687144279b78d4f2b0bb02ff3.pdf",
+   "publisher": "한국은행",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "한은 \"AI로 아낀 업무시간 2.4배로…생산성 효과는 제한적\"",
+   "url": "https://www.yna.co.kr/view/AKR20261117075000002",
+   "publisher": "연합뉴스",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "보고서의 차트는 PDF 내부 도표로 독립 이미지 파일 주소와 재사용 조건을 확인하지 못해 본문 이미지로 선정하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI가 절약한 시간이 실제 업무 성과에 이어지는지 팀은 무엇을 보고 판단해야 할까?",
+  "limitations": "한국은행의 자가보고 조사와 가중 횡단면 평균이며, 두 해 사용자 구성이 같다고 볼 수 없다. 주 40시간 환산은 가상 기준이고 유료 집단 및 패널의 관계는 인과효과가 아니다. 팀별 지표는 제안으로 실제 실행하거나 효과를 검증하지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 시간 절감: 3.7시간의 조건은 무엇일까요",
+    "excerpt": "같은 40시간을 가정할 때 9.2%는 40×0.092=3.68시간이고, 3.8%는 40×0.038=1.52시간입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "지난주 업무 사용자에 대한 두 연도 횡단면 평균을 동일한 주 40시간 가정으로 환산한다. 3.68−1.52=2.16시간은 동일인의 변화나 실측 시간이 아니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 팀별 적용: 도입률 다음에 무엇을 볼까요",
+    "excerpt": "전후 비교의 대상을 좁혀 보세요. 예컨대 정해진 유형의 문서 초안을 대상으로 작성부터 검토 완료까지의 시간을 기록하고, 같은 기준으로 수정량과 오류를 살펴보는 것입니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "사용 수준에 따라 비교 대상을 좁히고 작성부터 검토까지 같은 기준으로 측정하도록 제안한다. 실제 조직 실험이나 인과효과 검증은 아니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 14,
+  "confirmed": 14,
+  "removed": [
+   "첫 섹션의 도입 인사 반복 삭제",
+   "업무 활용률을 한 번이라도 사용한 경험으로 단순화한 표현 수정"
+  ],
+  "note": "공식 소개 페이지와 PDF 본문 및 2026-11-17 연합뉴스 원문을 별도 세션에서 다시 조회해 읽었다. 산술 40×0.092=3.68, 40×0.038=1.52, 차이 2.16시간; 33.8+29.3=63.1%, 11.4−8.3=3.1%p를 확인했다. 계산과 가상 측정 설계는 외부 사실 주장 개수에서 제외한다. 직접 사용·실험을 수행하지 않았다. 원고 첫 섹션 중복 인사를 삭제하고 활용률 정의와 패널 비교 조건을 명확히 했다."
+ }
+}
