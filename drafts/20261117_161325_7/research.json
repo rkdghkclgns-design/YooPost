@@ -1,0 +1,92 @@
+{
+ "topic": "Anthropic 2026-11-10 S-1/A Amendment No.2 — 개인투자자 배정 계획과 공모 참여 조건",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Anthropic, PBC Form S-1/A Amendment No. 2",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "publisher": "Anthropic / SEC EDGAR",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Issuer Free Writing Prospectus — EEA Prospectus",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "publisher": "Anthropic / SEC EDGAR",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Exclusive-Investors flock to Anthropic IPO but question durability of AI lead",
+   "url": "https://www.investing.com/news/stock-market-news/exclusiveinvestors-flock-to-anthropic-ipo-but-question-durability-of-ai-lead-5026644",
+   "publisher": "Reuters via Investing.com",
+   "published": "2026-11-13",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "미국 문서의 표지 삽화·로고와 유럽 문서의 페이지 이미지는 이 원고의 배정·가격 비교에 적합한 별도 도표가 아니므로 사용하지 않았습니다. 비교 내용은 자체 표로 정리했습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Anthropic의 개인 배정 계획만으로 한국 독자가 자기 참여 자격과 배정량을 알 수 있는가?",
+  "limitations": "2026-11-10~11일 공식 문서를 기준으로 해설했으며 이후 정정 전체를 조사한 최신 조건 안내는 아니다. 실제 신청·한국 계좌별 자격·최종 배정 결과는 확인하지 않았다. 계산은 기본 825,000,000주 고정·추가 물량 제외·20% 예상 상단 적용 가정이며 최종 한도가 아니다. 가격 비교는 같은 달러 단위여도 예상 구간과 최대 가격의 지위가 달라 우열을 뜻하지 않는다. EEA 대상국 요건을 다른 지역에 확대하지 않는다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 기본 물량에 예상 비율을 적용한 가정 계산",
+    "excerpt": "미국 예비 투자설명서 표지의 기본 공모 물량은 **825,000,000주**입니다. 아래 산식은 이 기본 물량이 유지되고 개인 배정 비율이 20%라고 가정한 계산입니다. **20%는 현재 예상의 상단**이며 반드시 지켜지는 최종 배정 한도라는 뜻으로 해석하지 않습니다. 추가 물량은 제외합니다. [공모 표지와 개인 판매 항목](https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm)",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "기본 물량 유지·추가 물량 제외 조건에서 예상 비율을 주식 수로 환산하고, 예상 상단이 최종 배정 한도가 아님을 구분한다."
+   },
+   {
+    "kind": "comparison",
+    "section": "🌍 유럽 문서를 함께 보면 드러나는 가격의 차이",
+    "excerpt": "두 숫자의 역할을 같은 것으로 놓으면 문서 사이에 가격 충돌이 있다고 오해하기 쉽습니다. 이 글의 해석은 **상한, 예상 범위, 최종 가격을 서로 다른 상태로 읽자**는 것입니다. 상한은 얼마까지라는 제한을, 범위는 현재 제시된 예상 구간을, 최종 가격은 이후 확정되는 값을 가리키는 식으로 메모를 나누면 좋습니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "미국 예상 범위와 유럽 상한을 동일 지표로 오해하지 않도록 가격 표현의 상태를 비교"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛠 한국 독자가 먼저 확인할 참여 조건",
+    "excerpt": "미국 신고서는 기재된 판매 플랫폼을 통한 구매가 **각 회사의 조건과 요건에 따른다**고 설명합니다. 유럽 문서의 EEA(유럽경제지역) 대상국 공모는 해당 국가의 거주·소재 요건을 별도로 두고 있습니다. 이 문장의 지역 요건을 스위스 등 다른 공모 구역 전체에 확대하지 않습니다. 이 두 설명을 합쳐 읽으면, 개인 배정 계획과 개인 자격은 별도 확인 대상이라는 결론을 얻을 수 있습니다. [미국 판매 조건](https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm) · [유럽 대상 요건](https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm)",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "전체 개인 배정과 지역·계좌별 요건을 연결해 한국 독자의 확인 순서를 제시"
+   }
+  ],
+  "verification_note": {
+   "result": "본문과 대조하여 calculation·comparison·source_synthesis의 3종 기여 확인",
+   "calculation": "825,000,000주 고정, 20% 예상 상단 적용, 추가 물량 제외. 165,000,000주는 확정 한도가 아님. 임의 10%는 회사 계획이 아니며 한국·지역·개인 배정량 산출 불가. 산술은 note에서 관리.",
+   "comparison": "동일 Class A 주식·달러 단위지만 미국 예상 구간과 유럽 최대 가격은 역할이 달라 가격 우열·수익률 비교 불가. S2 39~44행으로 조건 확인.",
+   "source_synthesis": "S1 플랫폼별 조건과 S2 EEA 대상국 거주·소재 요건을 연결. 한국 참여 가능·불가능 어느 쪽도 추론하지 않음.",
+   "repetition": "메모 반복 문단·중복 표 삭제, FAQ는 다른 경계 사례로 수정",
+   "experience": "직접 신청·테스트·인간 검토를 했다는 근거 없는 체험 문구 없음"
+  }
+ },
+ "factcheck": {
+  "claims": 13,
+  "confirmed": 13,
+  "removed": [
+   "20%를 변경 불가능한 배정 상한으로 읽힐 수 있게 한 표현을 현재 예상의 상단으로 수정",
+   "유럽 전체의 거주·소재 요건처럼 읽히는 표현을 EEA 대상국으로 한정",
+   "자체 가정 계산 두 건을 외부 사실 집계에서 제외하고 note에 산술 확인 기록",
+   "중복 메모 문단과 민감도 표 삭제; FAQ 반복 요약 교체"
+  ],
+  "note": "별도 검증 세션에서 S1 미국 S-1/A 표지(2·12·97~108·160~169행)와 Sales to Retail Investors(25677~25707행), S2 FWP 및 첨부 표지(2~14·28~44행), S3 Reuters 표시 날짜와 본문(24·41~54행)을 웹 도구로 다시 열어 직접 읽었다. 세 URL 모두 본문 접근 성공하여 HTTP 대체 조회는 필요하지 않았다. 기존의 13건 전부 확인 기록을 그대로 승인하지 않고 외부 주장 단위로 재집계했다. 825,000,000×0.20=165,000,000 및 임의 가정 0.10 적용=82,500,000은 산술 확인했으나 자체 계산이므로 claims에서 제외했다. 실제 신청·계좌 확인·실측을 했다는 주장은 없다. 반복 메모 문단 4개와 민감도 중복 표를 삭제하고 FAQ를 서로 다른 해석 질문으로 수정했다. 2026-11-10 대표 원문은 brief의 2026-11-03 이후 조건을 충족한다. brief의 기존 S-1·1차 정정 재무 분석과 달리 2차 정정 개인 배정 및 11일 EEA 문서의 조건 차이를 다루며, 제외 후보 목록은 비어 있다. 후속 정정 전체를 조사한 최신 조건 안내로는 승인하지 않는다. 본 검증은 발행·외부 승인 수행을 의미하지 않는다."
+ },
+ "issue_evidence": {
+  "source_id": "S3",
+  "published": "2026-11-13",
+  "role": "독립 취재 기사 이슈화 확인; 수요·전망 미인용"
+ }
+}
