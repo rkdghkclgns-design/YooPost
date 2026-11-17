@@ -1,0 +1,75 @@
+{
+ "topic": "New Google AdMob AI tools help app creators build, fix, and grow faster (2026-11-16)",
+ "source_url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "New Google AdMob AI tools help app creators build, fix, and grow faster",
+   "url": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "publisher": "Google",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Use agent skills | Android",
+   "url": "https://developers.google.com/admob/android/next-gen/agent-skills",
+   "publisher": "Google for Developers",
+   "published": "2026-11-16",
+   "official": true,
+   "date_note": "페이지의 Last updated 날짜이며 최초 발표일로 사용하지 않음"
+  },
+  {
+   "id": "S3",
+   "title": "Google’s AdMob lets AI agents like Claude Code set up app ads",
+   "url": "https://thenextweb.com/news/google-admob-ai-agents-claude-code-codex-ask-admob",
+   "publisher": "The Next Web",
+   "published": "2026-11-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표의 본문에는 Ask AdMob 예제 프롬프트 영상이 있고 poster-image-url도 발견했습니다. 다만 해당 이미지 URL을 웹 도구로 열었을 때 본문을 볼 수 없어 실제 화면 내용을 확인하지 못했습니다. 확인하지 못한 포스터를 인용 이미지로 사용하지 않았습니다. OG social_share와 로고는 제외했습니다. 공식 스킬 문서는 텍스트·표 위주여서 추가로 확인한 적합 이미지가 없습니다. 이미지 조회 문제를 핵심 발표 원문 조회 실패와 혼동하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "지금 AdMob 에이전트에 맡길 수 있는 코드 작업과 아직 기다려야 하는 계정 작업을 어떻게 구분할까?",
+  "limitations": "도구 설치·앱 실행·계정 접속을 하지 않았으며 가짜 사용 경험은 넣지 않았습니다. 비교는 2026-11-16 공식 발표에서 설명한 준비 상태와 작업 대상만 다루며 성능 우열 비교가 아닙니다. Android 문서의 작업 목록을 다른 플랫폼에 확대하지 않습니다. 예상 수익은 실측이 아니고 요금·한국어·계정별 접근 조건·정확도 수치는 발표에서 확인하지 못했습니다. 제안한 기록 양식은 제품 기능이나 효과 실증이 아니며, 서로 다른 SDK·작업 범위·검토 수준의 시간은 동일 조건 비교로 취급하지 않습니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📰 AdMob 발표에서 먼저 나눠야 할 세 가지 작업",
+    "excerpt": "위 표는 **동일한 발표일을 기준으로 한 준비 상태 비교**입니다. 기능이 더 강해 보인다는 이유로 도입 우선순위를 정하지 말고, 현재 접근 가능 여부와 실제로 수정할 대상을 함께 보시는 것이 좋습니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "같은 발표의 세 도구를 현재 활용 가능 여부와 변경 대상이라는 동일 기준으로 비교해 조기 도입 기대를 조절함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 코딩 스킬은 어떤 개발팀부터 검토하면 좋을까",
+    "excerpt": "도입 판단은 팀이 가진 문제에서 시작할 수 있습니다. 새 앱에 광고를 처음 넣는 팀이라면 초기 통합 작업을, 기존 앱을 옮기는 팀이라면 이전 작업을, 출시를 앞둔 팀이라면 검증 작업을 먼저 검토하는 방식입니다. 이는 문서의 역할 구분을 바탕으로 한 **작성자의 선택 기준**입니다. 스킬이 존재한다는 사실만으로 특정 앱의 구현이 올바르게 끝났다고 판단하는 기준은 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "팀의 초기 통합·이전·출시 전 상황을 문서상 작업 범위에 연결하고 제외할 사업 판단을 구분함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "📊 다음 적용을 결정할 검토 기록 만들기",
+    "excerpt": "시간을 기록하더라도 곧바로 절감률을 만들지는 마세요. **비교할 기존 작업의 조건과 기록이 먼저 필요합니다**. 이 글의 제안에서는 SDK와 작업 종류, 변경 범위, 검토 수준을 가능한 한 맞춘 뒤 차이를 살펴보되, 조건이 다른 작업은 별도로 표시합니다. 같은 앱의 단일 작업에서 얻은 기록을 다른 플랫폼이나 계정 운영 전체의 효과로 확대하지 않는 것이 비교의 한계입니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공식 문서의 구현·검증 작업을 팀의 재작업·검토 시간 기록에 연결하고, 기존 작업 자료와 SDK·작업 범위·검토 수준을 맞추지 못하면 절감률이나 다른 플랫폼의 효과로 확대하지 않는 제외 조건을 제시합니다. 계산이나 실측 결과는 아닙니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 38,
+  "confirmed": 38,
+  "removed": [],
+  "note": "이번 별도 검증에서 공식 발표와 Android 개발 문서를 다시 읽었다. 웹 도구에서 공식 발표를 읽지 못해 동일 URL을 urllib timeout=20으로 한 번 조회했으며 HTTP 200·최종 URL·조회 시각·실제 본문·발표일을 source-evidence/admob-recheck.json에 저장했다. 개발 문서는 웹 도구에서 본문과 2026-11-16 UTC 갱신일을 읽었다. TNW 기사도 재조회하여 2026-11-16 발행과 동일 소식의 독립 보도를 확인했다. 기존 검증 결과를 그대로 승인하지 않고 본문·표·FAQ를 대조했다. 중복된 외부 사실은 합산하지 않았다. C37의 방향성 해석은 외부 사실 집계에서 제외하고 이 note에 기록한다. 설치·실행·계정 접속·실측은 하지 않았다. 단위·가격·법적 효력·성능 수치나 계산 결과는 원고에 없다. comparison과 decision_guide의 발췌를 본문과 대조하고 조건·제외 조건·한계를 보완했다. 마지막 섹션의 반복 요약과 중복 도입 표를 검토 기록 제안으로 교체하고 FAQ의 반복을 줄였다. 확인 불가로 삭제할 외부 사실은 발견하지 않았다. 발행 승인이나 게시 작업은 하지 않았다."
+ }
+}
