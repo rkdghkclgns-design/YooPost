@@ -1,0 +1,197 @@
+{
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "HFS Research와 Rackspace가 2026-11-12 조사 결과 발표",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "발표 제목·날짜와 본문 첫 문단",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C2",
+   "claim": "고위 AI 의사결정자 502명 대상",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "조사 설명",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C3",
+   "claim": "가장 중요한 AI 프로그램 사업성 충족·초과 33%",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "핵심 결과",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C4",
+   "claim": "응답 기업 연 매출 1억 달러 이상",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "About the research",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C5",
+   "claim": "모든 응답 기업은 AI 시범사업 이상 진행",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "About the research",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C6",
+   "claim": "결과는 AI 활동 기업 대상이며 전체 시장 도입률 아님",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "About the research",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C7",
+   "claim": "단일 기능 도입 집단 사업성 충족·초과 37%",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "AI business-case achievement varies by deployment stage",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C8",
+   "claim": "여러 기능 도입 집단 사업성 충족·초과 28%",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "동일 단락",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C9",
+   "claim": "표준 운영에 AI 내재 집단 사업성 충족·초과 56%",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "동일 단락",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C10",
+   "claim": "서로 다른 집단이며 성숙도가 수익을 야기한다는 인과관계 입증 아님",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "동일 단락의 명시적 제한",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C11",
+   "claim": "Genpact 2026-11-12 별도 조사 발표",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "발표 날짜와 첫 문단",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C12",
+   "claim": "Genpact 조사 2,000명 이상 기업 임원 응답 기반",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "첫 문단",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C13",
+   "claim": "Genpact 응답 기업 79% AI 에이전트 운영 환경 배치",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "Key findings",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C14",
+   "claim": "Genpact 응답 기업 15% AI 투자와 손익 성과 완전 연결",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "Key findings",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C15",
+   "claim": "HFS와 Genpact 발표는 모집 조건과 성과 질문이 다르며 비율을 동일 지표로 합산할 근거가 없다",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "S1 About the research(연 매출 $100 million 이상) 및 S2 About the survey($1 billion~$50 billion 초과), S1 most significant AI program의 business case, S2 AI investment와 P&L outcomes 대조. 응답 기업의 비중복은 확인하지 않음.",
+   "action": "같은 표본이 아니라는 단정 대신 조사 대상 조건·문항 차이로 수정; 개별 응답 기업 중복 미확인 명시"
+  },
+  {
+   "id": "C16",
+   "claim": "HFS 운영자는 가동 후 성능·경제성·거버넌스 책임 역할",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "HFS calls for an accountable AI operator",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C17",
+   "claim": "HFS 운영자는 내부 팀·한 책임 범위의 기존 공급자군·관리 서비스 파트너 가능",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "동일 단락",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C18",
+   "claim": "HFS가 제안한 운영자 모델의 설명에서는 기업이 의사결정권과 법적 책임을 유지한다",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "S1 HFS calls for an accountable AI operator: enterprise retains ... decision rights, and legal accountability.",
+   "action": "발표의 역할 제안으로 한정; 국가별 법률·계약 책임의 일반 명제로 확장하지 않도록 본문 수정"
+  },
+  {
+   "id": "C19",
+   "claim": "Genpact는 자기보고 결과 및 반올림 비율임을 명시",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "About the survey",
+   "action": "공식 원문 재조회 후 유지"
+  },
+  {
+   "id": "C20",
+   "claim": "MarketScale 2026-11-15 해설 기사 발행 및 집단 차이·운영 책임 논의",
+   "url": "https://www.marketscale.com/industries/software-and-technology/hfs-survey-finds-only-a-third-of-enterprises-hit-their-ai-business-case",
+   "confirmed": true,
+   "evidence": "발행일·Key takeaways·본문 확인",
+   "action": "매체 본문 재조회 후 발행일·해설 내용 유지"
+  },
+  {
+   "claim": "Genpact 조사 대상 기업의 연 매출 범위는 10억 달러부터 500억 달러 초과까지다",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "About the survey: annual revenues from $1 billion to more than $50 billion",
+   "action": "공식 본문에서 확인하고 비교 조건 또는 FAQ에 반영",
+   "id": "C21"
+  },
+  {
+   "claim": "HFS·Rackspace 설문은 2026년 8~9월 진행됐다",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "About the research: between August and September 2026",
+   "action": "공식 본문에서 확인하고 비교 조건 또는 FAQ에 반영",
+   "id": "C22"
+  },
+  {
+   "claim": "HFS 설문은 공급자·플랫폼·서비스 제공자 이름을 제시하지 않은 블라인드 조사다",
+   "url": "https://ir.rackspace.com/news-releases/news-release-details/new-hfs-research-and-rackspace-study-finds-only-one-third",
+   "confirmed": true,
+   "evidence": "About the research: The blind survey did not name any vendor, platform, or provider.",
+   "action": "공식 본문에서 확인하고 비교 조건 또는 FAQ에 반영",
+   "id": "C23"
+  },
+  {
+   "claim": "Genpact는 기업 리더 심층 인터뷰로 설문을 보완했다고 설명한다",
+   "url": "https://media.genpact.com/2026-11-12-79-of-Enterprises-Report-AI-Agents-in-Production,-but-Only-15-Have-Fully-Tied-AI-Investment-to-P-L-Outcomes",
+   "confirmed": true,
+   "evidence": "About the survey: supplemented by in-depth interviews with enterprise leaders",
+   "action": "공식 본문에서 확인하고 비교 조건 또는 FAQ에 반영",
+   "id": "C24"
+  }
+ ],
+ "note": "2026-11-17 별도 사실 검증: 웹 도구로 S1 공식 발표 전체 본문·방법론, S2 공식 발표의 핵심 결과·방법론, S3 발행일·독자 해설 본문을 다시 읽음. 동일 외부 주장의 제목·본문·표·FAQ 반복은 통합. 가격·모델 성능 주장은 없음. 자체 실행·실측·외부 검증자 참여를 주장하지 않음. 계산은 외부 사실 개수에서 제외: 공개 비율 37·28로 9퍼센트포인트, 9/37*100=24.324…→24.3%(소수 첫째 자리). 가짜 사용 경험은 발견되지 않았고 반복 FAQ 세 항목을 설문 시점·블라인드 설계·인터뷰 방법론으로 교체. 원문의 미달성 응답에서 진행 중 사업 포함 가능성을 추측하던 문구를 삭제. editorial 3종의 소제목·연속 발췌·출처를 실제 본문과 대조함. 웹 원문 조회는 모두 성공; 추가 urllib 보관 요청은 S1 타임아웃, S2 HTTP 403, S3 HTTP 200이었으며 웹에서 읽은 원문을 HTTP 실패로 취급하지 않음. 이 증거만으로 조회 성공의 HTTP 상태를 추정하지 않음. 발행·승인 작업 없음. 최종 형식 대조: 링크 목적지·공백·강조 기호를 제외한 본문 5728자, 소제목 7개, 표 4개, FAQ 5개. 문단 21개 중 21개에 강조가 있음. 서식 수치는 사실 검증 집계에서 제외."
+}
