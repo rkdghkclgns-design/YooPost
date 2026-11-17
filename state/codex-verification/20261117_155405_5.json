@@ -1,0 +1,181 @@
+{
+ "verified_at": "2026-11-17T06:52:04.729332+00:00",
+ "method": "초안 저장 후 같은 Codex가 별도 검증 단계에서 공식 발표와 소장을 다시 열어 외부 사실을 항목별 대조. 다른 에이전트·유료 API 호출 없음.",
+ "claims": [
+  {
+   "id": "C01",
+   "claim": "캘리포니아 법무부는 2026-11-16 OpenAI 상대 소송 제기를 발표했다.",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "confirmed": true,
+   "evidence": "발표일 및 본문 첫 문단, lines 151–156",
+   "location": "intro, summary[0], sections[0]",
+   "action": "재열람 후 유지. 발표일 및 본문 첫 문단, lines 151–156에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C02",
+   "claim": "제소 주체는 롭 본타 법무장관이며 제출 법원은 샌프란시스코 상급법원이다.",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "confirmed": true,
+   "evidence": "본문 lines 156–158",
+   "location": "sections[0]",
+   "action": "재열람 후 유지. 본문 lines 156–158에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C03",
+   "claim": "발표는 안전조치·감시·대외 설명의 적절성을 쟁점으로 제시한다.",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "confirmed": true,
+   "evidence": "본문 lines 156, 165–172",
+   "location": "sections[0]",
+   "action": "재열람 후 유지. 본문 lines 156, 165–172에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C04",
+   "claim": "불공정경쟁법 위반 및 public nuisance는 원고 측의 법적 주장이다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "소장 청구원인 95–112항 및 표지의 COMPLAINT",
+   "location": "sections[1], table[0], faq[0]",
+   "action": "재열람 후 유지. 소장 청구원인 95–112항 및 표지의 COMPLAINT에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C05",
+   "claim": "소장은 금지명령을 청구한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "113항",
+   "location": "sections[1]",
+   "action": "재열람 후 유지. 113항에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C06",
+   "claim": "소장은 부당경쟁으로 취득한 금전·재산의 반환을 청구한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "114항",
+   "location": "sections[1]",
+   "action": "재열람 후 유지. 114항에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C07",
+   "claim": "소장은 재판에서 입증된 위반 건당 피고별 2,500달러 민사 제재금을 요청한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "115항: against each defendant for each violation, as proven at trial",
+   "location": "sections[1], table[0], sections[5] table, faq[1]",
+   "action": "재열람 후 유지. 115항: against each defendant for each violation, as proven at trial에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C08",
+   "claim": "소장은 이익 환수를 청구한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "116항",
+   "location": "sections[1]",
+   "action": "재열람 후 유지. 116항에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C09",
+   "claim": "소장은 공공 위해 제거를 요청한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "117항",
+   "location": "sections[1], table[0]",
+   "action": "재열람 후 유지. 117항에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C10",
+   "claim": "소장은 안전한 평가 환경과 지속적 감시에 관한 대외 설명을 문제 삼는다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "96(b)(i)항",
+   "location": "sections[2], sections[6]",
+   "action": "재열람 후 유지. 96(b)(i)항에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C11",
+   "claim": "법무부 발표는 시험 중 통제 상실 최소 80차례를 주장한다.",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "confirmed": true,
+   "evidence": "본문 line 169: at least 80 times during testing",
+   "location": "sections[5], table[3]",
+   "action": "재열람 후 유지. 본문 line 169: at least 80 times during testing에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C12",
+   "claim": "공식 소장에 기재된 날짜는 2026-11-16이다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "서명부 Dated: November 16, 2026",
+   "location": "research.sources[S2]",
+   "action": "재열람 후 유지. 서명부 Dated: November 16, 2026에서 확인; 소장상 주장과 청구를 법원의 확정 판단으로 확대하지 않음."
+  },
+  {
+   "id": "C13",
+   "claim": "AI 에이전트는 목표를 받아 도구를 사용하고 작업을 이어가는 시스템을 뜻한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": false,
+   "evidence": "소장 2–3항은 자율 에이전트와 할당 작업 수행을 설명하지만 도구 사용을 포함한 일반 정의 전체를 뒷받침하지 않는다.",
+   "location": "sections[0]",
+   "action": "일반 정의 삭제. 소장이 AI 모델과 자율 에이전트의 관계를 설명한다는 한정된 문장으로 수정."
+  },
+  {
+   "id": "C14",
+   "claim": "소장은 AI 모델이 자율 에이전트를 구동할 수 있다고 설명한다.",
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "confirmed": true,
+   "evidence": "소장 2항, PDF 2쪽.",
+   "action": "일반 정의를 출처에 한정된 설명으로 교체."
+  },
+  {
+   "id": "C15",
+   "claim": "The Record는 2026년 11월 16일 이 소송을 보도했다.",
+   "url": "https://therecord.media/california-sues-openai-hugging-face",
+   "confirmed": true,
+   "evidence": "기사 제목·Suzanne Smalley 바이라인·November 16th, 2026 및 소송 보도 본문을 재열람.",
+   "action": "유지. 해당 매체의 자체 보도·발행일 확인으로만 집계."
+  }
+ ],
+ "source_metadata_checks": [
+  {
+   "id": "S1",
+   "published": "2026-11-16",
+   "confirmed": true,
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "evidence": "법무부 발표 날짜 줄 재확인"
+  },
+  {
+   "id": "S2",
+   "published": "2026-11-16",
+   "confirmed": true,
+   "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "evidence": "소장 마지막 서명일 재확인"
+  },
+  {
+   "id": "S3",
+   "published": "2026-11-16",
+   "confirmed": true,
+   "url": "https://therecord.media/california-sues-openai-hugging-face",
+   "evidence": "The Record 자체 기사 byline의 November 16th, 2026 재확인. 이슈화 확인에만 사용, 사건의 독립 입증으로 사용하지 않음."
+  }
+ ],
+ "editorial_review": {
+  "passed": true,
+  "checks": [
+   "실제 제품 비교가 없는 comparison 기여 등록 삭제; 문서 비교 양식은 decision_guide의 보조 자료로 평가",
+   "decision_guide와 source_synthesis 두 종류를 서로 다른 소제목에서 실제 발췌와 대조",
+   "S1과 S2는 서로 다른 URL이지만 같은 원고 측 자료라는 한계 유지",
+   "제품·배포·권한·시점이 다른 자료의 우열 판단 금지; 분모·위반 단위 부재로 사고율·제재금 총액 계산 안 함",
+   "가짜 사용 경험 없음; 반복 결론과 FAQ 수정"
+  ]
+ },
+ "note": "2026-11-17 별도 사실 검증에서 S1 공식 발표, S2 소장 PDF, S3 기사 원문을 다시 열어 읽었다. 웹 조회 모두 성공하여 HTTP 대체 조회는 불필요했다. 반복 위치는 고유 주장 단위로 묶었으며 원고의 사실과 출처 발행일을 포함했다. confirmed=true는 해당 출처의 발표·주장·청구 존재를 뜻하며 피고의 위법성이 입증됐다는 뜻이 아니다. 가정 사례·편집부 제안·실행 미수행 설명은 외부 주장 개수에서 제외했다. 가짜 사용 경험 없음. 반복 결론 문단 2개를 삭제하고 FAQ 2개를 기록·미확인 처리 질문으로 교체했다. 승인·발행은 수행하지 않았다.",
+ "format_checks": {
+  "visible_nonspace_chars_without_headings": 5398,
+  "sections": 7,
+  "tables": 4,
+  "faq": 5,
+  "json_valid": true,
+  "editorial_excerpts_exact": true
+ }
+}
