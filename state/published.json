@@ -7229,5 +7229,21 @@
    "https://aiedgebriefing.com/2026-11-17/"
   ],
   "draft_id": "20261118_074438_3"
+ },
+ {
+  "date": "2026-11-18",
+  "title": "🤖 OpenAI 의료 에이전트, 병원 업무에 어디까지 맡길 수 있을까",
+  "topic": "Advancing computer-use agents for healthcare teams",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/openai_01908705770.html"
+  },
+  "sources": [
+   "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "https://www.fiercehealthcare.com/ai-and-machine-learning/hlth26-cvs-health-cigna-and-ambience-collaborating-openai-test-computer-use"
+  ],
+  "draft_id": "20261118_075014_4"
  }
 ]
