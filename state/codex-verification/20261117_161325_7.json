@@ -1,0 +1,104 @@
+{
+ "claims": [
+  {
+   "claim": "2026-11-10 SEC에 두 번째 정정 신고서를 제출",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "표지 제출일·AMENDMENT NO.2",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "2026-11-10자 예비 투자설명서이며 변경 가능",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "Subject to Completion 및 표지 미완성 문구",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "미국과 다른 나라 개인 합계 최대 20% 예상",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "Sales to Retail Investors",
+   "action": "수정: 20%를 확정 한도로 해석하지 않도록 현재 예상의 상단으로 명시"
+  },
+  {
+   "claim": "최종 개인 물량은 실제 수요에 따라 결정",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "개인 판매 항목 마지막 문장",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "기본 공모 물량 825,000,000주",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "표지 Class A Common Stock",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "유럽 투자설명서는 2026-11-11자",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "confirmed": true,
+   "evidence": "FWP 및 첨부 표지 날짜",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "유럽 최대 공모가격 120달러",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "confirmed": true,
+   "evidence": "첨부 표지 Maximum public offering price",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "미국 예상 가격 범위 70~78달러",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "표지 및 유럽 첨부 표지 교차 확인",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "글로벌 공모 최종 공모가격은 단일 가격",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "confirmed": true,
+   "evidence": "첨부 표지 final public offering price",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "미국 기재 플랫폼 구매는 회사별 조건·요건 적용",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "confirmed": true,
+   "evidence": "Sales to Retail Investors terms, conditions, requirements",
+   "action": "유지: 공식 원문 해당 항목 재확인"
+  },
+  {
+   "claim": "유럽 문서의 Covered EEA Countries 공모에는 해당국 거주·소재 요건이 있다",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "confirmed": true,
+   "evidence": "첨부 표지 Covered EEA Countries 요건",
+   "action": "수정: 지역 요건을 EEA 대상국 공모로 한정"
+  },
+  {
+   "claim": "유럽 문서에서 미국 예상 공모가격 범위는 변경될 수 있다고 설명한다",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm",
+   "confirmed": true,
+   "evidence": "첨부 표지, 웹 본문 39행",
+   "action": "FAQ에 반영: 예상 범위를 고정값으로 해석하지 않음"
+  },
+  {
+   "claim": "Reuters의 해당 기사는 2026-11-13 게시되었고 Anthropic IPO 기관 수요와 경쟁력 지속성 관련 질문을 보도했다",
+   "url": "https://www.investing.com/news/stock-market-news/exclusiveinvestors-flock-to-anthropic-ipo-but-question-durability-of-ai-lead-5026644",
+   "confirmed": true,
+   "evidence": "게시일 표시 24행, 기자명 41행, 본문 43~54행",
+   "action": "유지: 독립 이슈화 근거로만 사용; 수요 수치·전망 미인용"
+  }
+ ],
+ "note": "별도 검증 세션에서 S1 미국 S-1/A 표지(2·12·97~108·160~169행)와 Sales to Retail Investors(25677~25707행), S2 FWP 및 첨부 표지(2~14·28~44행), S3 Reuters 표시 날짜와 본문(24·41~54행)을 웹 도구로 다시 열어 직접 읽었다. 세 URL 모두 본문 접근 성공하여 HTTP 대체 조회는 필요하지 않았다. 기존의 13건 전부 확인 기록을 그대로 승인하지 않고 외부 주장 단위로 재집계했다. 825,000,000×0.20=165,000,000 및 임의 가정 0.10 적용=82,500,000은 산술 확인했으나 자체 계산이므로 claims에서 제외했다. 실제 신청·계좌 확인·실측을 했다는 주장은 없다. 반복 메모 문단 4개와 민감도 중복 표를 삭제하고 FAQ를 서로 다른 해석 질문으로 수정했다. 2026-11-10 대표 원문은 brief의 2026-11-03 이후 조건을 충족한다. brief의 기존 S-1·1차 정정 재무 분석과 달리 2차 정정 개인 배정 및 11일 EEA 문서의 조건 차이를 다루며, 제외 후보 목록은 비어 있다. 후속 정정 전체를 조사한 최신 조건 안내로는 승인하지 않는다. 본 검증은 발행·외부 승인 수행을 의미하지 않는다.",
+ "editorial_review": {
+  "result": "본문과 대조하여 calculation·comparison·source_synthesis의 3종 기여 확인",
+  "calculation": "825,000,000주 고정, 20% 예상 상단 적용, 추가 물량 제외. 165,000,000주는 확정 한도가 아님. 임의 10%는 회사 계획이 아니며 한국·지역·개인 배정량 산출 불가. 산술은 note에서 관리.",
+  "comparison": "동일 Class A 주식·달러 단위지만 미국 예상 구간과 유럽 최대 가격은 역할이 달라 가격 우열·수익률 비교 불가. S2 39~44행으로 조건 확인.",
+  "source_synthesis": "S1 플랫폼별 조건과 S2 EEA 대상국 거주·소재 요건을 연결. 한국 참여 가능·불가능 어느 쪽도 추론하지 않음.",
+  "repetition": "메모 반복 문단·중복 표 삭제, FAQ는 다른 경계 사례로 수정",
+  "experience": "직접 신청·테스트·인간 검토를 했다는 근거 없는 체험 문구 없음"
+ }
+}
