@@ -1,0 +1,67 @@
+{
+ "topic": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery",
+ "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery",
+   "url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+   "publisher": "Alibaba Cloud",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Model releases",
+   "url": "https://docs.qwencloud.com/changelog/models",
+   "publisher": "QwenCloud",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Alibaba Releases Qwen4-Max: 2.4T MoE, 71B Active, 1M Context",
+   "url": "https://www.marktechpost.com/2026/11/16/alibaba-qwen4-max-release/",
+   "publisher": "MarkTechPost",
+   "published": "2026-11-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표의 벤치마크 이미지가 있으나 원자료와 측정 조건을 충분히 확인하지 못해 본문 인용 이미지로 선정하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Qwen4-Max 프리뷰 이용자가 출시 모델로 전환할 때 무엇을 확인해야 할까?",
+  "limitations": "직접 실행하지 않았습니다. 발표의 Work360 결과는 공급사 자체 평가이며 비교 모델·High 추론 설정과 과제에 한정됩니다. 예산 계산은 캐시 적중 입력 200만 토큰만을 가정하고 세금·다른 입력·출력·재시도를 제외합니다. 프리뷰와 출시 모델의 실제 비교 결과나 호환성은 확인하지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💳 API 예산을 잡을 때의 확인 순서",
+    "excerpt": "가령 다른 요금이 없다고 가정하고 캐시 적중 입력만 200만 토큰이라면 계산은 200만 ÷ 100만 × 0.075달러로 **0.15달러**입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "발표의 100만 토큰당 0.075달러를 적중 입력 200만 토큰에 적용해 0.15달러를 계산합니다. 세금과 다른 요금은 제외한 가정이며 총 청구액이 아닙니다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧪 프리뷰에서 출시 모델로 비교하는 방법",
+    "excerpt": "프리뷰를 이미 사용 중이라면 모델 이름만 바꾼 뒤 전체 업무에 적용하기보다 **같은 입력과 평가 기준**을 먼저 준비해 보세요.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "변경 기록의 별도 모델 항목을 근거로 동일 입력·출력 형식·평가 기준을 고정하고 설정 차이, 품질·비용·권한을 기록하도록 제안합니다. 실제 비교 실험은 하지 않았습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 14,
+  "confirmed": 13,
+  "removed": [
+   "전체 파라미터 수를 저장되는 모델의 크기라고 한 표현을 모델 규모 수치로 수정",
+   "출시를 별도 일반 가용성 보장으로 오해할 수 있는 정식 표현을 출시로 수정",
+   "접근 및 비용 설명에서 반복 문장을 축약"
+  ],
+  "note": "별도 검증에서 공식 발표와 변경 기록 및 독립 매체 원문을 다시 읽었습니다. 계산 710억/2.4조≈2.96%, 200만/100만×0.075=0.15, 100달러의 60% 감소 후 40달러를 확인했습니다. 독자 가치 두 종류의 본문 발췌와 조건·한계를 대조했습니다. 직접 모델을 실행하지 않았으며 공급사 성능 주장의 독립 재현을 확인한 것은 아닙니다."
+ }
+}
