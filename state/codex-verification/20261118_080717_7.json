@@ -1,0 +1,143 @@
+{
+ "claims": [
+  {
+   "claim": "Nscale plc는 2026년 11월 12일 SEC에 S-1 제1차 정정 신고서를 제출했다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "미완성 예비 투자설명서의 공모가격은 공란이며 내용이 변경될 수 있다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "신규 구매 주문으로 단기 예상 설비투자 약정이 증가했으며 일부는 계약상 연기·축소·취소할 수 없다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "회사는 2027년 예상 의무와 통상적 사업계획 수행에 추가 조달이 필요하다고 밝혔다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 및 2025년 9월 종료 9개월 매출은 각각 잠정 307.5와 실적 21.3백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "같은 기간 영업손실은 각각 잠정 837.5와 실적 67.6백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "같은 기간 순손실은 각각 잠정 1,691.9와 실적 433.3백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 9개월 잠정 실적은 결산 중이며 변경될 수 있고 KPMG는 감사·검토 등 절차를 수행하지 않았다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2025년 9개월 수치는 미감사 실적이다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 9개월 잠정 조정 EBITDA 조정표의 공정가치 조정 손실은 629.9백만 달러, 감가상각·상각은 339.8백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 9월 말 잠정 현금 및 현금성 자산은 3,575.9백만 달러, 총차입금은 5,516.3백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지; 차액 1,940.4백만 달러 산술 확인"
+  },
+  {
+   "claim": "2025년 말 현금 및 현금성 자산은 1,500.9백만 달러, 총차입금은 78.9백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 6월 말 총차입금 장부금액은 137.4백만 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지; 9월 잠정치와 차이 5,378.9백만 달러 산술 확인"
+  },
+  {
+   "claim": "계약된 데이터센터 부지의 건설·전력 예상액은 190억~210억 달러이며 GPU 등 장비는 제외된다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "전체 부지 예상액 중 2026년 9월 말까지 약 30억 달러가 발생했고 잔여 예상은 160억~180억 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "Monarch 1동의 건설·전력 예상은 100억~105억 달러로, 9월 말까지 약 10억 달러가 발생했고 잔여 예상은 90억~95억 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지; 전체 부지 예상의 일부라는 해석을 범위 대조"
+  },
+  {
+   "claim": "Monarch 캠퍼스의 GPU 등 컴퓨팅 장비 예상액은 210억~220억 달러다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지; 표에서 캠퍼스 기준을 명시"
+  },
+  {
+   "claim": "사업 모델은 선행 설비 지출을 요구하며 약정된 고객 계약 체결 후 통상 인프라 구매 주문을 낸다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "일부 장기 계약의 선급금은 계약 기간의 지급액에 충당된다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지; 현금 유입이 서비스 뒤에만 발생하는 것처럼 보이는 흐름 수정"
+  },
+  {
+   "claim": "재무보고 내부통제의 중요한 취약점은 통제 설계·문서화·증거와 인력 부족에 관한 것이고 개선은 초기 단계다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "유지"
+  },
+  {
+   "claim": "2026년 9월 총 33.6억 달러 계약은 발행된 전환대출증권 23.6억 달러와 NVIDIA에 발행될 10억 달러를 포함한다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "10억 달러의 형태가 전환대출증권 또는 무의결권 주식임을 명시"
+  },
+  {
+   "claim": "신고서는 NVIDIA 거래의 종결을 2026년 11월 16일 전후로 예상했다.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "confirmed": true,
+   "action": "예상일이며 실제 종결 확인이 아님을 유지"
+  },
+  {
+   "claim": "Axios는 2026년 11월 13일 Nscale의 차입 증가와 추가 조달 필요성을 보도했다.",
+   "url": "https://www.axios.com/2026/11/13/nscale-ipo-debt-nvidia-jensen-huang",
+   "confirmed": true,
+   "action": "독립 보도 사실과 발행일 유지"
+  }
+ ],
+ "note": "별도 검증에서 SEC 신고서와 독립 보도를 직접 다시 열었다. 자체 실행·검증 상태는 외부 주장 수에 넣지 않았다. 신고서 이후 변경과 실제 거래 종결은 확인하지 않았다."
+}
