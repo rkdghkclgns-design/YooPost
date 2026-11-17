@@ -21,7 +21,12 @@
      "reason": "대표 Microsoft 발표 원문과 독립 보도에 각각 HTTP 403으로 접근하지 못해 발표의 핵심 수치·조건과 독립 보도를 검증할 수 없습니다. 모델 카드 PDF는 응답했지만 본문을 읽지 못했습니다. 후보를 보존하고 검증을 중단합니다."
     }
    ],
-   "next_retry_at": null
+   "next_retry_at": null,
+   "last_notified": {
+    "result": "done",
+    "kind": "result_invalid",
+    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
+   }
   }
  },
  "lease": {},
