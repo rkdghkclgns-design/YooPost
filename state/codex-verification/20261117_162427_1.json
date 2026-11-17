@@ -1,0 +1,261 @@
+{
+ "claims": [
+  {
+   "claim": "2026-11-16 Hy4 flash 출시",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "November 16, 2026",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C1"
+  },
+  {
+   "claim": "일상 업무 권장, 복잡한 장기 소프트웨어 개발에는 Hy4 권장",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "long-horizon software engineering",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C2"
+  },
+  {
+   "claim": "전체 224B 파라미터",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "224 billion total parameters",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C3"
+  },
+  {
+   "claim": "활성 12B 파라미터",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "12 billion active parameters",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C4"
+  },
+  {
+   "claim": "전체에 Engram 64B 포함",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "including 64 billion Engram parameters",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C5"
+  },
+  {
+   "claim": "최대 1M 토큰 문맥",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "up to 1M tokens",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C6"
+  },
+  {
+   "claim": "멀티모달 입력 지원",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "supports multimodal inputs",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C7"
+  },
+  {
+   "claim": "백만 입력 토큰당 약 US$0.070 정가",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "US$0.070 per million input tokens",
+   "confirmed": true,
+   "action": "유지. 백만 토큰당 달러 근사 정가이며 실제 청구액으로 단정하지 않음.",
+   "id": "C8"
+  },
+  {
+   "claim": "백만 출력 토큰당 약 US$0.281 정가",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "US$0.281 per million output tokens",
+   "confirmed": true,
+   "action": "유지. 백만 토큰당 달러 근사 정가이며 실제 청구액으로 단정하지 않음.",
+   "id": "C9"
+  },
+  {
+   "claim": "백만 캐시 입력 토큰당 약 US$0.003 정가",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "US$0.003 per million cached input tokens",
+   "confirmed": true,
+   "action": "유지. 백만 토큰당 달러 근사 정가이며 실제 청구액으로 단정하지 않음.",
+   "id": "C10"
+  },
+  {
+   "claim": "11월 30일까지 WorkBuddy 무료 이용 안내",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "From now till November 30",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C11"
+  },
+  {
+   "claim": "TokenHub 정가 대비 50% 할인 안내",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "50 percent off standard pricing",
+   "confirmed": true,
+   "action": "유지. 백만 토큰당 달러 근사 정가이며 실제 청구액으로 단정하지 않음.",
+   "id": "C12"
+  },
+  {
+   "claim": "내부 WorkIndex 작업당 비용 Hy4의 1/20",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "1/20 that of Hy4",
+   "confirmed": true,
+   "action": "유지. 텐센트가 보고한 내부 평가로 한정하며 독립 실측·품질 동등성으로 해석하지 않음.",
+   "id": "C13"
+  },
+  {
+   "claim": "블라인드 평가 내부 WorkBuddy 사용자 85명",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "85 internal Tencent WorkBuddy users",
+   "confirmed": true,
+   "action": "유지. 텐센트가 보고한 내부 평가로 한정하며 독립 실측·품질 동등성으로 해석하지 않음.",
+   "id": "C14"
+  },
+  {
+   "claim": "평가 작업 259개",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "259 tasks",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C15"
+  },
+  {
+   "claim": "평가 범주 27개",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "27 categories",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C16"
+  },
+  {
+   "claim": "회사 보고상 Claude Haiku 5.5에 가까운 만족도",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "user satisfaction close to Claude Haiku 5.5",
+   "confirmed": true,
+   "action": "유지. 텐센트가 보고한 내부 평가로 한정하며 독립 실측·품질 동등성으로 해석하지 않음.",
+   "id": "C17"
+  },
+  {
+   "claim": "OpenRouter 연동은 향후 계획",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "OpenRouter integration coming soon",
+   "confirmed": true,
+   "action": "유지. 공개·연동 완료로 서술하지 않음.",
+   "id": "C18"
+  },
+  {
+   "claim": "오픈소스 공개는 계획",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "plans to open-source Hy4 flash",
+   "confirmed": true,
+   "action": "유지. 공개·연동 완료로 서술하지 않음.",
+   "id": "C19"
+  },
+  {
+   "claim": "I1은 내부 WorkIndex 작업 비용 도표",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "evidence": "Figure 2: On the internal WorkIndex benchmark",
+   "confirmed": true,
+   "action": "유지. 공식 페이지의 Figure 2 캡션 및 이미지 링크와 대조.",
+   "id": "C20"
+  },
+  {
+   "claim": "Vercel AI Gateway 제공 공지 2026-11-16",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "evidence": "16 Nov 2026",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C21"
+  },
+  {
+   "claim": "Vercel 입력·캐시·출력 도입 50% 할인 11월 29일까지",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "evidence": "through November 29, 2026",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C22"
+  },
+  {
+   "claim": "모델 이름 tencent/hy4-flash",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "evidence": "tencent/hy4-flash",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C23"
+  },
+  {
+   "claim": "Vercel 안내는 도구 호출을 지원 기능으로 열거한다.",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "confirmed": true,
+   "action": "유지. Vercel 경로의 안내 범위로 한정.",
+   "evidence": "tool calling",
+   "id": "C24"
+  },
+  {
+   "claim": "Vercel 안내는 구조화 출력을 지원 기능으로 열거한다.",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "confirmed": true,
+   "action": "유지. Vercel 경로의 안내 범위로 한정.",
+   "evidence": "structured outputs",
+   "id": "C25"
+  },
+  {
+   "claim": "Vercel 안내는 프롬프트 캐싱을 지원 기능으로 열거한다.",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "confirmed": true,
+   "action": "유지. Vercel 경로의 안내 범위로 한정.",
+   "evidence": "prompt caching",
+   "id": "C26"
+  },
+  {
+   "claim": "Vercel 안내는 이미지 입력을 지원 기능으로 열거한다.",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "confirmed": true,
+   "action": "유지. Vercel 경로의 안내 범위로 한정.",
+   "evidence": "image input",
+   "id": "C27"
+  },
+  {
+   "claim": "필요 없는 요청에서 추론을 끌 수 있음",
+   "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+   "evidence": "Reasoning can be turned off",
+   "confirmed": true,
+   "action": "유지. 이번 검증에서 원문 본문과 재대조.",
+   "id": "C28"
+  },
+  {
+   "claim": "텐센트 발표는 TokenHub의 정가 대비 50% 할인 기간을 2026년 11월 30일까지로 안내한다.",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "confirmed": true,
+   "action": "유지. Vercel의 11월 29일과 구분하며 종료 시간대·계정별 적용 범위는 미확인.",
+   "evidence": "From now till November 30 ... 50 percent off standard pricing via Tencent Cloud TokenHub.",
+   "id": "C29"
+  },
+  {
+   "claim": "TechNode는 2026년 11월 16일 Hy4 flash 출시를 보도했다.",
+   "url": "https://technode.com/2026/11/16/tencent-launches-hy4-flash-cutting-ai-task-costs-by-95-in-internal-tests/",
+   "confirmed": true,
+   "action": "유지. 기사 본문의 게시일을 직접 확인. 제품 사양 근거는 공식 S1과 대조.",
+   "evidence": "Nov 16, 2026",
+   "id": "C30"
+  },
+  {
+   "claim": "TechNode 기사의 비용·만족도 수치는 텐센트 내부 평가를 전달한 것이다.",
+   "url": "https://technode.com/2026/11/16/tencent-launches-hy4-flash-cutting-ai-task-costs-by-95-in-internal-tests/",
+   "confirmed": true,
+   "action": "유지. 별도 성능 재현으로 계산하지 않음.",
+   "evidence": "Tencent’s internal WorkIndex benchmark; Tencent said",
+   "id": "C31"
+  },
+  {
+   "claim": "텐센트 발표는 Hy4 flash의 TokenHub·WorkBuddy 제공을 현재 이용 가능 항목으로 설명한다.",
+   "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+   "confirmed": true,
+   "action": "유지. 모든 계정에서의 이용 가능성 보장으로 넓히지 않음.",
+   "evidence": "Hy4 flash is now available across Tencent Cloud TokenHub, WorkBuddy",
+   "id": "C32"
+  }
+ ],
+ "note": "2026-11-17 별도 사실 검증 세션에서 S1·S2 공식 원문 및 보도 여부의 1차 자료인 S3 기사를 web open으로 다시 읽고, urllib(timeout=20)로도 재조회했다. 세 URL 모두 HTTP 200이며 발표·기사 본문과 2026-11-16 날짜를 확인했다. 최종 URL·HTTP 상태·UTC 조회 시각·HTML·추출 본문은 source-evidence/S1~S3-verification.json에 저장했다. 이전 검증 결과를 승인 근거로 재사용하지 않고 본문·표·FAQ·이미지 캡션과 대조했다. 반복된 동일 외부 주장은 하나로 집계하고, 서로 다른 기능·기간·보도 사실은 분리했다. 외부 사실의 오류나 확인 불가 항목은 발견되지 않아 removed는 빈 배열이다. 일반적인 토큰 정의 문장은 본문에서 생략했다. 실측·가짜 경험 서술은 없었다. 반복 FAQ를 삭제·재작성하고 계산의 전환 비용 적용 한계를 보강했다. 10×0.070+2×0.281=1.262, 절반 0.631, 단가의 절반 0.035/0.1405/0.0015 및 0.631÷20×60=1.893분을 재계산했다. 가정 사용량·가정 시급·자체 평가 제안·B 단위 풀이 및 작업 상태는 외부 사실 개수에서 제외했다. 모델 실행·독립 성능 재현·계정 청구 확인을 수행하지 않았다. S1 발표일과 S3 보도일은 brief의 11월 14일 이후 조건에 맞고, 기존 Hy4 정식판 소식과 이번 flash 출시를 구분했다. editorial의 세 기여는 서로 다른 소제목의 실제 연속 발췌와 일치하며 계산·출처 연결·선택 기준의 추가 가치와 한계를 대조했다. 발행·승인 작업은 수행하지 않았다."
+}

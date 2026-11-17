@@ -3,15 +3,24 @@
   "20261117:daily:AI 언어 모델": {
    "at": "2026-11-17T16:14:14+09:00",
    "count": 2,
-   "status": "writing",
-   "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)",
-   "failure_kind": "usage_limit",
-   "rejected_candidates": [],
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "rejected_candidates": [
+    {
+     "title": "🤖 Qwen4-Max 정식 출시, 프리뷰 이후 API 도입을 판단할 기준",
+     "topic": "Qwen4-Max 2026-11-16 정식 출시: 프리뷰 이후 API 접근과 비용·효율 평가",
+     "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+     "reason": "Qwen4-Max 정식 출시(2026-11-16)를 선정하고 공식 Alibaba Cloud 발표와 QwenCloud 문서를 읽었으나, 공식 문서가 연결하는 출시 원문 https://qwen.ai/blog?id=qwen4-max 는 웹 조회에서 본문이 없었음. 같은 공개 URL을 urllib로 20초 제한으로 1회 조회한 결과 HTTP 200이지만 스크립트·스타일 제거 후 표시 본문은 Qwen뿐이며 발표 본문과 날짜가 없음. policy.md의 어느 단계든 공식 원문 조회 실패 시 종료 규칙에 따라 원고·사실 검증을 완료하지 않음. "
+    }
+   ],
    "last_notified": {
     "result": "failed",
     "kind": "usage_limit",
     "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)"
-   }
+   },
+   "finished_at": "2026-11-17T16:24:29+09:00",
+   "next_retry_at": null
   },
   "20261117:daily:AI 도구": {
    "at": "2026-11-17T11:21:07+09:00",
@@ -111,21 +120,7 @@
    }
   }
  },
- "lease": {
-  "owner": "44037048524-1",
-  "at": "2026-11-17T16:14:14+09:00",
-  "expires": "2026-11-17T18:14:14+09:00",
-  "task": {
-   "day": "20261117",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 언어 모델",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "44037048524-1",
-   "at": "2026-11-17T16:14:14+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
