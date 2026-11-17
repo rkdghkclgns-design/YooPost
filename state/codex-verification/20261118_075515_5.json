@@ -1,0 +1,77 @@
+{
+ "claims": [
+  {
+   "claim": "Google GTIG 보고서 발표일은 2026-11-16이다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "GTIG는 노출된 준비 서버에서 다중 에이전트 프레임워크 exploit_agent를 발견했다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "이 프레임워크는 패치 전후 코드를 비교해 잠재 취약점을 분석하고 익스플로잇을 작성해 사람 개입 없이 실행하도록 구성됐다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "준비 서버에는 피해자로부터 유출된 데이터와 내부 정찰·무차별 대입·웹셸 설치 및 다른 공격자의 웹셸 제거를 돕는 스크립트가 있었다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "서버의 피해자 관측 정보는 운영자가 프랑스 미디어·엔터테인먼트 및 교육 분야 웹사이트에 관심을 뒀음을 시사했다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "GTIG는 해당 분기 취약점 발견과 악용을 사람 개입 없이 완전히 자동화하는 LLM 프레임워크의 공격자 사용을 처음 식별했다고 밝혔다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "GTIG와 Mandiant는 공격자들이 공개 에이전트 도구를 실전 침해의 개별 단계에 사용한 사례를 관찰했다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "Google은 일부 에이전트 도구의 제한 없는 자동 실행이 포렌식 트래픽과 식별자 및 코드 흔적을 남길 수 있다고 평가했다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "보고서는 작동하지 않는 AI 생성 추정 익스플로잇이 방어자에게 검증 부담을 준다고 설명한다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "BleepingComputer는 2026-11-16 Google 보고서와 exploit_agent 사례를 보도했다.",
+   "url": "https://www.bleepingcomputer.com/news/security/google-warns-that-fully-automated-ai-attacks-are-coming-soon/",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "Mandiant 보고서는 2026-10-30 발표됐으며 ARTEX에 탈취된 인증정보를 제공한 뒤 침해 후 정찰과 권한 상승을 수행한 사례를 설명한다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks?e=48754805",
+   "confirmed": true,
+   "action": "원문의 보고 범위로 유지"
+  },
+  {
+   "claim": "보고서가 존재하지 않는 세부사항을 만들어내는 모델의 한계를 설명한다.",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "confirmed": false,
+   "action": "보고서에서 해당 표현의 근거를 확인하지 못해 삭제하고 작동하지 않는 AI 생성 추정 익스플로잇에 관한 설명만 남김"
+  }
+ ],
+ "note": "별도 사실 검증에서 공식 원문 두 건과 독립 보도 본문을 재열람했다. 중복 주장은 통합했으며 작성자의 운영 제안과 직접 실행 여부는 외부 사실 주장에 포함하지 않았다. 기존 비교 기여는 비교 기준이 성립하지 않아 두 공식 보고서의 출처 종합으로 대체했다. 동일 조건의 성능 비교나 계산은 수행하지 않았다."
+}
