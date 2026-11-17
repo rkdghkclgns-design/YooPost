@@ -7084,5 +7084,21 @@
    "https://matharena.ai/models"
   ],
   "draft_id": "20261116_075637_1"
+ },
+ {
+  "date": "2026-11-17",
+  "title": "🧠 Tree-Ising, 가중치 수선 비용 0.90달러를 어떻게 읽어야 할까",
+  "topic": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.14210",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/tree-ising-090.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.14210",
+   "https://arxiv.org/html/2611.14210v1",
+   "https://tensorjournal.com/en/research/tree-ising-bit-level-weight-edits"
+  ],
+  "draft_id": "20261117_153345_3"
  }
 ]
