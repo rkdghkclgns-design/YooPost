@@ -7245,5 +7245,21 @@
    "https://www.fiercehealthcare.com/ai-and-machine-learning/hlth26-cvs-health-cigna-and-ambience-collaborating-openai-test-computer-use"
   ],
   "draft_id": "20261118_075014_4"
+ },
+ {
+  "date": "2026-11-18",
+  "title": "🔒 Google exploit_agent 보고서: 패치 공개 뒤 방어 우선순위는?",
+  "topic": "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold",
+  "category": "AI 보안",
+  "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/google-exploitagent.html"
+  },
+  "sources": [
+   "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "https://www.bleepingcomputer.com/news/security/google-warns-that-fully-automated-ai-attacks-are-coming-soon/",
+   "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks?e=48754805"
+  ],
+  "draft_id": "20261118_075515_5"
  }
 ]
