@@ -3,24 +3,28 @@
   "20261118:daily:AI 언어 모델": {
    "at": "2026-11-18T07:16:04+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-11-18T07:27:26+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🤖 GPT-6.2 Astra와 Sol, 4배 단가 차이를 감수할 업무는?",
+     "topic": "Introducing GPT-6.2 Astra and Sol",
+     "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+     "reason": "필수 독립 매체 Axios 원문이 웹 조회에서 열리지 않았고 직접 HTTP 요청도 403 접속 확인 화면을 반환해 독립 보도와 날짜를 확인하지 못했습니다. 공식 대표 발표 페이지에도 날짜가 표시되지 않아 최신성 확인에 제한이 있습니다."
+    },
+    {
+     "title": "🤖 MAI Code 2와 Flash, 어떤 코딩 작업에 골라 쓸까?",
+     "topic": "MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices",
+     "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+     "reason": "대표 Microsoft 발표 원문과 독립 보도에 각각 HTTP 403으로 접근하지 못해 발표의 핵심 수치·조건과 독립 보도를 검증할 수 없습니다. 모델 카드 PDF는 응답했지만 본문을 읽지 못했습니다. 후보를 보존하고 검증을 중단합니다."
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "44188283811-1",
-  "at": "2026-11-18T07:16:04+09:00",
-  "expires": "2026-11-18T09:16:04+09:00",
-  "task": {
-   "day": "20261118",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 언어 모델",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "44188283811-1",
-   "at": "2026-11-18T07:16:04+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
