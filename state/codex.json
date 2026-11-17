@@ -23,14 +23,12 @@
    "next_retry_at": null
   },
   "20261117:daily:AI 도구": {
-   "at": "2026-11-17T11:21:07+09:00",
-   "count": 1,
-   "status": "failed",
+   "at": "2026-11-17T16:25:02+09:00",
+   "count": 2,
+   "status": "writing",
    "note": "Codex 구독 사용량 한도에 도달했습니다. 사용량 초기화 시각을 확인해 주세요 (exit=1)",
    "failure_kind": "usage_limit",
-   "finished_at": "2026-11-17T11:22:18+09:00",
    "rejected_candidates": [],
-   "next_retry_at": "2026-11-17T15:22:18+09:00",
    "last_notified": {
     "result": "failed",
     "kind": "usage_limit",
@@ -120,7 +118,21 @@
    }
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "44038477978-1",
+  "at": "2026-11-17T16:25:02+09:00",
+  "expires": "2026-11-17T18:25:02+09:00",
+  "task": {
+   "day": "20261117",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 도구",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "44038477978-1",
+   "at": "2026-11-17T16:25:02+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
