@@ -7213,5 +7213,21 @@
    "https://www.marktechpost.com/2026/11/16/alibaba-qwen4-max-release/"
   ],
   "draft_id": "20261118_072724_1"
+ },
+ {
+  "date": "2026-11-18",
+  "title": "🧠 SWE-CoWork 논문: 코딩 에이전트의 부분 성공을 업무 완료로 믿어도 될까",
+  "topic": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.20218",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/swe-cowork.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.20218",
+   "https://arxiv.org/html/2611.20218",
+   "https://aiedgebriefing.com/2026-11-17/"
+  ],
+  "draft_id": "20261118_074438_3"
  }
 ]
