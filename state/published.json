@@ -7117,5 +7117,21 @@
    "https://autonews.gasgoo.com/articles/news/ponyai-toyota-launch-public-l4-service-with-gen-7-bz4x-robotaxi-in-guangzhou-2122198019533094913"
   ],
   "draft_id": "20261117_154601_4"
+ },
+ {
+  "date": "2026-11-17",
+  "title": "🔒 캘리포니아의 OpenAI 소송, 에이전트 안전 약속에서 무엇을 확인해야 할까",
+  "topic": "California Attorney General Bonta Sues OpenAI Over Cybersecurity Incidents (2026-11-16) — 소환장 이후 제기된 소송과 청구 내용",
+  "category": "AI 보안",
+  "source_url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/openai_01443715692.html"
+  },
+  "sources": [
+   "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf",
+   "https://therecord.media/california-sues-openai-hugging-face"
+  ],
+  "draft_id": "20261117_155405_5"
  }
 ]
