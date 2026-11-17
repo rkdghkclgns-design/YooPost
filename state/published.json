@@ -7197,5 +7197,21 @@
    "https://thenextweb.com/news/google-admob-ai-agents-claude-code-codex-ask-admob"
   ],
   "draft_id": "20261117_163551_2"
+ },
+ {
+  "date": "2026-11-18",
+  "title": "🤖 Qwen4-Max 출시, 프리뷰에서 전환할 때 무엇을 확인할까?",
+  "topic": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/qwen4-max.html"
+  },
+  "sources": [
+   "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+   "https://docs.qwencloud.com/changelog/models",
+   "https://www.marktechpost.com/2026/11/16/alibaba-qwen4-max-release/"
+  ],
+  "draft_id": "20261118_072724_1"
  }
 ]
