@@ -1,0 +1,125 @@
+{
+ "claims": [
+  {
+   "claim": "SWE-CoWork는 TokenWave AI 연구이며 2026-11-15 제출된 프리프린트다.",
+   "url": "https://arxiv.org/abs/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "벤치마크는 실제 저장소 101개, 개발 과제 101개, 언어 11개, 응용 분야 12개로 구성된다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "과제마다 책임과 제한된 지식을 가진 모의 동료 26명이 있으며 짧은 인계 후 동료와 기록에서 요구사항을 찾는다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "평가는 비공개 실행 테스트를 사용하며 기록에는 오래된 결론과 상충하는 증거가 포함될 수 있다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "F2P와 P2P는 각각 새 동작과 기존 동작 테스트 노드를 전체 과제에서 합산해 통과율을 계산한다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "전체 과제 통과는 같은 실행에서 해당 과제의 F2P와 P2P 테스트 노드가 모두 통과해야 한다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Claude-Opus-5.5의 F2P와 전체 과제 통과율은 각각 63.84%, 6.93%다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "GPT-6 Astra의 F2P와 전체 과제 통과율은 각각 62.91%, 7.92%다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Seed Evolving과 GPT-6 Astra의 Oracle-Spec 비교는 같은 과제, 저장소, 테스트, 스캐폴드와 실행 예산을 유지한다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Oracle-Spec은 완전한 요구사항을 처음부터 제공하고 상담할 동료가 없다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Seed Evolving의 F2P는 39.09%에서 55.76%로 16.67%포인트 올랐고 전체 통과율은 0.99%로 같았다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "GPT-6 Astra의 F2P는 62.91%에서 78.84%로 15.93%포인트 올랐고 전체 통과율은 7.92%로 같았다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "P2P는 Seed Evolving에서 94.48%에서 89.50%로, GPT-6 Astra에서 89.15%에서 91.81%로 변했다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Claude-Opus-5.5 기록에서 질문한 카드의 첫 질문 평균 93%가 담당자를 향했고 동료가 가진 요구사항의 약 64%를 얻었다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "연기된 질문 일부는 후속 확인되지 않았고 확보된 요구사항 중에도 구현 또는 검증 실패가 있었다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "Claude-Opus-5.5 인계에서 완료로 보고된 요구사항 826개 중 255개가 대응 테스트에 실패했다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "상세 기록 분석은 프로그램 로그와 기준표에 따른 언어 모델 검토를 결합했다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "메시지 빈도와 성과의 관찰된 상관관계는 인과관계를 입증하지 않는다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "GPT-6 Astra는 Codex 스캐폴드, 나머지 10개 모델은 Claude Code 스캐폴드를 사용했다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  },
+  {
+   "claim": "완전 명세 비교는 두 모델, 상세 요구사항 추적은 Claude-Opus-5.5를 대상으로 했다.",
+   "url": "https://arxiv.org/html/2611.20218",
+   "confirmed": true,
+   "action": "원문과 대조해 유지"
+  }
+ ],
+ "note": "논문 소개와 본문을 다시 읽었습니다. 독립 매체는 https://aiedgebriefing.com/2026-11-17/ 을 직접 조회해 200 응답의 기사 본문과 2026-11-17 날짜를 확인했습니다. 본문에서 관련 문장은 삭제했고, 작업 실행 여부는 주장 집계에서 제외했습니다. 원고는 직접 에이전트를 실행한 후기가 아닙니다."
+}

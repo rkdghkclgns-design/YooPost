@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 논문 분석",
   "taken_over": "2026-11-18T07:39:32+09:00",
   "first_taken_over": "2026-11-18T07:16:04+09:00",
   "reason": "실행 기록 없음",
-  "last_result": "skipped"
+  "last_result": "done"
  },
- "note": "다른 주제 재작성 2회 후 보류: 독립 매체 S4의 원문이 웹 조회 도구에서 열리지 않았으며 동일 URL 직접 조회는 HTTP 403 접속 확인 화면이어서 독립 보도 및 최신 이슈 기준을 재검증할 수 없음. 전체 사실 검증 미완료."
+ "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }
