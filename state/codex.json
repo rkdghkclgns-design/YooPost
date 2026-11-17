@@ -1,133 +1,26 @@
 {
  "attempts": {
-  "20261117:daily:AI 언어 모델": {
-   "at": "2026-11-17T16:14:14+09:00",
-   "count": 2,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🤖 Qwen4-Max 정식 출시, 프리뷰 이후 API 도입을 판단할 기준",
-     "topic": "Qwen4-Max 2026-11-16 정식 출시: 프리뷰 이후 API 접근과 비용·효율 평가",
-     "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
-     "reason": "Qwen4-Max 정식 출시(2026-11-16)를 선정하고 공식 Alibaba Cloud 발표와 QwenCloud 문서를 읽었으나, 공식 문서가 연결하는 출시 원문 https://qwen.ai/blog?id=qwen4-max 는 웹 조회에서 본문이 없었음. 같은 공개 URL을 urllib로 20초 제한으로 1회 조회한 결과 HTTP 200이지만 스크립트·스타일 제거 후 표시 본문은 Qwen뿐이며 발표 본문과 날짜가 없음. policy.md의 어느 단계든 공식 원문 조회 실패 시 종료 규칙에 따라 원고·사실 검증을 완료하지 않음. "
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-17T16:24:29+09:00",
-   "next_retry_at": null
-  },
-  "20261117:daily:AI 도구": {
-   "at": "2026-11-17T16:25:02+09:00",
-   "count": 2,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🤖 Sabre·Grok Bot 여행 에이전트, 예약 변경을 어디까지 맡길 수 있을까",
-     "topic": "Sabre Mosaic Travel Connector 및 선제형 여행 API 발표 (2026-11-16)",
-     "source_url": "https://sabre.gcs-web.com/node/20256/pdf",
-     "reason": "선정 후보는 Sabre의 2026-11-16 Mosaic Travel Connector·Grok Bot 및 선제형 여행 API 발표입니다. 대표 공식 원문 https://sabre.gcs-web.com/node/20256/pdf 를 웹 도구로 열었으나 not accessible 오류로 본문을 읽지 못했습니다. 정책에 따라 동일 공개 URL을 urllib로 제한 시간 20초에 한 번 조회했으나 The read operation timed out으로 종료되어 HTTP 상태와 실제 발표 본문·날짜를 확인하지 못했습니다. 검색 요약을 원문"
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-17T16:35:53+09:00",
-   "next_retry_at": null
-  },
-  "20261117:daily:AI 논문 분석": {
-   "at": "2026-11-17T15:26:03+09:00",
+  "20261118:daily:AI 언어 모델": {
+   "at": "2026-11-18T07:16:04+09:00",
    "count": 1,
-   "status": "done",
-   "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-17T15:33:47+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261117:daily:AI 뉴스 리뷰": {
-   "at": "2026-11-17T15:34:21+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-17T15:46:03+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🌐 샌프란시스코 AI 공급망 선언, 한국 기업은 무엇을 확인해야 할까",
-     "topic": "San Francisco Declaration on the Secure Foundations of Enduring Prosperity — 2026-11-15",
-     "source_url": "https://www.industry.gov.au/publications/san-francisco-declaration-secure-foundations-enduring-prosperity-signed-countries-attending-pax-silica-summit-15-november-2026",
-     "reason": "샌프란시스코 AI 공급망 선언(2026-11-15)을 후보로 선정했으나 공식 본문을 읽지 못했습니다. 웹 도구의 호주 산업부 원문 접근 오류 후 동일 URL을 urllib로 20초 제한 직접 조회했지만 읽기 시간 초과가 발생했습니다. 보조 공식 출처인 이스라엘 외교부 원문도 웹 도구와 직접 조회에서 HTTP 403이었으며 직접 응답은 Cloudflare 접속 확인 화면입니다. 검색 요약을 원문 근거로 인정하지 않았습니다. policy.md에 따라 이 세션은 선정한 한 후보만 처리하며 후보와 조회 증거를 보존하고 종료합니다. 후속 후"
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261117:daily:AI 보안": {
-   "at": "2026-11-17T15:46:48+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-17T15:54:07+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261117:daily:AI 인사이트": {
-   "at": "2026-11-17T15:54:32+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-17T16:04:03+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261117:daily:AI 공모주 분석": {
-   "at": "2026-11-17T16:04:32+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-17T16:13:27+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
+   "status": "writing"
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "44188283811-1",
+  "at": "2026-11-18T07:16:04+09:00",
+  "expires": "2026-11-18T09:16:04+09:00",
+  "task": {
+   "day": "20261118",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 언어 모델",
+   "topic": "",
+   "reason": "원고 없음",
+   "owner": "44188283811-1",
+   "at": "2026-11-18T07:16:04+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
