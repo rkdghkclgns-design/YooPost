@@ -1,0 +1,149 @@
+{
+ "claims": [
+  {
+   "claim": "OpenAI는 2026년 11월 16일 의료팀을 위한 컴퓨터 사용 에이전트의 평가 결과와 협력 사례를 발표했다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "컴퓨터 사용 에이전트는 화면을 읽고 클릭과 입력을 하며 앱 사이를 이동한다.",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "MRI 시연은 합성 환자 데이터와 방문·물리치료·이전 영상 기록을 사용한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "MRI 시연에서 검사 주문서·진료 기록·환자 답변 초안은 의료진이, 보험 사전 승인 요청은 승인 담당자가 검토한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "GPT-6 Astra의 EHR 수신함 과제는 행동과 기록·주문·메시지를 검토해 유용성과 임상 안전성을 평가했다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "임상 안전성 검토는 오류·누락·행동으로 인한 환자 위해 가능성을 기준으로 하며 325개 과제 중 99%가 안전으로 평가됐다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "의사들의 646건 유용성 평가 중 93%가 매우 또는 극도로 도움이 된다는 평가였다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "HealthAdminBench에서 GPT-6 Astra는 가능한 채점 점수의 94.3%, GPT-6 Luna는 91.8%를 얻었다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "두 모델은 최대 추론 노력으로 평가됐고 Luna의 과제당 비용은 8.5센트로 Astra보다 98% 낮았다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "CVS Health는 문서 전송, 의뢰 처리, 전문의 상담 지원에 컴퓨터 사용 기능을 이용한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "CVS Health의 한 운영 흐름에서 수개월간 밀린 문서 전송 업무가 주말에 처리됐다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "CVS Health는 검증과 사람의 감독을 활용하고 화면 캡처와 행동 기록으로 행동과 앱 상태를 확인한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "Abridge는 입원 환자의 퇴원 장애 해결 등 컴퓨터 사용 활용을 개발 중인 계획으로 설명했다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "Cigna Healthcare는 여러 시스템의 회원 관련 정보를 모아 케어 매니저를 지원한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "Ambience 시연에서 기록이 모호하면 임상의에게 묻고 제출 전에 승인을 기다린다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "ChatGPT for Healthcare는 역할 기반 접근 제어와 감사 로그를 제공하며 조직은 검토·승인 단계 및 에이전트 접근 환경을 설정할 수 있다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "OpenAI는 조직 데이터가 자사 기반 모델 학습에 사용되지 않는다고 밝혔다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "OpenAI는 HIPAA에 부합하는 보호 건강정보 업무를 지원하려면 BAA에 포함된 적격 서비스와 필요한 보안·보존 설정을 사용해야 한다고 설명한다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "OpenAI는 연결된 시스템에도 보호 조치를 확장해야 한다고 설명한다.",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "같은 날 발표된 제품 소식에는 임상 검색 개선과 20개가 넘는 신규 의료 플러그인이 포함됐다.",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "임상 검색 개선은 의료 근거를 찾고 평가하고 인용하는 방식을 다루며 플러그인은 의료 도구와 업무를 대화에 연결한다.",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "컴퓨터 사용 기능은 ChatGPT for Healthcare, ChatGPT for Clinicians와 OpenAI API를 통해 제공된다고 발표했다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "기존 고객은 관리자에게 활성화를 문의할 수 있고 미국 임상의에게 개별 가입 경로가 안내됐다.",
+   "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  },
+  {
+   "claim": "Fierce Healthcare는 2026년 11월 16일 발표와 의료기관 협력 사례를 보도했다.",
+   "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/hlth26-cvs-health-cigna-and-ambience-collaborating-openai-test-computer-use",
+   "confirmed": true,
+   "action": "원문과 일치하여 유지"
+  }
+ ],
+ "note": "별도 검증에서 공식 발표 두 건과 독립 보도 본문을 다시 열어 확인했다. 중복 표현은 하나의 외부 주장으로 묶었으며, 94.3−91.8=2.5%포인트는 공개 점수의 산술 차이이다. 직접 서비스 실행이나 병원 현장 검증은 하지 않았다. 의료기관 성과는 발표자의 주장과 사례로 한정한다."
+}

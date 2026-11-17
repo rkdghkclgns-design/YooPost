@@ -80,24 +80,22 @@
   "20261118:daily:AI 뉴스 리뷰": {
    "at": "2026-11-18T07:45:10+09:00",
    "count": 1,
-   "status": "writing"
+   "status": "done",
+   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
+   "failure_kind": "",
+   "finished_at": "2026-11-18T07:50:16+09:00",
+   "rejected_candidates": [
+    {
+     "title": "🤖 Microsoft Ignite의 MAI 모델 발표, 업무별 전환을 어떻게 판단할까",
+     "topic": "Seven new world class models at scalable price-performance (Microsoft Ignite 2026)",
+     "source_url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+     "reason": "Microsoft Ignite MAI 모델 공식 발표는 최초 웹 조회에서 읽었으나 별도 사실 검증을 위한 재조회에서 웹 도구가 접근 불가를 반환했고, 같은 공개 URL을 직접 조회한 결과 HTTP 403으로 원문 재확인에 실패했습니다. 추가 공식 기조연설 원문도 재조회 시 동일하게 실패했습니다. 후보 교체는 관리기가 담당합니다."
+    }
+   ],
+   "next_retry_at": null
   }
  },
- "lease": {
-  "owner": "44193015645-1",
-  "at": "2026-11-18T07:45:10+09:00",
-  "expires": "2026-11-18T09:45:10+09:00",
-  "task": {
-   "day": "20261118",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 뉴스 리뷰",
-   "topic": "",
-   "reason": "원고 없음",
-   "owner": "44193015645-1",
-   "at": "2026-11-18T07:45:10+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
