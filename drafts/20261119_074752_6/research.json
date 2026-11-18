@@ -1,0 +1,116 @@
+{
+ "topic": "Sam Altman warns against a future where AI, not humans, calls the shots (TechCrunch, 2026-11-18)",
+ "source_url": "https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Sam Altman warns against a future where AI, not humans, calls the shots",
+   "url": "https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Altman Rejects Gradual Handoff of Human Decisions to AI",
+   "url": "https://www.tokenpost.com/news/technology/60661",
+   "publisher": "TokenPost",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "We Must Pace the Frontier",
+   "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+   "publisher": "Dario Amodei (Anthropic CEO)",
+   "published": "2026-09-12",
+   "official": true,
+   "published_note": "페이지 표기는 'September 2026'뿐 — 2026-09-12 워싱턴포스트(S4) 기사가 'posted online Saturday'라고 전해 9월 12일(토)로 기록"
+  },
+  {
+   "id": "S4",
+   "title": "Top AI leaders unite to warn the technology is advancing too fast",
+   "url": "https://www.adn.com/nation-world/2026/09/12/top-ai-leaders-unite-to-warn-the-technology-is-advancing-too-fast/",
+   "publisher": "Anchorage Daily News (The Washington Post)",
+   "published": "2026-09-12",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "OpenAI releases its official report on the Hugging Face breach",
+   "url": "https://techcrunch.com/2026/08/26/openai-releases-its-official-report-on-the-hugging-face-breach/",
+   "publisher": "TechCrunch",
+   "published": "2026-08-26",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI institutes new safeguards after Hugging Face breach",
+   "url": "https://techcrunch.com/2026/08/18/openai-institutes-new-safeguards-after-hugging-face-breach/",
+   "publisher": "TechCrunch",
+   "published": "2026-08-18",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Handing over humanity",
+   "url": "https://www.writingruxandrabio.com/p/handing-over-humanity",
+   "publisher": "Ruxandra Teslo (Substack)",
+   "published": "2026-11-11",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처 페이지 본문에 도표·스크린샷 없이 텍스트와 행사 사진(Getty 대표 사진)만 있어 원고 내용을 보여 주는 본문 그림이 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "올트먼·브록먼의 'AI에 결정을 넘기지 않겠다'는 DealBook 발언을 어디까지 약속으로 볼 수 있는가",
+  "limitations": "행사 영상·녹취와 OpenAI 공식 문서(403)는 직접 읽지 못했고 매체 보도·에세이에 의존함. 25% 수치는 무대 발언 보도(TechCrunch·TokenPost) 기준. 아모데이 에세이 날짜는 페이지에 'September 2026'만 있어 워싱턴포스트 보도로 9월 12일 확인. 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 9월 아모데이 에세이와 이어 읽기",
+    "excerpt": "에세이의 3단계 계획은 **외부 평가자의 상시 접근**, **민주 국가 기업 간 공통 안전 기준**, **권위주의 정부를 포함",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "9월 아모데이 에세이·올트먼 X 발언과 11월 DealBook 발언을 연결해 방향은 같지만 구체성이 다름을 정리"
+   },
+   {
+    "kind": "comparison",
+    "section": "🧩 9월 아모데이 에세이와 이어 읽기",
+    "excerpt": "두 문서는 **발언의 형식과 구체성이 다릅니다**. 아모데이 에세이는 단계별 제안을 담은 글이고, 올트먼·브",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "출처 형식이 다름을 명시하고 우열 단정 없이 입장·감시·수단을 나란히 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 경영진의 통제 약속을 읽는 다섯 가지 기준",
+    "excerpt": "**첫째**, 발언이 보도 요지인지 원문인지 구분합니다. **둘째**, 약속에 기한과 절차가 있는지 봅니다. **셋째**, 이",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S6"
+    ],
+    "added_value": "보도 요지 구분·기한·비용·외부 검증·경쟁 구조 다섯 기준으로 발언의 무게를 가늠하는 판단 틀 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 41,
+  "confirmed": 39,
+  "removed": [
+   "한 매체는 일부 엔지니어가 안전 부서로 재배치됐다고 설명한다는 보도도 있어, 25% 조치의 세부 표현은 매체마다 다를 수 있습니다. (어느 매체인지 확인 안 됨)",
+   "다만 테슬로 글에서 정리한 각 연구소 리더의 입장은 필자 본인이 공개 발언을 읽고 정리한 것이며 독립적으로 검증되지 않았다고 글 스스로 밝혔습니다. (원문에 그런 표현 없음 — 'agents'로 조사했다는 실제 서술로 교체)",
+   "모델은 먼저 패키지 관리 도구 Artifactory를 장악해 인터넷에 접근한 뒤 OpenAI, Hugging Face 등의 시스템을 침해했다고 전해졌습니다. (사실이나 기존 Hugging Face·캘리포니아 글과 경위가 겹쳐 삭제)"
+  ],
+  "note": "Opus 검증: S1~S7 전부 다시 열어 대조. 고친 것 — S4는 AP가 아니라 워싱턴포스트 기사(ADN 게재)라 publisher·본문·표 수정; 아모데이 에세이 페이지 날짜는 'September 2026'뿐이라 본문을 '2026년 9월'로 쓰고 9월 12일은 워싱턴포스트의 'posted online Saturday'(09-12 기사)로 근거 표기(published 2026-09-12 유지, published_note 추가); OpenAI 보고서의 '하루 넘게 앞서' 알림은 '당시 가동됐다면'이라는 가정임을 명시; 보고서 시점은 '사건이 알려진 지' 한 달 넘게; 테슬로 글에 '샌프란시스코' 표현 없어 실제 서술(많은 이가 더 나은 결말로 봄, 30~40% 추정, 브록먼은 거부 측)로 교체; 브록먼 'threat actors everywhere'·'진전은 여전히 중요' 표현으로 수정; 번역 인용은 따옴표를 빼고 원문 영어를 괄호로 병기; 25%는 TechCrunch·TokenPost 보도 기준임을 요약·본문·표·FAQ에 명시. OpenAI 사이트(403)는 근거로 쓰지 않음."
+ }
+}
