@@ -1,0 +1,146 @@
+{
+ "topic": "GPT-6.2 Astra and GPT-6.2 Sol are now available (OpenAI Developer Community, 2026-11-17) / GPT-6.2 System Card / VentureBeat·DataCamp·Crypto Briefing 보도",
+ "source_url": "https://community.openai.com/t/gpt-6-2-astra-and-sol-are-now-available/1417531",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "GPT-6.2 Astra and Sol are now available",
+   "url": "https://community.openai.com/t/gpt-6-2-astra-and-sol-are-now-available/1417531",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GPT-6.2 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "publisher": "OpenAI Deployment Safety Hub",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI launches GPT-6.2 Astra and Sol with 20% lower API pricing",
+   "url": "https://cryptobriefing.com/openai-launches-gpt-6-2-astra-sol/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "OpenAI's GPT-6.2 Astra takes #3 and GPT-6.2 Sol lands #7 on Code Arena WebDev leaderboard",
+   "url": "https://cryptobriefing.com/openai-gpt-6-2-astra-sol-code-arena/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "'Essentially unusable': OpenAI launches GPT-6.2 Astra and Sol to negative reception from AI power users",
+   "url": "https://venturebeat.com/technology/essentially-unusable-openai-launches-gpt-6-2-astra-and-sol-to-negative-reception-from-ai-power-users",
+   "publisher": "VentureBeat",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "GPT-6.2 Astra and Sol: Features, Benchmarks, Tests & Pricing",
+   "url": "https://www.datacamp.com/blog/gpt-6-2-astra-and-sol",
+   "publisher": "DataCamp",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-2-astra-sol/assets/images/image2.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "caption": "ExploitBench Internal Port 성공률 — 추론 설정별 사이버 평가 점수",
+   "credit": "OpenAI"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-2-astra-sol/assets/images/image11.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "caption": "Sandbox Bench — 추론 설정별로 목표를 푼 비율과 출력 토큰",
+   "credit": "OpenAI"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://deploymentsafety.openai.com/data/eval-sets/gpt-6-2-astra-sol/assets/images/image21.png",
+   "page_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "caption": "Internal Research Debugging — AI 자기 개선 평가의 평균 루브릭 점수",
+   "credit": "OpenAI"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GPT-6.2에서 비싼 Astra가 필요한 작업은 무엇이고, 값이 그대로인 Sol로 충분한 작업은 무엇인가?",
+  "limitations": "모든 벤치마크는 OpenAI 발표 수치(모델별 최고 점수, 추론 강도는 다를 수 있음)이고 직접 실행·실측은 하지 않았다. 비용 계산은 가상 사용량과 입력 27만 2천 토큰 이하 표준 요율 가정이며 캐시 쓰기·긴 컨텍스트·Fast 요금은 제외했다. 시스템 카드는 일부만 읽었고 속도 제한은 확인하지 못했으며 컨텍스트 창은 매체 보도로만 확인했다. Code Arena 순위는 출시 하루 뒤 집계다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 우리 서비스 비용은 어떻게 달라질까: 가정 계산",
+    "excerpt": "캐시 적중이 큰 워크로드에서는 입력 쪽 비용이 크게 줄지만, 출력 단가 차이는 그대로 남기 때문에 4배 구조는 바뀌지 않습니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6"
+    ],
+    "added_value": "공식 입력·출력 단가와 보도된 캐시 입력 단가로 월 입력 1억·출력 2,000만 토큰 가정 비용($1,600 대 $400, 캐시 60% 시 $1,144 대 $286)을 계산하고 캐시를 줄여도 출력 단가 4배 구조가 남음을 보였다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 점수는 얼마나 올랐나: 4개 벤치마크 비교",
+    "excerpt": "즉 Sol은 과학 터미널 작업(Terminal-Bench-Science)에서 가장 크게 올랐고, 코드 변경 품질(FrontierCode 2.0)에서도 Astra보다 큰 폭으로 올라 격차를 거의 지웠습니다.",
+    "source_ids": [
+     "S5",
+     "S6"
+    ],
+    "added_value": "세대 간 증가폭을 직접 계산하고 Astra와 Sol 사이 FrontierCode 0.4포인트·Terminal-Bench-Science 9.1포인트 차이를 대비했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 Astra와 Sol, 내 상황에는 어느 쪽인가",
+    "excerpt": "점수 차가 큰 평가(Terminal-Bench-Science, LifeVal)에 해당하는 일을 하고, 실패 한 번의 비용이 모델 비용보다 클 때입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "점수 격차·가격·접근 제한을 상황별 선택 기준과 제외 조건으로 정리했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🏆 외부 순위는 어디까지 말해 주나",
+    "excerpt": "같은 보도는 Astra가 Artificial Analysis Intelligence Index에서 2위이지만 일부 코딩 지표에서는 고전했고, 에이전트 점수는 아직 집계 전이라고 적었습니다.",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S5"
+    ],
+    "added_value": "공식 자체 평가와 외부 순위·비용 자료의 측정 조건 차이를 구분했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 64,
+  "removed": [
+   "'보도에 따라 Business도 포함' (ChatGPT Work 대상 요금제) — 공식 공지·VentureBeat·DataCamp 모두 Business 미기재, 날짜 불확실한 iClarified 에만 있어 삭제",
+   "\"커뮤니티 운영자는 산문에는 GPT-6.1 Terra를 권장한다고 안내\" — 답글 작성자가 운영자로 표시되지 않아 운영자 표현 삭제(공식 평가 아님으로 고침)",
+   "\"긴 컨텍스트 요율과 빠른 서비스 등급의 구체적인 금액도 이번에 확인한 자료에는 없었습니다\" / \"컨텍스트 창 크기 확인 못함\" — VentureBeat 보도로 확인되어 문장 교체",
+   "\"이 평가는 표로 옮길 원자료가 공개 글에 없어 증가폭과 토큰 절감률만 인용합니다\" — DataCamp 표(50.4% 대 44.2%)로 대체"
+  ],
+  "corrected": [
+   "Agents' Last Exam GPT-6.2 Astra 77.6% → 78.3%, 증가폭 +4.5 → +5.2포인트 (공식 공지 'xhigh 에서 GPT-6 Astra max 보다 5.2포인트'·VentureBeat·DataCamp·Crypto Briefing 일치)",
+   "벤치마크 표 기준 '최대 추론 강도' → '모델별 최고 점수(추론 강도는 다를 수 있음)'",
+   "인용 이미지 I1(ExploitBench)·I2(Sandbox Bench)를 관련 없는 벤치마크·외부 순위 절에서 안전 평가 절로 이동",
+   "사이버 평가 표에 GPT-6.1 Sol 수치(21.5%·11.4%·78.8%) 보강, 평가 인식에서 Sol 비교 대상 명시"
+  ],
+  "source_changes": "iClarified(S5) 제거 — 페이지 머리 'November 18, 2026'은 사이트 공통 오늘 날짜이고 기사에는 'Posted 20 hours ago'뿐이라 published 2026-11-17 을 확정할 수 없음. 그 출처에만 의존하던 수치는 VentureBeat(2026-11-17 2:33 pm PT 표기)·DataCamp(메타데이터 2026-11-17, 본문 날짜 없음)로 재확인해 S5·S6 으로 대체. openai.com 공식 발표 글은 403 으로 막혀 출처에 넣지 않음.",
+  "note": "Opus 검증: S1(커뮤니티 공지 2026-11-17 6:00pm 표기)·S2(시스템 카드 'Published November 17, 2026')·S3(Tue 17 Nov 2026 13:25 EST)·S4(Wed 18 Nov 2026 12:59 EST)·S5 VentureBeat·S6 DataCamp 를 다시 열어 가격·제공 범위·Ultrafast·Daybreak·벤치마크·GDPval·Code Arena·Preparedness 단계·사이버/자기개선 수치·정렬 평가 문장을 대조. 공지 본문 차트 이미지(Agents' Last Exam·Terminal-Bench-Science·FrontierCode 2.0)를 내려받아 점수 위치가 표와 맞는지 확인. 가정 비용 계산(1억 입력·2천만 출력, 캐시 60%)은 원문 단가 $8/$0.40/$40, $2/$0.10/$10 로 재계산해 $1,600·$400·$1,144·$286 일치. 인용 이미지 3개는 HTTP 200 image/png, 2048px 폭, 캡션과 시스템 카드 그림 설명 일치."
+ }
+}
