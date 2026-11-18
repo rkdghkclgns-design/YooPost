@@ -7325,5 +7325,24 @@
    "https://www.datacamp.com/blog/gpt-6-2-astra-and-sol"
   ],
   "draft_id": "20261119_070604_1"
+ },
+ {
+  "date": "2026-11-19",
+  "title": "🤖 Copilot Autopilot, 항상 켜진 에이전트를 팀에 붙이기 전 확인할 5가지",
+  "topic": "Copilot at Microsoft Ignite: Expanding what's possible with intelligence built for work (Copilot Autopilot)",
+  "category": "AI 도구",
+  "source_url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/copilot-autopilot-5.html"
+  },
+  "sources": [
+   "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+   "https://siliconangle.com/2026/11/18/at-ignite-2026-microsoft-reinvents-copilot-as-the-autonomous-engine-of-enterprise-work/",
+   "https://windowsforum.com/news/microsoft-365-copilot-autopilot-rolls-out-to-frontier-always-on-ai-agent-with-entra-id-and-metered-billing.452839/",
+   "https://www.microsoft.com/en-us/copilot/features/autopilot",
+   "https://learn.microsoft.com/en-us/training/modules/delegate-ongoing-work-autopilot-copilot/",
+   "https://www.reworked.co/digital-workplace/microsoft-rebuilds-copilot-as-an-os-for-work/"
+  ],
+  "draft_id": "20261119_071544_2"
  }
 ]
