@@ -7344,5 +7344,23 @@
    "https://www.reworked.co/digital-workplace/microsoft-rebuilds-copilot-as-an-os-for-work/"
   ],
   "draft_id": "20261119_071544_2"
+ },
+ {
+  "date": "2026-11-19",
+  "title": "🎮 Gamer 논문: 키보드·마우스로 실시간 게임을 하는 8B 에이전트, 숫자는 무엇을 말하나",
+  "topic": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.18397",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gamer-8b.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.18397",
+   "https://arxiv.org/html/2611.18397v2",
+   "https://huggingface.co/papers/2611.18397",
+   "https://mihoyo-gamer.github.io/",
+   "https://github.com/RainBowLuoCS/Gamer"
+  ],
+  "draft_id": "20261119_072339_3"
  }
 ]
