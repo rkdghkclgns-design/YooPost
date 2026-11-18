@@ -3,9 +3,9 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
-  "category": "AI 인사이트",
-  "taken_over": "2026-11-18T08:39:04+09:00",
+  "status": "writing",
+  "category": "AI 도구",
+  "taken_over": "2026-11-18T09:46:07+09:00",
   "first_taken_over": "2026-11-18T07:16:04+09:00",
   "reason": "실행 기록 없음",
   "last_result": "done"
