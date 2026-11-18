@@ -1,0 +1,146 @@
+{
+ "topic": "More banks say customers using AI agents are on their own — even if they get hacked (TechCrunch, 2026-11-18) / Citi Online User Agreement 2026-11 Section H",
+ "source_url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "More banks say customers using AI agents are on their own — even if they get hacked",
+   "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Citi Online User Agreement (last updated November 2026, new Section H)",
+   "url": "https://www.citi.com/tandc/view-printable-version",
+   "publisher": "Citi",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Citi Makes Customers Responsible for Third-Party AI Agent Activity",
+   "url": "https://www.unite.ai/citi-makes-customers-responsible-for-third-party-ai-agent-activity/",
+   "publisher": "Unite.AI",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Citi, PNC and Citizens tell customers they own any loss an AI agent causes",
+   "url": "https://startupfortune.com/citi-pnc-and-citizens-tell-customers-they-own-any-loss-an-ai-agent-causes/",
+   "publisher": "Startup Fortune",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Bank of America kindly asks that you don't share your banking password with your AI assistant",
+   "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-27",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Wells Fargo wants customers to prove they've revoked AI agents",
+   "url": "https://www.americanbanker.com/news/wells-fargo-wants-customers-to-prove-theyve-revoked-ai-agents",
+   "publisher": "American Banker",
+   "published": "2026-11-02",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Citi Agreement for Online Funds Transfers (November 2026 updates, Section 4)",
+   "url": "https://online.citi.com/JRS/forms/wire_xfrs_tsandcs.html",
+   "publisher": "Citi",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "12 CFR 1005.2 Definitions (Regulation E)",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/2/",
+   "publisher": "Consumer Financial Protection Bureau",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "12 CFR 1005.6 Liability of consumer for unauthorized transfers (Regulation E)",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/6/",
+   "publisher": "Consumer Financial Protection Bureau",
+   "official": true
+  },
+  {
+   "id": "S10",
+   "title": "Almost no one uses AI agents to book their Uber, company says",
+   "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-04",
+   "official": false
+  },
+  {
+   "id": "S11",
+   "title": "DoorDash said it's only received several hundred orders from AI agents",
+   "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+   "publisher": "TechCrunch",
+   "published": "2026-10-30",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 Citi 약관 페이지는 글자뿐인 문서이고, TechCrunch 기사의 본문 사진은 은행 간판 사진이라 내용을 보여 주는 도표·화면이 아님.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "외부 AI 에이전트가 내 은행 계좌에서 한 일의 책임은 누구에게 있고, 약관에서 무엇을 확인해야 하나",
+  "limitations": "Citi 온라인 이용약관·온라인 송금 약관 원문과 CFPB Regulation E 원문은 직접 확인했지만, PNC·Citizens·Wells Fargo·JPMorgan·BofA 문구는 보도 기준입니다. Regulation E를 에이전트에 대입한 부분은 해석이며, 에이전트를 직접 연결해 실행하지 않았고 법률 자문이 아닙니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🏦 은행별 입장을 같은 기준으로 놓고 보면",
+    "excerpt": "은행마다 약관 문구 자체를 모두 확인한 것은 아니므로 '확인 수준'을 따",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "added_value": "은행별 내용을 시점과 확인 수준으로 나눠 같은 기준에서 비교"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 상황별 판단 기준 (해석입니다)",
+    "excerpt": "반대로 에이전트를 꼭 써야 하는 경우에는 약관의 감시 의무 문구를 먼저 읽어 보는 것이 좋습니다.",
+    "source_ids": [
+     "S2",
+     "S6"
+    ],
+    "added_value": "사용 상황별로 약관 기준에서 생각할 점과 제외 조건 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 '고객이 승인한 것'으로 간주한다는 말의 무게",
+    "excerpt": "'해지했다는 통지'가 중요한 갈림길이라는 점에서 Wells Fargo가 해지 증거를 요구한다는 보도와 연결해 읽을 수 있다는 것이 제 해석입니다.",
+    "source_ids": [
+     "S4",
+     "S6",
+     "S8",
+     "S9"
+    ],
+    "added_value": "Startup Fortune의 Regulation E 해석을 CFPB 규정 원문(책임 상한·'무단 이체' 정의의 예외)과 대조하고 Wells Fargo 해지 증거 보도와 연결"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "이 두 가지는 제가 직접 읽은 약관 발췌에는 없던 부분이라 Unite.AI의 요약으로 구분해 읽어야 합니다. (약관 원문에서 확인돼 원문 기준으로 다시 씀)",
+   "이 약관은 제가 직접 열어 확인하지 않았으므로 보도 내용으로만 소개합니다. (Citi 송금 약관 원문 확인 후 교체)",
+   "이것은 해당 매체의 해석이며, 제가 규정 원문을 대조한 것은 아닙니다. (CFPB Regulation E 원문 대조 문단으로 교체)",
+   "세부 수치는 해당 기사를 직접 읽지 않았으므로 여기서 인용하지 않습니다. (링크된 TechCrunch 기사 확인 후 수치로 교체)",
+   "Citi 약관 자체도 책임 범위에 '해당 법률이 허용하는 한'이라는 단서를 붙였다고 Unite.AI는 정리했습니다. (원문 문구 'except as otherwise permitted under applicable law'로 정정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): TechCrunch(11-18, 10-27, 11-04, 10-30)·Unite.AI·Startup Fortune·American Banker(공개 부분)를 다시 열고 Citi 온라인 이용약관·온라인 송금 약관 원문, CFPB Regulation E 12 CFR 1005.2(m)·1005.6(b) 원문과 대조. 정정: 'cautioned against'(삼가→주의), 'limit, prevent, suspend or terminate … without notice'(차단→방지·예고 없이), 법률 단서 문구, Wells Fargo '위임자'→대리인(Startup Fortune)·해지 증거(American Banker)로 출처 구분, Startup Fortune의 '사례 없음'→'없어 보임', TechCrunch 경쟁 위협 설명 정확화. Unite.AI 요약에만 있던 자격 증명 재유출·조사 의무 없음·민감정보 공개·송금 약관 Section 4는 Citi 원문으로 확인. PNC·Citizens·Wells Fargo 약관 원문은 못 봐 보도 인용으로 표시. American Banker는 유료 벽으로 요약·인용 부분만 확인. published 는 각 페이지 날짜와 일치 확인(Citi 약관·CFPB 규정 페이지는 일 단위 날짜 없어 비움). 출처 S7~S11 추가."
+ }
+}
