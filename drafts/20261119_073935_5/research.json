@@ -1,0 +1,115 @@
+{
+ "topic": "Threat Overview of ARTEX Autonomous Penetration Testing Framework (FBI FLASH-20261113-001, 2026-11-13) / Barracuda 'Forty-four hours' 사후 보고 / TechCrunch 보도",
+ "source_url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Threat Overview of ARTEX Autonomous Penetration Testing Framework (FLASH-20261113-001)",
+   "url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+   "publisher": "FBI",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Forty-four hours: Anatomy of a machine-speed intrusion",
+   "url": "https://blog.barracuda.com/2026/11/11/anatomy-of-a-machine-speed-intrusion",
+   "publisher": "Barracuda",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "FBI says Artex AI open source hacking tool used to breach networks in under three hours",
+   "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "ARTEX Runs Known Attacks at Machine Pace",
+   "url": "https://www.vectra.ai/blog/artex-runs-known-attacks-at-machine-pace",
+   "publisher": "Vectra AI",
+   "published": "2026-11-03",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+   "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-06",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Barracuda XDR Integration Credentials (Trust Center advisory)",
+   "url": "https://trust.barracuda.com/security/barracuda-xdr-integration-credentials",
+   "publisher": "Barracuda",
+   "published": "2026-11-10",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "South Korean officials believe AI agents were used to hack several banks",
+   "url": "https://therecord.media/south-korean-bank-hacks-ai-agents",
+   "publisher": "The Record",
+   "published": "2026-10-06",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "FBI FLASH PDF 는 머리글 배너와 표만 있고, Barracuda 블로그 본문에는 도표·스크린샷이 없어 인용할 본문 그림이 없음 (Vectra 의 Microsoft 도표는 avif 형식·비공식 재게시라 제외)",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "FBI 가 경고한 ARTEX 공격과 Barracuda 침해 사례를 보고, 내 조직은 어떤 상황이면 무엇부터 점검해야 하는가",
+  "limitations": "ARTEX 를 실행·재현하지 않았고 모든 수치는 공개 문서에서 가져옴. 한국 금융권 피해 인원은 FBI(약 67,000명)와 TechCrunch·The Record(최소 68,000명)가 달라 FBI 원문 기준으로 썼으며 차이의 이유는 미확인. 경과 시간 계산은 이 글의 해석이며 사건별 기준점이 달라 직접 비교 불가.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 숫자로 보는 속도: 3시간과 44시간을 같은 눈금에 놓기",
+    "excerpt": "Barracuda 는 이를 '약 44시간'이라고 쓰므로 반올림이나 집계 기준 차이로 보이지만",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "Barracuda 타임스탬프로 경과 시간을 계산하고 FBI·Google 수치와 기준점이 다름을 밝혀 잘못된 속도 비교를 막음"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 조직에 대입하는 점검 순서",
+    "excerpt": "직접 환경을 점검한 결과가 아니라 두 문서의 권고를 독자 상황에 매핑한 것이며",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "FBI 권고와 Barracuda 교훈을 독자 상황별 점검 우선순위로 매핑"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖️ 이번 경보가 말해 주는 것과 말하지 않는 것",
+    "excerpt": "FBI 는 도구의 확산과 방어 권고를, Barracuda 는 **그 도구가 실제로 한 업체의 폐기되지 않은 키 하나로 어떻게 움직였는지**를",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S7"
+    ],
+    "added_value": "정부 경보·피해 당사자 보고·보안 업체 해설을 연결해 확산, 실제 침해, 탐지 공백을 한 흐름으로 해석하고 미확인 사항을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 81,
+  "confirmed": 79,
+  "removed": [
+   "한 사람이 며칠씩 걸리던 단계 연결을 에이전트가 줄여 준다는 뜻이며 (FBI 원문에 없는 해석)",
+   "같은 도구가 악용되고 있으므로, 조직 내 정당한 테스트인지 여부는 별도 확인이 필요하다는 것이 경보의 취지입니다. (FBI 문서에 없는 취지 — FAQ 답을 FBI·Censys 확인 문장으로 교체)"
+  ],
+  "note": "Opus 검증: FBI FLASH-20261113-001 PDF(ic3.gov, 2026-11-13 표기), Barracuda 블로그(article:published_time 2026-11-11), TechCrunch 11/16·11/06, Vectra(2026-11-03), Barracuda Trust Center(Published 2026-11-10, Update 2026-11-13), The Record(2026-10-06)를 직접 다시 내려받아 문장별 대조. 수정: '관리자급 권한'→'특권 접근(privileged access)'; ConnectWise 를 FBI '2,250개 이상 하위 테넌트 로그인 시도' vs TechCrunch '최소 2,250개 고객 환경 접근'+ConnectWise 대변인 '확인할 가시성 없음'으로 정확히 구분; 67,000(FBI, approximately) vs 68,000(TechCrunch, at least — The Record 10/6 기사 근거) 출처 명시; 'TechCrunch 가 노출 시스템 비밀번호 없음 보도'를 11/6 기사의 Censys 800개 이상(1,600개와 집계 대상 다름)으로 정정; Barracuda 가 귀속하지 않았다는 문장을 '금전 동기 공격자와 일치한다고 했으나 특정 집단 귀속 안 함'으로 정정; '그날 저녁 자격 증명 교체'→'11/4 저녁(태평양 시간) 컨테이너 제거 후 교체'; 'TechCrunch: 모든 고객 자격 증명 교체'를 Barracuda 원문(영향 환경 교체·영향 가능 고객 직접 연락)과 대변인 '소수의 XDR 고객'으로 교체; '약 4시간 안에'→'4시간이 채 안 되는 동안'; 하드코딩 자격 증명→SPA 번들 하드코딩 관리자 비밀번호; 포털 권고 근거 Akamai·Zscaler; 증거 보존·봉쇄 순서 원문대로; Barracuda 첫 교훈 표현 정정; TrendAI 언급(출처 없음) 삭제. 43시간(42h58m)·'최소 하루 이상' 계산은 본문에 '이 글의 계산/해석'으로 표시, Barracuda 표기는 약 44시간 유지. 출처 3개(S5~S7) 추가."
+ }
+}
