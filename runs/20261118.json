@@ -3,12 +3,12 @@
  "finished": "",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "waiting",
   "category": "AI 도구",
   "taken_over": "2026-11-18T11:56:03+09:00",
   "first_taken_over": "2026-11-18T07:16:04+09:00",
   "reason": "실행 기록 없음",
   "last_result": "failed"
  },
- "note": "본문이 4,613자입니다 (최소 5,000자)"
+ "note": "Codex 실행 실패 — 오류 분류가 불가능해 인증·사용량·서비스 상태 확인이 필요합니다 (exit=1)"
 }
