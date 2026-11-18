@@ -31,9 +31,9 @@
   "20261118:daily:AI 도구": {
    "at": "2026-11-18T09:46:07+09:00",
    "count": 3,
-   "status": "writing",
-   "note": "다른 주제 재작성 2회 후 보류: Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니다.",
-   "failure_kind": "no_topic",
+   "status": "failed",
+   "note": "본문이 4,613자입니다 (최소 5,000자)",
+   "failure_kind": "result_invalid",
    "rejected_candidates": [
     {
      "title": "🛍 BigCommerce Shopping Agent, 우리 쇼핑몰에 대화형 안내가 필요할까",
@@ -70,13 +70,27 @@
      "topic": "Microsoft Agent 365 Ignite 2026 Business Analytics and governance updates",
      "source_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
      "reason": "Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니다."
+    },
+    {
+     "title": "🤝 Perplexity Multiagent, 여러 AI가 함께 일할 때 무엇을 확인해야 할까",
+     "topic": "Introducing Computer’s Multiagent effort level",
+     "source_url": "https://www.perplexity.ai/en-GB/hub/blog/introducing-computer-multiagent",
+     "reason": "Perplexity Computer Multiagent 공식 발표 본문과 2026-11-17 독립 보도는 읽었습니다. 공식 뉴스 목록은 해당 글에 2026-11-17을 표시하지만, 선정한 공식 발표 원문 자체의 조회 가능한 본문에는 게시일이 표시되지 않아 모든 출처에 해당 페이지의 게시일을 요구하는 brief 조건을 확인하지 못했습니다. 직접 HTTP 조회도 403이어서 원문에서 날짜를 추가 확인할 수 없었습니다. 목록의 날짜를 원문에 표시된 날짜로 대체하지 않고 원고를 보류합니다."
+    },
+    {
+     "title": "🎙 HeyGen Avatar 6, 디지털 진행자를 실무에 쓸 때 확인할 것",
+     "topic": "Avatar 6: Talking Avatars That Are More Like You",
+     "source_url": "https://www.heygen.com/research/avatar-6-model",
+     "reason": "본문이 4,613자입니다 (최소 5,000자)"
     }
    ],
    "last_notified": {
     "result": "skipped",
     "kind": "no_topic",
     "note": "다른 주제 재작성 2회 후 보류: Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니다."
-   }
+   },
+   "finished_at": "2026-11-18T09:52:08+09:00",
+   "next_retry_at": "2026-11-18T11:52:08+09:00"
   },
   "20261118:daily:AI 논문 분석": {
    "at": "2026-11-18T07:39:32+09:00",
@@ -180,32 +194,7 @@
    }
   }
  },
- "lease": {
-  "owner": "44210461477-1",
-  "at": "2026-11-18T09:46:07+09:00",
-  "expires": "2026-11-18T11:46:07+09:00",
-  "task": {
-   "day": "20261118",
-   "request": "",
-   "kind": "daily",
-   "category": "AI 도구",
-   "topic": "",
-   "reason": "건너뜀: 다른 주제 재작성 2회 후 보류: Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니",
-   "previous_attempt": {
-    "at": "2026-11-18T08:38:30+09:00",
-    "finished_at": "2026-11-18T08:38:30+09:00",
-    "status": "skipped",
-    "count": 2,
-    "note": "다른 주제 재작성 2회 후 보류: Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니다.",
-    "skip_ids": [
-     "20261118_073851_2",
-     "20261118_083830_2"
-    ]
-   },
-   "owner": "44210461477-1",
-   "at": "2026-11-18T09:46:07+09:00"
-  }
- },
+ "lease": {},
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
