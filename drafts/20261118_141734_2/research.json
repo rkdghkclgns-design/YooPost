@@ -1,0 +1,56 @@
+{
+ "topic": "Introducing eve 1.0",
+ "source_url": "https://vercel.com/blog/eve-is-now-generally-available",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing eve 1.0",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "publisher": "Vercel",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Vercel declares its eve agent framework generally available",
+   "url": "https://pivotnews.ai/build/vercel-declares-its-eve-agent-framework-generally-available",
+   "publisher": "Pivot News",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표의 관련 시각 자료는 주로 제품 화면과 성능 그래프이나, 본문의 판단을 설명하는 데 필수적인 독립 인용 이미지를 선정하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "운영용 AI 에이전트를 만들 때 eve 1.0을 어떤 업무에 적용하고 무엇을 먼저 검토해야 할까?",
+  "limitations": "직접 실행하거나 독립 성능 측정을 하지 않았습니다. 지연 비교는 Vercel Workflows의 100턴 순차 모의 모델 시험으로 도구 호출과 실제 모델 생성 시간이 제외됩니다. 공식 발표의 표는 414ms, 그래픽 설명은 626ms로 서로 다르며 본문은 표를 기준으로 합니다. 비용은 50턴, 턴당 약 2 모델 단계, 30일 보관의 Vercel Workflows 추정치로 전체 비용이 아닙니다. 도입 기준은 발표에 근거한 제안이며 권한 분리의 효과를 실측하지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "👥 공유 세션과 고객별 경계",
+    "excerpt": "사내 한 팀이 쓰는 읽기 전용 도우미라면 세션 공유와 기록 범위부터 검토하고, 여러 고객사의 시스템에 접속하는 제품이라면 **인증·테넌트 식별·자격 증명 분리**를 먼저 설계하세요. 후자의 통제가 불명확하다면 외부 시스템에 쓰기 권한을 주는 도입은 미루는 편이 합리적입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "사내 읽기 전용과 다중 고객 환경을 나눠 권한 설계의 우선순위를 제시합니다."
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 속도와 비용 수치를 읽는 법",
+    "excerpt": "같은 조건의 두 중앙값을 초로 통일해 계산하면 3.036 ÷ 0.414는 약 **7.3배**입니다. 이는 발표에 나온 특정 시험의 실행 오버헤드 비교입니다. 예를 들어 모델 응답에 오래 걸리거나 외부 도구가 지연되는 업무의 전체 응답 시간이 똑같은 비율로 단축된다는 뜻은 아닙니다. Pivot News도 모의 모델과 제외된 생성 시간을 함께 설명합니다. [Pivot News 보도](https://pivotnews.ai/build/vercel-declares-its-eve-agent-framework-generally-available)",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "서로 다른 단위를 통일해 배율을 계산하고 실제 전체 지연에 일반화할 수 없는 이유를 설명합니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 19,
+  "confirmed": 19,
+  "removed": [],
+  "note": "공식 발표 본문을 동일 URL의 HTTP 응답으로 다시 읽고 독립 보도도 읽었습니다. 7.3배는 3.036/0.414, 약 76%는 (5.4-1.3)/5.4로 확인했습니다. 제품을 실행하거나 성능을 실측하지 않았습니다. 그래픽 설명과 표의 불일치를 본문과 editorial에 추가했습니다."
+ }
+}
