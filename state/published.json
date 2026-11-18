@@ -7292,5 +7292,19 @@
    "https://www.yna.co.kr/view/AKR20261117075000002"
   ],
   "draft_id": "20261118_084520_6"
+ },
+ {
+  "date": "2026-11-18",
+  "title": "🛠 eve 1.0, 운영용 AI 에이전트를 만들기 전 살펴볼 선택",
+  "topic": "Introducing eve 1.0",
+  "category": "AI 도구",
+  "source_url": "https://vercel.com/blog/eve-is-now-generally-available",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/eve-10-ai.html"
+  },
+  "sources": [
+   "https://vercel.com/blog/eve-is-now-generally-available"
+  ],
+  "draft_id": "20261118_141734_2"
  }
 ]
