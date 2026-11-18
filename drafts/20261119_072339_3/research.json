@@ -1,0 +1,129 @@
+{
+ "topic": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+ "source_url": "https://arxiv.org/abs/2611.18397",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.18397",
+   "publisher": "arXiv (miHoYo Honkai AI R&D Team 외)",
+   "published": "2026-11-13",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent (arXiv HTML v2, 17 Nov 2026)",
+   "url": "https://arxiv.org/html/2611.18397v2",
+   "publisher": "arXiv (miHoYo Honkai AI R&D Team 외)",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+   "url": "https://huggingface.co/papers/2611.18397",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Gamer: A Generalist Game Agent (프로젝트 페이지)",
+   "url": "https://mihoyo-gamer.github.io/",
+   "publisher": "miHoYo Honkai AI R&D Team",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "RainBowLuoCS/Gamer (GitHub 저장소 README)",
+   "url": "https://github.com/RainBowLuoCS/Gamer",
+   "publisher": "GitHub (Gamer 저자)",
+   "published": "2026-11-16",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.18397v2/overview.png",
+   "page_url": "https://arxiv.org/html/2611.18397v2",
+   "caption": "Gamer 핵심 아이디어: 화면·과제·기억에서 키보드·마우스 행동까지 이어지는 전체 구조 개요 (논문 그림 1)",
+   "credit": "Run Luo 외, arXiv 2611.18397 (CC BY-NC-SA 4.0)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.18397v2/ta_grpo.png",
+   "page_url": "https://arxiv.org/html/2611.18397v2",
+   "caption": "TA-GRPO 강화학습: 긴 롤아웃을 메모리 요약으로 이은 구간으로 나누어 학습하는 방식 (논문 그림 5)",
+   "credit": "Run Luo 외, arXiv 2611.18397 (CC BY-NC-SA 4.0)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2611.18397v2/hsr_minigame_bench.png",
+   "page_url": "https://arxiv.org/html/2611.18397v2",
+   "caption": "벤치마크 결과를 낸 스타레일 미니게임 평가 구성: 7개 유형 40개 과제 (논문 그림 10)",
+   "credit": "Run Luo 외, arXiv 2611.18397 (CC BY-NC-SA 4.0)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "실시간 게임 에이전트 Gamer의 학습·추론 설계와 벤치마크 수치는 무엇을 말하며, 실시간 제약이 점수에 얼마나 영향을 주는가?",
+  "limitations": "직접 모델을 실행하거나 게임을 돌려 보지 않았고 논문·프로젝트 페이지·GitHub에 적힌 수치만 정리했다. 시간 정지 점수 역산은 논문 표 5 설명의 정의(괄호 = RT − TP)를 되돌린 계산이며, '우위의 상당 부분이 지연 내성'이라는 정리는 이 글의 해석이다. Gamer는 특화 학습 모델이고 비교 대상은 범용 모델이라 학습 목적이 다르며, 결과는 독립 재현되지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔍 해석: '실시간'이 점수를 어떻게 바꾸는가 (직접 계산)",
+    "excerpt": "GPT-5.6-Sol은 실시간 평균 17.6에 차이 −34.5이므로 일시정지 조건에서는 약 52.1, Gam",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "표 5 설명의 RT − TP 정의로 다섯 범용 모델과 Gamer 두 모델의 시간 정지 평균을 역산해, 상위 범용 모델 셋은 시간 정지 시 Gamer-8B-CPT보다 높고 GLM·DeepSeek는 낮다는 점을 구분해 제시"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크 결과: 같은 표에서 읽는 세 가지 비교",
+    "excerpt": "Gamer-8B-CPT의 평균은 **29.5**로 같은 표의 GPT-5.6-Sol(17.6)과 Claude-",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "같은 표 안에서 Gamer와 범용 모델을 항목별로 비교하고 GameWorld처럼 뒤처지는 항목도 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 읽는 사람별 활용 포인트",
+    "excerpt": "게임 업계 종사자라면 **조작 데이터 규모와 학습 단계 비중**(CPT 85:15 혼합, 3단계 SFT 비율",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "독자 유형별로 먼저 볼 부분과 주의점을 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 Gamer 등장 배경: 게임 에이전트는 왜 '실시간'이 문제인가",
+    "excerpt": "이 논문은 2026년 11월 13일 arXiv에 제출됐고 11월 17일 v2로 수정됐습니다. Hugging ",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "arXiv 제출·수정일, Hugging Face Papers 등록일·'오늘의 논문' 1위, 프로젝트 페이지·GitHub의 공개 범위를 연결해 같은 주 화제와 실제 공개 상태를 확인"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 116,
+  "confirmed": 116,
+  "removed": [
+   "논문은 별도의 라우터 없이 정책 자체가 생각할지 여부를 결정한다고 설명합니다. (원문에 '라우터' 언급 없음 → '하나의 자기회귀 정책이 행동·희소 추론·기억 갱신을 번갈아 수행'으로 교체)",
+   "가중치는 평균 1로 정규화됩니다. (원문은 '평균을 유지하도록 정규화' → 교체)",
+   "즉 이 표에서 Gamer의 우위는 모델의 '지능'이 아니라 '반응 속도와 지연에 대한 내성'에서 나온다고 읽을 수 있습니다. (GLM·DeepSeek는 시간 정지에서도 Gamer보다 낮아 과장 → '상위 범용 모델 대비 상당 부분'으로 한정)",
+   "부호 규칙을 논문 원표로 확인하지는 못했습니다. (표 5 설명에서 RT − TP 확인 → 가정 표현 삭제)",
+   "논문은 일반 모델들이 실시간 평가로 바꾸면 평균 점수가 17~35포인트 내려간다고 요약합니다. (논문이 아니라 프로젝트 페이지 문구 → 출처 교체)",
+   "Hugging Face Papers 요약에 따르면 … 화면 픽셀 … (HF 요약에 없는 내용 → 논문 서론으로 출처 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs(제출 2026-11-13, v2 2026-11-17, citation_date 메타 2026/11/13)·HTML v2 본문(표 2·4·5·6·7·8·9, 그림 1·5·10)·Hugging Face Papers(Published Nov 13, Submitted Nov 16, #1 Paper of the day)·프로젝트 페이지·GitHub README(마지막 커밋 2026-11-16)를 직접 다시 열어 수치·이름·날짜를 대조. 시간 정지 역산: 표 5 설명 'parentheses show its difference from idealized time-paused (TP) evaluation, computed as RT − TP'로 부호 규칙 확인 → TP = RT − 괄호, GLM·DeepSeek 행 추가. 고친 것: CPT 데이터 표(6.3B 토큰은 일반 비전-언어 15% 몫, 2.4K시간이 스타레일 포함 게임 85%), 사이드 퀘스트 RL 향상폭 순서(+7.8=Opportunity, +14.5=Bestial), 지연 20.1배 조건(누적 최적화), 공개 범위(Streaming-vLLM은 GitHub에 Coming soon, CPT 스케일링 체크포인트 공개), S2 published 2026-11-17(HTML v2 페이지 표기), 이미지 주소 v2·캡션. S4 프로젝트 페이지에는 날짜 표기가 없어 published 를 비움. 보강 출처: S4 프로젝트 페이지, S5 GitHub(git clone 으로 README 읽음; 웹 curl 은 프록시 403)."
+ }
+}
