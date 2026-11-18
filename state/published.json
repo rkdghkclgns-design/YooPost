@@ -7306,5 +7306,24 @@
    "https://vercel.com/blog/eve-is-now-generally-available"
   ],
   "draft_id": "20261118_141734_2"
+ },
+ {
+  "date": "2026-11-19",
+  "title": "🤖 GPT-6.2 Astra·Sol 공개: Astra 20% 인하, 같은 값 Sol 점수 상승, 어느 쪽을 골라야 할까",
+  "topic": "GPT-6.2 Astra and GPT-6.2 Sol are now available (OpenAI Developer Community, 2026-11-17) / GPT-6.2 System Card / VentureBeat·DataCamp·Crypto Briefing 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://community.openai.com/t/gpt-6-2-astra-and-sol-are-now-available/1417531",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gpt-62-astrasol-astra-20-sol.html"
+  },
+  "sources": [
+   "https://community.openai.com/t/gpt-6-2-astra-and-sol-are-now-available/1417531",
+   "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "https://cryptobriefing.com/openai-launches-gpt-6-2-astra-sol/",
+   "https://cryptobriefing.com/openai-gpt-6-2-astra-sol-code-arena/",
+   "https://venturebeat.com/technology/essentially-unusable-openai-launches-gpt-6-2-astra-and-sol-to-negative-reception-from-ai-power-users",
+   "https://www.datacamp.com/blog/gpt-6-2-astra-and-sol"
+  ],
+  "draft_id": "20261119_070604_1"
  }
 ]
