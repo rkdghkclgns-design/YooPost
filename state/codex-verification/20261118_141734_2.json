@@ -1,0 +1,119 @@
+{
+ "claims": [
+  {
+   "claim": "Vercel은 2026-11-17 오픈소스 eve 1.0 일반 제공을 발표했고 공개 프리뷰는 6월이었다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "eve 하네스는 모델 호출, 도구 실행, 하위 에이전트 위임을 수행하며 모델·도구·지침·승인 행동을 선택할 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "오픈소스 Workflow SDK가 진행 상황을 저장해 장애 후 마지막 완료 단계부터 재개한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "관리형 Vercel 배포에서 Workflows가 지속 실행을, Sandbox가 생성 코드 격리 실행을 담당한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "멀티플레이어 공유 세션은 발언자를 추적하고 승인과 로그인을 적절한 사람에게 전달하며 사용자별 또는 팀 메모리를 설정할 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "애플리케이션이 사용자를 인증하고 테넌트를 식별한 뒤 테넌트와 사용자별 메모리·연결 자격 증명·승인 정책을 설정할 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "메모리는 세션 간 맥락을 전달하며 내장 fileMemory는 eve dev에서 메모리를, Vercel에서 구성한 비공개 Blob 저장소를 사용하고 다른 제공자도 선택할 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "추적은 OpenTelemetry 기반이며 eve dev에서는 기본적으로 로컬 기록하고 자체 호스팅에서 OpenTelemetry 백엔드로 내보낼 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "추적에는 승인과 질문 등 사람을 기다리는 시점, 모델·도구·승인 흐름이 나타난다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "수집 제외 콘텐츠는 모든 목적지에서 제외되며 운영 환경 비공개 대화는 기본적으로 프롬프트와 도구 결과 없이 메타데이터만 전송한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "Vercel Workflows의 100턴 호스팅 부하 시험 표에서 베타 중앙값과 p95는 각각 3.036초와 3.692초, 1.0은 414ms와 633ms다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "시험은 메시지를 순차 전송하고 즉시 응답하는 모의 모델 하나를 사용하며 도구 호출과 실제 모델 생성 시간을 제외한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "발표의 그래픽 설명은 중앙값 626ms를 기재해 표의 414ms와 상충한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "본문에 발표 내부의 불일치와 표 기준을 명시"
+  },
+  {
+   "claim": "50턴 Evo Docs 세션의 Vercel Workflows 비용 추정치는 5.4센트에서 1.3센트로 약 76% 감소하며 턴당 약 2 모델 단계와 30일 보관을 가정한다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "로컬 초기화에는 Node.js 24 이상과 npx eve@latest init my-agent 명령이 안내되며 대화형 터미널에서 의존성 설치와 터미널 UI 실행이 이뤄진다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "선택한 팀이 AI Gateway에 접근 가능하면 기존 Vercel CLI 자격 증명으로 로컬 모델 호출을 시작할 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "1.0 전환 안내는 확장 빌드, 에이전트 API, 세션 이벤트, 클라이언트 및 저장 이력을 다룬다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "안정 API의 호환성 파괴 변경은 주요 버전에서 이뤄지며 실험적·내부 API는 주요 버전 사이에도 변경될 수 있다.",
+   "url": "https://vercel.com/blog/eve-is-now-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  },
+  {
+   "claim": "Pivot News는 2026-11-17 eve 일반 제공과 복구·수집 제어, 모의 모델 시험 및 실제 모델 생성 시간 제외 조건을 보도했다.",
+   "url": "https://pivotnews.ai/build/vercel-declares-its-eve-agent-framework-generally-available",
+   "confirmed": true,
+   "action": "확인 후 유지"
+  }
+ ],
+ "note": "공식 발표 본문을 동일 URL의 HTTP 응답으로 다시 읽고 독립 보도도 읽었습니다. 7.3배는 3.036/0.414, 약 76%는 (5.4-1.3)/5.4로 확인했습니다. 제품을 실행하거나 성능을 실측하지 않았습니다. 그래픽 설명과 표의 불일치를 본문과 editorial에 추가했습니다."
+}

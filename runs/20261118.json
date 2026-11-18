@@ -1,14 +1,14 @@
 {
  "started": "2026-11-18T07:16:04+09:00",
- "finished": "",
+ "finished": "2026-11-18T14:17:36+09:00",
  "fallback": {
   "provider": "codex",
-  "status": "writing",
+  "status": "done",
   "category": "AI 도구",
   "taken_over": "2026-11-18T14:11:09+09:00",
   "first_taken_over": "2026-11-18T07:16:04+09:00",
   "reason": "실행 기록 없음",
-  "last_result": "failed"
+  "last_result": "done"
  },
- "note": "Codex 실행 실패 — 오류 분류가 불가능해 인증·사용량·서비스 상태 확인이 필요합니다 (exit=1)"
+ "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
 }
