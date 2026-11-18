@@ -7386,5 +7386,25 @@
    "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/"
   ],
   "draft_id": "20261119_073217_4"
+ },
+ {
+  "date": "2026-11-19",
+  "title": "🔒 FBI ARTEX 경보와 Barracuda 44시간 침입, 내 조직은 무엇부터 점검할까",
+  "topic": "Threat Overview of ARTEX Autonomous Penetration Testing Framework (FBI FLASH-20261113-001, 2026-11-13) / Barracuda 'Forty-four hours' 사후 보고 / TechCrunch 보도",
+  "category": "AI 보안",
+  "source_url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/fbi-artex-barracuda-44.html"
+  },
+  "sources": [
+   "https://www.ic3.gov/CSA/2026/261113.pdf",
+   "https://blog.barracuda.com/2026/11/11/anatomy-of-a-machine-speed-intrusion",
+   "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+   "https://www.vectra.ai/blog/artex-runs-known-attacks-at-machine-pace",
+   "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+   "https://trust.barracuda.com/security/barracuda-xdr-integration-credentials",
+   "https://therecord.media/south-korean-bank-hacks-ai-agents"
+  ],
+  "draft_id": "20261119_073935_5"
  }
 ]
