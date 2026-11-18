@@ -1,0 +1,128 @@
+{
+ "topic": "Copilot at Microsoft Ignite: Expanding what's possible with intelligence built for work (Copilot Autopilot)",
+ "source_url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Copilot at Microsoft Ignite: Expanding what's possible with intelligence built for work",
+   "url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+   "publisher": "Microsoft (Jared Spataro)",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "At Ignite 2026, Microsoft reinvents Copilot as the autonomous engine of enterprise work",
+   "url": "https://siliconangle.com/2026/11/18/at-ignite-2026-microsoft-reinvents-copilot-as-the-autonomous-engine-of-enterprise-work/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft 365 Copilot Autopilot Rolls Out to Frontier: Always-On AI Agent with Entra ID and Metered Billing",
+   "url": "https://windowsforum.com/news/microsoft-365-copilot-autopilot-rolls-out-to-frontier-always-on-ai-agent-with-entra-id-and-metered-billing.452839/",
+   "publisher": "WindowsForum",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft Autopilot | Always-On Personal AI Agent for Work",
+   "url": "https://www.microsoft.com/en-us/copilot/features/autopilot",
+   "publisher": "Microsoft",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Delegate ongoing work to Autopilot in Microsoft Copilot (Microsoft Learn)",
+   "url": "https://learn.microsoft.com/en-us/training/modules/delegate-ongoing-work-autopilot-copilot/",
+   "publisher": "Microsoft Learn",
+   "published": "2026-09-21",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Microsoft Rebuilds Copilot as an 'OS for Work'",
+   "url": "https://www.reworked.co/digital-workplace/microsoft-rebuilds-copilot-as-an-os-for-work/",
+   "publisher": "Reworked",
+   "published": "2026-09-25",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "page_url": "https://www.microsoft.com/en-us/copilot/features/autopilot",
+   "image_url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/How-it-works-media-1?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3000&hei=2094&qlt=100&fmt=png-alpha&fit=constrain",
+   "caption": "Copilot Autopilot 공식 스펙 — Microsoft Autopilot 제품 페이지의 작동 방식(How it works) 화면",
+   "credit": "Microsoft"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "항상 켜진 Copilot Autopilot 을 팀에 붙이기 전에 무엇이 확인되었고 무엇이 비어 있는가",
+  "limitations": "직접 실행하지 않았고 공식 블로그·제품 페이지·Learn 모듈과 매체·커뮤니티 글에 기댄 정리다. 크레딧 단가·일반 제공 시기·감사 이벤트 세부는 미공개이며 WindowsForum 의 절차·데모 설명은 2차 자료다. The New Stack 등 일부 페이지는 열람이 막혀 출처로 쓰지 않았다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🛠 도입 조건: 구독·크레딧·활성화 절차",
+    "excerpt": "Ignite 공식 블로그는 Autopilot 전용 가격을 따로 밝히지 않고, Microsoft 의 일반 모델로 사용자별 구독 더하기 사용량 기반 소비를 언급할 뿐입니다",
+    "source_ids": [
+     "S1",
+     "S4",
+     "S3"
+    ],
+    "added_value": "가격 미공개 구간을 분리하고 파일럿 예산 한도부터 정하도록 제안"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔒 신원·권한·감사: 무엇이 확인되고 무엇이 비어 있나",
+    "excerpt": "구체적인 감사 이벤트 종류, 정책 템플릿, 기본 승인 임계값(WindowsForum 은 공개 자료에 없다고 지적)",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공식 약속과 미확인 항목을 대조해 도입 전 점검 목록으로 변환"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛠 도입 조건: 구독·크레딧·활성화 절차",
+    "excerpt": "참여 절차는 WindowsForum 정리 글을 참고하되, 이 글이 TestingCatalog 데모와 Microsoft 문서를 재정리한 2차 자료라는 점을 감안해 제품 페이지와 맞춰 보았습니다",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 블로그와 2차 정리의 신뢰 수준을 구분해 조건을 종합"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 Agent 365 와 Work IQ: 비용과 가치를 어떻게 재겠다는 건가",
+    "excerpt": "사용자 유형·작업 구성·요금제 조건이 공개 블로그에 모두 나오지 않으므로, 우리 조직의 실제 사용 패턴으로 다시 비교해야 합니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "Microsoft 가 인용한 GigaOm 가격 비교(84%·63%·68%·35%)를 비교 조건이 공개되지 않은 자체 인용 수치로 구분해 읽도록 안내"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 47,
+  "confirmed": 46,
+  "removed": [
+   "항상 켜져 있는 에이전트는 일을 하지 않는 시간에도 대기할 수 있고 (대기 중 과금 여부 확인 안 됨 — 경고 박스에서 삭제)"
+  ],
+  "corrected": [
+   "도입부: Autopilot 은 Ignite 에서 처음 공개된 것이 아니라 2026-09-25 처음 소개(이전 이름 Scout, S6)되었고 Ignite 에서 Frontier 순차 제공 시작(S1) — 문구 수정",
+   "과금: 'Autopilot 과금 방식 미공개' → 제품 페이지(S4)에 Copilot Credits 사용량 기반 과금·관리자 예산·GA 전 최종 가격 공유가 명시되어 있어 수정, 미공개는 크레딧 단가·GA 시기로 한정",
+   "구독 조건 근거를 2차 자료(WindowsForum)에서 공식 제품 페이지(S4)로 교체 (요약·FAQ 포함)",
+   "Frontier 참여 절차 3단계 '과금 정책에 동의' → '사용량 기반 과금 정책을 갖춤'",
+   "Copilotforce 스킬 38개 → 38개 이상(S1 'more than 38', S2 38)",
+   "Work IQ '추론 계층' → 공식 표현대로 중요한 것을 찾고 무시할 것을 가려내는 맥락 계층, 'Dynamics 365 맥락 공급원' → 'Dynamics 365 도 Work IQ 와 통합'",
+   "Agent 365 '두 번째 문제' 표현(원문에 없음) 삭제, Entra Agent ID 는 신원·접근 거버넌스 확대로 표현",
+   "BCG 인용에 2026년 9월 보고서 명시, GigaOm 비교에 'comparable quality'·조건 미공개 단서 추가"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Microsoft 공식 블로그(페이지 날짜 Nov 17, 2026 = published 일치), S2 SiliconANGLE(Nov 18, 2026 일치), S3 WindowsForum(Nov 17, 2026 일치)를 WebFetch 로 다시 열어 수치(19.5EB·900억·150억·100억, 84/63/68/35%, 80%, 100개 이상·38개 이상, 30일)·날짜·이름·제공 상태를 원문 문장과 대조. 출처가 3개라 공식 S4(Autopilot 제품 페이지, 날짜 표기 없음 → published 빈칸)·S5(Microsoft Learn 모듈, ms.date 2026-09-21)·매체 S6(Reworked 2026-09-25)를 추가해 구독·과금·Frontier 가입 조건과 9월 첫 공개 사실을 확인. 막힌(EGRESS_BLOCKED) 페이지는 출처로 쓰지 않음. 인용 이미지 I1 은 S4 본문 How it works 화면(HTTP 200 image/png 직접 확인)."
+ }
+}
