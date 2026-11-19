@@ -1,0 +1,104 @@
+{
+ "topic": "Devin Bots — Devin Docs: Bots / Fortune: Cognition bets on Devin Bots (2026-11-17)",
+ "source_url": "https://docs.devin.ai/work-with-devin/bots",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Devin Bots - Devin Docs",
+   "url": "https://docs.devin.ai/work-with-devin/bots",
+   "publisher": "Cognition (Devin Docs)",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Exclusive: Cognition bets on Devin Bots, coding agents in challenge to Anthropic's Duet and OpenAI's Dots",
+   "url": "https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots",
+   "publisher": "Fortune",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Cognition's Devin Bots Now Run Parallel Coding Sessions, Hitting 2,000 Pull Requests Weekly",
+   "url": "https://alphasignal.ai/news/cognition-s-devin-bots-now-run-parallel-coding-sessions-hitting-2-000-pull",
+   "publisher": "AlphaSignal",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Devin Bots own outcomes, not just tasks",
+   "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/devin-bots-own-outcomes-not-just-tasks",
+   "publisher": "StartupHub.ai",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Cognition launches Devin Bots",
+   "url": "https://cryptobriefing.com/cognition-launches-devin-bots-ai-coding/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://mintcdn.com/cognitionai/ieJ1Le8GMm2INQp4/images/bots/bots-before-after.svg?fit=max&auto=format&n=ieJ1Le8GMm2INQp4&q=85&s=4de5122941fd25c664d41dc404a25ddc",
+   "page_url": "https://docs.devin.ai/work-with-devin/bots",
+   "caption": "Devin Bots 도입 전후 비교 도식 (공식 문서)",
+   "credit": "Cognition (Devin Docs)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Devin Bots는 기존 Devin 세션과 무엇이 다르고, 공개된 수치를 어디까지 믿고 우리 팀은 어떤 조건에서 시험해 볼 수 있는가?",
+  "limitations": "직접 실행하지 않았고 모든 성과 수치는 회사 발표를 매체가 옮긴 것이다. 공식 문서 페이지에 날짜·요금이 없어 발표일은 보도 기준(2026-11-17)이다. 시험 기준 표와 단계는 필자의 해석이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 회사가 공개한 수치를 같은 단위로 다시 계산",
+    "excerpt": "1,134를 44로 나누면 약 25.8, 1,134를 183으로 나누면 약 6.2, 344,651을 1,134로 나누면 약 304, 159를 21로 나누면 약 7.6입니다.",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "회사 수치를 하루·메시지·PR 단위로 환산하고 최고 사례·검증 부재의 한계를 함께 밝힘"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀이 시험해 볼지 정하는 기준",
+    "excerpt": "핵심은 \"목표를 말로 설명할 수 있고, 결과를 기계적으로 검사할 수 있는 일\"과 \"검사하기 어려운 일\"을 나누는 것입니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "상황별 시험 적합성과 제외 조건, 시험 순서를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔒 권한과 안전장치: 문서와 기사를 겹쳐 읽기",
+    "excerpt": "두 설명을 함께 보면 \"누가 시켰는가\"와 \"어디서 실행되는가\"를 따로 통제하려는 구조로 읽히지만",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "문서의 시크릿·승인 카드와 Fortune의 실행 환경 분리 설명을 연결해 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "corrected": [
+   "Citigroup 내용이 기사에 'reportedly'로 실렸다는 문장 → Fortune 원문은 Jane Fraser CEO의 10월 13일 실적 발표 발언으로 인용(‘reportedly’ 없음)으로 수정",
+   "Archive 설명: Slack 앱 제거(재설정 필요)와 Bot 사이 접근 제거·미복원을 문서대로 구분",
+   "'개별 엔지니어' → '일부 엔지니어'(AlphaSignal 표현)",
+   "발표일 근거 문장: 공식 블로그·릴리스 노트에 날짜 붙은 발표 글 없음을 명시하고 4개 매체 보도일 기준으로 정정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 문서·S2 Fortune·S3 AlphaSignal·S4 StartupHub.ai·S5 Crypto Briefing 재열람으로 주장별 대조, I1 SVG 열어 desc('ten tools','twelve Devin sessions') 확인, 매체 4곳 게재일 모두 2026-11-17 확인(Fortune 12:01 PM ET, Crypto Briefing 12:40 EST). S1 문서엔 날짜 없음; cognition.com/blog(최신 11-04 SWE-2 Flash)·docs.devin.ai 릴리스 노트(최신 11-16)·devin.ai/bots(날짜 없음)에서 날짜 붙은 공식 발표 미발견 — published 는 보도일 기준 유지. 나눗셈 값 재계산 일치."
+ }
+}
