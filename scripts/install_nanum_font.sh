@@ -22,9 +22,22 @@ echo "APT 글꼴 설치 실패. Ubuntu 미러의 동일 패키지를 확인합�
 work_dir="$(mktemp -d)"
 trap 'rm -r -- "$work_dir"' EXIT
 archive="$work_dir/fonts-nanum.deb"
-curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
-    --connect-timeout 10 --max-time 45 --output "$archive" \
-    https://mirrors.kernel.org/ubuntu/pool/universe/f/fonts-nanum/fonts-nanum_20250212-1_all.deb
+downloaded=false
+for attempt in 1 2 3; do
+    if curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
+        --connect-timeout 10 --max-time 45 --output "$archive" \
+        https://mirrors.kernel.org/ubuntu/pool/universe/f/fonts-nanum/fonts-nanum_20250212-1_all.deb; then
+        downloaded=true
+        break
+    fi
+    if [[ "$attempt" -lt 3 ]]; then
+        sleep 2
+    fi
+done
+if [[ "$downloaded" != true ]]; then
+    echo "::error::Ubuntu 글꼴 패키지 다운로드가 3회 모두 실패했습니다."
+    exit 1
+fi
 echo "3cd2d18fc67c616c3a2e037ece0eb6aece414755025e2ddeec4f6e828783dc76  $archive" | sha256sum --check
 dpkg-deb --extract "$archive" "$work_dir/unpacked"
 for font in NanumGothic.ttf NanumGothicBold.ttf; do
