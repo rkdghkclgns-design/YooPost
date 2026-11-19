@@ -1,0 +1,107 @@
+{
+ "topic": "Jeveration: System One Models Now Generate (arXiv 2611.24738, NUS, 2026-11-18) / Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.24738",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Jeveration: System One Models Now Generate (arXiv:2611.24738)",
+   "url": "https://arxiv.org/abs/2611.24738",
+   "publisher": "arXiv",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Jeveration: System One Models Now Generate (HTML 전문)",
+   "url": "https://arxiv.org/html/2611.24738",
+   "publisher": "arXiv",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Jeveration: System One Models Now Generate — Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.24738",
+   "publisher": "Hugging Face",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "MedJev: A System One Vision-Language Decision Model for Fast and Effective Medical Image Understanding (arXiv:2611.20992)",
+   "url": "https://arxiv.org/abs/2611.20992",
+   "publisher": "arXiv",
+   "published": "2026-11-16",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.24738v1/teaser.png",
+   "page_url": "https://arxiv.org/html/2611.24738",
+   "caption": "Jeveration 개요: 모델 크기·GenEval 대 지연시간과 생성 샘플 (등장 배경)",
+   "credit": "Liu et al., arXiv 2611.24738 (Fig. 1)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://arxiv.org/html/2611.24738v1/architecture.png",
+   "page_url": "https://arxiv.org/html/2611.24738",
+   "caption": "얼린 VLM·LoRA·작업별 헤드로 이뤄진 구조 (구조와 학습)",
+   "credit": "Liu et al., arXiv 2611.24738 (Fig. 3)"
+  },
+  {
+   "id": "I4",
+   "image_url": "https://arxiv.org/html/2611.24738v1/dense.png",
+   "page_url": "https://arxiv.org/html/2611.24738",
+   "caption": "NYUv2 분할·깊이·표면 법선 예측 결과 (이미지 변환과 밀집 예측)",
+   "credit": "Liu et al., arXiv 2611.24738 (Fig. 6)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "한 번의 계산으로 이미지를 만드는 Jeveration의 속도 이득은 품질 손실을 감수할 만한가?",
+  "limitations": "모델을 직접 실행하지 않았고 모든 수치는 저자 보고값입니다. 표 1은 해상도가 섞여 있어 같은 조건 비교에 한계가 있으며, 가중치는 공개됐지만 외부 재현 결과는 확인하지 못했습니다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 텍스트→이미지: 같은 해상도끼리 놓고 읽기",
+    "excerpt": "속도는 Jeveration이 앞서고, 점수는 Janus-Pro-7B(0.80)와 Z-Image-Turbo(0.76)가 앞섭니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "해상도가 섞인 표 1에서 512px 근처 모델끼리 속도와 점수를 함께 놓고, 122.2배가 Janus-Pro-7B 기준임을 밝혀 격차를 바로잡음"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 선택 기준: 어떤 용도에 먼저 검토할 만한가",
+    "excerpt": "반대로 품질 우선이면 표에서 점수가 높은 Janus-Pro-7B나 Z-Image-Turbo가 여전히 앞서므로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "용도별(미리보기·프롬프트 충실도·멀티태스크·고해상도)로 논문 수치가 시사하는 바와 제외 조건을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 등장 배경: 'System One' 모델이 이번에는 그림을 그립니다",
+    "excerpt": "즉 '글을 쓰지 않고 결정만 내리는 작은 모델'이 분류에서 생성으로 번지는 중이라는 해석이 가능합니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "서로 다른 두 논문(MedJev·Jeveration)을 같은 Qwen3.5-4B 기반 System One 흐름으로 연결하되 점수는 비교 불가임을 명시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 94,
+  "confirmed": 94,
+  "removed": [
+   "코드·프로젝트 페이지 링크는 Hugging Face Papers 페이지에서 확인되지 않았고 (HF Papers에 프로젝트 페이지·GitHub 연결 확인 → 수정)",
+   "가중치 공개 여부, 프로젝트 페이지 ... 확인하지 못했습니다 (HF Papers 페이지에 인용 모델·데모 Space 표시 확인 → 공개 사실로 수정)",
+   "FAQ: 프로젝트 페이지나 GitHub 링크가 확인되지 않았습니다. 공개 여부는 저자 발표를 기다려야 합니다 (→ 가중치·데모·코드 공개로 수정)",
+   "인용 이미지 I2(mix.png, 가로 394px — 480px 미만) 및 본문 image 블록 삭제"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): arXiv abs(2611.24738·2611.20992, citation_date 2026-11-18/2026-11-16)·HTML 전문의 표1~5·보충 표·본문 수치를 원고 주장 96개와 하나씩 대조. 수정: 저자 목록에 제1저자 Yuhe Liu 추가, 표1 †/‡ 의미(†=해당 모델 저자 보고) 정정, 법선 오차 원인을 논문 표현(likely)대로 완화, HF Papers 페이지 날짜(Published on Nov 18)로 S3 published 2026-11-18 정정, HF Papers 페이지(S3)의 프로젝트 페이지·GitHub 링크, 인용 모델 linlinlinlinsdada/Jeveration·데모 Space 표시로 공개 범위 문단·FAQ 보완(모델 카드의 Apache 2.0·파일 크기도 직접 열어 일치 확인했으나 출처 수를 늘리지 않고 원고에는 넣지 않음). 이미지 teaser(825px)·architecture(805px)·dense(825px, Fig.6 NYUv2 분할·깊이·법선 — 직접 열어 확인) HTTP 200 image/png."
+ }
+}
