@@ -7517,5 +7517,22 @@
    "https://huggingface.co/docs/hub/security-malware"
   ],
   "draft_id": "20261120_073142_5"
+ },
+ {
+  "date": "2026-11-20",
+  "title": "📊 엔비디아 3분기 매출 1,158억 달러, 4분기 1,300억 달러 전망: 가이던스·마진·중국 가정을 계산해 읽기",
+  "topic": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 (NVIDIA, 2026-11-17) / stockanalysis.com·24/7 Wall St. 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/3-1158-4-1300.html"
+  },
+  "sources": [
+   "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+   "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+   "https://stockanalysis.com/news/nvda-q3-fy2027-earnings-beat/",
+   "https://247wallst.com/cards/nvidia-q3-2027-earnings-nvda-01m7nph36m2fmpwcfatxg16f2z"
+  ],
+  "draft_id": "20261120_073737_6"
  }
 ]
