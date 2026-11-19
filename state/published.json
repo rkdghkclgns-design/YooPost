@@ -7498,5 +7498,24 @@
    "https://www.anthropic.com/news/roadshow-launch"
   ],
   "draft_id": "20261120_072535_4"
+ },
+ {
+  "date": "2026-11-20",
+  "title": "🔒 Kokoro 허깅페이스 계정, 만료 도메인 하나로 넘어갔다: 내 모델 의존성은 안전한가",
+  "topic": "Researchers hijack Hugging Face account for popular Kokoro AI model (BleepingComputer, 2026-11-17)",
+  "category": "AI 보안",
+  "source_url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/kokoro.html"
+  },
+  "sources": [
+   "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/",
+   "https://www.techtimes.com/articles/330990/20261118/domain-lapse-let-researchers-hijack-kokoro-voice-ai-hugging-face-account-edit-weights-87-seconds.htm",
+   "https://huggingface.co/hexgrad/Kokoro-82M",
+   "https://huggingface.co/docs/hub/security",
+   "https://huggingface.co/docs/hub/security-2fa",
+   "https://huggingface.co/docs/hub/security-malware"
+  ],
+  "draft_id": "20261120_073142_5"
  }
 ]
