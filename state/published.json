@@ -7461,5 +7461,22 @@
    "https://cryptobriefing.com/cognition-launches-devin-bots-ai-coding/"
   ],
   "draft_id": "20261120_071111_2"
+ },
+ {
+  "date": "2026-11-20",
+  "title": "🖼 Jeveration 논문: 이미지 한 장을 78ms에 한 번에 만드는 방식, 품질은 어디까지 따라올까",
+  "topic": "Jeveration: System One Models Now Generate (arXiv 2611.24738, NUS, 2026-11-18) / Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.24738",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/jeveration-78ms.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.24738",
+   "https://arxiv.org/html/2611.24738",
+   "https://huggingface.co/papers/2611.24738",
+   "https://arxiv.org/abs/2611.20992"
+  ],
+  "draft_id": "20261120_071804_3"
  }
 ]
