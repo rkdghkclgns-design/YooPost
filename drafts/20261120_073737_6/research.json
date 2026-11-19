@@ -1,0 +1,93 @@
+{
+ "topic": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 (NVIDIA, 2026-11-17) / stockanalysis.com·24/7 Wall St. 보도",
+ "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027",
+   "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+   "publisher": "NVIDIA",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+   "publisher": "NVIDIA",
+   "published": "2026-08-26",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Nvidia's Q3 revenue grows 103% to $115.8B, beating estimates, as it forecasts $130B in its first report since Huang's exit",
+   "url": "https://stockanalysis.com/news/nvda-q3-fy2027-earnings-beat/",
+   "publisher": "StockAnalysis",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "NVIDIA Q3 2027: $115.8 Billion Revenue, Six Straight Beats, and What Comes Next",
+   "url": "https://247wallst.com/cards/nvidia-q3-2027-earnings-nvda-01m7nph36m2fmpwcfatxg16f2z",
+   "publisher": "24/7 Wall St.",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 실적 발표문 본문에는 로고와 본사 사진뿐이고 내용을 보여 주는 도표·차트가 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "엔비디아 3분기 실적과 4분기 가이던스는 가이던스 상회 폭·마진·이익·중국 가정 측면에서 무엇을 뜻하는가",
+  "limitations": "직접 실행·실측 없음. 근사 계산은 출처 숫자와 가이던스 중간값에 의존하며(4분기 14주는 회사 발표, 3분기 13주는 분기 날짜로 계산), 4분기 마진 하락 원인은 매체 해석이고 고객 가격·고객 집중도는 자료에 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 가이던스 대비 얼마나 더 벌었나: 계산해 보기",
+    "excerpt": "로 전망했습니다. 범위로 환산하면 약 1,058억~1,102억 달러입니다. 실제 매출 1,158억 달러는 범위 상단보다도 약",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "8월 가이던스 범위와 실제 매출의 차이를 계산해 상회 폭을 수치화"
+   },
+   {
+    "kind": "calculation",
+    "section": "📉 매출은 늘었는데 마진 가이던스는 왜 내려갔나",
+    "excerpt": "마진이 내려가도 이익 총액이 줄어드는 것은 아닙니다. 계산해 보면 3분기 매출총이익은 약 866억 달러(1,158억 × 74.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "마진 하락 전망에서도 매출총이익·영업이익이 늘어나는지 근사 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이 실적을 어떻게 활용할까: 상황별 읽기 가이드",
+    "excerpt": "일반 독자라면 '매출이 두 배가 됐다'는 헤드라인과 '가이던스 대비 몇 퍼센트 넘겼나'를 구분해 보는 습관이 도움이 됩니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "독자 상황별로 가져갈 신호와 주의점, 다음 발표 때 확인 항목 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [],
+  "corrected": [
+   "3분기 GAAP 영업이익 '약 773억 달러'(직접 계산) → 회사 발표 775억 달러, 4분기 대비 증가율 약 +5.0~6.7% → 약 +4.9~6.6%",
+   "매출총이익률 하락폭 '3~4%포인트' → '약 2.8~3.8%포인트'",
+   "4분기 14주 효과 설명의 방향 오류 수정(한 주 추가가 증가율을 부풀림)",
+   "주당 계산: 14주는 회사 발표, 3분기 13주는 91일로 계산했음을 계산식과 함께 표시(약 +4.2%)",
+   "크레스 인용을 발표문 원문 두 문장대로 정리",
+   "BofA '280달러 매수 유지' → '매수 의견에 목표가 280달러 제시'(유지 여부 미확인), UBS·BofA는 24/7 Wall St. 페이지가 소개한 게시물로 표시",
+   "3분기 마진 소폭 하락을 엔비디아가 루빈 램프 초기 단계 탓으로 설명했다는 S3 내용 추가, 4분기 원인은 매체 해석으로 유지",
+   "'대형 클라우드 5곳' → '클라우드 사업자 5곳'"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4를 WebFetch로 다시 열어 수치·날짜·이름·인용을 대조, 모든 근사값은 파이썬으로 재계산. 컨센서스 LSEG 1,091억(S3)·1,087억(S4 'est $108.73B')·EPS 2.47달러, 중국 호퍼 24억 달러·베센트 질의(S3), 마진 원인(S3·S4) 재확인. 각 published 가 페이지 날짜와 일치(S1·S3·S4 2026-11-17, S2 2026-08-26). S1 본문에 도표·차트 없음(본사 사진 링크뿐) 재확인 → images_none_reason 유지. 투자 권유 문구 없음."
+ }
+}
