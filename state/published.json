@@ -7443,5 +7443,23 @@
    "https://aistudio.google.com/docs/pricing"
   ],
   "draft_id": "20261120_070516_1"
+ },
+ {
+  "date": "2026-11-20",
+  "title": "🤖 Devin Bots 공개: 코딩 에이전트에게 작업 대신 목표를 맡길 때 확인할 것",
+  "topic": "Devin Bots — Devin Docs: Bots / Fortune: Cognition bets on Devin Bots (2026-11-17)",
+  "category": "AI 도구",
+  "source_url": "https://docs.devin.ai/work-with-devin/bots",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/devin-bots.html"
+  },
+  "sources": [
+   "https://docs.devin.ai/work-with-devin/bots",
+   "https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots",
+   "https://alphasignal.ai/news/cognition-s-devin-bots-now-run-parallel-coding-sessions-hitting-2-000-pull",
+   "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/devin-bots-own-outcomes-not-just-tasks",
+   "https://cryptobriefing.com/cognition-launches-devin-bots-ai-coding/"
+  ],
+  "draft_id": "20261120_071111_2"
  }
 ]
