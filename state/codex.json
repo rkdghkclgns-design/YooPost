@@ -1,212 +1,40 @@
 {
  "attempts": {
-  "20261118:daily:AI 언어 모델": {
-   "at": "2026-11-18T07:16:04+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-18T07:27:26+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🤖 GPT-6.2 Astra와 Sol, 4배 단가 차이를 감수할 업무는?",
-     "topic": "Introducing GPT-6.2 Astra and Sol",
-     "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
-     "reason": "필수 독립 매체 Axios 원문이 웹 조회에서 열리지 않았고 직접 HTTP 요청도 403 접속 확인 화면을 반환해 독립 보도와 날짜를 확인하지 못했습니다. 공식 대표 발표 페이지에도 날짜가 표시되지 않아 최신성 확인에 제한이 있습니다."
-    },
-    {
-     "title": "🤖 MAI Code 2와 Flash, 어떤 코딩 작업에 골라 쓸까?",
-     "topic": "MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices",
-     "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
-     "reason": "대표 Microsoft 발표 원문과 독립 보도에 각각 HTTP 403으로 접근하지 못해 발표의 핵심 수치·조건과 독립 보도를 검증할 수 없습니다. 모델 카드 PDF는 응답했지만 본문을 읽지 못했습니다. 후보를 보존하고 검증을 중단합니다."
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 언어 모델 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261118:daily:AI 도구": {
-   "at": "2026-11-18T14:11:09+09:00",
-   "count": 5,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "🛍 BigCommerce Shopping Agent, 우리 쇼핑몰에 대화형 안내가 필요할까",
-     "topic": "Commerce Introduces Shopping Agent to Enable Conversational Shopping for BigCommerce Merchants",
-     "source_url": "https://commerce.gcs-web.com/news-releases/news-release-details/commerce-introduces-shopping-agent-enable-conversational",
-     "reason": "필수 독립 매체 MarketMaze 원문이 웹 도구에서 열리지 않았고 직접 HTTP 조회에서도 403 차단 화면이 반환되어 해당 기간의 독립 보도와 이슈화 기준을 확인할 수 없습니다."
-    },
-    {
-     "title": "🖥 Lumo Desktop, 파일과 메일 자동화를 어디까지 맡길까",
-     "topic": "Lumo Desktop: Connectors, Schedules, and Skills",
-     "source_url": "https://proton.me/blog/lumo-desktop-features",
-     "reason": "공식 지원 문서 Connectors 및 Schedules의 본문은 조회되고 기능 주장은 확인되었으나, 두 페이지에 게시일이 표시되지 않아 모든 출처에 페이지에 적힌 게시일을 요구하는 brief를 충족할 수 없습니다. 날짜를 추정하거나 지어낼 근거가 없습니다."
-    },
-    {
-     "title": "🖥 Microsoft 365 Copilot Autopilot, 반복 업무를 어디까지 맡길까",
-     "topic": "Copilot at Microsoft Ignite: Expanding what’s possible with intelligence built for work",
-     "source_url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
-     "reason": "독립 매체 S4의 원문이 웹 조회 도구에서 열리지 않았으며 동일 URL 직접 조회는 HTTP 403 접속 확인 화면이어서 독립 보도 및 최신 이슈 기준을 재검증할 수 없음. 전체 사실 검증 미완료."
-    },
-    {
-     "title": "🤝 Zoho Desk Blended Agents, 고객 상담 어디까지 맡길까",
-     "topic": "Zoho Desk Blended Agents: AI execution and human oversight",
-     "source_url": "https://www.businesswire.com/news/home/20261116765196/en/Zoho-Introduces-Blended-Agents-to-Zoho-Desk-Combining-AI-Execution-With-Human-Judgment-to-Help-Businesses-More-Effectively-Resolve-Customer-Issues",
-     "reason": "Zoho Desk Blended Agents의 회사 발표 본문과 2026-11-16·17 독립 보도는 확인했지만, 선정한 Business Wire 공식 발표 원문에서 게시일이 표시되지 않아 대표 원문의 3일 이내 발표 조건과 모든 출처에 페이지에 적힌 게시일을 요구하는 조건을 직접 검증하지 못했습니다. 같은 발표의 재배포본 날짜로 원문의 게시일을 추정하지 않았습니다."
-    },
-    {
-     "title": "🤝 Copilotforce, 영업팀의 Salesforce와 Copilot을 어떻게 연결할까",
-     "topic": "Microsoft and Salesforce Announce Copilotforce, Bringing Trusted Customer Context and Action into Microsoft AI Experiences",
-     "source_url": "https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/",
-     "reason": "대표 Microsoft 공식 발표 원문이 웹 조회 도구에서 열리지 않았고 동일 URL 직접 조회도 HTTP 403 Forbidden이어서 발표일, 기능, 제공 단계와 editorial의 비교 전제를 검증할 수 없습니다. 독립 매체 본문은 읽었으나 공식 원문을 대체할 수 없습니다. 미검증 초안을 보존하며 발행을 보류합니다."
-    },
-    {
-     "title": "📊 Microsoft Agent 365 Business Analytics, AI 에이전트의 비용과 가치를 어떻게 살펴볼까",
-     "topic": "Microsoft Agent 365 Ignite 2026 Business Analytics and governance updates",
-     "source_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
-     "reason": "Microsoft Agent 365 Business Analytics의 2026-11-17 공식 발표 본문은 확인했으나, 같은 기간의 적격 독립 보도·커뮤니티 원문을 확인하지 못했습니다. Modern Workspace Pro 페이지는 Microsoft Message Center 내용을 재게재하고, 별도 Reddit 글은 본문에 게시일이 표시되지 않아 모든 출처의 페이지 표시 날짜 조건을 충족하지 못합니다. 기존 제외 후보도 재사용할 수 없어 이번 선정 후보의 이슈화 요건이 확인되지 않았습니다."
-    },
-    {
-     "title": "🤝 Perplexity Multiagent, 여러 AI가 함께 일할 때 무엇을 확인해야 할까",
-     "topic": "Introducing Computer’s Multiagent effort level",
-     "source_url": "https://www.perplexity.ai/en-GB/hub/blog/introducing-computer-multiagent",
-     "reason": "Perplexity Computer Multiagent 공식 발표 본문과 2026-11-17 독립 보도는 읽었습니다. 공식 뉴스 목록은 해당 글에 2026-11-17을 표시하지만, 선정한 공식 발표 원문 자체의 조회 가능한 본문에는 게시일이 표시되지 않아 모든 출처에 해당 페이지의 게시일을 요구하는 brief 조건을 확인하지 못했습니다. 직접 HTTP 조회도 403이어서 원문에서 날짜를 추가 확인할 수 없었습니다. 목록의 날짜를 원문에 표시된 날짜로 대체하지 않고 원고를 보류합니다."
-    },
-    {
-     "title": "🎙 HeyGen Avatar 6, 디지털 진행자를 실무에 쓸 때 확인할 것",
-     "topic": "Avatar 6: Talking Avatars That Are More Like You",
-     "source_url": "https://www.heygen.com/research/avatar-6-model",
-     "reason": "본문이 4,613자입니다 (최소 5,000자)"
-    },
-    {
-     "title": "🤖 Devin Bots, 지속적인 개발 업무를 어디까지 맡길까",
-     "topic": "Cognition introduces Devin Bots",
-     "source_url": "https://x.com/cognition/status/2122737511684587551",
-     "reason": "선정한 Cognition의 Devin Bots 공식 발표 원문은 웹 조회 도구에서 열리지 않았습니다. 같은 URL을 직접 조회한 결과 HTTP 200이었지만, 확인 가능한 내용은 제목·게시 시각과 짧은 메타데이터에 그쳤고 실제 발표 본문은 JavaScript 화면에서 읽을 수 없었습니다. 따라서 공식 발표의 내용과 날짜를 원문 본문에서 검증하지 못해 원고 작성을 보류합니다. 직접 조회 결과는 source-evidence/devin.json에 보존했습니다."
-    },
-    {
-     "title": "🔀 Perplexity Orchestrator, 여러 모델을 한 API로 쓰기 전 확인할 것",
-     "topic": "Introducing the Perplexity Orchestrator API",
-     "source_url": "https://community.perplexity.ai/t/introducing-the-perplexity-orchestrator-api/6688",
-     "reason": "Perplexity Orchestrator API 공식 포럼의 2026-11-17 발표와 Unite.AI의 같은 날 보도는 읽었으나, 함께 조회한 독립 보도 Crypto Briefing 원문이 웹 도구와 직접 HTTP 조회에서 모두 403으로 차단되었습니다. 해당 출처의 본문과 게시일을 확인하지 못해 이 후보의 조사·검증을 완료하지 않았습니다. 직접 조회 결과는 source-evidence/cryptobriefing.json에 보존했습니다."
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(2회). AI 도구 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-18T14:17:36+09:00",
-   "next_retry_at": null
-  },
-  "20261118:daily:AI 논문 분석": {
-   "at": "2026-11-18T07:39:32+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-18T07:44:40+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 논문 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261118:daily:AI 뉴스 리뷰": {
-   "at": "2026-11-18T07:45:10+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-18T07:50:16+09:00",
-   "rejected_candidates": [
-    {
-     "title": "🤖 Microsoft Ignite의 MAI 모델 발표, 업무별 전환을 어떻게 판단할까",
-     "topic": "Seven new world class models at scalable price-performance (Microsoft Ignite 2026)",
-     "source_url": "https://microsoft.ai/news/microsoft-ignite-2026/",
-     "reason": "Microsoft Ignite MAI 모델 공식 발표는 최초 웹 조회에서 읽었으나 별도 사실 검증을 위한 재조회에서 웹 도구가 접근 불가를 반환했고, 같은 공개 URL을 직접 조회한 결과 HTTP 403으로 원문 재확인에 실패했습니다. 추가 공식 기조연설 원문도 재조회 시 동일하게 실패했습니다. 후보 교체는 관리기가 담당합니다."
-    }
-   ],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "🔄 조회 실패 후 다른 주제로 재작성(1회). AI 뉴스 리뷰 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261118:daily:AI 보안": {
-   "at": "2026-11-18T07:50:46+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-18T07:55:17+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 보안 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
-  },
-  "20261118:daily:AI 인사이트": {
-   "at": "2026-11-18T08:39:04+09:00",
+  "20261119:daily:AI 공모주 분석": {
+   "at": "2026-11-19T09:00:35+09:00",
+   "status": "writing",
    "count": 2,
-   "status": "done",
-   "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "rejected_candidates": [
-    {
-     "title": "미국 초대형 데이터센터의 전력과 탄소: AI 인프라의 지역별 비용을 읽는 법",
-     "topic": "미국 초대형 데이터센터 403곳의 전력 사용과 탄소 배출 추정, 측정 범위와 전력망 선택의 함의",
-     "source_url": "https://www.nature.com/articles/s41893-026-01985-7",
-     "reason": "선정한 Nature Sustainability 논문(2026-11-16)은 웹 조회 도구에서 인증 리다이렉트로 본문을 열지 못했습니다. 동일 URL을 제한 시간 20초로 직접 조회한 결과 HTTP 200이었으나, 실제 페이지는 초록과 데이터·코드 안내만 공개하고 본문을 구독 미리보기 뒤에 두고 있습니다. 따라서 정책이 요구하는 발표·논문 본문 직접 확인과 별도 재검증을 완료할 수 없습니다. source-evidence/nature.json에 최종 URL, 상태, 조회 시각과 응답을 보존했습니다. 독립 보도 AP(2026-11-16)"
-    },
-    {
-     "title": "🧭 IBM AI 책임자 조사: 성과를 보아도 투자를 바꾸기 어려운 이유",
-     "topic": "기업 AI 책임자의 투자 권한과 거버넌스 간격을 설문 결과로 분석",
-     "source_url": "https://newsroom.ibm.com/2026-11-17-ibm-study-chief-ai-officers-see-where-ai-creates-value%2C-but-few-control-investment-decisions",
-     "reason": "IBM의 AI 책임자 설문을 다른 후보로 선정하고 2026-11-17 공식 발표와 CDO Magazine의 독립 보도를 읽었습니다. 발표가 연결한 공식 연구 보고서 페이지는 웹 조회 도구에서 열리지 않았고, 같은 URL을 20초 제한으로 직접 조회한 결과 HTTP 200이었으나 실제 연구 본문 없이 다운로드 안내와 발행일만 표시됐습니다. 보고서 본문과 고성과 집단의 정의를 직접 확인하고 별도 재검증할 수 없어 원고를 완성하지 않았습니다. 조회 응답과 시각은 source-evidence/ibm-report.json에 보존했습니다."
-    },
-    {
-     "title": "🧭 연준의 AI 경제 시나리오: 생산성 향상은 고용과 금융 안정으로 어떻게 이어질까",
-     "topic": "연준의 AI 생산성·고용 및 금융 안정 시나리오를 연결해 불확실성 분석",
-     "source_url": "https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm",
-     "reason": "연준의 2026-11-16 연설 두 건과 독립 보도를 직접 확인했으나, 기존 금융안정보고서·AI 투자 원고와의 중복을 피하면서 요구된 공백 제외 최소 5,000자의 새로운 분석을 충분히 확보하지 못했습니다. 현재 초안은 해당 분량과 독자 가치 기준을 충족하지 못해 별도 주장별 검증을 완료한 원고로 표시하지 않았습니다."
-    }
-   ],
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 인사이트 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   },
-   "finished_at": "2026-11-18T08:45:22+09:00",
-   "next_retry_at": null
-  },
-  "20261118:daily:AI 공모주 분석": {
-   "at": "2026-11-18T08:02:24+09:00",
-   "count": 1,
-   "status": "done",
-   "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다.",
-   "failure_kind": "",
-   "finished_at": "2026-11-18T08:07:19+09:00",
-   "rejected_candidates": [],
-   "next_retry_at": null,
-   "last_notified": {
-    "result": "done",
-    "kind": "result_invalid",
-    "note": "AI 공모주 분석 원고를 올렸습니다. 승인 채널에서 ✅로 즉시 승인하거나, 1분 미승인 시 자동 승인합니다. ❌는 보류입니다."
-   }
+   "note": "최근 14일 새 공모 소식: 유캐스트 발행조건확정(11-17) 원고는 check 가 엘리스그룹 글과 같은 소식으로 오판해 거절, 그 외 종목(케이엠에프·에이엔에이치스트럭쳐·아델·이나인페이·하나에어로다이내믹스)은 AI 관련 사업 확인 불가이거나 이미 쓴 글과 겹침",
+   "skip_ids": [
+    "20261119_080602_7"
+   ]
   }
  },
- "lease": {},
+ "lease": {
+  "owner": "44425421993-1",
+  "at": "2026-11-19T09:00:35+09:00",
+  "expires": "2026-11-19T11:00:35+09:00",
+  "task": {
+   "day": "20261119",
+   "request": "",
+   "kind": "daily",
+   "category": "AI 공모주 분석",
+   "topic": "",
+   "reason": "건너뜀: 최근 14일 새 공모 소식: 유캐스트 발행조건확정(11-17) 원고는 check 가 엘리스그룹 글과 같은 소식으로 오판해 거절, 그 외 종목(케이엠에프·에이엔에이치스트럭쳐·아델·이나인페이·하나에어로다이내믹스)은 AI 관련 사업 확인 불가이거나 이미 쓴 글과 겹침",
+   "previous_attempt": {
+    "at": "2026-11-19T08:06:02+09:00",
+    "finished_at": "2026-11-19T08:06:02+09:00",
+    "status": "skipped",
+    "count": 1,
+    "note": "최근 14일 새 공모 소식: 유캐스트 발행조건확정(11-17) 원고는 check 가 엘리스그룹 글과 같은 소식으로 오판해 거절, 그 외 종목(케이엠에프·에이엔에이치스트럭쳐·아델·이나인페이·하나에어로다이내믹스)은 AI 관련 사업 확인 불가이거나 이미 쓴 글과 겹침",
+    "skip_ids": [
+     "20261119_080602_7"
+    ]
+   },
+   "owner": "44425421993-1",
+   "at": "2026-11-19T09:00:35+09:00"
+  }
+ },
  "recoveries": [
   {
    "key": "20261006:C0C50SP7VV5-1791248113935869:AI 언어 모델",
