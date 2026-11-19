@@ -1,0 +1,121 @@
+{
+ "topic": "Researchers hijack Hugging Face account for popular Kokoro AI model (BleepingComputer, 2026-11-17)",
+ "source_url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Researchers hijack Hugging Face account for popular Kokoro AI model",
+   "url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Domain Lapse Let Researchers Hijack Kokoro Voice AI Hugging Face Account, Edit Weights in 87 Seconds",
+   "url": "https://www.techtimes.com/articles/330990/20261118/domain-lapse-let-researchers-hijack-kokoro-voice-ai-hugging-face-account-edit-weights-87-seconds.htm",
+   "publisher": "Tech Times",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "hexgrad/Kokoro-82M 모델 카드",
+   "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+   "publisher": "Hugging Face (Hexgrad)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hugging Face Hub Security",
+   "url": "https://huggingface.co/docs/hub/security",
+   "publisher": "Hugging Face",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Hugging Face Hub: Two-Factor Authentication (2FA)",
+   "url": "https://huggingface.co/docs/hub/security-2fa",
+   "publisher": "Hugging Face",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Hugging Face Hub: Malware Scanning",
+   "url": "https://huggingface.co/docs/hub/security-malware",
+   "publisher": "Hugging Face",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식·보도 출처 본문에 사건 내용을 보여 주는 도표·화면이 없고(BleepingComputer 는 기사 대표 이미지와 광고만, Tech Times 는 허깅페이스 로고 그림 한 장) 대표 이미지는 쓰지 않는다는 규칙에 따라 넣지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "모델 게시자 계정이 만료 도메인으로 넘어갈 수 있다면, 모델을 허브에서 내려받아 쓰는 내 서비스는 무엇을 점검해야 하나",
+  "limitations": "직접 재현·실행한 것이 없고 연구자 설명(87초, 탐지 불가)은 보도에 의존한다. BleepingComputer 가 연결한 연구자 Medium 글은 403 으로 열리지 않아 확인하지 못했다. 허깅페이스 공식 입장·Kokoro 계정의 2FA 여부는 미확인이며, 일일 다운로드 계산은 30일 가정의 어림값이다. 공식 문서 페이지에는 발표일이 적혀 있지 않다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자로 읽는 파급: 87초와 1,300만 다운로드",
+    "excerpt": "1,000시간을 초로 바꾸면 3,600,000초이고, 이를 87초로 나누면 약 41,379배입니다.",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "87초 시연과 원래 학습 시간을 같은 단위로 환산하고 월간 다운로드를 일 단위로 나눠, 조건이 다름을 밝힌 채 규모감을 제공"
+   },
+   {
+    "kind": "comparison",
+    "section": "📰 등장 배경: 도메인 부활 공격은 처음이 아니다",
+    "excerpt": "표의 세 사건은 모두 '이메일·이름 소유권'이 '게시자 신원'을 대신한다는 같은 구조를 가집니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "ctx·네임스페이스 재등록·Kokoro 세 사건을 빈틈·결과별로 나란히 놓고 실제 배포 여부 차이를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내 서비스의 모델 의존성 점검 순서",
+    "excerpt": "모델을 이름만으로 내려받는 자동 갱신 구성이라면 가장 먼저 커밋 해시 고정부터 하는 것이 좋습니다.",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "서비스 상황별로 먼저 할 점검과 이유를 표로 나눠 독자가 자기 구성에 맞게 고를 수 있게 함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚙ 허깅페이스 공식 문서가 말하는 것과 말하지 않는 것",
+    "excerpt": "두 보도와 허깅페이스 공식 문서를 겹쳐 읽으면, 비어 있는 부분은 '계정 복구 경로의 검증'과 '가중치 변경 탐지' 두 곳으로 좁혀집니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "added_value": "보도와 공식 문서 3건을 대조해 문서에서 확인되는 장치와 확인되지 않는 부분을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 42,
+  "confirmed": 41,
+  "removed": [
+   "Unit 42 네임스페이스 재등록 표의 '옛 모델 경로를 쓰던 사용자가 영향권(보도 설명)' — 보도에 없는 설명이라 '재등록 가능성 시연, 버전 고정 권고'로 교체"
+  ],
+  "corrected": [
+   "PyPI: '2025년 8월부터 재설정 중단' → 2025년 8월 발표, 6월 초부터 1,800여 개 주소 미인증 처리(Tech Times)",
+   "도메인 만료: BleepingComputer 는 만료라고 쓰지 않음 → Tech Times 가 연구자 말을 빌려 전한 것으로 출처 표시",
+   "DONATE.md: BleepingComputer '도메인이 적힘' / Tech Times '도메인의 연락용 이메일' 병기",
+   "탐지 시험: '게시자 이름·구조' → BleepingComputer 표현대로 '게시자·전달 경로·형식·아키텍처'",
+   "양자화 파생 '약 125개' → '125개'(Tech Times), 변환본 상속 설명을 기사 표현에 맞춤",
+   "'보도들이 연구자 원문 링크를 제시하지 않음' → BleepingComputer 는 헤르츠의 Medium 글을 연결했으나 403 으로 열리지 않음",
+   "도입부 섹션에 두 보도 모두 연구자 설명에 의존하고 탐지 불가 주장은 미검증이라는 문장 추가"
+  ],
+  "note": "Opus 검증: S1~S6 을 2026-11-20(KST) 다시 열어 확인. S1 페이지 날짜 2026-11-17, S2 2026-11-18 로 published 일치. S3~S6 허깅페이스 모델 카드·문서 페이지에는 발표·수정일 표기가 없어 published 를 비워 둠. 모델 카드 수치(82M, A100 1,000시간·1,000달러, 지난달 다운로드 13,134,554)·ClamAV 2GB 미만·커밋마다·2FA 'If you choose to enable'·복구 절차 원문 대조. 어림 계산(3,600,000/87≈41,379, 13,134,554/30≈437,818) 재계산. 인용 이미지: S1 본문은 광고뿐, S2 본문은 허깅페이스 로고, S3 모델 카드 본문은 관련 없는 영화 스틸뿐이라 images_none_reason 유지. 연구자 Medium 글은 403 으로 막혀 출처에 넣지 않음. 악용 절차는 쓰지 않고 방어 중심 유지."
+ }
+}
