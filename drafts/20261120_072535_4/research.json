@@ -1,0 +1,113 @@
+{
+ "topic": "Anthropic prices initial public offering (Anthropic, 2026-11-18) / Anthropic hits Nasdaq exchanges at $111, 33% above IPO price (TechCrunch, 2026-11-19)",
+ "source_url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Anthropic prices initial public offering",
+   "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+   "publisher": "Anthropic",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+   "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Anthropic prices IPO at $83 a share, above projected range",
+   "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic's IPO puts AI's circular financing boom to the test",
+   "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development",
+   "url": "https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+   "url": "https://www.anthropic.com/news/s1-sec",
+   "publisher": "Anthropic",
+   "published": "2026-10-26",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Anthropic launches roadshow for proposed initial public offering",
+   "url": "https://www.anthropic.com/news/roadshow-launch",
+   "publisher": "Anthropic",
+   "published": "2026-11-10",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "Anthropic 공식 발표문 3건(S-1·로드쇼·공모가)은 글자뿐인 보도자료로 본문 그림이 없고, TechCrunch 기사 4건의 그림은 Getty Images 대표 사진뿐이어서 인용하지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Anthropic 공모가 83달러와 813억 달러 조달액은 어떤 주식 구성이고 누구에게 가며, 보도에서 확정 사실과 해석은 어떻게 구분되는가",
+  "limitations": "직접 실행·측정 없음. Anthropic 공식 발표 3건과 TechCrunch 기사 4건만 읽었고 S-1·최종 투자설명서 본문은 직접 읽지 않음. 계산은 총액 단순 곱셈이며 개장 직후 가격은 변동 중",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 돈은 어디로: 813억 달러를 나눠 보기",
+    "excerpt": "이 글의 해설용 계산이며, 수수료·세금·결제 조정은 반영하지 않은 총액(gross) 입니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공식 주식 수에 공모가를 곱해 회사 몫과 기존 주주 몫, 추가 매입권 금액을 분리해 헤드라인 조달액의 구성을 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🤝 공급사가 곧 투자자: 순환 금융 논쟁",
+    "excerpt": "해석을 나눠 보면 두 시각이 있습니다. SemiAnalysis의 Joey Brookhart는",
+    "source_ids": [
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 발표와 TechCrunch 분석 기사를 연결해 공급사 지분 구조와 두 애널리스트의 상반된 시각을 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 읽는 법",
+    "excerpt": "이 소식이 AI 서비스를 쓰는 독자에게 주는 의미는 제한적입니다. 공식 발표에는 가격 정책이나 제품 변경이 없었고",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "투자자·개발자·정책 담당자별로 이 소식을 어떻게 읽을지와 확인되지 않은 영향의 한계를 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 53,
+  "removed": [
+   "애널리스트 추정(약 917억 달러의 순수입 등)과도 정의가 다를 수 있습니다 — 어느 출처에도 없음",
+   "260억 달러 규모의 '비의결권' 주식 — S4에 비의결권 언급 없음, '비의결권' 삭제",
+   "SemiAnalysis Joey Brookhart '공급사 지분이 합리적' / Gil Luria 'Anthropic 핵심 위험이 Nvidia 지원이 아니라 경쟁사나 값싼 오픈 가중치 모델' — S4 원문 인용과 다름, 원문대로 수정",
+   "이는 이전에 다룬 10월 30일 보도와 같은 맥락이며 — 날짜가 출처에 없음, 삭제",
+   "TechCrunch가 OpenAI 기대치에 대한 '분석가들의 시각'을 전했다 — S3는 분석가 의견이 아니라 예상으로 서술, 수정"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5를 WebFetch로 다시 열어 주식 수·가격·날짜·지분·인용문 대조, published 날짜가 각 페이지 날짜와 일치함 확인. 타임라인의 10-26 S-1·11-10 로드쇼는 Anthropic 공식 발표(S6·S7)를 추가해 확인(로드쇼 825,000,000주·70~78달러 포함). 33%는 TechCrunch 제목 표기, 111.50/83=34.3%는 해설용 계산으로 구분 표기. 계산값(793.8억·19.6억·813.4억·122억·97.6%·6.4%·18.6%·3,079억·2억8,220만) 파이썬으로 재계산. 인용 이미지: 공식 발표 3건 본문 그림 없음, TechCrunch는 Getty 사진만 있어 images_none_reason 유지"
+ }
+}
