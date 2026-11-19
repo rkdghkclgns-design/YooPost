@@ -1,0 +1,103 @@
+{
+ "topic": "Introducing Gemini 4 Neon (Google, 2026-11-18)",
+ "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Introducing Gemini 4 Neon",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+   "publisher": "Google",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google ships Gemini 4 Neon, its fourth new Gemini model in a month",
+   "url": "https://the-decoder.com/google-ships-gemini-4-neon-its-fourth-new-gemini-model-in-a-month",
+   "publisher": "The Decoder",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Google launches Gemini 4 Neon with Carbon quality at Flash speeds, live for AI Pro",
+   "url": "https://9to5google.com/2026/11/18/gemini-4-neon-announcement",
+   "publisher": "9to5Google",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Gemini Developer API pricing",
+   "url": "https://aistudio.google.com/docs/pricing",
+   "publisher": "Google",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+   "caption": "Gemini 4 계열(Carbon·Neon·Hydrogen) 안에서 Neon의 위치·가격·생각 수준을 보여 주는 비교 도표",
+   "credit": "Google"
+  },
+  {
+   "id": "I2",
+   "image_url": "",
+   "page_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+   "caption": "Gemini 4 Neon 벤치마크 비교표",
+   "credit": "Google"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Gemini 4 Neon은 Carbon·Hydrogen과 비교해 얼마나 들고, 12월 가격 전환 전후로 무엇을 확인해야 하나?",
+  "limitations": "직접 실행·측정 없음. 성능·작업당 비용 수치는 Google 주장이며 독립 검증 전. 계산은 같은 토큰 사용을 가정한 단가 계산. 요청 한도는 미확인.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 직접 계산: 입력 100만·출력 20만 토큰 작업이라면",
+    "excerpt": "같은 토큰 가정에서 Neon은 12월 이후 Carbon보다 $2 싸고, Hydrogen보다는 $3 비쌉니다. 그런데 Google 주장대로 Neon이 High에서 Carbon보다 **작업당 32%** 덜 든다면 Car",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "출처 단가로 같은 토큰 가정의 작업 비용을 모델별로 계산하고 가정을 밝힘"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 상황별 선택 기준",
+    "excerpt": "한 가지 더 따져 볼 것은 전환 비용입니다. 모델 이름이 바뀌면 프롬프트와 평가 세트를 다시 돌려야 하고, 생각 수준을 High에서 xhigh로 올리면 같은 작업에도 토큰이 더 들 수 있습니다. Google은 xhi",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "상황별로 먼저 볼 모델과 근거 수준(확인된 가격 vs Google 주장)을 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 가격표: Neon은 Hydrogen의 2배, 12월 이후 Carbon보다 25% 저렴",
+    "excerpt": "Google AI Studio 공식 가격표에 따르면 Carbon·Argon의 도입가는 **2026년 11월 30일까지**이고, **12월 1일부터 두 배**($4 / $20)가 됩니다. 두 매체 보도도 같은 내용입니다. 그러면 Neon은 $4 / $20 대비 **25% 저렴**해집니다.",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "공식 가격표와 두 매체 보도로 가격 전환일을 확인하고 12월 이후 Neon의 상대 가격(25%)을 도출"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 59,
+  "removed": [
+   "같은 달에 Carbon 일반 공개, Hydrogen 같은 Gemini 4 계열 소식이 이미 있었으므로 (Carbon '일반 공개' 미확인 → The Decoder 기준 '4주 사이 네 번째 모델, 앞서 Hydrogen·Carbon·Argon'으로 수정)",
+   "(The Decoder가) 성능 주장이 Google 한 곳에서 나왔다는 한계를 짚었습니다 (기사에 없음 → 삭제, 본문/FAQ 반복 문장도 수정)",
+   "토큰 소모량 차이를 반영한 Google 자체 측정 ('토큰 소모량 차이를 반영' 근거 없음 → 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Google 공식 글·S2 The Decoder·S3 9to5Google 을 다시 열어 수치·이름·가격·접근 경로·벤치마크·안전 수치를 하나씩 대조, 세 출처 published(2026-11-18)가 페이지 날짜와 일치 확인. Carbon·Argon 도입가 종료일은 공식 Google AI Studio 가격표(S4: $2/$10 'through November 30, 2026', $4/$20 'starting December 1, 2026')와 공식 글 본문 비교 도표('$2/$10 promo through Nov 30')로 확인 — 9to5Google(11/30까지)과 The Decoder(12/1 인상)는 같은 내용. Neon API 무료 계층 불가·다른 모델 캐시 단가를 S4 로 보완. 생각 수준 이름(Low·Medium·High·Extra High)은 9to5Google 출처로 명시. 32%·50~80%·36% 등은 Google 주장임을 본문에 명시. 계산표 산술 재계산 확인. 인용 이미지 URL 은 200 이지만 content-type 이 application/octet-stream 이라 image_url 은 비워 둠(Actions 보충). EGRESS_BLOCKED 출처 없음."
+ }
+}
