@@ -1,0 +1,117 @@
+{
+ "topic": "云知声发布大模型升级版本U2-Flash-1118 (Unisound, 2026-11-18)",
+ "source_url": "https://www.163.com/dy/article/LC0VK52N0518C51R.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "云知声 U2-Flash-1118 全新升级：打造国产第一梯队Flash 级别模型中的性价比标杆",
+   "url": "https://www.163.com/dy/article/LC0VK52N0518C51R.html",
+   "publisher": "云知声 공식 계정 (NetEase Hao)",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "自愿性公告 发布大模型全新升级版本U2-Flash-1118 (공고 목록)",
+   "url": "https://ir.unisound.com/",
+   "publisher": "Unisound 투자자 관계",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "云知声 MaaS 平台 모델 목록 (U2-Flash-1118)",
+   "url": "https://maas.unisound.com/",
+   "publisher": "云知声",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "云知声发布大模型升级版本U2-Flash-1118 总Token消耗降低约37.0%",
+   "url": "https://www.caiwennews.com/article/1705506.shtml",
+   "publisher": "财闻 (Caiwen)",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "云知声 U2-Flash 발표 기사 (9월)",
+   "url": "https://tech.ifeng.com/c/8wRVTZQDpGM",
+   "publisher": "凤凰网科技",
+   "published": "2026-09-16",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "雲知聲發布大模型全新升級版本U2-Flash-1118",
+   "url": "https://hk.on.cc/hk/bkn/cnt/finance/20261118/bkn-20261118080327994-1118_00842_001.html",
+   "publisher": "on.cc 東網",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "云知声：发布大模型升级版U2-Flash-1118，总Token消耗较原版本降低约37.0%",
+   "url": "http://stock.10jqka.com.cn/20261118/c681930408.shtml",
+   "publisher": "同花顺 (Tonghuashun)",
+   "published": "2026-11-18",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "",
+   "page_url": "https://www.163.com/dy/article/LC0VK52N0518C51R.html",
+   "caption": "U2-Flash-1118 벤치마크 성능: 코딩·에이전트 차트 (U2-SWE-Bench v1.1·SWE-Bench Pro·DeepSWE v1.1·TerminalBench 4.0, 이전 U2-Flash 점수 포함)",
+   "credit": "云知声"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "기존 U2-Flash 사용자가 이미지 입력과 토큰 37.0% 절감이 붙은 U2-Flash-1118로 갈아탈 만한가",
+  "limitations": "모든 수치는 회사 자체 평가. 모델을 직접 실행하지 않음. 정가·가중치 공개·라이선스·한국어 성능 미확인. 공고 PDF 본문은 읽지 못함.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 토큰 37.0% 절감, 내 청구액으로 계산해 보기",
+    "excerpt": "토큰이 37.0% 줄었다는 것은 회사가 고른 작업 묶음에서의 총량이고, 입력과 출력이 같은 비율로 줄었는지는 공개되지 않았습니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "MaaS 목록 단가와 37.0% 절감 수치로 입력·출력 단가별 예시 비용(1.8위안, 8.4위안, 약 5.29위안)을 계산하고 가정·한계를 표시"
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 U2-Flash-1118 벤치마크 성능",
+    "excerpt": "9월 소개 기사의 U2-Flash는 DeepSWE v1.1 64.6, SWE-Bench Pro 61.6이었는데",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "9월 기사 점수와 이번 차트에 함께 실린 이전 U2-Flash 점수를 대조해 DeepSWE +10.6·SWE-Bench Pro +0.9·TerminalBench 4.0 +12.9(22.6→35.5)를 계산하고, 각 항목 1위 모델과 TerminalBench 버전 차이를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "📊 선택 기준: 갈아탈 사람과 기다릴 사람",
+    "excerpt": "공개 자료만으로는 우열을 단정할 수 없으므로, 상황별로 무엇을 확인한 뒤 결정할지를 정리했습니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "상황별(기존 사용자·가중치 필요·한국어 업무·예산)로 선택과 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 51,
+  "removed": [
+   "'중국 본토 클라우드' 환경 언급 (출처 없음 — '중국산 AI 칩 환경'으로 축소, 9월 기사 근거)"
+  ],
+  "note": "Opus 검증: S1(163.com 공식 계정, 페이지 2026-11-18 12:41)·S2 IR 목록(2026-11-18 항목)과 공고 PDF(pdftotext로 숫자·날짜 부분 추출)·S3 MaaS 목록(1M/256K, 0.6/1.2위안, 표시가 1/2위안, 266B+)·S4 财闻(2026-11-18 08:08)·S5 凤凰网(2026-09-16 14:57, 266B/10B, 64.6/61.6/TB3.0 24.3, 국산 칩·한계)를 다시 열어 대조. 본문 에이전트 차트 이미지를 직접 열어 이전 U2-Flash 점수(64.6·61.6·22.6)와 각 항목 1위(DeepSWE 77.0, TB4.0 42.3, SWE-Bench Pro Qwen3.8-Max 67.7) 확인 후 반영. 고친 것: RSI 설명을 안내문 내용(실패 원인 분석 기반 훈련·분석/구현/검토 3단계)대로 수정, TerminalBench +12.9 근거(22.6→35.5) 확인, 공고 PDF '읽지 못함'→'일부 읽음'. 이슈 확인 매체 on.cc(S6)·同花顺(S7, 모두 2026-11-18) 추가. 계산(1.8·3·40%·8.4·5.29위안·1/30) 재계산 일치. 이미지는 nimg.ws.126.net 이 Referer 없이 194B 대체 PNG를 돌려줘 image_url 비우고 page_url만 둠."
+ }
+}
