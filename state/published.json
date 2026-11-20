@@ -7627,5 +7627,23 @@
    "https://www.anthropic.com/research/riemann-zeta"
   ],
   "draft_id": "20261121_072657_4"
+ },
+ {
+  "date": "2026-11-21",
+  "title": "🔒 GAO가 챗봇 4종에서 공격 계획을 받아냈다: 안전장치 점검 결과 어떻게 읽을까",
+  "topic": "Artificial Intelligence: Covert Testing Used Common Platforms to Create Viable Attack Plans (GAO-27-108814, 2026-11-18 공개) / Nextgov·Defense One·CBS News·Decrypt 보도",
+  "category": "AI 보안",
+  "source_url": "https://files.gao.gov/reports/GAO-27-108814/index.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/gao-4.html"
+  },
+  "sources": [
+   "https://files.gao.gov/reports/GAO-27-108814/index.html",
+   "https://www.nextgov.com/artificial-intelligence/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417305/",
+   "https://www.defenseone.com/threats/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417308/",
+   "https://www.cbsnews.com/news/ai-platforms-plan-us-terror-attack-when-asked-to-senate-hearings/",
+   "https://decrypt.co/383584/chatgpt-claude-gemini-grok-help-plan-terror-attacks-government-tests"
+  ],
+  "draft_id": "20261121_073316_5"
  }
 ]
