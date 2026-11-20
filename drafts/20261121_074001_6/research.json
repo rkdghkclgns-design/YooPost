@@ -1,0 +1,91 @@
+{
+ "topic": "Report: Just 11% of Companies Have Fully Integrated AI Implications into Workforce Planning (The Conference Board, 2026-11-18)",
+ "source_url": "https://www.conference-board.org/press/ai-implications-workforce-planning",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Report: Just 11% of Companies Have Fully Integrated AI Implications into Workforce Planning",
+   "url": "https://www.conference-board.org/press/ai-implications-workforce-planning",
+   "publisher": "The Conference Board",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI & Workforce Planning: How Leaders Can Navigate Tech-Driven Change",
+   "url": "https://www.conference-board.org/publications/AI-and-Workforce-Planning-How-Leaders-Can-Navigate-Tech-Driven-Change",
+   "publisher": "The Conference Board",
+   "published": "2026-11-09",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Just 1 in 10 employers factor AI's impact into workforce plans: report",
+   "url": "https://hrreporter.com/focus-areas/automation-ai/just-1-in-10-employers-factor-ais-impact-into-workforce-plans-report/395177",
+   "publisher": "Canadian HR Reporter",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Only 5% of leaders expect AI to hike headcount over the next two years",
+   "url": "https://www.hcamag.com/us/specialization/recruitment/only-5-of-leaders-expect-ai-to-hike-headcount-over-the-next-two-years/597993",
+   "publisher": "Human Resources Director (HRD America)",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "CIOs, HR leaders must redesign work for AI (Conference Board 'Leadership Disrupted')",
+   "url": "https://www.govinfosecurity.com/cios-hr-leaders-must-redesign-work-for-ai-a-33254",
+   "publisher": "GovInfoSecurity",
+   "published": "2026-10-29",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료와 보고서 공개 페이지에 본문 차트·도표가 없고(보고서 본문은 회원 전용) 매체 기사의 그림은 제목 일러스트뿐이라 인용하지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "기업은 AI의 고용 영향을 실제 인력 계획에 얼마나 반영했고, 775명 설문의 '예상' 수치를 어디까지 믿고 쓸 수 있는가",
+  "limitations": "보고서 본문은 회원 전용이라 보도자료와 두 매체 기사 수치만 확인. 조사 시기·응답자 구성·대표성 미공개. 환산·합계는 공개 비율에서 계산한 근삿값이며 직접 실험·실측 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산해 보기: 합계와 환산 인원",
+    "excerpt": "(글쓴이 계산) 계획 반영 네 구간의 합: 11% + 35% + 34% + 13% = 93%",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공개 비율을 합산·환산해 구간 합이 93%·101%로 100과 다르다는 점, 감소 예상이 증가 예상의 약 9.4배라는 점을 보여 주고 산술 결과임을 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 교차 대조: 보도자료와 두 매체 기사는 같은 말을 하나",
+    "excerpt": "이지 독립적인 재확인이 아닙니다. HRD America 는 여기에 Gartner 의 별도 전망",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "보도자료와 두 매체 수치를 항목별로 대조하고, 일치가 독립 재확인이 아님과 Gartner 전망과의 비교 불가를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직에 적용할 때의 판단 기준",
+    "excerpt": "보도자료에 적힌 단계를 조직의 현재 위치에 대응시켜 본 **해석용 체크표**입니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "보도자료의 네 구간을 조직 현재 위치로 읽고 여섯 권고와 연결, 제외 조건 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 보도자료(페이지 날짜 2026-11-18)·S2 보고서 페이지(2026-11-09, 저자 Matt Rosenbaum·Robin Maillard, 회원 전용 문구 확인)·S3 Canadian HR Reporter(2026-11-19)·S4 HRD America(2026-11-18)·S5 GovInfoSecurity(2026-10-29)를 다시 열어 수치 21개·인용·권고 6개·도구 3종·Gartner 수치·Leadership Disrupted 수치(64·37·85·26·38·36%, 775명·20명 인터뷰)를 대조. HRD America 기사에 37%·17%·8%가 없음을 재확인(표 '기사에 인용되지 않음' 유지). 글쓴이 계산 재계산: 93%·101%·47%·9.4배·85·39·364명·2.2배·49% 일치, '글쓴이 계산' 표시 추가. 수정: 도입의 '미국 민간 연구기관'은 출처 미확인이라 보도자료 소개문대로 '1916년에 세워진 비영리 싱크탱크'로 고침. 보완: 보고서 도구 3종과 Diana Scott 의 부서 간 협업 발언(S1) 문단 추가. S5는 별개 보고서로 합산하지 않음 유지. 보고서 본문은 회원 전용이라 미확인 — 본문·한계 절에 반영됨. 이미지: S1·S2 본문에 차트 없음(로고·저자 사진·관련 자료 썸네일뿐) 재확인."
+ }
+}
