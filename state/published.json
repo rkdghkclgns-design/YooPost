@@ -7574,5 +7574,23 @@
    "http://stock.10jqka.com.cn/20261118/c681930408.shtml"
   ],
   "draft_id": "20261121_070508_1"
+ },
+ {
+  "date": "2026-11-21",
+  "title": "🔌 Copilot 커넥터 8종 추가: Supabase·Box까지, 우리 팀이 켜기 전 확인할 조건",
+  "topic": "Connect Supabase, Box, Calendly, and more to Copilot (GitHub Changelog, 2026-11-18)",
+  "category": "AI 도구",
+  "source_url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/copilot-8-supabasebox.html"
+  },
+  "sources": [
+   "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+   "https://windowsforum.com/news/github-copilot-adds-8-mcp-connectors-enterprise-admin-policy-and-setup-guide.453115/",
+   "https://github.blog/changelog/2026-10-28-connect-your-tools-to-copilot-without-all-the-setup",
+   "https://docs.github.com/en/copilot/concepts/customizations/copilot-connectors",
+   "https://docs.github.com/en/copilot/reference/supported-connectors"
+  ],
+  "draft_id": "20261121_071308_2"
  }
 ]
