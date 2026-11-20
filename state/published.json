@@ -7592,5 +7592,21 @@
    "https://docs.github.com/en/copilot/reference/supported-connectors"
   ],
   "draft_id": "20261121_071308_2"
+ },
+ {
+  "date": "2026-11-21",
+  "title": "🧠 언어 모델이 자기 가중치를 직접 고쳤다: 6.6점 향상과 27B만 성공한 이유",
+  "topic": "Language Models Can Rewrite Their Own Weights (arXiv 2611.21885, 2026-11-16) / Hacker News 토론 (2026-11-20)",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.21885",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/66-27b.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.21885",
+   "https://arxiv.org/html/2611.21885v2",
+   "https://huggingface.co/papers/2611.21885"
+  ],
+  "draft_id": "20261121_071804_3"
  }
 ]
