@@ -7608,5 +7608,24 @@
    "https://huggingface.co/papers/2611.21885"
   ],
   "draft_id": "20261121_071804_3"
+ },
+ {
+  "date": "2026-11-21",
+  "title": "🧮 리만 가설 증명 주장 두 건, Claude와 쓴 Lean 코드와 사람이 쓴 초안: 무엇이 확인됐나",
+  "topic": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too (TechCrunch, 2026-11-20) / Alpöge·Masullo 리만 가설 증명 주장",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-lean.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+   "https://www.scientificamerican.com/article/dueling-claims-of-riemann-hypothesis-proofs-emerge/",
+   "https://officechai.com/ai/how-mathematicians-have-reacted-to-claimed-riemann-hypothesis-proof-by-anthropics-levent-alpoge/",
+   "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+   "https://alpo.ge/remark.pdf",
+   "https://www.anthropic.com/research/riemann-zeta"
+  ],
+  "draft_id": "20261121_072657_4"
  }
 ]
