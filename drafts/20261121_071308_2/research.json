@@ -1,0 +1,81 @@
+{
+ "topic": "Connect Supabase, Box, Calendly, and more to Copilot (GitHub Changelog, 2026-11-18)",
+ "source_url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+   "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+   "publisher": "GitHub",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "GitHub Copilot adds 8 MCP connectors: enterprise admin policy and setup guide",
+   "url": "https://windowsforum.com/news/github-copilot-adds-8-mcp-connectors-enterprise-admin-policy-and-setup-guide.453115/",
+   "publisher": "WindowsForum",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Connect your tools to Copilot without all the setup",
+   "url": "https://github.blog/changelog/2026-10-28-connect-your-tools-to-copilot-without-all-the-setup",
+   "publisher": "GitHub",
+   "published": "2026-10-28",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Copilot connectors (GitHub Docs)",
+   "url": "https://docs.github.com/en/copilot/concepts/customizations/copilot-connectors",
+   "publisher": "GitHub Docs",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Supported connectors (GitHub Docs)",
+   "url": "https://docs.github.com/en/copilot/reference/supported-connectors",
+   "publisher": "GitHub Docs",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처의 본문에는 관련 도표·화면 그림이 없고 변경 기록의 그림은 범용 대표 이미지(featured)뿐이며, 공식 문서는 글자 표뿐이라 인용하지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GitHub가 11월 18일 Copilot 커넥터를 8개 늘렸는데, 10월 출시 때와 무엇이 달라졌고 우리 팀은 켜기 전에 무엇을 확인해야 하는가?",
+  "limitations": "직접 커넥터를 연결해 실행하지 않았고 공개된 변경 기록·문서·외부 정리만 사용했다. 서비스별 권한·작업 범위는 공개되지 않았다. 기존 커넥터 수는 11월 18일 기록('25개 이상')과 10월 28일 기록('26개')의 표현이 달라 문서 표 34개를 합계 기준으로 삼았다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "📊 10월 28일과 11월 18일을 나란히 놓으면",
+    "excerpt": "출시 당시 26개에 이번 8개를 더한 수와 일치합니다. 증가 폭은 8÷26으로 약",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "두 변경 기록과 지원 커넥터 문서 표를 연결해 26+8=34 합계와 약 30.8% 증가, 조건이 바뀌지 않은 항목을 비교했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 지금 켜도 되는가: 상황별 판단 기준",
+    "excerpt": "아래 표는 공개된 조건만으로 만든 필자의 판단 기준입니다. 비용이나 보안",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "사용자 상황별로 먼저 할 일과 보류 조건을 정리해 도입 판단을 돕는다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 40,
+  "confirmed": 40,
+  "removed": [],
+  "note": "Opus 검증: S1(2026-11-18 변경 기록) 8개 커넥터·설명·연결 경로·모든 요금제 공개 프리뷰·Editor preview features·개별 허용 목록 추가·Box 측 MCP 허용·'25개 이상' 표현, S3(2026-10-28) 26개 출시·언급 서비스·지원 화면·예약 자동화, S4 문서의 MCP servers in Copilot·레지스트리 Allow all/Registry only·allowedMcpServers/deniedMcpServers·Actions 세션 미지원·로컬/클라우드 샌드박스 지원·이름 없이 사용 가능, S5 지원 표 34개(열은 Connector·MCP server URL 둘뿐), S2(WindowsForum 2026-11-18) Buildkite·Supabase 예시·GitHub verified 필터·읽기 위주 소규모 시험 의견을 각 페이지를 다시 열어 대조. 8/26≈30.8% 계산 확인. published 날짜는 페이지 표기와 일치(문서 S4·S5는 날짜 없음). 본문 그림은 변경 기록의 범용 featured SVG뿐이고 문서는 글자·표뿐이라 images_none_reason 타당."
+ }
+}
