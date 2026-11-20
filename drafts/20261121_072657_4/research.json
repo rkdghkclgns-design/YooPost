@@ -1,0 +1,107 @@
+{
+ "topic": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too (TechCrunch, 2026-11-20) / Alpöge·Masullo 리만 가설 증명 주장",
+ "source_url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+   "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Dueling claims of Riemann hypothesis proofs emerge",
+   "url": "https://www.scientificamerican.com/article/dueling-claims-of-riemann-hypothesis-proofs-emerge/",
+   "publisher": "Scientific American",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "How Mathematicians Have Reacted To Claimed Riemann Hypothesis Proof By Anthropic's Levent Alpöge",
+   "url": "https://officechai.com/ai/how-mathematicians-have-reacted-to-claimed-riemann-hypothesis-proof-by-anthropics-levent-alpoge/",
+   "publisher": "OfficeChai",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Hurried announcement: Alessandro Masullo, GRH",
+   "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+   "publisher": "Math 216 blog (Ravi Vakil)",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Levent Alpöge, Riemann Hypothesis note (remark.pdf — 본문에 날짜 표기 없음, PDF 메타데이터 CreationDate 2026-11-20 12:52 UTC)",
+   "url": "https://alpo.ge/remark.pdf",
+   "publisher": "Levent Alpöge (Anthropic 소속 수학자 개인 사이트)",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Claude has improved on a longstanding lower bound for the fraction of zeros of the Riemann zeta function that satisfy the Riemann hypothesis",
+   "url": "https://www.anthropic.com/research/riemann-zeta",
+   "publisher": "Anthropic",
+   "published": "2026-08-10",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처 페이지의 그림은 삽화·스톡 이미지(Scientific American 팔씨름 일러스트, Anthropic 나침반 삽화)뿐이며 원고 내용을 보여 주는 도표·화면이 없고, Alpöge 원문은 글자뿐인 PDF입니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "2026-11-20에 나온 두 건의 리만 가설 증명 주장은 지금 무엇이 공개됐고 무엇이 검증되지 않았으며, 독자는 이런 AI 수학 증명 뉴스를 어떻게 읽어야 하는가",
+  "limitations": "수학적 타당성은 직접 검증하지 않았고 Lean 코드를 실행하지 않았다. 보도 시점(2026-11-20) 이후 상황은 바뀔 수 있다. Lean Zulip 토론 페이지는 열리지 않아 출처로 쓰지 않았다. Alpöge PDF 에는 게시 날짜가 적혀 있지 않아 PDF 생성일(2026-11-20)과 보도를 기준으로 했다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 두 주장을 같은 기준으로 비교하기",
+    "excerpt": "두 주장은 같은 날 나왔지만 **공개 형태와 검증 방식이 전혀 다릅니다.** 아래 표는 위 출처에 적힌 내용",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "서로 다른 원문의 서술을 같은 다섯 항목(범위·공개 형태·AI 사용·검증 상태·남은 일)으로 나란히 놓아 독자가 확인할 지점을 보여 준다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자는 이 소식을 어떻게 읽어야 할까",
+    "excerpt": "AI가 수학의 오래된 문제를 풀었다는 뉴스는 앞으로 더 자주 나올 가능성이 있습니다. 아래 기준은 이번 보도",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "보도에서 확인된 검증 조건을 상황별 읽기 기준으로 바꿔, 앞으로의 AI 증명 뉴스에 적용할 체크리스트를 준다(해석임을 표시)."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🗓️ 8월의 Anthropic 발표와 무엇이 달라졌나",
+    "excerpt": "두 건은 **공식 발표 대 개인 사이트 게시, 부분 결과 대 전체 주장**이라는 점에서 다릅니다. 8월 글은",
+    "source_ids": [
+     "S5",
+     "S6",
+     "S3"
+    ],
+    "added_value": "2026-08-10 Anthropic 공식 글과 2026-11-20 저자 글·보도를 연결해 부분 결과와 전체 증명 주장의 차이와 각 출처의 한계를 해석한다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 54,
+  "confirmed": 54,
+  "removed": [
+   "'젊은 Stanford 수학자 Alessandro Masullo' — Vakil 글에 없는 표현이고 TechCrunch('Stanford postdoc')와 Vakil 글('Stanford에 1년 초청 희망')이 소속을 다르게 시사해 소속 수식어 삭제",
+   "'Lean은 … 컴파일이 통과하면 각 단계가 규칙에 맞는다는 것을 컴퓨터가 확인해 줍니다 [S1]' — S1 에 없는 서술, S1 원문('증명 검증을 돕는 오픈소스 언어', 'Lean-compilable')대로 교체"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4·S6 WebFetch 재열람, S5 PDF 는 내려받아 pdftotext 로 전문 대조(20개 타임라인 항목, 첫 10/6/26 Stepanov determinant·마지막 11/16/26 GRH, 각주 part01~part14·250,000+ pages, 'could not live', 'strange suboptimal choices' 확인). published: S1 November 20, 2026 11:32 AM PST, S2·S3 2026-11-20, S4 November 20, 2026 10:18 am, S6 Aug 10, 2026(8/13 갱신) 로 페이지 표기와 일치. S5 는 본문에 날짜 없음 — PDF 메타데이터 CreationDate 2026-11-20 과 보도 기준(한계 editorial.limitations 에 기록). 수정: 클레이 연구소→밀레니엄 상 문제(S1 표현), TechCrunch 인용 '말 그대로' 삭제, 야코비 추측 반례→야코비안 추측 반증(S3 'disprove the Jacobian conjecture'), 8월 글 'RH 증명 안 했다고 분명히 적음'→'시도했지만 성공하지 못했고 이 기법이 RH 증명으로 이어지리라 기대하지 않음'(S6 원문), 상장 문장 S1 표현으로, 14조각 출처에서 S3 제거(S3 에 없음), 강조 3문단 보강. Conrey·Goldston 'on short notice' 검토, 41.6%→67.2%, 약 60 하위 에이전트·하루 반·3,100만 출력 토큰·comparator 는 S6 로 확인. Lean Zulip 은 열리지 않아 쓰지 않음. 수학적 타당성은 검증 대상 아님. editorial excerpt 3개는 본문 문장과 일치 확인. images_none_reason: S6 본문 그림은 장식용 나침반 삽화뿐, S2 는 스톡 일러스트, S5 는 글자뿐 PDF — 타당."
+ }
+}
