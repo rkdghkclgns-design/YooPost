@@ -7554,5 +7554,25 @@
    "https://news.bizwatch.co.kr/article/market/2026/11/13/0024"
   ],
   "draft_id": "20261120_075444_7"
+ },
+ {
+  "date": "2026-11-21",
+  "title": "🤖 U2-Flash-1118, 이미지 입력과 토큰 37% 절감: 기존 U2-Flash 사용자가 갈아탈 조건",
+  "topic": "云知声发布大模型升级版本U2-Flash-1118 (Unisound, 2026-11-18)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.163.com/dy/article/LC0VK52N0518C51R.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/u2-flash-1118-37-u2-flash.html"
+  },
+  "sources": [
+   "https://www.163.com/dy/article/LC0VK52N0518C51R.html",
+   "https://ir.unisound.com/",
+   "https://maas.unisound.com/",
+   "https://www.caiwennews.com/article/1705506.shtml",
+   "https://tech.ifeng.com/c/8wRVTZQDpGM",
+   "https://hk.on.cc/hk/bkn/cnt/finance/20261118/bkn-20261118080327994-1118_00842_001.html",
+   "http://stock.10jqka.com.cn/20261118/c681930408.shtml"
+  ],
+  "draft_id": "20261121_070508_1"
  }
 ]
