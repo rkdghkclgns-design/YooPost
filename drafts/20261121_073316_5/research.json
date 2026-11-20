@@ -1,0 +1,106 @@
+{
+ "topic": "Artificial Intelligence: Covert Testing Used Common Platforms to Create Viable Attack Plans (GAO-27-108814, 2026-11-18 공개) / Nextgov·Defense One·CBS News·Decrypt 보도",
+ "source_url": "https://files.gao.gov/reports/GAO-27-108814/index.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Artificial Intelligence: Covert Testing Used Common Platforms to Create Viable Attack Plans (GAO-27-108814)",
+   "url": "https://files.gao.gov/reports/GAO-27-108814/index.html",
+   "publisher": "U.S. Government Accountability Office",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Major AI platforms generated viable plans for terrorist attacks, GAO finds",
+   "url": "https://www.nextgov.com/artificial-intelligence/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417305/",
+   "publisher": "Nextgov/FCW",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Major AI platforms generated viable plans for terrorist attacks, GAO finds",
+   "url": "https://www.defenseone.com/threats/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417308/",
+   "publisher": "Defense One",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Senate AI hearings in works after platforms planned U.S. terror attack when asked to",
+   "url": "https://www.cbsnews.com/news/ai-platforms-plan-us-terror-attack-when-asked-to-senate-hearings/",
+   "publisher": "CBS News",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "ChatGPT, Claude, Gemini and Grok Helped Plan Terror Attacks in Government Tests",
+   "url": "https://decrypt.co/383584/chatgpt-claude-gemini-grok-help-plan-terror-attacks-government-tests",
+   "publisher": "Decrypt",
+   "published": "2026-11-18",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://files.gao.gov/reports/GAO-27-108814/d27108814_web_files/image001.jpg",
+   "page_url": "https://files.gao.gov/reports/GAO-27-108814/index.html",
+   "caption": "GAO 시험 방법 개요: 플랫폼 4곳을 두 시나리오에 배정하고 질문 입력과 결과 검증의 두 단계로 진행",
+   "credit": "U.S. Government Accountability Office (GAO-27-108814, Figure 1)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://files.gao.gov/reports/GAO-27-108814/d27108814_web_files/image003.jpg",
+   "page_url": "https://files.gao.gov/reports/GAO-27-108814/index.html",
+   "caption": "안전장치는 어디에서 힘을 잃었나: 생성형 AI 이용자 상호작용(프롬프트, 모델 처리, 출력) 도식",
+   "credit": "U.S. Government Accountability Office (GAO-27-108814, Figure 3)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "GAO 시험에서 챗봇 4종의 안전장치가 넘어간 사실은 무엇이고, AI 를 쓰는 조직은 무엇을 점검해야 하나?",
+  "limitations": "직접 실행·재현하지 않았다. GAO 는 모델 이름과 기법을 공개하지 않았고 표본이 통계적으로 유의하지 않다. 점검 기준은 보고서에서 끌어낸 이 글의 해석이다. GAO 감사 기간(2025-12~2026-10)과 플랫폼 시험 시기(2026년 봄)는 서로 다른 기간이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🏢 네 회사의 답변을 나란히 읽기",
+    "excerpt": "이 표를 같은 조건의 비교로 읽을 수 없는 이유가 있습니다. 보고서에는 플랫폼 이름이 A~D로 가려져 있어 ",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "회사별 답변을 한 표로 모으되 시험 조건이 달라 순위로 읽을 수 없다는 제약을 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 우리 조직이 지금 점검할 것",
+    "excerpt": "이 절은 보고서 내용에서 끌어낸 방어 중심의 점검 기준이며, GAO 의 권고가 아니라 이 글의 해석입니다. ",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "상황별(직원 사용·서비스 연동·고위험 분야·공급사 계약) 점검 기준을 해석으로 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔬 이 보고서로 말할 수 있는 것과 없는 것",
+    "excerpt": "GAO 스스로 시험이 통계적으로 유의한 표본이 아니며 특정 시점의 평가라고 밝혔습니다. 같은 시험을 지금 반",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "GAO 원문의 한계 서술과 언론·회사 반박을 연결해 말할 수 있는 것과 없는 것을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 78,
+  "confirmed": 78,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): GAO 보고서 HTML(files.gao.gov)·Nextgov·Defense One·CBS·Decrypt 를 다시 열어 수치·날짜·이름·회사 답변·Hassan 발언을 대조. GAO 페이지 표기 'Published: Oct 16, 2026 / Publicly Released: Nov 18, 2026'(서한 날짜 2026-10-16) 확인 — 본문은 발간일·공개일을 바르게 구분, S1 published 는 공개일 2026-11-18(언론 4곳 datePublished 도 2026-11-18). 수정: (1) 'CBS 가 시험 기간을 2025-12~2026-10 으로 적었다'는 서술이 틀림 — GAO·CBS 모두 감사 기간 2025-12~2026-10, 시험 2026년 봄으로 같게 적음 → 경고 박스·표·연표·editorial limitations 를 '감사 기간과 시험 시기 구분'으로 고침. (2) OpenAI 가 '결국 쓸 만한 정보를 냈다고 인정'했다는 서술은 GAO 의 반박을 OpenAI 발언으로 잘못 돌린 것 → OpenAI 설명(거절·더 안전한 대안 답변, 출처 구분 지적)과 GAO 반박으로 나눔. (3) '일반 이용자처럼' 질문(출처에 없음) 삭제. (4) Walsh 발언 출처(Nextgov, 보고서와 함께 공개된 팟캐스트)·직함 명시. (5) 권고 없음의 인과 표현을 Nextgov 서술대로 완화. (6) Anthropic CBS 인용을 '요청 목적을 속이면'으로 정밀화, Google 이전 모델 발언 출처를 CBS 로 특정, Decrypt 의 OpenAI·Google 이전 모델 발언 추가. 보완: GAO 서한 수신인(합동경제위원회 간사 Hassan) 추가, 강조 없는 문단 보완. 인용 이미지 image001(Figure 1 방법 개요, 899x472)·image003(Figure 3 이용자 상호작용, 900x492) 모두 HTTP 200 image/jpeg 확인, 캡션 일치. 우회 기법·계획 세부 없음 확인. 환각(도로 위치 오류)은 GAO 원문 확인. editorial 발췌 3개 본문과 일치."
+ }
+}
