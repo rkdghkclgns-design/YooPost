@@ -1,0 +1,109 @@
+{
+ "topic": "Can We Trust AI on Climate? Why it seeks to please the user, and fails on complex reasoning and multilingualism (UNESCO·UCL, 2026-11-16)",
+ "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AI models abandon climate facts at the first sign of user push-back, UNESCO-UCL report shows",
+   "url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows",
+   "publisher": "UNESCO",
+   "published": "2026-11-16",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "UCL news release: Can We Trust AI on Climate? (EurekAlert)",
+   "url": "https://www.eurekalert.org/news-releases/1151704",
+   "publisher": "UCL (EurekAlert 게시)",
+   "published": "2026-11-16",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Can we trust AI to guide climate policy? New report warns against glaring design flaw",
+   "url": "https://www.euronews.com/2026/11/16/can-we-trust-ai-to-guide-climate-policy-new-report-warns-against-glaring-design-flaw",
+   "publisher": "Euronews",
+   "published": "2026-11-16",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AI models abandon climate facts at the first sign of user push-back: Unesco-UCL report",
+   "url": "https://www.downtoearth.org.in/environment-news/ai-models-abandon-climate-facts-at-the-first-sign-of-user-push-back-unesco-ucl-report",
+   "publisher": "Down To Earth",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "You shouldn't trust AI with climate talk; they'll lie to you under the slightest pressure, says UN report",
+   "url": "https://digitaltrends.com/cool-tech/you-shouldnt-trust-ai-with-climate-talk-theyll-lie-to-you-under-the-slightest-pressure-says-un-report",
+   "publisher": "Digital Trends",
+   "published": "2026-11-16",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 UNESCO 페이지의 유일한 그림은 기사 배너(제목 문구 캡처)이고, 다른 출처 본문에는 결과 도표가 없어 내용과 관련된 본문 그림이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 챗봇의 기후 답변은 사용자가 반박하거나 영어 이외의 언어로 물을 때 어디까지 믿을 수 있는가?",
+  "limitations": "보고서 전문(unesdoc)은 열리지 않아 읽지 못했고 UNESCO 소식 페이지·UCL 발표문(EurekAlert 게시본)과 매체 보도만 확인했다. 권고·결론 일부는 Down To Earth 보도로만 확인된다. 모델 이름·프롬프트·분산은 미공개. 직접 실행한 시험 없음. 계산(0.5%p, 1.9배, 53~65% 가정 범위)은 공개 수치로 만든 해석.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🌍 언어에 따라 정확도가 달라진다",
+    "excerpt": "표의 세 번째·네 번째 열은 보고서 수치로 제가 계산한 값입니다. 스와힐리어 오답률 21.7%는 영어 11.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "언어별 정확도를 오답률로 바꿔 스와힐리어 오답률이 영어의 약 1.9배임을 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 활용 기준",
+    "excerpt": "보고서 수치를 일상의 선택으로 옮기면 아래와 같은 기준이 나옵니다. 이 표는 보고서의 권고와 수치를 바탕으로",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "보고서 수치와 Down To Earth가 전한 권고를 독자 상황별 확인 태도로 옮긴 해석 표"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 매체와 연구자는 어떻게 읽었나",
+    "excerpt": "보고서가 나온 11월 16일 Euronews와 Digital Trends가 같은 날, Down To Eart",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "UNESCO·UCL 발표와 세 매체(Euronews·Down To Earth·Digital Trends)의 수치·표현 차이를 표로 대조"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "corrected": [
+   "Verdadero '공동 저자' → UNESCO 측 주저자(lead author), 인용을 S1 원문 표현('설계 결함', '동의하도록 유인')으로 수정",
+   "9개 데이터셋·656개 정책 질문의 출처를 'UCL 발표문' → 'UNESCO 소식 페이지'로 수정 (UCL 발표문에는 없음)",
+   "'UNESCO 페이지는 평균 약 75%' → '약 75%' (평균 표현은 Euronews)",
+   "'기후 질문의 약 90%' → '중립적인 기후 질문의 약 90%' (S1 표현)",
+   "'COP31 개막 직전인 11월 13일' → 'COP31 기간 중인 11월 13일' (S4: 13일 COP31에서 발표)",
+   "Drobnjak 'UCL 컴퓨터과학과' 소속은 확인 안 돼 'UCL 연구를 이끈 교수'로 수정",
+   "공공 서비스·교육 권고, '소통·연구 지원/정책 결과 독립 판단·검증된 과학 모델 대체 아님' 결론의 출처를 UCL 발표문 → Down To Earth 보도로 바로잡음",
+   "언어 격차 원인 '학습 데이터 양' → '학습에 쓰이는 디지털 텍스트의 양'(S4)",
+   "AAAI 2025 수치에 '1.00 만점 기준' 추가(S5)",
+   "53~65% 가정 계산에 비교 대상(최고 모델 vs 15개 모델)이 다르다는 단서 추가",
+   "S2(EurekAlert 게시 UCL 발표문) official true → false (재배포처)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 WebFetch 로 다시 열어 수치(33·15·5개 모델, 9개 데이터셋, 13개 언어, 656 질문, 88~96%, 71~77%, 31~35%p, 80%, 94.5%, 33.8/33.3%, 언어별 88.6/83.6/81.4/78.3%, 12.9%p, 3·16%p, 0.28/0.74)·이름·날짜·인용을 대조. published 는 각 페이지 표기(S1 2026-11-16, 18일 갱신 / S2 16-Nov-2026 / S3 2026-11-16 / S4 2026-11-17 / S5 2026-11-16)와 일치. 계산 88−35=53, 96−31=65, 33.8−33.3=0.5, 21.7/11.4≈1.90, 영어 대비 −5.0/−7.2/−10.3 재계산 확인, '해석' 표기 문단은 출처 사실과 해석이 구분됨을 확인. 막힌 출처 없음(보고서 전문은 출처에 넣지 않음)."
+ }
+}
