@@ -7753,5 +7753,25 @@
    "https://projectzero.google/2026/11/disclosure-policy.html"
   ],
   "draft_id": "20261122_073235_5"
+ },
+ {
+  "date": "2026-11-22",
+  "title": "📉 BofA 펀드매니저 서베이: AI 과잉 투자 순 38%, 기술주 비중 25포인트 급감은 무엇을 뜻할까",
+  "topic": "Is the bubble popping? Fund managers just cut tech by the most since 2006 as Goldman sees AI having pumped profits 25% above trend (Fortune, 2026-11-17) / BofA November Global Fund Manager Survey",
+  "category": "AI 인사이트",
+  "source_url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/bofa-ai-38-25.html"
+  },
+  "sources": [
+   "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+   "https://stocktwits.com/news-articles/markets/equity/bofa-says-ai-euphoria-is-over-after-fund-managers-cut-tech-exposure-by-most-since-2006/cNbawnMR9WF",
+   "https://www.wealthprofessional.ca/investments/equity-markets/us-fund-managers-drop-tech-to-a-net-12-overweight-bofa/394053",
+   "https://cryptobriefing.com/bofa-fund-managers-cut-tech-allocation/",
+   "https://www.bankofcanada.ca/publications/financial-stability-report/financial-stability-report-2026/financial-markets/",
+   "https://www.hl.co.uk/news/ai-hyperscalers-are-expected-to-finish-the-year-spending-a-whopping-828-billion-on-capex",
+   "https://finviz.com/news/312756/ai-spending-bubble-fear-just-hit-an-all-time-high-bofa-survey-shows"
+  ],
+  "draft_id": "20261122_073834_6"
  }
 ]
