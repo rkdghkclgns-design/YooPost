@@ -1,0 +1,118 @@
+{
+ "topic": "Attorney General Bonta Serves Investigative Subpoena on Nvidia (California DOJ, 2026-11-19) / CNBC·UPI·Newsquawk 보도",
+ "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Attorney General Bonta Serves Investigative Subpoena on Nvidia",
+   "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia",
+   "publisher": "California Department of Justice",
+   "published": "2026-11-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "California attorney general issues Nvidia subpoena in probe of China chip diversion",
+   "url": "https://www.cnbc.com/2026/11/19/nvidia-california-bonta-subpoena-china-chips.html",
+   "publisher": "CNBC",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "California Attorney General Rob Bonta opens probe into Nvidia",
+   "url": "https://www.upi.com/Top_News/US/2026/11/19/california-nvidia/2081795137162/",
+   "publisher": "UPI",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "California AG issued an investigative subpoena on Nvidia (NVDA) to prove if the Co. misled investors regarding China risks",
+   "url": "https://www.newsquawk.com/headlines/california-ag-issued-an-investigative-subpoena-on-nvidia-nvda-to-prove-if-the-co-misled-investors-regarding-china-risks",
+   "publisher": "Newsquawk",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Embattled Nvidia faces SEC probe as California attorney general eyes action",
+   "url": "https://www.investmentnews.com/equities/embattled-nvidia-faces-sec-probe-as-california-attorney-general-eyes-action/269054",
+   "publisher": "InvestmentNews",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "It's Golden State, not the Wild West: Attorney General Bonta Sues OpenAI Over Cybersecurity Incidents",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "publisher": "California Department of Justice",
+   "published": "2026-11-16",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료와 기사 본문에 원고 내용을 보여 주는 도표·스크린샷이 없고 글자 중심 문서임",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "캘리포니아가 엔비디아에 보낸 소환장은 무엇을 묻고, 확정된 사실과 아직 모르는 것은 무엇인가",
+  "limitations": "소환장 원문·엔비디아 회신·SEC 공식 확인을 읽지 못함. 주가 계산은 기사 속 수치에 대한 단순 산술이며 직접 시장 자료로 검증하지 않음. 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧭 엔비디아를 둘러싼 조사 갈래 비교",
+    "excerpt": "입니다. 나머지는 언론 보도나 기사 속 전언입니다. 둘째, 질문의 방향이",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "주체별로 공식 문서와 언론 전언을 구분하고 아직 모르는 항목을 대비해 소환장의 무게를 가늠하게 함"
+   },
+   {
+    "kind": "calculation",
+    "section": "🧮 주가 숫자를 계산해 읽기",
+    "excerpt": "22% 하락은 약 28% 상승이 필요하고, 38% 하락은 약 61% 상승이 필요합니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "CNBC 의 22%·38% 하락 수치에 회복 필요 상승률 1/(1-x)-1 을 적용해 낙폭의 비대칭을 보여 줌(전망 아님)"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 지난 소식과 이어 읽기: 소환장 다음에는 무엇이 오나",
+    "excerpt": "두 출처를 이어 얻는 결론은 **'소환장 이후 경로가 열려 있다'는 것까지**이고, 엔비디아가 소송으로 갈지는 어느 자료에도 없습니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6"
+    ],
+    "added_value": "엔비디아 소환장과 사흘 전 오픈AI 소송 보도자료(소환장→소송 선례)를 연결하되, 쟁점 차이를 밝히고 '경로가 열려 있다'는 데까지만 추론함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧑‍💼 독자별로 무엇을 지켜볼까",
+    "excerpt": "특히 AI 서비스를 운영하는 팀이라면 **이 소식만으로 GPU 조달 계획을 바꿀 근거는 읽은 자료에 없다**는 점을 먼저 확인하세요",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S5"
+    ],
+    "added_value": "독자 상황별 확인 항목과 제외할 해석을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [
+   "미국 정보 당국은 그가 중국 정보기관을 위해 일한다고 의심하고 … CNBC 는 썼습니다 (CNBC 에 없는 내용 — UPI 전언으로 고쳐 씀)",
+   "UPI 는 주 조사에 대한 엔비디아의 직접 인용문이 없다고 전했습니다 (UPI 가 그렇게 쓴 것이 아님 — '기사에 입장이 실리지 않았다'로 고침)",
+   "같은 기관이 소환장을 보낸 뒤 소송으로 나아간 사례가 바로 한 주 전에 있었다 (11/16 vs 11/19, 사흘 전으로 고침)",
+   "조사가 대개 조치 없이 끝나기도 하므로 (원문 'a large share' — '상당수'로 고침)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S6 을 WebFetch 로 다시 열어 모두 읽음(막힌 출처 없음), 각 published 가 페이지 날짜와 같음 확인(S1 11/19, S2 11/19 EST, S3 11/19, S4 19 Nov 22:55 UTC, S5 11/17, S6 11/16). CNBC 22%(9거래일)·7주 연속 주간 하락 38% 원문 확인, 산술 검산: 1/0.78-1=28.2%, 1/0.62-1=61.3%, 1-0.78^(1/9)=2.7%. 오픈AI 소환장 시점은 출처 간 표현이 달라 날짜를 쓰지 않음(S6 은 9월로 적음). SEC 조사는 InvestmentNews 의 WSJ 인용으로만 서술. 소환장·의혹은 '조사 절차·위반 판정 아님'으로만 서술했는지 확인. 오클랜드 dateline, 정보 당국 주장 출처(UPI), Newsquawk 해석 표현, 오픈AI 소송 시차(사흘) 등 4곳 수정."
+ }
+}
