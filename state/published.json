@@ -7716,5 +7716,24 @@
    "https://digitaltrends.com/cool-tech/you-shouldnt-trust-ai-with-climate-talk-theyll-lie-to-you-under-the-slightest-pressure-says-un-report"
   ],
   "draft_id": "20261122_071819_3"
+ },
+ {
+  "date": "2026-11-22",
+  "title": "🏛 캘리포니아가 엔비디아에 소환장을 보냈다: 칩 유출과 투자자 오도, 무엇이 확인됐을까",
+  "topic": "Attorney General Bonta Serves Investigative Subpoena on Nvidia (California DOJ, 2026-11-19) / CNBC·UPI·Newsquawk 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/blog-post_22.html"
+  },
+  "sources": [
+   "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia",
+   "https://www.cnbc.com/2026/11/19/nvidia-california-bonta-subpoena-china-chips.html",
+   "https://www.upi.com/Top_News/US/2026/11/19/california-nvidia/2081795137162/",
+   "https://www.newsquawk.com/headlines/california-ag-issued-an-investigative-subpoena-on-nvidia-nvda-to-prove-if-the-co-misled-investors-regarding-china-risks",
+   "https://www.investmentnews.com/equities/embattled-nvidia-faces-sec-probe-as-california-attorney-general-eyes-action/269054",
+   "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over"
+  ],
+  "draft_id": "20261122_072415_4"
  }
 ]
