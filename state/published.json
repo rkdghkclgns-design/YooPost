@@ -7735,5 +7735,23 @@
    "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over"
   ],
   "draft_id": "20261122_072415_4"
+ },
+ {
+  "date": "2026-11-22",
+  "title": "🔒 Anthropic 취약점 공개 기한 90일→30일: 오픈소스 메인테이너는 무엇을 먼저 바꿔야 할까",
+  "topic": "Updating our coordinated vulnerability disclosure policy timelines (Anthropic, 2026-11-16) / Google Project Zero 공개 기한 단축 보도",
+  "category": "AI 보안",
+  "source_url": "https://www.anthropic.com/news/coordinated-vulnerability-disclosure-timelines",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/anthropic-9030.html"
+  },
+  "sources": [
+   "https://www.anthropic.com/news/coordinated-vulnerability-disclosure-timelines",
+   "https://www.helpnetsecurity.com/2026/11/17/anthropic-vulnerability-disclosure-days/",
+   "https://www.csoonline.com/article/4249915/google-and-anthropic-push-for-faster-patches-as-ai-collapses-bug-discovery-timelines.html",
+   "https://bleepingcomputer.com/news/security/google-project-zero-cuts-bug-disclosure-deadline-to-30-days-amid-ai-threats",
+   "https://projectzero.google/2026/11/disclosure-policy.html"
+  ],
+  "draft_id": "20261122_073235_5"
  }
 ]
