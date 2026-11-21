@@ -1,0 +1,356 @@
+{
+ "title": "🛠 Claude Code 2.1.328, 클라우드 연동 환경에서 자동 모드가 기본 시작 모드로: 우리 팀이 확인할 조건",
+ "category": "AI 도구",
+ "intro": "Amazon Bedrock이나 Microsoft Foundry 같은 클라우드 제공자를 거쳐 Claude Code를 쓰는 팀이라면, 터미널을 열었을 때 권한 확인 창이 갑자기 줄어들 수 있습니다. 공식 변경 기록에 따르면 2026-11-19자 **Claude Code 2.1.328**이 Bedrock, Google Cloud의 Agent Platform, Microsoft Foundry, Claude apps gateway에서 Claude Opus 4.6과 Sonnet 4.6용 자동 모드를 추가했고, 권한 모드를 정하지 않은 대화형 세션은 자동 모드로 시작하도록 바꿨습니다. 이어 2.1.329(11월 19일)와 2.1.330(11월 20일)이 나왔습니다. 이 글은 공식 변경 기록, 공식 권한 모드 문서, 그리고 같은 기간에 이 버전들을 다룬 외부 사이트 두 곳을 맞춰 보며 무엇이 바뀌었고, 팀은 무엇부터 확인해야 하는지 정리합니다. 직접 설치해 실행해 본 결과는 아니며 문서와 기록에 적힌 내용만 다룹니다.",
+ "summary": [
+  "2.1.328(2026-11-19): Bedrock·Agent Platform·Foundry·Claude apps gateway에서 Opus 4.6·Sonnet 4.6용 자동 모드 추가",
+  "권한 모드를 정하지 않은 대화형 세션은 자동 모드로 시작, 끄는 설정은 disableAutoMode",
+  "같은 버전에서 /code-review는 버그와 CLAUDE.md 위반만 보고, 정리 제안은 /simplify로 분리",
+  "Code Mode 개선, 시작할 수 없는 샌드박스 알림, mcp_tool 훅 onFailure 차단 옵션 추가",
+  "2.1.329는 ~/.claude.json 초기화 문제를 고쳤고, 2.1.330은 easel 차트 기능 추가와 동시 저장 시 설정 유실 문제를 고침",
+  "공식 문서의 모델 표와 변경 기록의 모델 목록이 달라 보이는 부분이 있어 확인이 필요함",
+  "이 글에서 배울 것: 기본 모드 변경이 내 환경에 걸리는지 가리는 기준과 끄는 설정 위치"
+ ],
+ "sections": [
+  {
+   "heading": "📰 Claude Code 2.1.328 등장 배경: 무엇이 바뀌었나",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Claude Code 공식 변경 기록(2026-11-19)의 2.1.328 첫 항목은 이렇습니다. **Opus 4.6과 Sonnet 4.6**에서 Amazon Bedrock, Google Cloud의 Agent Platform, Microsoft Foundry, Claude apps gateway를 쓸 때 자동 모드를 쓸 수 있게 했고, **권한 모드를 정하지 않은 대화형 세션은 자동 모드로 시작**한다는 내용입니다. 같은 변경 기록은 이 모델들의 계획 모드와 Bash 확인 창도 더 새로운 모델에서처럼 자동 모드를 쓰고 제안하도록 바꿨다고 적고 있습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "자동 모드(auto mode)는 공식 문서에 따르면 별도의 분류 모델이 실행 전에 각 작업을 검토해, 요청 범위를 넘는 작업이나 낯선 인프라를 건드리는 작업, 읽은 내용에 숨은 악성 지시로 보이는 작업을 막는 방식입니다. 일상적인 권한 확인 창을 줄이는 대신 검토를 분류 모델에 맡기는 구조라고 이해하면 됩니다. 문서는 이것이 프롬프트를 줄여 줄 뿐 **안전을 보장하지는 않는다**고 직접 경고합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "공식 변경 기록(2.1.326~2.1.330), 공식 권한 모드 문서, 외부 사이트 ClaudeKit과 aicoding-guide의 정리를 읽고 맞춰 본 것입니다. 직접 설치해 실행한 실험은 없으므로 '써보니' 같은 경험담은 없습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "2.1.328은 외부 사이트 ClaudeKit이 11월 19일자로 요약했고, aicoding-guide가 11월 22일 주간 정리에서 다시 다뤘습니다. 두 곳 모두 **자동 모드 확대와 기본 시작 모드 변경**을 핵심으로 꼽았습니다. 다만 두 곳 모두 공식 변경 기록을 요약한 2차 자료이므로, 판단은 공식 기록과 문서를 기준으로 합니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ 자동 모드 공식 스펙 정리: 어떤 모델과 제공자에서 되는가",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 먼저 확인할 것은 내 환경이 이번 변경의 대상인지입니다. 변경 기록이 말하는 대상은 아래 **네 가지 경로와 두 모델**입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "2.1.328 변경 기록에 적힌 내용"
+     ],
+     "rows": [
+      [
+       "대상 제공자",
+       "Amazon Bedrock, Google Cloud의 Agent Platform, Microsoft Foundry, Claude apps gateway"
+      ],
+      [
+       "대상 모델",
+       "Claude Opus 4.6, Sonnet 4.6"
+      ],
+      [
+       "시작 모드",
+       "권한 모드를 정하지 않은 대화형 세션은 자동 모드로 시작"
+      ],
+      [
+       "계획 모드·Bash 확인 창",
+       "이 모델들도 더 새로운 모델처럼 자동 모드를 사용·제안"
+      ],
+      [
+       "끄는 방법",
+       "disableAutoMode 가 위 두 가지를 모두 끔"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "이 변경이 왜 '기본값 변경'으로 읽히는지는 공식 권한 모드 문서가 설명해 줍니다. 문서에 따르면 Claude Code **v2.1.283 이상에서는 자동 모드가 모든 요금제·제공자의 대화형 터미널·VS Code 세션의 기본 시작 모드**이고, Bedrock·Agent Platform·Foundry에서 권한 모드를 정하지 않으면 대화형 세션은 자동 모드로, `claude -p` 나 Agent SDK 실행은 Manual 모드(설정값 default)로 시작합니다. 문서는 지원 목록 밖의 모델이면 세션이 Manual 로 시작한다고 적으므로, 2.1.328은 이 제공자들에서 Opus 4.6·Sonnet 4.6 세션의 시작 모드를 Manual 에서 자동 모드로 바꾼 변경으로 읽힙니다(이전 동작을 직접 확인한 것은 아닙니다)."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 문서 표와 변경 기록이 달라 보입니다",
+     "text": "같은 시점에 읽은 공식 권한 모드 문서(날짜 표기 없음)의 요구 사항 표는 Bedrock·Agent Platform·Foundry·Claude apps gateway의 지원 모델을 Sonnet 5 이상, Opus 4.7 이상, Haiku 5.5 또는 Fable 모델로 적고, 그 밖의 모델은 Manual 모드로 시작한다고 적습니다. Sonnet 4.5·Opus 4.5 등 이전 모델은 어떤 제공자에서도 지원하지 않는다고도 적습니다. 이 표에 Opus 4.6·Sonnet 4.6은 없습니다. 문서가 아직 갱신되지 않았을 가능성이 있지만, 이 글에서 확인한 자료로는 어느 쪽이 맞는지 단정할 수 없습니다. 실제 지원 여부는 내 환경에서 모델 표시를 직접 확인하세요."
+    },
+    {
+     "type": "paragraph",
+     "text": "비교 조건을 정리하면 이렇습니다. 변경 기록은 **2026-11-19 시점의 변경 내용**을, 문서는 **날짜 없는 현재 요구 사항**을 말합니다. 같은 기준의 비교가 아니므로 우열이나 오류를 가리지 않고 차이만 표시했습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "자료",
+      "Opus 4.6·Sonnet 4.6의 클라우드 제공자 자동 모드",
+      "성격"
+     ],
+     "rows": [
+      [
+       "공식 변경 기록 2.1.328",
+       "추가됨",
+       "릴리스 시점 기록(2026-11-19)"
+      ],
+      [
+       "공식 권한 모드 문서 표",
+       "표에 없음(Sonnet 5+, Opus 4.7+, Haiku 5.5, Fable). 그 밖의 모델은 Manual로 시작한다고 적음",
+       "날짜 표기 없음"
+      ],
+      [
+       "ClaudeKit 요약",
+       "추가됨(변경 기록과 같음)",
+       "외부 사이트, 2026-11-19"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "🛠 기본값이 바뀐 날, 우리 팀은 무엇부터 점검할까",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "권한 모드를 정하지 않았다는 말은 설정 파일에 **permissions.defaultMode**도 없고 실행 때 --permission-mode 도 주지 않았다는 뜻입니다. 이런 세션이 이제 자동 모드로 시작하므로, 이전까지 확인 창을 한 번씩 거치던 팀은 같은 작업에서 확인 창을 덜 보게 될 수 있습니다. aicoding-guide도 같은 우려를 적으며, 확인 창을 유지하려면 defaultMode를 명시하라고 권합니다. 이는 그 사이트의 해석이고 공식 문서의 권고는 아닙니다."
+    },
+    {
+     "type": "subheading",
+     "text": "상황별 판단 기준"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "우리 팀 상황",
+      "먼저 할 일",
+      "근거"
+     ],
+     "rows": [
+      [
+       "Bedrock·Foundry 등에서 Opus 4.6 또는 Sonnet 4.6을 쓰고 모드를 지정한 적 없음",
+       "업데이트 전에 시작 모드를 정하고 시험 저장소에서 확인",
+       "2.1.328 변경 기록"
+      ],
+      [
+       "관리자가 조직 설정을 배포함",
+       "managed settings에 disableAutoMode 를 넣을지 결정",
+       "권한 모드 문서의 비활성화 절차"
+      ],
+      [
+       "개인 사용자이고 확인 창을 유지하고 싶음",
+       "~/.claude/settings.json에 defaultMode 를 명시",
+       "권한 모드 문서의 defaultMode 설명"
+      ],
+      [
+       "Opus 4.7 이상·Sonnet 5 이상만 사용",
+       "이번 변경의 대상이 아님. 문서상 v2.1.283 이상에서 이미 자동 모드가 기본 시작 모드이므로 현재 설정만 점검",
+       "권한 모드 문서의 시작 모드 설명"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "공식 문서가 알려 주는 자동 모드의 기본 동작도 판단 기준이 됩니다. 문서는 `curl | bash`, 강제 푸시, 운영 배포와 마이그레이션, 클라우드 저장소 대량 삭제, `terraform destroy`, 민감 데이터의 외부 전송을 **기본 차단** 예로 들고, 작업 폴더 안의 파일 작업, 잠금 파일에 적힌 의존성 설치, 읽기 전용 HTTP 요청, 작업 중인 저장소 브랜치로의 푸시를 **기본 허용** 예로 듭니다. 연속 3번 또는 총 20번 차단되면 자동 모드가 멈추고 다시 확인 창을 띄운다는 안전 장치도 적혀 있습니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 설정 위치 함정",
+     "text": "문서에 따르면 프로젝트 안의 .claude/settings.json 이나 .claude/settings.local.json 에 defaultMode 를 auto 로 적어도 효과가 없습니다. 개인 기본값은 ~/.claude/settings.json 에 넣어야 하고, --permission-mode 플래그는 설정 파일보다 우선합니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 설정 확인·고정 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래 두 가지는 공식 권한 모드 문서의 설명을 그대로 JSON으로 옮긴 설정입니다. 첫째는 **~/.claude/settings.json 에 개인 기본 시작 모드를 정하는 설정**(확인 창을 유지하려면 auto 대신 default), 둘째는 관리자가 managed settings에서 자동 모드를 끄는 설정입니다. 같은 파일에 이미 다른 키가 있다면 기존 내용을 지우지 말고 병합하라고 지시하세요."
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"permissions\": {\n    \"defaultMode\": \"auto\"\n  }\n}"
+    },
+    {
+     "type": "code",
+     "language": "json",
+     "code": "{\n  \"permissions\": {\n    \"disableAutoMode\": \"disable\"\n  }\n}"
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "~/.claude/settings.json 을 열어 permissions.defaultMode 가 이미 있는지 확인해 줘. 있으면 값만 알려 주고, 없으면 내가 원하는 모드(default 또는 auto)를 물어본 뒤 기존 키를 지우지 말고 병합해서 저장해 줘. 변경 전 파일 내용을 먼저 보여 줘."
+    },
+    {
+     "type": "paragraph",
+     "text": "문서는 조직 전체에서 아무도 자동 모드를 고르지 못하게 하려면 permissions.disableAutoMode 를 \"disable\" 로 두라고 안내합니다. 관리자 배포 설정(managed settings)에 이렇게 넣으면 **Shift+Tab 순환에서 auto 가 빠지고**, --permission-mode auto 로 시작한 세션도 Manual 모드로 시작합니다. 변경 기록의 표현(disableAutoMode 가 두 가지를 모두 끔)과 문서의 표현은 같은 설정을 가리킵니다. 정확한 값 형식은 위 문서 예시를 따르세요."
+    }
+   ]
+  },
+  {
+   "heading": "🧩 같이 바뀐 것: /code-review, Code Mode, 샌드박스, 훅",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "2.1.328은 변경 항목이 많은 릴리스이고, 자동 모드 외에도 일상 작업에 닿는 변경이 있습니다. 변경 기록의 문장을 기준으로 **다섯 가지**만 골랐습니다."
+    },
+    {
+     "type": "list",
+     "items": [
+      "/code-review: 대부분의 모델에서 **버그와 CLAUDE.md 위반만** 보고하며, 재사용·단순화·효율 정리는 /simplify 로 따로 실행하도록 바뀌었고, 각 발견에 Important·Pre-existing·Nit 표시를 붙이고 요약 끝에 수정 제안을 붙임",
+      "Code Mode: 자동·권한 우회 모드에서 대부분의 스크립트 뒤에 있던 **0.75초 대기를 제거**했고, 도구 설명을 줄여 토큰 사용을 개선함",
+      "샌드박스: 시작하지 못하면 다음 샌드박스 Bash 명령을 거절하며 세션에서 샌드박스가 꺼져 있다고 알림(sandbox.failIfUnavailable 설정 시 제외)",
+      "훅: mcp_tool 훅에 \"onFailure\": \"block\" 추가, 호출이 실패하면 해당 작업을 막음",
+      "Code Mode는 스크립트 출력에 UserPromptSubmit 훅을 더는 실행하지 않으므로, 출력을 가리려면 updatedToolOutput 을 쓰는 PostToolUse 훅을 사용"
+     ]
+    },
+    {
+     "type": "table",
+     "headers": [
+      "바뀐 항목",
+      "이전 습관",
+      "확인할 점"
+     ],
+     "rows": [
+      [
+       "/code-review 범위",
+       "정리 제안까지 한 번에 받음",
+       "정리 제안이 필요하면 /simplify 를 따로 실행"
+      ],
+      [
+       "샌드박스 시작 실패",
+       "명령이 계속 실행될 수 있었는지는 자료에 없음",
+       "시작 실패 알림과 거절을 팀 규칙에 반영"
+      ],
+      [
+       "Code Mode 훅",
+       "스크립트 출력에 UserPromptSubmit 훅이 걸림",
+       "출력 가림 정책은 PostToolUse 훅으로 이전"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "두 번째 열 중 '이전 습관'은 변경 기록의 '바꿨다'는 표현에서 추론한 것이며, 이전 버전의 실제 동작을 직접 확인한 것은 아닙니다. 또 한 가지 눈여겨볼 수정은 **자동 모드가 매 턴 실패하던 문제**입니다. 변경 기록은 Claude Desktop 밖에서 CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS 를 설정하고 베타를 거절하는 게이트웨이 뒤에서 Bedrock·Agent Platform·Foundry·Claude apps gateway를 쓸 때 자동 모드가 매 턴 실패하던 문제를 고쳤다고 적습니다. 이 조합이라면 새 기본값의 영향을 먼저 받을 수 있습니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 셀프 호스팅 러너",
+     "text": "변경 기록에 따르면 셀프 호스팅 러너에서 내장 gh api 가 설정이 GitHub 도구를 이름으로 보호하는 환경에서는 기본적으로 꺼졌고, 켜려면 --use-anthropic-gh true 를 써야 합니다. 러너를 운영한다면 업데이트 전 이 항목을 확인하세요."
+    }
+   ]
+  },
+  {
+   "heading": "🔄 2.1.329·2.1.330에서 이어진 수정",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "2.1.328과 같은 날, 그리고 다음 날 두 버전이 더 나왔습니다. 공식 변경 기록의 날짜는 **2.1.329가 2026-11-19, 2.1.330이 2026-11-20**입니다. 2.1.329 변경 기록에는 네트워크 지연이나 파일 잠금 때문에 저장 중 ~/.claude.json 을 읽지 못하면 **설정이 기본값으로 초기화되던 문제**를 고쳤다는 항목이 있고, aicoding-guide도 이 항목을 2.1.329의 대표 수정으로 꼽았습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "2.1.330에는 **easel**이 추가됐습니다. 변경 기록은 이것을 요청하면 차트를 그리고 MCP 지표 결과 아래에도 차트를 보여 주는 내장 mod로 설명하며, Pro·Max와 제공되는 경우의 Team·Enterprise, macOS·Linux에서 쓸 수 있고 자동 차트는 /config 에서 끌 수 있다고 적습니다. 또한 Anthropic Enterprise Admin Console에서 관리되는 조직에 로그인할 수 있게 됐으며, `claude auth login` 뒤에는 그 조직의 설정과 클라우드 제공자·게이트웨이가 적용된다고 적습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "버전",
+      "공식 변경 기록 날짜",
+      "눈에 띄는 항목"
+     ],
+     "rows": [
+      [
+       "2.1.328",
+       "2026-11-19",
+       "Opus 4.6·Sonnet 4.6용 클라우드 제공자 자동 모드, 자동 시작, /code-review 범위 변경"
+      ],
+      [
+       "2.1.329",
+       "2026-11-19",
+       "~/.claude.json 이 기본값으로 초기화되던 문제 수정"
+      ],
+      [
+       "2.1.330",
+       "2026-11-20",
+       "엔터프라이즈 관리 콘솔 로그인, easel 차트, 동시 저장 시 설정 유실 수정, 컴팩션 뒤 멈춤 수정"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 병렬 세션을 쓴다면",
+     "text": "2.1.330 변경 기록은 여러 Claude Code 프로세스가 동시에 저장할 때 사용자 설정 변경이 사라지던 문제와, ExitWorktree 가 다른 실행 중인 세션이 쓰던 작업 트리를 지우던 문제를 고쳤다고 적습니다. 병렬 세션을 돌리는 팀이라면 2.1.330까지 올릴 이유가 될 수 있습니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "이번 글의 한계를 먼저 밝힙니다. **직접 설치해 실행한 실험이 없고**, 모델별 자동 모드 지원 여부는 내 환경에서 확인한 값이 아닙니다. 공식 문서 표와 변경 기록의 모델 목록이 일치하지 않는 점은 앞에서 표로 정리했습니다. 또 외부 두 사이트는 변경 기록의 재요약이라 독립적인 검증이 아닙니다. aicoding-guide는 글 안에서 공식 문서를 바탕으로 AI가 초안을 쓰고 사이트 운영자가 검토해 올린 글이라고 밝히며, 도구가 빠르게 바뀌니 최신 공식 문서도 확인하라고 안내합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 자동 모드는 안전 보장이 아닙니다",
+     "text": "공식 문서는 자동 모드가 프롬프트를 줄이지만 안전을 보장하지 않는다고 적습니다. 운영 배포나 민감 데이터가 걸린 저장소에서는 시작 모드를 팀이 명시적으로 정하고, 필요하면 disableAutoMode 를 쓰는 편이 안전한 선택으로 보입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "마지막으로 이 변경이 비용이나 성능에 어떤 영향을 주는지는 자료에 없습니다. 분류 검토가 별도 호출로 이뤄지는지는 문서가 세션에 따라 서버 측 검토와 Claude Code 자체 분류 요청이 모두 있다고만 적으므로, **토큰 비용 변화는 확인하지 못했습니다**."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "2.1.328로 올리면 모든 사용자의 시작 모드가 자동 모드로 바뀌나요?",
+   "a": "변경 기록은 Bedrock·Agent Platform·Foundry·Claude apps gateway에서 Opus 4.6·Sonnet 4.6을 쓰고 권한 모드를 정하지 않은 대화형 세션이 자동 모드로 시작한다고 적습니다. 공식 문서에 따르면 다른 지원 모델의 대화형 세션은 v2.1.283 이상에서 이미 자동 모드로 시작했고, claude -p 나 Agent SDK 실행은 Manual 모드로 시작합니다."
+  },
+  {
+   "q": "자동 모드를 끄려면 어떻게 하나요?",
+   "a": "변경 기록은 disableAutoMode 가 두 가지(시작 모드와 계획 모드·Bash 확인 창의 자동 모드)를 모두 끈다고 적습니다. 공식 문서는 관리자 설정에서 permissions.disableAutoMode 를 disable 로 두는 방법을 보여 줍니다."
+  },
+  {
+   "q": "프로젝트 설정 파일에 defaultMode 를 auto 로 넣으면 되나요?",
+   "a": "공식 문서에 따르면 .claude/settings.json 과 .claude/settings.local.json 의 auto 는 효과가 없습니다. ~/.claude/settings.json 에 넣거나 --permission-mode 플래그를 쓰세요."
+  },
+  {
+   "q": "문서 표에 Opus 4.6이 없는데 정말 되는 건가요?",
+   "a": "변경 기록은 추가했다고 적고, 문서 표는 다른 목록을 보여 줍니다. 이 글에서는 어느 쪽이 맞는지 확인하지 못했으니, 내 환경에서 모델 표시와 모드 표시줄을 직접 확인해야 합니다."
+  },
+  {
+   "q": "/code-review 에서 정리 제안이 사라졌나요?",
+   "a": "변경 기록은 대부분의 모델에서 버그와 CLAUDE.md 위반만 보고하도록 바꿨고, 재사용·단순화·효율 정리는 /simplify 로 실행하라고 안내합니다."
+  }
+ ],
+ "closing": "정리하면, 클라우드 제공자로 Opus 4.6이나 Sonnet 4.6을 쓰면서 모드를 정해 둔 적이 없는 팀은 2.1.328 업데이트 전에 시작 모드를 직접 정해 두는 것이 가장 단순한 대비입니다. 확인 창을 줄이고 싶다면 자동 모드를, 기존 흐름을 유지하고 싶다면 defaultMode 명시나 disableAutoMode 를 고르면 됩니다. 남은 불확실성은 문서 표와 변경 기록의 모델 목록 차이와 비용 영향이며, 둘 다 직접 확인한 값이 아닙니다. 여러분도 한번 Claude Code의 권한 모드를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "버전·지원 모델·설정 방법은 바뀔 수 있으니 Claude Code 공식 변경 기록과 문서에서 최신 내용을 확인하세요.",
+ "hashtags": [
+  "ClaudeCode",
+  "자동모드",
+  "권한모드",
+  "AmazonBedrock",
+  "MicrosoftFoundry",
+  "disableAutoMode",
+  "Claude코드",
+  "AI코딩에이전트",
+  "개발도구",
+  "코드리뷰",
+  "샌드박스",
+  "MCP",
+  "엔터프라이즈",
+  "AI백과사전"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6"
+ ]
+}
