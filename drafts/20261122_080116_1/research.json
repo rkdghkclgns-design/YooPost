@@ -1,0 +1,134 @@
+{
+ "topic": "Meet bison-1 and groundhog-1, frontier American decision models (Baseten, 2026-11-20)",
+ "source_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Meet bison-1 and groundhog-1, frontier American decision models",
+   "url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+   "publisher": "Baseten",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "bison-1 and groundhog-1 decision models available on Baseten",
+   "url": "https://www.baseten.co/resources/changelog/bison-1-and-groundhog-1-available-on-baseten/",
+   "publisher": "Baseten",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "baselabs/bison-1 (Hugging Face model card)",
+   "url": "https://huggingface.co/baselabs/bison-1",
+   "publisher": "Base Labs / Hugging Face",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "bison-1 Decision Model: #1 on AA Index (Nov 20)",
+   "url": "https://explainx.ai/blog/baseten-bison-1-groundhog-1-gemma-4-decision-models-november-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Baseten Bison-1과 Groundhog-1 출시: 76점이라는 숫자를 어떻게 읽어야 할까",
+   "url": "https://tilnote.io/en/pages/6b0172222a9d4a26f9a2a07d",
+   "publisher": "TILNOTE",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "baselabs/groundhog-1 (Hugging Face model card)",
+   "url": "https://huggingface.co/baselabs/groundhog-1",
+   "publisher": "Base Labs / Hugging Face",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://www.datocms-assets.com/104802/1795202798-artificial-analysis-decision-index-20-nov-26-1.png?auto=format&w=1600",
+   "page_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+   "caption": "벤치마크: 출시 시점에 Artificial Analysis가 측정한 결정 모델 지수 비교 (bison-1 1위)",
+   "credit": "Baseten / Artificial Analysis"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://www.datocms-assets.com/104802/1795203143-artificial-analysis-decision-index-vs-time-per-task-19-nov-26-2.png?auto=format&w=1600",
+   "page_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+   "caption": "벤치마크: 작업당 시간 대비 결정 지수 점수 파레토 도표",
+   "credit": "Baseten / Artificial Analysis"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://www.datocms-assets.com/104802/1795203223-artificial-analysis-decision-index-brier-score-20-nov-26-1-copy.png?auto=format&w=1600",
+   "page_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+   "caption": "벤치마크: 결정 지수 모델별 Brier 점수 비교 (bison-1 0.14, d1.2-ultra 0.15, 낮을수록 좋음)",
+   "credit": "Baseten / Artificial Analysis"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "분류·라우팅 같은 판단 업무에 Baseten bison-1·groundhog-1을 기존 결정 모델 대신 시험해 볼 만한가, 어느 쪽부터인가",
+  "limitations": "직접 호출·측정은 하지 않았다. 점수·단가는 Baseten 발표·모델 카드·해설 글에 적힌 값이며 독립 검증은 확인되지 않았다. 비용 계산은 가정(질문당 2,000토큰·월 100만 건, 입력만)에 따른 예시다. groundhog-1은 발표 시점에 지수 점수가 없고(모델 카드도 미측정 명시), 지연 수치와 입출력 단가 구분은 출처에 없다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 벤치마크: 76점과 Brier 0.14는 무엇을 뜻할까",
+    "excerpt": "bison-1은 같은 가격의 mammoth-1보다 **5점** 높고 1위와 2위의 차이는 **1점**입니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "같은 지수의 점수 차이를 5점·1점으로 계산해 우열 단정을 피하고 선두권으로 읽는 기준을 제시"
+   },
+   {
+    "kind": "calculation",
+    "section": "💰 비용 계산: 질문 100만 건이면 얼마일까",
+    "excerpt": "가정은 한 질문(입력)이 평균 2,000토큰이고, 한 달에 100만 건을 처리하며",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "출처 단가에 가정 트래픽을 곱해 월 $200과 $70을 계산하고 가정·한계를 명시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "⚖ 어떤 팀에 어느 모델이 맞을까: 선택 기준",
+    "excerpt": "오분류 비용이 크고 확률 임계값으로 자동 승인 bison-1 지수 1위 76점·Brier 0.14. 단가는 mammoth-1과 같은 $0.10",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4",
+     "S6"
+    ],
+    "added_value": "업무 조건별로 먼저 시험할 모델과 제외 조건을 정리"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚖ 어떤 팀에 어느 모델이 맞을까: 선택 기준",
+    "excerpt": "그렇다면 **16k를 넘겨 쪼개 보내던 파이프라인**은 128k 모델로 바꾸면 쪼개기 로직을 줄일 수 있을 가능성이 있습니다.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "발표문의 16k 이전 세대 문맥과 모델 카드의 거부 규칙을 이어 파이프라인 단순화 가능성과 한계를 해석"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 50,
+  "confirmed": 49,
+  "removed": [
+   "세 가지가 모두 좋은 모델이 드물기 때문에 발표문은 파레토 도표를 따로 실었습니다. (근거 없는 인과 설명 — 사실만 남겨 고쳐 씀)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 블로그·S2 변경 기록·S3/S6 Hugging Face 모델 카드·S4·S5 를 다시 열어 수치·날짜·이름·가격·스펙을 대조. 고친 것: groundhog-1 역할 '긴 문맥·낮은 비용·지연'→'빠른 속도·낮은 비용'(카드: fastest option), 순위표에서 점수 확인되는 모델 목록을 카드 기준(d1.2-ultra 75, Drex Max v1.1·SubQ Snap 1.2·GLiDE v1.2 73, mammoth-1 71)으로 정정, 맺음말 groundhog-1 설명 정정. S3 published 2026-11-19 는 점수 측정일이라 출시일 근거가 없어 비움(S6 도 날짜 없음). S1·S2·S4 2026-11-20, S5 2026-11-21 페이지 날짜와 일치. groundhog-1 점수 없음은 S1(기대치)·S6(미측정 명시)으로 확인. 비용 계산 검산: 2,000토큰×100만 건=20억 토큰, ×$0.10/M=$200, ×$0.035/M=$70(35%), 100,000토큰×$0.10/M=$0.01 — 모두 맞음. 인용 이미지 3개 URL 200 image/png 확인(I3 Brier 도표 추가). 막힌 출처 없음."
+ }
+}
