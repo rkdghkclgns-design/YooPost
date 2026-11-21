@@ -7793,5 +7793,24 @@
    "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000363"
   ],
   "draft_id": "20261122_074646_7"
+ },
+ {
+  "date": "2026-11-22",
+  "title": "🤖 Baseten bison-1·groundhog-1 공개: 결정 모델 1위 76점, 문맥 16k→128k로 바꿀 만한가",
+  "topic": "Meet bison-1 and groundhog-1, frontier American decision models (Baseten, 2026-11-20)",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/baseten-bison-1groundhog-1-1-76-16k128k.html"
+  },
+  "sources": [
+   "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+   "https://www.baseten.co/resources/changelog/bison-1-and-groundhog-1-available-on-baseten/",
+   "https://huggingface.co/baselabs/bison-1",
+   "https://explainx.ai/blog/baseten-bison-1-groundhog-1-gemma-4-decision-models-november-2026",
+   "https://tilnote.io/en/pages/6b0172222a9d4a26f9a2a07d",
+   "https://huggingface.co/baselabs/groundhog-1"
+  ],
+  "draft_id": "20261122_080116_1"
  }
 ]
