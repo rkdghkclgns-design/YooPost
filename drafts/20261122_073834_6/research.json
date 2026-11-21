@@ -1,0 +1,113 @@
+{
+ "topic": "Is the bubble popping? Fund managers just cut tech by the most since 2006 as Goldman sees AI having pumped profits 25% above trend (Fortune, 2026-11-17) / BofA November Global Fund Manager Survey",
+ "source_url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Is the bubble popping? Fund managers just cut tech by the most since 2006 as Goldman sees AI having pumped profits 25% above trend",
+   "url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+   "publisher": "Fortune",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "BofA Says AI 'Euphoria' Is Over After Fund Managers Cut Tech Exposure By Most Since 2006",
+   "url": "https://stocktwits.com/news-articles/markets/equity/bofa-says-ai-euphoria-is-over-after-fund-managers-cut-tech-exposure-by-most-since-2006/cNbawnMR9WF",
+   "publisher": "Stocktwits",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "US fund managers drop tech to a net 12% overweight: BofA",
+   "url": "https://www.wealthprofessional.ca/investments/equity-markets/us-fund-managers-drop-tech-to-a-net-12-overweight-bofa/394053",
+   "publisher": "Wealth Professional",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "BofA fund managers cut tech allocation",
+   "url": "https://cryptobriefing.com/bofa-fund-managers-cut-tech-allocation/",
+   "publisher": "Crypto Briefing",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Financial Stability Report—2026: Financial markets",
+   "url": "https://www.bankofcanada.ca/publications/financial-stability-report/financial-stability-report-2026/financial-markets/",
+   "publisher": "Bank of Canada",
+   "published": "2026-05-28",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "AI hyperscalers are expected to finish the year spending a whopping $828 billion on capex",
+   "url": "https://www.hl.co.uk/news/ai-hyperscalers-are-expected-to-finish-the-year-spending-a-whopping-828-billion-on-capex",
+   "publisher": "Business Insider (via Hargreaves Lansdown)",
+   "published": "2026-10-30",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "AI Spending Bubble Fear Just Hit An All-Time High, BofA Survey Shows",
+   "url": "https://finviz.com/news/312756/ai-spending-bubble-fear-just-hit-an-all-time-high-bofa-survey-shows",
+   "publisher": "Benzinga (via Finviz)",
+   "published": "2026-02-17",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(캐나다 중앙은행 보고서) 본문 페이지에 차트 이미지 파일이 없고 나머지 출처는 매체 기사로 인용할 본문 도표가 없음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "BofA 11월 펀드매니저 서베이는 투자자들이 AI 설비투자에 속도 조절을 요구한다는 뜻인가, 그리고 어디까지 읽어야 하나",
+  "limitations": "BofA 원문·골드만삭스 원문을 직접 열지 못해 매체 보도(Fortune·Stocktwits·Wealth Professional·Crypto Briefing)에 적힌 숫자만 사용하고, 한 매체만 전한 숫자는 매체를 밝혔음. 계산은 반올림된 보도 수치에 기반한 글쓴이의 역산. 캐나다 중앙은행 보고서는 5월 자료라 시점이 다름. 직접 실행·실측 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자를 직접 풀어 보기: 25포인트, 17포인트, 1.4조 달러",
+    "excerpt": "식을 거꾸로 풀면 1조 4,000억 ÷ 1.58 ≈ **약 8,860억 달러가 올해 기준값**으로 역산됩니다",
+    "source_ids": [
+     "S1",
+     "S6"
+    ],
+    "added_value": "컨센서스 58% 증가·1.4조 달러 수치에서 올해 기준값을 역산하고 Business Insider 전망과 집계 범위가 다를 수 있음을 표시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 세 자료를 이어 읽기: 설문·골드만삭스·캐나다 중앙은행",
+    "excerpt": "설문은 **투자자의 심리**를, 골드만삭스는 **설비투자가 이익에 미치는 기여의 방향**을, 캐나다 중앙은행 금융안정보고서는 **시장 구조의 취약성**을 다룹니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "added_value": "심리 설문·이익 기여 추정·중앙은행 자금 조달 구조 분석을 연결해 신용 사건 경로를 설명"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 상황별 판단 기준: 설문을 어디까지 믿을까",
+    "excerpt": "아래 표는 독자 상황별로 이 뉴스를 어떻게 쓰면 좋을지 정리한 판단 기준입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 유형별로 볼 것·보지 말아야 할 것을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 40,
+  "confirmed": 40,
+  "removed": [
+   "현금 비중처럼 보도마다 다르게 적힌 값(3.6%와 3.7% 등)은 Fortune이 적은 값만 따랐습니다. (3.7%를 적은 출처 없음 — Fortune·Stocktwits·Crypto Briefing 모두 3.6%)",
+   "BofA 서베이는 일반에 공개되지 않아 (출처에서 확인 안 됨 — '원문을 열어 보지 못했다'로만 남김)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 7개 출처를 모두 다시 내려받아(curl, 전부 HTTP 200) 본문과 대조. 11월 서베이 핵심 수치(37%→12%·2006년 6월 이후 최대, 순 38% 역대 최고, 52%, 169명·4,610억 달러, 경기침체 3%, 현금 3.6%)는 Stocktwits·Wealth Professional·Crypto Briefing·Fortune 중 2~4곳에서 일치 확인. 한 곳만 전한 수치(Fortune: 16%·신용사건 38/30%·나스닥 2.5%·7,926·8,700·골드만 +12/+9/−5·컨센서스 58%/1.4조; WP: 꼬리위험 순위·2027 자산 36/24/17%·나스닥 10월 5%; CB: 반도체 39%/82%, 169~193명)은 본문에 매체를 밝혀 둠. 2월 서베이(Finviz/Benzinga), Business Insider 8,030억~8,280억 달러, 캐나다 중앙은행 수치(18% 이상·16년, 17%, IT 비중 닷컴 정점 수준, IG 스프레드 최저 구간, 레버리지·마진콜) 원문 일치. 계산(−25p, 17p, 1.4조÷1.58≈8,860억, 774p≈8.9%) 재계산 일치. 고친 것: 순비중 정의(늘리겠다/줄이겠다 → 비중 확대/축소 보유), 37%→12% 보도처에서 Fortune 제외(Fortune 본문엔 수치 없음)·Crypto Briefing 추가, 도입부 보도 매체 수정, '같은 발언에서' 삭제, 2월 '설비투자 확대' 주체(CEO→기업), BoC 장 'AI를 직접 평가하지 않으면서도'(본문에 AI 언급 있음) 수정, 소제목 '같은 시기'→'5월에', '겹치는 숫자만' 표현을 실제 사용 방식으로 수정(caveat·editorial limitations 포함). published: S1 2026-11-17(11:07 AM ET), S2 Nov 17 2026, S3 Nov 19 2026, S4 17 Nov 2026, S6 Oct 30 2026, S7 February 17 2026 모두 페이지 표기와 일치. S5(캐나다 중앙은행) 섹션 페이지 본문엔 날짜 표기가 없으나 meta publication_date=2026-05-28이고, 공식 FSR 목록 페이지(bankofcanada.ca/publications/financial-stability-report/)에 'Financial Stability Report—2026 · May 28, 2026'로 표기돼 2026-05-28 확인. EGRESS_BLOCKED 출처 없음. 투자 권유·자체 수익 전망 없음(골드만 목표치는 출처 인용으로만)."
+ }
+}
