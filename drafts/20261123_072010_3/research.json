@@ -1,0 +1,111 @@
+{
+ "topic": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth (arXiv 2611.26603, Apple, 2026-11-19) / Hugging Face Papers·AlphaSignal 소개",
+ "source_url": "https://arxiv.org/abs/2611.26603",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth (arXiv abstract)",
+   "url": "https://arxiv.org/abs/2611.26603",
+   "publisher": "arXiv (Apple 연구진)",
+   "published": "2026-11-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth (arXiv HTML v1)",
+   "url": "https://arxiv.org/html/2611.26603v1",
+   "publisher": "arXiv (Apple 연구진)",
+   "published": "2026-11-19",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.26603",
+   "publisher": "Hugging Face",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Apple's Depth Pro 2 Turns Any Video Into Precise 3D Depth Maps",
+   "url": "https://alphasignal.ai/model/apple-s-depth-pro-2-turns-any-video-into-precise-3d-depth-maps",
+   "publisher": "AlphaSignal",
+   "published": "2026-11-22",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "apple/DepthPro2-H · Hugging Face 모델 카드",
+   "url": "https://huggingface.co/apple/DepthPro2-H",
+   "publisher": "Apple (Hugging Face)",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "ml-depth-pro-2 README (공식 GitHub 저장소)",
+   "url": "https://raw.githubusercontent.com/apple-aiml-research/ml-depth-pro-2/main/README.md",
+   "publisher": "Apple",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.26603v1/architecture.png",
+   "page_url": "https://arxiv.org/html/2611.26603v1",
+   "caption": "Depth Pro 2 구조: 다중 뷰 트랜스포머와 DPT 디코더 (논문 Figure 3)",
+   "credit": "Apple, arXiv 2611.26603"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Depth Pro 2의 영상 깊이 떨림 감소는 얼마나 되고, 초점거리·해상도·라이선스 조건에서 내 프로젝트에 쓸 수 있는가",
+  "limitations": "모델을 직접 실행하지 않았다. 논문 HTML 본문·결론·부록 A~F를 읽었으며 논문에는 별도 한계 절이 없다. 배율·프레임당 시간·δ1 차이는 저자 보고값을 나눈·뺀 계산이고, fps·메모리는 B200·bf16·eager 모드 조건이다. 본문 H+ 8 fps의 측정 조건과 독립 재현 결과는 확인하지 못했다. 라이선스는 공식 README·LICENSE_MODEL·모델 카드로 확인했다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📐 숫자로 다시 계산: 떨림은 몇 배 줄었고 프레임당 몇 밀리초인가",
+    "excerpt": "Sintel은 11.26 ÷ 1.39 = 약 8.1배, Spring은 8.99 ÷ 0.86 = 약 10.5배입니다",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "표 5 떨림 값을 나눠 감소 배율을 구하고, 표 13의 fps를 프레임당 ms와 4K 해상도 비용·메모리 배율로 환산해 제시 (H+ 표 값 5.3 fps와 본문 8 fps를 구분)"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔍 초점거리가 없을 때: 정답 대비 추정 초점거리 차이",
+    "excerpt": "15개 조합 가운데 12개에서 추정 초점거리 쪽이 낮았고, 하락폭은 0.9~22.6포인트로 데이터셋마다 크게 다릅니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "표 2·3의 H+ 정답/추정 초점거리 δ1을 15개 조합 전부 나란히 두고 차이를 계산해, 하락 범위와 역전 사례를 함께 보임"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 도입 판단 가이드: 어떤 크기를, 어떤 상황에 쓸까",
+    "excerpt": "가중치는 Apple Machine Learning Research Model 라이선스로 '비상업 과학 연구와 학술 개발'에만 쓸 수 있습니다",
+    "source_ids": [
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "모델 크기·해상도·메모리·초점거리 정보·라이선스 조건별 선택·제외 기준을 보고 수치와 공식 라이선스 원문으로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 64,
+  "removed": [
+   "Hugging Face Papers 페이지는 ... 모델군의 크기와 fps 같은 핵심 수치를 요약했습니다 (페이지에 fps 요약 없음 → 연결 모델 목록으로 교체)",
+   "도로 주행 같은 환경에서는 초점거리 추정이 안정적이라는 해석이 가능합니다 (단일 이미지 KITTI는 10.3포인트 하락해 근거 부족)",
+   "다만 제가 읽은 본문 범위에서는 이 비교를 뒷받침하는 부록 표까지 확인하지 못했습니다 (부록 표 19 E3 −5.7p로 확인해 교체)",
+   "미터 깊이의 규모가 초점거리에 묶여 있으므로 ... 이는 해석이며 논문 실험이 직접 보인 내용은 아닙니다 (공식 README 설명으로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). arXiv abs·HTML v1 전문(본문·결론·부록 A~F, 표 1~23), HF Papers, AlphaSignal, HF 모델 카드 apple/DepthPro2-H, 공식 README·LICENSE_MODEL 을 다시 열어 대조. 고친 것: 단일 이미지 δ1 평균 순위는 2.4/2.7로 1위(논문 명시) — '1위 단정 어려움' 수정; 표 13에 H+ 행(1080p 5.3 fps·29.5GiB, 4K 0.4 fps·114.6GiB)과 S 행이 있어 표·요약·FAQ·가이드 수정(본문 8 fps와 구분); 정답/추정 초점거리 δ1 차이를 15개 조합 전부로 다시 계산 — 하락 0.9~22.6p(Booster 22.6), 3개 조합은 추정 쪽이 높음 — '0.9~16.8p' 반복 위치 모두 수정; 논문에 한계 절이 없음을 확인해 한계 절 문단 수정; 라이선스·학습 코드 미포함은 공식 README·LICENSE_MODEL·모델 카드로 확인(AlphaSignal 단독 근거 해소); HF Papers published 를 페이지 표기(Published on Nov 19)에 맞춰 2026-11-19로 수정; 파레토 프런티어 정의 오류 수정. 계산 재확인: 11.26/1.39=8.10, 8.99/0.86=10.45, 1000/23.6=42.4ms, 1000/9.1=109.9ms, 1000/5.3=188.7ms, 23.6/1.8=13.1, 9.1/0.7=13.0, 5.3/0.4=13.25, 64.8/14.0=4.63, 82.6/21.7=3.81, 114.6/29.5=3.88, 88.6-71.7=16.9. 출처 날짜: arXiv 2026-11-19(v1 19 Nov 2026), AlphaSignal 2026-11-22(datePublished), 모델 카드 2026-11-20(lastModified), README 날짜 미표기. EGRESS_BLOCKED 출처 없음(github.com 웹 페이지는 막혀 raw.githubusercontent.com 으로 읽음). 인용 이미지 architecture.png 200·image/png·3200×1800 확인."
+ }
+}
