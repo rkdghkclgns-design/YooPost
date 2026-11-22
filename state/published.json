@@ -7883,5 +7883,22 @@
    "https://pypi.org/project/agent-framework/"
   ],
   "draft_id": "20261123_073505_5"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🛡 Microsoft Agent 365 Ignite 2026 업데이트, 우리 조직의 에이전트는 어디까지 관리할 수 있을까",
+  "topic": "What's new in Microsoft Agent 365: Ignite 2026 (Microsoft, 2026-11-17)",
+  "category": "AI 인사이트",
+  "source_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/microsoft-agent-365-ignite-2026.html"
+  },
+  "sources": [
+   "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+   "https://www.constellationr.com/insights/news/ignite-2026-microsoft-makes-case-be-your-work-operating-system-intelligence-layer",
+   "https://jannikreinhard.com/microsoft-ignite-2026-ai-intune-agent-governance/",
+   "https://virtualizationreview.com/articles/2026/11/17/microsoft-ignite-2026-top-azure-announcements-for-enterprise-it.aspx"
+  ],
+  "draft_id": "20261123_074229_6"
  }
 ]
