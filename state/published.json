@@ -7847,5 +7847,22 @@
    "https://raw.githubusercontent.com/apple-aiml-research/ml-depth-pro-2/main/README.md"
   ],
   "draft_id": "20261123_072010_3"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🔒 Signal, 모바일 화면 캡처를 막다: OS 속 AI 에이전트 시대에 내 대화는 어디까지 지켜질까",
+  "topic": "Signal is Serious About Protecting Your Privacy (Signal, 2026-11-20) / Signal restricts mobile screenshots as it confronts 'existential threat' of AI surveillance (TechCrunch, 2026-11-21)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://signal.org/blog/protecting-your-privacy/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/signal-os-ai.html"
+  },
+  "sources": [
+   "https://signal.org/blog/protecting-your-privacy/",
+   "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+   "https://signal.org/blog/signal-doesnt-recall/",
+   "https://www.eff.org/deeplinks/2026/10/victory-you-can-now-exclude-apps-siri-ai"
+  ],
+  "draft_id": "20261123_072909_4"
  }
 ]
