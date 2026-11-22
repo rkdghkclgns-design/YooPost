@@ -1,0 +1,94 @@
+{
+ "topic": "Inkling 2 Mini (Thinking Machines Lab, 2026-11-20) / Artificial Analysis·VentureBeat 보도",
+ "source_url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Inkling 2 Mini",
+   "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+   "publisher": "Thinking Machines Lab",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Thinking Machines has released Inkling 2 Mini, an open weights looped transformer",
+   "url": "https://artificialanalysis.ai/articles/inkling-2-mini",
+   "publisher": "Artificial Analysis",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Thinking Machines wows with Inkling 2 Mini looped transformer model that runs locally on laptops",
+   "url": "https://venturebeat.com/technology/thinking-machines-wows-with-inkling-2-mini-looped-transformer-model-that-runs-locally-on-laptops",
+   "publisher": "VentureBeat",
+   "published": "2026-11-21",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.sanity.io/images/6vfeftx9/articles/21adb8b35ba70383b8eab5a753bfe3e1bd867248-2048x1172.png?w=1200&auto=format",
+   "page_url": "https://artificialanalysis.ai/articles/inkling-2-mini",
+   "caption": "공개된 벤치마크: Artificial Analysis 지능 지수 순위와 활성 파라미터 대비 지수 차트",
+   "credit": "Artificial Analysis"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.sanity.io/images/6vfeftx9/articles/8ad785245a34037d5a3fefbcde0c988850430bbd-2048x1150.png?w=1200&auto=format",
+   "page_url": "https://artificialanalysis.ai/articles/inkling-2-mini",
+   "caption": "비용·시간 계산: 과제당 비용 대비 지능 지수와 과제당 소요 시간 차트",
+   "credit": "Artificial Analysis"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "작은 오픈 가중치 루프 모델 Inkling 2 Mini 가 내 코딩·에이전트 작업을 로컬에서 낮은 비용으로 돌리기에 맞는가",
+  "limitations": "직접 실행하지 않았고 모든 수치는 개발사·Artificial Analysis·VentureBeat 에 적힌 값의 재계산이다. 개별 벤치마크 독립 재현과 실제 업무 성공률은 확인하지 못했다. 라이선스·문맥 길이·가격은 공식 글에 없고 VentureBeat 와 Artificial Analysis 만 적었다. 공식 글의 ComplexConstraints 본문 서술과 표 수치가 엇갈린다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 Artificial Analysis 수치로 다시 계산한 비용·시간·메모리",
+    "excerpt": "두 값을 나누면 비용은 3.53 ÷ 0.59 ≈ **6.0배**, 시간은 38.2 ÷ 9.0 ≈ **4.2배** 차이입니다.",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "평가 기관의 과제당 비용·시간을 나눠 배율을 구하고, 토큰 사용량이 38% 더 많다는 점과 함께 해석했다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 공개된 벤치마크: 어디서 앞서고 어디서 뒤처질까",
+    "excerpt": "공식 표에 실린 종합 점수 **Artificial Analysis 지능 지수(v5.0)** 는 두 모델 모두 **20.1** 로 같고",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공식 표의 같은 지표 쌍을 Qwen3.8-27B 와 나란히 놓고 차이를 계산해, 앞서는 지표와 뒤지는 지표를 가르고 지수는 동률임을 짚었다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 어떤 작업에 맞고 어떤 작업은 피해야 할까",
+    "excerpt": "**코딩·검색·도구 사용 중심 에이전트 작업**을 비용과 개인정보 때문에 내 장비에서 돌려야 하는 경우에 후보가 됩니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "작업 유형별로 시험 권장·비권장 기준을 수치 근거와 함께 제시했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 65,
+  "confirmed": 62,
+  "removed": [
+   "같은 달 5일에는 큰 모델인 Inkling 2 Small 을 먼저 선보였고 — '5일' 날짜가 이 원고의 출처에 없어 날짜를 뺌(‘앞서 선보였고’로 수정)",
+   "아래 '한계' 절의 커뮤니티 보고처럼 실제 사용량은 더 클 수 있습니다 — 원고·출처에 해당 커뮤니티 보고가 없어 뺌",
+   "VentureBeat 인용구 \"벤치마크를 넘어 노트북에서 돈다\" — 원문 문구로 확인되지 않아 인용 부호를 빼고 확인된 내용(노트북 오프라인 구동)으로 바꿈"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 글(HTML 본문·표·meta datePublished 2026-11-20), S2 Artificial Analysis(meta published_time 2026-11-20, 본문 텍스트), S3 VentureBeat(본문 날짜 2026-11-21, Carl Franzen)를 다시 열어 대조. 고친 것: ① ComplexConstraints — 공식 본문은 'Qwen3.8-27B 에 뒤짐'이지만 같은 글 표는 Mini 33.4% vs Qwen 30.1% 로 엇갈림을 명시(요약·FAQ·판단표의 '지시 준수 뒤짐'을 '멀티턴 대화'로 수정) ② 3.4B/5.4B — 공식 글이 '3.4B active, 5.4B weight activations(루프 반영)'로 관계를 적었으므로 '관계를 풀어 쓰지 않았다' 문장을 고치고 AA 의 3.1B 고유 가중치 병기 ③ 'RL 3회 반복'은 Mini 가 아니라 연구용 가변 루프 모델(TML-d24-varloop-research) 서술이라 귀속 수정 ④ 16→37초·CoT 단축도 연구용 모델로 명시 ⑤ 라이선스(Apache 2.0)·문맥 100만·텍스트+이미지 입력·가격은 VentureBeat 뿐 아니라 AA 본문에도 있어 'VentureBeat·Artificial Analysis'로 표기(공식 글엔 없음 유지) ⑥ AA 지수: AA 글은 20, 공식 표는 20.1 — 출처별로 구분 ⑦ 6배·4배는 AA 가 직접 적은 값과 일치함을 명시 ⑧ AA 글의 GPT-6 Luna(max) 28점·과제당 $0.15 추가(비용 비교 균형) ⑨ Qwen3.8-27B 활성 27.0B 는 공식 표 값으로 표기. 인용 이미지: 공식 페이지 도표는 인라인 SVG·인터랙티브라 이미지 파일이 없어, AA 본문 차트 2개(I1 지수 순위+활성 파라미터 대비 지수, I2 과제당 비용 대비 지수+과제당 시간)를 직접 내려받아 HTTP 200 image/png·1200px 폭·내용이 캡션과 맞는지 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
