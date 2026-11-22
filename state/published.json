@@ -7918,5 +7918,26 @@
    "https://www.thestandard.com.hk/finance/article/348287/Chinese-chip-firms-Hosin-Amicro-rise-in-Hong-Kong-debuts"
   ],
   "draft_id": "20261123_074910_7"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🛠 Claude Code 2.1.330 업데이트 전 점검: 조직 로그인·easel 차트·/loop 30일·rm 승인, 우리 환경에 걸리는 변경은",
+  "topic": "Claude Code changelog 2.1.330 (Anthropic, 2026-11-20) — Enterprise Admin Console sign-in, easel charts, /loop 30 days, rm approval",
+  "category": "AI 도구",
+  "source_url": "https://code.claude.com/docs/en/changelog.md",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-code-21330-easel-loop-30rm.html"
+  },
+  "sources": [
+   "https://code.claude.com/docs/en/changelog.md",
+   "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+   "https://wmedia.es/en/tips/claude-code-easel-charts-terminal",
+   "https://www.havoptic.com/r/claude-code-2.1.330",
+   "https://code.claude.com/docs/en/scheduled-tasks.md",
+   "https://code.claude.com/docs/en/plugins/mods/overview.md",
+   "https://code.claude.com/docs/en/authentication.md",
+   "https://claude.com/docs/third-party/claude-desktop/admin-console-claude-code"
+  ],
+  "draft_id": "20261123_075842_2"
  }
 ]
