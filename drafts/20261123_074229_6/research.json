@@ -1,0 +1,100 @@
+{
+ "topic": "What's new in Microsoft Agent 365: Ignite 2026 (Microsoft, 2026-11-17)",
+ "source_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "What's new in Microsoft Agent 365: Ignite 2026",
+   "url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+   "publisher": "Microsoft Tech Community",
+   "published": "2026-11-17",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "At Ignite 2026, Microsoft makes case to be your work operating system, intelligence layer",
+   "url": "https://www.constellationr.com/insights/news/ignite-2026-microsoft-makes-case-be-your-work-operating-system-intelligence-layer",
+   "publisher": "Constellation Research",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft Ignite 2026: AI, Intune and Agent Governance",
+   "url": "https://jannikreinhard.com/microsoft-ignite-2026-ai-intune-agent-governance/",
+   "publisher": "Jannik Reinhard",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Microsoft Ignite 2026: Top Azure Announcements for Enterprise IT",
+   "url": "https://virtualizationreview.com/articles/2026/11/17/microsoft-ignite-2026-top-azure-announcements-for-enterprise-it.aspx",
+   "publisher": "Virtualization Review",
+   "published": "2026-11-17",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/images/bS00NTcxNzUzLUpkQ3p2WA?image-dimensions=900x527&revision=11",
+   "page_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+   "caption": "Entra Agent ID 로 로컬 에이전트(Claude Code·GitHub Copilot CLI)에 사용자와 분리된 신원을 부여하는 화면",
+   "credit": "Microsoft"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/images/bS00NTcxNzUzLWpDV295cw?image-dimensions=900x495&revision=11",
+   "page_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+   "caption": "Intune·Global Secure Access 로 로컬 에이전트와 MCP 서버에 파일·네트워크 경계를 설정하는 화면",
+   "credit": "Microsoft"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Ignite 2026 에서 발표된 Agent 365 관리 기능 중 지금 쓸 수 있는 것(GA)과 아직 프리뷰인 것은 무엇이고, 우리 조직은 어떤 순서로 도입을 검토해야 하는가",
+  "limitations": "제품을 직접 실행하지 않았고 발표 글·매체 정리에 적힌 상태 표시(2026-11-17~18 기준)만 정리함. BCG 80% 수치는 Microsoft 글의 인용이며 BCG 원문은 접속이 막혀 미확인. 수명 주기 GA 는 Microsoft 글이 아니라 Virtualization Review·Jannik Reinhard 기준. Action center 는 Microsoft '프리뷰' vs Jannik '비공개 프리뷰'로 표기 차이. Virtualization Review 와 Constellation 은 일부 항목만 다룸.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📋 GA 와 프리뷰를 가르는 기능 상태표",
+    "excerpt": "GA 는 발견·수명 주기·도구 레지스트리·런타임 보호처럼 '보이게 만들고 기록하는' 쪽에 몰려 있고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S4"
+    ],
+    "added_value": "흩어진 발표 항목을 같은 기준(표시된 상태)으로 다시 분류해 보이게 하는 기능은 GA, 막는 기능은 프리뷰라는 패턴을 드러냄"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 조직은 무엇부터 할까: 도입 순서 판단표",
+    "excerpt": "아래는 이 권고와 위 상태표를 합쳐 필자가 만든 선택 기준입니다. 직접 실행해 검증한 결과가 아니라 출처에 ",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "조직 상황별로 먼저 볼 기능과 보류 조건을 나눈 선택 기준"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💰 비용과 사용량: Business Analytics 와 Cost Management",
+    "excerpt": "출시 초기에는 최소 50개 라이선스가 필요하고 12월 중순에 1개 이상으로 넓어진다는 Jannik Reinh",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "두 출처의 라이선스 조건 표현 차이를 대조해 확인 필요 사항으로 표시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 47,
+  "removed": [
+   "연결 대상 플랫폼 목록과 Agent ID 부여는 별개의 지원 단계로 표시되며 (출처에 그런 구분 없음 — Microsoft 글의 '플랫폼별 롤아웃·12월 완료, 비밀 없는 인증 프리뷰' 문장으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1(Microsoft, 페이지·datePublished 2026-11-17), S3(Jannik Reinhard, article:published_time 2026-11-18), S4(Virtualization Review, 11/17/2026)는 curl 로 원문 전체를, S2(Constellation, curl 403·WebFetch 로 열림, 2026-11-17, Larry Dignan)는 WebFetch 로 다시 읽어 48개 주장을 대조. published 4개 모두 페이지 날짜와 일치. 수정: ①'Defender 가 60개 이상 발견' → Microsoft 글대로 'Defender 와 Global Secure Access 가 함께 60개 이상', 요약·표의 60개 표기 정리 ②Entra 에이전트 신원 수명 주기 GA 는 S1 에 상태 표시가 없어 출처를 Virtualization Review·Jannik Reinhard 로 바꾸고 60일 비활성 기본 정책(S4) 추가 ③Action center '12월 비공개 프리뷰'(S3) vs '12월 프리뷰'(S1) 차이를 표에 명시 ④macOS 런타임 보호는 어느 출처에도 상태가 없어 GA 로 보지 않는다고 명시(S1 은 Windows GA 만) ⑤Autopilot Agent ID 확장이 S1 에서 프리뷰임을 추가 ⑥라이선스: S1 '최소 1개' vs S3 '출시 시 50개→12월 중순 1개 이상(Microsoft 상세 글 인용)' 차이 유지·근거 명시, 비 Microsoft 분석의 Agent 365/ME7 요건은 S1·S3 공통 ⑦BCG 80% 는 S1 이 BCG 링크로 인용함을 확인(BCG 원문 403) ⑧Software Compliance '식별자만 지원' → '지원되는 식별자로 판별' ⑨Jannik 의 완료 작업당 비용 권고는 모델 비교 맥락으로 정정 ⑩표 출처 열(로컬 Agent ID·CA·MCP firewall·Agent Containment) 보강. 인용 이미지 2개는 S1 본문 그림 파일 주소를 직접 열어 HTTP 200 image/png(900px 폭) 확인 후 image_url 기입. editorial 발췌 1의 남은 '*' 제거, 기여 3개를 본문과 대조."
+ }
+}
