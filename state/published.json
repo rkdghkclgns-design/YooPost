@@ -7828,5 +7828,24 @@
    "https://venturebeat.com/technology/thinking-machines-wows-with-inkling-2-mini-looped-transformer-model-that-runs-locally-on-laptops"
   ],
   "draft_id": "20261123_070515_1"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🖼 Apple Depth Pro 2, 영상 깊이 떨림 8~10배 감소: 우리 프로젝트에 쓸 수 있을까",
+  "topic": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth (arXiv 2611.26603, Apple, 2026-11-19) / Hugging Face Papers·AlphaSignal 소개",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.26603",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/apple-depth-pro-2-810.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.26603",
+   "https://arxiv.org/html/2611.26603v1",
+   "https://huggingface.co/papers/2611.26603",
+   "https://alphasignal.ai/model/apple-s-depth-pro-2-turns-any-video-into-precise-3d-depth-maps",
+   "https://huggingface.co/apple/DepthPro2-H",
+   "https://raw.githubusercontent.com/apple-aiml-research/ml-depth-pro-2/main/README.md"
+  ],
+  "draft_id": "20261123_072010_3"
  }
 ]
