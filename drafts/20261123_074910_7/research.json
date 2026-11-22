@@ -1,0 +1,94 @@
+{
+ "topic": "Amicro Technology (2065.HK) Announcement of Allotment Results (HKEXnews, 2026-11-11) — 홍콩 H주 71,687,000주·HK$9.90 공모 확정",
+ "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1111/2026111101359.pdf",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Amicro Technology Co., Ltd. — Announcement of Allotment Results (Global Offering, Stock code 2065)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1111/2026111101359.pdf",
+   "publisher": "HKEXnews (Amicro Technology)",
+   "published": "2026-11-11",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Amicro Technology Prospectus — Summary (prospectus dated 2026-10-31)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/12391413/2026103002361.pdf",
+   "publisher": "HKEXnews (Amicro Technology)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Amicro Technology Prospectus — Future Plans and Use of Proceeds",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/12391413/2026103002380.pdf",
+   "publisher": "HKEXnews (Amicro Technology)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Amicro Technology Prospectus — Cornerstone Investors",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1030/12391413/2026103002378.pdf",
+   "publisher": "HKEXnews (Amicro Technology)",
+   "published": "2026-10-31",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Chinese chip firms Hosin, Amicro rise in Hong Kong debuts (Reuters)",
+   "url": "https://www.thestandard.com.hk/finance/article/348287/Chinese-chip-firms-Hosin-Amicro-rise-in-Hong-Kong-debuts",
+   "publisher": "The Standard (Reuters)",
+   "published": "2026-11-12",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(HKEX 배정 결과 공고·투자설명서 PDF)에는 원고 내용을 보여 주는 본문 그림·도표 이미지가 없고 표와 글자뿐이며, 로이터 기사 쪽은 공식 출처가 아니어서 쓰지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "홍콩 소매 청약 13.95배와 국제 배정 1.05배는 무엇이 다르고, 공모가 HK$9.90와 조달금 사용 계획을 공시 숫자로 어떻게 읽어야 하나",
+  "limitations": "직접 투자·거래를 실행하지 않았고 공시 숫자와 단순 산술만 사용했다. 환율은 출처에 없어 위안화 재무와 홍콩달러 조달액을 비교하지 않았다. 홍콩 소매 신청 규모(약 5,000만 주)는 배수와 초기 물량을 곱한 추정이다. Hosin 비교는 사업·가격이 달라 우열을 가리지 않았다. 상장 후 주가와 수익은 예측하지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "💰 공모가 HK$9.90는 범위의 어디쯤일까",
+    "excerpt": "공시 숫자만으로 계산해 보면 위치가 분명해집니다. 희망 범위 HK$9.27~11.",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "희망 범위 내 위치(약 27.3%), 중간값 대비 5.1% 낮음, 상장 비용 7.6%, 순조달액 추정 대비 2.5% 감소를 공시 숫자와 식으로 계산해 공모가 위치를 판단하는 기준을 줬다."
+   },
+   {
+    "kind": "comparison",
+    "section": "📊 소매 13.95배와 국제 배정 1.05배, 같은 숫자일까",
+    "excerpt": "회수(claw-back) 조항이 작동해 국제 배정에서 3,584,500주가 홍콩 ",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "같은 공모 안의 홍콩 소매와 국제 배정 배수·물량을 표로 나란히 놓고 Hosin 수치를 조건이 다르다는 단서와 함께 참고로 붙여 수요가 쏠린 곳이 다름을 보였다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔬 조달금 70%는 AI 칩과 알고리즘으로",
+    "excerpt": "표의 마지막 열은 같은 비율을 확정 순조달액 HK$655.89 million에 곱",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "투자설명서의 중간값 가정 사용 계획과 배정 결과 공고의 확정 순조달액을 연결해 비율을 확정액으로 환산하고, AI 칩 비중의 의미를 설명했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 80,
+  "confirmed": 78,
+  "removed": [
+   "홍콩 공모의 실제 청구 금액은 단위 반올림 규칙에 따라 달라질 수 있고 (출처에 없는 규칙 — '거래 단위 500주'로 교체)",
+   "챗봇이나 언어 모델 서비스는 사업 설명에 나오지 않습니다 (투자설명서 전문 미확인 — '투자설명서 요약의 사업 설명'으로 범위 한정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). HKEX PDF 4개(S1 배정 결과 공고, S2 요약, S3 조달금 사용, S4 기초투자자)를 curl 로 받아 pdftotext 로 원문 대조, 투자설명서 표지 PDF(2026103002358)로 작성일 2026-10-31 확인, The Standard(Reuters) 기사는 WebFetch 로 2026-11-12 14:50 HKT 게재 확인. 수정: 총이익률 비교를 같은 기간(2025.1~4 30.7%→2026.1~4 23.9%)으로 바로잡음, R&D 비중 39.4%→43.9% 명시, '약 3분의 1에 가까운'→'약 30%'(20,775,000/71,687,000=28.98%), 보호예수 날짜를 '마지막 날'로 표기, 'AI 칩을 만드는'→'개발하는'(제조는 외부 위탁), 소제목 ⚠ 이모지 보정. 재계산: 3,584,500×13.95=50,003,775주(약 5,000만), 13.81%+15.17%=28.98%, 655.89×각 비율(216.4·32.8·45.9·26.2·76.7·28.2·32.8·65.6; 투자설명서가 순조달액 증감 시 비례 조정한다고 명시), 범위 위치 0.63/2.31=27.3%, 중간값 대비 5.1%, 비용 7.6%, 672.7 대비 2.5%, 수수료 1.0085%, 매출 성장 38.8%·42.3%·50.7%, 시초가 13.62/9.90=+37.6%, 기타 20,426=15,213+5,213(3.7+1.3=5.0%, 0.1+0.9=1.0%). Hosin 수치(2.37배·1.45배)는 사업·가격이 달라 우열 비교가 아니라는 단서 유지. 수익 전망·매수 권유 표현 없음. 홍콩 공모라 DART 가 아닌 HKEXnews 공시를 1차 출처로 씀(카테고리 설명 '증권신고서·공시'에 해당, check 코드에 DART 필수 조건 없음). published 날짜 모두 페이지 표기와 일치. EGRESS_BLOCKED 출처 없음."
+ }
+}
