@@ -7812,5 +7812,21 @@
    "https://huggingface.co/baselabs/groundhog-1"
   ],
   "draft_id": "20261122_080116_1"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🧠 Inkling 2 Mini, 노트북에서 돌리는 26B 루프 모델: 비용 6분의 1은 어떤 작업에 맞을까",
+  "topic": "Inkling 2 Mini (Thinking Machines Lab, 2026-11-20) / Artificial Analysis·VentureBeat 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/inkling-2-mini-26b-6-1.html"
+  },
+  "sources": [
+   "https://thinkingmachines.ai/news/inkling-2-mini/",
+   "https://artificialanalysis.ai/articles/inkling-2-mini",
+   "https://venturebeat.com/technology/thinking-machines-wows-with-inkling-2-mini-looped-transformer-model-that-runs-locally-on-laptops"
+  ],
+  "draft_id": "20261123_070515_1"
  }
 ]
