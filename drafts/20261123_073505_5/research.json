@@ -1,0 +1,109 @@
+{
+ "topic": "Microsoft agent-framework PyPI 1.26.1·1.26.2 악성 릴리스 — Microsoft agent-framework PyPI Compromise (Socket, 2026-11-17)",
+ "source_url": "http://socket.dev/blog/agent-framework-pypi-package-compromised-with-credential-stealer",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Microsoft agent-framework PyPI Compromise (Socket Research Team)",
+   "url": "http://socket.dev/blog/agent-framework-pypi-package-compromised-with-credential-stealer",
+   "publisher": "Socket",
+   "published": "2026-11-17",
+   "official": false
+  },
+  {
+   "id": "S2",
+   "title": "Microsoft agent-framework PyPI Compromise (StepSecurity)",
+   "url": "http://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised",
+   "publisher": "StepSecurity",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Microsoft's Agent Framework PyPI package compromised to steal credentials",
+   "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Attackers hijack Microsoft's agent-framework package to steal Azure and CI credentials",
+   "url": "https://www.csoonline.com/article/4250156/attackers-hijack-microsofts-agent-framework-package-to-steal-azure-and-ci-credentials.html",
+   "publisher": "CSO Online",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Credential stealer slipped into Microsoft's official Python agent framework",
+   "url": "https://www.helpnetsecurity.com/?p=391769",
+   "publisher": "Help Net Security",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "agent-framework · PyPI (Microsoft 프로젝트 페이지·릴리스 기록)",
+   "url": "https://pypi.org/project/agent-framework/",
+   "publisher": "PyPI / Microsoft",
+   "published": "2026-11-12",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/673b71f0790aabf30bd30bf8/6afd0f62c144498cdd26462a_pypi-release-history%20(1).png",
+   "page_url": "http://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised",
+   "caption": "PyPI 릴리스 기록 화면 — 1.26.1·1.26.2에 'RELEASE QUARANTINED' 표시, 1.26.0은 정상 (타임라인 소제목)",
+   "credit": "StepSecurity (PyPI 화면 캡처)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "agent-framework 1.26.1·1.26.2를 설치했을 수 있는 팀은 무엇을 어떤 순서로 점검하고, 어디까지가 확인된 사실인가",
+  "limitations": "악성 코드를 직접 실행·분석하지 않았고 공개 보도와 업체 분석을 대조했다. OX Security 원문은 접속이 막혀 CSO Online·Help Net Security 인용으로만 반영했다. 마이크로소프트의 공식 입장·침해 경로·토큰 실제 발급 여부는 확인되지 않았다. 다운로드 기반 어림 계산(월 192,534건 ÷ 30 × 공개 시간 합 약 39분)은 가정(월 평균의 시간 비례)이며 실제 노출 수가 아니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 41분의 타임라인: 한 번 격리된 뒤에도 다시 올라온 두 번째 버전",
+    "excerpt": "1.26.1은 약 31분, 1.26.2는 약 8분 동안 PyPI에 공개 상태였고(합계 약 39분), 첫 업로드부터 마지막 격리까지의 전체 구간은 약 41분(41분 24초)입니다",
+    "source_ids": [
+     "S2",
+     "S4",
+     "S5"
+    ],
+    "added_value": "StepSecurity의 UTC 시각 4개를 빼서 공개 시간(30분 56초·8분 5초, 합계 약 39분)과 전체 구간(41분 24초)을 계산하고, 이를 OX 월 다운로드 수와 엮어 노출 규모를 어림(약 170건, 가정 명시)"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 상황별 점검 순서: 설치했는지부터 판단하기",
+    "excerpt": "이미 발급된 토큰은 신뢰 관계를 지워도 바로 무효가 되지 않을 수 있다는 점이 핵심입니다",
+    "source_ids": [
+     "S2",
+     "S4"
+    ],
+    "added_value": "설치 여부·고정 여부·CI 사용 여부별로 먼저 할 일을 나눠, 비밀값 교체 이후 OIDC·로그 점검까지 이어지는 순서를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "💬 매체별 시각 차이: 같은 사건, 서로 다른 설명",
+    "excerpt": "깨끗한 1.26.0과 1.25.0에도 같은 표시가 있어서, 출처 증명이 없다는 사실만으로는 악성 여부를 가릴 수 없었습니다",
+    "source_ids": [
+     "S2",
+     "S6"
+    ],
+    "added_value": "StepSecurity가 악성 업로드의 단서로 든 '출처 증명 없음'·'RestSharp/106.13.0.0 업로드'를 PyPI 기록과 대조해, 정상 1.26.0에도 같은 표시가 있어 둘 다 구분 기준이 되지 못함을 보임"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 61,
+  "removed": [
+   "수집한 데이터는 JSON으로 묶고 (JSON 직렬화는 StepSecurity·Socket 어디에도 없어 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Socket(2026-11-17)·S2 StepSecurity(2026-11-18)·S3 BleepingComputer(2026-11-18)·S4 CSO Online(2026-11-18)·S5 Help Net Security(2026-11-19)를 다시 열어 각 페이지 게시일과 published 일치 확인. S6 PyPI 프로젝트 페이지는 게시일이 없는 상시 페이지로 published 2026-11-12 는 1.26.0 공개일(PyPI JSON 업로드 2026-11-12T18:24Z)이며 대표 원문 날짜가 아님. UTC 시각 재계산: 20:35:20→21:06:16=30분56초, 21:08:39→21:16:44=8분5초, 첫 격리→재업로드 2분23초, 전체 41분24초, 실제 공개 합계 39분1초 — 다운로드 어림은 41분이 아닌 공개 합계 39분으로 바꿔 약 180건→약 170건으로 수정. OX Security(403) 인용 경로 대조: 192,534건은 CSO·Help Net 모두 확인, wheel 빌드 과정 탈취 의심은 CSO에만 있음(Help Net에 없음 — 본문도 CSO만 인용), Azure 로그인·활동 로그 권고는 CSO가 전한 OX 권고로, 이미지·캐시·lockfile 경고는 Endor Labs 발언으로 귀속 수정. BleepingComputer '약 20만'은 192,534의 어림값으로 정리. agent-framework-core 1.26.0 유지는 BleepingComputer 근거로 귀속 수정. BleepingComputer의 재게시=게시 권한 유지 '보여 준다' 표현으로 정정. 데몬 스레드·로그 점검(차단 시도 vs 완료 전송, 11월 17일 이후)·신뢰 관계 삭제가 발급 토큰을 모두 무효화하지 않음은 StepSecurity 문구에 맞춤. PyPI 1.26.0 파일 페이지에서 Uploaded via RestSharp/106.13.0.0·Trusted Publishing No·No provenance 확인해 업로드 도구 단서 문단 보완. 인용 이미지 I1 HTTP 200 image/png 1100x760 확인, 화면의 Nov 18·RELEASE QUARANTINED·No provenance 확인. 현재 PyPI 기록에는 1.26.1·1.26.2가 보이지 않아 '캡처 화면' 기준으로 문구 수정. 침해 대응 권고는 모두 StepSecurity·CSO(OX·Endor·Aikido) 문구에 근거함을 확인."
+ }
+}
