@@ -1,0 +1,128 @@
+{
+ "topic": "Claude Code changelog 2.1.330 (Anthropic, 2026-11-20) — Enterprise Admin Console sign-in, easel charts, /loop 30 days, rm approval",
+ "source_url": "https://code.claude.com/docs/en/changelog.md",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Claude Code Changelog — 2.1.330",
+   "url": "https://code.claude.com/docs/en/changelog.md",
+   "publisher": "Anthropic",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Key Updates in Claude Code v2.1.330 - Addition of the Built-in mod \"easel\" for Drawing Charts and Behavior Change to deniedMcpServers",
+   "url": "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+   "publisher": "DevelopersIO (Classmethod)",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "easel in Claude Code: Claude draws charts right in your terminal",
+   "url": "https://wmedia.es/en/tips/claude-code-easel-charts-terminal",
+   "publisher": "wmedia.es",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Claude Code v2.1.330",
+   "url": "https://www.havoptic.com/r/claude-code-2.1.330",
+   "publisher": "Havoptic",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Run prompts on a schedule",
+   "url": "https://code.claude.com/docs/en/scheduled-tasks.md",
+   "publisher": "Anthropic",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Mods overview",
+   "url": "https://code.claude.com/docs/en/plugins/mods/overview.md",
+   "publisher": "Anthropic",
+   "official": true
+  },
+  {
+   "id": "S7",
+   "title": "Authentication",
+   "url": "https://code.claude.com/docs/en/authentication.md",
+   "publisher": "Anthropic",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Manage Claude Code in the terminal from the Enterprise Admin Console",
+   "url": "https://claude.com/docs/third-party/claude-desktop/admin-console-claude-code",
+   "publisher": "Anthropic",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 변경 내역·예약 작업·mods·인증·Admin Console 관리 문서는 모두 글자 문서이고 본문 그림이 없다. 그림이 있는 외부 글의 스크린샷은 공식 본문 그림이 아니어서 쓰지 않는다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Claude Code 2.1.330 변경 중 내 환경(개인·팀·CI)에 실제로 해당하는 것은 무엇이고 업데이트 전 무엇을 점검해야 하는가",
+  "limitations": "직접 설치·실행하지 않았고 공식 변경 내역·공식 문서(예약 작업·mods·인증·Admin Console 관리)와 외부 글 2곳의 기술에 근거한다. 요금제별 조직 로그인 차이는 확인하지 못했다. 5분 간격 계산은 4분 45초 실제 간격과 세션 중단을 무시한 단순 가정이다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "⏱ /loop 와 예약 작업: 7일에서 30일로, 누구에게 필요한가",
+    "excerpt": "2주 이상 이어지는 점검 작업 2.1.330 이상에서 작업을 새로 만들고 종료 시각 확인 기존 작업은 7일에 끝남",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "상황별로 7일 유지·재생성·클라우드 예약 작업 전환 기준을 제시"
+   },
+   {
+    "kind": "calculation",
+    "section": "⏱ /loop 와 예약 작업: 7일에서 30일로, 누구에게 필요한가",
+    "excerpt": "5분마다 도는 작업이라면 7일은 7×24×12=**2,016회**, 30일은 30×24×12=**8,640회**로, 같은 간격일 때 약 4.3배입니다.",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "수명 연장의 규모를 실행 횟수로 환산하고, 공식 문서의 5분 작업 실제 간격(4분 45초)·세션 중단 조건을 한계로 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 세 출처를 겹쳐 읽어 보니",
+    "excerpt": "변경 내역은 easel 이 \"어디서 안 보이는지\"를 말하지 않고 공식 mods 문서도 요구 조건만 적는데, wmedia 는 API 키·Bedrock·Vertex·Foundry 경로에서는 보이지 않는다고 구체적으로 적습니다.",
+    "source_ids": [
+     "S1",
+     "S6",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 문서와 외부 글의 차이·보완점을 구분해 확정/비확정을 가름"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔑 조직 로그인: 관리 콘솔 설정이 로그인과 함께 적용된다",
+    "excerpt": "낮은 것부터 **개발자 자신의 설정 파일 → 콘솔 설정 → 컴퓨터의 managed settings** 순이며",
+    "source_ids": [
+     "S1",
+     "S8"
+    ],
+    "added_value": "변경 내역 한 줄에 없는 설정 우선순위·도입 조건을 공식 관리자 문서로 보완해 기존 managed settings 와의 충돌 여부를 판단하게 함"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "다만 공식 변경 내역은 어떤 설정이 어떻게 우선하는지까지는 적지 않으므로, 기존 managed settings 와 충돌할 때의 우선순위는 공식 관리자 문서에서 따로 확인해야 합니다. 이 글은 그 부분을 단정하지 않습니다. (공식 Admin Console 관리 문서 S8 의 우선순위로 교체)",
+   "⚠️ 확인되지 않은 부분: 변경 내역에는 조직 로그인이 모든 요금제·환경에서 같은 방식으로 동작하는지, 기존 로그인 사용자가 다시 로그인해야 하는지 적혀 있지 않습니다. (S8 의 로그인 적용 조건으로 교체)",
+   "FAQ '조직 로그인으로 기존 설정이 사라지나요?' 의 '기존 설정과의 우선순위는 설명하지 않습니다' 답변 (S8 기준으로 교체), 맺음말의 '조직 로그인의 우선순위처럼 확인되지 않은 부분' 도 같이 교체",
+   "외부 글의 수치(…v2.1.321 이상 같은 버전 조건)는 확정 사실로 보지 않았다는 문장 (버전 조건은 공식 mods 문서 S6 로 확인돼 수정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 changelog.md 를 다시 받아 2.1.330 항목(Added 16·Changed 14·improvements 14·bug fixes 98, 2026-11-20)과 원고 주장을 한 줄씩 대조, 2.1.329 항목(max_tokens 재시도 제거·예약 작업 재예약)도 대조. S5 예약 작업 문서에서 Seven-day expiry 절 잔존·/loop 세션 조건·지터 규칙 확인. S2(2026.11.21)·S3(Nov 21, 2026)·S4(November 20, 2026) 페이지 날짜와 published 일치 확인. 고친 것: '같은 날 직접 써 본 글들'→하루 뒤(11/21), 142건이 공식 항목 합계와 같다는 점 반영(원고는 숫자가 다르다고 기술), 원 차트 사례는 작성자가 HTML 을 요청한 것으로 정정, 5분 작업은 지터가 없고 4분 45초 간격이라는 공식 문서 내용으로 계산 한계 정정, API 키·Bedrock 등 미표시는 wmedia(S3) 단독 기술로 출처 명시, serverName 비보안 통제 설명은 클래스메소드가 공식 문서를 전한 것으로 정정. 공식 문서 S6(mods: easel 요구 조건)·S7(인증: 조직 로그인 절차)·S8(Admin Console 관리: 설정 우선순위·2.1.330 이상·스위치·약 한 달 유지·강제 불가)을 새로 읽고 추가해 조직 로그인 절과 점검 순서를 보완. EGRESS_BLOCKED 출처 없음(모두 curl 로 직접 읽음)."
+ }
+}
