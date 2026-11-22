@@ -1,0 +1,100 @@
+{
+ "topic": "Signal is Serious About Protecting Your Privacy (Signal, 2026-11-20) / Signal restricts mobile screenshots as it confronts 'existential threat' of AI surveillance (TechCrunch, 2026-11-21)",
+ "source_url": "https://signal.org/blog/protecting-your-privacy/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Signal is Serious About Protecting Your Privacy",
+   "url": "https://signal.org/blog/protecting-your-privacy/",
+   "publisher": "Signal",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Signal restricts mobile screenshots as it confronts 'existential threat' of AI surveillance",
+   "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "By Default, Signal Doesn't Recall",
+   "url": "https://signal.org/blog/signal-doesnt-recall/",
+   "publisher": "Signal",
+   "published": "2025-05-21",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Victory: You can now exclude apps from Siri AI",
+   "url": "https://www.eff.org/deeplinks/2026/10/victory-you-can-now-exclude-apps-siri-ai",
+   "publisher": "Electronic Frontier Foundation",
+   "published": "2026-10-28",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://signal.org/blog/images/protecting-your-privacy-1.png",
+   "page_url": "https://signal.org/blog/protecting-your-privacy/",
+   "caption": "iOS 용 Signal 설정에서 'Block Siri AI' 가 켜진 화면 (플랫폼별 변화 비교)",
+   "credit": "Signal"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://signal.org/blog/images/protecting-your-privacy-2.png",
+   "page_url": "https://signal.org/blog/protecting-your-privacy/",
+   "caption": "Android 용 Signal 설정에서 '화면 보안(Screen security)' 이 켜진 화면 (플랫폼별 변화 비교)",
+   "credit": "Signal"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Signal 의 모바일 AI 화면 접근 차단은 플랫폼마다 무엇이 다르고, 내 상황에서는 무엇을 켜야 하며 어디가 여전히 뚫려 있는가",
+  "limitations": "직접 기기에서 실행·실측하지 않았고 공식 글·보도·EFF 문서에만 근거한다. 앱 버전과 세부 메뉴 경로는 공식 글에 없다. OS 제외 앱과 Signal 보호를 함께 쓸 때의 완전성은 어느 자료도 확인하지 않았다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📱 플랫폼별로 무엇이 달라지나요? 비교",
+    "excerpt": "iOS 는 앱 내 화면 캡처 차단, Android 는 AI 접근 감지 후 자동 활성화**로 방식이 다르고",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "공식 글의 플랫폼별 설명을 같은 틀(Signal 동작·사용자 조치)로 나란히 놓아 방식 차이를 드러냄"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧮 내 상황에는 무엇을 켜야 할까요? 판단 기준",
+    "excerpt": "아래는 공식 글과 EFF 의 사실을 상황별 선택으로 바꾼 **제 정리**입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "상황별 선택과 근거·한계를 분리해 보호를 끌지 판단하는 기준 제공"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🍎 Apple 쪽 장치와는 어떻게 맞물리나요? 출처 연결",
+    "excerpt": "제외된 앱의 내용에 Siri AI 가 접근하지 못합니다**. EFF 는 Signal 을 제외하면",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "Signal 공식 글과 EFF 의 OS 제외 앱 설명을 연결해 앱 층과 OS 층의 보호 비용을 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 38,
+  "confirmed": 38,
+  "removed": [
+   "EFF 는 Signal 을 제외하면 Siri 를 불러도 앱 내용 대신 '기능을 쓸 수 없다'는 안내가 나온다고 설명했습니다. (안내 문구가 EFF 본문에 없어 '정보가 드러나지 않는다'로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 Signal 공식 글(2026-11-20, Meredith Whittaker)·S2 TechCrunch(Anthony Ha, 2026-11-21)·S3 Signal Recall 글(2025-05-21)·S4 EFF(Thorin Klosowski, 2026-10-28)를 다시 열어 대조, 페이지 날짜 = published 일치. 수정: 'Block Siri AI'는 iOS 용 Signal 앱 설정 항목(끄는 스위치)으로 명확화; Android 는 '일부'가 아니라 '많은' 제조사 빌드에서 스크린샷 시도 감지가 불안정해 AI 화면 읽기 감지 시 Screen security 자동 활성화(불편 회피 이유 추가); macOS 는 스크린샷을 안정적으로 막지 못해 시스템 설정 > Siri > Excluded Apps 권고(공식 각주 3, TechCrunch 에는 macOS 언급 없음); Windows 해제 경로를 Signal 설정 > 개인정보 > 화면 보안으로 정정; 'President' 직함은 공식 글에 없어 TechCrunch 표기로 출처 표시; 'incomplete' 는 공식 글 원문 표현으로 귀속 수정; EFF 제외 비용은 Apple Messages 제외 시 읽기·답장 불가, 제외 앱에서 화면 인식 불가로 정정; Recall 설명을 '몇 초마다 캡처' 로 정정. 이미지 2개 HTTP 200 image/png 1560x884, 캡션을 Signal 설정 화면으로 정정. EGRESS_BLOCKED 출처 없음. editorial excerpt 3개 본문 일치 확인."
+ }
+}
