@@ -7864,5 +7864,24 @@
    "https://www.eff.org/deeplinks/2026/10/victory-you-can-now-exclude-apps-siri-ai"
   ],
   "draft_id": "20261123_072909_4"
+ },
+ {
+  "date": "2026-11-23",
+  "title": "🔒 Microsoft agent-framework PyPI 악성 릴리스 2종, 설치했다면 무엇부터 점검할까",
+  "topic": "Microsoft agent-framework PyPI 1.26.1·1.26.2 악성 릴리스 — Microsoft agent-framework PyPI Compromise (Socket, 2026-11-17)",
+  "category": "AI 보안",
+  "source_url": "http://socket.dev/blog/agent-framework-pypi-package-compromised-with-credential-stealer",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/microsoft-agent-framework-pypi-2.html"
+  },
+  "sources": [
+   "http://socket.dev/blog/agent-framework-pypi-package-compromised-with-credential-stealer",
+   "http://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised",
+   "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/",
+   "https://www.csoonline.com/article/4250156/attackers-hijack-microsofts-agent-framework-package-to-steal-azure-and-ci-credentials.html",
+   "https://www.helpnetsecurity.com/?p=391769",
+   "https://pypi.org/project/agent-framework/"
+  ],
+  "draft_id": "20261123_073505_5"
  }
 ]
