@@ -1,0 +1,120 @@
+{
+  "topic": "Introducing Claude Ship (Anthropic, 2026-11-23) / TechCrunch: Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+  "source_url": "https://claude.com/resources/articles/introducing-claude-ship",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Introducing Claude Ship",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "publisher": "Anthropic",
+      "published": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "S2",
+      "title": "Claude Ship - Claude Code Docs",
+      "url": "https://code.claude.com/docs/en/claude-ship",
+      "publisher": "Anthropic",
+      "official": true
+    },
+    {
+      "id": "S3",
+      "title": "Claude Approvals - Claude Code Docs",
+      "url": "https://code.claude.com/docs/en/approvals.md",
+      "publisher": "Anthropic",
+      "official": true
+    },
+    {
+      "id": "S4",
+      "title": "Set up PR Steward - Claude Code Docs",
+      "url": "https://code.claude.com/docs/en/pr-steward-setup.md",
+      "publisher": "Anthropic",
+      "official": true
+    },
+    {
+      "id": "S5",
+      "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+      "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+      "publisher": "TechCrunch",
+      "published": "2026-11-23",
+      "official": false
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "image_url": "https://assets.claude.com/a30243fe61e4cc224ebfdcdb8d693b69c125b060.png",
+      "page_url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "caption": "Code Review 가 풀 리퀘스트에 문제를 게시한 예시 화면",
+      "credit": "Anthropic"
+    },
+    {
+      "id": "I2",
+      "image_url": "https://assets.claude.com/c6832086d36407567641b1b4de4d705f79ef3fca.png",
+      "page_url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "caption": "PR Steward 가 풀 리퀘스트의 수정 작업을 하는 예시 화면",
+      "credit": "Anthropic"
+    },
+    {
+      "id": "I3",
+      "image_url": "https://assets.claude.com/6beae6085c1dc6bb43a62e6acf1f5563a14f4238.png",
+      "page_url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "caption": "Claude Approvals 승인 정책 파일의 예시",
+      "credit": "Anthropic"
+    }
+  ],
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "Claude Ship 의 세 에이전트를 우리 팀 저장소에 켜도 되는지, 켠다면 어떤 순서와 안전장치로 시작해야 하는가",
+    "limitations": "직접 설치·실행한 결과가 없으며 공개된 공식 발표문·문서·보도만 정리했다. 성과 수치는 Anthropic Claude Code 팀 내부 사례이고 독립 검증은 확인되지 않았다. 구체적 요금 금액은 공개 자료에서 확인하지 못해 계산하지 않았다. 베타 기능은 바뀔 수 있다.",
+    "contributions": [
+      {
+        "kind": "comparison",
+        "section": "🧩 세 에이전트는 각각 무엇을 하나",
+        "excerpt": "같은 기준(무엇을 하는가·상태·승인 권한)으로 나란히 놓았을 뿐, 어느 쪽이 더 낫다는 비교는 아닙니다.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "added_value": "세 에이전트의 역할·상태·승인 권한을 같은 기준의 표로 맞춰 도입 시 구분점을 제시"
+      },
+      {
+        "kind": "decision_guide",
+        "section": "✅ 우리 팀에 맞는지 판단하는 기준",
+        "excerpt": "첫 단계는 **관찰 모드로 정책이 실제 PR 에서 내릴 결정을 사람의 결정과 비교하는 것**이 합리적입니다.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "added_value": "팀 상황별로 대상 여부·시작 단계를 정리하고 관찰 모드 과금 한계를 함께 표시"
+      },
+      {
+        "kind": "source_synthesis",
+        "section": "⚠️ 사람 없이 병합될 수 있는 조건",
+        "excerpt": "TechCrunch 는 자동 승인 기능을 핵심으로 소개했고, Approvals 문서는 별도 절에서",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "added_value": "언론이 부각한 자동 승인 기능과 공식 문서의 병합 경고·self-hosted 승인 제약을 연결해 정책 설계 책임을 정리"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 78,
+    "confirmed": 78,
+    "removed": [],
+    "corrected": [
+      "TechCrunch 가 자동 승인 에이전트를 '가장 눈에 띄는 기능'으로 꼽았다 → 기사 표현대로 '더 흥미로운 부분'으로 수정 (S5)",
+      "PR Steward 과금 '푸시 활동에 따라' → 소개 글 표현대로 'PR Steward 의 작업량에 따라' (S1)",
+      "'월별 지출 한도만 확인' → '관리자가 Code Review·PR Steward 지출 한도를 정할 수 있음' (S1)",
+      "'소개 글의 이미지 설명' 문구 → 문서 본문 주의 문구와 소개 글 이미지 대체 텍스트로 정확히 표기 (S1, S2)",
+      "표의 Code Review 승인·병합 '하지 않음' (문서에 명시 없음) → '인라인 댓글로 결과 게시' (S2)",
+      "'결제 코드' → 문서 원문 billing 에 맞춰 '청구(billing) 코드' (S3)"
+    ],
+    "note": "Opus 검증 (claude-opus-5-5): S1~S5 를 2026-11-24 KST 에 WebFetch 로 다시 열어 수치(6~9월 병합 PR 2배 이상·되돌림 40% 이상 감소·크레딧 1만 달러·30일·2027-01-15)·이름·요금 구조·제공 조건(Team/Enterprise·GitHub·ZDR/HIPAA/CMEK 제외)·베타 상태·설정 순서·정책 파일 예시·병합 경고를 하나씩 대조. published: S1·S5 페이지 날짜 2026-11-23 일치, S2~S4 문서는 날짜 표기가 없어 비워 둠. EGRESS_BLOCKED 출처 없음. 인용 이미지 3개 모두 HTTP 200 image/png, 가로 3000px, 소개 글 본문 그림(대체 텍스트와 캡션 일치). 문단 강조 보완."
+  }
+}
