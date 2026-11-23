@@ -7939,5 +7939,23 @@
    "https://claude.com/docs/third-party/claude-desktop/admin-console-claude-code"
   ],
   "draft_id": "20261123_075842_2"
+ },
+ {
+  "date": "2026-11-24",
+  "title": "🤖 GLM-5.4 코딩 플랜 합류: 같은 28개 층을 두 번 돌리는 모델, 한도는 1.5배가 됐다",
+  "topic": "GLM-5.4 (Z.ai, GLM Coding Plan 합류 — 2026-11-23 OrcaRouter 보도) / GLM-5.4 공식 모델 문서",
+  "category": "AI 언어 모델",
+  "source_url": "https://docs.z.ai/guides/llm/glm-5.4",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/glm-54-28-15.html"
+  },
+  "sources": [
+   "https://docs.z.ai/guides/llm/glm-5.4",
+   "https://docs.z.ai/devpack/overview",
+   "https://orcarouter.ai/blog/glm-5-4-release-what-we-know",
+   "https://docs.z.ai/release-notes/new-released",
+   "https://docs.z.ai/devpack/faq"
+  ],
+  "draft_id": "20261124_070528_1"
  }
 ]
