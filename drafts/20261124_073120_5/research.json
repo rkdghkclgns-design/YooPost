@@ -1,0 +1,100 @@
+{
+ "topic": "Together AI 보안 공지: 코딩 에이전트가 올린 Hugging Face 자격 증명으로 2026년 6~7월 프롬프트 샘플 유출 (Together AI, 2026-11-21)",
+ "source_url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Security event: prompt leakage for requests in June and July of 2026",
+   "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+   "publisher": "Together AI",
+   "published": "2026-11-21",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Three breaches, endless leaks: Your AI supply chain needs canaries",
+   "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+   "publisher": "Dragos",
+   "published": "2026-11-19",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Together AI Prompt Leak: When a Coding Agent Published a Hugging Face Key",
+   "url": "https://agentbeam.com/blog/together-ai-prompt-leak-coding-agent-xorl-huggingface-november-2026",
+   "publisher": "Agentbeam",
+   "published": "2026-11-22",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Together AI prompt leak (xorl, Hugging Face credential, coding agent) November 2026",
+   "url": "https://explainx.ai/blog/together-ai-prompt-leak-xorl-huggingface-coding-agent-november-2026",
+   "publisher": "explainx.ai",
+   "published": "2026-11-22",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://dragos.brightspotcdn.com/dims4/default/4feabda/2147483647/strip/true/crop/2136x1988+0+0/resize/1440x1340!/format/webp/quality/90/?url=https%3A%2F%2Fdragos-production-dragos.s3.us-west-2.amazonaws.com%2Fbrightspot%2F02%2F29%2F042d069e4464ab1c38d1406479be%2Ffigure-4-incidents-by-network.png",
+   "page_url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+   "caption": "Dragos 카나리 실험: 하루 동안 일어난 사건을 출발 네트워크별로 묶은 화면",
+   "credit": "Dragos"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://dragos.brightspotcdn.com/dims4/default/5be6986/2147483647/strip/true/crop/2008x1376+0+0/resize/1440x987!/format/webp/quality/90/?url=https%3A%2F%2Fdragos-production-dragos.s3.us-west-2.amazonaws.com%2Fbrightspot%2F42%2F8e%2F39c4ee034ec391aa712df4716366%2Ffigure-7-route-trace.png",
+   "page_url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+   "caption": "Dragos 카나리 실험의 경로 추적 예: 마켓플레이스에서 모델 제공사까지 요청이 거친 경유지",
+   "credit": "Dragos"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Together AI에서 코딩 에이전트가 올린 자격 증명으로 프롬프트 샘플이 유출됐다는데, 6~7월에 호출한 우리 팀은 무엇부터 점검해야 하나?",
+  "limitations": "직접 실행·재현한 것이 없고 공지·블로그 읽기에 기반함. 영향 고객 수·자격 증명 종류·노출 구간·개인정보 포함 여부는 미공개. 경과일은 단순 날짜 계산이며 Dragos 실험과 Together 사고의 연결은 해석임. Together 공지의 'Dragos 보안 실험'이 Dragos 블로그의 실험과 같은지는 두 문서에 적혀 있지 않음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "⏱ 노출 범위와 날짜를 숫자로 읽기",
+    "excerpt": "아래 표의 '공지까지 경과일'은 공지에 적힌 날짜와 공지일(11월 21일)로 제가 단순 계산한 값이며, 실제 노출 시점은 아닙니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "샘플 날짜 4개와 공지일(11-21)의 경과일(150·140·136·130일)을 직접 계산해 표로 제시하고, 노출 시점이 아님을 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧪 Dragos 카나리 실험과 함께 읽으면 보이는 것",
+    "excerpt": "Dragos 글은 Together AI를 언급하지 않습니다. 따라서 **두 사건이 같은 침입이라고 쓸 근거는 없습니다.**",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "Together 공지의 카나리 5개와 Dragos 200만 프롬프트 실험을 연결하되 같은 사건으로 단정하지 않고 공통 교훈(ZDR이 닿지 않는 사본)을 해석으로 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 상황별 점검 순서: 우리 팀은 무엇부터 할까",
+    "excerpt": "아래 표는 공지와 Agentbeam·Dragos의 권고를 상황별로 묶은 **판단 안내**입니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "팀 상황 4가지별 우선 조치와 제외 조건을 표로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 44,
+  "removed": [
+   "explainx.ai 해설은 제3자가 데이터를 지운 것으로 회사가 이해한다고 전하면서 이를 검증되지 않은 것으로 표시했습니다. (Together 공지 원문에 삭제 언급 없음 → '공지에 삭제 언급 없음'으로 교체)",
+   "같은 사실을 Dragos 쪽에서 보면 실험의 규모가 드러납니다. (Dragos 글은 Together를 언급하지 않아 같은 사실로 단정 불가 → 별개 실험 글로 표현 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 재열람(WebFetch+curl 원문 텍스트·meta datePublished 대조: S1 2026-11-21, S2 2026-11-19, S3·S4 2026-11-22 일치). 경과일 150·140·136·130일 재계산 일치. Dragos 수치 원문 대조: 약 200만 프롬프트·7~11월·최소 3곳 AI 제공업체 맞음, '가장 큰 사건에서 AWS 키 수백 개로 수만 건 호출'은 '가장 큰 침해에 키 200개 안팎, 미끼 키 전체로 수만 건 호출'로 수정, 거부 요청은 가장 큰 침해·ZDR 요청은 나머지 두 침해로 구분. Dragos 글에 Together AI 언급 없음 확인('used together'만). 재발 방지책은 '시행한 변경'으로 시제 수정. ARTEX 문단에 Together 사고와 관련 미확인 명시. 이미지 I1·I2 HTTP 200 image/webp, 1440x1340·1440x987, 본문 figure 4·7, 캡션을 원문 그림 설명에 맞게 수정. EGRESS_BLOCKED 출처 없음. 공격 절차 상세 없음."
+ }
+}
