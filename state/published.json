@@ -8009,5 +8009,22 @@
    "https://finance.yahoo.com/markets/stocks/articles/crowdstrikes-zscaler-acquisition-could-broaden-132758790.html"
   ],
   "draft_id": "20261124_072445_4"
+ },
+ {
+  "date": "2026-11-24",
+  "title": "🔒 Together AI 프롬프트 샘플 유출: 코딩 에이전트가 올린 키, 6~7월 호출 팀은 무엇부터 점검할까",
+  "topic": "Together AI 보안 공지: 코딩 에이전트가 올린 Hugging Face 자격 증명으로 2026년 6~7월 프롬프트 샘플 유출 (Together AI, 2026-11-21)",
+  "category": "AI 보안",
+  "source_url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/together-ai-67.html"
+  },
+  "sources": [
+   "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+   "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+   "https://agentbeam.com/blog/together-ai-prompt-leak-coding-agent-xorl-huggingface-november-2026",
+   "https://explainx.ai/blog/together-ai-prompt-leak-xorl-huggingface-coding-agent-november-2026"
+  ],
+  "draft_id": "20261124_073120_5"
  }
 ]
