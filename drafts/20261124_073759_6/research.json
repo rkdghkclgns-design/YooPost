@@ -1,0 +1,85 @@
+{
+ "topic": "Amazon to purchase Decart's AI optimization technology to advance chip and model innovation for customers (Amazon, 2026-11-23) / GeekWire·The Register·TechCrunch 보도",
+ "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Amazon to purchase Decart's AI optimization technology to advance chip and model innovation for customers",
+   "url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization",
+   "publisher": "Amazon",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Amazon is buying Decart's AI chip software for a reported $7.5B and bringing its founders aboard",
+   "url": "https://www.geekwire.com/2026/amazon-is-buying-decarts-ai-chip-software-for-a-reported-7-5b-and-bringing-its-founders-aboard/",
+   "publisher": "GeekWire",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Amazon scoops up AI accelerator tech to keep chips busy at all times",
+   "url": "https://www.theregister.com/ai-and-ml/2026/11/23/amazon-scoops-up-ai-accelerator-tech-to-keep-chips-busy-at-all-times/5311754",
+   "publisher": "The Register",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Amazon snaps up Decart's AI optimization tech for $7.5B as it prepares to sell Trainium chips",
+   "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 글 본문에는 로고뿐이고 언론 기사의 그림은 일러스트·인물 사진으로 DOS 구조나 거래 내용을 보여 주지 않아 인용하지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "소프트웨어 최적화 기술을 왜 이 가격에 사는가, 이 거래를 AI 칩 경쟁에서 어떻게 읽어야 하는가",
+  "limitations": "직접 실행·측정 없이 공식 글과 언론 보도만 읽고 정리함. 가격·협상·지급 구조는 보도 기반이며 비교 계산은 단순 산술임",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 숫자로 읽는 거래: 75억 달러를 세 가지 기준에 놓기",
+    "excerpt": "75억 ÷ 3.5억 ≈ **약 21배**입니다. 다만 2015년 거래와 오늘 거래는 시장 상황이 달라 '비싸",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "보도 금액을 One Medical·MGM·Annapurna 거래와 창업자 지분율에 대입해 규모와 지급 구조를 읽는 기준과 한계를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🏗 왜 Trainium 판매 전략과 연결해서 읽히나",
+    "excerpt": "공식 글의 설명, 언론의 해석, 지난달 발언을 한 줄로 이으면 **'칩을 팔려면 쓰기 편한 소프트웨어 계층이",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "Amazon 공식 글·TechCrunch 해석·GeekWire의 TorchNeuron과 Jassy 발언을 연결해 칩 판매와 소프트웨어 계층의 관계를 해석"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 판단 기준",
+    "excerpt": "가장 현실적인 판단 기준은 세 가지입니다. 첫째, 인수 **종결 여부**입니다. 둘째, DOS가 **Nvid",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 종결 여부, 타사 칩 지원, Trainium 판매 방식이라는 확인 지점을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 44,
+  "confirmed": 44,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S4 4개 출처를 WebFetch로 다시 열어 주장 44개를 대조함. 모든 출처 published(2026-11-23)가 페이지 날짜와 같음(The Register 23 Nov 2026 21:17 UTC). 75억 달러는 Amazon 미공개·Bloomberg 보도(관계자 인용)로 S2·S3·S4에서 확인. 창업자 지분 약 64%·5년 잔류·약 48억 달러·5년 성과 목표 연동(Globes, S2) 확인, 75억×0.64=48억 일치. Annapurna 2015년 보도가 3.5억 달러(S2), 75억÷3.5억≈21.4배 확인. 'Amazon said last December that Decart was running real-time video four times faster on Trainium at half the cost of GPUs'(S2) 확인, '지난 12월'을 '2025년 12월'로 명확히 함. One Medical 39억·MGM 85억(S3), TorchNeuron·Jassy 실적 발표 발언·Anthropic 60억 달러 8월 협상·9월 철회·Nvidia 5월 3억 달러 라운드·Jensen Huang 복귀(S2) 확인. 수정: Lucy·Oasis 설명과 제외 근거를 GeekWire로 표기(The Register는 제외만 언급), Nvidia 인수 협의 시점 '그 전에'→'앞서'(CTech는 투자 라운드 이전이라고 하지 않음) 본문·표·FAQ 수정, The Register 문의 내용을 'Lucy·Oasis 제품의 앞날'→'잔여 직원과 회사의 다른 기술'로 수정. EGRESS_BLOCKED 출처 없음. 투자 권유·전망 표현 없음 확인. 공식 글 본문에 로고 외 그림이 없어 images_none_reason 유지."
+ }
+}
