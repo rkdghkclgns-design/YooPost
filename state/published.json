@@ -7975,5 +7975,23 @@
    "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"
   ],
   "draft_id": "20261124_071250_2"
+ },
+ {
+  "date": "2026-11-24",
+  "title": "🧠 Xing 4 기술 보고서: 285B 모델을 Ascend 8,192장으로 학습, 속도 수치는 어디까지 믿을까",
+  "topic": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.22115",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/xing-4-285b-ascend-8192.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.22115",
+   "https://arxiv.org/html/2611.22115",
+   "https://aiweekly.co/alerts/telechat-xing4-trains-285b-param-agentic-moe-entirely-on-8192-ascend-910c-npus",
+   "https://letsdatascience.com/news/xingchen-agi-lab-details-xing-4-llm-series-trained-on-ascend-4dac8ac9",
+   "https://raw.githubusercontent.com/XingChen-AGI/Xing4.0-29B-A4B/main/README.md"
+  ],
+  "draft_id": "20261124_071739_3"
  }
 ]
