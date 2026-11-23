@@ -8026,5 +8026,22 @@
    "https://explainx.ai/blog/together-ai-prompt-leak-xorl-huggingface-coding-agent-november-2026"
   ],
   "draft_id": "20261124_073120_5"
+ },
+ {
+  "date": "2026-11-24",
+  "title": "🧮 Amazon의 Decart 최적화 기술 인수, 75억 달러 보도는 무엇을 사는 값일까",
+  "topic": "Amazon to purchase Decart's AI optimization technology to advance chip and model innovation for customers (Amazon, 2026-11-23) / GeekWire·The Register·TechCrunch 보도",
+  "category": "AI 인사이트",
+  "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/amazon-decart-75.html"
+  },
+  "sources": [
+   "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization",
+   "https://www.geekwire.com/2026/amazon-is-buying-decarts-ai-chip-software-for-a-reported-7-5b-and-bringing-its-founders-aboard/",
+   "https://www.theregister.com/ai-and-ml/2026/11/23/amazon-scoops-up-ai-accelerator-tech-to-keep-chips-busy-at-all-times/5311754",
+   "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/"
+  ],
+  "draft_id": "20261124_073759_6"
  }
 ]
