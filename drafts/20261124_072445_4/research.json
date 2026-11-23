@@ -1,0 +1,82 @@
+{
+ "topic": "CrowdStrike to Acquire Zscaler, Bringing Network Security and Zero Trust to the Falcon Platform (CrowdStrike, 2026-11-23) / Yahoo Finance(StockTwits) 보도",
+ "source_url": "https://www.sec.gov/Archives/edgar/data/0001535527/000110465926130785/tm2630454d1_ex99-1.htm",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "CrowdStrike to Acquire Zscaler, Bringing Network Security and Zero Trust to the Falcon Platform (8-K Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001535527/000110465926130785/tm2630454d1_ex99-1.htm",
+   "publisher": "CrowdStrike (SEC 제출)",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "CrowdStrike Reports Third Quarter Fiscal Year 2027 Financial Results (8-K Exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001535527/000153552726000035/crwd-20261123xex991.htm",
+   "publisher": "CrowdStrike (SEC 제출)",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "CrowdStrike's Zscaler Acquisition Could Broaden Security Platform, Says JPMorgan — Analysts Weigh Opportunities And Risks",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrikes-zscaler-acquisition-could-broaden-132758790.html",
+   "publisher": "Yahoo Finance (StockTwits)",
+   "published": "2026-11-23",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 SEC 제출 보도자료(8-K 첨부)는 글자만 있는 문서이고 본문에 그림·도표가 없어 인용 이미지를 넣지 않음",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "CrowdStrike의 Zscaler 439억 달러 인수에서 계약으로 확정된 것과 회사의 목표·추정, 외부의 우려는 각각 무엇인가?",
+  "limitations": "직접 실행·측정한 것은 없고 SEC 제출 공식 자료와 StockTwits 보도만 근거로 함. 교환 비율 계산은 공식 환산가에서 역산한 가정 예시이며 실제 시세는 확인하지 않음. 애널리스트 의견은 매체 요약이며 원문 메모는 확인하지 않음. 목표주가·투자 의견은 다루지 않음. 규제 심사 결과·통합 세부는 미공개.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 교환 비율로 계산해 보면",
+    "excerpt": "발표 기준 환산가 260.41달러를 1.135로 나누면 계산에 쓰인 CrowdStrike 11월 20일 종가는 약 **229.4달러**로 역산됩니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "공식 교환 비율·환산가에서 기준가를 역산하고 ±10% 가정으로 고정 교환 비율의 작동 방식을 보여 줌"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 숫자로 보는 규모와 시너지",
+    "excerpt": "CrowdStrike의 3분기 말 ARR 62억 6천만 달러와 더하면 약 101억 6천만 달러로, 발표의 '100억 달러 이상'과 맞아떨어집니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "인수 발표문과 실적 발표문의 ARR을 연결해 합산 ARR 주장을 대조하고, 확정·목표·추정을 표로 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 내 조직은 무엇을 확인하면 될까요?",
+    "excerpt": "구매를 앞둔 조직은 '합병 뒤 한 플랫폼'이라는 약속과 **'지금 살 수 있는 기능'**을 나눠 보는 것이 좋습니다.",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "기존 고객·도입 검토·AI 에이전트 보안 검토 상황별로 종결 전 확인할 항목을 구분해 줌"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 44,
+  "removed": [
+   "Investing.com(AI 지원 작성) 장중 시세: CrowdStrike 217.91달러(-5.03%), Zscaler 약 235.50달러, 1.135×217.91≈247.3달러, 약 11.8달러(약 5%) 차이 계산과 표 전체",
+   "Investing.com: 시장이 260.41달러보다 낮게 거래해 성사 가능성을 의심했다는 해석, '주가 환산 계산에서 보듯 시장은 신중했다'(맺음말)",
+   "Investing.com: Piper Sandler Overweight·목표주가 240달러·'의미 있는 실행 위험', 기존 최대 인수액 7억 4천만 달러와 약 59배 계산, 반독점·고배수 약점 정리",
+   "Investing.com(AI 지원 작성): Jefferies 매수·목표주가 240달러, 경쟁 입찰 없음, 규제 겹침 적음, 2027년 FCF 대비 약 43배와 약 10억 달러 역산(표·FAQ·지배구조 문단 포함)",
+   "Investing.com: 예상치(매출 15억 3천만 달러, EPS 0.31달러) 상회, 11월 23일 오전 약 5% 하락",
+   "JPMorgan 목표주가 235→240달러·비중확대 유지(투자 권유로 읽힐 수 있어 삭제), FAQ '목표주가 240달러'",
+   "'투자 판단 목적' 행, '도입 검토나 투자 판단에 쓰기보다' 문구"
+  ],
+  "note": "Opus 검증: SEC 8-K Exhibit 99.1 두 건(인수 발표·3분기 실적)을 다시 열어 기업가치·교환비율·환산가·프리미엄·지분율·이사회 승인·종결 시점·의결권 합의 34%·ARR·TAM·시너지·고객 수·통합 수·실적·가이던스·Falcon Guardian·Fal.Con 발표·Anthropic/OpenAI 협력을 원문 대조. 수정: TAM '1,850억 달러 이상으로' → '1,850억 달러 이상 늘어난다'(by), 합산 ARR은 '종결 시 시작' 예상, Falcon Guardian은 '분기 종료 뒤' 1억 달러 돌파, SafeMind는 기기·네트워크 텔레메트리 통합 뒤 공격 경로 학습, 의결권 합의는 '거래 지지'. Investing.com 두 기사(S3·S5)는 'generated with the support of AI' 표기라 공식 자료로 확인 안 되는 수치를 모두 빼고 출처에서 제외. 목표주가·투자 의견은 투자 권유로 읽힐 수 있어 삭제. 남은 출처 published 는 페이지 날짜(2026-11-23)와 일치 확인. EGRESS_BLOCKED 출처 없음. AI 관련 서술은 공식 발표문의 'Zero Trust for AI Safety'·agentic AI 문구와 실적 자료의 AI 제품·협력으로만 뒷받침."
+ }
+}
