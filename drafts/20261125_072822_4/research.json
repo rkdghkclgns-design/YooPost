@@ -1,0 +1,126 @@
+{
+ "topic": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director (NVIDIA, 2026-11-23) / TechCrunch 보도",
+ "source_url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+   "publisher": "NVIDIA",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "NVIDIA Form 8-K Exhibit 99.1 — Board Reinstates Jensen Huang",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+   "publisher": "SEC / NVIDIA",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Nvidia reverses course and brings Jensen Huang back as CEO",
+   "url": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a U.S. blacklist",
+   "url": "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
+   "url": "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "In all-hands meeting, Jensen Huang thanks White House and says he's in therapy",
+   "url": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Anthropic shares fall below IPO price, a worrying sign for AI startups",
+   "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S8",
+   "title": "Jensen Huang isn't out of the woods yet",
+   "url": "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표문(뉴스룸·SEC 첨부)은 글자만 있고 본문 그림이 없으며, TechCrunch 본문 그림은 인물 사진뿐이라 문단 내용을 보여 주는 도표·화면이 아닙니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "엔비디아의 젠슨 황 복귀 발표는 사임 때와 비교해 무엇이 새로 확인됐고, 무엇이 아직 비어 있나?",
+  "limitations": "직접 실행·실측 없음. 주가는 보도 시각의 값이며 추정 계산은 표시함. 조사 결론·제재는 미확정.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🏛 이사회 발표문이 약속한 구조 변화",
+    "excerpt": "발표문은 **방향**(조사·감독·준법 강화)을 밝혔지만 **기한과 책임자**는 밝히지 않았습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "발표문이 밝힌 항목과 비워 둔 항목을 한 표로 나눠 후속 공시에서 확인할 지점을 제시"
+   },
+   {
+    "kind": "calculation",
+    "section": "📈 시장이 보인 반응을 숫자로 읽기",
+    "excerpt": "159.95달러가 27% 상승한 값이라면 직전 종가는 대략 159.95 ÷ 1.27 ≒ **125.9달러** 입니다",
+    "source_ids": [
+     "S3",
+     "S7"
+    ],
+    "added_value": "보도된 두 수치로 직전 종가를 역산하고 추정치임과 시각 차이를 명시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 같은 주에 겹친 Anthropic 주가 소식",
+    "excerpt": "공개 숫자로 계산하면 76달러는 IPO 가격 83달러보다 (76-83) ÷ 83 ≒ **-8.4%**",
+    "source_ids": [
+     "S3",
+     "S7"
+    ],
+    "added_value": "엔비디아 복귀 기사와 Anthropic 기사를 연결하되 인과는 단정하지 않고 기준가격별 차이를 계산"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🗓 앞으로 확인할 일정과 독자별 판단 기준",
+    "excerpt": "독자가 누구인지에 따라 확인할 대목이 다릅니다. 아래 표는 이번 소식에서 **무엇을 근거로 판단할지**를 상황별로 정리한 것이며, 투자 조언이 아닙니다.",
+    "source_ids": [
+     "S1",
+     "S5",
+     "S7"
+    ],
+    "added_value": "독자 상황별로 먼저 확인할 공시·일정을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 56,
+  "confirmed": 56,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 뉴스룸·S2 SEC 8-K 첨부·S3~S8 TechCrunch 6건을 다시 열어 수치·날짜·이름·일정 56개 주장을 대조. 모든 출처 published 가 페이지 날짜와 일치(S1·S2·S3·S4·S5·S8 2026-11-23, S6·S7 2026-11-24). EGRESS_BLOCKED 출처 없음. 고친 점: 전사 회의 발언 출처를 'CNBC 인용'에서 'CNBC·WSJ·Wired 인용'으로 정정(치료·감사 발언은 WSJ, 행동 강령·정상 참작은 Wired), 행동 강령 발언을 원문 취지(강령 유효·위반이 자동 해고 아님)로 정정, '복귀 후 첫 전사 회의'→'복귀 다음 날 전사 회의', 최고준법책임자 '지명·보고 대상은 지배구조 위원회'→'지명·지배구조 위원회에 보고'(지명 주체는 발표문에 없음), 트럼프 이사회 회의 전화 참여는 S3 이 아닌 S8 보도로 귀속, 네오클라우드 '반등'→'특히 크게 상승', Anthropic 기사 날짜를 '같은 날'→'11-24', 청문회 제목은 공지 주소 기준 주제로 표현, 청원 11-14 는 TechCrunch 관련 기사 날짜 기준 보도로 표시, 메가스피드 배경은 11-22 원고와 겹치지 않게 짧게 유지. 계산 확인: 159.95÷1.27=125.94(27% 반올림 범위 125.5~126.4 명시, 추정 표시), (76-83)/83=-8.43%, (76-111.5)/111.5=-31.84%, 76÷0.88≈86.4. Entity List 지정 계획(Semafor 익명 취재원→TechCrunch)·전사 회의 발언(매체→TechCrunch 재인용)은 보도로만 표시됨. 11-12 사임 배경은 한두 문장으로 최소화. 투자 권유·인물 단정 없음. editorial v1 발췌 4개 본문과 일치."
+ }
+}
