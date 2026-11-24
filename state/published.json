@@ -8043,5 +8043,22 @@
    "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/"
   ],
   "draft_id": "20261124_073759_6"
+ },
+ {
+  "date": "2026-11-25",
+  "title": "🇮🇳 Sarvam-105B-1711 공개: 혼합 가격 $0.44→$0.15, Gemini 3.5 Flash-Lite와 같은 점수대라면 갈아탈 만할까",
+  "topic": "Sarvam-105B-1711 (Sarvam AI, 2026-11-22) / Analytics India Magazine·Free Press Journal 보도",
+  "category": "AI 언어 모델",
+  "source_url": "https://www.sarvam.ai/blogs/sarvam-105b-1711",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/sarvam-105b-1711-044015-gemini-35-flash.html"
+  },
+  "sources": [
+   "https://www.sarvam.ai/blogs/sarvam-105b-1711",
+   "https://huggingface.co/sarvamai/sarvam-105b-1711",
+   "https://analyticsindiamag.com/ai-news/sarvam-defends-hosting-chinese-ai-models-releases-upgraded-105b-model",
+   "https://www.freepressjournal.in/tech/indias-sarvam-ai-launches-upgraded-105b-model-claims-google-level-performance-at-lower-cost"
+  ],
+  "draft_id": "20261125_070540_1"
  }
 ]
