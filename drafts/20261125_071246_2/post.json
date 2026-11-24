@@ -1,0 +1,393 @@
+{
+ "title": "🔒 Strands Box CLI, YOLO 모드 코딩 에이전트를 샌드박스에 가두면 무엇이 달라지나",
+ "category": "AI 도구",
+ "intro": "코딩 에이전트의 확인 창을 모두 끄고 돌리는 YOLO 모드는 빠르지만, 중요한 파일 삭제나 키 유출 같은 위험이 따라옵니다. AWS Strands Agents 팀은 2026년 11월 23일 블로그에서 Strands Box 가 Claude Code, Codex, Kiro CLI 를 한 명령으로 샌드박스 안에서 실행하도록 지원한다고 밝혔습니다. 같은 날 SiliconANGLE 도 이 소식을 다뤘습니다. 이 글은 새로 바뀐 점이 무엇인지, 프로필과 정책이 어떻게 생겼는지, 어떤 상황에서 쓸 만하고 무엇이 보호되지 않는지를 두 출처를 대조해 정리합니다.",
+ "summary": [
+  "2026-11-23 Strands 블로그: Strands Box 가 Claude Code, Codex, Kiro CLI 를 기본 지원합니다.",
+  "에이전트는 확인 없이 일하고, 접근 가능한 파일·명령·네트워크 호스트는 Dogwood 정책이 제한합니다.",
+  "API 키는 샌드박스 밖에 두고 요청이 나갈 때 egress gateway 가 진짜 토큰을 끼웁니다.",
+  "지원 환경은 macOS 15 이상 Apple silicon, Linux ARM64·x86-64 입니다.",
+  "Box 를 거치지 않는 키(프로젝트 파일·MCP 설정)는 보호되지 않습니다.",
+  "이 글에서 배울 것: Box CLI 의 구조, coding·oncall 프로필 비교, 내 상황별 선택 기준과 한계"
+ ],
+ "sections": [
+  {
+   "heading": "🧭 코딩 에이전트를 확인 없이 돌리고 싶을 때 생기는 문제",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "코딩 에이전트(AI가 터미널에서 파일을 고치고 명령을 실행하는 도구)를 쓰다 보면 매번 뜨는 권한 확인 창이 번거롭습니다. 그래서 많은 개발자가 확인 절차를 모두 끄는 이른바 **YOLO 모드**로 에이전트를 돌립니다. SiliconANGLE는 이 모드가 에이전트를 빠르게 만들지만 사람의 감독을 없애기 때문에 위험하다고 짚었고, 중요한 파일을 지우거나 민감한 키를 유출하거나 악성 프롬프트에 조종당할 수 있다고 설명했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "AWS의 Strands Agents 팀은 2026년 11월 23일 블로그에 **Strands Box가 Claude Code, Codex, Kiro CLI를 기본 지원한다**는 글을 올렸습니다. 에이전트는 확인 없이 일하되, 접근할 수 있는 파일·명령·네트워크 주소를 바깥 정책이 제한하는 방식입니다. 이 글은 이 발표가 실제로 무엇을 바꿨는지, 어떤 상황에서 쓸 만하고 어떤 상황에서는 기대하면 안 되는지를 원문 내용만으로 정리합니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 이 글의 범위",
+     "text": "직접 설치해 실행해 본 결과는 없습니다. 모든 설명은 AWS Strands 블로그 두 편과 SiliconANGLE 기사에 적힌 내용이며, 해석이 들어간 부분은 그렇게 표시했습니다."
+    }
+   ]
+  },
+  {
+   "heading": "📰 Strands Box 등장 배경: 10월 공개에서 11월 23일 CLI까지",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "SiliconANGLE에 따르면 Strands Box는 **운영체제 수준의 오픈소스 샌드박스**로, 에이전트의 모든 행동에 보안 정책을 적용합니다. 이 기사는 Box가 '지난달'에 나왔다고 적었고, 공식 블로그도 **2026년 10월에 Strands Box를 공개**했다고 밝혔습니다. 이번 11월 23일 발표는 여기에 **Box CLI**를 얹어 Claude Code, OpenAI의 Codex, AWS의 Kiro CLI를 한 명령으로 샌드박스 안에서 실행하게 한 것입니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "원문에서 확인되는 순서를 표로 정리하면 다음과 같습니다. 11월 5일 글은 Linux 지원을 알렸고, 11월 23일 글은 세 가지 코딩 에이전트 지원을 알렸습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "날짜",
+      "Strands 블로그·기사가 알린 내용",
+      "독자에게 의미"
+     ],
+     "rows": [
+      [
+       "2026년 10월",
+       "Strands Box 공개(처음에는 macOS): OS 샌드박스와 정책 적용",
+       "샌드박스 개념 자체는 이번 발표 이전부터 있었습니다"
+      ],
+      [
+       "2026-11-05",
+       "Linux 지원 추가(미리보기), 파일·네트워크 제어와 자격 증명 보호, Dogwood 정책 적용. 대상은 Kubernetes, Amazon Bedrock AgentCore Runtime, Linux 호스트",
+       "서버·클러스터에서 도는 에이전트용 확장이었습니다"
+      ],
+      [
+       "2026-11-23",
+       "Box가 Claude Code, Codex, Kiro CLI를 기본 지원. 프로필·팩으로 한 명령 실행",
+       "개인 개발자가 쓰는 코딩 에이전트를 직접 가둘 수 있게 됐습니다"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "정리하면 이번 소식의 새로운 점은 샌드박스가 아니라 **개발자 PC의 코딩 에이전트를 위한 실행 명령(`box run`)과 설정 단위(프로필·팩)**입니다. 같은 날 AWS는 Strands Decider v2 모델도 발표했지만, 이 글은 개발 도구인 Box CLI에 집중합니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚙ Box CLI 구조: 팩과 프로필은 무엇이 다른가",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Strands 블로그는 설정 단위를 두 가지로 나눕니다. **팩(pack)**은 프로그램 하나가 필요로 하는 것, 즉 에이전트·모델 제공자·도구 하나를 묶은 단위입니다. **프로필(profile)**은 여러 팩과 정책 파일, 설정을 합친 단위입니다. CLI에는 에이전트 팩(Claude Code, Codex, Kiro CLI), 제공자 팩(Amazon Bedrock, Anthropic), 도구 팩(git, gh, npm, uv, cargo)이 들어 있습니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "구분",
+      "역할",
+      "원문 예시"
+     ],
+     "rows": [
+      [
+       "팩",
+       "에이전트·제공자·도구 하나",
+       "@box/bedrock 은 모델 요청을 Amazon Bedrock 으로 보내고 나가는 길에 API 키를 붙입니다"
+      ],
+      [
+       "프로필",
+       "팩 + 정책 파일 + 설정",
+       "packs = [\"@box/claude\", \"@box/bedrock\", \"@box/git\", \"@box/npm\"], policies = [\"policy.dw\"]"
+      ],
+      [
+       "실행",
+       "프로젝트 폴더에서 한 줄",
+       "cd ~/src/my-app 후 box run claude"
+      ]
+     ]
+    },
+    {
+     "type": "code",
+     "language": "bash",
+     "code": "# 원문에 나온 설치 명령\ncurl -fsSL https://raw.githubusercontent.com/strands-agents/box/main/install.sh | sh\n\n# 프로젝트 폴더에서 에이전트를 샌드박스 안에서 실행\ncd ~/src/my-app\nbox run claude\n\n# 프로필 만들기와 실행 (원문 예시)\nbox profile create coding --with claude,bedrock --tools git,npm --policy scoped\nbox run coding\nbox profile show"
+    },
+    {
+     "type": "paragraph",
+     "text": "**`box profile create coding --with claude,bedrock --tools git,npm --policy scoped`** 한 줄이 에이전트·모델 경로·도구·정책 수준을 함께 정합니다. 이후에는 `box run coding`처럼 프로필 이름만 부르면 됩니다. `box profile show`로 프로필 설정을 확인할 수 있다고 글은 안내합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I1"
+    }
+   ]
+  },
+  {
+   "heading": "🔐 자격 증명 보호와 Dogwood 규칙 읽는 법",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "에이전트를 확인 없이 돌릴 때 가장 걱정되는 것이 키 유출입니다. Box의 답은 **키를 샌드박스 바깥에 두는 것**입니다. 에이전트는 자리표시자(placeholder) 값만 보고, 네트워크 요청이 샌드박스를 나갈 때 출구의 egress gateway가 진짜 토큰으로 바꿔 끼웁니다. 원문 예시에서 GitHub 경로는 `secret.ref = \"env://GIT_GITHUB\"`로 지정하고, `box run` 전에 `GIT_GITHUB`를 `x-access-token:<token>` 형태로 내보내라고 안내합니다."
+    },
+    {
+     "type": "image",
+     "image_id": "I2"
+    },
+    {
+     "type": "paragraph",
+     "text": "접근 규칙은 Dogwood라는 정책 언어로 씁니다. 파일 읽기, 명령, 네트워크 호스트, MCP 호출(에이전트가 외부 도구를 부르는 규약)을 모두 다룹니다. 원문이 든 규칙 세 가지는 용도가 서로 다릅니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "규칙 이름",
+      "하는 일",
+      "설계 의도(원문 설명)"
+     ],
+     "rows": [
+      [
+       "shared_read",
+       "~/.shared 읽기 허용",
+       "공유 자료는 열어 둡니다"
+      ],
+      [
+       "shared_secrets",
+       "~/.shared/.secrets 읽기 금지, 설명문에 사용자에게 물으라고 적음",
+       "거부 사유를 에이전트가 읽고 멈추게 합니다"
+      ],
+      [
+       "aws_mcp_rate_limit",
+       "1시간에 AWS MCP tools/call 60회 초과 금지, 지금까지 찾은 것을 보고하라고 안내",
+       "폭주하는 호출을 횟수로 막습니다"
+      ]
+     ]
+    },
+    {
+     "type": "info",
+     "title": "💡 거부 메시지가 곧 지침입니다",
+     "text": "원문 설명대로라면 규칙의 description 은 사람이 아니라 에이전트가 읽는 안내문 역할도 합니다. 막힌 에이전트가 우회하지 않고 사용자에게 되묻게 만드는 장치로 보입니다. 이는 원문 설명에 근거한 해석이며, 실제 에이전트가 항상 그렇게 행동하는지는 확인하지 못했습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "정책을 고칠 때 세션을 끊을 필요도 없습니다. 글은 실행 중인 세션에 정책 수정을 반영할 수 있고, 키 입력으로 정책을 다시 불러온다고 설명합니다. 터미널 녹화 그림에는 읽기 거부, 정책 수정, 읽기 성공, 그리고 secrets 폴더 읽기 거부가 이어집니다."
+    }
+   ]
+  },
+  {
+   "heading": "🛠 coding 프로필과 oncall 프로필 비교: 같은 도구, 다른 울타리",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "블로그는 프로필 예시 두 개를 듭니다. 같은 Box 위에서 목적에 따라 울타리가 얼마나 달라지는지 보여 주는 좋은 비교 자료입니다. 아래 표는 원문 설명을 같은 항목으로 나란히 놓은 것으로, 두 프로필의 우열을 가리려는 것이 아니라 설계 차이를 보려는 것입니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "항목",
+      "coding",
+      "oncall"
+     ],
+     "rows": [
+      [
+       "용도",
+       "프로젝트 하나 수정",
+       "장애 대응 조사"
+      ],
+      [
+       "시작 정책",
+       "scoped(만들기 명령 예시)",
+       "locked 정책에서 시작"
+      ],
+      [
+       "도달 가능한 곳",
+       "모델, npm 레지스트리, GitHub 푸시",
+       "모델과 AWS MCP Server 만"
+      ],
+      [
+       "도구",
+       "git, npm 실행",
+       "원문에 도구 팩 언급 없음"
+      ],
+      [
+       "AWS 키",
+       "원문에 언급 없음",
+       "aws:// 경로를 써서 키를 직접 쥐지 않음"
+      ],
+      [
+       "호출 제한",
+       "원문에 언급 없음",
+       "AWS MCP 호출 시간당 60회 규칙 예시"
+      ]
+     ]
+    },
+    {
+     "type": "image",
+     "image_id": "I3"
+    },
+    {
+     "type": "paragraph",
+     "text": "두 프로필의 공통점은 **필요한 길만 열고 나머지는 닫는다**는 것입니다. 코딩용은 쓰기와 푸시가 필요하므로 길이 넓고, 온콜용은 조사만 하므로 길이 좁습니다. 같은 에이전트(Claude Code 등)라도 어떤 프로필로 띄우느냐에 따라 할 수 있는 일이 달라집니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "특히 oncall 예시는 AWS 키를 에이전트가 직접 쥐지 않도록 aws:// 경로를 쓰고, AWS MCP 호출에는 시간당 60회 상한까지 겁니다. 장애 대응처럼 권한이 큰 작업일수록 처음부터 잠근 정책(locked)에서 시작해 필요한 곳만 여는 편이 안전하다는 설계 철학이 읽힙니다. 이것은 원문 예시에서 끌어낸 해석이며, 실제 환경에서 어떤 정책이 알맞은지는 팀의 보안 기준에 따라 달라집니다."
+    }
+   ]
+  },
+  {
+   "heading": "🎯 내 상황에는 어떤 선택이 맞나: 선택 기준과 제외 조건",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 원문에 적힌 사실을 바탕으로 한 **판단 도움**입니다. 원문이 추천한 기준이 아니라 제가 사실을 조합한 해석이므로, 도입 전 공식 문서로 확인하셔야 합니다."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "내 상황",
+      "Box 를 고려할 만한가",
+      "근거"
+     ],
+     "rows": [
+      [
+       "확인 창이 번거로워 이미 YOLO 모드로 돌리고 있다",
+       "고려할 만합니다",
+       "Box 는 확인 없이 일하게 두되 접근 범위를 정책으로 제한합니다"
+      ],
+      [
+       "Claude Code, Codex, Kiro CLI 중 하나를 쓴다",
+       "해당합니다",
+       "세 에이전트가 기본 팩으로 제공됩니다"
+      ],
+      [
+       "macOS 15 이상 Apple silicon 또는 Linux(ARM64·x86-64)가 아니다",
+       "지원 대상 밖입니다",
+       "설치 안내 문서는 Intel Mac, 이전 macOS, 다른 Linux 아키텍처를 설치 프로그램이 거부한다고 적었습니다"
+      ],
+      [
+       "키가 프로젝트 파일이나 MCP 설정에 평문으로 들어 있다",
+       "먼저 키를 옮겨야 합니다",
+       "Box 는 자기를 거쳐 가는 키만 보호합니다"
+      ],
+      [
+       "정책 언어를 배울 시간이 없다",
+       "내장 정책으로 시작할 수 있는지 확인이 필요합니다",
+       "예시 명령에 scoped, locked 정책이 나오지만 전체 목록은 확인하지 못했습니다"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 이 표는 보증이 아닙니다",
+     "text": "표의 판단은 원문의 사실을 조합한 해석입니다. 직접 설치해 보지 않았으므로 설치 난이도, 성능 부담, 에이전트별 호환 문제는 이 글로 알 수 없습니다."
+    },
+    {
+     "type": "subheading",
+     "text": "플랫폼 지원은 11월 5일 이후 넓어진 것으로 보입니다"
+    },
+    {
+     "type": "paragraph",
+     "text": "11월 5일 Linux 글은 미리보기 단계이며 **ARM64 호스트**에서 동작한다고 적었습니다. 11월 23일 CLI 글은 지원 환경을 macOS 15 이상 Apple silicon, Linux ARM64와 x86-64로 적었습니다. 현재 설치 안내 문서도 Linux 요구 사항을 **ARM64 또는 x86_64, glibc 2.34 이상**으로 적고 있어, 지금 기준으로 x86-64 Linux 가 지원 대상이라는 점은 두 곳에서 확인됩니다. 다만 11월 5일 이후 정확히 언제 x86-64 가 추가됐는지, 두 글이 같은 기능 범위를 가리키는지는 원문만으로 단정할 수 없습니다."
+    }
+   ]
+  },
+  {
+   "heading": "💬 SiliconANGLE 보도와 같은 날 나온 Decider v2",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "공식 블로그 말고 이 소식을 다룬 매체로는 SiliconANGLE가 있습니다. 이 기사는 Box CLI를 Strands Decider v2와 묶어 소개했습니다. 기사에 따르면 Strands Decider v2는 Google의 Gemma 4 구조를 바탕으로 한 **다섯 가지 오픈 웨이트(공개 가중치) 결정 모델**이며 라이선스는 Apache 2.0입니다. 이 글의 주제는 Box CLI이므로 Decider의 성능 수치는 다루지 않습니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "기사는 Box CLI가 YOLO 모드의 위험에 대한 답이라는 틀로 설명합니다. 개발자가 작업 흐름 전체를 격리된 샌드박스로 감싸면 에이전트는 허락을 구하느라 멈추지 않고 일할 수 있다는 것입니다. 또한 작업별 프로필을 바꿔 가며, 예를 들어 코딩 에이전트에게는 저장소 접근을 주고 장애 조사 에이전트에게는 읽기 전용 진단만 허용할 수 있다고 적었습니다. 이는 공식 블로그의 coding·oncall 예시와 같은 방향의 설명이어서, 두 출처가 서로 어긋나지 않는다는 점은 확인됩니다."
+    },
+    {
+     "type": "info",
+     "title": "💡 두 출처의 역할 차이",
+     "text": "공식 블로그는 명령·팩·규칙 이름처럼 구체적인 사용법을 담고, SiliconANGLE 기사는 왜 필요한지를 개발자 관점에서 요약합니다. 이 글의 명령과 설정 예시는 공식 블로그에서, 위험에 대한 설명은 기사에서 가져왔습니다."
+    }
+   ]
+  },
+  {
+   "heading": "💻 설치·사용 (에이전트에게 붙여넣기)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "아래는 원문에 나온 명령만 모은 점검용 지시문입니다. 설치 스크립트는 실행 전에 내용을 직접 확인하시길 권합니다. 파이프로 바로 셸에 넘기는 방식이기 때문입니다."
+    },
+    {
+     "type": "code",
+     "language": "plaintext",
+     "code": "다음 순서로 Strands Box 를 설치하고 확인해 줘. 각 단계 전에 무엇을 실행할지 먼저 알려 줘.\n1. curl -fsSL https://raw.githubusercontent.com/strands-agents/box/main/install.sh | sh\n2. 설치 스크립트는 실행하기 전에 내용을 보여 줘.\n3. 프로젝트 폴더에서 box profile create coding --with claude,bedrock --tools git,npm --policy scoped\n4. box profile show 로 설정을 보여 줘.\n5. box run coding 은 내가 확인한 뒤에만 실행해 줘.\n키가 프로젝트 파일에 평문으로 있는지도 찾아서 알려 줘."
+    },
+    {
+     "type": "info",
+     "title": "💡 프로필 이름은 바꿔도 됩니다",
+     "text": "원문의 coding, oncall 은 예시 이름입니다. 중요한 것은 이름이 아니라 어떤 팩과 정책을 묶었는지입니다."
+    }
+   ]
+  },
+  {
+   "heading": "⚠ 한계와 주의사항",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "가장 중요한 한계는 원문이 직접 밝힌 것입니다. **Box 를 거치지 않는 자격 증명은 보호되지 않습니다.** 에이전트가 이미 읽을 수 있는 키, 예를 들어 프로젝트 파일이나 MCP 서버 설정에 들어 있는 키는 그대로 보입니다. 글은 그런 키를 Box 의 경로 설정으로 옮기라고 권합니다."
+    },
+    {
+     "type": "warning",
+     "title": "⚠️ 'What a box does not protect' 페이지",
+     "text": "Strands Box 공식 문서에는 Box 가 보호하지 못하는 것을 정리한 'What a box does not protect' 페이지가 있습니다. 주요 내용은 이렇습니다. ① 파일 규칙(예: .env 읽기 금지)은 Box 의 셸과 Python 에만 적용되고, 에이전트 자체 파일 도구와 MCP 서버는 프로필이 허락한 파일에 모두 닿습니다. ② 에이전트는 .git/hooks, .claude/settings.json, package.json 스크립트 같은 파일을 고쳐 **나중에 박스 밖에서 실행될 코드**를 심을 수 있습니다. ③ 새 프로필은 기본으로 프로젝트 폴더(키와 .env 포함)를 에이전트가 읽게 둡니다. 문서는 권한 확인을 끄기 전 Scoped 또는 Locked 정책을 쓰고, 필요한 도구와 경로만 주라고 권합니다. 도입 전 전체 페이지를 직접 읽어 보시길 권합니다."
+    },
+    {
+     "type": "paragraph",
+     "text": "설치 안내 문서에 따르면 **box 는 사용 통계(telemetry)를 telemetry.strandsagents.com 으로 보내며** `box telemetry off` 로 끌 수 있습니다. 그 밖에 이 글이 확인하지 못한 것은 다음과 같습니다. 가격은 오픈소스라는 점 외에는 확인된 정보가 없고, 에이전트 성능에 미치는 영향이나 설치 후 실제 사용 후기도 확인하지 못했습니다. SiliconANGLE 기사는 AWS 직원의 직접 인용 없이 AWS 블로그 내용을 바탕으로 쓰였다는 점도 감안하셔야 합니다. 샌드박스는 에이전트가 할 수 있는 일을 줄여 주는 장치이지, 에이전트가 올바른 일을 한다는 보증이 아닙니다."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "YOLO 모드는 무엇인가요?",
+   "a": "원문 설명으로는 권한·보안 확인 창과 명령별 검토 없이 에이전트가 일하는 방식입니다. SiliconANGLE는 이름이 'you only live once'에서 왔다고 적었습니다. 빠르지만 사람의 감독이 없어 위험하다고 설명했습니다."
+  },
+  {
+   "q": "Box CLI 는 어떤 에이전트를 지원하나요?",
+   "a": "11월 23일 Strands 블로그 기준으로 Claude Code, Codex, Kiro CLI 세 가지입니다."
+  },
+  {
+   "q": "에이전트가 API 키를 볼 수 있나요?",
+   "a": "Box 를 거치도록 설정한 키는 에이전트가 자리표시자만 봅니다. 하지만 프로젝트 파일이나 MCP 설정에 이미 들어 있는 키는 그대로 보이므로 먼저 옮겨야 한다고 원문이 밝힙니다."
+  },
+  {
+   "q": "어떤 운영체제에서 쓸 수 있나요?",
+   "a": "원문은 macOS 15 이상의 Apple silicon Mac, 그리고 ARM64와 x86-64 Linux를 적었습니다. 설치 안내 문서는 Linux 에 glibc 2.34 이상이 필요하고 Intel Mac 은 설치되지 않는다고 적었습니다."
+  },
+  {
+   "q": "정책을 바꾸려면 세션을 다시 시작해야 하나요?",
+   "a": "원문은 실행 중인 세션에도 정책 수정을 반영할 수 있고, 키 입력으로 다시 불러온다고 설명합니다."
+  }
+ ],
+ "closing": "YOLO 모드를 쓰고 있다면 Box CLI 는 확인 창 없이 일하게 하되 길을 정책으로 좁히는 선택지로 검토할 만합니다. 다만 키가 프로젝트 파일에 평문으로 있다면 먼저 옮겨야 하고, 보호되지 않는 범위를 정리한 공식 페이지를 직접 읽어야 합니다. 직접 실행한 결과가 없는 만큼 도입은 작은 프로젝트에서 시험해 보시길 권합니다. 여러분도 한번 Strands Box 를 직접 체험해보시길 추천드리면서 저는 다음 시간에 더 유익한 정보를 가지고 다시 찾아뵙겠습니다. 감사합니다.",
+ "caveat": "기능·지원 환경·미리보기 상태는 바뀔 수 있으니 Strands Agents 공식 문서에서 최신 정보를 확인하세요.",
+ "hashtags": [
+  "StrandsBox",
+  "BoxCLI",
+  "AWS",
+  "StrandsAgents",
+  "ClaudeCode",
+  "Codex",
+  "KiroCLI",
+  "YOLO모드",
+  "AI에이전트",
+  "샌드박스",
+  "Dogwood",
+  "코딩에이전트",
+  "AI보안",
+  "개발도구"
+ ],
+ "source_ids": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ]
+}

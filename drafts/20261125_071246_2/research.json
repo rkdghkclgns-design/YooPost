@@ -1,0 +1,115 @@
+{
+ "topic": "Strands Box adds native support for Claude Code, Codex, and Kiro CLI",
+ "source_url": "https://strandsagents.com/blog/strands-box-cli/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Strands Box adds native support for Claude Code, Codex, and Kiro CLI",
+   "url": "https://strandsagents.com/blog/strands-box-cli/",
+   "publisher": "AWS Strands Agents",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AWS is making AI agents more decisive and secure with its latest Strands updates",
+   "url": "https://siliconangle.com/2026/11/23/aws-is-making-ai-agents-more-decisive-and-secure-with-its-latest-strands-updates/",
+   "publisher": "SiliconANGLE",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Strands Box brings its open source sandbox to Linux",
+   "url": "https://strandsagents.com/blog/strands-box-linux-sandbox/",
+   "publisher": "AWS Strands Agents",
+   "published": "2026-11-05",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "What a box does not protect",
+   "url": "https://strandsagents.com/docs/user-guide/box/limitations/",
+   "publisher": "AWS Strands Agents (문서)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Install Box",
+   "url": "https://strandsagents.com/docs/user-guide/box/install/",
+   "publisher": "AWS Strands Agents (문서)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://strandsagents.com/_astro/picture-1-how-box-works.DLw_yX5I_Z1ojvls.webp",
+   "page_url": "https://strandsagents.com/blog/strands-box-cli/",
+   "caption": "Box CLI 구조 — 에이전트가 박스 안에 있고 정책 계층이 유일한 출구인 그림",
+   "credit": "AWS Strands Agents"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://strandsagents.com/_astro/picture-2-credentials.CvC9YBgm_1ExfvT.webp",
+   "page_url": "https://strandsagents.com/blog/strands-box-cli/",
+   "caption": "자격 증명 보호 — 에이전트는 자리표시자를 보내고 Box 가 github.com 으로 가는 길에 진짜 토큰을 붙이는 그림",
+   "credit": "AWS Strands Agents"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://strandsagents.com/_astro/picture-3-oncall.C22uAF7y_2qzzfR.webp",
+   "page_url": "https://strandsagents.com/blog/strands-box-cli/",
+   "caption": "oncall 프로필 — 모델과 AWS MCP Server 만 열고 다른 호스트와 AWS 키는 막는 그림",
+   "credit": "AWS Strands Agents"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "YOLO 모드로 돌리는 코딩 에이전트를 Strands Box CLI 로 가두면 무엇이 보호되고 무엇이 여전히 노출되며, 내 상황에 맞는가",
+  "limitations": "직접 설치·실행하지 않았고 공식 블로그 두 편, 공식 문서 두 쪽(보호 한계·설치 요구 사항), SiliconANGLE 기사에 근거한 정리입니다. 가격·성능 영향은 확인하지 못했습니다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🎯 내 상황에는 어떤 선택이 맞나: 선택 기준과 제외 조건",
+    "excerpt": "11월 5일 Linux 글은 미리보기 단계이며 **ARM64 호스트**에서 동작한다고 적었습니다. 11월 23일 CLI 글은 지원 환경을 macOS 15 이상 A",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "11월 5일 글과 11월 23일 글의 지원 환경 표기 차이를 짚고, 설치 문서로 현재 지원 범위를 확인한 뒤 추가 시점은 단정하지 않는 한계를 붙였습니다."
+   },
+   {
+    "kind": "comparison",
+    "section": "🛠 coding 프로필과 oncall 프로필 비교: 같은 도구, 다른 울타리",
+    "excerpt": "두 프로필의 공통점은 **필요한 길만 열고 나머지는 닫는다**는 것입니다. 코딩용은 쓰기와 푸시가 필요하므로 길이 넓고, 온콜용은 조사만 하므로 길이 좁습니다. ",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "원문 두 예시 프로필을 같은 항목으로 비교해 목적에 따라 울타리를 어떻게 넓히고 좁히는지 보였습니다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 Strands Box 등장 배경: 10월 공개에서 11월 23일 CLI까지",
+    "excerpt": "정리하면 이번 소식의 새로운 점은 샌드박스가 아니라 **개발자 PC의 코딩 에이전트를 위한 실행 명령(`box run`)과 설정 단위(프로필·팩)**입니다. 같은",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "공식 블로그 두 편과 SiliconANGLE 기사를 연결해 이번 발표에서 새로 바뀐 점이 샌드박스가 아니라 CLI 실행 단위임을 구분했습니다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 36,
+  "confirmed": 36,
+  "removed": [
+   "원문은 Box 가 보호하지 못하는 것을 정리한 별도 페이지를 링크합니다. 이번 조사에서는 그 내용을 읽지 못했으므로, 도입 전에 반드시 직접 읽어 보시길 권합니다. (본문 링크가 아니라 문서 사이트 메뉴에 있는 페이지 — S4 를 직접 읽고 확인된 내용으로 교체)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): S1·S2·S3 를 curl 로 다시 열어 본문 대조, published 는 각 페이지 article:published_time·<time>·datePublished 와 일치 확인(2026-11-23/2026-11-23/2026-11-05). 수치·이름·명령·규칙(shared_read/shared_secrets/aws_mcp_rate_limit 60회)·팩 목록·지원 OS·Decider v2(5종, Gemma 4, Apache 2.0) 확인. 수정: 공개 시기 '지난달' 표를 S1 근거 '2026년 10월(처음 macOS)'로 명시, Linux ARM64(11/5 미리보기) vs ARM64·x86-64(11/23) 서술은 유지하고 설치 문서(S5, ARM64·x86_64·glibc 2.34+, Intel Mac 거부)로 현재 지원 범위 보강. 'What a box does not protect' 는 S4 를 읽고 확인된 내용으로 경고 박스 교체. telemetry 문장 추가(S5). 인용 이미지 I1~I3 은 200 image/webp, 1600px 폭, 본문 img alt 와 캡션 일치 확인. GIF 설명은 본문 img alt 로 확인. editorial 발췌 3개 본문 일치 확인. S4·S5 는 문서 페이지라 날짜 표기가 없어 published 비움. EGRESS_BLOCKED 출처 없음."
+ }
+}
