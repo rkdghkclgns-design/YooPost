@@ -8078,5 +8078,23 @@
    "https://strandsagents.com/docs/user-guide/box/install/"
   ],
   "draft_id": "20261125_071246_2"
+ },
+ {
+  "date": "2026-11-25",
+  "title": "🤖 Motion Mamba 2.0 논문: 휴머노이드 40초 동작을 6.1배 빠르게, G1 실물 94/100은 어디까지 믿을까",
+  "topic": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control (arXiv 2611.29897, 2026-11-23) / Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.29897",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/motion-mamba-20-40-61-g1-94100.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.29897",
+   "https://arxiv.org/html/2611.29897",
+   "https://huggingface.co/papers/2611.29897",
+   "https://github.com/AIGeeksGroup/MotionMamba2.0",
+   "https://aigeeksgroup.github.io/MotionMamba2.0"
+  ],
+  "draft_id": "20261125_072138_3"
  }
 ]
