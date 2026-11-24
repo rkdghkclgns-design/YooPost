@@ -8096,5 +8096,26 @@
    "https://aigeeksgroup.github.io/MotionMamba2.0"
   ],
   "draft_id": "20261125_072138_3"
+ },
+ {
+  "date": "2026-11-25",
+  "title": "🏛 엔비디아가 젠슨 황을 11일 만에 복귀시켰다: 발표문이 약속한 것과 비워 둔 것",
+  "topic": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director (NVIDIA, 2026-11-23) / TechCrunch 보도",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/11.html"
+  },
+  "sources": [
+   "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+   "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+   "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
+   "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
+   "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+   "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
+   "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/",
+   "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/"
+  ],
+  "draft_id": "20261125_072822_4"
  }
 ]
