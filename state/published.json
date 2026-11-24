@@ -8060,5 +8060,23 @@
    "https://www.freepressjournal.in/tech/indias-sarvam-ai-launches-upgraded-105b-model-claims-google-level-performance-at-lower-cost"
   ],
   "draft_id": "20261125_070540_1"
+ },
+ {
+  "date": "2026-11-25",
+  "title": "🔒 Strands Box CLI, YOLO 모드 코딩 에이전트를 샌드박스에 가두면 무엇이 달라지나",
+  "topic": "Strands Box adds native support for Claude Code, Codex, and Kiro CLI",
+  "category": "AI 도구",
+  "source_url": "https://strandsagents.com/blog/strands-box-cli/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/strands-box-cli-yolo.html"
+  },
+  "sources": [
+   "https://strandsagents.com/blog/strands-box-cli/",
+   "https://siliconangle.com/2026/11/23/aws-is-making-ai-agents-more-decisive-and-secure-with-its-latest-strands-updates/",
+   "https://strandsagents.com/blog/strands-box-linux-sandbox/",
+   "https://strandsagents.com/docs/user-guide/box/limitations/",
+   "https://strandsagents.com/docs/user-guide/box/install/"
+  ],
+  "draft_id": "20261125_071246_2"
  }
 ]
