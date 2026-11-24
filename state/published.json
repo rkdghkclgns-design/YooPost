@@ -8117,5 +8117,23 @@
    "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/"
   ],
   "draft_id": "20261125_072822_4"
+ },
+ {
+  "date": "2026-11-25",
+  "title": "🔒 Meta Muse 에이전트 점검 결과, 웹페이지 하나가 어디까지 갔나: 경계별 점검 기준",
+  "topic": "Hacking Muse: Stealing Private Chats Through Browser Use (NebuSec, 2026-11-20) / TechRadar·CSA·CybersecAsia 보도",
+  "category": "AI 보안",
+  "source_url": "https://nebusec.ai/research/meta-muse-credential-exposure/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/meta-muse.html"
+  },
+  "sources": [
+   "https://nebusec.ai/research/meta-muse-credential-exposure/",
+   "https://nebusec.ai/research/inside-meta-muse/",
+   "https://www.techradar.com/pro/security/meta-muse-can-be-hacked-to-access-user-private-chats-using-just-a-single-malicious-web-page",
+   "https://labs.cloudsecurityalliance.org/research/csa-research-note-meta-muse-sentinel-bypass-agent-egress-202/",
+   "https://cybersecasia.net/news/threat-researchers-show-malicious-webpage-could-expose-agentic-chats/"
+  ],
+  "draft_id": "20261125_073517_5"
  }
 ]
