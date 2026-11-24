@@ -1,0 +1,83 @@
+{
+ "topic": "Sarvam-105B-1711 (Sarvam AI, 2026-11-22) / Analytics India Magazine·Free Press Journal 보도",
+ "source_url": "https://www.sarvam.ai/blogs/sarvam-105b-1711",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Sarvam-105B-1711",
+   "url": "https://www.sarvam.ai/blogs/sarvam-105b-1711",
+   "publisher": "Sarvam AI",
+   "published": "2026-11-22",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "sarvamai/sarvam-105b-1711 (NVFP4 model card)",
+   "url": "https://huggingface.co/sarvamai/sarvam-105b-1711",
+   "publisher": "Hugging Face / Sarvam AI",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Sarvam Defends Hosting Chinese AI Models, Releases Upgraded 105B Model",
+   "url": "https://analyticsindiamag.com/ai-news/sarvam-defends-hosting-chinese-ai-models-releases-upgraded-105b-model",
+   "publisher": "Analytics India Magazine",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "India's Sarvam AI Launches Upgraded 105B Model, Claims Google-Level Performance At Lower Cost",
+   "url": "https://www.freepressjournal.in/tech/indias-sarvam-ai-launches-upgraded-105b-model-claims-google-level-performance-at-lower-cost",
+   "publisher": "Free Press Journal",
+   "published": "2026-11-23",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 글의 도표는 대화형 차트(playground)로 삽입되어 있어 내려받을 수 있는 정적 본문 그림이 없고, 확인된 이미지는 대표 포스터뿐이라 쓰지 않음.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Sarvam-105B-1711의 가격·점수 주장을 믿고 Gemini 3.5 Flash-Lite 등 대신 써 볼 만한가, 어떤 업무에서 그런가",
+  "limitations": "모든 성능·가격은 Sarvam 자체 평가·공개 값이며 직접 실행하거나 독립 검증하지 않았다. 월 비용은 가정 계산이고 모델별 토큰 사용량 차이는 반영하지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 월 비용으로 바꾸면 얼마나 차이 날까",
+    "excerpt": "계산은 0.85를 0.15로 나눈 약 **5.7배**, 0.54를 0.15로 나눈 **3.6배**, 2월 모델 대비로는 0.15가 0.44의 약 **34%**여서 약 **66% 낮아진** 셈입니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "혼합 단가를 월 1억 토큰 가정으로 환산하고 배수·절감률을 직접 계산"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔬 벤치마크는 어디서 앞서고 어디서 뒤질까",
+    "excerpt": "지시 따르기(IFEval·IFBench)와 Tau2 평균, Arena-Hard의 어려운 문제 묶음에서는 Sarvam이 앞섭니다",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "같은 표의 세 모델을 항목별로 나눠 강점·약점을 분리"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 누가 써 볼 만하고, 누가 다른 선택을 해야 할까",
+    "excerpt": "정리하면 이 모델은 '평균 점수를 올린 범용 최강 모델'이라기보다 **지시 따르기와 에이전트형 작업, 인도어 처리에서 가격 대비 성능을 노린 모델**로 보입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "업무 상황별 근거와 제외 조건을 표로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1 공식 글(2026-11-22 표기)·S2 모델 카드·S3·S4 기사를 다시 열어 수치·이름·날짜·스펙 72개를 하나씩 대조, 모두 확인. 고친 것: ① 혼합 단가 3:1 가정의 출처를 '분석 매체'→공식 글로(S1에 명시, 매체에는 없음, 본문·FAQ 모두) ② Samvaad를 '12개 인도어로 파인튜닝'→'12개 인도어 지원 기업용 음성 에이전트 플랫폼'(S1 표현) ③ B200 처리량은 '한 장'이 아니라 동시 요청 64건 기준 GPU당 값(S1 캡션) — 정밀도·가속 기법이 달라 배수 단정 안 함 유지 ④ 쿠마르 발언은 AIM이 직접 인용한 문장을 출처 밝혀 번역 인용, 중국 모델 호스팅 내용은 AIM 보도로 한정(FPJ에는 중국 모델 언급 없음). 확인: 컨텍스트 160K는 S1(긴 문맥 확장 목표), 131072는 S2의 vLLM --max-model-len·벤치 설정 — 두 값 차이를 경고 상자로 유지. Apache-2.0은 S2 라이선스 필드(HF API cardData license: apache-2.0)로 확인, S1에는 라이선스 명시 없음(FAQ에 그대로 적음). 10.3B 활성·같은 기반 모델·thinking 기본/온도 1.0·0.6·SGLang·Docker Model Runner는 S2로 확인. S2 published: 모델 카드 페이지에 날짜 표기 없음 → Hugging Face API 마지막 커밋(lastModified 2026-11-23, 벤치마크·설정 수정 커밋)으로 맞춤(저장소 생성 2026-11-15는 비공개 준비 시점일 수 있어 쓰지 않음). S3 2026-11-23·S4 2026-11-23(Updated 표기) 페이지 날짜 일치. EGRESS_BLOCKED 출처 없음. editorial v1 contributions 3개 발췌가 본문에 그대로 있고 계산(5.7배·3.6배·약 66%) 재계산 일치."
+ }
+}
