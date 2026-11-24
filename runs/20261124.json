@@ -7,9 +7,9 @@
  "phase": "조사·작성",
  "fallback": {
   "provider": "codex",
-  "status": "waiting",
+  "status": "writing",
   "category": "AI 공모주 분석",
-  "taken_over": "2026-11-24T17:06:03+09:00",
+  "taken_over": "2026-11-24T21:11:12+09:00",
   "first_taken_over": "2026-11-24T08:26:02+09:00",
   "reason": "실행 종료",
   "last_result": "failed"
