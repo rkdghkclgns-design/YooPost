@@ -1,0 +1,106 @@
+{
+ "topic": "Hacking Muse: Stealing Private Chats Through Browser Use (NebuSec, 2026-11-20) / TechRadar·CSA·CybersecAsia 보도",
+ "source_url": "https://nebusec.ai/research/meta-muse-credential-exposure/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Hacking Muse: Stealing Private Chats Through Browser Use",
+   "url": "https://nebusec.ai/research/meta-muse-credential-exposure/",
+   "publisher": "NebuSec",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Inside Meta Muse: Browser, Sentinel and the Shared-Kernel Boundary",
+   "url": "https://nebusec.ai/research/inside-meta-muse/",
+   "publisher": "NebuSec",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Meta Muse can be hacked to access user private chats using just a single malicious web page",
+   "url": "https://www.techradar.com/pro/security/meta-muse-can-be-hacked-to-access-user-private-chats-using-just-a-single-malicious-web-page",
+   "publisher": "TechRadar",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Breaking the Agent's Egress Gate: Lessons from the Muse Sentinel Bypass",
+   "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-meta-muse-sentinel-bypass-agent-egress-202/",
+   "publisher": "Cloud Security Alliance",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Threat researchers show malicious webpage could expose agentic chats",
+   "url": "https://cybersecasia.net/news/threat-researchers-show-malicious-webpage-could-expose-agentic-chats/",
+   "publisher": "CybersecAsia",
+   "published": "2026-11-24",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://nebusec.ai/_astro/muse-architecture.Ca8AR4Rs.png",
+   "page_url": "https://nebusec.ai/research/inside-meta-muse/",
+   "caption": "Muse 구조: 사용자 VM 안의 런타임 셀(컨테이너), Sentinel, hatch-authd 가 외부 서비스와 연결되는 구조도",
+   "credit": "NebuSec (Meta 의 Muse 구조도를 인용한 그림)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://nebusec.ai/_astro/muse-network-approval.DT_LrRUO.png",
+   "page_url": "https://nebusec.ai/research/inside-meta-muse/",
+   "caption": "Muse 권한 설정 화면: 웹 접근 기본값(Web access defaults)을 '일부 작업은 묻기'와 '항상 묻기'로 고르는 부분",
+   "credit": "NebuSec"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Meta Muse 점검에서 공개된 공격 연쇄는 어느 경계가 무너져 생겼고, 에이전트를 쓰는 사람과 조직은 무엇부터 점검해야 하나?",
+  "limitations": "필자는 Muse 를 직접 실행·재현하지 않았고 내용은 연구자 발표(NebuSec)와 CSA·매체 보도에 근거한다. 성공률·패치 시점은 독립 검증되지 않았으며 Meta 공식 입장은 확인되지 않았다. 상황별 점검 기준은 CSA 권고를 재배치한 해석이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🔗 세 단계 연결 고리: 브라우저, 송신 게이트, 컨테이너 경계",
+    "excerpt": "더 눈에 띄는 대목은 Sentinel 의 통신 강제 장치가 컨테이너에 붙어 있어 VM 에서 직접 도는 프로세스에는 적용되지 않았다는 점입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "브라우저·송신 게이트·컨테이너 경계를 같은 표에서 설계 의도와 약점, 방어 교훈으로 나란히 비교."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧩 두 문서를 겹쳐 읽으면 보이는 것: 경계가 붙은 위치",
+    "excerpt": "NebuSec 의 두 글과 CSA 노트를 함께 놓고 보면, 사고의 공통 원인은 취약점 개수가 아니라 **통제가 붙어 있던 위치**입니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "NebuSec 두 글과 CSA 노트를 연결해 사고의 공통 원인을 통제 위치로 해석하고 Signal 사례는 별개 경계 문제로 구분."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 에이전트를 쓰는 상황별 점검 기준",
+    "excerpt": "아래는 CSA 노트의 즉시·단기·전략 권고를 상황별로 다시 배치한 것으로, 이 글의 해석이며 Meta 나 NebuSec 의 공식 지침이 아닙니다.",
+    "source_ids": [
+     "S4"
+    ],
+    "added_value": "CSA 권고를 개인·관리자·개발자·제품 선정 담당 상황별 우선순위로 재배치."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 46,
+  "confirmed": 46,
+  "removed": [],
+  "note": "Opus 검증 — S1~S5 를 모두 다시 열어 확인(EGRESS_BLOCKED 없음, 각 페이지 메타 발표일이 published 와 일치: S1·S2 2026-11-20, S4 2026-11-21, S3·S5 2026-11-24). VM 사양(2 vCPU·8 GiB Cloud Hypervisor, systemd-nspawn)·hatch-safety/Sentinel/hatch-authd 역할·GET/HEAD/OPTIONS 기본 무승인·Chromium 갱신 지연·PDF 내보내기 샌드박스 꺼짐·cgroup 후크 범위·VM root 뒤 영구 저장소/자격 증명 저장소/Sentinel 접근·99.9% 초과(NebuSec 자체 수치, CSA 미검증 표시)·공개 전 패치(NebuSec 주장)·격리 환경·악용 보고 없음·Meta 미인정(TechRadar)·Hacker News 인용(CybersecAsia)·Signal 사례(CSA)·CSA 즉시/단기/전략 권고 대조. 수정 3건: 브라우저 단계 문장을 PDF 저장 경로로 정확히 하고 공격 절차성 표현 완화, '독립 재현 안 됨'의 범위를 CSA 원문대로(성공률) 조정, VM 격리 '효과적이었다' 추정 표현을 '시연에서 VM 안에 머묾'으로 수정. 인용 이미지 I1·I2 image_url 직접 열어 200 image/png 확인(2842x1359, 1600x1200), I2 파일 실제 내용이 Web access defaults 설정 화면임을 이미지로 확인해 캡션 유지. editorial 발췌 3개 본문 일치 확인. editorial v1 발췌 2 를 본문 문장 전체(30자 이상)로 늘림."
+ }
+}
