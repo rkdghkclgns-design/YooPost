@@ -1,0 +1,111 @@
+{
+ "topic": "Working with AI (Anthropic Economics, 2026-11-23) / AI Weekly·Stephen Smith 해설 보도",
+ "source_url": "https://www.anthropic.com/research/working-with-ai",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Working with AI",
+   "url": "https://www.anthropic.com/research/working-with-ai",
+   "publisher": "Anthropic",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Anthropic Study of 58 Firms Finds Few Layoffs, Slower Hiring",
+   "url": "https://aiweekly.co/alerts/anthropic-study-of-58-firms-finds-few-layoffs-slower-hiring",
+   "publisher": "AI Weekly",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "The AI Layoffs Never Came. Your 2031 Senior Lawyer Shortage Just Started.",
+   "url": "https://www.smithstephen.com/p/the-ai-layoffs-never-came-your-2031",
+   "publisher": "Intelligence by Intent (Stephen Smith, Substack)",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "The Adecco Group global study: AI delivers more value when people are involved in work redesign",
+   "url": "https://www.adeccogroup.com/en/our-group/media/press-releases/global-workforce-of-the-future-study-2026",
+   "publisher": "The Adecco Group",
+   "published": "2026-11-19",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://assets.claude.com/b8a511edb078752c5aa30a54fcb1f882a39d5a2f.png?w=3840&q=75&fm=webp&fit=max",
+   "page_url": "https://www.anthropic.com/research/working-with-ai",
+   "caption": "도표 2: AI 도입으로 보고된 가치 유형별 비율(산출물 확대·비용 절감·직원 몫·가치 없음)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://assets.claude.com/2dbedd21386ce0c58466096b0cc640231b76ce6c.png?w=3840&q=75&fm=webp&fit=max",
+   "page_url": "https://www.anthropic.com/research/working-with-ai",
+   "caption": "도표 4: AI로 가치를 얻는 데 걸린 병목 항목별 수치",
+   "credit": "Anthropic"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI로 해고는 드물고 채용이 줄었다는 Anthropic 인터뷰 결과를, 우리 조직의 채용·검토·도입 설계 판단에 어디까지 쓸 수 있는가",
+  "limitations": "직접 실행·실측 없음. Anthropic 보고서는 58개 고객 기업 대상 자기 보고 중심 질적 연구이며 무작위 표본이 아님. 도표 2는 '가치 유형이 언급된 활용 사례 중 비율'이라고만 설명되고 사례 수는 없으며, 도표 4는 단위가 명시되지 않아 막대값 합산(437)·비중은 직접 계산한 추정치. Adecco는 공식 보도자료 페이지만 읽었고 전체 보고서는 열지 못함. 두 조사는 직접 비교 불가이며 인과 주장 없음.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🚧 병목은 모델이 아니라 조직 안에: 도표 4의 숫자를 합산하기",
+    "excerpt": "일곱 묶음을 모두 더하면 437입니다. 이 가운데 **결과물 확인이 101로 약 23%**를 차지해 가장 큽니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "도표 4의 항목별 막대를 묶음별로 합산하고 전체 대비 비중을 계산해 병목의 상대적 크기를 보여 줌(단위·중복 한계 명시)."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔗 Adecco 근로자 설문과 나란히 읽기: 기업의 시선과 직원의 시선",
+    "excerpt": "Anthropic에서 가장 자주 나온 직원 쪽 장벽이 '저항'이었고 다섯 곳은 도입을 거부한 직원을 내보냈는데",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "기업 인터뷰와 근로자 설문이라는 서로 다른 원문을 연결해 저항을 참여·설명 설계 문제로 점검할 근거를 제시하되 인과 주장은 막음."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 상황별 점검 기준: 우리 조직은 무엇부터 볼까",
+    "excerpt": "아래 표는 두 조사의 숫자를 **상황별 첫 질문**으로 바꾼 것입니다. 원문이 이렇게 하라고 권한 것이 아니라, 앞의 숫자에서 제가 도출한 점검 순서이며 조직마다 달라질 수 있습니다.",
+    "source_ids": [
+     "S1",
+     "S4"
+    ],
+    "added_value": "채용 축소·검토 병목·직원 저항·외주·효과 측정 상황별로 먼저 던질 질문과 단정 못 하는 점을 분리."
+   },
+   {
+    "kind": "calculation",
+    "section": "👥 고용: 해고 2곳과 채용 축소 3분의 2를 어떻게 읽나",
+    "excerpt": "환산은 단순 나눗셈이며 한 기업이 여러 칸에 들어갈 수 있으니 합쳐서 해석하지 마시기 바랍니다.",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "2·5·10·9곳을 58곳 대비 비율로, 3분의 2를 약 39곳으로 환산해 규모감을 줌(중복 가능성 명시)."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 103,
+  "confirmed": 103,
+  "removed": [],
+  "corrected": [
+   "'산출물 증가의 절반가량이 기존 업무 가속' → 원문대로 '기존 업무를 빠르게 하거나 늘린 것'",
+   "도표 2 분모가 '본문에 풀어 쓰여 있지 않다' → 도표 설명(가치 유형이 언급된 활용 사례 중 비율, 자동 코더 분류)대로 수정",
+   "'원문이 직접 밝힌 한계 네 가지' → 원문 서술(대개 A/B 시험 아님, 무작위·체계적 대표 표본 아님, 후속 정량 연구 기대)에 맞춰 표현 수정",
+   "'원문 요약' 표현을 원문 본문·도표 설명 기준으로 수정, S4 제목을 페이지 제목으로 수정, 요약의 437 합산에 추정 표시"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1~S4 를 다시 내려받아 본문 대조(모두 HTTP 200, EGRESS_BLOCKED 없음). published: S1 article:published_time 2026-11-23, S2 'Published November 24, 2026', S3 datePublished 2026-11-24, S4 페이지 'November 19, 2026' 모두 일치. 도표 2·4 이미지(I1 3840x2968, I2 3840x4346, image/webp 200)를 직접 열어 막대값 대조: 도표 2 묶음 55/19/7/19=100, 세부 합 일치; 도표 4 묶음 101/74/74/60/59/52/17, 합 437, 101/437≈23%, 74/437≈17%, 17/437≈4% 일치. 58곳·66번 인터뷰·약 300개 사례·해고 2곳·도입 거부자 퇴출 5곳·추가 채용 10곳·계약직 축소 9곳·채용 축소 3분의 2·감소분 3분의 1 충원 안 함·90%/100명 이상/90:10/스타트업 6곳 평균 4배 원문 일치. 직원 몫 도표 7% 대 본문 'one-tenth' 차이는 경고 박스 유지. Adecco 수치(40,500명·36개국 21개 산업·2026년 6~7월·74%/64%·96%/29%·92%/15%·77%→67%·93%/47%)는 보도자료 페이지 범위 안에서만 인용. Smith 의 101회 언급·표본 편향 단서 원문 일치."
+ }
+}
