@@ -1,0 +1,113 @@
+{
+ "topic": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control (arXiv 2611.29897, 2026-11-23) / Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.29897",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control (arXiv abs)",
+   "url": "https://arxiv.org/abs/2611.29897",
+   "publisher": "arXiv",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Motion Mamba 2.0 (arXiv HTML 전문)",
+   "url": "https://arxiv.org/html/2611.29897",
+   "publisher": "arXiv",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control — Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.29897",
+   "publisher": "Hugging Face",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "AIGeeksGroup/MotionMamba2.0 (GitHub README)",
+   "url": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+   "publisher": "GitHub (AIGeeksGroup)",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Motion Mamba 2.0 프로젝트 사이트",
+   "url": "https://aigeeksgroup.github.io/MotionMamba2.0",
+   "publisher": "AIGeeksGroup",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.29897v1/overview.png",
+   "page_url": "https://arxiv.org/html/2611.29897",
+   "caption": "Motion Mamba 2.0 구성 요소: 루트·몸 2단계 확산, 어텐션·Mamba-3 혼합, 확정된 창 뒤 기록 갱신 개요도",
+   "credit": "Huang et al., arXiv 2611.29897"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://aigeeksgroup.github.io/MotionMamba2.0/images/cuda_graph_fusion.svg",
+   "page_url": "https://aigeeksgroup.github.io/MotionMamba2.0",
+   "caption": "6.1배 속도 향상의 핵심: CUDA Graph 재생(세 CFG 분기)과 Mamba 전이 융합 커널 구조",
+   "credit": "AIGeeksGroup, Motion Mamba 2.0 프로젝트 사이트"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Motion Mamba 2.0의 장거리 제어·6.1배 속도·G1 실물 94/100 수치는 어떤 조건에서 나온 것이고, 내 연구 상황에 맞을까",
+  "limitations": "논문 보고 수치를 읽고 계산한 글이며 직접 코드를 실행하지 않았다. 독립 재현·매체 보도는 확인하지 못했고 Hugging Face Papers 등록만 확인했다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 장거리 제어 비교: 숫자로 보면 어디까지 앞서나",
+    "excerpt": "Motion Mamba 2.0이 7.55/13.64cm인데, 루트 오차 쪽 비교 대상인 MotionStreamer는 7.78cm",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "길이별로 같은 조건의 모델 값을 나란히 놓고 격차가 긴 구간에서 줄어드는 점과 이름을 골라 비교했다는 한계를 짚음"
+   },
+   {
+    "kind": "calculation",
+    "section": "⏱ 6.1배 빨라졌다는 숫자, 계산으로 풀어 보기",
+    "excerpt": "1685.35÷276.14≈6.10배로 쌍체 중앙값(6.138배)과 조금 다릅니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "p50·호출 수·동기화 횟수 배수와 2080ms 창 대비 비율을 직접 계산하고 쌍체 값과의 차이를 설명"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이 모델이 맞는 사람, 아닌 사람",
+    "excerpt": "아래는 논문 수치를 바탕으로 한 제 판단 기준입니다. 직접 코드를 실행해 얻은 결과가 아니라는 점을 밝혀 둡니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "연구 상황별 검토·주의·제외 조건과 외부 의존성을 표로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 72,
+  "removed": [
+   "Motion Mamba 2.0은 Hugging Face 트렌딩 논문 목록에서도 상위권에 보였습니다. (현재 트렌딩 목록에서 확인 안 됨 → HF Papers 페이지의 '#1 Paper of the day'·upvote 171로 교체)",
+   "Hugging Face 트렌딩 논문 목록에서 이 논문은 같은 시점에 상위권(10개 중 4번째)으로 보였습니다. (확인 안 됨 → 교체)",
+   "저장소는 커밋 2개에 별 24개 (GitHub 페이지·API 접속 불가, HF API는 23개 → 별 개수 삭제)",
+   "긴 시퀀스에서 비용이 덜 늘어난다는 점이 이 논문이 Mamba를 고른 이유입니다. (논문에 없는 이유 → 논문 설명대로 수정)",
+   "어텐션만으로는 긴 기록을 매번 다시 읽는 비용이 커진다 (논문은 '제한된 어텐션 캐시가 먼 과거 접근을 막음'과 '반복 노이즈 제거 비용'을 문제로 듦 → 수정)",
+   "루트·몸 분리 확산이 장거리 목표 추종에 유리하다고 주장 (논문에 그런 주장 없음 → '루트 예측이 몸 예측의 조건'으로 수정)",
+   "'최소 구성'이 어떤 모델과 같은 수준인지 정리하지 못함 (논문: Minimal = Mamba 가지 없는 구성 → 확인된 사실로 수정)"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5): arXiv abs(2026-11-23 citation_date)·HTML v1 전문의 본문·표 1~9·부록, HF Papers 페이지·API(Published Nov 23, Submitted Nov 24, #1 Paper of the day, upvote 171), GitHub 저장소는 github.com 이 세션 프록시에서 403이라 git clone/raw README로 내용 확인(커밋 2개, Apache-2.0, SONIC·LLM2Vec·Llama 동의), HF 모델·데이터 저장소 API로 MotionMamba2.pt·데이터 공개 확인, 프로젝트 사이트 본문·그림 확인. 저자 계산(배수·차이·비율)은 재계산해 일치. 인용 이미지 2개 모두 HTTP 200 image/* (overview.png 2039x941 = 논문 Fig.4, cuda_graph_fusion.svg = 사이트 'CUDA Graph and Fusion Kernel' 그림). S4·S5는 페이지에 발표일이 없어 published 비움(check 요구 없음)."
+ }
+}
