@@ -1,0 +1,108 @@
+{
+ "topic": "Google Search Personal Intelligence: Wallet added, Drive and Gemini app coming (Google, 2026-11-23) / TechCrunch·9to5Google·Android Authority 보도",
+ "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Google Search Personal Intelligence expansion: Wallet, Drive and Gemini app (Robby Stein)",
+   "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+   "publisher": "Google",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Google Search's AI Mode can now tap into Drive and Wallet for more personalized responses",
+   "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "AI Mode adding Google Drive, Wallet, & Gemini app integration",
+   "url": "https://9to5google.com/2026/11/23/ai-mode-wallet-gemini/",
+   "publisher": "9to5Google",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Google Search AI Mode adds Wallet Personal Intelligence, with Drive and Gemini coming soon",
+   "url": "https://www.androidauthority.com/personal-intelligence-ai-mode-3738563/",
+   "publisher": "Android Authority",
+   "published": "2026-11-23",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Personal Intelligence in AI Mode in Search: Help that's uniquely yours",
+   "url": "https://blog.google/products-and-platforms/products/search/personal-intelligence-ai-mode-search/",
+   "publisher": "Google",
+   "published": "2026-01-22",
+   "official": true
+  },
+  {
+   "id": "S6",
+   "title": "Bringing the power of Personal Intelligence to more people",
+   "url": "https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/",
+   "publisher": "Google",
+   "published": "2026-03-17",
+   "official": true
+  }
+ ],
+ "images": [],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI Mode의 Personal Intelligence에 Wallet·Drive·Gemini 앱이 붙는다는 발표에서 지금 실제로 켜지는 것은 무엇이고, 어떤 순서로 연결을 판단해야 하나",
+  "limitations": "제품을 직접 실행하거나 계정에서 확인하지 않았고 공식 블로그 3건과 매체 보도 3건만 대조했다. 11월 글에는 국가·언어·구독 조건이 없어 현재 범위는 확인되지 않았다. 판단 기준 표는 해석이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 지금 켜지는 것과 몇 주 뒤인 것: 보도 대조",
+    "excerpt": "같은 날 나온 글들을 나란히 놓으면 **Drive와 Gemini 앱의 상태**를 서로 다르게 적고 있습니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "같은 날 네 글의 Wallet·Drive·Gemini 상태 서술을 같은 조건으로 대조해 차이가 Drive·Gemini 앱 시점에 있음을 보이고, 공식 글을 우선하라는 판단 기준을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧭 1월·3월·11월, 연결 범위는 어떻게 넓어졌나",
+    "excerpt": "3월은 '어디서 쓰나'의 확장이었고, 11월은 '무엇을 읽나'의 확장입니다.",
+    "source_ids": [
+     "S1",
+     "S5",
+     "S6"
+    ],
+    "added_value": "서로 다른 세 공식 글을 연결해 확장 축(쓰는 곳 vs 읽는 앱)과 11월 글에서 빠진 조건을 드러냄"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 어떤 앱부터 연결할지 판단하는 기준",
+    "excerpt": "한 번에 하나씩 연결해 답이 어떻게 달라지는지** 보는 방식이 가장 부담이 적습니다.",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S6"
+    ],
+    "added_value": "독자 상황별로 먼저 볼 항목과 조심할 점을 나눈 해석 표"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 48,
+  "confirmed": 44,
+  "removed": [
+   "9to5Google 글은 Wallet이 Gemini 앱 연동 뒤에 온다고 읽히게 적었고, 공식 글·Android Authority는 Wallet이 먼저라고 적었다는 점도 눈에 띕니다. (9to5Google 'Following the Gemini app' 오독 — Wallet이 Gemini 앱에 먼저 붙은 뒤 AI Mode로 온다는 뜻으로 수정)",
+   "⚠️ ChatGPT Wallet과는 다른 기능입니다 / 이름이 비슷해도 (어느 출처에도 없는 비교 — '대신 결제해 주는 기능이 아닙니다'로 교체)",
+   "TechCrunch: '제목·본문에 now 표현' (본문에는 now 없음 — 제목 'can now'로 수정)",
+   "앞서 숙소와 일정을 조사한 사람이 (공식 글은 'researching and planning for a trip'만 — '숙소' 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S3·S4·S5·S6 는 curl 로 원문 HTML 을 다시 받아 본문·article:published_time 대조(S1 2026-11-23, S3 2026-11-23T17:36Z, S4 2026-11-23T22:17Z, S5 2026-01-22, S6 2026-03-17 — 모두 published 와 일치). S2 TechCrunch 는 curl 403(Cloudflare)이었으나 WebFetch 로 열려 제목·'11:14 AM PST November 23, 2026'·본문 확인(EGRESS_BLOCKED 아님). 수정: 9to5Google Wallet 서술 오독, TechCrunch 'now' 범위, 최근 검색 맥락 시기(공식 글은 시기 미기재, '곧'은 아이콘에만), google.com/search-personalization 은 공식 글 링크 주소로 표기, 9to5Google 의 Gemini 앱 접근 범위·'연결 옵션은 오늘'은 매체 서술로 표시, 지역·언어·구독 조건은 11월 공식 글·TechCrunch 모두 미기재라 '확인되지 않음' 유지. 인용 이미지: 공식 글 본문은 동영상뿐이라 images_none_reason 처리."
+ },
+ "images_none_reason": "공식 글(S1) 본문의 그림은 동영상 3개(AIM_Credit_Card·AIM_Wedding·AIM_Taxes.mp4)뿐이고 정지 이미지는 대표 이미지(og:image, Blog_pContext_Drive_1118)·관련 글 썸네일·작성자 사진뿐이다. 1월(S5)·3월(S6) 공식 글도 본문은 동영상이고 정지 이미지는 썸네일·헤더라 관련 본문 그림이 없다."
+}
