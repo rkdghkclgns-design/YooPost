@@ -8169,5 +8169,23 @@
    "https://news.jkn.co.kr/post/1071831"
   ],
   "draft_id": "20261125_074935_7"
+ },
+ {
+  "date": "2026-11-26",
+  "title": "🤖 Ternary Bonsai 2.5 27B, 5.9GB로 에이전트 코딩을 맡겨도 될까: FP16 대비 남은 격차",
+  "topic": "Ternary Bonsai 2.5 27B (PrismML, 2026-11-24) / The Decoder 보도 (2026-11-25)",
+  "category": "AI 언어 모델",
+  "source_url": "https://prismml.com/news/bonsai-2-5-27b",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ternary-bonsai-25-27b-59gb-fp16.html"
+  },
+  "sources": [
+   "https://prismml.com/news/bonsai-2-5-27b",
+   "https://the-decoder.com/prismml-squeezes-an-agent-based-coding-model-with-27-billion-parameters-into-5-9-gb/",
+   "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-2-5-27b-whitepaper.pdf",
+   "https://docs.prismml.com/",
+   "https://github.com/PrismML-Eng/Bonsai-demo/"
+  ],
+  "draft_id": "20261126_070504_1"
  }
 ]
