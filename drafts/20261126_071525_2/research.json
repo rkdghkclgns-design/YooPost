@@ -1,0 +1,118 @@
+{
+ "topic": "Walmart's Black Friday Deals Continue. Meta's Muse Can Now Shop Them, Too. (Walmart, 2026-11-24) / TechCrunch: Walmart teams up with Meta to bring Black Friday deals to AI agent Muse (2026-11-24)",
+ "source_url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Walmart's Black Friday Deals Continue. Meta's Muse Can Now Shop Them, Too.",
+   "url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse",
+   "publisher": "Walmart",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
+   "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Walmart Makes It Possible for Agents to Shop on Behalf of Customers, While Keeping Customers in Control",
+   "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers",
+   "publisher": "Walmart",
+   "published": "2026-10-21",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Walmart Sparky shopping assistant expansion",
+   "url": "https://corporate.walmart.com/news/2026/10/sparky-shopping-assistant-expansion",
+   "publisher": "Walmart",
+   "published": "2026-10-30",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "Instacart to Bring Personalized Grocery Shopping to Muse, From Meta",
+   "url": "https://company.instacart.com/updates/instacart-to-bring-personalized-grocery-shopping-to-muse-from-meta",
+   "publisher": "Instacart",
+   "published": "2026-09-22",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://corporate.walmart.com/content/dam/corporate/images/newsroom/2026/11/shop-with-muse-from-meta/shop-with-muse-from-meta-screens.jpg",
+   "page_url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse",
+   "caption": "Muse 대화에서 월마트 상품을 찾고 장바구니에 담고, 승인 필요 표시와 허용·거절 버튼이 있는 결제 화면까지 이어지는 3단계 예시 화면",
+   "credit": "Walmart"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://corporate.walmart.com/content/dam/corporate/images/newsroom/2026/11/shop-with-muse-from-meta/ways-to-shop-black-friday.jpg",
+   "page_url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse",
+   "caption": "월마트 블랙프라이데이 쇼핑 방법 네 가지: 매장, 온라인, Sparky, 에이전트",
+   "credit": "Walmart"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Meta의 Muse에게 월마트 블랙프라이데이 구매를 맡길 때 한도·승인 권한은 어디서 어떻게 정하고, 무엇이 아직 공개되지 않았나?",
+  "limitations": "직접 Muse 앱에서 결제해 보지 않았고 월마트 뉴스룸(11월 24일·10월 21일·10월 30일)·TechCrunch·Instacart 글에 적힌 내용만 근거로 함. 이용 가능 국가·지역, 오류 시 환불 세부, 승인 알림 방식, 한도 초과 시 동작은 확인한 글에 없음. 10월 글과 11월 글은 항목별로 나란히 놓았을 뿐 둘 사이의 인과(예고→실현)는 단정하지 않음. 권한 구조·Amazon 대비·상황별 선택 기준은 이 글의 해석·제안으로 표시함.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🧭 10월 21일 규칙과 11월 24일 안내, 나란히 보기",
+    "excerpt": "두 글을 나란히 놓으면 **11월 안내에 적히지 않은 세부 규칙을 10월 글에서 찾아볼 수 있습니다.**",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "10월 21일 월마트 규칙 글과 11월 24일 Muse 구매 안내를 Gateway·프로필·결제·통제 수단 항목별로 나란히 놓아, 11월 안내에 없는 세부 규칙(기본 승인, 카드 정보 비공유, 추가 승인 가능)을 찾게 함. 인과 해석은 하지 않음"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔐 한도·승인·기록, 내 구매 권한을 어떻게 나눌까",
+    "excerpt": "결제 카드는 월마트 계정에 있고, 한도와 승인도 월마트의 에이전트 프로필에서 정하며, **Muse는 대화와 쇼핑 목록 전달을 맡습니다.**",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "월마트 두 글과 TechCrunch를 연결해 카드·한도·승인은 월마트 쪽, 요청 전달은 Muse 쪽에 나뉜 권한 구조로 정리하고 상황별 확인 지점을 표로 제시(해석으로 표시)"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛍 Muse로 사도 좋은 경우와 직접 사는 편이 나은 경우",
+    "excerpt": "같은 할인을 네 갈래로 살 수 있으니 상황에 맞는 선택 기준이 필요합니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S4"
+    ],
+    "added_value": "매장·온라인·Sparky·에이전트 중 상황별(조건 설명 용이성, 옵션 복잡도, 큰 금액, 매장 내 위치) 선택 기준을 표로 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 72,
+  "confirmed": 62,
+  "removed": [
+   "월마트가 10월에 공개한 Agent Gateway·에이전트 프로필 구상이 구체적인 에이전트에 연결된 사례입니다. (도입)",
+   "이번 글은 그 구조가 Muse라는 구체적인 에이전트에 연결된 첫 사례를 보여 줍니다. ('첫 사례' 미확인)",
+   "두 글을 이어 보면 10월에 예고된 에이전트 프로필과 한도 승인 구조가 11월 24일 Muse 연동 안내에서 실제 사용 절차로 등장했다고 읽을 수 있습니다. (10월-11월 연결 해석)",
+   "시작 시점: 2026년 11월 24일 (월마트는 지역 제한을 따로 적지 않음) / 월마트 글은 지역 제한을 따로 적지 않았지만 / FAQ '월마트는 지역 제한을 글에 적지 않았지만' ('지역 제한 없음'으로 읽히는 표현 → '이용 가능 국가·지역은 적혀 있지 않음'으로 교체)",
+   "Muse가 앞서 지원 지역을 나눠 발표해 왔기 때문에 (출처 없음)",
+   "두 글 모두 사용자가 월마트 웹사이트를 직접 돌아다니지 않아도 된다는 점을 강조합니다. (11월 두 글에 없음)",
+   "Muse가 요청을 월마트에 넘기면 월마트가 맞는 상품을 찾아 장바구니 구성을 돕는 구조 — TechCrunch 설명으로 적은 부분 (월마트 글 내용이므로 출처를 바로잡음)",
+   "Muse는 쇼핑 이력 등 개인정보에 접근하지 못한다고 월마트가 밝혔습니다 (월마트 글에는 없고 TechCrunch가 월마트 발언으로 전함 → 'TechCrunch에 따르면'으로 수정)",
+   "월마트 10월 글도 Gateway가 고객의 구매 이력을 다른 곳에 공유하지 않으면서 (해당 문장은 11월 글 → 11월 글로 수정)",
+   "Sparky 매장 통로 위치 보기·매장 지도 (Shop to Light 매장 길 찾기·Flash price tag 로 표현 수정)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): 5개 출처를 모두 다시 열어 주장 72개를 하나씩 대조(62개 확인, 10개 삭제·수정). S1 월마트 11월 글(페이지 날짜 Nov. 24, 2026 — JSON-LD datePublished 는 2026-11-23 로 하루 차이, 시간대 차이로 보이며 published 는 페이지 표기 2026-11-24 유지), S2 TechCrunch(Lauren Forristal, 2026-11-24 1:32 PM PST), S3 월마트 10월 21일 글, S4 월마트 Sparky 글(Oct. 30, 2026), S5 Instacart(Sep 22, 2026, datePublished 일치; Instacart 자체 공식 글이라 official:true 로 수정). EGRESS_BLOCKED 출처 없음. 이미지 I1·I2 는 HTTP 200 image/jpeg(1920x1080)로 내려받아 내용 확인(I1: Allow/Deny·Needs approval·Saved Card 결제 화면, I2: In stores/Online/With Sparky/Through an agent). 10월-11월 인과 해석·'지역 제한 없음' 표현·출처 없는 지역 발표 주장 삭제, 출처 귀속 오류 수정. 분량 보완은 S3의 카드 사용자 비유·기본 승인·빵·우유 재주문 예시, S1의 Gateway 설명·앱 확장 계획, S2의 비교·할인 찾기·주문 검토, S4의 6개 기능 이름·멕시코·캐나다 지원, I1 그림 내용 등 확인된 사실로만 함."
+ }
+}
