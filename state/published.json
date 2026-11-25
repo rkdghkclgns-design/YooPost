@@ -8242,5 +8242,27 @@
    "https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/"
   ],
   "draft_id": "20261126_073231_4"
+ },
+ {
+  "date": "2026-11-26",
+  "title": "🔒 AI 에이전트가 11분 만에 찾아낸 MONAI Label 제로데이: 운영자가 지금 점검할 순서",
+  "topic": "Chinese-nexus actor’s Cairn AI agents found a zero-day on their own (Amazon Threat Intelligence, 2026-11-20) / BleepingComputer·SecurityWeek·VentureBeat 보도",
+  "category": "AI 보안",
+  "source_url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-11-monai-label.html"
+  },
+  "sources": [
+   "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+   "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94",
+   "https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+   "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
+   "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+   "https://venturebeat.com/security/amazon-says-attackers-ai-agents-found-and-exploited-a-zero-day-in-11-minutes-but-no-patched-release-is-available",
+   "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-j5c7-p3x5-gw2x",
+   "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-xhxp-5f3g-gxxx",
+   "https://pypi.org/project/monailabel/"
+  ],
+  "draft_id": "20261126_074127_5"
  }
 ]
