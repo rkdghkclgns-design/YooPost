@@ -8205,5 +8205,23 @@
    "https://company.instacart.com/updates/instacart-to-bring-personalized-grocery-shopping-to-muse-from-meta"
   ],
   "draft_id": "20261126_071525_2"
+ },
+ {
+  "date": "2026-11-26",
+  "title": "🏦 Antom 3-in-1 Transformer 논문: 결제 손실 37.88% 감소, 내부 실험 수치는 어디까지 믿을까",
+  "topic": "Antom 3-in-1 Transformer: A Payment Foundation Model (arXiv 2611.25403, Ant International, 2026-11-19) / Hugging Face Papers·Blockchain.News 보도",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.25403",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/antom-3-in-1-transformer-3788.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.25403",
+   "https://arxiv.org/html/2611.25403",
+   "https://huggingface.co/papers/2611.25403",
+   "https://huggingface.co/papers/date/2026-11-25",
+   "https://blockchain.news/news/antom-3-in-1-transformer-payment-model"
+  ],
+  "draft_id": "20261126_072301_3"
  }
 ]
