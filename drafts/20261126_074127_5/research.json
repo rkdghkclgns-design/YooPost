@@ -1,0 +1,128 @@
+{
+ "topic": "Chinese-nexus actor’s Cairn AI agents found a zero-day on their own (Amazon Threat Intelligence, 2026-11-20) / BleepingComputer·SecurityWeek·VentureBeat 보도",
+ "source_url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Chinese-nexus actor’s Cairn AI agents found a zero-day on their own",
+   "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+   "publisher": "Amazon Web Services (AWS Security Blog)",
+   "published": "2026-11-20",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Path traversal in datastore upload endpoints allows arbitrary file write (GHSA-qc22-rmgc-vg94)",
+   "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94",
+   "publisher": "Project MONAI (GitHub Security Advisories)",
+   "published": "2026-11-18",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+   "url": "https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+   "publisher": "CISA",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
+   "url": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day",
+   "url": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+   "publisher": "SecurityWeek",
+   "published": "2026-11-21",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Amazon says attackers' AI agents found and exploited a zero-day in 11 minutes, but no patched release is available",
+   "url": "https://venturebeat.com/security/amazon-says-attackers-ai-agents-found-and-exploited-a-zero-day-in-11-minutes-but-no-patched-release-is-available",
+   "publisher": "VentureBeat",
+   "published": "2026-11-20",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Unauthenticated remote code execution via client-controlled bundle_path in task requests (GHSA-j5c7-p3x5-gw2x)",
+   "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-j5c7-p3x5-gw2x",
+   "publisher": "Project MONAI (GitHub Security Advisories)",
+   "published": "2026-11-25",
+   "official": true
+  },
+  {
+   "id": "S8",
+   "title": "Code execution, file read and missing checks in request handling, datastores and clients (GHSA-xhxp-5f3g-gxxx)",
+   "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-xhxp-5f3g-gxxx",
+   "publisher": "Project MONAI (GitHub Security Advisories)",
+   "published": "2026-11-25",
+   "official": true
+  },
+  {
+   "id": "S9",
+   "title": "monailabel — PyPI release history",
+   "url": "https://pypi.org/project/monailabel/",
+   "publisher": "Python Package Index",
+   "published": "2026-11-25",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처(AWS 보안 블로그 글·GitHub 보안 권고·CISA 경고·PyPI)에 원고 내용을 보여 주는 본문 그림(스크린샷·도표)이 없고 글자 위주 문서라 넣지 않았다. BleepingComputer 의 대표 이미지는 일러스트라 쓰지 않는다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "AI 에이전트가 MONAI Label 제로데이를 스스로 찾았다는 보도는 어디까지 확인됐고, 보도마다 다른 패치 상태 속에서 운영자는 어떤 순서로 점검해야 하나",
+  "limitations": "Cairn 서버 원기록과 취약점 재현은 직접 확인하지 않았고 Amazon 글·권고·보도·PyPI 기록을 대조한 해석이다. CISA 의 CVE-2026-133968 과 GHSA-qc22 의 일대일 대응은 두 페이지가 명시하지 않아 단정하지 않았다. 점검 순서는 공개 권고를 옮긴 것으로 직접 실행해 검증하지 않았다. 148회/16시간 평균은 출처 수치의 단순 계산이다.",
+  "contributions": [
+   {
+    "kind": "source_synthesis",
+    "section": "📅 패치 타임라인: 보도마다 달랐던 '패치 있음·없음' 정리",
+    "excerpt": ", 0.8.7 과 0.8.8 이 11월 25일로 올라 있습니다. 즉 보도 시점에는 코드 수정만 있고 설치 가능한 배포판이 없었으나, 지금은 배포판이 나와 있습니다",
+    "source_ids": [
+     "S2",
+     "S6",
+     "S5",
+     "S9"
+    ],
+    "added_value": "VentureBeat·SecurityWeek 의 '배포판 패치 없음'과 BleepingComputer·권고의 '11월 18일 업데이트'가 충돌처럼 보이는 이유를 PyPI 릴리스 날짜(0.8.6 은 11월 22일)와 대조해 시점 차이로 풀었다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛡 MONAI Label 운영자 점검 순서",
+    "excerpt": "권고문과 Amazon의 방어 권고를 조합해 상황별로 정리했습니다. 직접 실행해 검증한 절차가 아니라 공개된 권고의 내용을 순서로 옮긴 것이므로, 환경에 맞게 담당",
+    "source_ids": [
+     "S2",
+     "S7",
+     "S8",
+     "S6"
+    ],
+    "added_value": "여러 권고의 영향 버전·우회책을 운영 상황(노출·인증·권한·과거 침입 가능성)별 점검 표로 재구성했다."
+   },
+   {
+    "kind": "calculation",
+    "section": "🔍 Cairn 캠페인에서 확인된 것과 실패한 것",
+    "excerpt": "대략 6.5분에 한 번꼴입니다. 이는 출처 수치로 한 단순 계산이며, 실제 동작 간격은 균일하지 않았을 수 있습니다. 반면 성공한 MONAI Label 건은 11",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "16시간 148회 동작을 평균 약 6.5분 간격으로 환산하고 성공한 11분 건과 대비했다(단순 평균임을 명시)."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 62,
+  "removed": [
+   "Amazon이 서술한 후속 단계는 파이썬이 시작할 때 자동으로 불러오는 파일에 코드를 심어 새 프로세스가 그것을 읽게 하는 방식이었고 (공격 기법 세부 묘사라 방어 관점 서술로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 AWS 원문(curl 로 본문 추출, 작성자 CJ Moses·20 NOV 2026·meta 2026-11-20)에서 9/10 서버 발견·9/8 시작 약 48시간·간체 중국어·CST·동아시아 대학·Redis 약 16시간 148회·Qdrant SSRF 로 Docker 망 파악·GPU 서버 6시간 넘게·약 80개 사용자명·3만 조합 이상·약 11분·root 리버스 셸·두 번째 대학 망 프록시(추정)·zero-day 높은 신뢰도·Chinese-nexus 중간 신뢰도·Gambit·IOC 2개(9/8~10) 확인. S2 GHSA-qc22(11/18, Critical, No known CVE, <=0.8.5, 0.8.6, CWE-22, 인증 기본 꺼짐, ANNOTATOR, 우회책), S7 GHSA-j5c7(11/25, 9.8 CVSS3.1, 0.6.0~0.8.6, 0.8.7), S8 GHSA-xhxp(11/25, 9.8, <=0.8.7, 0.8.8) 확인. S9 PyPI JSON: 0.8.5 2024-11-25, 0.8.6 2026-11-22, 0.8.7·0.8.8 2026-11-25. S3 CISA(11/23) CVE-2026-133968 'Project MONAI MONAI Label Path Traversal', GHSA 언급 없음·기한 없음·'evidence of active exploitation' 확인 — GHSA 대응 단정하지 않은 서술 유지. S4 BleepingComputer(11/20, 11/18 업데이트·버전 미표기·Gambit 9월·Google 항공우주), S5 SecurityWeek(11/21, 'next release', moderate confidence), S6 VentureBeat(11/20, PR #1915 10/19 병합·PyPI 0.8.5·moderate confidence·인증이 과거 침입을 되돌리지 않음) 확인. 패치 상태 차이는 보도 시점(11/20~21) 뒤 0.8.6(11/22) 배포로 시점 차이 서술이 맞음. 각 published 가 페이지 날짜와 일치. EGRESS_BLOCKED 출처 없음. 수정: Redis 표·문단의 'Docker 망 파악도 실패' 오기(실제로는 파악 성공, 장악 실패)를 고치고, sitecustomize 기법 묘사를 영향 서술로 바꿈. 6.5분은 960/148 단순 계산."
+ }
+}
