@@ -1,0 +1,122 @@
+{
+ "topic": "Antom 3-in-1 Transformer: A Payment Foundation Model (arXiv 2611.25403, Ant International, 2026-11-19) / Hugging Face Papers·Blockchain.News 보도",
+ "source_url": "https://arxiv.org/abs/2611.25403",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "[2611.25403] Antom 3-in-1 Transformer: A Payment Foundation Model",
+   "url": "https://arxiv.org/abs/2611.25403",
+   "publisher": "arXiv",
+   "published": "2026-11-19",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Antom 3-in-1 Transformer: A Payment Foundation Model (HTML 본문)",
+   "url": "https://arxiv.org/html/2611.25403",
+   "publisher": "arXiv",
+   "published": "2026-11-19",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Paper page - Antom 3-in-1 Transformer: A Payment Foundation Model",
+   "url": "https://huggingface.co/papers/2611.25403",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Daily Papers (2026-11-25)",
+   "url": "https://huggingface.co/papers/date/2026-11-25",
+   "publisher": "Hugging Face Papers",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Antom 3-in-1 Transformer Reduces Payment Loss by 37.88% in Online Tests",
+   "url": "https://blockchain.news/news/antom-3-in-1-transformer-payment-model",
+   "publisher": "Blockchain.News",
+   "published": "2026-11-25",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://arxiv.org/html/2611.25403v1/figs/fig2_1_overview.png",
+   "page_url": "https://arxiv.org/html/2611.25403",
+   "caption": "구조: 시퀀스 인코더·표 필드 어텐션·그래프 어텐션·과제 조건 희소 전문가 융합 개요",
+   "credit": "Antom 3-in-1 Transformer 논문 Figure 1 (arXiv 2611.25403)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://arxiv.org/html/2611.25403v1/figs/fig3_2_label_efficiency_abs.png",
+   "page_url": "https://arxiv.org/html/2611.25403",
+   "caption": "라벨 효율: Merchant A·B 의 라벨 비율별 AP 와 R@0.5% (사전학습 대 처음부터 학습)",
+   "credit": "Antom 3-in-1 Transformer 논문 Figure 3 (arXiv 2611.25403)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "결제 사기 탐지 파운데이션 모델의 37.88% 손실률 감소와 라벨 효율 주장을 같은 기준선·같은 표 기준으로 읽으면 얼마나 믿을 수 있고 우리 팀에 적용할 수 있는가",
+  "limitations": "직접 모델을 실행하지 않았고 논문 표와 기사에 적힌 값만 계산·비교했다. 사전학습은 주로 Ant International 내부 데이터이고 온라인 실험·라벨 효율·교차 사업 전이·어블레이션 결과도 내부 데이터라 독립 재현이 불가능하다(공개 데이터 결과는 IBM 합성 데이터·그래프 벤치마크·TransXion·IBM CCT·MBD). 가중치·세부 구조·학습 설정·데이터 구성은 비공개다. 외부 연구자 평가는 확인하지 못했고 업보트 수는 조회 시점 값이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📈 라벨 25%면 충분한가: 라벨 효율과 교차 사업 전이 계산",
+    "excerpt": "Merchant A 에서 라벨 25%만 쓴 사전학습 모델의 AP(평균 정밀도)는 0.5246 으로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "라벨 비율과 AP(%) 차이를 논문 표 값으로 직접 계산해 상대 개선율(24.8%, 8.8%)과 예외 도메인(HK)의 한계를 함께 제시하고, SAINT 대비 손실률 24.07% 를 표 값으로 재계산해 확인"
+   },
+   {
+    "kind": "comparison",
+    "section": "🔬 공개 벤치마크와 어블레이션: 무엇이 성능을 만드나",
+    "excerpt": "표를 끝까지 보면 모든 지표에서 이기는 것은 아닙니다. F1 과 R@0.1% 에서는 PRAGMA 가 앞서므로",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "같은 데이터에서 AP·F1·R@k 를 나란히 놓고 Antom 이 앞서는 지표와 PRAGMA 가 앞서는 지표를 구분"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🧪 4개월 온라인 실험: 37.88%를 같은 조건으로 읽기",
+    "excerpt": "기사에는 SAINT 유사 모델 비교와 2단계 설계가 빠져 있어 **기사만 보면 더 강한 운영 모델 대비 감소 폭(24.07%)은 알 수 없다**",
+    "source_ids": [
+     "S2",
+     "S5"
+    ],
+    "added_value": "논문 본문과 Blockchain.News 기사를 대조해 기사에 빠진 SAINT 유사 모델 비교·2단계 설계를 보완하고, XGB 대비 37.88% 와 SAINT 유사 모델 대비 24.07% 를 구분하며 표마다 다른 차지백률(37.74%·28.28%)의 집계 범위 차이를 설명"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀에 적용할까: 판단 기준",
+    "excerpt": "결제·금융 사기 탐지 팀이라면 이 논문에서 가져갈 것은 모델 자체가 아니라",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "상황별로 논문 근거와 제외 조건을 표로 정리해 적용 여부 판단을 돕는다"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 74,
+  "confirmed": 74,
+  "removed": [
+   "기사 자체가 결과를 회사 보고로 표시하면서 (Blockchain.News 기사에서 확인 안 됨 — 삭제, 논문 링크 없음만 유지)",
+   "기사만으로는 '무엇 대비 37.88%인지'를 알 수 없다 (기사에 XGB-Online 대비라고 적혀 있어 틀림 — SAINT 대비 값이 없다는 문장으로 교체)",
+   "이미 운영 중인 더 강한 모델과 비교하면 이 숫자가 절반 안팎으로 해석된다 (논문 본문 SAINT 대비 손실률 24.07% — 교체)",
+   "논문 표마다 집계 구간과 지표 정의가 다르므로 (차지백률 정의는 같고 집계 범위가 다름 — 교체)",
+   "논문 스스로 대부분의 평가 데이터가 Ant International 내부 데이터여서 (논문에 그런 서술 없음, 공개 벤치마크 다수 — 산업 결과는 내부 데이터로 교체, editorial.limitations 도 수정)",
+   "Hugging Face 논문 페이지에서는 댓글이나 외부 논의 링크를 확인하지 못했고 (제1저자 소개 글이 있음 — 교체)",
+   "교차 사업 전이는 평균값 34.5% (평균값이라는 표현 근거 없음 — 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). arXiv 초록(S1, Submitted 19 Nov 2026, citation_date 2026/11/19)·HTML 본문(S2) 전체를 다시 열어 Table 1~14·본문 수치를 하나씩 대조, 작성자 계산값(25.1%, 24.8%, 8.8%, 7.2배, 12.2%, 72.7%/36.0%/24.4%/36.8%, 1.6배, 2.08배)은 재계산해 일치 확인, SAINT 대비 24.07%·28.26% 추가(표 값 재계산 0.759 일치). 고침: 그룹 비중 31~37%→30~37%, '4개월 넘게'→'약 4개월', AP 단위(%) 표기, HF 2위 업보트 87→88(조회 시점), 표 2개 차지백률 차이 설명(Table 1 포트폴리오·원래 거래일 귀속 vs Table 2 Antom 카드 결제 2단계 66개 공통 거래일), 37.88%는 손실률임을 명시, MBD는 고객 타기팅 과제임을 추가. 소속: 24명 모두 Ant International, 인턴 3명은 대학 병기 확인. HF 논문 페이지(S3)는 'Published on Nov 19 · Submitted on Nov 25' — 페이지 생성일 2026-11-25 로 published 수정, S4 는 날짜 고정 주소(/papers/date/2026-11-25)로 교체(1위 99, 2위 88). Blockchain.News(S5) datePublished 2026-11-25 일치. EGRESS_BLOCKED 출처 없음. 인용 이미지 2개 모두 HTTP 200 image/png(3782px·1533px 폭) 확인."
+ }
+}
