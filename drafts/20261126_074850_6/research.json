@@ -1,0 +1,98 @@
+{
+ "topic": "Dell Technologies Delivers Third Quarter Fiscal 2027 Financial Results (Dell, 2026-11-24) — AI 수주잔고 1,323억 달러 / TechRepublic·실적 통화 기록",
+ "source_url": "https://investors.delltechnologies.com/news-events/press-releases/detail/1665/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Dell Technologies Delivers Third Quarter Fiscal 2027 Financial Results",
+   "url": "https://investors.delltechnologies.com/news-events/press-releases/detail/1665/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results",
+   "publisher": "Dell Technologies",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Dell Q3 FY27 AI Server Revenue Hits $22B as Backlog Tops $132B",
+   "url": "https://www.techrepublic.com/article/news-dell-ai-server-revenue-q3-fy27-backlog/",
+   "publisher": "TechRepublic",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Dell (DELL) FY2027 Q3 Earnings Call: AI Backlog Reaches $132.3 Billion",
+   "url": "https://www.tradingkey.com/news/transcripts/262320900-",
+   "publisher": "TradingKey",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Dell Technologies Delivers Second Quarter Fiscal 2027 Financial Results",
+   "url": "https://finviz.com/news/387708/dell-technologies-delivers-second-quarter-fiscal-2027-financial-results",
+   "publisher": "Dell Technologies (Business Wire 배포, Finviz 게재)",
+   "published": "2026-09-01",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처인 Dell 실적 발표문 본문에는 표·텍스트뿐이고 그림이 없으며(페이지의 유일한 이미지는 사이트 로고), 해설 기사에도 원고 내용을 보여 주는 본문 그림을 확인하지 못했다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Dell 의 AI 수주잔고 1,323억 달러는 몇 분기 매출에 해당하고, 도입·시장 판단 전에 무엇을 확인해야 하는가",
+  "limitations": "직접 실행·실측 없음. 잔고 소진·커버 비율·부문 이익 비중은 공개 수치로 한 단순 계산이며 Dell 의 잔고 전환 일정·고객 집중도는 비공개. 직전 분기(2분기) 수치는 Business Wire 배포 공식 발표문 사본(Finviz)으로 확인. 실적 통화 내용은 TradingKey 기록 기준.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산 ① 602억 달러가 들어와 220억 달러가 나갔다",
+    "excerpt": "분기 말 잔고가 1,323억 달러이므로 **잔고 증가분은 373억 달러**입니다. 신규 수주에서 이 증가분을 빼면 약 229억 달러가 잔고에서 빠져나간 셈입니다.",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "수주·잔고·매출 수치로 잔고에서 빠져나간 몫(약 229억 달러)을 역산하고 AI 서버 매출과 비교해 일관성을 점검"
+   },
+   {
+    "kind": "calculation",
+    "section": "🏭 계산 ② 잔고는 몇 분기 치 매출일까",
+    "excerpt": "3분기 AI 서버 매출 220억 달러 기준으로 1,323억 ÷ 220억은 **약 6.0분기**입니다. 직전 분기는 잔고 950억 달러를 당시 AI 서버 매출 164억 달러로 나눈 약 5.8분기이고",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "분기별 커버 비율(5.8→6.0→5.6)을 계산해 잔고 증가가 곧 납품 지연을 뜻하지 않는다는 점과 한계를 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔍 출처를 엮어 보면: 같은 숫자, 다른 강조점",
+    "excerpt": "그래서 외부 독자는 **'질을 점검한다'는 말과 '질이 좋다'는 증거를 구분**해야 합니다.",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "발표문·구매자 관점 기사·실적 통화를 대조해 공개된 것과 비공개인 것을 구분"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 독자 상황별 점검 기준",
+    "excerpt": "이 실적이 나에게 무엇을 뜻하는지는 처지에 따라 다릅니다. 아래는 공개된 사실에서 끌어낸 점검 기준이며 투자 권유가 아닙니다.",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "도입 팀·운영·공급망·시장 관찰자별로 확인할 항목을 표로 정리"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 56,
+  "removed": [
+   "같은 자료는 AI 서버가 스토리지·서비스보다 마진이 낮은 편이라 믹스 변화가 마진 감시 항목이라고 지적합니다. (Fazen Markets 단독 주장, 공식 자료로 확인 안 됨)",
+   "해당 기사는 이 증가가 전환 속도가 느려질 때 부담이 될 수 있다고 봤습니다. 다만 이 두 수치는 ... 해설 기사(AI 가 SEC 서류를 바탕으로 작성했다고 밝힘)에서 가져왔으므로 ... (Fazen Markets 해석·출처 표기 삭제 — 재고·매입채무 수치는 Dell 발표문 재무상태표로 확인해 유지)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1 Dell 공식 3분기 발표문(2026-11-24)을 다시 열어 매출 549억(54,937M, +103%)·9개월 1,458억·ISG 420억/AI 서버 220억(22,031M, +291%)/일반 서버 150억/스토리지 49억·ISG 영업이익 71억(17.0%, 전년 12.4%)·CSG 129억/7.04억/5.5%/소비자 15.86억(-15%)·AI 수주 602억·잔고 1,323억·전망 2,020억(기존 1,920억)·AI 서버 780억(기존 740억)·4분기 563억·비GAAP 매출총이익률 21.2%(전년 21.1%)·순이익 56.73억·영업현금흐름 44.59억·FCF 34.74억·환원 49억(자사주 43.79억·배당 3.98억)·추가 자사주 250억·AI 팩토리 고객 7,500곳 이상·Clarke 인용문 2개 확인. 재고 294억(29,444M)·매입채무 578억(57,799M)은 S1 재무상태표(2026-10-30 vs 2026-01-30)로 확인 — 비교 기준을 '전년'에서 '회계연도 말'로 고침. Q2 공식 발표문(S5, Business Wire 배포본 Finviz 게재, 2026-09-01)으로 직전 분기 수주 609억·잔고 950억·AI 서버 164억 확인. S2 TechRepublic(2026-11-25)으로 잔고≠납기, 설치 제약, 6시간 주장 독립 검증 없음, 애널리스트 인용 없음, 4분기 필요분 약 234억 확인. S3 TradingKey 통화 기록(2026-11-24)으로 재일정 없음·다분기 잔고·약 100개 사이트·신용/자금/토지·전력 점검·4분기 AI 서버 약 235억 기대·ISG 마진 완만 하락·네오클라우드/소버린/기업·부품(CPU·메모리·광) 제약 확인. 작성자 계산값(373억·229억·2.7배·-7억(-1.1%)·커버 5.8/6.0/5.6분기·1.7배·ISG 비중 76.4%(76.5%에서 수정)·AI 서버 52%/40%·ISG 이익 비중 약 70→91%·현금 79%/61%·재고 2.8배·매입채무 1.7배) 재계산. 수정: Clarke 직함 '부사장'→'부회장 겸 COO', 매출총이익률 비GAAP 표기·GAAP 21.0% 추가, ISG 이익 비중을 Fazen 인용에서 발표문 수치 계산으로 교체. S4 Fazen Markets(published 없음, AI 작성 기사) 출처 삭제. 각 출처 published 가 페이지 날짜와 일치함을 확인. 투자 권유·전망 단정 없음."
+ }
+}
