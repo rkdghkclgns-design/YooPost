@@ -1,0 +1,119 @@
+{
+ "topic": "Ternary Bonsai 2.5 27B (PrismML, 2026-11-24) / The Decoder 보도 (2026-11-25)",
+ "source_url": "https://prismml.com/news/bonsai-2-5-27b",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Ternary Bonsai 2.5 27B",
+   "url": "https://prismml.com/news/bonsai-2-5-27b",
+   "publisher": "PrismML",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "PrismML shrinks a 54 GB language model to 5.9 GB by reducing every weight to just three possible values",
+   "url": "https://the-decoder.com/prismml-squeezes-an-agent-based-coding-model-with-27-billion-parameters-into-5-9-gb/",
+   "publisher": "The Decoder",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Ternary Bonsai 2.5 27B 백서 (A 27B ternary model built for agents)",
+   "url": "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-2-5-27b-whitepaper.pdf",
+   "publisher": "PrismML",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "PrismML 문서: Bonsai 2.5 27B",
+   "url": "https://docs.prismml.com/",
+   "publisher": "PrismML",
+   "published": "",
+   "official": true
+  },
+  {
+   "id": "S5",
+   "title": "PrismML-Eng/Bonsai-demo README",
+   "url": "https://github.com/PrismML-Eng/Bonsai-demo/",
+   "publisher": "PrismML (GitHub)",
+   "published": "",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 발표 페이지 본문에는 그림 없이 영상 데모만 있고(이미지는 로고·아이콘뿐), 백서 PDF는 표만 있으며, README의 이미지는 로고뿐이고 공식 문서 모델 페이지에도 본문 그림이 없어 인용 이미지를 넣지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "5.9GB로 줄인 삼진 27B 모델을 에이전트 코딩·도구 호출에 실제로 쓸 만한가, 어떤 메모리·속도 조건과 작업 종류에서 후보가 되는가",
+  "limitations": "모델을 직접 내려받아 실행하지 않았고 모든 벤치마크·속도 수치는 PrismML 자체 보고입니다(The Decoder 기사도 PrismML 자료를 출처로 삼았을 뿐 따로 측정하지 않음). 유지율·메모리·소요 시간은 백서·README·공식 문서 수치로 제가 계산한 어림값이며, README의 KV 캐시 수치는 Bonsai 2 27B 문단에 적힌 것(2.5는 같은 구조)입니다. 비전 프로젝터·런타임 버퍼는 메모리 계산에서 뺐고, 독립 재현과 가격·API 제공 정보는 확인되지 않았습니다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 FP16 대비 어디까지 남았나: 벤치마크 재계산",
+    "excerpt": "백서가 말하는 '에이전트 코딩 점수의 90% 유지'는 이 평균 비율과 맞습니다. 전작은 37.9÷60.5로 ",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "백서의 점수 표를 SWE-bench 93.8%, DeepSWE 89.7%, Terminal-Bench 84.9%, 평균 89.6%로 항목별 유지율로 다시 계산해 평균 뒤에 가려진 격차를 드러냄"
+   },
+   {
+    "kind": "comparison",
+    "section": "🆚 같은 모델의 일반 저비트 빌드와 비교",
+    "excerpt": "가장 가까운 경쟁 빌드는 IQ3_XXS입니다. 크기가 10.1÷5.93으로 ",
+    "source_ids": [
+     "S3"
+    ],
+    "added_value": "같은 기반 모델의 1.7배 큰 빌드와 도구 호출·코딩 평균을 같은 조건 표로 나란히 놓고, 코딩 평균이 뒤처지는 원인(Terminal-Bench)을 분리해 우열 단정을 피함"
+   },
+   {
+    "kind": "calculation",
+    "section": "🚀 메모리와 속도: 내 장비에서 얼마나 걸릴까",
+    "excerpt": "아래는 이 수치로 제가 어림한 값입니다. 5.93GB를 GiB로 바꾸면 약 5.5GiB이고, 비전 프로젝터·",
+    "source_ids": [
+     "S5",
+     "S3",
+     "S4"
+    ],
+    "added_value": "README의 KV 캐시 수치(토큰당 64KiB, KV4 약 18KiB)와 백서·공식 문서의 파일 크기(PTQ1_0 5.93GB, PQ2_0 약 7.2GB)로 100K 컨텍스트 총 메모리(PTQ1_0 약 11.8GiB/7.3GiB, PQ2_0 약 13.0GiB/8.5GiB)와 1,000토큰 소요 시간을 계산해 장비 선택 기준을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📊 FP16 대비 어디까지 남았나: 벤치마크 재계산",
+    "excerpt": "The Decoder 기사는 AppWorld의 기반 모델 점수를 싣지 않았지만 백서에는 93.2점으로 적혀 ",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "보도가 비워 둔 AppWorld 기반 점수를 백서(93.2)로 채워 유지율 약 97.1%를 도출하고 두 출처를 연결"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 누가 쓰면 좋고, 누가 피해야 하나",
+    "excerpt": "다만 판단을 가로막는 변수가 있습니다. 저비트 모델은 작업 하나가 잘못되면 긴 흐름 전체가 흔들리는 경향이 ",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "작업 종류·컨텍스트 길이·장치별로 후보/보류/근거 없음을 나누고, 도입 전 자기 작업으로 직접 비교하라는 제외 조건을 제시"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 92,
+  "confirmed": 85,
+  "removed": [
+   "The Decoder가 '모든 벤치마크 수치가 PrismML 자체 보고라는 점을 짚었다'는 문장(도입·한계 두 곳) — 기사 본문에 그런 언급이 없어 삭제하고, 기사에 실제로 적힌 내용(PrismML 자료를 출처로 삼음, 루프·긴 생각 감소, SWE-bench 60.8→75.6)으로 바꿈",
+   "'알리바바 Qwen 팀' — 출처에는 'Qwen Team'만 있어 '알리바바'를 뺌",
+   "FAQ의 '에이전트·도구 호출 중심의 후처리' — 출처에 2.5의 후처리 방식 설명이 없어 공식 발표에 적힌 개선점(긴 도구 호출 흐름, 과도한 생각·반복 루프 개선)으로 바꿈",
+   "'Bonsai 2 출시 대비 2.3~3.0배 중 일부는 테스트 중 커널 포함' — 백서 표 7의 2.5 값은 전부 '+kernels' 열이므로 '이 비교의 2.5 쪽 값은 MTP+테스트 중 커널'로 고침",
+   "'MTP 속도의 상당 부분은 테스트 중인 커널을 포함' — 백서 표 6상 커널 추가분은 작음(예: RTX 5090 305→312)이라 MTP만 켠 값을 함께 적도록 고침",
+   "속도 표 Core Ultra 24.5 tok/s 행 설명 누락(+kernels 값) → 'MTP+테스트 중 커널'로, Galaxy S26 Ultra 8.79 tok/s 행에 '미출시 수정 적용'(백서 각주) 추가",
+   "'이 글은 범주별 표 값만 인용했습니다' — 본문에 범주별 값을 인용하지 않아 '일반 능력 평균을 판단 근거로 쓰지 않았습니다'로 고침"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1 PrismML 발표(datePublished 2026-11-24, 페이지 표기 November 24, 2026 일치), S2 The Decoder(article:published_time 2026-11-25, 페이지 Nov 25, 2026 일치), S3 백서 PDF(github.com 경로는 세션 프록시가 403으로 막아 같은 파일을 raw.githubusercontent.com 에서 내려받아 전문 확인 — 표 1~8; 페이지 날짜는 'November 2026'뿐이라 published 비움), S4 docs.prismml.com(본문 날짜 없음, 메타 dateModified만 있어 비움), S5 README(raw, 날짜 없음)를 다시 열어 대조. 백서 점수 표의 모든 값과 작성자 계산(유지율 93.8/89.7/84.9/89.6/99.4/97.1%, 전작 62.6%, 27%p, 1.7배, 29~56%, 3.6·10.7·1.3점, GiB 환산 5.93GB≈5.5GiB, 11.8/7.3GiB, 1,000토큰 3.2/4.9/34/41/114초)을 다시 계산해 일치 확인. README KV 캐시 64KiB/토큰·100K 약 6.3GiB·KV4 약 1.8GiB, b11556, -np 1, --reasoning-budget 2048, setup.ps1, 7.6GB/6.4GB 다운로드 확인. 공식 문서로 비전 프로젝터 0.36~0.63GB, PQ2_0 약 7.2GB, MLX 텍스트 전용을 확인해 보완(PQ2_0 기준 메모리 13.0/8.5GiB 계산 추가, README의 RTX 3080 -np 1 보고 추가). EGRESS_BLOCKED 출처 없음."
+ }
+}
