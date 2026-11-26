@@ -8352,5 +8352,24 @@
    "https://huggingface.co/papers/date/2026-11-26"
   ],
   "draft_id": "20261127_071901_3"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "🔒 Character.AI 대화 기록 경매, 법무장관들이 막으려는 이유: 매각 조건과 이용자 점검 순서",
+  "topic": "Attorney General Bonta Opposes Asset Sale of Character.AI Amid Child Safety Concerns (California DOJ, 2026-11-24) / TechCrunch: Character.AI's plan to auction off users' private chats challenged by state AGs (2026-11-25)",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/characterai.html"
+  },
+  "sources": [
+   "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns",
+   "https://www.ag.state.mn.us/Office/Communications/2026/11/23_CharacterAI.asp",
+   "https://portal.ct.gov/ag/press-releases/2026-press-releases/attorney-general-tong-challenges-plan-to-auction-off-character-ai-private-chats",
+   "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+   "https://ppc.land/character-ai-users-chats-face-a-10m-sale-to-smirks-and-pangs/",
+   "https://blog.character.ai/an-update-on-character-ai/"
+  ],
+  "draft_id": "20261127_072600_4"
  }
 ]
