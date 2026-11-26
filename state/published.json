@@ -8316,5 +8316,23 @@
    "https://ai.info/news/cognition-swe-2-1-coding-model-cybersecurity"
   ],
   "draft_id": "20261127_070537_1"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "🧩 Claude의 Skills over MCP 공개 베타, MCP 서버가 스킬까지 배포하면 무엇을 승인해야 할까",
+  "topic": "MCP servers can now ship skills, run tasks, and more with Claude (Anthropic, 2026-11-24) / VentureBeat·The Decoder 보도",
+  "category": "AI 도구",
+  "source_url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/claude-skills-over-mcp-mcp.html"
+  },
+  "sources": [
+   "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "https://modelcontextprotocol.io/extensions/skills/overview",
+   "https://venturebeat.com/technology/mcp-servers-can-now-deliver-ai-agent-skills-changing-what-companies-approve-when-they-connect-one",
+   "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/",
+   "https://code.claude.com/docs/en/changelog.md"
+  ],
+  "draft_id": "20261127_071119_2"
  }
 ]
