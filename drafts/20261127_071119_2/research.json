@@ -1,0 +1,106 @@
+{
+ "topic": "MCP servers can now ship skills, run tasks, and more with Claude (Anthropic, 2026-11-24) / VentureBeat·The Decoder 보도",
+ "source_url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "MCP servers can now ship skills, run tasks, and more with Claude",
+   "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "publisher": "Anthropic",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Skills — Model Context Protocol extensions overview",
+   "url": "https://modelcontextprotocol.io/extensions/skills/overview",
+   "publisher": "Model Context Protocol",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "MCP servers can now deliver AI agent skills, changing what companies approve when they connect one",
+   "url": "https://venturebeat.com/technology/mcp-servers-can-now-deliver-ai-agent-skills-changing-what-companies-approve-when-they-connect-one",
+   "publisher": "VentureBeat",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents",
+   "url": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/",
+   "publisher": "The Decoder",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Claude Code changelog 2.1.332",
+   "url": "https://code.claude.com/docs/en/changelog.md",
+   "publisher": "Anthropic",
+   "published": "2026-11-25",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://assets.claude.com/c801d50355ebd35519eb1d82598a4c903298e966.png",
+   "page_url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "caption": "MCP 서버가 스킬·도구·리소스 세 층을 Claude에 전달하고 스킬은 필요할 때만 로드되는 구조 (Skills over MCP 다이어그램)",
+   "credit": "Anthropic"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://assets.claude.com/e53adba43ded0a4377bdd900155891633b3edbc7.png",
+   "page_url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "caption": "Claude가 긴 작업을 MCP 서버에 넘기고 계속 일하다 결과가 나오면 이어받는 Tasks 흐름 다이어그램",
+   "credit": "Anthropic"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "MCP 서버가 스킬까지 배포하는 Skills over MCP를 내 팀이 켜도 되는가, 서버 운영자는 스킬을 추가해야 하는가",
+  "limitations": "공식 글·MCP 문서·언론 보도·변경 기록을 읽고 정리한 글이며 직접 실행·실측하지 않았다. 스킬 사양은 베타이고 SDK·호스트 지원이 구현 중이다. 상황별 판단 기준은 근거에 바탕한 해석이다.",
+  "contributions": [
+   {
+    "kind": "decision_guide",
+    "section": "🧭 우리 팀은 켜야 할까: 상황별 판단 기준",
+    "excerpt": "도구 설명만으로 모델이 순서를 틀리거나 위험한 호출을 하는 사례가 반복된다면",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "플랜별 제공 범위와 보안 사양을 조합해 켜기 전 확인 조건과 서버 운영자의 스킬 추가 기준을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🛡 보안: 서버가 에이전트에게 지시할 수 있게 된다는 의미",
+    "excerpt": "이 두 기록을 연결하면, 스킬 안의 셸 명령을 조직 정책으로 걸러낼 수 있는 길이 열렸다고 해석할 수 있습니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "added_value": "MCP 사양의 승인 규칙, 언론이 정리한 Claude Code 대응, 변경 기록의 훅 이벤트를 연결해 조직 정책 관점의 해석과 한계를 제시"
+   },
+   {
+    "kind": "comparison",
+    "section": "🧩 Skills over MCP는 정확히 무엇이 달라지나",
+    "excerpt": "도구는 '무엇을 할 수 있는가', 스킬은 '어떻게 잘 하는가'에 가깝습니다",
+    "source_ids": [
+     "S1",
+     "S2"
+    ],
+    "added_value": "도구·스킬·리소스의 역할과 로드 시점을 같은 표로 비교해 구분 기준 제공"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [],
+  "note": "Opus 검증: S1(claude.com 공식 글, 2026-11-24)·S2(MCP Skills 문서)·S3(VentureBeat, 2026-11-25)·S4(The Decoder, 2026-11-24 메타 태그 확인)·S5(Claude Code 변경 기록 2.1.332, 2026-11-25)를 다시 열어 수치(85%, 512개 파일·16 MiB, 2026-07-28, 2.1.332, VS Code 1.147, 7억 회)·날짜·플랜별 제공 범위·파트너 예시·사양 요구사항·인용문을 대조. 프롬프트 인젝션 표시는 ext-skills 사양 원문(specification/beta/skills.mdx)과 S3로 확인. 인용 이미지 2개는 내려받아 PNG 3840px·내용 일치 확인. 수정: Agent Skills 2025-12 '개방형 표준으로 공개'로 표현 보정, Jeff Allen을 '개발자(X 게시글)'로 명시, Supabase·Railway 예시를 원문대로 고침, 판단표의 '스킬 로드 시 승인 절차' 근거를 자동 모드 분류기 사실로 바로잡고 '서버와 함께 갱신' 근거를 공식 글로 고침, The Decoder의 SDK 월간 다운로드 7억 회 이상 문장 추가. S2 문서는 페이지에 날짜가 없어 published 비움."
+ }
+}
