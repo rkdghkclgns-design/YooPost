@@ -8334,5 +8334,23 @@
    "https://code.claude.com/docs/en/changelog.md"
   ],
   "draft_id": "20261127_071119_2"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "🔁 Mixture-of-Loops Transformer: 루프 모델이 잔차 대신 KV를 넘기면 OLMo3보다 나을까",
+  "topic": "Mixture-of-Loops Transformer (arXiv 2611.34923, 2026-11-25) / Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.34923",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/mixture-of-loops-transformer-kv-olmo3.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.34923",
+   "https://arxiv.org/pdf/2611.34923",
+   "https://github.com/hustvl/MoLT",
+   "https://huggingface.co/papers/2611.34923",
+   "https://huggingface.co/papers/date/2026-11-26"
+  ],
+  "draft_id": "20261127_071901_3"
  }
 ]
