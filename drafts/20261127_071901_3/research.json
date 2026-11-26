@@ -1,0 +1,125 @@
+{
+ "topic": "Mixture-of-Loops Transformer (arXiv 2611.34923, 2026-11-25) / Hugging Face Papers 등록",
+ "source_url": "https://arxiv.org/abs/2611.34923",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Mixture-of-Loops Transformer (arXiv 2611.34923)",
+   "url": "https://arxiv.org/abs/2611.34923",
+   "publisher": "arXiv",
+   "published": "2026-11-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Mixture-of-Loops Transformer (논문 PDF)",
+   "url": "https://arxiv.org/pdf/2611.34923",
+   "publisher": "arXiv",
+   "published": "2026-11-25",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "hustvl/MoLT: Mixture-of-Loops Transformer 저장소 README",
+   "url": "https://github.com/hustvl/MoLT",
+   "publisher": "HUST Vision Lab (GitHub)",
+   "published": "2026-11-26",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Mixture-of-Loops Transformer - Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.34923",
+   "publisher": "Hugging Face",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Daily Papers, Nov 26 - Hugging Face",
+   "url": "https://huggingface.co/papers/date/2026-11-26",
+   "publisher": "Hugging Face",
+   "published": "2026-11-26",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://raw.githubusercontent.com/hustvl/MoLT/main/assets/molt_architecture.png",
+   "page_url": "https://github.com/hustvl/MoLT",
+   "caption": "U-MoLT 구조: 인코더와 크로스 전용 디코더",
+   "credit": "hustvl/MoLT (Zhu et al.)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://raw.githubusercontent.com/hustvl/MoLT/main/assets/molt_700m_loss_speedup.png",
+   "page_url": "https://github.com/hustvl/MoLT",
+   "caption": "700M 모델의 토큰 효율 곡선 (400B 토큰 사전학습)",
+   "credit": "hustvl/MoLT (Zhu et al.)"
+  },
+  {
+   "id": "I3",
+   "image_url": "https://raw.githubusercontent.com/hustvl/MoLT/main/assets/qwen_ct_100b.png",
+   "page_url": "https://github.com/hustvl/MoLT",
+   "caption": "Qwen3.5-0.8B-Base 100B 토큰 이어 학습 결과",
+   "credit": "hustvl/MoLT (Zhu et al.)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "루프 트랜스포머의 반복 사이에 KV 메모리를 넘기는 MoLT는 OLMo3 대비 무엇을 얼마나 개선했고, 지금 어디까지 믿고 쓸 수 있는가",
+  "limitations": "논문·저장소·Hugging Face 페이지를 읽고 정리했으며 직접 학습·재현·지연 시간 측정은 하지 않았다. 스케일링은 밀집 1.5B·3B MoE(활성 660M)까지, 속도 측정은 113M(H20 GPU 1장, 배치 1) 한 가지이며 일부 구현은 저장소에 미공개다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "📊 400B 토큰 사전학습 결과: 오차·정확도·토큰 효율을 한 표로 읽기",
+    "excerpt": "400에서 232.8을 빼면 167.2이고, 이를 400으로 나누면 0.418이므로",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "저장소가 말한 232.8B 토큰과 41.8%가 일치함을 직접 계산하고, 크기별 퍼플렉서티·정확도 차이를 표에서 다시 계산해 이득의 크기가 일정하지 않음을 보였으며, 논문 부록의 학습 계산량(FLOPs 2.01배·시간 1.99배)과 함께 읽어 토큰 효율이 계산 절감이 아님을 짚었다."
+   },
+   {
+    "kind": "comparison",
+    "section": "⏱ 추론 지연 시간: 반복 횟수와 상관없이 단일 루프 속도에 맞출 수 있나",
+    "excerpt": "2회 반복을 그대로 고정 실행하면 OLMo3의 거의 두 배(1.97배)가 걸립니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "같은 4,096토큰 조건의 실행 방식별 총 시간을 OLMo3 대비 배수로 환산해 어떤 방식이 속도를 잃고 어떤 방식이 유지하는지 비교했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🎯 우리 팀에 적용할지 판단하는 기준",
+    "excerpt": "이 구조를 지금 업무에 쓸 수 있느냐는 질문에 대한 답은 \"모델을 직접 사전학습하는 팀이 아니라면 당장은 관찰 대상\"에 가깝습니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "독자 상황별로 근거가 있는 부분과 확인되지 않은 부분을 나누고 권장 판단을 제시했다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🎯 우리 팀에 적용할지 판단하는 기준",
+    "excerpt": "MoLT-R·MoLT-KV·MoL-Hybrid 디코딩 구현과 대규모 사전학습 레시피, Qwen 이어 학습 코드가 아직 체크되지 않은 상태",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "논문 주장 범위와 저장소 공개 범위를 대조해 독자가 지금 직접 확인할 수 있는 것과 저자 보고에 의존하는 것을 구분했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 104,
+  "confirmed": 104,
+  "removed": [
+   "이 글의 자료만으로는 학습 비용(GPU 시간) 비교를 확인할 수 없습니다. (사실과 다름: 논문 부록 표 11의 FLOPs 2.01배·학습 시간 1.99배·메모리 1.34배로 교체)",
+   "저장소 표만으로는 하드웨어·배치 크기·구현 최적화 수준을 확인할 수 없으므로 (사실과 다름: 논문의 H20 GPU 1장·BF16·배치 1 조건으로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). arXiv abs(제출 2026-11-25 v1, citation_date 일치)·PDF 본문/부록·raw.githubusercontent README(News 2026-11-26)·Hugging Face 논문 페이지/API(Published on Nov 25, Submitted Nov 26, #3 Paper of the day, upvote 57, githubStars 69, 조직 ByteDance Seed, 댓글 1개)·일간 목록을 다시 열어 확인. github.com 페이지는 프록시 403이라 별 수는 HF 기준으로 표기. README 표에서 퍼플렉서티 차이(0.78/0.71/0.75)·정확도 차이(2.5/1.4/2.1)·41.8%((400-232.8)/400=0.418)·1.7배(400/232.8=1.72)·지연 배수(1.97/1.98/1.47/73.8/47.2/0.99/1.00)·프리필 45%(0.0265/0.0183=1.45)·CE 차이(-0.016/-0.013) 재계산 모두 일치. 고친 것: 스케일링 범위(3B MoE 포함), 학습 계산량·측정 하드웨어 문장 교체, S4 published 2026-11-26→2026-11-25(페이지 'Published on Nov 25'), 별 수 출처 표기, 라이선스 문장, CT2 설명 확정, 도메인별 1.28~1.51배 추가. 인용 이미지 3개 모두 HTTP 200 image/png(1892~2280px) 확인."
+ }
+}
