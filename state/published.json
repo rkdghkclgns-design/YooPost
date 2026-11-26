@@ -8371,5 +8371,24 @@
    "https://blog.character.ai/an-update-on-character-ai/"
   ],
   "draft_id": "20261127_072600_4"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "🔒 Check Point 관리 서버 24대 침해, 'AI 가 했다'는 추정은 어디까지 믿을까",
+  "topic": "99 IPs but a C2 ain't one: An Active Intrusion Campaign Against Check Point Security Management Servers (GreyNoise, 2026-11-23)",
+  "category": "AI 보안",
+  "source_url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/check-point-24-ai.html"
+  },
+  "sources": [
+   "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+   "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html",
+   "https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/",
+   "https://securityaffairs.com/203946/hacking/gt13-ai-assisted-hackers-target-22-organizations-through-check-point-servers.html",
+   "https://labs.cloudsecurityalliance.org/research/csa-research-note-gt13-ai-driven-checkpoint-management-compr/",
+   "https://thehackernews.com/2026/07/check-point-patches-exploited.html"
+  ],
+  "draft_id": "20261127_073209_5"
  }
 ]
