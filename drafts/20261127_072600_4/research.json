@@ -1,0 +1,109 @@
+{
+ "topic": "Attorney General Bonta Opposes Asset Sale of Character.AI Amid Child Safety Concerns (California DOJ, 2026-11-24) / TechCrunch: Character.AI's plan to auction off users' private chats challenged by state AGs (2026-11-25)",
+ "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Attorney General Bonta Opposes Asset Sale of Character.AI Amid Child Safety Concerns",
+   "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns",
+   "publisher": "California Department of Justice",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Minnesota AG Ellison Challenges Character.AI's Plan to Auction User Chats",
+   "url": "https://www.ag.state.mn.us/Office/Communications/2026/11/23_CharacterAI.asp",
+   "publisher": "Minnesota Attorney General's Office",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Attorney General Tong Challenges Plan to Auction Off Character.AI Private Chats",
+   "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/attorney-general-tong-challenges-plan-to-auction-off-character-ai-private-chats",
+   "publisher": "Connecticut Attorney General's Office",
+   "published": "2026-11-24",
+   "official": true
+  },
+  {
+   "id": "S4",
+   "title": "Character.AI's plan to auction off users' private chats challenged by state AGs",
+   "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Character.AI users' chats face a $10M sale to Smirks and Pangs",
+   "url": "https://ppc.land/character-ai-users-chats-face-a-10m-sale-to-smirks-and-pangs/",
+   "publisher": "PPC Land",
+   "published": "2026-11-15",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "An Update on Character.AI",
+   "url": "https://blog.character.ai/an-update-on-character-ai/",
+   "publisher": "Character.AI",
+   "published": "2026-10-12",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 출처 3건의 본문에는 사진·도표가 없고(주 로고·인물 사진은 사이트 머리글), TechCrunch의 유일한 이미지는 서비스 로고 사진이라 본문 내용을 보여 주는 그림이 아니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "주 법무장관들이 Character.AI의 대화 기록 경매를 막으려는 근거는 무엇이고, 이용자와 보호자는 무엇을 점검할 수 있나?",
+  "limitations": "직접 서비스를 실행하거나 법원 기록(docket)을 조회하지 않았고 발표문·보도만 읽었다. 연합 규모는 발표문 명단을 센 42명(주도 주+주 40곳+D.C.)을 쓰고, 캘리포니아 인용문의 45명은 설명되지 않은 차이로 남겼다. 계정당 환산은 출처 수치의 단순 나눗셈이며 데이터 가치가 아니다. 법원 판단과 경매 결과는 확인되지 않았다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🔢 숫자로 읽는 입찰 구조: 1,000만 달러와 2,100만 계정",
+    "excerpt": "계산은 출처에 적힌 수치만 쓴 단순 나눗셈이며, 사용자 한 명의 데이터 값어치를 뜻하지 않습니다",
+    "source_ids": [
+     "S1",
+     "S3",
+     "S5"
+    ],
+    "added_value": "기본 입찰가 1,000만 달러를 계정 수로 나누고 해약 수수료 3.5%를 검산해, 가격 대비 조건 공백이라는 주 정부 우려를 숫자로 가늠하게 한다."
+   },
+   {
+    "kind": "comparison",
+    "section": "🗓 일정표와 발표문 비교: 숫자가 서로 다른 이유",
+    "excerpt": "명단을 세면 세 발표문 모두 주도 주 1곳 + 다른 주 40곳 + D.C. = 법무장관 42명으로, TechCrunch와 캘리포니아 발표문 첫 문단의 '42'와 맞습니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "네 문서의 연합 규모 표현과 참여 명단을 센 결과를 나란히 놓아, 이번 신청(42명)과 디즈니 매각 반대('최소 42개 주와 D.C.'), 인용문의 45명을 독자가 구분하게 한다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 이용자·보호자가 지금 점검할 순서",
+    "excerpt": "계정을 이미 삭제한 사용자의 기록이 매각 대상에서 빠지는지는 문서에 적혀 있지 않습니다",
+    "source_ids": [
+     "S2",
+     "S3",
+     "S6"
+    ],
+    "added_value": "이용자 상황별 점검 순서를 제시하고, 삭제와 매각의 관계가 확인되지 않았음을 분명히 해 과신을 막는다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 58,
+  "confirmed": 58,
+  "removed": [],
+  "corrected": [
+   "연합 규모 표: 코네티컷 발표문 '40개 주, 워싱턴 D.C.' → 총수 표기 없음, 명단은 코네티컷 외 주 40곳과 D.C.; '최소 42개 주와 D.C.'는 디즈니 라이선스 매각 반대 표현",
+   "연합 규모 표: 미네소타 발표문 인용 '40개 주와 D.C. 포함'은 페이지에 없는 문구 → 총수 표기 없음, 명단은 미네소타 외 주 40곳과 D.C.",
+   "연합 규모 표: 캘리포니아 '최소 42개 주와 D.C.'는 이번 신청이 아니라 디즈니 매각 반대 표현이며 첫 문단은 '42명의 법무장관'",
+   "요약·결론 문단: '40~45로 다름/40여 개 주 안팎' → 명단 기준 법무장관 42명, 인용문 45명만 차이"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S6 전부 WebFetch 로 다시 열어 확인(막힌 출처 없음). 각 출처 published 가 페이지 날짜와 일치(S1 11-24, S2 11-23, S3 11-24, S4 11-25, S5 11-15, S6 10-12). 계산 재확인: 1,000만/2,100만=0.476→약 0.48달러 이하, 1,000만×3.5%=35만, 2,000만×3.5%=70만, 1,000만+2,684,462=12,684,462(PPC Land 계산과 일치)/2,100만=0.604→약 0.60달러. 법원 판단·경매 결과는 미확인 표기 유지. PPC Land(11-15)는 기간 밖 배경 출처로 입찰 문서 수치·일정에만 사용."
+ }
+}
