@@ -1,0 +1,131 @@
+{
+ "topic": "99 IPs but a C2 ain't one: An Active Intrusion Campaign Against Check Point Security Management Servers (GreyNoise, 2026-11-23)",
+ "source_url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "99 IPs but a C2 ain't one: An Active Intrusion Campaign Against Check Point Security Management Servers",
+   "url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+   "publisher": "GreyNoise",
+   "published": "2026-11-23",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign",
+   "url": "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html",
+   "publisher": "The Hacker News",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "Check Point Security Management Servers Hacked in AI-Assisted Campaign",
+   "url": "https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/",
+   "publisher": "SecurityWeek",
+   "published": "2026-11-24",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GT13: AI-Assisted Hackers Target 22 Organizations Through Check Point Servers",
+   "url": "https://securityaffairs.com/203946/hacking/gt13-ai-assisted-hackers-target-22-organizations-through-check-point-servers.html",
+   "publisher": "Security Affairs",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "GT13: Suspected AI-Driven Intrusions Against Check Point Management Servers",
+   "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-gt13-ai-driven-checkpoint-management-compr/",
+   "publisher": "Cloud Security Alliance",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Check Point patches exploited flaws (CVE-2026-16232)",
+   "url": "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
+   "publisher": "The Hacker News",
+   "published": "2026-07-23",
+   "official": false
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://cdn.prod.website-files.com/667dd40ebb8095e89f27565d/6b04b43ea95fde7851c0bf19_adversary-infrastructure-diagram-blog-small.png",
+   "page_url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+   "caption": "공격 순서 따라가기: GT13 공격자 인프라 구성도",
+   "credit": "GreyNoise"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://cdn.prod.website-files.com/667dd40ebb8095e89f27565d/6b04565204267fe0eb35982d_gt13-code-17.png",
+   "page_url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+   "caption": "공격 순서: 대량 인증서 작업 결과 파일에 오류 메시지가 가득한 예",
+   "credit": "GreyNoise"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Check Point 관리 서버 침해 보고서에서 확인된 사실과 'AI 가 했다'는 추정을 어떻게 구분하고, 관리자는 무엇부터 점검해야 하는가",
+  "limitations": "직접 실행·재현한 것이 없고 GreyNoise 보고서·보도·CSA 노트를 대조한 해석이다. AI 사용 여부·최초 침투 경로·일부 숫자는 출처에서도 미확인이며 점검 순서는 출처 권고를 상황별로 재구성한 제안이다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "🤖 'AI 가 했다'는 주장, 어디까지가 근거일까",
+    "excerpt": "이 단서들은 모두 '그럴 수 있다'는 간접 증거**입니다. CSA 는 AI 개입이 **그럴듯하고 증거와도 들어맞지만 입증되지는 않았다**고 평가하고",
+    "source_ids": [
+     "S1",
+     "S5"
+    ],
+    "added_value": "GreyNoise 의 단서를 CSA 의 대안 해석과 한 표에서 나란히 비교해 증거 수준을 가늠하게 함"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "🔢 숫자가 서로 달라 보이는 이유: 22·24·21·99",
+    "excerpt": "서로 다른 두 숫자를 합치거나 서로 빼서 새 숫자를 만들지 않는 것**이 안전합니다",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ],
+    "added_value": "THN·SecurityWeek·Security Affairs·GreyNoise 원문에서 엇갈리는 22/24/21 숫자를 단위별로 정리하고, 어느 출처도 그 관계를 설명하지 않는다는 점을 밝혀 읽는 법 제시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🛠 내 환경 점검 순서: 상황별 판단 가이드",
+    "excerpt": "새 사실이 아니라 **판단 순서의 제안**입니다. 먼저 Check Point",
+    "source_ids": [
+     "S2",
+     "S5",
+     "S6"
+    ],
+    "added_value": "CSA·Check Point 권고를 독자 상황별 우선순위로 재구성"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 64,
+  "confirmed": 57,
+  "corrected": [
+   "도입: '24대에서 방화벽 DB와 인증서 자료가 빠져나간' → '최소 22개 조직의 관리 서버 24대에서 데이터가 빠져나간'(THN·SecurityWeek 표현대로)",
+   "숫자 문단·FAQ: 'SecurityWeek 는 그룹이 겹치는지 명확하지 않다고 적음' → SecurityWeek 에 그런 문장 없음. GreyNoise 원문의 'Victim A 와 다른 피해 자산 21개를 포함한 24대'와 Security Affairs 표현으로 교체, 어느 출처도 관계를 정리하지 않는다고 기술",
+   "CSA 평가 인용: '그럴듯하지만 입증되지 않았다' → 원문 'plausible and consistent with the evidence, but not demonstrated' 에 맞게",
+   "Shykevich 발언: 직접 인용부호 → 취지 인용(THN 원문은 패러프레이즈)",
+   "점검 목록: 로그 확인 기간 10/17~11/2 → CSA 권고대로 '처음 인터넷 노출 시점부터, 늦어도 2026년 6월부터'",
+   "17개 나라·지역 출처 표기: 'CSA 요약 기준' → 'GreyNoise·CSA 기준'(CSA 는 숫자만, 목록은 GreyNoise·THN)",
+   "AI 단서 표: GreyNoise 가 AI 근거로 내세우지 않은 '피해자 맞춤 비밀번호'·'대량 작업 실패' 해석을 원문 표현에 맞게 수정"
+  ],
+  "removed": [
+   "GreyNoise 자신도 AI 사용을 증명하지는 못한다고 밝힙니다. (원문에 그런 문장 없음 — '믿는다·의심한다' 표현으로 대체)",
+   "한편 보고서는 사람 운영자도 관여했을 가능성을 인정합니다. (원문은 hands-on-keyboard 활동을 '관측'했다고 적음 — 그 표현으로 대체)",
+   "보고서가 근거로 든 단서는 다섯 가지입니다. (원문은 단서를 다섯 가지로 열거하지 않음)",
+   "10월 8일~19일 간단한 점검 명령(uname 등) (uname 은 원문에서 확인 안 됨 — '명령 훅으로 점검 접속'으로)",
+   "10월 2일 '반복 로그인으로 세션 서명 키를 복원' 세부 기법 (방어 목적 글에 불필요한 공격 방법 상세라 삭제)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5). S1~S6 를 모두 WebFetch 로 다시 열어 수치(22·24·21·99·17·69·1,400·800·1,200·100·30)·날짜(10/2~11/2 타임라인, 7/22 핫픽스, 7/23 기사)·이름(Sergey Shykevich, Lotem Finkelstein)·CVE(2026-16232 CVSS 9.3, 2026-61500, 2026-98432 등)·IOC(newpayapp[.]com, 'research' UA, /usr/lib/.libproc.so, Check Point 7월 IP 6개)를 대조. published 는 S1 2026-11-23, S2 2026-11-25, S3 2026-11-24, S4 2026-11-25, S5 2026-11-25, S6 2026-07-23 로 페이지 날짜와 일치. 'AI 개입'은 GreyNoise 가 believe/suspect 로 쓴 추정, CSA 는 plausible·consistent but not demonstrated 로 평가 — 본문 구분 일치 확인. GreyNoise 전체 보고서(labs.greynoise.io)는 이 세션에서 DNS 차단으로 열지 못했고 블로그의 'Read the full report' 버튼은 주소가 없음(#) — 블로그 본문(타임라인·IOC 포함 전문)으로 확인. EGRESS_BLOCKED 출처에만 의존한 주장 없음. 인용 이미지 2개 HTTP 200 image/png, 2368px·1650px 폭 확인."
+ }
+}
