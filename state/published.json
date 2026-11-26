@@ -8390,5 +8390,25 @@
    "https://thehackernews.com/2026/07/check-point-patches-exploited.html"
   ],
   "draft_id": "20261127_073209_5"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "🏛 S&P가 엔비디아 AA 등급을 '강등 검토'에 올렸다: 현금이 아닌 지배구조가 쟁점인 이유",
+  "topic": "S&P Global Ratings places NVIDIA 'AA' ratings on CreditWatch Negative (2026-11-25)",
+  "category": "AI 인사이트",
+  "source_url": "https://mexicobusiness.news/cloudanddata/news/sp-places-nvidia-aa-ratings-creditwatch-negative",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/s-aa.html"
+  },
+  "sources": [
+   "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+   "https://mexicobusiness.news/cloudanddata/news/sp-places-nvidia-aa-ratings-creditwatch-negative",
+   "https://investinglive.com/stocks/s-p-puts-nvidia-s-aa-rating-on-watch-for-a-possible-cut-as-moody-s-holds-steady/",
+   "https://www.techtimes.co.uk/sp-nvidia-creditwatch-negative-governance-concerns-1810411",
+   "https://www.rte.ie/news/business/2026/1126/1600723-s-p-on-nvidia-credit-rating/",
+   "https://247wallst.com/investing/2026/11/19/moodys-says-jensen-huangs-exit-is-credit-negative-for-nvidia/",
+   "https://securityboulevard.com/2026/11/hegseth-weighed-cold-war-law-to-force-nvidia-to-reinstate-ceo-jensen-huang-report/"
+  ],
+  "draft_id": "20261127_074028_6"
  }
 ]
