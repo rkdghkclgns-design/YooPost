@@ -8466,5 +8466,23 @@
    "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/"
   ],
   "draft_id": "20261128_071301_2"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🖥 OS-Omni 300개 과제로 본 컴퓨터 사용 에이전트: iOS·macOS에서 사람과 25점 넘게 벌어진 이유",
+  "topic": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms (arXiv 2611.34232, 2026-11-25) / Hugging Face Papers 등록",
+  "category": "AI 논문 분석",
+  "source_url": "https://arxiv.org/abs/2611.34232",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/os-omni-300-iosmacos-25.html"
+  },
+  "sources": [
+   "https://arxiv.org/abs/2611.34232",
+   "https://arxiv.org/html/2611.34232",
+   "https://huggingface.co/papers/2611.34232",
+   "https://aiweekly.co/alerts/os-omni-top-agent-hits-685-vs-773-humans-25-pt-ios-gap",
+   "https://os-copilot.github.io/OS-Omni-Home/"
+  ],
+  "draft_id": "20261128_072037_3"
  }
 ]
