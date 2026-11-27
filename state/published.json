@@ -8520,5 +8520,21 @@
    "http://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign"
   ],
   "draft_id": "20261128_073408_5"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🍁 캐나다 AI 컴퓨트 접근 기금 10억 달러로 확대: 주권 사업자 80% 지원, 우리 회사 몫은 얼마일까",
+  "topic": "Government of Canada boosts the AI Compute Access Fund with $700 million expansion (Government of Canada, 2026-11-26)",
+  "category": "AI 인사이트",
+  "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/government-of-canada-boosts-the-ai-compute-access-fund-with-700-million-expansion.html",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/ai-10-80.html"
+  },
+  "sources": [
+   "https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy/ai-compute-access-fund",
+   "https://betakit.com/feds-will-now-pay-80-percent-of-costs-under-ai-compute-access-fund-if-purchased-from-a-sovereign-provider/",
+   "https://thenextweb.com/news/canada-ai-compute-access-fund-700m-expansion"
+  ],
+  "draft_id": "20261128_073931_6"
  }
 ]
