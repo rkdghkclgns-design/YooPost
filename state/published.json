@@ -8447,5 +8447,24 @@
    "https://huggingface.co/KRAFTON/Raon-1-mini-preview"
   ],
   "draft_id": "20261128_070517_1"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🧩 ChatGPT Chat·Work 통합 사용량, 내 한도는 어떻게 달라지나: 12월 공유 허용량 판단 기준",
+  "topic": "ChatGPT Chat·Work 통합과 공유 사용량 — Understanding ChatGPT and Codex usage limits (OpenAI Help Center)",
+  "category": "AI 도구",
+  "source_url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/chatgpt-chatwork-12.html"
+  },
+  "sources": [
+   "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+   "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+   "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+   "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/",
+   "https://community.openai.com/t/feedback-please-reconsider-merging-the-chat-and-work-tabs-or-add-a-toggle/1417767",
+   "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/"
+  ],
+  "draft_id": "20261128_071301_2"
  }
 ]
