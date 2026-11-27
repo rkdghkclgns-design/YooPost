@@ -1,0 +1,93 @@
+{
+ "topic": "Government of Canada boosts the AI Compute Access Fund with $700 million expansion (Government of Canada, 2026-11-26)",
+ "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/government-of-canada-boosts-the-ai-compute-access-fund-with-700-million-expansion.html",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Government of Canada boosts the AI Compute Access Fund with $700 million expansion",
+   "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/government-of-canada-boosts-the-ai-compute-access-fund-with-700-million-expansion.html",
+   "publisher": "Innovation, Science and Economic Development Canada",
+   "published": "2026-11-26",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "AI Compute Access Fund",
+   "url": "https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy/ai-compute-access-fund",
+   "publisher": "Innovation, Science and Economic Development Canada",
+   "published": "2026-11-26",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "Feds will now pay 80 percent of costs under AI Compute Access Fund if purchased from a sovereign provider",
+   "url": "https://betakit.com/feds-will-now-pay-80-percent-of-costs-under-ai-compute-access-fund-if-purchased-from-a-sovereign-provider/",
+   "publisher": "BetaKit",
+   "published": "2026-11-26",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "Canada adds C$700M to AI Compute Access Fund",
+   "url": "https://thenextweb.com/news/canada-ai-compute-access-fund-700m-expansion",
+   "publisher": "TNW",
+   "published": "2026-11-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Government of Canada opens applications for the AI Compute Access Fund",
+   "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2025/06/government-of-canada-opens-applications-for-the-ai-compute-access-fund.html",
+   "publisher": "Innovation, Science and Economic Development Canada",
+   "published": "2025-06-25",
+   "official": true
+  }
+ ],
+ "images": [],
+ "images_none_reason": "공식 보도자료·기금 페이지는 글자 중심이고 본문에 도표·스크린샷이 없으며, 매체 기사의 본문 그림도 장관 사진뿐이라 원고 내용과 관련된 그림이 없습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "캐나다 AI 컴퓨트 접근 기금 확대에서 주권 사업자를 쓰면 실부담이 얼마나 달라지고, 언제까지 무엇을 해야 하나",
+  "limitations": "직접 실행·신청 경험 없음. 80%·50%는 ISED 기금 페이지(공식)와 BetaKit 보도에서 확인되며 정부 보도자료·TNW는 비율을 적지 않음. 기업당 평균·소진 비율·지원율 차이는 출처 수치에 단순 계산한 값이며 실제 심사 결과가 아님. BetaKit과 ISED의 자격 설명이 일부 다름.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 계산: 같은 컴퓨트 비용이라도 정부 몫은 얼마나 달라지나",
+    "excerpt": "같은 100만 달러어치 컴퓨트를 쓰더라도 주권 사업자를 고르면 정부 부담 상한은 80만 달러, 기업 부담은 최소 20만 달러가 됩니다",
+    "source_ids": [
+     "S2"
+    ],
+    "added_value": "10만·100만·500만 달러 비용 구간별로 80%와 50% 지원 상한과 기업 최소 부담, 그 차이를 계산"
+   },
+   {
+    "kind": "calculation",
+    "section": "📊 1단계 성적표: 45개 사 5,200만 달러, 누적 89개 사 1억 1,800만 달러",
+    "excerpt": "기금 규모가 3억 달러에서 10억 달러로 커졌지만, 지금까지 약정된 금액은 1억 1,800만 달러 이상이라 전체의 약 11.8%",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "약정액을 총액으로 나눈 소진 비율과 기업당 평균을 계산하고 수요 수치를 낙첨률로 읽지 못하게 한계를 표시"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "✅ 우리 회사는 대상일까: 상황별 판단 기준",
+    "excerpt": "자사 컴퓨트 계약이 이미 있는지, 그 사업자가 주권 요건 네 가지를 모두 채우는지부터 확인하는 것이 순서입니다",
+    "source_ids": [
+     "S2",
+     "S3"
+    ],
+    "added_value": "업종·계약·사업자 소유 상황별로 신청 가능성을 정리하고 BetaKit과 ISED의 자격 설명 차이를 대조"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 50,
+  "removed": [
+   "'2026년 6월 발표된 국가 AI 전략(AI for All)' 중 '2026년 6월 발표된' (정부 보도자료에 날짜 없음 — 삭제)",
+   "'주권 사업자 이용을 장려하면 국내 수요가 생긴다고 밝혔다' (BetaKit 실제 발언 '캐나다에서 소유·운영·관리되는 인프라 투자를 뒷받침할 수요를 만든다'로 교체)"
+  ],
+  "note": "Opus 검증(claude-opus-5-5): S1·S2·S3·S4·S5 를 WebFetch 로 다시 열어 주장 52개 대조(EGRESS_BLOCKED 출처 없음). 고친 것: 장관 발언 '몇백 곳'→원문 'a couple hundred'(200곳 남짓), 80%·50%는 ISED 페이지뿐 아니라 BetaKit 에도 있음(보도자료·TNW 에는 없음)으로 본문·FAQ·editorial.limitations 수정, 정보 상자 '1단계 지원 45개 사'→'1단계 최근 라운드 45개 사', '신규 7억 달러 약정 없음' 단정→가정 표현, 2.5배 손익분기 문장 정확화, 5.9% 표기, ISED 자격 설명(직원·매출·시리즈A 미기재, R&D·컴퓨트 프로젝트+상용화 경로) 보강. BetaKit(캐나다 법인·500명 미만·매출 또는 시리즈A·기존 계약)과 ISED(신청 때 계약 불필요, 협정 확정 전 활성 계약) 차이 대조 확인. 재계산: 118/1000=11.8%, 1000-118=882(백만), 118/89≈1.326(약 133만), 89/1500≈5.9%, 50만→20만=60% 감소, 0.5/0.2=2.5배, 11/28→12/17=19일, 80/50% 곱셈 표 모두 일치. 발표일: S1 'November 26, 2026', S3 'November 26, 2026', S4 'November 26, 2026 8:39 pm UTC', S5 '2025-06-25' 페이지와 일치. S2 는 게시일이 따로 없고 꼬리말 'Date modified: 2026-11-26'(수정일)만 있어 그 날짜를 근거로 유지 — 최초 게시일이 아님(기금 자체는 2024-12-05 발표, 2025년 3월 출범)."
+ }
+}
