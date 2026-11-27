@@ -1,0 +1,134 @@
+{
+ "topic": "크래프톤, 자체 개발 LLM '라온-1 미니' 정식 공개 (Raon-1 mini, KRAFTON AI, 2026-11-25)",
+ "source_url": "https://huggingface.co/KRAFTON/Raon-1-mini",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Raon-1 mini 모델 카드",
+   "url": "https://huggingface.co/KRAFTON/Raon-1-mini",
+   "publisher": "KRAFTON AI (Hugging Face)",
+   "published": "2026-11-25",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "크래프톤, 자체 개발 AI 모델 '라온-1 미니' 정식 공개",
+   "url": "https://www.newspim.com/news/view/20261125000734",
+   "publisher": "뉴스핌",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S3",
+   "title": "크래프톤, 자체 개발 AI 모델 ‘라온-1 미니’ 정식 출시",
+   "url": "https://www.etoday.co.kr/news/view/2652851",
+   "publisher": "이투데이",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "크래프톤, ‘라온-1 미니’ 정식 공개 “동급 MoE 모델 성능 앞섰다”",
+   "url": "https://www.gametoc.co.kr/news/articleView.html?idxno=113405",
+   "publisher": "게임톡",
+   "published": "2026-11-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "Raon-1 mini (KRAFTON) 로컬 실행 해설",
+   "url": "https://www.mindstudio.ai/blog/raon-1-mini-krafton-local",
+   "publisher": "MindStudio",
+   "published": "2026-11-26",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "Krafton unveils 30B-class LLM Raon-1 mini to boost cost efficiency (프리뷰)",
+   "url": "https://www.digitaltoday.co.kr/en/view/117657/krafton-unveils-30b-class-llm-raon-1-mini-to-boost-cost-efficiency",
+   "publisher": "Digital Today",
+   "published": "2026-10-21",
+   "official": false
+  },
+  {
+   "id": "S7",
+   "title": "Raon-1 mini preview 모델 카드",
+   "url": "https://huggingface.co/KRAFTON/Raon-1-mini-preview",
+   "publisher": "KRAFTON AI (Hugging Face)",
+   "published": "2026-10-21",
+   "official": true
+  }
+ ],
+ "images": [
+  {
+   "id": "I1",
+   "image_url": "https://huggingface.co/KRAFTON/Raon-1-mini/resolve/main/assets/benchmark-results.svg",
+   "page_url": "https://huggingface.co/KRAFTON/Raon-1-mini",
+   "caption": "라온-1 미니와 MoE·밀집 모델의 18개 벤치마크 결과표",
+   "credit": "KRAFTON AI (Hugging Face 모델 카드)"
+  },
+  {
+   "id": "I2",
+   "image_url": "https://huggingface.co/KRAFTON/Raon-1-mini/resolve/main/assets/memory-requirements.svg",
+   "page_url": "https://huggingface.co/KRAFTON/Raon-1-mini",
+   "caption": "24GB GPU 한 장에서 모델별 가중치·KV 캐시·최대 문맥 메모리 표",
+   "credit": "KRAFTON AI (Hugging Face 모델 카드)"
+  }
+ ],
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "크래프톤 라온-1 미니 정식판은 프리뷰에서 무엇이 바뀌었고, 24GB GPU 한 장에서 긴 문맥을 돌릴 만한 모델인가?",
+  "limitations": "모든 성능·메모리 수치는 KRAFTON 모델 카드와 보도에 적힌 회사 보고값이며 직접 실행하지 않았다. 계산은 카드 수치로 한 검산이고, 24GB를 24GiB로 취급한 가정이 있다. 프리뷰 대비 GDPVal 등은 비교 모델 점수도 바뀌어 재평가 영향이 섞여 있다. API 가격은 확인하지 못했다.",
+  "contributions": [
+   {
+    "kind": "comparison",
+    "section": "📊 같은 MoE 5개끼리 다시 읽은 벤치마크",
+    "excerpt": "라온-1 미니가 MoE 5개 중 1위인 항목은 18개 중 **5개**(AA-Omniscience, Multi",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "보도의 '동급 MoE 앞섰다'를 모델 카드 결과표의 같은 MoE 5개 열로 다시 세어 1위 5개·열세 항목(코딩·도구 호출)을 구분했다."
+   },
+   {
+    "kind": "calculation",
+    "section": "💾 24GB GPU 한 장에서 256K 문맥: 메모리 계산",
+    "excerpt": "먼저 KV 캐시는 토큰당 약 8KiB이므로 256K 문맥 한 건은 8KiB × 262,144 = 2,097,",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "8KiB×262,144=약 2.0GiB, 24−16.3−1.5=6.2GiB, 6.2−2.0=4.2(표 4.1)로 카드 메모리 표를 검산하고 Gemma 4와의 요청당 점유(2.0 대 2.7GiB)를 비교했다."
+   },
+   {
+    "kind": "decision_guide",
+    "section": "🧭 어떤 팀에 맞고, 어떤 경우는 피할까",
+    "excerpt": "추론 수준 선택에도 기준이 있습니다. 카드는 일반 채팅·지시 이행·간단한 도구 호출에는 **none**을 권",
+    "source_ids": [
+     "S1"
+    ],
+    "added_value": "벤치마크 행과 카드의 권장 용도·추론 수준 권고를 용도별 적합도 표와 선택·제외 기준으로 바꿨다."
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "📰 라온-1 미니 정식판 등장 배경: 프리뷰에서 달라진 점",
+    "excerpt": "보도에는 '300억 개(30B) 중 40억 개 활성화'라고 나오고, 모델 카드에는 **전체 28.8B, 토큰",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S7"
+    ],
+    "added_value": "보도(30B·40억·5단계+none·6종)와 카드(28.8B·4.3B·6단계·비교 열)의 표기를 맞춰 같은 사실임을 확인하고, 프리뷰 카드(S7)와 정식판 카드의 결과표를 대조해 10개 항목의 점수 변화(MultiChallenge 59.0→64.9 등)를 계산했다."
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 62,
+  "confirmed": 60,
+  "removed": [
+   "Docker Model Runner (실행 경로 목록과 코드 블록의 'docker model run hf.co/KRAFTON/Raon-1-mini') — 현재 모델 카드 Quickstart 에 없음",
+   "프리뷰 카드는 점수를 그림으로만 실어 숫자를 확인할 수 없으므로 … 추정치이며 직접 확인한 값이 아닙니다 — 프리뷰 카드 결과표(SVG 텍스트)에서 59.0 을 직접 확인해 확정 문장으로 교체"
+  ],
+  "note": "Opus 검증 (claude-opus-5-5). S1 모델 카드 README 원문과 본문 그림 benchmark-results.svg·memory-requirements.svg 의 텍스트를 내려받아 표의 숫자 전부(18개 벤치마크×7개 모델 중 본문 인용분, 메모리 표 6행)와 MoE 그룹 1위 5개·3위·공동 최하 판정을 대조, KV 8KiB×262,144=2.0GiB 등 계산 재검산. S2(뉴스핌 11-25 14:01)·S3(이투데이 11-25 14:41)·S4(게임톡 11-26)·S5(MindStudio 11-26)·S6(Digital Today 10-21 14:23) 다시 열어 게재일과 30B/40억·64.9(+5.9)·GDPVal 72.3·BrowseComp 55.9·6종·5단계+일반 모드·Apache 2.0·API·라온-1/전이중 음성 계획·프리뷰 10-21·기술 보고서 예고 확인. S7 프리뷰 카드 추가: '프리뷰, 최종 아님' 안내·추론 수준 설정 없음·프리뷰 점수 확인. 발표일: S1 페이지에는 날짜 표기가 없고(메모리 각주 'as of 2026-11-25'만 있음), HF API 저장소 생성 2026-11-24 13:17 UTC(=KST 22:17), 정식판 문구 커밋 2026-11-24 16:13 UTC(=KST 11-25 01:13), 보도 S2·S3 가 11-25 공개로 보도 → 2026-11-25 유지. S7 published 도 페이지 표기 없음, 저장소 생성 2026-10-21 00:14 UTC 와 S6 기사 10-21 로 확인. '카드의 권장/의도한 용도' 표현은 카드가 '강점'으로 적어 3곳 수정. 이미지 2개 HTTP 200 image/svg+xml(998×755, 820×411) 확인. EGRESS_BLOCKED 출처 없음."
+ }
+}
