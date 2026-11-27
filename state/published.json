@@ -8427,5 +8427,25 @@
    "https://www.the-stock.kr/news/articleView.html?idxno=33756"
   ],
   "draft_id": "20261127_074609_7"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🤖 크래프톤 라온-1 미니 정식판, 24GB GPU에서 256K를 돌릴 만한가: 프리뷰 대비 변화와 같은 급 MoE 비교",
+  "topic": "크래프톤, 자체 개발 LLM '라온-1 미니' 정식 공개 (Raon-1 mini, KRAFTON AI, 2026-11-25)",
+  "category": "AI 언어 모델",
+  "source_url": "https://huggingface.co/KRAFTON/Raon-1-mini",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/1-24gb-gpu-256k-moe.html"
+  },
+  "sources": [
+   "https://huggingface.co/KRAFTON/Raon-1-mini",
+   "https://www.newspim.com/news/view/20261125000734",
+   "https://www.etoday.co.kr/news/view/2652851",
+   "https://www.gametoc.co.kr/news/articleView.html?idxno=113405",
+   "https://www.mindstudio.ai/blog/raon-1-mini-krafton-local",
+   "https://www.digitaltoday.co.kr/en/view/117657/krafton-unveils-30b-class-llm-raon-1-mini-to-boost-cost-efficiency",
+   "https://huggingface.co/KRAFTON/Raon-1-mini-preview"
+  ],
+  "draft_id": "20261128_070517_1"
  }
 ]
