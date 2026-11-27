@@ -8503,5 +8503,22 @@
    "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal"
   ],
   "draft_id": "20261128_072735_4"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🔒 허깅페이스 가짜 모델 13개와 ARTEX 에이전트: 모델 내려받는 팀이 오늘 점검할 것",
+  "topic": "The Agent That Robbed Itself: an AI-Driven Hugging Face Malware Campaign Leaks Its Own Operator (JFrog Security Research, 2026-11-24)",
+  "category": "AI 보안",
+  "source_url": "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/13-artex.html"
+  },
+  "sources": [
+   "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
+   "https://dataconomy.com/2026/11/25/ai-agent-uploads-credential-stealers-to-hugging-face-leaks/",
+   "https://i10x.ai/news/hugging-face-fake-models-steal-secrets-hub-commits-trust-remote-code-checklist",
+   "http://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign"
+  ],
+  "draft_id": "20261128_073408_5"
  }
 ]
