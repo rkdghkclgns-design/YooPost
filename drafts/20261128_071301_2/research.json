@@ -1,0 +1,100 @@
+{
+ "topic": "ChatGPT Chat·Work 통합과 공유 사용량 — Understanding ChatGPT and Codex usage limits (OpenAI Help Center)",
+ "source_url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Understanding ChatGPT and Codex usage limits",
+   "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+   "publisher": "OpenAI Help Center",
+   "published": "2026-11-27",
+   "official": true
+  },
+  {
+   "id": "S2",
+   "title": "ChatGPT Work and Codex",
+   "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+   "publisher": "OpenAI Help Center",
+   "published": "2026-11-27",
+   "official": true
+  },
+  {
+   "id": "S3",
+   "title": "OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work",
+   "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+   "publisher": "TechCrunch",
+   "published": "2026-11-25",
+   "official": false
+  },
+  {
+   "id": "S4",
+   "title": "GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error",
+   "url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/",
+   "publisher": "The Decoder",
+   "published": "2026-11-26",
+   "official": false
+  },
+  {
+   "id": "S5",
+   "title": "[Feedback] Please reconsider merging the Chat and Work tabs (or add a toggle)",
+   "url": "https://community.openai.com/t/feedback-please-reconsider-merging-the-chat-and-work-tabs-or-add-a-toggle/1417767",
+   "publisher": "OpenAI Developer Community",
+   "published": "2026-11-18",
+   "official": false
+  },
+  {
+   "id": "S6",
+   "title": "OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
+   "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+   "publisher": "BleepingComputer",
+   "published": "2026-11-26",
+   "official": false
+  }
+ ],
+ "images": [],
+ "images_none_reason": "출처는 글자 중심의 도움말·기사로, 본문에 이 내용을 보여 주는 도표·스크린샷이 없어 인용 이미지를 넣지 않았습니다.",
+ "editorial": {
+  "standard_version": 1,
+  "reader_question": "Chat과 Work가 하나의 사용량으로 합쳐지면 내 사용 방식에서 무엇을 확인하고 어떻게 대응해야 하나?",
+  "limitations": "직접 계정에서 실행하거나 실측하지 않았고, 소티오의 X 게시물 원문과 구체적 토큰 한도 수치는 읽지 못했다. 40%·25% 수치는 The Decoder·BleepingComputer 두 매체의 인용으로 확인했으며, 소모 속도 1.4배·1.25배는 그 문장을 단순하게 읽은 가정이다.",
+  "contributions": [
+   {
+    "kind": "calculation",
+    "section": "🧮 GPT-6.2 한도 소진 속도 계산: 40%와 25%의 의미",
+    "excerpt": "같은 허용량으로 버티는 시간은 1 ÷ 1.4 ≈ 0.71배가 되어 약 29% 짧아집니다",
+    "source_ids": [
+     "S4",
+     "S6"
+    ],
+    "added_value": "보도된 40%·25%를 소모 속도 배율로 가정해 지속 시간 변화(약 29%·20% 감소)를 식과 함께 보이고, 가정의 한계를 표시함"
+   },
+   {
+    "kind": "decision_guide",
+    "section": "💡 내 사용 유형별 판단 기준",
+    "excerpt": "이는 도움말의 '고급 모델과 복잡한 작업이 허용량을 더 쓴다'는 설명에서 끌어낸 판단이며",
+    "source_ids": [
+     "S1",
+     "S2",
+     "S3"
+    ],
+    "added_value": "도움말 규칙을 Instant·Chat·Work·Codex·Business 사용 유형에 대입해 먼저 확인할 항목을 제시"
+   },
+   {
+    "kind": "source_synthesis",
+    "section": "⚙ 공식 도움말에 적힌 공유 사용량 규칙",
+    "excerpt": "따라서 가벼운 질문 위주라면 합산 계량기의 영향이 작을 가능성이 큽니다",
+    "source_ids": [
+     "S1",
+     "S3"
+    ],
+    "added_value": "공식 도움말과 TechCrunch 보도를 항목별로 나눠 무엇이 문서로 확인되고 무엇이 보도에만 있는지 구분"
+   }
+  ]
+ },
+ "factcheck": {
+  "claims": 52,
+  "confirmed": 52,
+  "removed": [],
+  "note": "Opus 검증(claude-opus-5-5): S1~S5 를 WebFetch 로 다시 열어 수치·날짜·이름·스펙·요금제·버전(Codex CLI 0.166.0)·모델 설명·대변인 발언·포럼 글/답글 날짜를 문장 단위로 대조. 출처 published 확인: TechCrunch 2026-11-25, The Decoder 2026-11-26(바이라인), 포럼 2026-11-18(글·답글), OpenAI 도움말 두 건은 날짜 없이 'Updated: 19/21 hours ago' 표시 — 확인 시점 2026-11-27 22시경 UTC 기준 2026-11-27(UTC·KST 모두 같은 날)로 환산 일치. EGRESS_BLOCKED 출처 없음. The Decoder 단독이던 40%·25%·지난주 대비·GPT-6 Astra/GPT-6.1 Sol 대비·소급 청구 없음·Go/Plus/Pro/Business 저장 초기화 1회는 BleepingComputer(2026-11-26, S6)로 교차 확인해 출처 추가; Business Fast Mode 연말 무료는 The Decoder(직접 읽음)로 확인. 수정: 40%·25% 출처 표기(Decoder 단독→Decoder·BleepingComputer), 계산 한계 박스를 BleepingComputer 설명 반영해 보완, 포럼 지원 답글의 '문서화돼 있다'를 원문대로 '안내'로 고침, 기준일 박스 날짜 범위(25~27일→25~26일) 수정. 소티오 직함은 매체별 표기(TechCrunch 'product lead', The Decoder 'Codex engineer')를 각 인용 문장에 맞게 유지."
+ }
+}
