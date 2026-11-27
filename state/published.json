@@ -8484,5 +8484,24 @@
    "https://os-copilot.github.io/OS-Omni-Home/"
   ],
   "draft_id": "20261128_072037_3"
+ },
+ {
+  "date": "2026-11-28",
+  "title": "🛑 엔비디아 동남아 4개국 서버 출하 중단 보도, 규칙은 무엇을 요구했고 무엇이 비어 있나",
+  "topic": "Nvidia hits pause on chip shipments to Southeast Asia (TechCrunch, 2026-11-26) / FT·WSJ 보도: 엔비디아, 말레이시아·싱가포르·태국·인도네시아 서버 출하 중단 / BIS 'Addressing Remote Access to Advanced Semiconductors' 규칙",
+  "category": "AI 뉴스 리뷰",
+  "source_url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+  "urls": {
+   "blogger": "https://aibaekgwasajeon.blogspot.com/2026/11/4.html"
+  },
+  "sources": [
+   "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+   "https://thenextweb.com/news/nvidia-halts-server-shipments-southeast-asia",
+   "https://www.thenationalnews.com/future/technology/2026/11/26/nvidia-halts-chip-shipments-to-south-east-asia-amid-us-crackdown/",
+   "https://www.thenews.com.pk/latest/1425192-nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-amid-us-export-curbs",
+   "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+   "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal"
+  ],
+  "draft_id": "20261128_072735_4"
  }
 ]
