@@ -1,0 +1,102 @@
+{
+  "topic": "Nvidia hits pause on chip shipments to Southeast Asia (TechCrunch, 2026-11-26) / FT·WSJ 보도: 엔비디아, 말레이시아·싱가포르·태국·인도네시아 서버 출하 중단 / BIS 'Addressing Remote Access to Advanced Semiconductors' 규칙",
+  "source_url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+      "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+      "publisher": "TechCrunch",
+      "published": "2026-11-26",
+      "official": false
+    },
+    {
+      "id": "S2",
+      "title": "Nvidia reportedly stops server shipments to Malaysia, Singapore, Thailand, and Indonesia",
+      "url": "https://thenextweb.com/news/nvidia-halts-server-shipments-southeast-asia",
+      "publisher": "TNW (The Next Web)",
+      "published": "2026-11-26",
+      "official": false
+    },
+    {
+      "id": "S3",
+      "title": "Nvidia halts chip shipments to South-East Asia amid US crackdown",
+      "url": "https://www.thenationalnews.com/future/technology/2026/11/26/nvidia-halts-chip-shipments-to-south-east-asia-amid-us-crackdown/",
+      "publisher": "The National",
+      "published": "2026-11-26",
+      "official": false
+    },
+    {
+      "id": "S4",
+      "title": "Nvidia halts server shipments to Malaysia, Singapore, Thailand and Indonesia amid US export curbs",
+      "url": "https://www.thenews.com.pk/latest/1425192-nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-amid-us-export-curbs",
+      "publisher": "The News International",
+      "published": "2026-11-26",
+      "official": false
+    },
+    {
+      "id": "S5",
+      "title": "Addressing Remote Access to Advanced Semiconductors (Federal Register, 91 FR 74970, interim final rule)",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+      "publisher": "U.S. Department of Commerce, Bureau of Industry and Security (Federal Register)",
+      "published": "2026-11-19",
+      "official": true
+    },
+    {
+      "id": "S6",
+      "title": "US moves to block China's remote access to AI chips amid Nvidia scandal",
+      "url": "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal",
+      "publisher": "Al Jazeera",
+      "published": "2026-11-17",
+      "official": false
+    }
+  ],
+  "images": [],
+  "images_none_reason": "공식 출처(연방관보 규칙 PDF)는 글자 중심 문서이고 본문 도표·그림이 없으며, 매체 기사의 그림은 AFP·로이터 대표 사진으로 원고 내용을 설명하지 않아 쓰지 않음",
+  "editorial": {
+    "standard_version": 1,
+    "reader_question": "엔비디아의 동남아 4개국 서버 출하 중단 보도는 미국 상무부 규칙이 직접 요구한 것인가, 그리고 내 상황에서는 무엇부터 확인해야 하는가",
+    "limitations": "직접 실행·실측 없음. 엔비디아·델·슈퍼마이크로의 공식 확인과 FT·WSJ 원문(유료)은 읽지 못해 매체 인용에 의존. 규칙 해석은 연방관보 본문 기준의 비법률 해설이며 개별 거래의 적법성 판단이 아님.",
+    "contributions": [
+      {
+        "kind": "source_synthesis",
+        "section": "🔍 보도와 규칙 사이, 규칙이 직접 말하지 않는 부분",
+        "excerpt": "따라서 4개국 출하 중단은 **규칙이 만든 불확실성에 대한 엔비디아와 파트너의 대응**으로 읽는 편이 문서와 맞습니다.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ],
+        "added_value": "연방관보 규칙문(허가·보고 요건)과 FT·WSJ 보도(출하 중단)를 대조해, 규칙이 정지를 명령한 것이 아니라 기업 대응이라는 해석과 5개국 대 4개국 차이를 제시"
+      },
+      {
+        "kind": "calculation",
+        "section": "🧮 날짜로 계산한 시간표와 숫자 읽기",
+        "excerpt": "11월 19일에 90일을 더하면 **2027년 2월 17일**입니다. 보도일 기준으로는 **83일**이 남아 있습니다.",
+        "source_ids": [
+          "S5"
+        ],
+        "added_value": "규칙문의 시행일·90일·의견 마감일을 달력으로 옮겨 +7일, +61일, +90일(2027-02-17)과 보도일 기준 남은 83일을 계산, 싱가포르 매출 72% 증가 역산과 그 한계 명시"
+      },
+      {
+        "kind": "decision_guide",
+        "section": "🧭 입장별 판단 기준: 무엇부터 확인할까",
+        "excerpt": "먼저 **내 계약의 최종 사용자와 최상위 모회사가 어디인지** 확인합니다. 규칙문이 본사 소재지를 기준으로 예외와 제한을 나누기 때문입니다.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5"
+        ],
+        "added_value": "고객·사업자 유형별로 규칙문의 예외·통제 조항과 보도된 주문 보류를 연결한 점검 순서와 제외 조건 제시"
+      }
+    ]
+  },
+  "factcheck": {
+    "claims": 44,
+    "confirmed": 44,
+    "removed": [
+      "영국 파이낸셜타임스(FT)가 먼저 보도했고 (FT·WSJ 보도 선후는 확인되지 않아 'FT와 WSJ가 보도했고'로 수정)"
+    ],
+    "note": "Opus 검증(claude-opus-5-5): S1~S4·S6 기사와 S5 연방관보 PDF(govinfo, 91 FR 74970) 원문을 다시 열어 주장 44건을 대조. 모든 출처 published 가 페이지 날짜와 일치(S1·S2·S3·S4 2026-11-26, S5 2026-11-19, S6 2026-11-17), EGRESS_BLOCKED 출처 없음. 규칙문에서 시행일 2026-11-19·의견 마감 2027-01-19·5개국(인도네시아·말레이시아·싱가포르·태국·브라질)·higher-than-normal risk of diversion·미국 본사/최상위 모회사 예외(Note 1, §743.10 보고)·건별 심사·90일 허가(§744.24(b)(3))·12,000,000 aggregate TPP·상업용 추천 시스템 제외·AI Diffusion Rule 폐지('never been enforced')·회피 용인국 결과 목록 확인. 날짜 계산(+7일, +61일, +90일=2027-02-17, 보도일 기준 83일, 29일 차)과 1,040억 달러/1.72≈604.7억 달러 역산 재계산. 싱가포르 법인 매출 1,040억 달러(+72%)는 S2·S3·S4가 FT를 인용한 보도 수치, IFP 24%는 S1(테크크런치)이 인용한 추정으로 본문에 보도 인용임을 명시. 수정: 논평 요청 주체를 'FT'에서 TNW가 적은 '로이터'로, 테크크런치 'earlier this month'를 '11월 초'에서 '이달(11월) 앞서'로, '미국인 최종 수하인'을 '미국에 본사가 있는'으로, 서버 설명을 출처 표현에 맞게, 1,040억 달러 문장에 TNW 추가·보도 수치 명시."
+  }
+}
